@@ -1,0 +1,44 @@
+name: "Bug Report"
+description: "Report a bug or unexpected behavior."
+type: "Bug"
+
+body:
+  - type: dropdown
+    id: ecosystems
+    attributes:
+      label: What ecosystems are you seeing the problem on?
+      multiple: true
+      options:
+        - NPM
+        - Java
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: problem
+    attributes:
+      label: What problem are you experiencing?
+      multiple: true
+      options:
+        - Analysis failure
+        - Missing or invalid dependencies
+        - Missing or invalid projects
+        - Missing or invalid scopes
+        - Performance issues
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: repository-url
+    attributes:
+      label: Repository URL
+      description: Provide the URL of the repository where the issue is occurring.
+      placeholder: e.g. https://github.com/scatool/demo-repository
+
+  - type: textarea
+    id: more
+    attributes:
+      label: "Additional Information"
+      description: Provide any extra details that might help us diagnose the issue."
