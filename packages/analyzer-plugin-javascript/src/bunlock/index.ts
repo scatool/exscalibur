@@ -35,7 +35,17 @@ export const extractor: Extractor = filesExtractor({
               const version = packageIdentifier.substring(lastAtIndex + 1);
 
               // Create a proper Package URL (PURL)
-              const purl = new PackageURL('npm', null, name, version, null, null);
+              // For scoped packages (@scope/name), extract scope as namespace
+              let namespace: string | null = null;
+              let packageName = name;
+              if (name.startsWith('@')) {
+                const parts = name.split('/');
+                if (parts.length === 2 && parts[0] && parts[1]) {
+                  namespace = parts[0].substring(1); // Remove @ prefix
+                  packageName = parts[1];
+                }
+              }
+              const purl = new PackageURL('npm', namespace, packageName, version, null, null);
               packages.push(purl.toString());
             }
           }

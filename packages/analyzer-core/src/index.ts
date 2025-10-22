@@ -33,18 +33,19 @@ export const filesExtractor = (config: FilesExtractor): Extractor => {
       await config.markFiles.call(context, codebase);
 
       // Then process each marked file
-      const results: AnalyzerResult = {
-        packages: [],
-      };
+      const allPackages: string[] = [];
 
       for (const file of markedFiles) {
         if (config.extractFile) {
           const fileResult = await config.extractFile(file);
-          results.packages.push(...fileResult.packages);
+          allPackages.push(...fileResult.packages);
         }
       }
 
-      return results;
+      // Remove duplicates
+      return {
+        packages: [...new Set(allPackages)],
+      };
     },
   };
 };
