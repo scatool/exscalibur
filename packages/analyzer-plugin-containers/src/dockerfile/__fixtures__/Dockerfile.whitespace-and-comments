@@ -1,0 +1,8 @@
+
+    # Lots of whitespace and a trailing comment
+	   FROM     alpine:3.18      AS    base     # trailing comment after FROM
+    RUN echo "whitespace test in base"
+
+    # FROM using a stage alias with a tab character before alias
+    FROM	base    # internal stage alias as base
+    RUN echo "using base stage"

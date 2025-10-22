@@ -1,0 +1,4 @@
+# ARG declared before first FROM and used to choose the base
+ARG BASE_IMAGE=python:3.11-slim
+FROM ${BASE_IMAGE}
+RUN python --version

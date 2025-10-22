@@ -1,0 +1,15 @@
+{
+  "name": "@scatool/analyzer",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "workspaces": [
+    "./packages/*"
+  ],
+  "scripts": {
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2"
+  }
+}

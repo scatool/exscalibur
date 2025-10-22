@@ -1,0 +1,10 @@
+# Compose the base image from multiple ARGs
+ARG REGISTRY=docker.io
+ARG NAMESPACE=library
+ARG IMAGE=alpine
+ARG TAG=3.19
+FROM ${REGISTRY}/${NAMESPACE}/${IMAGE}:${TAG} AS stage1
+RUN echo "stage1"
+# Second external base in same file
+FROM ${REGISTRY}/${NAMESPACE}/busybox:1.36
+CMD ["echo", "final"]

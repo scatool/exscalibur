@@ -1,0 +1,7 @@
+# Multi-stage where the second FROM uses a stage name as the base (not an external image)
+FROM alpine AS base
+RUN echo "building base layer"
+
+FROM base AS final
+RUN echo "this uses the internal stage 'base' as its FROM"
+CMD ["sh", "-c", "echo done"]

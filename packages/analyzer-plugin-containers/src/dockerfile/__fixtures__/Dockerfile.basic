@@ -1,0 +1,3 @@
+# Simple base image with a tag
+FROM alpine:3.18
+RUN echo "hello from basic"

@@ -1,0 +1,3 @@
+# Tag + digest pinning
+FROM ubuntu:22.04@sha256:3c282906f58630659f57e5fcae551eeeee54fa8ac4bfa2dc4c4f7deb6bf7e08c AS pinned
+RUN echo "pinned tag+digest"
