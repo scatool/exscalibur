@@ -28,5 +28,11 @@ exports[`react 1`] = `
     "pkg:npm/types/react@19.2.2",
     "pkg:npm/undici-types@7.16.0",
   ],
+  "subprojects": [
+    {
+      "definitionFile": "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/bunlock/__fixtures__/react/package.json",
+      "purl": "pkg:npm/bun-react-template@0.1.0",
+    },
+  ],
 }
 `;
