@@ -1,0 +1,9 @@
+name: docker-scheme
+on: [push]
+jobs:
+  job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: docker://alpine:3.18
+      - run: echo "done"
+      - uses: docker://busybox:1.36

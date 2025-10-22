@@ -1,0 +1,8 @@
+name: call-reusable
+on: [workflow_dispatch]
+jobs:
+  call:
+    uses: acme/reusable/.github/workflows/ci.yml@v1
+    with:
+      run-tests: true
+    secrets: inherit

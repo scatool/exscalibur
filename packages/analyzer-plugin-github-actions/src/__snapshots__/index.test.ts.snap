@@ -1,0 +1,82 @@
+// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
+
+exports[`basic.yml 1`] = `
+{
+  "packages": [
+    "pkg:github/actions/checkout@v4",
+    "pkg:github/actions/setup-node@v4",
+  ],
+}
+`;
+
+exports[`conditional.yml 1`] = `
+{
+  "packages": [
+    "pkg:github/actions/cache@v4",
+  ],
+}
+`;
+
+exports[`docker-scheme.yml 1`] = `
+{
+  "packages": [
+    "pkg:docker/alpine@3.18",
+    "pkg:docker/busybox@1.36",
+  ],
+}
+`;
+
+exports[`local-and-external.yml 1`] = `
+{
+  "packages": [
+    "pkg:github/actions/upload-artifact@v4",
+  ],
+}
+`;
+
+exports[`matrix.yml 1`] = `
+{
+  "packages": [
+    "pkg:github/actions/checkout@v4",
+    "pkg:github/actions/setup-node@v4",
+  ],
+}
+`;
+
+exports[`pinned-commit.yml 1`] = `
+{
+  "packages": [
+    "pkg:github/docker/login-action@ac2bdf35d6ab477ce523b7e564f4b6f3d3af5e6c",
+  ],
+}
+`;
+
+exports[`pinned-version.yml 1`] = `
+{
+  "packages": [
+    "pkg:github/actions/setup-python@v5.1.0",
+  ],
+}
+`;
+
+exports[`private-action.yml 1`] = `
+{
+  "packages": [
+    "pkg:github/my-org/private-action@v2",
+  ],
+}
+`;
+
+exports[`reusable-workflow.yml 1`] = `
+{
+  "packages": [],
+}
+`;
+
+exports[`subpath.yml 1`] = `
+{
+  "packages": [
+    "pkg:github/acme/tools%2Factions%2Feslint@v1",
+  ],
+}
+`;

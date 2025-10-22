@@ -1,0 +1,14 @@
+name: conditional-uses
+on: [push]
+jobs:
+  cache:
+    runs-on: ubuntu-latest
+    steps:
+      - if: ${{ github.ref == 'refs/heads/main' }}
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+      - run: echo "maybe cached"

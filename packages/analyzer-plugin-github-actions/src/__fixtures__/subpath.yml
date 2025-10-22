@@ -1,0 +1,8 @@
+name: subpath-action
+on: [push]
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: acme/tools/actions/eslint@v1
+      - run: echo "linted"

@@ -39,6 +39,7 @@
       "version": "0.0.1",
       "dependencies": {
         "@scatool/analyzer-core": "workspace:*",
+        "@scatool/analyzer-plugin-containers": "workspace:*",
         "packageurl-js": "^1.2.1",
       },
       "devDependencies": {

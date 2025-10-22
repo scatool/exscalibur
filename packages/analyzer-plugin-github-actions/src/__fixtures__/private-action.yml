@@ -1,0 +1,8 @@
+name: private-action
+on: [push]
+jobs:
+  job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: my-org/private-action@v2
+      - run: echo "ok"
