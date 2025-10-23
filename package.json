@@ -7,9 +7,14 @@
     "./packages/*"
   ],
   "scripts": {
+    "lint": "eslint .",
     "format": "prettier --write ."
   },
   "devDependencies": {
-    "prettier": "^3.6.2"
+    "@eslint/js": "^9.38.0",
+    "eslint": "^9.38.0",
+    "globals": "^16.4.0",
+    "prettier": "^3.6.2",
+    "typescript-eslint": "^8.46.2"
   }
 }
