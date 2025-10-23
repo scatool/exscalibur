@@ -1,7 +1,7 @@
-import {type AnalyzerResult, type Extractor, filesExtractor} from '@scatool/analyzer-core/src/index.ts';
-import {Glob} from 'bun';
-import {PackageURL} from 'packageurl-js';
-import {parseContainerImage} from '@scatool/analyzer-plugin-containers/src/dockerfile/index.ts';
+import { type AnalyzerResult, type Extractor, filesExtractor } from '@scatool/analyzer-core/src/index.ts';
+import { Glob } from 'bun';
+import { PackageURL } from 'packageurl-js';
+import { parseContainerImage } from '@scatool/analyzer-plugin-containers/src/dockerfile/index.ts';
 
 export const extractor: Extractor = filesExtractor({
   version: 1,
@@ -54,7 +54,7 @@ export async function extractWorkflow(content: string, filePath?: string): Promi
   }
 
   return {
-    packages: packages.map(pkg => {
+    packages: packages.map((pkg) => {
       const result: { purl: string; evidence?: string[] } = { purl: pkg.purl };
       if (filePath && pkg.lineNumber) {
         result.evidence = [`${filePath}#${pkg.lineNumber}`];
@@ -70,11 +70,12 @@ function findLineNumber(content: string, usesValue: string): number | undefined 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
     // Match "uses: <value>" or "uses: '<value>'" or 'uses: "<value>"'
-    if (line && (
-      line.includes(`uses: ${usesValue}`) ||
-      line.includes(`uses: '${usesValue}'`) ||
-      line.includes(`uses: "${usesValue}"`)
-    )) {
+    if (
+      line &&
+      (line.includes(`uses: ${usesValue}`) ||
+        line.includes(`uses: '${usesValue}'`) ||
+        line.includes(`uses: "${usesValue}"`))
+    ) {
       return i + 1; // Line numbers are 1-indexed
     }
   }

@@ -1,16 +1,24 @@
-import {type AnalyzerResult, type DependencyScope, type Extractor, type Relationship, type Subproject, filesExtractor} from '@scatool/analyzer-core/src/index.ts';
-import {Glob} from 'bun';
-import {PackageURL} from 'packageurl-js';
-import {dirname, join, resolve} from 'node:path';
-import {findPackageInLockfile} from './lockfile.ts';
-import {runNpmLs, isWorkspacePackage, getWorkspacePath, type NpmLsOutput, type NpmLsDependency} from './npmls.ts';
+import {
+  type AnalyzerResult,
+  type DependencyScope,
+  type Extractor,
+  type Relationship,
+  type Subproject,
+  filesExtractor,
+} from '@scatool/analyzer-core/src/index.ts';
+import { Glob } from 'bun';
+import { PackageURL } from 'packageurl-js';
+import { dirname, join, resolve } from 'node:path';
+import { findPackageInLockfile } from './lockfile.ts';
+import { runNpmLs, isWorkspacePackage, getWorkspacePath, type NpmLsOutput, type NpmLsDependency } from './npmls.ts';
+import type { PackageJson } from '../types.ts';
 
 const lockfileGlob = new Glob('**/{package-lock.json,npm-shrinkwrap.json}');
 
 export const extractor: Extractor = filesExtractor({
   version: 1,
   markFiles: async function (codebase: string) {
-    for await (const file of lockfileGlob.scan({cwd: codebase, absolute: true})) {
+    for await (const file of lockfileGlob.scan({ cwd: codebase, absolute: true })) {
       if (!file.includes('/node_modules/')) {
         this.markFile(file);
       }
@@ -30,10 +38,10 @@ export const extractor: Extractor = filesExtractor({
 
       // Read package.json to get the root package info
       const packageJsonPath = join(dir, 'package.json');
-      let rootPackageInfo: Record<string, unknown> | null = null;
+      let rootPackageInfo: PackageJson | null = null;
       try {
         const packageJsonContent = await Bun.file(packageJsonPath).text();
-        rootPackageInfo = JSON.parse(packageJsonContent);
+        rootPackageInfo = JSON.parse(packageJsonContent) as PackageJson;
       } catch {
         // package.json might not exist, continue anyway
       }
@@ -43,7 +51,10 @@ export const extractor: Extractor = filesExtractor({
 
       // Helper function to extract scopes from a package.json
       // This creates a mapping from dependency name to the version constraint from package.json
-      const extractScopesFromPackageJson = (packageInfo: Record<string, unknown>, depsTree: Record<string, NpmLsDependency> | undefined): DependencyScope[] => {
+      const extractScopesFromPackageJson = (
+        packageInfo: PackageJson,
+        depsTree: Record<string, NpmLsDependency> | undefined,
+      ): DependencyScope[] => {
         const scopes: DependencyScope[] = [];
         const scopeNames = ['dependencies', 'devDependencies', 'peerDependencies', 'optionalDependencies'];
 
@@ -124,7 +135,6 @@ export const extractor: Extractor = filesExtractor({
           if (typeof dep === 'object' && dep !== null && 'version' in dep) {
             const version = dep.version;
             if (typeof version === 'string') {
-
               // Create a proper Package URL (PURL)
               // For scoped packages (@scope/name), extract scope as namespace
               let namespace: string | null = null;
@@ -153,7 +163,7 @@ export const extractor: Extractor = filesExtractor({
                 let scopes: DependencyScope[] = [];
                 try {
                   const workspacePackageJsonContent = await Bun.file(subprojectPackageJson).text();
-                  const workspacePackageInfo = JSON.parse(workspacePackageJsonContent) as Record<string, unknown>;
+                  const workspacePackageInfo = JSON.parse(workspacePackageJsonContent) as PackageJson;
                   // Pass the dependencies from this workspace package's tree
                   scopes = extractScopesFromPackageJson(workspacePackageInfo, dep.dependencies);
                 } catch {
@@ -227,7 +237,7 @@ export const extractor: Extractor = filesExtractor({
     const uniquePurls = [...new Set(packagePurls)];
 
     const result: AnalyzerResult = {
-      packages: uniquePurls.map(purl => {
+      packages: uniquePurls.map((purl) => {
         const pkg: { purl: string; evidence?: string[] } = { purl };
         const evidenceSet = evidenceMap.get(purl);
         if (evidenceSet && evidenceSet.size > 0) {

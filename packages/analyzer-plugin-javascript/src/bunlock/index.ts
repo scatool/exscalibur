@@ -1,15 +1,22 @@
-import {type AnalyzerResult, type DependencyScope, type Extractor, type Subproject, filesExtractor} from '@scatool/analyzer-core/src/index.ts';
-import {Glob} from 'bun';
-import {PackageURL} from 'packageurl-js';
-import {parse} from 'jsonc-parser';
-import {dirname, join} from 'node:path';
+import {
+  type AnalyzerResult,
+  type DependencyScope,
+  type Extractor,
+  type Subproject,
+  filesExtractor,
+} from '@scatool/analyzer-core/src/index.ts';
+import { Glob } from 'bun';
+import { PackageURL } from 'packageurl-js';
+import { parse } from 'jsonc-parser';
+import { dirname, join } from 'node:path';
+import type { PackageJson } from '../types.ts';
 
 const glob = new Glob('**/bun.lock');
 
 export const extractor: Extractor = filesExtractor({
   version: 1,
   markFiles: async function (codebase: string) {
-    for await (const file of glob.scan({cwd: codebase, absolute: true})) {
+    for await (const file of glob.scan({ cwd: codebase, absolute: true })) {
       if (!file.includes('/node_modules/')) {
         this.markFile(file);
       }
@@ -28,10 +35,10 @@ export const extractor: Extractor = filesExtractor({
 
     // Read package.json to get the root package info
     const packageJsonPath = join(dir, 'package.json');
-    let rootPackageInfo: Record<string, unknown> | null = null;
+    let rootPackageInfo: PackageJson | null = null;
     try {
       const packageJsonContent = await Bun.file(packageJsonPath).text();
-      rootPackageInfo = JSON.parse(packageJsonContent);
+      rootPackageInfo = JSON.parse(packageJsonContent) as PackageJson;
     } catch {
       // package.json might not exist, continue anyway
     }
@@ -125,7 +132,7 @@ export const extractor: Extractor = filesExtractor({
     }
 
     return {
-      packages: packagePurls.map(purl => ({ purl })),
+      packages: packagePurls.map((purl) => ({ purl })),
       subprojects: subprojects.length > 0 ? subprojects : undefined,
     };
   },

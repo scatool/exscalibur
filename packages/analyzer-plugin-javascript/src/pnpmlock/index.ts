@@ -1,16 +1,24 @@
-import {type AnalyzerResult, type DependencyScope, type Extractor, type Relationship, type Subproject, filesExtractor} from '@scatool/analyzer-core/src/index.ts';
-import {Glob} from 'bun';
-import {PackageURL} from 'packageurl-js';
-import {dirname, join} from 'node:path';
-import {findPackageInLockfile} from './lockfile.ts';
-import {runPnpmLs, isWorkspacePackage, type PnpmLsOutput, type PnpmLsDependency} from './pnpmls.ts';
+import {
+  type AnalyzerResult,
+  type DependencyScope,
+  type Extractor,
+  type Relationship,
+  type Subproject,
+  filesExtractor,
+} from '@scatool/analyzer-core/src/index.ts';
+import { Glob } from 'bun';
+import { PackageURL } from 'packageurl-js';
+import { dirname, join } from 'node:path';
+import { findPackageInLockfile } from './lockfile.ts';
+import { runPnpmLs, isWorkspacePackage, type PnpmLsOutput, type PnpmLsDependency } from './pnpmls.ts';
+import type { PackageJson } from '../types.ts';
 
 const lockfileGlob = new Glob('**/pnpm-lock.yaml');
 
 export const extractor: Extractor = filesExtractor({
   version: 1,
   markFiles: async function (codebase: string) {
-    for await (const file of lockfileGlob.scan({cwd: codebase, absolute: true})) {
+    for await (const file of lockfileGlob.scan({ cwd: codebase, absolute: true })) {
       if (!file.includes('/node_modules/')) {
         this.markFile(file);
       }
@@ -34,7 +42,10 @@ export const extractor: Extractor = filesExtractor({
 
       // Helper function to extract scopes from a package.json
       // This creates a mapping from dependency name to the version constraint from package.json
-      const extractScopesFromPackageJson = (packageInfo: Record<string, unknown>, depsTree: Record<string, PnpmLsDependency> | undefined): DependencyScope[] => {
+      const extractScopesFromPackageJson = (
+        packageInfo: PackageJson,
+        depsTree: Record<string, PnpmLsDependency> | undefined,
+      ): DependencyScope[] => {
         const scopes: DependencyScope[] = [];
         const scopeNames = ['dependencies', 'devDependencies', 'peerDependencies', 'optionalDependencies'];
 
@@ -81,10 +92,10 @@ export const extractor: Extractor = filesExtractor({
         const workspacePath = result.path || dir;
         const workspacePackageJsonPath = join(workspacePath, 'package.json');
 
-        let packageInfo: Record<string, unknown> | null = null;
+        let packageInfo: PackageJson | null = null;
         try {
           const packageJsonContent = await Bun.file(workspacePackageJsonPath).text();
-          packageInfo = JSON.parse(packageJsonContent);
+          packageInfo = JSON.parse(packageJsonContent) as PackageJson;
         } catch {
           // If we can't read package.json, skip this workspace member
           continue;
@@ -143,7 +154,6 @@ export const extractor: Extractor = filesExtractor({
           if (typeof dep === 'object' && dep !== null && 'version' in dep) {
             const version = dep.version;
             if (typeof version === 'string') {
-
               // Create a proper Package URL (PURL)
               // For scoped packages (@scope/name), extract scope as namespace
               let namespace: string | null = null;
@@ -164,7 +174,7 @@ export const extractor: Extractor = filesExtractor({
                 // from the results array, so we just need to track the relationship here
                 if (parentPurl) {
                   // Find the actual version for this workspace package from subprojects
-                  const workspaceSubproject = subprojects.find(sp => {
+                  const workspaceSubproject = subprojects.find((sp) => {
                     // Match by name (extract from purl)
                     const spName = sp.purl.split('@').slice(0, -1).join('@').replace('pkg:npm/', '');
                     return spName === name;
@@ -222,7 +232,7 @@ export const extractor: Extractor = filesExtractor({
         let parentPurl: string | undefined;
 
         // Find the matching subproject for this workspace package
-        const matchingSubproject = subprojects.find(sp => sp.definitionFile === join(workspacePath, 'package.json'));
+        const matchingSubproject = subprojects.find((sp) => sp.definitionFile === join(workspacePath, 'package.json'));
         if (matchingSubproject) {
           parentPurl = matchingSubproject.purl;
         }
@@ -247,7 +257,7 @@ export const extractor: Extractor = filesExtractor({
     const uniquePurls = [...new Set(packagePurls)];
 
     const result: AnalyzerResult = {
-      packages: uniquePurls.map(purl => {
+      packages: uniquePurls.map((purl) => {
         const pkg: { purl: string; evidence?: string[] } = { purl };
         const evidenceSet = evidenceMap.get(purl);
         if (evidenceSet && evidenceSet.size > 0) {

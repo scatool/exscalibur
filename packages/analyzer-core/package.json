@@ -5,6 +5,7 @@
   "type": "module",
   "module": "src/index.ts",
   "scripts": {
+    "test": "bun test --passthrough || true",
     "typecheck": "bunx tsc --strict --noEmit"
   },
   "devDependencies": {

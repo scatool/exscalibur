@@ -72,7 +72,7 @@ export function getWorkspacePath(dep: NpmLsDependency): string | undefined {
   let relativePath = dep.resolved!.replace('file:', '');
   if (relativePath.startsWith('../')) {
     // Remove the ../../ prefix and just use the last parts
-    const parts = relativePath.split('/').filter(p => p !== '..' && p !== '.');
+    const parts = relativePath.split('/').filter((p) => p !== '..' && p !== '.');
     relativePath = parts.join('/');
   }
 

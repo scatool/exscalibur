@@ -1,7 +1,7 @@
-import {expect, test} from 'bun:test';
-import {Glob} from 'bun';
-import {extractor} from './index.ts';
-import {join} from 'node:path';
+import { expect, test } from 'bun:test';
+import { Glob } from 'bun';
+import { extractor } from './index.ts';
+import { join } from 'node:path';
 
 const fixturesDir = `${import.meta.dir}/__fixtures__`;
 
@@ -9,7 +9,7 @@ const fixturesDir = `${import.meta.dir}/__fixtures__`;
 const glob = new Glob('*/{package-lock.json,npm-shrinkwrap.json}');
 const fixtures = new Set<string>();
 
-for await (const file of glob.scan({cwd: fixturesDir})) {
+for await (const file of glob.scan({ cwd: fixturesDir })) {
   // Extract directory name from path (e.g., "basic/package-lock.json" -> "basic")
   const dir = file.split('/')[0];
   if (dir) {

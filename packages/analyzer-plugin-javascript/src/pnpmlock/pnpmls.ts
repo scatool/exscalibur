@@ -26,6 +26,8 @@ export interface PnpmLsOutput {
   name?: string;
   /** Whether this is a private package */
   private?: boolean;
+  /** The path to the workspace package (for pnpm ls -r output) */
+  path?: string;
   /** Direct dependencies of the root package */
   dependencies?: Record<string, PnpmLsDependency>;
   /** Dev dependencies of the root package */
@@ -112,10 +114,9 @@ export function isWorkspacePackage(dep: PnpmLsDependency): boolean {
   }
 
   // Check path property
-  return typeof dep.path === 'string' && (
-    dep.path.startsWith('file:') ||
-    dep.path.includes('link:') ||
-    !dep.path.includes('node_modules')
+  return (
+    typeof dep.path === 'string' &&
+    (dep.path.startsWith('file:') || dep.path.includes('link:') || !dep.path.includes('node_modules'))
   );
 }
 

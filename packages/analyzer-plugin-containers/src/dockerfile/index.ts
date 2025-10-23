@@ -72,7 +72,7 @@ export async function extractDockerfile(content: string, filePath?: string): Pro
   }
 
   return {
-    packages: packages.map(pkg => {
+    packages: packages.map((pkg) => {
       const result: { purl: string; evidence?: string[] } = { purl: pkg.purl };
       if (filePath) {
         result.evidence = [`${filePath}#${pkg.lineNumber}`];

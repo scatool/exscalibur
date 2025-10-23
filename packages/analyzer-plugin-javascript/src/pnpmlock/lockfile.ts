@@ -17,7 +17,11 @@
  * // Returns line number like 1234
  * ```
  */
-export function findPackageInLockfile(lockfileContent: string, packageName: string, version: string): number | undefined {
+export function findPackageInLockfile(
+  lockfileContent: string,
+  packageName: string,
+  version: string,
+): number | undefined {
   const lines = lockfileContent.split('\n');
 
   // pnpm-lock.yaml uses different formats depending on lockfile version:
