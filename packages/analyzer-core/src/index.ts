@@ -14,9 +14,15 @@ export type Subproject = {
   scopes?: DependencyScope[];
 };
 
+export type Relationship = {
+  from: string;
+  to: string[];
+};
+
 export type AnalyzerResult = {
   packages: Package[];
   subprojects?: Subproject[];
+  relationships?: Relationship[];
 };
 
 export type Extractor = {
@@ -52,6 +58,7 @@ export const filesExtractor = (config: FilesExtractor): Extractor => {
       // Then process each marked file
       const allPackages: Package[] = [];
       const allSubprojects: Subproject[] = [];
+      const allRelationships: Relationship[] = [];
 
       for (const file of markedFiles) {
         if (config.extractFile) {
@@ -59,6 +66,9 @@ export const filesExtractor = (config: FilesExtractor): Extractor => {
           allPackages.push(...fileResult.packages);
           if (fileResult.subprojects) {
             allSubprojects.push(...fileResult.subprojects);
+          }
+          if (fileResult.relationships) {
+            allRelationships.push(...fileResult.relationships);
           }
         }
       }
@@ -85,6 +95,19 @@ export const filesExtractor = (config: FilesExtractor): Extractor => {
           packageMap.set(pkg.purl, newPkg);
         }
       }
+      // Merge relationships with the same 'from' value
+      const relationshipMap = new Map<string, Set<string>>();
+      for (const rel of allRelationships) {
+        const existing = relationshipMap.get(rel.from);
+        if (existing) {
+          for (const to of rel.to) {
+            existing.add(to);
+          }
+        } else {
+          relationshipMap.set(rel.from, new Set(rel.to));
+        }
+      }
+
       const result: AnalyzerResult = {
         packages: Array.from(packageMap.values()),
       };
@@ -92,6 +115,14 @@ export const filesExtractor = (config: FilesExtractor): Extractor => {
       // Add subprojects if any were found
       if (allSubprojects.length > 0) {
         result.subprojects = allSubprojects;
+      }
+
+      // Add relationships if any were found
+      if (relationshipMap.size > 0) {
+        result.relationships = Array.from(relationshipMap.entries()).map(([from, toSet]) => ({
+          from,
+          to: Array.from(toSet),
+        }));
       }
 
       return result;

@@ -1,4 +1,4 @@
-import {type AnalyzerResult, type DependencyScope, type Extractor, type Subproject, filesExtractor} from '@scatool/analyzer-core/src/index.ts';
+import {type AnalyzerResult, type DependencyScope, type Extractor, type Relationship, type Subproject, filesExtractor} from '@scatool/analyzer-core/src/index.ts';
 import {Glob} from 'bun';
 import {PackageURL} from 'packageurl-js';
 import {dirname, join, resolve} from 'node:path';
@@ -20,6 +20,7 @@ export const extractor: Extractor = filesExtractor({
     const dir = dirname(file);
     const packagePurls: string[] = [];
     const subprojects: Subproject[] = [];
+    const relationships: Relationship[] = [];
     // Map of purl -> Set of evidence strings (to avoid duplicates)
     const evidenceMap = new Map<string, Set<string>>();
 
@@ -83,6 +84,7 @@ export const extractor: Extractor = filesExtractor({
       };
 
       // Extract root package as a subproject if it has name and version
+      let rootPurl: string | undefined;
       if (rootPackageInfo && rootPackageInfo.name && rootPackageInfo.version) {
         const name = rootPackageInfo.name;
         const version = rootPackageInfo.version;
@@ -98,22 +100,27 @@ export const extractor: Extractor = filesExtractor({
           }
         }
         const purl = new PackageURL('npm', namespace, packageName, version, null, null);
+        rootPurl = purl.toString();
 
         // Extract scopes for the root package
         const packageJsonContent = await Bun.file(packageJsonPath).text();
         const rootScopes = extractScopesFromPackageJson(rootPackageInfo, result.dependencies, packageJsonPath, packageJsonContent);
         subprojects.push({
-          purl: purl.toString(),
+          purl: rootPurl,
           definitionFile: packageJsonPath,
           scopes: rootScopes.length > 0 ? rootScopes : undefined,
         });
       }
 
       // Extract packages from the dependency tree recursively
-      const extractPackages = async (deps: Record<string, NpmLsDependency> | undefined) => {
+      // parentPurl is the purl of the package that depends on these packages
+      const extractPackages = async (deps: Record<string, NpmLsDependency> | undefined, parentPurl?: string) => {
         if (!deps || typeof deps !== 'object') {
           return;
         }
+
+        // Track dependencies for this parent to create relationships
+        const childPurls: string[] = [];
 
         for (const [name, dep] of Object.entries(deps)) {
           if (typeof dep === 'object' && dep !== null && 'version' in dep) {
@@ -132,6 +139,7 @@ export const extractor: Extractor = filesExtractor({
                 }
               }
               const purl = new PackageURL('npm', namespace, packageName, version, null, null);
+              const purlString = purl.toString();
 
               if (isWorkspacePackage(dep)) {
                 // This is a workspace package - add it as a subproject
@@ -155,13 +163,22 @@ export const extractor: Extractor = filesExtractor({
                 }
 
                 subprojects.push({
-                  purl: purl.toString(),
+                  purl: purlString,
                   definitionFile: subprojectPackageJson,
                   scopes: scopes.length > 0 ? scopes : undefined,
                 });
+
+                // Track relationship if we have a parent
+                if (parentPurl) {
+                  childPurls.push(purlString);
+                }
+
+                // Recursively process this workspace's dependencies
+                if (dep.dependencies) {
+                  await extractPackages(dep.dependencies, purlString);
+                }
               } else {
                 // This is a regular dependency package
-                const purlString = purl.toString();
                 packagePurls.push(purlString);
 
                 // Add evidence from lockfile
@@ -175,20 +192,33 @@ export const extractor: Extractor = filesExtractor({
                     evidenceMap.set(purlString, new Set([evidence]));
                   }
                 }
-              }
-            }
 
-            // Recursively process dependencies
-            if (dep.dependencies) {
-              await extractPackages(dep.dependencies);
+                // Track relationship if we have a parent
+                if (parentPurl) {
+                  childPurls.push(purlString);
+                }
+
+                // Recursively process dependencies
+                if (dep.dependencies) {
+                  await extractPackages(dep.dependencies, purlString);
+                }
+              }
             }
           }
         }
+
+        // Create relationship for this parent if it has children
+        if (parentPurl && childPurls.length > 0) {
+          relationships.push({
+            from: parentPurl,
+            to: childPurls,
+          });
+        }
       };
 
-      // Extract packages from the result
+      // Extract packages from the result, starting from the root
       if (result.dependencies) {
-        await extractPackages(result.dependencies);
+        await extractPackages(result.dependencies, rootPurl);
       }
     } catch (error) {
       // If npm ls fails, skip this file
@@ -198,7 +228,7 @@ export const extractor: Extractor = filesExtractor({
     // Deduplicate packagePurls before creating package objects
     const uniquePurls = [...new Set(packagePurls)];
 
-    return {
+    const result: AnalyzerResult = {
       packages: uniquePurls.map(purl => {
         const pkg: { purl: string; evidence?: string[] } = { purl };
         const evidenceSet = evidenceMap.get(purl);
@@ -207,7 +237,16 @@ export const extractor: Extractor = filesExtractor({
         }
         return pkg;
       }),
-      subprojects: subprojects.length > 0 ? subprojects : undefined,
     };
+
+    if (subprojects.length > 0) {
+      result.subprojects = subprojects;
+    }
+
+    if (relationships.length > 0) {
+      result.relationships = relationships;
+    }
+
+    return result;
   },
 });
