@@ -27,11 +27,10 @@ export const extractor: Extractor = filesExtractor({
     try {
       // Read the lockfile content for evidence tracking
       const lockfileContent = await Bun.file(file).text();
-      const lockfileLines = lockfileContent.split('\n');
 
       // Read package.json to get the root package info
       const packageJsonPath = join(dir, 'package.json');
-      let rootPackageInfo: any = null;
+      let rootPackageInfo: Record<string, unknown> | null = null;
       try {
         const packageJsonContent = await Bun.file(packageJsonPath).text();
         rootPackageInfo = JSON.parse(packageJsonContent);
@@ -44,7 +43,7 @@ export const extractor: Extractor = filesExtractor({
 
       // Helper function to extract scopes from a package.json
       // This creates a mapping from dependency name to the version constraint from package.json
-      const extractScopesFromPackageJson = (packageInfo: any, depsTree: Record<string, NpmLsDependency> | undefined, packageJsonPath: string, packageJsonContent: string): DependencyScope[] => {
+      const extractScopesFromPackageJson = (packageInfo: Record<string, unknown>, depsTree: Record<string, NpmLsDependency> | undefined): DependencyScope[] => {
         const scopes: DependencyScope[] = [];
         const scopeNames = ['dependencies', 'devDependencies', 'peerDependencies', 'optionalDependencies'];
 
@@ -103,8 +102,7 @@ export const extractor: Extractor = filesExtractor({
         rootPurl = purl.toString();
 
         // Extract scopes for the root package
-        const packageJsonContent = await Bun.file(packageJsonPath).text();
-        const rootScopes = extractScopesFromPackageJson(rootPackageInfo, result.dependencies, packageJsonPath, packageJsonContent);
+        const rootScopes = extractScopesFromPackageJson(rootPackageInfo, result.dependencies);
         subprojects.push({
           purl: rootPurl,
           definitionFile: packageJsonPath,
@@ -155,9 +153,9 @@ export const extractor: Extractor = filesExtractor({
                 let scopes: DependencyScope[] = [];
                 try {
                   const workspacePackageJsonContent = await Bun.file(subprojectPackageJson).text();
-                  const workspacePackageInfo = JSON.parse(workspacePackageJsonContent);
+                  const workspacePackageInfo = JSON.parse(workspacePackageJsonContent) as Record<string, unknown>;
                   // Pass the dependencies from this workspace package's tree
-                  scopes = extractScopesFromPackageJson(workspacePackageInfo, dep.dependencies, subprojectPackageJson, workspacePackageJsonContent);
+                  scopes = extractScopesFromPackageJson(workspacePackageInfo, dep.dependencies);
                 } catch {
                   // If we can't read the workspace package.json, continue without scopes
                 }

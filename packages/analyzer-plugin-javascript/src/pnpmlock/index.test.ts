@@ -1,4 +1,4 @@
-import {test, expect, describe} from 'bun:test';
+import {test, expect} from 'bun:test';
 import {extractor} from './index.ts';
 import {join} from 'node:path';
 

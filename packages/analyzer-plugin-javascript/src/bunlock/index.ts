@@ -28,7 +28,7 @@ export const extractor: Extractor = filesExtractor({
 
     // Read package.json to get the root package info
     const packageJsonPath = join(dir, 'package.json');
-    let rootPackageInfo: any = null;
+    let rootPackageInfo: Record<string, unknown> | null = null;
     try {
       const packageJsonContent = await Bun.file(packageJsonPath).text();
       rootPackageInfo = JSON.parse(packageJsonContent);

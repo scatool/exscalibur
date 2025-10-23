@@ -79,7 +79,7 @@ export async function runPnpmLs(cwd: string): Promise<PnpmLsOutput[]> {
     }
     // Fallback: wrap single object in array
     return [parsed as PnpmLsOutput];
-  } catch (error) {
+  } catch {
     // If -r fails to produce valid JSON (e.g., multiple lockfiles in subdirectories),
     // fall back to non-recursive mode which works for single lockfiles
     const procNonRecursive = Bun.spawn(['pnpm', 'ls', '--json', '--depth=Infinity'], {
@@ -123,10 +123,9 @@ export function isWorkspacePackage(dep: PnpmLsDependency): boolean {
  * Get the relative path for a workspace package
  *
  * @param dep - The workspace dependency
- * @param baseDir - The base directory (where pnpm-lock.yaml is located)
  * @returns The relative path, or undefined if not a workspace package
  */
-export function getWorkspacePath(dep: PnpmLsDependency, baseDir: string): string | undefined {
+export function getWorkspacePath(dep: PnpmLsDependency): string | undefined {
   if (!isWorkspacePackage(dep)) {
     return undefined;
   }
@@ -143,7 +142,7 @@ export function getWorkspacePath(dep: PnpmLsDependency, baseDir: string): string
   }
 
   // Remove file: or link: prefix if present
-  let relativePath = dep.path.replace(/^(file:|link:)/, '');
+  const relativePath = dep.path.replace(/^(file:|link:)/, '');
 
   // If it's an absolute path, return as-is
   if (relativePath.startsWith('/')) {

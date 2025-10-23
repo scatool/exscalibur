@@ -1,9 +1,9 @@
 import {type AnalyzerResult, type DependencyScope, type Extractor, type Relationship, type Subproject, filesExtractor} from '@scatool/analyzer-core/src/index.ts';
 import {Glob} from 'bun';
 import {PackageURL} from 'packageurl-js';
-import {dirname, join, resolve} from 'node:path';
+import {dirname, join} from 'node:path';
 import {findPackageInLockfile} from './lockfile.ts';
-import {runPnpmLs, isWorkspacePackage, getWorkspacePath, type PnpmLsOutput, type PnpmLsDependency} from './pnpmls.ts';
+import {runPnpmLs, isWorkspacePackage, type PnpmLsOutput, type PnpmLsDependency} from './pnpmls.ts';
 
 const lockfileGlob = new Glob('**/pnpm-lock.yaml');
 
@@ -28,23 +28,13 @@ export const extractor: Extractor = filesExtractor({
       // Read the lockfile content for evidence tracking
       const lockfileContent = await Bun.file(file).text();
 
-      // Read package.json to get the root package info
-      const packageJsonPath = join(dir, 'package.json');
-      let rootPackageInfo: any = null;
-      try {
-        const packageJsonContent = await Bun.file(packageJsonPath).text();
-        rootPackageInfo = JSON.parse(packageJsonContent);
-      } catch {
-        // package.json might not exist, continue anyway
-      }
-
       // Run pnpm install + pnpm ls -r to get the dependency tree
       // This returns an array: one element per workspace package (or single element for non-workspaces)
       const results: PnpmLsOutput[] = await runPnpmLs(dir);
 
       // Helper function to extract scopes from a package.json
       // This creates a mapping from dependency name to the version constraint from package.json
-      const extractScopesFromPackageJson = (packageInfo: any, depsTree: Record<string, PnpmLsDependency> | undefined, packageJsonPath: string): DependencyScope[] => {
+      const extractScopesFromPackageJson = (packageInfo: Record<string, unknown>, depsTree: Record<string, PnpmLsDependency> | undefined): DependencyScope[] => {
         const scopes: DependencyScope[] = [];
         const scopeNames = ['dependencies', 'devDependencies', 'peerDependencies', 'optionalDependencies'];
 
@@ -85,15 +75,13 @@ export const extractor: Extractor = filesExtractor({
       };
 
       // Process each workspace package (or the single root package)
-      // Track which result is the root for relationship tracking
-      let rootPurl: string | undefined;
 
       for (const result of results) {
         // Get the package info for this workspace member
         const workspacePath = result.path || dir;
         const workspacePackageJsonPath = join(workspacePath, 'package.json');
 
-        let packageInfo: any = null;
+        let packageInfo: Record<string, unknown> | null = null;
         try {
           const packageJsonContent = await Bun.file(workspacePackageJsonPath).text();
           packageInfo = JSON.parse(packageJsonContent);
@@ -119,11 +107,6 @@ export const extractor: Extractor = filesExtractor({
           const purl = new PackageURL('npm', namespace, packageName, version, null, null);
           const purlString = purl.toString();
 
-          // Track root package for later
-          if (workspacePath === dir) {
-            rootPurl = purlString;
-          }
-
           // Combine all dependency types for extracting scopes
           const allDeps: Record<string, PnpmLsDependency> = {};
           if (result.dependencies) {
@@ -137,7 +120,7 @@ export const extractor: Extractor = filesExtractor({
           }
 
           // Extract scopes for this package
-          const packageScopes = extractScopesFromPackageJson(packageInfo, allDeps, workspacePackageJsonPath);
+          const packageScopes = extractScopesFromPackageJson(packageInfo, allDeps);
           subprojects.push({
             purl: purlString,
             definitionFile: workspacePackageJsonPath,
