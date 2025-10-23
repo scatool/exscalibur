@@ -1,3 +1,7 @@
+export type Package = {
+  purl: string;
+};
+
 export type DependencyScope = {
   scope: string;
   packages: string[];
@@ -10,7 +14,7 @@ export type Subproject = {
 };
 
 export type AnalyzerResult = {
-  packages: string[];
+  packages: Package[];
   subprojects?: Subproject[];
 };
 
@@ -45,22 +49,23 @@ export const filesExtractor = (config: FilesExtractor): Extractor => {
       await config.markFiles.call(context, codebase);
 
       // Then process each marked file
-      const allPackages: string[] = [];
+      const allPackagePurls: string[] = [];
       const allSubprojects: Subproject[] = [];
 
       for (const file of markedFiles) {
         if (config.extractFile) {
           const fileResult = await config.extractFile(file);
-          allPackages.push(...fileResult.packages);
+          allPackagePurls.push(...fileResult.packages.map(p => p.purl));
           if (fileResult.subprojects) {
             allSubprojects.push(...fileResult.subprojects);
           }
         }
       }
 
-      // Remove duplicate packages
+      // Remove duplicate packages and convert to Package objects
+      const uniquePurls = [...new Set(allPackagePurls)];
       const result: AnalyzerResult = {
-        packages: [...new Set(allPackages)],
+        packages: uniquePurls.map(purl => ({ purl })),
       };
 
       // Add subprojects if any were found

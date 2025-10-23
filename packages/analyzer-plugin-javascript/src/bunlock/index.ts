@@ -23,7 +23,7 @@ export const extractor: Extractor = filesExtractor({
     const lockfile = parse(content);
 
     // Extract package information from the packages section
-    const packages: string[] = [];
+    const packagePurls: string[] = [];
     const subprojects: Subproject[] = [];
 
     // Read package.json to get the root package info
@@ -117,7 +117,7 @@ export const extractor: Extractor = filesExtractor({
                 }
               }
               const purl = new PackageURL('npm', namespace, packageName, version, null, null);
-              packages.push(purl.toString());
+              packagePurls.push(purl.toString());
             }
           }
         }
@@ -125,7 +125,7 @@ export const extractor: Extractor = filesExtractor({
     }
 
     return {
-      packages,
+      packages: packagePurls.map(purl => ({ purl })),
       subprojects: subprojects.length > 0 ? subprojects : undefined,
     };
   },

@@ -23,7 +23,7 @@ export const extractor: Extractor = filesExtractor({
 
 export async function extractWorkflow(content: string): Promise<AnalyzerResult> {
   const workflow = Bun.YAML.parse(content);
-  const packages: string[] = [];
+  const packagePurls: string[] = [];
 
   // Extract actions from jobs
   if (workflow && typeof workflow === 'object' && 'jobs' in workflow) {
@@ -40,7 +40,7 @@ export async function extractWorkflow(content: string): Promise<AnalyzerResult> 
                   // Parse action reference (e.g., "actions/checkout@v4")
                   const actionPurl = parseActionReference(uses);
                   if (actionPurl) {
-                    packages.push(actionPurl);
+                    packagePurls.push(actionPurl);
                   }
                 }
               }
@@ -52,7 +52,7 @@ export async function extractWorkflow(content: string): Promise<AnalyzerResult> 
   }
 
   return {
-    packages,
+    packages: packagePurls.map(purl => ({ purl })),
   };
 }
 

@@ -16,7 +16,7 @@ export const extractor: Extractor = filesExtractor({
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
     const dir = dirname(file);
-    const packages: string[] = [];
+    const packagePurls: string[] = [];
     const subprojects: Subproject[] = [];
 
     try {
@@ -174,7 +174,7 @@ export const extractor: Extractor = filesExtractor({
                 });
               } else {
                 // This is a regular dependency package
-                packages.push(purl.toString());
+                packagePurls.push(purl.toString());
               }
             }
 
@@ -196,7 +196,7 @@ export const extractor: Extractor = filesExtractor({
     }
 
     return {
-      packages,
+      packages: packagePurls.map(purl => ({ purl })),
       subprojects: subprojects.length > 0 ? subprojects : undefined,
     };
   },

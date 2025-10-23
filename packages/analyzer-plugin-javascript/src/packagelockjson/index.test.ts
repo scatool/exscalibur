@@ -22,7 +22,7 @@ for (const dir of fixtures) {
     const fixturePath = join(fixturesDir, dir);
     const result = await extractor.extract(fixturePath);
 
-    result.packages.sort();
+    result.packages.sort((a, b) => a.purl.localeCompare(b.purl));
     expect(result).toMatchSnapshot();
   });
 }

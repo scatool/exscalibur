@@ -24,7 +24,7 @@ export const extractor: Extractor = filesExtractor({
 });
 
 export async function extractDockerfile(content: string): Promise<AnalyzerResult> {
-  const packages: string[] = [];
+  const packagePurls: string[] = [];
 
   // Parse ARG instructions to build a variable map
   const args = new Map<string, string>();
@@ -65,12 +65,12 @@ export async function extractDockerfile(content: string): Promise<AnalyzerResult
 
     const purl = parseContainerImage(imageRef);
     if (purl) {
-      packages.push(purl);
+      packagePurls.push(purl);
     }
   }
 
   return {
-    packages,
+    packages: packagePurls.map(purl => ({ purl })),
   };
 }
 
