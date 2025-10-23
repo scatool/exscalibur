@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "name": "@scatest/www",
+  "version": "2.0.0",
+  "description": "The homepage",
+  "dependencies": {
+    "@scatest/ui": "workspace:*",
+    "next": "^15.1.7",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
+}
