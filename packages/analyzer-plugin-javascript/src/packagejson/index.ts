@@ -23,7 +23,7 @@ export const extractor: Extractor = filesExtractor({
     const content = await Bun.file(file).text();
     const packageJson = JSON.parse(content);
 
-    const packages: string[] = [];
+    const packages = [];
 
     // Extract dependencies (no version resolution, just what's declared)
     const depSections = [
@@ -43,8 +43,17 @@ export const extractor: Extractor = filesExtractor({
 
             // Create a proper Package URL (PURL)
             // Note: version ranges are supported in PURLs
-            const purl = new PackageURL('npm', null, name, cleanVersion, null, null);
-            packages.push(purl.toString());
+            let namespace: string | null = null;
+            let packageName = name;
+            if (name.startsWith('@')) {
+              const parts = name.split('/');
+              if (parts.length === 2 && parts[0] && parts[1]) {
+                namespace = parts[0].substring(1);
+                packageName = parts[1];
+              }
+            }
+            const purl = new PackageURL('npm', namespace, packageName, cleanVersion, null, null);
+            packages.push({ purl: purl.toString() });
           }
         }
       }

@@ -4,7 +4,7 @@ import { resolve } from 'path';
 
 test('package.json extractor should extract package URLs from package.json', async () => {
   // Path to the test fixture
-  const fixturePath = resolve(import.meta.dir, '../../fixtures/bun/react');
+  const fixturePath = resolve(import.meta.dir, './__fixtures__/simple');
 
   // Run the extractor
   const result = await extractor.extract(fixturePath);
@@ -14,7 +14,7 @@ test('package.json extractor should extract package URLs from package.json', asy
   expect(Array.isArray(result.packages)).toBe(true);
 
   // Sort packages for consistent snapshot comparison
-  result.packages.sort();
+  result.packages.sort((a, b) => a.purl.localeCompare(b.purl));
 
   // Snapshot test
   expect(result).toMatchSnapshot();

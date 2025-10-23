@@ -2,6 +2,8 @@ import {type AnalyzerResult, type DependencyScope, type Extractor, type Subproje
 import {Glob} from 'bun';
 import {PackageURL} from 'packageurl-js';
 import {dirname, join, resolve} from 'node:path';
+import {findPackageInLockfile} from './lockfile.ts';
+import {runNpmLs, isWorkspacePackage, getWorkspacePath, type NpmLsOutput, type NpmLsDependency} from './npmls.ts';
 
 const lockfileGlob = new Glob('**/{package-lock.json,npm-shrinkwrap.json}');
 
@@ -37,42 +39,11 @@ export const extractor: Extractor = filesExtractor({
       }
 
       // Run npm ls to get the dependency tree from package-lock.json only
-      const proc = Bun.spawn(['npm', 'ls', '--json', '--all', '--package-lock-only'], {
-        cwd: dir,
-        stdout: 'pipe',
-        stderr: 'pipe',
-      });
-
-      const output = await new Response(proc.stdout).text();
-      await proc.exited;
-
-      // Parse the npm ls output
-      const result = JSON.parse(output);
-
-      // Helper function to find line number of a package in the lockfile
-      const findPackageInLockfile = (packageName: string, version: string): number | undefined => {
-        // Look for "node_modules/packageName" or ".../node_modules/packageName" followed by "version": "version"
-        // This handles both top-level and nested node_modules entries
-        for (let i = 0; i < lockfileLines.length; i++) {
-          const line = lockfileLines[i] || '';
-          // Match the package entry - could be nested (e.g., "node_modules/vite/node_modules/postcss")
-          // Check if the line ends with "/packageName": or is exactly "node_modules/packageName":
-          if (line.includes(`node_modules/${packageName}"`) || line.includes(`"${packageName}"`)) {
-            // Check if the next few lines contain the version
-            for (let j = i; j < Math.min(i + 10, lockfileLines.length); j++) {
-              const versionLine = lockfileLines[j] || '';
-              if (versionLine.includes(`"version": "${version}"`)) {
-                return j + 1; // Return the line number of the version (1-indexed)
-              }
-            }
-          }
-        }
-        return undefined;
-      };
+      const result: NpmLsOutput = await runNpmLs(dir);
 
       // Helper function to extract scopes from a package.json
       // This creates a mapping from dependency name to the version constraint from package.json
-      const extractScopesFromPackageJson = (packageInfo: any, depsTree: any, packageJsonPath: string, packageJsonContent: string): DependencyScope[] => {
+      const extractScopesFromPackageJson = (packageInfo: any, depsTree: Record<string, NpmLsDependency> | undefined, packageJsonPath: string, packageJsonContent: string): DependencyScope[] => {
         const scopes: DependencyScope[] = [];
         const scopeNames = ['dependencies', 'devDependencies', 'peerDependencies', 'optionalDependencies'];
 
@@ -139,18 +110,15 @@ export const extractor: Extractor = filesExtractor({
       }
 
       // Extract packages from the dependency tree recursively
-      const extractPackages = async (deps: any) => {
+      const extractPackages = async (deps: Record<string, NpmLsDependency> | undefined) => {
         if (!deps || typeof deps !== 'object') {
           return;
         }
 
-        for (const [name, info] of Object.entries(deps)) {
-          if (typeof info === 'object' && info !== null && 'version' in info) {
-            const version = (info as any).version;
+        for (const [name, dep] of Object.entries(deps)) {
+          if (typeof dep === 'object' && dep !== null && 'version' in dep) {
+            const version = dep.version;
             if (typeof version === 'string') {
-              // Check if this is a workspace/local package (resolved to file:...)
-              const resolved = (info as any).resolved;
-              const isWorkspacePackage = typeof resolved === 'string' && resolved.startsWith('file:');
 
               // Create a proper Package URL (PURL)
               // For scoped packages (@scope/name), extract scope as namespace
@@ -165,20 +133,11 @@ export const extractor: Extractor = filesExtractor({
               }
               const purl = new PackageURL('npm', namespace, packageName, version, null, null);
 
-              if (isWorkspacePackage) {
+              if (isWorkspacePackage(dep)) {
                 // This is a workspace package - add it as a subproject
-                // npm ls gives paths relative to node_modules, but we need the actual location
-                // The package-lock.json has the correct path, but we get it from npm ls here
-                // So we need to try resolving it correctly
-                let relativePath = resolved.replace('file:', '');
-
-                // npm ls sometimes returns paths like "../../apps/docs" which are relative to node_modules
-                // We want paths relative to the lockfile directory
-                // If the path starts with ../, it's likely relative to node_modules, so adjust it
-                if (relativePath.startsWith('../')) {
-                  // Remove the ../../ prefix and just use the last parts
-                  const parts = relativePath.split('/').filter(p => p !== '..' && p !== '.');
-                  relativePath = parts.join('/');
+                const relativePath = getWorkspacePath(dep);
+                if (!relativePath) {
+                  continue;
                 }
 
                 const subprojectDir = resolve(dir, relativePath);
@@ -190,8 +149,7 @@ export const extractor: Extractor = filesExtractor({
                   const workspacePackageJsonContent = await Bun.file(subprojectPackageJson).text();
                   const workspacePackageInfo = JSON.parse(workspacePackageJsonContent);
                   // Pass the dependencies from this workspace package's tree
-                  const workspaceDeps = (info as any).dependencies;
-                  scopes = extractScopesFromPackageJson(workspacePackageInfo, workspaceDeps, subprojectPackageJson, workspacePackageJsonContent);
+                  scopes = extractScopesFromPackageJson(workspacePackageInfo, dep.dependencies, subprojectPackageJson, workspacePackageJsonContent);
                 } catch {
                   // If we can't read the workspace package.json, continue without scopes
                 }
@@ -207,7 +165,7 @@ export const extractor: Extractor = filesExtractor({
                 packagePurls.push(purlString);
 
                 // Add evidence from lockfile
-                const lineNumber = findPackageInLockfile(name, version);
+                const lineNumber = findPackageInLockfile(lockfileContent, name, version);
                 if (lineNumber) {
                   const evidence = `${file}#${lineNumber}`;
                   const existing = evidenceMap.get(purlString);
@@ -221,8 +179,8 @@ export const extractor: Extractor = filesExtractor({
             }
 
             // Recursively process dependencies
-            if ('dependencies' in info) {
-              await extractPackages((info as any).dependencies);
+            if (dep.dependencies) {
+              await extractPackages(dep.dependencies);
             }
           }
         }

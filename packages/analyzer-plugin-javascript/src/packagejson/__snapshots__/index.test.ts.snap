@@ -3,13 +3,18 @@
 exports[`package.json extractor should extract package URLs from package.json 1`] = `
 {
   "packages": [
-    "pkg:npm/%40types%2Fbun@latest",
-    "pkg:npm/%40types%2Freact-dom@%5E19",
-    "pkg:npm/%40types%2Freact@%5E19",
-    "pkg:npm/bun-plugin-tailwind@%5E0.1.2",
-    "pkg:npm/react-dom@%5E19",
-    "pkg:npm/react@%5E19",
-    "pkg:npm/tailwindcss@%5E4.1.11",
+    {
+      "purl": "pkg:npm/react-dom@%5E19.0.0",
+    },
+    {
+      "purl": "pkg:npm/react@%5E19.0.0",
+    },
+    {
+      "purl": "pkg:npm/types/react-dom@%5E19.0.0",
+    },
+    {
+      "purl": "pkg:npm/types/react@%5E19.0.0",
+    },
   ],
 }
 `;
