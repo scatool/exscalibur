@@ -32,6 +32,25 @@ exports[`react 1`] = `
     {
       "definitionFile": "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/bunlock/__fixtures__/react/package.json",
       "purl": "pkg:npm/bun-react-template@0.1.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/bun-plugin-tailwind@%5E0.1.2",
+            "pkg:npm/react@%5E19",
+            "pkg:npm/react-dom@%5E19",
+            "pkg:npm/tailwindcss@%5E4.1.11",
+          ],
+          "scope": "dependencies",
+        },
+        {
+          "packages": [
+            "pkg:npm/types/react@%5E19",
+            "pkg:npm/types/react-dom@%5E19",
+            "pkg:npm/types/bun@latest",
+          ],
+          "scope": "devDependencies",
+        },
+      ],
     },
   ],
 }

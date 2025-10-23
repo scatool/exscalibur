@@ -121,18 +121,63 @@ exports[`workspace 1`] = `
     {
       "definitionFile": "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/packagelockjson/__fixtures__/workspace/package.json",
       "purl": "pkg:npm/scatest/workspace@0.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/turbo@2.4.2",
+            "pkg:npm/typescript@5.7.3",
+          ],
+          "scope": "devDependencies",
+        },
+      ],
     },
     {
       "definitionFile": "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/packagelockjson/__fixtures__/workspace/apps/docs/package.json",
       "purl": "pkg:npm/scatest/docs@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/scatest/ui@1.0.7",
+            "pkg:npm/react@19.0.0",
+            "pkg:npm/react-dom@19.0.0",
+            "pkg:npm/vite@6.1.1",
+          ],
+          "scope": "dependencies",
+        },
+      ],
     },
     {
       "definitionFile": "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/packagelockjson/__fixtures__/workspace/packages/ui/package.json",
       "purl": "pkg:npm/scatest/ui@1.0.7",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/react@19.0.0",
+          ],
+          "scope": "dependencies",
+        },
+      ],
     },
     {
       "definitionFile": "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/packagelockjson/__fixtures__/workspace/apps/www/package.json",
       "purl": "pkg:npm/scatest/www@2.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/scatest/ui@1.0.7",
+            "pkg:npm/next@15.1.7",
+            "pkg:npm/react@19.0.0",
+            "pkg:npm/react-dom@19.0.0",
+          ],
+          "scope": "dependencies",
+        },
+        {
+          "packages": [
+            "pkg:npm/typescript@5.7.3",
+          ],
+          "scope": "devDependencies",
+        },
+      ],
     },
   ],
 }
@@ -252,14 +297,50 @@ exports[`monorepo 1`] = `
     {
       "definitionFile": "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/packagelockjson/__fixtures__/monorepo/package.json",
       "purl": "pkg:npm/utils@0.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/prettier@3.5.2",
+          ],
+          "scope": "devDependencies",
+        },
+      ],
     },
     {
       "definitionFile": "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/packagelockjson/__fixtures__/monorepo/b/package.json",
       "purl": "pkg:npm/b@1.5.2",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/vite@6.1.1",
+          ],
+          "scope": "dependencies",
+        },
+        {
+          "packages": [
+            "pkg:npm/typescript@5.7.3",
+          ],
+          "scope": "devDependencies",
+        },
+      ],
     },
     {
       "definitionFile": "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/packagelockjson/__fixtures__/monorepo/a/package.json",
       "purl": "pkg:npm/a@1.5.2",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/next@15.1.7",
+          ],
+          "scope": "dependencies",
+        },
+        {
+          "packages": [
+            "pkg:npm/typescript@5.7.3",
+          ],
+          "scope": "devDependencies",
+        },
+      ],
     },
   ],
 }
@@ -328,6 +409,22 @@ exports[`basic 1`] = `
     {
       "definitionFile": "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/packagelockjson/__fixtures__/basic/package.json",
       "purl": "pkg:npm/npm-basic@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/next@15.1.7",
+            "pkg:npm/react@19.0.0",
+            "pkg:npm/react-dom@19.0.0",
+          ],
+          "scope": "dependencies",
+        },
+        {
+          "packages": [
+            "pkg:npm/typescript@5.7.3",
+          ],
+          "scope": "devDependencies",
+        },
+      ],
     },
   ],
 }

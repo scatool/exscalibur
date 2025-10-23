@@ -1,4 +1,4 @@
-import {type AnalyzerResult, type Extractor, type Subproject, filesExtractor} from '@scatool/analyzer-core/src/index.ts';
+import {type AnalyzerResult, type DependencyScope, type Extractor, type Subproject, filesExtractor} from '@scatool/analyzer-core/src/index.ts';
 import {Glob} from 'bun';
 import {PackageURL} from 'packageurl-js';
 import {parse} from 'jsonc-parser';
@@ -52,9 +52,44 @@ export const extractor: Extractor = filesExtractor({
         }
       }
       const purl = new PackageURL('npm', namespace, packageName, version, null, null);
+
+      // Extract dependency scopes from package.json
+      const scopes: DependencyScope[] = [];
+      const scopeNames = ['dependencies', 'devDependencies', 'peerDependencies', 'optionalDependencies'];
+
+      for (const scopeName of scopeNames) {
+        if (rootPackageInfo[scopeName] && typeof rootPackageInfo[scopeName] === 'object') {
+          const scopePackages: string[] = [];
+          for (const [depName, depVersion] of Object.entries(rootPackageInfo[scopeName])) {
+            if (typeof depVersion === 'string') {
+              // Create PURL for the dependency
+              let depNamespace: string | null = null;
+              let depPackageName = depName;
+              if (depName.startsWith('@')) {
+                const parts = depName.split('/');
+                if (parts.length === 2 && parts[0] && parts[1]) {
+                  depNamespace = parts[0].substring(1);
+                  depPackageName = parts[1];
+                }
+              }
+              // For version ranges, we use the range as-is in the PURL
+              const depPurl = new PackageURL('npm', depNamespace, depPackageName, depVersion, null, null);
+              scopePackages.push(depPurl.toString());
+            }
+          }
+          if (scopePackages.length > 0) {
+            scopes.push({
+              scope: scopeName,
+              packages: scopePackages,
+            });
+          }
+        }
+      }
+
       subprojects.push({
         purl: purl.toString(),
         definitionFile: packageJsonPath,
+        scopes: scopes.length > 0 ? scopes : undefined,
       });
     }
 

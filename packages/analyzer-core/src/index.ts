@@ -1,6 +1,12 @@
+export type DependencyScope = {
+  scope: string;
+  packages: string[];
+};
+
 export type Subproject = {
   purl: string;
   definitionFile: string;
+  scopes?: DependencyScope[];
 };
 
 export type AnalyzerResult = {

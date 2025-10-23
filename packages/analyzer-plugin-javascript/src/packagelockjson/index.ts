@@ -1,4 +1,4 @@
-import {type AnalyzerResult, type Extractor, type Subproject, filesExtractor} from '@scatool/analyzer-core/src/index.ts';
+import {type AnalyzerResult, type DependencyScope, type Extractor, type Subproject, filesExtractor} from '@scatool/analyzer-core/src/index.ts';
 import {Glob} from 'bun';
 import {PackageURL} from 'packageurl-js';
 import {dirname, join, resolve} from 'node:path';
@@ -43,6 +43,46 @@ export const extractor: Extractor = filesExtractor({
       // Parse the npm ls output
       const result = JSON.parse(output);
 
+      // Helper function to extract scopes from a package.json
+      // This creates a mapping from dependency name to the version constraint from package.json
+      const extractScopesFromPackageJson = (packageInfo: any, depsTree: any): DependencyScope[] => {
+        const scopes: DependencyScope[] = [];
+        const scopeNames = ['dependencies', 'devDependencies', 'peerDependencies', 'optionalDependencies'];
+
+        for (const scopeName of scopeNames) {
+          if (packageInfo[scopeName] && typeof packageInfo[scopeName] === 'object') {
+            const scopePackages: string[] = [];
+            for (const depName of Object.keys(packageInfo[scopeName])) {
+              // Look up the resolved version from the dependency tree
+              const depInfo = depsTree?.[depName];
+              if (depInfo && typeof depInfo === 'object' && 'version' in depInfo) {
+                const version = depInfo.version;
+                if (typeof version === 'string') {
+                  let depNamespace: string | null = null;
+                  let depPackageName = depName;
+                  if (depName.startsWith('@')) {
+                    const parts = depName.split('/');
+                    if (parts.length === 2 && parts[0] && parts[1]) {
+                      depNamespace = parts[0].substring(1);
+                      depPackageName = parts[1];
+                    }
+                  }
+                  const depPurl = new PackageURL('npm', depNamespace, depPackageName, version, null, null);
+                  scopePackages.push(depPurl.toString());
+                }
+              }
+            }
+            if (scopePackages.length > 0) {
+              scopes.push({
+                scope: scopeName,
+                packages: scopePackages,
+              });
+            }
+          }
+        }
+        return scopes;
+      };
+
       // Extract root package as a subproject if it has name and version
       if (rootPackageInfo && rootPackageInfo.name && rootPackageInfo.version) {
         const name = rootPackageInfo.name;
@@ -59,14 +99,18 @@ export const extractor: Extractor = filesExtractor({
           }
         }
         const purl = new PackageURL('npm', namespace, packageName, version, null, null);
+
+        // Extract scopes for the root package
+        const rootScopes = extractScopesFromPackageJson(rootPackageInfo, result.dependencies);
         subprojects.push({
           purl: purl.toString(),
           definitionFile: packageJsonPath,
+          scopes: rootScopes.length > 0 ? rootScopes : undefined,
         });
       }
 
       // Extract packages from the dependency tree recursively
-      const extractPackages = (deps: any) => {
+      const extractPackages = async (deps: any) => {
         if (!deps || typeof deps !== 'object') {
           return;
         }
@@ -110,9 +154,23 @@ export const extractor: Extractor = filesExtractor({
 
                 const subprojectDir = resolve(dir, relativePath);
                 const subprojectPackageJson = join(subprojectDir, 'package.json');
+
+                // Read the workspace package's package.json to get its scopes
+                let scopes: DependencyScope[] = [];
+                try {
+                  const workspacePackageJsonContent = await Bun.file(subprojectPackageJson).text();
+                  const workspacePackageInfo = JSON.parse(workspacePackageJsonContent);
+                  // Pass the dependencies from this workspace package's tree
+                  const workspaceDeps = (info as any).dependencies;
+                  scopes = extractScopesFromPackageJson(workspacePackageInfo, workspaceDeps);
+                } catch {
+                  // If we can't read the workspace package.json, continue without scopes
+                }
+
                 subprojects.push({
                   purl: purl.toString(),
                   definitionFile: subprojectPackageJson,
+                  scopes: scopes.length > 0 ? scopes : undefined,
                 });
               } else {
                 // This is a regular dependency package
@@ -122,7 +180,7 @@ export const extractor: Extractor = filesExtractor({
 
             // Recursively process dependencies
             if ('dependencies' in info) {
-              extractPackages((info as any).dependencies);
+              await extractPackages((info as any).dependencies);
             }
           }
         }
@@ -130,7 +188,7 @@ export const extractor: Extractor = filesExtractor({
 
       // Extract packages from the result
       if (result.dependencies) {
-        extractPackages(result.dependencies);
+        await extractPackages(result.dependencies);
       }
     } catch (error) {
       // If npm ls fails, skip this file
