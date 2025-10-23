@@ -38,8 +38,9 @@ export const extractor: Extractor = filesExtractor({
         // package.json might not exist, continue anyway
       }
 
-      // Run pnpm install + pnpm ls to get the dependency tree
-      const result: PnpmLsOutput = await runPnpmLs(dir);
+      // Run pnpm install + pnpm ls -r to get the dependency tree
+      // This returns an array: one element per workspace package (or single element for non-workspaces)
+      const results: PnpmLsOutput[] = await runPnpmLs(dir);
 
       // Helper function to extract scopes from a package.json
       // This creates a mapping from dependency name to the version constraint from package.json
@@ -55,7 +56,8 @@ export const extractor: Extractor = filesExtractor({
               const depInfo = depsTree?.[depName];
               if (depInfo && typeof depInfo === 'object' && 'version' in depInfo) {
                 const version = depInfo.version;
-                if (typeof version === 'string') {
+                // Skip workspace links (they'll be added as subprojects)
+                if (typeof version === 'string' && !version.startsWith('link:')) {
                   let depNamespace: string | null = null;
                   let depPackageName = depName;
                   if (depName.startsWith('@')) {
@@ -82,44 +84,66 @@ export const extractor: Extractor = filesExtractor({
         return scopes;
       };
 
-      // Extract root package as a subproject if it has name and version
+      // Process each workspace package (or the single root package)
+      // Track which result is the root for relationship tracking
       let rootPurl: string | undefined;
-      if (rootPackageInfo && rootPackageInfo.name && rootPackageInfo.version) {
-        const name = rootPackageInfo.name;
-        const version = rootPackageInfo.version;
 
-        // Create a proper Package URL (PURL)
-        let namespace: string | null = null;
-        let packageName = name;
-        if (name.startsWith('@')) {
-          const parts = name.split('/');
-          if (parts.length === 2 && parts[0] && parts[1]) {
-            namespace = parts[0].substring(1); // Remove @ prefix
-            packageName = parts[1];
+      for (const result of results) {
+        // Get the package info for this workspace member
+        const workspacePath = result.path || dir;
+        const workspacePackageJsonPath = join(workspacePath, 'package.json');
+
+        let packageInfo: any = null;
+        try {
+          const packageJsonContent = await Bun.file(workspacePackageJsonPath).text();
+          packageInfo = JSON.parse(packageJsonContent);
+        } catch {
+          // If we can't read package.json, skip this workspace member
+          continue;
+        }
+
+        if (packageInfo && packageInfo.name && packageInfo.version) {
+          const name = packageInfo.name;
+          const version = packageInfo.version;
+
+          // Create a proper Package URL (PURL)
+          let namespace: string | null = null;
+          let packageName = name;
+          if (name.startsWith('@')) {
+            const parts = name.split('/');
+            if (parts.length === 2 && parts[0] && parts[1]) {
+              namespace = parts[0].substring(1); // Remove @ prefix
+              packageName = parts[1];
+            }
           }
-        }
-        const purl = new PackageURL('npm', namespace, packageName, version, null, null);
-        rootPurl = purl.toString();
+          const purl = new PackageURL('npm', namespace, packageName, version, null, null);
+          const purlString = purl.toString();
 
-        // Combine all dependency types for extracting scopes
-        const allDeps: Record<string, PnpmLsDependency> = {};
-        if (result.dependencies) {
-          Object.assign(allDeps, result.dependencies);
-        }
-        if (result.devDependencies) {
-          Object.assign(allDeps, result.devDependencies);
-        }
-        if (result.optionalDependencies) {
-          Object.assign(allDeps, result.optionalDependencies);
-        }
+          // Track root package for later
+          if (workspacePath === dir) {
+            rootPurl = purlString;
+          }
 
-        // Extract scopes for the root package
-        const rootScopes = extractScopesFromPackageJson(rootPackageInfo, allDeps, packageJsonPath);
-        subprojects.push({
-          purl: rootPurl,
-          definitionFile: packageJsonPath,
-          scopes: rootScopes.length > 0 ? rootScopes : undefined,
-        });
+          // Combine all dependency types for extracting scopes
+          const allDeps: Record<string, PnpmLsDependency> = {};
+          if (result.dependencies) {
+            Object.assign(allDeps, result.dependencies);
+          }
+          if (result.devDependencies) {
+            Object.assign(allDeps, result.devDependencies);
+          }
+          if (result.optionalDependencies) {
+            Object.assign(allDeps, result.optionalDependencies);
+          }
+
+          // Extract scopes for this package
+          const packageScopes = extractScopesFromPackageJson(packageInfo, allDeps, workspacePackageJsonPath);
+          subprojects.push({
+            purl: purlString,
+            definitionFile: workspacePackageJsonPath,
+            scopes: packageScopes.length > 0 ? packageScopes : undefined,
+          });
+        }
       }
 
       // Extract packages from the dependency tree recursively
@@ -152,41 +176,23 @@ export const extractor: Extractor = filesExtractor({
               const purlString = purl.toString();
 
               if (isWorkspacePackage(dep)) {
-                // This is a workspace package - add it as a subproject
-                const relativePath = getWorkspacePath(dep, dir);
-                if (!relativePath) {
-                  continue;
-                }
-
-                const subprojectDir = resolve(dir, relativePath);
-                const subprojectPackageJson = join(subprojectDir, 'package.json');
-
-                // Read the workspace package's package.json to get its scopes
-                let scopes: DependencyScope[] = [];
-                try {
-                  const workspacePackageJsonContent = await Bun.file(subprojectPackageJson).text();
-                  const workspacePackageInfo = JSON.parse(workspacePackageJsonContent);
-                  // Pass the dependencies from this workspace package's tree
-                  scopes = extractScopesFromPackageJson(workspacePackageInfo, dep.dependencies, subprojectPackageJson);
-                } catch {
-                  // If we can't read the workspace package.json, continue without scopes
-                }
-
-                subprojects.push({
-                  purl: purlString,
-                  definitionFile: subprojectPackageJson,
-                  scopes: scopes.length > 0 ? scopes : undefined,
-                });
-
-                // Track relationship if we have a parent
+                // This is a workspace package (internal workspace link)
+                // Since we're using pnpm ls -r, all workspace packages are already processed
+                // from the results array, so we just need to track the relationship here
                 if (parentPurl) {
-                  childPurls.push(purlString);
-                }
+                  // Find the actual version for this workspace package from subprojects
+                  const workspaceSubproject = subprojects.find(sp => {
+                    // Match by name (extract from purl)
+                    const spName = sp.purl.split('@').slice(0, -1).join('@').replace('pkg:npm/', '');
+                    return spName === name;
+                  });
 
-                // Recursively process this workspace's dependencies
-                if (dep.dependencies) {
-                  await extractPackages(dep.dependencies, purlString);
+                  if (workspaceSubproject) {
+                    childPurls.push(workspaceSubproject.purl);
+                  }
                 }
+                // Don't recursively process - already handled by results iteration
+                continue;
               } else {
                 // This is a regular dependency package
                 packagePurls.push(purlString);
@@ -226,15 +232,28 @@ export const extractor: Extractor = filesExtractor({
         }
       };
 
-      // Extract packages from all dependency types
-      if (result.dependencies) {
-        await extractPackages(result.dependencies, rootPurl);
-      }
-      if (result.devDependencies) {
-        await extractPackages(result.devDependencies, rootPurl);
-      }
-      if (result.optionalDependencies) {
-        await extractPackages(result.optionalDependencies, rootPurl);
+      // Extract packages from all workspace packages
+      for (const result of results) {
+        // Determine the parent purl for this workspace package
+        const workspacePath = result.path || dir;
+        let parentPurl: string | undefined;
+
+        // Find the matching subproject for this workspace package
+        const matchingSubproject = subprojects.find(sp => sp.definitionFile === join(workspacePath, 'package.json'));
+        if (matchingSubproject) {
+          parentPurl = matchingSubproject.purl;
+        }
+
+        // Extract packages from all dependency types
+        if (result.dependencies) {
+          await extractPackages(result.dependencies, parentPurl);
+        }
+        if (result.devDependencies) {
+          await extractPackages(result.devDependencies, parentPurl);
+        }
+        if (result.optionalDependencies) {
+          await extractPackages(result.optionalDependencies, parentPurl);
+        }
       }
     } catch (error) {
       // If pnpm ls fails, skip this file

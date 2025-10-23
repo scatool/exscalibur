@@ -1459,6 +1459,630 @@ exports[`workspace 1`] = `
   "packages": [
     {
       "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#512",
+      ],
+      "purl": "pkg:npm/caniuse-lite@1.0.30001751",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#515",
+      ],
+      "purl": "pkg:npm/client-only@0.0.1",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#518",
+      ],
+      "purl": "pkg:npm/detect-libc@2.1.2",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#60",
+      ],
+      "purl": "pkg:npm/emnapi/runtime@1.6.0",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#522",
+      ],
+      "purl": "pkg:npm/esbuild@0.25.11",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#63",
+      ],
+      "purl": "pkg:npm/esbuild/aix-ppc64@0.25.11",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#75",
+      ],
+      "purl": "pkg:npm/esbuild/android-arm@0.25.11",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#69",
+      ],
+      "purl": "pkg:npm/esbuild/android-arm64@0.25.11",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#81",
+      ],
+      "purl": "pkg:npm/esbuild/android-x64@0.25.11",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#87",
+      ],
+      "purl": "pkg:npm/esbuild/darwin-arm64@0.25.11",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#93",
+      ],
+      "purl": "pkg:npm/esbuild/darwin-x64@0.25.11",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#99",
+      ],
+      "purl": "pkg:npm/esbuild/freebsd-arm64@0.25.11",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#105",
+      ],
+      "purl": "pkg:npm/esbuild/freebsd-x64@0.25.11",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#117",
+      ],
+      "purl": "pkg:npm/esbuild/linux-arm@0.25.11",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#111",
+      ],
+      "purl": "pkg:npm/esbuild/linux-arm64@0.25.11",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#123",
+      ],
+      "purl": "pkg:npm/esbuild/linux-ia32@0.25.11",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#129",
+      ],
+      "purl": "pkg:npm/esbuild/linux-loong64@0.25.11",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#135",
+      ],
+      "purl": "pkg:npm/esbuild/linux-mips64el@0.25.11",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#141",
+      ],
+      "purl": "pkg:npm/esbuild/linux-ppc64@0.25.11",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#147",
+      ],
+      "purl": "pkg:npm/esbuild/linux-riscv64@0.25.11",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#153",
+      ],
+      "purl": "pkg:npm/esbuild/linux-s390x@0.25.11",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#159",
+      ],
+      "purl": "pkg:npm/esbuild/linux-x64@0.25.11",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#165",
+      ],
+      "purl": "pkg:npm/esbuild/netbsd-arm64@0.25.11",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#171",
+      ],
+      "purl": "pkg:npm/esbuild/netbsd-x64@0.25.11",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#177",
+      ],
+      "purl": "pkg:npm/esbuild/openbsd-arm64@0.25.11",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#183",
+      ],
+      "purl": "pkg:npm/esbuild/openbsd-x64@0.25.11",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#189",
+      ],
+      "purl": "pkg:npm/esbuild/openharmony-arm64@0.25.11",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#195",
+      ],
+      "purl": "pkg:npm/esbuild/sunos-x64@0.25.11",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#201",
+      ],
+      "purl": "pkg:npm/esbuild/win32-arm64@0.25.11",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#207",
+      ],
+      "purl": "pkg:npm/esbuild/win32-ia32@0.25.11",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#213",
+      ],
+      "purl": "pkg:npm/esbuild/win32-x64@0.25.11",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#527",
+      ],
+      "purl": "pkg:npm/fdir@6.5.0",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#536",
+      ],
+      "purl": "pkg:npm/fsevents@2.3.3",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#219",
+      ],
+      "purl": "pkg:npm/img/colour@1.0.0",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#223",
+      ],
+      "purl": "pkg:npm/img/sharp-darwin-arm64@0.34.4",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#229",
+      ],
+      "purl": "pkg:npm/img/sharp-darwin-x64@0.34.4",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#235",
+      ],
+      "purl": "pkg:npm/img/sharp-libvips-darwin-arm64@1.2.3",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#240",
+      ],
+      "purl": "pkg:npm/img/sharp-libvips-darwin-x64@1.2.3",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#250",
+      ],
+      "purl": "pkg:npm/img/sharp-libvips-linux-arm@1.2.3",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#245",
+      ],
+      "purl": "pkg:npm/img/sharp-libvips-linux-arm64@1.2.3",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#255",
+      ],
+      "purl": "pkg:npm/img/sharp-libvips-linux-ppc64@1.2.3",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#260",
+      ],
+      "purl": "pkg:npm/img/sharp-libvips-linux-s390x@1.2.3",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#265",
+      ],
+      "purl": "pkg:npm/img/sharp-libvips-linux-x64@1.2.3",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#270",
+      ],
+      "purl": "pkg:npm/img/sharp-libvips-linuxmusl-arm64@1.2.3",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#275",
+      ],
+      "purl": "pkg:npm/img/sharp-libvips-linuxmusl-x64@1.2.3",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#286",
+      ],
+      "purl": "pkg:npm/img/sharp-linux-arm@0.34.4",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#280",
+      ],
+      "purl": "pkg:npm/img/sharp-linux-arm64@0.34.4",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#292",
+      ],
+      "purl": "pkg:npm/img/sharp-linux-ppc64@0.34.4",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#298",
+      ],
+      "purl": "pkg:npm/img/sharp-linux-s390x@0.34.4",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#304",
+      ],
+      "purl": "pkg:npm/img/sharp-linux-x64@0.34.4",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#310",
+      ],
+      "purl": "pkg:npm/img/sharp-linuxmusl-arm64@0.34.4",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#316",
+      ],
+      "purl": "pkg:npm/img/sharp-linuxmusl-x64@0.34.4",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#322",
+      ],
+      "purl": "pkg:npm/img/sharp-wasm32@0.34.4",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#327",
+      ],
+      "purl": "pkg:npm/img/sharp-win32-arm64@0.34.4",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#333",
+      ],
+      "purl": "pkg:npm/img/sharp-win32-ia32@0.34.4",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#339",
+      ],
+      "purl": "pkg:npm/img/sharp-win32-x64@0.34.4",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#541",
+      ],
+      "purl": "pkg:npm/nanoid@3.3.11",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#546",
+      ],
+      "purl": "pkg:npm/next@15.5.6",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#345",
+      ],
+      "purl": "pkg:npm/next/env@15.5.6",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#348",
+      ],
+      "purl": "pkg:npm/next/swc-darwin-arm64@15.5.6",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#354",
+      ],
+      "purl": "pkg:npm/next/swc-darwin-x64@15.5.6",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#360",
+      ],
+      "purl": "pkg:npm/next/swc-linux-arm64-gnu@15.5.6",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#366",
+      ],
+      "purl": "pkg:npm/next/swc-linux-arm64-musl@15.5.6",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#372",
+      ],
+      "purl": "pkg:npm/next/swc-linux-x64-gnu@15.5.6",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#378",
+      ],
+      "purl": "pkg:npm/next/swc-linux-x64-musl@15.5.6",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#384",
+      ],
+      "purl": "pkg:npm/next/swc-win32-arm64-msvc@15.5.6",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#390",
+      ],
+      "purl": "pkg:npm/next/swc-win32-x64-msvc@15.5.6",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#567",
+      ],
+      "purl": "pkg:npm/picocolors@1.1.1",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#570",
+      ],
+      "purl": "pkg:npm/picomatch@4.0.3",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#574",
+      ],
+      "purl": "pkg:npm/postcss@8.4.31",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#578",
+      ],
+      "purl": "pkg:npm/postcss@8.5.6",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#582",
+      ],
+      "purl": "pkg:npm/react-dom@19.2.0",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#587",
+      ],
+      "purl": "pkg:npm/react@19.2.0",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#591",
+      ],
+      "purl": "pkg:npm/rollup@4.52.5",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#396",
+      ],
+      "purl": "pkg:npm/rollup/rollup-android-arm-eabi@4.52.5",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#401",
+      ],
+      "purl": "pkg:npm/rollup/rollup-android-arm64@4.52.5",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#406",
+      ],
+      "purl": "pkg:npm/rollup/rollup-darwin-arm64@4.52.5",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#411",
+      ],
+      "purl": "pkg:npm/rollup/rollup-darwin-x64@4.52.5",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#416",
+      ],
+      "purl": "pkg:npm/rollup/rollup-freebsd-arm64@4.52.5",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#421",
+      ],
+      "purl": "pkg:npm/rollup/rollup-freebsd-x64@4.52.5",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#426",
+      ],
+      "purl": "pkg:npm/rollup/rollup-linux-arm-gnueabihf@4.52.5",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#431",
+      ],
+      "purl": "pkg:npm/rollup/rollup-linux-arm-musleabihf@4.52.5",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#436",
+      ],
+      "purl": "pkg:npm/rollup/rollup-linux-arm64-gnu@4.52.5",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#441",
+      ],
+      "purl": "pkg:npm/rollup/rollup-linux-arm64-musl@4.52.5",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#446",
+      ],
+      "purl": "pkg:npm/rollup/rollup-linux-loong64-gnu@4.52.5",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#451",
+      ],
+      "purl": "pkg:npm/rollup/rollup-linux-ppc64-gnu@4.52.5",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#456",
+      ],
+      "purl": "pkg:npm/rollup/rollup-linux-riscv64-gnu@4.52.5",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#461",
+      ],
+      "purl": "pkg:npm/rollup/rollup-linux-riscv64-musl@4.52.5",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#466",
+      ],
+      "purl": "pkg:npm/rollup/rollup-linux-s390x-gnu@4.52.5",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#471",
+      ],
+      "purl": "pkg:npm/rollup/rollup-linux-x64-gnu@4.52.5",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#476",
+      ],
+      "purl": "pkg:npm/rollup/rollup-linux-x64-musl@4.52.5",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#481",
+      ],
+      "purl": "pkg:npm/rollup/rollup-openharmony-arm64@4.52.5",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#486",
+      ],
+      "purl": "pkg:npm/rollup/rollup-win32-arm64-msvc@4.52.5",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#491",
+      ],
+      "purl": "pkg:npm/rollup/rollup-win32-ia32-msvc@4.52.5",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#496",
+      ],
+      "purl": "pkg:npm/rollup/rollup-win32-x64-gnu@4.52.5",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#501",
+      ],
+      "purl": "pkg:npm/rollup/rollup-win32-x64-msvc@4.52.5",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#596",
+      ],
+      "purl": "pkg:npm/scheduler@0.27.0",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#599",
+      ],
+      "purl": "pkg:npm/semver@7.7.3",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#604",
+      ],
+      "purl": "pkg:npm/sharp@0.34.4",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#608",
+      ],
+      "purl": "pkg:npm/source-map-js@1.2.1",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#612",
+      ],
+      "purl": "pkg:npm/styled-jsx@5.1.6",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#506",
+      ],
+      "purl": "pkg:npm/swc/helpers@0.5.15",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#625",
+      ],
+      "purl": "pkg:npm/tinyglobby@0.2.15",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#629",
+      ],
+      "purl": "pkg:npm/tslib@2.8.1",
+    },
+    {
+      "evidence": [
         "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#632",
       ],
       "purl": "pkg:npm/turbo-darwin-64@2.5.8",
@@ -1501,9 +2125,21 @@ exports[`workspace 1`] = `
     },
     {
       "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#509",
+      ],
+      "purl": "pkg:npm/types/estree@1.0.8",
+    },
+    {
+      "evidence": [
         "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#666",
       ],
       "purl": "pkg:npm/typescript@5.9.3",
+    },
+    {
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/pnpm-lock.yaml#671",
+      ],
+      "purl": "pkg:npm/vite@6.4.1",
     },
   ],
   "relationships": [
@@ -1525,6 +2161,267 @@ exports[`workspace 1`] = `
         "pkg:npm/turbo@2.5.8",
       ],
     },
+    {
+      "from": "pkg:npm/react-dom@19.2.0",
+      "to": [
+        "pkg:npm/react@19.2.0",
+        "pkg:npm/scheduler@0.27.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/esbuild@0.25.11",
+      "to": [
+        "pkg:npm/esbuild/aix-ppc64@0.25.11",
+        "pkg:npm/esbuild/android-arm@0.25.11",
+        "pkg:npm/esbuild/android-arm64@0.25.11",
+        "pkg:npm/esbuild/android-x64@0.25.11",
+        "pkg:npm/esbuild/darwin-arm64@0.25.11",
+        "pkg:npm/esbuild/darwin-x64@0.25.11",
+        "pkg:npm/esbuild/freebsd-arm64@0.25.11",
+        "pkg:npm/esbuild/freebsd-x64@0.25.11",
+        "pkg:npm/esbuild/linux-arm@0.25.11",
+        "pkg:npm/esbuild/linux-arm64@0.25.11",
+        "pkg:npm/esbuild/linux-ia32@0.25.11",
+        "pkg:npm/esbuild/linux-loong64@0.25.11",
+        "pkg:npm/esbuild/linux-mips64el@0.25.11",
+        "pkg:npm/esbuild/linux-ppc64@0.25.11",
+        "pkg:npm/esbuild/linux-riscv64@0.25.11",
+        "pkg:npm/esbuild/linux-s390x@0.25.11",
+        "pkg:npm/esbuild/linux-x64@0.25.11",
+        "pkg:npm/esbuild/netbsd-arm64@0.25.11",
+        "pkg:npm/esbuild/netbsd-x64@0.25.11",
+        "pkg:npm/esbuild/openbsd-arm64@0.25.11",
+        "pkg:npm/esbuild/openbsd-x64@0.25.11",
+        "pkg:npm/esbuild/openharmony-arm64@0.25.11",
+        "pkg:npm/esbuild/sunos-x64@0.25.11",
+        "pkg:npm/esbuild/win32-arm64@0.25.11",
+        "pkg:npm/esbuild/win32-ia32@0.25.11",
+        "pkg:npm/esbuild/win32-x64@0.25.11",
+      ],
+    },
+    {
+      "from": "pkg:npm/fdir@6.5.0",
+      "to": [
+        "pkg:npm/picomatch@4.0.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/postcss@8.5.6",
+      "to": [
+        "pkg:npm/nanoid@3.3.11",
+        "pkg:npm/picocolors@1.1.1",
+        "pkg:npm/source-map-js@1.2.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/rollup@4.52.5",
+      "to": [
+        "pkg:npm/types/estree@1.0.8",
+        "pkg:npm/rollup/rollup-android-arm-eabi@4.52.5",
+        "pkg:npm/rollup/rollup-android-arm64@4.52.5",
+        "pkg:npm/rollup/rollup-darwin-arm64@4.52.5",
+        "pkg:npm/rollup/rollup-darwin-x64@4.52.5",
+        "pkg:npm/rollup/rollup-freebsd-arm64@4.52.5",
+        "pkg:npm/rollup/rollup-freebsd-x64@4.52.5",
+        "pkg:npm/rollup/rollup-linux-arm-gnueabihf@4.52.5",
+        "pkg:npm/rollup/rollup-linux-arm-musleabihf@4.52.5",
+        "pkg:npm/rollup/rollup-linux-arm64-gnu@4.52.5",
+        "pkg:npm/rollup/rollup-linux-arm64-musl@4.52.5",
+        "pkg:npm/rollup/rollup-linux-loong64-gnu@4.52.5",
+        "pkg:npm/rollup/rollup-linux-ppc64-gnu@4.52.5",
+        "pkg:npm/rollup/rollup-linux-riscv64-gnu@4.52.5",
+        "pkg:npm/rollup/rollup-linux-riscv64-musl@4.52.5",
+        "pkg:npm/rollup/rollup-linux-s390x-gnu@4.52.5",
+        "pkg:npm/rollup/rollup-linux-x64-gnu@4.52.5",
+        "pkg:npm/rollup/rollup-linux-x64-musl@4.52.5",
+        "pkg:npm/rollup/rollup-openharmony-arm64@4.52.5",
+        "pkg:npm/rollup/rollup-win32-arm64-msvc@4.52.5",
+        "pkg:npm/rollup/rollup-win32-ia32-msvc@4.52.5",
+        "pkg:npm/rollup/rollup-win32-x64-gnu@4.52.5",
+        "pkg:npm/rollup/rollup-win32-x64-msvc@4.52.5",
+        "pkg:npm/fsevents@2.3.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/tinyglobby@0.2.15",
+      "to": [
+        "pkg:npm/picomatch@4.0.3",
+        "pkg:npm/fdir@6.5.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/vite@6.4.1",
+      "to": [
+        "pkg:npm/picomatch@4.0.3",
+        "pkg:npm/fsevents@2.3.3",
+        "pkg:npm/esbuild@0.25.11",
+        "pkg:npm/fdir@6.5.0",
+        "pkg:npm/postcss@8.5.6",
+        "pkg:npm/rollup@4.52.5",
+        "pkg:npm/tinyglobby@0.2.15",
+      ],
+    },
+    {
+      "from": "pkg:npm/scatest/docs@1.0.0",
+      "to": [
+        "pkg:npm/react@19.2.0",
+        "pkg:npm/react-dom@19.2.0",
+        "pkg:npm/vite@6.4.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/swc/helpers@0.5.15",
+      "to": [
+        "pkg:npm/tslib@2.8.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/postcss@8.4.31",
+      "to": [
+        "pkg:npm/nanoid@3.3.11",
+        "pkg:npm/picocolors@1.1.1",
+        "pkg:npm/source-map-js@1.2.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/styled-jsx@5.1.6",
+      "to": [
+        "pkg:npm/client-only@0.0.1",
+        "pkg:npm/react@19.2.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/img/sharp-darwin-arm64@0.34.4",
+      "to": [
+        "pkg:npm/img/sharp-libvips-darwin-arm64@1.2.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/img/sharp-darwin-x64@0.34.4",
+      "to": [
+        "pkg:npm/img/sharp-libvips-darwin-x64@1.2.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/img/sharp-linux-arm@0.34.4",
+      "to": [
+        "pkg:npm/img/sharp-libvips-linux-arm@1.2.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/img/sharp-linux-arm64@0.34.4",
+      "to": [
+        "pkg:npm/img/sharp-libvips-linux-arm64@1.2.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/img/sharp-linux-ppc64@0.34.4",
+      "to": [
+        "pkg:npm/img/sharp-libvips-linux-ppc64@1.2.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/img/sharp-linux-s390x@0.34.4",
+      "to": [
+        "pkg:npm/img/sharp-libvips-linux-s390x@1.2.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/img/sharp-linux-x64@0.34.4",
+      "to": [
+        "pkg:npm/img/sharp-libvips-linux-x64@1.2.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/img/sharp-linuxmusl-arm64@0.34.4",
+      "to": [
+        "pkg:npm/img/sharp-libvips-linuxmusl-arm64@1.2.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/img/sharp-linuxmusl-x64@0.34.4",
+      "to": [
+        "pkg:npm/img/sharp-libvips-linuxmusl-x64@1.2.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/emnapi/runtime@1.6.0",
+      "to": [
+        "pkg:npm/tslib@2.8.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/img/sharp-wasm32@0.34.4",
+      "to": [
+        "pkg:npm/emnapi/runtime@1.6.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/sharp@0.34.4",
+      "to": [
+        "pkg:npm/img/colour@1.0.0",
+        "pkg:npm/detect-libc@2.1.2",
+        "pkg:npm/semver@7.7.3",
+        "pkg:npm/img/sharp-libvips-darwin-arm64@1.2.3",
+        "pkg:npm/img/sharp-libvips-darwin-x64@1.2.3",
+        "pkg:npm/img/sharp-libvips-linux-arm@1.2.3",
+        "pkg:npm/img/sharp-libvips-linux-arm64@1.2.3",
+        "pkg:npm/img/sharp-libvips-linux-ppc64@1.2.3",
+        "pkg:npm/img/sharp-libvips-linux-s390x@1.2.3",
+        "pkg:npm/img/sharp-libvips-linux-x64@1.2.3",
+        "pkg:npm/img/sharp-libvips-linuxmusl-arm64@1.2.3",
+        "pkg:npm/img/sharp-libvips-linuxmusl-x64@1.2.3",
+        "pkg:npm/img/sharp-win32-arm64@0.34.4",
+        "pkg:npm/img/sharp-win32-ia32@0.34.4",
+        "pkg:npm/img/sharp-win32-x64@0.34.4",
+        "pkg:npm/img/sharp-darwin-arm64@0.34.4",
+        "pkg:npm/img/sharp-darwin-x64@0.34.4",
+        "pkg:npm/img/sharp-linux-arm@0.34.4",
+        "pkg:npm/img/sharp-linux-arm64@0.34.4",
+        "pkg:npm/img/sharp-linux-ppc64@0.34.4",
+        "pkg:npm/img/sharp-linux-s390x@0.34.4",
+        "pkg:npm/img/sharp-linux-x64@0.34.4",
+        "pkg:npm/img/sharp-linuxmusl-arm64@0.34.4",
+        "pkg:npm/img/sharp-linuxmusl-x64@0.34.4",
+        "pkg:npm/img/sharp-wasm32@0.34.4",
+      ],
+    },
+    {
+      "from": "pkg:npm/next@15.5.6",
+      "to": [
+        "pkg:npm/next/env@15.5.6",
+        "pkg:npm/caniuse-lite@1.0.30001751",
+        "pkg:npm/react@19.2.0",
+        "pkg:npm/next/swc-darwin-arm64@15.5.6",
+        "pkg:npm/next/swc-darwin-x64@15.5.6",
+        "pkg:npm/next/swc-linux-arm64-gnu@15.5.6",
+        "pkg:npm/next/swc-linux-arm64-musl@15.5.6",
+        "pkg:npm/next/swc-linux-x64-gnu@15.5.6",
+        "pkg:npm/next/swc-linux-x64-musl@15.5.6",
+        "pkg:npm/next/swc-win32-arm64-msvc@15.5.6",
+        "pkg:npm/next/swc-win32-x64-msvc@15.5.6",
+        "pkg:npm/swc/helpers@0.5.15",
+        "pkg:npm/postcss@8.4.31",
+        "pkg:npm/react-dom@19.2.0",
+        "pkg:npm/styled-jsx@5.1.6",
+        "pkg:npm/sharp@0.34.4",
+      ],
+    },
+    {
+      "from": "pkg:npm/scatest/www@2.0.0",
+      "to": [
+        "pkg:npm/react@19.2.0",
+        "pkg:npm/react-dom@19.2.0",
+        "pkg:npm/next@15.5.6",
+        "pkg:npm/typescript@5.9.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/scatest/ui@1.0.7",
+      "to": [
+        "pkg:npm/react@19.2.0",
+      ],
+    },
   ],
   "subprojects": [
     {
@@ -1537,6 +2434,52 @@ exports[`workspace 1`] = `
             "pkg:npm/typescript@5.9.3",
           ],
           "scope": "devDependencies",
+        },
+      ],
+    },
+    {
+      "definitionFile": "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/apps/docs/package.json",
+      "purl": "pkg:npm/scatest/docs@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/react@19.2.0",
+            "pkg:npm/react-dom@19.2.0",
+            "pkg:npm/vite@6.4.1",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+    {
+      "definitionFile": "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/apps/www/package.json",
+      "purl": "pkg:npm/scatest/www@2.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/next@15.5.6",
+            "pkg:npm/react@19.2.0",
+            "pkg:npm/react-dom@19.2.0",
+          ],
+          "scope": "dependencies",
+        },
+        {
+          "packages": [
+            "pkg:npm/typescript@5.9.3",
+          ],
+          "scope": "devDependencies",
+        },
+      ],
+    },
+    {
+      "definitionFile": "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/pnpmlock/__fixtures__/workspace/packages/ui/package.json",
+      "purl": "pkg:npm/scatest/ui@1.0.7",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/react@19.2.0",
+          ],
+          "scope": "dependencies",
         },
       ],
     },

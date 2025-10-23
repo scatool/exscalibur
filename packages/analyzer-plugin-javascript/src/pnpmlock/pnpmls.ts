@@ -35,18 +35,20 @@ export interface PnpmLsOutput {
 }
 
 /**
- * Run `pnpm install --frozen-lockfile --ignore-scripts` followed by `pnpm ls --json --depth=Infinity` and parse the output
+ * Run `pnpm install --frozen-lockfile --ignore-scripts` followed by `pnpm ls -r --json --depth=Infinity` and parse the output
  *
  * @param cwd - The directory containing pnpm-lock.yaml
- * @returns Parsed pnpm ls output
+ * @returns Array of parsed pnpm ls output (one per workspace package, or single element for non-workspaces)
  *
  * @example
  * ```ts
- * const output = await runPnpmLs('/path/to/project');
- * console.log(output.dependencies);
+ * const outputs = await runPnpmLs('/path/to/project');
+ * for (const output of outputs) {
+ *   console.log(output.name, output.dependencies);
+ * }
  * ```
  */
-export async function runPnpmLs(cwd: string): Promise<PnpmLsOutput> {
+export async function runPnpmLs(cwd: string): Promise<PnpmLsOutput[]> {
   // First, install packages from lockfile only (no scripts, frozen lockfile)
   const installProc = Bun.spawn(['pnpm', 'install', '--frozen-lockfile', '--ignore-scripts'], {
     cwd,
@@ -56,8 +58,9 @@ export async function runPnpmLs(cwd: string): Promise<PnpmLsOutput> {
 
   await installProc.exited;
 
-  // Then run pnpm ls to get the dependency tree
-  const proc = Bun.spawn(['pnpm', 'ls', '--json', '--depth=Infinity'], {
+  // Then run pnpm ls -r to get the dependency tree for all workspace packages
+  // The -r flag is crucial for workspace support - it returns all packages in the workspace
+  const proc = Bun.spawn(['pnpm', 'ls', '-r', '--json', '--depth=Infinity'], {
     cwd,
     stdout: 'pipe',
     stderr: 'ignore',
@@ -66,27 +69,49 @@ export async function runPnpmLs(cwd: string): Promise<PnpmLsOutput> {
   const output = await new Response(proc.stdout).text();
   await proc.exited;
 
-  // pnpm ls --json returns an array with one element for single projects
-  // but for workspaces, it returns an array with multiple elements
-  const parsed = JSON.parse(output);
-  if (Array.isArray(parsed)) {
-    // For workspaces, we need to handle multiple packages
-    // For now, return the first one (root) - we'll handle workspaces via dependencies
-    if (parsed.length > 0) {
-      return parsed[0] as PnpmLsOutput;
+  // Try parsing the output
+  // For proper workspaces with a single pnpm-lock.yaml, this returns a single JSON array
+  // For monorepos with multiple separate lockfiles, this might output multiple arrays (invalid JSON)
+  try {
+    const parsed = JSON.parse(output);
+    if (Array.isArray(parsed)) {
+      return parsed as PnpmLsOutput[];
     }
-  }
+    // Fallback: wrap single object in array
+    return [parsed as PnpmLsOutput];
+  } catch (error) {
+    // If -r fails to produce valid JSON (e.g., multiple lockfiles in subdirectories),
+    // fall back to non-recursive mode which works for single lockfiles
+    const procNonRecursive = Bun.spawn(['pnpm', 'ls', '--json', '--depth=Infinity'], {
+      cwd,
+      stdout: 'pipe',
+      stderr: 'ignore',
+    });
 
-  return parsed as PnpmLsOutput;
+    const outputNonRecursive = await new Response(procNonRecursive.stdout).text();
+    await procNonRecursive.exited;
+
+    const parsedNonRecursive = JSON.parse(outputNonRecursive);
+    if (Array.isArray(parsedNonRecursive)) {
+      return parsedNonRecursive as PnpmLsOutput[];
+    }
+    return [parsedNonRecursive as PnpmLsOutput];
+  }
 }
 
 /**
  * Check if a dependency is a workspace/local package
  *
  * @param dep - The dependency to check
- * @returns True if this is a workspace package (has path property pointing to local directory)
+ * @returns True if this is a workspace package (has version or path indicating local link)
  */
 export function isWorkspacePackage(dep: PnpmLsDependency): boolean {
+  // Check version for workspace protocol (e.g., "link:../../packages/ui")
+  if (typeof dep.version === 'string' && dep.version.startsWith('link:')) {
+    return true;
+  }
+
+  // Check path property
   return typeof dep.path === 'string' && (
     dep.path.startsWith('file:') ||
     dep.path.includes('link:') ||
@@ -102,14 +127,25 @@ export function isWorkspacePackage(dep: PnpmLsDependency): boolean {
  * @returns The relative path, or undefined if not a workspace package
  */
 export function getWorkspacePath(dep: PnpmLsDependency, baseDir: string): string | undefined {
-  if (!isWorkspacePackage(dep) || !dep.path) {
+  if (!isWorkspacePackage(dep)) {
+    return undefined;
+  }
+
+  // First check if version has link protocol (e.g., "link:../../packages/ui")
+  if (typeof dep.version === 'string' && dep.version.startsWith('link:')) {
+    const relativePath = dep.version.replace(/^link:/, '');
+    return relativePath;
+  }
+
+  // Otherwise check path property
+  if (!dep.path) {
     return undefined;
   }
 
   // Remove file: or link: prefix if present
   let relativePath = dep.path.replace(/^(file:|link:)/, '');
 
-  // If it's an absolute path, make it relative to baseDir
+  // If it's an absolute path, return as-is
   if (relativePath.startsWith('/')) {
     return relativePath;
   }
