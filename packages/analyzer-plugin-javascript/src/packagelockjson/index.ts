@@ -18,8 +18,14 @@ export const extractor: Extractor = filesExtractor({
     const dir = dirname(file);
     const packagePurls: string[] = [];
     const subprojects: Subproject[] = [];
+    // Map of purl -> Set of evidence strings (to avoid duplicates)
+    const evidenceMap = new Map<string, Set<string>>();
 
     try {
+      // Read the lockfile content for evidence tracking
+      const lockfileContent = await Bun.file(file).text();
+      const lockfileLines = lockfileContent.split('\n');
+
       // Read package.json to get the root package info
       const packageJsonPath = join(dir, 'package.json');
       let rootPackageInfo: any = null;
@@ -43,9 +49,28 @@ export const extractor: Extractor = filesExtractor({
       // Parse the npm ls output
       const result = JSON.parse(output);
 
+      // Helper function to find line number of a package in the lockfile
+      const findPackageInLockfile = (packageName: string, version: string): number | undefined => {
+        // Look for "node_modules/packageName": { followed by "version": "version"
+        for (let i = 0; i < lockfileLines.length; i++) {
+          const line = lockfileLines[i] || '';
+          // Match the package entry in node_modules
+          if (line.includes(`"node_modules/${packageName}"`) || line.includes(`"${packageName}"`)) {
+            // Check if the next few lines contain the version
+            for (let j = i; j < Math.min(i + 10, lockfileLines.length); j++) {
+              const versionLine = lockfileLines[j] || '';
+              if (versionLine.includes(`"version": "${version}"`)) {
+                return j + 1; // Return the line number of the version (1-indexed)
+              }
+            }
+          }
+        }
+        return undefined;
+      };
+
       // Helper function to extract scopes from a package.json
       // This creates a mapping from dependency name to the version constraint from package.json
-      const extractScopesFromPackageJson = (packageInfo: any, depsTree: any): DependencyScope[] => {
+      const extractScopesFromPackageJson = (packageInfo: any, depsTree: any, packageJsonPath: string, packageJsonContent: string): DependencyScope[] => {
         const scopes: DependencyScope[] = [];
         const scopeNames = ['dependencies', 'devDependencies', 'peerDependencies', 'optionalDependencies'];
 
@@ -68,7 +93,8 @@ export const extractor: Extractor = filesExtractor({
                     }
                   }
                   const depPurl = new PackageURL('npm', depNamespace, depPackageName, version, null, null);
-                  scopePackages.push(depPurl.toString());
+                  const purlString = depPurl.toString();
+                  scopePackages.push(purlString);
                 }
               }
             }
@@ -101,7 +127,8 @@ export const extractor: Extractor = filesExtractor({
         const purl = new PackageURL('npm', namespace, packageName, version, null, null);
 
         // Extract scopes for the root package
-        const rootScopes = extractScopesFromPackageJson(rootPackageInfo, result.dependencies);
+        const packageJsonContent = await Bun.file(packageJsonPath).text();
+        const rootScopes = extractScopesFromPackageJson(rootPackageInfo, result.dependencies, packageJsonPath, packageJsonContent);
         subprojects.push({
           purl: purl.toString(),
           definitionFile: packageJsonPath,
@@ -162,7 +189,7 @@ export const extractor: Extractor = filesExtractor({
                   const workspacePackageInfo = JSON.parse(workspacePackageJsonContent);
                   // Pass the dependencies from this workspace package's tree
                   const workspaceDeps = (info as any).dependencies;
-                  scopes = extractScopesFromPackageJson(workspacePackageInfo, workspaceDeps);
+                  scopes = extractScopesFromPackageJson(workspacePackageInfo, workspaceDeps, subprojectPackageJson, workspacePackageJsonContent);
                 } catch {
                   // If we can't read the workspace package.json, continue without scopes
                 }
@@ -174,7 +201,20 @@ export const extractor: Extractor = filesExtractor({
                 });
               } else {
                 // This is a regular dependency package
-                packagePurls.push(purl.toString());
+                const purlString = purl.toString();
+                packagePurls.push(purlString);
+
+                // Add evidence from lockfile
+                const lineNumber = findPackageInLockfile(name, version);
+                if (lineNumber) {
+                  const evidence = `${file}#${lineNumber}`;
+                  const existing = evidenceMap.get(purlString);
+                  if (existing) {
+                    existing.add(evidence);
+                  } else {
+                    evidenceMap.set(purlString, new Set([evidence]));
+                  }
+                }
               }
             }
 
@@ -195,8 +235,18 @@ export const extractor: Extractor = filesExtractor({
       console.error(`Failed to run npm ls in ${dir}:`, error);
     }
 
+    // Deduplicate packagePurls before creating package objects
+    const uniquePurls = [...new Set(packagePurls)];
+
     return {
-      packages: packagePurls.map(purl => ({ purl })),
+      packages: uniquePurls.map(purl => {
+        const pkg: { purl: string; evidence?: string[] } = { purl };
+        const evidenceSet = evidenceMap.get(purl);
+        if (evidenceSet && evidenceSet.size > 0) {
+          pkg.evidence = Array.from(evidenceSet);
+        }
+        return pkg;
+      }),
       subprojects: subprojects.length > 0 ? subprojects : undefined,
     };
   },
