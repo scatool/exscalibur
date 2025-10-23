@@ -8,8 +8,9 @@ const fixturesDir = `${import.meta.dir}/__fixtures__`;
 
 for await (const file of glob.scan({ cwd: fixturesDir })) {
   test(file, async () => {
-    const content = await Bun.file(join(fixturesDir, file)).text();
-    const result = await extractWorkflow(content);
+    const filePath = join(fixturesDir, file);
+    const content = await Bun.file(filePath).text();
+    const result = await extractWorkflow(content, filePath);
     expect(result).toMatchSnapshot();
   });
 }

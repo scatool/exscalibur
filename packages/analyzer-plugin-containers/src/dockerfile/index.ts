@@ -19,12 +19,12 @@ export const extractor: Extractor = filesExtractor({
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
     const content = await Bun.file(file).text();
-    return extractDockerfile(content);
+    return extractDockerfile(content, file);
   },
 });
 
-export async function extractDockerfile(content: string): Promise<AnalyzerResult> {
-  const packagePurls: string[] = [];
+export async function extractDockerfile(content: string, filePath?: string): Promise<AnalyzerResult> {
+  const packages: Array<{ purl: string; lineNumber: number }> = [];
 
   // Parse ARG instructions to build a variable map
   const args = new Map<string, string>();
@@ -47,7 +47,7 @@ export async function extractDockerfile(content: string): Promise<AnalyzerResult
     }
   }
 
-  // Match FROM instructions
+  // Match FROM instructions and track line numbers
   let match;
   while ((match = fromRegex.exec(content)) !== null) {
     let imageRef = match[1];
@@ -65,12 +65,20 @@ export async function extractDockerfile(content: string): Promise<AnalyzerResult
 
     const purl = parseContainerImage(imageRef);
     if (purl) {
-      packagePurls.push(purl);
+      // Calculate line number by counting newlines before the match
+      const lineNumber = content.substring(0, match.index).split('\n').length;
+      packages.push({ purl, lineNumber });
     }
   }
 
   return {
-    packages: packagePurls.map(purl => ({ purl })),
+    packages: packages.map(pkg => {
+      const result: { purl: string; evidence?: string[] } = { purl: pkg.purl };
+      if (filePath) {
+        result.evidence = [`${filePath}#${pkg.lineNumber}`];
+      }
+      return result;
+    }),
   };
 }
 

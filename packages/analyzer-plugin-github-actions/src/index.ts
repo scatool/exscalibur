@@ -17,13 +17,13 @@ export const extractor: Extractor = filesExtractor({
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
     const content = await Bun.file(file).text();
-    return extractWorkflow(content);
+    return extractWorkflow(content, file);
   },
 });
 
-export async function extractWorkflow(content: string): Promise<AnalyzerResult> {
+export async function extractWorkflow(content: string, filePath?: string): Promise<AnalyzerResult> {
   const workflow = Bun.YAML.parse(content);
-  const packagePurls: string[] = [];
+  const packages: Array<{ purl: string; lineNumber?: number }> = [];
 
   // Extract actions from jobs
   if (workflow && typeof workflow === 'object' && 'jobs' in workflow) {
@@ -40,7 +40,9 @@ export async function extractWorkflow(content: string): Promise<AnalyzerResult> 
                   // Parse action reference (e.g., "actions/checkout@v4")
                   const actionPurl = parseActionReference(uses);
                   if (actionPurl) {
-                    packagePurls.push(actionPurl);
+                    // Find line number by searching for "uses: <value>" in content
+                    const lineNumber = findLineNumber(content, uses);
+                    packages.push({ purl: actionPurl, lineNumber });
                   }
                 }
               }
@@ -52,8 +54,31 @@ export async function extractWorkflow(content: string): Promise<AnalyzerResult> 
   }
 
   return {
-    packages: packagePurls.map(purl => ({ purl })),
+    packages: packages.map(pkg => {
+      const result: { purl: string; evidence?: string[] } = { purl: pkg.purl };
+      if (filePath && pkg.lineNumber) {
+        result.evidence = [`${filePath}#${pkg.lineNumber}`];
+      }
+      return result;
+    }),
   };
+}
+
+// Find the line number where a "uses:" statement appears
+function findLineNumber(content: string, usesValue: string): number | undefined {
+  const lines = content.split('\n');
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    // Match "uses: <value>" or "uses: '<value>'" or 'uses: "<value>"'
+    if (line && (
+      line.includes(`uses: ${usesValue}`) ||
+      line.includes(`uses: '${usesValue}'`) ||
+      line.includes(`uses: "${usesValue}"`)
+    )) {
+      return i + 1; // Line numbers are 1-indexed
+    }
+  }
+  return undefined;
 }
 
 function parseActionReference(uses: string): string | null {

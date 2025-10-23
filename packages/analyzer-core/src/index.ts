@@ -1,5 +1,6 @@
 export type Package = {
   purl: string;
+  evidence?: string[];
 };
 
 export type DependencyScope = {
@@ -49,23 +50,43 @@ export const filesExtractor = (config: FilesExtractor): Extractor => {
       await config.markFiles.call(context, codebase);
 
       // Then process each marked file
-      const allPackagePurls: string[] = [];
+      const allPackages: Package[] = [];
       const allSubprojects: Subproject[] = [];
 
       for (const file of markedFiles) {
         if (config.extractFile) {
           const fileResult = await config.extractFile(file);
-          allPackagePurls.push(...fileResult.packages.map(p => p.purl));
+          allPackages.push(...fileResult.packages);
           if (fileResult.subprojects) {
             allSubprojects.push(...fileResult.subprojects);
           }
         }
       }
 
-      // Remove duplicate packages and convert to Package objects
-      const uniquePurls = [...new Set(allPackagePurls)];
+      // Merge duplicate packages and combine evidence arrays
+      const packageMap = new Map<string, Package>();
+      for (const pkg of allPackages) {
+        const existing = packageMap.get(pkg.purl);
+        if (existing) {
+          // Merge evidence arrays
+          if (pkg.evidence) {
+            if (existing.evidence) {
+              existing.evidence.push(...pkg.evidence);
+            } else {
+              existing.evidence = [...pkg.evidence];
+            }
+          }
+        } else {
+          // Create new entry with evidence array (if present)
+          const newPkg: Package = { purl: pkg.purl };
+          if (pkg.evidence) {
+            newPkg.evidence = [...pkg.evidence];
+          }
+          packageMap.set(pkg.purl, newPkg);
+        }
+      }
       const result: AnalyzerResult = {
-        packages: uniquePurls.map(purl => ({ purl })),
+        packages: Array.from(packageMap.values()),
       };
 
       // Add subprojects if any were found
