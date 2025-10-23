@@ -51,11 +51,13 @@ export const extractor: Extractor = filesExtractor({
 
       // Helper function to find line number of a package in the lockfile
       const findPackageInLockfile = (packageName: string, version: string): number | undefined => {
-        // Look for "node_modules/packageName": { followed by "version": "version"
+        // Look for "node_modules/packageName" or ".../node_modules/packageName" followed by "version": "version"
+        // This handles both top-level and nested node_modules entries
         for (let i = 0; i < lockfileLines.length; i++) {
           const line = lockfileLines[i] || '';
-          // Match the package entry in node_modules
-          if (line.includes(`"node_modules/${packageName}"`) || line.includes(`"${packageName}"`)) {
+          // Match the package entry - could be nested (e.g., "node_modules/vite/node_modules/postcss")
+          // Check if the line ends with "/packageName": or is exactly "node_modules/packageName":
+          if (line.includes(`node_modules/${packageName}"`) || line.includes(`"${packageName}"`)) {
             // Check if the next few lines contain the version
             for (let j = i; j < Math.min(i + 10, lockfileLines.length); j++) {
               const versionLine = lockfileLines[j] || '';
