@@ -22,6 +22,7 @@ export const extractor: Extractor = filesExtractor({
     // Process individual package.json file
     const content = await Bun.file(file).text();
     const packageJson = JSON.parse(content);
+    const lines = content.split('\n');
 
     const packages = [];
 
@@ -37,12 +38,22 @@ export const extractor: Extractor = filesExtractor({
       if (deps && typeof deps === 'object') {
         for (const [name, versionRange] of Object.entries(deps)) {
           if (typeof versionRange === 'string') {
-            // For package.json, we use the version range as specified
             // Remove workspace: prefix if present
-            const cleanVersion = versionRange.replace(/^workspace:/, '');
+            let cleanVersion = versionRange.replace(/^workspace:/, '');
+
+            // Strip version range prefixes (^, ~, >=, <=, >, <, =)
+            cleanVersion = cleanVersion.replace(/^[\^~>=<]+/, '');
+
+            // Handle version ranges like "1.0.0 - 2.0.0" or ">=1.0.0 <2.0.0"
+            // Take the first version in the range
+            if (cleanVersion.includes(' ')) {
+              const firstPart = cleanVersion.split(/\s+/)[0];
+              if (firstPart) {
+                cleanVersion = firstPart.replace(/^[\^~>=<]+/, '');
+              }
+            }
 
             // Create a proper Package URL (PURL)
-            // Note: version ranges are supported in PURLs
             let namespace: string | null = null;
             let packageName = name;
             if (name.startsWith('@')) {
@@ -52,8 +63,17 @@ export const extractor: Extractor = filesExtractor({
                 packageName = parts[1];
               }
             }
+
             const purl = new PackageURL('npm', namespace, packageName, cleanVersion, null, null);
-            packages.push({ purl: purl.toString() });
+
+            // Find line number for evidence
+            const lineNumber = findLineNumber(lines, name);
+            const evidence = lineNumber ? [`${file}:${lineNumber}`] : undefined;
+
+            packages.push({
+              purl: purl.toString(),
+              evidence
+            });
           }
         }
       }
@@ -64,3 +84,18 @@ export const extractor: Extractor = filesExtractor({
     };
   },
 });
+
+// Find the line number where a package is declared
+function findLineNumber(lines: string[], packageName: string): number | undefined {
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    // Match "packageName": or 'packageName':
+    if (
+      line &&
+      (line.includes(`"${packageName}"`) || line.includes(`'${packageName}'`))
+    ) {
+      return i + 1; // Line numbers are 1-indexed
+    }
+  }
+  return undefined;
+}

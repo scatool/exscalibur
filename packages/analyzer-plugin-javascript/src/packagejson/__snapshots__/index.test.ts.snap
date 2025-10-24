@@ -4,16 +4,28 @@ exports[`package.json extractor should extract package URLs from package.json 1`
 {
   "packages": [
     {
-      "purl": "pkg:npm/react-dom@%5E19.0.0",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/packagejson/__fixtures__/simple/package.json:6",
+      ],
+      "purl": "pkg:npm/react-dom@19.0.0",
     },
     {
-      "purl": "pkg:npm/react@%5E19.0.0",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/packagejson/__fixtures__/simple/package.json:5",
+      ],
+      "purl": "pkg:npm/react@19.0.0",
     },
     {
-      "purl": "pkg:npm/types/react-dom@%5E19.0.0",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/packagejson/__fixtures__/simple/package.json:10",
+      ],
+      "purl": "pkg:npm/types/react-dom@19.0.0",
     },
     {
-      "purl": "pkg:npm/types/react@%5E19.0.0",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer/packages/analyzer-plugin-javascript/src/packagejson/__fixtures__/simple/package.json:9",
+      ],
+      "purl": "pkg:npm/types/react@19.0.0",
     },
   ],
 }
