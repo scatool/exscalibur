@@ -1,0 +1,22 @@
+{
+  "name": "@scatool/analyzer-cli",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "bin": {
+    "analyzer": "./src/cli.ts"
+  },
+  "scripts": {
+    "test": "bun test",
+    "typecheck": "bunx tsc --strict --noEmit"
+  },
+  "dependencies": {
+    "@scatool/analyzer-core": "workspace:*",
+    "@scatool/analyzer-plugin-javascript": "workspace:*",
+    "@scatool/analyzer-plugin-containers": "workspace:*",
+    "@scatool/analyzer-plugin-github-actions": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.3.0"
+  }
+}
