@@ -1,6 +1,6 @@
 #!/usr/bin/env bun
 
-import { bunlockExtractor, packageJsonExtractor } from '@scatool/analyzer-plugin-javascript/src/index.ts';
+import { bunlockExtractor, packageJsonExtractor, packageLockJsonExtractor, pnpmLockExtractor } from '@scatool/analyzer-plugin-javascript/src/index.ts';
 import { dockerfileExtractor } from '@scatool/analyzer-plugin-containers/src/index.ts';
 import { extractor as githubActionsExtractor } from '@scatool/analyzer-plugin-github-actions/src/index.ts';
 import type { AnalyzerResult, Extractor } from '@scatool/analyzer-core/src/index.ts';
@@ -25,6 +25,8 @@ const outputPath = resolve(args[1]);
 const extractors: Extractor[] = [
   bunlockExtractor,
   packageJsonExtractor,
+  packageLockJsonExtractor,
+  pnpmLockExtractor,
   dockerfileExtractor,
   githubActionsExtractor,
 ];
