@@ -7,6 +7,7 @@ const stageRegex = /^\s*FROM\s+(?:--platform=\S+\s+)?\S+\s+AS\s+(\S+)(?:\s*#.*)?
 const fromRegex = /^\s*FROM\s+(?:--platform=\S+\s+)?(\S+)(?:\s|#|$)/gim;
 
 export const extractor: Extractor = filesExtractor({
+  name: 'dockerfile',
   version: 1,
   markFiles: async function (codebase: string) {
     const dockerfiles = new Glob('**/Dockerfile*');

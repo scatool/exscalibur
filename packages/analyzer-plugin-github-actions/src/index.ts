@@ -4,6 +4,7 @@ import { PackageURL } from 'packageurl-js';
 import { parseContainerImage } from '@scatool/analyzer-plugin-containers/src/dockerfile/index.ts';
 
 export const extractor: Extractor = filesExtractor({
+  name: 'github-actions',
   version: 1,
   markFiles: async function (codebase: string) {
     const glob = new Glob('.github/workflows/**/*.{yml,yaml}');

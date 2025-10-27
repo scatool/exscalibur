@@ -3,6 +3,7 @@ import { Glob } from 'bun';
 import { PackageURL } from 'packageurl-js';
 
 export const extractor: Extractor = filesExtractor({
+  name: 'packagejson',
   version: 1,
   markFiles: async function (codebase: string) {
     // Find all package.json files in the codebase

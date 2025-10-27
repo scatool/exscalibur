@@ -26,6 +26,7 @@ export type AnalyzerResult = {
 };
 
 export type Extractor = {
+  name: string;
   version: 1;
   extract: (codebase: string) => Promise<AnalyzerResult>;
 };
@@ -35,6 +36,7 @@ export type MarkFileContext = {
 };
 
 export type FilesExtractor = {
+  name: string;
   version: 1;
   markFiles: (this: MarkFileContext, codebase: string) => Promise<void>;
   extractFile?: (file: string) => Promise<AnalyzerResult>;
@@ -42,6 +44,7 @@ export type FilesExtractor = {
 
 export const filesExtractor = (config: FilesExtractor): Extractor => {
   return {
+    name: config.name,
     version: config.version,
     extract: async (codebase: string) => {
       const markedFiles: string[] = [];

@@ -16,6 +16,7 @@ import type { PackageJson } from '../types.ts';
 const lockfileGlob = new Glob('**/yarn.lock');
 
 export const extractor: Extractor = filesExtractor({
+  name: 'yarnlock',
   version: 1,
   markFiles: async function (codebase: string) {
     for await (const file of lockfileGlob.scan({ cwd: codebase, absolute: true })) {

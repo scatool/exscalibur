@@ -9,20 +9,63 @@ import { resolve } from 'path';
 // Parse command line arguments
 const args = process.argv.slice(2);
 
-if (args.length < 2) {
-  console.error('Usage: analyzer <codebase-path> <output-path>');
+// Parse flags
+const enabledExtractors = new Set<string>();
+const disabledExtractors = new Set<string>();
+const positionalArgs: string[] = [];
+
+for (let i = 0; i < args.length; i++) {
+  const arg = args[i];
+  if (arg === '--enable' || arg === '-e') {
+    // Next argument is the extractor name(s) - can be comma-separated
+    i++;
+    if (i < args.length) {
+      const names = args[i].split(',').map(n => n.trim()).filter(n => n.length > 0);
+      for (const name of names) {
+        enabledExtractors.add(name);
+      }
+    }
+  } else if (arg === '--disable' || arg === '-d') {
+    // Next argument is the extractor name(s) - can be comma-separated
+    i++;
+    if (i < args.length) {
+      const names = args[i].split(',').map(n => n.trim()).filter(n => n.length > 0);
+      for (const name of names) {
+        disabledExtractors.add(name);
+      }
+    }
+  } else if (!arg.startsWith('-')) {
+    positionalArgs.push(arg);
+  }
+}
+
+if (positionalArgs.length < 2) {
+  console.error('Usage: analyzer [options] <codebase-path> <output-path>');
   console.error('');
   console.error('Arguments:');
   console.error('  codebase-path  Path to the codebase to analyze');
   console.error('  output-path    Path to write the JSON output file');
+  console.error('');
+  console.error('Options:');
+  console.error('  --enable, -e <name>   Enable specific extractor(s) (comma-separated or multiple flags)');
+  console.error('  --disable, -d <name>  Disable specific extractor(s) (comma-separated or multiple flags)');
+  console.error('');
+  console.error('Available extractors:');
+  console.error('  bunlock           Extract from bun.lock files');
+  console.error('  packagejson       Extract from package.json files');
+  console.error('  packagelockjson   Extract from package-lock.json files');
+  console.error('  pnpmlock          Extract from pnpm-lock.yaml files');
+  console.error('  yarnlock          Extract from yarn.lock files');
+  console.error('  dockerfile        Extract from Dockerfile files');
+  console.error('  github-actions    Extract from GitHub Actions workflow files');
   process.exit(1);
 }
 
-const codebasePath = resolve(args[0]);
-const outputPath = resolve(args[1]);
+const codebasePath = resolve(positionalArgs[0]);
+const outputPath = resolve(positionalArgs[1]);
 
 // All available extractors
-const extractors: Extractor[] = [
+const allExtractors: Extractor[] = [
   bunlockExtractor,
   packageJsonExtractor,
   packageLockJsonExtractor,
@@ -32,10 +75,29 @@ const extractors: Extractor[] = [
   githubActionsExtractor,
 ];
 
+// Filter extractors based on enable/disable flags
+function filterExtractors(extractors: Extractor[]): Extractor[] {
+  // If --enable is used, only run the enabled extractors
+  if (enabledExtractors.size > 0) {
+    return extractors.filter((e) => enabledExtractors.has(e.name));
+  }
+
+  // If --disable is used, run all except the disabled extractors
+  if (disabledExtractors.size > 0) {
+    return extractors.filter((e) => !disabledExtractors.has(e.name));
+  }
+
+  // Otherwise, run all extractors
+  return extractors;
+}
+
+const extractors = filterExtractors(allExtractors);
+
 async function runAnalysis(): Promise<void> {
   console.error('Running analysis...');
   console.error(`Codebase: ${codebasePath}`);
   console.error(`Output: ${outputPath}`);
+  console.error(`Active extractors: ${extractors.map((e) => e.name).join(', ')}`);
   console.error('');
 
   // Run all extractors
@@ -43,7 +105,7 @@ async function runAnalysis(): Promise<void> {
 
   for (const extractor of extractors) {
     try {
-      console.error(`Running extractor (version ${extractor.version})...`);
+      console.error(`Running ${extractor.name} extractor (version ${extractor.version})...`);
       const result = await extractor.extract(codebasePath);
       results.push(result);
       console.error(`  Found ${result.packages.length} packages`);

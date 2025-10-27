@@ -14,6 +14,7 @@ import type { PackageJson } from '../types.ts';
 const glob = new Glob('**/bun.lock');
 
 export const extractor: Extractor = filesExtractor({
+  name: 'bunlock',
   version: 1,
   markFiles: async function (codebase: string) {
     for await (const file of glob.scan({ cwd: codebase, absolute: true })) {
