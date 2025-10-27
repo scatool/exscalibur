@@ -5,6 +5,210 @@ exports[`basic 1`] = `
   "packages": [
     {
       "evidence": [
+        "<fixtures>/basic/pnpm-lock.yaml#25",
+      ],
+      "purl": "pkg:npm/%40emnapi/runtime@1.6.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/pnpm-lock.yaml#29",
+      ],
+      "purl": "pkg:npm/%40img/colour@1.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/pnpm-lock.yaml#34",
+      ],
+      "purl": "pkg:npm/%40img/sharp-darwin-arm64@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/pnpm-lock.yaml#41",
+      ],
+      "purl": "pkg:npm/%40img/sharp-darwin-x64@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/pnpm-lock.yaml#48",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-darwin-arm64@1.2.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/pnpm-lock.yaml#54",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-darwin-x64@1.2.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/pnpm-lock.yaml#66",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/pnpm-lock.yaml#60",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm64@1.2.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/pnpm-lock.yaml#72",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linux-ppc64@1.2.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/pnpm-lock.yaml#78",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linux-s390x@1.2.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/pnpm-lock.yaml#84",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linux-x64@1.2.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/pnpm-lock.yaml#90",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linuxmusl-arm64@1.2.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/pnpm-lock.yaml#96",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linuxmusl-x64@1.2.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/pnpm-lock.yaml#109",
+      ],
+      "purl": "pkg:npm/%40img/sharp-linux-arm@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/pnpm-lock.yaml#102",
+      ],
+      "purl": "pkg:npm/%40img/sharp-linux-arm64@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/pnpm-lock.yaml#116",
+      ],
+      "purl": "pkg:npm/%40img/sharp-linux-ppc64@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/pnpm-lock.yaml#123",
+      ],
+      "purl": "pkg:npm/%40img/sharp-linux-s390x@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/pnpm-lock.yaml#130",
+      ],
+      "purl": "pkg:npm/%40img/sharp-linux-x64@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/pnpm-lock.yaml#137",
+      ],
+      "purl": "pkg:npm/%40img/sharp-linuxmusl-arm64@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/pnpm-lock.yaml#144",
+      ],
+      "purl": "pkg:npm/%40img/sharp-linuxmusl-x64@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/pnpm-lock.yaml#151",
+      ],
+      "purl": "pkg:npm/%40img/sharp-wasm32@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/pnpm-lock.yaml#157",
+      ],
+      "purl": "pkg:npm/%40img/sharp-win32-arm64@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/pnpm-lock.yaml#164",
+      ],
+      "purl": "pkg:npm/%40img/sharp-win32-ia32@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/pnpm-lock.yaml#171",
+      ],
+      "purl": "pkg:npm/%40img/sharp-win32-x64@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/pnpm-lock.yaml#178",
+      ],
+      "purl": "pkg:npm/%40next/env@15.5.6",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/pnpm-lock.yaml#182",
+      ],
+      "purl": "pkg:npm/%40next/swc-darwin-arm64@15.5.6",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/pnpm-lock.yaml#189",
+      ],
+      "purl": "pkg:npm/%40next/swc-darwin-x64@15.5.6",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/pnpm-lock.yaml#196",
+      ],
+      "purl": "pkg:npm/%40next/swc-linux-arm64-gnu@15.5.6",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/pnpm-lock.yaml#203",
+      ],
+      "purl": "pkg:npm/%40next/swc-linux-arm64-musl@15.5.6",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/pnpm-lock.yaml#210",
+      ],
+      "purl": "pkg:npm/%40next/swc-linux-x64-gnu@15.5.6",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/pnpm-lock.yaml#217",
+      ],
+      "purl": "pkg:npm/%40next/swc-linux-x64-musl@15.5.6",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/pnpm-lock.yaml#224",
+      ],
+      "purl": "pkg:npm/%40next/swc-win32-arm64-msvc@15.5.6",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/pnpm-lock.yaml#231",
+      ],
+      "purl": "pkg:npm/%40next/swc-win32-x64-msvc@15.5.6",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/pnpm-lock.yaml#238",
+      ],
+      "purl": "pkg:npm/%40swc/helpers@0.5.15",
+    },
+    {
+      "evidence": [
         "<fixtures>/basic/pnpm-lock.yaml#242",
       ],
       "purl": "pkg:npm/caniuse-lite@1.0.30001751",
@@ -23,150 +227,6 @@ exports[`basic 1`] = `
     },
     {
       "evidence": [
-        "<fixtures>/basic/pnpm-lock.yaml#25",
-      ],
-      "purl": "pkg:npm/emnapi/runtime@1.6.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/pnpm-lock.yaml#29",
-      ],
-      "purl": "pkg:npm/img/colour@1.0.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/pnpm-lock.yaml#34",
-      ],
-      "purl": "pkg:npm/img/sharp-darwin-arm64@0.34.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/pnpm-lock.yaml#41",
-      ],
-      "purl": "pkg:npm/img/sharp-darwin-x64@0.34.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/pnpm-lock.yaml#48",
-      ],
-      "purl": "pkg:npm/img/sharp-libvips-darwin-arm64@1.2.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/pnpm-lock.yaml#54",
-      ],
-      "purl": "pkg:npm/img/sharp-libvips-darwin-x64@1.2.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/pnpm-lock.yaml#66",
-      ],
-      "purl": "pkg:npm/img/sharp-libvips-linux-arm@1.2.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/pnpm-lock.yaml#60",
-      ],
-      "purl": "pkg:npm/img/sharp-libvips-linux-arm64@1.2.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/pnpm-lock.yaml#72",
-      ],
-      "purl": "pkg:npm/img/sharp-libvips-linux-ppc64@1.2.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/pnpm-lock.yaml#78",
-      ],
-      "purl": "pkg:npm/img/sharp-libvips-linux-s390x@1.2.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/pnpm-lock.yaml#84",
-      ],
-      "purl": "pkg:npm/img/sharp-libvips-linux-x64@1.2.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/pnpm-lock.yaml#90",
-      ],
-      "purl": "pkg:npm/img/sharp-libvips-linuxmusl-arm64@1.2.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/pnpm-lock.yaml#96",
-      ],
-      "purl": "pkg:npm/img/sharp-libvips-linuxmusl-x64@1.2.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/pnpm-lock.yaml#109",
-      ],
-      "purl": "pkg:npm/img/sharp-linux-arm@0.34.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/pnpm-lock.yaml#102",
-      ],
-      "purl": "pkg:npm/img/sharp-linux-arm64@0.34.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/pnpm-lock.yaml#116",
-      ],
-      "purl": "pkg:npm/img/sharp-linux-ppc64@0.34.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/pnpm-lock.yaml#123",
-      ],
-      "purl": "pkg:npm/img/sharp-linux-s390x@0.34.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/pnpm-lock.yaml#130",
-      ],
-      "purl": "pkg:npm/img/sharp-linux-x64@0.34.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/pnpm-lock.yaml#137",
-      ],
-      "purl": "pkg:npm/img/sharp-linuxmusl-arm64@0.34.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/pnpm-lock.yaml#144",
-      ],
-      "purl": "pkg:npm/img/sharp-linuxmusl-x64@0.34.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/pnpm-lock.yaml#151",
-      ],
-      "purl": "pkg:npm/img/sharp-wasm32@0.34.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/pnpm-lock.yaml#157",
-      ],
-      "purl": "pkg:npm/img/sharp-win32-arm64@0.34.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/pnpm-lock.yaml#164",
-      ],
-      "purl": "pkg:npm/img/sharp-win32-ia32@0.34.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/pnpm-lock.yaml#171",
-      ],
-      "purl": "pkg:npm/img/sharp-win32-x64@0.34.4",
-    },
-    {
-      "evidence": [
         "<fixtures>/basic/pnpm-lock.yaml#255",
       ],
       "purl": "pkg:npm/nanoid@3.3.11",
@@ -176,60 +236,6 @@ exports[`basic 1`] = `
         "<fixtures>/basic/pnpm-lock.yaml#261",
       ],
       "purl": "pkg:npm/next@15.5.6",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/pnpm-lock.yaml#178",
-      ],
-      "purl": "pkg:npm/next/env@15.5.6",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/pnpm-lock.yaml#182",
-      ],
-      "purl": "pkg:npm/next/swc-darwin-arm64@15.5.6",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/pnpm-lock.yaml#189",
-      ],
-      "purl": "pkg:npm/next/swc-darwin-x64@15.5.6",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/pnpm-lock.yaml#196",
-      ],
-      "purl": "pkg:npm/next/swc-linux-arm64-gnu@15.5.6",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/pnpm-lock.yaml#203",
-      ],
-      "purl": "pkg:npm/next/swc-linux-arm64-musl@15.5.6",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/pnpm-lock.yaml#210",
-      ],
-      "purl": "pkg:npm/next/swc-linux-x64-gnu@15.5.6",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/pnpm-lock.yaml#217",
-      ],
-      "purl": "pkg:npm/next/swc-linux-x64-musl@15.5.6",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/pnpm-lock.yaml#224",
-      ],
-      "purl": "pkg:npm/next/swc-win32-arm64-msvc@15.5.6",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/pnpm-lock.yaml#231",
-      ],
-      "purl": "pkg:npm/next/swc-win32-x64-msvc@15.5.6",
     },
     {
       "evidence": [
@@ -287,12 +293,6 @@ exports[`basic 1`] = `
     },
     {
       "evidence": [
-        "<fixtures>/basic/pnpm-lock.yaml#238",
-      ],
-      "purl": "pkg:npm/swc/helpers@0.5.15",
-    },
-    {
-      "evidence": [
         "<fixtures>/basic/pnpm-lock.yaml#337",
       ],
       "purl": "pkg:npm/tslib@2.8.1",
@@ -313,7 +313,7 @@ exports[`basic 1`] = `
       ],
     },
     {
-      "from": "pkg:npm/swc/helpers@0.5.15",
+      "from": "pkg:npm/%40swc/helpers@0.5.15",
       "to": [
         "pkg:npm/tslib@2.8.1",
       ],
@@ -334,116 +334,116 @@ exports[`basic 1`] = `
       ],
     },
     {
-      "from": "pkg:npm/img/sharp-darwin-arm64@0.34.4",
+      "from": "pkg:npm/%40img/sharp-darwin-arm64@0.34.4",
       "to": [
-        "pkg:npm/img/sharp-libvips-darwin-arm64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-darwin-arm64@1.2.3",
       ],
     },
     {
-      "from": "pkg:npm/img/sharp-darwin-x64@0.34.4",
+      "from": "pkg:npm/%40img/sharp-darwin-x64@0.34.4",
       "to": [
-        "pkg:npm/img/sharp-libvips-darwin-x64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-darwin-x64@1.2.3",
       ],
     },
     {
-      "from": "pkg:npm/img/sharp-linux-arm@0.34.4",
+      "from": "pkg:npm/%40img/sharp-linux-arm@0.34.4",
       "to": [
-        "pkg:npm/img/sharp-libvips-linux-arm@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.3",
       ],
     },
     {
-      "from": "pkg:npm/img/sharp-linux-arm64@0.34.4",
+      "from": "pkg:npm/%40img/sharp-linux-arm64@0.34.4",
       "to": [
-        "pkg:npm/img/sharp-libvips-linux-arm64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linux-arm64@1.2.3",
       ],
     },
     {
-      "from": "pkg:npm/img/sharp-linux-ppc64@0.34.4",
+      "from": "pkg:npm/%40img/sharp-linux-ppc64@0.34.4",
       "to": [
-        "pkg:npm/img/sharp-libvips-linux-ppc64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linux-ppc64@1.2.3",
       ],
     },
     {
-      "from": "pkg:npm/img/sharp-linux-s390x@0.34.4",
+      "from": "pkg:npm/%40img/sharp-linux-s390x@0.34.4",
       "to": [
-        "pkg:npm/img/sharp-libvips-linux-s390x@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linux-s390x@1.2.3",
       ],
     },
     {
-      "from": "pkg:npm/img/sharp-linux-x64@0.34.4",
+      "from": "pkg:npm/%40img/sharp-linux-x64@0.34.4",
       "to": [
-        "pkg:npm/img/sharp-libvips-linux-x64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linux-x64@1.2.3",
       ],
     },
     {
-      "from": "pkg:npm/img/sharp-linuxmusl-arm64@0.34.4",
+      "from": "pkg:npm/%40img/sharp-linuxmusl-arm64@0.34.4",
       "to": [
-        "pkg:npm/img/sharp-libvips-linuxmusl-arm64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linuxmusl-arm64@1.2.3",
       ],
     },
     {
-      "from": "pkg:npm/img/sharp-linuxmusl-x64@0.34.4",
+      "from": "pkg:npm/%40img/sharp-linuxmusl-x64@0.34.4",
       "to": [
-        "pkg:npm/img/sharp-libvips-linuxmusl-x64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linuxmusl-x64@1.2.3",
       ],
     },
     {
-      "from": "pkg:npm/emnapi/runtime@1.6.0",
+      "from": "pkg:npm/%40emnapi/runtime@1.6.0",
       "to": [
         "pkg:npm/tslib@2.8.1",
       ],
     },
     {
-      "from": "pkg:npm/img/sharp-wasm32@0.34.4",
+      "from": "pkg:npm/%40img/sharp-wasm32@0.34.4",
       "to": [
-        "pkg:npm/emnapi/runtime@1.6.0",
+        "pkg:npm/%40emnapi/runtime@1.6.0",
       ],
     },
     {
       "from": "pkg:npm/sharp@0.34.4",
       "to": [
-        "pkg:npm/img/colour@1.0.0",
+        "pkg:npm/%40img/colour@1.0.0",
         "pkg:npm/detect-libc@2.1.2",
         "pkg:npm/semver@7.7.3",
-        "pkg:npm/img/sharp-libvips-darwin-arm64@1.2.3",
-        "pkg:npm/img/sharp-libvips-darwin-x64@1.2.3",
-        "pkg:npm/img/sharp-libvips-linux-arm@1.2.3",
-        "pkg:npm/img/sharp-libvips-linux-arm64@1.2.3",
-        "pkg:npm/img/sharp-libvips-linux-ppc64@1.2.3",
-        "pkg:npm/img/sharp-libvips-linux-s390x@1.2.3",
-        "pkg:npm/img/sharp-libvips-linux-x64@1.2.3",
-        "pkg:npm/img/sharp-libvips-linuxmusl-arm64@1.2.3",
-        "pkg:npm/img/sharp-libvips-linuxmusl-x64@1.2.3",
-        "pkg:npm/img/sharp-win32-arm64@0.34.4",
-        "pkg:npm/img/sharp-win32-ia32@0.34.4",
-        "pkg:npm/img/sharp-win32-x64@0.34.4",
-        "pkg:npm/img/sharp-darwin-arm64@0.34.4",
-        "pkg:npm/img/sharp-darwin-x64@0.34.4",
-        "pkg:npm/img/sharp-linux-arm@0.34.4",
-        "pkg:npm/img/sharp-linux-arm64@0.34.4",
-        "pkg:npm/img/sharp-linux-ppc64@0.34.4",
-        "pkg:npm/img/sharp-linux-s390x@0.34.4",
-        "pkg:npm/img/sharp-linux-x64@0.34.4",
-        "pkg:npm/img/sharp-linuxmusl-arm64@0.34.4",
-        "pkg:npm/img/sharp-linuxmusl-x64@0.34.4",
-        "pkg:npm/img/sharp-wasm32@0.34.4",
+        "pkg:npm/%40img/sharp-libvips-darwin-arm64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-darwin-x64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linux-arm64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linux-ppc64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linux-s390x@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linux-x64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linuxmusl-arm64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linuxmusl-x64@1.2.3",
+        "pkg:npm/%40img/sharp-win32-arm64@0.34.4",
+        "pkg:npm/%40img/sharp-win32-ia32@0.34.4",
+        "pkg:npm/%40img/sharp-win32-x64@0.34.4",
+        "pkg:npm/%40img/sharp-darwin-arm64@0.34.4",
+        "pkg:npm/%40img/sharp-darwin-x64@0.34.4",
+        "pkg:npm/%40img/sharp-linux-arm@0.34.4",
+        "pkg:npm/%40img/sharp-linux-arm64@0.34.4",
+        "pkg:npm/%40img/sharp-linux-ppc64@0.34.4",
+        "pkg:npm/%40img/sharp-linux-s390x@0.34.4",
+        "pkg:npm/%40img/sharp-linux-x64@0.34.4",
+        "pkg:npm/%40img/sharp-linuxmusl-arm64@0.34.4",
+        "pkg:npm/%40img/sharp-linuxmusl-x64@0.34.4",
+        "pkg:npm/%40img/sharp-wasm32@0.34.4",
       ],
     },
     {
       "from": "pkg:npm/next@15.5.6",
       "to": [
-        "pkg:npm/next/env@15.5.6",
+        "pkg:npm/%40next/env@15.5.6",
         "pkg:npm/caniuse-lite@1.0.30001751",
         "pkg:npm/react@19.2.0",
-        "pkg:npm/next/swc-darwin-arm64@15.5.6",
-        "pkg:npm/next/swc-darwin-x64@15.5.6",
-        "pkg:npm/next/swc-linux-arm64-gnu@15.5.6",
-        "pkg:npm/next/swc-linux-arm64-musl@15.5.6",
-        "pkg:npm/next/swc-linux-x64-gnu@15.5.6",
-        "pkg:npm/next/swc-linux-x64-musl@15.5.6",
-        "pkg:npm/next/swc-win32-arm64-msvc@15.5.6",
-        "pkg:npm/next/swc-win32-x64-msvc@15.5.6",
-        "pkg:npm/swc/helpers@0.5.15",
+        "pkg:npm/%40next/swc-darwin-arm64@15.5.6",
+        "pkg:npm/%40next/swc-darwin-x64@15.5.6",
+        "pkg:npm/%40next/swc-linux-arm64-gnu@15.5.6",
+        "pkg:npm/%40next/swc-linux-arm64-musl@15.5.6",
+        "pkg:npm/%40next/swc-linux-x64-gnu@15.5.6",
+        "pkg:npm/%40next/swc-linux-x64-musl@15.5.6",
+        "pkg:npm/%40next/swc-win32-arm64-msvc@15.5.6",
+        "pkg:npm/%40next/swc-win32-x64-msvc@15.5.6",
+        "pkg:npm/%40swc/helpers@0.5.15",
         "pkg:npm/postcss@8.4.31",
         "pkg:npm/react-dom@19.2.0",
         "pkg:npm/styled-jsx@5.1.6",
@@ -490,6 +490,504 @@ exports[`monorepo 1`] = `
   "packages": [
     {
       "evidence": [
+        "<fixtures>/monorepo/a/pnpm-lock.yaml#19",
+      ],
+      "purl": "pkg:npm/%40emnapi/runtime@1.6.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#19",
+      ],
+      "purl": "pkg:npm/%40esbuild/aix-ppc64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#33",
+      ],
+      "purl": "pkg:npm/%40esbuild/android-arm@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#26",
+      ],
+      "purl": "pkg:npm/%40esbuild/android-arm64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#40",
+      ],
+      "purl": "pkg:npm/%40esbuild/android-x64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#47",
+      ],
+      "purl": "pkg:npm/%40esbuild/darwin-arm64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#54",
+      ],
+      "purl": "pkg:npm/%40esbuild/darwin-x64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#61",
+      ],
+      "purl": "pkg:npm/%40esbuild/freebsd-arm64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#68",
+      ],
+      "purl": "pkg:npm/%40esbuild/freebsd-x64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#82",
+      ],
+      "purl": "pkg:npm/%40esbuild/linux-arm@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#75",
+      ],
+      "purl": "pkg:npm/%40esbuild/linux-arm64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#89",
+      ],
+      "purl": "pkg:npm/%40esbuild/linux-ia32@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#96",
+      ],
+      "purl": "pkg:npm/%40esbuild/linux-loong64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#103",
+      ],
+      "purl": "pkg:npm/%40esbuild/linux-mips64el@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#110",
+      ],
+      "purl": "pkg:npm/%40esbuild/linux-ppc64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#117",
+      ],
+      "purl": "pkg:npm/%40esbuild/linux-riscv64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#124",
+      ],
+      "purl": "pkg:npm/%40esbuild/linux-s390x@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#131",
+      ],
+      "purl": "pkg:npm/%40esbuild/linux-x64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#138",
+      ],
+      "purl": "pkg:npm/%40esbuild/netbsd-arm64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#145",
+      ],
+      "purl": "pkg:npm/%40esbuild/netbsd-x64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#152",
+      ],
+      "purl": "pkg:npm/%40esbuild/openbsd-arm64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#159",
+      ],
+      "purl": "pkg:npm/%40esbuild/openbsd-x64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#166",
+      ],
+      "purl": "pkg:npm/%40esbuild/openharmony-arm64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#173",
+      ],
+      "purl": "pkg:npm/%40esbuild/sunos-x64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#180",
+      ],
+      "purl": "pkg:npm/%40esbuild/win32-arm64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#187",
+      ],
+      "purl": "pkg:npm/%40esbuild/win32-ia32@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#194",
+      ],
+      "purl": "pkg:npm/%40esbuild/win32-x64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/a/pnpm-lock.yaml#23",
+      ],
+      "purl": "pkg:npm/%40img/colour@1.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/a/pnpm-lock.yaml#28",
+      ],
+      "purl": "pkg:npm/%40img/sharp-darwin-arm64@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/a/pnpm-lock.yaml#35",
+      ],
+      "purl": "pkg:npm/%40img/sharp-darwin-x64@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/a/pnpm-lock.yaml#42",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-darwin-arm64@1.2.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/a/pnpm-lock.yaml#48",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-darwin-x64@1.2.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/a/pnpm-lock.yaml#60",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/a/pnpm-lock.yaml#54",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm64@1.2.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/a/pnpm-lock.yaml#66",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linux-ppc64@1.2.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/a/pnpm-lock.yaml#72",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linux-s390x@1.2.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/a/pnpm-lock.yaml#78",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linux-x64@1.2.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/a/pnpm-lock.yaml#84",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linuxmusl-arm64@1.2.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/a/pnpm-lock.yaml#90",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linuxmusl-x64@1.2.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/a/pnpm-lock.yaml#103",
+      ],
+      "purl": "pkg:npm/%40img/sharp-linux-arm@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/a/pnpm-lock.yaml#96",
+      ],
+      "purl": "pkg:npm/%40img/sharp-linux-arm64@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/a/pnpm-lock.yaml#110",
+      ],
+      "purl": "pkg:npm/%40img/sharp-linux-ppc64@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/a/pnpm-lock.yaml#117",
+      ],
+      "purl": "pkg:npm/%40img/sharp-linux-s390x@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/a/pnpm-lock.yaml#124",
+      ],
+      "purl": "pkg:npm/%40img/sharp-linux-x64@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/a/pnpm-lock.yaml#131",
+      ],
+      "purl": "pkg:npm/%40img/sharp-linuxmusl-arm64@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/a/pnpm-lock.yaml#138",
+      ],
+      "purl": "pkg:npm/%40img/sharp-linuxmusl-x64@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/a/pnpm-lock.yaml#145",
+      ],
+      "purl": "pkg:npm/%40img/sharp-wasm32@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/a/pnpm-lock.yaml#151",
+      ],
+      "purl": "pkg:npm/%40img/sharp-win32-arm64@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/a/pnpm-lock.yaml#158",
+      ],
+      "purl": "pkg:npm/%40img/sharp-win32-ia32@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/a/pnpm-lock.yaml#165",
+      ],
+      "purl": "pkg:npm/%40img/sharp-win32-x64@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/a/pnpm-lock.yaml#172",
+      ],
+      "purl": "pkg:npm/%40next/env@15.5.6",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/a/pnpm-lock.yaml#176",
+      ],
+      "purl": "pkg:npm/%40next/swc-darwin-arm64@15.5.6",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/a/pnpm-lock.yaml#183",
+      ],
+      "purl": "pkg:npm/%40next/swc-darwin-x64@15.5.6",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/a/pnpm-lock.yaml#190",
+      ],
+      "purl": "pkg:npm/%40next/swc-linux-arm64-gnu@15.5.6",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/a/pnpm-lock.yaml#197",
+      ],
+      "purl": "pkg:npm/%40next/swc-linux-arm64-musl@15.5.6",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/a/pnpm-lock.yaml#204",
+      ],
+      "purl": "pkg:npm/%40next/swc-linux-x64-gnu@15.5.6",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/a/pnpm-lock.yaml#211",
+      ],
+      "purl": "pkg:npm/%40next/swc-linux-x64-musl@15.5.6",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/a/pnpm-lock.yaml#218",
+      ],
+      "purl": "pkg:npm/%40next/swc-win32-arm64-msvc@15.5.6",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/a/pnpm-lock.yaml#225",
+      ],
+      "purl": "pkg:npm/%40next/swc-win32-x64-msvc@15.5.6",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#201",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-android-arm-eabi@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#207",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-android-arm64@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#213",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-darwin-arm64@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#219",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-darwin-x64@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#225",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-freebsd-arm64@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#231",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-freebsd-x64@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#237",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-linux-arm-gnueabihf@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#243",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-linux-arm-musleabihf@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#249",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-linux-arm64-gnu@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#255",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-linux-arm64-musl@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#261",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-linux-loong64-gnu@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#267",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-linux-ppc64-gnu@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#273",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-linux-riscv64-gnu@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#279",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-linux-riscv64-musl@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#285",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-linux-s390x-gnu@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#291",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-linux-x64-gnu@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#297",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-linux-x64-musl@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#303",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-openharmony-arm64@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#309",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-win32-arm64-msvc@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#315",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-win32-ia32-msvc@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#321",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-win32-x64-gnu@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#327",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-win32-x64-msvc@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/a/pnpm-lock.yaml#232",
+      ],
+      "purl": "pkg:npm/%40swc/helpers@0.5.15",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#333",
+      ],
+      "purl": "pkg:npm/%40types/estree@1.0.8",
+    },
+    {
+      "evidence": [
         "<fixtures>/monorepo/a/pnpm-lock.yaml#236",
       ],
       "purl": "pkg:npm/caniuse-lite@1.0.30001751",
@@ -508,171 +1006,9 @@ exports[`monorepo 1`] = `
     },
     {
       "evidence": [
-        "<fixtures>/monorepo/a/pnpm-lock.yaml#19",
-      ],
-      "purl": "pkg:npm/emnapi/runtime@1.6.0",
-    },
-    {
-      "evidence": [
         "<fixtures>/monorepo/b/pnpm-lock.yaml#337",
       ],
       "purl": "pkg:npm/esbuild@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#19",
-      ],
-      "purl": "pkg:npm/esbuild/aix-ppc64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#33",
-      ],
-      "purl": "pkg:npm/esbuild/android-arm@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#26",
-      ],
-      "purl": "pkg:npm/esbuild/android-arm64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#40",
-      ],
-      "purl": "pkg:npm/esbuild/android-x64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#47",
-      ],
-      "purl": "pkg:npm/esbuild/darwin-arm64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#54",
-      ],
-      "purl": "pkg:npm/esbuild/darwin-x64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#61",
-      ],
-      "purl": "pkg:npm/esbuild/freebsd-arm64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#68",
-      ],
-      "purl": "pkg:npm/esbuild/freebsd-x64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#82",
-      ],
-      "purl": "pkg:npm/esbuild/linux-arm@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#75",
-      ],
-      "purl": "pkg:npm/esbuild/linux-arm64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#89",
-      ],
-      "purl": "pkg:npm/esbuild/linux-ia32@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#96",
-      ],
-      "purl": "pkg:npm/esbuild/linux-loong64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#103",
-      ],
-      "purl": "pkg:npm/esbuild/linux-mips64el@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#110",
-      ],
-      "purl": "pkg:npm/esbuild/linux-ppc64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#117",
-      ],
-      "purl": "pkg:npm/esbuild/linux-riscv64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#124",
-      ],
-      "purl": "pkg:npm/esbuild/linux-s390x@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#131",
-      ],
-      "purl": "pkg:npm/esbuild/linux-x64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#138",
-      ],
-      "purl": "pkg:npm/esbuild/netbsd-arm64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#145",
-      ],
-      "purl": "pkg:npm/esbuild/netbsd-x64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#152",
-      ],
-      "purl": "pkg:npm/esbuild/openbsd-arm64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#159",
-      ],
-      "purl": "pkg:npm/esbuild/openbsd-x64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#166",
-      ],
-      "purl": "pkg:npm/esbuild/openharmony-arm64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#173",
-      ],
-      "purl": "pkg:npm/esbuild/sunos-x64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#180",
-      ],
-      "purl": "pkg:npm/esbuild/win32-arm64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#187",
-      ],
-      "purl": "pkg:npm/esbuild/win32-ia32@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#194",
-      ],
-      "purl": "pkg:npm/esbuild/win32-x64@0.25.11",
     },
     {
       "evidence": [
@@ -688,144 +1024,6 @@ exports[`monorepo 1`] = `
     },
     {
       "evidence": [
-        "<fixtures>/monorepo/a/pnpm-lock.yaml#23",
-      ],
-      "purl": "pkg:npm/img/colour@1.0.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/a/pnpm-lock.yaml#28",
-      ],
-      "purl": "pkg:npm/img/sharp-darwin-arm64@0.34.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/a/pnpm-lock.yaml#35",
-      ],
-      "purl": "pkg:npm/img/sharp-darwin-x64@0.34.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/a/pnpm-lock.yaml#42",
-      ],
-      "purl": "pkg:npm/img/sharp-libvips-darwin-arm64@1.2.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/a/pnpm-lock.yaml#48",
-      ],
-      "purl": "pkg:npm/img/sharp-libvips-darwin-x64@1.2.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/a/pnpm-lock.yaml#60",
-      ],
-      "purl": "pkg:npm/img/sharp-libvips-linux-arm@1.2.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/a/pnpm-lock.yaml#54",
-      ],
-      "purl": "pkg:npm/img/sharp-libvips-linux-arm64@1.2.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/a/pnpm-lock.yaml#66",
-      ],
-      "purl": "pkg:npm/img/sharp-libvips-linux-ppc64@1.2.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/a/pnpm-lock.yaml#72",
-      ],
-      "purl": "pkg:npm/img/sharp-libvips-linux-s390x@1.2.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/a/pnpm-lock.yaml#78",
-      ],
-      "purl": "pkg:npm/img/sharp-libvips-linux-x64@1.2.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/a/pnpm-lock.yaml#84",
-      ],
-      "purl": "pkg:npm/img/sharp-libvips-linuxmusl-arm64@1.2.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/a/pnpm-lock.yaml#90",
-      ],
-      "purl": "pkg:npm/img/sharp-libvips-linuxmusl-x64@1.2.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/a/pnpm-lock.yaml#103",
-      ],
-      "purl": "pkg:npm/img/sharp-linux-arm@0.34.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/a/pnpm-lock.yaml#96",
-      ],
-      "purl": "pkg:npm/img/sharp-linux-arm64@0.34.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/a/pnpm-lock.yaml#110",
-      ],
-      "purl": "pkg:npm/img/sharp-linux-ppc64@0.34.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/a/pnpm-lock.yaml#117",
-      ],
-      "purl": "pkg:npm/img/sharp-linux-s390x@0.34.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/a/pnpm-lock.yaml#124",
-      ],
-      "purl": "pkg:npm/img/sharp-linux-x64@0.34.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/a/pnpm-lock.yaml#131",
-      ],
-      "purl": "pkg:npm/img/sharp-linuxmusl-arm64@0.34.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/a/pnpm-lock.yaml#138",
-      ],
-      "purl": "pkg:npm/img/sharp-linuxmusl-x64@0.34.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/a/pnpm-lock.yaml#145",
-      ],
-      "purl": "pkg:npm/img/sharp-wasm32@0.34.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/a/pnpm-lock.yaml#151",
-      ],
-      "purl": "pkg:npm/img/sharp-win32-arm64@0.34.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/a/pnpm-lock.yaml#158",
-      ],
-      "purl": "pkg:npm/img/sharp-win32-ia32@0.34.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/a/pnpm-lock.yaml#165",
-      ],
-      "purl": "pkg:npm/img/sharp-win32-x64@0.34.4",
-    },
-    {
-      "evidence": [
         "<fixtures>/monorepo/b/pnpm-lock.yaml#359",
         "<fixtures>/monorepo/a/pnpm-lock.yaml#249",
       ],
@@ -836,60 +1034,6 @@ exports[`monorepo 1`] = `
         "<fixtures>/monorepo/a/pnpm-lock.yaml#255",
       ],
       "purl": "pkg:npm/next@15.5.6",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/a/pnpm-lock.yaml#172",
-      ],
-      "purl": "pkg:npm/next/env@15.5.6",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/a/pnpm-lock.yaml#176",
-      ],
-      "purl": "pkg:npm/next/swc-darwin-arm64@15.5.6",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/a/pnpm-lock.yaml#183",
-      ],
-      "purl": "pkg:npm/next/swc-darwin-x64@15.5.6",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/a/pnpm-lock.yaml#190",
-      ],
-      "purl": "pkg:npm/next/swc-linux-arm64-gnu@15.5.6",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/a/pnpm-lock.yaml#197",
-      ],
-      "purl": "pkg:npm/next/swc-linux-arm64-musl@15.5.6",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/a/pnpm-lock.yaml#204",
-      ],
-      "purl": "pkg:npm/next/swc-linux-x64-gnu@15.5.6",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/a/pnpm-lock.yaml#211",
-      ],
-      "purl": "pkg:npm/next/swc-linux-x64-musl@15.5.6",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/a/pnpm-lock.yaml#218",
-      ],
-      "purl": "pkg:npm/next/swc-win32-arm64-msvc@15.5.6",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/a/pnpm-lock.yaml#225",
-      ],
-      "purl": "pkg:npm/next/swc-win32-x64-msvc@15.5.6",
     },
     {
       "evidence": [
@@ -942,138 +1086,6 @@ exports[`monorepo 1`] = `
     },
     {
       "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#201",
-      ],
-      "purl": "pkg:npm/rollup/rollup-android-arm-eabi@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#207",
-      ],
-      "purl": "pkg:npm/rollup/rollup-android-arm64@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#213",
-      ],
-      "purl": "pkg:npm/rollup/rollup-darwin-arm64@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#219",
-      ],
-      "purl": "pkg:npm/rollup/rollup-darwin-x64@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#225",
-      ],
-      "purl": "pkg:npm/rollup/rollup-freebsd-arm64@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#231",
-      ],
-      "purl": "pkg:npm/rollup/rollup-freebsd-x64@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#237",
-      ],
-      "purl": "pkg:npm/rollup/rollup-linux-arm-gnueabihf@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#243",
-      ],
-      "purl": "pkg:npm/rollup/rollup-linux-arm-musleabihf@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#249",
-      ],
-      "purl": "pkg:npm/rollup/rollup-linux-arm64-gnu@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#255",
-      ],
-      "purl": "pkg:npm/rollup/rollup-linux-arm64-musl@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#261",
-      ],
-      "purl": "pkg:npm/rollup/rollup-linux-loong64-gnu@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#267",
-      ],
-      "purl": "pkg:npm/rollup/rollup-linux-ppc64-gnu@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#273",
-      ],
-      "purl": "pkg:npm/rollup/rollup-linux-riscv64-gnu@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#279",
-      ],
-      "purl": "pkg:npm/rollup/rollup-linux-riscv64-musl@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#285",
-      ],
-      "purl": "pkg:npm/rollup/rollup-linux-s390x-gnu@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#291",
-      ],
-      "purl": "pkg:npm/rollup/rollup-linux-x64-gnu@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#297",
-      ],
-      "purl": "pkg:npm/rollup/rollup-linux-x64-musl@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#303",
-      ],
-      "purl": "pkg:npm/rollup/rollup-openharmony-arm64@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#309",
-      ],
-      "purl": "pkg:npm/rollup/rollup-win32-arm64-msvc@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#315",
-      ],
-      "purl": "pkg:npm/rollup/rollup-win32-ia32-msvc@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#321",
-      ],
-      "purl": "pkg:npm/rollup/rollup-win32-x64-gnu@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#327",
-      ],
-      "purl": "pkg:npm/rollup/rollup-win32-x64-msvc@4.52.5",
-    },
-    {
-      "evidence": [
         "<fixtures>/monorepo/a/pnpm-lock.yaml#297",
       ],
       "purl": "pkg:npm/scheduler@0.27.0",
@@ -1105,12 +1117,6 @@ exports[`monorepo 1`] = `
     },
     {
       "evidence": [
-        "<fixtures>/monorepo/a/pnpm-lock.yaml#232",
-      ],
-      "purl": "pkg:npm/swc/helpers@0.5.15",
-    },
-    {
-      "evidence": [
         "<fixtures>/monorepo/b/pnpm-lock.yaml#390",
       ],
       "purl": "pkg:npm/tinyglobby@0.2.15",
@@ -1120,12 +1126,6 @@ exports[`monorepo 1`] = `
         "<fixtures>/monorepo/a/pnpm-lock.yaml#331",
       ],
       "purl": "pkg:npm/tslib@2.8.1",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#333",
-      ],
-      "purl": "pkg:npm/types/estree@1.0.8",
     },
     {
       "evidence": [
@@ -1151,32 +1151,32 @@ exports[`monorepo 1`] = `
     {
       "from": "pkg:npm/esbuild@0.25.11",
       "to": [
-        "pkg:npm/esbuild/aix-ppc64@0.25.11",
-        "pkg:npm/esbuild/android-arm@0.25.11",
-        "pkg:npm/esbuild/android-arm64@0.25.11",
-        "pkg:npm/esbuild/android-x64@0.25.11",
-        "pkg:npm/esbuild/darwin-arm64@0.25.11",
-        "pkg:npm/esbuild/darwin-x64@0.25.11",
-        "pkg:npm/esbuild/freebsd-arm64@0.25.11",
-        "pkg:npm/esbuild/freebsd-x64@0.25.11",
-        "pkg:npm/esbuild/linux-arm@0.25.11",
-        "pkg:npm/esbuild/linux-arm64@0.25.11",
-        "pkg:npm/esbuild/linux-ia32@0.25.11",
-        "pkg:npm/esbuild/linux-loong64@0.25.11",
-        "pkg:npm/esbuild/linux-mips64el@0.25.11",
-        "pkg:npm/esbuild/linux-ppc64@0.25.11",
-        "pkg:npm/esbuild/linux-riscv64@0.25.11",
-        "pkg:npm/esbuild/linux-s390x@0.25.11",
-        "pkg:npm/esbuild/linux-x64@0.25.11",
-        "pkg:npm/esbuild/netbsd-arm64@0.25.11",
-        "pkg:npm/esbuild/netbsd-x64@0.25.11",
-        "pkg:npm/esbuild/openbsd-arm64@0.25.11",
-        "pkg:npm/esbuild/openbsd-x64@0.25.11",
-        "pkg:npm/esbuild/openharmony-arm64@0.25.11",
-        "pkg:npm/esbuild/sunos-x64@0.25.11",
-        "pkg:npm/esbuild/win32-arm64@0.25.11",
-        "pkg:npm/esbuild/win32-ia32@0.25.11",
-        "pkg:npm/esbuild/win32-x64@0.25.11",
+        "pkg:npm/%40esbuild/aix-ppc64@0.25.11",
+        "pkg:npm/%40esbuild/android-arm@0.25.11",
+        "pkg:npm/%40esbuild/android-arm64@0.25.11",
+        "pkg:npm/%40esbuild/android-x64@0.25.11",
+        "pkg:npm/%40esbuild/darwin-arm64@0.25.11",
+        "pkg:npm/%40esbuild/darwin-x64@0.25.11",
+        "pkg:npm/%40esbuild/freebsd-arm64@0.25.11",
+        "pkg:npm/%40esbuild/freebsd-x64@0.25.11",
+        "pkg:npm/%40esbuild/linux-arm@0.25.11",
+        "pkg:npm/%40esbuild/linux-arm64@0.25.11",
+        "pkg:npm/%40esbuild/linux-ia32@0.25.11",
+        "pkg:npm/%40esbuild/linux-loong64@0.25.11",
+        "pkg:npm/%40esbuild/linux-mips64el@0.25.11",
+        "pkg:npm/%40esbuild/linux-ppc64@0.25.11",
+        "pkg:npm/%40esbuild/linux-riscv64@0.25.11",
+        "pkg:npm/%40esbuild/linux-s390x@0.25.11",
+        "pkg:npm/%40esbuild/linux-x64@0.25.11",
+        "pkg:npm/%40esbuild/netbsd-arm64@0.25.11",
+        "pkg:npm/%40esbuild/netbsd-x64@0.25.11",
+        "pkg:npm/%40esbuild/openbsd-arm64@0.25.11",
+        "pkg:npm/%40esbuild/openbsd-x64@0.25.11",
+        "pkg:npm/%40esbuild/openharmony-arm64@0.25.11",
+        "pkg:npm/%40esbuild/sunos-x64@0.25.11",
+        "pkg:npm/%40esbuild/win32-arm64@0.25.11",
+        "pkg:npm/%40esbuild/win32-ia32@0.25.11",
+        "pkg:npm/%40esbuild/win32-x64@0.25.11",
       ],
     },
     {
@@ -1196,29 +1196,29 @@ exports[`monorepo 1`] = `
     {
       "from": "pkg:npm/rollup@4.52.5",
       "to": [
-        "pkg:npm/types/estree@1.0.8",
-        "pkg:npm/rollup/rollup-android-arm-eabi@4.52.5",
-        "pkg:npm/rollup/rollup-android-arm64@4.52.5",
-        "pkg:npm/rollup/rollup-darwin-arm64@4.52.5",
-        "pkg:npm/rollup/rollup-darwin-x64@4.52.5",
-        "pkg:npm/rollup/rollup-freebsd-arm64@4.52.5",
-        "pkg:npm/rollup/rollup-freebsd-x64@4.52.5",
-        "pkg:npm/rollup/rollup-linux-arm-gnueabihf@4.52.5",
-        "pkg:npm/rollup/rollup-linux-arm-musleabihf@4.52.5",
-        "pkg:npm/rollup/rollup-linux-arm64-gnu@4.52.5",
-        "pkg:npm/rollup/rollup-linux-arm64-musl@4.52.5",
-        "pkg:npm/rollup/rollup-linux-loong64-gnu@4.52.5",
-        "pkg:npm/rollup/rollup-linux-ppc64-gnu@4.52.5",
-        "pkg:npm/rollup/rollup-linux-riscv64-gnu@4.52.5",
-        "pkg:npm/rollup/rollup-linux-riscv64-musl@4.52.5",
-        "pkg:npm/rollup/rollup-linux-s390x-gnu@4.52.5",
-        "pkg:npm/rollup/rollup-linux-x64-gnu@4.52.5",
-        "pkg:npm/rollup/rollup-linux-x64-musl@4.52.5",
-        "pkg:npm/rollup/rollup-openharmony-arm64@4.52.5",
-        "pkg:npm/rollup/rollup-win32-arm64-msvc@4.52.5",
-        "pkg:npm/rollup/rollup-win32-ia32-msvc@4.52.5",
-        "pkg:npm/rollup/rollup-win32-x64-gnu@4.52.5",
-        "pkg:npm/rollup/rollup-win32-x64-msvc@4.52.5",
+        "pkg:npm/%40types/estree@1.0.8",
+        "pkg:npm/%40rollup/rollup-android-arm-eabi@4.52.5",
+        "pkg:npm/%40rollup/rollup-android-arm64@4.52.5",
+        "pkg:npm/%40rollup/rollup-darwin-arm64@4.52.5",
+        "pkg:npm/%40rollup/rollup-darwin-x64@4.52.5",
+        "pkg:npm/%40rollup/rollup-freebsd-arm64@4.52.5",
+        "pkg:npm/%40rollup/rollup-freebsd-x64@4.52.5",
+        "pkg:npm/%40rollup/rollup-linux-arm-gnueabihf@4.52.5",
+        "pkg:npm/%40rollup/rollup-linux-arm-musleabihf@4.52.5",
+        "pkg:npm/%40rollup/rollup-linux-arm64-gnu@4.52.5",
+        "pkg:npm/%40rollup/rollup-linux-arm64-musl@4.52.5",
+        "pkg:npm/%40rollup/rollup-linux-loong64-gnu@4.52.5",
+        "pkg:npm/%40rollup/rollup-linux-ppc64-gnu@4.52.5",
+        "pkg:npm/%40rollup/rollup-linux-riscv64-gnu@4.52.5",
+        "pkg:npm/%40rollup/rollup-linux-riscv64-musl@4.52.5",
+        "pkg:npm/%40rollup/rollup-linux-s390x-gnu@4.52.5",
+        "pkg:npm/%40rollup/rollup-linux-x64-gnu@4.52.5",
+        "pkg:npm/%40rollup/rollup-linux-x64-musl@4.52.5",
+        "pkg:npm/%40rollup/rollup-openharmony-arm64@4.52.5",
+        "pkg:npm/%40rollup/rollup-win32-arm64-msvc@4.52.5",
+        "pkg:npm/%40rollup/rollup-win32-ia32-msvc@4.52.5",
+        "pkg:npm/%40rollup/rollup-win32-x64-gnu@4.52.5",
+        "pkg:npm/%40rollup/rollup-win32-x64-msvc@4.52.5",
         "pkg:npm/fsevents@2.3.3",
       ],
     },
@@ -1249,7 +1249,7 @@ exports[`monorepo 1`] = `
       ],
     },
     {
-      "from": "pkg:npm/swc/helpers@0.5.15",
+      "from": "pkg:npm/%40swc/helpers@0.5.15",
       "to": [
         "pkg:npm/tslib@2.8.1",
       ],
@@ -1277,116 +1277,116 @@ exports[`monorepo 1`] = `
       ],
     },
     {
-      "from": "pkg:npm/img/sharp-darwin-arm64@0.34.4",
+      "from": "pkg:npm/%40img/sharp-darwin-arm64@0.34.4",
       "to": [
-        "pkg:npm/img/sharp-libvips-darwin-arm64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-darwin-arm64@1.2.3",
       ],
     },
     {
-      "from": "pkg:npm/img/sharp-darwin-x64@0.34.4",
+      "from": "pkg:npm/%40img/sharp-darwin-x64@0.34.4",
       "to": [
-        "pkg:npm/img/sharp-libvips-darwin-x64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-darwin-x64@1.2.3",
       ],
     },
     {
-      "from": "pkg:npm/img/sharp-linux-arm@0.34.4",
+      "from": "pkg:npm/%40img/sharp-linux-arm@0.34.4",
       "to": [
-        "pkg:npm/img/sharp-libvips-linux-arm@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.3",
       ],
     },
     {
-      "from": "pkg:npm/img/sharp-linux-arm64@0.34.4",
+      "from": "pkg:npm/%40img/sharp-linux-arm64@0.34.4",
       "to": [
-        "pkg:npm/img/sharp-libvips-linux-arm64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linux-arm64@1.2.3",
       ],
     },
     {
-      "from": "pkg:npm/img/sharp-linux-ppc64@0.34.4",
+      "from": "pkg:npm/%40img/sharp-linux-ppc64@0.34.4",
       "to": [
-        "pkg:npm/img/sharp-libvips-linux-ppc64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linux-ppc64@1.2.3",
       ],
     },
     {
-      "from": "pkg:npm/img/sharp-linux-s390x@0.34.4",
+      "from": "pkg:npm/%40img/sharp-linux-s390x@0.34.4",
       "to": [
-        "pkg:npm/img/sharp-libvips-linux-s390x@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linux-s390x@1.2.3",
       ],
     },
     {
-      "from": "pkg:npm/img/sharp-linux-x64@0.34.4",
+      "from": "pkg:npm/%40img/sharp-linux-x64@0.34.4",
       "to": [
-        "pkg:npm/img/sharp-libvips-linux-x64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linux-x64@1.2.3",
       ],
     },
     {
-      "from": "pkg:npm/img/sharp-linuxmusl-arm64@0.34.4",
+      "from": "pkg:npm/%40img/sharp-linuxmusl-arm64@0.34.4",
       "to": [
-        "pkg:npm/img/sharp-libvips-linuxmusl-arm64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linuxmusl-arm64@1.2.3",
       ],
     },
     {
-      "from": "pkg:npm/img/sharp-linuxmusl-x64@0.34.4",
+      "from": "pkg:npm/%40img/sharp-linuxmusl-x64@0.34.4",
       "to": [
-        "pkg:npm/img/sharp-libvips-linuxmusl-x64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linuxmusl-x64@1.2.3",
       ],
     },
     {
-      "from": "pkg:npm/emnapi/runtime@1.6.0",
+      "from": "pkg:npm/%40emnapi/runtime@1.6.0",
       "to": [
         "pkg:npm/tslib@2.8.1",
       ],
     },
     {
-      "from": "pkg:npm/img/sharp-wasm32@0.34.4",
+      "from": "pkg:npm/%40img/sharp-wasm32@0.34.4",
       "to": [
-        "pkg:npm/emnapi/runtime@1.6.0",
+        "pkg:npm/%40emnapi/runtime@1.6.0",
       ],
     },
     {
       "from": "pkg:npm/sharp@0.34.4",
       "to": [
-        "pkg:npm/img/colour@1.0.0",
+        "pkg:npm/%40img/colour@1.0.0",
         "pkg:npm/detect-libc@2.1.2",
         "pkg:npm/semver@7.7.3",
-        "pkg:npm/img/sharp-libvips-darwin-arm64@1.2.3",
-        "pkg:npm/img/sharp-libvips-darwin-x64@1.2.3",
-        "pkg:npm/img/sharp-libvips-linux-arm@1.2.3",
-        "pkg:npm/img/sharp-libvips-linux-arm64@1.2.3",
-        "pkg:npm/img/sharp-libvips-linux-ppc64@1.2.3",
-        "pkg:npm/img/sharp-libvips-linux-s390x@1.2.3",
-        "pkg:npm/img/sharp-libvips-linux-x64@1.2.3",
-        "pkg:npm/img/sharp-libvips-linuxmusl-arm64@1.2.3",
-        "pkg:npm/img/sharp-libvips-linuxmusl-x64@1.2.3",
-        "pkg:npm/img/sharp-win32-arm64@0.34.4",
-        "pkg:npm/img/sharp-win32-ia32@0.34.4",
-        "pkg:npm/img/sharp-win32-x64@0.34.4",
-        "pkg:npm/img/sharp-darwin-arm64@0.34.4",
-        "pkg:npm/img/sharp-darwin-x64@0.34.4",
-        "pkg:npm/img/sharp-linux-arm@0.34.4",
-        "pkg:npm/img/sharp-linux-arm64@0.34.4",
-        "pkg:npm/img/sharp-linux-ppc64@0.34.4",
-        "pkg:npm/img/sharp-linux-s390x@0.34.4",
-        "pkg:npm/img/sharp-linux-x64@0.34.4",
-        "pkg:npm/img/sharp-linuxmusl-arm64@0.34.4",
-        "pkg:npm/img/sharp-linuxmusl-x64@0.34.4",
-        "pkg:npm/img/sharp-wasm32@0.34.4",
+        "pkg:npm/%40img/sharp-libvips-darwin-arm64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-darwin-x64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linux-arm64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linux-ppc64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linux-s390x@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linux-x64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linuxmusl-arm64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linuxmusl-x64@1.2.3",
+        "pkg:npm/%40img/sharp-win32-arm64@0.34.4",
+        "pkg:npm/%40img/sharp-win32-ia32@0.34.4",
+        "pkg:npm/%40img/sharp-win32-x64@0.34.4",
+        "pkg:npm/%40img/sharp-darwin-arm64@0.34.4",
+        "pkg:npm/%40img/sharp-darwin-x64@0.34.4",
+        "pkg:npm/%40img/sharp-linux-arm@0.34.4",
+        "pkg:npm/%40img/sharp-linux-arm64@0.34.4",
+        "pkg:npm/%40img/sharp-linux-ppc64@0.34.4",
+        "pkg:npm/%40img/sharp-linux-s390x@0.34.4",
+        "pkg:npm/%40img/sharp-linux-x64@0.34.4",
+        "pkg:npm/%40img/sharp-linuxmusl-arm64@0.34.4",
+        "pkg:npm/%40img/sharp-linuxmusl-x64@0.34.4",
+        "pkg:npm/%40img/sharp-wasm32@0.34.4",
       ],
     },
     {
       "from": "pkg:npm/next@15.5.6",
       "to": [
-        "pkg:npm/next/env@15.5.6",
+        "pkg:npm/%40next/env@15.5.6",
         "pkg:npm/caniuse-lite@1.0.30001751",
         "pkg:npm/react@19.2.0",
-        "pkg:npm/next/swc-darwin-arm64@15.5.6",
-        "pkg:npm/next/swc-darwin-x64@15.5.6",
-        "pkg:npm/next/swc-linux-arm64-gnu@15.5.6",
-        "pkg:npm/next/swc-linux-arm64-musl@15.5.6",
-        "pkg:npm/next/swc-linux-x64-gnu@15.5.6",
-        "pkg:npm/next/swc-linux-x64-musl@15.5.6",
-        "pkg:npm/next/swc-win32-arm64-msvc@15.5.6",
-        "pkg:npm/next/swc-win32-x64-msvc@15.5.6",
-        "pkg:npm/swc/helpers@0.5.15",
+        "pkg:npm/%40next/swc-darwin-arm64@15.5.6",
+        "pkg:npm/%40next/swc-darwin-x64@15.5.6",
+        "pkg:npm/%40next/swc-linux-arm64-gnu@15.5.6",
+        "pkg:npm/%40next/swc-linux-arm64-musl@15.5.6",
+        "pkg:npm/%40next/swc-linux-x64-gnu@15.5.6",
+        "pkg:npm/%40next/swc-linux-x64-musl@15.5.6",
+        "pkg:npm/%40next/swc-win32-arm64-msvc@15.5.6",
+        "pkg:npm/%40next/swc-win32-x64-msvc@15.5.6",
+        "pkg:npm/%40swc/helpers@0.5.15",
         "pkg:npm/postcss@8.4.31",
         "pkg:npm/react-dom@19.2.0",
         "pkg:npm/styled-jsx@5.1.6",
@@ -1459,6 +1459,504 @@ exports[`workspace 1`] = `
   "packages": [
     {
       "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#58",
+      ],
+      "purl": "pkg:npm/%40emnapi/runtime@1.6.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#62",
+      ],
+      "purl": "pkg:npm/%40esbuild/aix-ppc64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#76",
+      ],
+      "purl": "pkg:npm/%40esbuild/android-arm@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#69",
+      ],
+      "purl": "pkg:npm/%40esbuild/android-arm64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#83",
+      ],
+      "purl": "pkg:npm/%40esbuild/android-x64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#90",
+      ],
+      "purl": "pkg:npm/%40esbuild/darwin-arm64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#97",
+      ],
+      "purl": "pkg:npm/%40esbuild/darwin-x64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#104",
+      ],
+      "purl": "pkg:npm/%40esbuild/freebsd-arm64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#111",
+      ],
+      "purl": "pkg:npm/%40esbuild/freebsd-x64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#125",
+      ],
+      "purl": "pkg:npm/%40esbuild/linux-arm@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#118",
+      ],
+      "purl": "pkg:npm/%40esbuild/linux-arm64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#132",
+      ],
+      "purl": "pkg:npm/%40esbuild/linux-ia32@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#139",
+      ],
+      "purl": "pkg:npm/%40esbuild/linux-loong64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#146",
+      ],
+      "purl": "pkg:npm/%40esbuild/linux-mips64el@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#153",
+      ],
+      "purl": "pkg:npm/%40esbuild/linux-ppc64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#160",
+      ],
+      "purl": "pkg:npm/%40esbuild/linux-riscv64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#167",
+      ],
+      "purl": "pkg:npm/%40esbuild/linux-s390x@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#174",
+      ],
+      "purl": "pkg:npm/%40esbuild/linux-x64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#181",
+      ],
+      "purl": "pkg:npm/%40esbuild/netbsd-arm64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#188",
+      ],
+      "purl": "pkg:npm/%40esbuild/netbsd-x64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#195",
+      ],
+      "purl": "pkg:npm/%40esbuild/openbsd-arm64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#202",
+      ],
+      "purl": "pkg:npm/%40esbuild/openbsd-x64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#209",
+      ],
+      "purl": "pkg:npm/%40esbuild/openharmony-arm64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#216",
+      ],
+      "purl": "pkg:npm/%40esbuild/sunos-x64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#223",
+      ],
+      "purl": "pkg:npm/%40esbuild/win32-arm64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#230",
+      ],
+      "purl": "pkg:npm/%40esbuild/win32-ia32@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#237",
+      ],
+      "purl": "pkg:npm/%40esbuild/win32-x64@0.25.11",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#244",
+      ],
+      "purl": "pkg:npm/%40img/colour@1.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#249",
+      ],
+      "purl": "pkg:npm/%40img/sharp-darwin-arm64@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#256",
+      ],
+      "purl": "pkg:npm/%40img/sharp-darwin-x64@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#263",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-darwin-arm64@1.2.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#269",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-darwin-x64@1.2.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#281",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#275",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm64@1.2.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#287",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linux-ppc64@1.2.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#293",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linux-s390x@1.2.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#299",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linux-x64@1.2.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#305",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linuxmusl-arm64@1.2.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#311",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linuxmusl-x64@1.2.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#324",
+      ],
+      "purl": "pkg:npm/%40img/sharp-linux-arm@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#317",
+      ],
+      "purl": "pkg:npm/%40img/sharp-linux-arm64@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#331",
+      ],
+      "purl": "pkg:npm/%40img/sharp-linux-ppc64@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#338",
+      ],
+      "purl": "pkg:npm/%40img/sharp-linux-s390x@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#345",
+      ],
+      "purl": "pkg:npm/%40img/sharp-linux-x64@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#352",
+      ],
+      "purl": "pkg:npm/%40img/sharp-linuxmusl-arm64@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#359",
+      ],
+      "purl": "pkg:npm/%40img/sharp-linuxmusl-x64@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#366",
+      ],
+      "purl": "pkg:npm/%40img/sharp-wasm32@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#372",
+      ],
+      "purl": "pkg:npm/%40img/sharp-win32-arm64@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#379",
+      ],
+      "purl": "pkg:npm/%40img/sharp-win32-ia32@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#386",
+      ],
+      "purl": "pkg:npm/%40img/sharp-win32-x64@0.34.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#393",
+      ],
+      "purl": "pkg:npm/%40next/env@15.5.6",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#397",
+      ],
+      "purl": "pkg:npm/%40next/swc-darwin-arm64@15.5.6",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#404",
+      ],
+      "purl": "pkg:npm/%40next/swc-darwin-x64@15.5.6",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#411",
+      ],
+      "purl": "pkg:npm/%40next/swc-linux-arm64-gnu@15.5.6",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#418",
+      ],
+      "purl": "pkg:npm/%40next/swc-linux-arm64-musl@15.5.6",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#425",
+      ],
+      "purl": "pkg:npm/%40next/swc-linux-x64-gnu@15.5.6",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#432",
+      ],
+      "purl": "pkg:npm/%40next/swc-linux-x64-musl@15.5.6",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#439",
+      ],
+      "purl": "pkg:npm/%40next/swc-win32-arm64-msvc@15.5.6",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#446",
+      ],
+      "purl": "pkg:npm/%40next/swc-win32-x64-msvc@15.5.6",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#453",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-android-arm-eabi@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#459",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-android-arm64@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#465",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-darwin-arm64@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#471",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-darwin-x64@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#477",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-freebsd-arm64@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#483",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-freebsd-x64@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#489",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-linux-arm-gnueabihf@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#495",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-linux-arm-musleabihf@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#501",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-linux-arm64-gnu@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#507",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-linux-arm64-musl@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#513",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-linux-loong64-gnu@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#519",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-linux-ppc64-gnu@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#525",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-linux-riscv64-gnu@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#531",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-linux-riscv64-musl@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#537",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-linux-s390x-gnu@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#543",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-linux-x64-gnu@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#549",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-linux-x64-musl@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#555",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-openharmony-arm64@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#561",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-win32-arm64-msvc@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#567",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-win32-ia32-msvc@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#573",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-win32-x64-gnu@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#579",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-win32-x64-msvc@4.52.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#585",
+      ],
+      "purl": "pkg:npm/%40swc/helpers@0.5.15",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/pnpm-lock.yaml#589",
+      ],
+      "purl": "pkg:npm/%40types/estree@1.0.8",
+    },
+    {
+      "evidence": [
         "<fixtures>/workspace/pnpm-lock.yaml#593",
       ],
       "purl": "pkg:npm/caniuse-lite@1.0.30001751",
@@ -1477,171 +1975,9 @@ exports[`workspace 1`] = `
     },
     {
       "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#58",
-      ],
-      "purl": "pkg:npm/emnapi/runtime@1.6.0",
-    },
-    {
-      "evidence": [
         "<fixtures>/workspace/pnpm-lock.yaml#606",
       ],
       "purl": "pkg:npm/esbuild@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#62",
-      ],
-      "purl": "pkg:npm/esbuild/aix-ppc64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#76",
-      ],
-      "purl": "pkg:npm/esbuild/android-arm@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#69",
-      ],
-      "purl": "pkg:npm/esbuild/android-arm64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#83",
-      ],
-      "purl": "pkg:npm/esbuild/android-x64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#90",
-      ],
-      "purl": "pkg:npm/esbuild/darwin-arm64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#97",
-      ],
-      "purl": "pkg:npm/esbuild/darwin-x64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#104",
-      ],
-      "purl": "pkg:npm/esbuild/freebsd-arm64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#111",
-      ],
-      "purl": "pkg:npm/esbuild/freebsd-x64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#125",
-      ],
-      "purl": "pkg:npm/esbuild/linux-arm@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#118",
-      ],
-      "purl": "pkg:npm/esbuild/linux-arm64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#132",
-      ],
-      "purl": "pkg:npm/esbuild/linux-ia32@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#139",
-      ],
-      "purl": "pkg:npm/esbuild/linux-loong64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#146",
-      ],
-      "purl": "pkg:npm/esbuild/linux-mips64el@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#153",
-      ],
-      "purl": "pkg:npm/esbuild/linux-ppc64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#160",
-      ],
-      "purl": "pkg:npm/esbuild/linux-riscv64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#167",
-      ],
-      "purl": "pkg:npm/esbuild/linux-s390x@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#174",
-      ],
-      "purl": "pkg:npm/esbuild/linux-x64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#181",
-      ],
-      "purl": "pkg:npm/esbuild/netbsd-arm64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#188",
-      ],
-      "purl": "pkg:npm/esbuild/netbsd-x64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#195",
-      ],
-      "purl": "pkg:npm/esbuild/openbsd-arm64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#202",
-      ],
-      "purl": "pkg:npm/esbuild/openbsd-x64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#209",
-      ],
-      "purl": "pkg:npm/esbuild/openharmony-arm64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#216",
-      ],
-      "purl": "pkg:npm/esbuild/sunos-x64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#223",
-      ],
-      "purl": "pkg:npm/esbuild/win32-arm64@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#230",
-      ],
-      "purl": "pkg:npm/esbuild/win32-ia32@0.25.11",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#237",
-      ],
-      "purl": "pkg:npm/esbuild/win32-x64@0.25.11",
     },
     {
       "evidence": [
@@ -1657,144 +1993,6 @@ exports[`workspace 1`] = `
     },
     {
       "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#244",
-      ],
-      "purl": "pkg:npm/img/colour@1.0.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#249",
-      ],
-      "purl": "pkg:npm/img/sharp-darwin-arm64@0.34.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#256",
-      ],
-      "purl": "pkg:npm/img/sharp-darwin-x64@0.34.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#263",
-      ],
-      "purl": "pkg:npm/img/sharp-libvips-darwin-arm64@1.2.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#269",
-      ],
-      "purl": "pkg:npm/img/sharp-libvips-darwin-x64@1.2.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#281",
-      ],
-      "purl": "pkg:npm/img/sharp-libvips-linux-arm@1.2.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#275",
-      ],
-      "purl": "pkg:npm/img/sharp-libvips-linux-arm64@1.2.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#287",
-      ],
-      "purl": "pkg:npm/img/sharp-libvips-linux-ppc64@1.2.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#293",
-      ],
-      "purl": "pkg:npm/img/sharp-libvips-linux-s390x@1.2.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#299",
-      ],
-      "purl": "pkg:npm/img/sharp-libvips-linux-x64@1.2.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#305",
-      ],
-      "purl": "pkg:npm/img/sharp-libvips-linuxmusl-arm64@1.2.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#311",
-      ],
-      "purl": "pkg:npm/img/sharp-libvips-linuxmusl-x64@1.2.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#324",
-      ],
-      "purl": "pkg:npm/img/sharp-linux-arm@0.34.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#317",
-      ],
-      "purl": "pkg:npm/img/sharp-linux-arm64@0.34.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#331",
-      ],
-      "purl": "pkg:npm/img/sharp-linux-ppc64@0.34.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#338",
-      ],
-      "purl": "pkg:npm/img/sharp-linux-s390x@0.34.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#345",
-      ],
-      "purl": "pkg:npm/img/sharp-linux-x64@0.34.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#352",
-      ],
-      "purl": "pkg:npm/img/sharp-linuxmusl-arm64@0.34.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#359",
-      ],
-      "purl": "pkg:npm/img/sharp-linuxmusl-x64@0.34.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#366",
-      ],
-      "purl": "pkg:npm/img/sharp-wasm32@0.34.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#372",
-      ],
-      "purl": "pkg:npm/img/sharp-win32-arm64@0.34.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#379",
-      ],
-      "purl": "pkg:npm/img/sharp-win32-ia32@0.34.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#386",
-      ],
-      "purl": "pkg:npm/img/sharp-win32-x64@0.34.4",
-    },
-    {
-      "evidence": [
         "<fixtures>/workspace/pnpm-lock.yaml#628",
       ],
       "purl": "pkg:npm/nanoid@3.3.11",
@@ -1804,60 +2002,6 @@ exports[`workspace 1`] = `
         "<fixtures>/workspace/pnpm-lock.yaml#634",
       ],
       "purl": "pkg:npm/next@15.5.6",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#393",
-      ],
-      "purl": "pkg:npm/next/env@15.5.6",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#397",
-      ],
-      "purl": "pkg:npm/next/swc-darwin-arm64@15.5.6",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#404",
-      ],
-      "purl": "pkg:npm/next/swc-darwin-x64@15.5.6",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#411",
-      ],
-      "purl": "pkg:npm/next/swc-linux-arm64-gnu@15.5.6",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#418",
-      ],
-      "purl": "pkg:npm/next/swc-linux-arm64-musl@15.5.6",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#425",
-      ],
-      "purl": "pkg:npm/next/swc-linux-x64-gnu@15.5.6",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#432",
-      ],
-      "purl": "pkg:npm/next/swc-linux-x64-musl@15.5.6",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#439",
-      ],
-      "purl": "pkg:npm/next/swc-win32-arm64-msvc@15.5.6",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#446",
-      ],
-      "purl": "pkg:npm/next/swc-win32-x64-msvc@15.5.6",
     },
     {
       "evidence": [
@@ -1903,138 +2047,6 @@ exports[`workspace 1`] = `
     },
     {
       "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#453",
-      ],
-      "purl": "pkg:npm/rollup/rollup-android-arm-eabi@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#459",
-      ],
-      "purl": "pkg:npm/rollup/rollup-android-arm64@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#465",
-      ],
-      "purl": "pkg:npm/rollup/rollup-darwin-arm64@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#471",
-      ],
-      "purl": "pkg:npm/rollup/rollup-darwin-x64@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#477",
-      ],
-      "purl": "pkg:npm/rollup/rollup-freebsd-arm64@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#483",
-      ],
-      "purl": "pkg:npm/rollup/rollup-freebsd-x64@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#489",
-      ],
-      "purl": "pkg:npm/rollup/rollup-linux-arm-gnueabihf@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#495",
-      ],
-      "purl": "pkg:npm/rollup/rollup-linux-arm-musleabihf@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#501",
-      ],
-      "purl": "pkg:npm/rollup/rollup-linux-arm64-gnu@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#507",
-      ],
-      "purl": "pkg:npm/rollup/rollup-linux-arm64-musl@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#513",
-      ],
-      "purl": "pkg:npm/rollup/rollup-linux-loong64-gnu@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#519",
-      ],
-      "purl": "pkg:npm/rollup/rollup-linux-ppc64-gnu@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#525",
-      ],
-      "purl": "pkg:npm/rollup/rollup-linux-riscv64-gnu@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#531",
-      ],
-      "purl": "pkg:npm/rollup/rollup-linux-riscv64-musl@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#537",
-      ],
-      "purl": "pkg:npm/rollup/rollup-linux-s390x-gnu@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#543",
-      ],
-      "purl": "pkg:npm/rollup/rollup-linux-x64-gnu@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#549",
-      ],
-      "purl": "pkg:npm/rollup/rollup-linux-x64-musl@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#555",
-      ],
-      "purl": "pkg:npm/rollup/rollup-openharmony-arm64@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#561",
-      ],
-      "purl": "pkg:npm/rollup/rollup-win32-arm64-msvc@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#567",
-      ],
-      "purl": "pkg:npm/rollup/rollup-win32-ia32-msvc@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#573",
-      ],
-      "purl": "pkg:npm/rollup/rollup-win32-x64-gnu@4.52.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#579",
-      ],
-      "purl": "pkg:npm/rollup/rollup-win32-x64-msvc@4.52.5",
-    },
-    {
-      "evidence": [
         "<fixtures>/workspace/pnpm-lock.yaml#692",
       ],
       "purl": "pkg:npm/scheduler@0.27.0",
@@ -2062,12 +2074,6 @@ exports[`workspace 1`] = `
         "<fixtures>/workspace/pnpm-lock.yaml#712",
       ],
       "purl": "pkg:npm/styled-jsx@5.1.6",
-    },
-    {
-      "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#585",
-      ],
-      "purl": "pkg:npm/swc/helpers@0.5.15",
     },
     {
       "evidence": [
@@ -2125,12 +2131,6 @@ exports[`workspace 1`] = `
     },
     {
       "evidence": [
-        "<fixtures>/workspace/pnpm-lock.yaml#589",
-      ],
-      "purl": "pkg:npm/types/estree@1.0.8",
-    },
-    {
-      "evidence": [
         "<fixtures>/workspace/pnpm-lock.yaml#776",
       ],
       "purl": "pkg:npm/typescript@5.9.3",
@@ -2155,7 +2155,7 @@ exports[`workspace 1`] = `
       ],
     },
     {
-      "from": "pkg:npm/scatest/workspace@0.0.0",
+      "from": "pkg:npm/%40scatest/workspace@0.0.0",
       "to": [
         "pkg:npm/typescript@5.9.3",
         "pkg:npm/turbo@2.5.8",
@@ -2171,32 +2171,32 @@ exports[`workspace 1`] = `
     {
       "from": "pkg:npm/esbuild@0.25.11",
       "to": [
-        "pkg:npm/esbuild/aix-ppc64@0.25.11",
-        "pkg:npm/esbuild/android-arm@0.25.11",
-        "pkg:npm/esbuild/android-arm64@0.25.11",
-        "pkg:npm/esbuild/android-x64@0.25.11",
-        "pkg:npm/esbuild/darwin-arm64@0.25.11",
-        "pkg:npm/esbuild/darwin-x64@0.25.11",
-        "pkg:npm/esbuild/freebsd-arm64@0.25.11",
-        "pkg:npm/esbuild/freebsd-x64@0.25.11",
-        "pkg:npm/esbuild/linux-arm@0.25.11",
-        "pkg:npm/esbuild/linux-arm64@0.25.11",
-        "pkg:npm/esbuild/linux-ia32@0.25.11",
-        "pkg:npm/esbuild/linux-loong64@0.25.11",
-        "pkg:npm/esbuild/linux-mips64el@0.25.11",
-        "pkg:npm/esbuild/linux-ppc64@0.25.11",
-        "pkg:npm/esbuild/linux-riscv64@0.25.11",
-        "pkg:npm/esbuild/linux-s390x@0.25.11",
-        "pkg:npm/esbuild/linux-x64@0.25.11",
-        "pkg:npm/esbuild/netbsd-arm64@0.25.11",
-        "pkg:npm/esbuild/netbsd-x64@0.25.11",
-        "pkg:npm/esbuild/openbsd-arm64@0.25.11",
-        "pkg:npm/esbuild/openbsd-x64@0.25.11",
-        "pkg:npm/esbuild/openharmony-arm64@0.25.11",
-        "pkg:npm/esbuild/sunos-x64@0.25.11",
-        "pkg:npm/esbuild/win32-arm64@0.25.11",
-        "pkg:npm/esbuild/win32-ia32@0.25.11",
-        "pkg:npm/esbuild/win32-x64@0.25.11",
+        "pkg:npm/%40esbuild/aix-ppc64@0.25.11",
+        "pkg:npm/%40esbuild/android-arm@0.25.11",
+        "pkg:npm/%40esbuild/android-arm64@0.25.11",
+        "pkg:npm/%40esbuild/android-x64@0.25.11",
+        "pkg:npm/%40esbuild/darwin-arm64@0.25.11",
+        "pkg:npm/%40esbuild/darwin-x64@0.25.11",
+        "pkg:npm/%40esbuild/freebsd-arm64@0.25.11",
+        "pkg:npm/%40esbuild/freebsd-x64@0.25.11",
+        "pkg:npm/%40esbuild/linux-arm@0.25.11",
+        "pkg:npm/%40esbuild/linux-arm64@0.25.11",
+        "pkg:npm/%40esbuild/linux-ia32@0.25.11",
+        "pkg:npm/%40esbuild/linux-loong64@0.25.11",
+        "pkg:npm/%40esbuild/linux-mips64el@0.25.11",
+        "pkg:npm/%40esbuild/linux-ppc64@0.25.11",
+        "pkg:npm/%40esbuild/linux-riscv64@0.25.11",
+        "pkg:npm/%40esbuild/linux-s390x@0.25.11",
+        "pkg:npm/%40esbuild/linux-x64@0.25.11",
+        "pkg:npm/%40esbuild/netbsd-arm64@0.25.11",
+        "pkg:npm/%40esbuild/netbsd-x64@0.25.11",
+        "pkg:npm/%40esbuild/openbsd-arm64@0.25.11",
+        "pkg:npm/%40esbuild/openbsd-x64@0.25.11",
+        "pkg:npm/%40esbuild/openharmony-arm64@0.25.11",
+        "pkg:npm/%40esbuild/sunos-x64@0.25.11",
+        "pkg:npm/%40esbuild/win32-arm64@0.25.11",
+        "pkg:npm/%40esbuild/win32-ia32@0.25.11",
+        "pkg:npm/%40esbuild/win32-x64@0.25.11",
       ],
     },
     {
@@ -2216,29 +2216,29 @@ exports[`workspace 1`] = `
     {
       "from": "pkg:npm/rollup@4.52.5",
       "to": [
-        "pkg:npm/types/estree@1.0.8",
-        "pkg:npm/rollup/rollup-android-arm-eabi@4.52.5",
-        "pkg:npm/rollup/rollup-android-arm64@4.52.5",
-        "pkg:npm/rollup/rollup-darwin-arm64@4.52.5",
-        "pkg:npm/rollup/rollup-darwin-x64@4.52.5",
-        "pkg:npm/rollup/rollup-freebsd-arm64@4.52.5",
-        "pkg:npm/rollup/rollup-freebsd-x64@4.52.5",
-        "pkg:npm/rollup/rollup-linux-arm-gnueabihf@4.52.5",
-        "pkg:npm/rollup/rollup-linux-arm-musleabihf@4.52.5",
-        "pkg:npm/rollup/rollup-linux-arm64-gnu@4.52.5",
-        "pkg:npm/rollup/rollup-linux-arm64-musl@4.52.5",
-        "pkg:npm/rollup/rollup-linux-loong64-gnu@4.52.5",
-        "pkg:npm/rollup/rollup-linux-ppc64-gnu@4.52.5",
-        "pkg:npm/rollup/rollup-linux-riscv64-gnu@4.52.5",
-        "pkg:npm/rollup/rollup-linux-riscv64-musl@4.52.5",
-        "pkg:npm/rollup/rollup-linux-s390x-gnu@4.52.5",
-        "pkg:npm/rollup/rollup-linux-x64-gnu@4.52.5",
-        "pkg:npm/rollup/rollup-linux-x64-musl@4.52.5",
-        "pkg:npm/rollup/rollup-openharmony-arm64@4.52.5",
-        "pkg:npm/rollup/rollup-win32-arm64-msvc@4.52.5",
-        "pkg:npm/rollup/rollup-win32-ia32-msvc@4.52.5",
-        "pkg:npm/rollup/rollup-win32-x64-gnu@4.52.5",
-        "pkg:npm/rollup/rollup-win32-x64-msvc@4.52.5",
+        "pkg:npm/%40types/estree@1.0.8",
+        "pkg:npm/%40rollup/rollup-android-arm-eabi@4.52.5",
+        "pkg:npm/%40rollup/rollup-android-arm64@4.52.5",
+        "pkg:npm/%40rollup/rollup-darwin-arm64@4.52.5",
+        "pkg:npm/%40rollup/rollup-darwin-x64@4.52.5",
+        "pkg:npm/%40rollup/rollup-freebsd-arm64@4.52.5",
+        "pkg:npm/%40rollup/rollup-freebsd-x64@4.52.5",
+        "pkg:npm/%40rollup/rollup-linux-arm-gnueabihf@4.52.5",
+        "pkg:npm/%40rollup/rollup-linux-arm-musleabihf@4.52.5",
+        "pkg:npm/%40rollup/rollup-linux-arm64-gnu@4.52.5",
+        "pkg:npm/%40rollup/rollup-linux-arm64-musl@4.52.5",
+        "pkg:npm/%40rollup/rollup-linux-loong64-gnu@4.52.5",
+        "pkg:npm/%40rollup/rollup-linux-ppc64-gnu@4.52.5",
+        "pkg:npm/%40rollup/rollup-linux-riscv64-gnu@4.52.5",
+        "pkg:npm/%40rollup/rollup-linux-riscv64-musl@4.52.5",
+        "pkg:npm/%40rollup/rollup-linux-s390x-gnu@4.52.5",
+        "pkg:npm/%40rollup/rollup-linux-x64-gnu@4.52.5",
+        "pkg:npm/%40rollup/rollup-linux-x64-musl@4.52.5",
+        "pkg:npm/%40rollup/rollup-openharmony-arm64@4.52.5",
+        "pkg:npm/%40rollup/rollup-win32-arm64-msvc@4.52.5",
+        "pkg:npm/%40rollup/rollup-win32-ia32-msvc@4.52.5",
+        "pkg:npm/%40rollup/rollup-win32-x64-gnu@4.52.5",
+        "pkg:npm/%40rollup/rollup-win32-x64-msvc@4.52.5",
         "pkg:npm/fsevents@2.3.3",
       ],
     },
@@ -2262,7 +2262,7 @@ exports[`workspace 1`] = `
       ],
     },
     {
-      "from": "pkg:npm/scatest/docs@1.0.0",
+      "from": "pkg:npm/%40scatest/docs@1.0.0",
       "to": [
         "pkg:npm/react@19.2.0",
         "pkg:npm/react-dom@19.2.0",
@@ -2270,7 +2270,7 @@ exports[`workspace 1`] = `
       ],
     },
     {
-      "from": "pkg:npm/swc/helpers@0.5.15",
+      "from": "pkg:npm/%40swc/helpers@0.5.15",
       "to": [
         "pkg:npm/tslib@2.8.1",
       ],
@@ -2291,116 +2291,116 @@ exports[`workspace 1`] = `
       ],
     },
     {
-      "from": "pkg:npm/img/sharp-darwin-arm64@0.34.4",
+      "from": "pkg:npm/%40img/sharp-darwin-arm64@0.34.4",
       "to": [
-        "pkg:npm/img/sharp-libvips-darwin-arm64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-darwin-arm64@1.2.3",
       ],
     },
     {
-      "from": "pkg:npm/img/sharp-darwin-x64@0.34.4",
+      "from": "pkg:npm/%40img/sharp-darwin-x64@0.34.4",
       "to": [
-        "pkg:npm/img/sharp-libvips-darwin-x64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-darwin-x64@1.2.3",
       ],
     },
     {
-      "from": "pkg:npm/img/sharp-linux-arm@0.34.4",
+      "from": "pkg:npm/%40img/sharp-linux-arm@0.34.4",
       "to": [
-        "pkg:npm/img/sharp-libvips-linux-arm@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.3",
       ],
     },
     {
-      "from": "pkg:npm/img/sharp-linux-arm64@0.34.4",
+      "from": "pkg:npm/%40img/sharp-linux-arm64@0.34.4",
       "to": [
-        "pkg:npm/img/sharp-libvips-linux-arm64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linux-arm64@1.2.3",
       ],
     },
     {
-      "from": "pkg:npm/img/sharp-linux-ppc64@0.34.4",
+      "from": "pkg:npm/%40img/sharp-linux-ppc64@0.34.4",
       "to": [
-        "pkg:npm/img/sharp-libvips-linux-ppc64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linux-ppc64@1.2.3",
       ],
     },
     {
-      "from": "pkg:npm/img/sharp-linux-s390x@0.34.4",
+      "from": "pkg:npm/%40img/sharp-linux-s390x@0.34.4",
       "to": [
-        "pkg:npm/img/sharp-libvips-linux-s390x@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linux-s390x@1.2.3",
       ],
     },
     {
-      "from": "pkg:npm/img/sharp-linux-x64@0.34.4",
+      "from": "pkg:npm/%40img/sharp-linux-x64@0.34.4",
       "to": [
-        "pkg:npm/img/sharp-libvips-linux-x64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linux-x64@1.2.3",
       ],
     },
     {
-      "from": "pkg:npm/img/sharp-linuxmusl-arm64@0.34.4",
+      "from": "pkg:npm/%40img/sharp-linuxmusl-arm64@0.34.4",
       "to": [
-        "pkg:npm/img/sharp-libvips-linuxmusl-arm64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linuxmusl-arm64@1.2.3",
       ],
     },
     {
-      "from": "pkg:npm/img/sharp-linuxmusl-x64@0.34.4",
+      "from": "pkg:npm/%40img/sharp-linuxmusl-x64@0.34.4",
       "to": [
-        "pkg:npm/img/sharp-libvips-linuxmusl-x64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linuxmusl-x64@1.2.3",
       ],
     },
     {
-      "from": "pkg:npm/emnapi/runtime@1.6.0",
+      "from": "pkg:npm/%40emnapi/runtime@1.6.0",
       "to": [
         "pkg:npm/tslib@2.8.1",
       ],
     },
     {
-      "from": "pkg:npm/img/sharp-wasm32@0.34.4",
+      "from": "pkg:npm/%40img/sharp-wasm32@0.34.4",
       "to": [
-        "pkg:npm/emnapi/runtime@1.6.0",
+        "pkg:npm/%40emnapi/runtime@1.6.0",
       ],
     },
     {
       "from": "pkg:npm/sharp@0.34.4",
       "to": [
-        "pkg:npm/img/colour@1.0.0",
+        "pkg:npm/%40img/colour@1.0.0",
         "pkg:npm/detect-libc@2.1.2",
         "pkg:npm/semver@7.7.3",
-        "pkg:npm/img/sharp-libvips-darwin-arm64@1.2.3",
-        "pkg:npm/img/sharp-libvips-darwin-x64@1.2.3",
-        "pkg:npm/img/sharp-libvips-linux-arm@1.2.3",
-        "pkg:npm/img/sharp-libvips-linux-arm64@1.2.3",
-        "pkg:npm/img/sharp-libvips-linux-ppc64@1.2.3",
-        "pkg:npm/img/sharp-libvips-linux-s390x@1.2.3",
-        "pkg:npm/img/sharp-libvips-linux-x64@1.2.3",
-        "pkg:npm/img/sharp-libvips-linuxmusl-arm64@1.2.3",
-        "pkg:npm/img/sharp-libvips-linuxmusl-x64@1.2.3",
-        "pkg:npm/img/sharp-win32-arm64@0.34.4",
-        "pkg:npm/img/sharp-win32-ia32@0.34.4",
-        "pkg:npm/img/sharp-win32-x64@0.34.4",
-        "pkg:npm/img/sharp-darwin-arm64@0.34.4",
-        "pkg:npm/img/sharp-darwin-x64@0.34.4",
-        "pkg:npm/img/sharp-linux-arm@0.34.4",
-        "pkg:npm/img/sharp-linux-arm64@0.34.4",
-        "pkg:npm/img/sharp-linux-ppc64@0.34.4",
-        "pkg:npm/img/sharp-linux-s390x@0.34.4",
-        "pkg:npm/img/sharp-linux-x64@0.34.4",
-        "pkg:npm/img/sharp-linuxmusl-arm64@0.34.4",
-        "pkg:npm/img/sharp-linuxmusl-x64@0.34.4",
-        "pkg:npm/img/sharp-wasm32@0.34.4",
+        "pkg:npm/%40img/sharp-libvips-darwin-arm64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-darwin-x64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linux-arm64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linux-ppc64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linux-s390x@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linux-x64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linuxmusl-arm64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linuxmusl-x64@1.2.3",
+        "pkg:npm/%40img/sharp-win32-arm64@0.34.4",
+        "pkg:npm/%40img/sharp-win32-ia32@0.34.4",
+        "pkg:npm/%40img/sharp-win32-x64@0.34.4",
+        "pkg:npm/%40img/sharp-darwin-arm64@0.34.4",
+        "pkg:npm/%40img/sharp-darwin-x64@0.34.4",
+        "pkg:npm/%40img/sharp-linux-arm@0.34.4",
+        "pkg:npm/%40img/sharp-linux-arm64@0.34.4",
+        "pkg:npm/%40img/sharp-linux-ppc64@0.34.4",
+        "pkg:npm/%40img/sharp-linux-s390x@0.34.4",
+        "pkg:npm/%40img/sharp-linux-x64@0.34.4",
+        "pkg:npm/%40img/sharp-linuxmusl-arm64@0.34.4",
+        "pkg:npm/%40img/sharp-linuxmusl-x64@0.34.4",
+        "pkg:npm/%40img/sharp-wasm32@0.34.4",
       ],
     },
     {
       "from": "pkg:npm/next@15.5.6",
       "to": [
-        "pkg:npm/next/env@15.5.6",
+        "pkg:npm/%40next/env@15.5.6",
         "pkg:npm/caniuse-lite@1.0.30001751",
         "pkg:npm/react@19.2.0",
-        "pkg:npm/next/swc-darwin-arm64@15.5.6",
-        "pkg:npm/next/swc-darwin-x64@15.5.6",
-        "pkg:npm/next/swc-linux-arm64-gnu@15.5.6",
-        "pkg:npm/next/swc-linux-arm64-musl@15.5.6",
-        "pkg:npm/next/swc-linux-x64-gnu@15.5.6",
-        "pkg:npm/next/swc-linux-x64-musl@15.5.6",
-        "pkg:npm/next/swc-win32-arm64-msvc@15.5.6",
-        "pkg:npm/next/swc-win32-x64-msvc@15.5.6",
-        "pkg:npm/swc/helpers@0.5.15",
+        "pkg:npm/%40next/swc-darwin-arm64@15.5.6",
+        "pkg:npm/%40next/swc-darwin-x64@15.5.6",
+        "pkg:npm/%40next/swc-linux-arm64-gnu@15.5.6",
+        "pkg:npm/%40next/swc-linux-arm64-musl@15.5.6",
+        "pkg:npm/%40next/swc-linux-x64-gnu@15.5.6",
+        "pkg:npm/%40next/swc-linux-x64-musl@15.5.6",
+        "pkg:npm/%40next/swc-win32-arm64-msvc@15.5.6",
+        "pkg:npm/%40next/swc-win32-x64-msvc@15.5.6",
+        "pkg:npm/%40swc/helpers@0.5.15",
         "pkg:npm/postcss@8.4.31",
         "pkg:npm/react-dom@19.2.0",
         "pkg:npm/styled-jsx@5.1.6",
@@ -2408,7 +2408,7 @@ exports[`workspace 1`] = `
       ],
     },
     {
-      "from": "pkg:npm/scatest/www@2.0.0",
+      "from": "pkg:npm/%40scatest/www@2.0.0",
       "to": [
         "pkg:npm/react@19.2.0",
         "pkg:npm/react-dom@19.2.0",
@@ -2417,7 +2417,7 @@ exports[`workspace 1`] = `
       ],
     },
     {
-      "from": "pkg:npm/scatest/ui@1.0.7",
+      "from": "pkg:npm/%40scatest/ui@1.0.7",
       "to": [
         "pkg:npm/react@19.2.0",
       ],
@@ -2426,7 +2426,7 @@ exports[`workspace 1`] = `
   "subprojects": [
     {
       "definitionFile": "<fixtures>/workspace/package.json",
-      "purl": "pkg:npm/scatest/workspace@0.0.0",
+      "purl": "pkg:npm/%40scatest/workspace@0.0.0",
       "scopes": [
         {
           "packages": [
@@ -2439,7 +2439,7 @@ exports[`workspace 1`] = `
     },
     {
       "definitionFile": "<fixtures>/workspace/apps/docs/package.json",
-      "purl": "pkg:npm/scatest/docs@1.0.0",
+      "purl": "pkg:npm/%40scatest/docs@1.0.0",
       "scopes": [
         {
           "packages": [
@@ -2453,7 +2453,7 @@ exports[`workspace 1`] = `
     },
     {
       "definitionFile": "<fixtures>/workspace/apps/www/package.json",
-      "purl": "pkg:npm/scatest/www@2.0.0",
+      "purl": "pkg:npm/%40scatest/www@2.0.0",
       "scopes": [
         {
           "packages": [
@@ -2473,7 +2473,7 @@ exports[`workspace 1`] = `
     },
     {
       "definitionFile": "<fixtures>/workspace/packages/ui/package.json",
-      "purl": "pkg:npm/scatest/ui@1.0.7",
+      "purl": "pkg:npm/%40scatest/ui@1.0.7",
       "scopes": [
         {
           "packages": [

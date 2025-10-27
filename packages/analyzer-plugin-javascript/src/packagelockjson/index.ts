@@ -73,7 +73,7 @@ export const extractor: Extractor = filesExtractor({
                   if (depName.startsWith('@')) {
                     const parts = depName.split('/');
                     if (parts.length === 2 && parts[0] && parts[1]) {
-                      depNamespace = parts[0].substring(1);
+                      depNamespace = parts[0]; // Keep @ for proper PURL encoding
                       depPackageName = parts[1];
                     }
                   }
@@ -106,7 +106,7 @@ export const extractor: Extractor = filesExtractor({
         if (name.startsWith('@')) {
           const parts = name.split('/');
           if (parts.length === 2 && parts[0] && parts[1]) {
-            namespace = parts[0].substring(1); // Remove @ prefix
+            namespace = parts[0]; // Keep @ for proper PURL encoding
             packageName = parts[1];
           }
         }
@@ -143,7 +143,7 @@ export const extractor: Extractor = filesExtractor({
               if (name.startsWith('@')) {
                 const parts = name.split('/');
                 if (parts.length === 2 && parts[0] && parts[1]) {
-                  namespace = parts[0].substring(1); // Remove @ prefix
+                  namespace = parts[0]; // Keep @ for proper PURL encoding
                   packageName = parts[1];
                 }
               }
