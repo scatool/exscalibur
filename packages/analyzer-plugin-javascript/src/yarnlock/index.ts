@@ -93,6 +93,28 @@ export const extractor: Extractor = filesExtractor({
         return scopes;
       };
 
+      // Check if this is a workspace root
+      const isWorkspaceRoot = rootPackageInfo && rootPackageInfo.workspaces && Array.isArray(rootPackageInfo.workspaces);
+
+      // Collect all workspace package.json files by globbing the workspace patterns
+      const workspacePackageJsonPaths: string[] = [];
+      if (isWorkspaceRoot && rootPackageInfo) {
+        const workspacePatterns = rootPackageInfo.workspaces as string[];
+        for (const pattern of workspacePatterns) {
+          // Convert workspace pattern to a glob pattern for package.json
+          // e.g., "apps/*" becomes "apps/*/package.json"
+          const pkgJsonPattern = pattern.endsWith('/*')
+            ? `${pattern}/package.json`
+            : `${pattern}/package.json`;
+          const pkgJsonGlob = new Glob(pkgJsonPattern);
+          for await (const pkgPath of pkgJsonGlob.scan({ cwd: dir, absolute: true })) {
+            if (!pkgPath.includes('/node_modules/')) {
+              workspacePackageJsonPaths.push(pkgPath);
+            }
+          }
+        }
+      }
+
       // Extract root package as a subproject if it has name and version
       let rootPurl: string | undefined;
       if (rootPackageInfo && rootPackageInfo.name && rootPackageInfo.version) {
@@ -118,6 +140,41 @@ export const extractor: Extractor = filesExtractor({
           definitionFile: packageJsonPath,
           scopes: rootScopes.length > 0 ? rootScopes : undefined,
         });
+      }
+
+      // Extract workspace packages as subprojects
+      if (isWorkspaceRoot && workspacePackageJsonPaths.length > 0) {
+        for (const pkgJsonPath of workspacePackageJsonPaths) {
+          try {
+            const pkgContent = await Bun.file(pkgJsonPath).text();
+            const pkgInfo = JSON.parse(pkgContent) as PackageJson;
+
+            // Add workspace package as a subproject if it has name and version
+            if (pkgInfo.name && pkgInfo.version) {
+              let namespace: string | null = null;
+              let packageName = pkgInfo.name;
+              if (pkgInfo.name.startsWith('@')) {
+                const parts = pkgInfo.name.split('/');
+                if (parts.length === 2 && parts[0] && parts[1]) {
+                  namespace = parts[0].substring(1);
+                  packageName = parts[1];
+                }
+              }
+              const purl = new PackageURL('npm', namespace, packageName, pkgInfo.version, null, null);
+
+              // Extract scopes for this workspace package
+              const scopes = extractScopesFromPackageJson(pkgInfo, trees);
+              subprojects.push({
+                purl: purl.toString(),
+                definitionFile: pkgJsonPath,
+                scopes: scopes.length > 0 ? scopes : undefined,
+              });
+            }
+          } catch {
+            // Skip invalid package.json files
+            continue;
+          }
+        }
       }
 
       // Extract packages from the dependency tree recursively

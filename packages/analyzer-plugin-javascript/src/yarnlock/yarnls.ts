@@ -121,15 +121,29 @@ function extractNameAndVersion(nameWithVersion: string): { name: string; version
 
 /**
  * Check if a dependency is a workspace/local package.
- * In Yarn 1, workspace packages typically have version like "0.0.0" or match workspace protocol
+ * In Yarn 1, workspace packages typically have version like "0.0.0" or match workspace protocol,
+ * or they may have references to workspace packages using "*" versions that are marked as shadow.
  *
  * @param dep - The dependency to check
+ * @param workspaceNames - Optional set of known workspace package names
  * @returns True if this is a workspace package
  */
-export function isWorkspacePackage(dep: YarnLsDependency): boolean {
+export function isWorkspacePackage(dep: YarnLsDependency, workspaceNames?: Set<string>): boolean {
   // Yarn 1 workspace packages often have version "0.0.0" or start with "workspace:"
   if (!dep.version) {
     return false;
   }
-  return dep.version === '0.0.0' || dep.version.startsWith('workspace:');
+
+  // Check for explicit workspace markers
+  if (dep.version === '0.0.0' || dep.version.startsWith('workspace:')) {
+    return true;
+  }
+
+  // If we have a list of known workspace names, check against it
+  // This helps identify workspace packages that have real versions
+  if (workspaceNames && workspaceNames.has(dep.name)) {
+    return true;
+  }
+
+  return false;
 }
