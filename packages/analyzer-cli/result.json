@@ -1,0 +1,247 @@
+{
+  "packages": [
+    {
+      "purl": "pkg:npm/commander@14.0.1",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/package.json:51"
+      ]
+    },
+    {
+      "purl": "pkg:npm/listr2@9.0.5",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/package.json:52"
+      ]
+    },
+    {
+      "purl": "pkg:npm/micromatch@4.0.8",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/package.json:53"
+      ]
+    },
+    {
+      "purl": "pkg:npm/nano-spawn@2.0.0",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/package.json:54"
+      ]
+    },
+    {
+      "purl": "pkg:npm/pidtree@0.6.0",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/package.json:55"
+      ]
+    },
+    {
+      "purl": "pkg:npm/string-argv@0.3.2",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/package.json:56"
+      ]
+    },
+    {
+      "purl": "pkg:npm/yaml@2.8.1",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/package.json:57"
+      ]
+    },
+    {
+      "purl": "pkg:npm/changesets/changelog-github@0.5.1",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/package.json:60"
+      ]
+    },
+    {
+      "purl": "pkg:npm/changesets/cli@2.29.7",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/package.json:61"
+      ]
+    },
+    {
+      "purl": "pkg:npm/commitlint/cli@20.1.0",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/package.json:62"
+      ]
+    },
+    {
+      "purl": "pkg:npm/commitlint/config-conventional@20.0.0",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/package.json:63"
+      ]
+    },
+    {
+      "purl": "pkg:npm/eslint/js@9.38.0",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/package.json:64"
+      ]
+    },
+    {
+      "purl": "pkg:npm/vitest/coverage-v8@4.0.1",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/package.json:65"
+      ]
+    },
+    {
+      "purl": "pkg:npm/vitest/eslint-plugin@1.3.23",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/package.json:66"
+      ]
+    },
+    {
+      "purl": "pkg:npm/consolemock@1.1.0",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/package.json:67"
+      ]
+    },
+    {
+      "purl": "pkg:npm/cross-env@10.1.0",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/package.json:68"
+      ]
+    },
+    {
+      "purl": "pkg:npm/eslint@9.38.0",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/package.json:43"
+      ]
+    },
+    {
+      "purl": "pkg:npm/eslint-config-prettier@10.1.8",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/package.json:70"
+      ]
+    },
+    {
+      "purl": "pkg:npm/eslint-plugin-n@17.23.1",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/package.json:71"
+      ]
+    },
+    {
+      "purl": "pkg:npm/eslint-plugin-prettier@5.5.4",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/package.json:72"
+      ]
+    },
+    {
+      "purl": "pkg:npm/eslint-plugin-simple-import-sort@12.1.1",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/package.json:73"
+      ]
+    },
+    {
+      "purl": "pkg:npm/husky@9.1.7",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/package.json:74"
+      ]
+    },
+    {
+      "purl": "pkg:npm/mock-stdin@1.0.0",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/package.json:75"
+      ]
+    },
+    {
+      "purl": "pkg:npm/prettier@3.6.2",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/package.json:76"
+      ]
+    },
+    {
+      "purl": "pkg:npm/semver@7.7.3",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/package.json:77"
+      ]
+    },
+    {
+      "purl": "pkg:npm/typescript@5.9.3",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/package.json:78"
+      ]
+    },
+    {
+      "purl": "pkg:npm/vitest@4.0.1",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/package.json:44"
+      ]
+    },
+    {
+      "purl": "pkg:github/actions/checkout@v5",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/codeql.yml#21",
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/default-branch-push.yml#26",
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/dependabot.yml#21",
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/npm.yml#14",
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/pull-requests.yml#21",
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/pull-requests.yml#21",
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/pull-requests.yml#21",
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/pull-requests.yml#21",
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/pull-requests.yml#21",
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/pull-requests.yml#21",
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/pull-requests.yml#21",
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/pull-requests.yml#21",
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/tag.yml#17"
+      ]
+    },
+    {
+      "purl": "pkg:github/github/codeql-action%2Finit@v3",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/codeql.yml#22"
+      ]
+    },
+    {
+      "purl": "pkg:github/github/codeql-action%2Fanalyze@v3",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/codeql.yml#25"
+      ]
+    },
+    {
+      "purl": "pkg:github/actions/setup-node@v5",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/default-branch-push.yml#30",
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/dependabot.yml#26",
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/npm.yml#21",
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/pull-requests.yml#24",
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/pull-requests.yml#24",
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/pull-requests.yml#24",
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/pull-requests.yml#24",
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/pull-requests.yml#24",
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/pull-requests.yml#24",
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/pull-requests.yml#24",
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/pull-requests.yml#24",
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/tag.yml#18"
+      ]
+    },
+    {
+      "purl": "pkg:github/actions/cache@v4",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/default-branch-push.yml#34",
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/dependabot.yml#30",
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/npm.yml#26",
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/pull-requests.yml#28",
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/pull-requests.yml#28",
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/pull-requests.yml#28",
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/pull-requests.yml#28",
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/pull-requests.yml#28",
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/pull-requests.yml#28",
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/pull-requests.yml#28",
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/pull-requests.yml#28"
+      ]
+    },
+    {
+      "purl": "pkg:github/changesets/action@v1",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/default-branch-push.yml#40"
+      ]
+    },
+    {
+      "purl": "pkg:github/msys2/setup-msys2@v2",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/pull-requests.yml#162"
+      ]
+    },
+    {
+      "purl": "pkg:github/cygwin/cygwin-install-action@v5",
+      "evidence": [
+        "/home/lukasnehrke/Projects/analyzer-fixtures/lint-staged-lint-staged/.github/workflows/pull-requests.yml#199"
+      ]
+    }
+  ]
+}
