@@ -1,6 +1,26 @@
 import { type Extractor, filesExtractor, type AnalyzerResult } from '@scatool/analyzer-core/src/index.ts';
 import { Glob } from 'bun';
 import { PackageURL } from 'packageurl-js';
+import { dirname } from 'node:path';
+import { existsSync } from 'node:fs';
+
+async function hasLockfileInDirectory(dir: string): Promise<boolean> {
+  const lockfiles = [
+    'package-lock.json',
+    'npm-shrinkwrap.json',
+    'yarn.lock',
+    'pnpm-lock.yaml',
+    'bun.lockb',
+  ];
+
+  for (const lockfile of lockfiles) {
+    if (existsSync(`${dir}/${lockfile}`)) {
+      return true;
+    }
+  }
+
+  return false;
+}
 
 export const extractor: Extractor = filesExtractor({
   name: 'packagejson',
@@ -14,9 +34,17 @@ export const extractor: Extractor = filesExtractor({
       absolute: true,
     })) {
       // Skip node_modules
-      if (!file.includes('/node_modules/')) {
-        this.markFile(file);
+      if (file.includes('/node_modules/')) {
+        continue;
       }
+
+      // Skip if a lockfile exists in the same directory
+      const dir = dirname(file);
+      if (await hasLockfileInDirectory(dir)) {
+        continue;
+      }
+
+      this.markFile(file);
     }
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
