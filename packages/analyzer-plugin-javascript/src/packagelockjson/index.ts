@@ -32,10 +32,29 @@ export const extractor: Extractor = filesExtractor({
     const relationships: Relationship[] = [];
     // Map of purl -> Set of evidence strings (to avoid duplicates)
     const evidenceMap = new Map<string, Set<string>>();
+    // Map to detect aliases: directory name -> actual package name from lockfile
+    const aliasMap = new Map<string, string>();
 
     try {
-      // Read the lockfile content for evidence tracking
+      // Read the lockfile content for evidence tracking and alias detection
       const lockfileContent = await Bun.file(file).text();
+      const lockfileData = JSON.parse(lockfileContent);
+
+      // Build alias map from lockfile
+      // Aliases have a "name" field that differs from their directory name
+      if (lockfileData.packages && typeof lockfileData.packages === 'object') {
+        for (const [path, pkg] of Object.entries(lockfileData.packages)) {
+          if (typeof pkg === 'object' && pkg !== null && 'name' in pkg && typeof pkg.name === 'string') {
+            // Extract package name from path: "node_modules/foo" -> "foo"
+            const parts = path.split('/');
+            const dirName = parts[parts.length - 1];
+            if (dirName && dirName !== pkg.name) {
+              // This is an alias: directory name differs from actual package name
+              aliasMap.set(dirName, pkg.name);
+            }
+          }
+        }
+      }
 
       // Read package.json to get the root package info
       const packageJsonPath = join(dir, 'package.json');
@@ -136,12 +155,22 @@ export const extractor: Extractor = filesExtractor({
           if (typeof dep === 'object' && dep !== null && 'version' in dep) {
             const version = dep.version;
             if (typeof version === 'string') {
+              // Extract the actual package name from resolved URL for aliases
+              // Aliases like string-width-cjs point to the actual package's tarball
+              let actualName = name;
+              if (dep.resolved && typeof dep.resolved === 'string' && dep.resolved.includes('registry.npmjs.org')) {
+                const match = dep.resolved.match(/registry\.npmjs\.org\/(@[^/]+\/[^/]+|[^/]+)\/-\//);
+                if (match && match[1]) {
+                  actualName = match[1];
+                }
+              }
+
               // Create a proper Package URL (PURL)
               // For scoped packages (@scope/name), extract scope as namespace
               let namespace: string | null = null;
-              let packageName = name;
-              if (name.startsWith('@')) {
-                const parts = name.split('/');
+              let packageName = actualName;
+              if (actualName.startsWith('@')) {
+                const parts = actualName.split('/');
                 if (parts.length === 2 && parts[0] && parts[1]) {
                   namespace = parts[0]; // Keep @ for proper PURL encoding
                   packageName = parts[1];
@@ -188,6 +217,16 @@ export const extractor: Extractor = filesExtractor({
                 }
               } else {
                 // This is a regular dependency package
+                // Skip npm alias packages without resolved URLs
+                // These are duplicates that npm sbom also excludes
+                if (!dep.resolved && aliasMap.has(name)) {
+                  // Still process their dependencies
+                  if (dep.dependencies) {
+                    await extractPackages(dep.dependencies, parentPurl);
+                  }
+                  continue;
+                }
+
                 packagePurls.push(purlString);
 
                 // Add evidence from lockfile
