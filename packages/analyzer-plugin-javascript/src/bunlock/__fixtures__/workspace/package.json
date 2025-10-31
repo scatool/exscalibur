@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "name": "@scatest/workspace",
+  "version": "0.0.0",
+  "description": "The root of this workspace",
+  "workspaces": ["apps/*", "packages/*"],
+  "devDependencies": {
+    "turbo": "^2.4.2",
+    "typescript": "^5.7.3"
+  }
+}
