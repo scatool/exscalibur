@@ -12,17 +12,12 @@ for (const dir of fixtures) {
 
     // Normalize paths in evidence and definitionFile for consistent snapshots
     for (const pkg of result.packages) {
-      if (pkg.evidence) {
-        pkg.evidence = pkg.evidence.map((e) => e.replace(fixturesDir, '<fixtures>'));
-      }
+      pkg.evidence = pkg.evidence.map((e) => e.replace(fixturesDir, '<fixtures>'));
     }
-    if (result.subprojects) {
-      for (const subproject of result.subprojects) {
-        subproject.definitionFile = subproject.definitionFile.replace(fixturesDir, '<fixtures>');
-      }
+    for (const subproject of result.subprojects) {
+      subproject.definitionFile = subproject.definitionFile.replace(fixturesDir, '<fixtures>');
     }
 
-    result.packages.sort((a, b) => a.purl.localeCompare(b.purl));
     expect(result).toMatchSnapshot();
   });
 }

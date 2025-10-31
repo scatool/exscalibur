@@ -10,6 +10,8 @@ exports[`Dockerfile.basic 1`] = `
       "purl": "pkg:docker/alpine@3.18",
     },
   ],
+  "relationships": [],
+  "subprojects": [],
 }
 `;
 
@@ -23,6 +25,8 @@ exports[`Dockerfile.tag-and-digest 1`] = `
       "purl": "pkg:docker/ubuntu@sha256%253A3c282906f58630659f57e5fcae551eeeee54fa8ac4bfa2dc4c4f7deb6bf7e08c",
     },
   ],
+  "relationships": [],
+  "subprojects": [],
 }
 `;
 
@@ -36,6 +40,8 @@ exports[`Dockerfile.private-registry-port 1`] = `
       "purl": "pkg:docker/private/app-base@1.2.3?repository_url=registry.example.com%3A5000",
     },
   ],
+  "relationships": [],
+  "subprojects": [],
 }
 `;
 
@@ -49,6 +55,8 @@ exports[`Dockerfile.digest-only 1`] = `
       "purl": "pkg:docker/node@sha256%253Acd39fdfb3bb0a8da539fe0b7bc13cb12b49c05d169895cbf5351c340dfe42357",
     },
   ],
+  "relationships": [],
+  "subprojects": [],
 }
 `;
 
@@ -62,6 +70,8 @@ exports[`Dockerfile.arg-before-from 1`] = `
       "purl": "pkg:docker/python@3.11-slim",
     },
   ],
+  "relationships": [],
+  "subprojects": [],
 }
 `;
 
@@ -81,6 +91,8 @@ exports[`Dockerfile.multi-arg-registry-namespace 1`] = `
       "purl": "pkg:docker/library/busybox@1.36",
     },
   ],
+  "relationships": [],
+  "subprojects": [],
 }
 `;
 
@@ -94,6 +106,8 @@ exports[`Dockerfile.multistage-internal-base 1`] = `
       "purl": "pkg:docker/alpine@latest",
     },
   ],
+  "relationships": [],
+  "subprojects": [],
 }
 `;
 
@@ -107,6 +121,8 @@ exports[`Dockerfile.platform-variant 1`] = `
       "purl": "pkg:docker/alpine@3.18",
     },
   ],
+  "relationships": [],
+  "subprojects": [],
 }
 `;
 
@@ -120,6 +136,8 @@ exports[`Dockerfile.ghcr 1`] = `
       "purl": "pkg:docker/actions/runner@2.319.1?repository_url=ghcr.io",
     },
   ],
+  "relationships": [],
+  "subprojects": [],
 }
 `;
 
@@ -133,6 +151,8 @@ exports[`Dockerfile.mcr-deep-path 1`] = `
       "purl": "pkg:docker/dotnet/sdk@8.0?repository_url=mcr.microsoft.com",
     },
   ],
+  "relationships": [],
+  "subprojects": [],
 }
 `;
 
@@ -146,11 +166,15 @@ exports[`Dockerfile.whitespace-and-comments 1`] = `
       "purl": "pkg:docker/alpine@3.18",
     },
   ],
+  "relationships": [],
+  "subprojects": [],
 }
 `;
 
 exports[`Dockerfile.scratch 1`] = `
 {
   "packages": [],
+  "relationships": [],
+  "subprojects": [],
 }
 `;

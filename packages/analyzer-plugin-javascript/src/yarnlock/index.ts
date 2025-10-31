@@ -138,7 +138,7 @@ export const extractor: Extractor = filesExtractor({
         subprojects.push({
           purl: rootPurl,
           definitionFile: packageJsonPath,
-          scopes: rootScopes.length > 0 ? rootScopes : undefined,
+          scopes: rootScopes,
         });
       }
 
@@ -167,7 +167,7 @@ export const extractor: Extractor = filesExtractor({
               subprojects.push({
                 purl: purl.toString(),
                 definitionFile: pkgJsonPath,
-                scopes: scopes.length > 0 ? scopes : undefined,
+                scopes,
               });
             }
           } catch {
@@ -260,25 +260,16 @@ export const extractor: Extractor = filesExtractor({
     // Deduplicate packagePurls before creating package objects
     const uniquePurls = [...new Set(packagePurls)];
 
-    const result: AnalyzerResult = {
+    return {
       packages: uniquePurls.map((purl) => {
-        const pkg: { purl: string; evidence?: string[] } = { purl };
         const evidenceSet = evidenceMap.get(purl);
-        if (evidenceSet && evidenceSet.size > 0) {
-          pkg.evidence = Array.from(evidenceSet);
-        }
-        return pkg;
+        return {
+          purl,
+          evidence: evidenceSet && evidenceSet.size > 0 ? Array.from(evidenceSet) : [],
+        };
       }),
+      subprojects,
+      relationships,
     };
-
-    if (subprojects.length > 0) {
-      result.subprojects = subprojects;
-    }
-
-    if (relationships.length > 0) {
-      result.relationships = relationships;
-    }
-
-    return result;
   },
 });

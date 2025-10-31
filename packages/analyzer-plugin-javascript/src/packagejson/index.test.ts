@@ -16,13 +16,8 @@ test('package.json extractor should extract package URLs from package.json', asy
 
   // Normalize paths in evidence for consistent snapshots
   for (const pkg of result.packages) {
-    if (pkg.evidence) {
-      pkg.evidence = pkg.evidence.map((e) => e.replace(fixturesDir, '<fixtures>'));
-    }
+    pkg.evidence = pkg.evidence.map((e) => e.replace(fixturesDir, '<fixtures>'));
   }
-
-  // Sort packages for consistent snapshot comparison
-  result.packages.sort((a, b) => a.purl.localeCompare(b.purl));
 
   // Snapshot test
   expect(result).toMatchSnapshot();

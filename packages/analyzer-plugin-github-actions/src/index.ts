@@ -55,13 +55,12 @@ export async function extractWorkflow(content: string, filePath?: string): Promi
   }
 
   return {
-    packages: packages.map((pkg) => {
-      const result: { purl: string; evidence?: string[] } = { purl: pkg.purl };
-      if (filePath && pkg.lineNumber) {
-        result.evidence = [`${filePath}#${pkg.lineNumber}`];
-      }
-      return result;
-    }),
+    packages: packages.map((pkg) => ({
+      purl: pkg.purl,
+      evidence: filePath && pkg.lineNumber ? [`${filePath}#${pkg.lineNumber}`] : [],
+    })),
+    subprojects: [],
+    relationships: [],
   };
 }
 

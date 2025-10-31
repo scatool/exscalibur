@@ -324,15 +324,15 @@ exports[`basic 1`] = `
       ],
     },
     {
-      "from": "pkg:npm/%40img/sharp-linux-arm64@0.34.4",
-      "to": [
-        "pkg:npm/%40img/sharp-libvips-linux-arm64@1.2.3",
-      ],
-    },
-    {
       "from": "pkg:npm/%40img/sharp-linux-arm@0.34.4",
       "to": [
         "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/%40img/sharp-linux-arm64@0.34.4",
+      "to": [
+        "pkg:npm/%40img/sharp-libvips-linux-arm64@1.2.3",
       ],
     },
     {
@@ -381,12 +381,6 @@ exports[`basic 1`] = `
       "from": "pkg:npm/next@15.5.6",
       "to": [
         "pkg:npm/%40next/env@15.5.6",
-        "pkg:npm/%40swc/helpers@0.5.15",
-        "pkg:npm/caniuse-lite@1.0.30001751",
-        "pkg:npm/postcss@8.4.31",
-        "pkg:npm/react@19.2.0",
-        "pkg:npm/react-dom@19.2.0",
-        "pkg:npm/styled-jsx@5.1.6",
         "pkg:npm/%40next/swc-darwin-arm64@15.5.6",
         "pkg:npm/%40next/swc-darwin-x64@15.5.6",
         "pkg:npm/%40next/swc-linux-arm64-gnu@15.5.6",
@@ -395,7 +389,22 @@ exports[`basic 1`] = `
         "pkg:npm/%40next/swc-linux-x64-musl@15.5.6",
         "pkg:npm/%40next/swc-win32-arm64-msvc@15.5.6",
         "pkg:npm/%40next/swc-win32-x64-msvc@15.5.6",
+        "pkg:npm/%40swc/helpers@0.5.15",
+        "pkg:npm/caniuse-lite@1.0.30001751",
+        "pkg:npm/postcss@8.4.31",
+        "pkg:npm/react-dom@19.2.0",
+        "pkg:npm/react@19.2.0",
         "pkg:npm/sharp@0.34.4",
+        "pkg:npm/styled-jsx@5.1.6",
+      ],
+    },
+    {
+      "from": "pkg:npm/npm-basic@1.0.0",
+      "to": [
+        "pkg:npm/next@15.5.6",
+        "pkg:npm/react-dom@19.2.0",
+        "pkg:npm/react@19.2.0",
+        "pkg:npm/typescript@5.9.3",
       ],
     },
     {
@@ -417,21 +426,19 @@ exports[`basic 1`] = `
       "from": "pkg:npm/sharp@0.34.4",
       "to": [
         "pkg:npm/%40img/colour@1.0.0",
-        "pkg:npm/detect-libc@2.1.2",
-        "pkg:npm/semver@7.7.3",
         "pkg:npm/%40img/sharp-darwin-arm64@0.34.4",
         "pkg:npm/%40img/sharp-darwin-x64@0.34.4",
         "pkg:npm/%40img/sharp-libvips-darwin-arm64@1.2.3",
         "pkg:npm/%40img/sharp-libvips-darwin-x64@1.2.3",
-        "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.3",
         "pkg:npm/%40img/sharp-libvips-linux-arm64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.3",
         "pkg:npm/%40img/sharp-libvips-linux-ppc64@1.2.3",
         "pkg:npm/%40img/sharp-libvips-linux-s390x@1.2.3",
         "pkg:npm/%40img/sharp-libvips-linux-x64@1.2.3",
         "pkg:npm/%40img/sharp-libvips-linuxmusl-arm64@1.2.3",
         "pkg:npm/%40img/sharp-libvips-linuxmusl-x64@1.2.3",
-        "pkg:npm/%40img/sharp-linux-arm@0.34.4",
         "pkg:npm/%40img/sharp-linux-arm64@0.34.4",
+        "pkg:npm/%40img/sharp-linux-arm@0.34.4",
         "pkg:npm/%40img/sharp-linux-ppc64@0.34.4",
         "pkg:npm/%40img/sharp-linux-s390x@0.34.4",
         "pkg:npm/%40img/sharp-linux-x64@0.34.4",
@@ -441,6 +448,8 @@ exports[`basic 1`] = `
         "pkg:npm/%40img/sharp-win32-arm64@0.34.4",
         "pkg:npm/%40img/sharp-win32-ia32@0.34.4",
         "pkg:npm/%40img/sharp-win32-x64@0.34.4",
+        "pkg:npm/detect-libc@2.1.2",
+        "pkg:npm/semver@7.7.3",
       ],
     },
     {
@@ -448,15 +457,6 @@ exports[`basic 1`] = `
       "to": [
         "pkg:npm/client-only@0.0.1",
         "pkg:npm/react@19.2.0",
-      ],
-    },
-    {
-      "from": "pkg:npm/npm-basic@1.0.0",
-      "to": [
-        "pkg:npm/next@15.5.6",
-        "pkg:npm/react@19.2.0",
-        "pkg:npm/react-dom@19.2.0",
-        "pkg:npm/typescript@5.9.3",
       ],
     },
   ],
@@ -468,8 +468,8 @@ exports[`basic 1`] = `
         {
           "packages": [
             "pkg:npm/next@15.5.6",
-            "pkg:npm/react@19.2.0",
             "pkg:npm/react-dom@19.2.0",
+            "pkg:npm/react@19.2.0",
           ],
           "scope": "dependencies",
         },
@@ -1024,8 +1024,8 @@ exports[`monorepo 1`] = `
     },
     {
       "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#359",
         "<fixtures>/monorepo/a/pnpm-lock.yaml#249",
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#359",
       ],
       "purl": "pkg:npm/nanoid@3.3.11",
     },
@@ -1037,8 +1037,8 @@ exports[`monorepo 1`] = `
     },
     {
       "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#365",
         "<fixtures>/monorepo/a/pnpm-lock.yaml#277",
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#365",
       ],
       "purl": "pkg:npm/picocolors@1.1.1",
     },
@@ -1104,8 +1104,8 @@ exports[`monorepo 1`] = `
     },
     {
       "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#385",
         "<fixtures>/monorepo/a/pnpm-lock.yaml#312",
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#385",
       ],
       "purl": "pkg:npm/source-map-js@1.2.1",
     },
@@ -1129,8 +1129,8 @@ exports[`monorepo 1`] = `
     },
     {
       "evidence": [
-        "<fixtures>/monorepo/b/pnpm-lock.yaml#395",
         "<fixtures>/monorepo/a/pnpm-lock.yaml#335",
+        "<fixtures>/monorepo/b/pnpm-lock.yaml#395",
       ],
       "purl": "pkg:npm/typescript@5.9.3",
     },
@@ -1142,112 +1142,6 @@ exports[`monorepo 1`] = `
     },
   ],
   "relationships": [
-    {
-      "from": "pkg:npm/utils@0.0.0",
-      "to": [
-        "pkg:npm/prettier@3.6.2",
-      ],
-    },
-    {
-      "from": "pkg:npm/esbuild@0.25.11",
-      "to": [
-        "pkg:npm/%40esbuild/aix-ppc64@0.25.11",
-        "pkg:npm/%40esbuild/android-arm@0.25.11",
-        "pkg:npm/%40esbuild/android-arm64@0.25.11",
-        "pkg:npm/%40esbuild/android-x64@0.25.11",
-        "pkg:npm/%40esbuild/darwin-arm64@0.25.11",
-        "pkg:npm/%40esbuild/darwin-x64@0.25.11",
-        "pkg:npm/%40esbuild/freebsd-arm64@0.25.11",
-        "pkg:npm/%40esbuild/freebsd-x64@0.25.11",
-        "pkg:npm/%40esbuild/linux-arm@0.25.11",
-        "pkg:npm/%40esbuild/linux-arm64@0.25.11",
-        "pkg:npm/%40esbuild/linux-ia32@0.25.11",
-        "pkg:npm/%40esbuild/linux-loong64@0.25.11",
-        "pkg:npm/%40esbuild/linux-mips64el@0.25.11",
-        "pkg:npm/%40esbuild/linux-ppc64@0.25.11",
-        "pkg:npm/%40esbuild/linux-riscv64@0.25.11",
-        "pkg:npm/%40esbuild/linux-s390x@0.25.11",
-        "pkg:npm/%40esbuild/linux-x64@0.25.11",
-        "pkg:npm/%40esbuild/netbsd-arm64@0.25.11",
-        "pkg:npm/%40esbuild/netbsd-x64@0.25.11",
-        "pkg:npm/%40esbuild/openbsd-arm64@0.25.11",
-        "pkg:npm/%40esbuild/openbsd-x64@0.25.11",
-        "pkg:npm/%40esbuild/openharmony-arm64@0.25.11",
-        "pkg:npm/%40esbuild/sunos-x64@0.25.11",
-        "pkg:npm/%40esbuild/win32-arm64@0.25.11",
-        "pkg:npm/%40esbuild/win32-ia32@0.25.11",
-        "pkg:npm/%40esbuild/win32-x64@0.25.11",
-      ],
-    },
-    {
-      "from": "pkg:npm/fdir@6.5.0",
-      "to": [
-        "pkg:npm/picomatch@4.0.3",
-      ],
-    },
-    {
-      "from": "pkg:npm/postcss@8.5.6",
-      "to": [
-        "pkg:npm/nanoid@3.3.11",
-        "pkg:npm/picocolors@1.1.1",
-        "pkg:npm/source-map-js@1.2.1",
-      ],
-    },
-    {
-      "from": "pkg:npm/rollup@4.52.5",
-      "to": [
-        "pkg:npm/%40types/estree@1.0.8",
-        "pkg:npm/%40rollup/rollup-android-arm-eabi@4.52.5",
-        "pkg:npm/%40rollup/rollup-android-arm64@4.52.5",
-        "pkg:npm/%40rollup/rollup-darwin-arm64@4.52.5",
-        "pkg:npm/%40rollup/rollup-darwin-x64@4.52.5",
-        "pkg:npm/%40rollup/rollup-freebsd-arm64@4.52.5",
-        "pkg:npm/%40rollup/rollup-freebsd-x64@4.52.5",
-        "pkg:npm/%40rollup/rollup-linux-arm-gnueabihf@4.52.5",
-        "pkg:npm/%40rollup/rollup-linux-arm-musleabihf@4.52.5",
-        "pkg:npm/%40rollup/rollup-linux-arm64-gnu@4.52.5",
-        "pkg:npm/%40rollup/rollup-linux-arm64-musl@4.52.5",
-        "pkg:npm/%40rollup/rollup-linux-loong64-gnu@4.52.5",
-        "pkg:npm/%40rollup/rollup-linux-ppc64-gnu@4.52.5",
-        "pkg:npm/%40rollup/rollup-linux-riscv64-gnu@4.52.5",
-        "pkg:npm/%40rollup/rollup-linux-riscv64-musl@4.52.5",
-        "pkg:npm/%40rollup/rollup-linux-s390x-gnu@4.52.5",
-        "pkg:npm/%40rollup/rollup-linux-x64-gnu@4.52.5",
-        "pkg:npm/%40rollup/rollup-linux-x64-musl@4.52.5",
-        "pkg:npm/%40rollup/rollup-openharmony-arm64@4.52.5",
-        "pkg:npm/%40rollup/rollup-win32-arm64-msvc@4.52.5",
-        "pkg:npm/%40rollup/rollup-win32-ia32-msvc@4.52.5",
-        "pkg:npm/%40rollup/rollup-win32-x64-gnu@4.52.5",
-        "pkg:npm/%40rollup/rollup-win32-x64-msvc@4.52.5",
-        "pkg:npm/fsevents@2.3.3",
-      ],
-    },
-    {
-      "from": "pkg:npm/tinyglobby@0.2.15",
-      "to": [
-        "pkg:npm/fdir@6.5.0",
-        "pkg:npm/picomatch@4.0.3",
-      ],
-    },
-    {
-      "from": "pkg:npm/vite@6.4.1",
-      "to": [
-        "pkg:npm/esbuild@0.25.11",
-        "pkg:npm/fdir@6.5.0",
-        "pkg:npm/picomatch@4.0.3",
-        "pkg:npm/postcss@8.5.6",
-        "pkg:npm/rollup@4.52.5",
-        "pkg:npm/tinyglobby@0.2.15",
-        "pkg:npm/fsevents@2.3.3",
-      ],
-    },
-    {
-      "from": "pkg:npm/b@1.5.2",
-      "to": [
-        "pkg:npm/vite@6.4.1",
-        "pkg:npm/typescript@5.9.3",
-      ],
-    },
     {
       "from": "pkg:npm/%40emnapi/runtime@1.6.0",
       "to": [
@@ -1267,15 +1161,15 @@ exports[`monorepo 1`] = `
       ],
     },
     {
-      "from": "pkg:npm/%40img/sharp-linux-arm64@0.34.4",
-      "to": [
-        "pkg:npm/%40img/sharp-libvips-linux-arm64@1.2.3",
-      ],
-    },
-    {
       "from": "pkg:npm/%40img/sharp-linux-arm@0.34.4",
       "to": [
         "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/%40img/sharp-linux-arm64@0.34.4",
+      "to": [
+        "pkg:npm/%40img/sharp-libvips-linux-arm64@1.2.3",
       ],
     },
     {
@@ -1321,15 +1215,60 @@ exports[`monorepo 1`] = `
       ],
     },
     {
+      "from": "pkg:npm/a@1.5.2",
+      "to": [
+        "pkg:npm/next@15.5.6",
+        "pkg:npm/typescript@5.9.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/b@1.5.2",
+      "to": [
+        "pkg:npm/typescript@5.9.3",
+        "pkg:npm/vite@6.4.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/esbuild@0.25.11",
+      "to": [
+        "pkg:npm/%40esbuild/aix-ppc64@0.25.11",
+        "pkg:npm/%40esbuild/android-arm64@0.25.11",
+        "pkg:npm/%40esbuild/android-arm@0.25.11",
+        "pkg:npm/%40esbuild/android-x64@0.25.11",
+        "pkg:npm/%40esbuild/darwin-arm64@0.25.11",
+        "pkg:npm/%40esbuild/darwin-x64@0.25.11",
+        "pkg:npm/%40esbuild/freebsd-arm64@0.25.11",
+        "pkg:npm/%40esbuild/freebsd-x64@0.25.11",
+        "pkg:npm/%40esbuild/linux-arm64@0.25.11",
+        "pkg:npm/%40esbuild/linux-arm@0.25.11",
+        "pkg:npm/%40esbuild/linux-ia32@0.25.11",
+        "pkg:npm/%40esbuild/linux-loong64@0.25.11",
+        "pkg:npm/%40esbuild/linux-mips64el@0.25.11",
+        "pkg:npm/%40esbuild/linux-ppc64@0.25.11",
+        "pkg:npm/%40esbuild/linux-riscv64@0.25.11",
+        "pkg:npm/%40esbuild/linux-s390x@0.25.11",
+        "pkg:npm/%40esbuild/linux-x64@0.25.11",
+        "pkg:npm/%40esbuild/netbsd-arm64@0.25.11",
+        "pkg:npm/%40esbuild/netbsd-x64@0.25.11",
+        "pkg:npm/%40esbuild/openbsd-arm64@0.25.11",
+        "pkg:npm/%40esbuild/openbsd-x64@0.25.11",
+        "pkg:npm/%40esbuild/openharmony-arm64@0.25.11",
+        "pkg:npm/%40esbuild/sunos-x64@0.25.11",
+        "pkg:npm/%40esbuild/win32-arm64@0.25.11",
+        "pkg:npm/%40esbuild/win32-ia32@0.25.11",
+        "pkg:npm/%40esbuild/win32-x64@0.25.11",
+      ],
+    },
+    {
+      "from": "pkg:npm/fdir@6.5.0",
+      "to": [
+        "pkg:npm/picomatch@4.0.3",
+      ],
+    },
+    {
       "from": "pkg:npm/next@15.5.6",
       "to": [
         "pkg:npm/%40next/env@15.5.6",
-        "pkg:npm/%40swc/helpers@0.5.15",
-        "pkg:npm/caniuse-lite@1.0.30001751",
-        "pkg:npm/postcss@8.4.31",
-        "pkg:npm/react@19.2.0",
-        "pkg:npm/react-dom@19.2.0",
-        "pkg:npm/styled-jsx@5.1.6",
         "pkg:npm/%40next/swc-darwin-arm64@15.5.6",
         "pkg:npm/%40next/swc-darwin-x64@15.5.6",
         "pkg:npm/%40next/swc-linux-arm64-gnu@15.5.6",
@@ -1338,11 +1277,25 @@ exports[`monorepo 1`] = `
         "pkg:npm/%40next/swc-linux-x64-musl@15.5.6",
         "pkg:npm/%40next/swc-win32-arm64-msvc@15.5.6",
         "pkg:npm/%40next/swc-win32-x64-msvc@15.5.6",
+        "pkg:npm/%40swc/helpers@0.5.15",
+        "pkg:npm/caniuse-lite@1.0.30001751",
+        "pkg:npm/postcss@8.4.31",
+        "pkg:npm/react-dom@19.2.0",
+        "pkg:npm/react@19.2.0",
         "pkg:npm/sharp@0.34.4",
+        "pkg:npm/styled-jsx@5.1.6",
       ],
     },
     {
       "from": "pkg:npm/postcss@8.4.31",
+      "to": [
+        "pkg:npm/nanoid@3.3.11",
+        "pkg:npm/picocolors@1.1.1",
+        "pkg:npm/source-map-js@1.2.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/postcss@8.5.6",
       "to": [
         "pkg:npm/nanoid@3.3.11",
         "pkg:npm/picocolors@1.1.1",
@@ -1357,24 +1310,51 @@ exports[`monorepo 1`] = `
       ],
     },
     {
+      "from": "pkg:npm/rollup@4.52.5",
+      "to": [
+        "pkg:npm/%40rollup/rollup-android-arm-eabi@4.52.5",
+        "pkg:npm/%40rollup/rollup-android-arm64@4.52.5",
+        "pkg:npm/%40rollup/rollup-darwin-arm64@4.52.5",
+        "pkg:npm/%40rollup/rollup-darwin-x64@4.52.5",
+        "pkg:npm/%40rollup/rollup-freebsd-arm64@4.52.5",
+        "pkg:npm/%40rollup/rollup-freebsd-x64@4.52.5",
+        "pkg:npm/%40rollup/rollup-linux-arm-gnueabihf@4.52.5",
+        "pkg:npm/%40rollup/rollup-linux-arm-musleabihf@4.52.5",
+        "pkg:npm/%40rollup/rollup-linux-arm64-gnu@4.52.5",
+        "pkg:npm/%40rollup/rollup-linux-arm64-musl@4.52.5",
+        "pkg:npm/%40rollup/rollup-linux-loong64-gnu@4.52.5",
+        "pkg:npm/%40rollup/rollup-linux-ppc64-gnu@4.52.5",
+        "pkg:npm/%40rollup/rollup-linux-riscv64-gnu@4.52.5",
+        "pkg:npm/%40rollup/rollup-linux-riscv64-musl@4.52.5",
+        "pkg:npm/%40rollup/rollup-linux-s390x-gnu@4.52.5",
+        "pkg:npm/%40rollup/rollup-linux-x64-gnu@4.52.5",
+        "pkg:npm/%40rollup/rollup-linux-x64-musl@4.52.5",
+        "pkg:npm/%40rollup/rollup-openharmony-arm64@4.52.5",
+        "pkg:npm/%40rollup/rollup-win32-arm64-msvc@4.52.5",
+        "pkg:npm/%40rollup/rollup-win32-ia32-msvc@4.52.5",
+        "pkg:npm/%40rollup/rollup-win32-x64-gnu@4.52.5",
+        "pkg:npm/%40rollup/rollup-win32-x64-msvc@4.52.5",
+        "pkg:npm/%40types/estree@1.0.8",
+        "pkg:npm/fsevents@2.3.3",
+      ],
+    },
+    {
       "from": "pkg:npm/sharp@0.34.4",
       "to": [
         "pkg:npm/%40img/colour@1.0.0",
-        "pkg:npm/detect-libc@2.1.2",
-        "pkg:npm/semver@7.7.3",
         "pkg:npm/%40img/sharp-darwin-arm64@0.34.4",
         "pkg:npm/%40img/sharp-darwin-x64@0.34.4",
         "pkg:npm/%40img/sharp-libvips-darwin-arm64@1.2.3",
         "pkg:npm/%40img/sharp-libvips-darwin-x64@1.2.3",
-        "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.3",
         "pkg:npm/%40img/sharp-libvips-linux-arm64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.3",
         "pkg:npm/%40img/sharp-libvips-linux-ppc64@1.2.3",
         "pkg:npm/%40img/sharp-libvips-linux-s390x@1.2.3",
         "pkg:npm/%40img/sharp-libvips-linux-x64@1.2.3",
         "pkg:npm/%40img/sharp-libvips-linuxmusl-arm64@1.2.3",
         "pkg:npm/%40img/sharp-libvips-linuxmusl-x64@1.2.3",
-        "pkg:npm/%40img/sharp-linux-arm@0.34.4",
         "pkg:npm/%40img/sharp-linux-arm64@0.34.4",
+        "pkg:npm/%40img/sharp-linux-arm@0.34.4",
         "pkg:npm/%40img/sharp-linux-ppc64@0.34.4",
         "pkg:npm/%40img/sharp-linux-s390x@0.34.4",
         "pkg:npm/%40img/sharp-linux-x64@0.34.4",
@@ -1384,6 +1364,8 @@ exports[`monorepo 1`] = `
         "pkg:npm/%40img/sharp-win32-arm64@0.34.4",
         "pkg:npm/%40img/sharp-win32-ia32@0.34.4",
         "pkg:npm/%40img/sharp-win32-x64@0.34.4",
+        "pkg:npm/detect-libc@2.1.2",
+        "pkg:npm/semver@7.7.3",
       ],
     },
     {
@@ -1394,21 +1376,45 @@ exports[`monorepo 1`] = `
       ],
     },
     {
-      "from": "pkg:npm/a@1.5.2",
+      "from": "pkg:npm/tinyglobby@0.2.15",
       "to": [
-        "pkg:npm/next@15.5.6",
-        "pkg:npm/typescript@5.9.3",
+        "pkg:npm/fdir@6.5.0",
+        "pkg:npm/picomatch@4.0.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/utils@0.0.0",
+      "to": [
+        "pkg:npm/prettier@3.6.2",
+      ],
+    },
+    {
+      "from": "pkg:npm/vite@6.4.1",
+      "to": [
+        "pkg:npm/esbuild@0.25.11",
+        "pkg:npm/fdir@6.5.0",
+        "pkg:npm/fsevents@2.3.3",
+        "pkg:npm/picomatch@4.0.3",
+        "pkg:npm/postcss@8.5.6",
+        "pkg:npm/rollup@4.52.5",
+        "pkg:npm/tinyglobby@0.2.15",
       ],
     },
   ],
   "subprojects": [
     {
-      "definitionFile": "<fixtures>/monorepo/package.json",
-      "purl": "pkg:npm/utils@0.0.0",
+      "definitionFile": "<fixtures>/monorepo/a/package.json",
+      "purl": "pkg:npm/a@1.5.2",
       "scopes": [
         {
           "packages": [
-            "pkg:npm/prettier@3.6.2",
+            "pkg:npm/next@15.5.6",
+          ],
+          "scope": "dependencies",
+        },
+        {
+          "packages": [
+            "pkg:npm/typescript@5.9.3",
           ],
           "scope": "devDependencies",
         },
@@ -1433,18 +1439,12 @@ exports[`monorepo 1`] = `
       ],
     },
     {
-      "definitionFile": "<fixtures>/monorepo/a/package.json",
-      "purl": "pkg:npm/a@1.5.2",
+      "definitionFile": "<fixtures>/monorepo/package.json",
+      "purl": "pkg:npm/utils@0.0.0",
       "scopes": [
         {
           "packages": [
-            "pkg:npm/next@15.5.6",
-          ],
-          "scope": "dependencies",
-        },
-        {
-          "packages": [
-            "pkg:npm/typescript@5.9.3",
+            "pkg:npm/prettier@3.6.2",
           ],
           "scope": "devDependencies",
         },
@@ -2162,15 +2162,15 @@ exports[`workspace 1`] = `
       ],
     },
     {
-      "from": "pkg:npm/%40img/sharp-linux-arm64@0.34.4",
-      "to": [
-        "pkg:npm/%40img/sharp-libvips-linux-arm64@1.2.3",
-      ],
-    },
-    {
       "from": "pkg:npm/%40img/sharp-linux-arm@0.34.4",
       "to": [
         "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/%40img/sharp-linux-arm64@0.34.4",
+      "to": [
+        "pkg:npm/%40img/sharp-libvips-linux-arm64@1.2.3",
       ],
     },
     {
@@ -2210,6 +2210,36 @@ exports[`workspace 1`] = `
       ],
     },
     {
+      "from": "pkg:npm/%40scatest/docs@1.0.0",
+      "to": [
+        "pkg:npm/react-dom@19.2.0",
+        "pkg:npm/react@19.2.0",
+        "pkg:npm/vite@6.4.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/%40scatest/ui@1.0.7",
+      "to": [
+        "pkg:npm/react@19.2.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/%40scatest/workspace@0.0.0",
+      "to": [
+        "pkg:npm/turbo@2.5.8",
+        "pkg:npm/typescript@5.9.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/%40scatest/www@2.0.0",
+      "to": [
+        "pkg:npm/next@15.5.6",
+        "pkg:npm/react-dom@19.2.0",
+        "pkg:npm/react@19.2.0",
+        "pkg:npm/typescript@5.9.3",
+      ],
+    },
+    {
       "from": "pkg:npm/%40swc/helpers@0.5.15",
       "to": [
         "pkg:npm/tslib@2.8.1",
@@ -2219,15 +2249,15 @@ exports[`workspace 1`] = `
       "from": "pkg:npm/esbuild@0.25.11",
       "to": [
         "pkg:npm/%40esbuild/aix-ppc64@0.25.11",
-        "pkg:npm/%40esbuild/android-arm@0.25.11",
         "pkg:npm/%40esbuild/android-arm64@0.25.11",
+        "pkg:npm/%40esbuild/android-arm@0.25.11",
         "pkg:npm/%40esbuild/android-x64@0.25.11",
         "pkg:npm/%40esbuild/darwin-arm64@0.25.11",
         "pkg:npm/%40esbuild/darwin-x64@0.25.11",
         "pkg:npm/%40esbuild/freebsd-arm64@0.25.11",
         "pkg:npm/%40esbuild/freebsd-x64@0.25.11",
-        "pkg:npm/%40esbuild/linux-arm@0.25.11",
         "pkg:npm/%40esbuild/linux-arm64@0.25.11",
+        "pkg:npm/%40esbuild/linux-arm@0.25.11",
         "pkg:npm/%40esbuild/linux-ia32@0.25.11",
         "pkg:npm/%40esbuild/linux-loong64@0.25.11",
         "pkg:npm/%40esbuild/linux-mips64el@0.25.11",
@@ -2256,12 +2286,6 @@ exports[`workspace 1`] = `
       "from": "pkg:npm/next@15.5.6",
       "to": [
         "pkg:npm/%40next/env@15.5.6",
-        "pkg:npm/%40swc/helpers@0.5.15",
-        "pkg:npm/caniuse-lite@1.0.30001751",
-        "pkg:npm/postcss@8.4.31",
-        "pkg:npm/react@19.2.0",
-        "pkg:npm/react-dom@19.2.0",
-        "pkg:npm/styled-jsx@5.1.6",
         "pkg:npm/%40next/swc-darwin-arm64@15.5.6",
         "pkg:npm/%40next/swc-darwin-x64@15.5.6",
         "pkg:npm/%40next/swc-linux-arm64-gnu@15.5.6",
@@ -2270,7 +2294,13 @@ exports[`workspace 1`] = `
         "pkg:npm/%40next/swc-linux-x64-musl@15.5.6",
         "pkg:npm/%40next/swc-win32-arm64-msvc@15.5.6",
         "pkg:npm/%40next/swc-win32-x64-msvc@15.5.6",
+        "pkg:npm/%40swc/helpers@0.5.15",
+        "pkg:npm/caniuse-lite@1.0.30001751",
+        "pkg:npm/postcss@8.4.31",
+        "pkg:npm/react-dom@19.2.0",
+        "pkg:npm/react@19.2.0",
         "pkg:npm/sharp@0.34.4",
+        "pkg:npm/styled-jsx@5.1.6",
       ],
     },
     {
@@ -2299,7 +2329,6 @@ exports[`workspace 1`] = `
     {
       "from": "pkg:npm/rollup@4.52.5",
       "to": [
-        "pkg:npm/%40types/estree@1.0.8",
         "pkg:npm/%40rollup/rollup-android-arm-eabi@4.52.5",
         "pkg:npm/%40rollup/rollup-android-arm64@4.52.5",
         "pkg:npm/%40rollup/rollup-darwin-arm64@4.52.5",
@@ -2322,6 +2351,7 @@ exports[`workspace 1`] = `
         "pkg:npm/%40rollup/rollup-win32-ia32-msvc@4.52.5",
         "pkg:npm/%40rollup/rollup-win32-x64-gnu@4.52.5",
         "pkg:npm/%40rollup/rollup-win32-x64-msvc@4.52.5",
+        "pkg:npm/%40types/estree@1.0.8",
         "pkg:npm/fsevents@2.3.3",
       ],
     },
@@ -2329,21 +2359,19 @@ exports[`workspace 1`] = `
       "from": "pkg:npm/sharp@0.34.4",
       "to": [
         "pkg:npm/%40img/colour@1.0.0",
-        "pkg:npm/detect-libc@2.1.2",
-        "pkg:npm/semver@7.7.3",
         "pkg:npm/%40img/sharp-darwin-arm64@0.34.4",
         "pkg:npm/%40img/sharp-darwin-x64@0.34.4",
         "pkg:npm/%40img/sharp-libvips-darwin-arm64@1.2.3",
         "pkg:npm/%40img/sharp-libvips-darwin-x64@1.2.3",
-        "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.3",
         "pkg:npm/%40img/sharp-libvips-linux-arm64@1.2.3",
+        "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.3",
         "pkg:npm/%40img/sharp-libvips-linux-ppc64@1.2.3",
         "pkg:npm/%40img/sharp-libvips-linux-s390x@1.2.3",
         "pkg:npm/%40img/sharp-libvips-linux-x64@1.2.3",
         "pkg:npm/%40img/sharp-libvips-linuxmusl-arm64@1.2.3",
         "pkg:npm/%40img/sharp-libvips-linuxmusl-x64@1.2.3",
-        "pkg:npm/%40img/sharp-linux-arm@0.34.4",
         "pkg:npm/%40img/sharp-linux-arm64@0.34.4",
+        "pkg:npm/%40img/sharp-linux-arm@0.34.4",
         "pkg:npm/%40img/sharp-linux-ppc64@0.34.4",
         "pkg:npm/%40img/sharp-linux-s390x@0.34.4",
         "pkg:npm/%40img/sharp-linux-x64@0.34.4",
@@ -2353,6 +2381,8 @@ exports[`workspace 1`] = `
         "pkg:npm/%40img/sharp-win32-arm64@0.34.4",
         "pkg:npm/%40img/sharp-win32-ia32@0.34.4",
         "pkg:npm/%40img/sharp-win32-x64@0.34.4",
+        "pkg:npm/detect-libc@2.1.2",
+        "pkg:npm/semver@7.7.3",
       ],
     },
     {
@@ -2385,45 +2415,41 @@ exports[`workspace 1`] = `
       "to": [
         "pkg:npm/esbuild@0.25.11",
         "pkg:npm/fdir@6.5.0",
+        "pkg:npm/fsevents@2.3.3",
         "pkg:npm/picomatch@4.0.3",
         "pkg:npm/postcss@8.5.6",
         "pkg:npm/rollup@4.52.5",
         "pkg:npm/tinyglobby@0.2.15",
-        "pkg:npm/fsevents@2.3.3",
-      ],
-    },
-    {
-      "from": "pkg:npm/%40scatest/workspace@0.0.0",
-      "to": [
-        "pkg:npm/turbo@2.5.8",
-        "pkg:npm/typescript@5.9.3",
-      ],
-    },
-    {
-      "from": "pkg:npm/%40scatest/docs@1.0.0",
-      "to": [
-        "pkg:npm/react@19.2.0",
-        "pkg:npm/react-dom@19.2.0",
-        "pkg:npm/vite@6.4.1",
-      ],
-    },
-    {
-      "from": "pkg:npm/%40scatest/www@2.0.0",
-      "to": [
-        "pkg:npm/next@15.5.6",
-        "pkg:npm/react@19.2.0",
-        "pkg:npm/react-dom@19.2.0",
-        "pkg:npm/typescript@5.9.3",
-      ],
-    },
-    {
-      "from": "pkg:npm/%40scatest/ui@1.0.7",
-      "to": [
-        "pkg:npm/react@19.2.0",
       ],
     },
   ],
   "subprojects": [
+    {
+      "definitionFile": "<fixtures>/workspace/apps/docs/package.json",
+      "purl": "pkg:npm/%40scatest/docs@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/react-dom@19.2.0",
+            "pkg:npm/react@19.2.0",
+            "pkg:npm/vite@6.4.1",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+    {
+      "definitionFile": "<fixtures>/workspace/packages/ui/package.json",
+      "purl": "pkg:npm/%40scatest/ui@1.0.7",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/react@19.2.0",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
     {
       "definitionFile": "<fixtures>/workspace/package.json",
       "purl": "pkg:npm/%40scatest/workspace@0.0.0",
@@ -2438,28 +2464,14 @@ exports[`workspace 1`] = `
       ],
     },
     {
-      "definitionFile": "<fixtures>/workspace/apps/docs/package.json",
-      "purl": "pkg:npm/%40scatest/docs@1.0.0",
-      "scopes": [
-        {
-          "packages": [
-            "pkg:npm/react@19.2.0",
-            "pkg:npm/react-dom@19.2.0",
-            "pkg:npm/vite@6.4.1",
-          ],
-          "scope": "dependencies",
-        },
-      ],
-    },
-    {
       "definitionFile": "<fixtures>/workspace/apps/www/package.json",
       "purl": "pkg:npm/%40scatest/www@2.0.0",
       "scopes": [
         {
           "packages": [
             "pkg:npm/next@15.5.6",
-            "pkg:npm/react@19.2.0",
             "pkg:npm/react-dom@19.2.0",
+            "pkg:npm/react@19.2.0",
           ],
           "scope": "dependencies",
         },
@@ -2468,18 +2480,6 @@ exports[`workspace 1`] = `
             "pkg:npm/typescript@5.9.3",
           ],
           "scope": "devDependencies",
-        },
-      ],
-    },
-    {
-      "definitionFile": "<fixtures>/workspace/packages/ui/package.json",
-      "purl": "pkg:npm/%40scatest/ui@1.0.7",
-      "scopes": [
-        {
-          "packages": [
-            "pkg:npm/react@19.2.0",
-          ],
-          "scope": "dependencies",
         },
       ],
     },

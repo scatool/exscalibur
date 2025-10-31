@@ -97,7 +97,7 @@ export const extractor: Extractor = filesExtractor({
       subprojects.push({
         purl: purl.toString(),
         definitionFile: packageJsonPath,
-        scopes: scopes.length > 0 ? scopes : undefined,
+        scopes,
       });
     }
 
@@ -133,8 +133,9 @@ export const extractor: Extractor = filesExtractor({
     }
 
     return {
-      packages: packagePurls.map((purl) => ({ purl })),
-      subprojects: subprojects.length > 0 ? subprojects : undefined,
+      packages: packagePurls.map((purl) => ({ purl, evidence: [] })),
+      subprojects,
+      relationships: [],
     };
   },
 });

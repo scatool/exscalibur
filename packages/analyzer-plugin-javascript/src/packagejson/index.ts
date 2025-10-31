@@ -91,7 +91,7 @@ export const extractor: Extractor = filesExtractor({
 
             // Find line number for evidence
             const lineNumber = findLineNumber(lines, name);
-            const evidence = lineNumber ? [`${file}:${lineNumber}`] : undefined;
+            const evidence = lineNumber ? [`${file}:${lineNumber}`] : [];
 
             packages.push({
               purl: purl.toString(),
@@ -104,6 +104,8 @@ export const extractor: Extractor = filesExtractor({
 
     return {
       packages,
+      subprojects: [],
+      relationships: [],
     };
   },
 });

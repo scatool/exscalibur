@@ -304,6 +304,7 @@ exports[`basic 1`] = `
       "purl": "pkg:npm/typescript@5.9.3",
     },
   ],
+  "relationships": [],
   "subprojects": [
     {
       "definitionFile": "<fixtures>/basic/package.json",
@@ -312,8 +313,8 @@ exports[`basic 1`] = `
         {
           "packages": [
             "pkg:npm/next@15.5.6",
-            "pkg:npm/react@19.2.0",
             "pkg:npm/react-dom@19.2.0",
+            "pkg:npm/react@19.2.0",
           ],
           "scope": "dependencies",
         },
@@ -967,19 +968,8 @@ exports[`monorepo 1`] = `
       "purl": "pkg:npm/vite@6.4.1",
     },
   ],
+  "relationships": [],
   "subprojects": [
-    {
-      "definitionFile": "<fixtures>/monorepo/package.json",
-      "purl": "pkg:npm/utils@0.0.0",
-      "scopes": [
-        {
-          "packages": [
-            "pkg:npm/prettier@3.6.2",
-          ],
-          "scope": "devDependencies",
-        },
-      ],
-    },
     {
       "definitionFile": "<fixtures>/monorepo/a/package.json",
       "purl": "pkg:npm/a@1.5.2",
@@ -1011,6 +1001,18 @@ exports[`monorepo 1`] = `
         {
           "packages": [
             "pkg:npm/typescript@5.9.3",
+          ],
+          "scope": "devDependencies",
+        },
+      ],
+    },
+    {
+      "definitionFile": "<fixtures>/monorepo/package.json",
+      "purl": "pkg:npm/utils@0.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/prettier@3.6.2",
           ],
           "scope": "devDependencies",
         },
@@ -1510,12 +1512,15 @@ exports[`workspace 1`] = `
       "purl": "pkg:npm/%40rollup/rollup-win32-x64-msvc@4.52.5",
     },
     {
+      "evidence": [],
       "purl": "pkg:npm/%40scatest/docs@1.0.0",
     },
     {
+      "evidence": [],
       "purl": "pkg:npm/%40scatest/ui@1.0.7",
     },
     {
+      "evidence": [],
       "purl": "pkg:npm/%40scatest/www@2.0.0",
     },
     {
@@ -1727,6 +1732,33 @@ exports[`workspace 1`] = `
   ],
   "subprojects": [
     {
+      "definitionFile": "<fixtures>/workspace/apps/docs/package.json",
+      "purl": "pkg:npm/%40scatest/docs@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/%40scatest/ui@1.0.7",
+            "pkg:npm/react-dom@19.2.0",
+            "pkg:npm/react@19.2.0",
+            "pkg:npm/vite@6.4.1",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+    {
+      "definitionFile": "<fixtures>/workspace/packages/ui/package.json",
+      "purl": "pkg:npm/%40scatest/ui@1.0.7",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/react@19.2.0",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+    {
       "definitionFile": "<fixtures>/workspace/package.json",
       "purl": "pkg:npm/%40scatest/workspace@0.0.0",
       "scopes": [
@@ -1740,21 +1772,6 @@ exports[`workspace 1`] = `
       ],
     },
     {
-      "definitionFile": "<fixtures>/workspace/apps/docs/package.json",
-      "purl": "pkg:npm/%40scatest/docs@1.0.0",
-      "scopes": [
-        {
-          "packages": [
-            "pkg:npm/%40scatest/ui@1.0.7",
-            "pkg:npm/react@19.2.0",
-            "pkg:npm/react-dom@19.2.0",
-            "pkg:npm/vite@6.4.1",
-          ],
-          "scope": "dependencies",
-        },
-      ],
-    },
-    {
       "definitionFile": "<fixtures>/workspace/apps/www/package.json",
       "purl": "pkg:npm/%40scatest/www@2.0.0",
       "scopes": [
@@ -1762,8 +1779,8 @@ exports[`workspace 1`] = `
           "packages": [
             "pkg:npm/%40scatest/ui@1.0.7",
             "pkg:npm/next@15.5.6",
-            "pkg:npm/react@19.2.0",
             "pkg:npm/react-dom@19.2.0",
+            "pkg:npm/react@19.2.0",
           ],
           "scope": "dependencies",
         },
@@ -1772,18 +1789,6 @@ exports[`workspace 1`] = `
             "pkg:npm/typescript@5.9.3",
           ],
           "scope": "devDependencies",
-        },
-      ],
-    },
-    {
-      "definitionFile": "<fixtures>/workspace/packages/ui/package.json",
-      "purl": "pkg:npm/%40scatest/ui@1.0.7",
-      "scopes": [
-        {
-          "packages": [
-            "pkg:npm/react@19.2.0",
-          ],
-          "scope": "dependencies",
         },
       ],
     },

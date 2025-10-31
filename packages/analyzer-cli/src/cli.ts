@@ -8,6 +8,7 @@ import {
   yarnLockExtractor,
 } from '@scatool/analyzer-plugin-javascript/src/index.ts';
 import { dockerfileExtractor } from '@scatool/analyzer-plugin-containers/src/index.ts';
+import { mergeResults } from '@scatool/analyzer-core/src/index.ts';
 import { extractor as githubActionsExtractor } from '@scatool/analyzer-plugin-github-actions/src/index.ts';
 import type { AnalyzerResult, Extractor } from '@scatool/analyzer-core/src/index.ts';
 import { resolve } from 'path';
@@ -151,76 +152,6 @@ async function runAnalysis(): Promise<void> {
   console.error(`Writing output to ${outputPath}...`);
   await Bun.write(outputPath, JSON.stringify(mergedResult, null, 2));
   console.error('Done!');
-}
-
-function mergeResults(results: AnalyzerResult[]): AnalyzerResult {
-  const packageMap = new Map<string, { purl: string; evidence?: string[] }>();
-  const subprojects: Array<{
-    purl: string;
-    definitionFile: string;
-    scopes?: Array<{ scope: string; packages: string[] }>;
-  }> = [];
-  const relationshipMap = new Map<string, Set<string>>();
-
-  for (const result of results) {
-    // Merge packages
-    for (const pkg of result.packages) {
-      const existing = packageMap.get(pkg.purl);
-      if (existing) {
-        // Merge evidence arrays
-        if (pkg.evidence) {
-          if (existing.evidence) {
-            existing.evidence.push(...pkg.evidence);
-          } else {
-            existing.evidence = [...pkg.evidence];
-          }
-        }
-      } else {
-        // Create new entry
-        const newPkg: { purl: string; evidence?: string[] } = { purl: pkg.purl };
-        if (pkg.evidence) {
-          newPkg.evidence = [...pkg.evidence];
-        }
-        packageMap.set(pkg.purl, newPkg);
-      }
-    }
-
-    // Merge subprojects
-    if (result.subprojects) {
-      subprojects.push(...result.subprojects);
-    }
-
-    // Merge relationships
-    if (result.relationships) {
-      for (const rel of result.relationships) {
-        const existing = relationshipMap.get(rel.from);
-        if (existing) {
-          for (const to of rel.to) {
-            existing.add(to);
-          }
-        } else {
-          relationshipMap.set(rel.from, new Set(rel.to));
-        }
-      }
-    }
-  }
-
-  const merged: AnalyzerResult = {
-    packages: Array.from(packageMap.values()),
-  };
-
-  if (subprojects.length > 0) {
-    merged.subprojects = subprojects;
-  }
-
-  if (relationshipMap.size > 0) {
-    merged.relationships = Array.from(relationshipMap.entries()).map(([from, toSet]) => ({
-      from,
-      to: Array.from(toSet),
-    }));
-  }
-
-  return merged;
 }
 
 // Run the analysis

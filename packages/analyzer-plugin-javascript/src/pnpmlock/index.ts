@@ -100,7 +100,7 @@ export const extractor: Extractor = filesExtractor({
             subprojects.push({
               purl,
               definitionFile: packageJsonPath,
-              scopes: scopes.length > 0 ? scopes : undefined,
+              scopes,
             });
           }
         }
@@ -142,27 +142,22 @@ export const extractor: Extractor = filesExtractor({
       // Silently skip files that fail to parse
     }
 
-    // Convert relationships map to array
-    const relationships: Relationship[] = [];
-    for (const [from, toSet] of relationshipsMap.entries()) {
-      if (toSet.size > 0) {
-        relationships.push({
-          from,
-          to: Array.from(toSet),
-        });
-      }
-    }
+    // Convert maps to arrays
+    const packages = Array.from(packageMap.values()).map(({purl, evidence}) => ({
+      purl,
+      evidence: Array.from(evidence),
+    }));
 
-    const result: AnalyzerResult = {
-      packages: Array.from(packageMap.values()).map(({purl, evidence}) => ({
-        purl,
-        evidence: evidence.size > 0 ? Array.from(evidence) : undefined,
-      })),
+    const relationships: Relationship[] = Array.from(relationshipsMap.entries()).map(([from, toSet]) => ({
+      from,
+      to: Array.from(toSet),
+    }));
+
+    return {
+      packages,
+      subprojects,
+      relationships,
     };
-
-    result.subprojects = subprojects;
-    result.relationships = relationships;
-    return result;
   },
 });
 

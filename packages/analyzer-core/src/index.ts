@@ -1,6 +1,9 @@
+export { mergeResults } from './merge.ts';
+import { mergeResults } from './merge.ts';
+
 export type Package = {
   purl: string;
-  evidence?: string[];
+  evidence: string[];
 };
 
 export type DependencyScope = {
@@ -11,7 +14,7 @@ export type DependencyScope = {
 export type Subproject = {
   purl: string;
   definitionFile: string;
-  scopes?: DependencyScope[];
+  scopes: DependencyScope[];
 };
 
 export type Relationship = {
@@ -21,8 +24,8 @@ export type Relationship = {
 
 export type AnalyzerResult = {
   packages: Package[];
-  subprojects?: Subproject[];
-  relationships?: Relationship[];
+  subprojects: Subproject[];
+  relationships: Relationship[];
 };
 
 export type Extractor = {
@@ -42,6 +45,52 @@ export type FilesExtractor = {
   extractFile?: (file: string) => Promise<AnalyzerResult>;
 };
 
+/**
+ * Normalize and sort an AnalyzerResult
+ * - Sorts packages by purl
+ * - Sorts subprojects by purl
+ * - Sorts relationships by from, then to array
+ * - Sorts evidence arrays
+ * - Sorts scope packages arrays
+ */
+export function normalizeResult(result: AnalyzerResult): AnalyzerResult {
+  // Sort packages by purl and their evidence arrays
+  const sortedPackages = result.packages
+    .map((pkg) => ({
+      purl: pkg.purl,
+      evidence: [...pkg.evidence].sort(),
+    }))
+    .sort((a, b) => a.purl.localeCompare(b.purl));
+
+  // Sort subprojects by purl and their scopes
+  const sortedSubprojects = result.subprojects
+    .map((sub) => ({
+      purl: sub.purl,
+      definitionFile: sub.definitionFile,
+      scopes: sub.scopes
+        .map((scope) => ({
+          scope: scope.scope,
+          packages: [...scope.packages].sort(),
+        }))
+        .sort((a, b) => a.scope.localeCompare(b.scope)),
+    }))
+    .sort((a, b) => a.purl.localeCompare(b.purl));
+
+  // Sort relationships by from, and sort their to arrays
+  const sortedRelationships = result.relationships
+    .map((rel) => ({
+      from: rel.from,
+      to: [...rel.to].sort(),
+    }))
+    .sort((a, b) => a.from.localeCompare(b.from));
+
+  return {
+    packages: sortedPackages,
+    subprojects: sortedSubprojects,
+    relationships: sortedRelationships,
+  };
+}
+
 export const filesExtractor = (config: FilesExtractor): Extractor => {
   return {
     name: config.name,
@@ -59,76 +108,17 @@ export const filesExtractor = (config: FilesExtractor): Extractor => {
       await config.markFiles.call(context, codebase);
 
       // Then process each marked file
-      const allPackages: Package[] = [];
-      const allSubprojects: Subproject[] = [];
-      const allRelationships: Relationship[] = [];
+      const results: AnalyzerResult[] = [];
 
       for (const file of markedFiles) {
         if (config.extractFile) {
           const fileResult = await config.extractFile(file);
-          allPackages.push(...fileResult.packages);
-          if (fileResult.subprojects) {
-            allSubprojects.push(...fileResult.subprojects);
-          }
-          if (fileResult.relationships) {
-            allRelationships.push(...fileResult.relationships);
-          }
+          results.push(fileResult);
         }
       }
 
-      // Merge duplicate packages and combine evidence arrays
-      const packageMap = new Map<string, Package>();
-      for (const pkg of allPackages) {
-        const existing = packageMap.get(pkg.purl);
-        if (existing) {
-          // Merge evidence arrays
-          if (pkg.evidence) {
-            if (existing.evidence) {
-              existing.evidence.push(...pkg.evidence);
-            } else {
-              existing.evidence = [...pkg.evidence];
-            }
-          }
-        } else {
-          // Create new entry with evidence array (if present)
-          const newPkg: Package = { purl: pkg.purl };
-          if (pkg.evidence) {
-            newPkg.evidence = [...pkg.evidence];
-          }
-          packageMap.set(pkg.purl, newPkg);
-        }
-      }
-      // Merge relationships with the same 'from' value
-      const relationshipMap = new Map<string, Set<string>>();
-      for (const rel of allRelationships) {
-        const existing = relationshipMap.get(rel.from);
-        if (existing) {
-          for (const to of rel.to) {
-            existing.add(to);
-          }
-        } else {
-          relationshipMap.set(rel.from, new Set(rel.to));
-        }
-      }
-
-      const result: AnalyzerResult = {
-        packages: Array.from(packageMap.values()),
-      };
-
-      // Add subprojects if any were found
-      if (allSubprojects.length > 0) {
-        result.subprojects = allSubprojects;
-      }
-
-      // Add relationships if any were found
-      if (relationshipMap.size > 0) {
-        result.relationships = Array.from(relationshipMap.entries()).map(([from, toSet]) => ({
-          from,
-          to: Array.from(toSet),
-        }));
-      }
-
-      return result;
+      // Merge and normalize all results
+      return mergeResults(results);
     },
   };
 };
