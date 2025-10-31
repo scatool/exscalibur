@@ -5,13 +5,7 @@ import { dirname } from 'node:path';
 import { existsSync } from 'node:fs';
 
 async function hasLockfileInDirectory(dir: string): Promise<boolean> {
-  const lockfiles = [
-    'package-lock.json',
-    'npm-shrinkwrap.json',
-    'yarn.lock',
-    'pnpm-lock.yaml',
-    'bun.lockb',
-  ];
+  const lockfiles = ['package-lock.json', 'npm-shrinkwrap.json', 'yarn.lock', 'pnpm-lock.yaml', 'bun.lockb'];
 
   for (const lockfile of lockfiles) {
     if (existsSync(`${dir}/${lockfile}`)) {
@@ -101,7 +95,7 @@ export const extractor: Extractor = filesExtractor({
 
             packages.push({
               purl: purl.toString(),
-              evidence
+              evidence,
             });
           }
         }
@@ -119,10 +113,7 @@ function findLineNumber(lines: string[], packageName: string): number | undefine
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
     // Match "packageName": or 'packageName':
-    if (
-      line &&
-      (line.includes(`"${packageName}"`) || line.includes(`'${packageName}'`))
-    ) {
+    if (line && (line.includes(`"${packageName}"`) || line.includes(`'${packageName}'`))) {
       return i + 1; // Line numbers are 1-indexed
     }
   }

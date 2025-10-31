@@ -152,53 +152,53 @@ export const extractor: Extractor = filesExtractor({
         const childPurls: string[] = [];
 
         for (const [name, dep] of Object.entries(deps)) {
-          if (typeof dep === 'object' && dep !== null && 'version' in dep) {
-            const version = dep.version;
-            if (typeof version === 'string') {
-              // Extract the actual package name from resolved URL for aliases
-              // Aliases like string-width-cjs point to the actual package's tarball
-              let actualName = name;
-              if (dep.resolved && typeof dep.resolved === 'string' && dep.resolved.includes('registry.npmjs.org')) {
-                const match = dep.resolved.match(/registry\.npmjs\.org\/(@[^/]+\/[^/]+|[^/]+)\/-\//);
-                if (match && match[1]) {
-                  actualName = match[1];
+          if (typeof dep === 'object' && dep !== null) {
+            // Check for workspace packages first (they may have null version)
+            if (isWorkspacePackage(dep)) {
+              const relativePath = getWorkspacePath(dep);
+              if (!relativePath) {
+                // Still traverse dependencies even if we can't get the path
+                if (dep.dependencies) {
+                  await extractPackages(dep.dependencies, parentPurl);
                 }
+                continue;
               }
 
-              // Create a proper Package URL (PURL)
-              // For scoped packages (@scope/name), extract scope as namespace
-              let namespace: string | null = null;
-              let packageName = actualName;
-              if (actualName.startsWith('@')) {
-                const parts = actualName.split('/');
-                if (parts.length === 2 && parts[0] && parts[1]) {
-                  namespace = parts[0]; // Keep @ for proper PURL encoding
-                  packageName = parts[1];
+              const subprojectDir = resolve(dir, relativePath);
+              const subprojectPackageJson = join(subprojectDir, 'package.json');
+
+              // Read workspace package.json to get name and version
+              let workspacePackageName: string | undefined;
+              let workspacePackageVersion: string | undefined;
+              let scopes: DependencyScope[] = [];
+
+              try {
+                const workspacePackageJsonContent = await Bun.file(subprojectPackageJson).text();
+                const workspacePackageInfo = JSON.parse(workspacePackageJsonContent) as PackageJson;
+                workspacePackageName = workspacePackageInfo.name;
+                workspacePackageVersion = workspacePackageInfo.version || '0.0.0';
+                scopes = extractScopesFromPackageJson(workspacePackageInfo, dep.dependencies);
+              } catch {
+                // If we can't read package.json, still traverse dependencies
+                if (dep.dependencies) {
+                  await extractPackages(dep.dependencies, parentPurl);
                 }
+                continue;
               }
-              const purl = new PackageURL('npm', namespace, packageName, version, null, null);
-              const purlString = purl.toString();
 
-              if (isWorkspacePackage(dep)) {
-                // This is a workspace package - add it as a subproject
-                const relativePath = getWorkspacePath(dep);
-                if (!relativePath) {
-                  continue;
+              if (workspacePackageName && workspacePackageVersion) {
+                // Create PURL for workspace package
+                let namespace: string | null = null;
+                let packageName = workspacePackageName;
+                if (workspacePackageName.startsWith('@')) {
+                  const parts = workspacePackageName.split('/');
+                  if (parts.length === 2 && parts[0] && parts[1]) {
+                    namespace = parts[0];
+                    packageName = parts[1];
+                  }
                 }
-
-                const subprojectDir = resolve(dir, relativePath);
-                const subprojectPackageJson = join(subprojectDir, 'package.json');
-
-                // Read the workspace package's package.json to get its scopes
-                let scopes: DependencyScope[] = [];
-                try {
-                  const workspacePackageJsonContent = await Bun.file(subprojectPackageJson).text();
-                  const workspacePackageInfo = JSON.parse(workspacePackageJsonContent) as PackageJson;
-                  // Pass the dependencies from this workspace package's tree
-                  scopes = extractScopesFromPackageJson(workspacePackageInfo, dep.dependencies);
-                } catch {
-                  // If we can't read the workspace package.json, continue without scopes
-                }
+                const purl = new PackageURL('npm', namespace, packageName, workspacePackageVersion, null, null);
+                const purlString = purl.toString();
 
                 subprojects.push({
                   purl: purlString,
@@ -211,46 +211,82 @@ export const extractor: Extractor = filesExtractor({
                   childPurls.push(purlString);
                 }
 
-                // Recursively process this workspace's dependencies
-                if (dep.dependencies) {
-                  await extractPackages(dep.dependencies, purlString);
-                }
-              } else {
-                // This is a regular dependency package
-                // Skip npm alias packages without resolved URLs
-                // These are duplicates that npm sbom also excludes
-                if (!dep.resolved && aliasMap.has(name)) {
-                  // Still process their dependencies
-                  if (dep.dependencies) {
-                    await extractPackages(dep.dependencies, parentPurl);
-                  }
-                  continue;
-                }
-
-                packagePurls.push(purlString);
-
-                // Add evidence from lockfile
-                const lineNumber = findPackageInLockfile(lockfileContent, name, version);
-                if (lineNumber) {
-                  const evidence = `${file}#${lineNumber}`;
-                  const existing = evidenceMap.get(purlString);
-                  if (existing) {
-                    existing.add(evidence);
-                  } else {
-                    evidenceMap.set(purlString, new Set([evidence]));
-                  }
-                }
-
-                // Track relationship if we have a parent
-                if (parentPurl) {
-                  childPurls.push(purlString);
-                }
-
-                // Recursively process dependencies
+                // Recursively process workspace dependencies
                 if (dep.dependencies) {
                   await extractPackages(dep.dependencies, purlString);
                 }
               }
+              continue;
+            }
+
+            // For non-workspace packages, version is required
+            const version = dep.version;
+            if (!version || typeof version !== 'string') {
+              // No version and not a workspace - just traverse dependencies
+              if (dep.dependencies) {
+                await extractPackages(dep.dependencies, parentPurl);
+              }
+              continue;
+            }
+
+            // Process regular package with valid version
+            // Extract the actual package name from resolved URL for aliases
+            // Aliases like string-width-cjs point to the actual package's tarball
+            let actualName = name;
+            if (dep.resolved && typeof dep.resolved === 'string' && dep.resolved.includes('registry.npmjs.org')) {
+              const match = dep.resolved.match(/registry\.npmjs\.org\/(@[^/]+\/[^/]+|[^/]+)\/-\//);
+              if (match && match[1]) {
+                actualName = match[1];
+              }
+            }
+
+            // Create a proper Package URL (PURL)
+            // For scoped packages (@scope/name), extract scope as namespace
+            let namespace: string | null = null;
+            let packageName = actualName;
+            if (actualName.startsWith('@')) {
+              const parts = actualName.split('/');
+              if (parts.length === 2 && parts[0] && parts[1]) {
+                namespace = parts[0]; // Keep @ for proper PURL encoding
+                packageName = parts[1];
+              }
+            }
+            const purl = new PackageURL('npm', namespace, packageName, version, null, null);
+            const purlString = purl.toString();
+
+            // This is a regular dependency package (not workspace)
+            // Skip npm alias packages without resolved URLs
+            // These are duplicates that npm sbom also excludes
+            if (!dep.resolved && aliasMap.has(name)) {
+              // Still process their dependencies
+              if (dep.dependencies) {
+                await extractPackages(dep.dependencies, parentPurl);
+              }
+              continue;
+            }
+
+            packagePurls.push(purlString);
+
+            // Add evidence from lockfile
+            const lineNumber = findPackageInLockfile(lockfileContent, name, version);
+            if (lineNumber) {
+              const evidence = `${file}#${lineNumber}`;
+              const existing = evidenceMap.get(purlString);
+              if (existing) {
+                existing.add(evidence);
+              } else {
+                evidenceMap.set(purlString, new Set([evidence]));
+              }
+            }
+
+            // Track relationship if we have a parent
+            if (parentPurl) {
+              childPurls.push(purlString);
+            }
+
+            // Recursively process dependencies
+            if (dep.dependencies) {
+              await extractPackages(dep.dependencies, purlString);
             }
           }
         }

@@ -49,8 +49,16 @@ export async function runYarnLs(cwd: string): Promise<YarnLsDependency[]> {
     stderr: 'pipe',
   });
 
-  const output = await new Response(proc.stdout).text();
-  await proc.exited;
+  const [output, exitCode, stderrOutput] = await Promise.all([
+    new Response(proc.stdout).text(),
+    proc.exited,
+    new Response(proc.stderr).text(),
+  ]);
+
+  // Check if yarn list succeeded
+  if (exitCode !== 0) {
+    throw new Error(`yarn list failed with exit code ${exitCode}: ${stderrOutput}`);
+  }
 
   // Yarn 1 outputs newline-delimited JSON (multiple JSON objects, one per line)
   // We need to find the line with type "tree" which contains the dependency data
@@ -61,7 +69,7 @@ export async function runYarnLs(cwd: string): Promise<YarnLsDependency[]> {
       const parsed = JSON.parse(line) as YarnLsOutput;
       if (parsed.type === 'tree' && parsed.data && parsed.data.trees) {
         // Parse the name@version format in each tree entry
-        return parsed.data.trees.map(tree => parseYarnDependency(tree));
+        return parsed.data.trees.map((tree) => parseYarnDependency(tree));
       }
     } catch {
       // Skip invalid JSON lines
@@ -83,7 +91,7 @@ function parseYarnDependency(dep: YarnLsDependency): YarnLsDependency {
     ...dep,
     name,
     version: version || dep.version, // Use extracted version, fallback to existing
-    children: dep.children?.map(child => parseYarnDependency(child)),
+    children: dep.children?.map((child) => parseYarnDependency(child)),
   };
 }
 

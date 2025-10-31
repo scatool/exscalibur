@@ -95,7 +95,8 @@ export const extractor: Extractor = filesExtractor({
       };
 
       // Check if this is a workspace root
-      const isWorkspaceRoot = rootPackageInfo && rootPackageInfo.workspaces && Array.isArray(rootPackageInfo.workspaces);
+      const isWorkspaceRoot =
+        rootPackageInfo && rootPackageInfo.workspaces && Array.isArray(rootPackageInfo.workspaces);
 
       // Collect all workspace package.json files by globbing the workspace patterns
       const workspacePackageJsonPaths: string[] = [];
@@ -104,9 +105,7 @@ export const extractor: Extractor = filesExtractor({
         for (const pattern of workspacePatterns) {
           // Convert workspace pattern to a glob pattern for package.json
           // e.g., "apps/*" becomes "apps/*/package.json"
-          const pkgJsonPattern = pattern.endsWith('/*')
-            ? `${pattern}/package.json`
-            : `${pattern}/package.json`;
+          const pkgJsonPattern = pattern.endsWith('/*') ? `${pattern}/package.json` : `${pattern}/package.json`;
           const pkgJsonGlob = new Glob(pkgJsonPattern);
           for await (const pkgPath of pkgJsonGlob.scan({ cwd: dir, absolute: true })) {
             if (!pkgPath.includes('/node_modules/')) {

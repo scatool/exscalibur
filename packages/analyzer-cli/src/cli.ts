@@ -1,6 +1,12 @@
 #!/usr/bin/env bun
 
-import { bunlockExtractor, packageJsonExtractor, packageLockJsonExtractor, pnpmLockExtractor, yarnLockExtractor } from '@scatool/analyzer-plugin-javascript/src/index.ts';
+import {
+  bunlockExtractor,
+  packageJsonExtractor,
+  packageLockJsonExtractor,
+  pnpmLockExtractor,
+  yarnLockExtractor,
+} from '@scatool/analyzer-plugin-javascript/src/index.ts';
 import { dockerfileExtractor } from '@scatool/analyzer-plugin-containers/src/index.ts';
 import { extractor as githubActionsExtractor } from '@scatool/analyzer-plugin-github-actions/src/index.ts';
 import type { AnalyzerResult, Extractor } from '@scatool/analyzer-core/src/index.ts';
@@ -20,7 +26,10 @@ for (let i = 0; i < args.length; i++) {
     // Next argument is the extractor name(s) - can be comma-separated
     i++;
     if (i < args.length) {
-      const names = args[i].split(',').map(n => n.trim()).filter(n => n.length > 0);
+      const names = args[i]
+        .split(',')
+        .map((n) => n.trim())
+        .filter((n) => n.length > 0);
       for (const name of names) {
         enabledExtractors.add(name);
       }
@@ -29,7 +38,10 @@ for (let i = 0; i < args.length; i++) {
     // Next argument is the extractor name(s) - can be comma-separated
     i++;
     if (i < args.length) {
-      const names = args[i].split(',').map(n => n.trim()).filter(n => n.length > 0);
+      const names = args[i]
+        .split(',')
+        .map((n) => n.trim())
+        .filter((n) => n.length > 0);
       for (const name of names) {
         disabledExtractors.add(name);
       }
