@@ -41,7 +41,7 @@ exports[`basic 1`] = `
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#41",
+        "<fixtures>/basic/yarn.lock#46",
       ],
       "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.3",
     },
@@ -83,7 +83,7 @@ exports[`basic 1`] = `
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#76",
+        "<fixtures>/basic/yarn.lock#83",
       ],
       "purl": "pkg:npm/%40img/sharp-linux-arm@0.34.4",
     },
@@ -233,7 +233,7 @@ exports[`basic 1`] = `
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#147",
+        "<fixtures>/basic/yarn.lock#219",
       ],
       "purl": "pkg:npm/next@15.5.6",
     },
@@ -257,7 +257,7 @@ exports[`basic 1`] = `
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#254",
+        "<fixtures>/basic/yarn.lock#261",
       ],
       "purl": "pkg:npm/react@19.2.0",
     },
@@ -275,7 +275,7 @@ exports[`basic 1`] = `
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#17",
+        "<fixtures>/basic/yarn.lock#276",
       ],
       "purl": "pkg:npm/sharp@0.34.4",
     },
@@ -304,7 +304,65 @@ exports[`basic 1`] = `
       "purl": "pkg:npm/typescript@5.9.3",
     },
   ],
-  "relationships": [],
+  "relationships": [
+    {
+      "from": "pkg:npm/%40emnapi/runtime@1.6.0",
+      "to": [
+        "pkg:npm/tslib@2.8.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/%40swc/helpers@0.5.15",
+      "to": [
+        "pkg:npm/tslib@2.8.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/next@15.5.6",
+      "to": [
+        "pkg:npm/caniuse-lite@1.0.30001751",
+        "pkg:npm/postcss@8.4.31",
+        "pkg:npm/sharp@0.34.4",
+        "pkg:npm/styled-jsx@5.1.6",
+      ],
+    },
+    {
+      "from": "pkg:npm/postcss@8.4.31",
+      "to": [
+        "pkg:npm/nanoid@3.3.11",
+        "pkg:npm/picocolors@1.1.1",
+        "pkg:npm/source-map-js@1.2.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/react-dom@19.2.0",
+      "to": [
+        "pkg:npm/scheduler@0.27.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/sharp@0.34.4",
+      "to": [
+        "pkg:npm/detect-libc@2.1.2",
+        "pkg:npm/semver@7.7.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/styled-jsx@5.1.6",
+      "to": [
+        "pkg:npm/client-only@0.0.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/yarn-basic@1.0.0",
+      "to": [
+        "pkg:npm/next@15.5.6",
+        "pkg:npm/react-dom@19.2.0",
+        "pkg:npm/react@19.2.0",
+        "pkg:npm/typescript@5.9.3",
+      ],
+    },
+  ],
   "subprojects": [
     {
       "definitionFile": "<fixtures>/basic/package.json",
@@ -330,6 +388,89 @@ exports[`basic 1`] = `
 }
 `;
 
+exports[`git-deps 1`] = `
+{
+  "packages": [
+    {
+      "evidence": [
+        "<fixtures>/git-deps/yarn.lock#5",
+      ],
+      "purl": "pkg:npm/express@5.0.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/yarn.lock#9",
+      ],
+      "purl": "pkg:npm/is-even@1.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/yarn.lock#15",
+      ],
+      "purl": "pkg:npm/is-number@0.1.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/yarn.lock#20",
+      ],
+      "purl": "pkg:npm/is-odd@0.1.2",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/yarn.lock#27",
+      ],
+      "purl": "pkg:npm/lodash@4.17.21",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/yarn.lock#32",
+      ],
+      "purl": "pkg:npm/mocha@11.0.1",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:npm/is-even@1.0.0",
+      "to": [
+        "pkg:npm/is-odd@0.1.2",
+      ],
+    },
+    {
+      "from": "pkg:npm/is-odd@0.1.2",
+      "to": [
+        "pkg:npm/is-number@0.1.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/test-git-deps@1.0.0",
+      "to": [
+        "pkg:npm/express@5.0.1",
+        "pkg:npm/is-even@1.0.0",
+        "pkg:npm/lodash@4.17.21",
+        "pkg:npm/mocha@11.0.1",
+      ],
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "<fixtures>/git-deps/package.json",
+      "purl": "pkg:npm/test-git-deps@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/express@5.0.1",
+            "pkg:npm/is-even@1.0.0",
+            "pkg:npm/lodash@4.17.21",
+            "pkg:npm/mocha@11.0.1",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
+
 exports[`monorepo 1`] = `
 {
   "packages": [
@@ -347,7 +488,7 @@ exports[`monorepo 1`] = `
     },
     {
       "evidence": [
-        "<fixtures>/monorepo/b/yarn.lock#10",
+        "<fixtures>/monorepo/b/yarn.lock#15",
       ],
       "purl": "pkg:npm/%40esbuild/android-arm@0.25.11",
     },
@@ -389,7 +530,7 @@ exports[`monorepo 1`] = `
     },
     {
       "evidence": [
-        "<fixtures>/monorepo/b/yarn.lock#45",
+        "<fixtures>/monorepo/b/yarn.lock#50",
       ],
       "purl": "pkg:npm/%40esbuild/linux-arm@0.25.11",
     },
@@ -527,7 +668,7 @@ exports[`monorepo 1`] = `
     },
     {
       "evidence": [
-        "<fixtures>/monorepo/a/yarn.lock#41",
+        "<fixtures>/monorepo/a/yarn.lock#46",
       ],
       "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.3",
     },
@@ -569,7 +710,7 @@ exports[`monorepo 1`] = `
     },
     {
       "evidence": [
-        "<fixtures>/monorepo/a/yarn.lock#76",
+        "<fixtures>/monorepo/a/yarn.lock#83",
       ],
       "purl": "pkg:npm/%40img/sharp-linux-arm@0.34.4",
     },
@@ -851,7 +992,7 @@ exports[`monorepo 1`] = `
     },
     {
       "evidence": [
-        "<fixtures>/monorepo/b/yarn.lock#5",
+        "<fixtures>/monorepo/b/yarn.lock#250",
       ],
       "purl": "pkg:npm/esbuild@0.25.11",
     },
@@ -876,7 +1017,7 @@ exports[`monorepo 1`] = `
     },
     {
       "evidence": [
-        "<fixtures>/monorepo/a/yarn.lock#147",
+        "<fixtures>/monorepo/a/yarn.lock#219",
       ],
       "purl": "pkg:npm/next@15.5.6",
     },
@@ -913,7 +1054,7 @@ exports[`monorepo 1`] = `
     },
     {
       "evidence": [
-        "<fixtures>/monorepo/b/yarn.lock#135",
+        "<fixtures>/monorepo/b/yarn.lock#316",
       ],
       "purl": "pkg:npm/rollup@4.52.5",
     },
@@ -925,7 +1066,7 @@ exports[`monorepo 1`] = `
     },
     {
       "evidence": [
-        "<fixtures>/monorepo/a/yarn.lock#17",
+        "<fixtures>/monorepo/a/yarn.lock#259",
       ],
       "purl": "pkg:npm/sharp@0.34.4",
     },
@@ -968,7 +1109,103 @@ exports[`monorepo 1`] = `
       "purl": "pkg:npm/vite@6.4.1",
     },
   ],
-  "relationships": [],
+  "relationships": [
+    {
+      "from": "pkg:npm/%40emnapi/runtime@1.6.0",
+      "to": [
+        "pkg:npm/tslib@2.8.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/%40swc/helpers@0.5.15",
+      "to": [
+        "pkg:npm/tslib@2.8.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/a@1.5.2",
+      "to": [
+        "pkg:npm/next@15.5.6",
+        "pkg:npm/typescript@5.9.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/b@1.5.2",
+      "to": [
+        "pkg:npm/typescript@5.9.3",
+        "pkg:npm/vite@6.4.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/next@15.5.6",
+      "to": [
+        "pkg:npm/caniuse-lite@1.0.30001751",
+        "pkg:npm/postcss@8.4.31",
+        "pkg:npm/sharp@0.34.4",
+        "pkg:npm/styled-jsx@5.1.6",
+      ],
+    },
+    {
+      "from": "pkg:npm/postcss@8.4.31",
+      "to": [
+        "pkg:npm/nanoid@3.3.11",
+        "pkg:npm/picocolors@1.1.1",
+        "pkg:npm/source-map-js@1.2.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/postcss@8.5.6",
+      "to": [
+        "pkg:npm/nanoid@3.3.11",
+        "pkg:npm/picocolors@1.1.1",
+        "pkg:npm/source-map-js@1.2.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/rollup@4.52.5",
+      "to": [
+        "pkg:npm/fsevents@2.3.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/sharp@0.34.4",
+      "to": [
+        "pkg:npm/detect-libc@2.1.2",
+        "pkg:npm/semver@7.7.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/styled-jsx@5.1.6",
+      "to": [
+        "pkg:npm/client-only@0.0.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/tinyglobby@0.2.15",
+      "to": [
+        "pkg:npm/fdir@6.5.0",
+        "pkg:npm/picomatch@4.0.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/utils@0.0.0",
+      "to": [
+        "pkg:npm/prettier@3.6.2",
+      ],
+    },
+    {
+      "from": "pkg:npm/vite@6.4.1",
+      "to": [
+        "pkg:npm/esbuild@0.25.11",
+        "pkg:npm/fdir@6.5.0",
+        "pkg:npm/fsevents@2.3.3",
+        "pkg:npm/picomatch@4.0.3",
+        "pkg:npm/postcss@8.5.6",
+        "pkg:npm/rollup@4.52.5",
+        "pkg:npm/tinyglobby@0.2.15",
+      ],
+    },
+  ],
   "subprojects": [
     {
       "definitionFile": "<fixtures>/monorepo/a/package.json",
@@ -1022,6 +1259,73 @@ exports[`monorepo 1`] = `
 }
 `;
 
+exports[`tarball-deps 1`] = `
+{
+  "packages": [
+    {
+      "evidence": [
+        "<fixtures>/tarball-deps/yarn.lock#5",
+      ],
+      "purl": "pkg:npm/js-tokens@4.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/tarball-deps/yarn.lock#10",
+      ],
+      "purl": "pkg:npm/lodash@4.17.21",
+    },
+    {
+      "evidence": [
+        "<fixtures>/tarball-deps/yarn.lock#15",
+      ],
+      "purl": "pkg:npm/loose-envify@1.4.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/tarball-deps/yarn.lock#22",
+      ],
+      "purl": "pkg:npm/react@18.3.1",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:npm/loose-envify@1.4.0",
+      "to": [
+        "pkg:npm/js-tokens@4.0.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/react@18.3.1",
+      "to": [
+        "pkg:npm/loose-envify@1.4.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/test-tarball-deps@1.0.0",
+      "to": [
+        "pkg:npm/lodash@4.17.21",
+        "pkg:npm/react@18.3.1",
+      ],
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "<fixtures>/tarball-deps/package.json",
+      "purl": "pkg:npm/test-tarball-deps@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/lodash@4.17.21",
+            "pkg:npm/react@18.3.1",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
+
 exports[`workspace 1`] = `
 {
   "packages": [
@@ -1039,7 +1343,7 @@ exports[`workspace 1`] = `
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#17",
+        "<fixtures>/workspace/yarn.lock#22",
       ],
       "purl": "pkg:npm/%40esbuild/android-arm@0.25.11",
     },
@@ -1081,7 +1385,7 @@ exports[`workspace 1`] = `
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#52",
+        "<fixtures>/workspace/yarn.lock#57",
       ],
       "purl": "pkg:npm/%40esbuild/linux-arm@0.25.11",
     },
@@ -1219,7 +1523,7 @@ exports[`workspace 1`] = `
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#171",
+        "<fixtures>/workspace/yarn.lock#176",
       ],
       "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.3",
     },
@@ -1261,7 +1565,7 @@ exports[`workspace 1`] = `
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#206",
+        "<fixtures>/workspace/yarn.lock#213",
       ],
       "purl": "pkg:npm/%40img/sharp-linux-arm@0.34.4",
     },
@@ -1512,18 +1816,6 @@ exports[`workspace 1`] = `
       "purl": "pkg:npm/%40rollup/rollup-win32-x64-msvc@4.52.5",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/%40scatest/docs@1.0.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/%40scatest/ui@1.0.7",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/%40scatest/www@2.0.0",
-    },
-    {
       "evidence": [
         "<fixtures>/workspace/yarn.lock#432",
       ],
@@ -1555,7 +1847,7 @@ exports[`workspace 1`] = `
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#12",
+        "<fixtures>/workspace/yarn.lock#459",
       ],
       "purl": "pkg:npm/esbuild@0.25.11",
     },
@@ -1579,7 +1871,7 @@ exports[`workspace 1`] = `
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#277",
+        "<fixtures>/workspace/yarn.lock#506",
       ],
       "purl": "pkg:npm/next@15.5.6",
     },
@@ -1615,13 +1907,13 @@ exports[`workspace 1`] = `
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#555",
+        "<fixtures>/workspace/yarn.lock#562",
       ],
       "purl": "pkg:npm/react@19.2.0",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#322",
+        "<fixtures>/workspace/yarn.lock#567",
       ],
       "purl": "pkg:npm/rollup@4.52.5",
     },
@@ -1639,7 +1931,7 @@ exports[`workspace 1`] = `
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#147",
+        "<fixtures>/workspace/yarn.lock#608",
       ],
       "purl": "pkg:npm/sharp@0.34.4",
     },
@@ -1705,7 +1997,7 @@ exports[`workspace 1`] = `
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#665",
+        "<fixtures>/workspace/yarn.lock#695",
       ],
       "purl": "pkg:npm/turbo@2.5.8",
     },
@@ -1724,9 +2016,127 @@ exports[`workspace 1`] = `
   ],
   "relationships": [
     {
+      "from": "pkg:npm/%40emnapi/runtime@1.6.0",
+      "to": [
+        "pkg:npm/tslib@2.8.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/%40scatest/docs@1.0.0",
+      "to": [
+        "pkg:npm/%40scatest/ui@1.0.7",
+        "pkg:npm/react-dom@19.2.0",
+        "pkg:npm/react@19.2.0",
+        "pkg:npm/vite@6.4.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/%40scatest/ui@1.0.7",
+      "to": [
+        "pkg:npm/react@19.2.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/%40scatest/workspace@0.0.0",
+      "to": [
+        "pkg:npm/turbo@2.5.8",
+        "pkg:npm/typescript@5.9.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/%40scatest/www@2.0.0",
+      "to": [
+        "pkg:npm/%40scatest/ui@1.0.7",
+        "pkg:npm/next@15.5.6",
+        "pkg:npm/react-dom@19.2.0",
+        "pkg:npm/react@19.2.0",
+        "pkg:npm/typescript@5.9.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/%40swc/helpers@0.5.15",
+      "to": [
+        "pkg:npm/tslib@2.8.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/next@15.5.6",
+      "to": [
+        "pkg:npm/caniuse-lite@1.0.30001751",
+        "pkg:npm/postcss@8.4.31",
+        "pkg:npm/sharp@0.34.4",
+        "pkg:npm/styled-jsx@5.1.6",
+      ],
+    },
+    {
+      "from": "pkg:npm/postcss@8.4.31",
+      "to": [
+        "pkg:npm/nanoid@3.3.11",
+        "pkg:npm/picocolors@1.1.1",
+        "pkg:npm/source-map-js@1.2.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/postcss@8.5.6",
+      "to": [
+        "pkg:npm/nanoid@3.3.11",
+        "pkg:npm/picocolors@1.1.1",
+        "pkg:npm/source-map-js@1.2.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/react-dom@19.2.0",
+      "to": [
+        "pkg:npm/scheduler@0.27.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/rollup@4.52.5",
+      "to": [
+        "pkg:npm/fsevents@2.3.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/sharp@0.34.4",
+      "to": [
+        "pkg:npm/detect-libc@2.1.2",
+        "pkg:npm/semver@7.7.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/styled-jsx@5.1.6",
+      "to": [
+        "pkg:npm/client-only@0.0.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/tinyglobby@0.2.15",
+      "to": [
+        "pkg:npm/fdir@6.5.0",
+        "pkg:npm/picomatch@4.0.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/turbo@2.5.8",
+      "to": [
+        "pkg:npm/turbo-darwin-64@2.5.8",
+        "pkg:npm/turbo-darwin-arm64@2.5.8",
+        "pkg:npm/turbo-linux-64@2.5.8",
+        "pkg:npm/turbo-linux-arm64@2.5.8",
+        "pkg:npm/turbo-windows-64@2.5.8",
+        "pkg:npm/turbo-windows-arm64@2.5.8",
+      ],
+    },
+    {
       "from": "pkg:npm/vite@6.4.1",
       "to": [
+        "pkg:npm/esbuild@0.25.11",
+        "pkg:npm/fdir@6.5.0",
+        "pkg:npm/fsevents@2.3.3",
+        "pkg:npm/picomatch@4.0.3",
         "pkg:npm/postcss@8.5.6",
+        "pkg:npm/rollup@4.52.5",
+        "pkg:npm/tinyglobby@0.2.15",
       ],
     },
   ],

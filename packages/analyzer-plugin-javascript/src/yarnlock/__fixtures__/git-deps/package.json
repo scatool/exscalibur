@@ -1,0 +1,11 @@
+{
+  "name": "test-git-deps",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "is-even": "jonschlinkert/is-even#1.0.0",
+    "mocha": "mochajs/mocha#4727d357ea",
+    "express": "expressjs/express",
+    "lodash": "^4.17.21"
+  }
+}

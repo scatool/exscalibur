@@ -485,6 +485,932 @@ exports[`basic 1`] = `
 }
 `;
 
+exports[`git-deps 1`] = `
+{
+  "packages": [
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#24",
+      ],
+      "purl": "pkg:npm/accepts@2.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#29",
+      ],
+      "purl": "pkg:npm/body-parser@2.2.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#34",
+      ],
+      "purl": "pkg:npm/bytes@3.1.2",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#39",
+      ],
+      "purl": "pkg:npm/call-bind-apply-helpers@1.0.2",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#44",
+      ],
+      "purl": "pkg:npm/call-bound@1.0.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#49",
+      ],
+      "purl": "pkg:npm/commander@0.6.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#54",
+      ],
+      "purl": "pkg:npm/commander@2.3.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#59",
+      ],
+      "purl": "pkg:npm/content-disposition@1.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#64",
+      ],
+      "purl": "pkg:npm/content-type@1.0.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#69",
+      ],
+      "purl": "pkg:npm/cookie-signature@1.2.2",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#74",
+      ],
+      "purl": "pkg:npm/cookie@0.7.2",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#79",
+      ],
+      "purl": "pkg:npm/debug@2.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#88",
+      ],
+      "purl": "pkg:npm/debug@4.4.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#98",
+      ],
+      "purl": "pkg:npm/depd@2.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#103",
+      ],
+      "purl": "pkg:npm/diff@1.0.8",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#108",
+      ],
+      "purl": "pkg:npm/dunder-proto@1.0.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#113",
+      ],
+      "purl": "pkg:npm/ee-first@1.1.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#117",
+      ],
+      "purl": "pkg:npm/encodeurl@2.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#122",
+      ],
+      "purl": "pkg:npm/es-define-property@1.0.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#127",
+      ],
+      "purl": "pkg:npm/es-errors@1.3.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#132",
+      ],
+      "purl": "pkg:npm/es-object-atoms@1.1.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#137",
+      ],
+      "purl": "pkg:npm/escape-html@1.0.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#141",
+      ],
+      "purl": "pkg:npm/escape-string-regexp@1.0.2",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#146",
+      ],
+      "purl": "pkg:npm/etag@1.8.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#151",
+      ],
+      "purl": "pkg:npm/express@5.1.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#157",
+      ],
+      "purl": "pkg:npm/finalhandler@2.1.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#162",
+      ],
+      "purl": "pkg:npm/forwarded@0.2.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#167",
+      ],
+      "purl": "pkg:npm/fresh@2.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#172",
+      ],
+      "purl": "pkg:npm/function-bind@1.1.2",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#176",
+      ],
+      "purl": "pkg:npm/get-intrinsic@1.3.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#181",
+      ],
+      "purl": "pkg:npm/get-proto@1.0.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#186",
+      ],
+      "purl": "pkg:npm/glob@3.2.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#191",
+      ],
+      "purl": "pkg:npm/gopd@1.2.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#196",
+      ],
+      "purl": "pkg:npm/graceful-fs@2.0.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#202",
+      ],
+      "purl": "pkg:npm/growl@1.8.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#206",
+      ],
+      "purl": "pkg:npm/has-symbols@1.1.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#211",
+      ],
+      "purl": "pkg:npm/hasown@2.0.2",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#216",
+      ],
+      "purl": "pkg:npm/http-errors@2.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#221",
+      ],
+      "purl": "pkg:npm/iconv-lite@0.6.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#226",
+      ],
+      "purl": "pkg:npm/iconv-lite@0.7.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#231",
+      ],
+      "purl": "pkg:npm/inherits@2.0.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#235",
+      ],
+      "purl": "pkg:npm/ipaddr.js@1.9.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#240",
+      ],
+      "purl": "pkg:npm/is-buffer@1.1.6",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#244",
+      ],
+      "purl": "pkg:npm/is-even@1.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#254",
+      ],
+      "purl": "pkg:npm/is-number@3.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#259",
+      ],
+      "purl": "pkg:npm/is-odd@0.1.2",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#264",
+      ],
+      "purl": "pkg:npm/is-promise@4.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#268",
+      ],
+      "purl": "pkg:npm/jade@0.26.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#274",
+      ],
+      "purl": "pkg:npm/kind-of@3.2.2",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#279",
+      ],
+      "purl": "pkg:npm/lodash@4.17.21",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#283",
+      ],
+      "purl": "pkg:npm/lru-cache@2.7.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#287",
+      ],
+      "purl": "pkg:npm/math-intrinsics@1.1.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#292",
+      ],
+      "purl": "pkg:npm/media-typer@1.1.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#297",
+      ],
+      "purl": "pkg:npm/merge-descriptors@2.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#302",
+      ],
+      "purl": "pkg:npm/mime-db@1.54.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#307",
+      ],
+      "purl": "pkg:npm/mime-types@3.0.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#312",
+      ],
+      "purl": "pkg:npm/minimatch@0.2.14",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#317",
+      ],
+      "purl": "pkg:npm/minimist@0.0.8",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#321",
+      ],
+      "purl": "pkg:npm/mkdirp@0.3.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#326",
+      ],
+      "purl": "pkg:npm/mkdirp@0.5.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#332",
+      ],
+      "purl": "pkg:npm/mocha@2.0.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#338",
+      ],
+      "purl": "pkg:npm/ms@0.6.2",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#342",
+      ],
+      "purl": "pkg:npm/ms@2.1.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#346",
+      ],
+      "purl": "pkg:npm/negotiator@1.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#351",
+      ],
+      "purl": "pkg:npm/object-inspect@1.13.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#356",
+      ],
+      "purl": "pkg:npm/on-finished@2.4.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#361",
+      ],
+      "purl": "pkg:npm/once@1.4.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#365",
+      ],
+      "purl": "pkg:npm/parseurl@1.3.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#370",
+      ],
+      "purl": "pkg:npm/path-to-regexp@8.3.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#374",
+      ],
+      "purl": "pkg:npm/proxy-addr@2.0.7",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#379",
+      ],
+      "purl": "pkg:npm/qs@6.14.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#384",
+      ],
+      "purl": "pkg:npm/range-parser@1.2.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#389",
+      ],
+      "purl": "pkg:npm/raw-body@3.0.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#394",
+      ],
+      "purl": "pkg:npm/router@2.2.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#399",
+      ],
+      "purl": "pkg:npm/safe-buffer@5.2.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#403",
+      ],
+      "purl": "pkg:npm/safer-buffer@2.1.2",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#407",
+      ],
+      "purl": "pkg:npm/send@1.2.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#412",
+      ],
+      "purl": "pkg:npm/serve-static@2.2.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#417",
+      ],
+      "purl": "pkg:npm/setprototypeof@1.2.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#421",
+      ],
+      "purl": "pkg:npm/side-channel-list@1.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#426",
+      ],
+      "purl": "pkg:npm/side-channel-map@1.0.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#431",
+      ],
+      "purl": "pkg:npm/side-channel-weakmap@1.0.2",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#436",
+      ],
+      "purl": "pkg:npm/side-channel@1.1.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#441",
+      ],
+      "purl": "pkg:npm/sigmund@1.0.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#445",
+      ],
+      "purl": "pkg:npm/statuses@2.0.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#450",
+      ],
+      "purl": "pkg:npm/statuses@2.0.2",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#455",
+      ],
+      "purl": "pkg:npm/toidentifier@1.0.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#460",
+      ],
+      "purl": "pkg:npm/type-is@2.0.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#465",
+      ],
+      "purl": "pkg:npm/unpipe@1.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#470",
+      ],
+      "purl": "pkg:npm/vary@1.1.2",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/pnpm-lock.yaml#475",
+      ],
+      "purl": "pkg:npm/wrappy@1.0.2",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:npm/accepts@2.0.0",
+      "to": [
+        "pkg:npm/mime-types@3.0.1",
+        "pkg:npm/negotiator@1.0.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/body-parser@2.2.0",
+      "to": [
+        "pkg:npm/bytes@3.1.2",
+        "pkg:npm/content-type@1.0.5",
+        "pkg:npm/debug@4.4.3",
+        "pkg:npm/http-errors@2.0.0",
+        "pkg:npm/iconv-lite@0.6.3",
+        "pkg:npm/on-finished@2.4.1",
+        "pkg:npm/qs@6.14.0",
+        "pkg:npm/raw-body@3.0.1",
+        "pkg:npm/type-is@2.0.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/call-bind-apply-helpers@1.0.2",
+      "to": [
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/function-bind@1.1.2",
+      ],
+    },
+    {
+      "from": "pkg:npm/call-bound@1.0.4",
+      "to": [
+        "pkg:npm/call-bind-apply-helpers@1.0.2",
+        "pkg:npm/get-intrinsic@1.3.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/content-disposition@1.0.0",
+      "to": [
+        "pkg:npm/safe-buffer@5.2.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/debug@2.0.0",
+      "to": [
+        "pkg:npm/ms@0.6.2",
+      ],
+    },
+    {
+      "from": "pkg:npm/debug@4.4.3",
+      "to": [
+        "pkg:npm/ms@2.1.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/dunder-proto@1.0.1",
+      "to": [
+        "pkg:npm/call-bind-apply-helpers@1.0.2",
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/gopd@1.2.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/es-object-atoms@1.1.1",
+      "to": [
+        "pkg:npm/es-errors@1.3.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/express@https:%2F%2Fcodeload.github.com%2Fexpressjs%2Fexpress%2Ftar.gz%2F64e7373d6976dd3ec32a92dbc31ff19700fe152a",
+      "to": [
+        "pkg:npm/accepts@2.0.0",
+        "pkg:npm/body-parser@2.2.0",
+        "pkg:npm/content-disposition@1.0.0",
+        "pkg:npm/content-type@1.0.5",
+        "pkg:npm/cookie-signature@1.2.2",
+        "pkg:npm/cookie@0.7.2",
+        "pkg:npm/debug@4.4.3",
+        "pkg:npm/depd@2.0.0",
+        "pkg:npm/encodeurl@2.0.0",
+        "pkg:npm/escape-html@1.0.3",
+        "pkg:npm/etag@1.8.1",
+        "pkg:npm/finalhandler@2.1.0",
+        "pkg:npm/fresh@2.0.0",
+        "pkg:npm/http-errors@2.0.0",
+        "pkg:npm/merge-descriptors@2.0.0",
+        "pkg:npm/mime-types@3.0.1",
+        "pkg:npm/on-finished@2.4.1",
+        "pkg:npm/once@1.4.0",
+        "pkg:npm/parseurl@1.3.3",
+        "pkg:npm/proxy-addr@2.0.7",
+        "pkg:npm/qs@6.14.0",
+        "pkg:npm/range-parser@1.2.1",
+        "pkg:npm/router@2.2.0",
+        "pkg:npm/send@1.2.0",
+        "pkg:npm/serve-static@2.2.0",
+        "pkg:npm/statuses@2.0.2",
+        "pkg:npm/type-is@2.0.1",
+        "pkg:npm/vary@1.1.2",
+      ],
+    },
+    {
+      "from": "pkg:npm/finalhandler@2.1.0",
+      "to": [
+        "pkg:npm/debug@4.4.3",
+        "pkg:npm/encodeurl@2.0.0",
+        "pkg:npm/escape-html@1.0.3",
+        "pkg:npm/on-finished@2.4.1",
+        "pkg:npm/parseurl@1.3.3",
+        "pkg:npm/statuses@2.0.2",
+      ],
+    },
+    {
+      "from": "pkg:npm/get-intrinsic@1.3.0",
+      "to": [
+        "pkg:npm/call-bind-apply-helpers@1.0.2",
+        "pkg:npm/es-define-property@1.0.1",
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/es-object-atoms@1.1.1",
+        "pkg:npm/function-bind@1.1.2",
+        "pkg:npm/get-proto@1.0.1",
+        "pkg:npm/gopd@1.2.0",
+        "pkg:npm/has-symbols@1.1.0",
+        "pkg:npm/hasown@2.0.2",
+        "pkg:npm/math-intrinsics@1.1.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/get-proto@1.0.1",
+      "to": [
+        "pkg:npm/dunder-proto@1.0.1",
+        "pkg:npm/es-object-atoms@1.1.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/glob@3.2.3",
+      "to": [
+        "pkg:npm/graceful-fs@2.0.3",
+        "pkg:npm/inherits@2.0.4",
+        "pkg:npm/minimatch@0.2.14",
+      ],
+    },
+    {
+      "from": "pkg:npm/hasown@2.0.2",
+      "to": [
+        "pkg:npm/function-bind@1.1.2",
+      ],
+    },
+    {
+      "from": "pkg:npm/http-errors@2.0.0",
+      "to": [
+        "pkg:npm/depd@2.0.0",
+        "pkg:npm/inherits@2.0.4",
+        "pkg:npm/setprototypeof@1.2.0",
+        "pkg:npm/statuses@2.0.1",
+        "pkg:npm/toidentifier@1.0.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/iconv-lite@0.6.3",
+      "to": [
+        "pkg:npm/safer-buffer@2.1.2",
+      ],
+    },
+    {
+      "from": "pkg:npm/iconv-lite@0.7.0",
+      "to": [
+        "pkg:npm/safer-buffer@2.1.2",
+      ],
+    },
+    {
+      "from": "pkg:npm/is-even@git+https:%2F%2Fgithub.com%2Fjonschlinkert%2Fis-even.git%230990c36e791f0eca662c661238fb3e560b7d28c8",
+      "to": [
+        "pkg:npm/is-odd@0.1.2",
+      ],
+    },
+    {
+      "from": "pkg:npm/is-number@3.0.0",
+      "to": [
+        "pkg:npm/kind-of@3.2.2",
+      ],
+    },
+    {
+      "from": "pkg:npm/is-odd@0.1.2",
+      "to": [
+        "pkg:npm/is-number@3.0.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/jade@0.26.3",
+      "to": [
+        "pkg:npm/commander@0.6.1",
+        "pkg:npm/mkdirp@0.3.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/kind-of@3.2.2",
+      "to": [
+        "pkg:npm/is-buffer@1.1.6",
+      ],
+    },
+    {
+      "from": "pkg:npm/mime-types@3.0.1",
+      "to": [
+        "pkg:npm/mime-db@1.54.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/minimatch@0.2.14",
+      "to": [
+        "pkg:npm/lru-cache@2.7.3",
+        "pkg:npm/sigmund@1.0.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/mkdirp@0.5.0",
+      "to": [
+        "pkg:npm/minimist@0.0.8",
+      ],
+    },
+    {
+      "from": "pkg:npm/mocha@https:%2F%2Fcodeload.github.com%2Fmochajs%2Fmocha%2Ftar.gz%2F4727d357ea",
+      "to": [
+        "pkg:npm/commander@2.3.0",
+        "pkg:npm/debug@2.0.0",
+        "pkg:npm/diff@1.0.8",
+        "pkg:npm/escape-string-regexp@1.0.2",
+        "pkg:npm/glob@3.2.3",
+        "pkg:npm/growl@1.8.1",
+        "pkg:npm/jade@0.26.3",
+        "pkg:npm/mkdirp@0.5.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/on-finished@2.4.1",
+      "to": [
+        "pkg:npm/ee-first@1.1.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/once@1.4.0",
+      "to": [
+        "pkg:npm/wrappy@1.0.2",
+      ],
+    },
+    {
+      "from": "pkg:npm/proxy-addr@2.0.7",
+      "to": [
+        "pkg:npm/forwarded@0.2.0",
+        "pkg:npm/ipaddr.js@1.9.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/qs@6.14.0",
+      "to": [
+        "pkg:npm/side-channel@1.1.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/raw-body@3.0.1",
+      "to": [
+        "pkg:npm/bytes@3.1.2",
+        "pkg:npm/http-errors@2.0.0",
+        "pkg:npm/iconv-lite@0.7.0",
+        "pkg:npm/unpipe@1.0.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/router@2.2.0",
+      "to": [
+        "pkg:npm/debug@4.4.3",
+        "pkg:npm/depd@2.0.0",
+        "pkg:npm/is-promise@4.0.0",
+        "pkg:npm/parseurl@1.3.3",
+        "pkg:npm/path-to-regexp@8.3.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/send@1.2.0",
+      "to": [
+        "pkg:npm/debug@4.4.3",
+        "pkg:npm/encodeurl@2.0.0",
+        "pkg:npm/escape-html@1.0.3",
+        "pkg:npm/etag@1.8.1",
+        "pkg:npm/fresh@2.0.0",
+        "pkg:npm/http-errors@2.0.0",
+        "pkg:npm/mime-types@3.0.1",
+        "pkg:npm/ms@2.1.3",
+        "pkg:npm/on-finished@2.4.1",
+        "pkg:npm/range-parser@1.2.1",
+        "pkg:npm/statuses@2.0.2",
+      ],
+    },
+    {
+      "from": "pkg:npm/serve-static@2.2.0",
+      "to": [
+        "pkg:npm/encodeurl@2.0.0",
+        "pkg:npm/escape-html@1.0.3",
+        "pkg:npm/parseurl@1.3.3",
+        "pkg:npm/send@1.2.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/side-channel-list@1.0.0",
+      "to": [
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/object-inspect@1.13.4",
+      ],
+    },
+    {
+      "from": "pkg:npm/side-channel-map@1.0.1",
+      "to": [
+        "pkg:npm/call-bound@1.0.4",
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/get-intrinsic@1.3.0",
+        "pkg:npm/object-inspect@1.13.4",
+      ],
+    },
+    {
+      "from": "pkg:npm/side-channel-weakmap@1.0.2",
+      "to": [
+        "pkg:npm/call-bound@1.0.4",
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/get-intrinsic@1.3.0",
+        "pkg:npm/object-inspect@1.13.4",
+        "pkg:npm/side-channel-map@1.0.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/side-channel@1.1.0",
+      "to": [
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/object-inspect@1.13.4",
+        "pkg:npm/side-channel-list@1.0.0",
+        "pkg:npm/side-channel-map@1.0.1",
+        "pkg:npm/side-channel-weakmap@1.0.2",
+      ],
+    },
+    {
+      "from": "pkg:npm/test-git-deps@1.0.0",
+      "to": [
+        "pkg:npm/express@5.1.0",
+        "pkg:npm/is-even@1.0.0",
+        "pkg:npm/lodash@4.17.21",
+        "pkg:npm/mocha@2.0.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/type-is@2.0.1",
+      "to": [
+        "pkg:npm/content-type@1.0.5",
+        "pkg:npm/media-typer@1.1.0",
+        "pkg:npm/mime-types@3.0.1",
+      ],
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "<fixtures>/git-deps/package.json",
+      "purl": "pkg:npm/test-git-deps@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/express@5.1.0",
+            "pkg:npm/is-even@1.0.0",
+            "pkg:npm/lodash@4.17.21",
+            "pkg:npm/mocha@2.0.1",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
+
 exports[`monorepo 1`] = `
 {
   "packages": [
@@ -1454,6 +2380,73 @@ exports[`monorepo 1`] = `
 }
 `;
 
+exports[`tarball-deps 1`] = `
+{
+  "packages": [
+    {
+      "evidence": [
+        "<fixtures>/tarball-deps/pnpm-lock.yaml#18",
+      ],
+      "purl": "pkg:npm/js-tokens@4.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/tarball-deps/pnpm-lock.yaml#22",
+      ],
+      "purl": "pkg:npm/lodash@4.17.21",
+    },
+    {
+      "evidence": [
+        "<fixtures>/tarball-deps/pnpm-lock.yaml#26",
+      ],
+      "purl": "pkg:npm/loose-envify@1.4.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/tarball-deps/pnpm-lock.yaml#31",
+      ],
+      "purl": "pkg:npm/react@18.3.1",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:npm/loose-envify@1.4.0",
+      "to": [
+        "pkg:npm/js-tokens@4.0.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/react@18.3.1",
+      "to": [
+        "pkg:npm/loose-envify@1.4.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/test-tarball-deps@1.0.0",
+      "to": [
+        "pkg:npm/lodash@4.17.21",
+        "pkg:npm/react@18.3.1",
+      ],
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "<fixtures>/tarball-deps/package.json",
+      "purl": "pkg:npm/test-tarball-deps@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/lodash@4.17.21",
+            "pkg:npm/react@18.3.1",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
+
 exports[`workspace 1`] = `
 {
   "packages": [
@@ -2212,6 +3205,7 @@ exports[`workspace 1`] = `
     {
       "from": "pkg:npm/%40scatest/docs@1.0.0",
       "to": [
+        "pkg:npm/%40scatest/ui@1.0.7",
         "pkg:npm/react-dom@19.2.0",
         "pkg:npm/react@19.2.0",
         "pkg:npm/vite@6.4.1",
@@ -2233,6 +3227,7 @@ exports[`workspace 1`] = `
     {
       "from": "pkg:npm/%40scatest/www@2.0.0",
       "to": [
+        "pkg:npm/%40scatest/ui@1.0.7",
         "pkg:npm/next@15.5.6",
         "pkg:npm/react-dom@19.2.0",
         "pkg:npm/react@19.2.0",
@@ -2430,6 +3425,7 @@ exports[`workspace 1`] = `
       "scopes": [
         {
           "packages": [
+            "pkg:npm/%40scatest/ui@1.0.7",
             "pkg:npm/react-dom@19.2.0",
             "pkg:npm/react@19.2.0",
             "pkg:npm/vite@6.4.1",
@@ -2469,6 +3465,7 @@ exports[`workspace 1`] = `
       "scopes": [
         {
           "packages": [
+            "pkg:npm/%40scatest/ui@1.0.7",
             "pkg:npm/next@15.5.6",
             "pkg:npm/react-dom@19.2.0",
             "pkg:npm/react@19.2.0",

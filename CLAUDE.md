@@ -5,6 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Project Overview
 
 Excalibur extracts dependency graphs from software projects. It parses lockfiles, package manifests, and other dependency definition files to produce a normalized graph of:
+
 - **Packages**: Dependencies with Package URLs (PURLs) and evidence (file paths + line numbers)
 - **Subprojects**: Individual projects in a monorepo with their dependency scopes
 - **Relationships**: Dependency edges between packages
@@ -12,20 +13,24 @@ Excalibur extracts dependency graphs from software projects. It parses lockfiles
 ## Commands
 
 ### Testing
+
 - **Run all tests**: `bun test` (from root, uses Turbo)
 - **Run tests for a specific package**: `cd packages/<package-name> && bun test`
 - **Run a single test file**: `bun test <path-to-test-file>`
 - **Update snapshots**: `bun test <path-to-test-file> --update-snapshots`
 
 ### Type Checking
+
 - **Type check all packages**: `bun run typecheck` (from root, uses Turbo)
 - **Type check a specific package**: `cd packages/<package-name> && bunx tsc --strict --noEmit`
 
 ### Linting and Formatting
+
 - **Lint**: `bun run lint` (ESLint)
 - **Format**: `bun run format` (Prettier)
 
 ### Package Management
+
 - **Install dependencies**: `bun install`
 - Uses Bun as the package manager (version 1.3.1)
 
@@ -60,6 +65,7 @@ export const extractor: Extractor = filesExtractor({
 ```
 
 **Key responsibilities**:
+
 1. **`markFiles`**: Use Bun's `Glob` to find relevant files, excluding `node_modules`
 2. **`extractFile`**: Parse individual files and return structured results
 3. **Evidence tracking**: Record file path and line number for each package reference
@@ -69,6 +75,7 @@ export const extractor: Extractor = filesExtractor({
 ### Result Normalization
 
 The core provides `normalizeResult()` and `mergeResults()` utilities:
+
 - **`normalizeResult()`**: Sorts packages, subprojects, relationships, and evidence arrays for deterministic output
 - **`mergeResults()`**: Combines multiple `AnalyzerResult` objects, deduplicating packages and merging relationships
 
@@ -96,6 +103,7 @@ Each plugin package exports one or more extractors:
 ### Testing Approach
 
 Tests use Bun's test runner with snapshot testing:
+
 - Fixtures in `__fixtures__/` subdirectories contain real-world examples
 - Tests typically extract from fixtures and compare against snapshots
 - Each extractor has comprehensive test coverage for different scenarios (basic, monorepo, workspace, git deps, tarball deps, etc.)

@@ -6,19 +6,20 @@ import {
   type Relationship,
   type Subproject,
 } from '@scatool/analyzer-core/src/index.ts';
-import {Glob} from 'bun';
-import {PackageURL} from 'packageurl-js';
-import {dirname, join} from 'node:path';
+import { Glob } from 'bun';
+import { PackageURL } from 'packageurl-js';
+import { dirname, join } from 'node:path';
 import {
   findLineNumber,
   isGitPackageKey,
   parsePackageKey,
   parsePnpmLockfile,
+  type PnpmLockfile,
   type PnpmLockfileV6,
   type PnpmLockfileV9,
   stripPeerDepSuffix,
 } from './lockfile.ts';
-import type {PackageJson} from '../types.ts';
+import type { PackageJson } from '../types.ts';
 
 const lockfileGlob = new Glob('**/pnpm-lock.yaml');
 
@@ -28,7 +29,7 @@ export const extractor: Extractor = filesExtractor({
   name: 'pnpmlock',
   version: 1,
   markFiles: async function (codebase: string) {
-    for await (const file of lockfileGlob.scan({cwd: codebase, absolute: true})) {
+    for await (const file of lockfileGlob.scan({ cwd: codebase, absolute: true })) {
       if (!file.includes('/node_modules/')) {
         this.markFile(file);
       }
@@ -44,6 +45,27 @@ export const extractor: Extractor = filesExtractor({
     try {
       const lockfileContent = await Bun.file(file).text();
       const lockfile = parsePnpmLockfile(lockfileContent);
+
+      // Build a map of workspace package names to their versions
+      // We need to do this before extracting scopes so we can identify workspace dependencies
+      const workspacePackages = new Map<string, string>();
+      if (lockfile.importers) {
+        for (const [importerPath, importer] of Object.entries(lockfile.importers)) {
+          const importerDir = importerPath === '.' ? dir : join(dir, importerPath);
+          const packageJsonPath = join(importerDir, 'package.json');
+
+          try {
+            const packageJsonContent = await Bun.file(packageJsonPath).text();
+            const packageInfo = JSON.parse(packageJsonContent) as PackageJson;
+            if (packageInfo.name && packageInfo.version) {
+              workspacePackages.set(packageInfo.name, packageInfo.version);
+            }
+          } catch {
+            // Skip invalid package.json files
+            continue;
+          }
+        }
+      }
 
       // Process importers (workspace packages) to create subprojects
       if (lockfile.importers) {
@@ -78,12 +100,43 @@ export const extractor: Extractor = filesExtractor({
                 for (const [depName, depRef] of Object.entries(importerDeps)) {
                   if (depRef && typeof depRef === 'object' && 'version' in depRef) {
                     let version = depRef.version;
-                    // Skip workspace links (e.g., "link:../packages/foo")
-                    if (typeof version === 'string' && !version.startsWith('link:')) {
-                      // Strip peer dependency suffix: "19.2.0(react@19.2.0)" -> "19.2.0"
-                      version = stripPeerDepSuffix(version);
-                      const depPurl = createPurl(depName, version);
-                      depsInScope.push(depPurl);
+
+                    // Check if this is a workspace package (starts with "link:")
+                    if (typeof version === 'string' && version.startsWith('link:')) {
+                      // Check if this is a known workspace package
+                      const workspaceVersion = workspacePackages.get(depName);
+                      if (workspaceVersion) {
+                        // Include workspace package with its actual version
+                        const depPurl = createPurl(depName, workspaceVersion);
+                        depsInScope.push(depPurl);
+                      }
+                      // Skip if not a known workspace package
+                      continue;
+                    }
+
+                    // Regular external dependency
+                    if (typeof version === 'string') {
+                      // For git/tarball dependencies, look up the actual version from packages section
+                      const packageKey = `${depName}@${version}`;
+                      if (isGitPackageKey(packageKey)) {
+                        // This is a git/tarball package - look up the actual version
+                        const actualVersion = getPackageVersion(lockfile, packageKey);
+                        if (actualVersion) {
+                          const depPurl = createPurl(depName, actualVersion);
+                          depsInScope.push(depPurl);
+                        } else {
+                          // Fallback to the git URL if we can't find the version
+                          version = stripPeerDepSuffix(version);
+                          const depPurl = createPurl(depName, version);
+                          depsInScope.push(depPurl);
+                        }
+                      } else {
+                        // Regular package with semantic version
+                        // Strip peer dependency suffix: "19.2.0(react@19.2.0)" -> "19.2.0"
+                        version = stripPeerDepSuffix(version);
+                        const depPurl = createPurl(depName, version);
+                        depsInScope.push(depPurl);
+                      }
                     }
                   }
                 }
@@ -143,7 +196,7 @@ export const extractor: Extractor = filesExtractor({
     }
 
     // Convert maps to arrays
-    const packages = Array.from(packageMap.values()).map(({purl, evidence}) => ({
+    const packages = Array.from(packageMap.values()).map(({ purl, evidence }) => ({
       purl,
       evidence: Array.from(evidence),
     }));
@@ -165,7 +218,11 @@ export const extractor: Extractor = filesExtractor({
  * Process dependencies from a package entry and add relationships
  */
 function processDependencies(
-  deps: { dependencies?: Record<string, string>; devDependencies?: Record<string, string>; optionalDependencies?: Record<string, string> },
+  deps: {
+    dependencies?: Record<string, string>;
+    devDependencies?: Record<string, string>;
+    optionalDependencies?: Record<string, string>;
+  },
   purl: string,
   packageMap: Map<string, { purl: string; evidence: Set<string> }>,
   relationshipsMap: Map<string, Set<string>>,
@@ -204,7 +261,7 @@ function processV9Lockfile(
       const parsed = parsePackageKey(packageKey);
       if (!parsed) continue;
 
-      let {name, version} = parsed;
+      let { name, version } = parsed;
 
       // For git packages, use the version field from the package entry instead of the git URL
       if (packageEntry.version && isGitPackageKey(packageKey)) {
@@ -215,7 +272,7 @@ function processV9Lockfile(
 
       // Add package with evidence
       if (!packageMap.has(purl)) {
-        packageMap.set(purl, {purl, evidence: new Set()});
+        packageMap.set(purl, { purl, evidence: new Set() });
       }
 
       const lineNumber = findLineNumber(lockfileContent, packageKey);
@@ -231,7 +288,7 @@ function processV9Lockfile(
       const parsed = parsePackageKey(snapshotKey);
       if (!parsed) continue;
 
-      const {name, version} = parsed;
+      const { name, version } = parsed;
       const purl = createPurl(name, version);
 
       // Extract relationships from dependencies
@@ -257,7 +314,7 @@ function processV6Lockfile(
     const parsed = parsePackageKey(packageKey);
     if (!parsed) continue;
 
-    let {name, version} = parsed;
+    let { name, version } = parsed;
 
     // For git packages, use the version field from the package entry instead of the git URL
     if (packageEntry.version && isGitPackageKey(packageKey)) {
@@ -268,7 +325,7 @@ function processV6Lockfile(
 
     // Add package with evidence
     if (!packageMap.has(purl)) {
-      packageMap.set(purl, {purl, evidence: new Set()});
+      packageMap.set(purl, { purl, evidence: new Set() });
     }
 
     const lineNumber = findLineNumber(lockfileContent, packageKey);
@@ -298,8 +355,39 @@ function addRelationship(relationshipsMap: Map<string, Set<string>>, from: strin
  */
 function ensurePackageExists(packageMap: Map<string, { purl: string; evidence: Set<string> }>, purl: string): void {
   if (!packageMap.has(purl)) {
-    packageMap.set(purl, {purl, evidence: new Set()});
+    packageMap.set(purl, { purl, evidence: new Set() });
   }
+}
+
+/**
+ * Get the actual semantic version for a package from the packages section
+ * For git/tarball packages, the version field in the package metadata contains the real version
+ */
+function getPackageVersion(lockfile: PnpmLockfile, packageKey: string): string | null {
+  const lockfileVersionNum =
+    typeof lockfile.lockfileVersion === 'string' ? parseFloat(lockfile.lockfileVersion) : lockfile.lockfileVersion;
+
+  if (lockfileVersionNum >= 9) {
+    // V9+ lockfile: check packages section for metadata
+    const v9Lockfile = lockfile as PnpmLockfileV9;
+    if (v9Lockfile.packages) {
+      const packageMetadata = v9Lockfile.packages[packageKey];
+      if (packageMetadata && packageMetadata.version) {
+        return packageMetadata.version;
+      }
+    }
+  } else {
+    // V6 and earlier: check packages section
+    const v6Lockfile = lockfile as PnpmLockfileV6;
+    if (v6Lockfile.packages) {
+      const packageEntry = v6Lockfile.packages[packageKey];
+      if (packageEntry && packageEntry.version) {
+        return packageEntry.version;
+      }
+    }
+  }
+
+  return null;
 }
 
 // Helper to create PURL from name and version

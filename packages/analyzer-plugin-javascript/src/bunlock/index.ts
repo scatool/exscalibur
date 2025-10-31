@@ -43,6 +43,28 @@ export const extractor: Extractor = filesExtractor({
     const relationshipsMap = new Map<string, Set<string>>();
     const subprojects: Subproject[] = [];
 
+    // Build a resolution map: package name → resolved version
+    // This allows us to resolve version ranges to actual versions
+    const resolutionMap = new Map<string, string>();
+    if (lockfile.packages && typeof lockfile.packages === 'object') {
+      for (const packageInfo of Object.values(lockfile.packages)) {
+        if (!Array.isArray(packageInfo) || packageInfo.length === 0) continue;
+
+        const packageIdentifier = packageInfo[PKG_IDENTIFIER_INDEX];
+        if (typeof packageIdentifier !== 'string') continue;
+
+        // Parse name@version format
+        const lastAtIndex = packageIdentifier.lastIndexOf('@');
+        if (lastAtIndex <= 0) continue;
+
+        const name = packageIdentifier.substring(0, lastAtIndex);
+        const version = packageIdentifier.substring(lastAtIndex + 1);
+
+        // Store the resolved version for this package name
+        resolutionMap.set(name, version);
+      }
+    }
+
     // Read package.json to get the root package info
     const packageJsonPath = join(dir, 'package.json');
     let rootPackageInfo: PackageJson | null = null;
@@ -51,6 +73,32 @@ export const extractor: Extractor = filesExtractor({
       rootPackageInfo = JSON.parse(packageJsonContent) as PackageJson;
     } catch {
       // package.json might not exist, continue anyway
+    }
+
+    // Build a map of workspace package names to their versions
+    const workspacePackages = new Map<string, string>();
+    if (lockfile.workspaces && typeof lockfile.workspaces === 'object') {
+      for (const [workspacePath, workspace] of Object.entries(lockfile.workspaces)) {
+        if (!workspace || typeof workspace !== 'object') continue;
+
+        const workspaceName = 'name' in workspace ? workspace.name : undefined;
+        if (!workspaceName || typeof workspaceName !== 'string') continue;
+
+        // Determine the package.json path for this workspace
+        const workspaceDir = workspacePath === '' ? dir : join(dir, workspacePath);
+        const workspacePackageJsonPath = join(workspaceDir, 'package.json');
+
+        try {
+          const packageJsonContent = await Bun.file(workspacePackageJsonPath).text();
+          const packageInfo = JSON.parse(packageJsonContent) as PackageJson;
+          if (packageInfo.version) {
+            workspacePackages.set(workspaceName, packageInfo.version);
+          }
+        } catch {
+          // Skip invalid package.json files
+          continue;
+        }
+      }
     }
 
     // Process workspaces if they exist in the lockfile
@@ -78,7 +126,7 @@ export const extractor: Extractor = filesExtractor({
 
         if (packageInfo?.version) {
           const purl = createPurl(workspaceName, packageInfo.version);
-          const scopes = extractScopes(workspace as Record<string, unknown>);
+          const scopes = extractScopes(workspace as Record<string, unknown>, resolutionMap, workspacePackages);
 
           subprojects.push({
             purl,
@@ -90,7 +138,7 @@ export const extractor: Extractor = filesExtractor({
     } else if (rootPackageInfo?.name && rootPackageInfo.version) {
       // Fallback to reading package.json directly if no workspaces in lockfile
       const purl = createPurl(rootPackageInfo.name, rootPackageInfo.version);
-      const scopes = extractScopes(rootPackageInfo);
+      const scopes = extractScopes(rootPackageInfo, resolutionMap, workspacePackages);
 
       subprojects.push({
         purl,
@@ -185,8 +233,13 @@ export const extractor: Extractor = filesExtractor({
 
 /**
  * Extract dependency scopes from a package info object
+ * Uses the resolution map to convert version ranges to resolved versions
  */
-function extractScopes(packageInfo: Record<string, unknown>): DependencyScope[] {
+function extractScopes(
+  packageInfo: Record<string, unknown>,
+  resolutionMap: Map<string, string>,
+  workspacePackages: Map<string, string>,
+): DependencyScope[] {
   const scopes: DependencyScope[] = [];
 
   for (const scopeName of DEPENDENCY_TYPES) {
@@ -194,9 +247,23 @@ function extractScopes(packageInfo: Record<string, unknown>): DependencyScope[] 
     if (!deps || typeof deps !== 'object') continue;
 
     const scopePackages: string[] = [];
-    for (const [depName, depVersion] of Object.entries(deps)) {
-      if (typeof depVersion === 'string') {
-        const depPurl = createPurl(depName, depVersion);
+    for (const [depName, depVersionRange] of Object.entries(deps)) {
+      if (typeof depVersionRange !== 'string') continue;
+
+      // Check if this is a workspace package
+      if (depVersionRange.startsWith('workspace:')) {
+        const workspaceVersion = workspacePackages.get(depName);
+        if (workspaceVersion) {
+          const depPurl = createPurl(depName, workspaceVersion);
+          scopePackages.push(depPurl);
+        }
+        continue;
+      }
+
+      // Look up the resolved version from the lockfile
+      const resolvedVersion = resolutionMap.get(depName);
+      if (resolvedVersion) {
+        const depPurl = createPurl(depName, resolvedVersion);
         scopePackages.push(depPurl);
       }
     }

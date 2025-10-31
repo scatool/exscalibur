@@ -67,9 +67,7 @@ test('mergeResults merges relationships and deduplicates', () => {
   const result1: AnalyzerResult = {
     packages: [],
     subprojects: [],
-    relationships: [
-      { from: 'pkg:npm/foo@1.0.0', to: ['pkg:npm/bar@2.0.0', 'pkg:npm/baz@3.0.0'] },
-    ],
+    relationships: [{ from: 'pkg:npm/foo@1.0.0', to: ['pkg:npm/bar@2.0.0', 'pkg:npm/baz@3.0.0'] }],
   };
 
   const result2: AnalyzerResult = {
@@ -106,9 +104,7 @@ test('mergeResults sorts output', () => {
       { purl: 'pkg:npm/alpha@1.0.0', evidence: ['a.txt:1', 'c.txt:1', 'b.txt:1'] },
     ],
     subprojects: [],
-    relationships: [
-      { from: 'pkg:npm/zebra@1.0.0', to: ['pkg:npm/charlie@1.0.0', 'pkg:npm/alpha@1.0.0'] },
-    ],
+    relationships: [{ from: 'pkg:npm/zebra@1.0.0', to: ['pkg:npm/charlie@1.0.0', 'pkg:npm/alpha@1.0.0'] }],
   };
 
   const merged = mergeResults([result]);

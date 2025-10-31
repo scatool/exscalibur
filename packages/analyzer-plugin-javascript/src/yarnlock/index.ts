@@ -2,18 +2,19 @@ import {
   type AnalyzerResult,
   type DependencyScope,
   type Extractor,
+  filesExtractor,
   type Relationship,
   type Subproject,
-  filesExtractor,
 } from '@scatool/analyzer-core/src/index.ts';
 import { Glob } from 'bun';
 import { PackageURL } from 'packageurl-js';
 import { dirname, join } from 'node:path';
-import { findPackageInLockfile } from './lockfile.ts';
-import { runYarnLs, isWorkspacePackage, type YarnLsDependency } from './yarnls.ts';
+import { findLineNumber, parsePackagePattern, parseYarnLockfile, resolvePackageVersion } from './lockfile.ts';
 import type { PackageJson } from '../types.ts';
 
 const lockfileGlob = new Glob('**/yarn.lock');
+
+const DEPENDENCY_TYPES = ['dependencies', 'devDependencies', 'optionalDependencies'] as const;
 
 export const extractor: Extractor = filesExtractor({
   name: 'yarnlock',
@@ -27,17 +28,16 @@ export const extractor: Extractor = filesExtractor({
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
     const dir = dirname(file);
-    const packagePurls: string[] = [];
+
+    const packageMap = new Map<string, { purl: string; evidence: Set<string> }>();
+    const relationshipsMap = new Map<string, Set<string>>();
     const subprojects: Subproject[] = [];
-    const relationships: Relationship[] = [];
-    // Map of purl -> Set of evidence strings (to avoid duplicates)
-    const evidenceMap = new Map<string, Set<string>>();
 
     try {
-      // Read the lockfile content for evidence tracking
       const lockfileContent = await Bun.file(file).text();
+      const lockfile = parseYarnLockfile(lockfileContent);
 
-      // Read package.json to get the root package info
+      // Read root package.json to determine workspace setup
       const packageJsonPath = join(dir, 'package.json');
       let rootPackageInfo: PackageJson | null = null;
       try {
@@ -47,64 +47,14 @@ export const extractor: Extractor = filesExtractor({
         // package.json might not exist, continue anyway
       }
 
-      // Run yarn list to get the dependency tree
-      const trees: YarnLsDependency[] = await runYarnLs(dir);
-
-      // Helper function to extract scopes from package.json
-      const extractScopesFromPackageJson = (
-        packageInfo: PackageJson,
-        depsTree: YarnLsDependency[],
-      ): DependencyScope[] => {
-        const scopes: DependencyScope[] = [];
-        const scopeNames = ['dependencies', 'devDependencies', 'peerDependencies', 'optionalDependencies'];
-
-        // Build a map from dependency name to its resolved version
-        const depMap = new Map<string, string>();
-        for (const dep of depsTree) {
-          depMap.set(dep.name, dep.version);
-        }
-
-        for (const scopeName of scopeNames) {
-          if (packageInfo[scopeName] && typeof packageInfo[scopeName] === 'object') {
-            const scopePackages: string[] = [];
-            for (const depName of Object.keys(packageInfo[scopeName])) {
-              const resolvedVersion = depMap.get(depName);
-              if (resolvedVersion) {
-                let depNamespace: string | null = null;
-                let depPackageName = depName;
-                if (depName.startsWith('@')) {
-                  const parts = depName.split('/');
-                  if (parts.length === 2 && parts[0] && parts[1]) {
-                    depNamespace = parts[0]; // Keep @ for proper PURL encoding
-                    depPackageName = parts[1];
-                  }
-                }
-                const depPurl = new PackageURL('npm', depNamespace, depPackageName, resolvedVersion, null, null);
-                scopePackages.push(depPurl.toString());
-              }
-            }
-            if (scopePackages.length > 0) {
-              scopes.push({
-                scope: scopeName,
-                packages: scopePackages,
-              });
-            }
-          }
-        }
-        return scopes;
-      };
-
-      // Check if this is a workspace root
-      const isWorkspaceRoot =
-        rootPackageInfo && rootPackageInfo.workspaces && Array.isArray(rootPackageInfo.workspaces);
-
-      // Collect all workspace package.json files by globbing the workspace patterns
+      // Collect workspace package.json files if this is a workspace root
       const workspacePackageJsonPaths: string[] = [];
+      const isWorkspaceRoot = rootPackageInfo?.workspaces && Array.isArray(rootPackageInfo.workspaces);
+
       if (isWorkspaceRoot && rootPackageInfo) {
         const workspacePatterns = rootPackageInfo.workspaces as string[];
         for (const pattern of workspacePatterns) {
           // Convert workspace pattern to a glob pattern for package.json
-          // e.g., "apps/*" becomes "apps/*/package.json"
           const pkgJsonPattern = pattern.endsWith('/*') ? `${pattern}/package.json` : `${pattern}/package.json`;
           const pkgJsonGlob = new Glob(pkgJsonPattern);
           for await (const pkgPath of pkgJsonGlob.scan({ cwd: dir, absolute: true })) {
@@ -115,26 +65,80 @@ export const extractor: Extractor = filesExtractor({
         }
       }
 
-      // Extract root package as a subproject if it has name and version
-      let rootPurl: string | undefined;
-      if (rootPackageInfo && rootPackageInfo.name && rootPackageInfo.version) {
-        const name = rootPackageInfo.name;
-        const version = rootPackageInfo.version;
-
-        let namespace: string | null = null;
-        let packageName = name;
-        if (name.startsWith('@')) {
-          const parts = name.split('/');
-          if (parts.length === 2 && parts[0] && parts[1]) {
-            namespace = parts[0]; // Keep @ for proper PURL encoding
-            packageName = parts[1];
+      // Build a map of workspace package names to their versions
+      // We need to do this before extracting scopes so we can identify workspace dependencies
+      const workspacePackages = new Map<string, string>();
+      if (rootPackageInfo?.name && rootPackageInfo?.version) {
+        workspacePackages.set(rootPackageInfo.name, rootPackageInfo.version);
+      }
+      // Add all workspace packages from their package.json files
+      if (isWorkspaceRoot && workspacePackageJsonPaths.length > 0) {
+        for (const pkgJsonPath of workspacePackageJsonPaths) {
+          try {
+            const pkgContent = await Bun.file(pkgJsonPath).text();
+            const pkgInfo = JSON.parse(pkgContent) as PackageJson;
+            if (pkgInfo.name && pkgInfo.version) {
+              workspacePackages.set(pkgInfo.name, pkgInfo.version);
+            }
+          } catch {
+            // Skip invalid package.json files
+            continue;
           }
         }
-        const purl = new PackageURL('npm', namespace, packageName, version, null, null);
-        rootPurl = purl.toString();
+      }
 
-        // Extract scopes for the root package
-        const rootScopes = extractScopesFromPackageJson(rootPackageInfo, trees);
+      // Helper to extract scopes from package.json
+      const extractScopesFromPackageJson = (packageInfo: PackageJson): DependencyScope[] => {
+        const scopes: DependencyScope[] = [];
+        const scopeNames = ['dependencies', 'devDependencies', 'optionalDependencies', 'peerDependencies'] as const;
+
+        for (const scopeName of scopeNames) {
+          const scopeDeps = packageInfo[scopeName];
+          if (scopeDeps && typeof scopeDeps === 'object') {
+            const scopePackages: string[] = [];
+
+            for (const [depName, versionRange] of Object.entries(scopeDeps)) {
+              if (typeof versionRange !== 'string') continue;
+
+              // Skip workspace protocol and link: dependencies (but not "*" which might be workspace)
+              if (versionRange.startsWith('workspace:') || versionRange.startsWith('link:')) {
+                continue;
+              }
+
+              // Check if this is a workspace package (by name)
+              const workspaceVersion = workspacePackages.get(depName);
+              if (workspaceVersion) {
+                // This is a workspace package - use its version
+                const depPurl = createPurl(depName, workspaceVersion);
+                scopePackages.push(depPurl);
+                continue;
+              }
+
+              // Resolve the actual installed version from the lockfile
+              const resolvedVersion = resolvePackageVersion(lockfile, depName, versionRange);
+              if (resolvedVersion) {
+                const depPurl = createPurl(depName, resolvedVersion);
+                scopePackages.push(depPurl);
+              }
+            }
+
+            if (scopePackages.length > 0) {
+              scopes.push({
+                scope: scopeName,
+                packages: scopePackages,
+              });
+            }
+          }
+        }
+
+        return scopes;
+      };
+
+      // Create subproject for root package if it has name and version
+      if (rootPackageInfo?.name && rootPackageInfo?.version) {
+        const rootPurl = createPurl(rootPackageInfo.name, rootPackageInfo.version);
+        const rootScopes = extractScopesFromPackageJson(rootPackageInfo);
+
         subprojects.push({
           purl: rootPurl,
           definitionFile: packageJsonPath,
@@ -142,30 +146,19 @@ export const extractor: Extractor = filesExtractor({
         });
       }
 
-      // Extract workspace packages as subprojects
+      // Create subprojects for workspace packages
       if (isWorkspaceRoot && workspacePackageJsonPaths.length > 0) {
         for (const pkgJsonPath of workspacePackageJsonPaths) {
           try {
             const pkgContent = await Bun.file(pkgJsonPath).text();
             const pkgInfo = JSON.parse(pkgContent) as PackageJson;
 
-            // Add workspace package as a subproject if it has name and version
             if (pkgInfo.name && pkgInfo.version) {
-              let namespace: string | null = null;
-              let packageName = pkgInfo.name;
-              if (pkgInfo.name.startsWith('@')) {
-                const parts = pkgInfo.name.split('/');
-                if (parts.length === 2 && parts[0] && parts[1]) {
-                  namespace = parts[0]; // Keep @ for proper PURL encoding
-                  packageName = parts[1];
-                }
-              }
-              const purl = new PackageURL('npm', namespace, packageName, pkgInfo.version, null, null);
+              const purl = createPurl(pkgInfo.name, pkgInfo.version);
+              const scopes = extractScopesFromPackageJson(pkgInfo);
 
-              // Extract scopes for this workspace package
-              const scopes = extractScopesFromPackageJson(pkgInfo, trees);
               subprojects.push({
-                purl: purl.toString(),
+                purl,
                 definitionFile: pkgJsonPath,
                 scopes,
               });
@@ -177,99 +170,144 @@ export const extractor: Extractor = filesExtractor({
         }
       }
 
-      // Extract packages from the dependency tree recursively
-      const extractPackages = (deps: YarnLsDependency[], parentPurl?: string, skipShadows = false) => {
-        const childPurls: string[] = [];
+      // Process all packages in the lockfile
+      const processedPackages = new Set<string>(); // Track unique package@version to avoid duplicates
 
-        for (const dep of deps) {
-          const name = dep.name;
-          const version = dep.version;
+      for (const [pattern, packageEntry] of lockfile.packages.entries()) {
+        const parsed = parsePackagePattern(pattern);
+        if (!parsed) continue;
 
-          // Skip if no name or version
-          if (!name || !version) {
-            continue;
-          }
+        const { name, versionRange } = parsed;
+        const version = packageEntry.version;
 
-          // Skip "shadow" entries when requested - these are version range references in children
-          if (skipShadows && 'shadow' in dep && dep.shadow === true) {
-            continue;
-          }
+        if (!version) continue;
 
-          // Create a proper Package URL (PURL)
-          let namespace: string | null = null;
-          let packageName = name;
-          if (name.startsWith('@')) {
-            const parts = name.split('/');
-            if (parts.length === 2 && parts[0] && parts[1]) {
-              namespace = parts[0]; // Keep @ for proper PURL encoding
-              packageName = parts[1];
+        // Create a unique key for this package
+        const packageKey = `${name}@${version}`;
+        if (processedPackages.has(packageKey)) {
+          continue; // Already processed this exact package
+        }
+        processedPackages.add(packageKey);
+
+        const purl = createPurl(name, version);
+
+        // Add package with evidence
+        if (!packageMap.has(purl)) {
+          packageMap.set(purl, { purl, evidence: new Set() });
+        }
+
+        const lineNumber = findLineNumber(lockfileContent, lockfile, name, version);
+        if (lineNumber) {
+          packageMap.get(purl)!.evidence.add(`${file}#${lineNumber}`);
+        }
+
+        // Extract relationships from dependencies
+        processDependencies(packageEntry, purl, lockfile, packageMap, relationshipsMap);
+      }
+
+      // Add relationships from subprojects to their dependencies
+      for (const subproject of subprojects) {
+        if (subproject.scopes) {
+          const allDeps = new Set<string>();
+          for (const scope of subproject.scopes) {
+            for (const pkg of scope.packages) {
+              allDeps.add(pkg);
             }
           }
-          const purl = new PackageURL('npm', namespace, packageName, version, null, null);
-          const purlString = purl.toString();
 
-          // Skip workspace packages for now (Yarn 1 workspaces are complex)
-          if (isWorkspacePackage(dep)) {
-            continue;
-          }
-
-          // This is a regular dependency package
-          packagePurls.push(purlString);
-
-          // Add evidence from lockfile
-          const lineNumber = findPackageInLockfile(lockfileContent, name, version);
-          if (lineNumber) {
-            const evidence = `${file}#${lineNumber}`;
-            const existing = evidenceMap.get(purlString);
+          if (allDeps.size > 0) {
+            const existing = relationshipsMap.get(subproject.purl);
             if (existing) {
-              existing.add(evidence);
+              allDeps.forEach((dep) => existing.add(dep));
             } else {
-              evidenceMap.set(purlString, new Set([evidence]));
+              relationshipsMap.set(subproject.purl, allDeps);
             }
           }
-
-          // Track relationship if we have a parent
-          if (parentPurl) {
-            childPurls.push(purlString);
-          }
-
-          // Recursively process dependencies (skip shadows in children)
-          if (dep.children && dep.children.length > 0) {
-            extractPackages(dep.children, purlString, true);
-          }
         }
-
-        // Create relationship for this parent if it has children
-        if (parentPurl && childPurls.length > 0) {
-          relationships.push({
-            from: parentPurl,
-            to: childPurls,
-          });
-        }
-      };
-
-      // Extract packages from the tree
-      // Note: trees contains ALL packages (including the root), not just dependencies
-      // We need to extract each package in the trees array
-      extractPackages(trees, undefined, false);
+      }
     } catch (error) {
-      // If yarn list fails, skip this file
-      console.error(`Failed to run yarn list in ${dir}:`, error);
+      // Silently skip files that fail to parse
     }
 
-    // Deduplicate packagePurls before creating package objects
-    const uniquePurls = [...new Set(packagePurls)];
+    // Convert maps to arrays
+    const packages = Array.from(packageMap.values()).map(({ purl, evidence }) => ({
+      purl,
+      evidence: Array.from(evidence),
+    }));
+
+    const relationships: Relationship[] = Array.from(relationshipsMap.entries()).map(([from, toSet]) => ({
+      from,
+      to: Array.from(toSet),
+    }));
 
     return {
-      packages: uniquePurls.map((purl) => {
-        const evidenceSet = evidenceMap.get(purl);
-        return {
-          purl,
-          evidence: evidenceSet && evidenceSet.size > 0 ? Array.from(evidenceSet) : [],
-        };
-      }),
+      packages,
       subprojects,
       relationships,
     };
   },
 });
+
+/**
+ * Process dependencies from a package entry and add relationships
+ */
+function processDependencies(
+  packageEntry: { dependencies?: Record<string, string>; optionalDependencies?: Record<string, string> },
+  purl: string,
+  lockfile: ReturnType<typeof parseYarnLockfile>,
+  packageMap: Map<string, { purl: string; evidence: Set<string> }>,
+  relationshipsMap: Map<string, Set<string>>,
+): void {
+  const depsToProcess = [
+    ...(packageEntry.dependencies ? Object.entries(packageEntry.dependencies) : []),
+    ...(packageEntry.optionalDependencies ? Object.entries(packageEntry.optionalDependencies) : []),
+  ];
+
+  for (const [depName, depVersionRange] of depsToProcess) {
+    // Resolve the actual version from the lockfile
+    const resolvedVersion = resolvePackageVersion(lockfile, depName, depVersionRange);
+    if (!resolvedVersion) continue;
+
+    const depPurl = createPurl(depName, resolvedVersion);
+
+    addRelationship(relationshipsMap, purl, depPurl);
+    ensurePackageExists(packageMap, depPurl);
+  }
+}
+
+/**
+ * Add a relationship to the relationships map
+ */
+function addRelationship(relationshipsMap: Map<string, Set<string>>, from: string, to: string): void {
+  const existing = relationshipsMap.get(from);
+  if (existing) {
+    existing.add(to);
+  } else {
+    relationshipsMap.set(from, new Set([to]));
+  }
+}
+
+/**
+ * Ensure a package exists in the package map
+ */
+function ensurePackageExists(packageMap: Map<string, { purl: string; evidence: Set<string> }>, purl: string): void {
+  if (!packageMap.has(purl)) {
+    packageMap.set(purl, { purl, evidence: new Set() });
+  }
+}
+
+// Helper to create PURL from name and version
+function createPurl(name: string, version: string): string {
+  let namespace: string | null = null;
+  let packageName = name;
+
+  if (name.startsWith('@')) {
+    const parts = name.split('/');
+    if (parts.length === 2 && parts[0] && parts[1]) {
+      namespace = parts[0];
+      packageName = parts[1];
+    }
+  }
+
+  return new PackageURL('npm', namespace, packageName, version, null, null).toString();
+}
