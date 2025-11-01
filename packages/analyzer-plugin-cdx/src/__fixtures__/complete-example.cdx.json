@@ -1,0 +1,75 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.7",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2024-01-15T10:30:00Z",
+    "component": {
+      "type": "application",
+      "name": "my-app",
+      "version": "1.0.0"
+    }
+  },
+  "components": [
+    {
+      "bom-ref": "pkg:npm/express@4.18.2",
+      "type": "library",
+      "name": "express",
+      "version": "4.18.2",
+      "purl": "pkg:npm/express@4.18.2",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "/package.json",
+            "line": 15
+          }
+        ]
+      }
+    },
+    {
+      "bom-ref": "pkg:npm/body-parser@1.20.1",
+      "type": "library",
+      "name": "body-parser",
+      "version": "1.20.1",
+      "purl": "pkg:npm/body-parser@1.20.1"
+    },
+    {
+      "bom-ref": "pkg:npm/cookie-parser@1.4.6",
+      "type": "library",
+      "name": "cookie-parser",
+      "version": "1.4.6",
+      "purl": "pkg:npm/cookie-parser@1.4.6",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "/package.json",
+            "line": 16
+          }
+        ]
+      }
+    },
+    {
+      "bom-ref": "pkg:npm/debug@2.6.9",
+      "type": "library",
+      "name": "debug",
+      "version": "2.6.9",
+      "purl": "pkg:npm/debug@2.6.9"
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "pkg:npm/express@4.18.2",
+      "dependsOn": [
+        "pkg:npm/body-parser@1.20.1",
+        "pkg:npm/cookie-parser@1.4.6",
+        "pkg:npm/debug@2.6.9"
+      ]
+    },
+    {
+      "ref": "pkg:npm/body-parser@1.20.1",
+      "dependsOn": [
+        "pkg:npm/debug@2.6.9"
+      ]
+    }
+  ]
+}
