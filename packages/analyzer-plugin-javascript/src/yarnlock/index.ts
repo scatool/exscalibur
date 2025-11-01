@@ -22,7 +22,17 @@ export const extractor: Extractor = filesExtractor({
   markFiles: async function (codebase: string) {
     for await (const file of lockfileGlob.scan({ cwd: codebase, absolute: true })) {
       if (!file.includes('/node_modules/')) {
-        this.markFile(file);
+        // Only mark Yarn Classic (v1) lockfiles
+        // Yarn Berry lockfiles have "__metadata:" section with version 8+
+        try {
+          const content = await Bun.file(file).text();
+          // Skip Yarn Berry lockfiles (they have __metadata: section)
+          if (!content.includes('__metadata:')) {
+            this.markFile(file);
+          }
+        } catch {
+          // Skip files we can't read
+        }
       }
     }
   },
