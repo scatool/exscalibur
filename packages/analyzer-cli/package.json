@@ -7,7 +7,6 @@
     "analyzer": "./src/cli.ts"
   },
   "scripts": {
-    "test": "bun test",
     "typecheck": "bunx tsc --strict --noEmit"
   },
   "dependencies": {
