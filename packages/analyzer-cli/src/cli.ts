@@ -5,6 +5,7 @@ import {
   packageJsonExtractor,
   packageLockJsonExtractor,
   pnpmLockExtractor,
+  yarnBerryExtractor,
   yarnLockExtractor,
 } from '@scatool/analyzer-plugin-javascript/src/index.ts';
 import { dockerfileExtractor } from '@scatool/analyzer-plugin-containers/src/index.ts';
@@ -68,7 +69,8 @@ if (positionalArgs.length < 2) {
   console.error('  packagejson       Extract from package.json files');
   console.error('  packagelockjson   Extract from package-lock.json files');
   console.error('  pnpmlock          Extract from pnpm-lock.yaml files');
-  console.error('  yarnlock          Extract from yarn.lock files');
+  console.error('  yarnberry         Extract from yarn.lock files (Yarn Berry/Modern)');
+  console.error('  yarnlock          Extract from yarn.lock files (Yarn v1/Classic)');
   console.error('  dockerfile        Extract from Dockerfile files');
   console.error('  github-actions    Extract from GitHub Actions workflow files');
   process.exit(1);
@@ -83,6 +85,7 @@ const allExtractors: Extractor[] = [
   packageJsonExtractor,
   packageLockJsonExtractor,
   pnpmLockExtractor,
+  yarnBerryExtractor,
   yarnLockExtractor,
   dockerfileExtractor,
   githubActionsExtractor,

@@ -46,7 +46,9 @@ export const extractor: Extractor = filesExtractor({
           reader.releaseLock();
 
           // Check for Yarn Berry markers
-          if (buffer.includes('__metadata:') && /version:\s+[8-9]\d*/.test(buffer)) {
+          // Yarn Berry uses lockfile version 6+ (v2, v3, v4 all use different formats)
+          // We support v6 (Yarn v3/v4) and v8+ (Yarn v4+)
+          if (buffer.includes('__metadata:') && /version:\s+[6-9]\d*/.test(buffer)) {
             this.markFile(file);
           }
         } catch {
