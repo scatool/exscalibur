@@ -141,9 +141,7 @@ export function convertSPDXToAnalyzerResult(spdxDoc: SPDXDocument, codebase: str
           const filePaths = spdxIdToFiles.get(fileId) || [];
           for (const filePath of filePaths) {
             // Make path relative to codebase if it's absolute
-            const relativePath = filePath.startsWith('/')
-              ? path.relative(codebase, filePath)
-              : filePath;
+            const relativePath = filePath.startsWith('/') ? path.relative(codebase, filePath) : filePath;
             if (relativePath && !relativePath.startsWith('..')) {
               evidence.push(path.join(codebase, relativePath));
             }
