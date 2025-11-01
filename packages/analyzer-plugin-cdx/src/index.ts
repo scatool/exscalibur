@@ -12,10 +12,6 @@ export const extractor: Extractor = filesExtractor({
       absolute: true,
       onlyFiles: true,
     })) {
-      // Skip node_modules
-      if (file.includes('node_modules')) {
-        continue;
-      }
       this.markFile(file);
     }
   },
