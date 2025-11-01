@@ -1,0 +1,84 @@
+// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
+
+exports[`with-dependencies.spdx.json 1`] = `
+{
+  "packages": [
+    {
+      "evidence": [],
+      "purl": "pkg:npm/body-parser@1.20.1",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:npm/cookie@0.5.0",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:npm/express@4.18.2",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:npm/express@4.18.2",
+      "to": [
+        "pkg:npm/body-parser@1.20.1",
+        "pkg:npm/cookie@0.5.0",
+      ],
+    },
+  ],
+  "subprojects": [],
+}
+`;
+
+exports[`basic.spdx.json 1`] = `
+{
+  "packages": [
+    {
+      "evidence": [
+        "<project>/package-lock.json",
+      ],
+      "purl": "pkg:npm/express@4.18.2",
+    },
+    {
+      "evidence": [
+        "<project>/package-lock.json",
+      ],
+      "purl": "pkg:npm/lodash@4.17.21",
+    },
+    {
+      "evidence": [
+        "<project>/package-lock.json",
+      ],
+      "purl": "pkg:npm/react@18.2.0",
+    },
+  ],
+  "relationships": [],
+  "subprojects": [],
+}
+`;
+
+exports[`python-packages.spdx.json 1`] = `
+{
+  "packages": [
+    {
+      "evidence": [
+        "<project>/requirements.txt",
+      ],
+      "purl": "pkg:pypi/django@4.2.0",
+    },
+    {
+      "evidence": [
+        "<project>/Pipfile.lock",
+      ],
+      "purl": "pkg:pypi/numpy@1.24.3",
+    },
+    {
+      "evidence": [
+        "<project>/requirements.txt",
+      ],
+      "purl": "pkg:pypi/requests@2.31.0",
+    },
+  ],
+  "relationships": [],
+  "subprojects": [],
+}
+`;

@@ -1,0 +1,99 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "SCALIBR Python packages scan",
+  "documentNamespace": "https://example.com/scalibr-scan-python",
+  "creationInfo": {
+    "created": "2025-01-15T10:30:00Z",
+    "creators": ["Tool: scalibr-0.3.6"]
+  },
+  "packages": [
+    {
+      "name": "django",
+      "SPDXID": "SPDXRef-Package-django",
+      "versionInfo": "4.2.0",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:pypi/django@4.2.0"
+        }
+      ]
+    },
+    {
+      "name": "requests",
+      "SPDXID": "SPDXRef-Package-requests",
+      "versionInfo": "2.31.0",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:pypi/requests@2.31.0"
+        }
+      ]
+    },
+    {
+      "name": "numpy",
+      "SPDXID": "SPDXRef-Package-numpy",
+      "versionInfo": "1.24.3",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:pypi/numpy@1.24.3"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "fileName": "/project/requirements.txt",
+      "SPDXID": "SPDXRef-File-requirements.txt",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "def456"
+        }
+      ]
+    },
+    {
+      "fileName": "/project/Pipfile.lock",
+      "SPDXID": "SPDXRef-File-pipfile.lock",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "ghi789"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-Package-django"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-django",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-File-requirements.txt"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-requests",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-File-requirements.txt"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-numpy",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-File-pipfile.lock"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "SCALIBR-generated SPDX with dependencies",
+  "documentNamespace": "https://example.com/scalibr-scan-67890",
+  "creationInfo": {
+    "created": "2025-01-15T10:30:00Z",
+    "creators": ["Tool: scalibr-0.3.6"]
+  },
+  "packages": [
+    {
+      "name": "express",
+      "SPDXID": "SPDXRef-Package-express",
+      "versionInfo": "4.18.2",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:npm/express@4.18.2"
+        }
+      ]
+    },
+    {
+      "name": "body-parser",
+      "SPDXID": "SPDXRef-Package-body-parser",
+      "versionInfo": "1.20.1",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:npm/body-parser@1.20.1"
+        }
+      ]
+    },
+    {
+      "name": "cookie",
+      "SPDXID": "SPDXRef-Package-cookie",
+      "versionInfo": "0.5.0",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:npm/cookie@0.5.0"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-Package-express"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-express",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Package-body-parser"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-express",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Package-cookie"
+    }
+  ]
+}
