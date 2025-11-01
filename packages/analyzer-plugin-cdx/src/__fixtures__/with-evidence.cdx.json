@@ -1,0 +1,41 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.7",
+  "version": 1,
+  "components": [
+    {
+      "bom-ref": "pkg:npm/lodash@4.17.21",
+      "type": "library",
+      "name": "lodash",
+      "version": "4.17.21",
+      "purl": "pkg:npm/lodash@4.17.21",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "/src/utils/helper.ts",
+            "line": 5
+          },
+          {
+            "location": "/src/index.ts",
+            "line": 12
+          }
+        ]
+      }
+    },
+    {
+      "bom-ref": "pkg:pypi/requests@2.28.1",
+      "type": "library",
+      "name": "requests",
+      "version": "2.28.1",
+      "purl": "pkg:pypi/requests@2.28.1",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "/requirements.txt",
+            "line": 3
+          }
+        ]
+      }
+    }
+  ]
+}

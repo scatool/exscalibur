@@ -1,0 +1,25 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.7",
+  "version": 1,
+  "components": [
+    {
+      "bom-ref": "component-1",
+      "type": "library",
+      "name": "some-library",
+      "version": "1.0.0"
+    },
+    {
+      "bom-ref": "pkg:npm/valid-package@1.0.0",
+      "type": "library",
+      "name": "valid-package",
+      "version": "1.0.0",
+      "purl": "pkg:npm/valid-package@1.0.0"
+    },
+    {
+      "type": "library",
+      "name": "another-without-purl",
+      "version": "2.0.0"
+    }
+  ]
+}
