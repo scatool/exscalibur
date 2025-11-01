@@ -145,9 +145,11 @@ export const extractor: Extractor = filesExtractor({
                 }
 
                 // Regular external dependency - resolve the version
-                const resolvedVersion = resolvePackageVersion(lockfile, depName, versionRange);
+                // Check if this is an npm alias (e.g., "react-old": "npm:react@^16.0.0")
+                const { actualName, actualRange } = parseAliasedDependency(depName, versionRange);
+                const resolvedVersion = resolvePackageVersion(lockfile, actualName, actualRange);
                 if (resolvedVersion) {
-                  const depPurl = createPurl(depName, resolvedVersion);
+                  const depPurl = createPurl(actualName, resolvedVersion);
                   depsInScope.push(depPurl);
                 }
               }
@@ -192,9 +194,11 @@ export const extractor: Extractor = filesExtractor({
                 for (const [depName, versionRange] of Object.entries(deps)) {
                   if (typeof versionRange === 'string') {
                     // Resolve the actual installed version from the lockfile
-                    const resolvedVersion = resolvePackageVersion(lockfile, depName, versionRange);
+                    // Check if this is an npm alias (e.g., "react-old": "npm:react@^16.0.0")
+                    const { actualName, actualRange } = parseAliasedDependency(depName, versionRange);
+                    const resolvedVersion = resolvePackageVersion(lockfile, actualName, actualRange);
                     if (resolvedVersion) {
-                      const depPurl = createPurl(depName, resolvedVersion);
+                      const depPurl = createPurl(actualName, resolvedVersion);
                       depsInScope.push(depPurl);
                     }
                   }
@@ -225,9 +229,21 @@ export const extractor: Extractor = filesExtractor({
         const parsed = parsePackagePattern(pattern);
         if (!parsed) continue;
 
-        // Skip workspace packages - they're not external dependencies
-        if (parsed.type === 'workspace') continue;
+        // Skip packages that shouldn't be included in the graph
+        // - workspace packages (they're subprojects, not external dependencies)
+        // - patch/link/portal protocols (internal Yarn protocols)
+        // - workspace version marker (0.0.0-use.local)
+        if (
+          parsed.type === 'workspace' ||
+          parsed.type === 'patch' ||
+          parsed.type === 'link' ||
+          parsed.type === 'portal' ||
+          pkg.version === '0.0.0-use.local'
+        ) {
+          continue;
+        }
 
+        // For npm aliases, use the real package name, not the alias
         const { name } = parsed;
         const version = pkg.version;
 
@@ -292,6 +308,30 @@ export const extractor: Extractor = filesExtractor({
     };
   },
 });
+
+/**
+ * Parse an aliased dependency from package.json
+ *
+ * Examples:
+ * - parseAliasedDependency("react-old", "npm:react@^16.0.0") => { actualName: "react", actualRange: "^16.0.0" }
+ * - parseAliasedDependency("lodash", "^4.17.21") => { actualName: "lodash", actualRange: "^4.17.21" }
+ */
+function parseAliasedDependency(depName: string, versionRange: string): { actualName: string; actualRange: string } {
+  // Check for npm alias format: "npm:packageName@version"
+  const aliasMatch = versionRange.match(/^npm:(.+?)@(.+)$/);
+  if (aliasMatch && aliasMatch[1] && aliasMatch[2]) {
+    return {
+      actualName: aliasMatch[1],
+      actualRange: aliasMatch[2],
+    };
+  }
+
+  // Not an alias - return as-is
+  return {
+    actualName: depName,
+    actualRange: versionRange,
+  };
+}
 
 /**
  * Process dependencies from a package entry and add relationships

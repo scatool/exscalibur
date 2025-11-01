@@ -221,13 +221,41 @@ function parsePackageEntry(
  * - "@babel/core@npm:^7.0.0" -> { name: "@babel/core", type: "npm", versionOrPath: "^7.0.0" }
  * - "@scatest/ui@workspace:packages/ui" -> { name: "@scatest/ui", type: "workspace", versionOrPath: "packages/ui" }
  * - "express@https://github.com/..." -> { name: "express", type: "git", versionOrPath: "https://..." }
+ * - "react-16@npm:react@^16.0.0" -> { name: "react", type: "npm-alias", versionOrPath: "^16.0.0", alias: "react-16" }
  */
 export function parsePackagePattern(pattern: string): {
   name: string;
-  type: 'npm' | 'workspace' | 'git' | 'tarball';
+  type: 'npm' | 'workspace' | 'git' | 'tarball' | 'npm-alias' | 'patch' | 'link' | 'portal';
   versionOrPath: string;
+  alias?: string;
 } | null {
-  // Find the separator - it's either @npm:, @workspace:, or a URL
+  // Check for special protocols that should be skipped: patch:, link:, portal:
+  const patchMatch = pattern.match(/^(.+)@patch:(.+)$/);
+  if (patchMatch && patchMatch[1] && patchMatch[2]) {
+    return {
+      name: patchMatch[1],
+      type: 'patch',
+      versionOrPath: patchMatch[2],
+    };
+  }
+
+  const linkMatch = pattern.match(/^(.+)@link:(.+)$/);
+  if (linkMatch && linkMatch[1] && linkMatch[2]) {
+    return {
+      name: linkMatch[1],
+      type: 'link',
+      versionOrPath: linkMatch[2],
+    };
+  }
+
+  const portalMatch = pattern.match(/^(.+)@portal:(.+)$/);
+  if (portalMatch && portalMatch[1] && portalMatch[2]) {
+    return {
+      name: portalMatch[1],
+      type: 'portal',
+      versionOrPath: portalMatch[2],
+    };
+  }
 
   // Check for workspace packages
   const workspaceMatch = pattern.match(/^(.+)@workspace:(.+)$/);
@@ -239,7 +267,19 @@ export function parsePackagePattern(pattern: string): {
     };
   }
 
-  // Check for npm packages
+  // Check for npm package aliases (e.g., "react-16@npm:react@^16.0.0")
+  // This matches patterns where the package name appears twice with @npm: in between
+  const npmAliasMatch = pattern.match(/^(.+)@npm:(.+)@(.+)$/);
+  if (npmAliasMatch && npmAliasMatch[1] && npmAliasMatch[2] && npmAliasMatch[3]) {
+    return {
+      name: npmAliasMatch[2], // The actual package name (e.g., "react")
+      type: 'npm-alias',
+      versionOrPath: npmAliasMatch[3], // The version (e.g., "^16.0.0")
+      alias: npmAliasMatch[1], // The alias (e.g., "react-16")
+    };
+  }
+
+  // Check for regular npm packages
   const npmMatch = pattern.match(/^(.+)@npm:(.+)$/);
   if (npmMatch && npmMatch[1] && npmMatch[2]) {
     return {
@@ -292,28 +332,53 @@ export function findLineNumber(content: string, packageKey: string): number | un
 /**
  * Resolve the actual installed version for a package name and version range
  * by looking it up in the lockfile's packages map
+ *
+ * Implements fallback logic similar to Blackduck and FOSSA:
+ * 1. Try exact match with npm: protocol
+ * 2. Try without protocol
+ * 3. Search all entries for this package and find best match
  */
 export function resolvePackageVersion(
   lockfile: YarnBerryLockfile,
   packageName: string,
   versionRange: string,
 ): string | null {
-  // Try different pattern formats
+  // Normalize version range - strip npm: prefix if present
+  let normalizedRange = versionRange;
+  if (normalizedRange.startsWith('npm:')) {
+    normalizedRange = normalizedRange.substring(4);
+  }
 
-  // 1. Try npm: protocol (most common)
-  let pattern = `${packageName}@npm:${versionRange}`;
+  // 1. Try npm: protocol with normalized range (most common)
+  let pattern = `${packageName}@npm:${normalizedRange}`;
   let pkg = lockfile.packages.get(pattern);
-  if (pkg) return pkg.version;
+  if (pkg && pkg.version !== '0.0.0-use.local') return pkg.version;
 
-  // 2. Try without protocol (for git dependencies like "owner/repo#commit")
-  pattern = `${packageName}@${versionRange}`;
+  // 2. Try without protocol (for git/tarball dependencies like "owner/repo#commit")
+  pattern = `${packageName}@${normalizedRange}`;
   pkg = lockfile.packages.get(pattern);
-  if (pkg) return pkg.version;
+  if (pkg && pkg.version !== '0.0.0-use.local') return pkg.version;
 
-  // 3. Try just the version range (for special cases)
-  pattern = versionRange;
-  pkg = lockfile.packages.get(pattern);
-  if (pkg) return pkg.version;
+  // 3. Try with original range if different from normalized
+  if (versionRange !== normalizedRange) {
+    pattern = `${packageName}@${versionRange}`;
+    pkg = lockfile.packages.get(pattern);
+    if (pkg && pkg.version !== '0.0.0-use.local') return pkg.version;
+  }
+
+  // 4. Search all lockfile entries for this package name and find any match
+  // This handles cases where the exact range doesn't match but the package exists
+  for (const [entryPattern, entryPkg] of lockfile.packages.entries()) {
+    if (entryPkg.version === '0.0.0-use.local') continue;
+
+    const parsed = parsePackagePattern(entryPattern);
+    if (parsed && parsed.name === packageName) {
+      // Found a match for this package - return its version
+      // Note: This may not be the exact range requested, but it's better than nothing
+      // In a more sophisticated implementation, we'd do semver range matching here
+      return entryPkg.version;
+    }
+  }
 
   return null;
 }

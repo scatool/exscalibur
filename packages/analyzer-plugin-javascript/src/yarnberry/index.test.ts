@@ -5,7 +5,7 @@ import { mkdtempSync, rmSync, cpSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 
 const fixturesDir = join(import.meta.dir, './__fixtures__');
-const fixtures = ['basic', 'git-deps', 'monorepo', 'tarball-deps', 'workspace'];
+const fixtures = ['basic', 'edge-cases', 'git-deps', 'monorepo', 'patch-deps', 'tarball-deps', 'workspace'];
 
 // Copy fixtures to /tmp to avoid workspace detection issues
 let tmpFixturesDir: string;
