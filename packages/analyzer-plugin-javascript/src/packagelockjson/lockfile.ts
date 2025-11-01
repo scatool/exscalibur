@@ -119,11 +119,7 @@ export function isWorkspacePath(path: string): boolean {
  * @param version - The package version to find
  * @returns Line number (1-indexed) where the version is defined, or undefined
  */
-export function findLineNumber(
-  content: string,
-  packagePath: string,
-  version: string,
-): number | undefined {
+export function findLineNumber(content: string, packagePath: string, version: string): number | undefined {
   const lines = content.split('\n');
 
   // Search for the package path entry

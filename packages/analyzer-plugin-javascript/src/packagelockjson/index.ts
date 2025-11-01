@@ -279,13 +279,7 @@ function extractScopes(
       }
 
       // Resolve the version from the lockfile entry's dependencies
-      const resolvedVersion = resolveVersion(
-        depName,
-        versionRange,
-        lockfileEntry,
-        allPackages,
-        packageVersionMap,
-      );
+      const resolvedVersion = resolveVersion(depName, versionRange, lockfileEntry, allPackages, packageVersionMap);
 
       if (resolvedVersion) {
         const depPurl = createPurl(depName, resolvedVersion);
@@ -331,13 +325,7 @@ function processDependencies(
       }
 
       // Resolve the actual installed version
-      const resolvedVersion = resolveVersion(
-        depName,
-        versionRange,
-        packageEntry,
-        allPackages,
-        packageVersionMap,
-      );
+      const resolvedVersion = resolveVersion(depName, versionRange, packageEntry, allPackages, packageVersionMap);
 
       if (resolvedVersion) {
         const depPurl = createPurl(depName, resolvedVersion);
