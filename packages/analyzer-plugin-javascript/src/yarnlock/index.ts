@@ -25,9 +25,20 @@ export const extractor: Extractor = filesExtractor({
         // Only mark Yarn Classic (v1) lockfiles
         // Yarn Berry lockfiles have "__metadata:" section with version 8+
         try {
-          const content = await Bun.file(file).text();
+          const fileHandle = Bun.file(file);
+          const stream = fileHandle.stream();
+          const reader = stream.getReader();
+
+          // Read first ~500 bytes to check for Yarn Berry marker
+          const { value } = await reader.read();
+          let buffer = '';
+          if (value) {
+            buffer = new TextDecoder().decode(value.slice(0, 500));
+          }
+          reader.releaseLock();
+
           // Skip Yarn Berry lockfiles (they have __metadata: section)
-          if (!content.includes('__metadata:')) {
+          if (!buffer.includes('__metadata:')) {
             this.markFile(file);
           }
         } catch {

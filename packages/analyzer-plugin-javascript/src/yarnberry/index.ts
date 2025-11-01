@@ -29,10 +29,24 @@ export const extractor: Extractor = filesExtractor({
     for await (const file of lockfileGlob.scan({ cwd: codebase, absolute: true })) {
       if (!file.includes('/node_modules/')) {
         // Only mark Yarn Berry lockfiles (version 8+)
-        // Check if the file contains "version: 8" or higher in the metadata section
+        // Check the first few lines for __metadata: section
         try {
-          const content = await Bun.file(file).text();
-          if (content.includes('__metadata:') && /version:\s+[8-9]\d*/.test(content)) {
+          const fileHandle = Bun.file(file);
+          const stream = fileHandle.stream();
+          const reader = stream.getReader();
+
+          let buffer = '';
+          let foundMetadata = false;
+
+          // Read first ~500 bytes (should cover metadata section)
+          const { value } = await reader.read();
+          if (value) {
+            buffer = new TextDecoder().decode(value.slice(0, 500));
+          }
+          reader.releaseLock();
+
+          // Check for Yarn Berry markers
+          if (buffer.includes('__metadata:') && /version:\s+[8-9]\d*/.test(buffer)) {
             this.markFile(file);
           }
         } catch {
