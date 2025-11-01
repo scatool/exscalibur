@@ -77,8 +77,9 @@ export function extractPackageName(path: string): string | null {
   // Remove trailing slash if present
   const cleanPath = path.endsWith('/') ? path.slice(0, -1) : path;
 
-  // Split by node_modules to get the last package
-  const parts = cleanPath.split('/node_modules/');
+  // Split by /node_modules/ OR node_modules/ (at start) to get the last package
+  // Handle both "node_modules/foo" and "node_modules/a/node_modules/b"
+  const parts = cleanPath.split(/\/?node_modules\//);
   const lastPart = parts[parts.length - 1];
 
   if (!lastPart) {
@@ -86,6 +87,7 @@ export function extractPackageName(path: string): string | null {
   }
 
   // Handle scoped packages (@scope/name)
+  // For scoped packages, we need exactly @scope/name, nothing after
   if (lastPart.startsWith('@')) {
     const scopeParts = lastPart.split('/');
     if (scopeParts.length >= 2 && scopeParts[0] && scopeParts[1]) {
@@ -93,7 +95,8 @@ export function extractPackageName(path: string): string | null {
     }
   }
 
-  return lastPart;
+  // For non-scoped packages, return just the package name (first segment)
+  return lastPart.split('/')[0] || lastPart;
 }
 
 /**

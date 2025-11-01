@@ -20,7 +20,7 @@ import type { PackageJson } from '../types.ts';
 
 const lockfileGlob = new Glob('**/{package-lock.json,npm-shrinkwrap.json}');
 
-const DEPENDENCY_TYPES = ['dependencies', 'devDependencies', 'optionalDependencies'] as const;
+const DEPENDENCY_TYPES = ['dependencies', 'devDependencies', 'optionalDependencies', 'peerDependencies'] as const;
 
 export const extractor: Extractor = filesExtractor({
   name: 'packagelockjson',
