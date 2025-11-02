@@ -94,12 +94,18 @@ export function normalizeResult(result: AnalyzerResult): AnalyzerResult {
     }))
     .sort((a, b) => a.from.localeCompare(b.from));
 
-  // Sort issues by severity (ERROR > WARNING > HINT), then by message
+  // Sort issues by severity (ERROR > WARNING > HINT), then by message, then by file
   const severityOrder: Record<IssueSeverity, number> = { ERROR: 0, WARNING: 1, HINT: 2 };
   const sortedIssues = [...result.issues].sort((a, b) => {
     const severityDiff = severityOrder[a.severity] - severityOrder[b.severity];
     if (severityDiff !== 0) return severityDiff;
-    return a.message.localeCompare(b.message);
+    const messageDiff = a.message.localeCompare(b.message);
+    if (messageDiff !== 0) return messageDiff;
+    // Sort by file if both exist, otherwise put undefined files last
+    if (!a.file && !b.file) return 0;
+    if (!a.file) return 1;
+    if (!b.file) return -1;
+    return a.file.localeCompare(b.file);
   });
 
   return {

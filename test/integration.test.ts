@@ -11,7 +11,7 @@ import {
   yarnLockExtractor,
 } from '@scatool/analyzer-plugin-javascript/src/index.ts';
 import type { Extractor } from '@scatool/analyzer-core/src/index.ts';
-import { mergeResults } from '@scatool/analyzer-core/src/index.ts';
+import { mergeResults, normalizeResult } from '@scatool/analyzer-core/src/index.ts';
 
 const repositoriesDir = `${import.meta.dir}/repositories`;
 
@@ -56,6 +56,9 @@ for (const repoName of repositories) {
       }
     }
 
+    // Re-normalize after path replacement to ensure consistent ordering
+    const normalizedResult = normalizeResult(mergedResult);
+
     // Write snapshot to individual JSON file
     const snapshotPath = join(import.meta.dir, '__snapshots__', `${repoName}.json`);
     const snapshotFile = file(snapshotPath);
@@ -65,10 +68,10 @@ for (const repoName of repositories) {
 
     if (updateSnapshots) {
       // Update snapshot
-      await Bun.write(snapshotPath, JSON.stringify(mergedResult, null, 2) + '\n');
+      await Bun.write(snapshotPath, JSON.stringify(normalizedResult, null, 2) + '\n');
     } else if (!snapshotExists) {
       // Create snapshot
-      await Bun.write(snapshotPath, JSON.stringify(mergedResult, null, 2) + '\n');
+      await Bun.write(snapshotPath, JSON.stringify(normalizedResult, null, 2) + '\n');
       return; // No need to compare if we just created it
     }
 
@@ -76,6 +79,6 @@ for (const repoName of repositories) {
     const snapshotContent = await snapshotFile.text();
     const snapshot = JSON.parse(snapshotContent);
 
-    expect(mergedResult).toEqual(snapshot);
+    expect(normalizedResult).toEqual(snapshot);
   });
 }
