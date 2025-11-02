@@ -61,6 +61,7 @@ export async function extractWorkflow(content: string, filePath?: string): Promi
     })),
     subprojects: [],
     relationships: [],
+    issues: [],
   };
 }
 

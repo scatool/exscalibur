@@ -6,6 +6,7 @@ import { normalizeResult } from './index.ts';
  * - Deduplicates packages by purl, merging evidence arrays
  * - Concatenates all subprojects
  * - Merges relationships with the same 'from' value
+ * - Concatenates all issues
  * - Normalizes and sorts the final result
  */
 export function mergeResults(results: AnalyzerResult[]): AnalyzerResult {
@@ -16,6 +17,7 @@ export function mergeResults(results: AnalyzerResult[]): AnalyzerResult {
     scopes: Array<{ scope: string; packages: string[] }>;
   }> = [];
   const relationshipMap = new Map<string, Set<string>>();
+  const issues: Array<{ message: string; severity: 'HINT' | 'WARNING' | 'ERROR'; file?: string }> = [];
 
   for (const result of results) {
     // Merge packages
@@ -47,6 +49,9 @@ export function mergeResults(results: AnalyzerResult[]): AnalyzerResult {
         relationshipMap.set(rel.from, new Set(rel.to));
       }
     }
+
+    // Merge issues
+    issues.push(...result.issues);
   }
 
   return normalizeResult({
@@ -56,5 +61,6 @@ export function mergeResults(results: AnalyzerResult[]): AnalyzerResult {
       from,
       to: Array.from(toSet),
     })),
+    issues,
   });
 }

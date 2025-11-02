@@ -2,6 +2,7 @@
 
 exports[`Dockerfile.arg-before-from 1`] = `
 {
+  "issues": [],
   "packages": [
     {
       "evidence": [
@@ -17,6 +18,7 @@ exports[`Dockerfile.arg-before-from 1`] = `
 
 exports[`Dockerfile.basic 1`] = `
 {
+  "issues": [],
   "packages": [
     {
       "evidence": [
@@ -32,6 +34,7 @@ exports[`Dockerfile.basic 1`] = `
 
 exports[`Dockerfile.digest-only 1`] = `
 {
+  "issues": [],
   "packages": [
     {
       "evidence": [
@@ -47,6 +50,7 @@ exports[`Dockerfile.digest-only 1`] = `
 
 exports[`Dockerfile.ghcr 1`] = `
 {
+  "issues": [],
   "packages": [
     {
       "evidence": [
@@ -62,6 +66,7 @@ exports[`Dockerfile.ghcr 1`] = `
 
 exports[`Dockerfile.mcr-deep-path 1`] = `
 {
+  "issues": [],
   "packages": [
     {
       "evidence": [
@@ -77,6 +82,7 @@ exports[`Dockerfile.mcr-deep-path 1`] = `
 
 exports[`Dockerfile.multi-arg-registry-namespace 1`] = `
 {
+  "issues": [],
   "packages": [
     {
       "evidence": [
@@ -98,6 +104,7 @@ exports[`Dockerfile.multi-arg-registry-namespace 1`] = `
 
 exports[`Dockerfile.multistage-internal-base 1`] = `
 {
+  "issues": [],
   "packages": [
     {
       "evidence": [
@@ -113,6 +120,7 @@ exports[`Dockerfile.multistage-internal-base 1`] = `
 
 exports[`Dockerfile.platform-variant 1`] = `
 {
+  "issues": [],
   "packages": [
     {
       "evidence": [
@@ -128,6 +136,7 @@ exports[`Dockerfile.platform-variant 1`] = `
 
 exports[`Dockerfile.private-registry-port 1`] = `
 {
+  "issues": [],
   "packages": [
     {
       "evidence": [
@@ -143,6 +152,7 @@ exports[`Dockerfile.private-registry-port 1`] = `
 
 exports[`Dockerfile.scratch 1`] = `
 {
+  "issues": [],
   "packages": [],
   "relationships": [],
   "subprojects": [],
@@ -151,6 +161,7 @@ exports[`Dockerfile.scratch 1`] = `
 
 exports[`Dockerfile.tag-and-digest 1`] = `
 {
+  "issues": [],
   "packages": [
     {
       "evidence": [
@@ -166,6 +177,7 @@ exports[`Dockerfile.tag-and-digest 1`] = `
 
 exports[`Dockerfile.whitespace-and-comments 1`] = `
 {
+  "issues": [],
   "packages": [
     {
       "evidence": [

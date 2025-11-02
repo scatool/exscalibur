@@ -265,6 +265,7 @@ export const extractor: Extractor = filesExtractor({
       packages,
       subprojects,
       relationships,
+      issues: [],
     };
   },
 });

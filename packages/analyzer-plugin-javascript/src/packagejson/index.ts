@@ -44,9 +44,27 @@ export const extractor: Extractor = filesExtractor({
   extractFile: async (file: string): Promise<AnalyzerResult> => {
     // Process individual package.json file
     const content = await Bun.file(file).text();
-    const packageJson = JSON.parse(content);
-    const lines = content.split('\n');
 
+    let packageJson: any;
+    try {
+      packageJson = JSON.parse(content);
+    } catch (error) {
+      // Return empty result with an error issue if JSON is malformed
+      return {
+        packages: [],
+        subprojects: [],
+        relationships: [],
+        issues: [
+          {
+            message: `Failed to parse package.json: ${error instanceof Error ? error.message : String(error)}`,
+            severity: 'ERROR',
+            file,
+          },
+        ],
+      };
+    }
+
+    const lines = content.split('\n');
     const packages = [];
 
     // Extract dependencies (no version resolution, just what's declared)
@@ -106,6 +124,7 @@ export const extractor: Extractor = filesExtractor({
       packages,
       subprojects: [],
       relationships: [],
+      issues: [],
     };
   },
 });

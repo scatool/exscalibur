@@ -46,7 +46,7 @@ export const extractor: Extractor = filesExtractor({
       // Lockfile v1 doesn't have packages section, skip it
       if (!lockfile.packages || lockfile.lockfileVersion < 2) {
         console.warn(`Skipping lockfile ${file}: lockfileVersion ${lockfile.lockfileVersion} not supported`);
-        return { packages: [], subprojects: [], relationships: [] };
+        return { packages: [], subprojects: [], relationships: [], issues: [] };
       }
 
       // Build maps for package resolution
@@ -243,6 +243,7 @@ export const extractor: Extractor = filesExtractor({
       packages,
       subprojects,
       relationships,
+      issues: [],
     };
   },
 });

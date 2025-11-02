@@ -22,10 +22,19 @@ export type Relationship = {
   to: string[];
 };
 
+export type IssueSeverity = 'HINT' | 'WARNING' | 'ERROR';
+
+export type Issue = {
+  message: string;
+  severity: IssueSeverity;
+  file?: string;
+};
+
 export type AnalyzerResult = {
   packages: Package[];
   subprojects: Subproject[];
   relationships: Relationship[];
+  issues: Issue[];
 };
 
 export type Extractor = {
@@ -52,6 +61,7 @@ export type FilesExtractor = {
  * - Sorts relationships by from, then to array
  * - Sorts evidence arrays
  * - Sorts scope packages arrays
+ * - Sorts issues by severity, then message
  */
 export function normalizeResult(result: AnalyzerResult): AnalyzerResult {
   // Sort packages by purl and their evidence arrays
@@ -84,10 +94,19 @@ export function normalizeResult(result: AnalyzerResult): AnalyzerResult {
     }))
     .sort((a, b) => a.from.localeCompare(b.from));
 
+  // Sort issues by severity (ERROR > WARNING > HINT), then by message
+  const severityOrder: Record<IssueSeverity, number> = { ERROR: 0, WARNING: 1, HINT: 2 };
+  const sortedIssues = [...result.issues].sort((a, b) => {
+    const severityDiff = severityOrder[a.severity] - severityOrder[b.severity];
+    if (severityDiff !== 0) return severityDiff;
+    return a.message.localeCompare(b.message);
+  });
+
   return {
     packages: sortedPackages,
     subprojects: sortedSubprojects,
     relationships: sortedRelationships,
+    issues: sortedIssues,
   };
 }
 

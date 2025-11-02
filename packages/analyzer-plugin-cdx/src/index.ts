@@ -58,6 +58,7 @@ export async function extractCycloneDX(content: string, filePath?: string): Prom
         packages: [],
         subprojects: [],
         relationships: [],
+        issues: [],
       };
     }
 
@@ -158,6 +159,7 @@ export async function extractCycloneDX(content: string, filePath?: string): Prom
       packages,
       subprojects: [],
       relationships,
+      issues: [],
     };
   } catch (error) {
     // If JSON parsing fails or any other error, return empty result
@@ -165,6 +167,7 @@ export async function extractCycloneDX(content: string, filePath?: string): Prom
       packages: [],
       subprojects: [],
       relationships: [],
+      issues: [],
     };
   }
 }

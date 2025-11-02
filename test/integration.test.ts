@@ -57,14 +57,13 @@ for (const repoName of repositories) {
     const updateSnapshots = process.argv.includes('--update-snapshots') || process.argv.includes('-u');
     const snapshotExists = await snapshotFile.exists();
 
-    if (updateSnapshots || !snapshotExists) {
-      // Create or update snapshot
+    if (updateSnapshots) {
+      // Update snapshot
       await Bun.write(snapshotPath, JSON.stringify(mergedResult, null, 2) + '\n');
-
-      if (!snapshotExists) {
-        // If we just created the snapshot, no need to compare
-        return;
-      }
+    } else if (!snapshotExists) {
+      // Create snapshot
+      await Bun.write(snapshotPath, JSON.stringify(mergedResult, null, 2) + '\n');
+      return; // No need to compare if we just created it
     }
 
     // Read and compare with snapshot

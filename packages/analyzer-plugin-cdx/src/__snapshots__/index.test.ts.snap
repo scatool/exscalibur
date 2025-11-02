@@ -2,6 +2,7 @@
 
 exports[`basic.cdx.json 1`] = `
 {
+  "issues": [],
   "packages": [
     {
       "evidence": [
@@ -29,6 +30,7 @@ exports[`basic.cdx.json 1`] = `
 
 exports[`complete-example.cdx.json 1`] = `
 {
+  "issues": [],
   "packages": [
     {
       "evidence": [
@@ -79,6 +81,7 @@ exports[`complete-example.cdx.json 1`] = `
 
 exports[`missing-purls.cdx.json 1`] = `
 {
+  "issues": [],
   "packages": [
     {
       "evidence": [
@@ -94,6 +97,7 @@ exports[`missing-purls.cdx.json 1`] = `
 
 exports[`nested-components.cdx.json 1`] = `
 {
+  "issues": [],
   "packages": [
     {
       "evidence": [
@@ -121,6 +125,7 @@ exports[`nested-components.cdx.json 1`] = `
 
 exports[`with-dependencies.cdx.json 1`] = `
 {
+  "issues": [],
   "packages": [
     {
       "evidence": [
@@ -156,6 +161,7 @@ exports[`with-dependencies.cdx.json 1`] = `
 
 exports[`with-evidence.cdx.json 1`] = `
 {
+  "issues": [],
   "packages": [
     {
       "evidence": [

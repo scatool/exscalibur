@@ -79,6 +79,7 @@ export async function extractDockerfile(content: string, filePath?: string): Pro
     })),
     subprojects: [],
     relationships: [],
+    issues: [],
   };
 }
 
