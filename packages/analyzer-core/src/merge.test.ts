@@ -10,6 +10,7 @@ test('mergeResults merges packages and deduplicates by purl', () => {
     ],
     subprojects: [],
     relationships: [],
+    issues: [],
   };
 
   const result2: AnalyzerResult = {
@@ -19,6 +20,7 @@ test('mergeResults merges packages and deduplicates by purl', () => {
     ],
     subprojects: [],
     relationships: [],
+    issues: [],
   };
 
   const merged = mergeResults([result1, result2]);
@@ -42,6 +44,7 @@ test('mergeResults merges subprojects', () => {
       },
     ],
     relationships: [],
+    issues: [],
   };
 
   const result2: AnalyzerResult = {
@@ -54,6 +57,7 @@ test('mergeResults merges subprojects', () => {
       },
     ],
     relationships: [],
+    issues: [],
   };
 
   const merged = mergeResults([result1, result2]);
@@ -68,6 +72,7 @@ test('mergeResults merges relationships and deduplicates', () => {
     packages: [],
     subprojects: [],
     relationships: [{ from: 'pkg:npm/foo@1.0.0', to: ['pkg:npm/bar@2.0.0', 'pkg:npm/baz@3.0.0'] }],
+    issues: [],
   };
 
   const result2: AnalyzerResult = {
@@ -77,6 +82,7 @@ test('mergeResults merges relationships and deduplicates', () => {
       { from: 'pkg:npm/foo@1.0.0', to: ['pkg:npm/baz@3.0.0', 'pkg:npm/qux@4.0.0'] },
       { from: 'pkg:npm/bar@2.0.0', to: ['pkg:npm/qux@4.0.0'] },
     ],
+    issues: [],
   };
 
   const merged = mergeResults([result1, result2]);
@@ -94,6 +100,7 @@ test('mergeResults handles empty array', () => {
     packages: [],
     subprojects: [],
     relationships: [],
+    issues: [],
   });
 });
 
@@ -105,6 +112,7 @@ test('mergeResults sorts output', () => {
     ],
     subprojects: [],
     relationships: [{ from: 'pkg:npm/zebra@1.0.0', to: ['pkg:npm/charlie@1.0.0', 'pkg:npm/alpha@1.0.0'] }],
+    issues: [],
   };
 
   const merged = mergeResults([result]);
