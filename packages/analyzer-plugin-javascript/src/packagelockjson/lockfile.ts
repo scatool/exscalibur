@@ -14,7 +14,29 @@
  */
 
 /**
- * Represents a package entry in the package-lock.json packages section
+ * Represents a dependency entry in lockfile v1's dependencies tree
+ */
+export interface LockfileV1Dependency {
+  /** Package version */
+  version: string;
+  /** Resolved URL (registry or tarball) */
+  resolved?: string;
+  /** Integrity checksum */
+  integrity?: string;
+  /** Dependencies with version ranges (v1 uses "requires") */
+  requires?: Record<string, string>;
+  /** Nested dependencies (only present when version conflicts exist) */
+  dependencies?: Record<string, LockfileV1Dependency>;
+  /** Whether this is a dev dependency */
+  dev?: boolean;
+  /** Whether this is optional */
+  optional?: boolean;
+  /** Whether this package is bundled */
+  bundled?: boolean;
+}
+
+/**
+ * Represents a package entry in the package-lock.json packages section (v2+)
  */
 export interface PackageLockPackage {
   /** Package version */
@@ -55,6 +77,8 @@ export interface PackageLock {
   version?: string;
   /** Flat map of package paths to package metadata (v2+) */
   packages?: Record<string, PackageLockPackage>;
+  /** Nested dependency tree (v1 only) */
+  dependencies?: Record<string, LockfileV1Dependency>;
   /** Whether lockfile requires packages to be installed */
   requires?: boolean;
 }
@@ -128,6 +152,37 @@ export function findLineNumber(content: string, packagePath: string, version: st
 
     // Look for the package path as a JSON key
     if (line.includes(`"${packagePath}"`)) {
+      // Found the package, now look for the version in the next few lines
+      for (let j = i; j < Math.min(i + 20, lines.length); j++) {
+        const versionLine = lines[j] || '';
+        if (versionLine.includes(`"version"`) && versionLine.includes(`"${version}"`)) {
+          return j + 1; // Return 1-indexed line number
+        }
+      }
+      // If we didn't find the version in the next 20 lines, keep looking for another match
+    }
+  }
+
+  return undefined;
+}
+
+/**
+ * Find the line number where a package is defined in a lockfile v1
+ *
+ * @param content - The full lockfile content
+ * @param packageName - The package name (e.g., "react", "@babel/core")
+ * @param version - The package version to find
+ * @returns Line number (1-indexed) where the version is defined, or undefined
+ */
+export function findLineNumberV1(content: string, packageName: string, version: string): number | undefined {
+  const lines = content.split('\n');
+
+  // Search for the package name as a key
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i] || '';
+
+    // Look for the package name as a JSON key
+    if (line.includes(`"${packageName}"`) && line.includes(':')) {
       // Found the package, now look for the version in the next few lines
       for (let j = i; j < Math.min(i + 20, lines.length); j++) {
         const versionLine = lines[j] || '';

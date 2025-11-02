@@ -3529,3 +3529,64 @@ exports[`workspace 1`] = `
   ],
 }
 `;
+
+exports[`lockfile-v1 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "<fixtures>/lockfile-v1/package-lock.json#8",
+      ],
+      "purl": "pkg:npm/is-number@6.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/lockfile-v1/package-lock.json#14",
+      ],
+      "purl": "pkg:npm/is-odd@3.0.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/lockfile-v1/package-lock.json#23",
+      ],
+      "purl": "pkg:npm/left-pad@1.3.0",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:npm/is-odd@3.0.1",
+      "to": [
+        "pkg:npm/is-number@6.0.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/test-v1@1.0.0",
+      "to": [
+        "pkg:npm/is-odd@3.0.1",
+        "pkg:npm/left-pad@1.3.0",
+      ],
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "<fixtures>/lockfile-v1/package.json",
+      "purl": "pkg:npm/test-v1@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/left-pad@1.3.0",
+          ],
+          "scope": "dependencies",
+        },
+        {
+          "packages": [
+            "pkg:npm/is-odd@3.0.1",
+          ],
+          "scope": "devDependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
