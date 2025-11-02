@@ -6,7 +6,14 @@ import { join } from 'node:path';
 const glob = new Glob('Dockerfile.*');
 const fixturesDir = `${import.meta.dir}/__fixtures__`;
 
+// Collect and sort fixture files for consistent test ordering
+const fixtureFiles: string[] = [];
 for await (const file of glob.scan({ cwd: fixturesDir })) {
+  fixtureFiles.push(file);
+}
+fixtureFiles.sort();
+
+for (const file of fixtureFiles) {
   test(file, async () => {
     const filePath = join(fixturesDir, file);
     const content = await Bun.file(filePath).text();

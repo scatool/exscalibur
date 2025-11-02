@@ -17,6 +17,9 @@ for await (const file of glob.scan({ cwd: fixturesDir })) {
   }
 }
 
+// Sort fixtures alphabetically for consistent test ordering
+fixtures.sort();
+
 for (const dir of fixtures) {
   test(dir, async () => {
     const fixturePath = join(fixturesDir, dir);

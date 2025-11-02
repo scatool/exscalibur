@@ -17,7 +17,10 @@ for await (const file of glob.scan({ cwd: fixturesDir })) {
   }
 }
 
-for (const dir of fixtures) {
+// Sort fixtures alphabetically for consistent test ordering
+const sortedFixtures = Array.from(fixtures).sort();
+
+for (const dir of sortedFixtures) {
   test(
     dir,
     async () => {

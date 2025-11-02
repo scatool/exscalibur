@@ -1,5 +1,1471 @@
 // Bun Snapshot v1, https://bun.sh/docs/test/snapshots
 
+exports[`basic 1`] = `
+{
+  "packages": [
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#20",
+      ],
+      "purl": "pkg:npm/%40emnapi/runtime@1.3.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#30",
+      ],
+      "purl": "pkg:npm/%40img/sharp-darwin-arm64@0.33.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#52",
+      ],
+      "purl": "pkg:npm/%40img/sharp-darwin-x64@0.33.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#74",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-darwin-arm64@1.0.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#90",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-darwin-x64@1.0.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#106",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.0.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#122",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm64@1.0.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#138",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linux-s390x@1.0.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#154",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linux-x64@1.0.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#170",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linuxmusl-arm64@1.0.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#186",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linuxmusl-x64@1.0.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#202",
+      ],
+      "purl": "pkg:npm/%40img/sharp-linux-arm@0.33.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#224",
+      ],
+      "purl": "pkg:npm/%40img/sharp-linux-arm64@0.33.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#246",
+      ],
+      "purl": "pkg:npm/%40img/sharp-linux-s390x@0.33.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#268",
+      ],
+      "purl": "pkg:npm/%40img/sharp-linux-x64@0.33.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#290",
+      ],
+      "purl": "pkg:npm/%40img/sharp-linuxmusl-arm64@0.33.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#312",
+      ],
+      "purl": "pkg:npm/%40img/sharp-linuxmusl-x64@0.33.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#334",
+      ],
+      "purl": "pkg:npm/%40img/sharp-wasm32@0.33.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#353",
+      ],
+      "purl": "pkg:npm/%40img/sharp-win32-ia32@0.33.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#372",
+      ],
+      "purl": "pkg:npm/%40img/sharp-win32-x64@0.33.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#391",
+      ],
+      "purl": "pkg:npm/%40next/env@15.1.7",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#397",
+      ],
+      "purl": "pkg:npm/%40next/swc-darwin-arm64@15.1.7",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#413",
+      ],
+      "purl": "pkg:npm/%40next/swc-darwin-x64@15.1.7",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#429",
+      ],
+      "purl": "pkg:npm/%40next/swc-linux-arm64-gnu@15.1.7",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#445",
+      ],
+      "purl": "pkg:npm/%40next/swc-linux-arm64-musl@15.1.7",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#461",
+      ],
+      "purl": "pkg:npm/%40next/swc-linux-x64-gnu@15.1.7",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#477",
+      ],
+      "purl": "pkg:npm/%40next/swc-linux-x64-musl@15.1.7",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#493",
+      ],
+      "purl": "pkg:npm/%40next/swc-win32-arm64-msvc@15.1.7",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#509",
+      ],
+      "purl": "pkg:npm/%40next/swc-win32-x64-msvc@15.1.7",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#525",
+      ],
+      "purl": "pkg:npm/%40swc/counter@0.1.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#531",
+      ],
+      "purl": "pkg:npm/%40swc/helpers@0.5.15",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#540",
+      ],
+      "purl": "pkg:npm/busboy@1.6.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#551",
+      ],
+      "purl": "pkg:npm/caniuse-lite@1.0.30001700",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#571",
+      ],
+      "purl": "pkg:npm/client-only@0.0.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#591",
+      ],
+      "purl": "pkg:npm/color-convert@2.0.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#604",
+      ],
+      "purl": "pkg:npm/color-name@1.1.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#611",
+      ],
+      "purl": "pkg:npm/color-string@1.9.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#577",
+      ],
+      "purl": "pkg:npm/color@4.2.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#622",
+      ],
+      "purl": "pkg:npm/detect-libc@2.0.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#632",
+      ],
+      "purl": "pkg:npm/is-arrayish@0.3.2",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#639",
+      ],
+      "purl": "pkg:npm/nanoid@3.3.8",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#657",
+      ],
+      "purl": "pkg:npm/next@15.1.7",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#711",
+      ],
+      "purl": "pkg:npm/picocolors@1.1.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#717",
+      ],
+      "purl": "pkg:npm/postcss@8.4.31",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#754",
+      ],
+      "purl": "pkg:npm/react-dom@19.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#745",
+      ],
+      "purl": "pkg:npm/react@19.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#766",
+      ],
+      "purl": "pkg:npm/scheduler@0.25.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#772",
+      ],
+      "purl": "pkg:npm/semver@7.7.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#785",
+      ],
+      "purl": "pkg:npm/sharp@0.33.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#825",
+      ],
+      "purl": "pkg:npm/simple-swizzle@0.2.2",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#835",
+      ],
+      "purl": "pkg:npm/source-map-js@1.2.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#844",
+      ],
+      "purl": "pkg:npm/streamsearch@1.1.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#852",
+      ],
+      "purl": "pkg:npm/styled-jsx@5.1.6",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#875",
+      ],
+      "purl": "pkg:npm/tslib@2.8.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/package-lock.json#881",
+      ],
+      "purl": "pkg:npm/typescript@5.7.3",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:npm/%40emnapi/runtime@1.3.1",
+      "to": [
+        "pkg:npm/tslib@2.8.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/%40img/sharp-darwin-arm64@0.33.5",
+      "to": [
+        "pkg:npm/%40img/sharp-libvips-darwin-arm64@1.0.4",
+      ],
+    },
+    {
+      "from": "pkg:npm/%40img/sharp-darwin-x64@0.33.5",
+      "to": [
+        "pkg:npm/%40img/sharp-libvips-darwin-x64@1.0.4",
+      ],
+    },
+    {
+      "from": "pkg:npm/%40img/sharp-linux-arm@0.33.5",
+      "to": [
+        "pkg:npm/%40img/sharp-libvips-linux-arm@1.0.5",
+      ],
+    },
+    {
+      "from": "pkg:npm/%40img/sharp-linux-arm64@0.33.5",
+      "to": [
+        "pkg:npm/%40img/sharp-libvips-linux-arm64@1.0.4",
+      ],
+    },
+    {
+      "from": "pkg:npm/%40img/sharp-linux-s390x@0.33.5",
+      "to": [
+        "pkg:npm/%40img/sharp-libvips-linux-s390x@1.0.4",
+      ],
+    },
+    {
+      "from": "pkg:npm/%40img/sharp-linux-x64@0.33.5",
+      "to": [
+        "pkg:npm/%40img/sharp-libvips-linux-x64@1.0.4",
+      ],
+    },
+    {
+      "from": "pkg:npm/%40img/sharp-linuxmusl-arm64@0.33.5",
+      "to": [
+        "pkg:npm/%40img/sharp-libvips-linuxmusl-arm64@1.0.4",
+      ],
+    },
+    {
+      "from": "pkg:npm/%40img/sharp-linuxmusl-x64@0.33.5",
+      "to": [
+        "pkg:npm/%40img/sharp-libvips-linuxmusl-x64@1.0.4",
+      ],
+    },
+    {
+      "from": "pkg:npm/%40img/sharp-wasm32@0.33.5",
+      "to": [
+        "pkg:npm/%40emnapi/runtime@1.3.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/%40swc/helpers@0.5.15",
+      "to": [
+        "pkg:npm/tslib@2.8.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/busboy@1.6.0",
+      "to": [
+        "pkg:npm/streamsearch@1.1.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/color-convert@2.0.1",
+      "to": [
+        "pkg:npm/color-name@1.1.4",
+      ],
+    },
+    {
+      "from": "pkg:npm/color-string@1.9.1",
+      "to": [
+        "pkg:npm/color-name@1.1.4",
+        "pkg:npm/simple-swizzle@0.2.2",
+      ],
+    },
+    {
+      "from": "pkg:npm/color@4.2.3",
+      "to": [
+        "pkg:npm/color-convert@2.0.1",
+        "pkg:npm/color-string@1.9.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/next@15.1.7",
+      "to": [
+        "pkg:npm/%40next/env@15.1.7",
+        "pkg:npm/%40next/swc-darwin-arm64@15.1.7",
+        "pkg:npm/%40next/swc-darwin-x64@15.1.7",
+        "pkg:npm/%40next/swc-linux-arm64-gnu@15.1.7",
+        "pkg:npm/%40next/swc-linux-arm64-musl@15.1.7",
+        "pkg:npm/%40next/swc-linux-x64-gnu@15.1.7",
+        "pkg:npm/%40next/swc-linux-x64-musl@15.1.7",
+        "pkg:npm/%40next/swc-win32-arm64-msvc@15.1.7",
+        "pkg:npm/%40next/swc-win32-x64-msvc@15.1.7",
+        "pkg:npm/%40swc/counter@0.1.3",
+        "pkg:npm/%40swc/helpers@0.5.15",
+        "pkg:npm/busboy@1.6.0",
+        "pkg:npm/caniuse-lite@1.0.30001700",
+        "pkg:npm/postcss@8.4.31",
+        "pkg:npm/react-dom@19.0.0",
+        "pkg:npm/react@19.0.0",
+        "pkg:npm/sharp@0.33.5",
+        "pkg:npm/styled-jsx@5.1.6",
+      ],
+    },
+    {
+      "from": "pkg:npm/npm-basic@1.0.0",
+      "to": [
+        "pkg:npm/next@15.1.7",
+        "pkg:npm/react-dom@19.0.0",
+        "pkg:npm/react@19.0.0",
+        "pkg:npm/typescript@5.7.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/postcss@8.4.31",
+      "to": [
+        "pkg:npm/nanoid@3.3.8",
+        "pkg:npm/picocolors@1.1.1",
+        "pkg:npm/source-map-js@1.2.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/react-dom@19.0.0",
+      "to": [
+        "pkg:npm/react@19.0.0",
+        "pkg:npm/scheduler@0.25.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/sharp@0.33.5",
+      "to": [
+        "pkg:npm/%40img/sharp-darwin-arm64@0.33.5",
+        "pkg:npm/%40img/sharp-darwin-x64@0.33.5",
+        "pkg:npm/%40img/sharp-libvips-darwin-arm64@1.0.4",
+        "pkg:npm/%40img/sharp-libvips-darwin-x64@1.0.4",
+        "pkg:npm/%40img/sharp-libvips-linux-arm64@1.0.4",
+        "pkg:npm/%40img/sharp-libvips-linux-arm@1.0.5",
+        "pkg:npm/%40img/sharp-libvips-linux-s390x@1.0.4",
+        "pkg:npm/%40img/sharp-libvips-linux-x64@1.0.4",
+        "pkg:npm/%40img/sharp-libvips-linuxmusl-arm64@1.0.4",
+        "pkg:npm/%40img/sharp-libvips-linuxmusl-x64@1.0.4",
+        "pkg:npm/%40img/sharp-linux-arm64@0.33.5",
+        "pkg:npm/%40img/sharp-linux-arm@0.33.5",
+        "pkg:npm/%40img/sharp-linux-s390x@0.33.5",
+        "pkg:npm/%40img/sharp-linux-x64@0.33.5",
+        "pkg:npm/%40img/sharp-linuxmusl-arm64@0.33.5",
+        "pkg:npm/%40img/sharp-linuxmusl-x64@0.33.5",
+        "pkg:npm/%40img/sharp-wasm32@0.33.5",
+        "pkg:npm/%40img/sharp-win32-ia32@0.33.5",
+        "pkg:npm/%40img/sharp-win32-x64@0.33.5",
+        "pkg:npm/color@4.2.3",
+        "pkg:npm/detect-libc@2.0.3",
+        "pkg:npm/semver@7.7.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/simple-swizzle@0.2.2",
+      "to": [
+        "pkg:npm/is-arrayish@0.3.2",
+      ],
+    },
+    {
+      "from": "pkg:npm/styled-jsx@5.1.6",
+      "to": [
+        "pkg:npm/client-only@0.0.1",
+        "pkg:npm/react@19.0.0",
+      ],
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "<fixtures>/basic/package.json",
+      "purl": "pkg:npm/npm-basic@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/next@15.1.7",
+            "pkg:npm/react-dom@19.0.0",
+            "pkg:npm/react@19.0.0",
+          ],
+          "scope": "dependencies",
+        },
+        {
+          "packages": [
+            "pkg:npm/typescript@5.7.3",
+          ],
+          "scope": "devDependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
+
+exports[`git-deps 1`] = `
+{
+  "packages": [
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#18",
+      ],
+      "purl": "pkg:npm/accepts@2.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#31",
+      ],
+      "purl": "pkg:npm/body-parser@2.2.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#51",
+      ],
+      "purl": "pkg:npm/bytes@3.1.2",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#60",
+      ],
+      "purl": "pkg:npm/call-bind-apply-helpers@1.0.2",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#73",
+      ],
+      "purl": "pkg:npm/call-bound@1.0.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#554",
+      ],
+      "purl": "pkg:npm/commander@0.6.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#89",
+      ],
+      "purl": "pkg:npm/commander@2.3.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#97",
+      ],
+      "purl": "pkg:npm/content-disposition@1.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#109",
+      ],
+      "purl": "pkg:npm/content-type@1.0.5",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#127",
+      ],
+      "purl": "pkg:npm/cookie-signature@1.2.2",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#118",
+      ],
+      "purl": "pkg:npm/cookie@0.7.2",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#701",
+      ],
+      "purl": "pkg:npm/debug@2.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#136",
+      ],
+      "purl": "pkg:npm/debug@4.4.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#153",
+      ],
+      "purl": "pkg:npm/depd@2.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#162",
+      ],
+      "purl": "pkg:npm/diff@1.0.8",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#170",
+      ],
+      "purl": "pkg:npm/dunder-proto@1.0.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#184",
+      ],
+      "purl": "pkg:npm/ee-first@1.1.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#190",
+      ],
+      "purl": "pkg:npm/encodeurl@2.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#199",
+      ],
+      "purl": "pkg:npm/es-define-property@1.0.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#208",
+      ],
+      "purl": "pkg:npm/es-errors@1.3.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#217",
+      ],
+      "purl": "pkg:npm/es-object-atoms@1.1.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#229",
+      ],
+      "purl": "pkg:npm/escape-html@1.0.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#235",
+      ],
+      "purl": "pkg:npm/escape-string-regexp@1.0.2",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#244",
+      ],
+      "purl": "pkg:npm/etag@1.8.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#253",
+      ],
+      "purl": "pkg:npm/express@5.1.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#295",
+      ],
+      "purl": "pkg:npm/finalhandler@2.1.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#312",
+      ],
+      "purl": "pkg:npm/forwarded@0.2.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#321",
+      ],
+      "purl": "pkg:npm/fresh@2.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#330",
+      ],
+      "purl": "pkg:npm/function-bind@1.1.2",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#339",
+      ],
+      "purl": "pkg:npm/get-intrinsic@1.3.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#363",
+      ],
+      "purl": "pkg:npm/get-proto@1.0.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#376",
+      ],
+      "purl": "pkg:npm/glob@3.2.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#391",
+      ],
+      "purl": "pkg:npm/gopd@1.2.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#403",
+      ],
+      "purl": "pkg:npm/graceful-fs@2.0.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#413",
+      ],
+      "purl": "pkg:npm/growl@1.8.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#418",
+      ],
+      "purl": "pkg:npm/has-symbols@1.1.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#430",
+      ],
+      "purl": "pkg:npm/hasown@2.0.2",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#442",
+      ],
+      "purl": "pkg:npm/http-errors@2.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#467",
+      ],
+      "purl": "pkg:npm/iconv-lite@0.6.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#833",
+      ],
+      "purl": "pkg:npm/iconv-lite@0.7.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#479",
+      ],
+      "purl": "pkg:npm/inherits@2.0.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#485",
+      ],
+      "purl": "pkg:npm/ipaddr.js@1.9.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#494",
+      ],
+      "purl": "pkg:npm/is-buffer@1.1.6",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#500",
+      ],
+      "purl": "pkg:npm/is-even@1.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#511",
+      ],
+      "purl": "pkg:npm/is-number@3.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#523",
+      ],
+      "purl": "pkg:npm/is-odd@0.1.2",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#535",
+      ],
+      "purl": "pkg:npm/is-promise@4.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#541",
+      ],
+      "purl": "pkg:npm/jade@0.26.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#572",
+      ],
+      "purl": "pkg:npm/kind-of@3.2.2",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#584",
+      ],
+      "purl": "pkg:npm/lodash@4.17.21",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#590",
+      ],
+      "purl": "pkg:npm/lru-cache@2.7.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#596",
+      ],
+      "purl": "pkg:npm/math-intrinsics@1.1.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#605",
+      ],
+      "purl": "pkg:npm/media-typer@1.1.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#614",
+      ],
+      "purl": "pkg:npm/merge-descriptors@2.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#626",
+      ],
+      "purl": "pkg:npm/mime-db@1.54.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#635",
+      ],
+      "purl": "pkg:npm/mime-types@3.0.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#647",
+      ],
+      "purl": "pkg:npm/minimatch@0.2.14",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#661",
+      ],
+      "purl": "pkg:npm/minimist@0.0.8",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#562",
+      ],
+      "purl": "pkg:npm/mkdirp@0.3.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#667",
+      ],
+      "purl": "pkg:npm/mkdirp@0.5.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#680",
+      ],
+      "purl": "pkg:npm/mocha@2.0.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#709",
+      ],
+      "purl": "pkg:npm/ms@0.6.2",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#714",
+      ],
+      "purl": "pkg:npm/ms@2.1.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#720",
+      ],
+      "purl": "pkg:npm/negotiator@1.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#729",
+      ],
+      "purl": "pkg:npm/object-inspect@1.13.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#741",
+      ],
+      "purl": "pkg:npm/on-finished@2.4.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#753",
+      ],
+      "purl": "pkg:npm/once@1.4.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#762",
+      ],
+      "purl": "pkg:npm/parseurl@1.3.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#771",
+      ],
+      "purl": "pkg:npm/path-to-regexp@8.3.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#781",
+      ],
+      "purl": "pkg:npm/proxy-addr@2.0.7",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#794",
+      ],
+      "purl": "pkg:npm/qs@6.14.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#809",
+      ],
+      "purl": "pkg:npm/range-parser@1.2.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#818",
+      ],
+      "purl": "pkg:npm/raw-body@3.0.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#849",
+      ],
+      "purl": "pkg:npm/router@2.2.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#865",
+      ],
+      "purl": "pkg:npm/safe-buffer@5.2.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#885",
+      ],
+      "purl": "pkg:npm/safer-buffer@2.1.2",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#891",
+      ],
+      "purl": "pkg:npm/send@1.2.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#913",
+      ],
+      "purl": "pkg:npm/serve-static@2.2.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#928",
+      ],
+      "purl": "pkg:npm/setprototypeof@1.2.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#953",
+      ],
+      "purl": "pkg:npm/side-channel-list@1.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#969",
+      ],
+      "purl": "pkg:npm/side-channel-map@1.0.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#987",
+      ],
+      "purl": "pkg:npm/side-channel-weakmap@1.0.2",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#934",
+      ],
+      "purl": "pkg:npm/side-channel@1.1.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#1006",
+      ],
+      "purl": "pkg:npm/sigmund@1.0.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#458",
+      ],
+      "purl": "pkg:npm/statuses@2.0.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#1012",
+      ],
+      "purl": "pkg:npm/statuses@2.0.2",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#1021",
+      ],
+      "purl": "pkg:npm/toidentifier@1.0.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#1030",
+      ],
+      "purl": "pkg:npm/type-is@2.0.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#1044",
+      ],
+      "purl": "pkg:npm/unpipe@1.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#1053",
+      ],
+      "purl": "pkg:npm/vary@1.1.2",
+    },
+    {
+      "evidence": [
+        "<fixtures>/git-deps/package-lock.json#1062",
+      ],
+      "purl": "pkg:npm/wrappy@1.0.2",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:npm/accepts@2.0.0",
+      "to": [
+        "pkg:npm/mime-types@3.0.1",
+        "pkg:npm/negotiator@1.0.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/body-parser@2.2.0",
+      "to": [
+        "pkg:npm/bytes@3.1.2",
+        "pkg:npm/content-type@1.0.5",
+        "pkg:npm/debug@4.4.3",
+        "pkg:npm/http-errors@2.0.0",
+        "pkg:npm/iconv-lite@0.6.3",
+        "pkg:npm/on-finished@2.4.1",
+        "pkg:npm/qs@6.14.0",
+        "pkg:npm/raw-body@3.0.1",
+        "pkg:npm/type-is@2.0.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/call-bind-apply-helpers@1.0.2",
+      "to": [
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/function-bind@1.1.2",
+      ],
+    },
+    {
+      "from": "pkg:npm/call-bound@1.0.4",
+      "to": [
+        "pkg:npm/call-bind-apply-helpers@1.0.2",
+        "pkg:npm/get-intrinsic@1.3.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/content-disposition@1.0.0",
+      "to": [
+        "pkg:npm/safe-buffer@5.2.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/debug@2.0.0",
+      "to": [
+        "pkg:npm/ms@2.1.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/debug@4.4.3",
+      "to": [
+        "pkg:npm/ms@2.1.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/dunder-proto@1.0.1",
+      "to": [
+        "pkg:npm/call-bind-apply-helpers@1.0.2",
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/gopd@1.2.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/es-object-atoms@1.1.1",
+      "to": [
+        "pkg:npm/es-errors@1.3.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/express@5.1.0",
+      "to": [
+        "pkg:npm/accepts@2.0.0",
+        "pkg:npm/body-parser@2.2.0",
+        "pkg:npm/content-disposition@1.0.0",
+        "pkg:npm/content-type@1.0.5",
+        "pkg:npm/cookie-signature@1.2.2",
+        "pkg:npm/cookie@0.7.2",
+        "pkg:npm/debug@4.4.3",
+        "pkg:npm/depd@2.0.0",
+        "pkg:npm/encodeurl@2.0.0",
+        "pkg:npm/escape-html@1.0.3",
+        "pkg:npm/etag@1.8.1",
+        "pkg:npm/finalhandler@2.1.0",
+        "pkg:npm/fresh@2.0.0",
+        "pkg:npm/http-errors@2.0.0",
+        "pkg:npm/merge-descriptors@2.0.0",
+        "pkg:npm/mime-types@3.0.1",
+        "pkg:npm/on-finished@2.4.1",
+        "pkg:npm/once@1.4.0",
+        "pkg:npm/parseurl@1.3.3",
+        "pkg:npm/proxy-addr@2.0.7",
+        "pkg:npm/qs@6.14.0",
+        "pkg:npm/range-parser@1.2.1",
+        "pkg:npm/router@2.2.0",
+        "pkg:npm/send@1.2.0",
+        "pkg:npm/serve-static@2.2.0",
+        "pkg:npm/statuses@2.0.2",
+        "pkg:npm/type-is@2.0.1",
+        "pkg:npm/vary@1.1.2",
+      ],
+    },
+    {
+      "from": "pkg:npm/finalhandler@2.1.0",
+      "to": [
+        "pkg:npm/debug@4.4.3",
+        "pkg:npm/encodeurl@2.0.0",
+        "pkg:npm/escape-html@1.0.3",
+        "pkg:npm/on-finished@2.4.1",
+        "pkg:npm/parseurl@1.3.3",
+        "pkg:npm/statuses@2.0.2",
+      ],
+    },
+    {
+      "from": "pkg:npm/get-intrinsic@1.3.0",
+      "to": [
+        "pkg:npm/call-bind-apply-helpers@1.0.2",
+        "pkg:npm/es-define-property@1.0.1",
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/es-object-atoms@1.1.1",
+        "pkg:npm/function-bind@1.1.2",
+        "pkg:npm/get-proto@1.0.1",
+        "pkg:npm/gopd@1.2.0",
+        "pkg:npm/has-symbols@1.1.0",
+        "pkg:npm/hasown@2.0.2",
+        "pkg:npm/math-intrinsics@1.1.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/get-proto@1.0.1",
+      "to": [
+        "pkg:npm/dunder-proto@1.0.1",
+        "pkg:npm/es-object-atoms@1.1.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/glob@3.2.3",
+      "to": [
+        "pkg:npm/graceful-fs@2.0.3",
+        "pkg:npm/inherits@2.0.4",
+        "pkg:npm/minimatch@0.2.14",
+      ],
+    },
+    {
+      "from": "pkg:npm/hasown@2.0.2",
+      "to": [
+        "pkg:npm/function-bind@1.1.2",
+      ],
+    },
+    {
+      "from": "pkg:npm/http-errors@2.0.0",
+      "to": [
+        "pkg:npm/depd@2.0.0",
+        "pkg:npm/inherits@2.0.4",
+        "pkg:npm/setprototypeof@1.2.0",
+        "pkg:npm/statuses@2.0.2",
+        "pkg:npm/toidentifier@1.0.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/iconv-lite@0.6.3",
+      "to": [
+        "pkg:npm/safer-buffer@2.1.2",
+      ],
+    },
+    {
+      "from": "pkg:npm/iconv-lite@0.7.0",
+      "to": [
+        "pkg:npm/safer-buffer@2.1.2",
+      ],
+    },
+    {
+      "from": "pkg:npm/is-even@1.0.0",
+      "to": [
+        "pkg:npm/is-odd@0.1.2",
+      ],
+    },
+    {
+      "from": "pkg:npm/is-number@3.0.0",
+      "to": [
+        "pkg:npm/kind-of@3.2.2",
+      ],
+    },
+    {
+      "from": "pkg:npm/is-odd@0.1.2",
+      "to": [
+        "pkg:npm/is-number@3.0.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/jade@0.26.3",
+      "to": [
+        "pkg:npm/commander@2.3.0",
+        "pkg:npm/mkdirp@0.5.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/kind-of@3.2.2",
+      "to": [
+        "pkg:npm/is-buffer@1.1.6",
+      ],
+    },
+    {
+      "from": "pkg:npm/mime-types@3.0.1",
+      "to": [
+        "pkg:npm/mime-db@1.54.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/minimatch@0.2.14",
+      "to": [
+        "pkg:npm/lru-cache@2.7.3",
+        "pkg:npm/sigmund@1.0.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/mkdirp@0.5.0",
+      "to": [
+        "pkg:npm/minimist@0.0.8",
+      ],
+    },
+    {
+      "from": "pkg:npm/mocha@2.0.1",
+      "to": [
+        "pkg:npm/commander@2.3.0",
+        "pkg:npm/debug@4.4.3",
+        "pkg:npm/diff@1.0.8",
+        "pkg:npm/escape-string-regexp@1.0.2",
+        "pkg:npm/glob@3.2.3",
+        "pkg:npm/growl@1.8.1",
+        "pkg:npm/jade@0.26.3",
+        "pkg:npm/mkdirp@0.5.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/on-finished@2.4.1",
+      "to": [
+        "pkg:npm/ee-first@1.1.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/once@1.4.0",
+      "to": [
+        "pkg:npm/wrappy@1.0.2",
+      ],
+    },
+    {
+      "from": "pkg:npm/proxy-addr@2.0.7",
+      "to": [
+        "pkg:npm/forwarded@0.2.0",
+        "pkg:npm/ipaddr.js@1.9.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/qs@6.14.0",
+      "to": [
+        "pkg:npm/side-channel@1.1.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/raw-body@3.0.1",
+      "to": [
+        "pkg:npm/bytes@3.1.2",
+        "pkg:npm/http-errors@2.0.0",
+        "pkg:npm/iconv-lite@0.6.3",
+        "pkg:npm/unpipe@1.0.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/router@2.2.0",
+      "to": [
+        "pkg:npm/debug@4.4.3",
+        "pkg:npm/depd@2.0.0",
+        "pkg:npm/is-promise@4.0.0",
+        "pkg:npm/parseurl@1.3.3",
+        "pkg:npm/path-to-regexp@8.3.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/send@1.2.0",
+      "to": [
+        "pkg:npm/debug@4.4.3",
+        "pkg:npm/encodeurl@2.0.0",
+        "pkg:npm/escape-html@1.0.3",
+        "pkg:npm/etag@1.8.1",
+        "pkg:npm/fresh@2.0.0",
+        "pkg:npm/http-errors@2.0.0",
+        "pkg:npm/mime-types@3.0.1",
+        "pkg:npm/ms@2.1.3",
+        "pkg:npm/on-finished@2.4.1",
+        "pkg:npm/range-parser@1.2.1",
+        "pkg:npm/statuses@2.0.2",
+      ],
+    },
+    {
+      "from": "pkg:npm/serve-static@2.2.0",
+      "to": [
+        "pkg:npm/encodeurl@2.0.0",
+        "pkg:npm/escape-html@1.0.3",
+        "pkg:npm/parseurl@1.3.3",
+        "pkg:npm/send@1.2.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/side-channel-list@1.0.0",
+      "to": [
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/object-inspect@1.13.4",
+      ],
+    },
+    {
+      "from": "pkg:npm/side-channel-map@1.0.1",
+      "to": [
+        "pkg:npm/call-bound@1.0.4",
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/get-intrinsic@1.3.0",
+        "pkg:npm/object-inspect@1.13.4",
+      ],
+    },
+    {
+      "from": "pkg:npm/side-channel-weakmap@1.0.2",
+      "to": [
+        "pkg:npm/call-bound@1.0.4",
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/get-intrinsic@1.3.0",
+        "pkg:npm/object-inspect@1.13.4",
+        "pkg:npm/side-channel-map@1.0.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/side-channel@1.1.0",
+      "to": [
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/object-inspect@1.13.4",
+        "pkg:npm/side-channel-list@1.0.0",
+        "pkg:npm/side-channel-map@1.0.1",
+        "pkg:npm/side-channel-weakmap@1.0.2",
+      ],
+    },
+    {
+      "from": "pkg:npm/test-git-deps@1.0.0",
+      "to": [
+        "pkg:npm/express@5.1.0",
+        "pkg:npm/is-even@1.0.0",
+        "pkg:npm/lodash@4.17.21",
+        "pkg:npm/mocha@2.0.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/type-is@2.0.1",
+      "to": [
+        "pkg:npm/content-type@1.0.5",
+        "pkg:npm/media-typer@1.1.0",
+        "pkg:npm/mime-types@3.0.1",
+      ],
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "<fixtures>/git-deps/package.json",
+      "purl": "pkg:npm/test-git-deps@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/express@5.1.0",
+            "pkg:npm/is-even@1.0.0",
+            "pkg:npm/lodash@4.17.21",
+            "pkg:npm/mocha@2.0.1",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
+
 exports[`monorepo 1`] = `
 {
   "packages": [
@@ -1029,932 +2495,6 @@ exports[`tarball-deps 1`] = `
 }
 `;
 
-exports[`git-deps 1`] = `
-{
-  "packages": [
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#18",
-      ],
-      "purl": "pkg:npm/accepts@2.0.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#31",
-      ],
-      "purl": "pkg:npm/body-parser@2.2.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#51",
-      ],
-      "purl": "pkg:npm/bytes@3.1.2",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#60",
-      ],
-      "purl": "pkg:npm/call-bind-apply-helpers@1.0.2",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#73",
-      ],
-      "purl": "pkg:npm/call-bound@1.0.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#554",
-      ],
-      "purl": "pkg:npm/commander@0.6.1",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#89",
-      ],
-      "purl": "pkg:npm/commander@2.3.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#97",
-      ],
-      "purl": "pkg:npm/content-disposition@1.0.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#109",
-      ],
-      "purl": "pkg:npm/content-type@1.0.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#127",
-      ],
-      "purl": "pkg:npm/cookie-signature@1.2.2",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#118",
-      ],
-      "purl": "pkg:npm/cookie@0.7.2",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#701",
-      ],
-      "purl": "pkg:npm/debug@2.0.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#136",
-      ],
-      "purl": "pkg:npm/debug@4.4.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#153",
-      ],
-      "purl": "pkg:npm/depd@2.0.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#162",
-      ],
-      "purl": "pkg:npm/diff@1.0.8",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#170",
-      ],
-      "purl": "pkg:npm/dunder-proto@1.0.1",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#184",
-      ],
-      "purl": "pkg:npm/ee-first@1.1.1",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#190",
-      ],
-      "purl": "pkg:npm/encodeurl@2.0.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#199",
-      ],
-      "purl": "pkg:npm/es-define-property@1.0.1",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#208",
-      ],
-      "purl": "pkg:npm/es-errors@1.3.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#217",
-      ],
-      "purl": "pkg:npm/es-object-atoms@1.1.1",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#229",
-      ],
-      "purl": "pkg:npm/escape-html@1.0.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#235",
-      ],
-      "purl": "pkg:npm/escape-string-regexp@1.0.2",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#244",
-      ],
-      "purl": "pkg:npm/etag@1.8.1",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#253",
-      ],
-      "purl": "pkg:npm/express@5.1.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#295",
-      ],
-      "purl": "pkg:npm/finalhandler@2.1.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#312",
-      ],
-      "purl": "pkg:npm/forwarded@0.2.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#321",
-      ],
-      "purl": "pkg:npm/fresh@2.0.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#330",
-      ],
-      "purl": "pkg:npm/function-bind@1.1.2",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#339",
-      ],
-      "purl": "pkg:npm/get-intrinsic@1.3.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#363",
-      ],
-      "purl": "pkg:npm/get-proto@1.0.1",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#376",
-      ],
-      "purl": "pkg:npm/glob@3.2.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#391",
-      ],
-      "purl": "pkg:npm/gopd@1.2.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#403",
-      ],
-      "purl": "pkg:npm/graceful-fs@2.0.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#413",
-      ],
-      "purl": "pkg:npm/growl@1.8.1",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#418",
-      ],
-      "purl": "pkg:npm/has-symbols@1.1.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#430",
-      ],
-      "purl": "pkg:npm/hasown@2.0.2",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#442",
-      ],
-      "purl": "pkg:npm/http-errors@2.0.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#467",
-      ],
-      "purl": "pkg:npm/iconv-lite@0.6.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#833",
-      ],
-      "purl": "pkg:npm/iconv-lite@0.7.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#479",
-      ],
-      "purl": "pkg:npm/inherits@2.0.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#485",
-      ],
-      "purl": "pkg:npm/ipaddr.js@1.9.1",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#494",
-      ],
-      "purl": "pkg:npm/is-buffer@1.1.6",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#500",
-      ],
-      "purl": "pkg:npm/is-even@1.0.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#511",
-      ],
-      "purl": "pkg:npm/is-number@3.0.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#523",
-      ],
-      "purl": "pkg:npm/is-odd@0.1.2",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#535",
-      ],
-      "purl": "pkg:npm/is-promise@4.0.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#541",
-      ],
-      "purl": "pkg:npm/jade@0.26.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#572",
-      ],
-      "purl": "pkg:npm/kind-of@3.2.2",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#584",
-      ],
-      "purl": "pkg:npm/lodash@4.17.21",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#590",
-      ],
-      "purl": "pkg:npm/lru-cache@2.7.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#596",
-      ],
-      "purl": "pkg:npm/math-intrinsics@1.1.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#605",
-      ],
-      "purl": "pkg:npm/media-typer@1.1.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#614",
-      ],
-      "purl": "pkg:npm/merge-descriptors@2.0.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#626",
-      ],
-      "purl": "pkg:npm/mime-db@1.54.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#635",
-      ],
-      "purl": "pkg:npm/mime-types@3.0.1",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#647",
-      ],
-      "purl": "pkg:npm/minimatch@0.2.14",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#661",
-      ],
-      "purl": "pkg:npm/minimist@0.0.8",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#562",
-      ],
-      "purl": "pkg:npm/mkdirp@0.3.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#667",
-      ],
-      "purl": "pkg:npm/mkdirp@0.5.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#680",
-      ],
-      "purl": "pkg:npm/mocha@2.0.1",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#709",
-      ],
-      "purl": "pkg:npm/ms@0.6.2",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#714",
-      ],
-      "purl": "pkg:npm/ms@2.1.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#720",
-      ],
-      "purl": "pkg:npm/negotiator@1.0.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#729",
-      ],
-      "purl": "pkg:npm/object-inspect@1.13.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#741",
-      ],
-      "purl": "pkg:npm/on-finished@2.4.1",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#753",
-      ],
-      "purl": "pkg:npm/once@1.4.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#762",
-      ],
-      "purl": "pkg:npm/parseurl@1.3.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#771",
-      ],
-      "purl": "pkg:npm/path-to-regexp@8.3.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#781",
-      ],
-      "purl": "pkg:npm/proxy-addr@2.0.7",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#794",
-      ],
-      "purl": "pkg:npm/qs@6.14.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#809",
-      ],
-      "purl": "pkg:npm/range-parser@1.2.1",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#818",
-      ],
-      "purl": "pkg:npm/raw-body@3.0.1",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#849",
-      ],
-      "purl": "pkg:npm/router@2.2.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#865",
-      ],
-      "purl": "pkg:npm/safe-buffer@5.2.1",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#885",
-      ],
-      "purl": "pkg:npm/safer-buffer@2.1.2",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#891",
-      ],
-      "purl": "pkg:npm/send@1.2.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#913",
-      ],
-      "purl": "pkg:npm/serve-static@2.2.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#928",
-      ],
-      "purl": "pkg:npm/setprototypeof@1.2.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#953",
-      ],
-      "purl": "pkg:npm/side-channel-list@1.0.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#969",
-      ],
-      "purl": "pkg:npm/side-channel-map@1.0.1",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#987",
-      ],
-      "purl": "pkg:npm/side-channel-weakmap@1.0.2",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#934",
-      ],
-      "purl": "pkg:npm/side-channel@1.1.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#1006",
-      ],
-      "purl": "pkg:npm/sigmund@1.0.1",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#458",
-      ],
-      "purl": "pkg:npm/statuses@2.0.1",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#1012",
-      ],
-      "purl": "pkg:npm/statuses@2.0.2",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#1021",
-      ],
-      "purl": "pkg:npm/toidentifier@1.0.1",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#1030",
-      ],
-      "purl": "pkg:npm/type-is@2.0.1",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#1044",
-      ],
-      "purl": "pkg:npm/unpipe@1.0.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#1053",
-      ],
-      "purl": "pkg:npm/vary@1.1.2",
-    },
-    {
-      "evidence": [
-        "<fixtures>/git-deps/package-lock.json#1062",
-      ],
-      "purl": "pkg:npm/wrappy@1.0.2",
-    },
-  ],
-  "relationships": [
-    {
-      "from": "pkg:npm/accepts@2.0.0",
-      "to": [
-        "pkg:npm/mime-types@3.0.1",
-        "pkg:npm/negotiator@1.0.0",
-      ],
-    },
-    {
-      "from": "pkg:npm/body-parser@2.2.0",
-      "to": [
-        "pkg:npm/bytes@3.1.2",
-        "pkg:npm/content-type@1.0.5",
-        "pkg:npm/debug@4.4.3",
-        "pkg:npm/http-errors@2.0.0",
-        "pkg:npm/iconv-lite@0.6.3",
-        "pkg:npm/on-finished@2.4.1",
-        "pkg:npm/qs@6.14.0",
-        "pkg:npm/raw-body@3.0.1",
-        "pkg:npm/type-is@2.0.1",
-      ],
-    },
-    {
-      "from": "pkg:npm/call-bind-apply-helpers@1.0.2",
-      "to": [
-        "pkg:npm/es-errors@1.3.0",
-        "pkg:npm/function-bind@1.1.2",
-      ],
-    },
-    {
-      "from": "pkg:npm/call-bound@1.0.4",
-      "to": [
-        "pkg:npm/call-bind-apply-helpers@1.0.2",
-        "pkg:npm/get-intrinsic@1.3.0",
-      ],
-    },
-    {
-      "from": "pkg:npm/content-disposition@1.0.0",
-      "to": [
-        "pkg:npm/safe-buffer@5.2.1",
-      ],
-    },
-    {
-      "from": "pkg:npm/debug@2.0.0",
-      "to": [
-        "pkg:npm/ms@2.1.3",
-      ],
-    },
-    {
-      "from": "pkg:npm/debug@4.4.3",
-      "to": [
-        "pkg:npm/ms@2.1.3",
-      ],
-    },
-    {
-      "from": "pkg:npm/dunder-proto@1.0.1",
-      "to": [
-        "pkg:npm/call-bind-apply-helpers@1.0.2",
-        "pkg:npm/es-errors@1.3.0",
-        "pkg:npm/gopd@1.2.0",
-      ],
-    },
-    {
-      "from": "pkg:npm/es-object-atoms@1.1.1",
-      "to": [
-        "pkg:npm/es-errors@1.3.0",
-      ],
-    },
-    {
-      "from": "pkg:npm/express@5.1.0",
-      "to": [
-        "pkg:npm/accepts@2.0.0",
-        "pkg:npm/body-parser@2.2.0",
-        "pkg:npm/content-disposition@1.0.0",
-        "pkg:npm/content-type@1.0.5",
-        "pkg:npm/cookie-signature@1.2.2",
-        "pkg:npm/cookie@0.7.2",
-        "pkg:npm/debug@4.4.3",
-        "pkg:npm/depd@2.0.0",
-        "pkg:npm/encodeurl@2.0.0",
-        "pkg:npm/escape-html@1.0.3",
-        "pkg:npm/etag@1.8.1",
-        "pkg:npm/finalhandler@2.1.0",
-        "pkg:npm/fresh@2.0.0",
-        "pkg:npm/http-errors@2.0.0",
-        "pkg:npm/merge-descriptors@2.0.0",
-        "pkg:npm/mime-types@3.0.1",
-        "pkg:npm/on-finished@2.4.1",
-        "pkg:npm/once@1.4.0",
-        "pkg:npm/parseurl@1.3.3",
-        "pkg:npm/proxy-addr@2.0.7",
-        "pkg:npm/qs@6.14.0",
-        "pkg:npm/range-parser@1.2.1",
-        "pkg:npm/router@2.2.0",
-        "pkg:npm/send@1.2.0",
-        "pkg:npm/serve-static@2.2.0",
-        "pkg:npm/statuses@2.0.2",
-        "pkg:npm/type-is@2.0.1",
-        "pkg:npm/vary@1.1.2",
-      ],
-    },
-    {
-      "from": "pkg:npm/finalhandler@2.1.0",
-      "to": [
-        "pkg:npm/debug@4.4.3",
-        "pkg:npm/encodeurl@2.0.0",
-        "pkg:npm/escape-html@1.0.3",
-        "pkg:npm/on-finished@2.4.1",
-        "pkg:npm/parseurl@1.3.3",
-        "pkg:npm/statuses@2.0.2",
-      ],
-    },
-    {
-      "from": "pkg:npm/get-intrinsic@1.3.0",
-      "to": [
-        "pkg:npm/call-bind-apply-helpers@1.0.2",
-        "pkg:npm/es-define-property@1.0.1",
-        "pkg:npm/es-errors@1.3.0",
-        "pkg:npm/es-object-atoms@1.1.1",
-        "pkg:npm/function-bind@1.1.2",
-        "pkg:npm/get-proto@1.0.1",
-        "pkg:npm/gopd@1.2.0",
-        "pkg:npm/has-symbols@1.1.0",
-        "pkg:npm/hasown@2.0.2",
-        "pkg:npm/math-intrinsics@1.1.0",
-      ],
-    },
-    {
-      "from": "pkg:npm/get-proto@1.0.1",
-      "to": [
-        "pkg:npm/dunder-proto@1.0.1",
-        "pkg:npm/es-object-atoms@1.1.1",
-      ],
-    },
-    {
-      "from": "pkg:npm/glob@3.2.3",
-      "to": [
-        "pkg:npm/graceful-fs@2.0.3",
-        "pkg:npm/inherits@2.0.4",
-        "pkg:npm/minimatch@0.2.14",
-      ],
-    },
-    {
-      "from": "pkg:npm/hasown@2.0.2",
-      "to": [
-        "pkg:npm/function-bind@1.1.2",
-      ],
-    },
-    {
-      "from": "pkg:npm/http-errors@2.0.0",
-      "to": [
-        "pkg:npm/depd@2.0.0",
-        "pkg:npm/inherits@2.0.4",
-        "pkg:npm/setprototypeof@1.2.0",
-        "pkg:npm/statuses@2.0.2",
-        "pkg:npm/toidentifier@1.0.1",
-      ],
-    },
-    {
-      "from": "pkg:npm/iconv-lite@0.6.3",
-      "to": [
-        "pkg:npm/safer-buffer@2.1.2",
-      ],
-    },
-    {
-      "from": "pkg:npm/iconv-lite@0.7.0",
-      "to": [
-        "pkg:npm/safer-buffer@2.1.2",
-      ],
-    },
-    {
-      "from": "pkg:npm/is-even@1.0.0",
-      "to": [
-        "pkg:npm/is-odd@0.1.2",
-      ],
-    },
-    {
-      "from": "pkg:npm/is-number@3.0.0",
-      "to": [
-        "pkg:npm/kind-of@3.2.2",
-      ],
-    },
-    {
-      "from": "pkg:npm/is-odd@0.1.2",
-      "to": [
-        "pkg:npm/is-number@3.0.0",
-      ],
-    },
-    {
-      "from": "pkg:npm/jade@0.26.3",
-      "to": [
-        "pkg:npm/commander@2.3.0",
-        "pkg:npm/mkdirp@0.5.0",
-      ],
-    },
-    {
-      "from": "pkg:npm/kind-of@3.2.2",
-      "to": [
-        "pkg:npm/is-buffer@1.1.6",
-      ],
-    },
-    {
-      "from": "pkg:npm/mime-types@3.0.1",
-      "to": [
-        "pkg:npm/mime-db@1.54.0",
-      ],
-    },
-    {
-      "from": "pkg:npm/minimatch@0.2.14",
-      "to": [
-        "pkg:npm/lru-cache@2.7.3",
-        "pkg:npm/sigmund@1.0.1",
-      ],
-    },
-    {
-      "from": "pkg:npm/mkdirp@0.5.0",
-      "to": [
-        "pkg:npm/minimist@0.0.8",
-      ],
-    },
-    {
-      "from": "pkg:npm/mocha@2.0.1",
-      "to": [
-        "pkg:npm/commander@2.3.0",
-        "pkg:npm/debug@4.4.3",
-        "pkg:npm/diff@1.0.8",
-        "pkg:npm/escape-string-regexp@1.0.2",
-        "pkg:npm/glob@3.2.3",
-        "pkg:npm/growl@1.8.1",
-        "pkg:npm/jade@0.26.3",
-        "pkg:npm/mkdirp@0.5.0",
-      ],
-    },
-    {
-      "from": "pkg:npm/on-finished@2.4.1",
-      "to": [
-        "pkg:npm/ee-first@1.1.1",
-      ],
-    },
-    {
-      "from": "pkg:npm/once@1.4.0",
-      "to": [
-        "pkg:npm/wrappy@1.0.2",
-      ],
-    },
-    {
-      "from": "pkg:npm/proxy-addr@2.0.7",
-      "to": [
-        "pkg:npm/forwarded@0.2.0",
-        "pkg:npm/ipaddr.js@1.9.1",
-      ],
-    },
-    {
-      "from": "pkg:npm/qs@6.14.0",
-      "to": [
-        "pkg:npm/side-channel@1.1.0",
-      ],
-    },
-    {
-      "from": "pkg:npm/raw-body@3.0.1",
-      "to": [
-        "pkg:npm/bytes@3.1.2",
-        "pkg:npm/http-errors@2.0.0",
-        "pkg:npm/iconv-lite@0.6.3",
-        "pkg:npm/unpipe@1.0.0",
-      ],
-    },
-    {
-      "from": "pkg:npm/router@2.2.0",
-      "to": [
-        "pkg:npm/debug@4.4.3",
-        "pkg:npm/depd@2.0.0",
-        "pkg:npm/is-promise@4.0.0",
-        "pkg:npm/parseurl@1.3.3",
-        "pkg:npm/path-to-regexp@8.3.0",
-      ],
-    },
-    {
-      "from": "pkg:npm/send@1.2.0",
-      "to": [
-        "pkg:npm/debug@4.4.3",
-        "pkg:npm/encodeurl@2.0.0",
-        "pkg:npm/escape-html@1.0.3",
-        "pkg:npm/etag@1.8.1",
-        "pkg:npm/fresh@2.0.0",
-        "pkg:npm/http-errors@2.0.0",
-        "pkg:npm/mime-types@3.0.1",
-        "pkg:npm/ms@2.1.3",
-        "pkg:npm/on-finished@2.4.1",
-        "pkg:npm/range-parser@1.2.1",
-        "pkg:npm/statuses@2.0.2",
-      ],
-    },
-    {
-      "from": "pkg:npm/serve-static@2.2.0",
-      "to": [
-        "pkg:npm/encodeurl@2.0.0",
-        "pkg:npm/escape-html@1.0.3",
-        "pkg:npm/parseurl@1.3.3",
-        "pkg:npm/send@1.2.0",
-      ],
-    },
-    {
-      "from": "pkg:npm/side-channel-list@1.0.0",
-      "to": [
-        "pkg:npm/es-errors@1.3.0",
-        "pkg:npm/object-inspect@1.13.4",
-      ],
-    },
-    {
-      "from": "pkg:npm/side-channel-map@1.0.1",
-      "to": [
-        "pkg:npm/call-bound@1.0.4",
-        "pkg:npm/es-errors@1.3.0",
-        "pkg:npm/get-intrinsic@1.3.0",
-        "pkg:npm/object-inspect@1.13.4",
-      ],
-    },
-    {
-      "from": "pkg:npm/side-channel-weakmap@1.0.2",
-      "to": [
-        "pkg:npm/call-bound@1.0.4",
-        "pkg:npm/es-errors@1.3.0",
-        "pkg:npm/get-intrinsic@1.3.0",
-        "pkg:npm/object-inspect@1.13.4",
-        "pkg:npm/side-channel-map@1.0.1",
-      ],
-    },
-    {
-      "from": "pkg:npm/side-channel@1.1.0",
-      "to": [
-        "pkg:npm/es-errors@1.3.0",
-        "pkg:npm/object-inspect@1.13.4",
-        "pkg:npm/side-channel-list@1.0.0",
-        "pkg:npm/side-channel-map@1.0.1",
-        "pkg:npm/side-channel-weakmap@1.0.2",
-      ],
-    },
-    {
-      "from": "pkg:npm/test-git-deps@1.0.0",
-      "to": [
-        "pkg:npm/express@5.1.0",
-        "pkg:npm/is-even@1.0.0",
-        "pkg:npm/lodash@4.17.21",
-        "pkg:npm/mocha@2.0.1",
-      ],
-    },
-    {
-      "from": "pkg:npm/type-is@2.0.1",
-      "to": [
-        "pkg:npm/content-type@1.0.5",
-        "pkg:npm/media-typer@1.1.0",
-        "pkg:npm/mime-types@3.0.1",
-      ],
-    },
-  ],
-  "subprojects": [
-    {
-      "definitionFile": "<fixtures>/git-deps/package.json",
-      "purl": "pkg:npm/test-git-deps@1.0.0",
-      "scopes": [
-        {
-          "packages": [
-            "pkg:npm/express@5.1.0",
-            "pkg:npm/is-even@1.0.0",
-            "pkg:npm/lodash@4.17.21",
-            "pkg:npm/mocha@2.0.1",
-          ],
-          "scope": "dependencies",
-        },
-      ],
-    },
-  ],
-}
-`;
-
 exports[`workspace 1`] = `
 {
   "packages": [
@@ -2967,546 +3507,6 @@ exports[`workspace 1`] = `
         {
           "packages": [
             "pkg:npm/%40scatest/ui@1.0.7",
-            "pkg:npm/next@15.1.7",
-            "pkg:npm/react-dom@19.0.0",
-            "pkg:npm/react@19.0.0",
-          ],
-          "scope": "dependencies",
-        },
-        {
-          "packages": [
-            "pkg:npm/typescript@5.7.3",
-          ],
-          "scope": "devDependencies",
-        },
-      ],
-    },
-  ],
-}
-`;
-
-exports[`basic 1`] = `
-{
-  "packages": [
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#20",
-      ],
-      "purl": "pkg:npm/%40emnapi/runtime@1.3.1",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#30",
-      ],
-      "purl": "pkg:npm/%40img/sharp-darwin-arm64@0.33.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#52",
-      ],
-      "purl": "pkg:npm/%40img/sharp-darwin-x64@0.33.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#74",
-      ],
-      "purl": "pkg:npm/%40img/sharp-libvips-darwin-arm64@1.0.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#90",
-      ],
-      "purl": "pkg:npm/%40img/sharp-libvips-darwin-x64@1.0.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#106",
-      ],
-      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.0.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#122",
-      ],
-      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm64@1.0.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#138",
-      ],
-      "purl": "pkg:npm/%40img/sharp-libvips-linux-s390x@1.0.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#154",
-      ],
-      "purl": "pkg:npm/%40img/sharp-libvips-linux-x64@1.0.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#170",
-      ],
-      "purl": "pkg:npm/%40img/sharp-libvips-linuxmusl-arm64@1.0.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#186",
-      ],
-      "purl": "pkg:npm/%40img/sharp-libvips-linuxmusl-x64@1.0.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#202",
-      ],
-      "purl": "pkg:npm/%40img/sharp-linux-arm@0.33.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#224",
-      ],
-      "purl": "pkg:npm/%40img/sharp-linux-arm64@0.33.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#246",
-      ],
-      "purl": "pkg:npm/%40img/sharp-linux-s390x@0.33.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#268",
-      ],
-      "purl": "pkg:npm/%40img/sharp-linux-x64@0.33.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#290",
-      ],
-      "purl": "pkg:npm/%40img/sharp-linuxmusl-arm64@0.33.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#312",
-      ],
-      "purl": "pkg:npm/%40img/sharp-linuxmusl-x64@0.33.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#334",
-      ],
-      "purl": "pkg:npm/%40img/sharp-wasm32@0.33.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#353",
-      ],
-      "purl": "pkg:npm/%40img/sharp-win32-ia32@0.33.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#372",
-      ],
-      "purl": "pkg:npm/%40img/sharp-win32-x64@0.33.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#391",
-      ],
-      "purl": "pkg:npm/%40next/env@15.1.7",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#397",
-      ],
-      "purl": "pkg:npm/%40next/swc-darwin-arm64@15.1.7",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#413",
-      ],
-      "purl": "pkg:npm/%40next/swc-darwin-x64@15.1.7",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#429",
-      ],
-      "purl": "pkg:npm/%40next/swc-linux-arm64-gnu@15.1.7",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#445",
-      ],
-      "purl": "pkg:npm/%40next/swc-linux-arm64-musl@15.1.7",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#461",
-      ],
-      "purl": "pkg:npm/%40next/swc-linux-x64-gnu@15.1.7",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#477",
-      ],
-      "purl": "pkg:npm/%40next/swc-linux-x64-musl@15.1.7",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#493",
-      ],
-      "purl": "pkg:npm/%40next/swc-win32-arm64-msvc@15.1.7",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#509",
-      ],
-      "purl": "pkg:npm/%40next/swc-win32-x64-msvc@15.1.7",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#525",
-      ],
-      "purl": "pkg:npm/%40swc/counter@0.1.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#531",
-      ],
-      "purl": "pkg:npm/%40swc/helpers@0.5.15",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#540",
-      ],
-      "purl": "pkg:npm/busboy@1.6.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#551",
-      ],
-      "purl": "pkg:npm/caniuse-lite@1.0.30001700",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#571",
-      ],
-      "purl": "pkg:npm/client-only@0.0.1",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#591",
-      ],
-      "purl": "pkg:npm/color-convert@2.0.1",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#604",
-      ],
-      "purl": "pkg:npm/color-name@1.1.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#611",
-      ],
-      "purl": "pkg:npm/color-string@1.9.1",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#577",
-      ],
-      "purl": "pkg:npm/color@4.2.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#622",
-      ],
-      "purl": "pkg:npm/detect-libc@2.0.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#632",
-      ],
-      "purl": "pkg:npm/is-arrayish@0.3.2",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#639",
-      ],
-      "purl": "pkg:npm/nanoid@3.3.8",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#657",
-      ],
-      "purl": "pkg:npm/next@15.1.7",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#711",
-      ],
-      "purl": "pkg:npm/picocolors@1.1.1",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#717",
-      ],
-      "purl": "pkg:npm/postcss@8.4.31",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#754",
-      ],
-      "purl": "pkg:npm/react-dom@19.0.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#745",
-      ],
-      "purl": "pkg:npm/react@19.0.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#766",
-      ],
-      "purl": "pkg:npm/scheduler@0.25.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#772",
-      ],
-      "purl": "pkg:npm/semver@7.7.1",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#785",
-      ],
-      "purl": "pkg:npm/sharp@0.33.5",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#825",
-      ],
-      "purl": "pkg:npm/simple-swizzle@0.2.2",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#835",
-      ],
-      "purl": "pkg:npm/source-map-js@1.2.1",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#844",
-      ],
-      "purl": "pkg:npm/streamsearch@1.1.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#852",
-      ],
-      "purl": "pkg:npm/styled-jsx@5.1.6",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#875",
-      ],
-      "purl": "pkg:npm/tslib@2.8.1",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/package-lock.json#881",
-      ],
-      "purl": "pkg:npm/typescript@5.7.3",
-    },
-  ],
-  "relationships": [
-    {
-      "from": "pkg:npm/%40emnapi/runtime@1.3.1",
-      "to": [
-        "pkg:npm/tslib@2.8.1",
-      ],
-    },
-    {
-      "from": "pkg:npm/%40img/sharp-darwin-arm64@0.33.5",
-      "to": [
-        "pkg:npm/%40img/sharp-libvips-darwin-arm64@1.0.4",
-      ],
-    },
-    {
-      "from": "pkg:npm/%40img/sharp-darwin-x64@0.33.5",
-      "to": [
-        "pkg:npm/%40img/sharp-libvips-darwin-x64@1.0.4",
-      ],
-    },
-    {
-      "from": "pkg:npm/%40img/sharp-linux-arm@0.33.5",
-      "to": [
-        "pkg:npm/%40img/sharp-libvips-linux-arm@1.0.5",
-      ],
-    },
-    {
-      "from": "pkg:npm/%40img/sharp-linux-arm64@0.33.5",
-      "to": [
-        "pkg:npm/%40img/sharp-libvips-linux-arm64@1.0.4",
-      ],
-    },
-    {
-      "from": "pkg:npm/%40img/sharp-linux-s390x@0.33.5",
-      "to": [
-        "pkg:npm/%40img/sharp-libvips-linux-s390x@1.0.4",
-      ],
-    },
-    {
-      "from": "pkg:npm/%40img/sharp-linux-x64@0.33.5",
-      "to": [
-        "pkg:npm/%40img/sharp-libvips-linux-x64@1.0.4",
-      ],
-    },
-    {
-      "from": "pkg:npm/%40img/sharp-linuxmusl-arm64@0.33.5",
-      "to": [
-        "pkg:npm/%40img/sharp-libvips-linuxmusl-arm64@1.0.4",
-      ],
-    },
-    {
-      "from": "pkg:npm/%40img/sharp-linuxmusl-x64@0.33.5",
-      "to": [
-        "pkg:npm/%40img/sharp-libvips-linuxmusl-x64@1.0.4",
-      ],
-    },
-    {
-      "from": "pkg:npm/%40img/sharp-wasm32@0.33.5",
-      "to": [
-        "pkg:npm/%40emnapi/runtime@1.3.1",
-      ],
-    },
-    {
-      "from": "pkg:npm/%40swc/helpers@0.5.15",
-      "to": [
-        "pkg:npm/tslib@2.8.1",
-      ],
-    },
-    {
-      "from": "pkg:npm/busboy@1.6.0",
-      "to": [
-        "pkg:npm/streamsearch@1.1.0",
-      ],
-    },
-    {
-      "from": "pkg:npm/color-convert@2.0.1",
-      "to": [
-        "pkg:npm/color-name@1.1.4",
-      ],
-    },
-    {
-      "from": "pkg:npm/color-string@1.9.1",
-      "to": [
-        "pkg:npm/color-name@1.1.4",
-        "pkg:npm/simple-swizzle@0.2.2",
-      ],
-    },
-    {
-      "from": "pkg:npm/color@4.2.3",
-      "to": [
-        "pkg:npm/color-convert@2.0.1",
-        "pkg:npm/color-string@1.9.1",
-      ],
-    },
-    {
-      "from": "pkg:npm/next@15.1.7",
-      "to": [
-        "pkg:npm/%40next/env@15.1.7",
-        "pkg:npm/%40next/swc-darwin-arm64@15.1.7",
-        "pkg:npm/%40next/swc-darwin-x64@15.1.7",
-        "pkg:npm/%40next/swc-linux-arm64-gnu@15.1.7",
-        "pkg:npm/%40next/swc-linux-arm64-musl@15.1.7",
-        "pkg:npm/%40next/swc-linux-x64-gnu@15.1.7",
-        "pkg:npm/%40next/swc-linux-x64-musl@15.1.7",
-        "pkg:npm/%40next/swc-win32-arm64-msvc@15.1.7",
-        "pkg:npm/%40next/swc-win32-x64-msvc@15.1.7",
-        "pkg:npm/%40swc/counter@0.1.3",
-        "pkg:npm/%40swc/helpers@0.5.15",
-        "pkg:npm/busboy@1.6.0",
-        "pkg:npm/caniuse-lite@1.0.30001700",
-        "pkg:npm/postcss@8.4.31",
-        "pkg:npm/react-dom@19.0.0",
-        "pkg:npm/react@19.0.0",
-        "pkg:npm/sharp@0.33.5",
-        "pkg:npm/styled-jsx@5.1.6",
-      ],
-    },
-    {
-      "from": "pkg:npm/npm-basic@1.0.0",
-      "to": [
-        "pkg:npm/next@15.1.7",
-        "pkg:npm/react-dom@19.0.0",
-        "pkg:npm/react@19.0.0",
-        "pkg:npm/typescript@5.7.3",
-      ],
-    },
-    {
-      "from": "pkg:npm/postcss@8.4.31",
-      "to": [
-        "pkg:npm/nanoid@3.3.8",
-        "pkg:npm/picocolors@1.1.1",
-        "pkg:npm/source-map-js@1.2.1",
-      ],
-    },
-    {
-      "from": "pkg:npm/react-dom@19.0.0",
-      "to": [
-        "pkg:npm/react@19.0.0",
-        "pkg:npm/scheduler@0.25.0",
-      ],
-    },
-    {
-      "from": "pkg:npm/sharp@0.33.5",
-      "to": [
-        "pkg:npm/%40img/sharp-darwin-arm64@0.33.5",
-        "pkg:npm/%40img/sharp-darwin-x64@0.33.5",
-        "pkg:npm/%40img/sharp-libvips-darwin-arm64@1.0.4",
-        "pkg:npm/%40img/sharp-libvips-darwin-x64@1.0.4",
-        "pkg:npm/%40img/sharp-libvips-linux-arm64@1.0.4",
-        "pkg:npm/%40img/sharp-libvips-linux-arm@1.0.5",
-        "pkg:npm/%40img/sharp-libvips-linux-s390x@1.0.4",
-        "pkg:npm/%40img/sharp-libvips-linux-x64@1.0.4",
-        "pkg:npm/%40img/sharp-libvips-linuxmusl-arm64@1.0.4",
-        "pkg:npm/%40img/sharp-libvips-linuxmusl-x64@1.0.4",
-        "pkg:npm/%40img/sharp-linux-arm64@0.33.5",
-        "pkg:npm/%40img/sharp-linux-arm@0.33.5",
-        "pkg:npm/%40img/sharp-linux-s390x@0.33.5",
-        "pkg:npm/%40img/sharp-linux-x64@0.33.5",
-        "pkg:npm/%40img/sharp-linuxmusl-arm64@0.33.5",
-        "pkg:npm/%40img/sharp-linuxmusl-x64@0.33.5",
-        "pkg:npm/%40img/sharp-wasm32@0.33.5",
-        "pkg:npm/%40img/sharp-win32-ia32@0.33.5",
-        "pkg:npm/%40img/sharp-win32-x64@0.33.5",
-        "pkg:npm/color@4.2.3",
-        "pkg:npm/detect-libc@2.0.3",
-        "pkg:npm/semver@7.7.1",
-      ],
-    },
-    {
-      "from": "pkg:npm/simple-swizzle@0.2.2",
-      "to": [
-        "pkg:npm/is-arrayish@0.3.2",
-      ],
-    },
-    {
-      "from": "pkg:npm/styled-jsx@5.1.6",
-      "to": [
-        "pkg:npm/client-only@0.0.1",
-        "pkg:npm/react@19.0.0",
-      ],
-    },
-  ],
-  "subprojects": [
-    {
-      "definitionFile": "<fixtures>/basic/package.json",
-      "purl": "pkg:npm/npm-basic@1.0.0",
-      "scopes": [
-        {
-          "packages": [
             "pkg:npm/next@15.1.7",
             "pkg:npm/react-dom@19.0.0",
             "pkg:npm/react@19.0.0",
