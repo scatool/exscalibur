@@ -50,6 +50,12 @@ for (const repoName of repositories) {
       subproject.definitionFile = subproject.definitionFile.replace(repositoriesDir, '<repositories>');
     }
 
+    for (const issue of mergedResult.issues) {
+      if (issue.file) {
+        issue.file = issue.file.replace(repositoriesDir, '<repositories>');
+      }
+    }
+
     // Write snapshot to individual JSON file
     const snapshotPath = join(import.meta.dir, '__snapshots__', `${repoName}.json`);
     const snapshotFile = file(snapshotPath);

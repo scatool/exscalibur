@@ -19855,12 +19855,12 @@
     {
       "message": "Failed to parse package.json: JSON Parse error: Expected '}'",
       "severity": "ERROR",
-      "file": "/home/lukasnehrke/Projects/analyzer/test/repositories/babel+babel/packages/babel-core/test/fixtures/errors/invalid-pkg-json/package.json"
+      "file": "<repositories>/babel+babel/packages/babel-core/test/fixtures/errors/invalid-pkg-json/package.json"
     },
     {
       "message": "Failed to parse package.json: JSON Parse error: Expected '}'",
       "severity": "ERROR",
-      "file": "/home/lukasnehrke/Projects/analyzer/test/repositories/babel+babel/packages/babel-core/test/fixtures/config/config-files/pkg-error/package.json"
+      "file": "<repositories>/babel+babel/packages/babel-core/test/fixtures/config/config-files/pkg-error/package.json"
     }
   ]
 }
