@@ -1,0 +1,38 @@
+name: Integration Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  integration-tests:
+    name: Integration Tests
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Setup bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Cache test repositories
+        id: cache-repos
+        uses: actions/cache@v4
+        with:
+          path: test/repositories
+          key: test-repositories-${{ hashFiles('test/repositories.txt') }}
+          restore-keys: |
+            test-repositories-
+
+      - name: Download test repositories
+        if: steps.cache-repos.outputs.cache-hit != 'true'
+        run: bun run test/scripts/download-repositories.ts
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Run integration tests
+        run: bun test test/integration.test.ts

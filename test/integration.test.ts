@@ -11,7 +11,7 @@ import {
   yarnLockExtractor,
 } from '@scatool/analyzer-plugin-javascript/src/index.ts';
 import type { Extractor } from '@scatool/analyzer-core/src/index.ts';
-import { mergeResults } from '@scatool/analyzer-core/src/index.ts';
+import { mergeResults, normalizeResult } from '@scatool/analyzer-core/src/index.ts';
 
 const repositoriesDir = `${import.meta.dir}/repositories`;
 
@@ -33,43 +33,56 @@ const repositories = entries
   .sort();
 
 for (const repoName of repositories) {
-  test(repoName, async () => {
-    const repoPath = join(repositoriesDir, repoName);
+  test(
+    repoName,
+    async () => {
+      const repoPath = join(repositoriesDir, repoName);
 
-    const results = await Promise.all(allExtractors.map((extractor) => extractor.extract(repoPath)));
+      const results = await Promise.all(allExtractors.map((extractor) => extractor.extract(repoPath)));
 
-    // Merge all results
-    const mergedResult = mergeResults(results);
+      // Merge all results
+      const mergedResult = mergeResults(results);
 
-    // Normalize paths in evidence and definitionFile for consistent snapshots
-    for (const pkg of mergedResult.packages) {
-      pkg.evidence = pkg.evidence.map((e: string) => e.replace(repositoriesDir, '<repositories>'));
-    }
+      // Normalize paths in evidence and definitionFile for consistent snapshots
+      for (const pkg of mergedResult.packages) {
+        pkg.evidence = pkg.evidence.map((e: string) => e.replace(repositoriesDir, '<repositories>'));
+      }
 
-    for (const subproject of mergedResult.subprojects) {
-      subproject.definitionFile = subproject.definitionFile.replace(repositoriesDir, '<repositories>');
-    }
+      for (const subproject of mergedResult.subprojects) {
+        subproject.definitionFile = subproject.definitionFile.replace(repositoriesDir, '<repositories>');
+      }
 
-    // Write snapshot to individual JSON file
-    const snapshotPath = join(import.meta.dir, '__snapshots__', `${repoName}.json`);
-    const snapshotFile = file(snapshotPath);
+      for (const issue of mergedResult.issues) {
+        if (issue.file) {
+          issue.file = issue.file.replace(repositoriesDir, '<repositories>');
+        }
+      }
 
-    const updateSnapshots = process.argv.includes('--update-snapshots') || process.argv.includes('-u');
-    const snapshotExists = await snapshotFile.exists();
+      // Re-normalize after path replacement to ensure consistent ordering
+      const normalizedResult = normalizeResult(mergedResult);
 
-    if (updateSnapshots) {
-      // Update snapshot
-      await Bun.write(snapshotPath, JSON.stringify(mergedResult, null, 2) + '\n');
-    } else if (!snapshotExists) {
-      // Create snapshot
-      await Bun.write(snapshotPath, JSON.stringify(mergedResult, null, 2) + '\n');
-      return; // No need to compare if we just created it
-    }
+      // Write snapshot to individual JSON file
+      const snapshotPath = join(import.meta.dir, '__snapshots__', `${repoName}.json`);
+      const snapshotFile = file(snapshotPath);
 
-    // Read and compare with snapshot
-    const snapshotContent = await snapshotFile.text();
-    const snapshot = JSON.parse(snapshotContent);
+      const updateSnapshots = process.argv.includes('--update-snapshots') || process.argv.includes('-u');
+      const snapshotExists = await snapshotFile.exists();
 
-    expect(mergedResult).toEqual(snapshot);
-  });
+      if (updateSnapshots) {
+        // Update snapshot
+        await Bun.write(snapshotPath, JSON.stringify(normalizedResult, null, 2) + '\n');
+      } else if (!snapshotExists) {
+        // Create snapshot
+        await Bun.write(snapshotPath, JSON.stringify(normalizedResult, null, 2) + '\n');
+        return; // No need to compare if we just created it
+      }
+
+      // Read and compare with snapshot
+      const snapshotContent = await snapshotFile.text();
+      const snapshot = JSON.parse(snapshotContent);
+
+      expect(normalizedResult).toEqual(snapshot);
+    },
+    { timeout: 300000 }, // 5 minutes
+  );
 }
