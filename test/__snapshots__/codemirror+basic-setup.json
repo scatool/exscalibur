@@ -1,0 +1,38 @@
+{
+  "packages": [
+    {
+      "purl": "pkg:npm/%40codemirror/autocomplete@6.0.0",
+      "evidence": ["<repositories>/codemirror+basic-setup/package.json:29"]
+    },
+    {
+      "purl": "pkg:npm/%40codemirror/buildhelper@1.0.0",
+      "evidence": ["<repositories>/codemirror+basic-setup/package.json:38"]
+    },
+    {
+      "purl": "pkg:npm/%40codemirror/commands@6.0.0",
+      "evidence": ["<repositories>/codemirror+basic-setup/package.json:30"]
+    },
+    {
+      "purl": "pkg:npm/%40codemirror/language@6.0.0",
+      "evidence": ["<repositories>/codemirror+basic-setup/package.json:31"]
+    },
+    {
+      "purl": "pkg:npm/%40codemirror/lint@6.0.0",
+      "evidence": ["<repositories>/codemirror+basic-setup/package.json:32"]
+    },
+    {
+      "purl": "pkg:npm/%40codemirror/search@6.0.0",
+      "evidence": ["<repositories>/codemirror+basic-setup/package.json:33"]
+    },
+    {
+      "purl": "pkg:npm/%40codemirror/state@6.0.0",
+      "evidence": ["<repositories>/codemirror+basic-setup/package.json:34"]
+    },
+    {
+      "purl": "pkg:npm/%40codemirror/view@6.0.0",
+      "evidence": ["<repositories>/codemirror+basic-setup/package.json:35"]
+    }
+  ],
+  "subprojects": [],
+  "relationships": []
+}

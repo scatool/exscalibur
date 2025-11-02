@@ -1,0 +1,194 @@
+{
+  "packages": [
+    {
+      "purl": "pkg:npm/%40arethetypeswrong/cli@0.17.1",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:60"]
+    },
+    {
+      "purl": "pkg:npm/%40ljharb/eslint-config@21.1.1",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:61"]
+    },
+    {
+      "purl": "pkg:npm/%40ljharb/tsconfig@0.2.2",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:62"]
+    },
+    {
+      "purl": "pkg:npm/%40types/for-each@0.3.3",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:63"]
+    },
+    {
+      "purl": "pkg:npm/%40types/function.prototype.name@1.1.4",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:64"]
+    },
+    {
+      "purl": "pkg:npm/%40types/is-async-function@2.0.3",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:65"]
+    },
+    {
+      "purl": "pkg:npm/%40types/is-date-object@1.0.4",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:66"]
+    },
+    {
+      "purl": "pkg:npm/%40types/is-generator-function@1.0.3",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:67"]
+    },
+    {
+      "purl": "pkg:npm/%40types/is-weakref@1.0.0",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:68"]
+    },
+    {
+      "purl": "pkg:npm/%40types/make-arrow-function@1.2.2",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:69"]
+    },
+    {
+      "purl": "pkg:npm/%40types/make-async-function@1.0.2",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:70"]
+    },
+    {
+      "purl": "pkg:npm/%40types/object-inspect@1.13.0",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:71"]
+    },
+    {
+      "purl": "pkg:npm/%40types/object.assign@4.1.0",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:72"]
+    },
+    {
+      "purl": "pkg:npm/%40types/tape@5.6.5",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:73"]
+    },
+    {
+      "purl": "pkg:npm/%40types/which-boxed-primitive@1.0.3",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:74"]
+    },
+    {
+      "purl": "pkg:npm/auto-changelog@2.5.0",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:75"]
+    },
+    {
+      "purl": "pkg:npm/available-typed-arrays@1.0.7",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:76"]
+    },
+    {
+      "purl": "pkg:npm/call-bound@1.0.2",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:45"]
+    },
+    {
+      "purl": "pkg:npm/encoding@0.1.13",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:77"]
+    },
+    {
+      "purl": "pkg:npm/eslint@8.8.0",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:78"]
+    },
+    {
+      "purl": "pkg:npm/evalmd@0.0.19",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:79"]
+    },
+    {
+      "purl": "pkg:npm/for-each@0.3.3",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:80"]
+    },
+    {
+      "purl": "pkg:npm/function.prototype.name@1.1.6",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:46"]
+    },
+    {
+      "purl": "pkg:npm/has-bigints@1.0.2",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:81"]
+    },
+    {
+      "purl": "pkg:npm/has-symbols@1.1.0",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:82"]
+    },
+    {
+      "purl": "pkg:npm/has-tostringtag@1.0.2",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:47"]
+    },
+    {
+      "purl": "pkg:npm/in-publish@2.0.1",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:83"]
+    },
+    {
+      "purl": "pkg:npm/is-async-function@2.0.0",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:48"]
+    },
+    {
+      "purl": "pkg:npm/is-date-object@1.1.0",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:49"]
+    },
+    {
+      "purl": "pkg:npm/is-finalizationregistry@1.1.0",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:50"]
+    },
+    {
+      "purl": "pkg:npm/is-generator-function@1.0.10",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:51"]
+    },
+    {
+      "purl": "pkg:npm/is-regex@1.2.1",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:52"]
+    },
+    {
+      "purl": "pkg:npm/is-weakref@1.0.2",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:53"]
+    },
+    {
+      "purl": "pkg:npm/isarray@2.0.5",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:54"]
+    },
+    {
+      "purl": "pkg:npm/make-arrow-function@1.2.0",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:84"]
+    },
+    {
+      "purl": "pkg:npm/make-async-function@1.0.0",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:85"]
+    },
+    {
+      "purl": "pkg:npm/make-generator-function@2.0.0",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:86"]
+    },
+    {
+      "purl": "pkg:npm/npmignore@0.3.1",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:87"]
+    },
+    {
+      "purl": "pkg:npm/nyc@10.3.2",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:88"]
+    },
+    {
+      "purl": "pkg:npm/object-inspect@1.13.3",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:89"]
+    },
+    {
+      "purl": "pkg:npm/object.assign@4.1.5",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:90"]
+    },
+    {
+      "purl": "pkg:npm/safe-publish-latest@2.0.0",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:15"]
+    },
+    {
+      "purl": "pkg:npm/tape@5.9.0",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:92"]
+    },
+    {
+      "purl": "pkg:npm/typescript@next",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:93"]
+    },
+    {
+      "purl": "pkg:npm/which-boxed-primitive@1.1.0",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:55"]
+    },
+    {
+      "purl": "pkg:npm/which-collection@1.0.2",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:56"]
+    },
+    {
+      "purl": "pkg:npm/which-typed-array@1.1.16",
+      "evidence": ["<repositories>/inspect-js+which-builtin-type/package.json:57"]
+    }
+  ],
+  "subprojects": [],
+  "relationships": []
+}

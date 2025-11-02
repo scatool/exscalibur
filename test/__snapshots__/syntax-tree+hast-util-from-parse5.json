@@ -1,0 +1,86 @@
+{
+  "packages": [
+    {
+      "purl": "pkg:npm/%40types/hast@3.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-from-parse5/package.json:8"]
+    },
+    {
+      "purl": "pkg:npm/%40types/node@22.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-from-parse5/package.json:19"]
+    },
+    {
+      "purl": "pkg:npm/%40types/unist@3.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-from-parse5/package.json:9"]
+    },
+    {
+      "purl": "pkg:npm/c8@10.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-from-parse5/package.json:20"]
+    },
+    {
+      "purl": "pkg:npm/devlop@1.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-from-parse5/package.json:10"]
+    },
+    {
+      "purl": "pkg:npm/hastscript@9.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-from-parse5/package.json:11"]
+    },
+    {
+      "purl": "pkg:npm/is-hidden@2.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-from-parse5/package.json:21"]
+    },
+    {
+      "purl": "pkg:npm/parse5@7.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-from-parse5/package.json:22"]
+    },
+    {
+      "purl": "pkg:npm/prettier@3.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-from-parse5/package.json:23"]
+    },
+    {
+      "purl": "pkg:npm/property-information@7.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-from-parse5/package.json:12"]
+    },
+    {
+      "purl": "pkg:npm/remark-cli@12.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-from-parse5/package.json:24"]
+    },
+    {
+      "purl": "pkg:npm/remark-preset-wooorm@11.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-from-parse5/package.json:25"]
+    },
+    {
+      "purl": "pkg:npm/to-vfile@8.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-from-parse5/package.json:26"]
+    },
+    {
+      "purl": "pkg:npm/type-coverage@2.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-from-parse5/package.json:27"]
+    },
+    {
+      "purl": "pkg:npm/typescript@5.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-from-parse5/package.json:28"]
+    },
+    {
+      "purl": "pkg:npm/unist-util-visit@5.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-from-parse5/package.json:29"]
+    },
+    {
+      "purl": "pkg:npm/vfile-location@5.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-from-parse5/package.json:14"]
+    },
+    {
+      "purl": "pkg:npm/vfile@6.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-from-parse5/package.json:13"]
+    },
+    {
+      "purl": "pkg:npm/web-namespaces@2.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-from-parse5/package.json:15"]
+    },
+    {
+      "purl": "pkg:npm/xo@0.60.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-from-parse5/package.json:30"]
+    }
+  ],
+  "subprojects": [],
+  "relationships": []
+}

@@ -1,0 +1,82 @@
+{
+  "packages": [
+    {
+      "purl": "pkg:npm/%40types/node@22.0.0",
+      "evidence": ["<repositories>/micromark+micromark-extension-gfm-footnote/package.json:49"]
+    },
+    {
+      "purl": "pkg:npm/c8@10.0.0",
+      "evidence": ["<repositories>/micromark+micromark-extension-gfm-footnote/package.json:50"]
+    },
+    {
+      "purl": "pkg:npm/create-gfm-fixtures@1.0.0",
+      "evidence": ["<repositories>/micromark+micromark-extension-gfm-footnote/package.json:51"]
+    },
+    {
+      "purl": "pkg:npm/devlop@1.0.0",
+      "evidence": ["<repositories>/micromark+micromark-extension-gfm-footnote/package.json:39"]
+    },
+    {
+      "purl": "pkg:npm/micromark-build@2.0.0",
+      "evidence": ["<repositories>/micromark+micromark-extension-gfm-footnote/package.json:53"]
+    },
+    {
+      "purl": "pkg:npm/micromark-core-commonmark@2.0.0",
+      "evidence": ["<repositories>/micromark+micromark-extension-gfm-footnote/package.json:40"]
+    },
+    {
+      "purl": "pkg:npm/micromark-factory-space@2.0.0",
+      "evidence": ["<repositories>/micromark+micromark-extension-gfm-footnote/package.json:41"]
+    },
+    {
+      "purl": "pkg:npm/micromark-util-character@2.0.0",
+      "evidence": ["<repositories>/micromark+micromark-extension-gfm-footnote/package.json:42"]
+    },
+    {
+      "purl": "pkg:npm/micromark-util-normalize-identifier@2.0.0",
+      "evidence": ["<repositories>/micromark+micromark-extension-gfm-footnote/package.json:43"]
+    },
+    {
+      "purl": "pkg:npm/micromark-util-sanitize-uri@2.0.0",
+      "evidence": ["<repositories>/micromark+micromark-extension-gfm-footnote/package.json:44"]
+    },
+    {
+      "purl": "pkg:npm/micromark-util-symbol@2.0.0",
+      "evidence": ["<repositories>/micromark+micromark-extension-gfm-footnote/package.json:45"]
+    },
+    {
+      "purl": "pkg:npm/micromark-util-types@2.0.0",
+      "evidence": ["<repositories>/micromark+micromark-extension-gfm-footnote/package.json:46"]
+    },
+    {
+      "purl": "pkg:npm/micromark@4.0.0",
+      "evidence": ["<repositories>/micromark+micromark-extension-gfm-footnote/package.json:7"]
+    },
+    {
+      "purl": "pkg:npm/prettier@3.0.0",
+      "evidence": ["<repositories>/micromark+micromark-extension-gfm-footnote/package.json:54"]
+    },
+    {
+      "purl": "pkg:npm/remark-cli@12.0.0",
+      "evidence": ["<repositories>/micromark+micromark-extension-gfm-footnote/package.json:55"]
+    },
+    {
+      "purl": "pkg:npm/remark-preset-wooorm@10.0.0",
+      "evidence": ["<repositories>/micromark+micromark-extension-gfm-footnote/package.json:56"]
+    },
+    {
+      "purl": "pkg:npm/type-coverage@2.0.0",
+      "evidence": ["<repositories>/micromark+micromark-extension-gfm-footnote/package.json:57"]
+    },
+    {
+      "purl": "pkg:npm/typescript@5.0.0",
+      "evidence": ["<repositories>/micromark+micromark-extension-gfm-footnote/package.json:58"]
+    },
+    {
+      "purl": "pkg:npm/xo@0.59.0",
+      "evidence": ["<repositories>/micromark+micromark-extension-gfm-footnote/package.json:59"]
+    }
+  ],
+  "subprojects": [],
+  "relationships": []
+}

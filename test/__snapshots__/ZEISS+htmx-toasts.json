@@ -1,0 +1,3370 @@
+{
+  "packages": [
+    {
+      "purl": "pkg:npm/%40babel/code-frame@7.26.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#27"]
+    },
+    {
+      "purl": "pkg:npm/%40babel/helper-validator-identifier@7.25.9",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#42"]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/aix-ppc64@0.24.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#52"]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/android-arm@0.24.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#69"]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/android-arm64@0.24.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#86"]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/android-x64@0.24.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#103"]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/darwin-arm64@0.24.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#120"]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/darwin-x64@0.24.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#137"]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/freebsd-arm64@0.24.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#154"]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/freebsd-x64@0.24.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#171"]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/linux-arm@0.24.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#188"]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/linux-arm64@0.24.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#205"]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/linux-ia32@0.24.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#222"]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/linux-loong64@0.24.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#239"]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/linux-mips64el@0.24.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#256"]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/linux-ppc64@0.24.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#273"]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/linux-riscv64@0.24.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#290"]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/linux-s390x@0.24.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#307"]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/linux-x64@0.24.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#324"]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/netbsd-arm64@0.24.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#341"]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/netbsd-x64@0.24.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#358"]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/openbsd-arm64@0.24.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#375"]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/openbsd-x64@0.24.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#392"]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/sunos-x64@0.24.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#409"]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/win32-arm64@0.24.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#426"]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/win32-ia32@0.24.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#443"]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/win32-x64@0.24.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#460"]
+    },
+    {
+      "purl": "pkg:npm/%40eslint-community/eslint-utils@4.4.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#477"]
+    },
+    {
+      "purl": "pkg:npm/%40eslint-community/regexpp@4.12.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#496"]
+    },
+    {
+      "purl": "pkg:npm/%40eslint/compat@1.2.4",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2642"]
+    },
+    {
+      "purl": "pkg:npm/%40eslint/eslintrc@2.1.4",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#506"]
+    },
+    {
+      "purl": "pkg:npm/%40eslint/eslintrc@3.2.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2659"]
+    },
+    {
+      "purl": "pkg:npm/%40eslint/js@8.57.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#530"]
+    },
+    {
+      "purl": "pkg:npm/%40eslint/js@9.17.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2694"]
+    },
+    {
+      "purl": "pkg:npm/%40github/browserslist-config@1.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#540"]
+    },
+    {
+      "purl": "pkg:npm/%40github/prettier-config@0.0.6",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#547"]
+    },
+    {
+      "purl": "pkg:npm/%40humanwhocodes/config-array@0.13.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#553"]
+    },
+    {
+      "purl": "pkg:npm/%40humanwhocodes/module-importer@1.0.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#569"]
+    },
+    {
+      "purl": "pkg:npm/%40humanwhocodes/object-schema@2.0.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#583"]
+    },
+    {
+      "purl": "pkg:npm/%40jest/expect-utils@29.7.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#591"]
+    },
+    {
+      "purl": "pkg:npm/%40jest/schemas@29.6.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#604"]
+    },
+    {
+      "purl": "pkg:npm/%40jest/types@29.6.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#617"]
+    },
+    {
+      "purl": "pkg:npm/%40jridgewell/sourcemap-codec@1.5.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#635"]
+    },
+    {
+      "purl": "pkg:npm/%40lit-labs/ssr-dom-shim@1.2.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#642"]
+    },
+    {
+      "purl": "pkg:npm/%40lit/reactive-element@2.0.4",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#649"]
+    },
+    {
+      "purl": "pkg:npm/%40nodelib/fs.scandir@2.1.5",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#659"]
+    },
+    {
+      "purl": "pkg:npm/%40nodelib/fs.stat@2.0.5",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#673"]
+    },
+    {
+      "purl": "pkg:npm/%40nodelib/fs.walk@1.2.8",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#683"]
+    },
+    {
+      "purl": "pkg:npm/%40open-wc/dedupe-mixin@1.4.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#697"]
+    },
+    {
+      "purl": "pkg:npm/%40open-wc/scoped-elements@3.0.5",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#704"]
+    },
+    {
+      "purl": "pkg:npm/%40open-wc/testing-helpers@3.0.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#715"]
+    },
+    {
+      "purl": "pkg:npm/%40pkgr/core@0.1.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#727"]
+    },
+    {
+      "purl": "pkg:npm/%40rollup/rollup-android-arm-eabi@4.24.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#740"]
+    },
+    {
+      "purl": "pkg:npm/%40rollup/rollup-android-arm64@4.24.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#754"]
+    },
+    {
+      "purl": "pkg:npm/%40rollup/rollup-darwin-arm64@4.24.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#768"]
+    },
+    {
+      "purl": "pkg:npm/%40rollup/rollup-darwin-x64@4.24.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#782"]
+    },
+    {
+      "purl": "pkg:npm/%40rollup/rollup-freebsd-arm64@4.24.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#796"]
+    },
+    {
+      "purl": "pkg:npm/%40rollup/rollup-freebsd-x64@4.24.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#810"]
+    },
+    {
+      "purl": "pkg:npm/%40rollup/rollup-linux-arm-gnueabihf@4.24.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#824"]
+    },
+    {
+      "purl": "pkg:npm/%40rollup/rollup-linux-arm-musleabihf@4.24.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#838"]
+    },
+    {
+      "purl": "pkg:npm/%40rollup/rollup-linux-arm64-gnu@4.24.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#852"]
+    },
+    {
+      "purl": "pkg:npm/%40rollup/rollup-linux-arm64-musl@4.24.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#866"]
+    },
+    {
+      "purl": "pkg:npm/%40rollup/rollup-linux-powerpc64le-gnu@4.24.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#880"]
+    },
+    {
+      "purl": "pkg:npm/%40rollup/rollup-linux-riscv64-gnu@4.24.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#894"]
+    },
+    {
+      "purl": "pkg:npm/%40rollup/rollup-linux-s390x-gnu@4.24.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#908"]
+    },
+    {
+      "purl": "pkg:npm/%40rollup/rollup-linux-x64-gnu@4.24.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#922"]
+    },
+    {
+      "purl": "pkg:npm/%40rollup/rollup-linux-x64-musl@4.24.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#936"]
+    },
+    {
+      "purl": "pkg:npm/%40rollup/rollup-win32-arm64-msvc@4.24.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#950"]
+    },
+    {
+      "purl": "pkg:npm/%40rollup/rollup-win32-ia32-msvc@4.24.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#964"]
+    },
+    {
+      "purl": "pkg:npm/%40rollup/rollup-win32-x64-msvc@4.24.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#978"]
+    },
+    {
+      "purl": "pkg:npm/%40rtsao/scc@1.1.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#992"]
+    },
+    {
+      "purl": "pkg:npm/%40sinclair/typebox@0.27.8",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#999"]
+    },
+    {
+      "purl": "pkg:npm/%40types/estree@1.0.6",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1006"]
+    },
+    {
+      "purl": "pkg:npm/%40types/istanbul-lib-coverage@2.0.6",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1013"]
+    },
+    {
+      "purl": "pkg:npm/%40types/istanbul-lib-report@3.0.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1020"]
+    },
+    {
+      "purl": "pkg:npm/%40types/istanbul-reports@3.0.4",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1030"]
+    },
+    {
+      "purl": "pkg:npm/%40types/jest@29.5.14",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1040"]
+    },
+    {
+      "purl": "pkg:npm/%40types/json5@0.0.29",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1051"]
+    },
+    {
+      "purl": "pkg:npm/%40types/node@22.8.6",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1058"]
+    },
+    {
+      "purl": "pkg:npm/%40types/stack-utils@2.0.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1068"]
+    },
+    {
+      "purl": "pkg:npm/%40types/trusted-types@2.0.7",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1075"]
+    },
+    {
+      "purl": "pkg:npm/%40types/yargs-parser@21.0.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1092"]
+    },
+    {
+      "purl": "pkg:npm/%40types/yargs@17.0.33",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1082"]
+    },
+    {
+      "purl": "pkg:npm/%40typescript-eslint/eslint-plugin@8.19.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1099"]
+    },
+    {
+      "purl": "pkg:npm/%40typescript-eslint/parser@8.19.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1128"]
+    },
+    {
+      "purl": "pkg:npm/%40typescript-eslint/scope-manager@8.19.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1152"]
+    },
+    {
+      "purl": "pkg:npm/%40typescript-eslint/type-utils@8.19.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1169"]
+    },
+    {
+      "purl": "pkg:npm/%40typescript-eslint/types@8.19.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1192"]
+    },
+    {
+      "purl": "pkg:npm/%40typescript-eslint/typescript-estree@8.19.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1205"]
+    },
+    {
+      "purl": "pkg:npm/%40typescript-eslint/utils@8.19.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1255"]
+    },
+    {
+      "purl": "pkg:npm/%40typescript-eslint/visitor-keys@8.19.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1278"]
+    },
+    {
+      "purl": "pkg:npm/%40ungap/structured-clone@1.2.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1307"]
+    },
+    {
+      "purl": "pkg:npm/%40vitest/expect@3.0.4",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1314"]
+    },
+    {
+      "purl": "pkg:npm/%40vitest/mocker@3.0.4",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1330"]
+    },
+    {
+      "purl": "pkg:npm/%40vitest/pretty-format@3.0.4",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1357"]
+    },
+    {
+      "purl": "pkg:npm/%40vitest/runner@3.0.4",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1370"]
+    },
+    {
+      "purl": "pkg:npm/%40vitest/snapshot@3.0.4",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1384"]
+    },
+    {
+      "purl": "pkg:npm/%40vitest/spy@3.0.4",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1399"]
+    },
+    {
+      "purl": "pkg:npm/%40vitest/utils@3.0.4",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1412"]
+    },
+    {
+      "purl": "pkg:npm/acorn-jsx@5.3.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1440"]
+    },
+    {
+      "purl": "pkg:npm/acorn@8.14.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1427"]
+    },
+    {
+      "purl": "pkg:npm/agent-base@7.1.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1450"]
+    },
+    {
+      "purl": "pkg:npm/ajv@6.12.6",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1463"]
+    },
+    {
+      "purl": "pkg:npm/ansi-regex@5.0.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1480"]
+    },
+    {
+      "purl": "pkg:npm/ansi-styles@4.3.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1490"]
+    },
+    {
+      "purl": "pkg:npm/ansi-styles@5.2.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4945"]
+    },
+    {
+      "purl": "pkg:npm/argparse@2.0.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1506"]
+    },
+    {
+      "purl": "pkg:npm/aria-query@5.3.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1513"]
+    },
+    {
+      "purl": "pkg:npm/array-buffer-byte-length@1.0.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1523"]
+    },
+    {
+      "purl": "pkg:npm/array-includes@3.1.8",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1540"]
+    },
+    {
+      "purl": "pkg:npm/array.prototype.findlastindex@1.2.5",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1561"]
+    },
+    {
+      "purl": "pkg:npm/array.prototype.flat@1.3.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1582"]
+    },
+    {
+      "purl": "pkg:npm/array.prototype.flatmap@1.3.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1601"]
+    },
+    {
+      "purl": "pkg:npm/arraybuffer.prototype.slice@1.0.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1620"]
+    },
+    {
+      "purl": "pkg:npm/assertion-error@2.0.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1643"]
+    },
+    {
+      "purl": "pkg:npm/ast-types-flow@0.0.8",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1653"]
+    },
+    {
+      "purl": "pkg:npm/async@2.6.4",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1660"]
+    },
+    {
+      "purl": "pkg:npm/asynckit@0.4.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1670"]
+    },
+    {
+      "purl": "pkg:npm/available-typed-arrays@1.0.7",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1677"]
+    },
+    {
+      "purl": "pkg:npm/axe-core@4.10.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1693"]
+    },
+    {
+      "purl": "pkg:npm/axobject-query@4.1.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1703"]
+    },
+    {
+      "purl": "pkg:npm/balanced-match@1.0.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1713"]
+    },
+    {
+      "purl": "pkg:npm/basic-auth@2.0.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1720"]
+    },
+    {
+      "purl": "pkg:npm/brace-expansion@1.1.11",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1733"]
+    },
+    {
+      "purl": "pkg:npm/brace-expansion@2.0.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1231"]
+    },
+    {
+      "purl": "pkg:npm/braces@3.0.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1744"]
+    },
+    {
+      "purl": "pkg:npm/browserslist@4.24.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1757"]
+    },
+    {
+      "purl": "pkg:npm/cac@6.7.14",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1790"]
+    },
+    {
+      "purl": "pkg:npm/call-bind@1.0.7",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1800"]
+    },
+    {
+      "purl": "pkg:npm/callsites@3.1.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1820"]
+    },
+    {
+      "purl": "pkg:npm/caniuse-lite@1.0.30001676",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1830"]
+    },
+    {
+      "purl": "pkg:npm/chai@5.1.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1851"]
+    },
+    {
+      "purl": "pkg:npm/chalk@4.1.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1868"]
+    },
+    {
+      "purl": "pkg:npm/check-error@2.1.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1885"]
+    },
+    {
+      "purl": "pkg:npm/ci-info@3.9.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1895"]
+    },
+    {
+      "purl": "pkg:npm/color-convert@2.0.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1911"]
+    },
+    {
+      "purl": "pkg:npm/color-name@1.1.4",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1924"]
+    },
+    {
+      "purl": "pkg:npm/combined-stream@1.0.8",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1931"]
+    },
+    {
+      "purl": "pkg:npm/concat-map@0.0.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1944"]
+    },
+    {
+      "purl": "pkg:npm/construct-style-sheets-polyfill@3.1.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1951"]
+    },
+    {
+      "purl": "pkg:npm/corser@2.0.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1958"]
+    },
+    {
+      "purl": "pkg:npm/cross-spawn@7.0.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1968"]
+    },
+    {
+      "purl": "pkg:npm/cssstyle@4.1.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1983"]
+    },
+    {
+      "purl": "pkg:npm/damerau-levenshtein@1.0.8",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1996"]
+    },
+    {
+      "purl": "pkg:npm/data-urls@5.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2003"]
+    },
+    {
+      "purl": "pkg:npm/data-view-buffer@1.0.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2017"]
+    },
+    {
+      "purl": "pkg:npm/data-view-byte-length@1.0.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2035"]
+    },
+    {
+      "purl": "pkg:npm/data-view-byte-offset@1.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2053"]
+    },
+    {
+      "purl": "pkg:npm/debug@3.2.7",
+      "evidence": [
+        "<repositories>/ZEISS+htmx-toasts/package-lock.json#2509",
+        "<repositories>/ZEISS+htmx-toasts/package-lock.json#2537",
+        "<repositories>/ZEISS+htmx-toasts/package-lock.json#2788",
+        "<repositories>/ZEISS+htmx-toasts/package-lock.json#4843"
+      ]
+    },
+    {
+      "purl": "pkg:npm/debug@4.4.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2071"]
+    },
+    {
+      "purl": "pkg:npm/decimal.js@10.4.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2089"]
+    },
+    {
+      "purl": "pkg:npm/deep-eql@5.0.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2096"]
+    },
+    {
+      "purl": "pkg:npm/deep-is@0.1.4",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2106"]
+    },
+    {
+      "purl": "pkg:npm/define-data-property@1.1.4",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2113"]
+    },
+    {
+      "purl": "pkg:npm/define-properties@1.2.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2131"]
+    },
+    {
+      "purl": "pkg:npm/delayed-stream@1.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2149"]
+    },
+    {
+      "purl": "pkg:npm/diff-sequences@29.6.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2159"]
+    },
+    {
+      "purl": "pkg:npm/doctrine@2.1.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2798"]
+    },
+    {
+      "purl": "pkg:npm/doctrine@3.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2169"]
+    },
+    {
+      "purl": "pkg:npm/duplexer@0.1.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2182"]
+    },
+    {
+      "purl": "pkg:npm/electron-to-chromium@1.5.50",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2189"]
+    },
+    {
+      "purl": "pkg:npm/emoji-regex@9.2.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2196"]
+    },
+    {
+      "purl": "pkg:npm/entities@4.5.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2203"]
+    },
+    {
+      "purl": "pkg:npm/es-abstract@1.23.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2216"]
+    },
+    {
+      "purl": "pkg:npm/es-define-property@1.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2277"]
+    },
+    {
+      "purl": "pkg:npm/es-errors@1.3.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2290"]
+    },
+    {
+      "purl": "pkg:npm/es-module-lexer@1.6.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2300"]
+    },
+    {
+      "purl": "pkg:npm/es-object-atoms@1.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2307"]
+    },
+    {
+      "purl": "pkg:npm/es-set-tostringtag@2.0.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2320"]
+    },
+    {
+      "purl": "pkg:npm/es-shim-unscopables@1.0.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2335"]
+    },
+    {
+      "purl": "pkg:npm/es-to-primitive@1.2.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2345"]
+    },
+    {
+      "purl": "pkg:npm/esbuild@0.24.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2363"]
+    },
+    {
+      "purl": "pkg:npm/escalade@3.2.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2404"]
+    },
+    {
+      "purl": "pkg:npm/escape-string-regexp@1.0.5",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2580"]
+    },
+    {
+      "purl": "pkg:npm/escape-string-regexp@2.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5370"]
+    },
+    {
+      "purl": "pkg:npm/escape-string-regexp@4.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2414"]
+    },
+    {
+      "purl": "pkg:npm/eslint-config-prettier@9.1.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2484"]
+    },
+    {
+      "purl": "pkg:npm/eslint-import-resolver-node@0.3.9",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2497"]
+    },
+    {
+      "purl": "pkg:npm/eslint-module-utils@2.12.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2519"]
+    },
+    {
+      "purl": "pkg:npm/eslint-plugin-escompat@3.11.4",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2547"]
+    },
+    {
+      "purl": "pkg:npm/eslint-plugin-eslint-comments@3.2.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2560"]
+    },
+    {
+      "purl": "pkg:npm/eslint-plugin-filenames@1.3.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2590"]
+    },
+    {
+      "purl": "pkg:npm/eslint-plugin-github@5.1.5",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2606"]
+    },
+    {
+      "purl": "pkg:npm/eslint-plugin-i18n-text@1.0.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2744"]
+    },
+    {
+      "purl": "pkg:npm/eslint-plugin-import@2.31.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2754"]
+    },
+    {
+      "purl": "pkg:npm/eslint-plugin-jsx-a11y@6.10.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2821"]
+    },
+    {
+      "purl": "pkg:npm/eslint-plugin-no-only-tests@3.3.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2851"]
+    },
+    {
+      "purl": "pkg:npm/eslint-plugin-prettier@5.2.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2861"]
+    },
+    {
+      "purl": "pkg:npm/eslint-rule-documentation@1.0.23",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2892"]
+    },
+    {
+      "purl": "pkg:npm/eslint-scope@7.2.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2902"]
+    },
+    {
+      "purl": "pkg:npm/eslint-visitor-keys@3.4.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2919"]
+    },
+    {
+      "purl": "pkg:npm/eslint-visitor-keys@4.2.0",
+      "evidence": [
+        "<repositories>/ZEISS+htmx-toasts/package-lock.json#1295",
+        "<repositories>/ZEISS+htmx-toasts/package-lock.json#2703"
+      ]
+    },
+    {
+      "purl": "pkg:npm/eslint@8.57.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2427"]
+    },
+    {
+      "purl": "pkg:npm/espree@10.3.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2715"]
+    },
+    {
+      "purl": "pkg:npm/espree@9.6.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2932"]
+    },
+    {
+      "purl": "pkg:npm/esquery@1.6.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2950"]
+    },
+    {
+      "purl": "pkg:npm/esrecurse@4.3.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2963"]
+    },
+    {
+      "purl": "pkg:npm/estraverse@5.3.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2976"]
+    },
+    {
+      "purl": "pkg:npm/estree-walker@3.0.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2986"]
+    },
+    {
+      "purl": "pkg:npm/esutils@2.0.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2996"]
+    },
+    {
+      "purl": "pkg:npm/event-stream@3.3.4",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3006"]
+    },
+    {
+      "purl": "pkg:npm/eventemitter3@4.0.7",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3022"]
+    },
+    {
+      "purl": "pkg:npm/expect-type@1.1.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3046"]
+    },
+    {
+      "purl": "pkg:npm/expect@29.7.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3029"]
+    },
+    {
+      "purl": "pkg:npm/fast-deep-equal@3.1.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3056"]
+    },
+    {
+      "purl": "pkg:npm/fast-diff@1.3.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3063"]
+    },
+    {
+      "purl": "pkg:npm/fast-glob@3.3.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3070"]
+    },
+    {
+      "purl": "pkg:npm/fast-json-stable-stringify@2.1.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3098"]
+    },
+    {
+      "purl": "pkg:npm/fast-levenshtein@2.0.6",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3105"]
+    },
+    {
+      "purl": "pkg:npm/fastq@1.17.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3112"]
+    },
+    {
+      "purl": "pkg:npm/file-entry-cache@6.0.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3122"]
+    },
+    {
+      "purl": "pkg:npm/fill-range@7.1.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3135"]
+    },
+    {
+      "purl": "pkg:npm/find-up@5.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3148"]
+    },
+    {
+      "purl": "pkg:npm/flat-cache@3.2.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3165"]
+    },
+    {
+      "purl": "pkg:npm/flatted@3.3.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3197"]
+    },
+    {
+      "purl": "pkg:npm/follow-redirects@1.15.9",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3204"]
+    },
+    {
+      "purl": "pkg:npm/for-each@0.3.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3225"]
+    },
+    {
+      "purl": "pkg:npm/form-data@4.0.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3235"]
+    },
+    {
+      "purl": "pkg:npm/from@0.1.7",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3250"]
+    },
+    {
+      "purl": "pkg:npm/fs.realpath@1.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3257"]
+    },
+    {
+      "purl": "pkg:npm/fsevents@2.3.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3264"]
+    },
+    {
+      "purl": "pkg:npm/function-bind@1.1.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3279"]
+    },
+    {
+      "purl": "pkg:npm/function.prototype.name@1.1.6",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3289"]
+    },
+    {
+      "purl": "pkg:npm/functions-have-names@1.2.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3308"]
+    },
+    {
+      "purl": "pkg:npm/get-intrinsic@1.2.4",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3318"]
+    },
+    {
+      "purl": "pkg:npm/get-symbol-description@1.0.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3338"]
+    },
+    {
+      "purl": "pkg:npm/glob-parent@5.1.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3086"]
+    },
+    {
+      "purl": "pkg:npm/glob-parent@6.0.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3378"]
+    },
+    {
+      "purl": "pkg:npm/glob@7.2.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3356"]
+    },
+    {
+      "purl": "pkg:npm/globals@13.24.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3391"]
+    },
+    {
+      "purl": "pkg:npm/globals@14.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2682"]
+    },
+    {
+      "purl": "pkg:npm/globals@15.14.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2732"]
+    },
+    {
+      "purl": "pkg:npm/globalthis@1.0.4",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3407"]
+    },
+    {
+      "purl": "pkg:npm/gopd@1.0.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3424"]
+    },
+    {
+      "purl": "pkg:npm/graceful-fs@4.2.11",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3437"]
+    },
+    {
+      "purl": "pkg:npm/graphemer@1.4.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3444"]
+    },
+    {
+      "purl": "pkg:npm/has-bigints@1.0.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3451"]
+    },
+    {
+      "purl": "pkg:npm/has-flag@4.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3461"]
+    },
+    {
+      "purl": "pkg:npm/has-property-descriptors@1.0.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3471"]
+    },
+    {
+      "purl": "pkg:npm/has-proto@1.0.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3484"]
+    },
+    {
+      "purl": "pkg:npm/has-symbols@1.0.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3497"]
+    },
+    {
+      "purl": "pkg:npm/has-tostringtag@1.0.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3510"]
+    },
+    {
+      "purl": "pkg:npm/hasown@2.0.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3526"]
+    },
+    {
+      "purl": "pkg:npm/he@1.2.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3539"]
+    },
+    {
+      "purl": "pkg:npm/html-encoding-sniffer@3.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3549"]
+    },
+    {
+      "purl": "pkg:npm/html-encoding-sniffer@4.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4147"]
+    },
+    {
+      "purl": "pkg:npm/http-proxy-agent@7.0.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3577"]
+    },
+    {
+      "purl": "pkg:npm/http-proxy@1.18.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3562"]
+    },
+    {
+      "purl": "pkg:npm/http-server@14.1.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3591"]
+    },
+    {
+      "purl": "pkg:npm/https-proxy-agent@7.0.5",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3632"]
+    },
+    {
+      "purl": "pkg:npm/iconv-lite@0.6.3",
+      "evidence": [
+        "<repositories>/ZEISS+htmx-toasts/package-lock.json#4160",
+        "<repositories>/ZEISS+htmx-toasts/package-lock.json#6189"
+      ]
+    },
+    {
+      "purl": "pkg:npm/ignore@5.3.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3646"]
+    },
+    {
+      "purl": "pkg:npm/import-fresh@3.3.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3656"]
+    },
+    {
+      "purl": "pkg:npm/imurmurhash@0.1.4",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3673"]
+    },
+    {
+      "purl": "pkg:npm/inflight@1.0.6",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3683"]
+    },
+    {
+      "purl": "pkg:npm/inherits@2.0.4",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3695"]
+    },
+    {
+      "purl": "pkg:npm/internal-slot@1.0.7",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3702"]
+    },
+    {
+      "purl": "pkg:npm/is-array-buffer@3.0.4",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3717"]
+    },
+    {
+      "purl": "pkg:npm/is-bigint@1.0.4",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3734"]
+    },
+    {
+      "purl": "pkg:npm/is-boolean-object@1.1.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3747"]
+    },
+    {
+      "purl": "pkg:npm/is-callable@1.2.7",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3764"]
+    },
+    {
+      "purl": "pkg:npm/is-core-module@2.15.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3777"]
+    },
+    {
+      "purl": "pkg:npm/is-data-view@1.0.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3793"]
+    },
+    {
+      "purl": "pkg:npm/is-date-object@1.0.5",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3809"]
+    },
+    {
+      "purl": "pkg:npm/is-extglob@2.1.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3825"]
+    },
+    {
+      "purl": "pkg:npm/is-glob@4.0.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3835"]
+    },
+    {
+      "purl": "pkg:npm/is-negative-zero@2.0.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3848"]
+    },
+    {
+      "purl": "pkg:npm/is-number-object@1.0.7",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3871"]
+    },
+    {
+      "purl": "pkg:npm/is-number@7.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3861"]
+    },
+    {
+      "purl": "pkg:npm/is-path-inside@3.0.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3887"]
+    },
+    {
+      "purl": "pkg:npm/is-potential-custom-element-name@1.0.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3897"]
+    },
+    {
+      "purl": "pkg:npm/is-regex@1.1.4",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3904"]
+    },
+    {
+      "purl": "pkg:npm/is-shared-array-buffer@1.0.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3921"]
+    },
+    {
+      "purl": "pkg:npm/is-string@1.0.7",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3937"]
+    },
+    {
+      "purl": "pkg:npm/is-symbol@1.0.4",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3953"]
+    },
+    {
+      "purl": "pkg:npm/is-typed-array@1.1.13",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3969"]
+    },
+    {
+      "purl": "pkg:npm/is-weakref@1.0.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3985"]
+    },
+    {
+      "purl": "pkg:npm/isarray@2.0.5",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5171"]
+    },
+    {
+      "purl": "pkg:npm/isexe@2.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3998"]
+    },
+    {
+      "purl": "pkg:npm/jest-diff@29.7.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4005"]
+    },
+    {
+      "purl": "pkg:npm/jest-get-type@29.6.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4021"]
+    },
+    {
+      "purl": "pkg:npm/jest-matcher-utils@29.7.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4031"]
+    },
+    {
+      "purl": "pkg:npm/jest-message-util@29.7.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4047"]
+    },
+    {
+      "purl": "pkg:npm/jest-util@29.7.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4068"]
+    },
+    {
+      "purl": "pkg:npm/js-tokens@4.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4086"]
+    },
+    {
+      "purl": "pkg:npm/js-yaml@4.1.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4093"]
+    },
+    {
+      "purl": "pkg:npm/jsdom@25.0.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4106"]
+    },
+    {
+      "purl": "pkg:npm/json-buffer@3.0.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4221"]
+    },
+    {
+      "purl": "pkg:npm/json-schema-traverse@0.4.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4228"]
+    },
+    {
+      "purl": "pkg:npm/json-stable-stringify-without-jsonify@1.0.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4235"]
+    },
+    {
+      "purl": "pkg:npm/json5@1.0.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4242"]
+    },
+    {
+      "purl": "pkg:npm/jsx-ast-utils@3.3.5",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4255"]
+    },
+    {
+      "purl": "pkg:npm/keyv@4.5.4",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4271"]
+    },
+    {
+      "purl": "pkg:npm/language-subtag-registry@0.3.23",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4281"]
+    },
+    {
+      "purl": "pkg:npm/language-tags@1.0.9",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4288"]
+    },
+    {
+      "purl": "pkg:npm/levn@0.4.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4301"]
+    },
+    {
+      "purl": "pkg:npm/lit-element@4.1.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4327"]
+    },
+    {
+      "purl": "pkg:npm/lit-html@3.2.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4339"]
+    },
+    {
+      "purl": "pkg:npm/lit@3.2.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4315"]
+    },
+    {
+      "purl": "pkg:npm/locate-path@6.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4349"]
+    },
+    {
+      "purl": "pkg:npm/lodash.camelcase@4.3.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4372"]
+    },
+    {
+      "purl": "pkg:npm/lodash.kebabcase@4.1.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4379"]
+    },
+    {
+      "purl": "pkg:npm/lodash.merge@4.6.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4386"]
+    },
+    {
+      "purl": "pkg:npm/lodash.snakecase@4.1.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4393"]
+    },
+    {
+      "purl": "pkg:npm/lodash.upperfirst@4.3.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4400"]
+    },
+    {
+      "purl": "pkg:npm/lodash@4.17.21",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4365"]
+    },
+    {
+      "purl": "pkg:npm/loupe@3.1.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4407"]
+    },
+    {
+      "purl": "pkg:npm/magic-string@0.30.17",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4414"]
+    },
+    {
+      "purl": "pkg:npm/map-stream@0.1.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4424"]
+    },
+    {
+      "purl": "pkg:npm/merge2@1.4.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4430"]
+    },
+    {
+      "purl": "pkg:npm/micromatch@4.0.8",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4439"]
+    },
+    {
+      "purl": "pkg:npm/mime-db@1.52.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4452"]
+    },
+    {
+      "purl": "pkg:npm/mime-types@2.1.35",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4462"]
+    },
+    {
+      "purl": "pkg:npm/mime@1.6.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3619"]
+    },
+    {
+      "purl": "pkg:npm/minimatch@3.1.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4475"]
+    },
+    {
+      "purl": "pkg:npm/minimatch@9.0.5",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#1240"]
+    },
+    {
+      "purl": "pkg:npm/minimist@1.2.8",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4488"]
+    },
+    {
+      "purl": "pkg:npm/mkdirp@0.5.6",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4498"]
+    },
+    {
+      "purl": "pkg:npm/ms@2.1.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4511"]
+    },
+    {
+      "purl": "pkg:npm/nanoid@3.3.8",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4518"]
+    },
+    {
+      "purl": "pkg:npm/natural-compare@1.4.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4536"]
+    },
+    {
+      "purl": "pkg:npm/node-cleanup@2.1.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4543"]
+    },
+    {
+      "purl": "pkg:npm/node-releases@2.0.18",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4550"]
+    },
+    {
+      "purl": "pkg:npm/nwsapi@2.2.13",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4557"]
+    },
+    {
+      "purl": "pkg:npm/object-inspect@1.13.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4564"]
+    },
+    {
+      "purl": "pkg:npm/object-keys@1.1.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4577"]
+    },
+    {
+      "purl": "pkg:npm/object.assign@4.1.5",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4587"]
+    },
+    {
+      "purl": "pkg:npm/object.fromentries@2.0.8",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4606"]
+    },
+    {
+      "purl": "pkg:npm/object.groupby@1.0.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4625"]
+    },
+    {
+      "purl": "pkg:npm/object.values@1.2.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4640"]
+    },
+    {
+      "purl": "pkg:npm/once@1.4.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4658"]
+    },
+    {
+      "purl": "pkg:npm/opener@1.5.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4668"]
+    },
+    {
+      "purl": "pkg:npm/optionator@0.9.4",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4678"]
+    },
+    {
+      "purl": "pkg:npm/p-limit@3.1.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4696"]
+    },
+    {
+      "purl": "pkg:npm/p-locate@5.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4712"]
+    },
+    {
+      "purl": "pkg:npm/parent-module@1.0.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4728"]
+    },
+    {
+      "purl": "pkg:npm/parse5@7.2.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4173"]
+    },
+    {
+      "purl": "pkg:npm/path-exists@4.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4741"]
+    },
+    {
+      "purl": "pkg:npm/path-is-absolute@1.0.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4751"]
+    },
+    {
+      "purl": "pkg:npm/path-key@3.1.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4761"]
+    },
+    {
+      "purl": "pkg:npm/path-parse@1.0.7",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4771"]
+    },
+    {
+      "purl": "pkg:npm/pathe@2.0.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4778"]
+    },
+    {
+      "purl": "pkg:npm/pathval@2.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4785"]
+    },
+    {
+      "purl": "pkg:npm/pause-stream@0.0.11",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4795"]
+    },
+    {
+      "purl": "pkg:npm/picocolors@1.1.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4808"]
+    },
+    {
+      "purl": "pkg:npm/picomatch@2.3.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4815"]
+    },
+    {
+      "purl": "pkg:npm/portfinder@1.0.32",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4828"]
+    },
+    {
+      "purl": "pkg:npm/possible-typed-array-names@1.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4853"]
+    },
+    {
+      "purl": "pkg:npm/postcss@8.4.49",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4863"]
+    },
+    {
+      "purl": "pkg:npm/prelude-ls@1.2.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4891"]
+    },
+    {
+      "purl": "pkg:npm/prettier-linter-helpers@1.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4917"]
+    },
+    {
+      "purl": "pkg:npm/prettier@3.3.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4901"]
+    },
+    {
+      "purl": "pkg:npm/pretty-format@29.7.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4930"]
+    },
+    {
+      "purl": "pkg:npm/ps-tree@1.2.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4958"]
+    },
+    {
+      "purl": "pkg:npm/punycode@2.3.1",
+      "evidence": [
+        "<repositories>/ZEISS+htmx-toasts/package-lock.json#5694",
+        "<repositories>/ZEISS+htmx-toasts/package-lock.json#5971"
+      ]
+    },
+    {
+      "purl": "pkg:npm/qs@6.13.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4974"]
+    },
+    {
+      "purl": "pkg:npm/queue-microtask@1.2.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4990"]
+    },
+    {
+      "purl": "pkg:npm/react-is@18.3.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5011"]
+    },
+    {
+      "purl": "pkg:npm/regexp.prototype.flags@1.5.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5018"]
+    },
+    {
+      "purl": "pkg:npm/requires-port@1.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5037"]
+    },
+    {
+      "purl": "pkg:npm/resolve-from@4.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5062"]
+    },
+    {
+      "purl": "pkg:npm/resolve@1.22.8",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5044"]
+    },
+    {
+      "purl": "pkg:npm/reusify@1.0.4",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5072"]
+    },
+    {
+      "purl": "pkg:npm/rimraf@3.0.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#3180"]
+    },
+    {
+      "purl": "pkg:npm/rollup@4.24.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5083"]
+    },
+    {
+      "purl": "pkg:npm/rrweb-cssom@0.7.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5121"]
+    },
+    {
+      "purl": "pkg:npm/run-parallel@1.2.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5128"]
+    },
+    {
+      "purl": "pkg:npm/safe-array-concat@1.1.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5152"]
+    },
+    {
+      "purl": "pkg:npm/safe-buffer@5.1.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5178"]
+    },
+    {
+      "purl": "pkg:npm/safe-regex-test@1.0.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5185"]
+    },
+    {
+      "purl": "pkg:npm/safer-buffer@2.1.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5203"]
+    },
+    {
+      "purl": "pkg:npm/saxes@6.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5210"]
+    },
+    {
+      "purl": "pkg:npm/secure-compare@3.0.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5223"]
+    },
+    {
+      "purl": "pkg:npm/semver@6.3.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#2811"]
+    },
+    {
+      "purl": "pkg:npm/semver@7.6.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5230"]
+    },
+    {
+      "purl": "pkg:npm/set-function-length@1.2.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5242"]
+    },
+    {
+      "purl": "pkg:npm/set-function-name@2.0.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5260"]
+    },
+    {
+      "purl": "pkg:npm/shebang-command@2.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5276"]
+    },
+    {
+      "purl": "pkg:npm/shebang-regex@3.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5289"]
+    },
+    {
+      "purl": "pkg:npm/side-channel@1.0.6",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5299"]
+    },
+    {
+      "purl": "pkg:npm/siginfo@2.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5318"]
+    },
+    {
+      "purl": "pkg:npm/slash@3.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5325"]
+    },
+    {
+      "purl": "pkg:npm/source-map-js@1.2.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5335"]
+    },
+    {
+      "purl": "pkg:npm/split@0.3.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5344"]
+    },
+    {
+      "purl": "pkg:npm/stack-utils@2.0.6",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5357"]
+    },
+    {
+      "purl": "pkg:npm/stackback@0.0.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5380"]
+    },
+    {
+      "purl": "pkg:npm/std-env@3.8.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5387"]
+    },
+    {
+      "purl": "pkg:npm/stream-combiner@0.0.4",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5393"]
+    },
+    {
+      "purl": "pkg:npm/string-argv@0.3.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5403"]
+    },
+    {
+      "purl": "pkg:npm/string.prototype.includes@2.0.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5413"]
+    },
+    {
+      "purl": "pkg:npm/string.prototype.trim@1.2.9",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5428"]
+    },
+    {
+      "purl": "pkg:npm/string.prototype.trimend@1.0.8",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5447"]
+    },
+    {
+      "purl": "pkg:npm/string.prototype.trimstart@1.0.8",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5462"]
+    },
+    {
+      "purl": "pkg:npm/strip-ansi@6.0.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5480"]
+    },
+    {
+      "purl": "pkg:npm/strip-bom@3.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5493"]
+    },
+    {
+      "purl": "pkg:npm/strip-json-comments@3.1.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5503"]
+    },
+    {
+      "purl": "pkg:npm/supports-color@7.2.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5516"]
+    },
+    {
+      "purl": "pkg:npm/supports-preserve-symlinks-flag@1.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5529"]
+    },
+    {
+      "purl": "pkg:npm/svg-element-attributes@1.3.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5542"]
+    },
+    {
+      "purl": "pkg:npm/symbol-tree@3.2.4",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5553"]
+    },
+    {
+      "purl": "pkg:npm/synckit@0.9.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5560"]
+    },
+    {
+      "purl": "pkg:npm/text-table@0.2.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5577"]
+    },
+    {
+      "purl": "pkg:npm/through@2.3.8",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5584"]
+    },
+    {
+      "purl": "pkg:npm/tinybench@2.9.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5591"]
+    },
+    {
+      "purl": "pkg:npm/tinyexec@0.3.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5598"]
+    },
+    {
+      "purl": "pkg:npm/tinypool@1.0.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5605"]
+    },
+    {
+      "purl": "pkg:npm/tinyrainbow@2.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5615"]
+    },
+    {
+      "purl": "pkg:npm/tinyspy@3.0.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5625"]
+    },
+    {
+      "purl": "pkg:npm/tldts-core@6.1.58",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5648"]
+    },
+    {
+      "purl": "pkg:npm/tldts@6.1.58",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5635"]
+    },
+    {
+      "purl": "pkg:npm/to-regex-range@5.0.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5655"]
+    },
+    {
+      "purl": "pkg:npm/tough-cookie@5.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5668"]
+    },
+    {
+      "purl": "pkg:npm/tr46@5.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5681"]
+    },
+    {
+      "purl": "pkg:npm/ts-api-utils@2.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5704"]
+    },
+    {
+      "purl": "pkg:npm/tsc-watch@6.2.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5716"]
+    },
+    {
+      "purl": "pkg:npm/tsconfig-paths@3.15.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5737"]
+    },
+    {
+      "purl": "pkg:npm/tslib@2.8.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5750"]
+    },
+    {
+      "purl": "pkg:npm/type-check@0.4.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5757"]
+    },
+    {
+      "purl": "pkg:npm/type-fest@0.20.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5770"]
+    },
+    {
+      "purl": "pkg:npm/typed-array-buffer@1.0.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5783"]
+    },
+    {
+      "purl": "pkg:npm/typed-array-byte-length@1.0.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5798"]
+    },
+    {
+      "purl": "pkg:npm/typed-array-byte-offset@1.0.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5818"]
+    },
+    {
+      "purl": "pkg:npm/typed-array-length@1.0.6",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5839"]
+    },
+    {
+      "purl": "pkg:npm/typescript-eslint@8.19.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5873"]
+    },
+    {
+      "purl": "pkg:npm/typescript@5.7.3",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5860"]
+    },
+    {
+      "purl": "pkg:npm/unbox-primitive@1.0.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5895"]
+    },
+    {
+      "purl": "pkg:npm/undici-types@6.19.8",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5911"]
+    },
+    {
+      "purl": "pkg:npm/union@0.5.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5918"]
+    },
+    {
+      "purl": "pkg:npm/update-browserslist-db@1.1.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5930"]
+    },
+    {
+      "purl": "pkg:npm/uri-js@4.4.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5961"]
+    },
+    {
+      "purl": "pkg:npm/url-join@4.0.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5981"]
+    },
+    {
+      "purl": "pkg:npm/vite-node@3.0.4",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#6060"]
+    },
+    {
+      "purl": "pkg:npm/vite@6.0.11",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#5988"]
+    },
+    {
+      "purl": "pkg:npm/vitest@3.0.4",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#6083"]
+    },
+    {
+      "purl": "pkg:npm/w3c-xmlserializer@5.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#6153"]
+    },
+    {
+      "purl": "pkg:npm/webidl-conversions@7.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#6166"]
+    },
+    {
+      "purl": "pkg:npm/whatwg-encoding@2.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#6176"]
+    },
+    {
+      "purl": "pkg:npm/whatwg-encoding@3.1.1",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4186"]
+    },
+    {
+      "purl": "pkg:npm/whatwg-mimetype@4.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#6202"]
+    },
+    {
+      "purl": "pkg:npm/whatwg-url@14.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#6212"]
+    },
+    {
+      "purl": "pkg:npm/which-boxed-primitive@1.0.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#6242"]
+    },
+    {
+      "purl": "pkg:npm/which-typed-array@1.1.15",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#6259"]
+    },
+    {
+      "purl": "pkg:npm/which@2.0.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#6226"]
+    },
+    {
+      "purl": "pkg:npm/why-is-node-running@2.3.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#6279"]
+    },
+    {
+      "purl": "pkg:npm/word-wrap@1.2.5",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#6296"]
+    },
+    {
+      "purl": "pkg:npm/wrappy@1.0.2",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#6306"]
+    },
+    {
+      "purl": "pkg:npm/ws@8.18.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#4199"]
+    },
+    {
+      "purl": "pkg:npm/xml-name-validator@5.0.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#6313"]
+    },
+    {
+      "purl": "pkg:npm/xmlchars@2.2.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#6323"]
+    },
+    {
+      "purl": "pkg:npm/yocto-queue@0.1.0",
+      "evidence": ["<repositories>/ZEISS+htmx-toasts/package-lock.json#6330"]
+    }
+  ],
+  "subprojects": [
+    {
+      "purl": "pkg:npm/%40htmx/htmx-toasts@1.0.0",
+      "definitionFile": "<repositories>/ZEISS+htmx-toasts/package.json",
+      "scopes": [
+        {
+          "scope": "devDependencies",
+          "packages": [
+            "pkg:npm/%40github/prettier-config@0.0.6",
+            "pkg:npm/%40open-wc/testing-helpers@3.0.1",
+            "pkg:npm/%40types/jest@29.5.14",
+            "pkg:npm/construct-style-sheets-polyfill@3.1.0",
+            "pkg:npm/eslint-plugin-github@5.1.5",
+            "pkg:npm/eslint@8.57.1",
+            "pkg:npm/http-server@14.1.1",
+            "pkg:npm/jsdom@25.0.1",
+            "pkg:npm/tsc-watch@6.2.1",
+            "pkg:npm/typescript@5.7.3",
+            "pkg:npm/vite@6.0.11",
+            "pkg:npm/vitest@3.0.4"
+          ]
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "from": "pkg:npm/%40babel/code-frame@7.26.2",
+      "to": [
+        "pkg:npm/%40babel/helper-validator-identifier@7.25.9",
+        "pkg:npm/js-tokens@4.0.0",
+        "pkg:npm/picocolors@1.1.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/%40eslint-community/eslint-utils@4.4.1",
+      "to": ["pkg:npm/eslint-visitor-keys@3.4.3", "pkg:npm/eslint@8.57.1"]
+    },
+    {
+      "from": "pkg:npm/%40eslint/compat@1.2.4",
+      "to": ["pkg:npm/eslint@8.57.1"]
+    },
+    {
+      "from": "pkg:npm/%40eslint/eslintrc@2.1.4",
+      "to": [
+        "pkg:npm/ajv@6.12.6",
+        "pkg:npm/debug@4.4.0",
+        "pkg:npm/espree@9.6.1",
+        "pkg:npm/globals@13.24.0",
+        "pkg:npm/ignore@5.3.2",
+        "pkg:npm/import-fresh@3.3.0",
+        "pkg:npm/js-yaml@4.1.0",
+        "pkg:npm/minimatch@3.1.2",
+        "pkg:npm/strip-json-comments@3.1.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/%40eslint/eslintrc@3.2.0",
+      "to": [
+        "pkg:npm/ajv@6.12.6",
+        "pkg:npm/debug@4.4.0",
+        "pkg:npm/espree@9.6.1",
+        "pkg:npm/globals@13.24.0",
+        "pkg:npm/ignore@5.3.2",
+        "pkg:npm/import-fresh@3.3.0",
+        "pkg:npm/js-yaml@4.1.0",
+        "pkg:npm/minimatch@3.1.2",
+        "pkg:npm/strip-json-comments@3.1.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/%40htmx/htmx-toasts@1.0.0",
+      "to": [
+        "pkg:npm/%40github/prettier-config@0.0.6",
+        "pkg:npm/%40open-wc/testing-helpers@3.0.1",
+        "pkg:npm/%40types/jest@29.5.14",
+        "pkg:npm/construct-style-sheets-polyfill@3.1.0",
+        "pkg:npm/eslint-plugin-github@5.1.5",
+        "pkg:npm/eslint@8.57.1",
+        "pkg:npm/http-server@14.1.1",
+        "pkg:npm/jsdom@25.0.1",
+        "pkg:npm/tsc-watch@6.2.1",
+        "pkg:npm/typescript@5.7.3",
+        "pkg:npm/vite@6.0.11",
+        "pkg:npm/vitest@3.0.4"
+      ]
+    },
+    {
+      "from": "pkg:npm/%40humanwhocodes/config-array@0.13.0",
+      "to": ["pkg:npm/%40humanwhocodes/object-schema@2.0.3", "pkg:npm/debug@4.4.0", "pkg:npm/minimatch@3.1.2"]
+    },
+    {
+      "from": "pkg:npm/%40jest/expect-utils@29.7.0",
+      "to": ["pkg:npm/jest-get-type@29.6.3"]
+    },
+    {
+      "from": "pkg:npm/%40jest/schemas@29.6.3",
+      "to": ["pkg:npm/%40sinclair/typebox@0.27.8"]
+    },
+    {
+      "from": "pkg:npm/%40jest/types@29.6.3",
+      "to": [
+        "pkg:npm/%40jest/schemas@29.6.3",
+        "pkg:npm/%40types/istanbul-lib-coverage@2.0.6",
+        "pkg:npm/%40types/istanbul-reports@3.0.4",
+        "pkg:npm/%40types/node@22.8.6",
+        "pkg:npm/%40types/yargs@17.0.33",
+        "pkg:npm/chalk@4.1.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/%40lit/reactive-element@2.0.4",
+      "to": ["pkg:npm/%40lit-labs/ssr-dom-shim@1.2.1"]
+    },
+    {
+      "from": "pkg:npm/%40nodelib/fs.scandir@2.1.5",
+      "to": ["pkg:npm/%40nodelib/fs.stat@2.0.5", "pkg:npm/run-parallel@1.2.0"]
+    },
+    {
+      "from": "pkg:npm/%40nodelib/fs.walk@1.2.8",
+      "to": ["pkg:npm/%40nodelib/fs.scandir@2.1.5", "pkg:npm/fastq@1.17.1"]
+    },
+    {
+      "from": "pkg:npm/%40open-wc/scoped-elements@3.0.5",
+      "to": ["pkg:npm/%40open-wc/dedupe-mixin@1.4.0", "pkg:npm/lit@3.2.1"]
+    },
+    {
+      "from": "pkg:npm/%40open-wc/testing-helpers@3.0.1",
+      "to": ["pkg:npm/%40open-wc/scoped-elements@3.0.5", "pkg:npm/lit-html@3.2.1", "pkg:npm/lit@3.2.1"]
+    },
+    {
+      "from": "pkg:npm/%40types/istanbul-lib-report@3.0.3",
+      "to": ["pkg:npm/%40types/istanbul-lib-coverage@2.0.6"]
+    },
+    {
+      "from": "pkg:npm/%40types/istanbul-reports@3.0.4",
+      "to": ["pkg:npm/%40types/istanbul-lib-report@3.0.3"]
+    },
+    {
+      "from": "pkg:npm/%40types/jest@29.5.14",
+      "to": ["pkg:npm/expect@29.7.0", "pkg:npm/pretty-format@29.7.0"]
+    },
+    {
+      "from": "pkg:npm/%40types/node@22.8.6",
+      "to": ["pkg:npm/undici-types@6.19.8"]
+    },
+    {
+      "from": "pkg:npm/%40types/yargs@17.0.33",
+      "to": ["pkg:npm/%40types/yargs-parser@21.0.3"]
+    },
+    {
+      "from": "pkg:npm/%40typescript-eslint/eslint-plugin@8.19.1",
+      "to": [
+        "pkg:npm/%40eslint-community/regexpp@4.12.1",
+        "pkg:npm/%40typescript-eslint/parser@8.19.1",
+        "pkg:npm/%40typescript-eslint/scope-manager@8.19.1",
+        "pkg:npm/%40typescript-eslint/type-utils@8.19.1",
+        "pkg:npm/%40typescript-eslint/utils@8.19.1",
+        "pkg:npm/%40typescript-eslint/visitor-keys@8.19.1",
+        "pkg:npm/eslint@8.57.1",
+        "pkg:npm/graphemer@1.4.0",
+        "pkg:npm/ignore@5.3.2",
+        "pkg:npm/natural-compare@1.4.0",
+        "pkg:npm/ts-api-utils@2.0.0",
+        "pkg:npm/typescript@5.7.3"
+      ]
+    },
+    {
+      "from": "pkg:npm/%40typescript-eslint/parser@8.19.1",
+      "to": [
+        "pkg:npm/%40typescript-eslint/scope-manager@8.19.1",
+        "pkg:npm/%40typescript-eslint/types@8.19.1",
+        "pkg:npm/%40typescript-eslint/typescript-estree@8.19.1",
+        "pkg:npm/%40typescript-eslint/visitor-keys@8.19.1",
+        "pkg:npm/debug@4.4.0",
+        "pkg:npm/eslint@8.57.1",
+        "pkg:npm/typescript@5.7.3"
+      ]
+    },
+    {
+      "from": "pkg:npm/%40typescript-eslint/scope-manager@8.19.1",
+      "to": ["pkg:npm/%40typescript-eslint/types@8.19.1", "pkg:npm/%40typescript-eslint/visitor-keys@8.19.1"]
+    },
+    {
+      "from": "pkg:npm/%40typescript-eslint/type-utils@8.19.1",
+      "to": [
+        "pkg:npm/%40typescript-eslint/typescript-estree@8.19.1",
+        "pkg:npm/%40typescript-eslint/utils@8.19.1",
+        "pkg:npm/debug@4.4.0",
+        "pkg:npm/eslint@8.57.1",
+        "pkg:npm/ts-api-utils@2.0.0",
+        "pkg:npm/typescript@5.7.3"
+      ]
+    },
+    {
+      "from": "pkg:npm/%40typescript-eslint/typescript-estree@8.19.1",
+      "to": [
+        "pkg:npm/%40typescript-eslint/types@8.19.1",
+        "pkg:npm/%40typescript-eslint/visitor-keys@8.19.1",
+        "pkg:npm/debug@4.4.0",
+        "pkg:npm/fast-glob@3.3.3",
+        "pkg:npm/is-glob@4.0.3",
+        "pkg:npm/minimatch@3.1.2",
+        "pkg:npm/semver@7.6.3",
+        "pkg:npm/ts-api-utils@2.0.0",
+        "pkg:npm/typescript@5.7.3"
+      ]
+    },
+    {
+      "from": "pkg:npm/%40typescript-eslint/utils@8.19.1",
+      "to": [
+        "pkg:npm/%40eslint-community/eslint-utils@4.4.1",
+        "pkg:npm/%40typescript-eslint/scope-manager@8.19.1",
+        "pkg:npm/%40typescript-eslint/types@8.19.1",
+        "pkg:npm/%40typescript-eslint/typescript-estree@8.19.1",
+        "pkg:npm/eslint@8.57.1",
+        "pkg:npm/typescript@5.7.3"
+      ]
+    },
+    {
+      "from": "pkg:npm/%40typescript-eslint/visitor-keys@8.19.1",
+      "to": ["pkg:npm/%40typescript-eslint/types@8.19.1", "pkg:npm/eslint-visitor-keys@3.4.3"]
+    },
+    {
+      "from": "pkg:npm/%40vitest/expect@3.0.4",
+      "to": [
+        "pkg:npm/%40vitest/spy@3.0.4",
+        "pkg:npm/%40vitest/utils@3.0.4",
+        "pkg:npm/chai@5.1.2",
+        "pkg:npm/tinyrainbow@2.0.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/%40vitest/mocker@3.0.4",
+      "to": [
+        "pkg:npm/%40vitest/spy@3.0.4",
+        "pkg:npm/estree-walker@3.0.3",
+        "pkg:npm/magic-string@0.30.17",
+        "pkg:npm/vite@6.0.11"
+      ]
+    },
+    {
+      "from": "pkg:npm/%40vitest/pretty-format@3.0.4",
+      "to": ["pkg:npm/tinyrainbow@2.0.0"]
+    },
+    {
+      "from": "pkg:npm/%40vitest/runner@3.0.4",
+      "to": ["pkg:npm/%40vitest/utils@3.0.4", "pkg:npm/pathe@2.0.2"]
+    },
+    {
+      "from": "pkg:npm/%40vitest/snapshot@3.0.4",
+      "to": ["pkg:npm/%40vitest/pretty-format@3.0.4", "pkg:npm/magic-string@0.30.17", "pkg:npm/pathe@2.0.2"]
+    },
+    {
+      "from": "pkg:npm/%40vitest/spy@3.0.4",
+      "to": ["pkg:npm/tinyspy@3.0.2"]
+    },
+    {
+      "from": "pkg:npm/%40vitest/utils@3.0.4",
+      "to": ["pkg:npm/%40vitest/pretty-format@3.0.4", "pkg:npm/loupe@3.1.2", "pkg:npm/tinyrainbow@2.0.0"]
+    },
+    {
+      "from": "pkg:npm/acorn-jsx@5.3.2",
+      "to": ["pkg:npm/acorn@8.14.0"]
+    },
+    {
+      "from": "pkg:npm/agent-base@7.1.1",
+      "to": ["pkg:npm/debug@4.4.0"]
+    },
+    {
+      "from": "pkg:npm/ajv@6.12.6",
+      "to": [
+        "pkg:npm/fast-deep-equal@3.1.3",
+        "pkg:npm/fast-json-stable-stringify@2.1.0",
+        "pkg:npm/json-schema-traverse@0.4.1",
+        "pkg:npm/uri-js@4.4.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/ansi-styles@4.3.0",
+      "to": ["pkg:npm/color-convert@2.0.1"]
+    },
+    {
+      "from": "pkg:npm/array-buffer-byte-length@1.0.1",
+      "to": ["pkg:npm/call-bind@1.0.7", "pkg:npm/is-array-buffer@3.0.4"]
+    },
+    {
+      "from": "pkg:npm/array-includes@3.1.8",
+      "to": [
+        "pkg:npm/call-bind@1.0.7",
+        "pkg:npm/define-properties@1.2.1",
+        "pkg:npm/es-abstract@1.23.3",
+        "pkg:npm/es-object-atoms@1.0.0",
+        "pkg:npm/get-intrinsic@1.2.4",
+        "pkg:npm/is-string@1.0.7"
+      ]
+    },
+    {
+      "from": "pkg:npm/array.prototype.findlastindex@1.2.5",
+      "to": [
+        "pkg:npm/call-bind@1.0.7",
+        "pkg:npm/define-properties@1.2.1",
+        "pkg:npm/es-abstract@1.23.3",
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/es-object-atoms@1.0.0",
+        "pkg:npm/es-shim-unscopables@1.0.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/array.prototype.flat@1.3.2",
+      "to": [
+        "pkg:npm/call-bind@1.0.7",
+        "pkg:npm/define-properties@1.2.1",
+        "pkg:npm/es-abstract@1.23.3",
+        "pkg:npm/es-shim-unscopables@1.0.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/array.prototype.flatmap@1.3.2",
+      "to": [
+        "pkg:npm/call-bind@1.0.7",
+        "pkg:npm/define-properties@1.2.1",
+        "pkg:npm/es-abstract@1.23.3",
+        "pkg:npm/es-shim-unscopables@1.0.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/arraybuffer.prototype.slice@1.0.3",
+      "to": [
+        "pkg:npm/array-buffer-byte-length@1.0.1",
+        "pkg:npm/call-bind@1.0.7",
+        "pkg:npm/define-properties@1.2.1",
+        "pkg:npm/es-abstract@1.23.3",
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/get-intrinsic@1.2.4",
+        "pkg:npm/is-array-buffer@3.0.4",
+        "pkg:npm/is-shared-array-buffer@1.0.3"
+      ]
+    },
+    {
+      "from": "pkg:npm/async@2.6.4",
+      "to": ["pkg:npm/lodash@4.17.21"]
+    },
+    {
+      "from": "pkg:npm/available-typed-arrays@1.0.7",
+      "to": ["pkg:npm/possible-typed-array-names@1.0.0"]
+    },
+    {
+      "from": "pkg:npm/basic-auth@2.0.1",
+      "to": ["pkg:npm/safe-buffer@5.1.2"]
+    },
+    {
+      "from": "pkg:npm/brace-expansion@1.1.11",
+      "to": ["pkg:npm/balanced-match@1.0.2", "pkg:npm/concat-map@0.0.1"]
+    },
+    {
+      "from": "pkg:npm/brace-expansion@2.0.1",
+      "to": ["pkg:npm/balanced-match@1.0.2"]
+    },
+    {
+      "from": "pkg:npm/braces@3.0.3",
+      "to": ["pkg:npm/fill-range@7.1.1"]
+    },
+    {
+      "from": "pkg:npm/browserslist@4.24.2",
+      "to": [
+        "pkg:npm/caniuse-lite@1.0.30001676",
+        "pkg:npm/electron-to-chromium@1.5.50",
+        "pkg:npm/node-releases@2.0.18",
+        "pkg:npm/update-browserslist-db@1.1.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/call-bind@1.0.7",
+      "to": [
+        "pkg:npm/es-define-property@1.0.0",
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/function-bind@1.1.2",
+        "pkg:npm/get-intrinsic@1.2.4",
+        "pkg:npm/set-function-length@1.2.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/chai@5.1.2",
+      "to": [
+        "pkg:npm/assertion-error@2.0.1",
+        "pkg:npm/check-error@2.1.1",
+        "pkg:npm/deep-eql@5.0.2",
+        "pkg:npm/loupe@3.1.2",
+        "pkg:npm/pathval@2.0.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/chalk@4.1.2",
+      "to": ["pkg:npm/ansi-styles@4.3.0", "pkg:npm/supports-color@7.2.0"]
+    },
+    {
+      "from": "pkg:npm/color-convert@2.0.1",
+      "to": ["pkg:npm/color-name@1.1.4"]
+    },
+    {
+      "from": "pkg:npm/combined-stream@1.0.8",
+      "to": ["pkg:npm/delayed-stream@1.0.0"]
+    },
+    {
+      "from": "pkg:npm/cross-spawn@7.0.3",
+      "to": ["pkg:npm/path-key@3.1.1", "pkg:npm/shebang-command@2.0.0", "pkg:npm/which@2.0.2"]
+    },
+    {
+      "from": "pkg:npm/cssstyle@4.1.0",
+      "to": ["pkg:npm/rrweb-cssom@0.7.1"]
+    },
+    {
+      "from": "pkg:npm/data-urls@5.0.0",
+      "to": ["pkg:npm/whatwg-mimetype@4.0.0", "pkg:npm/whatwg-url@14.0.0"]
+    },
+    {
+      "from": "pkg:npm/data-view-buffer@1.0.1",
+      "to": ["pkg:npm/call-bind@1.0.7", "pkg:npm/es-errors@1.3.0", "pkg:npm/is-data-view@1.0.1"]
+    },
+    {
+      "from": "pkg:npm/data-view-byte-length@1.0.1",
+      "to": ["pkg:npm/call-bind@1.0.7", "pkg:npm/es-errors@1.3.0", "pkg:npm/is-data-view@1.0.1"]
+    },
+    {
+      "from": "pkg:npm/data-view-byte-offset@1.0.0",
+      "to": ["pkg:npm/call-bind@1.0.7", "pkg:npm/es-errors@1.3.0", "pkg:npm/is-data-view@1.0.1"]
+    },
+    {
+      "from": "pkg:npm/debug@3.2.7",
+      "to": ["pkg:npm/ms@2.1.3"]
+    },
+    {
+      "from": "pkg:npm/debug@4.4.0",
+      "to": ["pkg:npm/ms@2.1.3"]
+    },
+    {
+      "from": "pkg:npm/define-data-property@1.1.4",
+      "to": ["pkg:npm/es-define-property@1.0.0", "pkg:npm/es-errors@1.3.0", "pkg:npm/gopd@1.0.1"]
+    },
+    {
+      "from": "pkg:npm/define-properties@1.2.1",
+      "to": [
+        "pkg:npm/define-data-property@1.1.4",
+        "pkg:npm/has-property-descriptors@1.0.2",
+        "pkg:npm/object-keys@1.1.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/doctrine@2.1.0",
+      "to": ["pkg:npm/esutils@2.0.3"]
+    },
+    {
+      "from": "pkg:npm/doctrine@3.0.0",
+      "to": ["pkg:npm/esutils@2.0.3"]
+    },
+    {
+      "from": "pkg:npm/es-abstract@1.23.3",
+      "to": [
+        "pkg:npm/array-buffer-byte-length@1.0.1",
+        "pkg:npm/arraybuffer.prototype.slice@1.0.3",
+        "pkg:npm/available-typed-arrays@1.0.7",
+        "pkg:npm/call-bind@1.0.7",
+        "pkg:npm/data-view-buffer@1.0.1",
+        "pkg:npm/data-view-byte-length@1.0.1",
+        "pkg:npm/data-view-byte-offset@1.0.0",
+        "pkg:npm/es-define-property@1.0.0",
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/es-object-atoms@1.0.0",
+        "pkg:npm/es-set-tostringtag@2.0.3",
+        "pkg:npm/es-to-primitive@1.2.1",
+        "pkg:npm/function.prototype.name@1.1.6",
+        "pkg:npm/get-intrinsic@1.2.4",
+        "pkg:npm/get-symbol-description@1.0.2",
+        "pkg:npm/globalthis@1.0.4",
+        "pkg:npm/gopd@1.0.1",
+        "pkg:npm/has-property-descriptors@1.0.2",
+        "pkg:npm/has-proto@1.0.3",
+        "pkg:npm/has-symbols@1.0.3",
+        "pkg:npm/hasown@2.0.2",
+        "pkg:npm/internal-slot@1.0.7",
+        "pkg:npm/is-array-buffer@3.0.4",
+        "pkg:npm/is-callable@1.2.7",
+        "pkg:npm/is-data-view@1.0.1",
+        "pkg:npm/is-negative-zero@2.0.3",
+        "pkg:npm/is-regex@1.1.4",
+        "pkg:npm/is-shared-array-buffer@1.0.3",
+        "pkg:npm/is-string@1.0.7",
+        "pkg:npm/is-typed-array@1.1.13",
+        "pkg:npm/is-weakref@1.0.2",
+        "pkg:npm/object-inspect@1.13.2",
+        "pkg:npm/object-keys@1.1.1",
+        "pkg:npm/object.assign@4.1.5",
+        "pkg:npm/regexp.prototype.flags@1.5.3",
+        "pkg:npm/safe-array-concat@1.1.2",
+        "pkg:npm/safe-regex-test@1.0.3",
+        "pkg:npm/string.prototype.trim@1.2.9",
+        "pkg:npm/string.prototype.trimend@1.0.8",
+        "pkg:npm/string.prototype.trimstart@1.0.8",
+        "pkg:npm/typed-array-buffer@1.0.2",
+        "pkg:npm/typed-array-byte-length@1.0.1",
+        "pkg:npm/typed-array-byte-offset@1.0.2",
+        "pkg:npm/typed-array-length@1.0.6",
+        "pkg:npm/unbox-primitive@1.0.2",
+        "pkg:npm/which-typed-array@1.1.15"
+      ]
+    },
+    {
+      "from": "pkg:npm/es-define-property@1.0.0",
+      "to": ["pkg:npm/get-intrinsic@1.2.4"]
+    },
+    {
+      "from": "pkg:npm/es-object-atoms@1.0.0",
+      "to": ["pkg:npm/es-errors@1.3.0"]
+    },
+    {
+      "from": "pkg:npm/es-set-tostringtag@2.0.3",
+      "to": ["pkg:npm/get-intrinsic@1.2.4", "pkg:npm/has-tostringtag@1.0.2", "pkg:npm/hasown@2.0.2"]
+    },
+    {
+      "from": "pkg:npm/es-shim-unscopables@1.0.2",
+      "to": ["pkg:npm/hasown@2.0.2"]
+    },
+    {
+      "from": "pkg:npm/es-to-primitive@1.2.1",
+      "to": ["pkg:npm/is-callable@1.2.7", "pkg:npm/is-date-object@1.0.5", "pkg:npm/is-symbol@1.0.4"]
+    },
+    {
+      "from": "pkg:npm/esbuild@0.24.2",
+      "to": [
+        "pkg:npm/%40esbuild/aix-ppc64@0.24.2",
+        "pkg:npm/%40esbuild/android-arm64@0.24.2",
+        "pkg:npm/%40esbuild/android-arm@0.24.2",
+        "pkg:npm/%40esbuild/android-x64@0.24.2",
+        "pkg:npm/%40esbuild/darwin-arm64@0.24.2",
+        "pkg:npm/%40esbuild/darwin-x64@0.24.2",
+        "pkg:npm/%40esbuild/freebsd-arm64@0.24.2",
+        "pkg:npm/%40esbuild/freebsd-x64@0.24.2",
+        "pkg:npm/%40esbuild/linux-arm64@0.24.2",
+        "pkg:npm/%40esbuild/linux-arm@0.24.2",
+        "pkg:npm/%40esbuild/linux-ia32@0.24.2",
+        "pkg:npm/%40esbuild/linux-loong64@0.24.2",
+        "pkg:npm/%40esbuild/linux-mips64el@0.24.2",
+        "pkg:npm/%40esbuild/linux-ppc64@0.24.2",
+        "pkg:npm/%40esbuild/linux-riscv64@0.24.2",
+        "pkg:npm/%40esbuild/linux-s390x@0.24.2",
+        "pkg:npm/%40esbuild/linux-x64@0.24.2",
+        "pkg:npm/%40esbuild/netbsd-arm64@0.24.2",
+        "pkg:npm/%40esbuild/netbsd-x64@0.24.2",
+        "pkg:npm/%40esbuild/openbsd-arm64@0.24.2",
+        "pkg:npm/%40esbuild/openbsd-x64@0.24.2",
+        "pkg:npm/%40esbuild/sunos-x64@0.24.2",
+        "pkg:npm/%40esbuild/win32-arm64@0.24.2",
+        "pkg:npm/%40esbuild/win32-ia32@0.24.2",
+        "pkg:npm/%40esbuild/win32-x64@0.24.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/eslint-config-prettier@9.1.0",
+      "to": ["pkg:npm/eslint@8.57.1"]
+    },
+    {
+      "from": "pkg:npm/eslint-import-resolver-node@0.3.9",
+      "to": ["pkg:npm/debug@4.4.0", "pkg:npm/is-core-module@2.15.1", "pkg:npm/resolve@1.22.8"]
+    },
+    {
+      "from": "pkg:npm/eslint-module-utils@2.12.0",
+      "to": ["pkg:npm/debug@4.4.0"]
+    },
+    {
+      "from": "pkg:npm/eslint-plugin-escompat@3.11.4",
+      "to": ["pkg:npm/browserslist@4.24.2", "pkg:npm/eslint@8.57.1"]
+    },
+    {
+      "from": "pkg:npm/eslint-plugin-eslint-comments@3.2.0",
+      "to": ["pkg:npm/escape-string-regexp@4.0.0", "pkg:npm/eslint@8.57.1", "pkg:npm/ignore@5.3.2"]
+    },
+    {
+      "from": "pkg:npm/eslint-plugin-filenames@1.3.2",
+      "to": [
+        "pkg:npm/eslint@8.57.1",
+        "pkg:npm/lodash.camelcase@4.3.0",
+        "pkg:npm/lodash.kebabcase@4.1.1",
+        "pkg:npm/lodash.snakecase@4.1.1",
+        "pkg:npm/lodash.upperfirst@4.3.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/eslint-plugin-github@5.1.5",
+      "to": [
+        "pkg:npm/%40eslint/compat@1.2.4",
+        "pkg:npm/%40eslint/eslintrc@2.1.4",
+        "pkg:npm/%40eslint/js@8.57.1",
+        "pkg:npm/%40github/browserslist-config@1.0.0",
+        "pkg:npm/%40typescript-eslint/eslint-plugin@8.19.1",
+        "pkg:npm/%40typescript-eslint/parser@8.19.1",
+        "pkg:npm/aria-query@5.3.2",
+        "pkg:npm/eslint-config-prettier@9.1.0",
+        "pkg:npm/eslint-plugin-escompat@3.11.4",
+        "pkg:npm/eslint-plugin-eslint-comments@3.2.0",
+        "pkg:npm/eslint-plugin-filenames@1.3.2",
+        "pkg:npm/eslint-plugin-i18n-text@1.0.1",
+        "pkg:npm/eslint-plugin-import@2.31.0",
+        "pkg:npm/eslint-plugin-jsx-a11y@6.10.2",
+        "pkg:npm/eslint-plugin-no-only-tests@3.3.0",
+        "pkg:npm/eslint-plugin-prettier@5.2.1",
+        "pkg:npm/eslint-rule-documentation@1.0.23",
+        "pkg:npm/eslint@8.57.1",
+        "pkg:npm/globals@13.24.0",
+        "pkg:npm/jsx-ast-utils@3.3.5",
+        "pkg:npm/prettier@3.3.3",
+        "pkg:npm/svg-element-attributes@1.3.1",
+        "pkg:npm/typescript-eslint@8.19.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/eslint-plugin-i18n-text@1.0.1",
+      "to": ["pkg:npm/eslint@8.57.1"]
+    },
+    {
+      "from": "pkg:npm/eslint-plugin-import@2.31.0",
+      "to": [
+        "pkg:npm/%40rtsao/scc@1.1.0",
+        "pkg:npm/array-includes@3.1.8",
+        "pkg:npm/array.prototype.findlastindex@1.2.5",
+        "pkg:npm/array.prototype.flat@1.3.2",
+        "pkg:npm/array.prototype.flatmap@1.3.2",
+        "pkg:npm/debug@4.4.0",
+        "pkg:npm/doctrine@3.0.0",
+        "pkg:npm/eslint-import-resolver-node@0.3.9",
+        "pkg:npm/eslint-module-utils@2.12.0",
+        "pkg:npm/eslint@8.57.1",
+        "pkg:npm/hasown@2.0.2",
+        "pkg:npm/is-core-module@2.15.1",
+        "pkg:npm/is-glob@4.0.3",
+        "pkg:npm/minimatch@3.1.2",
+        "pkg:npm/object.fromentries@2.0.8",
+        "pkg:npm/object.groupby@1.0.3",
+        "pkg:npm/object.values@1.2.0",
+        "pkg:npm/semver@7.6.3",
+        "pkg:npm/string.prototype.trimend@1.0.8",
+        "pkg:npm/tsconfig-paths@3.15.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/eslint-plugin-jsx-a11y@6.10.2",
+      "to": [
+        "pkg:npm/aria-query@5.3.2",
+        "pkg:npm/array-includes@3.1.8",
+        "pkg:npm/array.prototype.flatmap@1.3.2",
+        "pkg:npm/ast-types-flow@0.0.8",
+        "pkg:npm/axe-core@4.10.2",
+        "pkg:npm/axobject-query@4.1.0",
+        "pkg:npm/damerau-levenshtein@1.0.8",
+        "pkg:npm/emoji-regex@9.2.2",
+        "pkg:npm/eslint@8.57.1",
+        "pkg:npm/hasown@2.0.2",
+        "pkg:npm/jsx-ast-utils@3.3.5",
+        "pkg:npm/language-tags@1.0.9",
+        "pkg:npm/minimatch@3.1.2",
+        "pkg:npm/object.fromentries@2.0.8",
+        "pkg:npm/safe-regex-test@1.0.3",
+        "pkg:npm/string.prototype.includes@2.0.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/eslint-plugin-prettier@5.2.1",
+      "to": [
+        "pkg:npm/eslint-config-prettier@9.1.0",
+        "pkg:npm/eslint@8.57.1",
+        "pkg:npm/prettier-linter-helpers@1.0.0",
+        "pkg:npm/prettier@3.3.3",
+        "pkg:npm/synckit@0.9.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/eslint-scope@7.2.2",
+      "to": ["pkg:npm/esrecurse@4.3.0", "pkg:npm/estraverse@5.3.0"]
+    },
+    {
+      "from": "pkg:npm/eslint@8.57.1",
+      "to": [
+        "pkg:npm/%40eslint-community/eslint-utils@4.4.1",
+        "pkg:npm/%40eslint-community/regexpp@4.12.1",
+        "pkg:npm/%40eslint/eslintrc@2.1.4",
+        "pkg:npm/%40eslint/js@8.57.1",
+        "pkg:npm/%40humanwhocodes/config-array@0.13.0",
+        "pkg:npm/%40humanwhocodes/module-importer@1.0.1",
+        "pkg:npm/%40nodelib/fs.walk@1.2.8",
+        "pkg:npm/%40ungap/structured-clone@1.2.0",
+        "pkg:npm/ajv@6.12.6",
+        "pkg:npm/chalk@4.1.2",
+        "pkg:npm/cross-spawn@7.0.3",
+        "pkg:npm/debug@4.4.0",
+        "pkg:npm/doctrine@3.0.0",
+        "pkg:npm/escape-string-regexp@4.0.0",
+        "pkg:npm/eslint-scope@7.2.2",
+        "pkg:npm/eslint-visitor-keys@3.4.3",
+        "pkg:npm/espree@9.6.1",
+        "pkg:npm/esquery@1.6.0",
+        "pkg:npm/esutils@2.0.3",
+        "pkg:npm/fast-deep-equal@3.1.3",
+        "pkg:npm/file-entry-cache@6.0.1",
+        "pkg:npm/find-up@5.0.0",
+        "pkg:npm/glob-parent@6.0.2",
+        "pkg:npm/globals@13.24.0",
+        "pkg:npm/graphemer@1.4.0",
+        "pkg:npm/ignore@5.3.2",
+        "pkg:npm/imurmurhash@0.1.4",
+        "pkg:npm/is-glob@4.0.3",
+        "pkg:npm/is-path-inside@3.0.3",
+        "pkg:npm/js-yaml@4.1.0",
+        "pkg:npm/json-stable-stringify-without-jsonify@1.0.1",
+        "pkg:npm/levn@0.4.1",
+        "pkg:npm/lodash.merge@4.6.2",
+        "pkg:npm/minimatch@3.1.2",
+        "pkg:npm/natural-compare@1.4.0",
+        "pkg:npm/optionator@0.9.4",
+        "pkg:npm/strip-ansi@6.0.1",
+        "pkg:npm/text-table@0.2.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/espree@10.3.0",
+      "to": ["pkg:npm/acorn-jsx@5.3.2", "pkg:npm/acorn@8.14.0", "pkg:npm/eslint-visitor-keys@3.4.3"]
+    },
+    {
+      "from": "pkg:npm/espree@9.6.1",
+      "to": ["pkg:npm/acorn-jsx@5.3.2", "pkg:npm/acorn@8.14.0", "pkg:npm/eslint-visitor-keys@3.4.3"]
+    },
+    {
+      "from": "pkg:npm/esquery@1.6.0",
+      "to": ["pkg:npm/estraverse@5.3.0"]
+    },
+    {
+      "from": "pkg:npm/esrecurse@4.3.0",
+      "to": ["pkg:npm/estraverse@5.3.0"]
+    },
+    {
+      "from": "pkg:npm/estree-walker@3.0.3",
+      "to": ["pkg:npm/%40types/estree@1.0.6"]
+    },
+    {
+      "from": "pkg:npm/event-stream@3.3.4",
+      "to": [
+        "pkg:npm/duplexer@0.1.2",
+        "pkg:npm/from@0.1.7",
+        "pkg:npm/map-stream@0.1.0",
+        "pkg:npm/pause-stream@0.0.11",
+        "pkg:npm/split@0.3.3",
+        "pkg:npm/stream-combiner@0.0.4",
+        "pkg:npm/through@2.3.8"
+      ]
+    },
+    {
+      "from": "pkg:npm/expect@29.7.0",
+      "to": [
+        "pkg:npm/%40jest/expect-utils@29.7.0",
+        "pkg:npm/jest-get-type@29.6.3",
+        "pkg:npm/jest-matcher-utils@29.7.0",
+        "pkg:npm/jest-message-util@29.7.0",
+        "pkg:npm/jest-util@29.7.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/fast-glob@3.3.3",
+      "to": [
+        "pkg:npm/%40nodelib/fs.stat@2.0.5",
+        "pkg:npm/%40nodelib/fs.walk@1.2.8",
+        "pkg:npm/glob-parent@6.0.2",
+        "pkg:npm/merge2@1.4.1",
+        "pkg:npm/micromatch@4.0.8"
+      ]
+    },
+    {
+      "from": "pkg:npm/fastq@1.17.1",
+      "to": ["pkg:npm/reusify@1.0.4"]
+    },
+    {
+      "from": "pkg:npm/file-entry-cache@6.0.1",
+      "to": ["pkg:npm/flat-cache@3.2.0"]
+    },
+    {
+      "from": "pkg:npm/fill-range@7.1.1",
+      "to": ["pkg:npm/to-regex-range@5.0.1"]
+    },
+    {
+      "from": "pkg:npm/find-up@5.0.0",
+      "to": ["pkg:npm/locate-path@6.0.0", "pkg:npm/path-exists@4.0.0"]
+    },
+    {
+      "from": "pkg:npm/flat-cache@3.2.0",
+      "to": ["pkg:npm/flatted@3.3.1", "pkg:npm/keyv@4.5.4", "pkg:npm/rimraf@3.0.2"]
+    },
+    {
+      "from": "pkg:npm/for-each@0.3.3",
+      "to": ["pkg:npm/is-callable@1.2.7"]
+    },
+    {
+      "from": "pkg:npm/form-data@4.0.1",
+      "to": ["pkg:npm/asynckit@0.4.0", "pkg:npm/combined-stream@1.0.8", "pkg:npm/mime-types@2.1.35"]
+    },
+    {
+      "from": "pkg:npm/function.prototype.name@1.1.6",
+      "to": [
+        "pkg:npm/call-bind@1.0.7",
+        "pkg:npm/define-properties@1.2.1",
+        "pkg:npm/es-abstract@1.23.3",
+        "pkg:npm/functions-have-names@1.2.3"
+      ]
+    },
+    {
+      "from": "pkg:npm/get-intrinsic@1.2.4",
+      "to": [
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/function-bind@1.1.2",
+        "pkg:npm/has-proto@1.0.3",
+        "pkg:npm/has-symbols@1.0.3",
+        "pkg:npm/hasown@2.0.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/get-symbol-description@1.0.2",
+      "to": ["pkg:npm/call-bind@1.0.7", "pkg:npm/es-errors@1.3.0", "pkg:npm/get-intrinsic@1.2.4"]
+    },
+    {
+      "from": "pkg:npm/glob-parent@5.1.2",
+      "to": ["pkg:npm/is-glob@4.0.3"]
+    },
+    {
+      "from": "pkg:npm/glob-parent@6.0.2",
+      "to": ["pkg:npm/is-glob@4.0.3"]
+    },
+    {
+      "from": "pkg:npm/glob@7.2.3",
+      "to": [
+        "pkg:npm/fs.realpath@1.0.0",
+        "pkg:npm/inflight@1.0.6",
+        "pkg:npm/inherits@2.0.4",
+        "pkg:npm/minimatch@3.1.2",
+        "pkg:npm/once@1.4.0",
+        "pkg:npm/path-is-absolute@1.0.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/globals@13.24.0",
+      "to": ["pkg:npm/type-fest@0.20.2"]
+    },
+    {
+      "from": "pkg:npm/globalthis@1.0.4",
+      "to": ["pkg:npm/define-properties@1.2.1", "pkg:npm/gopd@1.0.1"]
+    },
+    {
+      "from": "pkg:npm/gopd@1.0.1",
+      "to": ["pkg:npm/get-intrinsic@1.2.4"]
+    },
+    {
+      "from": "pkg:npm/has-property-descriptors@1.0.2",
+      "to": ["pkg:npm/es-define-property@1.0.0"]
+    },
+    {
+      "from": "pkg:npm/has-tostringtag@1.0.2",
+      "to": ["pkg:npm/has-symbols@1.0.3"]
+    },
+    {
+      "from": "pkg:npm/hasown@2.0.2",
+      "to": ["pkg:npm/function-bind@1.1.2"]
+    },
+    {
+      "from": "pkg:npm/html-encoding-sniffer@3.0.0",
+      "to": ["pkg:npm/whatwg-encoding@2.0.0"]
+    },
+    {
+      "from": "pkg:npm/html-encoding-sniffer@4.0.0",
+      "to": ["pkg:npm/whatwg-encoding@2.0.0"]
+    },
+    {
+      "from": "pkg:npm/http-proxy-agent@7.0.2",
+      "to": ["pkg:npm/agent-base@7.1.1", "pkg:npm/debug@4.4.0"]
+    },
+    {
+      "from": "pkg:npm/http-proxy@1.18.1",
+      "to": ["pkg:npm/eventemitter3@4.0.7", "pkg:npm/follow-redirects@1.15.9", "pkg:npm/requires-port@1.0.0"]
+    },
+    {
+      "from": "pkg:npm/http-server@14.1.1",
+      "to": [
+        "pkg:npm/basic-auth@2.0.1",
+        "pkg:npm/chalk@4.1.2",
+        "pkg:npm/corser@2.0.1",
+        "pkg:npm/he@1.2.0",
+        "pkg:npm/html-encoding-sniffer@3.0.0",
+        "pkg:npm/http-proxy@1.18.1",
+        "pkg:npm/mime@1.6.0",
+        "pkg:npm/minimist@1.2.8",
+        "pkg:npm/opener@1.5.2",
+        "pkg:npm/portfinder@1.0.32",
+        "pkg:npm/secure-compare@3.0.1",
+        "pkg:npm/union@0.5.0",
+        "pkg:npm/url-join@4.0.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/https-proxy-agent@7.0.5",
+      "to": ["pkg:npm/agent-base@7.1.1", "pkg:npm/debug@4.4.0"]
+    },
+    {
+      "from": "pkg:npm/iconv-lite@0.6.3",
+      "to": ["pkg:npm/safer-buffer@2.1.2"]
+    },
+    {
+      "from": "pkg:npm/import-fresh@3.3.0",
+      "to": ["pkg:npm/parent-module@1.0.1", "pkg:npm/resolve-from@4.0.0"]
+    },
+    {
+      "from": "pkg:npm/inflight@1.0.6",
+      "to": ["pkg:npm/once@1.4.0", "pkg:npm/wrappy@1.0.2"]
+    },
+    {
+      "from": "pkg:npm/internal-slot@1.0.7",
+      "to": ["pkg:npm/es-errors@1.3.0", "pkg:npm/hasown@2.0.2", "pkg:npm/side-channel@1.0.6"]
+    },
+    {
+      "from": "pkg:npm/is-array-buffer@3.0.4",
+      "to": ["pkg:npm/call-bind@1.0.7", "pkg:npm/get-intrinsic@1.2.4"]
+    },
+    {
+      "from": "pkg:npm/is-bigint@1.0.4",
+      "to": ["pkg:npm/has-bigints@1.0.2"]
+    },
+    {
+      "from": "pkg:npm/is-boolean-object@1.1.2",
+      "to": ["pkg:npm/call-bind@1.0.7", "pkg:npm/has-tostringtag@1.0.2"]
+    },
+    {
+      "from": "pkg:npm/is-core-module@2.15.1",
+      "to": ["pkg:npm/hasown@2.0.2"]
+    },
+    {
+      "from": "pkg:npm/is-data-view@1.0.1",
+      "to": ["pkg:npm/is-typed-array@1.1.13"]
+    },
+    {
+      "from": "pkg:npm/is-date-object@1.0.5",
+      "to": ["pkg:npm/has-tostringtag@1.0.2"]
+    },
+    {
+      "from": "pkg:npm/is-glob@4.0.3",
+      "to": ["pkg:npm/is-extglob@2.1.1"]
+    },
+    {
+      "from": "pkg:npm/is-number-object@1.0.7",
+      "to": ["pkg:npm/has-tostringtag@1.0.2"]
+    },
+    {
+      "from": "pkg:npm/is-regex@1.1.4",
+      "to": ["pkg:npm/call-bind@1.0.7", "pkg:npm/has-tostringtag@1.0.2"]
+    },
+    {
+      "from": "pkg:npm/is-shared-array-buffer@1.0.3",
+      "to": ["pkg:npm/call-bind@1.0.7"]
+    },
+    {
+      "from": "pkg:npm/is-string@1.0.7",
+      "to": ["pkg:npm/has-tostringtag@1.0.2"]
+    },
+    {
+      "from": "pkg:npm/is-symbol@1.0.4",
+      "to": ["pkg:npm/has-symbols@1.0.3"]
+    },
+    {
+      "from": "pkg:npm/is-typed-array@1.1.13",
+      "to": ["pkg:npm/which-typed-array@1.1.15"]
+    },
+    {
+      "from": "pkg:npm/is-weakref@1.0.2",
+      "to": ["pkg:npm/call-bind@1.0.7"]
+    },
+    {
+      "from": "pkg:npm/jest-diff@29.7.0",
+      "to": [
+        "pkg:npm/chalk@4.1.2",
+        "pkg:npm/diff-sequences@29.6.3",
+        "pkg:npm/jest-get-type@29.6.3",
+        "pkg:npm/pretty-format@29.7.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/jest-matcher-utils@29.7.0",
+      "to": [
+        "pkg:npm/chalk@4.1.2",
+        "pkg:npm/jest-diff@29.7.0",
+        "pkg:npm/jest-get-type@29.6.3",
+        "pkg:npm/pretty-format@29.7.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/jest-message-util@29.7.0",
+      "to": [
+        "pkg:npm/%40babel/code-frame@7.26.2",
+        "pkg:npm/%40jest/types@29.6.3",
+        "pkg:npm/%40types/stack-utils@2.0.3",
+        "pkg:npm/chalk@4.1.2",
+        "pkg:npm/graceful-fs@4.2.11",
+        "pkg:npm/micromatch@4.0.8",
+        "pkg:npm/pretty-format@29.7.0",
+        "pkg:npm/slash@3.0.0",
+        "pkg:npm/stack-utils@2.0.6"
+      ]
+    },
+    {
+      "from": "pkg:npm/jest-util@29.7.0",
+      "to": [
+        "pkg:npm/%40jest/types@29.6.3",
+        "pkg:npm/%40types/node@22.8.6",
+        "pkg:npm/chalk@4.1.2",
+        "pkg:npm/ci-info@3.9.0",
+        "pkg:npm/graceful-fs@4.2.11",
+        "pkg:npm/picomatch@2.3.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/js-yaml@4.1.0",
+      "to": ["pkg:npm/argparse@2.0.1"]
+    },
+    {
+      "from": "pkg:npm/jsdom@25.0.1",
+      "to": [
+        "pkg:npm/cssstyle@4.1.0",
+        "pkg:npm/data-urls@5.0.0",
+        "pkg:npm/decimal.js@10.4.3",
+        "pkg:npm/form-data@4.0.1",
+        "pkg:npm/html-encoding-sniffer@3.0.0",
+        "pkg:npm/http-proxy-agent@7.0.2",
+        "pkg:npm/https-proxy-agent@7.0.5",
+        "pkg:npm/is-potential-custom-element-name@1.0.1",
+        "pkg:npm/nwsapi@2.2.13",
+        "pkg:npm/parse5@7.2.1",
+        "pkg:npm/rrweb-cssom@0.7.1",
+        "pkg:npm/saxes@6.0.0",
+        "pkg:npm/symbol-tree@3.2.4",
+        "pkg:npm/tough-cookie@5.0.0",
+        "pkg:npm/w3c-xmlserializer@5.0.0",
+        "pkg:npm/webidl-conversions@7.0.0",
+        "pkg:npm/whatwg-encoding@2.0.0",
+        "pkg:npm/whatwg-mimetype@4.0.0",
+        "pkg:npm/whatwg-url@14.0.0",
+        "pkg:npm/ws@8.18.0",
+        "pkg:npm/xml-name-validator@5.0.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/json5@1.0.2",
+      "to": ["pkg:npm/minimist@1.2.8"]
+    },
+    {
+      "from": "pkg:npm/jsx-ast-utils@3.3.5",
+      "to": [
+        "pkg:npm/array-includes@3.1.8",
+        "pkg:npm/array.prototype.flat@1.3.2",
+        "pkg:npm/object.assign@4.1.5",
+        "pkg:npm/object.values@1.2.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/keyv@4.5.4",
+      "to": ["pkg:npm/json-buffer@3.0.1"]
+    },
+    {
+      "from": "pkg:npm/language-tags@1.0.9",
+      "to": ["pkg:npm/language-subtag-registry@0.3.23"]
+    },
+    {
+      "from": "pkg:npm/levn@0.4.1",
+      "to": ["pkg:npm/prelude-ls@1.2.1", "pkg:npm/type-check@0.4.0"]
+    },
+    {
+      "from": "pkg:npm/lit-element@4.1.1",
+      "to": [
+        "pkg:npm/%40lit-labs/ssr-dom-shim@1.2.1",
+        "pkg:npm/%40lit/reactive-element@2.0.4",
+        "pkg:npm/lit-html@3.2.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/lit-html@3.2.1",
+      "to": ["pkg:npm/%40types/trusted-types@2.0.7"]
+    },
+    {
+      "from": "pkg:npm/lit@3.2.1",
+      "to": ["pkg:npm/%40lit/reactive-element@2.0.4", "pkg:npm/lit-element@4.1.1", "pkg:npm/lit-html@3.2.1"]
+    },
+    {
+      "from": "pkg:npm/locate-path@6.0.0",
+      "to": ["pkg:npm/p-locate@5.0.0"]
+    },
+    {
+      "from": "pkg:npm/magic-string@0.30.17",
+      "to": ["pkg:npm/%40jridgewell/sourcemap-codec@1.5.0"]
+    },
+    {
+      "from": "pkg:npm/micromatch@4.0.8",
+      "to": ["pkg:npm/braces@3.0.3", "pkg:npm/picomatch@2.3.1"]
+    },
+    {
+      "from": "pkg:npm/mime-types@2.1.35",
+      "to": ["pkg:npm/mime-db@1.52.0"]
+    },
+    {
+      "from": "pkg:npm/minimatch@3.1.2",
+      "to": ["pkg:npm/brace-expansion@1.1.11"]
+    },
+    {
+      "from": "pkg:npm/minimatch@9.0.5",
+      "to": ["pkg:npm/brace-expansion@1.1.11"]
+    },
+    {
+      "from": "pkg:npm/mkdirp@0.5.6",
+      "to": ["pkg:npm/minimist@1.2.8"]
+    },
+    {
+      "from": "pkg:npm/object.assign@4.1.5",
+      "to": [
+        "pkg:npm/call-bind@1.0.7",
+        "pkg:npm/define-properties@1.2.1",
+        "pkg:npm/has-symbols@1.0.3",
+        "pkg:npm/object-keys@1.1.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/object.fromentries@2.0.8",
+      "to": [
+        "pkg:npm/call-bind@1.0.7",
+        "pkg:npm/define-properties@1.2.1",
+        "pkg:npm/es-abstract@1.23.3",
+        "pkg:npm/es-object-atoms@1.0.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/object.groupby@1.0.3",
+      "to": ["pkg:npm/call-bind@1.0.7", "pkg:npm/define-properties@1.2.1", "pkg:npm/es-abstract@1.23.3"]
+    },
+    {
+      "from": "pkg:npm/object.values@1.2.0",
+      "to": ["pkg:npm/call-bind@1.0.7", "pkg:npm/define-properties@1.2.1", "pkg:npm/es-object-atoms@1.0.0"]
+    },
+    {
+      "from": "pkg:npm/once@1.4.0",
+      "to": ["pkg:npm/wrappy@1.0.2"]
+    },
+    {
+      "from": "pkg:npm/optionator@0.9.4",
+      "to": [
+        "pkg:npm/deep-is@0.1.4",
+        "pkg:npm/fast-levenshtein@2.0.6",
+        "pkg:npm/levn@0.4.1",
+        "pkg:npm/prelude-ls@1.2.1",
+        "pkg:npm/type-check@0.4.0",
+        "pkg:npm/word-wrap@1.2.5"
+      ]
+    },
+    {
+      "from": "pkg:npm/p-limit@3.1.0",
+      "to": ["pkg:npm/yocto-queue@0.1.0"]
+    },
+    {
+      "from": "pkg:npm/p-locate@5.0.0",
+      "to": ["pkg:npm/p-limit@3.1.0"]
+    },
+    {
+      "from": "pkg:npm/parent-module@1.0.1",
+      "to": ["pkg:npm/callsites@3.1.0"]
+    },
+    {
+      "from": "pkg:npm/parse5@7.2.1",
+      "to": ["pkg:npm/entities@4.5.0"]
+    },
+    {
+      "from": "pkg:npm/pause-stream@0.0.11",
+      "to": ["pkg:npm/through@2.3.8"]
+    },
+    {
+      "from": "pkg:npm/portfinder@1.0.32",
+      "to": ["pkg:npm/async@2.6.4", "pkg:npm/debug@4.4.0", "pkg:npm/mkdirp@0.5.6"]
+    },
+    {
+      "from": "pkg:npm/postcss@8.4.49",
+      "to": ["pkg:npm/nanoid@3.3.8", "pkg:npm/picocolors@1.1.1", "pkg:npm/source-map-js@1.2.1"]
+    },
+    {
+      "from": "pkg:npm/prettier-linter-helpers@1.0.0",
+      "to": ["pkg:npm/fast-diff@1.3.0"]
+    },
+    {
+      "from": "pkg:npm/pretty-format@29.7.0",
+      "to": ["pkg:npm/%40jest/schemas@29.6.3", "pkg:npm/ansi-styles@4.3.0", "pkg:npm/react-is@18.3.1"]
+    },
+    {
+      "from": "pkg:npm/ps-tree@1.2.0",
+      "to": ["pkg:npm/event-stream@3.3.4"]
+    },
+    {
+      "from": "pkg:npm/qs@6.13.0",
+      "to": ["pkg:npm/side-channel@1.0.6"]
+    },
+    {
+      "from": "pkg:npm/regexp.prototype.flags@1.5.3",
+      "to": [
+        "pkg:npm/call-bind@1.0.7",
+        "pkg:npm/define-properties@1.2.1",
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/set-function-name@2.0.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/resolve@1.22.8",
+      "to": [
+        "pkg:npm/is-core-module@2.15.1",
+        "pkg:npm/path-parse@1.0.7",
+        "pkg:npm/supports-preserve-symlinks-flag@1.0.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/rimraf@3.0.2",
+      "to": ["pkg:npm/glob@7.2.3"]
+    },
+    {
+      "from": "pkg:npm/rollup@4.24.3",
+      "to": [
+        "pkg:npm/%40rollup/rollup-android-arm-eabi@4.24.3",
+        "pkg:npm/%40rollup/rollup-android-arm64@4.24.3",
+        "pkg:npm/%40rollup/rollup-darwin-arm64@4.24.3",
+        "pkg:npm/%40rollup/rollup-darwin-x64@4.24.3",
+        "pkg:npm/%40rollup/rollup-freebsd-arm64@4.24.3",
+        "pkg:npm/%40rollup/rollup-freebsd-x64@4.24.3",
+        "pkg:npm/%40rollup/rollup-linux-arm-gnueabihf@4.24.3",
+        "pkg:npm/%40rollup/rollup-linux-arm-musleabihf@4.24.3",
+        "pkg:npm/%40rollup/rollup-linux-arm64-gnu@4.24.3",
+        "pkg:npm/%40rollup/rollup-linux-arm64-musl@4.24.3",
+        "pkg:npm/%40rollup/rollup-linux-powerpc64le-gnu@4.24.3",
+        "pkg:npm/%40rollup/rollup-linux-riscv64-gnu@4.24.3",
+        "pkg:npm/%40rollup/rollup-linux-s390x-gnu@4.24.3",
+        "pkg:npm/%40rollup/rollup-linux-x64-gnu@4.24.3",
+        "pkg:npm/%40rollup/rollup-linux-x64-musl@4.24.3",
+        "pkg:npm/%40rollup/rollup-win32-arm64-msvc@4.24.3",
+        "pkg:npm/%40rollup/rollup-win32-ia32-msvc@4.24.3",
+        "pkg:npm/%40rollup/rollup-win32-x64-msvc@4.24.3",
+        "pkg:npm/%40types/estree@1.0.6",
+        "pkg:npm/fsevents@2.3.3"
+      ]
+    },
+    {
+      "from": "pkg:npm/run-parallel@1.2.0",
+      "to": ["pkg:npm/queue-microtask@1.2.3"]
+    },
+    {
+      "from": "pkg:npm/safe-array-concat@1.1.2",
+      "to": [
+        "pkg:npm/call-bind@1.0.7",
+        "pkg:npm/get-intrinsic@1.2.4",
+        "pkg:npm/has-symbols@1.0.3",
+        "pkg:npm/isarray@2.0.5"
+      ]
+    },
+    {
+      "from": "pkg:npm/safe-regex-test@1.0.3",
+      "to": ["pkg:npm/call-bind@1.0.7", "pkg:npm/es-errors@1.3.0", "pkg:npm/is-regex@1.1.4"]
+    },
+    {
+      "from": "pkg:npm/saxes@6.0.0",
+      "to": ["pkg:npm/xmlchars@2.2.0"]
+    },
+    {
+      "from": "pkg:npm/set-function-length@1.2.2",
+      "to": [
+        "pkg:npm/define-data-property@1.1.4",
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/function-bind@1.1.2",
+        "pkg:npm/get-intrinsic@1.2.4",
+        "pkg:npm/gopd@1.0.1",
+        "pkg:npm/has-property-descriptors@1.0.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/set-function-name@2.0.2",
+      "to": [
+        "pkg:npm/define-data-property@1.1.4",
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/functions-have-names@1.2.3",
+        "pkg:npm/has-property-descriptors@1.0.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/shebang-command@2.0.0",
+      "to": ["pkg:npm/shebang-regex@3.0.0"]
+    },
+    {
+      "from": "pkg:npm/side-channel@1.0.6",
+      "to": [
+        "pkg:npm/call-bind@1.0.7",
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/get-intrinsic@1.2.4",
+        "pkg:npm/object-inspect@1.13.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/split@0.3.3",
+      "to": ["pkg:npm/through@2.3.8"]
+    },
+    {
+      "from": "pkg:npm/stack-utils@2.0.6",
+      "to": ["pkg:npm/escape-string-regexp@4.0.0"]
+    },
+    {
+      "from": "pkg:npm/stream-combiner@0.0.4",
+      "to": ["pkg:npm/duplexer@0.1.2"]
+    },
+    {
+      "from": "pkg:npm/string.prototype.includes@2.0.1",
+      "to": ["pkg:npm/call-bind@1.0.7", "pkg:npm/define-properties@1.2.1", "pkg:npm/es-abstract@1.23.3"]
+    },
+    {
+      "from": "pkg:npm/string.prototype.trim@1.2.9",
+      "to": [
+        "pkg:npm/call-bind@1.0.7",
+        "pkg:npm/define-properties@1.2.1",
+        "pkg:npm/es-abstract@1.23.3",
+        "pkg:npm/es-object-atoms@1.0.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/string.prototype.trimend@1.0.8",
+      "to": ["pkg:npm/call-bind@1.0.7", "pkg:npm/define-properties@1.2.1", "pkg:npm/es-object-atoms@1.0.0"]
+    },
+    {
+      "from": "pkg:npm/string.prototype.trimstart@1.0.8",
+      "to": ["pkg:npm/call-bind@1.0.7", "pkg:npm/define-properties@1.2.1", "pkg:npm/es-object-atoms@1.0.0"]
+    },
+    {
+      "from": "pkg:npm/strip-ansi@6.0.1",
+      "to": ["pkg:npm/ansi-regex@5.0.1"]
+    },
+    {
+      "from": "pkg:npm/supports-color@7.2.0",
+      "to": ["pkg:npm/has-flag@4.0.0"]
+    },
+    {
+      "from": "pkg:npm/synckit@0.9.2",
+      "to": ["pkg:npm/%40pkgr/core@0.1.1", "pkg:npm/tslib@2.8.1"]
+    },
+    {
+      "from": "pkg:npm/tldts@6.1.58",
+      "to": ["pkg:npm/tldts-core@6.1.58"]
+    },
+    {
+      "from": "pkg:npm/to-regex-range@5.0.1",
+      "to": ["pkg:npm/is-number@7.0.0"]
+    },
+    {
+      "from": "pkg:npm/tough-cookie@5.0.0",
+      "to": ["pkg:npm/tldts@6.1.58"]
+    },
+    {
+      "from": "pkg:npm/tr46@5.0.0",
+      "to": ["pkg:npm/punycode@2.3.1"]
+    },
+    {
+      "from": "pkg:npm/ts-api-utils@2.0.0",
+      "to": ["pkg:npm/typescript@5.7.3"]
+    },
+    {
+      "from": "pkg:npm/tsc-watch@6.2.1",
+      "to": [
+        "pkg:npm/cross-spawn@7.0.3",
+        "pkg:npm/node-cleanup@2.1.2",
+        "pkg:npm/ps-tree@1.2.0",
+        "pkg:npm/string-argv@0.3.2",
+        "pkg:npm/typescript@5.7.3"
+      ]
+    },
+    {
+      "from": "pkg:npm/tsconfig-paths@3.15.0",
+      "to": [
+        "pkg:npm/%40types/json5@0.0.29",
+        "pkg:npm/json5@1.0.2",
+        "pkg:npm/minimist@1.2.8",
+        "pkg:npm/strip-bom@3.0.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/type-check@0.4.0",
+      "to": ["pkg:npm/prelude-ls@1.2.1"]
+    },
+    {
+      "from": "pkg:npm/typed-array-buffer@1.0.2",
+      "to": ["pkg:npm/call-bind@1.0.7", "pkg:npm/es-errors@1.3.0", "pkg:npm/is-typed-array@1.1.13"]
+    },
+    {
+      "from": "pkg:npm/typed-array-byte-length@1.0.1",
+      "to": [
+        "pkg:npm/call-bind@1.0.7",
+        "pkg:npm/for-each@0.3.3",
+        "pkg:npm/gopd@1.0.1",
+        "pkg:npm/has-proto@1.0.3",
+        "pkg:npm/is-typed-array@1.1.13"
+      ]
+    },
+    {
+      "from": "pkg:npm/typed-array-byte-offset@1.0.2",
+      "to": [
+        "pkg:npm/available-typed-arrays@1.0.7",
+        "pkg:npm/call-bind@1.0.7",
+        "pkg:npm/for-each@0.3.3",
+        "pkg:npm/gopd@1.0.1",
+        "pkg:npm/has-proto@1.0.3",
+        "pkg:npm/is-typed-array@1.1.13"
+      ]
+    },
+    {
+      "from": "pkg:npm/typed-array-length@1.0.6",
+      "to": [
+        "pkg:npm/call-bind@1.0.7",
+        "pkg:npm/for-each@0.3.3",
+        "pkg:npm/gopd@1.0.1",
+        "pkg:npm/has-proto@1.0.3",
+        "pkg:npm/is-typed-array@1.1.13",
+        "pkg:npm/possible-typed-array-names@1.0.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/typescript-eslint@8.19.1",
+      "to": [
+        "pkg:npm/%40typescript-eslint/eslint-plugin@8.19.1",
+        "pkg:npm/%40typescript-eslint/parser@8.19.1",
+        "pkg:npm/%40typescript-eslint/utils@8.19.1",
+        "pkg:npm/eslint@8.57.1",
+        "pkg:npm/typescript@5.7.3"
+      ]
+    },
+    {
+      "from": "pkg:npm/unbox-primitive@1.0.2",
+      "to": [
+        "pkg:npm/call-bind@1.0.7",
+        "pkg:npm/has-bigints@1.0.2",
+        "pkg:npm/has-symbols@1.0.3",
+        "pkg:npm/which-boxed-primitive@1.0.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/union@0.5.0",
+      "to": ["pkg:npm/qs@6.13.0"]
+    },
+    {
+      "from": "pkg:npm/update-browserslist-db@1.1.1",
+      "to": ["pkg:npm/browserslist@4.24.2", "pkg:npm/escalade@3.2.0", "pkg:npm/picocolors@1.1.1"]
+    },
+    {
+      "from": "pkg:npm/uri-js@4.4.1",
+      "to": ["pkg:npm/punycode@2.3.1"]
+    },
+    {
+      "from": "pkg:npm/vite-node@3.0.4",
+      "to": [
+        "pkg:npm/cac@6.7.14",
+        "pkg:npm/debug@4.4.0",
+        "pkg:npm/es-module-lexer@1.6.0",
+        "pkg:npm/pathe@2.0.2",
+        "pkg:npm/vite@6.0.11"
+      ]
+    },
+    {
+      "from": "pkg:npm/vite@6.0.11",
+      "to": [
+        "pkg:npm/%40types/node@22.8.6",
+        "pkg:npm/esbuild@0.24.2",
+        "pkg:npm/fsevents@2.3.3",
+        "pkg:npm/postcss@8.4.49",
+        "pkg:npm/rollup@4.24.3"
+      ]
+    },
+    {
+      "from": "pkg:npm/vitest@3.0.4",
+      "to": [
+        "pkg:npm/%40types/node@22.8.6",
+        "pkg:npm/%40vitest/expect@3.0.4",
+        "pkg:npm/%40vitest/mocker@3.0.4",
+        "pkg:npm/%40vitest/pretty-format@3.0.4",
+        "pkg:npm/%40vitest/runner@3.0.4",
+        "pkg:npm/%40vitest/snapshot@3.0.4",
+        "pkg:npm/%40vitest/spy@3.0.4",
+        "pkg:npm/%40vitest/utils@3.0.4",
+        "pkg:npm/chai@5.1.2",
+        "pkg:npm/debug@4.4.0",
+        "pkg:npm/expect-type@1.1.0",
+        "pkg:npm/jsdom@25.0.1",
+        "pkg:npm/magic-string@0.30.17",
+        "pkg:npm/pathe@2.0.2",
+        "pkg:npm/std-env@3.8.0",
+        "pkg:npm/tinybench@2.9.0",
+        "pkg:npm/tinyexec@0.3.2",
+        "pkg:npm/tinypool@1.0.2",
+        "pkg:npm/tinyrainbow@2.0.0",
+        "pkg:npm/vite-node@3.0.4",
+        "pkg:npm/vite@6.0.11",
+        "pkg:npm/why-is-node-running@2.3.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/w3c-xmlserializer@5.0.0",
+      "to": ["pkg:npm/xml-name-validator@5.0.0"]
+    },
+    {
+      "from": "pkg:npm/whatwg-encoding@2.0.0",
+      "to": ["pkg:npm/iconv-lite@0.6.3"]
+    },
+    {
+      "from": "pkg:npm/whatwg-encoding@3.1.1",
+      "to": ["pkg:npm/iconv-lite@0.6.3"]
+    },
+    {
+      "from": "pkg:npm/whatwg-url@14.0.0",
+      "to": ["pkg:npm/tr46@5.0.0", "pkg:npm/webidl-conversions@7.0.0"]
+    },
+    {
+      "from": "pkg:npm/which-boxed-primitive@1.0.2",
+      "to": [
+        "pkg:npm/is-bigint@1.0.4",
+        "pkg:npm/is-boolean-object@1.1.2",
+        "pkg:npm/is-number-object@1.0.7",
+        "pkg:npm/is-string@1.0.7",
+        "pkg:npm/is-symbol@1.0.4"
+      ]
+    },
+    {
+      "from": "pkg:npm/which-typed-array@1.1.15",
+      "to": [
+        "pkg:npm/available-typed-arrays@1.0.7",
+        "pkg:npm/call-bind@1.0.7",
+        "pkg:npm/for-each@0.3.3",
+        "pkg:npm/gopd@1.0.1",
+        "pkg:npm/has-tostringtag@1.0.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/which@2.0.2",
+      "to": ["pkg:npm/isexe@2.0.0"]
+    },
+    {
+      "from": "pkg:npm/why-is-node-running@2.3.0",
+      "to": ["pkg:npm/siginfo@2.0.0", "pkg:npm/stackback@0.0.2"]
+    }
+  ]
+}

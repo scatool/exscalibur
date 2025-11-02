@@ -1,0 +1,82 @@
+{
+  "packages": [
+    {
+      "purl": "pkg:npm/%40types/mdast@4.0.0",
+      "evidence": ["<repositories>/syntax-tree+mdast-util-to-markdown/package.json:8"]
+    },
+    {
+      "purl": "pkg:npm/%40types/node@22.0.0",
+      "evidence": ["<repositories>/syntax-tree+mdast-util-to-markdown/package.json:20"]
+    },
+    {
+      "purl": "pkg:npm/%40types/unist@3.0.0",
+      "evidence": ["<repositories>/syntax-tree+mdast-util-to-markdown/package.json:9"]
+    },
+    {
+      "purl": "pkg:npm/c8@10.0.0",
+      "evidence": ["<repositories>/syntax-tree+mdast-util-to-markdown/package.json:21"]
+    },
+    {
+      "purl": "pkg:npm/longest-streak@3.0.0",
+      "evidence": ["<repositories>/syntax-tree+mdast-util-to-markdown/package.json:10"]
+    },
+    {
+      "purl": "pkg:npm/mdast-util-from-markdown@2.0.0",
+      "evidence": ["<repositories>/syntax-tree+mdast-util-to-markdown/package.json:22"]
+    },
+    {
+      "purl": "pkg:npm/mdast-util-phrasing@4.0.0",
+      "evidence": ["<repositories>/syntax-tree+mdast-util-to-markdown/package.json:11"]
+    },
+    {
+      "purl": "pkg:npm/mdast-util-to-string@4.0.0",
+      "evidence": ["<repositories>/syntax-tree+mdast-util-to-markdown/package.json:12"]
+    },
+    {
+      "purl": "pkg:npm/micromark-util-classify-character@2.0.0",
+      "evidence": ["<repositories>/syntax-tree+mdast-util-to-markdown/package.json:13"]
+    },
+    {
+      "purl": "pkg:npm/micromark-util-decode-string@2.0.0",
+      "evidence": ["<repositories>/syntax-tree+mdast-util-to-markdown/package.json:14"]
+    },
+    {
+      "purl": "pkg:npm/prettier@3.0.0",
+      "evidence": ["<repositories>/syntax-tree+mdast-util-to-markdown/package.json:23"]
+    },
+    {
+      "purl": "pkg:npm/remark-cli@12.0.0",
+      "evidence": ["<repositories>/syntax-tree+mdast-util-to-markdown/package.json:24"]
+    },
+    {
+      "purl": "pkg:npm/remark-preset-wooorm@11.0.0",
+      "evidence": ["<repositories>/syntax-tree+mdast-util-to-markdown/package.json:25"]
+    },
+    {
+      "purl": "pkg:npm/type-coverage@2.0.0",
+      "evidence": ["<repositories>/syntax-tree+mdast-util-to-markdown/package.json:26"]
+    },
+    {
+      "purl": "pkg:npm/typescript@5.0.0",
+      "evidence": ["<repositories>/syntax-tree+mdast-util-to-markdown/package.json:27"]
+    },
+    {
+      "purl": "pkg:npm/unist-util-remove-position@5.0.0",
+      "evidence": ["<repositories>/syntax-tree+mdast-util-to-markdown/package.json:28"]
+    },
+    {
+      "purl": "pkg:npm/unist-util-visit@5.0.0",
+      "evidence": ["<repositories>/syntax-tree+mdast-util-to-markdown/package.json:15"]
+    },
+    {
+      "purl": "pkg:npm/xo@0.60.0",
+      "evidence": ["<repositories>/syntax-tree+mdast-util-to-markdown/package.json:29"]
+    },
+    {
+      "purl": "pkg:npm/zwitch@2.0.0",
+      "evidence": ["<repositories>/syntax-tree+mdast-util-to-markdown/package.json:16"]
+    }
+  ],
+  "subprojects": [],
+  "relationships": []
+}

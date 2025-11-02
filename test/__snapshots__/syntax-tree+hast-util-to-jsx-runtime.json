@@ -1,0 +1,130 @@
+{
+  "packages": [
+    {
+      "purl": "pkg:npm/%40types/estree@1.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-to-jsx-runtime/package.json:8"]
+    },
+    {
+      "purl": "pkg:npm/%40types/hast@3.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-to-jsx-runtime/package.json:9"]
+    },
+    {
+      "purl": "pkg:npm/%40types/node@22.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-to-jsx-runtime/package.json:26"]
+    },
+    {
+      "purl": "pkg:npm/%40types/react-dom@19.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-to-jsx-runtime/package.json:28"]
+    },
+    {
+      "purl": "pkg:npm/%40types/react@19.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-to-jsx-runtime/package.json:27"]
+    },
+    {
+      "purl": "pkg:npm/%40types/unist@3.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-to-jsx-runtime/package.json:10"]
+    },
+    {
+      "purl": "pkg:npm/c8@10.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-to-jsx-runtime/package.json:29"]
+    },
+    {
+      "purl": "pkg:npm/comma-separated-tokens@2.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-to-jsx-runtime/package.json:11"]
+    },
+    {
+      "purl": "pkg:npm/devlop@1.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-to-jsx-runtime/package.json:12"]
+    },
+    {
+      "purl": "pkg:npm/esbuild@0.25.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-to-jsx-runtime/package.json:30"]
+    },
+    {
+      "purl": "pkg:npm/estree-util-is-identifier-name@3.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-to-jsx-runtime/package.json:13"]
+    },
+    {
+      "purl": "pkg:npm/estree-util-visit@2.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-to-jsx-runtime/package.json:31"]
+    },
+    {
+      "purl": "pkg:npm/hast-util-whitespace@3.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-to-jsx-runtime/package.json:14"]
+    },
+    {
+      "purl": "pkg:npm/hastscript@9.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-to-jsx-runtime/package.json:32"]
+    },
+    {
+      "purl": "pkg:npm/mdast-util-mdx-expression@2.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-to-jsx-runtime/package.json:15"]
+    },
+    {
+      "purl": "pkg:npm/mdast-util-mdx-jsx@3.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-to-jsx-runtime/package.json:16"]
+    },
+    {
+      "purl": "pkg:npm/mdast-util-mdxjs-esm@2.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-to-jsx-runtime/package.json:17"]
+    },
+    {
+      "purl": "pkg:npm/prettier@3.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-to-jsx-runtime/package.json:33"]
+    },
+    {
+      "purl": "pkg:npm/property-information@7.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-to-jsx-runtime/package.json:18"]
+    },
+    {
+      "purl": "pkg:npm/react-dom@19.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-to-jsx-runtime/package.json:35"]
+    },
+    {
+      "purl": "pkg:npm/react@19.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-to-jsx-runtime/package.json:34"]
+    },
+    {
+      "purl": "pkg:npm/remark-cli@12.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-to-jsx-runtime/package.json:36"]
+    },
+    {
+      "purl": "pkg:npm/remark-preset-wooorm@11.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-to-jsx-runtime/package.json:37"]
+    },
+    {
+      "purl": "pkg:npm/space-separated-tokens@2.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-to-jsx-runtime/package.json:19"]
+    },
+    {
+      "purl": "pkg:npm/style-to-js@1.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-to-jsx-runtime/package.json:20"]
+    },
+    {
+      "purl": "pkg:npm/sval@0.6.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-to-jsx-runtime/package.json:38"]
+    },
+    {
+      "purl": "pkg:npm/type-coverage@2.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-to-jsx-runtime/package.json:39"]
+    },
+    {
+      "purl": "pkg:npm/typescript@5.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-to-jsx-runtime/package.json:40"]
+    },
+    {
+      "purl": "pkg:npm/unist-util-position@5.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-to-jsx-runtime/package.json:21"]
+    },
+    {
+      "purl": "pkg:npm/vfile-message@4.0.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-to-jsx-runtime/package.json:22"]
+    },
+    {
+      "purl": "pkg:npm/xo@0.60.0",
+      "evidence": ["<repositories>/syntax-tree+hast-util-to-jsx-runtime/package.json:41"]
+    }
+  ],
+  "subprojects": [],
+  "relationships": []
+}

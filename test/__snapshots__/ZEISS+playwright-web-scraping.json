@@ -1,0 +1,2045 @@
+{
+  "packages": [
+    {
+      "purl": "pkg:npm/%40eslint-community/eslint-utils@4.4.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#22"]
+    },
+    {
+      "purl": "pkg:npm/%40eslint-community/regexpp@4.12.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#41"]
+    },
+    {
+      "purl": "pkg:npm/%40eslint/eslintrc@2.1.4",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#51"]
+    },
+    {
+      "purl": "pkg:npm/%40eslint/js@8.57.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#75"]
+    },
+    {
+      "purl": "pkg:npm/%40github/browserslist-config@1.0.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#85"]
+    },
+    {
+      "purl": "pkg:npm/%40humanwhocodes/config-array@0.13.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#92"]
+    },
+    {
+      "purl": "pkg:npm/%40humanwhocodes/module-importer@1.0.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#108"]
+    },
+    {
+      "purl": "pkg:npm/%40humanwhocodes/object-schema@2.0.3",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#122"]
+    },
+    {
+      "purl": "pkg:npm/%40nodelib/fs.scandir@2.1.5",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#130"]
+    },
+    {
+      "purl": "pkg:npm/%40nodelib/fs.stat@2.0.5",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#144"]
+    },
+    {
+      "purl": "pkg:npm/%40nodelib/fs.walk@1.2.8",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#154"]
+    },
+    {
+      "purl": "pkg:npm/%40pkgr/core@0.1.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#168"]
+    },
+    {
+      "purl": "pkg:npm/%40rtsao/scc@1.1.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#181"]
+    },
+    {
+      "purl": "pkg:npm/%40types/json5@0.0.29",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#188"]
+    },
+    {
+      "purl": "pkg:npm/%40typescript-eslint/eslint-plugin@8.15.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#195"]
+    },
+    {
+      "purl": "pkg:npm/%40typescript-eslint/parser@8.15.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#229"]
+    },
+    {
+      "purl": "pkg:npm/%40typescript-eslint/scope-manager@8.15.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#258"]
+    },
+    {
+      "purl": "pkg:npm/%40typescript-eslint/type-utils@8.15.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#276"]
+    },
+    {
+      "purl": "pkg:npm/%40typescript-eslint/types@8.15.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#304"]
+    },
+    {
+      "purl": "pkg:npm/%40typescript-eslint/typescript-estree@8.15.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#318"]
+    },
+    {
+      "purl": "pkg:npm/%40typescript-eslint/utils@8.15.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#373"]
+    },
+    {
+      "purl": "pkg:npm/%40typescript-eslint/visitor-keys@8.15.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#401"]
+    },
+    {
+      "purl": "pkg:npm/%40ungap/structured-clone@1.2.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#432"]
+    },
+    {
+      "purl": "pkg:npm/acorn-jsx@5.3.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#452"]
+    },
+    {
+      "purl": "pkg:npm/acorn@8.14.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#439"]
+    },
+    {
+      "purl": "pkg:npm/ajv@6.12.6",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#462"]
+    },
+    {
+      "purl": "pkg:npm/ansi-regex@5.0.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#479"]
+    },
+    {
+      "purl": "pkg:npm/ansi-styles@4.3.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#489"]
+    },
+    {
+      "purl": "pkg:npm/argparse@2.0.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#505"]
+    },
+    {
+      "purl": "pkg:npm/aria-query@5.3.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#512"]
+    },
+    {
+      "purl": "pkg:npm/array-buffer-byte-length@1.0.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#522"]
+    },
+    {
+      "purl": "pkg:npm/array-includes@3.1.8",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#539"]
+    },
+    {
+      "purl": "pkg:npm/array.prototype.findlastindex@1.2.5",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#560"]
+    },
+    {
+      "purl": "pkg:npm/array.prototype.flat@1.3.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#581"]
+    },
+    {
+      "purl": "pkg:npm/array.prototype.flatmap@1.3.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#600"]
+    },
+    {
+      "purl": "pkg:npm/arraybuffer.prototype.slice@1.0.3",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#619"]
+    },
+    {
+      "purl": "pkg:npm/ast-types-flow@0.0.8",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#642"]
+    },
+    {
+      "purl": "pkg:npm/available-typed-arrays@1.0.7",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#649"]
+    },
+    {
+      "purl": "pkg:npm/axe-core@4.10.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#665"]
+    },
+    {
+      "purl": "pkg:npm/axobject-query@4.1.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#675"]
+    },
+    {
+      "purl": "pkg:npm/balanced-match@1.0.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#685"]
+    },
+    {
+      "purl": "pkg:npm/brace-expansion@1.1.11",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#692"]
+    },
+    {
+      "purl": "pkg:npm/brace-expansion@2.0.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#347"]
+    },
+    {
+      "purl": "pkg:npm/braces@3.0.3",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#703"]
+    },
+    {
+      "purl": "pkg:npm/browserslist@4.24.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#716"]
+    },
+    {
+      "purl": "pkg:npm/call-bind@1.0.7",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#749"]
+    },
+    {
+      "purl": "pkg:npm/callsites@3.1.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#769"]
+    },
+    {
+      "purl": "pkg:npm/caniuse-lite@1.0.30001680",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#779"]
+    },
+    {
+      "purl": "pkg:npm/chalk@4.1.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#800"]
+    },
+    {
+      "purl": "pkg:npm/color-convert@2.0.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#817"]
+    },
+    {
+      "purl": "pkg:npm/color-name@1.1.4",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#830"]
+    },
+    {
+      "purl": "pkg:npm/concat-map@0.0.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#837"]
+    },
+    {
+      "purl": "pkg:npm/cross-spawn@7.0.6",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#844"]
+    },
+    {
+      "purl": "pkg:npm/damerau-levenshtein@1.0.8",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#859"]
+    },
+    {
+      "purl": "pkg:npm/data-view-buffer@1.0.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#866"]
+    },
+    {
+      "purl": "pkg:npm/data-view-byte-length@1.0.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#884"]
+    },
+    {
+      "purl": "pkg:npm/data-view-byte-offset@1.0.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#902"]
+    },
+    {
+      "purl": "pkg:npm/debug@3.2.7",
+      "evidence": [
+        "<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1253",
+        "<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1281",
+        "<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1426"
+      ]
+    },
+    {
+      "purl": "pkg:npm/debug@4.3.7",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#920"]
+    },
+    {
+      "purl": "pkg:npm/deep-is@0.1.4",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#938"]
+    },
+    {
+      "purl": "pkg:npm/define-data-property@1.1.4",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#945"]
+    },
+    {
+      "purl": "pkg:npm/define-properties@1.2.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#963"]
+    },
+    {
+      "purl": "pkg:npm/doctrine@2.1.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1436"]
+    },
+    {
+      "purl": "pkg:npm/doctrine@3.0.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#981"]
+    },
+    {
+      "purl": "pkg:npm/electron-to-chromium@1.5.63",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#994"]
+    },
+    {
+      "purl": "pkg:npm/emoji-regex@9.2.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1001"]
+    },
+    {
+      "purl": "pkg:npm/es-abstract@1.23.5",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1008"]
+    },
+    {
+      "purl": "pkg:npm/es-define-property@1.0.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1069"]
+    },
+    {
+      "purl": "pkg:npm/es-errors@1.3.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1082"]
+    },
+    {
+      "purl": "pkg:npm/es-object-atoms@1.0.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1092"]
+    },
+    {
+      "purl": "pkg:npm/es-set-tostringtag@2.0.3",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1105"]
+    },
+    {
+      "purl": "pkg:npm/es-shim-unscopables@1.0.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1120"]
+    },
+    {
+      "purl": "pkg:npm/es-to-primitive@1.2.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1130"]
+    },
+    {
+      "purl": "pkg:npm/escalade@3.2.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1148"]
+    },
+    {
+      "purl": "pkg:npm/escape-string-regexp@1.0.5",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1324"]
+    },
+    {
+      "purl": "pkg:npm/escape-string-regexp@4.0.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1158"]
+    },
+    {
+      "purl": "pkg:npm/eslint-config-prettier@9.1.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1228"]
+    },
+    {
+      "purl": "pkg:npm/eslint-import-resolver-node@0.3.9",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1241"]
+    },
+    {
+      "purl": "pkg:npm/eslint-module-utils@2.12.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1263"]
+    },
+    {
+      "purl": "pkg:npm/eslint-plugin-escompat@3.11.4",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1291"]
+    },
+    {
+      "purl": "pkg:npm/eslint-plugin-eslint-comments@3.2.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1304"]
+    },
+    {
+      "purl": "pkg:npm/eslint-plugin-filenames@1.3.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1334"]
+    },
+    {
+      "purl": "pkg:npm/eslint-plugin-github@5.0.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1350"]
+    },
+    {
+      "purl": "pkg:npm/eslint-plugin-i18n-text@1.0.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1382"]
+    },
+    {
+      "purl": "pkg:npm/eslint-plugin-import@2.31.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1392"]
+    },
+    {
+      "purl": "pkg:npm/eslint-plugin-jsx-a11y@6.10.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1459"]
+    },
+    {
+      "purl": "pkg:npm/eslint-plugin-no-only-tests@3.3.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1489"]
+    },
+    {
+      "purl": "pkg:npm/eslint-plugin-prettier@5.2.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1499"]
+    },
+    {
+      "purl": "pkg:npm/eslint-rule-documentation@1.0.23",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1530"]
+    },
+    {
+      "purl": "pkg:npm/eslint-scope@7.2.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1540"]
+    },
+    {
+      "purl": "pkg:npm/eslint-visitor-keys@3.4.3",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1557"]
+    },
+    {
+      "purl": "pkg:npm/eslint-visitor-keys@4.2.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#419"]
+    },
+    {
+      "purl": "pkg:npm/eslint@8.57.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1171"]
+    },
+    {
+      "purl": "pkg:npm/espree@9.6.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1570"]
+    },
+    {
+      "purl": "pkg:npm/esquery@1.6.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1588"]
+    },
+    {
+      "purl": "pkg:npm/esrecurse@4.3.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1601"]
+    },
+    {
+      "purl": "pkg:npm/estraverse@5.3.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1614"]
+    },
+    {
+      "purl": "pkg:npm/esutils@2.0.3",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1624"]
+    },
+    {
+      "purl": "pkg:npm/fast-deep-equal@3.1.3",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1634"]
+    },
+    {
+      "purl": "pkg:npm/fast-diff@1.3.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1641"]
+    },
+    {
+      "purl": "pkg:npm/fast-glob@3.3.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1648"]
+    },
+    {
+      "purl": "pkg:npm/fast-json-stable-stringify@2.1.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1678"]
+    },
+    {
+      "purl": "pkg:npm/fast-levenshtein@2.0.6",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1685"]
+    },
+    {
+      "purl": "pkg:npm/fastq@1.17.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1692"]
+    },
+    {
+      "purl": "pkg:npm/file-entry-cache@6.0.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1702"]
+    },
+    {
+      "purl": "pkg:npm/fill-range@7.1.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1715"]
+    },
+    {
+      "purl": "pkg:npm/find-up@5.0.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1728"]
+    },
+    {
+      "purl": "pkg:npm/flat-cache@3.2.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1745"]
+    },
+    {
+      "purl": "pkg:npm/flatted@3.3.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1760"]
+    },
+    {
+      "purl": "pkg:npm/for-each@0.3.3",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1767"]
+    },
+    {
+      "purl": "pkg:npm/fs.realpath@1.0.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1777"]
+    },
+    {
+      "purl": "pkg:npm/fsevents@2.3.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1784"]
+    },
+    {
+      "purl": "pkg:npm/function-bind@1.1.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1798"]
+    },
+    {
+      "purl": "pkg:npm/function.prototype.name@1.1.6",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1808"]
+    },
+    {
+      "purl": "pkg:npm/functions-have-names@1.2.3",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1827"]
+    },
+    {
+      "purl": "pkg:npm/get-intrinsic@1.2.4",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1837"]
+    },
+    {
+      "purl": "pkg:npm/get-symbol-description@1.0.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1857"]
+    },
+    {
+      "purl": "pkg:npm/glob-parent@5.1.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1665"]
+    },
+    {
+      "purl": "pkg:npm/glob-parent@6.0.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1897"]
+    },
+    {
+      "purl": "pkg:npm/glob@7.2.3",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1875"]
+    },
+    {
+      "purl": "pkg:npm/globals@13.24.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1910"]
+    },
+    {
+      "purl": "pkg:npm/globalthis@1.0.4",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1926"]
+    },
+    {
+      "purl": "pkg:npm/gopd@1.0.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1943"]
+    },
+    {
+      "purl": "pkg:npm/graphemer@1.4.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1956"]
+    },
+    {
+      "purl": "pkg:npm/has-bigints@1.0.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1963"]
+    },
+    {
+      "purl": "pkg:npm/has-flag@4.0.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1973"]
+    },
+    {
+      "purl": "pkg:npm/has-property-descriptors@1.0.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1983"]
+    },
+    {
+      "purl": "pkg:npm/has-proto@1.0.3",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1996"]
+    },
+    {
+      "purl": "pkg:npm/has-symbols@1.0.3",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2009"]
+    },
+    {
+      "purl": "pkg:npm/has-tostringtag@1.0.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2022"]
+    },
+    {
+      "purl": "pkg:npm/hasown@2.0.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2038"]
+    },
+    {
+      "purl": "pkg:npm/ignore@5.3.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2051"]
+    },
+    {
+      "purl": "pkg:npm/import-fresh@3.3.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2061"]
+    },
+    {
+      "purl": "pkg:npm/imurmurhash@0.1.4",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2078"]
+    },
+    {
+      "purl": "pkg:npm/inflight@1.0.6",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2088"]
+    },
+    {
+      "purl": "pkg:npm/inherits@2.0.4",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2100"]
+    },
+    {
+      "purl": "pkg:npm/internal-slot@1.0.7",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2107"]
+    },
+    {
+      "purl": "pkg:npm/is-array-buffer@3.0.4",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2122"]
+    },
+    {
+      "purl": "pkg:npm/is-bigint@1.0.4",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2139"]
+    },
+    {
+      "purl": "pkg:npm/is-boolean-object@1.1.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2152"]
+    },
+    {
+      "purl": "pkg:npm/is-callable@1.2.7",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2169"]
+    },
+    {
+      "purl": "pkg:npm/is-core-module@2.15.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2182"]
+    },
+    {
+      "purl": "pkg:npm/is-data-view@1.0.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2198"]
+    },
+    {
+      "purl": "pkg:npm/is-date-object@1.0.5",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2214"]
+    },
+    {
+      "purl": "pkg:npm/is-extglob@2.1.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2230"]
+    },
+    {
+      "purl": "pkg:npm/is-glob@4.0.3",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2240"]
+    },
+    {
+      "purl": "pkg:npm/is-negative-zero@2.0.3",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2253"]
+    },
+    {
+      "purl": "pkg:npm/is-number-object@1.0.7",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2276"]
+    },
+    {
+      "purl": "pkg:npm/is-number@7.0.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2266"]
+    },
+    {
+      "purl": "pkg:npm/is-path-inside@3.0.3",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2292"]
+    },
+    {
+      "purl": "pkg:npm/is-regex@1.1.4",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2302"]
+    },
+    {
+      "purl": "pkg:npm/is-shared-array-buffer@1.0.3",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2319"]
+    },
+    {
+      "purl": "pkg:npm/is-string@1.0.7",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2335"]
+    },
+    {
+      "purl": "pkg:npm/is-symbol@1.0.4",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2351"]
+    },
+    {
+      "purl": "pkg:npm/is-typed-array@1.1.13",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2367"]
+    },
+    {
+      "purl": "pkg:npm/is-weakref@1.0.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2383"]
+    },
+    {
+      "purl": "pkg:npm/isarray@2.0.5",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2396"]
+    },
+    {
+      "purl": "pkg:npm/isexe@2.0.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2403"]
+    },
+    {
+      "purl": "pkg:npm/js-yaml@4.1.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2410"]
+    },
+    {
+      "purl": "pkg:npm/json-buffer@3.0.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2423"]
+    },
+    {
+      "purl": "pkg:npm/json-schema-traverse@0.4.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2430"]
+    },
+    {
+      "purl": "pkg:npm/json-stable-stringify-without-jsonify@1.0.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2437"]
+    },
+    {
+      "purl": "pkg:npm/json5@1.0.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2444"]
+    },
+    {
+      "purl": "pkg:npm/jsx-ast-utils@3.3.5",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2457"]
+    },
+    {
+      "purl": "pkg:npm/keyv@4.5.4",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2473"]
+    },
+    {
+      "purl": "pkg:npm/language-subtag-registry@0.3.23",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2483"]
+    },
+    {
+      "purl": "pkg:npm/language-tags@1.0.9",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2490"]
+    },
+    {
+      "purl": "pkg:npm/levn@0.4.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2503"]
+    },
+    {
+      "purl": "pkg:npm/locate-path@6.0.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2517"]
+    },
+    {
+      "purl": "pkg:npm/lodash.camelcase@4.3.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2533"]
+    },
+    {
+      "purl": "pkg:npm/lodash.kebabcase@4.1.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2540"]
+    },
+    {
+      "purl": "pkg:npm/lodash.merge@4.6.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2547"]
+    },
+    {
+      "purl": "pkg:npm/lodash.snakecase@4.1.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2554"]
+    },
+    {
+      "purl": "pkg:npm/lodash.upperfirst@4.3.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2561"]
+    },
+    {
+      "purl": "pkg:npm/merge2@1.4.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2568"]
+    },
+    {
+      "purl": "pkg:npm/micromatch@4.0.8",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2578"]
+    },
+    {
+      "purl": "pkg:npm/minimatch@3.1.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2592"]
+    },
+    {
+      "purl": "pkg:npm/minimatch@9.0.5",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#357"]
+    },
+    {
+      "purl": "pkg:npm/minimist@1.2.8",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2605"]
+    },
+    {
+      "purl": "pkg:npm/ms@2.1.3",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2615"]
+    },
+    {
+      "purl": "pkg:npm/natural-compare@1.4.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2622"]
+    },
+    {
+      "purl": "pkg:npm/node-releases@2.0.18",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2629"]
+    },
+    {
+      "purl": "pkg:npm/object-inspect@1.13.3",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2636"]
+    },
+    {
+      "purl": "pkg:npm/object-keys@1.1.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2649"]
+    },
+    {
+      "purl": "pkg:npm/object.assign@4.1.5",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2659"]
+    },
+    {
+      "purl": "pkg:npm/object.fromentries@2.0.8",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2678"]
+    },
+    {
+      "purl": "pkg:npm/object.groupby@1.0.3",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2697"]
+    },
+    {
+      "purl": "pkg:npm/object.values@1.2.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2712"]
+    },
+    {
+      "purl": "pkg:npm/once@1.4.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2730"]
+    },
+    {
+      "purl": "pkg:npm/optionator@0.9.4",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2740"]
+    },
+    {
+      "purl": "pkg:npm/p-limit@3.1.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2758"]
+    },
+    {
+      "purl": "pkg:npm/p-locate@5.0.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2774"]
+    },
+    {
+      "purl": "pkg:npm/parent-module@1.0.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2790"]
+    },
+    {
+      "purl": "pkg:npm/path-exists@4.0.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2803"]
+    },
+    {
+      "purl": "pkg:npm/path-is-absolute@1.0.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2813"]
+    },
+    {
+      "purl": "pkg:npm/path-key@3.1.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2823"]
+    },
+    {
+      "purl": "pkg:npm/path-parse@1.0.7",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2833"]
+    },
+    {
+      "purl": "pkg:npm/picocolors@1.1.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2840"]
+    },
+    {
+      "purl": "pkg:npm/picomatch@2.3.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2847"]
+    },
+    {
+      "purl": "pkg:npm/playwright-core@1.27.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/node/package-lock.json#27"]
+    },
+    {
+      "purl": "pkg:npm/playwright-core@1.49.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2878"]
+    },
+    {
+      "purl": "pkg:npm/playwright@1.27.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/node/package-lock.json#12"]
+    },
+    {
+      "purl": "pkg:npm/playwright@1.49.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2860"]
+    },
+    {
+      "purl": "pkg:npm/possible-typed-array-names@1.0.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2890"]
+    },
+    {
+      "purl": "pkg:npm/prelude-ls@1.2.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2900"]
+    },
+    {
+      "purl": "pkg:npm/prettier-linter-helpers@1.0.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2926"]
+    },
+    {
+      "purl": "pkg:npm/prettier@3.3.3",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2910"]
+    },
+    {
+      "purl": "pkg:npm/punycode@2.3.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2939"]
+    },
+    {
+      "purl": "pkg:npm/queue-microtask@1.2.3",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2949"]
+    },
+    {
+      "purl": "pkg:npm/regexp.prototype.flags@1.5.3",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2970"]
+    },
+    {
+      "purl": "pkg:npm/resolve-from@4.0.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3007"]
+    },
+    {
+      "purl": "pkg:npm/resolve@1.22.8",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#2989"]
+    },
+    {
+      "purl": "pkg:npm/reusify@1.0.4",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3017"]
+    },
+    {
+      "purl": "pkg:npm/rimraf@3.0.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3028"]
+    },
+    {
+      "purl": "pkg:npm/run-parallel@1.2.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3045"]
+    },
+    {
+      "purl": "pkg:npm/safe-array-concat@1.1.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3069"]
+    },
+    {
+      "purl": "pkg:npm/safe-regex-test@1.0.3",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3088"]
+    },
+    {
+      "purl": "pkg:npm/semver@6.3.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#1449"]
+    },
+    {
+      "purl": "pkg:npm/semver@7.6.3",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3106"]
+    },
+    {
+      "purl": "pkg:npm/set-function-length@1.2.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3119"]
+    },
+    {
+      "purl": "pkg:npm/set-function-name@2.0.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3137"]
+    },
+    {
+      "purl": "pkg:npm/shebang-command@2.0.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3153"]
+    },
+    {
+      "purl": "pkg:npm/shebang-regex@3.0.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3166"]
+    },
+    {
+      "purl": "pkg:npm/side-channel@1.0.6",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3176"]
+    },
+    {
+      "purl": "pkg:npm/string.prototype.includes@2.0.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3195"]
+    },
+    {
+      "purl": "pkg:npm/string.prototype.trim@1.2.9",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3210"]
+    },
+    {
+      "purl": "pkg:npm/string.prototype.trimend@1.0.8",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3229"]
+    },
+    {
+      "purl": "pkg:npm/string.prototype.trimstart@1.0.8",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3244"]
+    },
+    {
+      "purl": "pkg:npm/strip-ansi@6.0.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3262"]
+    },
+    {
+      "purl": "pkg:npm/strip-bom@3.0.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3275"]
+    },
+    {
+      "purl": "pkg:npm/strip-json-comments@3.1.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3285"]
+    },
+    {
+      "purl": "pkg:npm/supports-color@7.2.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3298"]
+    },
+    {
+      "purl": "pkg:npm/supports-preserve-symlinks-flag@1.0.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3311"]
+    },
+    {
+      "purl": "pkg:npm/svg-element-attributes@1.3.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3324"]
+    },
+    {
+      "purl": "pkg:npm/synckit@0.9.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3335"]
+    },
+    {
+      "purl": "pkg:npm/text-table@0.2.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3352"]
+    },
+    {
+      "purl": "pkg:npm/to-regex-range@5.0.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3359"]
+    },
+    {
+      "purl": "pkg:npm/ts-api-utils@1.4.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3372"]
+    },
+    {
+      "purl": "pkg:npm/tsconfig-paths@3.15.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3385"]
+    },
+    {
+      "purl": "pkg:npm/tslib@2.8.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3398"]
+    },
+    {
+      "purl": "pkg:npm/type-check@0.4.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3405"]
+    },
+    {
+      "purl": "pkg:npm/type-fest@0.20.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3418"]
+    },
+    {
+      "purl": "pkg:npm/typed-array-buffer@1.0.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3431"]
+    },
+    {
+      "purl": "pkg:npm/typed-array-byte-length@1.0.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3446"]
+    },
+    {
+      "purl": "pkg:npm/typed-array-byte-offset@1.0.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3466"]
+    },
+    {
+      "purl": "pkg:npm/typed-array-length@1.0.6",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3487"]
+    },
+    {
+      "purl": "pkg:npm/typescript@5.6.3",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3508"]
+    },
+    {
+      "purl": "pkg:npm/unbox-primitive@1.0.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3523"]
+    },
+    {
+      "purl": "pkg:npm/update-browserslist-db@1.1.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3539"]
+    },
+    {
+      "purl": "pkg:npm/uri-js@4.4.1",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3570"]
+    },
+    {
+      "purl": "pkg:npm/which-boxed-primitive@1.0.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3596"]
+    },
+    {
+      "purl": "pkg:npm/which-typed-array@1.1.15",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3613"]
+    },
+    {
+      "purl": "pkg:npm/which@2.0.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3580"]
+    },
+    {
+      "purl": "pkg:npm/word-wrap@1.2.5",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3633"]
+    },
+    {
+      "purl": "pkg:npm/wrappy@1.0.2",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3643"]
+    },
+    {
+      "purl": "pkg:npm/yocto-queue@0.1.0",
+      "evidence": ["<repositories>/ZEISS+playwright-web-scraping/package-lock.json#3650"]
+    }
+  ],
+  "subprojects": [
+    {
+      "purl": "pkg:npm/playwright-web-scraping@1.0.0",
+      "definitionFile": "<repositories>/ZEISS+playwright-web-scraping/package.json",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": ["pkg:npm/playwright@1.49.0"]
+        },
+        {
+          "scope": "devDependencies",
+          "packages": [
+            "pkg:npm/eslint-config-prettier@9.1.0",
+            "pkg:npm/eslint-plugin-github@5.0.2",
+            "pkg:npm/eslint@8.57.1"
+          ]
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "from": "pkg:npm/%40eslint-community/eslint-utils@4.4.1",
+      "to": ["pkg:npm/eslint-visitor-keys@3.4.3", "pkg:npm/eslint@8.57.1"]
+    },
+    {
+      "from": "pkg:npm/%40eslint/eslintrc@2.1.4",
+      "to": [
+        "pkg:npm/ajv@6.12.6",
+        "pkg:npm/debug@4.3.7",
+        "pkg:npm/espree@9.6.1",
+        "pkg:npm/globals@13.24.0",
+        "pkg:npm/ignore@5.3.2",
+        "pkg:npm/import-fresh@3.3.0",
+        "pkg:npm/js-yaml@4.1.0",
+        "pkg:npm/minimatch@3.1.2",
+        "pkg:npm/strip-json-comments@3.1.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/%40humanwhocodes/config-array@0.13.0",
+      "to": ["pkg:npm/%40humanwhocodes/object-schema@2.0.3", "pkg:npm/debug@4.3.7", "pkg:npm/minimatch@3.1.2"]
+    },
+    {
+      "from": "pkg:npm/%40nodelib/fs.scandir@2.1.5",
+      "to": ["pkg:npm/%40nodelib/fs.stat@2.0.5", "pkg:npm/run-parallel@1.2.0"]
+    },
+    {
+      "from": "pkg:npm/%40nodelib/fs.walk@1.2.8",
+      "to": ["pkg:npm/%40nodelib/fs.scandir@2.1.5", "pkg:npm/fastq@1.17.1"]
+    },
+    {
+      "from": "pkg:npm/%40typescript-eslint/eslint-plugin@8.15.0",
+      "to": [
+        "pkg:npm/%40eslint-community/regexpp@4.12.1",
+        "pkg:npm/%40typescript-eslint/parser@8.15.0",
+        "pkg:npm/%40typescript-eslint/scope-manager@8.15.0",
+        "pkg:npm/%40typescript-eslint/type-utils@8.15.0",
+        "pkg:npm/%40typescript-eslint/utils@8.15.0",
+        "pkg:npm/%40typescript-eslint/visitor-keys@8.15.0",
+        "pkg:npm/eslint@8.57.1",
+        "pkg:npm/graphemer@1.4.0",
+        "pkg:npm/ignore@5.3.2",
+        "pkg:npm/natural-compare@1.4.0",
+        "pkg:npm/ts-api-utils@1.4.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/%40typescript-eslint/parser@8.15.0",
+      "to": [
+        "pkg:npm/%40typescript-eslint/scope-manager@8.15.0",
+        "pkg:npm/%40typescript-eslint/types@8.15.0",
+        "pkg:npm/%40typescript-eslint/typescript-estree@8.15.0",
+        "pkg:npm/%40typescript-eslint/visitor-keys@8.15.0",
+        "pkg:npm/debug@4.3.7",
+        "pkg:npm/eslint@8.57.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/%40typescript-eslint/scope-manager@8.15.0",
+      "to": ["pkg:npm/%40typescript-eslint/types@8.15.0", "pkg:npm/%40typescript-eslint/visitor-keys@8.15.0"]
+    },
+    {
+      "from": "pkg:npm/%40typescript-eslint/type-utils@8.15.0",
+      "to": [
+        "pkg:npm/%40typescript-eslint/typescript-estree@8.15.0",
+        "pkg:npm/%40typescript-eslint/utils@8.15.0",
+        "pkg:npm/debug@4.3.7",
+        "pkg:npm/eslint@8.57.1",
+        "pkg:npm/ts-api-utils@1.4.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/%40typescript-eslint/typescript-estree@8.15.0",
+      "to": [
+        "pkg:npm/%40typescript-eslint/types@8.15.0",
+        "pkg:npm/%40typescript-eslint/visitor-keys@8.15.0",
+        "pkg:npm/debug@4.3.7",
+        "pkg:npm/fast-glob@3.3.2",
+        "pkg:npm/is-glob@4.0.3",
+        "pkg:npm/minimatch@3.1.2",
+        "pkg:npm/semver@7.6.3",
+        "pkg:npm/ts-api-utils@1.4.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/%40typescript-eslint/utils@8.15.0",
+      "to": [
+        "pkg:npm/%40eslint-community/eslint-utils@4.4.1",
+        "pkg:npm/%40typescript-eslint/scope-manager@8.15.0",
+        "pkg:npm/%40typescript-eslint/types@8.15.0",
+        "pkg:npm/%40typescript-eslint/typescript-estree@8.15.0",
+        "pkg:npm/eslint@8.57.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/%40typescript-eslint/visitor-keys@8.15.0",
+      "to": ["pkg:npm/%40typescript-eslint/types@8.15.0", "pkg:npm/eslint-visitor-keys@3.4.3"]
+    },
+    {
+      "from": "pkg:npm/acorn-jsx@5.3.2",
+      "to": ["pkg:npm/acorn@8.14.0"]
+    },
+    {
+      "from": "pkg:npm/ajv@6.12.6",
+      "to": [
+        "pkg:npm/fast-deep-equal@3.1.3",
+        "pkg:npm/fast-json-stable-stringify@2.1.0",
+        "pkg:npm/json-schema-traverse@0.4.1",
+        "pkg:npm/uri-js@4.4.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/ansi-styles@4.3.0",
+      "to": ["pkg:npm/color-convert@2.0.1"]
+    },
+    {
+      "from": "pkg:npm/array-buffer-byte-length@1.0.1",
+      "to": ["pkg:npm/call-bind@1.0.7", "pkg:npm/is-array-buffer@3.0.4"]
+    },
+    {
+      "from": "pkg:npm/array-includes@3.1.8",
+      "to": [
+        "pkg:npm/call-bind@1.0.7",
+        "pkg:npm/define-properties@1.2.1",
+        "pkg:npm/es-abstract@1.23.5",
+        "pkg:npm/es-object-atoms@1.0.0",
+        "pkg:npm/get-intrinsic@1.2.4",
+        "pkg:npm/is-string@1.0.7"
+      ]
+    },
+    {
+      "from": "pkg:npm/array.prototype.findlastindex@1.2.5",
+      "to": [
+        "pkg:npm/call-bind@1.0.7",
+        "pkg:npm/define-properties@1.2.1",
+        "pkg:npm/es-abstract@1.23.5",
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/es-object-atoms@1.0.0",
+        "pkg:npm/es-shim-unscopables@1.0.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/array.prototype.flat@1.3.2",
+      "to": [
+        "pkg:npm/call-bind@1.0.7",
+        "pkg:npm/define-properties@1.2.1",
+        "pkg:npm/es-abstract@1.23.5",
+        "pkg:npm/es-shim-unscopables@1.0.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/array.prototype.flatmap@1.3.2",
+      "to": [
+        "pkg:npm/call-bind@1.0.7",
+        "pkg:npm/define-properties@1.2.1",
+        "pkg:npm/es-abstract@1.23.5",
+        "pkg:npm/es-shim-unscopables@1.0.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/arraybuffer.prototype.slice@1.0.3",
+      "to": [
+        "pkg:npm/array-buffer-byte-length@1.0.1",
+        "pkg:npm/call-bind@1.0.7",
+        "pkg:npm/define-properties@1.2.1",
+        "pkg:npm/es-abstract@1.23.5",
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/get-intrinsic@1.2.4",
+        "pkg:npm/is-array-buffer@3.0.4",
+        "pkg:npm/is-shared-array-buffer@1.0.3"
+      ]
+    },
+    {
+      "from": "pkg:npm/available-typed-arrays@1.0.7",
+      "to": ["pkg:npm/possible-typed-array-names@1.0.0"]
+    },
+    {
+      "from": "pkg:npm/brace-expansion@1.1.11",
+      "to": ["pkg:npm/balanced-match@1.0.2", "pkg:npm/concat-map@0.0.1"]
+    },
+    {
+      "from": "pkg:npm/brace-expansion@2.0.1",
+      "to": ["pkg:npm/balanced-match@1.0.2"]
+    },
+    {
+      "from": "pkg:npm/braces@3.0.3",
+      "to": ["pkg:npm/fill-range@7.1.1"]
+    },
+    {
+      "from": "pkg:npm/browserslist@4.24.2",
+      "to": [
+        "pkg:npm/caniuse-lite@1.0.30001680",
+        "pkg:npm/electron-to-chromium@1.5.63",
+        "pkg:npm/node-releases@2.0.18",
+        "pkg:npm/update-browserslist-db@1.1.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/call-bind@1.0.7",
+      "to": [
+        "pkg:npm/es-define-property@1.0.0",
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/function-bind@1.1.2",
+        "pkg:npm/get-intrinsic@1.2.4",
+        "pkg:npm/set-function-length@1.2.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/chalk@4.1.2",
+      "to": ["pkg:npm/ansi-styles@4.3.0", "pkg:npm/supports-color@7.2.0"]
+    },
+    {
+      "from": "pkg:npm/color-convert@2.0.1",
+      "to": ["pkg:npm/color-name@1.1.4"]
+    },
+    {
+      "from": "pkg:npm/cross-spawn@7.0.6",
+      "to": ["pkg:npm/path-key@3.1.1", "pkg:npm/shebang-command@2.0.0", "pkg:npm/which@2.0.2"]
+    },
+    {
+      "from": "pkg:npm/data-view-buffer@1.0.1",
+      "to": ["pkg:npm/call-bind@1.0.7", "pkg:npm/es-errors@1.3.0", "pkg:npm/is-data-view@1.0.1"]
+    },
+    {
+      "from": "pkg:npm/data-view-byte-length@1.0.1",
+      "to": ["pkg:npm/call-bind@1.0.7", "pkg:npm/es-errors@1.3.0", "pkg:npm/is-data-view@1.0.1"]
+    },
+    {
+      "from": "pkg:npm/data-view-byte-offset@1.0.0",
+      "to": ["pkg:npm/call-bind@1.0.7", "pkg:npm/es-errors@1.3.0", "pkg:npm/is-data-view@1.0.1"]
+    },
+    {
+      "from": "pkg:npm/debug@3.2.7",
+      "to": ["pkg:npm/ms@2.1.3"]
+    },
+    {
+      "from": "pkg:npm/debug@4.3.7",
+      "to": ["pkg:npm/ms@2.1.3"]
+    },
+    {
+      "from": "pkg:npm/define-data-property@1.1.4",
+      "to": ["pkg:npm/es-define-property@1.0.0", "pkg:npm/es-errors@1.3.0", "pkg:npm/gopd@1.0.1"]
+    },
+    {
+      "from": "pkg:npm/define-properties@1.2.1",
+      "to": [
+        "pkg:npm/define-data-property@1.1.4",
+        "pkg:npm/has-property-descriptors@1.0.2",
+        "pkg:npm/object-keys@1.1.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/doctrine@2.1.0",
+      "to": ["pkg:npm/esutils@2.0.3"]
+    },
+    {
+      "from": "pkg:npm/doctrine@3.0.0",
+      "to": ["pkg:npm/esutils@2.0.3"]
+    },
+    {
+      "from": "pkg:npm/es-abstract@1.23.5",
+      "to": [
+        "pkg:npm/array-buffer-byte-length@1.0.1",
+        "pkg:npm/arraybuffer.prototype.slice@1.0.3",
+        "pkg:npm/available-typed-arrays@1.0.7",
+        "pkg:npm/call-bind@1.0.7",
+        "pkg:npm/data-view-buffer@1.0.1",
+        "pkg:npm/data-view-byte-length@1.0.1",
+        "pkg:npm/data-view-byte-offset@1.0.0",
+        "pkg:npm/es-define-property@1.0.0",
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/es-object-atoms@1.0.0",
+        "pkg:npm/es-set-tostringtag@2.0.3",
+        "pkg:npm/es-to-primitive@1.2.1",
+        "pkg:npm/function.prototype.name@1.1.6",
+        "pkg:npm/get-intrinsic@1.2.4",
+        "pkg:npm/get-symbol-description@1.0.2",
+        "pkg:npm/globalthis@1.0.4",
+        "pkg:npm/gopd@1.0.1",
+        "pkg:npm/has-property-descriptors@1.0.2",
+        "pkg:npm/has-proto@1.0.3",
+        "pkg:npm/has-symbols@1.0.3",
+        "pkg:npm/hasown@2.0.2",
+        "pkg:npm/internal-slot@1.0.7",
+        "pkg:npm/is-array-buffer@3.0.4",
+        "pkg:npm/is-callable@1.2.7",
+        "pkg:npm/is-data-view@1.0.1",
+        "pkg:npm/is-negative-zero@2.0.3",
+        "pkg:npm/is-regex@1.1.4",
+        "pkg:npm/is-shared-array-buffer@1.0.3",
+        "pkg:npm/is-string@1.0.7",
+        "pkg:npm/is-typed-array@1.1.13",
+        "pkg:npm/is-weakref@1.0.2",
+        "pkg:npm/object-inspect@1.13.3",
+        "pkg:npm/object-keys@1.1.1",
+        "pkg:npm/object.assign@4.1.5",
+        "pkg:npm/regexp.prototype.flags@1.5.3",
+        "pkg:npm/safe-array-concat@1.1.2",
+        "pkg:npm/safe-regex-test@1.0.3",
+        "pkg:npm/string.prototype.trim@1.2.9",
+        "pkg:npm/string.prototype.trimend@1.0.8",
+        "pkg:npm/string.prototype.trimstart@1.0.8",
+        "pkg:npm/typed-array-buffer@1.0.2",
+        "pkg:npm/typed-array-byte-length@1.0.1",
+        "pkg:npm/typed-array-byte-offset@1.0.2",
+        "pkg:npm/typed-array-length@1.0.6",
+        "pkg:npm/unbox-primitive@1.0.2",
+        "pkg:npm/which-typed-array@1.1.15"
+      ]
+    },
+    {
+      "from": "pkg:npm/es-define-property@1.0.0",
+      "to": ["pkg:npm/get-intrinsic@1.2.4"]
+    },
+    {
+      "from": "pkg:npm/es-object-atoms@1.0.0",
+      "to": ["pkg:npm/es-errors@1.3.0"]
+    },
+    {
+      "from": "pkg:npm/es-set-tostringtag@2.0.3",
+      "to": ["pkg:npm/get-intrinsic@1.2.4", "pkg:npm/has-tostringtag@1.0.2", "pkg:npm/hasown@2.0.2"]
+    },
+    {
+      "from": "pkg:npm/es-shim-unscopables@1.0.2",
+      "to": ["pkg:npm/hasown@2.0.2"]
+    },
+    {
+      "from": "pkg:npm/es-to-primitive@1.2.1",
+      "to": ["pkg:npm/is-callable@1.2.7", "pkg:npm/is-date-object@1.0.5", "pkg:npm/is-symbol@1.0.4"]
+    },
+    {
+      "from": "pkg:npm/eslint-config-prettier@9.1.0",
+      "to": ["pkg:npm/eslint@8.57.1"]
+    },
+    {
+      "from": "pkg:npm/eslint-import-resolver-node@0.3.9",
+      "to": ["pkg:npm/debug@4.3.7", "pkg:npm/is-core-module@2.15.1", "pkg:npm/resolve@1.22.8"]
+    },
+    {
+      "from": "pkg:npm/eslint-module-utils@2.12.0",
+      "to": ["pkg:npm/debug@4.3.7"]
+    },
+    {
+      "from": "pkg:npm/eslint-plugin-escompat@3.11.4",
+      "to": ["pkg:npm/browserslist@4.24.2", "pkg:npm/eslint@8.57.1"]
+    },
+    {
+      "from": "pkg:npm/eslint-plugin-eslint-comments@3.2.0",
+      "to": ["pkg:npm/escape-string-regexp@4.0.0", "pkg:npm/eslint@8.57.1", "pkg:npm/ignore@5.3.2"]
+    },
+    {
+      "from": "pkg:npm/eslint-plugin-filenames@1.3.2",
+      "to": [
+        "pkg:npm/eslint@8.57.1",
+        "pkg:npm/lodash.camelcase@4.3.0",
+        "pkg:npm/lodash.kebabcase@4.1.1",
+        "pkg:npm/lodash.snakecase@4.1.1",
+        "pkg:npm/lodash.upperfirst@4.3.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/eslint-plugin-github@5.0.2",
+      "to": [
+        "pkg:npm/%40github/browserslist-config@1.0.0",
+        "pkg:npm/%40typescript-eslint/eslint-plugin@8.15.0",
+        "pkg:npm/%40typescript-eslint/parser@8.15.0",
+        "pkg:npm/aria-query@5.3.2",
+        "pkg:npm/eslint-config-prettier@9.1.0",
+        "pkg:npm/eslint-plugin-escompat@3.11.4",
+        "pkg:npm/eslint-plugin-eslint-comments@3.2.0",
+        "pkg:npm/eslint-plugin-filenames@1.3.2",
+        "pkg:npm/eslint-plugin-i18n-text@1.0.1",
+        "pkg:npm/eslint-plugin-import@2.31.0",
+        "pkg:npm/eslint-plugin-jsx-a11y@6.10.2",
+        "pkg:npm/eslint-plugin-no-only-tests@3.3.0",
+        "pkg:npm/eslint-plugin-prettier@5.2.1",
+        "pkg:npm/eslint-rule-documentation@1.0.23",
+        "pkg:npm/eslint@8.57.1",
+        "pkg:npm/jsx-ast-utils@3.3.5",
+        "pkg:npm/prettier@3.3.3",
+        "pkg:npm/svg-element-attributes@1.3.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/eslint-plugin-i18n-text@1.0.1",
+      "to": ["pkg:npm/eslint@8.57.1"]
+    },
+    {
+      "from": "pkg:npm/eslint-plugin-import@2.31.0",
+      "to": [
+        "pkg:npm/%40rtsao/scc@1.1.0",
+        "pkg:npm/array-includes@3.1.8",
+        "pkg:npm/array.prototype.findlastindex@1.2.5",
+        "pkg:npm/array.prototype.flat@1.3.2",
+        "pkg:npm/array.prototype.flatmap@1.3.2",
+        "pkg:npm/debug@4.3.7",
+        "pkg:npm/doctrine@3.0.0",
+        "pkg:npm/eslint-import-resolver-node@0.3.9",
+        "pkg:npm/eslint-module-utils@2.12.0",
+        "pkg:npm/eslint@8.57.1",
+        "pkg:npm/hasown@2.0.2",
+        "pkg:npm/is-core-module@2.15.1",
+        "pkg:npm/is-glob@4.0.3",
+        "pkg:npm/minimatch@3.1.2",
+        "pkg:npm/object.fromentries@2.0.8",
+        "pkg:npm/object.groupby@1.0.3",
+        "pkg:npm/object.values@1.2.0",
+        "pkg:npm/semver@7.6.3",
+        "pkg:npm/string.prototype.trimend@1.0.8",
+        "pkg:npm/tsconfig-paths@3.15.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/eslint-plugin-jsx-a11y@6.10.2",
+      "to": [
+        "pkg:npm/aria-query@5.3.2",
+        "pkg:npm/array-includes@3.1.8",
+        "pkg:npm/array.prototype.flatmap@1.3.2",
+        "pkg:npm/ast-types-flow@0.0.8",
+        "pkg:npm/axe-core@4.10.2",
+        "pkg:npm/axobject-query@4.1.0",
+        "pkg:npm/damerau-levenshtein@1.0.8",
+        "pkg:npm/emoji-regex@9.2.2",
+        "pkg:npm/eslint@8.57.1",
+        "pkg:npm/hasown@2.0.2",
+        "pkg:npm/jsx-ast-utils@3.3.5",
+        "pkg:npm/language-tags@1.0.9",
+        "pkg:npm/minimatch@3.1.2",
+        "pkg:npm/object.fromentries@2.0.8",
+        "pkg:npm/safe-regex-test@1.0.3",
+        "pkg:npm/string.prototype.includes@2.0.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/eslint-plugin-prettier@5.2.1",
+      "to": [
+        "pkg:npm/eslint-config-prettier@9.1.0",
+        "pkg:npm/eslint@8.57.1",
+        "pkg:npm/prettier-linter-helpers@1.0.0",
+        "pkg:npm/prettier@3.3.3",
+        "pkg:npm/synckit@0.9.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/eslint-scope@7.2.2",
+      "to": ["pkg:npm/esrecurse@4.3.0", "pkg:npm/estraverse@5.3.0"]
+    },
+    {
+      "from": "pkg:npm/eslint@8.57.1",
+      "to": [
+        "pkg:npm/%40eslint-community/eslint-utils@4.4.1",
+        "pkg:npm/%40eslint-community/regexpp@4.12.1",
+        "pkg:npm/%40eslint/eslintrc@2.1.4",
+        "pkg:npm/%40eslint/js@8.57.1",
+        "pkg:npm/%40humanwhocodes/config-array@0.13.0",
+        "pkg:npm/%40humanwhocodes/module-importer@1.0.1",
+        "pkg:npm/%40nodelib/fs.walk@1.2.8",
+        "pkg:npm/%40ungap/structured-clone@1.2.0",
+        "pkg:npm/ajv@6.12.6",
+        "pkg:npm/chalk@4.1.2",
+        "pkg:npm/cross-spawn@7.0.6",
+        "pkg:npm/debug@4.3.7",
+        "pkg:npm/doctrine@3.0.0",
+        "pkg:npm/escape-string-regexp@4.0.0",
+        "pkg:npm/eslint-scope@7.2.2",
+        "pkg:npm/eslint-visitor-keys@3.4.3",
+        "pkg:npm/espree@9.6.1",
+        "pkg:npm/esquery@1.6.0",
+        "pkg:npm/esutils@2.0.3",
+        "pkg:npm/fast-deep-equal@3.1.3",
+        "pkg:npm/file-entry-cache@6.0.1",
+        "pkg:npm/find-up@5.0.0",
+        "pkg:npm/glob-parent@6.0.2",
+        "pkg:npm/globals@13.24.0",
+        "pkg:npm/graphemer@1.4.0",
+        "pkg:npm/ignore@5.3.2",
+        "pkg:npm/imurmurhash@0.1.4",
+        "pkg:npm/is-glob@4.0.3",
+        "pkg:npm/is-path-inside@3.0.3",
+        "pkg:npm/js-yaml@4.1.0",
+        "pkg:npm/json-stable-stringify-without-jsonify@1.0.1",
+        "pkg:npm/levn@0.4.1",
+        "pkg:npm/lodash.merge@4.6.2",
+        "pkg:npm/minimatch@3.1.2",
+        "pkg:npm/natural-compare@1.4.0",
+        "pkg:npm/optionator@0.9.4",
+        "pkg:npm/strip-ansi@6.0.1",
+        "pkg:npm/text-table@0.2.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/espree@9.6.1",
+      "to": ["pkg:npm/acorn-jsx@5.3.2", "pkg:npm/acorn@8.14.0", "pkg:npm/eslint-visitor-keys@3.4.3"]
+    },
+    {
+      "from": "pkg:npm/esquery@1.6.0",
+      "to": ["pkg:npm/estraverse@5.3.0"]
+    },
+    {
+      "from": "pkg:npm/esrecurse@4.3.0",
+      "to": ["pkg:npm/estraverse@5.3.0"]
+    },
+    {
+      "from": "pkg:npm/fast-glob@3.3.2",
+      "to": [
+        "pkg:npm/%40nodelib/fs.stat@2.0.5",
+        "pkg:npm/%40nodelib/fs.walk@1.2.8",
+        "pkg:npm/glob-parent@6.0.2",
+        "pkg:npm/merge2@1.4.1",
+        "pkg:npm/micromatch@4.0.8"
+      ]
+    },
+    {
+      "from": "pkg:npm/fastq@1.17.1",
+      "to": ["pkg:npm/reusify@1.0.4"]
+    },
+    {
+      "from": "pkg:npm/file-entry-cache@6.0.1",
+      "to": ["pkg:npm/flat-cache@3.2.0"]
+    },
+    {
+      "from": "pkg:npm/fill-range@7.1.1",
+      "to": ["pkg:npm/to-regex-range@5.0.1"]
+    },
+    {
+      "from": "pkg:npm/find-up@5.0.0",
+      "to": ["pkg:npm/locate-path@6.0.0", "pkg:npm/path-exists@4.0.0"]
+    },
+    {
+      "from": "pkg:npm/flat-cache@3.2.0",
+      "to": ["pkg:npm/flatted@3.3.2", "pkg:npm/keyv@4.5.4", "pkg:npm/rimraf@3.0.2"]
+    },
+    {
+      "from": "pkg:npm/for-each@0.3.3",
+      "to": ["pkg:npm/is-callable@1.2.7"]
+    },
+    {
+      "from": "pkg:npm/function.prototype.name@1.1.6",
+      "to": [
+        "pkg:npm/call-bind@1.0.7",
+        "pkg:npm/define-properties@1.2.1",
+        "pkg:npm/es-abstract@1.23.5",
+        "pkg:npm/functions-have-names@1.2.3"
+      ]
+    },
+    {
+      "from": "pkg:npm/get-intrinsic@1.2.4",
+      "to": [
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/function-bind@1.1.2",
+        "pkg:npm/has-proto@1.0.3",
+        "pkg:npm/has-symbols@1.0.3",
+        "pkg:npm/hasown@2.0.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/get-symbol-description@1.0.2",
+      "to": ["pkg:npm/call-bind@1.0.7", "pkg:npm/es-errors@1.3.0", "pkg:npm/get-intrinsic@1.2.4"]
+    },
+    {
+      "from": "pkg:npm/glob-parent@5.1.2",
+      "to": ["pkg:npm/is-glob@4.0.3"]
+    },
+    {
+      "from": "pkg:npm/glob-parent@6.0.2",
+      "to": ["pkg:npm/is-glob@4.0.3"]
+    },
+    {
+      "from": "pkg:npm/glob@7.2.3",
+      "to": [
+        "pkg:npm/fs.realpath@1.0.0",
+        "pkg:npm/inflight@1.0.6",
+        "pkg:npm/inherits@2.0.4",
+        "pkg:npm/minimatch@3.1.2",
+        "pkg:npm/once@1.4.0",
+        "pkg:npm/path-is-absolute@1.0.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/globals@13.24.0",
+      "to": ["pkg:npm/type-fest@0.20.2"]
+    },
+    {
+      "from": "pkg:npm/globalthis@1.0.4",
+      "to": ["pkg:npm/define-properties@1.2.1", "pkg:npm/gopd@1.0.1"]
+    },
+    {
+      "from": "pkg:npm/gopd@1.0.1",
+      "to": ["pkg:npm/get-intrinsic@1.2.4"]
+    },
+    {
+      "from": "pkg:npm/has-property-descriptors@1.0.2",
+      "to": ["pkg:npm/es-define-property@1.0.0"]
+    },
+    {
+      "from": "pkg:npm/has-tostringtag@1.0.2",
+      "to": ["pkg:npm/has-symbols@1.0.3"]
+    },
+    {
+      "from": "pkg:npm/hasown@2.0.2",
+      "to": ["pkg:npm/function-bind@1.1.2"]
+    },
+    {
+      "from": "pkg:npm/import-fresh@3.3.0",
+      "to": ["pkg:npm/parent-module@1.0.1", "pkg:npm/resolve-from@4.0.0"]
+    },
+    {
+      "from": "pkg:npm/inflight@1.0.6",
+      "to": ["pkg:npm/once@1.4.0", "pkg:npm/wrappy@1.0.2"]
+    },
+    {
+      "from": "pkg:npm/internal-slot@1.0.7",
+      "to": ["pkg:npm/es-errors@1.3.0", "pkg:npm/hasown@2.0.2", "pkg:npm/side-channel@1.0.6"]
+    },
+    {
+      "from": "pkg:npm/is-array-buffer@3.0.4",
+      "to": ["pkg:npm/call-bind@1.0.7", "pkg:npm/get-intrinsic@1.2.4"]
+    },
+    {
+      "from": "pkg:npm/is-bigint@1.0.4",
+      "to": ["pkg:npm/has-bigints@1.0.2"]
+    },
+    {
+      "from": "pkg:npm/is-boolean-object@1.1.2",
+      "to": ["pkg:npm/call-bind@1.0.7", "pkg:npm/has-tostringtag@1.0.2"]
+    },
+    {
+      "from": "pkg:npm/is-core-module@2.15.1",
+      "to": ["pkg:npm/hasown@2.0.2"]
+    },
+    {
+      "from": "pkg:npm/is-data-view@1.0.1",
+      "to": ["pkg:npm/is-typed-array@1.1.13"]
+    },
+    {
+      "from": "pkg:npm/is-date-object@1.0.5",
+      "to": ["pkg:npm/has-tostringtag@1.0.2"]
+    },
+    {
+      "from": "pkg:npm/is-glob@4.0.3",
+      "to": ["pkg:npm/is-extglob@2.1.1"]
+    },
+    {
+      "from": "pkg:npm/is-number-object@1.0.7",
+      "to": ["pkg:npm/has-tostringtag@1.0.2"]
+    },
+    {
+      "from": "pkg:npm/is-regex@1.1.4",
+      "to": ["pkg:npm/call-bind@1.0.7", "pkg:npm/has-tostringtag@1.0.2"]
+    },
+    {
+      "from": "pkg:npm/is-shared-array-buffer@1.0.3",
+      "to": ["pkg:npm/call-bind@1.0.7"]
+    },
+    {
+      "from": "pkg:npm/is-string@1.0.7",
+      "to": ["pkg:npm/has-tostringtag@1.0.2"]
+    },
+    {
+      "from": "pkg:npm/is-symbol@1.0.4",
+      "to": ["pkg:npm/has-symbols@1.0.3"]
+    },
+    {
+      "from": "pkg:npm/is-typed-array@1.1.13",
+      "to": ["pkg:npm/which-typed-array@1.1.15"]
+    },
+    {
+      "from": "pkg:npm/is-weakref@1.0.2",
+      "to": ["pkg:npm/call-bind@1.0.7"]
+    },
+    {
+      "from": "pkg:npm/js-yaml@4.1.0",
+      "to": ["pkg:npm/argparse@2.0.1"]
+    },
+    {
+      "from": "pkg:npm/json5@1.0.2",
+      "to": ["pkg:npm/minimist@1.2.8"]
+    },
+    {
+      "from": "pkg:npm/jsx-ast-utils@3.3.5",
+      "to": [
+        "pkg:npm/array-includes@3.1.8",
+        "pkg:npm/array.prototype.flat@1.3.2",
+        "pkg:npm/object.assign@4.1.5",
+        "pkg:npm/object.values@1.2.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/keyv@4.5.4",
+      "to": ["pkg:npm/json-buffer@3.0.1"]
+    },
+    {
+      "from": "pkg:npm/language-tags@1.0.9",
+      "to": ["pkg:npm/language-subtag-registry@0.3.23"]
+    },
+    {
+      "from": "pkg:npm/levn@0.4.1",
+      "to": ["pkg:npm/prelude-ls@1.2.1", "pkg:npm/type-check@0.4.0"]
+    },
+    {
+      "from": "pkg:npm/locate-path@6.0.0",
+      "to": ["pkg:npm/p-locate@5.0.0"]
+    },
+    {
+      "from": "pkg:npm/micromatch@4.0.8",
+      "to": ["pkg:npm/braces@3.0.3", "pkg:npm/picomatch@2.3.1"]
+    },
+    {
+      "from": "pkg:npm/minimatch@3.1.2",
+      "to": ["pkg:npm/brace-expansion@1.1.11"]
+    },
+    {
+      "from": "pkg:npm/minimatch@9.0.5",
+      "to": ["pkg:npm/brace-expansion@1.1.11"]
+    },
+    {
+      "from": "pkg:npm/object.assign@4.1.5",
+      "to": [
+        "pkg:npm/call-bind@1.0.7",
+        "pkg:npm/define-properties@1.2.1",
+        "pkg:npm/has-symbols@1.0.3",
+        "pkg:npm/object-keys@1.1.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/object.fromentries@2.0.8",
+      "to": [
+        "pkg:npm/call-bind@1.0.7",
+        "pkg:npm/define-properties@1.2.1",
+        "pkg:npm/es-abstract@1.23.5",
+        "pkg:npm/es-object-atoms@1.0.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/object.groupby@1.0.3",
+      "to": ["pkg:npm/call-bind@1.0.7", "pkg:npm/define-properties@1.2.1", "pkg:npm/es-abstract@1.23.5"]
+    },
+    {
+      "from": "pkg:npm/object.values@1.2.0",
+      "to": ["pkg:npm/call-bind@1.0.7", "pkg:npm/define-properties@1.2.1", "pkg:npm/es-object-atoms@1.0.0"]
+    },
+    {
+      "from": "pkg:npm/once@1.4.0",
+      "to": ["pkg:npm/wrappy@1.0.2"]
+    },
+    {
+      "from": "pkg:npm/optionator@0.9.4",
+      "to": [
+        "pkg:npm/deep-is@0.1.4",
+        "pkg:npm/fast-levenshtein@2.0.6",
+        "pkg:npm/levn@0.4.1",
+        "pkg:npm/prelude-ls@1.2.1",
+        "pkg:npm/type-check@0.4.0",
+        "pkg:npm/word-wrap@1.2.5"
+      ]
+    },
+    {
+      "from": "pkg:npm/p-limit@3.1.0",
+      "to": ["pkg:npm/yocto-queue@0.1.0"]
+    },
+    {
+      "from": "pkg:npm/p-locate@5.0.0",
+      "to": ["pkg:npm/p-limit@3.1.0"]
+    },
+    {
+      "from": "pkg:npm/parent-module@1.0.1",
+      "to": ["pkg:npm/callsites@3.1.0"]
+    },
+    {
+      "from": "pkg:npm/playwright-web-scraping@1.0.0",
+      "to": [
+        "pkg:npm/eslint-config-prettier@9.1.0",
+        "pkg:npm/eslint-plugin-github@5.0.2",
+        "pkg:npm/eslint@8.57.1",
+        "pkg:npm/playwright@1.49.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/playwright@1.27.0",
+      "to": ["pkg:npm/playwright-core@1.27.0"]
+    },
+    {
+      "from": "pkg:npm/playwright@1.49.0",
+      "to": ["pkg:npm/fsevents@2.3.2", "pkg:npm/playwright-core@1.49.0"]
+    },
+    {
+      "from": "pkg:npm/prettier-linter-helpers@1.0.0",
+      "to": ["pkg:npm/fast-diff@1.3.0"]
+    },
+    {
+      "from": "pkg:npm/regexp.prototype.flags@1.5.3",
+      "to": [
+        "pkg:npm/call-bind@1.0.7",
+        "pkg:npm/define-properties@1.2.1",
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/set-function-name@2.0.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/resolve@1.22.8",
+      "to": [
+        "pkg:npm/is-core-module@2.15.1",
+        "pkg:npm/path-parse@1.0.7",
+        "pkg:npm/supports-preserve-symlinks-flag@1.0.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/rimraf@3.0.2",
+      "to": ["pkg:npm/glob@7.2.3"]
+    },
+    {
+      "from": "pkg:npm/run-parallel@1.2.0",
+      "to": ["pkg:npm/queue-microtask@1.2.3"]
+    },
+    {
+      "from": "pkg:npm/safe-array-concat@1.1.2",
+      "to": [
+        "pkg:npm/call-bind@1.0.7",
+        "pkg:npm/get-intrinsic@1.2.4",
+        "pkg:npm/has-symbols@1.0.3",
+        "pkg:npm/isarray@2.0.5"
+      ]
+    },
+    {
+      "from": "pkg:npm/safe-regex-test@1.0.3",
+      "to": ["pkg:npm/call-bind@1.0.7", "pkg:npm/es-errors@1.3.0", "pkg:npm/is-regex@1.1.4"]
+    },
+    {
+      "from": "pkg:npm/set-function-length@1.2.2",
+      "to": [
+        "pkg:npm/define-data-property@1.1.4",
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/function-bind@1.1.2",
+        "pkg:npm/get-intrinsic@1.2.4",
+        "pkg:npm/gopd@1.0.1",
+        "pkg:npm/has-property-descriptors@1.0.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/set-function-name@2.0.2",
+      "to": [
+        "pkg:npm/define-data-property@1.1.4",
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/functions-have-names@1.2.3",
+        "pkg:npm/has-property-descriptors@1.0.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/shebang-command@2.0.0",
+      "to": ["pkg:npm/shebang-regex@3.0.0"]
+    },
+    {
+      "from": "pkg:npm/side-channel@1.0.6",
+      "to": [
+        "pkg:npm/call-bind@1.0.7",
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/get-intrinsic@1.2.4",
+        "pkg:npm/object-inspect@1.13.3"
+      ]
+    },
+    {
+      "from": "pkg:npm/string.prototype.includes@2.0.1",
+      "to": ["pkg:npm/call-bind@1.0.7", "pkg:npm/define-properties@1.2.1", "pkg:npm/es-abstract@1.23.5"]
+    },
+    {
+      "from": "pkg:npm/string.prototype.trim@1.2.9",
+      "to": [
+        "pkg:npm/call-bind@1.0.7",
+        "pkg:npm/define-properties@1.2.1",
+        "pkg:npm/es-abstract@1.23.5",
+        "pkg:npm/es-object-atoms@1.0.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/string.prototype.trimend@1.0.8",
+      "to": ["pkg:npm/call-bind@1.0.7", "pkg:npm/define-properties@1.2.1", "pkg:npm/es-object-atoms@1.0.0"]
+    },
+    {
+      "from": "pkg:npm/string.prototype.trimstart@1.0.8",
+      "to": ["pkg:npm/call-bind@1.0.7", "pkg:npm/define-properties@1.2.1", "pkg:npm/es-object-atoms@1.0.0"]
+    },
+    {
+      "from": "pkg:npm/strip-ansi@6.0.1",
+      "to": ["pkg:npm/ansi-regex@5.0.1"]
+    },
+    {
+      "from": "pkg:npm/supports-color@7.2.0",
+      "to": ["pkg:npm/has-flag@4.0.0"]
+    },
+    {
+      "from": "pkg:npm/synckit@0.9.2",
+      "to": ["pkg:npm/%40pkgr/core@0.1.1", "pkg:npm/tslib@2.8.1"]
+    },
+    {
+      "from": "pkg:npm/to-regex-range@5.0.1",
+      "to": ["pkg:npm/is-number@7.0.0"]
+    },
+    {
+      "from": "pkg:npm/ts-api-utils@1.4.0",
+      "to": ["pkg:npm/typescript@5.6.3"]
+    },
+    {
+      "from": "pkg:npm/tsconfig-paths@3.15.0",
+      "to": [
+        "pkg:npm/%40types/json5@0.0.29",
+        "pkg:npm/json5@1.0.2",
+        "pkg:npm/minimist@1.2.8",
+        "pkg:npm/strip-bom@3.0.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/type-check@0.4.0",
+      "to": ["pkg:npm/prelude-ls@1.2.1"]
+    },
+    {
+      "from": "pkg:npm/typed-array-buffer@1.0.2",
+      "to": ["pkg:npm/call-bind@1.0.7", "pkg:npm/es-errors@1.3.0", "pkg:npm/is-typed-array@1.1.13"]
+    },
+    {
+      "from": "pkg:npm/typed-array-byte-length@1.0.1",
+      "to": [
+        "pkg:npm/call-bind@1.0.7",
+        "pkg:npm/for-each@0.3.3",
+        "pkg:npm/gopd@1.0.1",
+        "pkg:npm/has-proto@1.0.3",
+        "pkg:npm/is-typed-array@1.1.13"
+      ]
+    },
+    {
+      "from": "pkg:npm/typed-array-byte-offset@1.0.2",
+      "to": [
+        "pkg:npm/available-typed-arrays@1.0.7",
+        "pkg:npm/call-bind@1.0.7",
+        "pkg:npm/for-each@0.3.3",
+        "pkg:npm/gopd@1.0.1",
+        "pkg:npm/has-proto@1.0.3",
+        "pkg:npm/is-typed-array@1.1.13"
+      ]
+    },
+    {
+      "from": "pkg:npm/typed-array-length@1.0.6",
+      "to": [
+        "pkg:npm/call-bind@1.0.7",
+        "pkg:npm/for-each@0.3.3",
+        "pkg:npm/gopd@1.0.1",
+        "pkg:npm/has-proto@1.0.3",
+        "pkg:npm/is-typed-array@1.1.13",
+        "pkg:npm/possible-typed-array-names@1.0.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/unbox-primitive@1.0.2",
+      "to": [
+        "pkg:npm/call-bind@1.0.7",
+        "pkg:npm/has-bigints@1.0.2",
+        "pkg:npm/has-symbols@1.0.3",
+        "pkg:npm/which-boxed-primitive@1.0.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/update-browserslist-db@1.1.1",
+      "to": ["pkg:npm/browserslist@4.24.2", "pkg:npm/escalade@3.2.0", "pkg:npm/picocolors@1.1.1"]
+    },
+    {
+      "from": "pkg:npm/uri-js@4.4.1",
+      "to": ["pkg:npm/punycode@2.3.1"]
+    },
+    {
+      "from": "pkg:npm/which-boxed-primitive@1.0.2",
+      "to": [
+        "pkg:npm/is-bigint@1.0.4",
+        "pkg:npm/is-boolean-object@1.1.2",
+        "pkg:npm/is-number-object@1.0.7",
+        "pkg:npm/is-string@1.0.7",
+        "pkg:npm/is-symbol@1.0.4"
+      ]
+    },
+    {
+      "from": "pkg:npm/which-typed-array@1.1.15",
+      "to": [
+        "pkg:npm/available-typed-arrays@1.0.7",
+        "pkg:npm/call-bind@1.0.7",
+        "pkg:npm/for-each@0.3.3",
+        "pkg:npm/gopd@1.0.1",
+        "pkg:npm/has-tostringtag@1.0.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/which@2.0.2",
+      "to": ["pkg:npm/isexe@2.0.0"]
+    }
+  ]
+}
