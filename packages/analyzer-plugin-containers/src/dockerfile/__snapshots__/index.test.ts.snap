@@ -1,5 +1,20 @@
 // Bun Snapshot v1, https://bun.sh/docs/test/snapshots
 
+exports[`Dockerfile.arg-before-from 1`] = `
+{
+  "packages": [
+    {
+      "evidence": [
+        "<fixtures>/Dockerfile.arg-before-from#3",
+      ],
+      "purl": "pkg:docker/python@3.11-slim",
+    },
+  ],
+  "relationships": [],
+  "subprojects": [],
+}
+`;
+
 exports[`Dockerfile.basic 1`] = `
 {
   "packages": [
@@ -8,36 +23,6 @@ exports[`Dockerfile.basic 1`] = `
         "<fixtures>/Dockerfile.basic#2",
       ],
       "purl": "pkg:docker/alpine@3.18",
-    },
-  ],
-  "relationships": [],
-  "subprojects": [],
-}
-`;
-
-exports[`Dockerfile.tag-and-digest 1`] = `
-{
-  "packages": [
-    {
-      "evidence": [
-        "<fixtures>/Dockerfile.tag-and-digest#2",
-      ],
-      "purl": "pkg:docker/ubuntu@sha256%253A3c282906f58630659f57e5fcae551eeeee54fa8ac4bfa2dc4c4f7deb6bf7e08c",
-    },
-  ],
-  "relationships": [],
-  "subprojects": [],
-}
-`;
-
-exports[`Dockerfile.private-registry-port 1`] = `
-{
-  "packages": [
-    {
-      "evidence": [
-        "<fixtures>/Dockerfile.private-registry-port#2",
-      ],
-      "purl": "pkg:docker/private/app-base@1.2.3?repository_url=registry.example.com%3A5000",
     },
   ],
   "relationships": [],
@@ -60,14 +45,29 @@ exports[`Dockerfile.digest-only 1`] = `
 }
 `;
 
-exports[`Dockerfile.arg-before-from 1`] = `
+exports[`Dockerfile.ghcr 1`] = `
 {
   "packages": [
     {
       "evidence": [
-        "<fixtures>/Dockerfile.arg-before-from#3",
+        "<fixtures>/Dockerfile.ghcr#2",
       ],
-      "purl": "pkg:docker/python@3.11-slim",
+      "purl": "pkg:docker/actions/runner@2.319.1?repository_url=ghcr.io",
+    },
+  ],
+  "relationships": [],
+  "subprojects": [],
+}
+`;
+
+exports[`Dockerfile.mcr-deep-path 1`] = `
+{
+  "packages": [
+    {
+      "evidence": [
+        "<fixtures>/Dockerfile.mcr-deep-path#2",
+      ],
+      "purl": "pkg:docker/dotnet/sdk@8.0?repository_url=mcr.microsoft.com",
     },
   ],
   "relationships": [],
@@ -126,14 +126,14 @@ exports[`Dockerfile.platform-variant 1`] = `
 }
 `;
 
-exports[`Dockerfile.ghcr 1`] = `
+exports[`Dockerfile.private-registry-port 1`] = `
 {
   "packages": [
     {
       "evidence": [
-        "<fixtures>/Dockerfile.ghcr#2",
+        "<fixtures>/Dockerfile.private-registry-port#2",
       ],
-      "purl": "pkg:docker/actions/runner@2.319.1?repository_url=ghcr.io",
+      "purl": "pkg:docker/private/app-base@1.2.3?repository_url=registry.example.com%3A5000",
     },
   ],
   "relationships": [],
@@ -141,14 +141,22 @@ exports[`Dockerfile.ghcr 1`] = `
 }
 `;
 
-exports[`Dockerfile.mcr-deep-path 1`] = `
+exports[`Dockerfile.scratch 1`] = `
+{
+  "packages": [],
+  "relationships": [],
+  "subprojects": [],
+}
+`;
+
+exports[`Dockerfile.tag-and-digest 1`] = `
 {
   "packages": [
     {
       "evidence": [
-        "<fixtures>/Dockerfile.mcr-deep-path#2",
+        "<fixtures>/Dockerfile.tag-and-digest#2",
       ],
-      "purl": "pkg:docker/dotnet/sdk@8.0?repository_url=mcr.microsoft.com",
+      "purl": "pkg:docker/ubuntu@sha256%253A3c282906f58630659f57e5fcae551eeeee54fa8ac4bfa2dc4c4f7deb6bf7e08c",
     },
   ],
   "relationships": [],
@@ -166,14 +174,6 @@ exports[`Dockerfile.whitespace-and-comments 1`] = `
       "purl": "pkg:docker/alpine@3.18",
     },
   ],
-  "relationships": [],
-  "subprojects": [],
-}
-`;
-
-exports[`Dockerfile.scratch 1`] = `
-{
-  "packages": [],
   "relationships": [],
   "subprojects": [],
 }

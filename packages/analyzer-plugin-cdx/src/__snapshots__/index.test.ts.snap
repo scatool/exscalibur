@@ -1,25 +1,78 @@
 // Bun Snapshot v1, https://bun.sh/docs/test/snapshots
 
-exports[`with-evidence.cdx.json 1`] = `
+exports[`basic.cdx.json 1`] = `
 {
   "packages": [
     {
       "evidence": [
-        "<fixtures>/with-evidence.cdx.json",
-        "/src/utils/helper.ts#5",
-        "/src/index.ts#12",
+        "<fixtures>/basic.cdx.json",
       ],
-      "purl": "pkg:npm/lodash@4.17.21",
+      "purl": "pkg:npm/express@4.18.2",
     },
     {
       "evidence": [
-        "<fixtures>/with-evidence.cdx.json",
-        "/requirements.txt#3",
+        "<fixtures>/basic.cdx.json",
       ],
-      "purl": "pkg:pypi/requests@2.28.1",
+      "purl": "pkg:npm/react@18.2.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic.cdx.json",
+      ],
+      "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.15.0",
     },
   ],
   "relationships": [],
+  "subprojects": [],
+}
+`;
+
+exports[`complete-example.cdx.json 1`] = `
+{
+  "packages": [
+    {
+      "evidence": [
+        "<fixtures>/complete-example.cdx.json",
+        "/package.json#15",
+      ],
+      "purl": "pkg:npm/express@4.18.2",
+    },
+    {
+      "evidence": [
+        "<fixtures>/complete-example.cdx.json",
+      ],
+      "purl": "pkg:npm/body-parser@1.20.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/complete-example.cdx.json",
+        "/package.json#16",
+      ],
+      "purl": "pkg:npm/cookie-parser@1.4.6",
+    },
+    {
+      "evidence": [
+        "<fixtures>/complete-example.cdx.json",
+      ],
+      "purl": "pkg:npm/debug@2.6.9",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:npm/express@4.18.2",
+      "to": [
+        "pkg:npm/body-parser@1.20.1",
+        "pkg:npm/cookie-parser@1.4.6",
+        "pkg:npm/debug@2.6.9",
+      ],
+    },
+    {
+      "from": "pkg:npm/body-parser@1.20.1",
+      "to": [
+        "pkg:npm/debug@2.6.9",
+      ],
+    },
+  ],
   "subprojects": [],
 }
 `;
@@ -101,76 +154,23 @@ exports[`with-dependencies.cdx.json 1`] = `
 }
 `;
 
-exports[`complete-example.cdx.json 1`] = `
+exports[`with-evidence.cdx.json 1`] = `
 {
   "packages": [
     {
       "evidence": [
-        "<fixtures>/complete-example.cdx.json",
-        "/package.json#15",
+        "<fixtures>/with-evidence.cdx.json",
+        "/src/utils/helper.ts#5",
+        "/src/index.ts#12",
       ],
-      "purl": "pkg:npm/express@4.18.2",
+      "purl": "pkg:npm/lodash@4.17.21",
     },
     {
       "evidence": [
-        "<fixtures>/complete-example.cdx.json",
+        "<fixtures>/with-evidence.cdx.json",
+        "/requirements.txt#3",
       ],
-      "purl": "pkg:npm/body-parser@1.20.1",
-    },
-    {
-      "evidence": [
-        "<fixtures>/complete-example.cdx.json",
-        "/package.json#16",
-      ],
-      "purl": "pkg:npm/cookie-parser@1.4.6",
-    },
-    {
-      "evidence": [
-        "<fixtures>/complete-example.cdx.json",
-      ],
-      "purl": "pkg:npm/debug@2.6.9",
-    },
-  ],
-  "relationships": [
-    {
-      "from": "pkg:npm/express@4.18.2",
-      "to": [
-        "pkg:npm/body-parser@1.20.1",
-        "pkg:npm/cookie-parser@1.4.6",
-        "pkg:npm/debug@2.6.9",
-      ],
-    },
-    {
-      "from": "pkg:npm/body-parser@1.20.1",
-      "to": [
-        "pkg:npm/debug@2.6.9",
-      ],
-    },
-  ],
-  "subprojects": [],
-}
-`;
-
-exports[`basic.cdx.json 1`] = `
-{
-  "packages": [
-    {
-      "evidence": [
-        "<fixtures>/basic.cdx.json",
-      ],
-      "purl": "pkg:npm/express@4.18.2",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic.cdx.json",
-      ],
-      "purl": "pkg:npm/react@18.2.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic.cdx.json",
-      ],
-      "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.15.0",
+      "purl": "pkg:pypi/requests@2.28.1",
     },
   ],
   "relationships": [],
