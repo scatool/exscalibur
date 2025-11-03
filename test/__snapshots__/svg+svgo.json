@@ -8,7 +8,9 @@
     },
     {
       "purl": "pkg:npm/%40babel/code-frame@7.24.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#18"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/compat-data@7.24.4",
@@ -18,11 +20,15 @@
     },
     {
       "purl": "pkg:npm/%40babel/core@7.24.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#35"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/generator@7.24.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#58"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/helper-compilation-targets@7.23.6",
@@ -62,7 +68,9 @@
     },
     {
       "purl": "pkg:npm/%40babel/helper-plugin-utils@7.24.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#133"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/helper-simple-access@7.24.5",
@@ -108,7 +116,9 @@
     },
     {
       "purl": "pkg:npm/%40babel/parser@7.24.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#202"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/plugin-syntax-async-generators@7.8.4",
@@ -196,7 +206,9 @@
     },
     {
       "purl": "pkg:npm/%40babel/template@7.24.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#365"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/traverse@7.24.5",
@@ -206,7 +218,9 @@
     },
     {
       "purl": "pkg:npm/%40babel/types@7.24.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#394"
+      ]
     },
     {
       "purl": "pkg:npm/%40bcoe/v8-coverage@0.2.3",
@@ -252,7 +266,9 @@
     },
     {
       "purl": "pkg:npm/%40eslint/js@9.25.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#474"
+      ]
     },
     {
       "purl": "pkg:npm/%40eslint/object-schema@2.1.6",
@@ -310,7 +326,9 @@
     },
     {
       "purl": "pkg:npm/%40istanbuljs/schema@0.1.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#563"
+      ]
     },
     {
       "purl": "pkg:npm/%40jest/console@29.7.0",
@@ -422,11 +440,15 @@
     },
     {
       "purl": "pkg:npm/%40jridgewell/sourcemap-codec@1.4.15",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#835"
+      ]
     },
     {
       "purl": "pkg:npm/%40jridgewell/trace-mapping@0.3.25",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#842"
+      ]
     },
     {
       "purl": "pkg:npm/%40nodelib/fs.scandir@2.1.5",
@@ -436,7 +458,9 @@
     },
     {
       "purl": "pkg:npm/%40nodelib/fs.stat@2.0.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#862"
+      ]
     },
     {
       "purl": "pkg:npm/%40nodelib/fs.walk@1.2.8",
@@ -650,11 +674,15 @@
     },
     {
       "purl": "pkg:npm/%40types/babel__traverse@7.20.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#1182"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/css-tree@2.3.10",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#1191"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/csso@5.0.4",
@@ -670,7 +698,9 @@
     },
     {
       "purl": "pkg:npm/%40types/estree@1.0.7",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#1217"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/graceful-fs@4.1.9",
@@ -680,7 +710,9 @@
     },
     {
       "purl": "pkg:npm/%40types/istanbul-lib-coverage@2.0.6",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#1233"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/istanbul-lib-report@3.0.3",
@@ -702,7 +734,9 @@
     },
     {
       "purl": "pkg:npm/%40types/json-schema@7.0.15",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#1268"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/minimist@1.2.5",
@@ -712,7 +746,9 @@
     },
     {
       "purl": "pkg:npm/%40types/node@22.15.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#1282"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/normalize-package-data@2.4.4",
@@ -776,11 +812,15 @@
     },
     {
       "purl": "pkg:npm/acorn@8.14.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#1371"
+      ]
     },
     {
       "purl": "pkg:npm/agent-base@7.1.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#1380"
+      ]
     },
     {
       "purl": "pkg:npm/aggregate-error@3.1.0",
@@ -820,7 +860,9 @@
     },
     {
       "purl": "pkg:npm/ansi-styles@4.3.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#1443"
+      ]
     },
     {
       "purl": "pkg:npm/ansi-styles@5.2.0",
@@ -1004,7 +1046,9 @@
     },
     {
       "purl": "pkg:npm/chalk@4.1.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#1745"
+      ]
     },
     {
       "purl": "pkg:npm/char-regex@1.0.2",
@@ -1122,7 +1166,9 @@
     },
     {
       "purl": "pkg:npm/cross-spawn@7.0.6",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#1911"
+      ]
     },
     {
       "purl": "pkg:npm/css-select@5.1.0",
@@ -1156,7 +1202,9 @@
     },
     {
       "purl": "pkg:npm/debug@4.3.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#1971"
+      ]
     },
     {
       "purl": "pkg:npm/decamelize-keys@1.1.1",
@@ -1166,7 +1214,9 @@
     },
     {
       "purl": "pkg:npm/decamelize@1.2.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#1993"
+      ]
     },
     {
       "purl": "pkg:npm/dedent@1.5.3",
@@ -1218,7 +1268,9 @@
     },
     {
       "purl": "pkg:npm/domhandler@5.0.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#2067"
+      ]
     },
     {
       "purl": "pkg:npm/domutils@3.1.0",
@@ -1288,7 +1340,9 @@
     },
     {
       "purl": "pkg:npm/escalade@3.1.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#2161"
+      ]
     },
     {
       "purl": "pkg:npm/escape-string-regexp@1.0.5",
@@ -1346,7 +1400,9 @@
     },
     {
       "purl": "pkg:npm/espree@10.3.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#2286"
+      ]
     },
     {
       "purl": "pkg:npm/esprima@4.0.1",
@@ -1368,7 +1424,9 @@
     },
     {
       "purl": "pkg:npm/estraverse@5.3.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#2325"
+      ]
     },
     {
       "purl": "pkg:npm/estree-walker@2.0.2",
@@ -1396,7 +1454,9 @@
     },
     {
       "purl": "pkg:npm/expect@29.7.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#2370"
+      ]
     },
     {
       "purl": "pkg:npm/exponential-backoff@3.1.1",
@@ -1406,11 +1466,15 @@
     },
     {
       "purl": "pkg:npm/fast-deep-equal@3.1.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#2390"
+      ]
     },
     {
       "purl": "pkg:npm/fast-fifo@1.3.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#2397"
+      ]
     },
     {
       "purl": "pkg:npm/fast-glob@3.3.3",
@@ -1420,7 +1484,9 @@
     },
     {
       "purl": "pkg:npm/fast-json-stable-stringify@2.1.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#2417"
+      ]
     },
     {
       "purl": "pkg:npm/fast-levenshtein@2.0.6",
@@ -1454,7 +1520,9 @@
     },
     {
       "purl": "pkg:npm/find-up@4.1.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#2467"
+      ]
     },
     {
       "purl": "pkg:npm/find-up@5.0.0",
@@ -1506,7 +1574,9 @@
     },
     {
       "purl": "pkg:npm/fsevents@2.3.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#2549"
+      ]
     },
     {
       "purl": "pkg:npm/function-bind@1.1.2",
@@ -1552,11 +1622,15 @@
     },
     {
       "purl": "pkg:npm/glob@10.4.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#2630"
+      ]
     },
     {
       "purl": "pkg:npm/glob@7.2.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#2646"
+      ]
     },
     {
       "purl": "pkg:npm/globals@11.12.0",
@@ -1578,7 +1652,9 @@
     },
     {
       "purl": "pkg:npm/graceful-fs@4.2.11",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#2688"
+      ]
     },
     {
       "purl": "pkg:npm/hard-rejection@2.1.0",
@@ -1720,7 +1796,9 @@
     },
     {
       "purl": "pkg:npm/is-core-module@2.16.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#2884"
+      ]
     },
     {
       "purl": "pkg:npm/is-extglob@2.1.1",
@@ -1742,7 +1820,9 @@
     },
     {
       "purl": "pkg:npm/is-glob@4.0.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#2914"
+      ]
     },
     {
       "purl": "pkg:npm/is-lambda@1.0.1",
@@ -1800,7 +1880,9 @@
     },
     {
       "purl": "pkg:npm/istanbul-lib-coverage@3.2.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#2988"
+      ]
     },
     {
       "purl": "pkg:npm/istanbul-lib-instrument@5.2.1",
@@ -1864,7 +1946,9 @@
     },
     {
       "purl": "pkg:npm/jest-diff@29.7.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#3169"
+      ]
     },
     {
       "purl": "pkg:npm/jest-docblock@29.7.0",
@@ -2114,7 +2198,9 @@
     },
     {
       "purl": "pkg:npm/lru-cache@10.2.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#3670"
+      ]
     },
     {
       "purl": "pkg:npm/lru-cache@5.1.1",
@@ -2190,11 +2276,15 @@
     },
     {
       "purl": "pkg:npm/merge2@1.4.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#3797"
+      ]
     },
     {
       "purl": "pkg:npm/micromatch@4.0.8",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#3804"
+      ]
     },
     {
       "purl": "pkg:npm/mimic-fn@2.1.0",
@@ -2210,7 +2300,9 @@
     },
     {
       "purl": "pkg:npm/minimatch@3.1.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#3828"
+      ]
     },
     {
       "purl": "pkg:npm/minimatch@9.0.4",
@@ -2268,11 +2360,15 @@
     },
     {
       "purl": "pkg:npm/minipass@7.1.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#3924"
+      ]
     },
     {
       "purl": "pkg:npm/minizlib@2.1.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#3931"
+      ]
     },
     {
       "purl": "pkg:npm/mkdirp@1.0.4",
@@ -2378,7 +2474,9 @@
     },
     {
       "purl": "pkg:npm/p-limit@3.1.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#4106"
+      ]
     },
     {
       "purl": "pkg:npm/p-locate@4.1.0",
@@ -2418,7 +2516,9 @@
     },
     {
       "purl": "pkg:npm/parse-json@5.2.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#4165"
+      ]
     },
     {
       "purl": "pkg:npm/path-exists@4.0.0",
@@ -2434,7 +2534,9 @@
     },
     {
       "purl": "pkg:npm/path-key@3.1.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#4191"
+      ]
     },
     {
       "purl": "pkg:npm/path-parse@1.0.7",
@@ -2456,11 +2558,15 @@
     },
     {
       "purl": "pkg:npm/picocolors@1.1.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#4222"
+      ]
     },
     {
       "purl": "pkg:npm/picomatch@2.3.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#4229"
+      ]
     },
     {
       "purl": "pkg:npm/pirates@4.0.6",
@@ -2518,7 +2624,9 @@
     },
     {
       "purl": "pkg:npm/pretty-format@29.7.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#4319"
+      ]
     },
     {
       "purl": "pkg:npm/proc-log@3.0.0",
@@ -2588,7 +2696,9 @@
     },
     {
       "purl": "pkg:npm/read-pkg-up@7.0.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#4415"
+      ]
     },
     {
       "purl": "pkg:npm/read-pkg@5.2.0",
@@ -2634,7 +2744,9 @@
     },
     {
       "purl": "pkg:npm/resolve@1.22.10",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#4485"
+      ]
     },
     {
       "purl": "pkg:npm/retry@0.12.0",
@@ -2692,11 +2804,15 @@
     },
     {
       "purl": "pkg:npm/semver@6.3.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#4657"
+      ]
     },
     {
       "purl": "pkg:npm/semver@7.7.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#4666"
+      ]
     },
     {
       "purl": "pkg:npm/serialize-javascript@6.0.2",
@@ -2718,7 +2834,9 @@
     },
     {
       "purl": "pkg:npm/signal-exit@3.0.7",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#4700"
+      ]
     },
     {
       "purl": "pkg:npm/signal-exit@4.1.0",
@@ -2782,7 +2900,9 @@
     },
     {
       "purl": "pkg:npm/source-map@0.6.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#4790"
+      ]
     },
     {
       "purl": "pkg:npm/spdx-correct@3.2.0",
@@ -2850,11 +2970,15 @@
     },
     {
       "purl": "pkg:npm/string-width@4.2.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#4887"
+      ]
     },
     {
       "purl": "pkg:npm/string-width@5.1.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#4898"
+      ]
     },
     {
       "purl": "pkg:npm/strip-ansi-cjs@6.0.1",
@@ -2862,7 +2986,9 @@
     },
     {
       "purl": "pkg:npm/strip-ansi@6.0.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#4909"
+      ]
     },
     {
       "purl": "pkg:npm/strip-ansi@7.1.0",
@@ -2902,7 +3028,9 @@
     },
     {
       "purl": "pkg:npm/supports-color@7.2.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#4966"
+      ]
     },
     {
       "purl": "pkg:npm/supports-color@8.1.1",
@@ -2930,7 +3058,9 @@
     },
     {
       "purl": "pkg:npm/tar@6.2.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#5053"
+      ]
     },
     {
       "purl": "pkg:npm/terser@5.31.0",
@@ -2976,7 +3106,9 @@
     },
     {
       "purl": "pkg:npm/type-check@0.4.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#5139"
+      ]
     },
     {
       "purl": "pkg:npm/type-detect@4.0.8",
@@ -3086,7 +3218,9 @@
     },
     {
       "purl": "pkg:npm/wrap-ansi@7.0.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/svg+svgo/yarn.lock#5310"
+      ]
     },
     {
       "purl": "pkg:npm/wrap-ansi@8.1.0",

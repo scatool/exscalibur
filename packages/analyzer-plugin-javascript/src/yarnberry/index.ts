@@ -259,7 +259,10 @@ export const extractor: Extractor = filesExtractor({
           packageMap.set(purl, { purl, evidence: new Set() });
         }
 
-        const lineNumber = findLineNumber(lockfileContent, pattern);
+        // Use the original combined pattern for evidence tracking
+        // (handles cases where multiple patterns are comma-separated in the lockfile)
+        const patternToFind = pkg.originalPattern || pattern;
+        const lineNumber = findLineNumber(lockfileContent, patternToFind);
         if (lineNumber) {
           packageMap.get(purl)!.evidence.add(`${file}#${lineNumber}`);
         }

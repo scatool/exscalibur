@@ -10790,10 +10790,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/string-width-cjs@string-width%404.2.3",
-      "evidence": []
-    },
-    {
       "purl": "pkg:npm/string-width@%5E4.1.0",
       "evidence": []
     },
@@ -10851,10 +10847,6 @@
       "evidence": [
         "<repositories>/Mail-0+Zero/pnpm-lock.yaml#8995"
       ]
-    },
-    {
-      "purl": "pkg:npm/strip-ansi-cjs@strip-ansi%406.0.1",
-      "evidence": []
     },
     {
       "purl": "pkg:npm/strip-ansi@%5E6.0.0",
@@ -11928,10 +11920,6 @@
       "evidence": [
         "<repositories>/Mail-0+Zero/pnpm-lock.yaml#9808"
       ]
-    },
-    {
-      "purl": "pkg:npm/wrap-ansi-cjs@wrap-ansi%407.0.0",
-      "evidence": []
     },
     {
       "purl": "pkg:npm/wrap-ansi@%5E6.2.0",
@@ -13377,11 +13365,11 @@
     {
       "from": "pkg:npm/%40isaacs/cliui@8.0.2",
       "to": [
-        "pkg:npm/string-width-cjs@string-width%404.2.3",
+        "pkg:npm/string-width@4.2.3",
         "pkg:npm/string-width@5.1.2",
-        "pkg:npm/strip-ansi-cjs@strip-ansi%406.0.1",
+        "pkg:npm/strip-ansi@6.0.1",
         "pkg:npm/strip-ansi@7.1.0",
-        "pkg:npm/wrap-ansi-cjs@wrap-ansi%407.0.0",
+        "pkg:npm/wrap-ansi@7.0.0",
         "pkg:npm/wrap-ansi@8.1.0"
       ]
     },

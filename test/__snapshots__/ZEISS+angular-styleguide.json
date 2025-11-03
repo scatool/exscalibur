@@ -8761,10 +8761,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/string-width-cjs@4.2.3",
-      "evidence": []
-    },
-    {
       "purl": "pkg:npm/string-width@4.2.3",
       "evidence": [
         "<repositories>/ZEISS+angular-styleguide/package-lock.json#22390",
@@ -8786,10 +8782,6 @@
         "<repositories>/ZEISS+angular-styleguide/package-lock.json#17092",
         "<repositories>/ZEISS+angular-styleguide/package-lock.json#17530"
       ]
-    },
-    {
-      "purl": "pkg:npm/strip-ansi-cjs@6.0.1",
-      "evidence": []
     },
     {
       "purl": "pkg:npm/strip-ansi@6.0.1",
@@ -9694,10 +9686,6 @@
       "evidence": [
         "<repositories>/ZEISS+angular-styleguide/package-lock.json#24778"
       ]
-    },
-    {
-      "purl": "pkg:npm/wrap-ansi-cjs@7.0.0",
-      "evidence": []
     },
     {
       "purl": "pkg:npm/wrap-ansi@6.2.0",
@@ -11459,11 +11447,8 @@
     {
       "from": "pkg:npm/%40isaacs/cliui@8.0.2",
       "to": [
-        "pkg:npm/string-width-cjs@4.2.3",
         "pkg:npm/string-width@4.2.3",
-        "pkg:npm/strip-ansi-cjs@6.0.1",
         "pkg:npm/strip-ansi@6.0.1",
-        "pkg:npm/wrap-ansi-cjs@7.0.0",
         "pkg:npm/wrap-ansi@7.0.0"
       ]
     },

@@ -117,25 +117,52 @@ export const extractor: Extractor = filesExtractor({
 
                     // Regular external dependency
                     if (typeof version === 'string') {
+                      // Handle pnpm aliases: "alias-name: real-package@version"
+                      let actualName = depName;
+                      let actualVersion: string;
+
+                      // Strip peer dependency suffix FIRST before checking for aliases
+                      // to avoid matching @ inside the suffix like (react@18.2.0)
+                      const versionWithoutPeerDeps = stripPeerDepSuffix(version);
+
+                      // Check if this is an alias (version contains @ which indicates package@version format)
+                      // Aliases look like: "string-width@4.2.3" or "@docusaurus/react-loadable@6.0.0"
+                      // Regular versions look like: "19.2.0" or "1.0.0"
+                      const lastAtIndex = versionWithoutPeerDeps.lastIndexOf('@');
+                      if (lastAtIndex > 0 && !isGitPackageKey(`${depName}@${versionWithoutPeerDeps}`)) {
+                        // Check if what comes before @ looks like a package name (not starting with a digit)
+                        const beforeAt = versionWithoutPeerDeps.substring(0, lastAtIndex);
+                        if (beforeAt && !/^\d/.test(beforeAt)) {
+                          // This is an alias - extract the real package name and version
+                          actualName = beforeAt;
+                          actualVersion = versionWithoutPeerDeps.substring(lastAtIndex + 1);
+                        } else {
+                          // Not an alias - use the stripped version
+                          actualVersion = versionWithoutPeerDeps;
+                        }
+                      } else {
+                        // Not an alias - use the stripped version
+                        actualVersion = versionWithoutPeerDeps;
+                      }
+
                       // For git/tarball dependencies, look up the actual version from packages section
-                      const packageKey = `${depName}@${version}`;
+                      const packageKey = `${actualName}@${actualVersion}`;
                       if (isGitPackageKey(packageKey)) {
                         // This is a git/tarball package - look up the actual version
-                        const actualVersion = getPackageVersion(lockfile, packageKey);
-                        if (actualVersion) {
-                          const depPurl = createNpmPurl(depName, actualVersion);
+                        const resolvedVersion = getPackageVersion(lockfile, packageKey);
+                        if (resolvedVersion) {
+                          const depPurl = createNpmPurl(actualName, resolvedVersion);
                           depsInScope.push(depPurl);
                         } else {
                           // Fallback to the git URL if we can't find the version
-                          version = stripPeerDepSuffix(version);
-                          const depPurl = createNpmPurl(depName, version);
+                          // actualVersion is already stripped if it was an alias
+                          const depPurl = createNpmPurl(actualName, actualVersion);
                           depsInScope.push(depPurl);
                         }
                       } else {
                         // Regular package with semantic version
-                        // Strip peer dependency suffix: "19.2.0(react@19.2.0)" -> "19.2.0"
-                        version = stripPeerDepSuffix(version);
-                        const depPurl = createNpmPurl(depName, version);
+                        // actualVersion is already stripped of peer deps (either from alias extraction or original version)
+                        const depPurl = createNpmPurl(actualName, actualVersion);
                         depsInScope.push(depPurl);
                       }
                     }
@@ -210,8 +237,36 @@ function processDependencies(
     if (depsInScope && typeof depsInScope === 'object') {
       for (const [depName, depVersion] of Object.entries(depsInScope)) {
         if (typeof depVersion === 'string') {
-          const cleanVersion = stripPeerDepSuffix(depVersion);
-          const depPurl = createNpmPurl(depName, cleanVersion);
+          // Handle pnpm aliases: "alias-name: real-package@version"
+          // The depVersion might be "real-package@version" instead of just a version
+          let actualName = depName;
+          let actualVersion: string;
+
+          // Strip peer dependency suffix FIRST before checking for aliases
+          // to avoid matching @ inside the suffix like (react@18.2.0)
+          const versionWithoutPeerDeps = stripPeerDepSuffix(depVersion);
+
+          // Check if this is an alias (version contains @ which indicates package@version format)
+          // Aliases look like: "string-width@4.2.3" or "@docusaurus/react-loadable@6.0.0"
+          // Regular versions look like: "19.2.0" or "1.0.0"
+          const lastAtIndex = versionWithoutPeerDeps.lastIndexOf('@');
+          if (lastAtIndex > 0) {
+            // Check if what comes before @ looks like a package name (not starting with a digit)
+            const beforeAt = versionWithoutPeerDeps.substring(0, lastAtIndex);
+            if (beforeAt && !/^\d/.test(beforeAt)) {
+              // This is an alias - extract the real package name and version
+              actualName = beforeAt;
+              actualVersion = versionWithoutPeerDeps.substring(lastAtIndex + 1);
+            } else {
+              // Not an alias - use the stripped version
+              actualVersion = versionWithoutPeerDeps;
+            }
+          } else {
+            // Not an alias - use the stripped version
+            actualVersion = versionWithoutPeerDeps;
+          }
+
+          const depPurl = createNpmPurl(actualName, actualVersion);
 
           addRelationship(relationshipsMap, purl, depPurl);
           ensurePackageExists(packageMap, depPurl);

@@ -9469,10 +9469,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/string-width-cjs@string-width%404.2.3",
-      "evidence": []
-    },
-    {
       "purl": "pkg:npm/string-width@4.2.3",
       "evidence": [
         "<repositories>/resend+react-email/pnpm-lock.yaml#8268"
@@ -9513,10 +9509,6 @@
       "evidence": [
         "<repositories>/resend+react-email/pnpm-lock.yaml#8298"
       ]
-    },
-    {
-      "purl": "pkg:npm/strip-ansi-cjs@strip-ansi%406.0.1",
-      "evidence": []
     },
     {
       "purl": "pkg:npm/strip-ansi@6.0.1",
@@ -10509,10 +10501,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/wrap-ansi-cjs@wrap-ansi%407.0.0",
-      "evidence": []
-    },
-    {
       "purl": "pkg:npm/wrap-ansi@6.2.0",
       "evidence": [
         "<repositories>/resend+react-email/pnpm-lock.yaml#9059"
@@ -10713,7 +10701,7 @@
         {
           "scope": "dependencies",
           "packages": [
-            "pkg:npm/react-email-2.1.7-canary.2@react-email%402.1.7-canary.2",
+            "pkg:npm/react-email@2.1.7-canary.2",
             "pkg:npm/react-email@4.3.2",
             "pkg:npm/tinybench@3.1.0"
           ]
@@ -10736,11 +10724,11 @@
           "packages": [
             "pkg:npm/%40react-email/components@1.0.0-canary.0",
             "pkg:npm/%40react-email/render@1.4.0",
+            "pkg:npm/%40react-email/tailwind@0.0.12",
+            "pkg:npm/%40react-email/tailwind@0.0.17",
             "pkg:npm/%40react-email/tailwind@2.0.0-canary.0",
             "pkg:npm/react-dom@19.0.0",
             "pkg:npm/react@19.0.0",
-            "pkg:npm/tailwind-0.0.12@%40react-email%2Ftailwind%400.0.12",
-            "pkg:npm/tailwind-0.0.17@%40react-email%2Ftailwind%400.0.17",
             "pkg:npm/tinybench@3.1.0"
           ]
         },
@@ -11107,12 +11095,12 @@
             "pkg:npm/framer-motion@12.23.22",
             "pkg:npm/json5@2.2.3",
             "pkg:npm/log-symbols@4.1.0",
-            "pkg:npm/module-punycode@punycode%402.3.1",
             "pkg:npm/next@15.5.2",
             "pkg:npm/node-html-parser@7.0.1",
             "pkg:npm/ora@5.4.1",
             "pkg:npm/pretty-bytes@6.1.1",
             "pkg:npm/prism-react-renderer@2.4.1",
+            "pkg:npm/punycode@2.3.1",
             "pkg:npm/react-dom@19.0.0",
             "pkg:npm/react@19.0.0",
             "pkg:npm/sharp@0.34.4",
@@ -11883,7 +11871,7 @@
     {
       "from": "pkg:npm/%40benchmarks/preview-server@0.0.0",
       "to": [
-        "pkg:npm/react-email-2.1.7-canary.2@react-email%402.1.7-canary.2",
+        "pkg:npm/react-email@2.1.7-canary.2",
         "pkg:npm/react-email@4.3.2",
         "pkg:npm/tinybench@3.1.0",
         "pkg:npm/tsconfig@0.0.0",
@@ -11896,12 +11884,12 @@
         "pkg:npm/%40biomejs/biome@2.0.0",
         "pkg:npm/%40react-email/components@1.0.0-canary.0",
         "pkg:npm/%40react-email/render@1.4.0",
+        "pkg:npm/%40react-email/tailwind@0.0.12",
+        "pkg:npm/%40react-email/tailwind@0.0.17",
         "pkg:npm/%40react-email/tailwind@2.0.0-canary.0",
         "pkg:npm/flamebearer@1.1.3",
         "pkg:npm/react-dom@19.0.0",
         "pkg:npm/react@19.0.0",
-        "pkg:npm/tailwind-0.0.12@%40react-email%2Ftailwind%400.0.12",
-        "pkg:npm/tailwind-0.0.17@%40react-email%2Ftailwind%400.0.17",
         "pkg:npm/tinybench@3.1.0",
         "pkg:npm/tsconfig@0.0.0",
         "pkg:npm/typescript@5.8.3"
@@ -12509,11 +12497,11 @@
     {
       "from": "pkg:npm/%40isaacs/cliui@8.0.2",
       "to": [
-        "pkg:npm/string-width-cjs@string-width%404.2.3",
+        "pkg:npm/string-width@4.2.3",
         "pkg:npm/string-width@5.1.2",
-        "pkg:npm/strip-ansi-cjs@strip-ansi%406.0.1",
+        "pkg:npm/strip-ansi@6.0.1",
         "pkg:npm/strip-ansi@7.1.0",
-        "pkg:npm/wrap-ansi-cjs@wrap-ansi%407.0.0",
+        "pkg:npm/wrap-ansi@7.0.0",
         "pkg:npm/wrap-ansi@8.1.0"
       ]
     },
@@ -14069,13 +14057,13 @@
         "pkg:npm/framer-motion@12.23.22",
         "pkg:npm/json5@2.2.3",
         "pkg:npm/log-symbols@4.1.0",
-        "pkg:npm/module-punycode@punycode%402.3.1",
         "pkg:npm/next@15.5.2",
         "pkg:npm/node-html-parser@7.0.1",
         "pkg:npm/ora@5.4.1",
         "pkg:npm/postcss@8.5.3",
         "pkg:npm/pretty-bytes@6.1.1",
         "pkg:npm/prism-react-renderer@2.4.1",
+        "pkg:npm/punycode@2.3.1",
         "pkg:npm/react-dom@19.0.0",
         "pkg:npm/react@19.0.0",
         "pkg:npm/sharp@0.34.4",
