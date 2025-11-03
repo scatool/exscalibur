@@ -2,79 +2,117 @@
   "packages": [
     {
       "purl": "pkg:npm/%40types/mdast@4.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-directive/package.json:8"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-directive/package.json:8"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/node@22.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-directive/package.json:20"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-directive/package.json:20"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/unist@3.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-directive/package.json:9"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-directive/package.json:9"
+      ]
     },
     {
       "purl": "pkg:npm/c8@10.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-directive/package.json:21"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-directive/package.json:21"
+      ]
     },
     {
       "purl": "pkg:npm/ccount@2.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-directive/package.json:10"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-directive/package.json:10"
+      ]
     },
     {
       "purl": "pkg:npm/devlop@1.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-directive/package.json:11"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-directive/package.json:11"
+      ]
     },
     {
       "purl": "pkg:npm/mdast-util-from-markdown@2.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-directive/package.json:12"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-directive/package.json:12"
+      ]
     },
     {
       "purl": "pkg:npm/mdast-util-to-markdown@2.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-directive/package.json:13"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-directive/package.json:13"
+      ]
     },
     {
       "purl": "pkg:npm/micromark-extension-directive@4.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-directive/package.json:22"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-directive/package.json:22"
+      ]
     },
     {
       "purl": "pkg:npm/parse-entities@4.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-directive/package.json:14"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-directive/package.json:14"
+      ]
     },
     {
       "purl": "pkg:npm/prettier@3.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-directive/package.json:23"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-directive/package.json:23"
+      ]
     },
     {
       "purl": "pkg:npm/remark-cli@12.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-directive/package.json:24"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-directive/package.json:24"
+      ]
     },
     {
       "purl": "pkg:npm/remark-preset-wooorm@11.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-directive/package.json:25"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-directive/package.json:25"
+      ]
     },
     {
       "purl": "pkg:npm/stringify-entities@4.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-directive/package.json:15"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-directive/package.json:15"
+      ]
     },
     {
       "purl": "pkg:npm/type-coverage@2.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-directive/package.json:26"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-directive/package.json:26"
+      ]
     },
     {
       "purl": "pkg:npm/typescript@5.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-directive/package.json:27"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-directive/package.json:27"
+      ]
     },
     {
       "purl": "pkg:npm/unist-util-remove-position@5.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-directive/package.json:28"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-directive/package.json:28"
+      ]
     },
     {
       "purl": "pkg:npm/unist-util-visit-parents@6.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-directive/package.json:16"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-directive/package.json:16"
+      ]
     },
     {
       "purl": "pkg:npm/xo@0.60.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-directive/package.json:29"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-directive/package.json:29"
+      ]
     }
   ],
   "subprojects": [],

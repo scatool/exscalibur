@@ -2,99 +2,147 @@
   "packages": [
     {
       "purl": "pkg:npm/%40types/estree-jsx@1.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:39"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:39"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/hast@3.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:40"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:40"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/mdast@4.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:41"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:41"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/node@22.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:53"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:53"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/unist@3.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:42"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:42"
+      ]
     },
     {
       "purl": "pkg:npm/acorn@8.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:54"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:54"
+      ]
     },
     {
       "purl": "pkg:npm/c8@10.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:55"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:55"
+      ]
     },
     {
       "purl": "pkg:npm/ccount@2.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:43"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:43"
+      ]
     },
     {
       "purl": "pkg:npm/devlop@1.1.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:44"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:44"
+      ]
     },
     {
       "purl": "pkg:npm/mdast-util-from-markdown@2.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:45"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:45"
+      ]
     },
     {
       "purl": "pkg:npm/mdast-util-to-markdown@2.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:46"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:46"
+      ]
     },
     {
       "purl": "pkg:npm/micromark-extension-mdx-jsx@3.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:56"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:56"
+      ]
     },
     {
       "purl": "pkg:npm/micromark-extension-mdx-md@2.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:57"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:57"
+      ]
     },
     {
       "purl": "pkg:npm/parse-entities@4.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:47"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:47"
+      ]
     },
     {
       "purl": "pkg:npm/prettier@3.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:58"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:58"
+      ]
     },
     {
       "purl": "pkg:npm/remark-cli@12.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:59"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:59"
+      ]
     },
     {
       "purl": "pkg:npm/remark-preset-wooorm@10.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:60"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:60"
+      ]
     },
     {
       "purl": "pkg:npm/stringify-entities@4.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:48"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:48"
+      ]
     },
     {
       "purl": "pkg:npm/type-coverage@2.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:61"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:61"
+      ]
     },
     {
       "purl": "pkg:npm/typescript@5.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:62"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:62"
+      ]
     },
     {
       "purl": "pkg:npm/unist-util-remove-position@5.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:63"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:63"
+      ]
     },
     {
       "purl": "pkg:npm/unist-util-stringify-position@4.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:49"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:49"
+      ]
     },
     {
       "purl": "pkg:npm/vfile-message@4.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:50"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:50"
+      ]
     },
     {
       "purl": "pkg:npm/xo@0.60.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:64"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-mdx-jsx/package.json:64"
+      ]
     }
   ],
   "subprojects": [],

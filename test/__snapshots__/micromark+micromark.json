@@ -2,63 +2,93 @@
   "packages": [
     {
       "purl": "pkg:npm/%40babel/core@7.0.0",
-      "evidence": ["<repositories>/micromark+micromark/packages/micromark-build/package.json:35"]
+      "evidence": [
+        "<repositories>/micromark+micromark/packages/micromark-build/package.json:35"
+      ]
     },
     {
       "purl": "pkg:npm/%40rollup/plugin-node-resolve@16.0.0",
-      "evidence": ["<repositories>/micromark+micromark/package.json:58"]
+      "evidence": [
+        "<repositories>/micromark+micromark/package.json:58"
+      ]
     },
     {
       "purl": "pkg:npm/%40rollup/plugin-terser@0.4.0",
-      "evidence": ["<repositories>/micromark+micromark/package.json:59"]
+      "evidence": [
+        "<repositories>/micromark+micromark/package.json:59"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/concat-stream@2.0.0",
-      "evidence": ["<repositories>/micromark+micromark/package.json:60"]
+      "evidence": [
+        "<repositories>/micromark+micromark/package.json:60"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/debug@4.0.0",
-      "evidence": ["<repositories>/micromark+micromark/packages/micromark/package.json:65"]
+      "evidence": [
+        "<repositories>/micromark+micromark/packages/micromark/package.json:65"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/ms@2.0.0",
-      "evidence": ["<repositories>/micromark+micromark/package.json:61"]
+      "evidence": [
+        "<repositories>/micromark+micromark/package.json:61"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/node@22.0.0",
-      "evidence": ["<repositories>/micromark+micromark/package.json:62"]
+      "evidence": [
+        "<repositories>/micromark+micromark/package.json:62"
+      ]
     },
     {
       "purl": "pkg:npm/babel-plugin-inline-constants@5.0.0",
-      "evidence": ["<repositories>/micromark+micromark/packages/micromark-build/package.json:36"]
+      "evidence": [
+        "<repositories>/micromark+micromark/packages/micromark-build/package.json:36"
+      ]
     },
     {
       "purl": "pkg:npm/babel-plugin-unassert@3.2.0",
-      "evidence": ["<repositories>/micromark+micromark/packages/micromark-build/package.json:37"]
+      "evidence": [
+        "<repositories>/micromark+micromark/packages/micromark-build/package.json:37"
+      ]
     },
     {
       "purl": "pkg:npm/babel-plugin-undebug@3.0.0",
-      "evidence": ["<repositories>/micromark+micromark/packages/micromark-build/package.json:38"]
+      "evidence": [
+        "<repositories>/micromark+micromark/packages/micromark-build/package.json:38"
+      ]
     },
     {
       "purl": "pkg:npm/c8@10.0.0",
-      "evidence": ["<repositories>/micromark+micromark/package.json:63"]
+      "evidence": [
+        "<repositories>/micromark+micromark/package.json:63"
+      ]
     },
     {
       "purl": "pkg:npm/character-entities@2.0.0",
-      "evidence": ["<repositories>/micromark+micromark/package.json:64"]
+      "evidence": [
+        "<repositories>/micromark+micromark/package.json:64"
+      ]
     },
     {
       "purl": "pkg:npm/commonmark.json@0.31.0",
-      "evidence": ["<repositories>/micromark+micromark/package.json:65"]
+      "evidence": [
+        "<repositories>/micromark+micromark/package.json:65"
+      ]
     },
     {
       "purl": "pkg:npm/concat-stream@2.0.0",
-      "evidence": ["<repositories>/micromark+micromark/package.json:66"]
+      "evidence": [
+        "<repositories>/micromark+micromark/package.json:66"
+      ]
     },
     {
       "purl": "pkg:npm/debug@4.0.0",
-      "evidence": ["<repositories>/micromark+micromark/packages/micromark/package.json:66"]
+      "evidence": [
+        "<repositories>/micromark+micromark/packages/micromark/package.json:66"
+      ]
     },
     {
       "purl": "pkg:npm/decode-named-character-reference@1.0.0",
@@ -79,31 +109,45 @@
     },
     {
       "purl": "pkg:npm/esbuild@0.25.0",
-      "evidence": ["<repositories>/micromark+micromark/package.json:67"]
+      "evidence": [
+        "<repositories>/micromark+micromark/package.json:67"
+      ]
     },
     {
       "purl": "pkg:npm/glob@10.0.0",
-      "evidence": ["<repositories>/micromark+micromark/packages/micromark-build/package.json:39"]
+      "evidence": [
+        "<repositories>/micromark+micromark/packages/micromark-build/package.json:39"
+      ]
     },
     {
       "purl": "pkg:npm/gzip-size-cli@5.0.0",
-      "evidence": ["<repositories>/micromark+micromark/package.json:68"]
+      "evidence": [
+        "<repositories>/micromark+micromark/package.json:68"
+      ]
     },
     {
       "purl": "pkg:npm/import-meta-resolve@4.0.0",
-      "evidence": ["<repositories>/micromark+micromark/packages/micromark-build/package.json:40"]
+      "evidence": [
+        "<repositories>/micromark+micromark/packages/micromark-build/package.json:40"
+      ]
     },
     {
       "purl": "pkg:npm/micromark-core-commonmark@2.0.0",
-      "evidence": ["<repositories>/micromark+micromark/packages/micromark/package.json:69"]
+      "evidence": [
+        "<repositories>/micromark+micromark/packages/micromark/package.json:69"
+      ]
     },
     {
       "purl": "pkg:npm/micromark-factory-destination@2.0.0",
-      "evidence": ["<repositories>/micromark+micromark/packages/micromark-core-commonmark/package.json:43"]
+      "evidence": [
+        "<repositories>/micromark+micromark/packages/micromark-core-commonmark/package.json:43"
+      ]
     },
     {
       "purl": "pkg:npm/micromark-factory-label@2.0.0",
-      "evidence": ["<repositories>/micromark+micromark/packages/micromark-core-commonmark/package.json:44"]
+      "evidence": [
+        "<repositories>/micromark+micromark/packages/micromark-core-commonmark/package.json:44"
+      ]
     },
     {
       "purl": "pkg:npm/micromark-factory-space@2.0.0",
@@ -116,11 +160,15 @@
     },
     {
       "purl": "pkg:npm/micromark-factory-title@2.0.0",
-      "evidence": ["<repositories>/micromark+micromark/packages/micromark-core-commonmark/package.json:46"]
+      "evidence": [
+        "<repositories>/micromark+micromark/packages/micromark-core-commonmark/package.json:46"
+      ]
     },
     {
       "purl": "pkg:npm/micromark-factory-whitespace@2.0.0",
-      "evidence": ["<repositories>/micromark+micromark/packages/micromark-core-commonmark/package.json:47"]
+      "evidence": [
+        "<repositories>/micromark+micromark/packages/micromark-core-commonmark/package.json:47"
+      ]
     },
     {
       "purl": "pkg:npm/micromark-util-character@2.0.0",
@@ -148,11 +196,15 @@
     },
     {
       "purl": "pkg:npm/micromark-util-classify-character@2.0.0",
-      "evidence": ["<repositories>/micromark+micromark/packages/micromark-core-commonmark/package.json:50"]
+      "evidence": [
+        "<repositories>/micromark+micromark/packages/micromark-core-commonmark/package.json:50"
+      ]
     },
     {
       "purl": "pkg:npm/micromark-util-combine-extensions@2.0.0",
-      "evidence": ["<repositories>/micromark+micromark/packages/micromark/package.json:73"]
+      "evidence": [
+        "<repositories>/micromark+micromark/packages/micromark/package.json:73"
+      ]
     },
     {
       "purl": "pkg:npm/micromark-util-decode-numeric-character-reference@2.0.0",
@@ -170,7 +222,9 @@
     },
     {
       "purl": "pkg:npm/micromark-util-html-tag-name@2.0.0",
-      "evidence": ["<repositories>/micromark+micromark/packages/micromark-core-commonmark/package.json:51"]
+      "evidence": [
+        "<repositories>/micromark+micromark/packages/micromark-core-commonmark/package.json:51"
+      ]
     },
     {
       "purl": "pkg:npm/micromark-util-normalize-identifier@2.0.0",
@@ -188,7 +242,9 @@
     },
     {
       "purl": "pkg:npm/micromark-util-sanitize-uri@2.0.0",
-      "evidence": ["<repositories>/micromark+micromark/packages/micromark/package.json:78"]
+      "evidence": [
+        "<repositories>/micromark+micromark/packages/micromark/package.json:78"
+      ]
     },
     {
       "purl": "pkg:npm/micromark-util-subtokenize@2.0.0",
@@ -235,39 +291,57 @@
     },
     {
       "purl": "pkg:npm/ms@2.0.0",
-      "evidence": ["<repositories>/micromark+micromark/package.json:69"]
+      "evidence": [
+        "<repositories>/micromark+micromark/package.json:69"
+      ]
     },
     {
       "purl": "pkg:npm/prettier@3.0.0",
-      "evidence": ["<repositories>/micromark+micromark/package.json:70"]
+      "evidence": [
+        "<repositories>/micromark+micromark/package.json:70"
+      ]
     },
     {
       "purl": "pkg:npm/relativize-url@0.1.0",
-      "evidence": ["<repositories>/micromark+micromark/packages/micromark-build/package.json:41"]
+      "evidence": [
+        "<repositories>/micromark+micromark/packages/micromark-build/package.json:41"
+      ]
     },
     {
       "purl": "pkg:npm/remark-cli@12.0.0",
-      "evidence": ["<repositories>/micromark+micromark/package.json:71"]
+      "evidence": [
+        "<repositories>/micromark+micromark/package.json:71"
+      ]
     },
     {
       "purl": "pkg:npm/remark-preset-wooorm@11.0.0",
-      "evidence": ["<repositories>/micromark+micromark/package.json:72"]
+      "evidence": [
+        "<repositories>/micromark+micromark/package.json:72"
+      ]
     },
     {
       "purl": "pkg:npm/rollup@4.0.0",
-      "evidence": ["<repositories>/micromark+micromark/package.json:73"]
+      "evidence": [
+        "<repositories>/micromark+micromark/package.json:73"
+      ]
     },
     {
       "purl": "pkg:npm/type-coverage@2.0.0",
-      "evidence": ["<repositories>/micromark+micromark/package.json:74"]
+      "evidence": [
+        "<repositories>/micromark+micromark/package.json:74"
+      ]
     },
     {
       "purl": "pkg:npm/typescript@5.0.0",
-      "evidence": ["<repositories>/micromark+micromark/package.json:75"]
+      "evidence": [
+        "<repositories>/micromark+micromark/package.json:75"
+      ]
     },
     {
       "purl": "pkg:npm/xo@0.60.0",
-      "evidence": ["<repositories>/micromark+micromark/package.json:76"]
+      "evidence": [
+        "<repositories>/micromark+micromark/package.json:76"
+      ]
     }
   ],
   "subprojects": [],

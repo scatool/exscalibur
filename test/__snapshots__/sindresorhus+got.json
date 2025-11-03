@@ -2,227 +2,339 @@
   "packages": [
     {
       "purl": "pkg:npm/%40hapi/bourne@3.0.0",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:68"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:68"
+      ]
     },
     {
       "purl": "pkg:npm/%40sindresorhus/is@7.0.1",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:54"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:54"
+      ]
     },
     {
       "purl": "pkg:npm/%40sindresorhus/tsconfig@6.0.0",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:69"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:69"
+      ]
     },
     {
       "purl": "pkg:npm/%40sinonjs/fake-timers@11.2.2",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:70"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:70"
+      ]
     },
     {
       "purl": "pkg:npm/%40szmarczak/http-timer@5.0.1",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:55"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:55"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/benchmark@2.1.5",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:71"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:71"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/express@5.0.0",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:72"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:72"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/node@22.7.5",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:73"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:73"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/pem@1.14.4",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:74"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:74"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/readable-stream@4.0.14",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:75"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:75"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/request@2.48.12",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:76"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:76"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/sinon@17.0.2",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:77"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:77"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/sinonjs__fake-timers@8.1.5",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:78"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:78"
+      ]
     },
     {
       "purl": "pkg:npm/ava@5.3.1",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:79"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:79"
+      ]
     },
     {
       "purl": "pkg:npm/axios@1.7.7",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:48"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:48"
+      ]
     },
     {
       "purl": "pkg:npm/benchmark@2.1.4",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:81"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:81"
+      ]
     },
     {
       "purl": "pkg:npm/bluebird@3.7.2",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:82"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:82"
+      ]
     },
     {
       "purl": "pkg:npm/body-parser@1.20.3",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:83"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:83"
+      ]
     },
     {
       "purl": "pkg:npm/c8@10.1.3",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:84"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:84"
+      ]
     },
     {
       "purl": "pkg:npm/cacheable-lookup@7.0.0",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:56"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:56"
+      ]
     },
     {
       "purl": "pkg:npm/cacheable-request@13.0.12",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:57"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:57"
+      ]
     },
     {
       "purl": "pkg:npm/chunk-data@0.1.0",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:85"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:85"
+      ]
     },
     {
       "purl": "pkg:npm/create-cert@1.0.6",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:86"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:86"
+      ]
     },
     {
       "purl": "pkg:npm/create-test-server@3.0.1",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:87"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:87"
+      ]
     },
     {
       "purl": "pkg:npm/decompress-response@10.0.0",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:58"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:58"
+      ]
     },
     {
       "purl": "pkg:npm/del-cli@6.0.0",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:88"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:88"
+      ]
     },
     {
       "purl": "pkg:npm/delay@6.0.0",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:89"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:89"
+      ]
     },
     {
       "purl": "pkg:npm/expect-type@1.0.0",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:90"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:90"
+      ]
     },
     {
       "purl": "pkg:npm/express@4.21.1",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:91"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:91"
+      ]
     },
     {
       "purl": "pkg:npm/form-data-encoder@4.0.2",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:59"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:59"
+      ]
     },
     {
       "purl": "pkg:npm/form-data@4.0.0",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:92"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:92"
+      ]
     },
     {
       "purl": "pkg:npm/formdata-node@6.0.3",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:93"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:93"
+      ]
     },
     {
       "purl": "pkg:npm/get-stream@9.0.1",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:94"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:94"
+      ]
     },
     {
       "purl": "pkg:npm/http2-wrapper@2.2.1",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:60"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:60"
+      ]
     },
     {
       "purl": "pkg:npm/keyv@5.5.3",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:61"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:61"
+      ]
     },
     {
       "purl": "pkg:npm/lowercase-keys@3.0.0",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:62"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:62"
+      ]
     },
     {
       "purl": "pkg:npm/nock@13.5.5",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:95"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:95"
+      ]
     },
     {
       "purl": "pkg:npm/node-fetch@3.3.2",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:50"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:50"
+      ]
     },
     {
       "purl": "pkg:npm/np@10.0.5",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:20"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:20"
+      ]
     },
     {
       "purl": "pkg:npm/p-cancelable@4.0.1",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:63"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:63"
+      ]
     },
     {
       "purl": "pkg:npm/p-event@6.0.1",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:98"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:98"
+      ]
     },
     {
       "purl": "pkg:npm/pem@1.14.8",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:99"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:99"
+      ]
     },
     {
       "purl": "pkg:npm/pify@6.1.0",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:100"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:100"
+      ]
     },
     {
       "purl": "pkg:npm/quick-lru@7.2.0",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:101"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:101"
+      ]
     },
     {
       "purl": "pkg:npm/readable-stream@4.4.2",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:102"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:102"
+      ]
     },
     {
       "purl": "pkg:npm/request@2.88.2",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:35"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:35"
+      ]
     },
     {
       "purl": "pkg:npm/responselike@4.0.2",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:64"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:64"
+      ]
     },
     {
       "purl": "pkg:npm/sinon@19.0.2",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:104"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:104"
+      ]
     },
     {
       "purl": "pkg:npm/slow-stream@0.0.4",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:105"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:105"
+      ]
     },
     {
       "purl": "pkg:npm/tempy@3.1.0",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:106"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:106"
+      ]
     },
     {
       "purl": "pkg:npm/then-busboy@5.2.1",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:107"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:107"
+      ]
     },
     {
       "purl": "pkg:npm/tough-cookie@4.1.4",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:108"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:108"
+      ]
     },
     {
       "purl": "pkg:npm/tsx@4.19.1",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:109"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:109"
+      ]
     },
     {
       "purl": "pkg:npm/type-fest@4.26.1",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:65"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:65"
+      ]
     },
     {
       "purl": "pkg:npm/typescript@5.6.3",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:110"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:110"
+      ]
     },
     {
       "purl": "pkg:npm/xo@0.56.0",
-      "evidence": ["<repositories>/sindresorhus+got/package.json:111"]
+      "evidence": [
+        "<repositories>/sindresorhus+got/package.json:111"
+      ]
     }
   ],
   "subprojects": [],

@@ -4,13 +4,25 @@ import { PackageURL } from 'packageurl-js';
 import { dirname } from 'node:path';
 import { existsSync } from 'node:fs';
 
-async function hasLockfileInDirectory(dir: string): Promise<boolean> {
+async function hasLockfileInDirectory(dir: string, codebase: string): Promise<boolean> {
   const lockfiles = ['package-lock.json', 'npm-shrinkwrap.json', 'yarn.lock', 'pnpm-lock.yaml', 'bun.lockb'];
 
-  for (const lockfile of lockfiles) {
-    if (existsSync(`${dir}/${lockfile}`)) {
-      return true;
+  // Check current directory and all parent directories up to the codebase root
+  let currentDir = dir;
+  while (currentDir.startsWith(codebase)) {
+    for (const lockfile of lockfiles) {
+      if (existsSync(`${currentDir}/${lockfile}`)) {
+        return true;
+      }
     }
+
+    // Move to parent directory
+    const parentDir = dirname(currentDir);
+    if (parentDir === currentDir) {
+      // Reached filesystem root
+      break;
+    }
+    currentDir = parentDir;
   }
 
   return false;
@@ -32,9 +44,9 @@ export const extractor: Extractor = filesExtractor({
         continue;
       }
 
-      // Skip if a lockfile exists in the same directory
+      // Skip if a lockfile exists in the same directory or any parent directory
       const dir = dirname(file);
-      if (await hasLockfileInDirectory(dir)) {
+      if (await hasLockfileInDirectory(dir, codebase)) {
         continue;
       }
 

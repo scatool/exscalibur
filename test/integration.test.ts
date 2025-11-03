@@ -65,12 +65,13 @@ for (const repoName of repositories) {
       const snapshotPath = join(import.meta.dir, '__snapshots__', `${repoName}.json`);
       const snapshotFile = file(snapshotPath);
 
-      const updateSnapshots = process.argv.includes('--update-snapshots') || process.argv.includes('-u');
+      const updateSnapshots = process.env.UPDATE_SNAPSHOTS === '1';
       const snapshotExists = await snapshotFile.exists();
 
       if (updateSnapshots) {
         // Update snapshot
         await Bun.write(snapshotPath, JSON.stringify(normalizedResult, null, 2) + '\n');
+        return; // No need to compare if we just updated it
       } else if (!snapshotExists) {
         // Create snapshot
         await Bun.write(snapshotPath, JSON.stringify(normalizedResult, null, 2) + '\n');

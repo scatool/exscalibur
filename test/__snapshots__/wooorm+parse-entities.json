@@ -2,63 +2,93 @@
   "packages": [
     {
       "purl": "pkg:npm/%40types/node@22.0.0",
-      "evidence": ["<repositories>/wooorm+parse-entities/package.json:43"]
+      "evidence": [
+        "<repositories>/wooorm+parse-entities/package.json:43"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/unist@2.0.0",
-      "evidence": ["<repositories>/wooorm+parse-entities/package.json:34"]
+      "evidence": [
+        "<repositories>/wooorm+parse-entities/package.json:34"
+      ]
     },
     {
       "purl": "pkg:npm/c8@10.0.0",
-      "evidence": ["<repositories>/wooorm+parse-entities/package.json:44"]
+      "evidence": [
+        "<repositories>/wooorm+parse-entities/package.json:44"
+      ]
     },
     {
       "purl": "pkg:npm/character-entities-legacy@3.0.0",
-      "evidence": ["<repositories>/wooorm+parse-entities/package.json:35"]
+      "evidence": [
+        "<repositories>/wooorm+parse-entities/package.json:35"
+      ]
     },
     {
       "purl": "pkg:npm/character-reference-invalid@2.0.0",
-      "evidence": ["<repositories>/wooorm+parse-entities/package.json:36"]
+      "evidence": [
+        "<repositories>/wooorm+parse-entities/package.json:36"
+      ]
     },
     {
       "purl": "pkg:npm/decode-named-character-reference@1.0.0",
-      "evidence": ["<repositories>/wooorm+parse-entities/package.json:37"]
+      "evidence": [
+        "<repositories>/wooorm+parse-entities/package.json:37"
+      ]
     },
     {
       "purl": "pkg:npm/is-alphanumerical@2.0.0",
-      "evidence": ["<repositories>/wooorm+parse-entities/package.json:38"]
+      "evidence": [
+        "<repositories>/wooorm+parse-entities/package.json:38"
+      ]
     },
     {
       "purl": "pkg:npm/is-decimal@2.0.0",
-      "evidence": ["<repositories>/wooorm+parse-entities/package.json:39"]
+      "evidence": [
+        "<repositories>/wooorm+parse-entities/package.json:39"
+      ]
     },
     {
       "purl": "pkg:npm/is-hexadecimal@2.0.0",
-      "evidence": ["<repositories>/wooorm+parse-entities/package.json:40"]
+      "evidence": [
+        "<repositories>/wooorm+parse-entities/package.json:40"
+      ]
     },
     {
       "purl": "pkg:npm/prettier@3.0.0",
-      "evidence": ["<repositories>/wooorm+parse-entities/package.json:45"]
+      "evidence": [
+        "<repositories>/wooorm+parse-entities/package.json:45"
+      ]
     },
     {
       "purl": "pkg:npm/remark-cli@12.0.0",
-      "evidence": ["<repositories>/wooorm+parse-entities/package.json:46"]
+      "evidence": [
+        "<repositories>/wooorm+parse-entities/package.json:46"
+      ]
     },
     {
       "purl": "pkg:npm/remark-preset-wooorm@10.0.0",
-      "evidence": ["<repositories>/wooorm+parse-entities/package.json:47"]
+      "evidence": [
+        "<repositories>/wooorm+parse-entities/package.json:47"
+      ]
     },
     {
       "purl": "pkg:npm/type-coverage@2.0.0",
-      "evidence": ["<repositories>/wooorm+parse-entities/package.json:48"]
+      "evidence": [
+        "<repositories>/wooorm+parse-entities/package.json:48"
+      ]
     },
     {
       "purl": "pkg:npm/typescript@5.0.0",
-      "evidence": ["<repositories>/wooorm+parse-entities/package.json:49"]
+      "evidence": [
+        "<repositories>/wooorm+parse-entities/package.json:49"
+      ]
     },
     {
       "purl": "pkg:npm/xo@0.60.0",
-      "evidence": ["<repositories>/wooorm+parse-entities/package.json:50"]
+      "evidence": [
+        "<repositories>/wooorm+parse-entities/package.json:50"
+      ]
     }
   ],
   "subprojects": [],

@@ -2,95 +2,141 @@
   "packages": [
     {
       "purl": "pkg:npm/%40types/hast@3.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-to-hast/package.json:36"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-to-hast/package.json:36"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/mdast@4.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-to-hast/package.json:37"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-to-hast/package.json:37"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/node@20.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-to-hast/package.json:47"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-to-hast/package.json:47"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/ungap__structured-clone@1.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-to-hast/package.json:48"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-to-hast/package.json:48"
+      ]
     },
     {
       "purl": "pkg:npm/%40ungap/structured-clone@1.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-to-hast/package.json:38"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-to-hast/package.json:38"
+      ]
     },
     {
       "purl": "pkg:npm/c8@9.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-to-hast/package.json:49"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-to-hast/package.json:49"
+      ]
     },
     {
       "purl": "pkg:npm/devlop@1.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-to-hast/package.json:39"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-to-hast/package.json:39"
+      ]
     },
     {
       "purl": "pkg:npm/hast-util-to-html@9.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-to-hast/package.json:50"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-to-hast/package.json:50"
+      ]
     },
     {
       "purl": "pkg:npm/hastscript@9.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-to-hast/package.json:51"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-to-hast/package.json:51"
+      ]
     },
     {
       "purl": "pkg:npm/mdast-util-from-markdown@2.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-to-hast/package.json:52"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-to-hast/package.json:52"
+      ]
     },
     {
       "purl": "pkg:npm/mdast-util-gfm@3.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-to-hast/package.json:53"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-to-hast/package.json:53"
+      ]
     },
     {
       "purl": "pkg:npm/micromark-extension-gfm@3.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-to-hast/package.json:54"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-to-hast/package.json:54"
+      ]
     },
     {
       "purl": "pkg:npm/micromark-util-sanitize-uri@2.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-to-hast/package.json:40"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-to-hast/package.json:40"
+      ]
     },
     {
       "purl": "pkg:npm/prettier@3.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-to-hast/package.json:55"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-to-hast/package.json:55"
+      ]
     },
     {
       "purl": "pkg:npm/remark-cli@12.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-to-hast/package.json:56"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-to-hast/package.json:56"
+      ]
     },
     {
       "purl": "pkg:npm/remark-preset-wooorm@10.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-to-hast/package.json:57"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-to-hast/package.json:57"
+      ]
     },
     {
       "purl": "pkg:npm/trim-lines@3.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-to-hast/package.json:41"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-to-hast/package.json:41"
+      ]
     },
     {
       "purl": "pkg:npm/type-coverage@2.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-to-hast/package.json:58"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-to-hast/package.json:58"
+      ]
     },
     {
       "purl": "pkg:npm/typescript@5.5.1-rc",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-to-hast/package.json:59"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-to-hast/package.json:59"
+      ]
     },
     {
       "purl": "pkg:npm/unist-util-position@5.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-to-hast/package.json:42"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-to-hast/package.json:42"
+      ]
     },
     {
       "purl": "pkg:npm/unist-util-visit@5.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-to-hast/package.json:43"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-to-hast/package.json:43"
+      ]
     },
     {
       "purl": "pkg:npm/vfile@6.0.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-to-hast/package.json:44"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-to-hast/package.json:44"
+      ]
     },
     {
       "purl": "pkg:npm/xo@0.58.0",
-      "evidence": ["<repositories>/syntax-tree+mdast-util-to-hast/package.json:60"]
+      "evidence": [
+        "<repositories>/syntax-tree+mdast-util-to-hast/package.json:60"
+      ]
     }
   ],
   "subprojects": [],

@@ -2,99 +2,147 @@
   "packages": [
     {
       "purl": "pkg:npm/%40types/node@22.0.0",
-      "evidence": ["<repositories>/micromark+micromark-extension-gfm/package.json:49"]
+      "evidence": [
+        "<repositories>/micromark+micromark-extension-gfm/package.json:49"
+      ]
     },
     {
       "purl": "pkg:npm/c8@10.0.0",
-      "evidence": ["<repositories>/micromark+micromark-extension-gfm/package.json:50"]
+      "evidence": [
+        "<repositories>/micromark+micromark-extension-gfm/package.json:50"
+      ]
     },
     {
       "purl": "pkg:npm/create-gfm-fixtures@1.0.0",
-      "evidence": ["<repositories>/micromark+micromark-extension-gfm/package.json:51"]
+      "evidence": [
+        "<repositories>/micromark+micromark-extension-gfm/package.json:51"
+      ]
     },
     {
       "purl": "pkg:npm/hast-util-from-html@2.0.0",
-      "evidence": ["<repositories>/micromark+micromark-extension-gfm/package.json:52"]
+      "evidence": [
+        "<repositories>/micromark+micromark-extension-gfm/package.json:52"
+      ]
     },
     {
       "purl": "pkg:npm/hast-util-select@6.0.0",
-      "evidence": ["<repositories>/micromark+micromark-extension-gfm/package.json:53"]
+      "evidence": [
+        "<repositories>/micromark+micromark-extension-gfm/package.json:53"
+      ]
     },
     {
       "purl": "pkg:npm/hast-util-to-text@4.0.0",
-      "evidence": ["<repositories>/micromark+micromark-extension-gfm/package.json:54"]
+      "evidence": [
+        "<repositories>/micromark+micromark-extension-gfm/package.json:54"
+      ]
     },
     {
       "purl": "pkg:npm/micromark-extension-gfm-autolink-literal@2.0.0",
-      "evidence": ["<repositories>/micromark+micromark-extension-gfm/package.json:39"]
+      "evidence": [
+        "<repositories>/micromark+micromark-extension-gfm/package.json:39"
+      ]
     },
     {
       "purl": "pkg:npm/micromark-extension-gfm-footnote@2.0.0",
-      "evidence": ["<repositories>/micromark+micromark-extension-gfm/package.json:40"]
+      "evidence": [
+        "<repositories>/micromark+micromark-extension-gfm/package.json:40"
+      ]
     },
     {
       "purl": "pkg:npm/micromark-extension-gfm-strikethrough@2.0.0",
-      "evidence": ["<repositories>/micromark+micromark-extension-gfm/package.json:41"]
+      "evidence": [
+        "<repositories>/micromark+micromark-extension-gfm/package.json:41"
+      ]
     },
     {
       "purl": "pkg:npm/micromark-extension-gfm-table@2.0.0",
-      "evidence": ["<repositories>/micromark+micromark-extension-gfm/package.json:42"]
+      "evidence": [
+        "<repositories>/micromark+micromark-extension-gfm/package.json:42"
+      ]
     },
     {
       "purl": "pkg:npm/micromark-extension-gfm-tagfilter@2.0.0",
-      "evidence": ["<repositories>/micromark+micromark-extension-gfm/package.json:43"]
+      "evidence": [
+        "<repositories>/micromark+micromark-extension-gfm/package.json:43"
+      ]
     },
     {
       "purl": "pkg:npm/micromark-extension-gfm-task-list-item@2.0.0",
-      "evidence": ["<repositories>/micromark+micromark-extension-gfm/package.json:44"]
+      "evidence": [
+        "<repositories>/micromark+micromark-extension-gfm/package.json:44"
+      ]
     },
     {
       "purl": "pkg:npm/micromark-util-combine-extensions@2.0.0",
-      "evidence": ["<repositories>/micromark+micromark-extension-gfm/package.json:45"]
+      "evidence": [
+        "<repositories>/micromark+micromark-extension-gfm/package.json:45"
+      ]
     },
     {
       "purl": "pkg:npm/micromark-util-types@2.0.0",
-      "evidence": ["<repositories>/micromark+micromark-extension-gfm/package.json:46"]
+      "evidence": [
+        "<repositories>/micromark+micromark-extension-gfm/package.json:46"
+      ]
     },
     {
       "purl": "pkg:npm/micromark@4.0.0",
-      "evidence": ["<repositories>/micromark+micromark-extension-gfm/package.json:7"]
+      "evidence": [
+        "<repositories>/micromark+micromark-extension-gfm/package.json:7"
+      ]
     },
     {
       "purl": "pkg:npm/prettier@3.0.0",
-      "evidence": ["<repositories>/micromark+micromark-extension-gfm/package.json:56"]
+      "evidence": [
+        "<repositories>/micromark+micromark-extension-gfm/package.json:56"
+      ]
     },
     {
       "purl": "pkg:npm/rehype-sort-attributes@5.0.0",
-      "evidence": ["<repositories>/micromark+micromark-extension-gfm/package.json:58"]
+      "evidence": [
+        "<repositories>/micromark+micromark-extension-gfm/package.json:58"
+      ]
     },
     {
       "purl": "pkg:npm/rehype@13.0.0",
-      "evidence": ["<repositories>/micromark+micromark-extension-gfm/package.json:57"]
+      "evidence": [
+        "<repositories>/micromark+micromark-extension-gfm/package.json:57"
+      ]
     },
     {
       "purl": "pkg:npm/remark-cli@12.0.0",
-      "evidence": ["<repositories>/micromark+micromark-extension-gfm/package.json:59"]
+      "evidence": [
+        "<repositories>/micromark+micromark-extension-gfm/package.json:59"
+      ]
     },
     {
       "purl": "pkg:npm/remark-preset-wooorm@10.0.0",
-      "evidence": ["<repositories>/micromark+micromark-extension-gfm/package.json:60"]
+      "evidence": [
+        "<repositories>/micromark+micromark-extension-gfm/package.json:60"
+      ]
     },
     {
       "purl": "pkg:npm/type-coverage@2.0.0",
-      "evidence": ["<repositories>/micromark+micromark-extension-gfm/package.json:61"]
+      "evidence": [
+        "<repositories>/micromark+micromark-extension-gfm/package.json:61"
+      ]
     },
     {
       "purl": "pkg:npm/typescript@5.0.0",
-      "evidence": ["<repositories>/micromark+micromark-extension-gfm/package.json:62"]
+      "evidence": [
+        "<repositories>/micromark+micromark-extension-gfm/package.json:62"
+      ]
     },
     {
       "purl": "pkg:npm/undici@6.0.0",
-      "evidence": ["<repositories>/micromark+micromark-extension-gfm/package.json:63"]
+      "evidence": [
+        "<repositories>/micromark+micromark-extension-gfm/package.json:63"
+      ]
     },
     {
       "purl": "pkg:npm/xo@0.59.0",
-      "evidence": ["<repositories>/micromark+micromark-extension-gfm/package.json:64"]
+      "evidence": [
+        "<repositories>/micromark+micromark-extension-gfm/package.json:64"
+      ]
     }
   ],
   "subprojects": [],
