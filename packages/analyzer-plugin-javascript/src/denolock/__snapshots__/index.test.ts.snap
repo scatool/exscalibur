@@ -1,0 +1,117 @@
+// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
+
+exports[`basic 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "<fixtures>/basic/deno.lock#5",
+      ],
+      "purl": "pkg:jsr/std/assert@1.0.9",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/deno.lock#6",
+      ],
+      "purl": "pkg:jsr/std/fmt@0.218.2",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/deno.lock#7",
+      ],
+      "purl": "pkg:npm/fast-check@3.13.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/deno.lock#25",
+      ],
+      "purl": "pkg:npm/pure-rand@6.0.4",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:generic/my-deno-app@1.0.0",
+      "to": [
+        "pkg:jsr/std/assert@1.0.9",
+        "pkg:npm/fast-check@3.13.1",
+      ],
+    },
+    {
+      "from": "pkg:jsr/std/assert@1.0.9",
+      "to": [
+        "pkg:jsr/std/fmt@0.218.2",
+      ],
+    },
+    {
+      "from": "pkg:npm/fast-check@3.13.1",
+      "to": [
+        "pkg:npm/pure-rand@6.0.4",
+      ],
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "<fixtures>/basic/deno.json",
+      "purl": "pkg:generic/my-deno-app@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:jsr/std/assert@1.0.9",
+            "pkg:npm/fast-check@3.13.1",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
+
+exports[`workspace 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "<fixtures>/workspace/deno.lock#5",
+      ],
+      "purl": "pkg:jsr/oak/oak@17.1.4",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/deno.lock#6",
+      ],
+      "purl": "pkg:jsr/std/assert@1.0.9",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:generic/deno-workspace@1.0.0",
+      "to": [
+        "pkg:jsr/oak/oak@17.1.4",
+      ],
+    },
+    {
+      "from": "pkg:jsr/oak/oak@17.1.4",
+      "to": [
+        "pkg:jsr/std/assert@1.0.9",
+      ],
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "<fixtures>/workspace/deno.json",
+      "purl": "pkg:generic/deno-workspace@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:jsr/oak/oak@17.1.4",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
