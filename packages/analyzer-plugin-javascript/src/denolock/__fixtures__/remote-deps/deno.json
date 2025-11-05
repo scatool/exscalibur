@@ -1,0 +1,8 @@
+{
+  "name": "deno-remote-deps",
+  "version": "1.0.0",
+  "imports": {
+    "@std/assert": "jsr:@std/assert@^1.0.9",
+    "case": "https://deno.land/x/case/mod.ts"
+  }
+}

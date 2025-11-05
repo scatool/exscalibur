@@ -68,6 +68,118 @@ exports[`basic 1`] = `
 }
 `;
 
+exports[`edge-cases 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "<fixtures>/edge-cases/deno.lock#6",
+      ],
+      "purl": "pkg:jsr/std/assert@0.218.2",
+    },
+    {
+      "evidence": [
+        "<fixtures>/edge-cases/deno.lock#5",
+      ],
+      "purl": "pkg:jsr/std/assert@1.0.9",
+    },
+    {
+      "evidence": [
+        "<fixtures>/edge-cases/deno.lock#36",
+      ],
+      "purl": "pkg:npm/js-tokens@4.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/edge-cases/deno.lock#28",
+      ],
+      "purl": "pkg:npm/loose-envify@1.4.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/edge-cases/deno.lock#29",
+      ],
+      "purl": "pkg:npm/object-assign@4.1.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/edge-cases/deno.lock#30",
+      ],
+      "purl": "pkg:npm/prop-types@15.8.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/edge-cases/deno.lock#52",
+      ],
+      "purl": "pkg:npm/react-is@16.13.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/edge-cases/deno.lock#8",
+      ],
+      "purl": "pkg:npm/react@16.14.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/edge-cases/deno.lock#7",
+      ],
+      "purl": "pkg:npm/react@19.2.0",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:generic/deno-edge-cases@1.0.0",
+      "to": [
+        "pkg:jsr/std/assert@0.218.2",
+        "pkg:jsr/std/assert@1.0.9",
+        "pkg:npm/react@16.14.0",
+        "pkg:npm/react@19.2.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/loose-envify@1.4.0",
+      "to": [
+        "pkg:npm/js-tokens@4.0.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/prop-types@15.8.1",
+      "to": [
+        "pkg:npm/loose-envify@1.4.0",
+        "pkg:npm/object-assign@4.1.1",
+        "pkg:npm/react-is@16.13.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/react@16.14.0",
+      "to": [
+        "pkg:npm/loose-envify@1.4.0",
+        "pkg:npm/object-assign@4.1.1",
+        "pkg:npm/prop-types@15.8.1",
+      ],
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "<fixtures>/edge-cases/deno.json",
+      "purl": "pkg:generic/deno-edge-cases@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:jsr/std/assert@0.218.2",
+            "pkg:jsr/std/assert@1.0.9",
+            "pkg:npm/react@16.14.0",
+            "pkg:npm/react@19.2.0",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
+
 exports[`monorepo 1`] = `
 {
   "issues": [],
@@ -119,6 +231,42 @@ exports[`monorepo 1`] = `
         {
           "packages": [
             "pkg:jsr/oak/oak@17.1.4",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
+
+exports[`remote-deps 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "<fixtures>/remote-deps/deno.lock#5",
+      ],
+      "purl": "pkg:jsr/std/assert@1.0.9",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:generic/deno-remote-deps@1.0.0",
+      "to": [
+        "pkg:jsr/std/assert@1.0.9",
+      ],
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "<fixtures>/remote-deps/deno.json",
+      "purl": "pkg:generic/deno-remote-deps@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:jsr/std/assert@1.0.9",
           ],
           "scope": "dependencies",
         },

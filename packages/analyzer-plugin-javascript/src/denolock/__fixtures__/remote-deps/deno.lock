@@ -1,0 +1,19 @@
+{
+  "version": "3",
+  "packages": {
+    "specifiers": {
+      "jsr:@std/assert@^1.0.9": "jsr:@std/assert@1.0.9"
+    },
+    "jsr": {
+      "@std/assert@1.0.9": {
+        "integrity": "7f0a5a1a8cf86607cd6c2c030584096e1ffad27fc9271429a8cb48cfbdee5eaf",
+        "dependencies": []
+      }
+    },
+    "npm": {}
+  },
+  "remote": {
+    "https://deno.land/x/case/mod.ts": "8a9da298c26750b28b326b297316cdde860bc237533b07e1337c021379e6b2a9",
+    "https://deno.land/x/case@0.2.2/mod.ts": "3b1c79559dc67567950e8f7c4c6c7e05d8f0c4e6e5d7a4d7c6c7e3b0a1c2d3e4"
+  }
+}

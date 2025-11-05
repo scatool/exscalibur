@@ -1,0 +1,10 @@
+{
+  "name": "deno-edge-cases",
+  "version": "1.0.0",
+  "imports": {
+    "react": "npm:react@^19.0.0",
+    "react-old": "npm:react@^16.0.0",
+    "@std/assert": "jsr:@std/assert@^1.0.9",
+    "@std/assert-old": "jsr:@std/assert@^0.218.0"
+  }
+}
