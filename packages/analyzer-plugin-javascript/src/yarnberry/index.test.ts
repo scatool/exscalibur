@@ -3,6 +3,7 @@ import { extractor } from './index.ts';
 import { join } from 'node:path';
 import { mkdtempSync, rmSync, cpSync } from 'node:fs';
 import { tmpdir } from 'node:os';
+import { normalizeResult } from '@scatool/analyzer-test-utils';
 
 const fixturesDir = join(import.meta.dir, './__fixtures__');
 const fixtures = ['basic', 'edge-cases', 'git-deps', 'monorepo', 'patch-deps', 'tarball-deps', 'workspace'];
@@ -25,15 +26,7 @@ for (const dir of fixtures) {
   test(dir, async () => {
     const fixturePath = join(tmpFixturesDir, dir);
     const result = await extractor.extract(fixturePath);
-
-    // Normalize paths in evidence and definitionFile for consistent snapshots
-    for (const pkg of result.packages) {
-      pkg.evidence = pkg.evidence.map((e) => e.replace(tmpFixturesDir, '<fixtures>'));
-    }
-    for (const subproject of result.subprojects) {
-      subproject.definitionFile = subproject.definitionFile.replace(tmpFixturesDir, '<fixtures>');
-    }
-
+    normalizeResult(result, tmpFixturesDir);
     expect(result).toMatchSnapshot();
   });
 }

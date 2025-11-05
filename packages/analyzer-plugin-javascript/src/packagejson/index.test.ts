@@ -1,6 +1,7 @@
 import { test, expect } from 'bun:test';
 import { extractor } from './index.ts';
 import { resolve } from 'path';
+import { normalizeResult } from '@scatool/analyzer-test-utils';
 
 test('package.json extractor should extract package URLs from package.json', async () => {
   // Path to the test fixture
@@ -14,10 +15,7 @@ test('package.json extractor should extract package URLs from package.json', asy
   expect(result).toHaveProperty('packages');
   expect(Array.isArray(result.packages)).toBe(true);
 
-  // Normalize paths in evidence for consistent snapshots
-  for (const pkg of result.packages) {
-    pkg.evidence = pkg.evidence.map((e) => e.replace(fixturesDir, '<fixtures>'));
-  }
+  normalizeResult(result, fixturesDir);
 
   // Snapshot test
   expect(result).toMatchSnapshot();
