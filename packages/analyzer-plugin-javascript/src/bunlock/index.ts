@@ -4,20 +4,18 @@ import {
   type Extractor,
   type Subproject,
   filesExtractor,
-  createNpmPurl,
   addRelationship,
   ensurePackageExists,
   convertPackageMapToArray,
   convertRelationshipsMapToArray,
   aggregateSubprojectRelationships,
   initializeExtractionMaps,
-  NPM_DEPENDENCY_SCOPES,
-  type NpmDependencyScope,
 } from '@scatool/analyzer-core/src/index.ts';
 import { Glob } from 'bun';
 import { parse } from 'jsonc-parser';
 import { dirname, join } from 'node:path';
 import type { PackageJson } from '../types.ts';
+import { createNpmPurl, NPM_DEPENDENCY_SCOPES } from '../npm-utils.ts';
 
 const glob = new Glob('**/bun.lock');
 

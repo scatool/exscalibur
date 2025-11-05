@@ -4,14 +4,12 @@ import {
   type Extractor,
   type Subproject,
   filesExtractor,
-  createNpmPurl,
   addRelationship,
   ensurePackageExists,
   convertPackageMapToArray,
   convertRelationshipsMapToArray,
   aggregateSubprojectRelationships,
   initializeExtractionMaps,
-  NPM_DEPENDENCY_SCOPES,
 } from '@scatool/analyzer-core/src/index.ts';
 import { Glob } from 'bun';
 import { dirname, join } from 'node:path';
@@ -25,6 +23,7 @@ import {
   type PackageLockPackage,
 } from './lockfile.ts';
 import type { PackageJson } from '../types.ts';
+import { createNpmPurl, NPM_DEPENDENCY_SCOPES } from '../npm-utils.ts';
 
 const lockfileGlob = new Glob('**/{package-lock.json,npm-shrinkwrap.json}');
 

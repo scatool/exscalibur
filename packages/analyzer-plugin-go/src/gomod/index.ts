@@ -4,7 +4,6 @@ import {
   type Extractor,
   type Subproject,
   filesExtractor,
-  createGoPurl,
   addRelationship,
   ensurePackageExists,
   convertPackageMapToArray,
@@ -13,6 +12,7 @@ import {
 } from '@scatool/analyzer-core/src/index.ts';
 import { Glob } from 'bun';
 import { dirname } from 'node:path';
+import { createGoPurl } from '../go-utils.ts';
 
 const glob = new Glob('**/go.mod');
 

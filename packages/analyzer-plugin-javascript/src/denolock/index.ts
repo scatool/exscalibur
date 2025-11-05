@@ -3,7 +3,6 @@ import {
   type DependencyScope,
   type Extractor,
   filesExtractor,
-  type Relationship,
   type Subproject,
   initializeExtractionMaps,
   addRelationship,
@@ -11,13 +10,13 @@ import {
   convertPackageMapToArray,
   convertRelationshipsMapToArray,
   aggregateSubprojectRelationships,
-  createNpmPurl,
-  createPurl,
 } from '@scatool/analyzer-core/src/index.ts';
 import { Glob } from 'bun';
+import { PackageURL } from 'packageurl-js';
 import { dirname, join } from 'node:path';
 import { findLineNumber, parseDenoLockfile, parseJsrPackage, parseNpmPackage, type DenoLockfile } from './lockfile.ts';
 import type { PackageJson } from '../types.ts';
+import { createNpmPurl } from '../npm-utils.ts';
 
 const lockfileGlob = new Glob('**/deno.lock');
 
@@ -241,6 +240,17 @@ function resolveNpmSpecifier(lockfile: DenoLockfile, specifier: string): { name:
 
   // Try to parse the specifier directly
   return parseNpmPackage(specifier);
+}
+
+/**
+ * Creates a generic Package URL (PURL) for any package type.
+ * @param type - The package type (e.g., "jsr", "generic")
+ * @param name - The package name
+ * @param version - The package version
+ * @param namespace - Optional namespace for the package
+ */
+function createPurl(type: string, name: string, version: string, namespace: string | null = null): string {
+  return new PackageURL(type, namespace, name, version, null, null).toString();
 }
 
 /**

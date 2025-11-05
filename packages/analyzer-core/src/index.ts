@@ -1,10 +1,7 @@
 export { mergeResults } from './merge.ts';
 import { mergeResults } from './merge.ts';
 
-// Export PURL utilities
-export { createNpmPurl, createGoPurl, createPurl } from './purl-utils.ts';
-
-// Export map utilities
+// Export map utilities (generic, not package-manager specific)
 export {
   addRelationship,
   ensurePackageExists,
@@ -15,10 +12,6 @@ export {
   initializeExtractionMaps,
 } from './map-utils.ts';
 export type { PackageMapEntry } from './map-utils.ts';
-
-// Export constants
-export { NPM_DEPENDENCY_SCOPES } from './constants.ts';
-export type { NpmDependencyScope } from './constants.ts';
 
 export type Package = {
   purl: string;
