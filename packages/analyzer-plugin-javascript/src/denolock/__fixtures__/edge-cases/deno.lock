@@ -1,0 +1,62 @@
+{
+  "version": "3",
+  "packages": {
+    "specifiers": {
+      "jsr:@std/assert@^1.0.9": "jsr:@std/assert@1.0.9",
+      "jsr:@std/assert@^0.218.0": "jsr:@std/assert@0.218.2",
+      "npm:react@^19.0.0": "npm:react@19.2.0",
+      "npm:react@^16.0.0": "npm:react@16.14.0"
+    },
+    "jsr": {
+      "@std/assert@1.0.9": {
+        "integrity": "7f0a5a1a8cf86607cd6c2c030584096e1ffad27fc9271429a8cb48cfbdee5eaf",
+        "dependencies": []
+      },
+      "@std/assert@0.218.2": {
+        "integrity": "abc123def456ghi789jkl012mno345pqr678stu901vwx234yzabcdefghijklmn",
+        "dependencies": []
+      }
+    },
+    "npm": {
+      "react@19.2.0": {
+        "integrity": "sha512-tmbWg6W31tQLeB5cdIBOicJDJRR2KzXsV7uSK9iNfLWQ5bIZfxuPEHp7M8wiHyHnn0DD1i7w3Zmin0FtkrwoCQ==",
+        "dependencies": {}
+      },
+      "react@16.14.0": {
+        "integrity": "sha512-abc123def456ghi789jkl012mno345pqr678stu901vwx234yzabcdefghijklmn",
+        "dependencies": {
+          "loose-envify": "loose-envify@1.4.0",
+          "object-assign": "object-assign@4.1.1",
+          "prop-types": "prop-types@15.8.1"
+        }
+      },
+      "loose-envify@1.4.0": {
+        "integrity": "sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==",
+        "dependencies": {
+          "js-tokens": "js-tokens@4.0.0"
+        }
+      },
+      "js-tokens@4.0.0": {
+        "integrity": "sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==",
+        "dependencies": {}
+      },
+      "object-assign@4.1.1": {
+        "integrity": "sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==",
+        "dependencies": {}
+      },
+      "prop-types@15.8.1": {
+        "integrity": "sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==",
+        "dependencies": {
+          "loose-envify": "loose-envify@1.4.0",
+          "object-assign": "object-assign@4.1.1",
+          "react-is": "react-is@16.13.1"
+        }
+      },
+      "react-is@16.13.1": {
+        "integrity": "sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==",
+        "dependencies": {}
+      }
+    }
+  },
+  "remote": {}
+}
