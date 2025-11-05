@@ -1,9 +1,9 @@
 import { expect, test } from 'bun:test';
-import { extractWorkflow } from './index.ts';
 import { join } from 'node:path';
+import { extractWorkflow } from './index.ts';
 import { normalizeResult, scanFixtureFiles } from '@scatool/analyzer-test-utils';
 
-const fixturesDir = `${import.meta.dir}/__fixtures__`;
+const fixturesDir = join(import.meta.dir, '__fixtures__');
 const fixtureFiles = await scanFixtureFiles(fixturesDir, '*.yml');
 
 for (const file of fixtureFiles) {

@@ -1,12 +1,12 @@
 import { test, expect, beforeAll, afterAll } from 'bun:test';
-import { extractor } from './index.ts';
 import { join } from 'node:path';
 import { mkdtempSync, rmSync, cpSync } from 'node:fs';
 import { tmpdir } from 'node:os';
-import { normalizeResult } from '@scatool/analyzer-test-utils';
+import { extractor } from './index.ts';
+import { normalizeResult, scanFixtures } from '@scatool/analyzer-test-utils';
 
-const fixturesDir = join(import.meta.dir, './__fixtures__');
-const fixtures = ['basic', 'edge-cases', 'git-deps', 'monorepo', 'patch-deps', 'tarball-deps', 'workspace'];
+const fixturesDir = join(import.meta.dir, '__fixtures__');
+const fixtures = await scanFixtures(fixturesDir, '*/yarn.lock');
 
 // Copy fixtures to /tmp to avoid workspace detection issues
 let tmpFixturesDir: string;

@@ -1,9 +1,9 @@
 import { expect, test } from 'bun:test';
-import { extractor } from './index.ts';
 import { join } from 'node:path';
+import { extractor } from './index.ts';
 import { normalizeResult, scanFixtures } from '@scatool/analyzer-test-utils';
 
-const fixturesDir = `${import.meta.dir}/__fixtures__`;
+const fixturesDir = join(import.meta.dir, '__fixtures__');
 const fixtures = await scanFixtures(fixturesDir, '*/{package-lock.json,npm-shrinkwrap.json}');
 
 for (const dir of fixtures) {
