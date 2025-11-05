@@ -1,0 +1,293 @@
+// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
+
+exports[`basic 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "<fixtures>/basic/Cargo.lock#6",
+      ],
+      "purl": "pkg:cargo/basic-rust-app@0.1.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/Cargo.lock#14",
+      ],
+      "purl": "pkg:cargo/itoa@1.0.10",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/Cargo.lock#57",
+      ],
+      "purl": "pkg:cargo/proc-macro2@1.0.70",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/Cargo.lock#66",
+      ],
+      "purl": "pkg:cargo/quote@1.0.33",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/Cargo.lock#20",
+      ],
+      "purl": "pkg:cargo/ryu@1.0.16",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/Cargo.lock#35",
+      ],
+      "purl": "pkg:cargo/serde_derive@1.0.193",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/Cargo.lock#46",
+      ],
+      "purl": "pkg:cargo/serde_json@1.0.108",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/Cargo.lock#26",
+      ],
+      "purl": "pkg:cargo/serde@1.0.193",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/Cargo.lock#75",
+      ],
+      "purl": "pkg:cargo/syn@2.0.41",
+    },
+    {
+      "evidence": [
+        "<fixtures>/basic/Cargo.lock#86",
+      ],
+      "purl": "pkg:cargo/unicode-ident@1.0.12",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:cargo/basic-rust-app@0.1.0",
+      "to": [
+        "pkg:cargo/serde@1.0.193",
+        "pkg:cargo/serde_json@1.0.108",
+      ],
+    },
+    {
+      "from": "pkg:cargo/proc-macro2@1.0.70",
+      "to": [
+        "pkg:cargo/unicode-ident@1.0.12",
+      ],
+    },
+    {
+      "from": "pkg:cargo/quote@1.0.33",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.70",
+      ],
+    },
+    {
+      "from": "pkg:cargo/serde_derive@1.0.193",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.70",
+        "pkg:cargo/quote@1.0.33",
+        "pkg:cargo/syn@2.0.41",
+      ],
+    },
+    {
+      "from": "pkg:cargo/serde_json@1.0.108",
+      "to": [
+        "pkg:cargo/itoa@1.0.10",
+        "pkg:cargo/ryu@1.0.16",
+        "pkg:cargo/serde@1.0.193",
+      ],
+    },
+    {
+      "from": "pkg:cargo/serde@1.0.193",
+      "to": [
+        "pkg:cargo/serde_derive@1.0.193",
+      ],
+    },
+    {
+      "from": "pkg:cargo/syn@2.0.41",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.70",
+        "pkg:cargo/quote@1.0.33",
+        "pkg:cargo/unicode-ident@1.0.12",
+      ],
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "<fixtures>/basic/Cargo.toml",
+      "purl": "pkg:cargo/basic-rust-app@0.1.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:cargo/serde@1.0.193",
+            "pkg:cargo/serde_json@1.0.108",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
+
+exports[`workspace 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "<fixtures>/workspace/Cargo.lock#61",
+      ],
+      "purl": "pkg:cargo/proc-macro2@1.0.70",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/Cargo.lock#70",
+      ],
+      "purl": "pkg:cargo/quote@1.0.33",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/Cargo.lock#30",
+      ],
+      "purl": "pkg:cargo/serde_derive@1.0.193",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/Cargo.lock#21",
+      ],
+      "purl": "pkg:cargo/serde@1.0.193",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/Cargo.lock#79",
+      ],
+      "purl": "pkg:cargo/syn@2.0.41",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/Cargo.lock#50",
+      ],
+      "purl": "pkg:cargo/tokio-macros@2.2.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/Cargo.lock#41",
+      ],
+      "purl": "pkg:cargo/tokio@1.35.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/Cargo.lock#90",
+      ],
+      "purl": "pkg:cargo/unicode-ident@1.0.12",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/Cargo.lock#6",
+      ],
+      "purl": "pkg:cargo/workspace-app@0.1.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/workspace/Cargo.lock#14",
+      ],
+      "purl": "pkg:cargo/workspace-lib@0.2.0",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:cargo/proc-macro2@1.0.70",
+      "to": [
+        "pkg:cargo/unicode-ident@1.0.12",
+      ],
+    },
+    {
+      "from": "pkg:cargo/quote@1.0.33",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.70",
+      ],
+    },
+    {
+      "from": "pkg:cargo/serde_derive@1.0.193",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.70",
+        "pkg:cargo/quote@1.0.33",
+        "pkg:cargo/syn@2.0.41",
+      ],
+    },
+    {
+      "from": "pkg:cargo/serde@1.0.193",
+      "to": [
+        "pkg:cargo/serde_derive@1.0.193",
+      ],
+    },
+    {
+      "from": "pkg:cargo/syn@2.0.41",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.70",
+        "pkg:cargo/quote@1.0.33",
+        "pkg:cargo/unicode-ident@1.0.12",
+      ],
+    },
+    {
+      "from": "pkg:cargo/tokio-macros@2.2.0",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.70",
+        "pkg:cargo/quote@1.0.33",
+        "pkg:cargo/syn@2.0.41",
+      ],
+    },
+    {
+      "from": "pkg:cargo/tokio@1.35.0",
+      "to": [
+        "pkg:cargo/tokio-macros@2.2.0",
+      ],
+    },
+    {
+      "from": "pkg:cargo/workspace-app@0.1.0",
+      "to": [
+        "pkg:cargo/tokio@1.35.0",
+        "pkg:cargo/workspace-lib@0.2.0",
+      ],
+    },
+    {
+      "from": "pkg:cargo/workspace-lib@0.2.0",
+      "to": [
+        "pkg:cargo/serde@1.0.193",
+      ],
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "<fixtures>/workspace/app/Cargo.toml",
+      "purl": "pkg:cargo/workspace-app@0.1.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:cargo/tokio@1.35.0",
+            "pkg:cargo/workspace-lib@0.2.0",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+    {
+      "definitionFile": "<fixtures>/workspace/lib/Cargo.toml",
+      "purl": "pkg:cargo/workspace-lib@0.2.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:cargo/serde@1.0.193",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+  ],
+}
+`;

@@ -1,0 +1,7 @@
+[package]
+name = "workspace-lib"
+version = "0.2.0"
+edition = "2021"
+
+[dependencies]
+serde = "1.0.193"
