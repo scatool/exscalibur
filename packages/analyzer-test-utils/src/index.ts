@@ -1,5 +1,7 @@
-import type { AnalyzerResult } from '@scatool/analyzer-core';
+import type { AnalyzerResult, Extractor } from '@scatool/analyzer-core';
 import { Glob } from 'bun';
+import { expect, test } from 'bun:test';
+import { join } from 'node:path';
 
 /**
  * Normalizes paths in an AnalyzerResult for snapshot testing.
@@ -87,4 +89,54 @@ export async function scanFixtureFiles(fixturesDir: string, pattern: string): Pr
 
   // Sort files alphabetically for consistent test ordering
   return files.sort();
+}
+
+/**
+ * Creates standardized tests for an extractor using fixtures.
+ * This helper reduces boilerplate by automating the common pattern of:
+ * 1. Scanning for fixtures
+ * 2. Running the extractor on each fixture
+ * 3. Normalizing paths
+ * 4. Comparing against snapshots
+ *
+ * @param options - Configuration for the test factory
+ * @param options.extractor - The extractor to test
+ * @param options.fixturesDir - Directory containing test fixtures
+ * @param options.pattern - Glob pattern to find fixture directories/files
+ * @param options.useFiles - If true, uses scanFixtureFiles instead of scanFixtures (default: false)
+ *
+ * @example
+ * // In your test file:
+ * import { extractor } from './index.ts';
+ * import { createExtractorTests } from '@scatool/analyzer-test-utils';
+ * import { join } from 'node:path';
+ *
+ * const fixturesDir = join(import.meta.dir, '__fixtures__');
+ *
+ * createExtractorTests({
+ *   extractor,
+ *   fixturesDir,
+ *   pattern: '* /bun.lock',
+ * });
+ */
+export async function createExtractorTests(options: {
+  extractor: Extractor;
+  fixturesDir: string;
+  pattern: string;
+  useFiles?: boolean;
+}): Promise<void> {
+  const { extractor, fixturesDir, pattern, useFiles = false } = options;
+
+  // Scan for fixtures
+  const fixtures = useFiles ? await scanFixtureFiles(fixturesDir, pattern) : await scanFixtures(fixturesDir, pattern);
+
+  // Create a test for each fixture
+  for (const fixture of fixtures) {
+    test(fixture, async () => {
+      const fixturePath = useFiles ? join(fixturesDir, fixture) : join(fixturesDir, fixture);
+      const result = await extractor.extract(fixturePath);
+      normalizeResult(result, fixturesDir);
+      expect(result).toMatchSnapshot();
+    });
+  }
 }

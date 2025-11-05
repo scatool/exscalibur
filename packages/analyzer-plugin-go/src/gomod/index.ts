@@ -2,12 +2,16 @@ import {
   type AnalyzerResult,
   type DependencyScope,
   type Extractor,
-  type Relationship,
   type Subproject,
   filesExtractor,
+  createGoPurl,
+  addRelationship,
+  ensurePackageExists,
+  convertPackageMapToArray,
+  convertRelationshipsMapToArray,
+  initializeExtractionMaps,
 } from '@scatool/analyzer-core/src/index.ts';
 import { Glob } from 'bun';
-import { PackageURL } from 'packageurl-js';
 import { dirname } from 'node:path';
 
 const glob = new Glob('**/go.mod');
@@ -46,8 +50,7 @@ export const extractor: Extractor = filesExtractor({
     const lines = content.split('\n');
 
     const goMod = parseGoMod(content);
-    const packageMap = new Map<string, { purl: string; evidence: Set<string> }>();
-    const relationshipsMap = new Map<string, Set<string>>();
+    const { packageMap, relationshipsMap } = initializeExtractionMaps();
     const subprojects: Subproject[] = [];
 
     // Build a map of replace directives for resolution
@@ -59,7 +62,7 @@ export const extractor: Extractor = filesExtractor({
     // Create the main module as a subproject
     // For Go modules, we use a pseudo-version since the module itself doesn't have a version
     // until it's published or tagged
-    const modulePurl = createPurl(goMod.module, '0.0.0-00010101000000-000000000000');
+    const modulePurl = createGoPurl(goMod.module, '0.0.0-00010101000000-000000000000');
 
     // Separate direct and indirect dependencies
     const directDeps: string[] = [];
@@ -74,7 +77,7 @@ export const extractor: Extractor = filesExtractor({
       }
 
       const depVersion = replacement || dep.version;
-      const depPurl = createPurl(dep.path, depVersion);
+      const depPurl = createGoPurl(dep.path, depVersion);
 
       // Add to package map
       ensurePackageExists(packageMap, depPurl);
@@ -126,15 +129,8 @@ export const extractor: Extractor = filesExtractor({
     }
 
     // Convert maps to arrays
-    const packages = Array.from(packageMap.values()).map(({ purl, evidence }) => ({
-      purl,
-      evidence: Array.from(evidence),
-    }));
-
-    const relationships: Relationship[] = Array.from(relationshipsMap.entries()).map(([from, toSet]) => ({
-      from,
-      to: Array.from(toSet),
-    }));
+    const packages = convertPackageMapToArray(packageMap);
+    const relationships = convertRelationshipsMapToArray(relationshipsMap);
 
     return {
       packages,
@@ -269,39 +265,7 @@ function parseReplaceLine(line: string): ReplaceDirective | null {
 }
 
 /**
- * Helper to create PURL for Go packages
- */
-function createPurl(modulePath: string, version: string): string {
-  // For Go, the namespace is typically derived from the first part of the import path
-  // For example: github.com/user/repo -> namespace: github.com/user, name: repo
-  // However, PackageURL for Go uses the full path as the name without namespace
-
-  return new PackageURL('golang', null, modulePath, version, null, null).toString();
-}
-
-/**
- * Add a relationship to the relationships map
- */
-function addRelationship(relationshipsMap: Map<string, Set<string>>, from: string, to: string): void {
-  const existing = relationshipsMap.get(from);
-  if (existing) {
-    existing.add(to);
-  } else {
-    relationshipsMap.set(from, new Set([to]));
-  }
-}
-
-/**
- * Ensure a package exists in the package map
- */
-function ensurePackageExists(packageMap: Map<string, { purl: string; evidence: Set<string> }>, purl: string): void {
-  if (!packageMap.has(purl)) {
-    packageMap.set(purl, { purl, evidence: new Set() });
-  }
-}
-
-/**
- * Find the line number where a module directive appears
+ * Find the line number where a module directive appears.
  */
 function findModuleLineNumber(lines: string[], moduleName: string): number | undefined {
   for (let i = 0; i < lines.length; i++) {
