@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "type": "module",
   "module": "src/index.ts",
+  "types": "src/index.ts",
   "scripts": {
     "test": "bun test --passthrough || true",
     "typecheck": "bunx tsc --strict --noEmit"
