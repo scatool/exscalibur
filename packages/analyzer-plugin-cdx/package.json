@@ -13,6 +13,7 @@
     "packageurl-js": "^1.2.1"
   },
   "devDependencies": {
+    "@scatool/analyzer-test-utils": "workspace:*",
     "@types/bun": "^1.3.0"
   },
   "peerDependencies": {

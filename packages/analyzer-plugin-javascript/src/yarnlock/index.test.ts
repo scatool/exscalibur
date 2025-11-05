@@ -1,11 +1,12 @@
 import { test, expect, beforeAll, afterAll } from 'bun:test';
-import { extractor } from './index.ts';
 import { join } from 'node:path';
 import { mkdtempSync, rmSync, cpSync } from 'node:fs';
 import { tmpdir } from 'node:os';
+import { extractor } from './index.ts';
+import { normalizeResult, scanFixtures } from '@scatool/analyzer-test-utils';
 
-const fixturesDir = join(import.meta.dir, './__fixtures__');
-const fixtures = ['basic', 'git-deps', 'monorepo', 'tarball-deps', 'workspace'];
+const fixturesDir = join(import.meta.dir, '__fixtures__');
+const fixtures = await scanFixtures(fixturesDir, '*/yarn.lock');
 
 // Copy fixtures to /tmp to avoid workspace detection issues
 let tmpFixturesDir: string;
@@ -25,15 +26,7 @@ for (const dir of fixtures) {
   test(dir, async () => {
     const fixturePath = join(tmpFixturesDir, dir);
     const result = await extractor.extract(fixturePath);
-
-    // Normalize paths in evidence and definitionFile for consistent snapshots
-    for (const pkg of result.packages) {
-      pkg.evidence = pkg.evidence.map((e) => e.replace(tmpFixturesDir, '<fixtures>'));
-    }
-    for (const subproject of result.subprojects) {
-      subproject.definitionFile = subproject.definitionFile.replace(tmpFixturesDir, '<fixtures>');
-    }
-
+    normalizeResult(result, tmpFixturesDir);
     expect(result).toMatchSnapshot();
   });
 }
