@@ -10,6 +10,7 @@ import {
   yarnBerryExtractor,
   yarnLockExtractor,
 } from '@scatool/analyzer-plugin-javascript/src/index.ts';
+import { gomodExtractor } from '@scatool/analyzer-plugin-go/src/index.ts';
 import type { Extractor } from '@scatool/analyzer-core/src/index.ts';
 import { mergeResults, normalizeResult } from '@scatool/analyzer-core/src/index.ts';
 
@@ -23,6 +24,7 @@ const allExtractors: Extractor[] = [
   pnpmLockExtractor,
   yarnBerryExtractor,
   yarnLockExtractor,
+  gomodExtractor,
 ];
 
 // Scan for repository directories

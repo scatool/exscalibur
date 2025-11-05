@@ -1,0 +1,3913 @@
+{
+  "packages": [
+    {
+      "purl": "pkg:golang/code.dny.dev%2Fssrf@v0.2.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#183",
+        "<repositories>/ory+kratos/oryx/go.mod#6",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#12",
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#11"
+      ]
+    },
+    {
+      "purl": "pkg:golang/codeberg.org%2Fgo-fonts%2Fliberation@v0.5.0",
+      "evidence": [
+        "<repositories>/ory+kratos/oryx/randx/strength/go.mod#13"
+      ]
+    },
+    {
+      "purl": "pkg:golang/codeberg.org%2Fgo-latex%2Flatex@v0.1.0",
+      "evidence": [
+        "<repositories>/ory+kratos/oryx/randx/strength/go.mod#14"
+      ]
+    },
+    {
+      "purl": "pkg:golang/codeberg.org%2Fgo-pdf%2Ffpdf@v0.11.1",
+      "evidence": [
+        "<repositories>/ory+kratos/oryx/randx/strength/go.mod#15"
+      ]
+    },
+    {
+      "purl": "pkg:golang/dario.cat%2Fmergo@v1.0.2",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#21",
+        "<repositories>/ory+kratos/oryx/go.mod#98"
+      ]
+    },
+    {
+      "purl": "pkg:golang/filippo.io%2Fedwards25519@v1.1.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#102",
+        "<repositories>/ory+kratos/oryx/go.mod#99"
+      ]
+    },
+    {
+      "purl": "pkg:golang/git.sr.ht%2F~sbinet%2Fgg@v0.6.0",
+      "evidence": [
+        "<repositories>/ory+kratos/oryx/randx/strength/go.mod#16"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fa8m%2Fenvsubst@v1.4.2",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#104"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fajstarks%2Fsvgo@v0.0.0-20211024235047-1546f124cd8b",
+      "evidence": [
+        "<repositories>/ory+kratos/oryx/randx/strength/go.mod#17"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Falecthomas%2Fparticiple%2Fv2@v2.1.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#105"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Falecthomas%2Ftemplate@v0.0.0-20190718012654-fb15b899a751",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#106"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Falecthomas%2Funits@v0.0.0-20211218093645-b94a6e3cc137",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#107"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Farbovm%2Flevenshtein@v0.0.0-20160628152529-48b4e1c0c4d0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#23"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fasaskevich%2Fgovalidator@v0.0.0-20230301143203-a9d515a09cc2",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#189",
+        "<repositories>/ory+kratos/oryx/go.mod#106",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#13"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fauth0%2Fgo-jwt-middleware%2Fv2@v2.3.0",
+      "evidence": [
+        "<repositories>/ory+kratos/oryx/go.mod#8"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Favast%2Fretry-go%2Fv4@v4.6.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#190",
+        "<repositories>/ory+kratos/oryx/go.mod#9",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#14",
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#12"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Faymerick%2Fdouceur@v0.2.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#191",
+        "<repositories>/ory+kratos/oryx/go.mod#107"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2FAzure%2Fgo-ansiterm@v0.0.0-20250102033503-faa5f7b0171c",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#184",
+        "<repositories>/ory+kratos/oryx/go.mod#100"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fbeorn7%2Fperks@v1.0.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#192",
+        "<repositories>/ory+kratos/oryx/go.mod#108"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fbmatcuk%2Fdoublestar@v1.3.4",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#108"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fbmatcuk%2Fdoublestar%2Fv2@v2.0.4",
+      "evidence": [
+        "<repositories>/ory+kratos/oryx/go.mod#10"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fboombuler%2Fbarcode@v1.0.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#193"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fbradleyjkemp%2Fcupaloy%2Fv2@v2.8.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#24",
+        "<repositories>/ory+kratos/oryx/go.mod#11"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fbwmarrin%2Fdiscordgo@v0.28.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#25"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fcampoy%2Fembedmd@v1.0.0",
+      "evidence": [
+        "<repositories>/ory+kratos/oryx/randx/strength/go.mod#18"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fcenkalti%2Fbackoff@v2.2.1+incompatible",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#99"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fcenkalti%2Fbackoff%2Fv4@v4.3.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#194",
+        "<repositories>/ory+kratos/oryx/go.mod#109"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fcenkalti%2Fbackoff%2Fv5@v5.0.2",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#109",
+        "<repositories>/ory+kratos/oryx/go.mod#110"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fcespare%2Fxxhash%2Fv2@v2.3.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#195",
+        "<repositories>/ory+kratos/oryx/go.mod#111"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fcockroachdb%2Fcockroach-go%2Fv2@v2.4.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#196",
+        "<repositories>/ory+kratos/oryx/go.mod#12"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fcontainerd%2Fcontinuity@v0.4.5",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#197",
+        "<repositories>/ory+kratos/oryx/go.mod#112"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fcontainerd%2Ferrdefs@v1.0.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#110",
+        "<repositories>/ory+kratos/oryx/go.mod#113"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fcontainerd%2Ferrdefs%2Fpkg@v0.3.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#111",
+        "<repositories>/ory+kratos/oryx/go.mod#114"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fcoreos%2Fgo-oidc%2Fv3@github.com%2Fory%2Fgo-oidc%2Fv3",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#26"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fcortesi%2Fmodd@v0.8.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#112"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fcortesi%2Fmoddwatch@v0.1.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#113"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fcortesi%2Ftermlog@v0.0.0-20210222042314-a1eec763abec",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#114"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fdavecgh%2Fgo-spew@v1.1.1",
+      "evidence": [
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#13"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fdavecgh%2Fgo-spew@v1.1.2-0.20180830191138-d8f796af33cc",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#27",
+        "<repositories>/ory+kratos/oryx/go.mod#115",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#15"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fdecred%2Fdcrd%2Fdcrec%2Fsecp256k1%2Fv4@v4.4.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#198",
+        "<repositories>/ory+kratos/oryx/go.mod#116"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fdghubble%2Foauth1@v0.7.3",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#28"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fdgraph-io%2Fristretto%2Fv2@v2.2.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#29",
+        "<repositories>/ory+kratos/oryx/go.mod#13"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fdimchansky%2Futfbom@v1.1.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#115"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fdistribution%2Freference@v0.6.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#199",
+        "<repositories>/ory+kratos/oryx/go.mod#117"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fdocker%2Fcli@v28.3.3+incompatible",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#200",
+        "<repositories>/ory+kratos/oryx/go.mod#118"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fdocker%2Fdocker@v28.3.3+incompatible",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#201",
+        "<repositories>/ory+kratos/oryx/go.mod#14"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fdocker%2Fgo-connections@v0.6.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#202",
+        "<repositories>/ory+kratos/oryx/go.mod#119"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fdocker%2Fgo-units@v0.5.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#203",
+        "<repositories>/ory+kratos/oryx/go.mod#120"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fdustin%2Fgo-humanize@v1.0.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#204",
+        "<repositories>/ory+kratos/oryx/go.mod#121"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Felliotchance%2Forderedmap@v1.7.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#116"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fevanphx%2Fjson-patch%2Fv5@v5.9.11",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#205",
+        "<repositories>/ory+kratos/oryx/go.mod#15"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Ffatih%2Fcolor@v1.18.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#30",
+        "<repositories>/ory+kratos/oryx/go.mod#122"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Ffatih%2Fstructs@v1.1.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#206",
+        "<repositories>/ory+kratos/oryx/go.mod#123"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Ffelixge%2Ffgprof@v0.9.5",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#207",
+        "<repositories>/ory+kratos/oryx/go.mod#124"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Ffelixge%2Fhttpsnoop@v1.0.4",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#208",
+        "<repositories>/ory+kratos/oryx/go.mod#125",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#16",
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#14"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Ffsnotify%2Ffsnotify@v1.9.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#209",
+        "<repositories>/ory+kratos/oryx/go.mod#16"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Ffxamacker%2Fcbor%2Fv2@v2.7.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#210"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgabriel-vasile%2Fmimetype@v1.4.3",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#211"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fghodss%2Fyaml@v1.0.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#31",
+        "<repositories>/ory+kratos/oryx/go.mod#17"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgo-crypt%2Fcrypt@v0.2.25",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#32"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgo-crypt%2Fx@v0.2.18",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#212"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgo-faker%2Ffaker%2Fv4@v4.4.2",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#33"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgo-jose%2Fgo-jose%2Fv3@v3.0.4",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#213",
+        "<repositories>/ory+kratos/oryx/go.mod#18"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgo-jose%2Fgo-jose%2Fv4@v4.0.5",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#214"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgo-logr%2Flogr@v1.4.2",
+      "evidence": [
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#15"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgo-logr%2Flogr@v1.4.3",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#215",
+        "<repositories>/ory+kratos/oryx/go.mod#126",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#17"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgo-logr%2Fstdr@v1.2.2",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#216",
+        "<repositories>/ory+kratos/oryx/go.mod#127",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#18",
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#16"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgo-openapi%2Fanalysis@v0.23.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#117",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#19"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgo-openapi%2Ferrors@v0.22.1",
+      "evidence": [
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#20"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgo-openapi%2Ferrors@v0.22.2",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#217",
+        "<repositories>/ory+kratos/oryx/go.mod#128"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgo-openapi%2Finflect@v0.21.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#118"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgo-openapi%2Fjsonpointer@v0.21.1",
+      "evidence": [
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#21",
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#17"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgo-openapi%2Fjsonpointer@v0.21.2",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#218",
+        "<repositories>/ory+kratos/oryx/go.mod#19"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgo-openapi%2Fjsonreference@v0.21.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#119",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#22"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgo-openapi%2Floads@v0.22.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#120",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#23"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgo-openapi%2Fruntime@v0.28.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#121",
+        "<repositories>/ory+kratos/oryx/go.mod#20",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#24"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgo-openapi%2Fspec@v0.21.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#122",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#25"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgo-openapi%2Fstrfmt@v0.23.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#34",
+        "<repositories>/ory+kratos/oryx/go.mod#129",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#26"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgo-openapi%2Fswag@v0.23.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#219",
+        "<repositories>/ory+kratos/oryx/go.mod#130",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#27",
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#18"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgo-openapi%2Fvalidate@v0.24.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#123",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#28"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgo-playground%2Flocales@v0.14.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#220"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgo-playground%2Funiversal-translator@v0.18.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#221"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgo-playground%2Fvalidator%2Fv10@v10.22.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#35"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgo-sql-driver%2Fmysql@v1.9.3",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#222",
+        "<repositories>/ory+kratos/oryx/go.mod#21"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgo-swagger%2Fgo-swagger@github.com%2Faeneasr%2Fgo-swagger",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#124"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgo-viper%2Fmapstructure%2Fv2@v2.4.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#125",
+        "<repositories>/ory+kratos/oryx/go.mod#131",
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#19"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgo-webauthn%2Fwebauthn@v0.11.2",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#36"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgo-webauthn%2Fx@v0.1.14",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#223"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgobuffalo%2Fenvy@v1.10.2",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#224",
+        "<repositories>/ory+kratos/oryx/go.mod#132"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgobuffalo%2Ffizz@v1.14.4",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#225",
+        "<repositories>/ory+kratos/oryx/go.mod#133"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgobuffalo%2Fflect@v1.0.3",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#226",
+        "<repositories>/ory+kratos/oryx/go.mod#134"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgobuffalo%2Fgithub_flavored_markdown@v1.1.4",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#227",
+        "<repositories>/ory+kratos/oryx/go.mod#135"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgobuffalo%2Fhelpers@v0.6.10",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#228",
+        "<repositories>/ory+kratos/oryx/go.mod#136"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgobuffalo%2Fhttptest@v1.5.2",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#37",
+        "<repositories>/ory+kratos/oryx/go.mod#22"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgobuffalo%2Fnulls@v0.4.2",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#229",
+        "<repositories>/ory+kratos/oryx/go.mod#137"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgobuffalo%2Fplush%2Fv4@v4.1.22",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#230",
+        "<repositories>/ory+kratos/oryx/go.mod#138"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgobuffalo%2Fplush%2Fv5@v5.0.7",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#126",
+        "<repositories>/ory+kratos/oryx/go.mod#139"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgobuffalo%2Ftags%2Fv3@v3.1.4",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#231",
+        "<repositories>/ory+kratos/oryx/go.mod#140"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgobuffalo%2Fvalidate%2Fv3@v3.3.3",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#232",
+        "<repositories>/ory+kratos/oryx/go.mod#141"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgobwas%2Fglob@v0.2.3",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#233",
+        "<repositories>/ory+kratos/oryx/go.mod#23",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#29",
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#20"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgoccy%2Fgo-json@v0.10.5",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#234",
+        "<repositories>/ory+kratos/oryx/go.mod#142"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgoccy%2Fgo-yaml@v1.16.0",
+      "evidence": [
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#21"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgoccy%2Fgo-yaml@v1.18.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#235",
+        "<repositories>/ory+kratos/oryx/go.mod#24",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#30"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgofrs%2Fflock@v0.12.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#236",
+        "<repositories>/ory+kratos/oryx/go.mod#143"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgofrs%2Fuuid@v4.4.0+incompatible",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#38",
+        "<repositories>/ory+kratos/oryx/go.mod#25"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgogo%2Fgoogleapis@v1.4.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#127",
+        "<repositories>/ory+kratos/oryx/go.mod#144"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgogo%2Fprotobuf@v1.3.2",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#237",
+        "<repositories>/ory+kratos/oryx/go.mod#145"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgolang-jwt%2Fjwt%2Fv4@v4.5.2",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#39"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgolang-jwt%2Fjwt%2Fv5@v5.3.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#40",
+        "<repositories>/ory+kratos/oryx/go.mod#26"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgolang%2Ffreetype@v0.0.0-20170609003504-e2365dfdc4a0",
+      "evidence": [
+        "<repositories>/ory+kratos/oryx/randx/strength/go.mod#19"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgolang%2Fgddo@v0.0.0-20190904175337-72a348e765d2",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#41"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgolang%2Fmock@v1.6.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#42"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgolang%2Fprotobuf@v1.5.4",
+      "evidence": [
+        "<repositories>/ory+kratos/oryx/go.mod#146"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgoogle%2Fgo-github%2Fv38@v38.1.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#43"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgoogle%2Fgo-jsonnet@v0.21.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#44",
+        "<repositories>/ory+kratos/oryx/go.mod#27"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgoogle%2Fgo-querystring@v1.0.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#238"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgoogle%2Fgo-tpm@v0.9.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#239"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgoogle%2Fpprof@v0.0.0-20250630185457-6e76a2b096b5",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#240",
+        "<repositories>/ory+kratos/oryx/go.mod#147"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgoogle%2Fshlex@v0.0.0-20191202100458-e7afc7fbc510",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#241",
+        "<repositories>/ory+kratos/oryx/go.mod#148"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgoogle%2Fuuid@v1.6.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#242",
+        "<repositories>/ory+kratos/oryx/go.mod#149",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#31"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgorilla%2Fcontext@v1.1.2",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#128"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgorilla%2Fcss@v1.0.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#243",
+        "<repositories>/ory+kratos/oryx/go.mod#150"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgorilla%2Fhandlers@v1.5.2",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#129"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgorilla%2Fmux@v1.8.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#130"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgorilla%2Fpat@v1.0.2",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#131"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgorilla%2Fsecurecookie@v1.1.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#244"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgorilla%2Fsessions@github.com%2Fory%2Fsessions",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#45"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgorilla%2Fwebsocket@v1.5.3",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#245",
+        "<repositories>/ory+kratos/oryx/go.mod#28"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgrpc-ecosystem%2Fgo-grpc-prometheus@v1.2.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#246",
+        "<repositories>/ory+kratos/oryx/go.mod#29"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgrpc-ecosystem%2Fgrpc-gateway%2Fv2@v2.27.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#247",
+        "<repositories>/ory+kratos/oryx/go.mod#151"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgtank%2Fcryptopasta@v0.0.0-20170601214702-1f550f6f2f69",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#46"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fhashicorp%2Fgo-cleanhttp@v0.5.2",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#248",
+        "<repositories>/ory+kratos/oryx/go.mod#152",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#32",
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#22"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fhashicorp%2Fgo-retryablehttp@v0.7.7",
+      "evidence": [
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#23"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fhashicorp%2Fgo-retryablehttp@v0.7.8",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#47",
+        "<repositories>/ory+kratos/oryx/go.mod#30",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#33"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fhashicorp%2Fgolang-lru%2Fv2@v2.0.7",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#48"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fhashicorp%2Fhcl@v1.0.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#132"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fhuandu%2Fxstrings@v1.5.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#249",
+        "<repositories>/ory+kratos/oryx/go.mod#153"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fian-kent%2Fenvconf@v0.0.0-20141026121121-c19809918c02",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#133"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fian-kent%2Fgo-log@v0.0.0-20160113211217-5731446c36ab",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#134"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fian-kent%2Fgoose@v0.0.0-20141221090059-c3541ea826ad",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#135"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fian-kent%2Flinkio@v0.0.0-20170807205755-97566b872887",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#136"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Finconshreveable%2Fmousetrap@v1.1.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#250",
+        "<repositories>/ory+kratos/oryx/go.mod#154",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#34",
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#24"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Finhies%2Fgo-bytesize@v0.0.0-20220417184213-4913239db9cf",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#49",
+        "<repositories>/ory+kratos/oryx/go.mod#31"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fjackc%2Fchunkreader%2Fv2@v2.0.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#251",
+        "<repositories>/ory+kratos/oryx/go.mod#155"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fjackc%2Fpgconn@v1.14.3",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#252",
+        "<repositories>/ory+kratos/oryx/go.mod#32"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fjackc%2Fpgio@v1.0.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#253",
+        "<repositories>/ory+kratos/oryx/go.mod#156"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fjackc%2Fpgpassfile@v1.0.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#254",
+        "<repositories>/ory+kratos/oryx/go.mod#157"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fjackc%2Fpgproto3%2Fv2@v2.3.3",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#255",
+        "<repositories>/ory+kratos/oryx/go.mod#158"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fjackc%2Fpgservicefile@v0.0.0-20240606120523-5a60cdf6a761",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#256",
+        "<repositories>/ory+kratos/oryx/go.mod#159"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fjackc%2Fpgtype@v1.14.4",
+      "evidence": [
+        "<repositories>/ory+kratos/oryx/go.mod#160"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fjackc%2Fpgx%2Fv4@v4.18.3",
+      "evidence": [
+        "<repositories>/ory+kratos/oryx/go.mod#33"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fjackc%2Fpgx%2Fv5@v5.7.5",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#137",
+        "<repositories>/ory+kratos/oryx/go.mod#161"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fjackc%2Fpuddle%2Fv2@v2.2.2",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#257",
+        "<repositories>/ory+kratos/oryx/go.mod#34"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fjaegertracing%2Fjaeger-idl@v0.5.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#138",
+        "<repositories>/ory+kratos/oryx/go.mod#162"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fjandelgado%2Fgcov2lcov@v1.1.1",
+      "evidence": [
+        "<repositories>/ory+kratos/oryx/go.mod#163"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fjarcoal%2Fhttpmock@v1.3.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#50"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fjessevdk%2Fgo-flags@v1.6.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#139"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fjinzhu%2Fcopier@v0.4.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#140"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fjmoiron%2Fsqlx@v1.4.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#51",
+        "<repositories>/ory+kratos/oryx/go.mod#35"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fjoho%2Fgodotenv@v1.5.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#258",
+        "<repositories>/ory+kratos/oryx/go.mod#164"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fjosharian%2Fintern@v1.0.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#259",
+        "<repositories>/ory+kratos/oryx/go.mod#165",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#35",
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#25"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fjulienschmidt%2Fhttprouter@v1.3.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#52",
+        "<repositories>/ory+kratos/oryx/go.mod#36"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fkballard%2Fgo-shellquote@v0.0.0-20180428030007-95032a82bc51",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#260",
+        "<repositories>/ory+kratos/oryx/go.mod#166"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fknadh%2Fkoanf%2Fmaps@v0.1.2",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#261",
+        "<repositories>/ory+kratos/oryx/go.mod#37"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fknadh%2Fkoanf%2Fparsers%2Fjson@v0.1.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#53",
+        "<repositories>/ory+kratos/oryx/go.mod#38"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fknadh%2Fkoanf%2Fparsers%2Ftoml@v0.1.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#262",
+        "<repositories>/ory+kratos/oryx/go.mod#39"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fknadh%2Fkoanf%2Fparsers%2Fyaml@v0.1.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#263",
+        "<repositories>/ory+kratos/oryx/go.mod#40"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fknadh%2Fkoanf%2Fproviders%2Fposflag@v0.1.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#264",
+        "<repositories>/ory+kratos/oryx/go.mod#41"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fknadh%2Fkoanf%2Fproviders%2Frawbytes@v0.1.0",
+      "evidence": [
+        "<repositories>/ory+kratos/oryx/go.mod#42"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fknadh%2Fkoanf%2Fv2@v2.2.2",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#265",
+        "<repositories>/ory+kratos/oryx/go.mod#43"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fkr%2Fpretty@v0.3.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#141"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fkr%2Ftext@v0.2.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#142"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Flaher%2Fmergefs@v0.1.1",
+      "evidence": [
+        "<repositories>/ory+kratos/oryx/go.mod#44"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Flaher%2Fmergefs@v0.1.2-0.20230223191438-d16611b2f4e7",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#54"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fleodido%2Fgo-urn@v1.4.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#266"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Flestrrat-go%2Fbackoff%2Fv2@v2.0.8",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#267",
+        "<repositories>/ory+kratos/oryx/go.mod#167"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Flestrrat-go%2Fblackmagic@v1.0.4",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#268",
+        "<repositories>/ory+kratos/oryx/go.mod#168"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Flestrrat-go%2Fhttpcc@v1.0.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#269",
+        "<repositories>/ory+kratos/oryx/go.mod#169"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Flestrrat-go%2Fhttprc@v1.0.6",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#270"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Flestrrat-go%2Fiter@v1.0.2",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#271",
+        "<repositories>/ory+kratos/oryx/go.mod#170"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Flestrrat-go%2Fjwx@v1.2.31",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#272",
+        "<repositories>/ory+kratos/oryx/go.mod#45"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Flestrrat-go%2Fjwx%2Fv2@v2.1.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#55"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Flestrrat-go%2Foption@v1.0.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#273",
+        "<repositories>/ory+kratos/oryx/go.mod#171"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Flib%2Fpq@v1.10.9",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#274",
+        "<repositories>/ory+kratos/oryx/go.mod#46"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fmagiconair%2Fproperties@v1.8.9",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#275"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fmailhog%2Fdata@v1.0.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#146"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fmailhog%2Fhttp@v1.0.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#147"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fmailhog%2FMailHog-Server@v1.0.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#144"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fmailhog%2FMailHog-UI@v1.0.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#145"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fmailhog%2FMailHog@v1.0.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#143"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fmailhog%2Fmhsendmail@v0.2.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#148"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fmailhog%2Fsmtp@v1.0.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#149"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fmailhog%2Fstorage@v1.0.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#150"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fmailru%2Feasyjson@v0.9.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#276",
+        "<repositories>/ory+kratos/oryx/go.mod#172",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#36",
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#26"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2FMasterminds%2Fgoutils@v1.1.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#185",
+        "<repositories>/ory+kratos/oryx/go.mod#101"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2FMasterminds%2Fsemver%2Fv3@v3.4.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#186",
+        "<repositories>/ory+kratos/oryx/go.mod#102"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2FMasterminds%2Fsprig%2Fv3@v3.3.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#22",
+        "<repositories>/ory+kratos/oryx/go.mod#7"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fmattn%2Fgo-colorable@v0.1.14",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#277",
+        "<repositories>/ory+kratos/oryx/go.mod#173"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fmattn%2Fgo-isatty@v0.0.20",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#278",
+        "<repositories>/ory+kratos/oryx/go.mod#174"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fmattn%2Fgo-sqlite3@github.com%2Fmattn%2Fgo-sqlite3",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#279"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fmattn%2Fgo-sqlite3@v1.14.32",
+      "evidence": [
+        "<repositories>/ory+kratos/oryx/go.mod#47"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fmicrocosm-cc%2Fbluemonday@v1.0.27",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#280",
+        "<repositories>/ory+kratos/oryx/go.mod#175"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2FMicrosoft%2Fgo-winio@v0.6.2",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#187",
+        "<repositories>/ory+kratos/oryx/go.mod#103"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fmikefarah%2Fyq%2Fv4@v4.45.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#151"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fmitchellh%2Fcopystructure@v1.2.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#281",
+        "<repositories>/ory+kratos/oryx/go.mod#176"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fmitchellh%2Fmapstructure@v1.5.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#282",
+        "<repositories>/ory+kratos/oryx/go.mod#177",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#37"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fmitchellh%2Freflectwalk@v1.0.2",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#283",
+        "<repositories>/ory+kratos/oryx/go.mod#178"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fmoby%2Fdocker-image-spec@v1.3.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#284",
+        "<repositories>/ory+kratos/oryx/go.mod#179"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fmoby%2Fsys%2Fatomicwriter@v0.1.0",
+      "evidence": [
+        "<repositories>/ory+kratos/oryx/go.mod#180"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fmoby%2Fsys%2Fsequential@v0.6.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#152"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fmoby%2Fsys%2Fuser@v0.4.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#153",
+        "<repositories>/ory+kratos/oryx/go.mod#181"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fmoby%2Fterm@v0.5.2",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#285",
+        "<repositories>/ory+kratos/oryx/go.mod#182"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fmohae%2Fdeepcopy@v0.0.0-20170929034955-c48cc78d4826",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#56",
+        "<repositories>/ory+kratos/oryx/go.mod#48"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fmontanaflynn%2Fstats@v0.7.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#57"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fmorikuni%2Faec@v1.0.0",
+      "evidence": [
+        "<repositories>/ory+kratos/oryx/go.mod#183"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fmunnerz%2Fgoautoneg@v0.0.0-20191010083416-a7dc8b61c822",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#154",
+        "<repositories>/ory+kratos/oryx/go.mod#184"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2FNvveen%2FGotty@v0.0.0-20120604004816-cd527374f1e5",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#188",
+        "<repositories>/ory+kratos/oryx/go.mod#104"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fnyaruka%2Fphonenumbers@v1.6.5",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#286",
+        "<repositories>/ory+kratos/oryx/go.mod#185"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fogier%2Fpflag@v0.0.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#155"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Foklog%2Fulid@v1.3.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#287",
+        "<repositories>/ory+kratos/oryx/go.mod#186",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#38"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fopencontainers%2Fgo-digest@v1.0.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#288",
+        "<repositories>/ory+kratos/oryx/go.mod#187"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fopencontainers%2Fimage-spec@v1.1.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#289",
+        "<repositories>/ory+kratos/oryx/go.mod#188"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fopencontainers%2Frunc@v1.3.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#290",
+        "<repositories>/ory+kratos/oryx/go.mod#189"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fopentracing%2Fopentracing-go@v1.2.0",
+      "evidence": [
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#39"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fopenzipkin%2Fzipkin-go@v0.4.3",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#291",
+        "<repositories>/ory+kratos/oryx/go.mod#190"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fory%2Fanalytics-go%2Fv5@v5.0.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#58",
+        "<repositories>/ory+kratos/oryx/go.mod#49"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fory%2Fclient-go@0.0.0-00010101000000-000000000000",
+      "evidence": [
+        "<repositories>/ory+kratos/internal/client-go/go.mod#1"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fory%2Fdockertest%2Fv3@v3.12.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#60",
+        "<repositories>/ory+kratos/oryx/go.mod#50"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fory%2Fgraceful@v0.1.4-0.20230301144740-e222150c51d0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#61"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fory%2Fherodot@v0.10.7",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#62",
+        "<repositories>/ory+kratos/oryx/go.mod#51"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fory%2Fhydra-client-go@v1.7.4",
+      "evidence": [
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#6"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fory%2Fhydra-client-go%2Fv2@v2.0.3",
+      "evidence": [
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#6"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fory%2Fhydra-client-go%2Fv2@v2.2.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#63"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fory%2Fjsonschema%2Fv3@v3.0.9-0.20250317235931-280c5fc7bf0e",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#64",
+        "<repositories>/ory+kratos/oryx/go.mod#52"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fory%2Fkratos-client-go@v0.10.1",
+      "evidence": [
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#7"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fory%2Fkratos@0.0.0-00010101000000-000000000000",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#1"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fory%2Fkratos%2Ftest%2Fe2e%2Fhydra-kratos-login-consent@0.0.0-00010101000000-000000000000",
+      "evidence": [
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#1"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fory%2Fkratos%2Ftest%2Fe2e%2Fhydra-login-consent@0.0.0-00010101000000-000000000000",
+      "evidence": [
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#1"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fory%2Fmail%2Fv3@v3.0.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#65"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fory%2Fmock@0.0.0-00010101000000-000000000000",
+      "evidence": [
+        "<repositories>/ory+kratos/test/e2e/mock/httptarget/go.mod#1",
+        "<repositories>/ory+kratos/test/e2e/mock/webhook/go.mod#1"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fory%2Fnosurf@v1.2.7",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#66"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fory%2Fpop%2Fv6@v6.3.0",
+      "evidence": [
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#40",
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#27"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fory%2Fpop%2Fv6@v6.3.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#67",
+        "<repositories>/ory+kratos/oryx/go.mod#53"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fory%2Fx@0.0.0-00010101000000-000000000000",
+      "evidence": [
+        "<repositories>/ory+kratos/oryx/go.mod#1"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fory%2Fx@v0.0.721",
+      "evidence": [
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#7"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fory%2Fx@v0.0.722-0.20250620091013-eeb8bd14b65a",
+      "evidence": [
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#8"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fory%2Fx%2Frandx%2Fstrength@0.0.0-00010101000000-000000000000",
+      "evidence": [
+        "<repositories>/ory+kratos/oryx/randx/strength/go.mod#1"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fpelletier%2Fgo-toml@v1.9.5",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#292",
+        "<repositories>/ory+kratos/oryx/go.mod#54"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fpelletier%2Fgo-toml%2Fv2@v2.2.3",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#293"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fpeterhellberg%2Flink@v1.2.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#69",
+        "<repositories>/ory+kratos/oryx/go.mod#55"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fphayes%2Ffreeport@v0.0.0-20220201140144-74d24b5ae9f5",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#70"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fphilhofer%2Ffwd@v1.1.3-0.20240916144458-20a13a1f6b7c",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#156"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fpkg%2Ferrors@v0.9.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#71",
+        "<repositories>/ory+kratos/oryx/go.mod#56",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#41",
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#28"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fpkg%2Fprofile@v1.7.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#294",
+        "<repositories>/ory+kratos/oryx/go.mod#57"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fpmezard%2Fgo-difflib@v1.0.0",
+      "evidence": [
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#29"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fpmezard%2Fgo-difflib@v1.0.1-0.20181226105442-5d4384ee4fb2",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#295",
+        "<repositories>/ory+kratos/oryx/go.mod#191",
+        "<repositories>/ory+kratos/oryx/randx/strength/go.mod#20",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#42"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fpquerna%2Fotp@v1.4.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#72"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fprometheus%2Fclient_golang@v1.23.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#296",
+        "<repositories>/ory+kratos/oryx/go.mod#58"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fprometheus%2Fclient_model@v0.6.2",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#297",
+        "<repositories>/ory+kratos/oryx/go.mod#59"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fprometheus%2Fcommon@v0.65.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#298",
+        "<repositories>/ory+kratos/oryx/go.mod#60"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fprometheus%2Fprocfs@v0.17.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#299",
+        "<repositories>/ory+kratos/oryx/go.mod#192"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Frakutentech%2Fjwk-go@v1.2.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#73",
+        "<repositories>/ory+kratos/oryx/go.mod#61"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Frjeczalik%2Fnotify@v0.9.3",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#157"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Frogpeppe%2Fgo-internal@v1.14.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#300",
+        "<repositories>/ory+kratos/oryx/go.mod#193"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Frs%2Fcors@v1.11.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#74",
+        "<repositories>/ory+kratos/oryx/go.mod#62"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fsagikazarmark%2Flocafero@v0.4.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#158"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fsagikazarmark%2Fslog-shim@v0.1.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#159"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fsamber%2Flo@v1.46.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#75"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fseatgeek%2Flogrus-gelf-formatter@v0.0.0-20210414080842-5b05eb8ff761",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#301",
+        "<repositories>/ory+kratos/oryx/go.mod#63",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#43",
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#30"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fsegmentio%2Fasm@v1.2.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#302"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fsegmentio%2Fbacko-go@v1.1.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#303",
+        "<repositories>/ory+kratos/oryx/go.mod#194"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fsergi%2Fgo-diff@v1.4.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#304",
+        "<repositories>/ory+kratos/oryx/go.mod#195"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fshopspring%2Fdecimal@v1.4.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#305",
+        "<repositories>/ory+kratos/oryx/go.mod#196"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fsirupsen%2Flogrus@v1.8.1",
+      "evidence": [
+        "<repositories>/ory+kratos/test/e2e/mock/webhook/go.mod#5"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fsirupsen%2Flogrus@v1.9.3",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#76",
+        "<repositories>/ory+kratos/oryx/go.mod#64",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#44",
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#31"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fslack-go%2Fslack@v0.13.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#77"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fsmartystreets%2Fgoconvey@v1.8.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#160"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fsourcegraph%2Fannotate@v0.0.0-20160123013949-f4cad6c6324d",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#306",
+        "<repositories>/ory+kratos/oryx/go.mod#197"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fsourcegraph%2Fconc@v0.3.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#161"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fsourcegraph%2Fsyntaxhighlight@v0.0.0-20170531221838-bd320f5d308e",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#307",
+        "<repositories>/ory+kratos/oryx/go.mod#198"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fspf13%2Fafero@v1.11.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#162"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fspf13%2Fcast@v1.9.2",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#308",
+        "<repositories>/ory+kratos/oryx/go.mod#65"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fspf13%2Fcobra@v1.10.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#78",
+        "<repositories>/ory+kratos/oryx/go.mod#66"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fspf13%2Fcobra@v1.9.1",
+      "evidence": [
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#45",
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#32"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fspf13%2Fpflag@v1.0.10",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#79",
+        "<repositories>/ory+kratos/oryx/go.mod#67"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fspf13%2Fpflag@v1.0.6",
+      "evidence": [
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#46",
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#33"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fspf13%2Fviper@v1.18.2",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#163"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fssoready%2Fhyrumtoken@v1.0.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#164",
+        "<repositories>/ory+kratos/oryx/go.mod#68"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fstretchr%2Fobjx@v0.5.2",
+      "evidence": [
+        "<repositories>/ory+kratos/oryx/go.mod#199"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.10.0",
+      "evidence": [
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#47",
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#34"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.11.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#80",
+        "<repositories>/ory+kratos/oryx/go.mod#69"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.7.0",
+      "evidence": [
+        "<repositories>/ory+kratos/test/e2e/mock/webhook/go.mod#8"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fsubosito%2Fgotenv@v1.6.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#165"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Ft-k%2Ffluent-logger-golang@v1.0.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#166"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Ftidwall%2Fgjson@v1.18.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#81",
+        "<repositories>/ory+kratos/oryx/go.mod#70",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#48",
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#35"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Ftidwall%2Fmatch@v1.1.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#309",
+        "<repositories>/ory+kratos/oryx/go.mod#200",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#49",
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#36"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Ftidwall%2Fpretty@v1.2.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#310",
+        "<repositories>/ory+kratos/oryx/go.mod#201",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#50",
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#37"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Ftidwall%2Fsjson@v1.2.5",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#82",
+        "<repositories>/ory+kratos/oryx/go.mod#71"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Ftinylib%2Fmsgp@v1.2.5",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#167"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Ftoqueteos%2Fwebbrowser@v1.2.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#168"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Furfave%2Fnegroni@v1.0.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#83",
+        "<repositories>/ory+kratos/oryx/go.mod#72",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#51",
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#38"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2FwI2L%2Fjsondiff@v0.6.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#84"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fx448%2Ffloat16@v0.8.4",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#311"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fxeipuuv%2Fgojsonpointer@v0.0.0-20190905194746-02993c407bfb",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#312",
+        "<repositories>/ory+kratos/oryx/go.mod#202"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fxeipuuv%2Fgojsonreference@v0.0.0-20180127040603-bd5ef7bd5415",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#313",
+        "<repositories>/ory+kratos/oryx/go.mod#203"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fxeipuuv%2Fgojsonschema@v1.2.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#314",
+        "<repositories>/ory+kratos/oryx/go.mod#204"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2FXSAM%2Fotelsql@v0.39.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#103",
+        "<repositories>/ory+kratos/oryx/go.mod#105"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fxtgo%2Fuuid@v0.0.0-20140804021211-a0b114877d4c",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#315",
+        "<repositories>/ory+kratos/oryx/go.mod#205"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fyuin%2Fgopher-lua@v1.1.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#169"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fzmb3%2Fspotify%2Fv2@v2.4.2",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#85"
+      ]
+    },
+    {
+      "purl": "pkg:golang/go.mongodb.org%2Fmongo-driver@v1.17.4",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#316",
+        "<repositories>/ory+kratos/oryx/go.mod#206",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#52"
+      ]
+    },
+    {
+      "purl": "pkg:golang/go.opentelemetry.io%2Fauto%2Fsdk@v1.1.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#170",
+        "<repositories>/ory+kratos/oryx/go.mod#207",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#53",
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#39"
+      ]
+    },
+    {
+      "purl": "pkg:golang/go.opentelemetry.io%2Fcontrib%2Finstrumentation%2Fnet%2Fhttp%2Fhttptrace%2Fotelhttptrace@v0.60.0",
+      "evidence": [
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#40"
+      ]
+    },
+    {
+      "purl": "pkg:golang/go.opentelemetry.io%2Fcontrib%2Finstrumentation%2Fnet%2Fhttp%2Fhttptrace%2Fotelhttptrace@v0.61.0",
+      "evidence": [
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#54"
+      ]
+    },
+    {
+      "purl": "pkg:golang/go.opentelemetry.io%2Fcontrib%2Finstrumentation%2Fnet%2Fhttp%2Fhttptrace%2Fotelhttptrace@v0.62.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#317",
+        "<repositories>/ory+kratos/oryx/go.mod#73"
+      ]
+    },
+    {
+      "purl": "pkg:golang/go.opentelemetry.io%2Fcontrib%2Finstrumentation%2Fnet%2Fhttp%2Fotelhttp@v0.60.0",
+      "evidence": [
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#41"
+      ]
+    },
+    {
+      "purl": "pkg:golang/go.opentelemetry.io%2Fcontrib%2Finstrumentation%2Fnet%2Fhttp%2Fotelhttp@v0.61.0",
+      "evidence": [
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#55"
+      ]
+    },
+    {
+      "purl": "pkg:golang/go.opentelemetry.io%2Fcontrib%2Finstrumentation%2Fnet%2Fhttp%2Fotelhttp@v0.62.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#86",
+        "<repositories>/ory+kratos/oryx/go.mod#74"
+      ]
+    },
+    {
+      "purl": "pkg:golang/go.opentelemetry.io%2Fcontrib%2Fpropagators%2Fb3@v1.37.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#318",
+        "<repositories>/ory+kratos/oryx/go.mod#75"
+      ]
+    },
+    {
+      "purl": "pkg:golang/go.opentelemetry.io%2Fcontrib%2Fpropagators%2Fjaeger@v1.37.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#319",
+        "<repositories>/ory+kratos/oryx/go.mod#76"
+      ]
+    },
+    {
+      "purl": "pkg:golang/go.opentelemetry.io%2Fcontrib%2Fsamplers%2Fjaegerremote@v0.31.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#320",
+        "<repositories>/ory+kratos/oryx/go.mod#77"
+      ]
+    },
+    {
+      "purl": "pkg:golang/go.opentelemetry.io%2Fotel@v1.35.0",
+      "evidence": [
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#42"
+      ]
+    },
+    {
+      "purl": "pkg:golang/go.opentelemetry.io%2Fotel@v1.36.0",
+      "evidence": [
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#56"
+      ]
+    },
+    {
+      "purl": "pkg:golang/go.opentelemetry.io%2Fotel@v1.38.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#87",
+        "<repositories>/ory+kratos/oryx/go.mod#78"
+      ]
+    },
+    {
+      "purl": "pkg:golang/go.opentelemetry.io%2Fotel%2Fexporters%2Fjaeger@v1.17.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#321",
+        "<repositories>/ory+kratos/oryx/go.mod#79"
+      ]
+    },
+    {
+      "purl": "pkg:golang/go.opentelemetry.io%2Fotel%2Fexporters%2Fotlp%2Fotlptrace@v1.37.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#322",
+        "<repositories>/ory+kratos/oryx/go.mod#80"
+      ]
+    },
+    {
+      "purl": "pkg:golang/go.opentelemetry.io%2Fotel%2Fexporters%2Fotlp%2Fotlptrace%2Fotlptracehttp@v1.37.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#323",
+        "<repositories>/ory+kratos/oryx/go.mod#81"
+      ]
+    },
+    {
+      "purl": "pkg:golang/go.opentelemetry.io%2Fotel%2Fexporters%2Fzipkin@v1.37.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#324",
+        "<repositories>/ory+kratos/oryx/go.mod#82"
+      ]
+    },
+    {
+      "purl": "pkg:golang/go.opentelemetry.io%2Fotel%2Fmetric@v1.35.0",
+      "evidence": [
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#43"
+      ]
+    },
+    {
+      "purl": "pkg:golang/go.opentelemetry.io%2Fotel%2Fmetric@v1.36.0",
+      "evidence": [
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#57"
+      ]
+    },
+    {
+      "purl": "pkg:golang/go.opentelemetry.io%2Fotel%2Fmetric@v1.38.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#325",
+        "<repositories>/ory+kratos/oryx/go.mod#208"
+      ]
+    },
+    {
+      "purl": "pkg:golang/go.opentelemetry.io%2Fotel%2Fsdk@v1.38.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#88",
+        "<repositories>/ory+kratos/oryx/go.mod#83"
+      ]
+    },
+    {
+      "purl": "pkg:golang/go.opentelemetry.io%2Fotel%2Ftrace@v1.35.0",
+      "evidence": [
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#44"
+      ]
+    },
+    {
+      "purl": "pkg:golang/go.opentelemetry.io%2Fotel%2Ftrace@v1.36.0",
+      "evidence": [
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#58"
+      ]
+    },
+    {
+      "purl": "pkg:golang/go.opentelemetry.io%2Fotel%2Ftrace@v1.38.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#89",
+        "<repositories>/ory+kratos/oryx/go.mod#84"
+      ]
+    },
+    {
+      "purl": "pkg:golang/go.opentelemetry.io%2Fproto%2Fotlp@v1.7.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#326",
+        "<repositories>/ory+kratos/oryx/go.mod#85"
+      ]
+    },
+    {
+      "purl": "pkg:golang/go.uber.org%2Fgoleak@v1.3.0",
+      "evidence": [
+        "<repositories>/ory+kratos/oryx/go.mod#86"
+      ]
+    },
+    {
+      "purl": "pkg:golang/go.uber.org%2Fmock@v0.5.2",
+      "evidence": [
+        "<repositories>/ory+kratos/oryx/go.mod#87"
+      ]
+    },
+    {
+      "purl": "pkg:golang/go.uber.org%2Fmultierr@v1.11.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#171"
+      ]
+    },
+    {
+      "purl": "pkg:golang/go.yaml.in%2Fyaml%2Fv2@v2.4.2",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#172",
+        "<repositories>/ory+kratos/oryx/go.mod#209"
+      ]
+    },
+    {
+      "purl": "pkg:golang/golang.org%2Fx%2Fcrypto@v0.42.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#90",
+        "<repositories>/ory+kratos/oryx/go.mod#88"
+      ]
+    },
+    {
+      "purl": "pkg:golang/golang.org%2Fx%2Fexp@v0.0.0-20250305212735-054e65f0b394",
+      "evidence": [
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#45"
+      ]
+    },
+    {
+      "purl": "pkg:golang/golang.org%2Fx%2Fexp@v0.0.0-20250620022241-b7579e27df2b",
+      "evidence": [
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#59"
+      ]
+    },
+    {
+      "purl": "pkg:golang/golang.org%2Fx%2Fexp@v0.0.0-20250813145105-42675adae3e6",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#91",
+        "<repositories>/ory+kratos/oryx/go.mod#210"
+      ]
+    },
+    {
+      "purl": "pkg:golang/golang.org%2Fx%2Fimage@v0.30.0",
+      "evidence": [
+        "<repositories>/ory+kratos/oryx/randx/strength/go.mod#21"
+      ]
+    },
+    {
+      "purl": "pkg:golang/golang.org%2Fx%2Fmod@v0.27.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#327",
+        "<repositories>/ory+kratos/oryx/go.mod#89"
+      ]
+    },
+    {
+      "purl": "pkg:golang/golang.org%2Fx%2Fnet@v0.44.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#92",
+        "<repositories>/ory+kratos/oryx/go.mod#90",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#60",
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#46"
+      ]
+    },
+    {
+      "purl": "pkg:golang/golang.org%2Fx%2Foauth2@v0.31.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#93",
+        "<repositories>/ory+kratos/oryx/go.mod#91",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#61",
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#47"
+      ]
+    },
+    {
+      "purl": "pkg:golang/golang.org%2Fx%2Fsync@v0.17.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#94",
+        "<repositories>/ory+kratos/oryx/go.mod#92",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#62",
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#48"
+      ]
+    },
+    {
+      "purl": "pkg:golang/golang.org%2Fx%2Fsys@v0.36.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#328",
+        "<repositories>/ory+kratos/oryx/go.mod#211",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#63",
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#49",
+        "<repositories>/ory+kratos/test/e2e/mock/webhook/go.mod#9"
+      ]
+    },
+    {
+      "purl": "pkg:golang/golang.org%2Fx%2Fterm@v0.35.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#173"
+      ]
+    },
+    {
+      "purl": "pkg:golang/golang.org%2Fx%2Ftext@v0.29.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#95",
+        "<repositories>/ory+kratos/oryx/go.mod#212",
+        "<repositories>/ory+kratos/oryx/randx/strength/go.mod#22",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#64",
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#50"
+      ]
+    },
+    {
+      "purl": "pkg:golang/golang.org%2Fx%2Ftime@v0.12.0",
+      "evidence": [
+        "<repositories>/ory+kratos/oryx/go.mod#213"
+      ]
+    },
+    {
+      "purl": "pkg:golang/golang.org%2Fx%2Ftools@v0.36.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#174",
+        "<repositories>/ory+kratos/oryx/go.mod#214"
+      ]
+    },
+    {
+      "purl": "pkg:golang/gonum.org%2Fv1%2Fplot@v0.16.0",
+      "evidence": [
+        "<repositories>/ory+kratos/oryx/randx/strength/go.mod#9"
+      ]
+    },
+    {
+      "purl": "pkg:golang/google.golang.org%2Fgenproto%2Fgoogleapis%2Fapi@v0.0.0-20250811230008-5f3141c8851a",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#329",
+        "<repositories>/ory+kratos/oryx/go.mod#215"
+      ]
+    },
+    {
+      "purl": "pkg:golang/google.golang.org%2Fgenproto%2Fgoogleapis%2Frpc@v0.0.0-20250528174236-200df99c418a",
+      "evidence": [
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#51"
+      ]
+    },
+    {
+      "purl": "pkg:golang/google.golang.org%2Fgenproto%2Fgoogleapis%2Frpc@v0.0.0-20250603155806-513f23925822",
+      "evidence": [
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#65"
+      ]
+    },
+    {
+      "purl": "pkg:golang/google.golang.org%2Fgenproto%2Fgoogleapis%2Frpc@v0.0.0-20250811230008-5f3141c8851a",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#330",
+        "<repositories>/ory+kratos/oryx/go.mod#216"
+      ]
+    },
+    {
+      "purl": "pkg:golang/google.golang.org%2Fgrpc@v1.72.1",
+      "evidence": [
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#52"
+      ]
+    },
+    {
+      "purl": "pkg:golang/google.golang.org%2Fgrpc@v1.74.2",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#96",
+        "<repositories>/ory+kratos/oryx/go.mod#93"
+      ]
+    },
+    {
+      "purl": "pkg:golang/google.golang.org%2Fprotobuf@v1.36.9",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#331",
+        "<repositories>/ory+kratos/oryx/go.mod#94",
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#53"
+      ]
+    },
+    {
+      "purl": "pkg:golang/gopkg.in%2Falecthomas%2Fkingpin.v2@v2.2.6",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#175"
+      ]
+    },
+    {
+      "purl": "pkg:golang/gopkg.in%2Falexcesaro%2Fquotedprintable.v3@v3.0.0-20150716171945-2caba252f4dc",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#332"
+      ]
+    },
+    {
+      "purl": "pkg:golang/gopkg.in%2Fini.v1@v1.67.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#176"
+      ]
+    },
+    {
+      "purl": "pkg:golang/gopkg.in%2Fmgo.v2@v2.0.0-20190816093944-a6b53ec6cb22",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#177"
+      ]
+    },
+    {
+      "purl": "pkg:golang/gopkg.in%2Fop%2Fgo-logging.v1@v1.0.0-20160211212156-b2cb9fa56473",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#178"
+      ]
+    },
+    {
+      "purl": "pkg:golang/gopkg.in%2Fyaml.v2@v2.4.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#333",
+        "<repositories>/ory+kratos/oryx/go.mod#217"
+      ]
+    },
+    {
+      "purl": "pkg:golang/gopkg.in%2Fyaml.v3@v3.0.1",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#334",
+        "<repositories>/ory+kratos/oryx/go.mod#218",
+        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#66",
+        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#54"
+      ]
+    },
+    {
+      "purl": "pkg:golang/mvdan.cc%2Fsh%2Fv3@v3.6.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#179"
+      ]
+    },
+    {
+      "purl": "pkg:golang/sigs.k8s.io%2Fyaml@v1.6.0",
+      "evidence": [
+        "<repositories>/ory+kratos/go.mod#335",
+        "<repositories>/ory+kratos/oryx/go.mod#219"
+      ]
+    }
+  ],
+  "subprojects": [
+    {
+      "purl": "pkg:golang/github.com%2Fory%2Fclient-go@0.0.0-00010101000000-000000000000",
+      "definitionFile": "<repositories>/ory+kratos/internal/client-go/go.mod",
+      "scopes": []
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fory%2Fkratos@0.0.0-00010101000000-000000000000",
+      "definitionFile": "<repositories>/ory+kratos/go.mod",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:golang/dario.cat%2Fmergo@v1.0.2",
+            "pkg:golang/github.com%2FMasterminds%2Fsprig%2Fv3@v3.3.0",
+            "pkg:golang/github.com%2Farbovm%2Flevenshtein@v0.0.0-20160628152529-48b4e1c0c4d0",
+            "pkg:golang/github.com%2Fbradleyjkemp%2Fcupaloy%2Fv2@v2.8.0",
+            "pkg:golang/github.com%2Fbwmarrin%2Fdiscordgo@v0.28.1",
+            "pkg:golang/github.com%2Fcenkalti%2Fbackoff@v2.2.1+incompatible",
+            "pkg:golang/github.com%2Fcockroachdb%2Fcockroach-go%2Fv2@v2.4.1",
+            "pkg:golang/github.com%2Fcoreos%2Fgo-oidc%2Fv3@github.com%2Fory%2Fgo-oidc%2Fv3",
+            "pkg:golang/github.com%2Fdavecgh%2Fgo-spew@v1.1.2-0.20180830191138-d8f796af33cc",
+            "pkg:golang/github.com%2Fdghubble%2Foauth1@v0.7.3",
+            "pkg:golang/github.com%2Fdgraph-io%2Fristretto%2Fv2@v2.2.0",
+            "pkg:golang/github.com%2Ffatih%2Fcolor@v1.18.0",
+            "pkg:golang/github.com%2Fghodss%2Fyaml@v1.0.0",
+            "pkg:golang/github.com%2Fgo-crypt%2Fcrypt@v0.2.25",
+            "pkg:golang/github.com%2Fgo-faker%2Ffaker%2Fv4@v4.4.2",
+            "pkg:golang/github.com%2Fgo-openapi%2Fstrfmt@v0.23.0",
+            "pkg:golang/github.com%2Fgo-playground%2Fvalidator%2Fv10@v10.22.1",
+            "pkg:golang/github.com%2Fgo-webauthn%2Fwebauthn@v0.11.2",
+            "pkg:golang/github.com%2Fgobuffalo%2Fhttptest@v1.5.2",
+            "pkg:golang/github.com%2Fgofrs%2Fuuid@v4.4.0+incompatible",
+            "pkg:golang/github.com%2Fgolang%2Fgddo@v0.0.0-20190904175337-72a348e765d2",
+            "pkg:golang/github.com%2Fgolang%2Fmock@v1.6.0",
+            "pkg:golang/github.com%2Fgolang-jwt%2Fjwt%2Fv4@v4.5.2",
+            "pkg:golang/github.com%2Fgolang-jwt%2Fjwt%2Fv5@v5.3.0",
+            "pkg:golang/github.com%2Fgoogle%2Fgo-github%2Fv38@v38.1.0",
+            "pkg:golang/github.com%2Fgoogle%2Fgo-jsonnet@v0.21.0",
+            "pkg:golang/github.com%2Fgorilla%2Fsessions@github.com%2Fory%2Fsessions",
+            "pkg:golang/github.com%2Fgtank%2Fcryptopasta@v0.0.0-20170601214702-1f550f6f2f69",
+            "pkg:golang/github.com%2Fhashicorp%2Fgo-retryablehttp@v0.7.8",
+            "pkg:golang/github.com%2Fhashicorp%2Fgolang-lru%2Fv2@v2.0.7",
+            "pkg:golang/github.com%2Finhies%2Fgo-bytesize@v0.0.0-20220417184213-4913239db9cf",
+            "pkg:golang/github.com%2Fjarcoal%2Fhttpmock@v1.3.1",
+            "pkg:golang/github.com%2Fjmoiron%2Fsqlx@v1.4.0",
+            "pkg:golang/github.com%2Fjulienschmidt%2Fhttprouter@v1.3.0",
+            "pkg:golang/github.com%2Fknadh%2Fkoanf%2Fparsers%2Fjson@v0.1.0",
+            "pkg:golang/github.com%2Flestrrat-go%2Fjwx%2Fv2@v2.1.1",
+            "pkg:golang/github.com%2Flestrrat-go%2Fjwx@v1.2.31",
+            "pkg:golang/github.com%2Fmohae%2Fdeepcopy@v0.0.0-20170929034955-c48cc78d4826",
+            "pkg:golang/github.com%2Fmontanaflynn%2Fstats@v0.7.1",
+            "pkg:golang/github.com%2Fnyaruka%2Fphonenumbers@v1.6.5",
+            "pkg:golang/github.com%2Fory%2Fanalytics-go%2Fv5@v5.0.1",
+            "pkg:golang/github.com%2Fory%2Fdockertest%2Fv3@v3.12.0",
+            "pkg:golang/github.com%2Fory%2Fgraceful@v0.1.4-0.20230301144740-e222150c51d0",
+            "pkg:golang/github.com%2Fory%2Fherodot@v0.10.7",
+            "pkg:golang/github.com%2Fory%2Fhydra-client-go%2Fv2@v2.2.1",
+            "pkg:golang/github.com%2Fory%2Fjsonschema%2Fv3@v3.0.9-0.20250317235931-280c5fc7bf0e",
+            "pkg:golang/github.com%2Fory%2Fmail%2Fv3@v3.0.0",
+            "pkg:golang/github.com%2Fory%2Fnosurf@v1.2.7",
+            "pkg:golang/github.com%2Fory%2Fpop%2Fv6@v6.3.1",
+            "pkg:golang/github.com%2Fpeterhellberg%2Flink@v1.2.0",
+            "pkg:golang/github.com%2Fphayes%2Ffreeport@v0.0.0-20220201140144-74d24b5ae9f5",
+            "pkg:golang/github.com%2Fpkg%2Ferrors@v0.9.1",
+            "pkg:golang/github.com%2Fpquerna%2Fotp@v1.4.0",
+            "pkg:golang/github.com%2Fprometheus%2Fclient_golang@v1.23.0",
+            "pkg:golang/github.com%2Frakutentech%2Fjwk-go@v1.2.0",
+            "pkg:golang/github.com%2Frs%2Fcors@v1.11.1",
+            "pkg:golang/github.com%2Fsamber%2Flo@v1.46.0",
+            "pkg:golang/github.com%2Fsirupsen%2Flogrus@v1.9.3",
+            "pkg:golang/github.com%2Fslack-go%2Fslack@v0.13.1",
+            "pkg:golang/github.com%2Fspf13%2Fcobra@v1.10.1",
+            "pkg:golang/github.com%2Fspf13%2Fpflag@v1.0.10",
+            "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.11.1",
+            "pkg:golang/github.com%2Ftidwall%2Fgjson@v1.18.0",
+            "pkg:golang/github.com%2Ftidwall%2Fsjson@v1.2.5",
+            "pkg:golang/github.com%2Furfave%2Fnegroni@v1.0.0",
+            "pkg:golang/github.com%2FwI2L%2Fjsondiff@v0.6.0",
+            "pkg:golang/github.com%2Fzmb3%2Fspotify%2Fv2@v2.4.2",
+            "pkg:golang/go.opentelemetry.io%2Fcontrib%2Finstrumentation%2Fnet%2Fhttp%2Fotelhttp@v0.62.0",
+            "pkg:golang/go.opentelemetry.io%2Fotel%2Fsdk@v1.38.0",
+            "pkg:golang/go.opentelemetry.io%2Fotel%2Ftrace@v1.38.0",
+            "pkg:golang/go.opentelemetry.io%2Fotel@v1.38.0",
+            "pkg:golang/golang.org%2Fx%2Fcrypto@v0.42.0",
+            "pkg:golang/golang.org%2Fx%2Fnet@v0.44.0",
+            "pkg:golang/golang.org%2Fx%2Foauth2@v0.31.0",
+            "pkg:golang/golang.org%2Fx%2Fsync@v0.17.0",
+            "pkg:golang/golang.org%2Fx%2Ftext@v0.29.0",
+            "pkg:golang/google.golang.org%2Fgrpc@v1.74.2",
+            "pkg:golang/google.golang.org%2Fprotobuf@v1.36.9"
+          ]
+        },
+        {
+          "scope": "indirectDependencies",
+          "packages": [
+            "pkg:golang/code.dny.dev%2Fssrf@v0.2.0",
+            "pkg:golang/filippo.io%2Fedwards25519@v1.1.0",
+            "pkg:golang/github.com%2FAzure%2Fgo-ansiterm@v0.0.0-20250102033503-faa5f7b0171c",
+            "pkg:golang/github.com%2FMasterminds%2Fgoutils@v1.1.1",
+            "pkg:golang/github.com%2FMasterminds%2Fsemver%2Fv3@v3.4.0",
+            "pkg:golang/github.com%2FMicrosoft%2Fgo-winio@v0.6.2",
+            "pkg:golang/github.com%2FNvveen%2FGotty@v0.0.0-20120604004816-cd527374f1e5",
+            "pkg:golang/github.com%2FXSAM%2Fotelsql@v0.39.0",
+            "pkg:golang/github.com%2Fa8m%2Fenvsubst@v1.4.2",
+            "pkg:golang/github.com%2Falecthomas%2Fparticiple%2Fv2@v2.1.1",
+            "pkg:golang/github.com%2Falecthomas%2Ftemplate@v0.0.0-20190718012654-fb15b899a751",
+            "pkg:golang/github.com%2Falecthomas%2Funits@v0.0.0-20211218093645-b94a6e3cc137",
+            "pkg:golang/github.com%2Fasaskevich%2Fgovalidator@v0.0.0-20230301143203-a9d515a09cc2",
+            "pkg:golang/github.com%2Favast%2Fretry-go%2Fv4@v4.6.1",
+            "pkg:golang/github.com%2Faymerick%2Fdouceur@v0.2.0",
+            "pkg:golang/github.com%2Fbeorn7%2Fperks@v1.0.1",
+            "pkg:golang/github.com%2Fbmatcuk%2Fdoublestar@v1.3.4",
+            "pkg:golang/github.com%2Fboombuler%2Fbarcode@v1.0.1",
+            "pkg:golang/github.com%2Fcenkalti%2Fbackoff%2Fv4@v4.3.0",
+            "pkg:golang/github.com%2Fcenkalti%2Fbackoff%2Fv5@v5.0.2",
+            "pkg:golang/github.com%2Fcespare%2Fxxhash%2Fv2@v2.3.0",
+            "pkg:golang/github.com%2Fcontainerd%2Fcontinuity@v0.4.5",
+            "pkg:golang/github.com%2Fcontainerd%2Ferrdefs%2Fpkg@v0.3.0",
+            "pkg:golang/github.com%2Fcontainerd%2Ferrdefs@v1.0.0",
+            "pkg:golang/github.com%2Fcortesi%2Fmodd@v0.8.1",
+            "pkg:golang/github.com%2Fcortesi%2Fmoddwatch@v0.1.0",
+            "pkg:golang/github.com%2Fcortesi%2Ftermlog@v0.0.0-20210222042314-a1eec763abec",
+            "pkg:golang/github.com%2Fdecred%2Fdcrd%2Fdcrec%2Fsecp256k1%2Fv4@v4.4.0",
+            "pkg:golang/github.com%2Fdimchansky%2Futfbom@v1.1.1",
+            "pkg:golang/github.com%2Fdistribution%2Freference@v0.6.0",
+            "pkg:golang/github.com%2Fdocker%2Fcli@v28.3.3+incompatible",
+            "pkg:golang/github.com%2Fdocker%2Fdocker@v28.3.3+incompatible",
+            "pkg:golang/github.com%2Fdocker%2Fgo-connections@v0.6.0",
+            "pkg:golang/github.com%2Fdocker%2Fgo-units@v0.5.0",
+            "pkg:golang/github.com%2Fdustin%2Fgo-humanize@v1.0.1",
+            "pkg:golang/github.com%2Felliotchance%2Forderedmap@v1.7.1",
+            "pkg:golang/github.com%2Fevanphx%2Fjson-patch%2Fv5@v5.9.11",
+            "pkg:golang/github.com%2Ffatih%2Fstructs@v1.1.0",
+            "pkg:golang/github.com%2Ffelixge%2Ffgprof@v0.9.5",
+            "pkg:golang/github.com%2Ffelixge%2Fhttpsnoop@v1.0.4",
+            "pkg:golang/github.com%2Ffsnotify%2Ffsnotify@v1.9.0",
+            "pkg:golang/github.com%2Ffxamacker%2Fcbor%2Fv2@v2.7.0",
+            "pkg:golang/github.com%2Fgabriel-vasile%2Fmimetype@v1.4.3",
+            "pkg:golang/github.com%2Fgo-crypt%2Fx@v0.2.18",
+            "pkg:golang/github.com%2Fgo-jose%2Fgo-jose%2Fv3@v3.0.4",
+            "pkg:golang/github.com%2Fgo-jose%2Fgo-jose%2Fv4@v4.0.5",
+            "pkg:golang/github.com%2Fgo-logr%2Flogr@v1.4.3",
+            "pkg:golang/github.com%2Fgo-logr%2Fstdr@v1.2.2",
+            "pkg:golang/github.com%2Fgo-openapi%2Fanalysis@v0.23.0",
+            "pkg:golang/github.com%2Fgo-openapi%2Ferrors@v0.22.2",
+            "pkg:golang/github.com%2Fgo-openapi%2Finflect@v0.21.0",
+            "pkg:golang/github.com%2Fgo-openapi%2Fjsonpointer@v0.21.2",
+            "pkg:golang/github.com%2Fgo-openapi%2Fjsonreference@v0.21.0",
+            "pkg:golang/github.com%2Fgo-openapi%2Floads@v0.22.0",
+            "pkg:golang/github.com%2Fgo-openapi%2Fruntime@v0.28.0",
+            "pkg:golang/github.com%2Fgo-openapi%2Fspec@v0.21.0",
+            "pkg:golang/github.com%2Fgo-openapi%2Fswag@v0.23.1",
+            "pkg:golang/github.com%2Fgo-openapi%2Fvalidate@v0.24.0",
+            "pkg:golang/github.com%2Fgo-playground%2Flocales@v0.14.1",
+            "pkg:golang/github.com%2Fgo-playground%2Funiversal-translator@v0.18.1",
+            "pkg:golang/github.com%2Fgo-sql-driver%2Fmysql@v1.9.3",
+            "pkg:golang/github.com%2Fgo-swagger%2Fgo-swagger@github.com%2Faeneasr%2Fgo-swagger",
+            "pkg:golang/github.com%2Fgo-viper%2Fmapstructure%2Fv2@v2.4.0",
+            "pkg:golang/github.com%2Fgo-webauthn%2Fx@v0.1.14",
+            "pkg:golang/github.com%2Fgobuffalo%2Fenvy@v1.10.2",
+            "pkg:golang/github.com%2Fgobuffalo%2Ffizz@v1.14.4",
+            "pkg:golang/github.com%2Fgobuffalo%2Fflect@v1.0.3",
+            "pkg:golang/github.com%2Fgobuffalo%2Fgithub_flavored_markdown@v1.1.4",
+            "pkg:golang/github.com%2Fgobuffalo%2Fhelpers@v0.6.10",
+            "pkg:golang/github.com%2Fgobuffalo%2Fnulls@v0.4.2",
+            "pkg:golang/github.com%2Fgobuffalo%2Fplush%2Fv4@v4.1.22",
+            "pkg:golang/github.com%2Fgobuffalo%2Fplush%2Fv5@v5.0.7",
+            "pkg:golang/github.com%2Fgobuffalo%2Ftags%2Fv3@v3.1.4",
+            "pkg:golang/github.com%2Fgobuffalo%2Fvalidate%2Fv3@v3.3.3",
+            "pkg:golang/github.com%2Fgobwas%2Fglob@v0.2.3",
+            "pkg:golang/github.com%2Fgoccy%2Fgo-json@v0.10.5",
+            "pkg:golang/github.com%2Fgoccy%2Fgo-yaml@v1.18.0",
+            "pkg:golang/github.com%2Fgofrs%2Fflock@v0.12.1",
+            "pkg:golang/github.com%2Fgogo%2Fgoogleapis@v1.4.1",
+            "pkg:golang/github.com%2Fgogo%2Fprotobuf@v1.3.2",
+            "pkg:golang/github.com%2Fgoogle%2Fgo-querystring@v1.0.0",
+            "pkg:golang/github.com%2Fgoogle%2Fgo-tpm@v0.9.1",
+            "pkg:golang/github.com%2Fgoogle%2Fpprof@v0.0.0-20250630185457-6e76a2b096b5",
+            "pkg:golang/github.com%2Fgoogle%2Fshlex@v0.0.0-20191202100458-e7afc7fbc510",
+            "pkg:golang/github.com%2Fgoogle%2Fuuid@v1.6.0",
+            "pkg:golang/github.com%2Fgorilla%2Fcontext@v1.1.2",
+            "pkg:golang/github.com%2Fgorilla%2Fcss@v1.0.1",
+            "pkg:golang/github.com%2Fgorilla%2Fhandlers@v1.5.2",
+            "pkg:golang/github.com%2Fgorilla%2Fmux@v1.8.1",
+            "pkg:golang/github.com%2Fgorilla%2Fpat@v1.0.2",
+            "pkg:golang/github.com%2Fgorilla%2Fsecurecookie@v1.1.1",
+            "pkg:golang/github.com%2Fgorilla%2Fwebsocket@v1.5.3",
+            "pkg:golang/github.com%2Fgrpc-ecosystem%2Fgo-grpc-prometheus@v1.2.0",
+            "pkg:golang/github.com%2Fgrpc-ecosystem%2Fgrpc-gateway%2Fv2@v2.27.1",
+            "pkg:golang/github.com%2Fhashicorp%2Fgo-cleanhttp@v0.5.2",
+            "pkg:golang/github.com%2Fhashicorp%2Fhcl@v1.0.0",
+            "pkg:golang/github.com%2Fhuandu%2Fxstrings@v1.5.0",
+            "pkg:golang/github.com%2Fian-kent%2Fenvconf@v0.0.0-20141026121121-c19809918c02",
+            "pkg:golang/github.com%2Fian-kent%2Fgo-log@v0.0.0-20160113211217-5731446c36ab",
+            "pkg:golang/github.com%2Fian-kent%2Fgoose@v0.0.0-20141221090059-c3541ea826ad",
+            "pkg:golang/github.com%2Fian-kent%2Flinkio@v0.0.0-20170807205755-97566b872887",
+            "pkg:golang/github.com%2Finconshreveable%2Fmousetrap@v1.1.0",
+            "pkg:golang/github.com%2Fjackc%2Fchunkreader%2Fv2@v2.0.1",
+            "pkg:golang/github.com%2Fjackc%2Fpgconn@v1.14.3",
+            "pkg:golang/github.com%2Fjackc%2Fpgio@v1.0.0",
+            "pkg:golang/github.com%2Fjackc%2Fpgpassfile@v1.0.0",
+            "pkg:golang/github.com%2Fjackc%2Fpgproto3%2Fv2@v2.3.3",
+            "pkg:golang/github.com%2Fjackc%2Fpgservicefile@v0.0.0-20240606120523-5a60cdf6a761",
+            "pkg:golang/github.com%2Fjackc%2Fpgx%2Fv5@v5.7.5",
+            "pkg:golang/github.com%2Fjackc%2Fpuddle%2Fv2@v2.2.2",
+            "pkg:golang/github.com%2Fjaegertracing%2Fjaeger-idl@v0.5.0",
+            "pkg:golang/github.com%2Fjessevdk%2Fgo-flags@v1.6.1",
+            "pkg:golang/github.com%2Fjinzhu%2Fcopier@v0.4.0",
+            "pkg:golang/github.com%2Fjoho%2Fgodotenv@v1.5.1",
+            "pkg:golang/github.com%2Fjosharian%2Fintern@v1.0.0",
+            "pkg:golang/github.com%2Fkballard%2Fgo-shellquote@v0.0.0-20180428030007-95032a82bc51",
+            "pkg:golang/github.com%2Fknadh%2Fkoanf%2Fmaps@v0.1.2",
+            "pkg:golang/github.com%2Fknadh%2Fkoanf%2Fparsers%2Ftoml@v0.1.0",
+            "pkg:golang/github.com%2Fknadh%2Fkoanf%2Fparsers%2Fyaml@v0.1.0",
+            "pkg:golang/github.com%2Fknadh%2Fkoanf%2Fproviders%2Fposflag@v0.1.0",
+            "pkg:golang/github.com%2Fknadh%2Fkoanf%2Fv2@v2.2.2",
+            "pkg:golang/github.com%2Fkr%2Fpretty@v0.3.1",
+            "pkg:golang/github.com%2Fkr%2Ftext@v0.2.0",
+            "pkg:golang/github.com%2Flaher%2Fmergefs@v0.1.2-0.20230223191438-d16611b2f4e7",
+            "pkg:golang/github.com%2Fleodido%2Fgo-urn@v1.4.0",
+            "pkg:golang/github.com%2Flestrrat-go%2Fbackoff%2Fv2@v2.0.8",
+            "pkg:golang/github.com%2Flestrrat-go%2Fblackmagic@v1.0.4",
+            "pkg:golang/github.com%2Flestrrat-go%2Fhttpcc@v1.0.1",
+            "pkg:golang/github.com%2Flestrrat-go%2Fhttprc@v1.0.6",
+            "pkg:golang/github.com%2Flestrrat-go%2Fiter@v1.0.2",
+            "pkg:golang/github.com%2Flestrrat-go%2Foption@v1.0.1",
+            "pkg:golang/github.com%2Flib%2Fpq@v1.10.9",
+            "pkg:golang/github.com%2Fmagiconair%2Fproperties@v1.8.9",
+            "pkg:golang/github.com%2Fmailhog%2FMailHog-Server@v1.0.1",
+            "pkg:golang/github.com%2Fmailhog%2FMailHog-UI@v1.0.1",
+            "pkg:golang/github.com%2Fmailhog%2FMailHog@v1.0.1",
+            "pkg:golang/github.com%2Fmailhog%2Fdata@v1.0.1",
+            "pkg:golang/github.com%2Fmailhog%2Fhttp@v1.0.1",
+            "pkg:golang/github.com%2Fmailhog%2Fmhsendmail@v0.2.0",
+            "pkg:golang/github.com%2Fmailhog%2Fsmtp@v1.0.1",
+            "pkg:golang/github.com%2Fmailhog%2Fstorage@v1.0.1",
+            "pkg:golang/github.com%2Fmailru%2Feasyjson@v0.9.0",
+            "pkg:golang/github.com%2Fmattn%2Fgo-colorable@v0.1.14",
+            "pkg:golang/github.com%2Fmattn%2Fgo-isatty@v0.0.20",
+            "pkg:golang/github.com%2Fmattn%2Fgo-sqlite3@github.com%2Fmattn%2Fgo-sqlite3",
+            "pkg:golang/github.com%2Fmicrocosm-cc%2Fbluemonday@v1.0.27",
+            "pkg:golang/github.com%2Fmikefarah%2Fyq%2Fv4@v4.45.1",
+            "pkg:golang/github.com%2Fmitchellh%2Fcopystructure@v1.2.0",
+            "pkg:golang/github.com%2Fmitchellh%2Fmapstructure@v1.5.0",
+            "pkg:golang/github.com%2Fmitchellh%2Freflectwalk@v1.0.2",
+            "pkg:golang/github.com%2Fmoby%2Fdocker-image-spec@v1.3.1",
+            "pkg:golang/github.com%2Fmoby%2Fsys%2Fsequential@v0.6.0",
+            "pkg:golang/github.com%2Fmoby%2Fsys%2Fuser@v0.4.0",
+            "pkg:golang/github.com%2Fmoby%2Fterm@v0.5.2",
+            "pkg:golang/github.com%2Fmunnerz%2Fgoautoneg@v0.0.0-20191010083416-a7dc8b61c822",
+            "pkg:golang/github.com%2Fogier%2Fpflag@v0.0.1",
+            "pkg:golang/github.com%2Foklog%2Fulid@v1.3.1",
+            "pkg:golang/github.com%2Fopencontainers%2Fgo-digest@v1.0.0",
+            "pkg:golang/github.com%2Fopencontainers%2Fimage-spec@v1.1.1",
+            "pkg:golang/github.com%2Fopencontainers%2Frunc@v1.3.0",
+            "pkg:golang/github.com%2Fopenzipkin%2Fzipkin-go@v0.4.3",
+            "pkg:golang/github.com%2Fpelletier%2Fgo-toml%2Fv2@v2.2.3",
+            "pkg:golang/github.com%2Fpelletier%2Fgo-toml@v1.9.5",
+            "pkg:golang/github.com%2Fphilhofer%2Ffwd@v1.1.3-0.20240916144458-20a13a1f6b7c",
+            "pkg:golang/github.com%2Fpkg%2Fprofile@v1.7.0",
+            "pkg:golang/github.com%2Fpmezard%2Fgo-difflib@v1.0.1-0.20181226105442-5d4384ee4fb2",
+            "pkg:golang/github.com%2Fprometheus%2Fclient_model@v0.6.2",
+            "pkg:golang/github.com%2Fprometheus%2Fcommon@v0.65.0",
+            "pkg:golang/github.com%2Fprometheus%2Fprocfs@v0.17.0",
+            "pkg:golang/github.com%2Frjeczalik%2Fnotify@v0.9.3",
+            "pkg:golang/github.com%2Frogpeppe%2Fgo-internal@v1.14.1",
+            "pkg:golang/github.com%2Fsagikazarmark%2Flocafero@v0.4.0",
+            "pkg:golang/github.com%2Fsagikazarmark%2Fslog-shim@v0.1.0",
+            "pkg:golang/github.com%2Fseatgeek%2Flogrus-gelf-formatter@v0.0.0-20210414080842-5b05eb8ff761",
+            "pkg:golang/github.com%2Fsegmentio%2Fasm@v1.2.0",
+            "pkg:golang/github.com%2Fsegmentio%2Fbacko-go@v1.1.0",
+            "pkg:golang/github.com%2Fsergi%2Fgo-diff@v1.4.0",
+            "pkg:golang/github.com%2Fshopspring%2Fdecimal@v1.4.0",
+            "pkg:golang/github.com%2Fsmartystreets%2Fgoconvey@v1.8.1",
+            "pkg:golang/github.com%2Fsourcegraph%2Fannotate@v0.0.0-20160123013949-f4cad6c6324d",
+            "pkg:golang/github.com%2Fsourcegraph%2Fconc@v0.3.0",
+            "pkg:golang/github.com%2Fsourcegraph%2Fsyntaxhighlight@v0.0.0-20170531221838-bd320f5d308e",
+            "pkg:golang/github.com%2Fspf13%2Fafero@v1.11.0",
+            "pkg:golang/github.com%2Fspf13%2Fcast@v1.9.2",
+            "pkg:golang/github.com%2Fspf13%2Fviper@v1.18.2",
+            "pkg:golang/github.com%2Fssoready%2Fhyrumtoken@v1.0.0",
+            "pkg:golang/github.com%2Fsubosito%2Fgotenv@v1.6.0",
+            "pkg:golang/github.com%2Ft-k%2Ffluent-logger-golang@v1.0.0",
+            "pkg:golang/github.com%2Ftidwall%2Fmatch@v1.1.1",
+            "pkg:golang/github.com%2Ftidwall%2Fpretty@v1.2.1",
+            "pkg:golang/github.com%2Ftinylib%2Fmsgp@v1.2.5",
+            "pkg:golang/github.com%2Ftoqueteos%2Fwebbrowser@v1.2.0",
+            "pkg:golang/github.com%2Fx448%2Ffloat16@v0.8.4",
+            "pkg:golang/github.com%2Fxeipuuv%2Fgojsonpointer@v0.0.0-20190905194746-02993c407bfb",
+            "pkg:golang/github.com%2Fxeipuuv%2Fgojsonreference@v0.0.0-20180127040603-bd5ef7bd5415",
+            "pkg:golang/github.com%2Fxeipuuv%2Fgojsonschema@v1.2.0",
+            "pkg:golang/github.com%2Fxtgo%2Fuuid@v0.0.0-20140804021211-a0b114877d4c",
+            "pkg:golang/github.com%2Fyuin%2Fgopher-lua@v1.1.1",
+            "pkg:golang/go.mongodb.org%2Fmongo-driver@v1.17.4",
+            "pkg:golang/go.opentelemetry.io%2Fauto%2Fsdk@v1.1.0",
+            "pkg:golang/go.opentelemetry.io%2Fcontrib%2Finstrumentation%2Fnet%2Fhttp%2Fhttptrace%2Fotelhttptrace@v0.62.0",
+            "pkg:golang/go.opentelemetry.io%2Fcontrib%2Fpropagators%2Fb3@v1.37.0",
+            "pkg:golang/go.opentelemetry.io%2Fcontrib%2Fpropagators%2Fjaeger@v1.37.0",
+            "pkg:golang/go.opentelemetry.io%2Fcontrib%2Fsamplers%2Fjaegerremote@v0.31.0",
+            "pkg:golang/go.opentelemetry.io%2Fotel%2Fexporters%2Fjaeger@v1.17.0",
+            "pkg:golang/go.opentelemetry.io%2Fotel%2Fexporters%2Fotlp%2Fotlptrace%2Fotlptracehttp@v1.37.0",
+            "pkg:golang/go.opentelemetry.io%2Fotel%2Fexporters%2Fotlp%2Fotlptrace@v1.37.0",
+            "pkg:golang/go.opentelemetry.io%2Fotel%2Fexporters%2Fzipkin@v1.37.0",
+            "pkg:golang/go.opentelemetry.io%2Fotel%2Fmetric@v1.38.0",
+            "pkg:golang/go.opentelemetry.io%2Fproto%2Fotlp@v1.7.1",
+            "pkg:golang/go.uber.org%2Fmultierr@v1.11.0",
+            "pkg:golang/go.yaml.in%2Fyaml%2Fv2@v2.4.2",
+            "pkg:golang/golang.org%2Fx%2Fexp@v0.0.0-20250813145105-42675adae3e6",
+            "pkg:golang/golang.org%2Fx%2Fmod@v0.27.0",
+            "pkg:golang/golang.org%2Fx%2Fsys@v0.36.0",
+            "pkg:golang/golang.org%2Fx%2Fterm@v0.35.0",
+            "pkg:golang/golang.org%2Fx%2Ftools@v0.36.0",
+            "pkg:golang/google.golang.org%2Fgenproto%2Fgoogleapis%2Fapi@v0.0.0-20250811230008-5f3141c8851a",
+            "pkg:golang/google.golang.org%2Fgenproto%2Fgoogleapis%2Frpc@v0.0.0-20250811230008-5f3141c8851a",
+            "pkg:golang/gopkg.in%2Falecthomas%2Fkingpin.v2@v2.2.6",
+            "pkg:golang/gopkg.in%2Falexcesaro%2Fquotedprintable.v3@v3.0.0-20150716171945-2caba252f4dc",
+            "pkg:golang/gopkg.in%2Fini.v1@v1.67.0",
+            "pkg:golang/gopkg.in%2Fmgo.v2@v2.0.0-20190816093944-a6b53ec6cb22",
+            "pkg:golang/gopkg.in%2Fop%2Fgo-logging.v1@v1.0.0-20160211212156-b2cb9fa56473",
+            "pkg:golang/gopkg.in%2Fyaml.v2@v2.4.0",
+            "pkg:golang/gopkg.in%2Fyaml.v3@v3.0.1",
+            "pkg:golang/mvdan.cc%2Fsh%2Fv3@v3.6.0",
+            "pkg:golang/sigs.k8s.io%2Fyaml@v1.6.0"
+          ]
+        }
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fory%2Fkratos%2Ftest%2Fe2e%2Fhydra-kratos-login-consent@0.0.0-00010101000000-000000000000",
+      "definitionFile": "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:golang/github.com%2Fory%2Fhydra-client-go@v1.7.4",
+            "pkg:golang/github.com%2Fory%2Fkratos-client-go@v0.10.1",
+            "pkg:golang/github.com%2Fory%2Fx@v0.0.722-0.20250620091013-eeb8bd14b65a"
+          ]
+        },
+        {
+          "scope": "indirectDependencies",
+          "packages": [
+            "pkg:golang/code.dny.dev%2Fssrf@v0.2.0",
+            "pkg:golang/github.com%2Fasaskevich%2Fgovalidator@v0.0.0-20230301143203-a9d515a09cc2",
+            "pkg:golang/github.com%2Favast%2Fretry-go%2Fv4@v4.6.1",
+            "pkg:golang/github.com%2Fdavecgh%2Fgo-spew@v1.1.2-0.20180830191138-d8f796af33cc",
+            "pkg:golang/github.com%2Ffelixge%2Fhttpsnoop@v1.0.4",
+            "pkg:golang/github.com%2Fgo-logr%2Flogr@v1.4.3",
+            "pkg:golang/github.com%2Fgo-logr%2Fstdr@v1.2.2",
+            "pkg:golang/github.com%2Fgo-openapi%2Fanalysis@v0.23.0",
+            "pkg:golang/github.com%2Fgo-openapi%2Ferrors@v0.22.1",
+            "pkg:golang/github.com%2Fgo-openapi%2Fjsonpointer@v0.21.1",
+            "pkg:golang/github.com%2Fgo-openapi%2Fjsonreference@v0.21.0",
+            "pkg:golang/github.com%2Fgo-openapi%2Floads@v0.22.0",
+            "pkg:golang/github.com%2Fgo-openapi%2Fruntime@v0.28.0",
+            "pkg:golang/github.com%2Fgo-openapi%2Fspec@v0.21.0",
+            "pkg:golang/github.com%2Fgo-openapi%2Fstrfmt@v0.23.0",
+            "pkg:golang/github.com%2Fgo-openapi%2Fswag@v0.23.1",
+            "pkg:golang/github.com%2Fgo-openapi%2Fvalidate@v0.24.0",
+            "pkg:golang/github.com%2Fgobwas%2Fglob@v0.2.3",
+            "pkg:golang/github.com%2Fgoccy%2Fgo-yaml@v1.18.0",
+            "pkg:golang/github.com%2Fgoogle%2Fuuid@v1.6.0",
+            "pkg:golang/github.com%2Fhashicorp%2Fgo-cleanhttp@v0.5.2",
+            "pkg:golang/github.com%2Fhashicorp%2Fgo-retryablehttp@v0.7.8",
+            "pkg:golang/github.com%2Finconshreveable%2Fmousetrap@v1.1.0",
+            "pkg:golang/github.com%2Fjosharian%2Fintern@v1.0.0",
+            "pkg:golang/github.com%2Fmailru%2Feasyjson@v0.9.0",
+            "pkg:golang/github.com%2Fmitchellh%2Fmapstructure@v1.5.0",
+            "pkg:golang/github.com%2Foklog%2Fulid@v1.3.1",
+            "pkg:golang/github.com%2Fopentracing%2Fopentracing-go@v1.2.0",
+            "pkg:golang/github.com%2Fory%2Fpop%2Fv6@v6.3.0",
+            "pkg:golang/github.com%2Fpkg%2Ferrors@v0.9.1",
+            "pkg:golang/github.com%2Fpmezard%2Fgo-difflib@v1.0.1-0.20181226105442-5d4384ee4fb2",
+            "pkg:golang/github.com%2Fseatgeek%2Flogrus-gelf-formatter@v0.0.0-20210414080842-5b05eb8ff761",
+            "pkg:golang/github.com%2Fsirupsen%2Flogrus@v1.9.3",
+            "pkg:golang/github.com%2Fspf13%2Fcobra@v1.9.1",
+            "pkg:golang/github.com%2Fspf13%2Fpflag@v1.0.6",
+            "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.10.0",
+            "pkg:golang/github.com%2Ftidwall%2Fgjson@v1.18.0",
+            "pkg:golang/github.com%2Ftidwall%2Fmatch@v1.1.1",
+            "pkg:golang/github.com%2Ftidwall%2Fpretty@v1.2.1",
+            "pkg:golang/github.com%2Furfave%2Fnegroni@v1.0.0",
+            "pkg:golang/go.mongodb.org%2Fmongo-driver@v1.17.4",
+            "pkg:golang/go.opentelemetry.io%2Fauto%2Fsdk@v1.1.0",
+            "pkg:golang/go.opentelemetry.io%2Fcontrib%2Finstrumentation%2Fnet%2Fhttp%2Fhttptrace%2Fotelhttptrace@v0.61.0",
+            "pkg:golang/go.opentelemetry.io%2Fcontrib%2Finstrumentation%2Fnet%2Fhttp%2Fotelhttp@v0.61.0",
+            "pkg:golang/go.opentelemetry.io%2Fotel%2Fmetric@v1.36.0",
+            "pkg:golang/go.opentelemetry.io%2Fotel%2Ftrace@v1.36.0",
+            "pkg:golang/go.opentelemetry.io%2Fotel@v1.36.0",
+            "pkg:golang/golang.org%2Fx%2Fexp@v0.0.0-20250620022241-b7579e27df2b",
+            "pkg:golang/golang.org%2Fx%2Fnet@v0.44.0",
+            "pkg:golang/golang.org%2Fx%2Foauth2@v0.31.0",
+            "pkg:golang/golang.org%2Fx%2Fsync@v0.17.0",
+            "pkg:golang/golang.org%2Fx%2Fsys@v0.36.0",
+            "pkg:golang/golang.org%2Fx%2Ftext@v0.29.0",
+            "pkg:golang/google.golang.org%2Fgenproto%2Fgoogleapis%2Frpc@v0.0.0-20250603155806-513f23925822",
+            "pkg:golang/gopkg.in%2Fyaml.v3@v3.0.1"
+          ]
+        }
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fory%2Fkratos%2Ftest%2Fe2e%2Fhydra-login-consent@0.0.0-00010101000000-000000000000",
+      "definitionFile": "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:golang/github.com%2Fory%2Fhydra-client-go%2Fv2@v2.0.3",
+            "pkg:golang/github.com%2Fory%2Fx@v0.0.721"
+          ]
+        },
+        {
+          "scope": "indirectDependencies",
+          "packages": [
+            "pkg:golang/code.dny.dev%2Fssrf@v0.2.0",
+            "pkg:golang/github.com%2Favast%2Fretry-go%2Fv4@v4.6.1",
+            "pkg:golang/github.com%2Fdavecgh%2Fgo-spew@v1.1.1",
+            "pkg:golang/github.com%2Ffelixge%2Fhttpsnoop@v1.0.4",
+            "pkg:golang/github.com%2Fgo-logr%2Flogr@v1.4.2",
+            "pkg:golang/github.com%2Fgo-logr%2Fstdr@v1.2.2",
+            "pkg:golang/github.com%2Fgo-openapi%2Fjsonpointer@v0.21.1",
+            "pkg:golang/github.com%2Fgo-openapi%2Fswag@v0.23.1",
+            "pkg:golang/github.com%2Fgo-viper%2Fmapstructure%2Fv2@v2.4.0",
+            "pkg:golang/github.com%2Fgobwas%2Fglob@v0.2.3",
+            "pkg:golang/github.com%2Fgoccy%2Fgo-yaml@v1.16.0",
+            "pkg:golang/github.com%2Fhashicorp%2Fgo-cleanhttp@v0.5.2",
+            "pkg:golang/github.com%2Fhashicorp%2Fgo-retryablehttp@v0.7.7",
+            "pkg:golang/github.com%2Finconshreveable%2Fmousetrap@v1.1.0",
+            "pkg:golang/github.com%2Fjosharian%2Fintern@v1.0.0",
+            "pkg:golang/github.com%2Fmailru%2Feasyjson@v0.9.0",
+            "pkg:golang/github.com%2Fory%2Fpop%2Fv6@v6.3.0",
+            "pkg:golang/github.com%2Fpkg%2Ferrors@v0.9.1",
+            "pkg:golang/github.com%2Fpmezard%2Fgo-difflib@v1.0.0",
+            "pkg:golang/github.com%2Fseatgeek%2Flogrus-gelf-formatter@v0.0.0-20210414080842-5b05eb8ff761",
+            "pkg:golang/github.com%2Fsirupsen%2Flogrus@v1.9.3",
+            "pkg:golang/github.com%2Fspf13%2Fcobra@v1.9.1",
+            "pkg:golang/github.com%2Fspf13%2Fpflag@v1.0.6",
+            "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.10.0",
+            "pkg:golang/github.com%2Ftidwall%2Fgjson@v1.18.0",
+            "pkg:golang/github.com%2Ftidwall%2Fmatch@v1.1.1",
+            "pkg:golang/github.com%2Ftidwall%2Fpretty@v1.2.1",
+            "pkg:golang/github.com%2Furfave%2Fnegroni@v1.0.0",
+            "pkg:golang/go.opentelemetry.io%2Fauto%2Fsdk@v1.1.0",
+            "pkg:golang/go.opentelemetry.io%2Fcontrib%2Finstrumentation%2Fnet%2Fhttp%2Fhttptrace%2Fotelhttptrace@v0.60.0",
+            "pkg:golang/go.opentelemetry.io%2Fcontrib%2Finstrumentation%2Fnet%2Fhttp%2Fotelhttp@v0.60.0",
+            "pkg:golang/go.opentelemetry.io%2Fotel%2Fmetric@v1.35.0",
+            "pkg:golang/go.opentelemetry.io%2Fotel%2Ftrace@v1.35.0",
+            "pkg:golang/go.opentelemetry.io%2Fotel@v1.35.0",
+            "pkg:golang/golang.org%2Fx%2Fexp@v0.0.0-20250305212735-054e65f0b394",
+            "pkg:golang/golang.org%2Fx%2Fnet@v0.44.0",
+            "pkg:golang/golang.org%2Fx%2Foauth2@v0.31.0",
+            "pkg:golang/golang.org%2Fx%2Fsync@v0.17.0",
+            "pkg:golang/golang.org%2Fx%2Fsys@v0.36.0",
+            "pkg:golang/golang.org%2Fx%2Ftext@v0.29.0",
+            "pkg:golang/google.golang.org%2Fgenproto%2Fgoogleapis%2Frpc@v0.0.0-20250528174236-200df99c418a",
+            "pkg:golang/google.golang.org%2Fgrpc@v1.72.1",
+            "pkg:golang/google.golang.org%2Fprotobuf@v1.36.9",
+            "pkg:golang/gopkg.in%2Fyaml.v3@v3.0.1"
+          ]
+        }
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fory%2Fmock@0.0.0-00010101000000-000000000000",
+      "definitionFile": "<repositories>/ory+kratos/test/e2e/mock/httptarget/go.mod",
+      "scopes": []
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fory%2Fmock@0.0.0-00010101000000-000000000000",
+      "definitionFile": "<repositories>/ory+kratos/test/e2e/mock/webhook/go.mod",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:golang/github.com%2Fsirupsen%2Flogrus@v1.8.1"
+          ]
+        },
+        {
+          "scope": "indirectDependencies",
+          "packages": [
+            "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.7.0",
+            "pkg:golang/golang.org%2Fx%2Fsys@v0.36.0"
+          ]
+        }
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fory%2Fx@0.0.0-00010101000000-000000000000",
+      "definitionFile": "<repositories>/ory+kratos/oryx/go.mod",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:golang/code.dny.dev%2Fssrf@v0.2.0",
+            "pkg:golang/github.com%2FMasterminds%2Fsprig%2Fv3@v3.3.0",
+            "pkg:golang/github.com%2Fauth0%2Fgo-jwt-middleware%2Fv2@v2.3.0",
+            "pkg:golang/github.com%2Favast%2Fretry-go%2Fv4@v4.6.1",
+            "pkg:golang/github.com%2Fbmatcuk%2Fdoublestar%2Fv2@v2.0.4",
+            "pkg:golang/github.com%2Fbradleyjkemp%2Fcupaloy%2Fv2@v2.8.0",
+            "pkg:golang/github.com%2Fcockroachdb%2Fcockroach-go%2Fv2@v2.4.1",
+            "pkg:golang/github.com%2Fdgraph-io%2Fristretto%2Fv2@v2.2.0",
+            "pkg:golang/github.com%2Fdocker%2Fdocker@v28.3.3+incompatible",
+            "pkg:golang/github.com%2Fevanphx%2Fjson-patch%2Fv5@v5.9.11",
+            "pkg:golang/github.com%2Ffsnotify%2Ffsnotify@v1.9.0",
+            "pkg:golang/github.com%2Fghodss%2Fyaml@v1.0.0",
+            "pkg:golang/github.com%2Fgo-jose%2Fgo-jose%2Fv3@v3.0.4",
+            "pkg:golang/github.com%2Fgo-openapi%2Fjsonpointer@v0.21.2",
+            "pkg:golang/github.com%2Fgo-openapi%2Fruntime@v0.28.0",
+            "pkg:golang/github.com%2Fgo-sql-driver%2Fmysql@v1.9.3",
+            "pkg:golang/github.com%2Fgobuffalo%2Fhttptest@v1.5.2",
+            "pkg:golang/github.com%2Fgobwas%2Fglob@v0.2.3",
+            "pkg:golang/github.com%2Fgoccy%2Fgo-yaml@v1.18.0",
+            "pkg:golang/github.com%2Fgofrs%2Fuuid@v4.4.0+incompatible",
+            "pkg:golang/github.com%2Fgolang-jwt%2Fjwt%2Fv5@v5.3.0",
+            "pkg:golang/github.com%2Fgoogle%2Fgo-jsonnet@v0.21.0",
+            "pkg:golang/github.com%2Fgorilla%2Fwebsocket@v1.5.3",
+            "pkg:golang/github.com%2Fgrpc-ecosystem%2Fgo-grpc-prometheus@v1.2.0",
+            "pkg:golang/github.com%2Fhashicorp%2Fgo-retryablehttp@v0.7.8",
+            "pkg:golang/github.com%2Finhies%2Fgo-bytesize@v0.0.0-20220417184213-4913239db9cf",
+            "pkg:golang/github.com%2Fjackc%2Fpgconn@v1.14.3",
+            "pkg:golang/github.com%2Fjackc%2Fpgx%2Fv4@v4.18.3",
+            "pkg:golang/github.com%2Fjackc%2Fpuddle%2Fv2@v2.2.2",
+            "pkg:golang/github.com%2Fjmoiron%2Fsqlx@v1.4.0",
+            "pkg:golang/github.com%2Fjulienschmidt%2Fhttprouter@v1.3.0",
+            "pkg:golang/github.com%2Fknadh%2Fkoanf%2Fmaps@v0.1.2",
+            "pkg:golang/github.com%2Fknadh%2Fkoanf%2Fparsers%2Fjson@v0.1.0",
+            "pkg:golang/github.com%2Fknadh%2Fkoanf%2Fparsers%2Ftoml@v0.1.0",
+            "pkg:golang/github.com%2Fknadh%2Fkoanf%2Fparsers%2Fyaml@v0.1.0",
+            "pkg:golang/github.com%2Fknadh%2Fkoanf%2Fproviders%2Fposflag@v0.1.0",
+            "pkg:golang/github.com%2Fknadh%2Fkoanf%2Fproviders%2Frawbytes@v0.1.0",
+            "pkg:golang/github.com%2Fknadh%2Fkoanf%2Fv2@v2.2.2",
+            "pkg:golang/github.com%2Flaher%2Fmergefs@v0.1.1",
+            "pkg:golang/github.com%2Flestrrat-go%2Fjwx@v1.2.31",
+            "pkg:golang/github.com%2Flib%2Fpq@v1.10.9",
+            "pkg:golang/github.com%2Fmattn%2Fgo-sqlite3@v1.14.32",
+            "pkg:golang/github.com%2Fmohae%2Fdeepcopy@v0.0.0-20170929034955-c48cc78d4826",
+            "pkg:golang/github.com%2Fory%2Fanalytics-go%2Fv5@v5.0.1",
+            "pkg:golang/github.com%2Fory%2Fdockertest%2Fv3@v3.12.0",
+            "pkg:golang/github.com%2Fory%2Fherodot@v0.10.7",
+            "pkg:golang/github.com%2Fory%2Fjsonschema%2Fv3@v3.0.9-0.20250317235931-280c5fc7bf0e",
+            "pkg:golang/github.com%2Fory%2Fpop%2Fv6@v6.3.1",
+            "pkg:golang/github.com%2Fpelletier%2Fgo-toml@v1.9.5",
+            "pkg:golang/github.com%2Fpeterhellberg%2Flink@v1.2.0",
+            "pkg:golang/github.com%2Fpkg%2Ferrors@v0.9.1",
+            "pkg:golang/github.com%2Fpkg%2Fprofile@v1.7.0",
+            "pkg:golang/github.com%2Fprometheus%2Fclient_golang@v1.23.0",
+            "pkg:golang/github.com%2Fprometheus%2Fclient_model@v0.6.2",
+            "pkg:golang/github.com%2Fprometheus%2Fcommon@v0.65.0",
+            "pkg:golang/github.com%2Frakutentech%2Fjwk-go@v1.2.0",
+            "pkg:golang/github.com%2Frs%2Fcors@v1.11.1",
+            "pkg:golang/github.com%2Fseatgeek%2Flogrus-gelf-formatter@v0.0.0-20210414080842-5b05eb8ff761",
+            "pkg:golang/github.com%2Fsirupsen%2Flogrus@v1.9.3",
+            "pkg:golang/github.com%2Fspf13%2Fcast@v1.9.2",
+            "pkg:golang/github.com%2Fspf13%2Fcobra@v1.10.1",
+            "pkg:golang/github.com%2Fspf13%2Fpflag@v1.0.10",
+            "pkg:golang/github.com%2Fssoready%2Fhyrumtoken@v1.0.0",
+            "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.11.1",
+            "pkg:golang/github.com%2Ftidwall%2Fgjson@v1.18.0",
+            "pkg:golang/github.com%2Ftidwall%2Fsjson@v1.2.5",
+            "pkg:golang/github.com%2Furfave%2Fnegroni@v1.0.0",
+            "pkg:golang/go.opentelemetry.io%2Fcontrib%2Finstrumentation%2Fnet%2Fhttp%2Fhttptrace%2Fotelhttptrace@v0.62.0",
+            "pkg:golang/go.opentelemetry.io%2Fcontrib%2Finstrumentation%2Fnet%2Fhttp%2Fotelhttp@v0.62.0",
+            "pkg:golang/go.opentelemetry.io%2Fcontrib%2Fpropagators%2Fb3@v1.37.0",
+            "pkg:golang/go.opentelemetry.io%2Fcontrib%2Fpropagators%2Fjaeger@v1.37.0",
+            "pkg:golang/go.opentelemetry.io%2Fcontrib%2Fsamplers%2Fjaegerremote@v0.31.0",
+            "pkg:golang/go.opentelemetry.io%2Fotel%2Fexporters%2Fjaeger@v1.17.0",
+            "pkg:golang/go.opentelemetry.io%2Fotel%2Fexporters%2Fotlp%2Fotlptrace%2Fotlptracehttp@v1.37.0",
+            "pkg:golang/go.opentelemetry.io%2Fotel%2Fexporters%2Fotlp%2Fotlptrace@v1.37.0",
+            "pkg:golang/go.opentelemetry.io%2Fotel%2Fexporters%2Fzipkin@v1.37.0",
+            "pkg:golang/go.opentelemetry.io%2Fotel%2Fsdk@v1.38.0",
+            "pkg:golang/go.opentelemetry.io%2Fotel%2Ftrace@v1.38.0",
+            "pkg:golang/go.opentelemetry.io%2Fotel@v1.38.0",
+            "pkg:golang/go.opentelemetry.io%2Fproto%2Fotlp@v1.7.1",
+            "pkg:golang/go.uber.org%2Fgoleak@v1.3.0",
+            "pkg:golang/go.uber.org%2Fmock@v0.5.2",
+            "pkg:golang/golang.org%2Fx%2Fcrypto@v0.42.0",
+            "pkg:golang/golang.org%2Fx%2Fmod@v0.27.0",
+            "pkg:golang/golang.org%2Fx%2Fnet@v0.44.0",
+            "pkg:golang/golang.org%2Fx%2Foauth2@v0.31.0",
+            "pkg:golang/golang.org%2Fx%2Fsync@v0.17.0",
+            "pkg:golang/google.golang.org%2Fgrpc@v1.74.2",
+            "pkg:golang/google.golang.org%2Fprotobuf@v1.36.9"
+          ]
+        },
+        {
+          "scope": "indirectDependencies",
+          "packages": [
+            "pkg:golang/dario.cat%2Fmergo@v1.0.2",
+            "pkg:golang/filippo.io%2Fedwards25519@v1.1.0",
+            "pkg:golang/github.com%2FAzure%2Fgo-ansiterm@v0.0.0-20250102033503-faa5f7b0171c",
+            "pkg:golang/github.com%2FMasterminds%2Fgoutils@v1.1.1",
+            "pkg:golang/github.com%2FMasterminds%2Fsemver%2Fv3@v3.4.0",
+            "pkg:golang/github.com%2FMicrosoft%2Fgo-winio@v0.6.2",
+            "pkg:golang/github.com%2FNvveen%2FGotty@v0.0.0-20120604004816-cd527374f1e5",
+            "pkg:golang/github.com%2FXSAM%2Fotelsql@v0.39.0",
+            "pkg:golang/github.com%2Fasaskevich%2Fgovalidator@v0.0.0-20230301143203-a9d515a09cc2",
+            "pkg:golang/github.com%2Faymerick%2Fdouceur@v0.2.0",
+            "pkg:golang/github.com%2Fbeorn7%2Fperks@v1.0.1",
+            "pkg:golang/github.com%2Fcenkalti%2Fbackoff%2Fv4@v4.3.0",
+            "pkg:golang/github.com%2Fcenkalti%2Fbackoff%2Fv5@v5.0.2",
+            "pkg:golang/github.com%2Fcespare%2Fxxhash%2Fv2@v2.3.0",
+            "pkg:golang/github.com%2Fcontainerd%2Fcontinuity@v0.4.5",
+            "pkg:golang/github.com%2Fcontainerd%2Ferrdefs%2Fpkg@v0.3.0",
+            "pkg:golang/github.com%2Fcontainerd%2Ferrdefs@v1.0.0",
+            "pkg:golang/github.com%2Fdavecgh%2Fgo-spew@v1.1.2-0.20180830191138-d8f796af33cc",
+            "pkg:golang/github.com%2Fdecred%2Fdcrd%2Fdcrec%2Fsecp256k1%2Fv4@v4.4.0",
+            "pkg:golang/github.com%2Fdistribution%2Freference@v0.6.0",
+            "pkg:golang/github.com%2Fdocker%2Fcli@v28.3.3+incompatible",
+            "pkg:golang/github.com%2Fdocker%2Fgo-connections@v0.6.0",
+            "pkg:golang/github.com%2Fdocker%2Fgo-units@v0.5.0",
+            "pkg:golang/github.com%2Fdustin%2Fgo-humanize@v1.0.1",
+            "pkg:golang/github.com%2Ffatih%2Fcolor@v1.18.0",
+            "pkg:golang/github.com%2Ffatih%2Fstructs@v1.1.0",
+            "pkg:golang/github.com%2Ffelixge%2Ffgprof@v0.9.5",
+            "pkg:golang/github.com%2Ffelixge%2Fhttpsnoop@v1.0.4",
+            "pkg:golang/github.com%2Fgo-logr%2Flogr@v1.4.3",
+            "pkg:golang/github.com%2Fgo-logr%2Fstdr@v1.2.2",
+            "pkg:golang/github.com%2Fgo-openapi%2Ferrors@v0.22.2",
+            "pkg:golang/github.com%2Fgo-openapi%2Fstrfmt@v0.23.0",
+            "pkg:golang/github.com%2Fgo-openapi%2Fswag@v0.23.1",
+            "pkg:golang/github.com%2Fgo-viper%2Fmapstructure%2Fv2@v2.4.0",
+            "pkg:golang/github.com%2Fgobuffalo%2Fenvy@v1.10.2",
+            "pkg:golang/github.com%2Fgobuffalo%2Ffizz@v1.14.4",
+            "pkg:golang/github.com%2Fgobuffalo%2Fflect@v1.0.3",
+            "pkg:golang/github.com%2Fgobuffalo%2Fgithub_flavored_markdown@v1.1.4",
+            "pkg:golang/github.com%2Fgobuffalo%2Fhelpers@v0.6.10",
+            "pkg:golang/github.com%2Fgobuffalo%2Fnulls@v0.4.2",
+            "pkg:golang/github.com%2Fgobuffalo%2Fplush%2Fv4@v4.1.22",
+            "pkg:golang/github.com%2Fgobuffalo%2Fplush%2Fv5@v5.0.7",
+            "pkg:golang/github.com%2Fgobuffalo%2Ftags%2Fv3@v3.1.4",
+            "pkg:golang/github.com%2Fgobuffalo%2Fvalidate%2Fv3@v3.3.3",
+            "pkg:golang/github.com%2Fgoccy%2Fgo-json@v0.10.5",
+            "pkg:golang/github.com%2Fgofrs%2Fflock@v0.12.1",
+            "pkg:golang/github.com%2Fgogo%2Fgoogleapis@v1.4.1",
+            "pkg:golang/github.com%2Fgogo%2Fprotobuf@v1.3.2",
+            "pkg:golang/github.com%2Fgolang%2Fprotobuf@v1.5.4",
+            "pkg:golang/github.com%2Fgoogle%2Fpprof@v0.0.0-20250630185457-6e76a2b096b5",
+            "pkg:golang/github.com%2Fgoogle%2Fshlex@v0.0.0-20191202100458-e7afc7fbc510",
+            "pkg:golang/github.com%2Fgoogle%2Fuuid@v1.6.0",
+            "pkg:golang/github.com%2Fgorilla%2Fcss@v1.0.1",
+            "pkg:golang/github.com%2Fgrpc-ecosystem%2Fgrpc-gateway%2Fv2@v2.27.1",
+            "pkg:golang/github.com%2Fhashicorp%2Fgo-cleanhttp@v0.5.2",
+            "pkg:golang/github.com%2Fhuandu%2Fxstrings@v1.5.0",
+            "pkg:golang/github.com%2Finconshreveable%2Fmousetrap@v1.1.0",
+            "pkg:golang/github.com%2Fjackc%2Fchunkreader%2Fv2@v2.0.1",
+            "pkg:golang/github.com%2Fjackc%2Fpgio@v1.0.0",
+            "pkg:golang/github.com%2Fjackc%2Fpgpassfile@v1.0.0",
+            "pkg:golang/github.com%2Fjackc%2Fpgproto3%2Fv2@v2.3.3",
+            "pkg:golang/github.com%2Fjackc%2Fpgservicefile@v0.0.0-20240606120523-5a60cdf6a761",
+            "pkg:golang/github.com%2Fjackc%2Fpgtype@v1.14.4",
+            "pkg:golang/github.com%2Fjackc%2Fpgx%2Fv5@v5.7.5",
+            "pkg:golang/github.com%2Fjaegertracing%2Fjaeger-idl@v0.5.0",
+            "pkg:golang/github.com%2Fjandelgado%2Fgcov2lcov@v1.1.1",
+            "pkg:golang/github.com%2Fjoho%2Fgodotenv@v1.5.1",
+            "pkg:golang/github.com%2Fjosharian%2Fintern@v1.0.0",
+            "pkg:golang/github.com%2Fkballard%2Fgo-shellquote@v0.0.0-20180428030007-95032a82bc51",
+            "pkg:golang/github.com%2Flestrrat-go%2Fbackoff%2Fv2@v2.0.8",
+            "pkg:golang/github.com%2Flestrrat-go%2Fblackmagic@v1.0.4",
+            "pkg:golang/github.com%2Flestrrat-go%2Fhttpcc@v1.0.1",
+            "pkg:golang/github.com%2Flestrrat-go%2Fiter@v1.0.2",
+            "pkg:golang/github.com%2Flestrrat-go%2Foption@v1.0.1",
+            "pkg:golang/github.com%2Fmailru%2Feasyjson@v0.9.0",
+            "pkg:golang/github.com%2Fmattn%2Fgo-colorable@v0.1.14",
+            "pkg:golang/github.com%2Fmattn%2Fgo-isatty@v0.0.20",
+            "pkg:golang/github.com%2Fmicrocosm-cc%2Fbluemonday@v1.0.27",
+            "pkg:golang/github.com%2Fmitchellh%2Fcopystructure@v1.2.0",
+            "pkg:golang/github.com%2Fmitchellh%2Fmapstructure@v1.5.0",
+            "pkg:golang/github.com%2Fmitchellh%2Freflectwalk@v1.0.2",
+            "pkg:golang/github.com%2Fmoby%2Fdocker-image-spec@v1.3.1",
+            "pkg:golang/github.com%2Fmoby%2Fsys%2Fatomicwriter@v0.1.0",
+            "pkg:golang/github.com%2Fmoby%2Fsys%2Fuser@v0.4.0",
+            "pkg:golang/github.com%2Fmoby%2Fterm@v0.5.2",
+            "pkg:golang/github.com%2Fmorikuni%2Faec@v1.0.0",
+            "pkg:golang/github.com%2Fmunnerz%2Fgoautoneg@v0.0.0-20191010083416-a7dc8b61c822",
+            "pkg:golang/github.com%2Fnyaruka%2Fphonenumbers@v1.6.5",
+            "pkg:golang/github.com%2Foklog%2Fulid@v1.3.1",
+            "pkg:golang/github.com%2Fopencontainers%2Fgo-digest@v1.0.0",
+            "pkg:golang/github.com%2Fopencontainers%2Fimage-spec@v1.1.1",
+            "pkg:golang/github.com%2Fopencontainers%2Frunc@v1.3.0",
+            "pkg:golang/github.com%2Fopenzipkin%2Fzipkin-go@v0.4.3",
+            "pkg:golang/github.com%2Fpmezard%2Fgo-difflib@v1.0.1-0.20181226105442-5d4384ee4fb2",
+            "pkg:golang/github.com%2Fprometheus%2Fprocfs@v0.17.0",
+            "pkg:golang/github.com%2Frogpeppe%2Fgo-internal@v1.14.1",
+            "pkg:golang/github.com%2Fsegmentio%2Fbacko-go@v1.1.0",
+            "pkg:golang/github.com%2Fsergi%2Fgo-diff@v1.4.0",
+            "pkg:golang/github.com%2Fshopspring%2Fdecimal@v1.4.0",
+            "pkg:golang/github.com%2Fsourcegraph%2Fannotate@v0.0.0-20160123013949-f4cad6c6324d",
+            "pkg:golang/github.com%2Fsourcegraph%2Fsyntaxhighlight@v0.0.0-20170531221838-bd320f5d308e",
+            "pkg:golang/github.com%2Fstretchr%2Fobjx@v0.5.2",
+            "pkg:golang/github.com%2Ftidwall%2Fmatch@v1.1.1",
+            "pkg:golang/github.com%2Ftidwall%2Fpretty@v1.2.1",
+            "pkg:golang/github.com%2Fxeipuuv%2Fgojsonpointer@v0.0.0-20190905194746-02993c407bfb",
+            "pkg:golang/github.com%2Fxeipuuv%2Fgojsonreference@v0.0.0-20180127040603-bd5ef7bd5415",
+            "pkg:golang/github.com%2Fxeipuuv%2Fgojsonschema@v1.2.0",
+            "pkg:golang/github.com%2Fxtgo%2Fuuid@v0.0.0-20140804021211-a0b114877d4c",
+            "pkg:golang/go.mongodb.org%2Fmongo-driver@v1.17.4",
+            "pkg:golang/go.opentelemetry.io%2Fauto%2Fsdk@v1.1.0",
+            "pkg:golang/go.opentelemetry.io%2Fotel%2Fmetric@v1.38.0",
+            "pkg:golang/go.yaml.in%2Fyaml%2Fv2@v2.4.2",
+            "pkg:golang/golang.org%2Fx%2Fexp@v0.0.0-20250813145105-42675adae3e6",
+            "pkg:golang/golang.org%2Fx%2Fsys@v0.36.0",
+            "pkg:golang/golang.org%2Fx%2Ftext@v0.29.0",
+            "pkg:golang/golang.org%2Fx%2Ftime@v0.12.0",
+            "pkg:golang/golang.org%2Fx%2Ftools@v0.36.0",
+            "pkg:golang/google.golang.org%2Fgenproto%2Fgoogleapis%2Fapi@v0.0.0-20250811230008-5f3141c8851a",
+            "pkg:golang/google.golang.org%2Fgenproto%2Fgoogleapis%2Frpc@v0.0.0-20250811230008-5f3141c8851a",
+            "pkg:golang/gopkg.in%2Fyaml.v2@v2.4.0",
+            "pkg:golang/gopkg.in%2Fyaml.v3@v3.0.1",
+            "pkg:golang/sigs.k8s.io%2Fyaml@v1.6.0"
+          ]
+        }
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fory%2Fx%2Frandx%2Fstrength@0.0.0-00010101000000-000000000000",
+      "definitionFile": "<repositories>/ory+kratos/oryx/randx/strength/go.mod",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:golang/gonum.org%2Fv1%2Fplot@v0.16.0"
+          ]
+        },
+        {
+          "scope": "indirectDependencies",
+          "packages": [
+            "pkg:golang/codeberg.org%2Fgo-fonts%2Fliberation@v0.5.0",
+            "pkg:golang/codeberg.org%2Fgo-latex%2Flatex@v0.1.0",
+            "pkg:golang/codeberg.org%2Fgo-pdf%2Ffpdf@v0.11.1",
+            "pkg:golang/git.sr.ht%2F~sbinet%2Fgg@v0.6.0",
+            "pkg:golang/github.com%2Fajstarks%2Fsvgo@v0.0.0-20211024235047-1546f124cd8b",
+            "pkg:golang/github.com%2Fcampoy%2Fembedmd@v1.0.0",
+            "pkg:golang/github.com%2Fgolang%2Ffreetype@v0.0.0-20170609003504-e2365dfdc4a0",
+            "pkg:golang/github.com%2Fpmezard%2Fgo-difflib@v1.0.1-0.20181226105442-5d4384ee4fb2",
+            "pkg:golang/golang.org%2Fx%2Fimage@v0.30.0",
+            "pkg:golang/golang.org%2Fx%2Ftext@v0.29.0"
+          ]
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "from": "pkg:golang/github.com%2Fory%2Fkratos@0.0.0-00010101000000-000000000000",
+      "to": [
+        "pkg:golang/code.dny.dev%2Fssrf@v0.2.0",
+        "pkg:golang/dario.cat%2Fmergo@v1.0.2",
+        "pkg:golang/filippo.io%2Fedwards25519@v1.1.0",
+        "pkg:golang/github.com%2FAzure%2Fgo-ansiterm@v0.0.0-20250102033503-faa5f7b0171c",
+        "pkg:golang/github.com%2FMasterminds%2Fgoutils@v1.1.1",
+        "pkg:golang/github.com%2FMasterminds%2Fsemver%2Fv3@v3.4.0",
+        "pkg:golang/github.com%2FMasterminds%2Fsprig%2Fv3@v3.3.0",
+        "pkg:golang/github.com%2FMicrosoft%2Fgo-winio@v0.6.2",
+        "pkg:golang/github.com%2FNvveen%2FGotty@v0.0.0-20120604004816-cd527374f1e5",
+        "pkg:golang/github.com%2FXSAM%2Fotelsql@v0.39.0",
+        "pkg:golang/github.com%2Fa8m%2Fenvsubst@v1.4.2",
+        "pkg:golang/github.com%2Falecthomas%2Fparticiple%2Fv2@v2.1.1",
+        "pkg:golang/github.com%2Falecthomas%2Ftemplate@v0.0.0-20190718012654-fb15b899a751",
+        "pkg:golang/github.com%2Falecthomas%2Funits@v0.0.0-20211218093645-b94a6e3cc137",
+        "pkg:golang/github.com%2Farbovm%2Flevenshtein@v0.0.0-20160628152529-48b4e1c0c4d0",
+        "pkg:golang/github.com%2Fasaskevich%2Fgovalidator@v0.0.0-20230301143203-a9d515a09cc2",
+        "pkg:golang/github.com%2Favast%2Fretry-go%2Fv4@v4.6.1",
+        "pkg:golang/github.com%2Faymerick%2Fdouceur@v0.2.0",
+        "pkg:golang/github.com%2Fbeorn7%2Fperks@v1.0.1",
+        "pkg:golang/github.com%2Fbmatcuk%2Fdoublestar@v1.3.4",
+        "pkg:golang/github.com%2Fboombuler%2Fbarcode@v1.0.1",
+        "pkg:golang/github.com%2Fbradleyjkemp%2Fcupaloy%2Fv2@v2.8.0",
+        "pkg:golang/github.com%2Fbwmarrin%2Fdiscordgo@v0.28.1",
+        "pkg:golang/github.com%2Fcenkalti%2Fbackoff%2Fv4@v4.3.0",
+        "pkg:golang/github.com%2Fcenkalti%2Fbackoff%2Fv5@v5.0.2",
+        "pkg:golang/github.com%2Fcenkalti%2Fbackoff@v2.2.1+incompatible",
+        "pkg:golang/github.com%2Fcespare%2Fxxhash%2Fv2@v2.3.0",
+        "pkg:golang/github.com%2Fcockroachdb%2Fcockroach-go%2Fv2@v2.4.1",
+        "pkg:golang/github.com%2Fcontainerd%2Fcontinuity@v0.4.5",
+        "pkg:golang/github.com%2Fcontainerd%2Ferrdefs%2Fpkg@v0.3.0",
+        "pkg:golang/github.com%2Fcontainerd%2Ferrdefs@v1.0.0",
+        "pkg:golang/github.com%2Fcoreos%2Fgo-oidc%2Fv3@github.com%2Fory%2Fgo-oidc%2Fv3",
+        "pkg:golang/github.com%2Fcortesi%2Fmodd@v0.8.1",
+        "pkg:golang/github.com%2Fcortesi%2Fmoddwatch@v0.1.0",
+        "pkg:golang/github.com%2Fcortesi%2Ftermlog@v0.0.0-20210222042314-a1eec763abec",
+        "pkg:golang/github.com%2Fdavecgh%2Fgo-spew@v1.1.2-0.20180830191138-d8f796af33cc",
+        "pkg:golang/github.com%2Fdecred%2Fdcrd%2Fdcrec%2Fsecp256k1%2Fv4@v4.4.0",
+        "pkg:golang/github.com%2Fdghubble%2Foauth1@v0.7.3",
+        "pkg:golang/github.com%2Fdgraph-io%2Fristretto%2Fv2@v2.2.0",
+        "pkg:golang/github.com%2Fdimchansky%2Futfbom@v1.1.1",
+        "pkg:golang/github.com%2Fdistribution%2Freference@v0.6.0",
+        "pkg:golang/github.com%2Fdocker%2Fcli@v28.3.3+incompatible",
+        "pkg:golang/github.com%2Fdocker%2Fdocker@v28.3.3+incompatible",
+        "pkg:golang/github.com%2Fdocker%2Fgo-connections@v0.6.0",
+        "pkg:golang/github.com%2Fdocker%2Fgo-units@v0.5.0",
+        "pkg:golang/github.com%2Fdustin%2Fgo-humanize@v1.0.1",
+        "pkg:golang/github.com%2Felliotchance%2Forderedmap@v1.7.1",
+        "pkg:golang/github.com%2Fevanphx%2Fjson-patch%2Fv5@v5.9.11",
+        "pkg:golang/github.com%2Ffatih%2Fcolor@v1.18.0",
+        "pkg:golang/github.com%2Ffatih%2Fstructs@v1.1.0",
+        "pkg:golang/github.com%2Ffelixge%2Ffgprof@v0.9.5",
+        "pkg:golang/github.com%2Ffelixge%2Fhttpsnoop@v1.0.4",
+        "pkg:golang/github.com%2Ffsnotify%2Ffsnotify@v1.9.0",
+        "pkg:golang/github.com%2Ffxamacker%2Fcbor%2Fv2@v2.7.0",
+        "pkg:golang/github.com%2Fgabriel-vasile%2Fmimetype@v1.4.3",
+        "pkg:golang/github.com%2Fghodss%2Fyaml@v1.0.0",
+        "pkg:golang/github.com%2Fgo-crypt%2Fcrypt@v0.2.25",
+        "pkg:golang/github.com%2Fgo-crypt%2Fx@v0.2.18",
+        "pkg:golang/github.com%2Fgo-faker%2Ffaker%2Fv4@v4.4.2",
+        "pkg:golang/github.com%2Fgo-jose%2Fgo-jose%2Fv3@v3.0.4",
+        "pkg:golang/github.com%2Fgo-jose%2Fgo-jose%2Fv4@v4.0.5",
+        "pkg:golang/github.com%2Fgo-logr%2Flogr@v1.4.3",
+        "pkg:golang/github.com%2Fgo-logr%2Fstdr@v1.2.2",
+        "pkg:golang/github.com%2Fgo-openapi%2Fanalysis@v0.23.0",
+        "pkg:golang/github.com%2Fgo-openapi%2Ferrors@v0.22.2",
+        "pkg:golang/github.com%2Fgo-openapi%2Finflect@v0.21.0",
+        "pkg:golang/github.com%2Fgo-openapi%2Fjsonpointer@v0.21.2",
+        "pkg:golang/github.com%2Fgo-openapi%2Fjsonreference@v0.21.0",
+        "pkg:golang/github.com%2Fgo-openapi%2Floads@v0.22.0",
+        "pkg:golang/github.com%2Fgo-openapi%2Fruntime@v0.28.0",
+        "pkg:golang/github.com%2Fgo-openapi%2Fspec@v0.21.0",
+        "pkg:golang/github.com%2Fgo-openapi%2Fstrfmt@v0.23.0",
+        "pkg:golang/github.com%2Fgo-openapi%2Fswag@v0.23.1",
+        "pkg:golang/github.com%2Fgo-openapi%2Fvalidate@v0.24.0",
+        "pkg:golang/github.com%2Fgo-playground%2Flocales@v0.14.1",
+        "pkg:golang/github.com%2Fgo-playground%2Funiversal-translator@v0.18.1",
+        "pkg:golang/github.com%2Fgo-playground%2Fvalidator%2Fv10@v10.22.1",
+        "pkg:golang/github.com%2Fgo-sql-driver%2Fmysql@v1.9.3",
+        "pkg:golang/github.com%2Fgo-swagger%2Fgo-swagger@github.com%2Faeneasr%2Fgo-swagger",
+        "pkg:golang/github.com%2Fgo-viper%2Fmapstructure%2Fv2@v2.4.0",
+        "pkg:golang/github.com%2Fgo-webauthn%2Fwebauthn@v0.11.2",
+        "pkg:golang/github.com%2Fgo-webauthn%2Fx@v0.1.14",
+        "pkg:golang/github.com%2Fgobuffalo%2Fenvy@v1.10.2",
+        "pkg:golang/github.com%2Fgobuffalo%2Ffizz@v1.14.4",
+        "pkg:golang/github.com%2Fgobuffalo%2Fflect@v1.0.3",
+        "pkg:golang/github.com%2Fgobuffalo%2Fgithub_flavored_markdown@v1.1.4",
+        "pkg:golang/github.com%2Fgobuffalo%2Fhelpers@v0.6.10",
+        "pkg:golang/github.com%2Fgobuffalo%2Fhttptest@v1.5.2",
+        "pkg:golang/github.com%2Fgobuffalo%2Fnulls@v0.4.2",
+        "pkg:golang/github.com%2Fgobuffalo%2Fplush%2Fv4@v4.1.22",
+        "pkg:golang/github.com%2Fgobuffalo%2Fplush%2Fv5@v5.0.7",
+        "pkg:golang/github.com%2Fgobuffalo%2Ftags%2Fv3@v3.1.4",
+        "pkg:golang/github.com%2Fgobuffalo%2Fvalidate%2Fv3@v3.3.3",
+        "pkg:golang/github.com%2Fgobwas%2Fglob@v0.2.3",
+        "pkg:golang/github.com%2Fgoccy%2Fgo-json@v0.10.5",
+        "pkg:golang/github.com%2Fgoccy%2Fgo-yaml@v1.18.0",
+        "pkg:golang/github.com%2Fgofrs%2Fflock@v0.12.1",
+        "pkg:golang/github.com%2Fgofrs%2Fuuid@v4.4.0+incompatible",
+        "pkg:golang/github.com%2Fgogo%2Fgoogleapis@v1.4.1",
+        "pkg:golang/github.com%2Fgogo%2Fprotobuf@v1.3.2",
+        "pkg:golang/github.com%2Fgolang%2Fgddo@v0.0.0-20190904175337-72a348e765d2",
+        "pkg:golang/github.com%2Fgolang%2Fmock@v1.6.0",
+        "pkg:golang/github.com%2Fgolang-jwt%2Fjwt%2Fv4@v4.5.2",
+        "pkg:golang/github.com%2Fgolang-jwt%2Fjwt%2Fv5@v5.3.0",
+        "pkg:golang/github.com%2Fgoogle%2Fgo-github%2Fv38@v38.1.0",
+        "pkg:golang/github.com%2Fgoogle%2Fgo-jsonnet@v0.21.0",
+        "pkg:golang/github.com%2Fgoogle%2Fgo-querystring@v1.0.0",
+        "pkg:golang/github.com%2Fgoogle%2Fgo-tpm@v0.9.1",
+        "pkg:golang/github.com%2Fgoogle%2Fpprof@v0.0.0-20250630185457-6e76a2b096b5",
+        "pkg:golang/github.com%2Fgoogle%2Fshlex@v0.0.0-20191202100458-e7afc7fbc510",
+        "pkg:golang/github.com%2Fgoogle%2Fuuid@v1.6.0",
+        "pkg:golang/github.com%2Fgorilla%2Fcontext@v1.1.2",
+        "pkg:golang/github.com%2Fgorilla%2Fcss@v1.0.1",
+        "pkg:golang/github.com%2Fgorilla%2Fhandlers@v1.5.2",
+        "pkg:golang/github.com%2Fgorilla%2Fmux@v1.8.1",
+        "pkg:golang/github.com%2Fgorilla%2Fpat@v1.0.2",
+        "pkg:golang/github.com%2Fgorilla%2Fsecurecookie@v1.1.1",
+        "pkg:golang/github.com%2Fgorilla%2Fsessions@github.com%2Fory%2Fsessions",
+        "pkg:golang/github.com%2Fgorilla%2Fwebsocket@v1.5.3",
+        "pkg:golang/github.com%2Fgrpc-ecosystem%2Fgo-grpc-prometheus@v1.2.0",
+        "pkg:golang/github.com%2Fgrpc-ecosystem%2Fgrpc-gateway%2Fv2@v2.27.1",
+        "pkg:golang/github.com%2Fgtank%2Fcryptopasta@v0.0.0-20170601214702-1f550f6f2f69",
+        "pkg:golang/github.com%2Fhashicorp%2Fgo-cleanhttp@v0.5.2",
+        "pkg:golang/github.com%2Fhashicorp%2Fgo-retryablehttp@v0.7.8",
+        "pkg:golang/github.com%2Fhashicorp%2Fgolang-lru%2Fv2@v2.0.7",
+        "pkg:golang/github.com%2Fhashicorp%2Fhcl@v1.0.0",
+        "pkg:golang/github.com%2Fhuandu%2Fxstrings@v1.5.0",
+        "pkg:golang/github.com%2Fian-kent%2Fenvconf@v0.0.0-20141026121121-c19809918c02",
+        "pkg:golang/github.com%2Fian-kent%2Fgo-log@v0.0.0-20160113211217-5731446c36ab",
+        "pkg:golang/github.com%2Fian-kent%2Fgoose@v0.0.0-20141221090059-c3541ea826ad",
+        "pkg:golang/github.com%2Fian-kent%2Flinkio@v0.0.0-20170807205755-97566b872887",
+        "pkg:golang/github.com%2Finconshreveable%2Fmousetrap@v1.1.0",
+        "pkg:golang/github.com%2Finhies%2Fgo-bytesize@v0.0.0-20220417184213-4913239db9cf",
+        "pkg:golang/github.com%2Fjackc%2Fchunkreader%2Fv2@v2.0.1",
+        "pkg:golang/github.com%2Fjackc%2Fpgconn@v1.14.3",
+        "pkg:golang/github.com%2Fjackc%2Fpgio@v1.0.0",
+        "pkg:golang/github.com%2Fjackc%2Fpgpassfile@v1.0.0",
+        "pkg:golang/github.com%2Fjackc%2Fpgproto3%2Fv2@v2.3.3",
+        "pkg:golang/github.com%2Fjackc%2Fpgservicefile@v0.0.0-20240606120523-5a60cdf6a761",
+        "pkg:golang/github.com%2Fjackc%2Fpgx%2Fv5@v5.7.5",
+        "pkg:golang/github.com%2Fjackc%2Fpuddle%2Fv2@v2.2.2",
+        "pkg:golang/github.com%2Fjaegertracing%2Fjaeger-idl@v0.5.0",
+        "pkg:golang/github.com%2Fjarcoal%2Fhttpmock@v1.3.1",
+        "pkg:golang/github.com%2Fjessevdk%2Fgo-flags@v1.6.1",
+        "pkg:golang/github.com%2Fjinzhu%2Fcopier@v0.4.0",
+        "pkg:golang/github.com%2Fjmoiron%2Fsqlx@v1.4.0",
+        "pkg:golang/github.com%2Fjoho%2Fgodotenv@v1.5.1",
+        "pkg:golang/github.com%2Fjosharian%2Fintern@v1.0.0",
+        "pkg:golang/github.com%2Fjulienschmidt%2Fhttprouter@v1.3.0",
+        "pkg:golang/github.com%2Fkballard%2Fgo-shellquote@v0.0.0-20180428030007-95032a82bc51",
+        "pkg:golang/github.com%2Fknadh%2Fkoanf%2Fmaps@v0.1.2",
+        "pkg:golang/github.com%2Fknadh%2Fkoanf%2Fparsers%2Fjson@v0.1.0",
+        "pkg:golang/github.com%2Fknadh%2Fkoanf%2Fparsers%2Ftoml@v0.1.0",
+        "pkg:golang/github.com%2Fknadh%2Fkoanf%2Fparsers%2Fyaml@v0.1.0",
+        "pkg:golang/github.com%2Fknadh%2Fkoanf%2Fproviders%2Fposflag@v0.1.0",
+        "pkg:golang/github.com%2Fknadh%2Fkoanf%2Fv2@v2.2.2",
+        "pkg:golang/github.com%2Fkr%2Fpretty@v0.3.1",
+        "pkg:golang/github.com%2Fkr%2Ftext@v0.2.0",
+        "pkg:golang/github.com%2Flaher%2Fmergefs@v0.1.2-0.20230223191438-d16611b2f4e7",
+        "pkg:golang/github.com%2Fleodido%2Fgo-urn@v1.4.0",
+        "pkg:golang/github.com%2Flestrrat-go%2Fbackoff%2Fv2@v2.0.8",
+        "pkg:golang/github.com%2Flestrrat-go%2Fblackmagic@v1.0.4",
+        "pkg:golang/github.com%2Flestrrat-go%2Fhttpcc@v1.0.1",
+        "pkg:golang/github.com%2Flestrrat-go%2Fhttprc@v1.0.6",
+        "pkg:golang/github.com%2Flestrrat-go%2Fiter@v1.0.2",
+        "pkg:golang/github.com%2Flestrrat-go%2Fjwx%2Fv2@v2.1.1",
+        "pkg:golang/github.com%2Flestrrat-go%2Fjwx@v1.2.31",
+        "pkg:golang/github.com%2Flestrrat-go%2Foption@v1.0.1",
+        "pkg:golang/github.com%2Flib%2Fpq@v1.10.9",
+        "pkg:golang/github.com%2Fmagiconair%2Fproperties@v1.8.9",
+        "pkg:golang/github.com%2Fmailhog%2FMailHog-Server@v1.0.1",
+        "pkg:golang/github.com%2Fmailhog%2FMailHog-UI@v1.0.1",
+        "pkg:golang/github.com%2Fmailhog%2FMailHog@v1.0.1",
+        "pkg:golang/github.com%2Fmailhog%2Fdata@v1.0.1",
+        "pkg:golang/github.com%2Fmailhog%2Fhttp@v1.0.1",
+        "pkg:golang/github.com%2Fmailhog%2Fmhsendmail@v0.2.0",
+        "pkg:golang/github.com%2Fmailhog%2Fsmtp@v1.0.1",
+        "pkg:golang/github.com%2Fmailhog%2Fstorage@v1.0.1",
+        "pkg:golang/github.com%2Fmailru%2Feasyjson@v0.9.0",
+        "pkg:golang/github.com%2Fmattn%2Fgo-colorable@v0.1.14",
+        "pkg:golang/github.com%2Fmattn%2Fgo-isatty@v0.0.20",
+        "pkg:golang/github.com%2Fmattn%2Fgo-sqlite3@github.com%2Fmattn%2Fgo-sqlite3",
+        "pkg:golang/github.com%2Fmicrocosm-cc%2Fbluemonday@v1.0.27",
+        "pkg:golang/github.com%2Fmikefarah%2Fyq%2Fv4@v4.45.1",
+        "pkg:golang/github.com%2Fmitchellh%2Fcopystructure@v1.2.0",
+        "pkg:golang/github.com%2Fmitchellh%2Fmapstructure@v1.5.0",
+        "pkg:golang/github.com%2Fmitchellh%2Freflectwalk@v1.0.2",
+        "pkg:golang/github.com%2Fmoby%2Fdocker-image-spec@v1.3.1",
+        "pkg:golang/github.com%2Fmoby%2Fsys%2Fsequential@v0.6.0",
+        "pkg:golang/github.com%2Fmoby%2Fsys%2Fuser@v0.4.0",
+        "pkg:golang/github.com%2Fmoby%2Fterm@v0.5.2",
+        "pkg:golang/github.com%2Fmohae%2Fdeepcopy@v0.0.0-20170929034955-c48cc78d4826",
+        "pkg:golang/github.com%2Fmontanaflynn%2Fstats@v0.7.1",
+        "pkg:golang/github.com%2Fmunnerz%2Fgoautoneg@v0.0.0-20191010083416-a7dc8b61c822",
+        "pkg:golang/github.com%2Fnyaruka%2Fphonenumbers@v1.6.5",
+        "pkg:golang/github.com%2Fogier%2Fpflag@v0.0.1",
+        "pkg:golang/github.com%2Foklog%2Fulid@v1.3.1",
+        "pkg:golang/github.com%2Fopencontainers%2Fgo-digest@v1.0.0",
+        "pkg:golang/github.com%2Fopencontainers%2Fimage-spec@v1.1.1",
+        "pkg:golang/github.com%2Fopencontainers%2Frunc@v1.3.0",
+        "pkg:golang/github.com%2Fopenzipkin%2Fzipkin-go@v0.4.3",
+        "pkg:golang/github.com%2Fory%2Fanalytics-go%2Fv5@v5.0.1",
+        "pkg:golang/github.com%2Fory%2Fdockertest%2Fv3@v3.12.0",
+        "pkg:golang/github.com%2Fory%2Fgraceful@v0.1.4-0.20230301144740-e222150c51d0",
+        "pkg:golang/github.com%2Fory%2Fherodot@v0.10.7",
+        "pkg:golang/github.com%2Fory%2Fhydra-client-go%2Fv2@v2.2.1",
+        "pkg:golang/github.com%2Fory%2Fjsonschema%2Fv3@v3.0.9-0.20250317235931-280c5fc7bf0e",
+        "pkg:golang/github.com%2Fory%2Fmail%2Fv3@v3.0.0",
+        "pkg:golang/github.com%2Fory%2Fnosurf@v1.2.7",
+        "pkg:golang/github.com%2Fory%2Fpop%2Fv6@v6.3.1",
+        "pkg:golang/github.com%2Fpelletier%2Fgo-toml%2Fv2@v2.2.3",
+        "pkg:golang/github.com%2Fpelletier%2Fgo-toml@v1.9.5",
+        "pkg:golang/github.com%2Fpeterhellberg%2Flink@v1.2.0",
+        "pkg:golang/github.com%2Fphayes%2Ffreeport@v0.0.0-20220201140144-74d24b5ae9f5",
+        "pkg:golang/github.com%2Fphilhofer%2Ffwd@v1.1.3-0.20240916144458-20a13a1f6b7c",
+        "pkg:golang/github.com%2Fpkg%2Ferrors@v0.9.1",
+        "pkg:golang/github.com%2Fpkg%2Fprofile@v1.7.0",
+        "pkg:golang/github.com%2Fpmezard%2Fgo-difflib@v1.0.1-0.20181226105442-5d4384ee4fb2",
+        "pkg:golang/github.com%2Fpquerna%2Fotp@v1.4.0",
+        "pkg:golang/github.com%2Fprometheus%2Fclient_golang@v1.23.0",
+        "pkg:golang/github.com%2Fprometheus%2Fclient_model@v0.6.2",
+        "pkg:golang/github.com%2Fprometheus%2Fcommon@v0.65.0",
+        "pkg:golang/github.com%2Fprometheus%2Fprocfs@v0.17.0",
+        "pkg:golang/github.com%2Frakutentech%2Fjwk-go@v1.2.0",
+        "pkg:golang/github.com%2Frjeczalik%2Fnotify@v0.9.3",
+        "pkg:golang/github.com%2Frogpeppe%2Fgo-internal@v1.14.1",
+        "pkg:golang/github.com%2Frs%2Fcors@v1.11.1",
+        "pkg:golang/github.com%2Fsagikazarmark%2Flocafero@v0.4.0",
+        "pkg:golang/github.com%2Fsagikazarmark%2Fslog-shim@v0.1.0",
+        "pkg:golang/github.com%2Fsamber%2Flo@v1.46.0",
+        "pkg:golang/github.com%2Fseatgeek%2Flogrus-gelf-formatter@v0.0.0-20210414080842-5b05eb8ff761",
+        "pkg:golang/github.com%2Fsegmentio%2Fasm@v1.2.0",
+        "pkg:golang/github.com%2Fsegmentio%2Fbacko-go@v1.1.0",
+        "pkg:golang/github.com%2Fsergi%2Fgo-diff@v1.4.0",
+        "pkg:golang/github.com%2Fshopspring%2Fdecimal@v1.4.0",
+        "pkg:golang/github.com%2Fsirupsen%2Flogrus@v1.9.3",
+        "pkg:golang/github.com%2Fslack-go%2Fslack@v0.13.1",
+        "pkg:golang/github.com%2Fsmartystreets%2Fgoconvey@v1.8.1",
+        "pkg:golang/github.com%2Fsourcegraph%2Fannotate@v0.0.0-20160123013949-f4cad6c6324d",
+        "pkg:golang/github.com%2Fsourcegraph%2Fconc@v0.3.0",
+        "pkg:golang/github.com%2Fsourcegraph%2Fsyntaxhighlight@v0.0.0-20170531221838-bd320f5d308e",
+        "pkg:golang/github.com%2Fspf13%2Fafero@v1.11.0",
+        "pkg:golang/github.com%2Fspf13%2Fcast@v1.9.2",
+        "pkg:golang/github.com%2Fspf13%2Fcobra@v1.10.1",
+        "pkg:golang/github.com%2Fspf13%2Fpflag@v1.0.10",
+        "pkg:golang/github.com%2Fspf13%2Fviper@v1.18.2",
+        "pkg:golang/github.com%2Fssoready%2Fhyrumtoken@v1.0.0",
+        "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.11.1",
+        "pkg:golang/github.com%2Fsubosito%2Fgotenv@v1.6.0",
+        "pkg:golang/github.com%2Ft-k%2Ffluent-logger-golang@v1.0.0",
+        "pkg:golang/github.com%2Ftidwall%2Fgjson@v1.18.0",
+        "pkg:golang/github.com%2Ftidwall%2Fmatch@v1.1.1",
+        "pkg:golang/github.com%2Ftidwall%2Fpretty@v1.2.1",
+        "pkg:golang/github.com%2Ftidwall%2Fsjson@v1.2.5",
+        "pkg:golang/github.com%2Ftinylib%2Fmsgp@v1.2.5",
+        "pkg:golang/github.com%2Ftoqueteos%2Fwebbrowser@v1.2.0",
+        "pkg:golang/github.com%2Furfave%2Fnegroni@v1.0.0",
+        "pkg:golang/github.com%2FwI2L%2Fjsondiff@v0.6.0",
+        "pkg:golang/github.com%2Fx448%2Ffloat16@v0.8.4",
+        "pkg:golang/github.com%2Fxeipuuv%2Fgojsonpointer@v0.0.0-20190905194746-02993c407bfb",
+        "pkg:golang/github.com%2Fxeipuuv%2Fgojsonreference@v0.0.0-20180127040603-bd5ef7bd5415",
+        "pkg:golang/github.com%2Fxeipuuv%2Fgojsonschema@v1.2.0",
+        "pkg:golang/github.com%2Fxtgo%2Fuuid@v0.0.0-20140804021211-a0b114877d4c",
+        "pkg:golang/github.com%2Fyuin%2Fgopher-lua@v1.1.1",
+        "pkg:golang/github.com%2Fzmb3%2Fspotify%2Fv2@v2.4.2",
+        "pkg:golang/go.mongodb.org%2Fmongo-driver@v1.17.4",
+        "pkg:golang/go.opentelemetry.io%2Fauto%2Fsdk@v1.1.0",
+        "pkg:golang/go.opentelemetry.io%2Fcontrib%2Finstrumentation%2Fnet%2Fhttp%2Fhttptrace%2Fotelhttptrace@v0.62.0",
+        "pkg:golang/go.opentelemetry.io%2Fcontrib%2Finstrumentation%2Fnet%2Fhttp%2Fotelhttp@v0.62.0",
+        "pkg:golang/go.opentelemetry.io%2Fcontrib%2Fpropagators%2Fb3@v1.37.0",
+        "pkg:golang/go.opentelemetry.io%2Fcontrib%2Fpropagators%2Fjaeger@v1.37.0",
+        "pkg:golang/go.opentelemetry.io%2Fcontrib%2Fsamplers%2Fjaegerremote@v0.31.0",
+        "pkg:golang/go.opentelemetry.io%2Fotel%2Fexporters%2Fjaeger@v1.17.0",
+        "pkg:golang/go.opentelemetry.io%2Fotel%2Fexporters%2Fotlp%2Fotlptrace%2Fotlptracehttp@v1.37.0",
+        "pkg:golang/go.opentelemetry.io%2Fotel%2Fexporters%2Fotlp%2Fotlptrace@v1.37.0",
+        "pkg:golang/go.opentelemetry.io%2Fotel%2Fexporters%2Fzipkin@v1.37.0",
+        "pkg:golang/go.opentelemetry.io%2Fotel%2Fmetric@v1.38.0",
+        "pkg:golang/go.opentelemetry.io%2Fotel%2Fsdk@v1.38.0",
+        "pkg:golang/go.opentelemetry.io%2Fotel%2Ftrace@v1.38.0",
+        "pkg:golang/go.opentelemetry.io%2Fotel@v1.38.0",
+        "pkg:golang/go.opentelemetry.io%2Fproto%2Fotlp@v1.7.1",
+        "pkg:golang/go.uber.org%2Fmultierr@v1.11.0",
+        "pkg:golang/go.yaml.in%2Fyaml%2Fv2@v2.4.2",
+        "pkg:golang/golang.org%2Fx%2Fcrypto@v0.42.0",
+        "pkg:golang/golang.org%2Fx%2Fexp@v0.0.0-20250813145105-42675adae3e6",
+        "pkg:golang/golang.org%2Fx%2Fmod@v0.27.0",
+        "pkg:golang/golang.org%2Fx%2Fnet@v0.44.0",
+        "pkg:golang/golang.org%2Fx%2Foauth2@v0.31.0",
+        "pkg:golang/golang.org%2Fx%2Fsync@v0.17.0",
+        "pkg:golang/golang.org%2Fx%2Fsys@v0.36.0",
+        "pkg:golang/golang.org%2Fx%2Fterm@v0.35.0",
+        "pkg:golang/golang.org%2Fx%2Ftext@v0.29.0",
+        "pkg:golang/golang.org%2Fx%2Ftools@v0.36.0",
+        "pkg:golang/google.golang.org%2Fgenproto%2Fgoogleapis%2Fapi@v0.0.0-20250811230008-5f3141c8851a",
+        "pkg:golang/google.golang.org%2Fgenproto%2Fgoogleapis%2Frpc@v0.0.0-20250811230008-5f3141c8851a",
+        "pkg:golang/google.golang.org%2Fgrpc@v1.74.2",
+        "pkg:golang/google.golang.org%2Fprotobuf@v1.36.9",
+        "pkg:golang/gopkg.in%2Falecthomas%2Fkingpin.v2@v2.2.6",
+        "pkg:golang/gopkg.in%2Falexcesaro%2Fquotedprintable.v3@v3.0.0-20150716171945-2caba252f4dc",
+        "pkg:golang/gopkg.in%2Fini.v1@v1.67.0",
+        "pkg:golang/gopkg.in%2Fmgo.v2@v2.0.0-20190816093944-a6b53ec6cb22",
+        "pkg:golang/gopkg.in%2Fop%2Fgo-logging.v1@v1.0.0-20160211212156-b2cb9fa56473",
+        "pkg:golang/gopkg.in%2Fyaml.v2@v2.4.0",
+        "pkg:golang/gopkg.in%2Fyaml.v3@v3.0.1",
+        "pkg:golang/mvdan.cc%2Fsh%2Fv3@v3.6.0",
+        "pkg:golang/sigs.k8s.io%2Fyaml@v1.6.0"
+      ]
+    },
+    {
+      "from": "pkg:golang/github.com%2Fory%2Fkratos%2Ftest%2Fe2e%2Fhydra-kratos-login-consent@0.0.0-00010101000000-000000000000",
+      "to": [
+        "pkg:golang/code.dny.dev%2Fssrf@v0.2.0",
+        "pkg:golang/github.com%2Fasaskevich%2Fgovalidator@v0.0.0-20230301143203-a9d515a09cc2",
+        "pkg:golang/github.com%2Favast%2Fretry-go%2Fv4@v4.6.1",
+        "pkg:golang/github.com%2Fdavecgh%2Fgo-spew@v1.1.2-0.20180830191138-d8f796af33cc",
+        "pkg:golang/github.com%2Ffelixge%2Fhttpsnoop@v1.0.4",
+        "pkg:golang/github.com%2Fgo-logr%2Flogr@v1.4.3",
+        "pkg:golang/github.com%2Fgo-logr%2Fstdr@v1.2.2",
+        "pkg:golang/github.com%2Fgo-openapi%2Fanalysis@v0.23.0",
+        "pkg:golang/github.com%2Fgo-openapi%2Ferrors@v0.22.1",
+        "pkg:golang/github.com%2Fgo-openapi%2Fjsonpointer@v0.21.1",
+        "pkg:golang/github.com%2Fgo-openapi%2Fjsonreference@v0.21.0",
+        "pkg:golang/github.com%2Fgo-openapi%2Floads@v0.22.0",
+        "pkg:golang/github.com%2Fgo-openapi%2Fruntime@v0.28.0",
+        "pkg:golang/github.com%2Fgo-openapi%2Fspec@v0.21.0",
+        "pkg:golang/github.com%2Fgo-openapi%2Fstrfmt@v0.23.0",
+        "pkg:golang/github.com%2Fgo-openapi%2Fswag@v0.23.1",
+        "pkg:golang/github.com%2Fgo-openapi%2Fvalidate@v0.24.0",
+        "pkg:golang/github.com%2Fgobwas%2Fglob@v0.2.3",
+        "pkg:golang/github.com%2Fgoccy%2Fgo-yaml@v1.18.0",
+        "pkg:golang/github.com%2Fgoogle%2Fuuid@v1.6.0",
+        "pkg:golang/github.com%2Fhashicorp%2Fgo-cleanhttp@v0.5.2",
+        "pkg:golang/github.com%2Fhashicorp%2Fgo-retryablehttp@v0.7.8",
+        "pkg:golang/github.com%2Finconshreveable%2Fmousetrap@v1.1.0",
+        "pkg:golang/github.com%2Fjosharian%2Fintern@v1.0.0",
+        "pkg:golang/github.com%2Fmailru%2Feasyjson@v0.9.0",
+        "pkg:golang/github.com%2Fmitchellh%2Fmapstructure@v1.5.0",
+        "pkg:golang/github.com%2Foklog%2Fulid@v1.3.1",
+        "pkg:golang/github.com%2Fopentracing%2Fopentracing-go@v1.2.0",
+        "pkg:golang/github.com%2Fory%2Fhydra-client-go@v1.7.4",
+        "pkg:golang/github.com%2Fory%2Fkratos-client-go@v0.10.1",
+        "pkg:golang/github.com%2Fory%2Fpop%2Fv6@v6.3.0",
+        "pkg:golang/github.com%2Fory%2Fx@v0.0.722-0.20250620091013-eeb8bd14b65a",
+        "pkg:golang/github.com%2Fpkg%2Ferrors@v0.9.1",
+        "pkg:golang/github.com%2Fpmezard%2Fgo-difflib@v1.0.1-0.20181226105442-5d4384ee4fb2",
+        "pkg:golang/github.com%2Fseatgeek%2Flogrus-gelf-formatter@v0.0.0-20210414080842-5b05eb8ff761",
+        "pkg:golang/github.com%2Fsirupsen%2Flogrus@v1.9.3",
+        "pkg:golang/github.com%2Fspf13%2Fcobra@v1.9.1",
+        "pkg:golang/github.com%2Fspf13%2Fpflag@v1.0.6",
+        "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.10.0",
+        "pkg:golang/github.com%2Ftidwall%2Fgjson@v1.18.0",
+        "pkg:golang/github.com%2Ftidwall%2Fmatch@v1.1.1",
+        "pkg:golang/github.com%2Ftidwall%2Fpretty@v1.2.1",
+        "pkg:golang/github.com%2Furfave%2Fnegroni@v1.0.0",
+        "pkg:golang/go.mongodb.org%2Fmongo-driver@v1.17.4",
+        "pkg:golang/go.opentelemetry.io%2Fauto%2Fsdk@v1.1.0",
+        "pkg:golang/go.opentelemetry.io%2Fcontrib%2Finstrumentation%2Fnet%2Fhttp%2Fhttptrace%2Fotelhttptrace@v0.61.0",
+        "pkg:golang/go.opentelemetry.io%2Fcontrib%2Finstrumentation%2Fnet%2Fhttp%2Fotelhttp@v0.61.0",
+        "pkg:golang/go.opentelemetry.io%2Fotel%2Fmetric@v1.36.0",
+        "pkg:golang/go.opentelemetry.io%2Fotel%2Ftrace@v1.36.0",
+        "pkg:golang/go.opentelemetry.io%2Fotel@v1.36.0",
+        "pkg:golang/golang.org%2Fx%2Fexp@v0.0.0-20250620022241-b7579e27df2b",
+        "pkg:golang/golang.org%2Fx%2Fnet@v0.44.0",
+        "pkg:golang/golang.org%2Fx%2Foauth2@v0.31.0",
+        "pkg:golang/golang.org%2Fx%2Fsync@v0.17.0",
+        "pkg:golang/golang.org%2Fx%2Fsys@v0.36.0",
+        "pkg:golang/golang.org%2Fx%2Ftext@v0.29.0",
+        "pkg:golang/google.golang.org%2Fgenproto%2Fgoogleapis%2Frpc@v0.0.0-20250603155806-513f23925822",
+        "pkg:golang/gopkg.in%2Fyaml.v3@v3.0.1"
+      ]
+    },
+    {
+      "from": "pkg:golang/github.com%2Fory%2Fkratos%2Ftest%2Fe2e%2Fhydra-login-consent@0.0.0-00010101000000-000000000000",
+      "to": [
+        "pkg:golang/code.dny.dev%2Fssrf@v0.2.0",
+        "pkg:golang/github.com%2Favast%2Fretry-go%2Fv4@v4.6.1",
+        "pkg:golang/github.com%2Fdavecgh%2Fgo-spew@v1.1.1",
+        "pkg:golang/github.com%2Ffelixge%2Fhttpsnoop@v1.0.4",
+        "pkg:golang/github.com%2Fgo-logr%2Flogr@v1.4.2",
+        "pkg:golang/github.com%2Fgo-logr%2Fstdr@v1.2.2",
+        "pkg:golang/github.com%2Fgo-openapi%2Fjsonpointer@v0.21.1",
+        "pkg:golang/github.com%2Fgo-openapi%2Fswag@v0.23.1",
+        "pkg:golang/github.com%2Fgo-viper%2Fmapstructure%2Fv2@v2.4.0",
+        "pkg:golang/github.com%2Fgobwas%2Fglob@v0.2.3",
+        "pkg:golang/github.com%2Fgoccy%2Fgo-yaml@v1.16.0",
+        "pkg:golang/github.com%2Fhashicorp%2Fgo-cleanhttp@v0.5.2",
+        "pkg:golang/github.com%2Fhashicorp%2Fgo-retryablehttp@v0.7.7",
+        "pkg:golang/github.com%2Finconshreveable%2Fmousetrap@v1.1.0",
+        "pkg:golang/github.com%2Fjosharian%2Fintern@v1.0.0",
+        "pkg:golang/github.com%2Fmailru%2Feasyjson@v0.9.0",
+        "pkg:golang/github.com%2Fory%2Fhydra-client-go%2Fv2@v2.0.3",
+        "pkg:golang/github.com%2Fory%2Fpop%2Fv6@v6.3.0",
+        "pkg:golang/github.com%2Fory%2Fx@v0.0.721",
+        "pkg:golang/github.com%2Fpkg%2Ferrors@v0.9.1",
+        "pkg:golang/github.com%2Fpmezard%2Fgo-difflib@v1.0.0",
+        "pkg:golang/github.com%2Fseatgeek%2Flogrus-gelf-formatter@v0.0.0-20210414080842-5b05eb8ff761",
+        "pkg:golang/github.com%2Fsirupsen%2Flogrus@v1.9.3",
+        "pkg:golang/github.com%2Fspf13%2Fcobra@v1.9.1",
+        "pkg:golang/github.com%2Fspf13%2Fpflag@v1.0.6",
+        "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.10.0",
+        "pkg:golang/github.com%2Ftidwall%2Fgjson@v1.18.0",
+        "pkg:golang/github.com%2Ftidwall%2Fmatch@v1.1.1",
+        "pkg:golang/github.com%2Ftidwall%2Fpretty@v1.2.1",
+        "pkg:golang/github.com%2Furfave%2Fnegroni@v1.0.0",
+        "pkg:golang/go.opentelemetry.io%2Fauto%2Fsdk@v1.1.0",
+        "pkg:golang/go.opentelemetry.io%2Fcontrib%2Finstrumentation%2Fnet%2Fhttp%2Fhttptrace%2Fotelhttptrace@v0.60.0",
+        "pkg:golang/go.opentelemetry.io%2Fcontrib%2Finstrumentation%2Fnet%2Fhttp%2Fotelhttp@v0.60.0",
+        "pkg:golang/go.opentelemetry.io%2Fotel%2Fmetric@v1.35.0",
+        "pkg:golang/go.opentelemetry.io%2Fotel%2Ftrace@v1.35.0",
+        "pkg:golang/go.opentelemetry.io%2Fotel@v1.35.0",
+        "pkg:golang/golang.org%2Fx%2Fexp@v0.0.0-20250305212735-054e65f0b394",
+        "pkg:golang/golang.org%2Fx%2Fnet@v0.44.0",
+        "pkg:golang/golang.org%2Fx%2Foauth2@v0.31.0",
+        "pkg:golang/golang.org%2Fx%2Fsync@v0.17.0",
+        "pkg:golang/golang.org%2Fx%2Fsys@v0.36.0",
+        "pkg:golang/golang.org%2Fx%2Ftext@v0.29.0",
+        "pkg:golang/google.golang.org%2Fgenproto%2Fgoogleapis%2Frpc@v0.0.0-20250528174236-200df99c418a",
+        "pkg:golang/google.golang.org%2Fgrpc@v1.72.1",
+        "pkg:golang/google.golang.org%2Fprotobuf@v1.36.9",
+        "pkg:golang/gopkg.in%2Fyaml.v3@v3.0.1"
+      ]
+    },
+    {
+      "from": "pkg:golang/github.com%2Fory%2Fmock@0.0.0-00010101000000-000000000000",
+      "to": [
+        "pkg:golang/github.com%2Fsirupsen%2Flogrus@v1.8.1",
+        "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.7.0",
+        "pkg:golang/golang.org%2Fx%2Fsys@v0.36.0"
+      ]
+    },
+    {
+      "from": "pkg:golang/github.com%2Fory%2Fx@0.0.0-00010101000000-000000000000",
+      "to": [
+        "pkg:golang/code.dny.dev%2Fssrf@v0.2.0",
+        "pkg:golang/dario.cat%2Fmergo@v1.0.2",
+        "pkg:golang/filippo.io%2Fedwards25519@v1.1.0",
+        "pkg:golang/github.com%2FAzure%2Fgo-ansiterm@v0.0.0-20250102033503-faa5f7b0171c",
+        "pkg:golang/github.com%2FMasterminds%2Fgoutils@v1.1.1",
+        "pkg:golang/github.com%2FMasterminds%2Fsemver%2Fv3@v3.4.0",
+        "pkg:golang/github.com%2FMasterminds%2Fsprig%2Fv3@v3.3.0",
+        "pkg:golang/github.com%2FMicrosoft%2Fgo-winio@v0.6.2",
+        "pkg:golang/github.com%2FNvveen%2FGotty@v0.0.0-20120604004816-cd527374f1e5",
+        "pkg:golang/github.com%2FXSAM%2Fotelsql@v0.39.0",
+        "pkg:golang/github.com%2Fasaskevich%2Fgovalidator@v0.0.0-20230301143203-a9d515a09cc2",
+        "pkg:golang/github.com%2Fauth0%2Fgo-jwt-middleware%2Fv2@v2.3.0",
+        "pkg:golang/github.com%2Favast%2Fretry-go%2Fv4@v4.6.1",
+        "pkg:golang/github.com%2Faymerick%2Fdouceur@v0.2.0",
+        "pkg:golang/github.com%2Fbeorn7%2Fperks@v1.0.1",
+        "pkg:golang/github.com%2Fbmatcuk%2Fdoublestar%2Fv2@v2.0.4",
+        "pkg:golang/github.com%2Fbradleyjkemp%2Fcupaloy%2Fv2@v2.8.0",
+        "pkg:golang/github.com%2Fcenkalti%2Fbackoff%2Fv4@v4.3.0",
+        "pkg:golang/github.com%2Fcenkalti%2Fbackoff%2Fv5@v5.0.2",
+        "pkg:golang/github.com%2Fcespare%2Fxxhash%2Fv2@v2.3.0",
+        "pkg:golang/github.com%2Fcockroachdb%2Fcockroach-go%2Fv2@v2.4.1",
+        "pkg:golang/github.com%2Fcontainerd%2Fcontinuity@v0.4.5",
+        "pkg:golang/github.com%2Fcontainerd%2Ferrdefs%2Fpkg@v0.3.0",
+        "pkg:golang/github.com%2Fcontainerd%2Ferrdefs@v1.0.0",
+        "pkg:golang/github.com%2Fdavecgh%2Fgo-spew@v1.1.2-0.20180830191138-d8f796af33cc",
+        "pkg:golang/github.com%2Fdecred%2Fdcrd%2Fdcrec%2Fsecp256k1%2Fv4@v4.4.0",
+        "pkg:golang/github.com%2Fdgraph-io%2Fristretto%2Fv2@v2.2.0",
+        "pkg:golang/github.com%2Fdistribution%2Freference@v0.6.0",
+        "pkg:golang/github.com%2Fdocker%2Fcli@v28.3.3+incompatible",
+        "pkg:golang/github.com%2Fdocker%2Fdocker@v28.3.3+incompatible",
+        "pkg:golang/github.com%2Fdocker%2Fgo-connections@v0.6.0",
+        "pkg:golang/github.com%2Fdocker%2Fgo-units@v0.5.0",
+        "pkg:golang/github.com%2Fdustin%2Fgo-humanize@v1.0.1",
+        "pkg:golang/github.com%2Fevanphx%2Fjson-patch%2Fv5@v5.9.11",
+        "pkg:golang/github.com%2Ffatih%2Fcolor@v1.18.0",
+        "pkg:golang/github.com%2Ffatih%2Fstructs@v1.1.0",
+        "pkg:golang/github.com%2Ffelixge%2Ffgprof@v0.9.5",
+        "pkg:golang/github.com%2Ffelixge%2Fhttpsnoop@v1.0.4",
+        "pkg:golang/github.com%2Ffsnotify%2Ffsnotify@v1.9.0",
+        "pkg:golang/github.com%2Fghodss%2Fyaml@v1.0.0",
+        "pkg:golang/github.com%2Fgo-jose%2Fgo-jose%2Fv3@v3.0.4",
+        "pkg:golang/github.com%2Fgo-logr%2Flogr@v1.4.3",
+        "pkg:golang/github.com%2Fgo-logr%2Fstdr@v1.2.2",
+        "pkg:golang/github.com%2Fgo-openapi%2Ferrors@v0.22.2",
+        "pkg:golang/github.com%2Fgo-openapi%2Fjsonpointer@v0.21.2",
+        "pkg:golang/github.com%2Fgo-openapi%2Fruntime@v0.28.0",
+        "pkg:golang/github.com%2Fgo-openapi%2Fstrfmt@v0.23.0",
+        "pkg:golang/github.com%2Fgo-openapi%2Fswag@v0.23.1",
+        "pkg:golang/github.com%2Fgo-sql-driver%2Fmysql@v1.9.3",
+        "pkg:golang/github.com%2Fgo-viper%2Fmapstructure%2Fv2@v2.4.0",
+        "pkg:golang/github.com%2Fgobuffalo%2Fenvy@v1.10.2",
+        "pkg:golang/github.com%2Fgobuffalo%2Ffizz@v1.14.4",
+        "pkg:golang/github.com%2Fgobuffalo%2Fflect@v1.0.3",
+        "pkg:golang/github.com%2Fgobuffalo%2Fgithub_flavored_markdown@v1.1.4",
+        "pkg:golang/github.com%2Fgobuffalo%2Fhelpers@v0.6.10",
+        "pkg:golang/github.com%2Fgobuffalo%2Fhttptest@v1.5.2",
+        "pkg:golang/github.com%2Fgobuffalo%2Fnulls@v0.4.2",
+        "pkg:golang/github.com%2Fgobuffalo%2Fplush%2Fv4@v4.1.22",
+        "pkg:golang/github.com%2Fgobuffalo%2Fplush%2Fv5@v5.0.7",
+        "pkg:golang/github.com%2Fgobuffalo%2Ftags%2Fv3@v3.1.4",
+        "pkg:golang/github.com%2Fgobuffalo%2Fvalidate%2Fv3@v3.3.3",
+        "pkg:golang/github.com%2Fgobwas%2Fglob@v0.2.3",
+        "pkg:golang/github.com%2Fgoccy%2Fgo-json@v0.10.5",
+        "pkg:golang/github.com%2Fgoccy%2Fgo-yaml@v1.18.0",
+        "pkg:golang/github.com%2Fgofrs%2Fflock@v0.12.1",
+        "pkg:golang/github.com%2Fgofrs%2Fuuid@v4.4.0+incompatible",
+        "pkg:golang/github.com%2Fgogo%2Fgoogleapis@v1.4.1",
+        "pkg:golang/github.com%2Fgogo%2Fprotobuf@v1.3.2",
+        "pkg:golang/github.com%2Fgolang%2Fprotobuf@v1.5.4",
+        "pkg:golang/github.com%2Fgolang-jwt%2Fjwt%2Fv5@v5.3.0",
+        "pkg:golang/github.com%2Fgoogle%2Fgo-jsonnet@v0.21.0",
+        "pkg:golang/github.com%2Fgoogle%2Fpprof@v0.0.0-20250630185457-6e76a2b096b5",
+        "pkg:golang/github.com%2Fgoogle%2Fshlex@v0.0.0-20191202100458-e7afc7fbc510",
+        "pkg:golang/github.com%2Fgoogle%2Fuuid@v1.6.0",
+        "pkg:golang/github.com%2Fgorilla%2Fcss@v1.0.1",
+        "pkg:golang/github.com%2Fgorilla%2Fwebsocket@v1.5.3",
+        "pkg:golang/github.com%2Fgrpc-ecosystem%2Fgo-grpc-prometheus@v1.2.0",
+        "pkg:golang/github.com%2Fgrpc-ecosystem%2Fgrpc-gateway%2Fv2@v2.27.1",
+        "pkg:golang/github.com%2Fhashicorp%2Fgo-cleanhttp@v0.5.2",
+        "pkg:golang/github.com%2Fhashicorp%2Fgo-retryablehttp@v0.7.8",
+        "pkg:golang/github.com%2Fhuandu%2Fxstrings@v1.5.0",
+        "pkg:golang/github.com%2Finconshreveable%2Fmousetrap@v1.1.0",
+        "pkg:golang/github.com%2Finhies%2Fgo-bytesize@v0.0.0-20220417184213-4913239db9cf",
+        "pkg:golang/github.com%2Fjackc%2Fchunkreader%2Fv2@v2.0.1",
+        "pkg:golang/github.com%2Fjackc%2Fpgconn@v1.14.3",
+        "pkg:golang/github.com%2Fjackc%2Fpgio@v1.0.0",
+        "pkg:golang/github.com%2Fjackc%2Fpgpassfile@v1.0.0",
+        "pkg:golang/github.com%2Fjackc%2Fpgproto3%2Fv2@v2.3.3",
+        "pkg:golang/github.com%2Fjackc%2Fpgservicefile@v0.0.0-20240606120523-5a60cdf6a761",
+        "pkg:golang/github.com%2Fjackc%2Fpgtype@v1.14.4",
+        "pkg:golang/github.com%2Fjackc%2Fpgx%2Fv4@v4.18.3",
+        "pkg:golang/github.com%2Fjackc%2Fpgx%2Fv5@v5.7.5",
+        "pkg:golang/github.com%2Fjackc%2Fpuddle%2Fv2@v2.2.2",
+        "pkg:golang/github.com%2Fjaegertracing%2Fjaeger-idl@v0.5.0",
+        "pkg:golang/github.com%2Fjandelgado%2Fgcov2lcov@v1.1.1",
+        "pkg:golang/github.com%2Fjmoiron%2Fsqlx@v1.4.0",
+        "pkg:golang/github.com%2Fjoho%2Fgodotenv@v1.5.1",
+        "pkg:golang/github.com%2Fjosharian%2Fintern@v1.0.0",
+        "pkg:golang/github.com%2Fjulienschmidt%2Fhttprouter@v1.3.0",
+        "pkg:golang/github.com%2Fkballard%2Fgo-shellquote@v0.0.0-20180428030007-95032a82bc51",
+        "pkg:golang/github.com%2Fknadh%2Fkoanf%2Fmaps@v0.1.2",
+        "pkg:golang/github.com%2Fknadh%2Fkoanf%2Fparsers%2Fjson@v0.1.0",
+        "pkg:golang/github.com%2Fknadh%2Fkoanf%2Fparsers%2Ftoml@v0.1.0",
+        "pkg:golang/github.com%2Fknadh%2Fkoanf%2Fparsers%2Fyaml@v0.1.0",
+        "pkg:golang/github.com%2Fknadh%2Fkoanf%2Fproviders%2Fposflag@v0.1.0",
+        "pkg:golang/github.com%2Fknadh%2Fkoanf%2Fproviders%2Frawbytes@v0.1.0",
+        "pkg:golang/github.com%2Fknadh%2Fkoanf%2Fv2@v2.2.2",
+        "pkg:golang/github.com%2Flaher%2Fmergefs@v0.1.1",
+        "pkg:golang/github.com%2Flestrrat-go%2Fbackoff%2Fv2@v2.0.8",
+        "pkg:golang/github.com%2Flestrrat-go%2Fblackmagic@v1.0.4",
+        "pkg:golang/github.com%2Flestrrat-go%2Fhttpcc@v1.0.1",
+        "pkg:golang/github.com%2Flestrrat-go%2Fiter@v1.0.2",
+        "pkg:golang/github.com%2Flestrrat-go%2Fjwx@v1.2.31",
+        "pkg:golang/github.com%2Flestrrat-go%2Foption@v1.0.1",
+        "pkg:golang/github.com%2Flib%2Fpq@v1.10.9",
+        "pkg:golang/github.com%2Fmailru%2Feasyjson@v0.9.0",
+        "pkg:golang/github.com%2Fmattn%2Fgo-colorable@v0.1.14",
+        "pkg:golang/github.com%2Fmattn%2Fgo-isatty@v0.0.20",
+        "pkg:golang/github.com%2Fmattn%2Fgo-sqlite3@v1.14.32",
+        "pkg:golang/github.com%2Fmicrocosm-cc%2Fbluemonday@v1.0.27",
+        "pkg:golang/github.com%2Fmitchellh%2Fcopystructure@v1.2.0",
+        "pkg:golang/github.com%2Fmitchellh%2Fmapstructure@v1.5.0",
+        "pkg:golang/github.com%2Fmitchellh%2Freflectwalk@v1.0.2",
+        "pkg:golang/github.com%2Fmoby%2Fdocker-image-spec@v1.3.1",
+        "pkg:golang/github.com%2Fmoby%2Fsys%2Fatomicwriter@v0.1.0",
+        "pkg:golang/github.com%2Fmoby%2Fsys%2Fuser@v0.4.0",
+        "pkg:golang/github.com%2Fmoby%2Fterm@v0.5.2",
+        "pkg:golang/github.com%2Fmohae%2Fdeepcopy@v0.0.0-20170929034955-c48cc78d4826",
+        "pkg:golang/github.com%2Fmorikuni%2Faec@v1.0.0",
+        "pkg:golang/github.com%2Fmunnerz%2Fgoautoneg@v0.0.0-20191010083416-a7dc8b61c822",
+        "pkg:golang/github.com%2Fnyaruka%2Fphonenumbers@v1.6.5",
+        "pkg:golang/github.com%2Foklog%2Fulid@v1.3.1",
+        "pkg:golang/github.com%2Fopencontainers%2Fgo-digest@v1.0.0",
+        "pkg:golang/github.com%2Fopencontainers%2Fimage-spec@v1.1.1",
+        "pkg:golang/github.com%2Fopencontainers%2Frunc@v1.3.0",
+        "pkg:golang/github.com%2Fopenzipkin%2Fzipkin-go@v0.4.3",
+        "pkg:golang/github.com%2Fory%2Fanalytics-go%2Fv5@v5.0.1",
+        "pkg:golang/github.com%2Fory%2Fdockertest%2Fv3@v3.12.0",
+        "pkg:golang/github.com%2Fory%2Fherodot@v0.10.7",
+        "pkg:golang/github.com%2Fory%2Fjsonschema%2Fv3@v3.0.9-0.20250317235931-280c5fc7bf0e",
+        "pkg:golang/github.com%2Fory%2Fpop%2Fv6@v6.3.1",
+        "pkg:golang/github.com%2Fpelletier%2Fgo-toml@v1.9.5",
+        "pkg:golang/github.com%2Fpeterhellberg%2Flink@v1.2.0",
+        "pkg:golang/github.com%2Fpkg%2Ferrors@v0.9.1",
+        "pkg:golang/github.com%2Fpkg%2Fprofile@v1.7.0",
+        "pkg:golang/github.com%2Fpmezard%2Fgo-difflib@v1.0.1-0.20181226105442-5d4384ee4fb2",
+        "pkg:golang/github.com%2Fprometheus%2Fclient_golang@v1.23.0",
+        "pkg:golang/github.com%2Fprometheus%2Fclient_model@v0.6.2",
+        "pkg:golang/github.com%2Fprometheus%2Fcommon@v0.65.0",
+        "pkg:golang/github.com%2Fprometheus%2Fprocfs@v0.17.0",
+        "pkg:golang/github.com%2Frakutentech%2Fjwk-go@v1.2.0",
+        "pkg:golang/github.com%2Frogpeppe%2Fgo-internal@v1.14.1",
+        "pkg:golang/github.com%2Frs%2Fcors@v1.11.1",
+        "pkg:golang/github.com%2Fseatgeek%2Flogrus-gelf-formatter@v0.0.0-20210414080842-5b05eb8ff761",
+        "pkg:golang/github.com%2Fsegmentio%2Fbacko-go@v1.1.0",
+        "pkg:golang/github.com%2Fsergi%2Fgo-diff@v1.4.0",
+        "pkg:golang/github.com%2Fshopspring%2Fdecimal@v1.4.0",
+        "pkg:golang/github.com%2Fsirupsen%2Flogrus@v1.9.3",
+        "pkg:golang/github.com%2Fsourcegraph%2Fannotate@v0.0.0-20160123013949-f4cad6c6324d",
+        "pkg:golang/github.com%2Fsourcegraph%2Fsyntaxhighlight@v0.0.0-20170531221838-bd320f5d308e",
+        "pkg:golang/github.com%2Fspf13%2Fcast@v1.9.2",
+        "pkg:golang/github.com%2Fspf13%2Fcobra@v1.10.1",
+        "pkg:golang/github.com%2Fspf13%2Fpflag@v1.0.10",
+        "pkg:golang/github.com%2Fssoready%2Fhyrumtoken@v1.0.0",
+        "pkg:golang/github.com%2Fstretchr%2Fobjx@v0.5.2",
+        "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.11.1",
+        "pkg:golang/github.com%2Ftidwall%2Fgjson@v1.18.0",
+        "pkg:golang/github.com%2Ftidwall%2Fmatch@v1.1.1",
+        "pkg:golang/github.com%2Ftidwall%2Fpretty@v1.2.1",
+        "pkg:golang/github.com%2Ftidwall%2Fsjson@v1.2.5",
+        "pkg:golang/github.com%2Furfave%2Fnegroni@v1.0.0",
+        "pkg:golang/github.com%2Fxeipuuv%2Fgojsonpointer@v0.0.0-20190905194746-02993c407bfb",
+        "pkg:golang/github.com%2Fxeipuuv%2Fgojsonreference@v0.0.0-20180127040603-bd5ef7bd5415",
+        "pkg:golang/github.com%2Fxeipuuv%2Fgojsonschema@v1.2.0",
+        "pkg:golang/github.com%2Fxtgo%2Fuuid@v0.0.0-20140804021211-a0b114877d4c",
+        "pkg:golang/go.mongodb.org%2Fmongo-driver@v1.17.4",
+        "pkg:golang/go.opentelemetry.io%2Fauto%2Fsdk@v1.1.0",
+        "pkg:golang/go.opentelemetry.io%2Fcontrib%2Finstrumentation%2Fnet%2Fhttp%2Fhttptrace%2Fotelhttptrace@v0.62.0",
+        "pkg:golang/go.opentelemetry.io%2Fcontrib%2Finstrumentation%2Fnet%2Fhttp%2Fotelhttp@v0.62.0",
+        "pkg:golang/go.opentelemetry.io%2Fcontrib%2Fpropagators%2Fb3@v1.37.0",
+        "pkg:golang/go.opentelemetry.io%2Fcontrib%2Fpropagators%2Fjaeger@v1.37.0",
+        "pkg:golang/go.opentelemetry.io%2Fcontrib%2Fsamplers%2Fjaegerremote@v0.31.0",
+        "pkg:golang/go.opentelemetry.io%2Fotel%2Fexporters%2Fjaeger@v1.17.0",
+        "pkg:golang/go.opentelemetry.io%2Fotel%2Fexporters%2Fotlp%2Fotlptrace%2Fotlptracehttp@v1.37.0",
+        "pkg:golang/go.opentelemetry.io%2Fotel%2Fexporters%2Fotlp%2Fotlptrace@v1.37.0",
+        "pkg:golang/go.opentelemetry.io%2Fotel%2Fexporters%2Fzipkin@v1.37.0",
+        "pkg:golang/go.opentelemetry.io%2Fotel%2Fmetric@v1.38.0",
+        "pkg:golang/go.opentelemetry.io%2Fotel%2Fsdk@v1.38.0",
+        "pkg:golang/go.opentelemetry.io%2Fotel%2Ftrace@v1.38.0",
+        "pkg:golang/go.opentelemetry.io%2Fotel@v1.38.0",
+        "pkg:golang/go.opentelemetry.io%2Fproto%2Fotlp@v1.7.1",
+        "pkg:golang/go.uber.org%2Fgoleak@v1.3.0",
+        "pkg:golang/go.uber.org%2Fmock@v0.5.2",
+        "pkg:golang/go.yaml.in%2Fyaml%2Fv2@v2.4.2",
+        "pkg:golang/golang.org%2Fx%2Fcrypto@v0.42.0",
+        "pkg:golang/golang.org%2Fx%2Fexp@v0.0.0-20250813145105-42675adae3e6",
+        "pkg:golang/golang.org%2Fx%2Fmod@v0.27.0",
+        "pkg:golang/golang.org%2Fx%2Fnet@v0.44.0",
+        "pkg:golang/golang.org%2Fx%2Foauth2@v0.31.0",
+        "pkg:golang/golang.org%2Fx%2Fsync@v0.17.0",
+        "pkg:golang/golang.org%2Fx%2Fsys@v0.36.0",
+        "pkg:golang/golang.org%2Fx%2Ftext@v0.29.0",
+        "pkg:golang/golang.org%2Fx%2Ftime@v0.12.0",
+        "pkg:golang/golang.org%2Fx%2Ftools@v0.36.0",
+        "pkg:golang/google.golang.org%2Fgenproto%2Fgoogleapis%2Fapi@v0.0.0-20250811230008-5f3141c8851a",
+        "pkg:golang/google.golang.org%2Fgenproto%2Fgoogleapis%2Frpc@v0.0.0-20250811230008-5f3141c8851a",
+        "pkg:golang/google.golang.org%2Fgrpc@v1.74.2",
+        "pkg:golang/google.golang.org%2Fprotobuf@v1.36.9",
+        "pkg:golang/gopkg.in%2Fyaml.v2@v2.4.0",
+        "pkg:golang/gopkg.in%2Fyaml.v3@v3.0.1",
+        "pkg:golang/sigs.k8s.io%2Fyaml@v1.6.0"
+      ]
+    },
+    {
+      "from": "pkg:golang/github.com%2Fory%2Fx%2Frandx%2Fstrength@0.0.0-00010101000000-000000000000",
+      "to": [
+        "pkg:golang/codeberg.org%2Fgo-fonts%2Fliberation@v0.5.0",
+        "pkg:golang/codeberg.org%2Fgo-latex%2Flatex@v0.1.0",
+        "pkg:golang/codeberg.org%2Fgo-pdf%2Ffpdf@v0.11.1",
+        "pkg:golang/git.sr.ht%2F~sbinet%2Fgg@v0.6.0",
+        "pkg:golang/github.com%2Fajstarks%2Fsvgo@v0.0.0-20211024235047-1546f124cd8b",
+        "pkg:golang/github.com%2Fcampoy%2Fembedmd@v1.0.0",
+        "pkg:golang/github.com%2Fgolang%2Ffreetype@v0.0.0-20170609003504-e2365dfdc4a0",
+        "pkg:golang/github.com%2Fpmezard%2Fgo-difflib@v1.0.1-0.20181226105442-5d4384ee4fb2",
+        "pkg:golang/golang.org%2Fx%2Fimage@v0.30.0",
+        "pkg:golang/golang.org%2Fx%2Ftext@v0.29.0",
+        "pkg:golang/gonum.org%2Fv1%2Fplot@v0.16.0"
+      ]
+    }
+  ],
+  "issues": []
+}
