@@ -3,7 +3,7 @@ import { extractor } from './index.ts';
 import { join } from 'node:path';
 
 const fixturesDir = join(import.meta.dir, './__fixtures__');
-const fixtures = ['basic', 'workspace'];
+const fixtures = ['basic', 'monorepo', 'workspace'];
 
 for (const dir of fixtures) {
   test(dir, async () => {
