@@ -1,6 +1,18 @@
 export { mergeResults } from './merge.ts';
 import { mergeResults } from './merge.ts';
 
+// Export map utilities (generic, not package-manager specific)
+export {
+  addRelationship,
+  ensurePackageExists,
+  addPackageEvidence,
+  convertPackageMapToArray,
+  convertRelationshipsMapToArray,
+  aggregateSubprojectRelationships,
+  initializeExtractionMaps,
+} from './map-utils.ts';
+export type { PackageMapEntry } from './map-utils.ts';
+
 export type Package = {
   purl: string;
   evidence: string[];

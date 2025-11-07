@@ -3,14 +3,20 @@ import {
   type DependencyScope,
   type Extractor,
   filesExtractor,
-  type Relationship,
   type Subproject,
+  initializeExtractionMaps,
+  addRelationship,
+  ensurePackageExists,
+  convertPackageMapToArray,
+  convertRelationshipsMapToArray,
+  aggregateSubprojectRelationships,
 } from '@scatool/analyzer-core/src/index.ts';
 import { Glob } from 'bun';
 import { PackageURL } from 'packageurl-js';
 import { dirname, join } from 'node:path';
 import { findLineNumber, parseDenoLockfile, parseJsrPackage, parseNpmPackage, type DenoLockfile } from './lockfile.ts';
 import type { PackageJson } from '../types.ts';
+import { createNpmPurl } from '../npm-utils.ts';
 
 const lockfileGlob = new Glob('**/deno.lock');
 
@@ -27,8 +33,7 @@ export const extractor: Extractor = filesExtractor({
   extractFile: async (file: string): Promise<AnalyzerResult> => {
     const dir = dirname(file);
 
-    const packageMap = new Map<string, { purl: string; evidence: Set<string> }>();
-    const relationshipsMap = new Map<string, Set<string>>();
+    const { packageMap, relationshipsMap } = initializeExtractionMaps();
     const subprojects: Subproject[] = [];
 
     try {
@@ -63,7 +68,7 @@ export const extractor: Extractor = filesExtractor({
           const version = denoConfig.version || '0.0.0';
 
           // Create PURL for the subproject (use generic type for Deno projects)
-          const purl = new PackageURL('generic', null, name, version, null, null).toString();
+          const purl = createPurl('generic', name, version);
 
           // Extract dependency scopes
           const scopes: DependencyScope[] = [];
@@ -184,39 +189,14 @@ export const extractor: Extractor = filesExtractor({
       }
 
       // Add relationships from subprojects to their dependencies
-      for (const subproject of subprojects) {
-        if (subproject.scopes) {
-          const allDeps = new Set<string>();
-          for (const scope of subproject.scopes) {
-            for (const pkg of scope.packages) {
-              allDeps.add(pkg);
-            }
-          }
-
-          if (allDeps.size > 0) {
-            const existing = relationshipsMap.get(subproject.purl);
-            if (existing) {
-              allDeps.forEach((dep) => existing.add(dep));
-            } else {
-              relationshipsMap.set(subproject.purl, allDeps);
-            }
-          }
-        }
-      }
+      aggregateSubprojectRelationships(subprojects, relationshipsMap);
     } catch (error) {
       // Silently skip files that fail to parse
     }
 
     // Convert maps to arrays
-    const packages = Array.from(packageMap.values()).map(({ purl, evidence }) => ({
-      purl,
-      evidence: Array.from(evidence),
-    }));
-
-    const relationships: Relationship[] = Array.from(relationshipsMap.entries()).map(([from, toSet]) => ({
-      from,
-      to: Array.from(toSet),
-    }));
+    const packages = convertPackageMapToArray(packageMap);
+    const relationships = convertRelationshipsMapToArray(relationshipsMap);
 
     return {
       packages,
@@ -263,24 +243,14 @@ function resolveNpmSpecifier(lockfile: DenoLockfile, specifier: string): { name:
 }
 
 /**
- * Add a relationship to the relationships map
+ * Creates a generic Package URL (PURL) for any package type.
+ * @param type - The package type (e.g., "jsr", "generic")
+ * @param name - The package name
+ * @param version - The package version
+ * @param namespace - Optional namespace for the package
  */
-function addRelationship(relationshipsMap: Map<string, Set<string>>, from: string, to: string): void {
-  const existing = relationshipsMap.get(from);
-  if (existing) {
-    existing.add(to);
-  } else {
-    relationshipsMap.set(from, new Set([to]));
-  }
-}
-
-/**
- * Ensure a package exists in the package map
- */
-function ensurePackageExists(packageMap: Map<string, { purl: string; evidence: Set<string> }>, purl: string): void {
-  if (!packageMap.has(purl)) {
-    packageMap.set(purl, { purl, evidence: new Set() });
-  }
+function createPurl(type: string, name: string, version: string, namespace: string | null = null): string {
+  return new PackageURL(type, namespace, name, version, null, null).toString();
 }
 
 /**
@@ -289,23 +259,5 @@ function ensurePackageExists(packageMap: Map<string, { purl: string; evidence: S
 function createJsrPurl(scope: string, name: string, version: string): string {
   // JSR uses @scope/name format, so we use the scope as namespace (without @)
   const namespace = scope.startsWith('@') ? scope.slice(1) : scope;
-  return new PackageURL('jsr', namespace, name, version, null, null).toString();
-}
-
-/**
- * Create an npm PURL
- */
-function createNpmPurl(name: string, version: string): string {
-  let namespace: string | null = null;
-  let packageName = name;
-
-  if (name.startsWith('@')) {
-    const parts = name.split('/');
-    if (parts.length === 2 && parts[0] && parts[1]) {
-      namespace = parts[0];
-      packageName = parts[1];
-    }
-  }
-
-  return new PackageURL('npm', namespace, packageName, version, null, null).toString();
+  return createPurl('jsr', name, version, namespace);
 }

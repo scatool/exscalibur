@@ -2,12 +2,16 @@ import {
   type AnalyzerResult,
   type DependencyScope,
   type Extractor,
-  type Relationship,
   type Subproject,
   filesExtractor,
+  addRelationship,
+  ensurePackageExists,
+  convertPackageMapToArray,
+  convertRelationshipsMapToArray,
+  aggregateSubprojectRelationships,
+  initializeExtractionMaps,
 } from '@scatool/analyzer-core/src/index.ts';
 import { Glob } from 'bun';
-import { PackageURL } from 'packageurl-js';
 import { dirname, join } from 'node:path';
 import {
   extractPackageName,
@@ -19,10 +23,9 @@ import {
   type PackageLockPackage,
 } from './lockfile.ts';
 import type { PackageJson } from '../types.ts';
+import { createNpmPurl, NPM_DEPENDENCY_SCOPES } from '../npm-utils.ts';
 
 const lockfileGlob = new Glob('**/{package-lock.json,npm-shrinkwrap.json}');
-
-const DEPENDENCY_TYPES = ['dependencies', 'devDependencies', 'optionalDependencies', 'peerDependencies'] as const;
 
 export const extractor: Extractor = filesExtractor({
   name: 'packagelockjson',
@@ -67,8 +70,7 @@ async function extractFromV1Lockfile(
   file: string,
   dir: string,
 ): Promise<AnalyzerResult> {
-  const packageMap = new Map<string, { purl: string; evidence: Set<string> }>();
-  const relationshipsMap = new Map<string, Set<string>>();
+  const { packageMap, relationshipsMap } = initializeExtractionMaps();
   const subprojects: Subproject[] = [];
 
   if (!lockfile.dependencies) {
@@ -79,7 +81,7 @@ async function extractFromV1Lockfile(
   const traverseDependencies = (deps: Record<string, LockfileV1Dependency>, parentPath: string[] = []): void => {
     for (const [packageName, depEntry] of Object.entries(deps)) {
       const version = depEntry.version;
-      const purl = createPurl(packageName, version);
+      const purl = createNpmPurl(packageName, version);
 
       // Add package with evidence
       if (!packageMap.has(purl)) {
@@ -110,7 +112,7 @@ async function extractFromV1Lockfile(
           }
 
           if (resolvedVersion) {
-            const depPurl = createPurl(depName, resolvedVersion);
+            const depPurl = createNpmPurl(depName, resolvedVersion);
             addRelationship(relationshipsMap, purl, depPurl);
             ensurePackageExists(packageMap, depPurl);
           }
@@ -134,7 +136,7 @@ async function extractFromV1Lockfile(
     const packageInfo = JSON.parse(packageJsonContent) as PackageJson;
 
     if (packageInfo.name && packageInfo.version) {
-      const rootPurl = createPurl(packageInfo.name, packageInfo.version);
+      const rootPurl = createNpmPurl(packageInfo.name, packageInfo.version);
 
       // Extract scopes for the root package
       const rootScopes = extractScopesV1(packageInfo, lockfile.dependencies);
@@ -164,15 +166,8 @@ async function extractFromV1Lockfile(
   }
 
   // Convert maps to arrays
-  const packages = Array.from(packageMap.values()).map(({ purl, evidence }) => ({
-    purl,
-    evidence: Array.from(evidence),
-  }));
-
-  const relationships: Relationship[] = Array.from(relationshipsMap.entries()).map(([from, toSet]) => ({
-    from,
-    to: Array.from(toSet),
-  }));
+  const packages = convertPackageMapToArray(packageMap);
+  const relationships = convertRelationshipsMapToArray(relationshipsMap);
 
   return {
     packages,
@@ -204,7 +199,7 @@ function extractScopesV1(
       // Look up the version from the lockfile dependencies
       const depEntry = dependencies[depName];
       if (depEntry && depEntry.version) {
-        const depPurl = createPurl(depName, depEntry.version);
+        const depPurl = createNpmPurl(depName, depEntry.version);
         scopePackages.push(depPurl);
       }
     }
@@ -229,8 +224,7 @@ async function extractFromV2Lockfile(
   file: string,
   dir: string,
 ): Promise<AnalyzerResult> {
-  const packageMap = new Map<string, { purl: string; evidence: Set<string> }>();
-  const relationshipsMap = new Map<string, Set<string>>();
+  const { packageMap, relationshipsMap } = initializeExtractionMaps();
   const subprojects: Subproject[] = [];
 
   if (!lockfile.packages) {
@@ -295,7 +289,7 @@ async function extractFromV2Lockfile(
       const packageInfo = JSON.parse(packageJsonContent) as PackageJson;
 
       if (packageInfo.name && packageInfo.version) {
-        const rootPurl = createPurl(packageInfo.name, packageInfo.version);
+        const rootPurl = createNpmPurl(packageInfo.name, packageInfo.version);
 
         // Extract scopes for the root package
         const rootScopes = extractScopes(
@@ -327,7 +321,7 @@ async function extractFromV2Lockfile(
         const packageInfo = JSON.parse(packageJsonContent) as PackageJson;
 
         if (packageInfo.name && packageInfo.version) {
-          const purl = createPurl(packageInfo.name, packageInfo.version);
+          const purl = createNpmPurl(packageInfo.name, packageInfo.version);
 
           // Extract scopes
           const scopes = extractScopes(
@@ -366,7 +360,7 @@ async function extractFromV2Lockfile(
 
     // Use the actual package name from the entry if available (handles aliases)
     const actualName = packageEntry.name || packageName;
-    const purl = createPurl(actualName, version);
+    const purl = createNpmPurl(actualName, version);
 
     // Add package with evidence
     if (!packageMap.has(purl)) {
@@ -392,36 +386,11 @@ async function extractFromV2Lockfile(
   }
 
   // Add relationships from subprojects to their dependencies
-  for (const subproject of subprojects) {
-    if (subproject.scopes) {
-      const allDeps = new Set<string>();
-      for (const scope of subproject.scopes) {
-        for (const pkg of scope.packages) {
-          allDeps.add(pkg);
-        }
-      }
-
-      if (allDeps.size > 0) {
-        const existing = relationshipsMap.get(subproject.purl);
-        if (existing) {
-          allDeps.forEach((dep) => existing.add(dep));
-        } else {
-          relationshipsMap.set(subproject.purl, allDeps);
-        }
-      }
-    }
-  }
+  aggregateSubprojectRelationships(subprojects, relationshipsMap);
 
   // Convert maps to arrays
-  const packages = Array.from(packageMap.values()).map(({ purl, evidence }) => ({
-    purl,
-    evidence: Array.from(evidence),
-  }));
-
-  const relationships: Relationship[] = Array.from(relationshipsMap.entries()).map(([from, toSet]) => ({
-    from,
-    to: Array.from(toSet),
-  }));
+  const packages = convertPackageMapToArray(packageMap);
+  const relationships = convertRelationshipsMapToArray(relationshipsMap);
 
   return {
     packages,
@@ -457,7 +426,7 @@ function extractScopes(
       const workspaceInfo = workspacePackages.get(depName);
       if (workspaceInfo) {
         // This is a workspace package - use its version
-        const depPurl = createPurl(depName, workspaceInfo.version);
+        const depPurl = createNpmPurl(depName, workspaceInfo.version);
         scopePackages.push(depPurl);
         continue;
       }
@@ -466,7 +435,7 @@ function extractScopes(
       const resolvedVersion = resolveVersion(depName, versionRange, lockfileEntry, allPackages, packageVersionMap);
 
       if (resolvedVersion) {
-        const depPurl = createPurl(depName, resolvedVersion);
+        const depPurl = createNpmPurl(depName, resolvedVersion);
         scopePackages.push(depPurl);
       }
     }
@@ -494,7 +463,7 @@ function processDependencies(
   packageMap: Map<string, { purl: string; evidence: Set<string> }>,
   relationshipsMap: Map<string, Set<string>>,
 ): void {
-  for (const depType of DEPENDENCY_TYPES) {
+  for (const depType of NPM_DEPENDENCY_SCOPES) {
     const depsInScope = packageEntry[depType];
     if (!depsInScope || typeof depsInScope !== 'object') continue;
 
@@ -512,7 +481,7 @@ function processDependencies(
       const resolvedVersion = resolveVersion(depName, versionRange, packageEntry, allPackages, packageVersionMap);
 
       if (resolvedVersion) {
-        const depPurl = createPurl(depName, resolvedVersion);
+        const depPurl = createNpmPurl(depName, resolvedVersion);
 
         // Add relationship
         addRelationship(relationshipsMap, purl, depPurl);
@@ -574,43 +543,4 @@ function resolveVersion(
   }
 
   return null;
-}
-
-/**
- * Add a relationship to the relationships map
- */
-function addRelationship(relationshipsMap: Map<string, Set<string>>, from: string, to: string): void {
-  const existing = relationshipsMap.get(from);
-  if (existing) {
-    existing.add(to);
-  } else {
-    relationshipsMap.set(from, new Set([to]));
-  }
-}
-
-/**
- * Ensure a package exists in the package map
- */
-function ensurePackageExists(packageMap: Map<string, { purl: string; evidence: Set<string> }>, purl: string): void {
-  if (!packageMap.has(purl)) {
-    packageMap.set(purl, { purl, evidence: new Set() });
-  }
-}
-
-/**
- * Create a PURL from package name and version
- */
-function createPurl(name: string, version: string): string {
-  let namespace: string | null = null;
-  let packageName = name;
-
-  if (name.startsWith('@')) {
-    const parts = name.split('/');
-    if (parts.length === 2 && parts[0] && parts[1]) {
-      namespace = parts[0];
-      packageName = parts[1];
-    }
-  }
-
-  return new PackageURL('npm', namespace, packageName, version, null, null).toString();
 }
