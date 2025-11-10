@@ -14,10 +14,12 @@ Excalibur extracts dependency graphs from software projects. It parses lockfiles
 
 ### Testing
 
-- **Run all tests**: `bun test` (from root, uses Turbo)
+- **Run all tests**: `bun run test` (from root, uses Turbo to run tests across all packages)
 - **Run tests for a specific package**: `cd packages/<package-name> && bun test`
 - **Run a single test file**: `bun test <path-to-test-file>`
 - **Update snapshots**: `bun test <path-to-test-file> --update-snapshots`
+
+Note: Do not run `bun test` from root, it will run tests in the downloaded fixtures.
 
 ### Type Checking
 

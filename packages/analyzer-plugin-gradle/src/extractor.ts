@@ -3,9 +3,9 @@ import {
   type DependencyScope,
   type Extractor,
   filesExtractor,
+  type Package,
   type Relationship,
   type Subproject,
-  type Package,
 } from '@scatool/analyzer-core/src/index.ts';
 import { Glob } from 'bun';
 import { PackageURL } from 'packageurl-js';
@@ -63,26 +63,16 @@ export const extractor: Extractor = filesExtractor({
     const issues: AnalyzerResult['issues'] = [];
 
     try {
-      // Check if gradlew exists
-      const gradlewPath = join(dir, 'gradlew');
-      const gradlewBatPath = join(dir, 'gradlew.bat');
-      const hasGradlew = existsSync(gradlewPath) || existsSync(gradlewBatPath);
-
-      if (!hasGradlew) {
-        // Skip if no gradle wrapper is available
-        return {
-          packages: [],
-          subprojects: [],
-          relationships: [],
-          issues: [],
-        };
-      }
-
       // Determine the correct gradlew command for the platform
       const isWindows = process.platform === 'win32';
-      const gradleWrapper = isWindows ? gradlewBatPath : gradlewPath;
-
+      const gradleWrapper = isWindows ? join(dir, 'gradlew.bat') : join(dir, 'gradlew');
       if (!existsSync(gradleWrapper)) {
+        issues.push({
+          message: `Gradle wrapper not found at expected path: ${gradleWrapper}`,
+          severity: 'ERROR',
+          file,
+        });
+
         return {
           packages: [],
           subprojects: [],
@@ -91,14 +81,13 @@ export const extractor: Extractor = filesExtractor({
         };
       }
 
-      // First, get project metadata (group, name, version) for all projects
       const projectInfoScriptPath = join(import.meta.dir, 'project-info.gradle');
       const projectInfoCommand = [gradleWrapper, '-I', projectInfoScriptPath, '-q'];
 
       const projectInfoProc = Bun.spawn(projectInfoCommand, {
         cwd: dir,
         stdout: 'pipe',
-        stderr: 'pipe',
+        stderr: 'inherit',
         env: process.env,
       });
 
@@ -111,8 +100,8 @@ export const extractor: Extractor = filesExtractor({
         group: string;
         version: string;
       }
-      const projectInfoMap = new Map<string, ProjectInfo>();
 
+      const projectInfoMap = new Map<string, ProjectInfo>();
       if (projectInfoExitCode === 0) {
         try {
           const startMarker = '===PROJECT_INFO_START===';
@@ -146,19 +135,15 @@ export const extractor: Extractor = filesExtractor({
       } else {
         issues.push({
           message: 'Failed to extract project metadata, using fallback values',
-          severity: 'HINT',
+          severity: 'WARNING',
           file,
         });
       }
 
-      // Get the path to our init script
-      const initScriptPath = join(import.meta.dir, 'init.gradle');
-
-      // Run gradle with the dependency graph plugin
       const gradleCommand = [
         gradleWrapper,
         '-I',
-        initScriptPath,
+        join(import.meta.dir, 'init.gradle'),
         '--dependency-verification=off',
         '--no-configuration-cache',
         '--no-configure-on-demand',
@@ -167,40 +152,19 @@ export const extractor: Extractor = filesExtractor({
 
       const proc = Bun.spawn(gradleCommand, {
         cwd: dir,
-        stdout: 'pipe',
-        stderr: 'pipe',
+        stdout: 'inherit',
+        stderr: 'inherit',
         env: process.env,
       });
 
-      const stderr = await new Response(proc.stderr).text();
       const exitCode = await proc.exited;
-
       if (exitCode !== 0) {
-        // Gradle command failed - try to extract useful error info
-        let errorMessage = `Gradle dependency extraction failed with exit code ${exitCode}`;
-
-        // Look for common error patterns in stderr
-        if (stderr.includes('JVM runtime version')) {
-          const jvmMatch = stderr.match(/requires at least JVM runtime version (\d+)/);
-          if (jvmMatch) {
-            errorMessage += ` (requires Java ${jvmMatch[1]}+)`;
-          }
-        } else if (stderr.includes('requires Java')) {
-          const javaMatch = stderr.match(/requires Java (\d+)/);
-          if (javaMatch) {
-            errorMessage += ` (requires Java ${javaMatch[1]}+)`;
-          }
-        } else if (stderr.includes('Could not find') || stderr.includes('Could not resolve')) {
-          errorMessage += ' (dependency resolution failed)';
-        } else if (stderr.includes('Connection refused') || stderr.includes('UnknownHostException')) {
-          errorMessage += ' (network error)';
-        }
-
         issues.push({
-          message: errorMessage,
-          severity: 'WARNING',
+          message: `Gradle dependency extraction failed with exit code ${exitCode}`,
+          severity: 'ERROR',
           file,
         });
+
         return {
           packages: [],
           subprojects: [],
@@ -215,10 +179,11 @@ export const extractor: Extractor = filesExtractor({
 
       if (!existsSync(graphFile)) {
         issues.push({
-          message: 'Dependency graph file not found after Gradle execution',
-          severity: 'WARNING',
+          message: 'dependency-graph.json not found',
+          severity: 'ERROR',
           file,
         });
+
         return {
           packages: [],
           subprojects: [],
@@ -360,7 +325,7 @@ export const extractor: Extractor = filesExtractor({
       }
 
       // Convert project map to subprojects
-      for (const [projectPath, project] of projectMap.entries()) {
+      for (const [, project] of projectMap.entries()) {
         const scopes: DependencyScope[] = [];
 
         for (const [scopeName, packages] of project.scopes.entries()) {
@@ -416,16 +381,13 @@ export const extractor: Extractor = filesExtractor({
   },
 });
 
-// Helper to create Maven PURL (Package URL)
-function createMavenPurl(group: string, name: string, version: string, repositoryUrl?: string): string {
+function createMavenPurl(group: string, name: string, version: string, repoUrl?: string): string {
   const namespace = group || null;
 
   // Only add repository_url qualifier if it's not Maven Central
-  // Maven Central is the default and should not have a qualifier
   const isMavenCentral =
-    repositoryUrl === 'https://repo.maven.apache.org/maven2' || repositoryUrl === 'https://repo1.maven.org/maven2';
-
-  const qualifiers = !isMavenCentral && repositoryUrl ? { repository_url: repositoryUrl } : null;
+    repoUrl === 'https://repo.maven.apache.org/maven2' || repoUrl === 'https://repo1.maven.org/maven2';
+  const qualifiers = !isMavenCentral && repoUrl ? { repository_url: repoUrl } : null;
 
   return new PackageURL('maven', namespace, name, version, qualifiers, null).toString();
 }
