@@ -11,16 +11,36 @@ exports[`basic 1`] = `
       "purl": "pkg:golang/example.com%2Fmyapp@0.0.0-00010101000000-000000000000",
     },
     {
+      "evidence": [],
+      "purl": "pkg:golang/github.com%2Fbytedance%2Fsonic@v1.5.0",
+    },
+    {
       "evidence": [
         "<fixtures>/basic/go.mod#12",
       ],
       "purl": "pkg:golang/github.com%2Fbytedance%2Fsonic@v1.9.1",
     },
     {
+      "evidence": [],
+      "purl": "pkg:golang/github.com%2Fchenzhuoyu%2Fbase64x@v0.0.0-20211019084208-fb5309c8db06",
+    },
+    {
       "evidence": [
         "<fixtures>/basic/go.mod#13",
       ],
       "purl": "pkg:golang/github.com%2Fchenzhuoyu%2Fbase64x@v0.0.0-20221115062448-fe3a3abad311",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:golang/github.com%2Fcpuguy83%2Fgo-md2man%2Fv2@v2.0.2",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:golang/github.com%2Fdavecgh%2Fgo-spew@v1.1.0",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:golang/github.com%2Fdavecgh%2Fgo-spew@v1.1.1",
     },
     {
       "evidence": [
@@ -39,6 +59,10 @@ exports[`basic 1`] = `
         "<fixtures>/basic/go.mod#6",
       ],
       "purl": "pkg:golang/github.com%2Fgin-gonic%2Fgin@v1.9.1",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:golang/github.com%2Fgo-playground%2Fassert%2Fv2@v2.2.0",
     },
     {
       "evidence": [
@@ -65,6 +89,18 @@ exports[`basic 1`] = `
       "purl": "pkg:golang/github.com%2Fgoccy%2Fgo-json@v0.10.2",
     },
     {
+      "evidence": [],
+      "purl": "pkg:golang/github.com%2Fgolang%2Fprotobuf@v1.5.0",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:golang/github.com%2Fgoogle%2Fgo-cmp@v0.5.5",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:golang/github.com%2Fgoogle%2Fgofuzz@v1.0.0",
+    },
+    {
       "evidence": [
         "<fixtures>/basic/go.mod#20",
       ],
@@ -75,6 +111,10 @@ exports[`basic 1`] = `
         "<fixtures>/basic/go.mod#21",
       ],
       "purl": "pkg:golang/github.com%2Fjson-iterator%2Fgo@v1.1.12",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:golang/github.com%2Fklauspost%2Fcpuid%2Fv2@v2.0.9",
     },
     {
       "evidence": [
@@ -95,6 +135,10 @@ exports[`basic 1`] = `
       "purl": "pkg:golang/github.com%2Fmattn%2Fgo-isatty@v0.0.19",
     },
     {
+      "evidence": [],
+      "purl": "pkg:golang/github.com%2Fmodern-go%2Fconcurrent@v0.0.0-20180228061459-e0a39a4cb421",
+    },
+    {
       "evidence": [
         "<fixtures>/basic/go.mod#25",
       ],
@@ -113,6 +157,14 @@ exports[`basic 1`] = `
       "purl": "pkg:golang/github.com%2Fpelletier%2Fgo-toml%2Fv2@v2.0.8",
     },
     {
+      "evidence": [],
+      "purl": "pkg:golang/github.com%2Fpmezard%2Fgo-difflib@v1.0.0",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:golang/github.com%2Frussross%2Fblackfriday%2Fv2@v2.1.0",
+    },
+    {
       "evidence": [
         "<fixtures>/basic/go.mod#7",
       ],
@@ -123,6 +175,46 @@ exports[`basic 1`] = `
         "<fixtures>/basic/go.mod#28",
       ],
       "purl": "pkg:golang/github.com%2Fspf13%2Fpflag@v1.0.5",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:golang/github.com%2Fstretchr%2Fobjx@v0.1.0",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:golang/github.com%2Fstretchr%2Fobjx@v0.4.0",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:golang/github.com%2Fstretchr%2Fobjx@v0.5.0",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.3.0",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.7.0",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.7.1",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.8.0",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.8.1",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.8.2",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.8.3",
     },
     {
       "evidence": [
@@ -137,10 +229,18 @@ exports[`basic 1`] = `
       "purl": "pkg:golang/github.com%2Fugorji%2Fgo%2Fcodec@v1.2.11",
     },
     {
+      "evidence": [],
+      "purl": "pkg:golang/golang.org%2Fx%2Farch@v0.0.0-20210923205945-b76863e36670",
+    },
+    {
       "evidence": [
         "<fixtures>/basic/go.mod#31",
       ],
       "purl": "pkg:golang/golang.org%2Fx%2Farch@v0.3.0",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:golang/golang.org%2Fx%2Fcrypto@v0.7.0",
     },
     {
       "evidence": [
@@ -149,10 +249,18 @@ exports[`basic 1`] = `
       "purl": "pkg:golang/golang.org%2Fx%2Fcrypto@v0.9.0",
     },
     {
+      "evidence": [],
+      "purl": "pkg:golang/golang.org%2Fx%2Fmod@v0.8.0",
+    },
+    {
       "evidence": [
         "<fixtures>/basic/go.mod#33",
       ],
       "purl": "pkg:golang/golang.org%2Fx%2Fnet@v0.10.0",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:golang/golang.org%2Fx%2Fnet@v0.8.0",
     },
     {
       "evidence": [
@@ -161,10 +269,34 @@ exports[`basic 1`] = `
       "purl": "pkg:golang/golang.org%2Fx%2Fsync@v0.3.0",
     },
     {
+      "evidence": [],
+      "purl": "pkg:golang/golang.org%2Fx%2Fsys@v0.0.0-20220704084225-05e143d24a9e",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:golang/golang.org%2Fx%2Fsys@v0.5.0",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:golang/golang.org%2Fx%2Fsys@v0.6.0",
+    },
+    {
       "evidence": [
         "<fixtures>/basic/go.mod#34",
       ],
       "purl": "pkg:golang/golang.org%2Fx%2Fsys@v0.8.0",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:golang/golang.org%2Fx%2Fterm@v0.8.0",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:golang/golang.org%2Fx%2Ftext@v0.3.8",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:golang/golang.org%2Fx%2Ftext@v0.8.0",
     },
     {
       "evidence": [
@@ -173,16 +305,40 @@ exports[`basic 1`] = `
       "purl": "pkg:golang/golang.org%2Fx%2Ftext@v0.9.0",
     },
     {
+      "evidence": [],
+      "purl": "pkg:golang/golang.org%2Fx%2Ftools@v0.6.0",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:golang/golang.org%2Fx%2Fxerrors@v0.0.0-20191204190536-9bdfabe68543",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:golang/google.golang.org%2Fprotobuf@v1.26.0-rc.1",
+    },
+    {
       "evidence": [
         "<fixtures>/basic/go.mod#36",
       ],
       "purl": "pkg:golang/google.golang.org%2Fprotobuf@v1.30.0",
     },
     {
+      "evidence": [],
+      "purl": "pkg:golang/gopkg.in%2Fcheck.v1@v0.0.0-20161208181325-20d25e280405",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:golang/gopkg.in%2Fyaml.v3@v3.0.0-20200313102051-9f266ea9e77c",
+    },
+    {
       "evidence": [
         "<fixtures>/basic/go.mod#37",
       ],
       "purl": "pkg:golang/gopkg.in%2Fyaml.v3@v3.0.1",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:golang/rsc.io%2Fpdf@v0.1.1",
     },
   ],
   "relationships": [
@@ -220,6 +376,312 @@ exports[`basic 1`] = `
         "pkg:golang/gopkg.in%2Fyaml.v3@v3.0.1",
       ],
     },
+    {
+      "from": "pkg:golang/github.com%2Fbytedance%2Fsonic@v1.5.0",
+      "to": [
+        "pkg:golang/github.com%2Fchenzhuoyu%2Fbase64x@v0.0.0-20211019084208-fb5309c8db06",
+        "pkg:golang/github.com%2Fdavecgh%2Fgo-spew@v1.1.1",
+        "pkg:golang/github.com%2Fklauspost%2Fcpuid%2Fv2@v2.0.9",
+        "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.7.0",
+        "pkg:golang/github.com%2Ftwitchyliquid64%2Fgolang-asm@v0.15.1",
+        "pkg:golang/golang.org%2Fx%2Farch@v0.0.0-20210923205945-b76863e36670",
+      ],
+    },
+    {
+      "from": "pkg:golang/github.com%2Fbytedance%2Fsonic@v1.9.1",
+      "to": [
+        "pkg:golang/github.com%2Fchenzhuoyu%2Fbase64x@v0.0.0-20221115062448-fe3a3abad311",
+        "pkg:golang/github.com%2Fdavecgh%2Fgo-spew@v1.1.1",
+        "pkg:golang/github.com%2Fklauspost%2Fcpuid%2Fv2@v2.0.9",
+        "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.8.1",
+        "pkg:golang/github.com%2Ftwitchyliquid64%2Fgolang-asm@v0.15.1",
+        "pkg:golang/golang.org%2Fx%2Farch@v0.0.0-20210923205945-b76863e36670",
+      ],
+    },
+    {
+      "from": "pkg:golang/github.com%2Fchenzhuoyu%2Fbase64x@v0.0.0-20211019084208-fb5309c8db06",
+      "to": [
+        "pkg:golang/github.com%2Fklauspost%2Fcpuid%2Fv2@v2.0.9",
+      ],
+    },
+    {
+      "from": "pkg:golang/github.com%2Fchenzhuoyu%2Fbase64x@v0.0.0-20221115062448-fe3a3abad311",
+      "to": [
+        "pkg:golang/github.com%2Fbytedance%2Fsonic@v1.5.0",
+        "pkg:golang/github.com%2Fdavecgh%2Fgo-spew@v1.1.1",
+        "pkg:golang/github.com%2Fklauspost%2Fcpuid%2Fv2@v2.0.9",
+        "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.8.1",
+      ],
+    },
+    {
+      "from": "pkg:golang/github.com%2Fcpuguy83%2Fgo-md2man%2Fv2@v2.0.2",
+      "to": [
+        "pkg:golang/github.com%2Frussross%2Fblackfriday%2Fv2@v2.1.0",
+      ],
+    },
+    {
+      "from": "pkg:golang/github.com%2Fgabriel-vasile%2Fmimetype@v1.4.2",
+      "to": [
+        "pkg:golang/golang.org%2Fx%2Fnet@v0.8.0",
+      ],
+    },
+    {
+      "from": "pkg:golang/github.com%2Fgin-contrib%2Fsse@v0.1.0",
+      "to": [
+        "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.3.0",
+      ],
+    },
+    {
+      "from": "pkg:golang/github.com%2Fgin-gonic%2Fgin@v1.9.1",
+      "to": [
+        "pkg:golang/github.com%2Fbytedance%2Fsonic@v1.9.1",
+        "pkg:golang/github.com%2Fchenzhuoyu%2Fbase64x@v0.0.0-20221115062448-fe3a3abad311",
+        "pkg:golang/github.com%2Fdavecgh%2Fgo-spew@v1.1.1",
+        "pkg:golang/github.com%2Fgabriel-vasile%2Fmimetype@v1.4.2",
+        "pkg:golang/github.com%2Fgin-contrib%2Fsse@v0.1.0",
+        "pkg:golang/github.com%2Fgo-playground%2Flocales@v0.14.1",
+        "pkg:golang/github.com%2Fgo-playground%2Funiversal-translator@v0.18.1",
+        "pkg:golang/github.com%2Fgo-playground%2Fvalidator%2Fv10@v10.14.0",
+        "pkg:golang/github.com%2Fgoccy%2Fgo-json@v0.10.2",
+        "pkg:golang/github.com%2Fjson-iterator%2Fgo@v1.1.12",
+        "pkg:golang/github.com%2Fklauspost%2Fcpuid%2Fv2@v2.2.4",
+        "pkg:golang/github.com%2Fleodido%2Fgo-urn@v1.2.4",
+        "pkg:golang/github.com%2Fmattn%2Fgo-isatty@v0.0.19",
+        "pkg:golang/github.com%2Fmodern-go%2Fconcurrent@v0.0.0-20180306012644-bacd9c7ef1dd",
+        "pkg:golang/github.com%2Fmodern-go%2Freflect2@v1.0.2",
+        "pkg:golang/github.com%2Fpelletier%2Fgo-toml%2Fv2@v2.0.8",
+        "pkg:golang/github.com%2Fpmezard%2Fgo-difflib@v1.0.0",
+        "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.8.3",
+        "pkg:golang/github.com%2Ftwitchyliquid64%2Fgolang-asm@v0.15.1",
+        "pkg:golang/github.com%2Fugorji%2Fgo%2Fcodec@v1.2.11",
+        "pkg:golang/golang.org%2Fx%2Farch@v0.3.0",
+        "pkg:golang/golang.org%2Fx%2Fcrypto@v0.9.0",
+        "pkg:golang/golang.org%2Fx%2Fnet@v0.10.0",
+        "pkg:golang/golang.org%2Fx%2Fsys@v0.8.0",
+        "pkg:golang/golang.org%2Fx%2Ftext@v0.9.0",
+        "pkg:golang/google.golang.org%2Fprotobuf@v1.30.0",
+        "pkg:golang/gopkg.in%2Fyaml.v3@v3.0.1",
+      ],
+    },
+    {
+      "from": "pkg:golang/github.com%2Fgo-playground%2Flocales@v0.14.1",
+      "to": [
+        "pkg:golang/golang.org%2Fx%2Ftext@v0.3.8",
+      ],
+    },
+    {
+      "from": "pkg:golang/github.com%2Fgo-playground%2Funiversal-translator@v0.18.1",
+      "to": [
+        "pkg:golang/github.com%2Fgo-playground%2Flocales@v0.14.1",
+      ],
+    },
+    {
+      "from": "pkg:golang/github.com%2Fgo-playground%2Fvalidator%2Fv10@v10.14.0",
+      "to": [
+        "pkg:golang/github.com%2Fgabriel-vasile%2Fmimetype@v1.4.2",
+        "pkg:golang/github.com%2Fgo-playground%2Fassert%2Fv2@v2.2.0",
+        "pkg:golang/github.com%2Fgo-playground%2Flocales@v0.14.1",
+        "pkg:golang/github.com%2Fgo-playground%2Funiversal-translator@v0.18.1",
+        "pkg:golang/github.com%2Fleodido%2Fgo-urn@v1.2.4",
+        "pkg:golang/golang.org%2Fx%2Fcrypto@v0.7.0",
+        "pkg:golang/golang.org%2Fx%2Fnet@v0.8.0",
+        "pkg:golang/golang.org%2Fx%2Fsys@v0.6.0",
+        "pkg:golang/golang.org%2Fx%2Ftext@v0.8.0",
+      ],
+    },
+    {
+      "from": "pkg:golang/github.com%2Fgolang%2Fprotobuf@v1.5.0",
+      "to": [
+        "pkg:golang/github.com%2Fgoogle%2Fgo-cmp@v0.5.5",
+        "pkg:golang/google.golang.org%2Fprotobuf@v1.26.0-rc.1",
+      ],
+    },
+    {
+      "from": "pkg:golang/github.com%2Fgoogle%2Fgo-cmp@v0.5.5",
+      "to": [
+        "pkg:golang/golang.org%2Fx%2Fxerrors@v0.0.0-20191204190536-9bdfabe68543",
+      ],
+    },
+    {
+      "from": "pkg:golang/github.com%2Fjson-iterator%2Fgo@v1.1.12",
+      "to": [
+        "pkg:golang/github.com%2Fdavecgh%2Fgo-spew@v1.1.1",
+        "pkg:golang/github.com%2Fgoogle%2Fgofuzz@v1.0.0",
+        "pkg:golang/github.com%2Fmodern-go%2Fconcurrent@v0.0.0-20180228061459-e0a39a4cb421",
+        "pkg:golang/github.com%2Fmodern-go%2Freflect2@v1.0.2",
+        "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.3.0",
+      ],
+    },
+    {
+      "from": "pkg:golang/github.com%2Fklauspost%2Fcpuid%2Fv2@v2.2.4",
+      "to": [
+        "pkg:golang/golang.org%2Fx%2Fsys@v0.0.0-20220704084225-05e143d24a9e",
+      ],
+    },
+    {
+      "from": "pkg:golang/github.com%2Fleodido%2Fgo-urn@v1.2.4",
+      "to": [
+        "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.8.2",
+      ],
+    },
+    {
+      "from": "pkg:golang/github.com%2Fmattn%2Fgo-isatty@v0.0.19",
+      "to": [
+        "pkg:golang/golang.org%2Fx%2Fsys@v0.6.0",
+      ],
+    },
+    {
+      "from": "pkg:golang/github.com%2Fpelletier%2Fgo-toml%2Fv2@v2.0.8",
+      "to": [
+        "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.8.3",
+      ],
+    },
+    {
+      "from": "pkg:golang/github.com%2Fspf13%2Fcobra@v1.7.0",
+      "to": [
+        "pkg:golang/github.com%2Fcpuguy83%2Fgo-md2man%2Fv2@v2.0.2",
+        "pkg:golang/github.com%2Finconshreveable%2Fmousetrap@v1.1.0",
+        "pkg:golang/github.com%2Fspf13%2Fpflag@v1.0.5",
+        "pkg:golang/gopkg.in%2Fyaml.v3@v3.0.1",
+      ],
+    },
+    {
+      "from": "pkg:golang/github.com%2Fstretchr%2Fobjx@v0.4.0",
+      "to": [
+        "pkg:golang/github.com%2Fdavecgh%2Fgo-spew@v1.1.1",
+        "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.7.1",
+      ],
+    },
+    {
+      "from": "pkg:golang/github.com%2Fstretchr%2Fobjx@v0.5.0",
+      "to": [
+        "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.8.0",
+      ],
+    },
+    {
+      "from": "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.3.0",
+      "to": [
+        "pkg:golang/github.com%2Fdavecgh%2Fgo-spew@v1.1.0",
+        "pkg:golang/github.com%2Fpmezard%2Fgo-difflib@v1.0.0",
+        "pkg:golang/github.com%2Fstretchr%2Fobjx@v0.1.0",
+      ],
+    },
+    {
+      "from": "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.7.0",
+      "to": [
+        "pkg:golang/github.com%2Fdavecgh%2Fgo-spew@v1.1.0",
+        "pkg:golang/github.com%2Fpmezard%2Fgo-difflib@v1.0.0",
+        "pkg:golang/github.com%2Fstretchr%2Fobjx@v0.1.0",
+        "pkg:golang/gopkg.in%2Fyaml.v3@v3.0.0-20200313102051-9f266ea9e77c",
+      ],
+    },
+    {
+      "from": "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.7.1",
+      "to": [
+        "pkg:golang/github.com%2Fdavecgh%2Fgo-spew@v1.1.0",
+        "pkg:golang/github.com%2Fpmezard%2Fgo-difflib@v1.0.0",
+        "pkg:golang/github.com%2Fstretchr%2Fobjx@v0.1.0",
+        "pkg:golang/gopkg.in%2Fyaml.v3@v3.0.0-20200313102051-9f266ea9e77c",
+      ],
+    },
+    {
+      "from": "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.8.0",
+      "to": [
+        "pkg:golang/github.com%2Fdavecgh%2Fgo-spew@v1.1.1",
+        "pkg:golang/github.com%2Fpmezard%2Fgo-difflib@v1.0.0",
+        "pkg:golang/github.com%2Fstretchr%2Fobjx@v0.4.0",
+        "pkg:golang/gopkg.in%2Fyaml.v3@v3.0.1",
+      ],
+    },
+    {
+      "from": "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.8.1",
+      "to": [
+        "pkg:golang/github.com%2Fdavecgh%2Fgo-spew@v1.1.1",
+        "pkg:golang/github.com%2Fpmezard%2Fgo-difflib@v1.0.0",
+        "pkg:golang/github.com%2Fstretchr%2Fobjx@v0.5.0",
+        "pkg:golang/gopkg.in%2Fyaml.v3@v3.0.1",
+      ],
+    },
+    {
+      "from": "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.8.2",
+      "to": [
+        "pkg:golang/github.com%2Fdavecgh%2Fgo-spew@v1.1.1",
+        "pkg:golang/github.com%2Fpmezard%2Fgo-difflib@v1.0.0",
+        "pkg:golang/github.com%2Fstretchr%2Fobjx@v0.5.0",
+        "pkg:golang/gopkg.in%2Fyaml.v3@v3.0.1",
+      ],
+    },
+    {
+      "from": "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.8.3",
+      "to": [
+        "pkg:golang/github.com%2Fdavecgh%2Fgo-spew@v1.1.1",
+        "pkg:golang/github.com%2Fpmezard%2Fgo-difflib@v1.0.0",
+        "pkg:golang/github.com%2Fstretchr%2Fobjx@v0.5.0",
+        "pkg:golang/gopkg.in%2Fyaml.v3@v3.0.1",
+      ],
+    },
+    {
+      "from": "pkg:golang/golang.org%2Fx%2Farch@v0.0.0-20210923205945-b76863e36670",
+      "to": [
+        "pkg:golang/rsc.io%2Fpdf@v0.1.1",
+      ],
+    },
+    {
+      "from": "pkg:golang/golang.org%2Fx%2Farch@v0.3.0",
+      "to": [
+        "pkg:golang/rsc.io%2Fpdf@v0.1.1",
+      ],
+    },
+    {
+      "from": "pkg:golang/golang.org%2Fx%2Fcrypto@v0.9.0",
+      "to": [
+        "pkg:golang/golang.org%2Fx%2Fnet@v0.10.0",
+        "pkg:golang/golang.org%2Fx%2Fsys@v0.8.0",
+        "pkg:golang/golang.org%2Fx%2Fterm@v0.8.0",
+        "pkg:golang/golang.org%2Fx%2Ftext@v0.9.0",
+      ],
+    },
+    {
+      "from": "pkg:golang/golang.org%2Fx%2Fnet@v0.10.0",
+      "to": [
+        "pkg:golang/golang.org%2Fx%2Fsys@v0.8.0",
+        "pkg:golang/golang.org%2Fx%2Fterm@v0.8.0",
+        "pkg:golang/golang.org%2Fx%2Ftext@v0.9.0",
+      ],
+    },
+    {
+      "from": "pkg:golang/golang.org%2Fx%2Ftext@v0.9.0",
+      "to": [
+        "pkg:golang/golang.org%2Fx%2Fmod@v0.8.0",
+        "pkg:golang/golang.org%2Fx%2Fsys@v0.5.0",
+        "pkg:golang/golang.org%2Fx%2Ftools@v0.6.0",
+      ],
+    },
+    {
+      "from": "pkg:golang/google.golang.org%2Fprotobuf@v1.26.0-rc.1",
+      "to": [
+        "pkg:golang/github.com%2Fgoogle%2Fgo-cmp@v0.5.5",
+      ],
+    },
+    {
+      "from": "pkg:golang/google.golang.org%2Fprotobuf@v1.30.0",
+      "to": [
+        "pkg:golang/github.com%2Fgolang%2Fprotobuf@v1.5.0",
+        "pkg:golang/github.com%2Fgoogle%2Fgo-cmp@v0.5.5",
+      ],
+    },
+    {
+      "from": "pkg:golang/gopkg.in%2Fyaml.v3@v3.0.0-20200313102051-9f266ea9e77c",
+      "to": [
+        "pkg:golang/gopkg.in%2Fcheck.v1@v0.0.0-20161208181325-20d25e280405",
+      ],
+    },
+    {
+      "from": "pkg:golang/gopkg.in%2Fyaml.v3@v3.0.1",
+      "to": [
+        "pkg:golang/gopkg.in%2Fcheck.v1@v0.0.0-20161208181325-20d25e280405",
+      ],
+    },
   ],
   "subprojects": [
     {
@@ -236,32 +698,71 @@ exports[`basic 1`] = `
         },
         {
           "packages": [
+            "pkg:golang/github.com%2Fbytedance%2Fsonic@v1.5.0",
             "pkg:golang/github.com%2Fbytedance%2Fsonic@v1.9.1",
+            "pkg:golang/github.com%2Fchenzhuoyu%2Fbase64x@v0.0.0-20211019084208-fb5309c8db06",
             "pkg:golang/github.com%2Fchenzhuoyu%2Fbase64x@v0.0.0-20221115062448-fe3a3abad311",
+            "pkg:golang/github.com%2Fcpuguy83%2Fgo-md2man%2Fv2@v2.0.2",
+            "pkg:golang/github.com%2Fdavecgh%2Fgo-spew@v1.1.0",
+            "pkg:golang/github.com%2Fdavecgh%2Fgo-spew@v1.1.1",
             "pkg:golang/github.com%2Fgabriel-vasile%2Fmimetype@v1.4.2",
             "pkg:golang/github.com%2Fgin-contrib%2Fsse@v0.1.0",
+            "pkg:golang/github.com%2Fgo-playground%2Fassert%2Fv2@v2.2.0",
             "pkg:golang/github.com%2Fgo-playground%2Flocales@v0.14.1",
             "pkg:golang/github.com%2Fgo-playground%2Funiversal-translator@v0.18.1",
             "pkg:golang/github.com%2Fgo-playground%2Fvalidator%2Fv10@v10.14.0",
             "pkg:golang/github.com%2Fgoccy%2Fgo-json@v0.10.2",
+            "pkg:golang/github.com%2Fgolang%2Fprotobuf@v1.5.0",
+            "pkg:golang/github.com%2Fgoogle%2Fgo-cmp@v0.5.5",
+            "pkg:golang/github.com%2Fgoogle%2Fgofuzz@v1.0.0",
             "pkg:golang/github.com%2Finconshreveable%2Fmousetrap@v1.1.0",
             "pkg:golang/github.com%2Fjson-iterator%2Fgo@v1.1.12",
+            "pkg:golang/github.com%2Fklauspost%2Fcpuid%2Fv2@v2.0.9",
             "pkg:golang/github.com%2Fklauspost%2Fcpuid%2Fv2@v2.2.4",
             "pkg:golang/github.com%2Fleodido%2Fgo-urn@v1.2.4",
             "pkg:golang/github.com%2Fmattn%2Fgo-isatty@v0.0.19",
+            "pkg:golang/github.com%2Fmodern-go%2Fconcurrent@v0.0.0-20180228061459-e0a39a4cb421",
             "pkg:golang/github.com%2Fmodern-go%2Fconcurrent@v0.0.0-20180306012644-bacd9c7ef1dd",
             "pkg:golang/github.com%2Fmodern-go%2Freflect2@v1.0.2",
             "pkg:golang/github.com%2Fpelletier%2Fgo-toml%2Fv2@v2.0.8",
+            "pkg:golang/github.com%2Fpmezard%2Fgo-difflib@v1.0.0",
+            "pkg:golang/github.com%2Frussross%2Fblackfriday%2Fv2@v2.1.0",
             "pkg:golang/github.com%2Fspf13%2Fpflag@v1.0.5",
+            "pkg:golang/github.com%2Fstretchr%2Fobjx@v0.1.0",
+            "pkg:golang/github.com%2Fstretchr%2Fobjx@v0.4.0",
+            "pkg:golang/github.com%2Fstretchr%2Fobjx@v0.5.0",
+            "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.3.0",
+            "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.7.0",
+            "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.7.1",
+            "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.8.0",
+            "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.8.1",
+            "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.8.2",
+            "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.8.3",
             "pkg:golang/github.com%2Ftwitchyliquid64%2Fgolang-asm@v0.15.1",
             "pkg:golang/github.com%2Fugorji%2Fgo%2Fcodec@v1.2.11",
+            "pkg:golang/golang.org%2Fx%2Farch@v0.0.0-20210923205945-b76863e36670",
             "pkg:golang/golang.org%2Fx%2Farch@v0.3.0",
+            "pkg:golang/golang.org%2Fx%2Fcrypto@v0.7.0",
             "pkg:golang/golang.org%2Fx%2Fcrypto@v0.9.0",
+            "pkg:golang/golang.org%2Fx%2Fmod@v0.8.0",
             "pkg:golang/golang.org%2Fx%2Fnet@v0.10.0",
+            "pkg:golang/golang.org%2Fx%2Fnet@v0.8.0",
+            "pkg:golang/golang.org%2Fx%2Fsys@v0.0.0-20220704084225-05e143d24a9e",
+            "pkg:golang/golang.org%2Fx%2Fsys@v0.5.0",
+            "pkg:golang/golang.org%2Fx%2Fsys@v0.6.0",
             "pkg:golang/golang.org%2Fx%2Fsys@v0.8.0",
+            "pkg:golang/golang.org%2Fx%2Fterm@v0.8.0",
+            "pkg:golang/golang.org%2Fx%2Ftext@v0.3.8",
+            "pkg:golang/golang.org%2Fx%2Ftext@v0.8.0",
             "pkg:golang/golang.org%2Fx%2Ftext@v0.9.0",
+            "pkg:golang/golang.org%2Fx%2Ftools@v0.6.0",
+            "pkg:golang/golang.org%2Fx%2Fxerrors@v0.0.0-20191204190536-9bdfabe68543",
+            "pkg:golang/google.golang.org%2Fprotobuf@v1.26.0-rc.1",
             "pkg:golang/google.golang.org%2Fprotobuf@v1.30.0",
+            "pkg:golang/gopkg.in%2Fcheck.v1@v0.0.0-20161208181325-20d25e280405",
+            "pkg:golang/gopkg.in%2Fyaml.v3@v3.0.0-20200313102051-9f266ea9e77c",
             "pkg:golang/gopkg.in%2Fyaml.v3@v3.0.1",
+            "pkg:golang/rsc.io%2Fpdf@v0.1.1",
           ],
           "scope": "indirectDependencies",
         },
@@ -289,9 +790,22 @@ exports[`monorepo 1`] = `
     },
     {
       "evidence": [
+        "<fixtures>/monorepo/go.mod#6",
+        "<fixtures>/monorepo/pkg2/go.mod#6",
+      ],
+      "purl": "pkg:golang/example.com%2Fmonorepo%2Fpkg1@v0.0.0",
+    },
+    {
+      "evidence": [
         "<fixtures>/monorepo/pkg2/go.mod#1",
       ],
       "purl": "pkg:golang/example.com%2Fmonorepo%2Fpkg2@0.0.0-00010101000000-000000000000",
+    },
+    {
+      "evidence": [
+        "<fixtures>/monorepo/go.mod#7",
+      ],
+      "purl": "pkg:golang/example.com%2Fmonorepo%2Fpkg2@v0.0.0",
     },
     {
       "evidence": [
@@ -312,16 +826,36 @@ exports[`monorepo 1`] = `
       "purl": "pkg:golang/github.com%2Fpmezard%2Fgo-difflib@v1.0.0",
     },
     {
+      "evidence": [],
+      "purl": "pkg:golang/github.com%2Fstretchr%2Fobjx@v0.5.0",
+    },
+    {
       "evidence": [
         "<fixtures>/monorepo/go.mod#8",
       ],
       "purl": "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.8.4",
     },
     {
+      "evidence": [],
+      "purl": "pkg:golang/golang.org%2Fx%2Fmod@v0.8.0",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:golang/golang.org%2Fx%2Fsys@v0.5.0",
+    },
+    {
       "evidence": [
         "<fixtures>/monorepo/pkg2/go.mod#7",
       ],
       "purl": "pkg:golang/golang.org%2Fx%2Ftext@v0.12.0",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:golang/golang.org%2Fx%2Ftools@v0.6.0",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:golang/gopkg.in%2Fcheck.v1@v0.0.0-20161208181325-20d25e280405",
     },
     {
       "evidence": [
@@ -334,6 +868,8 @@ exports[`monorepo 1`] = `
     {
       "from": "pkg:golang/example.com%2Fmonorepo@0.0.0-00010101000000-000000000000",
       "to": [
+        "pkg:golang/example.com%2Fmonorepo%2Fpkg1@v0.0.0",
+        "pkg:golang/example.com%2Fmonorepo%2Fpkg2@v0.0.0",
         "pkg:golang/github.com%2Fdavecgh%2Fgo-spew@v1.1.1",
         "pkg:golang/github.com%2Fpmezard%2Fgo-difflib@v1.0.0",
         "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.8.4",
@@ -347,9 +883,46 @@ exports[`monorepo 1`] = `
       ],
     },
     {
+      "from": "pkg:golang/example.com%2Fmonorepo%2Fpkg1@v0.0.0",
+      "to": [
+        "pkg:golang/github.com%2Fgoogle%2Fuuid@v1.3.0",
+      ],
+    },
+    {
       "from": "pkg:golang/example.com%2Fmonorepo%2Fpkg2@0.0.0-00010101000000-000000000000",
       "to": [
+        "pkg:golang/example.com%2Fmonorepo%2Fpkg1@v0.0.0",
         "pkg:golang/golang.org%2Fx%2Ftext@v0.12.0",
+      ],
+    },
+    {
+      "from": "pkg:golang/example.com%2Fmonorepo%2Fpkg2@v0.0.0",
+      "to": [
+        "pkg:golang/example.com%2Fmonorepo%2Fpkg1@v0.0.0",
+        "pkg:golang/golang.org%2Fx%2Ftext@v0.12.0",
+      ],
+    },
+    {
+      "from": "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.8.4",
+      "to": [
+        "pkg:golang/github.com%2Fdavecgh%2Fgo-spew@v1.1.1",
+        "pkg:golang/github.com%2Fpmezard%2Fgo-difflib@v1.0.0",
+        "pkg:golang/github.com%2Fstretchr%2Fobjx@v0.5.0",
+        "pkg:golang/gopkg.in%2Fyaml.v3@v3.0.1",
+      ],
+    },
+    {
+      "from": "pkg:golang/golang.org%2Fx%2Ftext@v0.12.0",
+      "to": [
+        "pkg:golang/golang.org%2Fx%2Fmod@v0.8.0",
+        "pkg:golang/golang.org%2Fx%2Fsys@v0.5.0",
+        "pkg:golang/golang.org%2Fx%2Ftools@v0.6.0",
+      ],
+    },
+    {
+      "from": "pkg:golang/gopkg.in%2Fyaml.v3@v3.0.1",
+      "to": [
+        "pkg:golang/gopkg.in%2Fcheck.v1@v0.0.0-20161208181325-20d25e280405",
       ],
     },
   ],
@@ -360,6 +933,8 @@ exports[`monorepo 1`] = `
       "scopes": [
         {
           "packages": [
+            "pkg:golang/example.com%2Fmonorepo%2Fpkg1@v0.0.0",
+            "pkg:golang/example.com%2Fmonorepo%2Fpkg2@v0.0.0",
             "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.8.4",
           ],
           "scope": "dependencies",
@@ -367,7 +942,11 @@ exports[`monorepo 1`] = `
         {
           "packages": [
             "pkg:golang/github.com%2Fdavecgh%2Fgo-spew@v1.1.1",
+            "pkg:golang/github.com%2Fgoogle%2Fuuid@v1.3.0",
             "pkg:golang/github.com%2Fpmezard%2Fgo-difflib@v1.0.0",
+            "pkg:golang/github.com%2Fstretchr%2Fobjx@v0.5.0",
+            "pkg:golang/golang.org%2Fx%2Ftext@v0.12.0",
+            "pkg:golang/gopkg.in%2Fcheck.v1@v0.0.0-20161208181325-20d25e280405",
             "pkg:golang/gopkg.in%2Fyaml.v3@v3.0.1",
           ],
           "scope": "indirectDependencies",
@@ -392,9 +971,19 @@ exports[`monorepo 1`] = `
       "scopes": [
         {
           "packages": [
+            "pkg:golang/example.com%2Fmonorepo%2Fpkg1@v0.0.0",
             "pkg:golang/golang.org%2Fx%2Ftext@v0.12.0",
           ],
           "scope": "dependencies",
+        },
+        {
+          "packages": [
+            "pkg:golang/github.com%2Fgoogle%2Fuuid@v1.3.0",
+            "pkg:golang/golang.org%2Fx%2Fmod@v0.8.0",
+            "pkg:golang/golang.org%2Fx%2Fsys@v0.5.0",
+            "pkg:golang/golang.org%2Fx%2Ftools@v0.6.0",
+          ],
+          "scope": "indirectDependencies",
         },
       ],
     },
@@ -414,9 +1003,29 @@ exports[`replace-directive 1`] = `
     },
     {
       "evidence": [
+        "<fixtures>/replace-directive/internal/utils/go.mod#1",
+      ],
+      "purl": "pkg:golang/example.com%2Finternal%2Futils@0.0.0-00010101000000-000000000000",
+    },
+    {
+      "evidence": [
+        "<fixtures>/replace-directive/go.mod#7",
+      ],
+      "purl": "pkg:golang/example.com%2Finternal%2Futils@v0.0.0",
+    },
+    {
+      "evidence": [
         "<fixtures>/replace-directive/go.mod#6",
       ],
       "purl": "pkg:golang/github.com%2Fgoogle%2Fuuid@v1.3.0",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:golang/golang.org%2Fx%2Fmod@v0.8.0",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:golang/golang.org%2Fx%2Fsys@v0.5.0",
     },
     {
       "evidence": [
@@ -424,13 +1033,26 @@ exports[`replace-directive 1`] = `
       ],
       "purl": "pkg:golang/golang.org%2Fx%2Ftext@v0.12.0",
     },
+    {
+      "evidence": [],
+      "purl": "pkg:golang/golang.org%2Fx%2Ftools@v0.6.0",
+    },
   ],
   "relationships": [
     {
       "from": "pkg:golang/example.com%2Fapp@0.0.0-00010101000000-000000000000",
       "to": [
+        "pkg:golang/example.com%2Finternal%2Futils@v0.0.0",
         "pkg:golang/github.com%2Fgoogle%2Fuuid@v1.3.0",
         "pkg:golang/golang.org%2Fx%2Ftext@v0.12.0",
+      ],
+    },
+    {
+      "from": "pkg:golang/golang.org%2Fx%2Ftext@v0.12.0",
+      "to": [
+        "pkg:golang/golang.org%2Fx%2Fmod@v0.8.0",
+        "pkg:golang/golang.org%2Fx%2Fsys@v0.5.0",
+        "pkg:golang/golang.org%2Fx%2Ftools@v0.6.0",
       ],
     },
   ],
@@ -441,17 +1063,26 @@ exports[`replace-directive 1`] = `
       "scopes": [
         {
           "packages": [
+            "pkg:golang/example.com%2Finternal%2Futils@v0.0.0",
             "pkg:golang/github.com%2Fgoogle%2Fuuid@v1.3.0",
           ],
           "scope": "dependencies",
         },
         {
           "packages": [
+            "pkg:golang/golang.org%2Fx%2Fmod@v0.8.0",
+            "pkg:golang/golang.org%2Fx%2Fsys@v0.5.0",
             "pkg:golang/golang.org%2Fx%2Ftext@v0.12.0",
+            "pkg:golang/golang.org%2Fx%2Ftools@v0.6.0",
           ],
           "scope": "indirectDependencies",
         },
       ],
+    },
+    {
+      "definitionFile": "<fixtures>/replace-directive/internal/utils/go.mod",
+      "purl": "pkg:golang/example.com%2Finternal%2Futils@0.0.0-00010101000000-000000000000",
+      "scopes": [],
     },
   ],
 }
