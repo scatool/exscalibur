@@ -1,0 +1,2599 @@
+{
+  "packages": [
+    {
+      "purl": "pkg:npm/%40colors/colors@1.5.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#5"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40discoveryjs/json-ext@0.5.7",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#10"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40jridgewell/gen-mapping@0.3.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#15"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40jridgewell/resolve-uri@3.0.7",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#29"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40jridgewell/resolve-uri@3.1.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#24"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40jridgewell/set-array@1.1.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#34"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40jridgewell/source-map@0.3.5",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#39"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40jridgewell/sourcemap-codec@1.4.13",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#52"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40jridgewell/sourcemap-codec@1.4.14",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#47"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40jridgewell/trace-mapping@0.3.13",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#65"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40jridgewell/trace-mapping@0.3.18",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#57"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40socket.io/component-emitter@3.1.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#73"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40types/cookie@0.4.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#78"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40types/cors@2.8.13",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#83"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40types/eslint-scope@3.7.4",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#90"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40types/eslint@8.4.3",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#98"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40types/estree@0.0.51",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#106"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40types/estree@1.0.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#111"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40types/json-schema@7.0.11",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#116"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40types/node@17.0.41",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#121"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40webassemblyjs/ast@1.11.6",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#126"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40webassemblyjs/floating-point-hex-parser@1.11.6",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#134"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40webassemblyjs/helper-api-error@1.11.6",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#139"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40webassemblyjs/helper-buffer@1.11.6",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#144"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40webassemblyjs/helper-numbers@1.11.6",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#149"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40webassemblyjs/helper-wasm-bytecode@1.11.6",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#158"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40webassemblyjs/helper-wasm-section@1.11.6",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#163"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40webassemblyjs/ieee754@1.11.6",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#173"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40webassemblyjs/leb128@1.11.6",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#180"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40webassemblyjs/utf8@1.11.6",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#187"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40webassemblyjs/wasm-edit@1.11.6",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#192"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40webassemblyjs/wasm-gen@1.11.6",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#206"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40webassemblyjs/wasm-opt@1.11.6",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#217"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40webassemblyjs/wasm-parser@1.11.6",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#227"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40webassemblyjs/wast-printer@1.11.6",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#239"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40webpack-cli/configtest@2.1.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#247"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40webpack-cli/info@2.0.2",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#252"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40webpack-cli/serve@2.0.5",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#257"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40xtuc/ieee754@1.2.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#262"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40xtuc/long@4.2.2",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#267"
+      ]
+    },
+    {
+      "purl": "pkg:npm/abab@2.0.6",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#272"
+      ]
+    },
+    {
+      "purl": "pkg:npm/accepts@1.3.8",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#277"
+      ]
+    },
+    {
+      "purl": "pkg:npm/acorn-import-assertions@1.8.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#285"
+      ]
+    },
+    {
+      "purl": "pkg:npm/acorn@8.10.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#295"
+      ]
+    },
+    {
+      "purl": "pkg:npm/acorn@8.8.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#290"
+      ]
+    },
+    {
+      "purl": "pkg:npm/ajv-keywords@3.5.2",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#300"
+      ]
+    },
+    {
+      "purl": "pkg:npm/ajv@6.12.6",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#305"
+      ]
+    },
+    {
+      "purl": "pkg:npm/ansi-colors@4.1.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#315"
+      ]
+    },
+    {
+      "purl": "pkg:npm/ansi-regex@5.0.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#320"
+      ]
+    },
+    {
+      "purl": "pkg:npm/ansi-styles@4.3.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#325"
+      ]
+    },
+    {
+      "purl": "pkg:npm/anymatch@3.1.2",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#332"
+      ]
+    },
+    {
+      "purl": "pkg:npm/argparse@2.0.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#340"
+      ]
+    },
+    {
+      "purl": "pkg:npm/balanced-match@1.0.2",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#345"
+      ]
+    },
+    {
+      "purl": "pkg:npm/base64id@2.0.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#350"
+      ]
+    },
+    {
+      "purl": "pkg:npm/binary-extensions@2.2.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#355"
+      ]
+    },
+    {
+      "purl": "pkg:npm/body-parser@1.20.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#360"
+      ]
+    },
+    {
+      "purl": "pkg:npm/brace-expansion@1.1.11",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#378"
+      ]
+    },
+    {
+      "purl": "pkg:npm/brace-expansion@2.0.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#386"
+      ]
+    },
+    {
+      "purl": "pkg:npm/braces@3.0.2",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#393"
+      ]
+    },
+    {
+      "purl": "pkg:npm/browser-stdout@1.3.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#400"
+      ]
+    },
+    {
+      "purl": "pkg:npm/browserslist@4.20.4",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#405"
+      ]
+    },
+    {
+      "purl": "pkg:npm/buffer-from@1.1.2",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#416"
+      ]
+    },
+    {
+      "purl": "pkg:npm/bytes@3.1.2",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#421"
+      ]
+    },
+    {
+      "purl": "pkg:npm/call-bind@1.0.2",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#426"
+      ]
+    },
+    {
+      "purl": "pkg:npm/camelcase@6.3.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#434"
+      ]
+    },
+    {
+      "purl": "pkg:npm/caniuse-lite@1.0.30001350",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#439"
+      ]
+    },
+    {
+      "purl": "pkg:npm/chalk@4.1.2",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#444"
+      ]
+    },
+    {
+      "purl": "pkg:npm/chokidar@3.5.3",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#452"
+      ]
+    },
+    {
+      "purl": "pkg:npm/chrome-trace-event@1.0.3",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#467"
+      ]
+    },
+    {
+      "purl": "pkg:npm/cliui@7.0.4",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#472"
+      ]
+    },
+    {
+      "purl": "pkg:npm/clone-deep@4.0.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#481"
+      ]
+    },
+    {
+      "purl": "pkg:npm/color-convert@2.0.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#490"
+      ]
+    },
+    {
+      "purl": "pkg:npm/color-name@1.1.4",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#497"
+      ]
+    },
+    {
+      "purl": "pkg:npm/colorette@2.0.17",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#502"
+      ]
+    },
+    {
+      "purl": "pkg:npm/commander@10.0.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#507"
+      ]
+    },
+    {
+      "purl": "pkg:npm/commander@2.20.3",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#512"
+      ]
+    },
+    {
+      "purl": "pkg:npm/concat-map@0.0.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#517"
+      ]
+    },
+    {
+      "purl": "pkg:npm/connect@3.7.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#522"
+      ]
+    },
+    {
+      "purl": "pkg:npm/content-type@1.0.4",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#532"
+      ]
+    },
+    {
+      "purl": "pkg:npm/cookie@0.4.2",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#537"
+      ]
+    },
+    {
+      "purl": "pkg:npm/cors@2.8.5",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#542"
+      ]
+    },
+    {
+      "purl": "pkg:npm/cross-spawn@7.0.3",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#550"
+      ]
+    },
+    {
+      "purl": "pkg:npm/custom-event@1.0.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#559"
+      ]
+    },
+    {
+      "purl": "pkg:npm/date-format@4.0.14",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#564"
+      ]
+    },
+    {
+      "purl": "pkg:npm/debug@2.6.9",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#569"
+      ]
+    },
+    {
+      "purl": "pkg:npm/debug@4.3.4",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#576"
+      ]
+    },
+    {
+      "purl": "pkg:npm/decamelize@4.0.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#583"
+      ]
+    },
+    {
+      "purl": "pkg:npm/depd@2.0.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#588"
+      ]
+    },
+    {
+      "purl": "pkg:npm/destroy@1.2.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#593"
+      ]
+    },
+    {
+      "purl": "pkg:npm/di@0.0.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#598"
+      ]
+    },
+    {
+      "purl": "pkg:npm/diff@5.0.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#603"
+      ]
+    },
+    {
+      "purl": "pkg:npm/dom-serialize@2.2.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#608"
+      ]
+    },
+    {
+      "purl": "pkg:npm/ee-first@1.1.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#618"
+      ]
+    },
+    {
+      "purl": "pkg:npm/electron-to-chromium@1.4.148",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#623"
+      ]
+    },
+    {
+      "purl": "pkg:npm/emoji-regex@8.0.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#628"
+      ]
+    },
+    {
+      "purl": "pkg:npm/encodeurl@1.0.2",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#633"
+      ]
+    },
+    {
+      "purl": "pkg:npm/engine.io-parser@5.0.4",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#638"
+      ]
+    },
+    {
+      "purl": "pkg:npm/engine.io@6.2.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#643"
+      ]
+    },
+    {
+      "purl": "pkg:npm/enhanced-resolve@5.15.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#659"
+      ]
+    },
+    {
+      "purl": "pkg:npm/ent@2.2.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#667"
+      ]
+    },
+    {
+      "purl": "pkg:npm/envinfo@7.8.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#672"
+      ]
+    },
+    {
+      "purl": "pkg:npm/es-module-lexer@1.3.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#677"
+      ]
+    },
+    {
+      "purl": "pkg:npm/escalade@3.1.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#682"
+      ]
+    },
+    {
+      "purl": "pkg:npm/escape-html@1.0.3",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#687"
+      ]
+    },
+    {
+      "purl": "pkg:npm/escape-string-regexp@4.0.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#692"
+      ]
+    },
+    {
+      "purl": "pkg:npm/eslint-scope@5.1.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#697"
+      ]
+    },
+    {
+      "purl": "pkg:npm/esrecurse@4.3.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#705"
+      ]
+    },
+    {
+      "purl": "pkg:npm/estraverse@4.3.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#712"
+      ]
+    },
+    {
+      "purl": "pkg:npm/estraverse@5.3.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#717"
+      ]
+    },
+    {
+      "purl": "pkg:npm/eventemitter3@4.0.7",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#722"
+      ]
+    },
+    {
+      "purl": "pkg:npm/events@3.3.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#727"
+      ]
+    },
+    {
+      "purl": "pkg:npm/extend@3.0.2",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#732"
+      ]
+    },
+    {
+      "purl": "pkg:npm/fast-deep-equal@3.1.3",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#737"
+      ]
+    },
+    {
+      "purl": "pkg:npm/fast-json-stable-stringify@2.1.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#742"
+      ]
+    },
+    {
+      "purl": "pkg:npm/fastest-levenshtein@1.0.12",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#747"
+      ]
+    },
+    {
+      "purl": "pkg:npm/fill-range@7.0.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#752"
+      ]
+    },
+    {
+      "purl": "pkg:npm/finalhandler@1.1.2",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#759"
+      ]
+    },
+    {
+      "purl": "pkg:npm/find-up@4.1.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#780"
+      ]
+    },
+    {
+      "purl": "pkg:npm/find-up@5.0.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#772"
+      ]
+    },
+    {
+      "purl": "pkg:npm/flat@5.0.2",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#788"
+      ]
+    },
+    {
+      "purl": "pkg:npm/flatted@3.2.7",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#793"
+      ]
+    },
+    {
+      "purl": "pkg:npm/follow-redirects@1.15.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#798"
+      ]
+    },
+    {
+      "purl": "pkg:npm/format-util@1.0.5",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#803"
+      ]
+    },
+    {
+      "purl": "pkg:npm/fs-extra@8.1.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#808"
+      ]
+    },
+    {
+      "purl": "pkg:npm/fs.realpath@1.0.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#817"
+      ]
+    },
+    {
+      "purl": "pkg:npm/fsevents@2.3.2",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#822"
+      ]
+    },
+    {
+      "purl": "pkg:npm/function-bind@1.1.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#827"
+      ]
+    },
+    {
+      "purl": "pkg:npm/get-caller-file@2.0.5",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#832"
+      ]
+    },
+    {
+      "purl": "pkg:npm/get-intrinsic@1.1.2",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#837"
+      ]
+    },
+    {
+      "purl": "pkg:npm/glob-parent@5.1.2",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#846"
+      ]
+    },
+    {
+      "purl": "pkg:npm/glob-to-regexp@0.4.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#853"
+      ]
+    },
+    {
+      "purl": "pkg:npm/glob@7.2.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#858"
+      ]
+    },
+    {
+      "purl": "pkg:npm/glob@7.2.3",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#870"
+      ]
+    },
+    {
+      "purl": "pkg:npm/graceful-fs@4.2.10",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#882"
+      ]
+    },
+    {
+      "purl": "pkg:npm/graceful-fs@4.2.11",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#887"
+      ]
+    },
+    {
+      "purl": "pkg:npm/has-flag@4.0.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#892"
+      ]
+    },
+    {
+      "purl": "pkg:npm/has-symbols@1.0.3",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#897"
+      ]
+    },
+    {
+      "purl": "pkg:npm/has@1.0.3",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#902"
+      ]
+    },
+    {
+      "purl": "pkg:npm/he@1.2.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#909"
+      ]
+    },
+    {
+      "purl": "pkg:npm/http-errors@2.0.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#914"
+      ]
+    },
+    {
+      "purl": "pkg:npm/http-proxy@1.18.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#925"
+      ]
+    },
+    {
+      "purl": "pkg:npm/iconv-lite@0.4.24",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#934"
+      ]
+    },
+    {
+      "purl": "pkg:npm/iconv-lite@0.6.3",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#941"
+      ]
+    },
+    {
+      "purl": "pkg:npm/import-local@3.1.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#948"
+      ]
+    },
+    {
+      "purl": "pkg:npm/inflight@1.0.6",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#956"
+      ]
+    },
+    {
+      "purl": "pkg:npm/inherits@2.0.4",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#964"
+      ]
+    },
+    {
+      "purl": "pkg:npm/interpret@3.1.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#969"
+      ]
+    },
+    {
+      "purl": "pkg:npm/is-binary-path@2.1.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#974"
+      ]
+    },
+    {
+      "purl": "pkg:npm/is-core-module@2.12.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#981"
+      ]
+    },
+    {
+      "purl": "pkg:npm/is-extglob@2.1.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#988"
+      ]
+    },
+    {
+      "purl": "pkg:npm/is-fullwidth-code-point@3.0.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#993"
+      ]
+    },
+    {
+      "purl": "pkg:npm/is-glob@4.0.3",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#998"
+      ]
+    },
+    {
+      "purl": "pkg:npm/is-number@7.0.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1005"
+      ]
+    },
+    {
+      "purl": "pkg:npm/is-plain-obj@2.1.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1010"
+      ]
+    },
+    {
+      "purl": "pkg:npm/is-plain-object@2.0.4",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1015"
+      ]
+    },
+    {
+      "purl": "pkg:npm/is-unicode-supported@0.1.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1022"
+      ]
+    },
+    {
+      "purl": "pkg:npm/isbinaryfile@4.0.10",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1027"
+      ]
+    },
+    {
+      "purl": "pkg:npm/isexe@2.0.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1032"
+      ]
+    },
+    {
+      "purl": "pkg:npm/isobject@3.0.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1037"
+      ]
+    },
+    {
+      "purl": "pkg:npm/jest-worker@27.5.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1042"
+      ]
+    },
+    {
+      "purl": "pkg:npm/js-yaml@4.1.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1051"
+      ]
+    },
+    {
+      "purl": "pkg:npm/json-parse-even-better-errors@2.3.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1058"
+      ]
+    },
+    {
+      "purl": "pkg:npm/json-schema-traverse@0.4.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1063"
+      ]
+    },
+    {
+      "purl": "pkg:npm/jsonfile@4.0.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1068"
+      ]
+    },
+    {
+      "purl": "pkg:npm/karma-chrome-launcher@3.2.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1075"
+      ]
+    },
+    {
+      "purl": "pkg:npm/karma-mocha@2.0.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1082"
+      ]
+    },
+    {
+      "purl": "pkg:npm/karma-sourcemap-loader@0.4.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1089"
+      ]
+    },
+    {
+      "purl": "pkg:npm/karma-webpack@5.0.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1096"
+      ]
+    },
+    {
+      "purl": "pkg:npm/karma@6.4.2",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1105"
+      ]
+    },
+    {
+      "purl": "pkg:npm/kind-of@6.0.3",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1135"
+      ]
+    },
+    {
+      "purl": "pkg:npm/loader-runner@4.3.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1140"
+      ]
+    },
+    {
+      "purl": "pkg:npm/locate-path@5.0.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1145"
+      ]
+    },
+    {
+      "purl": "pkg:npm/locate-path@6.0.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1152"
+      ]
+    },
+    {
+      "purl": "pkg:npm/lodash@4.17.21",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1159"
+      ]
+    },
+    {
+      "purl": "pkg:npm/log-symbols@4.1.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1164"
+      ]
+    },
+    {
+      "purl": "pkg:npm/log4js@6.7.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1172"
+      ]
+    },
+    {
+      "purl": "pkg:npm/media-typer@0.3.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1183"
+      ]
+    },
+    {
+      "purl": "pkg:npm/merge-stream@2.0.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1188"
+      ]
+    },
+    {
+      "purl": "pkg:npm/mime-db@1.52.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1193"
+      ]
+    },
+    {
+      "purl": "pkg:npm/mime-types@2.1.35",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1198"
+      ]
+    },
+    {
+      "purl": "pkg:npm/mime@2.6.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1205"
+      ]
+    },
+    {
+      "purl": "pkg:npm/minimatch@3.1.2",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1217"
+      ]
+    },
+    {
+      "purl": "pkg:npm/minimatch@5.0.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1210"
+      ]
+    },
+    {
+      "purl": "pkg:npm/minimist@1.2.6",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1224"
+      ]
+    },
+    {
+      "purl": "pkg:npm/mkdirp@0.5.6",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1229"
+      ]
+    },
+    {
+      "purl": "pkg:npm/mocha@10.2.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1236"
+      ]
+    },
+    {
+      "purl": "pkg:npm/ms@2.0.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1263"
+      ]
+    },
+    {
+      "purl": "pkg:npm/ms@2.1.2",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1268"
+      ]
+    },
+    {
+      "purl": "pkg:npm/ms@2.1.3",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1273"
+      ]
+    },
+    {
+      "purl": "pkg:npm/nanoid@3.3.3",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1278"
+      ]
+    },
+    {
+      "purl": "pkg:npm/negotiator@0.6.3",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1283"
+      ]
+    },
+    {
+      "purl": "pkg:npm/neo-async@2.6.2",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1288"
+      ]
+    },
+    {
+      "purl": "pkg:npm/node-releases@2.0.5",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1293"
+      ]
+    },
+    {
+      "purl": "pkg:npm/normalize-path@3.0.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1298"
+      ]
+    },
+    {
+      "purl": "pkg:npm/object-assign@4.1.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1303"
+      ]
+    },
+    {
+      "purl": "pkg:npm/object-inspect@1.12.2",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1308"
+      ]
+    },
+    {
+      "purl": "pkg:npm/on-finished@2.3.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1320"
+      ]
+    },
+    {
+      "purl": "pkg:npm/on-finished@2.4.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1313"
+      ]
+    },
+    {
+      "purl": "pkg:npm/once@1.4.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1327"
+      ]
+    },
+    {
+      "purl": "pkg:npm/p-limit@2.3.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1334"
+      ]
+    },
+    {
+      "purl": "pkg:npm/p-limit@3.1.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1341"
+      ]
+    },
+    {
+      "purl": "pkg:npm/p-locate@4.1.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1348"
+      ]
+    },
+    {
+      "purl": "pkg:npm/p-locate@5.0.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1355"
+      ]
+    },
+    {
+      "purl": "pkg:npm/p-try@2.2.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1362"
+      ]
+    },
+    {
+      "purl": "pkg:npm/parseurl@1.3.3",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1367"
+      ]
+    },
+    {
+      "purl": "pkg:npm/path-exists@4.0.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1372"
+      ]
+    },
+    {
+      "purl": "pkg:npm/path-is-absolute@1.0.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1377"
+      ]
+    },
+    {
+      "purl": "pkg:npm/path-key@3.1.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1382"
+      ]
+    },
+    {
+      "purl": "pkg:npm/path-parse@1.0.7",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1387"
+      ]
+    },
+    {
+      "purl": "pkg:npm/picocolors@1.0.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1392"
+      ]
+    },
+    {
+      "purl": "pkg:npm/picomatch@2.3.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1397"
+      ]
+    },
+    {
+      "purl": "pkg:npm/pkg-dir@4.2.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1402"
+      ]
+    },
+    {
+      "purl": "pkg:npm/punycode@2.1.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1409"
+      ]
+    },
+    {
+      "purl": "pkg:npm/qjobs@1.2.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1414"
+      ]
+    },
+    {
+      "purl": "pkg:npm/qs@6.10.3",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1419"
+      ]
+    },
+    {
+      "purl": "pkg:npm/randombytes@2.1.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1426"
+      ]
+    },
+    {
+      "purl": "pkg:npm/range-parser@1.2.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1433"
+      ]
+    },
+    {
+      "purl": "pkg:npm/raw-body@2.5.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1438"
+      ]
+    },
+    {
+      "purl": "pkg:npm/readdirp@3.6.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1448"
+      ]
+    },
+    {
+      "purl": "pkg:npm/rechoir@0.8.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1455"
+      ]
+    },
+    {
+      "purl": "pkg:npm/require-directory@2.1.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1462"
+      ]
+    },
+    {
+      "purl": "pkg:npm/requires-port@1.0.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1467"
+      ]
+    },
+    {
+      "purl": "pkg:npm/resolve-cwd@3.0.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1472"
+      ]
+    },
+    {
+      "purl": "pkg:npm/resolve-from@5.0.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1479"
+      ]
+    },
+    {
+      "purl": "pkg:npm/resolve@1.22.2",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1484"
+      ]
+    },
+    {
+      "purl": "pkg:npm/rfdc@1.3.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1493"
+      ]
+    },
+    {
+      "purl": "pkg:npm/rimraf@3.0.2",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1498"
+      ]
+    },
+    {
+      "purl": "pkg:npm/safe-buffer@5.2.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1505"
+      ]
+    },
+    {
+      "purl": "pkg:npm/safer-buffer@2.1.2",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1510"
+      ]
+    },
+    {
+      "purl": "pkg:npm/schema-utils@3.1.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1515"
+      ]
+    },
+    {
+      "purl": "pkg:npm/schema-utils@3.3.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1524"
+      ]
+    },
+    {
+      "purl": "pkg:npm/serialize-javascript@6.0.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1533"
+      ]
+    },
+    {
+      "purl": "pkg:npm/serialize-javascript@6.0.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1540"
+      ]
+    },
+    {
+      "purl": "pkg:npm/setprototypeof@1.2.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1547"
+      ]
+    },
+    {
+      "purl": "pkg:npm/shallow-clone@3.0.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1552"
+      ]
+    },
+    {
+      "purl": "pkg:npm/shebang-command@2.0.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1559"
+      ]
+    },
+    {
+      "purl": "pkg:npm/shebang-regex@3.0.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1566"
+      ]
+    },
+    {
+      "purl": "pkg:npm/side-channel@1.0.4",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1571"
+      ]
+    },
+    {
+      "purl": "pkg:npm/socket.io-adapter@2.4.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1580"
+      ]
+    },
+    {
+      "purl": "pkg:npm/socket.io-parser@4.2.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1585"
+      ]
+    },
+    {
+      "purl": "pkg:npm/socket.io@4.5.4",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1593"
+      ]
+    },
+    {
+      "purl": "pkg:npm/source-map-js@1.0.2",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1605"
+      ]
+    },
+    {
+      "purl": "pkg:npm/source-map-loader@4.0.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1610"
+      ]
+    },
+    {
+      "purl": "pkg:npm/source-map-support@0.5.21",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1619"
+      ]
+    },
+    {
+      "purl": "pkg:npm/source-map@0.6.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1627"
+      ]
+    },
+    {
+      "purl": "pkg:npm/statuses@1.5.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1637"
+      ]
+    },
+    {
+      "purl": "pkg:npm/statuses@2.0.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1632"
+      ]
+    },
+    {
+      "purl": "pkg:npm/streamroller@3.1.3",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1642"
+      ]
+    },
+    {
+      "purl": "pkg:npm/string-width@4.2.3",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1651"
+      ]
+    },
+    {
+      "purl": "pkg:npm/strip-ansi@6.0.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1660"
+      ]
+    },
+    {
+      "purl": "pkg:npm/strip-json-comments@3.1.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1667"
+      ]
+    },
+    {
+      "purl": "pkg:npm/supports-color@7.2.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1679"
+      ]
+    },
+    {
+      "purl": "pkg:npm/supports-color@8.1.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1672"
+      ]
+    },
+    {
+      "purl": "pkg:npm/supports-preserve-symlinks-flag@1.0.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1686"
+      ]
+    },
+    {
+      "purl": "pkg:npm/tapable@2.2.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1691"
+      ]
+    },
+    {
+      "purl": "pkg:npm/terser-webpack-plugin@5.3.9",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1696"
+      ]
+    },
+    {
+      "purl": "pkg:npm/terser@5.19.2",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1707"
+      ]
+    },
+    {
+      "purl": "pkg:npm/tmp@0.2.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1717"
+      ]
+    },
+    {
+      "purl": "pkg:npm/to-regex-range@5.0.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1724"
+      ]
+    },
+    {
+      "purl": "pkg:npm/toidentifier@1.0.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1731"
+      ]
+    },
+    {
+      "purl": "pkg:npm/type-is@1.6.18",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1736"
+      ]
+    },
+    {
+      "purl": "pkg:npm/typescript@5.0.4",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1744"
+      ]
+    },
+    {
+      "purl": "pkg:npm/ua-parser-js@0.7.32",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1749"
+      ]
+    },
+    {
+      "purl": "pkg:npm/universalify@0.1.2",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1754"
+      ]
+    },
+    {
+      "purl": "pkg:npm/unpipe@1.0.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1759"
+      ]
+    },
+    {
+      "purl": "pkg:npm/uri-js@4.4.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1764"
+      ]
+    },
+    {
+      "purl": "pkg:npm/utils-merge@1.0.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1771"
+      ]
+    },
+    {
+      "purl": "pkg:npm/vary@1.1.2",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1776"
+      ]
+    },
+    {
+      "purl": "pkg:npm/void-elements@2.0.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1781"
+      ]
+    },
+    {
+      "purl": "pkg:npm/watchpack@2.4.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1786"
+      ]
+    },
+    {
+      "purl": "pkg:npm/webpack-cli@5.1.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1794"
+      ]
+    },
+    {
+      "purl": "pkg:npm/webpack-merge@4.2.2",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1813"
+      ]
+    },
+    {
+      "purl": "pkg:npm/webpack-merge@5.8.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1820"
+      ]
+    },
+    {
+      "purl": "pkg:npm/webpack-sources@3.2.3",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1828"
+      ]
+    },
+    {
+      "purl": "pkg:npm/webpack@5.82.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1833"
+      ]
+    },
+    {
+      "purl": "pkg:npm/which@1.3.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1863"
+      ]
+    },
+    {
+      "purl": "pkg:npm/which@2.0.2",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1870"
+      ]
+    },
+    {
+      "purl": "pkg:npm/wildcard@2.0.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1877"
+      ]
+    },
+    {
+      "purl": "pkg:npm/workerpool@6.2.1",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1882"
+      ]
+    },
+    {
+      "purl": "pkg:npm/wrap-ansi@7.0.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1887"
+      ]
+    },
+    {
+      "purl": "pkg:npm/wrappy@1.0.2",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1896"
+      ]
+    },
+    {
+      "purl": "pkg:npm/ws@8.2.3",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1901"
+      ]
+    },
+    {
+      "purl": "pkg:npm/y18n@5.0.8",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1906"
+      ]
+    },
+    {
+      "purl": "pkg:npm/yargs-parser@20.2.4",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1911"
+      ]
+    },
+    {
+      "purl": "pkg:npm/yargs-parser@20.2.9",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1916"
+      ]
+    },
+    {
+      "purl": "pkg:npm/yargs-unparser@2.0.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1921"
+      ]
+    },
+    {
+      "purl": "pkg:npm/yargs@16.2.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1931"
+      ]
+    },
+    {
+      "purl": "pkg:npm/yocto-queue@0.1.0",
+      "evidence": [
+        "<repositories>/square+okhttp/kotlin-js-store/yarn.lock#1944"
+      ]
+    }
+  ],
+  "subprojects": [],
+  "relationships": [
+    {
+      "from": "pkg:npm/accepts@1.3.8",
+      "to": [
+        "pkg:npm/mime-types@2.1.35",
+        "pkg:npm/negotiator@0.6.3"
+      ]
+    },
+    {
+      "from": "pkg:npm/ajv@6.12.6",
+      "to": [
+        "pkg:npm/fast-deep-equal@3.1.3",
+        "pkg:npm/fast-json-stable-stringify@2.1.0",
+        "pkg:npm/json-schema-traverse@0.4.1",
+        "pkg:npm/uri-js@4.4.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/ansi-styles@4.3.0",
+      "to": [
+        "pkg:npm/color-convert@2.0.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/anymatch@3.1.2",
+      "to": [
+        "pkg:npm/normalize-path@3.0.0",
+        "pkg:npm/picomatch@2.3.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/body-parser@1.20.0",
+      "to": [
+        "pkg:npm/bytes@3.1.2",
+        "pkg:npm/content-type@1.0.4",
+        "pkg:npm/debug@2.6.9",
+        "pkg:npm/depd@2.0.0",
+        "pkg:npm/destroy@1.2.0",
+        "pkg:npm/http-errors@2.0.0",
+        "pkg:npm/iconv-lite@0.4.24",
+        "pkg:npm/on-finished@2.4.1",
+        "pkg:npm/qs@6.10.3",
+        "pkg:npm/raw-body@2.5.1",
+        "pkg:npm/type-is@1.6.18",
+        "pkg:npm/unpipe@1.0.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/brace-expansion@1.1.11",
+      "to": [
+        "pkg:npm/balanced-match@1.0.2",
+        "pkg:npm/concat-map@0.0.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/brace-expansion@2.0.1",
+      "to": [
+        "pkg:npm/balanced-match@1.0.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/braces@3.0.2",
+      "to": [
+        "pkg:npm/fill-range@7.0.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/browserslist@4.20.4",
+      "to": [
+        "pkg:npm/caniuse-lite@1.0.30001350",
+        "pkg:npm/electron-to-chromium@1.4.148",
+        "pkg:npm/escalade@3.1.1",
+        "pkg:npm/node-releases@2.0.5",
+        "pkg:npm/picocolors@1.0.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/call-bind@1.0.2",
+      "to": [
+        "pkg:npm/function-bind@1.1.1",
+        "pkg:npm/get-intrinsic@1.1.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/chalk@4.1.2",
+      "to": [
+        "pkg:npm/ansi-styles@4.3.0",
+        "pkg:npm/supports-color@7.2.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/chokidar@3.5.3",
+      "to": [
+        "pkg:npm/anymatch@3.1.2",
+        "pkg:npm/braces@3.0.2",
+        "pkg:npm/fsevents@2.3.2",
+        "pkg:npm/glob-parent@5.1.2",
+        "pkg:npm/is-binary-path@2.1.0",
+        "pkg:npm/is-glob@4.0.3",
+        "pkg:npm/normalize-path@3.0.0",
+        "pkg:npm/readdirp@3.6.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/cliui@7.0.4",
+      "to": [
+        "pkg:npm/string-width@4.2.3",
+        "pkg:npm/strip-ansi@6.0.1",
+        "pkg:npm/wrap-ansi@7.0.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/clone-deep@4.0.1",
+      "to": [
+        "pkg:npm/is-plain-object@2.0.4",
+        "pkg:npm/kind-of@6.0.3",
+        "pkg:npm/shallow-clone@3.0.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/color-convert@2.0.1",
+      "to": [
+        "pkg:npm/color-name@1.1.4"
+      ]
+    },
+    {
+      "from": "pkg:npm/connect@3.7.0",
+      "to": [
+        "pkg:npm/debug@2.6.9",
+        "pkg:npm/finalhandler@1.1.2",
+        "pkg:npm/parseurl@1.3.3",
+        "pkg:npm/utils-merge@1.0.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/cors@2.8.5",
+      "to": [
+        "pkg:npm/object-assign@4.1.1",
+        "pkg:npm/vary@1.1.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/cross-spawn@7.0.3",
+      "to": [
+        "pkg:npm/path-key@3.1.1",
+        "pkg:npm/shebang-command@2.0.0",
+        "pkg:npm/which@2.0.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/debug@2.6.9",
+      "to": [
+        "pkg:npm/ms@2.0.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/debug@4.3.4",
+      "to": [
+        "pkg:npm/ms@2.1.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/dom-serialize@2.2.1",
+      "to": [
+        "pkg:npm/custom-event@1.0.1",
+        "pkg:npm/ent@2.2.0",
+        "pkg:npm/extend@3.0.2",
+        "pkg:npm/void-elements@2.0.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/engine.io@6.2.1",
+      "to": [
+        "pkg:npm/accepts@1.3.8",
+        "pkg:npm/base64id@2.0.0",
+        "pkg:npm/cookie@0.4.2",
+        "pkg:npm/cors@2.8.5",
+        "pkg:npm/debug@4.3.4",
+        "pkg:npm/engine.io-parser@5.0.4",
+        "pkg:npm/ws@8.2.3"
+      ]
+    },
+    {
+      "from": "pkg:npm/enhanced-resolve@5.15.0",
+      "to": [
+        "pkg:npm/graceful-fs@4.2.10",
+        "pkg:npm/tapable@2.2.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/eslint-scope@5.1.1",
+      "to": [
+        "pkg:npm/esrecurse@4.3.0",
+        "pkg:npm/estraverse@4.3.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/esrecurse@4.3.0",
+      "to": [
+        "pkg:npm/estraverse@5.3.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/fill-range@7.0.1",
+      "to": [
+        "pkg:npm/to-regex-range@5.0.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/finalhandler@1.1.2",
+      "to": [
+        "pkg:npm/debug@2.6.9",
+        "pkg:npm/encodeurl@1.0.2",
+        "pkg:npm/escape-html@1.0.3",
+        "pkg:npm/on-finished@2.3.0",
+        "pkg:npm/parseurl@1.3.3",
+        "pkg:npm/statuses@1.5.0",
+        "pkg:npm/unpipe@1.0.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/find-up@4.1.0",
+      "to": [
+        "pkg:npm/locate-path@5.0.0",
+        "pkg:npm/path-exists@4.0.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/find-up@5.0.0",
+      "to": [
+        "pkg:npm/locate-path@6.0.0",
+        "pkg:npm/path-exists@4.0.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/fs-extra@8.1.0",
+      "to": [
+        "pkg:npm/graceful-fs@4.2.10",
+        "pkg:npm/jsonfile@4.0.0",
+        "pkg:npm/universalify@0.1.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/get-intrinsic@1.1.2",
+      "to": [
+        "pkg:npm/function-bind@1.1.1",
+        "pkg:npm/has-symbols@1.0.3",
+        "pkg:npm/has@1.0.3"
+      ]
+    },
+    {
+      "from": "pkg:npm/glob-parent@5.1.2",
+      "to": [
+        "pkg:npm/is-glob@4.0.3"
+      ]
+    },
+    {
+      "from": "pkg:npm/glob@7.2.0",
+      "to": [
+        "pkg:npm/fs.realpath@1.0.0",
+        "pkg:npm/inflight@1.0.6",
+        "pkg:npm/inherits@2.0.4",
+        "pkg:npm/minimatch@3.1.2",
+        "pkg:npm/once@1.4.0",
+        "pkg:npm/path-is-absolute@1.0.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/glob@7.2.3",
+      "to": [
+        "pkg:npm/fs.realpath@1.0.0",
+        "pkg:npm/inflight@1.0.6",
+        "pkg:npm/inherits@2.0.4",
+        "pkg:npm/minimatch@3.1.2",
+        "pkg:npm/once@1.4.0",
+        "pkg:npm/path-is-absolute@1.0.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/has@1.0.3",
+      "to": [
+        "pkg:npm/function-bind@1.1.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/http-errors@2.0.0",
+      "to": [
+        "pkg:npm/depd@2.0.0",
+        "pkg:npm/inherits@2.0.4",
+        "pkg:npm/setprototypeof@1.2.0",
+        "pkg:npm/statuses@2.0.1",
+        "pkg:npm/toidentifier@1.0.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/http-proxy@1.18.1",
+      "to": [
+        "pkg:npm/eventemitter3@4.0.7",
+        "pkg:npm/follow-redirects@1.15.1",
+        "pkg:npm/requires-port@1.0.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/iconv-lite@0.4.24",
+      "to": [
+        "pkg:npm/safer-buffer@2.1.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/iconv-lite@0.6.3",
+      "to": [
+        "pkg:npm/safer-buffer@2.1.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/import-local@3.1.0",
+      "to": [
+        "pkg:npm/pkg-dir@4.2.0",
+        "pkg:npm/resolve-cwd@3.0.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/inflight@1.0.6",
+      "to": [
+        "pkg:npm/once@1.4.0",
+        "pkg:npm/wrappy@1.0.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/is-binary-path@2.1.0",
+      "to": [
+        "pkg:npm/binary-extensions@2.2.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/is-core-module@2.12.1",
+      "to": [
+        "pkg:npm/has@1.0.3"
+      ]
+    },
+    {
+      "from": "pkg:npm/is-glob@4.0.3",
+      "to": [
+        "pkg:npm/is-extglob@2.1.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/is-plain-object@2.0.4",
+      "to": [
+        "pkg:npm/isobject@3.0.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/jest-worker@27.5.1",
+      "to": [
+        "pkg:npm/merge-stream@2.0.0",
+        "pkg:npm/supports-color@8.1.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/js-yaml@4.1.0",
+      "to": [
+        "pkg:npm/argparse@2.0.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/jsonfile@4.0.0",
+      "to": [
+        "pkg:npm/graceful-fs@4.2.10"
+      ]
+    },
+    {
+      "from": "pkg:npm/karma-chrome-launcher@3.2.0",
+      "to": [
+        "pkg:npm/which@1.3.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/karma-mocha@2.0.1",
+      "to": [
+        "pkg:npm/minimist@1.2.6"
+      ]
+    },
+    {
+      "from": "pkg:npm/karma-sourcemap-loader@0.4.0",
+      "to": [
+        "pkg:npm/graceful-fs@4.2.11"
+      ]
+    },
+    {
+      "from": "pkg:npm/karma-webpack@5.0.0",
+      "to": [
+        "pkg:npm/glob@7.2.3",
+        "pkg:npm/minimatch@3.1.2",
+        "pkg:npm/webpack-merge@4.2.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/karma@6.4.2",
+      "to": [
+        "pkg:npm/body-parser@1.20.0",
+        "pkg:npm/braces@3.0.2",
+        "pkg:npm/chokidar@3.5.3",
+        "pkg:npm/connect@3.7.0",
+        "pkg:npm/di@0.0.1",
+        "pkg:npm/dom-serialize@2.2.1",
+        "pkg:npm/glob@7.2.3",
+        "pkg:npm/graceful-fs@4.2.10",
+        "pkg:npm/http-proxy@1.18.1",
+        "pkg:npm/isbinaryfile@4.0.10",
+        "pkg:npm/lodash@4.17.21",
+        "pkg:npm/log4js@6.7.1",
+        "pkg:npm/mime@2.6.0",
+        "pkg:npm/minimatch@3.1.2",
+        "pkg:npm/mkdirp@0.5.6",
+        "pkg:npm/qjobs@1.2.0",
+        "pkg:npm/range-parser@1.2.1",
+        "pkg:npm/rimraf@3.0.2",
+        "pkg:npm/socket.io@4.5.4",
+        "pkg:npm/source-map@0.6.1",
+        "pkg:npm/tmp@0.2.1",
+        "pkg:npm/ua-parser-js@0.7.32",
+        "pkg:npm/yargs@16.2.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/locate-path@5.0.0",
+      "to": [
+        "pkg:npm/p-locate@4.1.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/locate-path@6.0.0",
+      "to": [
+        "pkg:npm/p-locate@5.0.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/log-symbols@4.1.0",
+      "to": [
+        "pkg:npm/chalk@4.1.2",
+        "pkg:npm/is-unicode-supported@0.1.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/log4js@6.7.1",
+      "to": [
+        "pkg:npm/date-format@4.0.14",
+        "pkg:npm/debug@4.3.4",
+        "pkg:npm/flatted@3.2.7",
+        "pkg:npm/rfdc@1.3.0",
+        "pkg:npm/streamroller@3.1.3"
+      ]
+    },
+    {
+      "from": "pkg:npm/mime-types@2.1.35",
+      "to": [
+        "pkg:npm/mime-db@1.52.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/minimatch@3.1.2",
+      "to": [
+        "pkg:npm/brace-expansion@1.1.11"
+      ]
+    },
+    {
+      "from": "pkg:npm/minimatch@5.0.1",
+      "to": [
+        "pkg:npm/brace-expansion@2.0.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/mkdirp@0.5.6",
+      "to": [
+        "pkg:npm/minimist@1.2.6"
+      ]
+    },
+    {
+      "from": "pkg:npm/mocha@10.2.0",
+      "to": [
+        "pkg:npm/ansi-colors@4.1.1",
+        "pkg:npm/browser-stdout@1.3.1",
+        "pkg:npm/chokidar@3.5.3",
+        "pkg:npm/debug@4.3.4",
+        "pkg:npm/diff@5.0.0",
+        "pkg:npm/escape-string-regexp@4.0.0",
+        "pkg:npm/find-up@5.0.0",
+        "pkg:npm/glob@7.2.0",
+        "pkg:npm/he@1.2.0",
+        "pkg:npm/js-yaml@4.1.0",
+        "pkg:npm/log-symbols@4.1.0",
+        "pkg:npm/minimatch@5.0.1",
+        "pkg:npm/ms@2.1.3",
+        "pkg:npm/nanoid@3.3.3",
+        "pkg:npm/serialize-javascript@6.0.0",
+        "pkg:npm/strip-json-comments@3.1.1",
+        "pkg:npm/supports-color@8.1.1",
+        "pkg:npm/workerpool@6.2.1",
+        "pkg:npm/yargs-parser@20.2.4",
+        "pkg:npm/yargs-unparser@2.0.0",
+        "pkg:npm/yargs@16.2.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/on-finished@2.3.0",
+      "to": [
+        "pkg:npm/ee-first@1.1.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/on-finished@2.4.1",
+      "to": [
+        "pkg:npm/ee-first@1.1.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/once@1.4.0",
+      "to": [
+        "pkg:npm/wrappy@1.0.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/p-limit@2.3.0",
+      "to": [
+        "pkg:npm/p-try@2.2.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/p-limit@3.1.0",
+      "to": [
+        "pkg:npm/yocto-queue@0.1.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/p-locate@4.1.0",
+      "to": [
+        "pkg:npm/p-limit@2.3.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/p-locate@5.0.0",
+      "to": [
+        "pkg:npm/p-limit@3.1.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/pkg-dir@4.2.0",
+      "to": [
+        "pkg:npm/find-up@4.1.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/qs@6.10.3",
+      "to": [
+        "pkg:npm/side-channel@1.0.4"
+      ]
+    },
+    {
+      "from": "pkg:npm/randombytes@2.1.0",
+      "to": [
+        "pkg:npm/safe-buffer@5.2.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/raw-body@2.5.1",
+      "to": [
+        "pkg:npm/bytes@3.1.2",
+        "pkg:npm/http-errors@2.0.0",
+        "pkg:npm/iconv-lite@0.4.24",
+        "pkg:npm/unpipe@1.0.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/readdirp@3.6.0",
+      "to": [
+        "pkg:npm/picomatch@2.3.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/rechoir@0.8.0",
+      "to": [
+        "pkg:npm/resolve@1.22.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/resolve-cwd@3.0.0",
+      "to": [
+        "pkg:npm/resolve-from@5.0.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/resolve@1.22.2",
+      "to": [
+        "pkg:npm/is-core-module@2.12.1",
+        "pkg:npm/path-parse@1.0.7",
+        "pkg:npm/supports-preserve-symlinks-flag@1.0.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/rimraf@3.0.2",
+      "to": [
+        "pkg:npm/glob@7.2.3"
+      ]
+    },
+    {
+      "from": "pkg:npm/schema-utils@3.1.1",
+      "to": [
+        "pkg:npm/ajv-keywords@3.5.2",
+        "pkg:npm/ajv@6.12.6"
+      ]
+    },
+    {
+      "from": "pkg:npm/schema-utils@3.3.0",
+      "to": [
+        "pkg:npm/ajv-keywords@3.5.2",
+        "pkg:npm/ajv@6.12.6"
+      ]
+    },
+    {
+      "from": "pkg:npm/serialize-javascript@6.0.0",
+      "to": [
+        "pkg:npm/randombytes@2.1.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/serialize-javascript@6.0.1",
+      "to": [
+        "pkg:npm/randombytes@2.1.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/shallow-clone@3.0.1",
+      "to": [
+        "pkg:npm/kind-of@6.0.3"
+      ]
+    },
+    {
+      "from": "pkg:npm/shebang-command@2.0.0",
+      "to": [
+        "pkg:npm/shebang-regex@3.0.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/side-channel@1.0.4",
+      "to": [
+        "pkg:npm/call-bind@1.0.2",
+        "pkg:npm/get-intrinsic@1.1.2",
+        "pkg:npm/object-inspect@1.12.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/socket.io-parser@4.2.1",
+      "to": [
+        "pkg:npm/debug@4.3.4"
+      ]
+    },
+    {
+      "from": "pkg:npm/socket.io@4.5.4",
+      "to": [
+        "pkg:npm/accepts@1.3.8",
+        "pkg:npm/base64id@2.0.0",
+        "pkg:npm/debug@4.3.4",
+        "pkg:npm/engine.io@6.2.1",
+        "pkg:npm/socket.io-adapter@2.4.0",
+        "pkg:npm/socket.io-parser@4.2.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/source-map-loader@4.0.1",
+      "to": [
+        "pkg:npm/abab@2.0.6",
+        "pkg:npm/iconv-lite@0.6.3",
+        "pkg:npm/source-map-js@1.0.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/source-map-support@0.5.21",
+      "to": [
+        "pkg:npm/buffer-from@1.1.2",
+        "pkg:npm/source-map@0.6.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/streamroller@3.1.3",
+      "to": [
+        "pkg:npm/date-format@4.0.14",
+        "pkg:npm/debug@4.3.4",
+        "pkg:npm/fs-extra@8.1.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/string-width@4.2.3",
+      "to": [
+        "pkg:npm/emoji-regex@8.0.0",
+        "pkg:npm/is-fullwidth-code-point@3.0.0",
+        "pkg:npm/strip-ansi@6.0.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/strip-ansi@6.0.1",
+      "to": [
+        "pkg:npm/ansi-regex@5.0.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/supports-color@7.2.0",
+      "to": [
+        "pkg:npm/has-flag@4.0.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/supports-color@8.1.1",
+      "to": [
+        "pkg:npm/has-flag@4.0.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/terser-webpack-plugin@5.3.9",
+      "to": [
+        "pkg:npm/jest-worker@27.5.1",
+        "pkg:npm/schema-utils@3.1.1",
+        "pkg:npm/serialize-javascript@6.0.1",
+        "pkg:npm/terser@5.19.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/terser@5.19.2",
+      "to": [
+        "pkg:npm/acorn@8.10.0",
+        "pkg:npm/commander@2.20.3",
+        "pkg:npm/source-map-support@0.5.21"
+      ]
+    },
+    {
+      "from": "pkg:npm/tmp@0.2.1",
+      "to": [
+        "pkg:npm/rimraf@3.0.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/to-regex-range@5.0.1",
+      "to": [
+        "pkg:npm/is-number@7.0.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/type-is@1.6.18",
+      "to": [
+        "pkg:npm/media-typer@0.3.0",
+        "pkg:npm/mime-types@2.1.35"
+      ]
+    },
+    {
+      "from": "pkg:npm/uri-js@4.4.1",
+      "to": [
+        "pkg:npm/punycode@2.1.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/watchpack@2.4.0",
+      "to": [
+        "pkg:npm/glob-to-regexp@0.4.1",
+        "pkg:npm/graceful-fs@4.2.10"
+      ]
+    },
+    {
+      "from": "pkg:npm/webpack-cli@5.1.0",
+      "to": [
+        "pkg:npm/colorette@2.0.17",
+        "pkg:npm/commander@10.0.1",
+        "pkg:npm/cross-spawn@7.0.3",
+        "pkg:npm/envinfo@7.8.1",
+        "pkg:npm/fastest-levenshtein@1.0.12",
+        "pkg:npm/import-local@3.1.0",
+        "pkg:npm/interpret@3.1.1",
+        "pkg:npm/rechoir@0.8.0",
+        "pkg:npm/webpack-merge@5.8.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/webpack-merge@4.2.2",
+      "to": [
+        "pkg:npm/lodash@4.17.21"
+      ]
+    },
+    {
+      "from": "pkg:npm/webpack-merge@5.8.0",
+      "to": [
+        "pkg:npm/clone-deep@4.0.1",
+        "pkg:npm/wildcard@2.0.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/webpack@5.82.0",
+      "to": [
+        "pkg:npm/acorn-import-assertions@1.8.0",
+        "pkg:npm/acorn@8.8.1",
+        "pkg:npm/browserslist@4.20.4",
+        "pkg:npm/chrome-trace-event@1.0.3",
+        "pkg:npm/enhanced-resolve@5.15.0",
+        "pkg:npm/es-module-lexer@1.3.0",
+        "pkg:npm/eslint-scope@5.1.1",
+        "pkg:npm/events@3.3.0",
+        "pkg:npm/glob-to-regexp@0.4.1",
+        "pkg:npm/graceful-fs@4.2.10",
+        "pkg:npm/json-parse-even-better-errors@2.3.1",
+        "pkg:npm/loader-runner@4.3.0",
+        "pkg:npm/mime-types@2.1.35",
+        "pkg:npm/neo-async@2.6.2",
+        "pkg:npm/schema-utils@3.3.0",
+        "pkg:npm/tapable@2.2.1",
+        "pkg:npm/terser-webpack-plugin@5.3.9",
+        "pkg:npm/watchpack@2.4.0",
+        "pkg:npm/webpack-sources@3.2.3"
+      ]
+    },
+    {
+      "from": "pkg:npm/which@1.3.1",
+      "to": [
+        "pkg:npm/isexe@2.0.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/which@2.0.2",
+      "to": [
+        "pkg:npm/isexe@2.0.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/wrap-ansi@7.0.0",
+      "to": [
+        "pkg:npm/ansi-styles@4.3.0",
+        "pkg:npm/string-width@4.2.3",
+        "pkg:npm/strip-ansi@6.0.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/yargs-unparser@2.0.0",
+      "to": [
+        "pkg:npm/camelcase@6.3.0",
+        "pkg:npm/decamelize@4.0.0",
+        "pkg:npm/flat@5.0.2",
+        "pkg:npm/is-plain-obj@2.1.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/yargs@16.2.0",
+      "to": [
+        "pkg:npm/cliui@7.0.4",
+        "pkg:npm/escalade@3.1.1",
+        "pkg:npm/get-caller-file@2.0.5",
+        "pkg:npm/require-directory@2.1.1",
+        "pkg:npm/string-width@4.2.3",
+        "pkg:npm/y18n@5.0.8",
+        "pkg:npm/yargs-parser@20.2.9"
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "message": "Gradle dependency extraction failed with exit code 1 (dependency resolution failed)",
+      "severity": "WARNING",
+      "file": "<repositories>/square+okhttp/build.gradle.kts"
+    }
+  ]
+}

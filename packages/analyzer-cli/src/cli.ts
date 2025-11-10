@@ -9,6 +9,7 @@ import {
   yarnLockExtractor,
 } from '@scatool/analyzer-plugin-javascript/src/index.ts';
 import { dockerfileExtractor } from '@scatool/analyzer-plugin-containers/src/index.ts';
+import { gradleExtractor } from '@scatool/analyzer-plugin-gradle/src/index.ts';
 import { mergeResults } from '@scatool/analyzer-core/src/index.ts';
 import { extractor as githubActionsExtractor } from '@scatool/analyzer-plugin-github-actions/src/index.ts';
 import type { AnalyzerResult, Extractor } from '@scatool/analyzer-core/src/index.ts';
@@ -73,6 +74,7 @@ if (positionalArgs.length < 2) {
   console.error('  yarnlock          Extract from yarn.lock files (Yarn v1/Classic)');
   console.error('  dockerfile        Extract from Dockerfile files');
   console.error('  github-actions    Extract from GitHub Actions workflow files');
+  console.error('  gradle            Extract from Gradle projects (build.gradle)');
   process.exit(1);
 }
 
@@ -89,6 +91,7 @@ const allExtractors: Extractor[] = [
   yarnLockExtractor,
   dockerfileExtractor,
   githubActionsExtractor,
+  gradleExtractor,
 ];
 
 // Filter extractors based on enable/disable flags

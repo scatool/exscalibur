@@ -11,7 +11,8 @@
     "@scatool/analyzer-plugin-javascript": "workspace:*",
     "@scatool/analyzer-plugin-containers": "workspace:*",
     "@scatool/analyzer-plugin-github-actions": "workspace:*",
-    "@scatool/analyzer-plugin-go": "workspace:*"
+    "@scatool/analyzer-plugin-go": "workspace:*",
+    "@scatool/analyzer-plugin-gradle": "workspace:*"
   },
   "devDependencies": {
     "@types/bun": "^1.3.1"

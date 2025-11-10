@@ -18,12 +18,20 @@ jobs:
       - name: Setup bun
         uses: oven-sh/setup-bun@v2
 
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: |
+            11
+            17
+
       - name: Cache test repositories
         id: cache-repos
         uses: actions/cache@v4
         with:
           path: test/repositories
-          key: test-repositories-${{ hashFiles('test/repositories.txt') }}
+          key: test-repositories-${{ hashFiles('test/repositories.json') }}
           restore-keys: |
             test-repositories-
 
@@ -33,6 +41,17 @@ jobs:
 
       - name: Install dependencies
         run: bun install
+
+      - name: Create system.json for Java paths
+        run: |
+          cat > test/system.json << EOF
+          {
+            "java": {
+              "11": "${{ env.JAVA_HOME_11_X64 }}",
+              "17": "${{ env.JAVA_HOME_17_X64 }}"
+            }
+          }
+          EOF
 
       - name: Run integration tests
         run: bun test test/integration.test.ts

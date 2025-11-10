@@ -1,0 +1,13 @@
+// Gradle init script using GitHub dependency graph plugin
+// Based on: https://github.com/gradle/github-dependency-graph-gradle-plugin
+
+initscript {
+    repositories {
+        gradlePluginPortal()
+    }
+    dependencies {
+        classpath "org.gradle:github-dependency-graph-gradle-plugin:2.0.2"
+    }
+}
+
+apply plugin: org.gradle.dependencygraph.simple.SimpleDependencyGraphPlugin

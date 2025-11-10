@@ -1,0 +1,31 @@
+// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
+
+exports[`basic 1`] = `
+{
+  "issues": [
+    {
+      "file": "<fixtures>/basic/build.gradle",
+      "message": "Gradle dependency extraction failed with exit code 1 (dependency resolution failed)",
+      "severity": "WARNING",
+    },
+  ],
+  "packages": [],
+  "relationships": [],
+  "subprojects": [],
+}
+`;
+
+exports[`multimodule 1`] = `
+{
+  "issues": [
+    {
+      "file": "<fixtures>/multimodule/build.gradle",
+      "message": "Gradle dependency extraction failed with exit code 1 (dependency resolution failed)",
+      "severity": "WARNING",
+    },
+  ],
+  "packages": [],
+  "relationships": [],
+  "subprojects": [],
+}
+`;
