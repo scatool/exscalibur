@@ -84,7 +84,7 @@ export function normalizeResult(result: AnalyzerResult): AnalyzerResult {
     }))
     .sort((a, b) => a.purl.localeCompare(b.purl));
 
-  // Sort subprojects by purl and their scopes
+  // Sort subprojects by purl, then by definitionFile for stable sorting
   const sortedSubprojects = result.subprojects
     .map((sub) => ({
       purl: sub.purl,
@@ -96,7 +96,11 @@ export function normalizeResult(result: AnalyzerResult): AnalyzerResult {
         }))
         .sort((a, b) => a.scope.localeCompare(b.scope)),
     }))
-    .sort((a, b) => a.purl.localeCompare(b.purl));
+    .sort((a, b) => {
+      const purlCompare = a.purl.localeCompare(b.purl);
+      if (purlCompare !== 0) return purlCompare;
+      return a.definitionFile.localeCompare(b.definitionFile);
+    });
 
   // Sort relationships by from, and sort their to arrays
   const sortedRelationships = result.relationships

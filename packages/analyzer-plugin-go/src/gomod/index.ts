@@ -22,22 +22,32 @@ type Dependency = {
   indirect: boolean;
 };
 
-type ReplaceDirective = {
-  old: string;
-  new: string;
-};
-
-type GoMod = {
-  module: string;
-  goVersion: string;
-  require: Dependency[];
-  replace: ReplaceDirective[];
-};
+/**
+ * Check if the `go` binary is available
+ */
+async function isGoAvailable(): Promise<boolean> {
+  try {
+    const proc = Bun.spawn(['which', 'go'], {
+      stdout: 'pipe',
+      stderr: 'pipe',
+    });
+    await proc.exited;
+    return proc.exitCode === 0;
+  } catch {
+    return false;
+  }
+}
 
 export const extractor: Extractor = filesExtractor({
   name: 'gomod',
   version: 1,
   markFiles: async function (codebase: string) {
+    // Check if go binary is available
+    const goAvailable = await isGoAvailable();
+    if (!goAvailable) {
+      return; // Skip marking files if go is not available
+    }
+
     for await (const file of glob.scan({ cwd: codebase, absolute: true })) {
       // Exclude vendor and common module cache directories
       if (!file.includes('/vendor/') && !file.includes('/.cache/')) {
@@ -48,55 +58,112 @@ export const extractor: Extractor = filesExtractor({
   extractFile: async (file: string): Promise<AnalyzerResult> => {
     const content = await Bun.file(file).text();
     const lines = content.split('\n');
+    const dir = dirname(file);
 
-    const goMod = parseGoMod(content);
+    // Parse go.mod to get module name and direct/indirect dependency info
+    const moduleName = parseModuleName(content);
+    if (!moduleName) {
+      return {
+        packages: [],
+        subprojects: [],
+        relationships: [],
+        issues: [
+          {
+            severity: 'ERROR',
+            message: 'Failed to parse module name from go.mod',
+            file,
+          },
+        ],
+      };
+    }
+
+    const directDepsSet = parseDirectDependencies(content);
+
+    // Run `go mod graph` to get the complete dependency graph
+    const graphOutput = await runGoModGraph(dir);
+    if (!graphOutput) {
+      return {
+        packages: [],
+        subprojects: [],
+        relationships: [],
+        issues: [
+          {
+            severity: 'ERROR',
+            message: 'Failed to run go mod graph. Ensure go.sum is valid and dependencies are downloaded.',
+            file,
+          },
+        ],
+      };
+    }
+
     const { packageMap, relationshipsMap } = initializeExtractionMaps();
     const subprojects: Subproject[] = [];
 
-    // Build a map of replace directives for resolution
-    const replaceMap = new Map<string, string>();
-    for (const replace of goMod.replace) {
-      replaceMap.set(replace.old, replace.new);
+    // Parse the graph output
+    const graphLines = graphOutput.split('\n').filter((line) => line.trim());
+    const allDeps = new Set<string>(); // Track all dependencies by path@version
+
+    for (const line of graphLines) {
+      const parts = line.trim().split(/\s+/);
+      if (parts.length !== 2) continue;
+
+      const [from, to] = parts as [string, string];
+
+      // Parse module@version or just module (for main module)
+      const fromParsed = parseModuleVersion(from);
+      const toParsed = parseModuleVersion(to);
+
+      if (!fromParsed || !toParsed) continue;
+
+      // Skip go runtime and toolchain pseudo-modules
+      if (fromParsed.path === 'go' || fromParsed.path === 'toolchain') continue;
+      if (toParsed.path === 'go' || toParsed.path === 'toolchain') continue;
+
+      // Create PURLs
+      const fromPurl = createGoPurl(fromParsed.path, fromParsed.version);
+      const toPurl = createGoPurl(toParsed.path, toParsed.version);
+
+      // Track all dependencies
+      if (toParsed.path !== moduleName) {
+        allDeps.add(`${toParsed.path}@${toParsed.version}`);
+      }
+
+      // Ensure packages exist
+      ensurePackageExists(packageMap, fromPurl);
+      ensurePackageExists(packageMap, toPurl);
+
+      // Add relationship
+      addRelationship(relationshipsMap, fromPurl, toPurl);
     }
 
-    // Create the main module as a subproject
-    // For Go modules, we use a pseudo-version since the module itself doesn't have a version
-    // until it's published or tagged
-    const modulePurl = createGoPurl(goMod.module, '0.0.0-00010101000000-000000000000');
+    // Add evidence for the main module
+    const modulePurl = createGoPurl(moduleName, '0.0.0-00010101000000-000000000000');
+    ensurePackageExists(packageMap, modulePurl);
+    const moduleLineNumber = findModuleLineNumber(lines, moduleName);
+    if (moduleLineNumber !== undefined) {
+      packageMap.get(modulePurl)!.evidence.add(`${file}#${moduleLineNumber}`);
+    }
 
-    // Separate direct and indirect dependencies
+    // Add evidence for dependencies from go.mod
     const directDeps: string[] = [];
     const indirectDeps: string[] = [];
 
-    for (const dep of goMod.require) {
-      // Skip replaced local modules (they start with ./ or ../)
-      const replacement = replaceMap.get(dep.path);
-      if (replacement && (replacement.startsWith('./') || replacement.startsWith('../'))) {
-        // This is a local replacement, we'll handle it separately
-        continue;
-      }
-
-      const depVersion = replacement || dep.version;
-      const depPurl = createGoPurl(dep.path, depVersion);
-
-      // Add to package map
-      ensurePackageExists(packageMap, depPurl);
+    for (const depKey of allDeps) {
+      const [path, version] = depKey.split('@') as [string, string];
+      const depPurl = createGoPurl(path, version);
 
       // Find line number for evidence
-      const lineNumber = findDependencyLineNumber(lines, dep.path, dep.version);
+      const lineNumber = findDependencyLineNumber(lines, path, version);
       if (lineNumber !== undefined) {
         packageMap.get(depPurl)!.evidence.add(`${file}#${lineNumber}`);
       }
 
-      // Add to appropriate dependency list
-      if (dep.indirect) {
-        indirectDeps.push(depPurl);
-      } else {
+      // Categorize as direct or indirect
+      if (directDepsSet.has(path)) {
         directDeps.push(depPurl);
+      } else {
+        indirectDeps.push(depPurl);
       }
-
-      // Add relationship from module to dependency
-      addRelationship(relationshipsMap, modulePurl, depPurl);
     }
 
     // Create scopes for the subproject
@@ -121,13 +188,6 @@ export const extractor: Extractor = filesExtractor({
       scopes,
     });
 
-    // Ensure the module itself is in the package map
-    ensurePackageExists(packageMap, modulePurl);
-    const moduleLineNumber = findModuleLineNumber(lines, goMod.module);
-    if (moduleLineNumber !== undefined) {
-      packageMap.get(modulePurl)!.evidence.add(`${file}#${moduleLineNumber}`);
-    }
-
     // Convert maps to arrays
     const packages = convertPackageMapToArray(packageMap);
     const relationships = convertRelationshipsMapToArray(relationshipsMap);
@@ -142,78 +202,89 @@ export const extractor: Extractor = filesExtractor({
 });
 
 /**
- * Parse a go.mod file into a structured format
+ * Run `go mod graph` in the specified directory
  */
-function parseGoMod(content: string): GoMod {
+async function runGoModGraph(dir: string): Promise<string | null> {
+  try {
+    const proc = Bun.spawn(['go', 'mod', 'graph'], {
+      cwd: dir,
+      stdout: 'pipe',
+      stderr: 'pipe',
+    });
+
+    const output = await new Response(proc.stdout).text();
+    const error = await new Response(proc.stderr).text();
+
+    await proc.exited;
+
+    if (proc.exitCode !== 0) {
+      console.error(`go mod graph failed: ${error}`);
+      return null;
+    }
+
+    return output;
+  } catch (error) {
+    console.error('Failed to run go mod graph:', error);
+    return null;
+  }
+}
+
+/**
+ * Parse module name from go.mod content
+ */
+function parseModuleName(content: string): string | null {
   const lines = content.split('\n');
-  let module = '';
-  let goVersion = '';
-  const require: Dependency[] = [];
-  const replace: ReplaceDirective[] = [];
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (trimmed.startsWith('module ')) {
+      return trimmed.substring(7).trim();
+    }
+  }
+  return null;
+}
 
+/**
+ * Parse direct dependencies (non-indirect) from go.mod
+ * Returns a Set of dependency paths
+ */
+function parseDirectDependencies(content: string): Set<string> {
+  const directDeps = new Set<string>();
+  const lines = content.split('\n');
   let inRequireBlock = false;
-  let inReplaceBlock = false;
 
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i]?.trim() || '';
+  for (const line of lines) {
+    const trimmed = line.trim();
 
     // Skip comments and empty lines
-    if (line.startsWith('//') || line === '') continue;
-
-    // Parse module directive
-    if (line.startsWith('module ')) {
-      module = line.substring(7).trim();
-      continue;
-    }
-
-    // Parse go version directive
-    if (line.startsWith('go ')) {
-      goVersion = line.substring(3).trim();
-      continue;
-    }
+    if (trimmed.startsWith('//') || trimmed === '') continue;
 
     // Parse require block or single require
-    if (line.startsWith('require (')) {
+    if (trimmed.startsWith('require (')) {
       inRequireBlock = true;
       continue;
     }
-    if (line.startsWith('require ')) {
-      const dep = parseRequireLine(line.substring(8).trim());
-      if (dep) require.push(dep);
+
+    if (trimmed.startsWith('require ')) {
+      const dep = parseRequireLine(trimmed.substring(8).trim());
+      if (dep && !dep.indirect) {
+        directDeps.add(dep.path);
+      }
       continue;
     }
+
     if (inRequireBlock) {
-      if (line === ')') {
+      if (trimmed === ')') {
         inRequireBlock = false;
         continue;
       }
-      const dep = parseRequireLine(line);
-      if (dep) require.push(dep);
-      continue;
-    }
-
-    // Parse replace block or single replace
-    if (line.startsWith('replace (')) {
-      inReplaceBlock = true;
-      continue;
-    }
-    if (line.startsWith('replace ')) {
-      const rep = parseReplaceLine(line.substring(8).trim());
-      if (rep) replace.push(rep);
-      continue;
-    }
-    if (inReplaceBlock) {
-      if (line === ')') {
-        inReplaceBlock = false;
-        continue;
+      const dep = parseRequireLine(trimmed);
+      if (dep && !dep.indirect) {
+        directDeps.add(dep.path);
       }
-      const rep = parseReplaceLine(line);
-      if (rep) replace.push(rep);
-      continue;
     }
   }
 
-  return { module, goVersion, require, replace };
+  return directDeps;
 }
 
 /**
@@ -239,29 +310,24 @@ function parseRequireLine(line: string): Dependency | null {
 }
 
 /**
- * Parse a single replace line
+ * Parse "path@version" or "path" (main module) into components
  */
-function parseReplaceLine(line: string): ReplaceDirective | null {
-  // Remove inline comments
-  const commentIndex = line.indexOf('//');
-  const cleanLine = commentIndex !== -1 ? line.substring(0, commentIndex).trim() : line;
-
-  // Parse "old [version] => new [version]"
-  const parts = cleanLine.split('=>').map((p) => p.trim());
-  if (parts.length !== 2 || !parts[0] || !parts[1]) return null;
-
-  // Extract just the module paths (ignore versions)
-  const oldParts = parts[0].split(/\s+/);
-  const newParts = parts[1].split(/\s+/);
-
-  if (oldParts[0] && newParts[0]) {
+function parseModuleVersion(input: string): { path: string; version: string } | null {
+  const atIndex = input.lastIndexOf('@');
+  if (atIndex === -1) {
+    // Main module without version
     return {
-      old: oldParts[0],
-      new: newParts[0],
+      path: input,
+      version: '0.0.0-00010101000000-000000000000',
     };
   }
 
-  return null;
+  const path = input.substring(0, atIndex);
+  const version = input.substring(atIndex + 1);
+
+  if (!path || !version) return null;
+
+  return { path, version };
 }
 
 /**
