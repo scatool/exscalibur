@@ -384,9 +384,11 @@ export const extractor: Extractor = filesExtractor({
 function createMavenPurl(group: string, name: string, version: string, repoUrl?: string): string {
   const namespace = group || null;
 
-  // Only add repository_url qualifier if it's not Maven Central
   const isMavenCentral =
-    repoUrl === 'https://repo.maven.apache.org/maven2' || repoUrl === 'https://repo1.maven.org/maven2';
+    repoUrl === 'https://repo.maven.apache.org/maven2' ||
+    repoUrl === 'https://repo1.maven.org/maven2' ||
+    repoUrl?.startsWith('file:'); // Local Maven cache (file: URLs are machine-specific)
+
   const qualifiers = !isMavenCentral && repoUrl ? { repository_url: repoUrl } : null;
 
   return new PackageURL('maven', namespace, name, version, qualifiers, null).toString();
