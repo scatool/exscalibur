@@ -1,9 +1,10 @@
 import { test, expect } from 'bun:test';
+import { normalizeResult, scanFixtures } from '@scatool/analyzer-test-utils';
 import { extractor } from './extractor.ts';
 import { join } from 'node:path';
 
 const fixturesDir = join(import.meta.dir, './__fixtures__');
-const fixtures = ['basic', 'multimodule'];
+const fixtures = await scanFixtures(fixturesDir, '*/build.gradle*');
 
 for (const dir of fixtures) {
   test(
@@ -11,20 +12,7 @@ for (const dir of fixtures) {
     async () => {
       const fixturePath = join(fixturesDir, dir);
       const result = await extractor.extract(fixturePath);
-
-      // Normalize paths in evidence and definitionFile for consistent snapshots
-      for (const pkg of result.packages) {
-        pkg.evidence = pkg.evidence.map((e) => e.replace(fixturesDir, '<fixtures>'));
-      }
-      for (const subproject of result.subprojects) {
-        subproject.definitionFile = subproject.definitionFile.replace(fixturesDir, '<fixtures>');
-      }
-      for (const issue of result.issues) {
-        if (issue.file) {
-          issue.file = issue.file.replace(fixturesDir, '<fixtures>');
-        }
-      }
-
+      normalizeResult(result, fixturesDir);
       expect(result).toMatchSnapshot();
     },
     { timeout: 60000 },
