@@ -1,14 +1,14 @@
 import {
-  type AnalyzerResult,
-  type DependencyScope,
-  type Extractor,
-  type Subproject,
-  filesExtractor,
   addRelationship,
-  ensurePackageExists,
+  type AnalyzerResult,
   convertPackageMapToArray,
   convertRelationshipsMapToArray,
+  type DependencyScope,
+  ensurePackageExists,
+  type Extractor,
+  filesExtractor,
   initializeExtractionMaps,
+  type Subproject,
 } from '@scatool/analyzer-core/src/index.ts';
 import { Glob } from 'bun';
 import { dirname } from 'node:path';
@@ -22,32 +22,10 @@ type Dependency = {
   indirect: boolean;
 };
 
-/**
- * Check if the `go` binary is available
- */
-async function isGoAvailable(): Promise<boolean> {
-  try {
-    const proc = Bun.spawn(['which', 'go'], {
-      stdout: 'pipe',
-      stderr: 'pipe',
-    });
-    await proc.exited;
-    return proc.exitCode === 0;
-  } catch {
-    return false;
-  }
-}
-
 export const extractor: Extractor = filesExtractor({
   name: 'gomod',
   version: 1,
   markFiles: async function (codebase: string) {
-    // Check if go binary is available
-    const goAvailable = await isGoAvailable();
-    if (!goAvailable) {
-      return; // Skip marking files if go is not available
-    }
-
     for await (const file of glob.scan({ cwd: codebase, absolute: true })) {
       // Exclude vendor and common module cache directories
       if (!file.includes('/vendor/') && !file.includes('/.cache/')) {
@@ -78,6 +56,23 @@ export const extractor: Extractor = filesExtractor({
     }
 
     const directDepsSet = parseDirectDependencies(content);
+
+    // Run `go list -m -json all` to get selected module versions
+    const selectedModules = await runGoListModules(dir);
+    if (!selectedModules) {
+      return {
+        packages: [],
+        subprojects: [],
+        relationships: [],
+        issues: [
+          {
+            severity: 'ERROR',
+            message: 'Failed to run go list -m -json all. Ensure go.sum is valid and dependencies are downloaded.',
+            file,
+          },
+        ],
+      };
+    }
 
     // Run `go mod graph` to get the complete dependency graph
     const graphOutput = await runGoModGraph(dir);
@@ -114,6 +109,16 @@ export const extractor: Extractor = filesExtractor({
       const toParsed = parseModuleVersion(to);
 
       if (!fromParsed || !toParsed) continue;
+
+      // Normalize to module@version format for selectedModules check
+      const fromNormalized = `${fromParsed.path}@${fromParsed.version}`;
+      const toNormalized = `${toParsed.path}@${toParsed.version}`;
+
+      // Filter: Only include edges where both endpoints are in selectedModules
+      // This removes duplicate versions and keeps only MVS-selected versions
+      if (!selectedModules.has(fromNormalized) || !selectedModules.has(toNormalized)) {
+        continue;
+      }
 
       // Skip go runtime and toolchain pseudo-modules
       if (fromParsed.path === 'go' || fromParsed.path === 'toolchain') continue;
@@ -200,6 +205,54 @@ export const extractor: Extractor = filesExtractor({
     };
   },
 });
+
+/**
+ * Run `go list -m -json all` to get selected module versions
+ */
+async function runGoListModules(dir: string): Promise<Set<string> | null> {
+  try {
+    const proc = Bun.spawn(['go', 'list', '-m', '-json', 'all'], {
+      cwd: dir,
+      stdout: 'pipe',
+      stderr: 'pipe',
+    });
+
+    const output = await new Response(proc.stdout).text();
+    const error = await new Response(proc.stderr).text();
+
+    await proc.exited;
+
+    if (proc.exitCode !== 0) {
+      console.error(`go list -m -json all failed: ${error}`);
+      return null;
+    }
+
+    // Parse the JSON output - each line is a separate JSON object
+    const selectedModules = new Set<string>();
+    const lines = output.trim().split('\n');
+    let jsonBuffer = '';
+
+    for (const line of lines) {
+      jsonBuffer += line;
+      if (line.trim() === '}') {
+        try {
+          const module = JSON.parse(jsonBuffer);
+          const path = module.Path;
+          const version = module.Version || '0.0.0-00010101000000-000000000000';
+          selectedModules.add(`${path}@${version}`);
+          jsonBuffer = '';
+        } catch {
+          // Continue buffering if JSON is incomplete
+        }
+      }
+    }
+
+    return selectedModules;
+  } catch (error) {
+    console.error('Failed to run go list:', error);
+    return null;
+  }
+}
 
 /**
  * Run `go mod graph` in the specified directory
