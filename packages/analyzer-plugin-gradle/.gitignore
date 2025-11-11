@@ -1,0 +1,19 @@
+# Node modules and package manager artifacts
+node_modules/
+
+# Build output
+dist/
+*.tsbuildinfo
+
+# Turbo cache
+.turbo/
+
+# Gradle build artifacts in fixtures
+src/__fixtures__/**/build/
+src/__fixtures__/**/.gradle/
+
+# IDE and OS files
+.DS_Store
+*.swp
+*.swo
+*~

@@ -6232,10 +6232,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/string-width-cjs@4.2.3",
-      "evidence": []
-    },
-    {
       "purl": "pkg:npm/string-width@4.2.3",
       "evidence": [
         "<repositories>/ZEISS+htmx-template/package-lock.json#1904",
@@ -6250,10 +6246,6 @@
       "evidence": [
         "<repositories>/ZEISS+htmx-template/package-lock.json#2964"
       ]
-    },
-    {
-      "purl": "pkg:npm/strip-ansi-cjs@6.0.1",
-      "evidence": []
     },
     {
       "purl": "pkg:npm/strip-ansi@6.0.1",
@@ -6391,10 +6383,6 @@
       "evidence": [
         "<repositories>/ZEISS+htmx-template/package-lock.json#3298"
       ]
-    },
-    {
-      "purl": "pkg:npm/wrap-ansi-cjs@7.0.0",
-      "evidence": []
     },
     {
       "purl": "pkg:npm/wrap-ansi@7.0.0",
@@ -15778,11 +15766,11 @@
     {
       "from": "pkg:npm/%40isaacs/cliui@8.0.2",
       "to": [
-        "pkg:npm/string-width-cjs@4.2.3",
+        "pkg:npm/string-width@4.2.3",
         "pkg:npm/string-width@5.1.2",
-        "pkg:npm/strip-ansi-cjs@6.0.1",
+        "pkg:npm/strip-ansi@6.0.1",
         "pkg:npm/strip-ansi@7.1.0",
-        "pkg:npm/wrap-ansi-cjs@7.0.0",
+        "pkg:npm/wrap-ansi@7.0.0",
         "pkg:npm/wrap-ansi@8.1.0"
       ]
     },

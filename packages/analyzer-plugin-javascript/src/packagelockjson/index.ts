@@ -431,11 +431,18 @@ function extractScopes(
         continue;
       }
 
-      // Resolve the version from the lockfile entry's dependencies
-      const resolvedVersion = resolveVersion(depName, versionRange, lockfileEntry, allPackages, packageVersionMap);
+      // Resolve the package info from the lockfile (handles aliases)
+      const packageInfoResolved = resolvePackageInfo(
+        depName,
+        versionRange,
+        lockfileEntry,
+        allPackages,
+        packageVersionMap,
+      );
 
-      if (resolvedVersion) {
-        const depPurl = createNpmPurl(depName, resolvedVersion);
+      if (packageInfoResolved) {
+        // Use the actual package name (not the alias)
+        const depPurl = createNpmPurl(packageInfoResolved.name, packageInfoResolved.version);
         scopePackages.push(depPurl);
       }
     }
@@ -477,11 +484,12 @@ function processDependencies(
         continue;
       }
 
-      // Resolve the actual installed version
-      const resolvedVersion = resolveVersion(depName, versionRange, packageEntry, allPackages, packageVersionMap);
+      // Resolve the actual package info (handles aliases)
+      const packageInfo = resolvePackageInfo(depName, versionRange, packageEntry, allPackages, packageVersionMap);
 
-      if (resolvedVersion) {
-        const depPurl = createNpmPurl(depName, resolvedVersion);
+      if (packageInfo) {
+        // Use the actual package name (not the alias)
+        const depPurl = createNpmPurl(packageInfo.name, packageInfo.version);
 
         // Add relationship
         addRelationship(relationshipsMap, purl, depPurl);
@@ -491,6 +499,79 @@ function processDependencies(
       }
     }
   }
+}
+
+/**
+ * Resolve a dependency's package info (name and version) from the lockfile
+ * This handles aliases where the dependency name differs from the actual package name
+ */
+function resolvePackageInfo(
+  depName: string,
+  versionRange: string,
+  packageEntry: PackageLockPackage,
+  allPackages: Record<string, PackageLockPackage>,
+  packageVersionMap: Map<string, Map<string, string>>,
+): { name: string; version: string } | null {
+  // Try to find a package entry that matches this dependency
+  // First, check direct node_modules
+  const directPath = `node_modules/${depName}`;
+  const directPackage = allPackages[directPath];
+  if (directPackage?.version) {
+    // Use the actual package name from the entry (handles aliases)
+    const actualName = directPackage.name || depName;
+    return { name: actualName, version: directPackage.version };
+  }
+
+  // For scoped packages or nested dependencies, we need to search more carefully
+  // Look through all packages to find one with matching name
+  const versionMap = packageVersionMap.get(depName);
+  if (versionMap) {
+    // Try exact version match first
+    if (versionMap.has(versionRange)) {
+      const version = versionMap.get(versionRange)!;
+      // Need to find the actual package entry to get the real name
+      for (const [path, pkg] of Object.entries(allPackages)) {
+        if (path === '' || isWorkspacePath(path)) continue;
+        const pkgName = extractPackageName(path);
+        if (pkgName === depName && pkg.version === version) {
+          const actualName = pkg.name || depName;
+          return { name: actualName, version };
+        }
+      }
+      return { name: depName, version };
+    }
+
+    // If there's only one version, use it
+    if (versionMap.size === 1) {
+      const versions = Array.from(versionMap.values());
+      if (versions[0]) {
+        const version = versions[0];
+        // Find the actual package entry
+        for (const [path, pkg] of Object.entries(allPackages)) {
+          if (path === '' || isWorkspacePath(path)) continue;
+          const pkgName = extractPackageName(path);
+          if (pkgName === depName && pkg.version === version) {
+            const actualName = pkg.name || depName;
+            return { name: actualName, version };
+          }
+        }
+        return { name: depName, version };
+      }
+    }
+  }
+
+  // Fallback: search all packages for this name
+  for (const [path, pkg] of Object.entries(allPackages)) {
+    if (path === '' || isWorkspacePath(path)) continue;
+
+    const pkgName = extractPackageName(path);
+    if (pkgName === depName && pkg.version) {
+      const actualName = pkg.name || depName;
+      return { name: actualName, version: pkg.version };
+    }
+  }
+
+  return null;
 }
 
 /**
@@ -504,43 +585,6 @@ function resolveVersion(
   allPackages: Record<string, PackageLockPackage>,
   packageVersionMap: Map<string, Map<string, string>>,
 ): string | null {
-  // Look in the lockfile's dependencies section for this package's resolved version
-  // The lockfile entry's dependencies contain version ranges that point to the exact versions
-
-  // Try to find a package entry that matches this dependency
-  // First, check direct node_modules
-  const directPath = `node_modules/${depName}`;
-  if (allPackages[directPath]?.version) {
-    return allPackages[directPath].version!;
-  }
-
-  // For scoped packages or nested dependencies, we need to search more carefully
-  // Look through all packages to find one with matching name
-  const versionMap = packageVersionMap.get(depName);
-  if (versionMap) {
-    // Try exact version match first
-    if (versionMap.has(versionRange)) {
-      return versionMap.get(versionRange)!;
-    }
-
-    // If there's only one version, use it
-    if (versionMap.size === 1) {
-      const versions = Array.from(versionMap.values());
-      if (versions[0]) {
-        return versions[0];
-      }
-    }
-  }
-
-  // Fallback: search all packages for this name
-  for (const [path, pkg] of Object.entries(allPackages)) {
-    if (path === '' || isWorkspacePath(path)) continue;
-
-    const pkgName = extractPackageName(path);
-    if (pkgName === depName && pkg.version) {
-      return pkg.version;
-    }
-  }
-
-  return null;
+  const info = resolvePackageInfo(depName, versionRange, packageEntry, allPackages, packageVersionMap);
+  return info?.version ?? null;
 }

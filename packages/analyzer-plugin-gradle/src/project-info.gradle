@@ -1,0 +1,16 @@
+// Gradle init script to extract project metadata (group, name, version)
+gradle.projectsEvaluated {
+    def projectInfo = [:]
+
+    allprojects { project ->
+        projectInfo[project.path] = [
+            name: project.name,
+            group: project.group.toString(),
+            version: project.version.toString()
+        ]
+    }
+
+    println "===PROJECT_INFO_START==="
+    println groovy.json.JsonOutput.toJson(projectInfo)
+    println "===PROJECT_INFO_END==="
+}

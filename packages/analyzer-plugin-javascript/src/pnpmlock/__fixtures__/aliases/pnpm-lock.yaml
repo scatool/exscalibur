@@ -1,0 +1,79 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+  .:
+    dependencies:
+      test-package:
+        specifier: 1.0.0
+        version: 1.0.0
+
+packages:
+  'string-width@4.2.3':
+    resolution: { integrity: sha512-test1 }
+    engines: { node: '>=8' }
+
+  'string-width@5.1.2':
+    resolution: { integrity: sha512-test2 }
+    engines: { node: '>=12' }
+
+  'strip-ansi@6.0.1':
+    resolution: { integrity: sha512-test3 }
+    engines: { node: '>=8' }
+
+  'strip-ansi@7.1.0':
+    resolution: { integrity: sha512-test4 }
+    engines: { node: '>=12' }
+
+  'wrap-ansi@7.0.0':
+    resolution: { integrity: sha512-test5 }
+    engines: { node: '>=10' }
+
+  'wrap-ansi@8.1.0':
+    resolution: { integrity: sha512-test6 }
+    engines: { node: '>=12' }
+
+  '@docusaurus/react-loadable@6.0.0':
+    resolution: { integrity: sha512-test7 }
+    peerDependencies:
+      react: '*'
+
+  'react@18.2.0':
+    resolution: { integrity: sha512-test8 }
+    engines: { node: '>=0.10.0' }
+
+  'test-package@1.0.0':
+    resolution: { integrity: sha512-test9 }
+    engines: { node: '>=12' }
+
+snapshots:
+  'string-width@4.2.3': {}
+
+  'string-width@5.1.2': {}
+
+  'strip-ansi@6.0.1': {}
+
+  'strip-ansi@7.1.0': {}
+
+  'wrap-ansi@7.0.0': {}
+
+  'wrap-ansi@8.1.0': {}
+
+  '@docusaurus/react-loadable@6.0.0(react@18.2.0)':
+    dependencies:
+      react: 18.2.0
+
+  'react@18.2.0': {}
+
+  'test-package@1.0.0':
+    dependencies:
+      string-width: 5.1.2
+      string-width-cjs: string-width@4.2.3
+      strip-ansi: 7.1.0
+      strip-ansi-cjs: strip-ansi@6.0.1
+      wrap-ansi: 8.1.0
+      wrap-ansi-cjs: wrap-ansi@7.0.0
+      react-loadable: '@docusaurus/react-loadable@6.0.0(react@18.2.0)'

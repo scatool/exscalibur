@@ -50,11 +50,15 @@
     },
     {
       "purl": "pkg:npm/%40ai-sdk/provider-utils@2.2.8",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#99"
+      ]
     },
     {
       "purl": "pkg:npm/%40ai-sdk/provider@1.1.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#112"
+      ]
     },
     {
       "purl": "pkg:npm/%40ai-sdk/react@1.2.12",
@@ -154,7 +158,9 @@
     },
     {
       "purl": "pkg:npm/%40aws-crypto/sha256-js@5.2.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#326"
+      ]
     },
     {
       "purl": "pkg:npm/%40aws-crypto/supports-web-crypto@5.2.0",
@@ -356,7 +362,9 @@
     },
     {
       "purl": "pkg:npm/%40azure/abort-controller@1.1.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#926"
+      ]
     },
     {
       "purl": "pkg:npm/%40azure/abort-controller@2.1.2",
@@ -366,15 +374,21 @@
     },
     {
       "purl": "pkg:npm/%40azure/core-auth@1.4.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#944"
+      ]
     },
     {
       "purl": "pkg:npm/%40azure/core-auth@1.9.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#954"
+      ]
     },
     {
       "purl": "pkg:npm/%40azure/core-client@1.6.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#965"
+      ]
     },
     {
       "purl": "pkg:npm/%40azure/core-client@1.9.3",
@@ -402,7 +416,9 @@
     },
     {
       "purl": "pkg:npm/%40azure/core-rest-pipeline@1.10.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#1042"
+      ]
     },
     {
       "purl": "pkg:npm/%40azure/core-rest-pipeline@1.19.1",
@@ -412,7 +428,9 @@
     },
     {
       "purl": "pkg:npm/%40azure/core-tracing@1.0.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#1060"
+      ]
     },
     {
       "purl": "pkg:npm/%40azure/core-util@1.1.1",
@@ -470,7 +488,9 @@
     },
     {
       "purl": "pkg:npm/%40babel/code-frame@7.22.13",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#1176"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/code-frame@7.23.5",
@@ -522,7 +542,9 @@
     },
     {
       "purl": "pkg:npm/%40babel/core@7.22.11",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#1279"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/core@7.23.5",
@@ -532,7 +554,9 @@
     },
     {
       "purl": "pkg:npm/%40babel/core@7.24.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#1325"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/core@7.24.7",
@@ -554,7 +578,9 @@
     },
     {
       "purl": "pkg:npm/%40babel/generator@7.22.10",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#1382"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/generator@7.23.5",
@@ -564,7 +590,9 @@
     },
     {
       "purl": "pkg:npm/%40babel/generator@7.23.6",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#1419"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/generator@7.24.7",
@@ -574,11 +602,15 @@
     },
     {
       "purl": "pkg:npm/%40babel/generator@7.27.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#1394"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/generator@7.28.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#1443"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/helper-annotate-as-pure@7.22.5",
@@ -624,7 +656,9 @@
     },
     {
       "purl": "pkg:npm/%40babel/helper-environment-visitor@7.22.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#1530"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/helper-environment-visitor@7.24.7",
@@ -634,7 +668,9 @@
     },
     {
       "purl": "pkg:npm/%40babel/helper-function-name@7.22.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#1553"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/helper-function-name@7.23.0",
@@ -656,7 +692,9 @@
     },
     {
       "purl": "pkg:npm/%40babel/helper-hoist-variables@7.22.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#1590"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/helper-hoist-variables@7.24.7",
@@ -672,7 +710,9 @@
     },
     {
       "purl": "pkg:npm/%40babel/helper-module-imports@7.22.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#1608"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/helper-module-imports@7.24.7",
@@ -712,11 +752,15 @@
     },
     {
       "purl": "pkg:npm/%40babel/helper-plugin-utils@7.22.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#1704"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/helper-plugin-utils@7.26.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#1711"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/helper-simple-access@7.22.5",
@@ -732,7 +776,9 @@
     },
     {
       "purl": "pkg:npm/%40babel/helper-split-export-declaration@7.22.6",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#1737"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/helper-split-export-declaration@7.24.7",
@@ -778,7 +824,9 @@
     },
     {
       "purl": "pkg:npm/%40babel/helper-validator-identifier@7.22.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#1790"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/helper-validator-identifier@7.24.7",
@@ -878,7 +926,9 @@
     },
     {
       "purl": "pkg:npm/%40babel/parser@7.22.14",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#1956"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/parser@7.23.0",
@@ -888,11 +938,15 @@
     },
     {
       "purl": "pkg:npm/%40babel/parser@7.23.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#1947"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/parser@7.24.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#1974"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/parser@7.24.7",
@@ -902,11 +956,15 @@
     },
     {
       "purl": "pkg:npm/%40babel/parser@7.27.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#1992"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/parser@7.28.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#2003"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/plugin-syntax-async-generators@7.8.4",
@@ -946,7 +1004,9 @@
     },
     {
       "purl": "pkg:npm/%40babel/plugin-syntax-jsx@7.22.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#2080"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/plugin-syntax-jsx@7.23.3",
@@ -1034,11 +1094,15 @@
     },
     {
       "purl": "pkg:npm/%40babel/plugin-transform-react-jsx@7.22.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#2245"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/runtime@7.22.11",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#2269"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/runtime@7.23.5",
@@ -1048,7 +1112,9 @@
     },
     {
       "purl": "pkg:npm/%40babel/runtime@7.27.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#2260"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/template@7.22.15",
@@ -1064,7 +1130,9 @@
     },
     {
       "purl": "pkg:npm/%40babel/template@7.24.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#2320"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/template@7.24.7",
@@ -1074,7 +1142,9 @@
     },
     {
       "purl": "pkg:npm/%40babel/template@7.27.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#2287"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/template@7.27.2",
@@ -1114,7 +1184,9 @@
     },
     {
       "purl": "pkg:npm/%40babel/traverse@7.27.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#2443"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/traverse@7.28.3",
@@ -1130,19 +1202,27 @@
     },
     {
       "purl": "pkg:npm/%40babel/types@7.22.11",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#2494"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/types@7.23.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#2483"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/types@7.23.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#2515"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/types@7.24.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#2526"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/types@7.24.7",
@@ -1152,11 +1232,15 @@
     },
     {
       "purl": "pkg:npm/%40babel/types@7.27.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#2505"
+      ]
     },
     {
       "purl": "pkg:npm/%40babel/types@7.28.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#2548"
+      ]
     },
     {
       "purl": "pkg:npm/%40base2/pretty-print-object@1.0.1",
@@ -1370,7 +1454,9 @@
     },
     {
       "purl": "pkg:npm/%40colors/colors@1.6.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#4805"
+      ]
     },
     {
       "purl": "pkg:npm/%40cspotcode/source-map-support@0.8.1",
@@ -1386,7 +1472,9 @@
     },
     {
       "purl": "pkg:npm/%40csstools/css-calc@2.1.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#4828"
+      ]
     },
     {
       "purl": "pkg:npm/%40csstools/css-color-parser@3.1.0",
@@ -1516,7 +1604,9 @@
     },
     {
       "purl": "pkg:npm/%40emotion/cache@11.7.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#5061"
+      ]
     },
     {
       "purl": "pkg:npm/%40emotion/hash@0.8.0",
@@ -1538,7 +1628,9 @@
     },
     {
       "purl": "pkg:npm/%40emotion/memoize@0.7.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#5097"
+      ]
     },
     {
       "purl": "pkg:npm/%40emotion/react@11.9.0",
@@ -1578,7 +1670,9 @@
     },
     {
       "purl": "pkg:npm/%40emotion/utils@1.1.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#5176"
+      ]
     },
     {
       "purl": "pkg:npm/%40emotion/weak-memoize@0.2.5",
@@ -2302,11 +2396,15 @@
     },
     {
       "purl": "pkg:npm/%40eslint-community/eslint-utils@4.9.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#6038"
+      ]
     },
     {
       "purl": "pkg:npm/%40eslint-community/regexpp@4.12.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#6049"
+      ]
     },
     {
       "purl": "pkg:npm/%40eslint/config-array@0.21.0",
@@ -2436,7 +2534,9 @@
     },
     {
       "purl": "pkg:npm/%40formatjs/intl-localematcher@0.5.10",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#6248"
+      ]
     },
     {
       "purl": "pkg:npm/%40formbricks/api@1.7.0",
@@ -2458,7 +2558,9 @@
     },
     {
       "purl": "pkg:npm/%40gar/promisify@1.1.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#6278"
+      ]
     },
     {
       "purl": "pkg:npm/%40getalby/lightning-tools@5.1.2",
@@ -2558,7 +2660,9 @@
     },
     {
       "purl": "pkg:npm/%40graphql-codegen/plugin-helpers@5.1.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#6503"
+      ]
     },
     {
       "purl": "pkg:npm/%40graphql-codegen/schema-ast@4.1.0",
@@ -2586,7 +2690,9 @@
     },
     {
       "purl": "pkg:npm/%40graphql-codegen/visitor-plugin-common@5.8.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#6578"
+      ]
     },
     {
       "purl": "pkg:npm/%40graphql-hive/signal@1.0.0",
@@ -2674,7 +2780,9 @@
     },
     {
       "purl": "pkg:npm/%40graphql-tools/graphql-tag-pluck@8.3.19",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#6806"
+      ]
     },
     {
       "purl": "pkg:npm/%40graphql-tools/import@7.0.18",
@@ -2696,7 +2804,9 @@
     },
     {
       "purl": "pkg:npm/%40graphql-tools/merge@9.0.24",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#6864"
+      ]
     },
     {
       "purl": "pkg:npm/%40graphql-tools/optimize@2.0.0",
@@ -2718,15 +2828,21 @@
     },
     {
       "purl": "pkg:npm/%40graphql-tools/schema@10.0.23",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#6926"
+      ]
     },
     {
       "purl": "pkg:npm/%40graphql-tools/url-loader@8.0.31",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#6939"
+      ]
     },
     {
       "purl": "pkg:npm/%40graphql-tools/utils@10.8.6",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#6961"
+      ]
     },
     {
       "purl": "pkg:npm/%40graphql-tools/wrap@10.0.35",
@@ -2736,7 +2852,9 @@
     },
     {
       "purl": "pkg:npm/%40graphql-typed-document-node/core@3.2.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#6991"
+      ]
     },
     {
       "purl": "pkg:npm/%40grpc/grpc-js@1.12.6",
@@ -2800,7 +2918,9 @@
     },
     {
       "purl": "pkg:npm/%40humanwhocodes/retry@0.4.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#7108"
+      ]
     },
     {
       "purl": "pkg:npm/%40img/sharp-darwin-arm64@0.33.5",
@@ -3134,7 +3254,9 @@
     },
     {
       "purl": "pkg:npm/%40inquirer/prompts@7.8.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#7702"
+      ]
     },
     {
       "purl": "pkg:npm/%40inquirer/rawlist@4.1.6",
@@ -3186,7 +3308,9 @@
     },
     {
       "purl": "pkg:npm/%40istanbuljs/schema@0.1.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#7834"
+      ]
     },
     {
       "purl": "pkg:npm/%40jest/console@29.7.0",
@@ -3496,7 +3620,9 @@
     },
     {
       "purl": "pkg:npm/%40jridgewell/gen-mapping@0.3.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#8549"
+      ]
     },
     {
       "purl": "pkg:npm/%40jridgewell/gen-mapping@0.3.5",
@@ -3548,7 +3674,9 @@
     },
     {
       "purl": "pkg:npm/%40jridgewell/sourcemap-codec@1.4.15",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#8636"
+      ]
     },
     {
       "purl": "pkg:npm/%40jridgewell/sourcemap-codec@1.5.0",
@@ -3564,7 +3692,9 @@
     },
     {
       "purl": "pkg:npm/%40jridgewell/trace-mapping@0.3.14",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#8667"
+      ]
     },
     {
       "purl": "pkg:npm/%40jridgewell/trace-mapping@0.3.19",
@@ -3580,7 +3710,9 @@
     },
     {
       "purl": "pkg:npm/%40jridgewell/trace-mapping@0.3.25",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#8697"
+      ]
     },
     {
       "purl": "pkg:npm/%40jridgewell/trace-mapping@0.3.30",
@@ -3866,7 +3998,9 @@
     },
     {
       "purl": "pkg:npm/%40microsoft/tsdoc@0.14.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#9261"
+      ]
     },
     {
       "purl": "pkg:npm/%40mixmark-io/domino@2.2.0",
@@ -4026,7 +4160,9 @@
     },
     {
       "purl": "pkg:npm/%40nestjs/schematics@10.1.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#9627"
+      ]
     },
     {
       "purl": "pkg:npm/%40nestjs/swagger@7.3.0",
@@ -4324,7 +4460,9 @@
     },
     {
       "purl": "pkg:npm/%40noble/hashes@1.3.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#10040"
+      ]
     },
     {
       "purl": "pkg:npm/%40nodelib/fs.scandir@2.1.5",
@@ -4334,7 +4472,9 @@
     },
     {
       "purl": "pkg:npm/%40nodelib/fs.stat@2.0.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#10057"
+      ]
     },
     {
       "purl": "pkg:npm/%40nodelib/fs.walk@1.2.8",
@@ -4386,7 +4526,9 @@
     },
     {
       "purl": "pkg:npm/%40oclif/color@1.0.13",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#10149"
+      ]
     },
     {
       "purl": "pkg:npm/%40oclif/core@1.26.2",
@@ -4396,7 +4538,9 @@
     },
     {
       "purl": "pkg:npm/%40oclif/core@2.15.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#10235"
+      ]
     },
     {
       "purl": "pkg:npm/%40oclif/core@2.8.11",
@@ -4454,7 +4598,9 @@
     },
     {
       "purl": "pkg:npm/%40octokit/auth-oauth-app@8.1.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#10371"
+      ]
     },
     {
       "purl": "pkg:npm/%40octokit/auth-oauth-device@7.1.5",
@@ -4464,7 +4610,9 @@
     },
     {
       "purl": "pkg:npm/%40octokit/auth-oauth-user@5.1.6",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#10396"
+      ]
     },
     {
       "purl": "pkg:npm/%40octokit/auth-token@5.1.2",
@@ -4474,11 +4622,15 @@
     },
     {
       "purl": "pkg:npm/%40octokit/auth-unauthenticated@6.1.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#10416"
+      ]
     },
     {
       "purl": "pkg:npm/%40octokit/core@6.1.6",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#10426"
+      ]
     },
     {
       "purl": "pkg:npm/%40octokit/endpoint@10.1.4",
@@ -4500,11 +4652,15 @@
     },
     {
       "purl": "pkg:npm/%40octokit/oauth-authorization-url@7.1.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#10478"
+      ]
     },
     {
       "purl": "pkg:npm/%40octokit/oauth-methods@5.1.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#10485"
+      ]
     },
     {
       "purl": "pkg:npm/%40octokit/openapi-types@25.1.0",
@@ -4550,7 +4706,9 @@
     },
     {
       "purl": "pkg:npm/%40octokit/request-error@6.1.8",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#10567"
+      ]
     },
     {
       "purl": "pkg:npm/%40octokit/request@9.2.4",
@@ -4572,7 +4730,9 @@
     },
     {
       "purl": "pkg:npm/%40octokit/webhooks@13.9.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#10605"
+      ]
     },
     {
       "purl": "pkg:npm/%40open-draft/deferred-promise@2.2.0",
@@ -4594,7 +4754,9 @@
     },
     {
       "purl": "pkg:npm/%40open-draft/until@2.1.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#10640"
+      ]
     },
     {
       "purl": "pkg:npm/%40openrouter/ai-sdk-provider@0.7.5",
@@ -4616,7 +4778,9 @@
     },
     {
       "purl": "pkg:npm/%40opentelemetry/api@1.9.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#10678"
+      ]
     },
     {
       "purl": "pkg:npm/%40opentelemetry/context-async-hooks@1.30.1",
@@ -4626,11 +4790,15 @@
     },
     {
       "purl": "pkg:npm/%40opentelemetry/core@1.25.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#10705"
+      ]
     },
     {
       "purl": "pkg:npm/%40opentelemetry/core@1.30.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#10694"
+      ]
     },
     {
       "purl": "pkg:npm/%40opentelemetry/exporter-metrics-otlp-grpc@0.57.1",
@@ -4790,7 +4958,9 @@
     },
     {
       "purl": "pkg:npm/%40opentelemetry/instrumentation@0.57.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#11053"
+      ]
     },
     {
       "purl": "pkg:npm/%40opentelemetry/otlp-exporter-base@0.57.1",
@@ -4818,7 +4988,9 @@
     },
     {
       "purl": "pkg:npm/%40opentelemetry/resources@1.30.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#11119"
+      ]
     },
     {
       "purl": "pkg:npm/%40opentelemetry/sdk-logs@0.57.1",
@@ -4834,7 +5006,9 @@
     },
     {
       "purl": "pkg:npm/%40opentelemetry/sdk-trace-base@1.30.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#11156"
+      ]
     },
     {
       "purl": "pkg:npm/%40opentelemetry/semantic-conventions@1.25.0",
@@ -4928,7 +5102,9 @@
     },
     {
       "purl": "pkg:npm/%40paralleldrive/cuid2@2.2.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#11291"
+      ]
     },
     {
       "purl": "pkg:npm/%40parcel/watcher-android-arm64@2.5.1",
@@ -5424,7 +5600,9 @@
     },
     {
       "purl": "pkg:npm/%40protobufjs/aspromise@1.1.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#12120"
+      ]
     },
     {
       "purl": "pkg:npm/%40protobufjs/base64@1.1.2",
@@ -5572,7 +5750,9 @@
     },
     {
       "purl": "pkg:npm/%40radix-ui/react-collapsible@1.1.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#12397"
+      ]
     },
     {
       "purl": "pkg:npm/%40radix-ui/react-collection@0.1.4",
@@ -5666,7 +5846,9 @@
     },
     {
       "purl": "pkg:npm/%40radix-ui/react-dialog@1.0.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#12658"
+      ]
     },
     {
       "purl": "pkg:npm/%40radix-ui/react-dialog@1.1.6",
@@ -5682,7 +5864,9 @@
     },
     {
       "purl": "pkg:npm/%40radix-ui/react-direction@1.1.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#12764"
+      ]
     },
     {
       "purl": "pkg:npm/%40radix-ui/react-dismissable-layer@0.1.5",
@@ -5782,7 +5966,9 @@
     },
     {
       "purl": "pkg:npm/%40radix-ui/react-id@1.0.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#13071"
+      ]
     },
     {
       "purl": "pkg:npm/%40radix-ui/react-id@1.1.0",
@@ -5852,7 +6038,9 @@
     },
     {
       "purl": "pkg:npm/%40radix-ui/react-portal@1.0.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#13366"
+      ]
     },
     {
       "purl": "pkg:npm/%40radix-ui/react-portal@1.0.4",
@@ -5988,7 +6176,9 @@
     },
     {
       "purl": "pkg:npm/%40radix-ui/react-slot@1.0.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#13867"
+      ]
     },
     {
       "purl": "pkg:npm/%40radix-ui/react-slot@1.1.0",
@@ -6004,7 +6194,9 @@
     },
     {
       "purl": "pkg:npm/%40radix-ui/react-slot@1.1.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#13913"
+      ]
     },
     {
       "purl": "pkg:npm/%40radix-ui/react-switch@1.0.3",
@@ -6032,7 +6224,9 @@
     },
     {
       "purl": "pkg:npm/%40radix-ui/react-toggle-group@1.0.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#14036"
+      ]
     },
     {
       "purl": "pkg:npm/%40radix-ui/react-toggle@1.0.3",
@@ -6048,7 +6242,9 @@
     },
     {
       "purl": "pkg:npm/%40radix-ui/react-tooltip@1.0.6",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#14110"
+      ]
     },
     {
       "purl": "pkg:npm/%40radix-ui/react-tooltip@1.1.8",
@@ -6292,7 +6488,9 @@
     },
     {
       "purl": "pkg:npm/%40repeaterjs/repeater@3.0.6",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#14673"
+      ]
     },
     {
       "purl": "pkg:npm/%40resvg/resvg-wasm@2.4.0",
@@ -6980,7 +7178,9 @@
     },
     {
       "purl": "pkg:npm/%40sentry/node@9.46.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#15720"
+      ]
     },
     {
       "purl": "pkg:npm/%40sentry/opentelemetry@9.15.0",
@@ -7146,7 +7346,9 @@
     },
     {
       "purl": "pkg:npm/%40shikijs/vscode-textmate@10.0.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#16068"
+      ]
     },
     {
       "purl": "pkg:npm/%40shuding/opentype.js@1.4.0-beta.0",
@@ -7198,19 +7400,27 @@
     },
     {
       "purl": "pkg:npm/%40smithy/config-resolver@4.1.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#16143"
+      ]
     },
     {
       "purl": "pkg:npm/%40smithy/core@3.8.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#16156"
+      ]
     },
     {
       "purl": "pkg:npm/%40smithy/credential-provider-imds@4.0.7",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#16175"
+      ]
     },
     {
       "purl": "pkg:npm/%40smithy/fetch-http-handler@5.1.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#16188"
+      ]
     },
     {
       "purl": "pkg:npm/%40smithy/hash-node@4.0.5",
@@ -7244,7 +7454,9 @@
     },
     {
       "purl": "pkg:npm/%40smithy/middleware-endpoint@4.1.18",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#16252"
+      ]
     },
     {
       "purl": "pkg:npm/%40smithy/middleware-retry@4.1.19",
@@ -7254,27 +7466,39 @@
     },
     {
       "purl": "pkg:npm/%40smithy/middleware-serde@4.0.9",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#16286"
+      ]
     },
     {
       "purl": "pkg:npm/%40smithy/middleware-stack@4.0.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#16297"
+      ]
     },
     {
       "purl": "pkg:npm/%40smithy/node-config-provider@4.1.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#16307"
+      ]
     },
     {
       "purl": "pkg:npm/%40smithy/node-http-handler@4.1.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#16319"
+      ]
     },
     {
       "purl": "pkg:npm/%40smithy/property-provider@4.0.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#16332"
+      ]
     },
     {
       "purl": "pkg:npm/%40smithy/protocol-http@5.1.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#16342"
+      ]
     },
     {
       "purl": "pkg:npm/%40smithy/querystring-builder@4.0.5",
@@ -7296,7 +7520,9 @@
     },
     {
       "purl": "pkg:npm/%40smithy/shared-ini-file-loader@4.0.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#16382"
+      ]
     },
     {
       "purl": "pkg:npm/%40smithy/signature-v4@5.1.3",
@@ -7306,15 +7532,21 @@
     },
     {
       "purl": "pkg:npm/%40smithy/smithy-client@4.4.10",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#16408"
+      ]
     },
     {
       "purl": "pkg:npm/%40smithy/types@4.3.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#16423"
+      ]
     },
     {
       "purl": "pkg:npm/%40smithy/url-parser@4.0.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#16432"
+      ]
     },
     {
       "purl": "pkg:npm/%40smithy/util-base64@4.0.0",
@@ -7378,15 +7610,21 @@
     },
     {
       "purl": "pkg:npm/%40smithy/util-middleware@4.0.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#16549"
+      ]
     },
     {
       "purl": "pkg:npm/%40smithy/util-retry@4.0.7",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#16559"
+      ]
     },
     {
       "purl": "pkg:npm/%40smithy/util-stream@4.2.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#16570"
+      ]
     },
     {
       "purl": "pkg:npm/%40smithy/util-uri-escape@4.0.0",
@@ -7438,7 +7676,9 @@
     },
     {
       "purl": "pkg:npm/%40standard-schema/spec@1.0.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#16661"
+      ]
     },
     {
       "purl": "pkg:npm/%40standard-schema/utils@0.3.0",
@@ -7634,7 +7874,9 @@
     },
     {
       "purl": "pkg:npm/%40swc/counter@0.1.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#17106"
+      ]
     },
     {
       "purl": "pkg:npm/%40swc/helpers@0.5.15",
@@ -7914,7 +8156,9 @@
     },
     {
       "purl": "pkg:npm/%40types/babel__core@7.20.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#17589"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/babel__generator@7.6.7",
@@ -8038,7 +8282,9 @@
     },
     {
       "purl": "pkg:npm/%40types/d3-time@3.0.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#17768"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/d3-timer@3.0.0",
@@ -8096,7 +8342,9 @@
     },
     {
       "purl": "pkg:npm/%40types/eslint@8.4.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#17845"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/estree-jsx@1.0.5",
@@ -8106,7 +8354,9 @@
     },
     {
       "purl": "pkg:npm/%40types/estree@0.0.51",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#17864"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/estree@1.0.1",
@@ -8116,7 +8366,9 @@
     },
     {
       "purl": "pkg:npm/%40types/estree@1.0.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#17871"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/estree@1.0.6",
@@ -8162,7 +8414,9 @@
     },
     {
       "purl": "pkg:npm/%40types/express@4.17.21",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#17953"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/find-cache-dir@3.2.1",
@@ -8196,7 +8450,9 @@
     },
     {
       "purl": "pkg:npm/%40types/hast@3.0.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#18005"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/hoist-non-react-statics@3.3.1",
@@ -8218,7 +8474,9 @@
     },
     {
       "purl": "pkg:npm/%40types/istanbul-lib-coverage@2.0.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#18043"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/istanbul-lib-report@3.0.0",
@@ -8234,7 +8492,9 @@
     },
     {
       "purl": "pkg:npm/%40types/jest@29.5.12",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#18078"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/jest@29.5.3",
@@ -8274,11 +8534,15 @@
     },
     {
       "purl": "pkg:npm/%40types/json-schema@7.0.11",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#18127"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/json-schema@7.0.15",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#18134"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/json5@0.0.29",
@@ -8318,11 +8582,15 @@
     },
     {
       "purl": "pkg:npm/%40types/lodash@4.14.182",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#18182"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/luxon@3.4.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#18196"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/markdown-it@12.2.3",
@@ -8350,7 +8618,9 @@
     },
     {
       "purl": "pkg:npm/%40types/mdx@2.0.13",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#18236"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/memory-cache@0.2.2",
@@ -8510,7 +8780,9 @@
     },
     {
       "purl": "pkg:npm/%40types/qs@6.9.7",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#18466"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/range-parser@1.2.4",
@@ -8670,7 +8942,9 @@
     },
     {
       "purl": "pkg:npm/%40types/tough-cookie@4.0.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#18697"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/triple-beam@1.3.5",
@@ -8680,7 +8954,9 @@
     },
     {
       "purl": "pkg:npm/%40types/trusted-types@2.0.7",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#18711"
+      ]
     },
     {
       "purl": "pkg:npm/%40types/turndown@5.0.1",
@@ -8816,7 +9092,9 @@
     },
     {
       "purl": "pkg:npm/%40typescript-eslint/parser@6.21.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#18970"
+      ]
     },
     {
       "purl": "pkg:npm/%40typescript-eslint/parser@8.39.0",
@@ -8880,7 +9158,9 @@
     },
     {
       "purl": "pkg:npm/%40typescript-eslint/tsconfig-utils@8.44.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#19089"
+      ]
     },
     {
       "purl": "pkg:npm/%40typescript-eslint/type-utils@5.52.0",
@@ -8938,7 +9218,9 @@
     },
     {
       "purl": "pkg:npm/%40typescript-eslint/types@8.44.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#19199"
+      ]
     },
     {
       "purl": "pkg:npm/%40typescript-eslint/typescript-estree@5.52.0",
@@ -8972,7 +9254,9 @@
     },
     {
       "purl": "pkg:npm/%40typescript-eslint/utils@5.52.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#19301"
+      ]
     },
     {
       "purl": "pkg:npm/%40typescript-eslint/utils@6.21.0",
@@ -9240,7 +9524,9 @@
     },
     {
       "purl": "pkg:npm/%40vitest/pretty-format@2.1.9",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#19751"
+      ]
     },
     {
       "purl": "pkg:npm/%40vitest/runner@2.1.9",
@@ -9274,11 +9560,15 @@
     },
     {
       "purl": "pkg:npm/%40volar/language-core@1.11.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#19818"
+      ]
     },
     {
       "purl": "pkg:npm/%40volar/source-map@1.11.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#19827"
+      ]
     },
     {
       "purl": "pkg:npm/%40volar/typescript@1.11.1",
@@ -9300,15 +9590,21 @@
     },
     {
       "purl": "pkg:npm/%40vue/language-core@1.8.27",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#19869"
+      ]
     },
     {
       "purl": "pkg:npm/%40vue/shared@3.4.21",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#19891"
+      ]
     },
     {
       "purl": "pkg:npm/%40webassemblyjs/ast@1.11.6",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#19898"
+      ]
     },
     {
       "purl": "pkg:npm/%40webassemblyjs/floating-point-hex-parser@1.11.6",
@@ -9384,7 +9680,9 @@
     },
     {
       "purl": "pkg:npm/%40webassemblyjs/wasm-parser@1.11.6",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#20025"
+      ]
     },
     {
       "purl": "pkg:npm/%40webassemblyjs/wast-printer@1.11.6",
@@ -9406,7 +9704,9 @@
     },
     {
       "purl": "pkg:npm/%40whatwg-node/fetch@0.10.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#20066"
+      ]
     },
     {
       "purl": "pkg:npm/%40whatwg-node/node-fetch@0.7.17",
@@ -9416,11 +9716,15 @@
     },
     {
       "purl": "pkg:npm/%40whatwg-node/promise-helpers@1.3.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#20088"
+      ]
     },
     {
       "purl": "pkg:npm/%40wojtekmaj/date-utils@1.0.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#20097"
+      ]
     },
     {
       "purl": "pkg:npm/%40wojtekmaj/react-daterange-picker@3.4.0",
@@ -9496,7 +9800,9 @@
     },
     {
       "purl": "pkg:npm/abbrev@1.1.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#20208"
+      ]
     },
     {
       "purl": "pkg:npm/abbrev@2.0.0",
@@ -9518,7 +9824,9 @@
     },
     {
       "purl": "pkg:npm/abstract-leveldown@0.12.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#20238"
+      ]
     },
     {
       "purl": "pkg:npm/accept-language-parser@1.5.0",
@@ -9528,7 +9836,9 @@
     },
     {
       "purl": "pkg:npm/accepts@1.3.8",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#20254"
+      ]
     },
     {
       "purl": "pkg:npm/accepts@2.0.0",
@@ -9550,7 +9860,9 @@
     },
     {
       "purl": "pkg:npm/acorn-jsx@5.3.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#20292"
+      ]
     },
     {
       "purl": "pkg:npm/acorn-walk@7.2.0",
@@ -9560,7 +9872,9 @@
     },
     {
       "purl": "pkg:npm/acorn-walk@8.2.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#20301"
+      ]
     },
     {
       "purl": "pkg:npm/acorn@7.4.1",
@@ -9576,7 +9890,9 @@
     },
     {
       "purl": "pkg:npm/acorn@8.14.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#20333"
+      ]
     },
     {
       "purl": "pkg:npm/acorn@8.15.0",
@@ -9586,7 +9902,9 @@
     },
     {
       "purl": "pkg:npm/acorn@8.7.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#20342"
+      ]
     },
     {
       "purl": "pkg:npm/acorn@8.8.0",
@@ -9614,11 +9932,15 @@
     },
     {
       "purl": "pkg:npm/agent-base@6.0.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#20394"
+      ]
     },
     {
       "purl": "pkg:npm/agent-base@7.1.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#20403"
+      ]
     },
     {
       "purl": "pkg:npm/agent-base@7.1.1",
@@ -9652,7 +9974,9 @@
     },
     {
       "purl": "pkg:npm/ai@4.3.19",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#20458"
+      ]
     },
     {
       "purl": "pkg:npm/airtable@0.12.2",
@@ -9662,7 +9986,9 @@
     },
     {
       "purl": "pkg:npm/ajv-formats@2.1.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#20491"
+      ]
     },
     {
       "purl": "pkg:npm/ajv-keywords@3.5.2",
@@ -9672,7 +9998,9 @@
     },
     {
       "purl": "pkg:npm/ajv@6.12.6",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#20526"
+      ]
     },
     {
       "purl": "pkg:npm/ajv@8.11.0",
@@ -9682,7 +10010,9 @@
     },
     {
       "purl": "pkg:npm/ajv@8.12.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#20514"
+      ]
     },
     {
       "purl": "pkg:npm/akismet-api@6.0.0",
@@ -9692,11 +10022,15 @@
     },
     {
       "purl": "pkg:npm/ansi-colors@4.1.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#20560"
+      ]
     },
     {
       "purl": "pkg:npm/ansi-escapes@4.3.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#20567"
+      ]
     },
     {
       "purl": "pkg:npm/ansi-escapes@6.2.1",
@@ -9730,7 +10064,9 @@
     },
     {
       "purl": "pkg:npm/ansi-styles@4.3.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#20615"
+      ]
     },
     {
       "purl": "pkg:npm/ansi-styles@5.2.0",
@@ -9746,7 +10082,9 @@
     },
     {
       "purl": "pkg:npm/ansi-styles@6.2.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#20638"
+      ]
     },
     {
       "purl": "pkg:npm/ansicolors@0.3.2",
@@ -9774,7 +10112,9 @@
     },
     {
       "purl": "pkg:npm/anymatch@3.1.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#20673"
+      ]
     },
     {
       "purl": "pkg:npm/app-root-dir@1.0.2",
@@ -9826,11 +10166,15 @@
     },
     {
       "purl": "pkg:npm/arg@5.0.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#20735"
+      ]
     },
     {
       "purl": "pkg:npm/argparse@1.0.10",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#20749"
+      ]
     },
     {
       "purl": "pkg:npm/argparse@2.0.1",
@@ -9972,7 +10316,9 @@
     },
     {
       "purl": "pkg:npm/array.prototype.flat@1.3.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#21007"
+      ]
     },
     {
       "purl": "pkg:npm/array.prototype.flat@1.3.3",
@@ -10048,11 +10394,15 @@
     },
     {
       "purl": "pkg:npm/asap@2.0.6",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#21165"
+      ]
     },
     {
       "purl": "pkg:npm/asn1.js@5.4.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#21172"
+      ]
     },
     {
       "purl": "pkg:npm/asn1@0.2.6",
@@ -10062,11 +10412,15 @@
     },
     {
       "purl": "pkg:npm/assert-plus@1.0.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#21193"
+      ]
     },
     {
       "purl": "pkg:npm/assert@2.1.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#21200"
+      ]
     },
     {
       "purl": "pkg:npm/assertion-error@2.0.1",
@@ -10106,7 +10460,9 @@
     },
     {
       "purl": "pkg:npm/async@3.2.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#21259"
+      ]
     },
     {
       "purl": "pkg:npm/asynciterator.prototype@1.0.0",
@@ -10140,7 +10496,9 @@
     },
     {
       "purl": "pkg:npm/auto-bind@4.0.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#21311"
+      ]
     },
     {
       "purl": "pkg:npm/auto-bind@5.0.1",
@@ -10222,7 +10580,9 @@
     },
     {
       "purl": "pkg:npm/axios@0.26.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#21455"
+      ]
     },
     {
       "purl": "pkg:npm/axios@1.4.0",
@@ -10232,7 +10592,9 @@
     },
     {
       "purl": "pkg:npm/axios@1.7.7",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#21482"
+      ]
     },
     {
       "purl": "pkg:npm/axios@1.9.0",
@@ -10308,7 +10670,9 @@
     },
     {
       "purl": "pkg:npm/base64-js@1.5.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#21617"
+      ]
     },
     {
       "purl": "pkg:npm/base64-url@2.3.3",
@@ -10396,7 +10760,9 @@
     },
     {
       "purl": "pkg:npm/bl@4.1.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#21729"
+      ]
     },
     {
       "purl": "pkg:npm/bl@6.1.0",
@@ -10412,7 +10778,9 @@
     },
     {
       "purl": "pkg:npm/bluebird@3.7.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#21768"
+      ]
     },
     {
       "purl": "pkg:npm/bmp-js@0.1.0",
@@ -10422,11 +10790,15 @@
     },
     {
       "purl": "pkg:npm/bn.js@4.12.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#21782"
+      ]
     },
     {
       "purl": "pkg:npm/bn.js@5.2.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#21789"
+      ]
     },
     {
       "purl": "pkg:npm/body-parser@1.20.1",
@@ -10436,7 +10808,9 @@
     },
     {
       "purl": "pkg:npm/body-parser@1.20.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#21816"
+      ]
     },
     {
       "purl": "pkg:npm/body-parser@2.2.0",
@@ -10458,11 +10832,15 @@
     },
     {
       "purl": "pkg:npm/bottleneck@2.19.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#21875"
+      ]
     },
     {
       "purl": "pkg:npm/bowser@2.11.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#21882"
+      ]
     },
     {
       "purl": "pkg:npm/brace-expansion@1.1.11",
@@ -10478,7 +10856,9 @@
     },
     {
       "purl": "pkg:npm/braces@3.0.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#21908"
+      ]
     },
     {
       "purl": "pkg:npm/braces@3.0.3",
@@ -10488,7 +10868,9 @@
     },
     {
       "purl": "pkg:npm/brorand@1.1.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#21926"
+      ]
     },
     {
       "purl": "pkg:npm/browser-resolve@2.0.0",
@@ -10498,7 +10880,9 @@
     },
     {
       "purl": "pkg:npm/browserify-aes@1.2.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#21942"
+      ]
     },
     {
       "purl": "pkg:npm/browserify-cipher@1.0.1",
@@ -10520,7 +10904,9 @@
     },
     {
       "purl": "pkg:npm/browserify-rsa@4.1.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#21990"
+      ]
     },
     {
       "purl": "pkg:npm/browserify-sign@4.2.1",
@@ -10536,7 +10922,9 @@
     },
     {
       "purl": "pkg:npm/browserslist@4.21.10",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#22026"
+      ]
     },
     {
       "purl": "pkg:npm/browserslist@4.21.4",
@@ -10576,7 +10964,9 @@
     },
     {
       "purl": "pkg:npm/bson@6.10.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#22114"
+      ]
     },
     {
       "purl": "pkg:npm/btoa@1.2.1",
@@ -10616,7 +11006,9 @@
     },
     {
       "purl": "pkg:npm/buffer@5.7.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#22165"
+      ]
     },
     {
       "purl": "pkg:npm/buffer@6.0.3",
@@ -10650,7 +11042,9 @@
     },
     {
       "purl": "pkg:npm/busboy@1.6.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#22223"
+      ]
     },
     {
       "purl": "pkg:npm/bytes@3.1.0",
@@ -10660,7 +11054,9 @@
     },
     {
       "purl": "pkg:npm/bytes@3.1.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#22239"
+      ]
     },
     {
       "purl": "pkg:npm/c12@3.1.0",
@@ -10700,19 +11096,27 @@
     },
     {
       "purl": "pkg:npm/call-bind-apply-helpers@1.0.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#22419"
+      ]
     },
     {
       "purl": "pkg:npm/call-bind@1.0.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#22429"
+      ]
     },
     {
       "purl": "pkg:npm/call-bind@1.0.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#22439"
+      ]
     },
     {
       "purl": "pkg:npm/call-bind@1.0.7",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#22450"
+      ]
     },
     {
       "purl": "pkg:npm/call-bind@1.0.8",
@@ -10722,7 +11126,9 @@
     },
     {
       "purl": "pkg:npm/call-bound@1.0.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#22475"
+      ]
     },
     {
       "purl": "pkg:npm/call-me-maybe@1.0.1",
@@ -10762,7 +11168,9 @@
     },
     {
       "purl": "pkg:npm/camelcase@5.3.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#22537"
+      ]
     },
     {
       "purl": "pkg:npm/camelcase@6.3.0",
@@ -10784,7 +11192,9 @@
     },
     {
       "purl": "pkg:npm/caniuse-lite@1.0.30001425",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#22565"
+      ]
     },
     {
       "purl": "pkg:npm/caniuse-lite@1.0.30001460",
@@ -10806,7 +11216,9 @@
     },
     {
       "purl": "pkg:npm/caniuse-lite@1.0.30001597",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#22600"
+      ]
     },
     {
       "purl": "pkg:npm/caniuse-lite@1.0.30001612",
@@ -10858,11 +11270,15 @@
     },
     {
       "purl": "pkg:npm/chalk@2.4.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#22701"
+      ]
     },
     {
       "purl": "pkg:npm/chalk@3.0.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#22671"
+      ]
     },
     {
       "purl": "pkg:npm/chalk@4.1.1",
@@ -10872,7 +11288,9 @@
     },
     {
       "purl": "pkg:npm/chalk@4.1.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#22691"
+      ]
     },
     {
       "purl": "pkg:npm/chalk@5.3.0",
@@ -10882,7 +11300,9 @@
     },
     {
       "purl": "pkg:npm/chalk@5.6.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#22712"
+      ]
     },
     {
       "purl": "pkg:npm/change-case-all@1.0.15",
@@ -10970,11 +11390,15 @@
     },
     {
       "purl": "pkg:npm/chokidar@3.5.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#22920"
+      ]
     },
     {
       "purl": "pkg:npm/chokidar@3.6.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#22901"
+      ]
     },
     {
       "purl": "pkg:npm/chokidar@4.0.3",
@@ -11026,7 +11450,9 @@
     },
     {
       "purl": "pkg:npm/cipher-base@1.0.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#22997"
+      ]
     },
     {
       "purl": "pkg:npm/citty@0.1.6",
@@ -11072,7 +11498,9 @@
     },
     {
       "purl": "pkg:npm/class-variance-authority@0.7.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#23069"
+      ]
     },
     {
       "purl": "pkg:npm/classnames@2.3.1",
@@ -11136,7 +11564,9 @@
     },
     {
       "purl": "pkg:npm/cli-progress@3.12.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#23159"
+      ]
     },
     {
       "purl": "pkg:npm/cli-spinners@2.6.1",
@@ -11146,7 +11576,9 @@
     },
     {
       "purl": "pkg:npm/cli-spinners@2.9.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#23175"
+      ]
     },
     {
       "purl": "pkg:npm/cli-spinners@3.2.0",
@@ -11258,7 +11690,9 @@
     },
     {
       "purl": "pkg:npm/cluster-key-slot@1.1.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#23341"
+      ]
     },
     {
       "purl": "pkg:npm/cmdk@0.2.0",
@@ -11328,7 +11762,9 @@
     },
     {
       "purl": "pkg:npm/color-convert@1.9.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#23440"
+      ]
     },
     {
       "purl": "pkg:npm/color-convert@2.0.1",
@@ -11344,11 +11780,15 @@
     },
     {
       "purl": "pkg:npm/color-name@1.1.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#23465"
+      ]
     },
     {
       "purl": "pkg:npm/color-string@1.9.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#23472"
+      ]
     },
     {
       "purl": "pkg:npm/color-support@1.1.3",
@@ -11394,7 +11834,9 @@
     },
     {
       "purl": "pkg:npm/combined-stream@1.0.8",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#23542"
+      ]
     },
     {
       "purl": "pkg:npm/comma-separated-tokens@2.0.3",
@@ -11404,7 +11846,9 @@
     },
     {
       "purl": "pkg:npm/command-score@0.1.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#23558"
+      ]
     },
     {
       "purl": "pkg:npm/commander@11.1.0",
@@ -11420,11 +11864,15 @@
     },
     {
       "purl": "pkg:npm/commander@2.20.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#23600"
+      ]
     },
     {
       "purl": "pkg:npm/commander@4.1.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#23565"
+      ]
     },
     {
       "purl": "pkg:npm/commander@6.2.0",
@@ -11434,7 +11882,9 @@
     },
     {
       "purl": "pkg:npm/commander@7.2.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#23607"
+      ]
     },
     {
       "purl": "pkg:npm/commander@8.3.0",
@@ -11516,7 +11966,9 @@
     },
     {
       "purl": "pkg:npm/concat-stream@1.6.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#23707"
+      ]
     },
     {
       "purl": "pkg:npm/concat-stream@2.0.0",
@@ -11556,7 +12008,9 @@
     },
     {
       "purl": "pkg:npm/consola@3.4.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#23793"
+      ]
     },
     {
       "purl": "pkg:npm/console-browserify@1.2.0",
@@ -11590,7 +12044,9 @@
     },
     {
       "purl": "pkg:npm/content-disposition@0.5.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#23842"
+      ]
     },
     {
       "purl": "pkg:npm/content-disposition@1.0.0",
@@ -11600,15 +12056,21 @@
     },
     {
       "purl": "pkg:npm/content-type@1.0.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#23860"
+      ]
     },
     {
       "purl": "pkg:npm/content-type@1.0.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#23867"
+      ]
     },
     {
       "purl": "pkg:npm/convert-source-map@1.8.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#23874"
+      ]
     },
     {
       "purl": "pkg:npm/convert-source-map@2.0.0",
@@ -11660,11 +12122,15 @@
     },
     {
       "purl": "pkg:npm/cookie@0.5.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#23935"
+      ]
     },
     {
       "purl": "pkg:npm/cookie@0.7.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#23949"
+      ]
     },
     {
       "purl": "pkg:npm/cookiejar@2.1.3",
@@ -11710,11 +12176,15 @@
     },
     {
       "purl": "pkg:npm/core-util-is@1.0.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#24009"
+      ]
     },
     {
       "purl": "pkg:npm/cors@2.8.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#24016"
+      ]
     },
     {
       "purl": "pkg:npm/cosmiconfig@6.0.0",
@@ -11724,7 +12194,9 @@
     },
     {
       "purl": "pkg:npm/cosmiconfig@8.3.6",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#24039"
+      ]
     },
     {
       "purl": "pkg:npm/country-flag-icons@1.5.5",
@@ -11740,11 +12212,15 @@
     },
     {
       "purl": "pkg:npm/create-hash@1.2.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#24073"
+      ]
     },
     {
       "purl": "pkg:npm/create-hmac@1.1.7",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#24086"
+      ]
     },
     {
       "purl": "pkg:npm/create-jest@29.7.0",
@@ -11754,7 +12230,9 @@
     },
     {
       "purl": "pkg:npm/create-require@1.1.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#24117"
+      ]
     },
     {
       "purl": "pkg:npm/cron-parser@3.5.0",
@@ -11806,11 +12284,15 @@
     },
     {
       "purl": "pkg:npm/cross-spawn@7.0.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#24202"
+      ]
     },
     {
       "purl": "pkg:npm/cross-spawn@7.0.6",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#24213"
+      ]
     },
     {
       "purl": "pkg:npm/crypt@0.0.2",
@@ -11922,7 +12404,9 @@
     },
     {
       "purl": "pkg:npm/csstype@3.1.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#24389"
+      ]
     },
     {
       "purl": "pkg:npm/csv-parse@4.16.3",
@@ -11932,7 +12416,9 @@
     },
     {
       "purl": "pkg:npm/csv-parse@5.6.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#24403"
+      ]
     },
     {
       "purl": "pkg:npm/csv-stringify@1.1.2",
@@ -11954,7 +12440,9 @@
     },
     {
       "purl": "pkg:npm/d3-array@3.2.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#24433"
+      ]
     },
     {
       "purl": "pkg:npm/d3-color@3.1.0",
@@ -11976,7 +12464,9 @@
     },
     {
       "purl": "pkg:npm/d3-interpolate@3.0.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#24463"
+      ]
     },
     {
       "purl": "pkg:npm/d3-path@3.1.0",
@@ -12004,7 +12494,9 @@
     },
     {
       "purl": "pkg:npm/d3-time@3.1.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#24510"
+      ]
     },
     {
       "purl": "pkg:npm/d3-timer@3.0.1",
@@ -12134,11 +12626,15 @@
     },
     {
       "purl": "pkg:npm/debounce@1.2.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#24710"
+      ]
     },
     {
       "purl": "pkg:npm/debug@2.6.9",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#24717"
+      ]
     },
     {
       "purl": "pkg:npm/debug@3.2.7",
@@ -12148,7 +12644,9 @@
     },
     {
       "purl": "pkg:npm/debug@4.3.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#24726"
+      ]
     },
     {
       "purl": "pkg:npm/debug@4.4.0",
@@ -12158,7 +12656,9 @@
     },
     {
       "purl": "pkg:npm/debug@4.4.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#24759"
+      ]
     },
     {
       "purl": "pkg:npm/debug@4.4.3",
@@ -12174,7 +12674,9 @@
     },
     {
       "purl": "pkg:npm/decamelize@1.2.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#24793"
+      ]
     },
     {
       "purl": "pkg:npm/decimal.js-light@2.5.1",
@@ -12184,7 +12686,9 @@
     },
     {
       "purl": "pkg:npm/decimal.js@10.4.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#24807"
+      ]
     },
     {
       "purl": "pkg:npm/decode-named-character-reference@1.1.0",
@@ -12206,7 +12710,9 @@
     },
     {
       "purl": "pkg:npm/dedent@1.6.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#24844"
+      ]
     },
     {
       "purl": "pkg:npm/deep-eql@5.0.2",
@@ -12276,7 +12782,9 @@
     },
     {
       "purl": "pkg:npm/define-data-property@1.1.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#24940"
+      ]
     },
     {
       "purl": "pkg:npm/define-data-property@1.1.4",
@@ -12310,7 +12818,9 @@
     },
     {
       "purl": "pkg:npm/define-properties@1.2.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#24995"
+      ]
     },
     {
       "purl": "pkg:npm/defu@6.1.4",
@@ -12338,11 +12848,15 @@
     },
     {
       "purl": "pkg:npm/depd@1.1.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#25041"
+      ]
     },
     {
       "purl": "pkg:npm/depd@2.0.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#25034"
+      ]
     },
     {
       "purl": "pkg:npm/dependency-graph@0.11.0",
@@ -12352,7 +12866,9 @@
     },
     {
       "purl": "pkg:npm/dequal@2.0.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#25055"
+      ]
     },
     {
       "purl": "pkg:npm/des.js@1.0.1",
@@ -12398,7 +12914,9 @@
     },
     {
       "purl": "pkg:npm/detect-libc@2.0.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#25119"
+      ]
     },
     {
       "purl": "pkg:npm/detect-libc@2.0.4",
@@ -12426,7 +12944,9 @@
     },
     {
       "purl": "pkg:npm/devlop@1.1.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#25160"
+      ]
     },
     {
       "purl": "pkg:npm/dezalgo@1.0.4",
@@ -12502,7 +13022,9 @@
     },
     {
       "purl": "pkg:npm/doctrine@3.0.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#25255"
+      ]
     },
     {
       "purl": "pkg:npm/dom-accessibility-api@0.5.14",
@@ -12554,7 +13076,9 @@
     },
     {
       "purl": "pkg:npm/domhandler@5.0.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#25338"
+      ]
     },
     {
       "purl": "pkg:npm/dompurify@3.1.7",
@@ -12606,7 +13130,9 @@
     },
     {
       "purl": "pkg:npm/dotenv-expand@10.0.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#25435"
+      ]
     },
     {
       "purl": "pkg:npm/dotenv-expand@8.0.3",
@@ -12628,7 +13154,9 @@
     },
     {
       "purl": "pkg:npm/dotenv@16.3.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#25456"
+      ]
     },
     {
       "purl": "pkg:npm/dotenv@16.4.1",
@@ -12638,7 +13166,9 @@
     },
     {
       "purl": "pkg:npm/dotenv@16.6.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#25477"
+      ]
     },
     {
       "purl": "pkg:npm/dotenv@17.2.2",
@@ -12660,7 +13190,9 @@
     },
     {
       "purl": "pkg:npm/dset@3.1.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#25513"
+      ]
     },
     {
       "purl": "pkg:npm/dub@0.59.1",
@@ -12676,7 +13208,9 @@
     },
     {
       "purl": "pkg:npm/dunder-proto@1.0.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#25550"
+      ]
     },
     {
       "purl": "pkg:npm/duplexer@0.1.2",
@@ -12704,7 +13238,9 @@
     },
     {
       "purl": "pkg:npm/ecdsa-sig-formatter@1.0.11",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#25597"
+      ]
     },
     {
       "purl": "pkg:npm/ee-first@1.1.1",
@@ -12726,7 +13262,9 @@
     },
     {
       "purl": "pkg:npm/ejs@3.1.9",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#25634"
+      ]
     },
     {
       "purl": "pkg:npm/electron-to-chromium@1.4.284",
@@ -12838,11 +13376,15 @@
     },
     {
       "purl": "pkg:npm/encoding@0.1.13",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#25781"
+      ]
     },
     {
       "purl": "pkg:npm/end-of-stream@1.4.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#25790"
+      ]
     },
     {
       "purl": "pkg:npm/enhanced-resolve@5.10.0",
@@ -12882,7 +13424,9 @@
     },
     {
       "purl": "pkg:npm/entities@4.4.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#25849"
+      ]
     },
     {
       "purl": "pkg:npm/entities@4.5.0",
@@ -12898,7 +13442,9 @@
     },
     {
       "purl": "pkg:npm/env-paths@2.2.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#25882"
+      ]
     },
     {
       "purl": "pkg:npm/environment@1.1.0",
@@ -12914,7 +13460,9 @@
     },
     {
       "purl": "pkg:npm/errno@0.1.8",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#25903"
+      ]
     },
     {
       "purl": "pkg:npm/error-ex@1.3.2",
@@ -12936,11 +13484,15 @@
     },
     {
       "purl": "pkg:npm/es-abstract@1.19.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#25998"
+      ]
     },
     {
       "purl": "pkg:npm/es-abstract@1.20.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#26026"
+      ]
     },
     {
       "purl": "pkg:npm/es-abstract@1.20.4",
@@ -12956,11 +13508,15 @@
     },
     {
       "purl": "pkg:npm/es-abstract@1.23.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#26136"
+      ]
     },
     {
       "purl": "pkg:npm/es-abstract@1.23.9",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#25939"
+      ]
     },
     {
       "purl": "pkg:npm/es-abstract@1.24.0",
@@ -12988,11 +13544,15 @@
     },
     {
       "purl": "pkg:npm/es-errors@1.3.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#26274"
+      ]
     },
     {
       "purl": "pkg:npm/es-iterator-helpers@1.0.17",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#26281"
+      ]
     },
     {
       "purl": "pkg:npm/es-iterator-helpers@1.2.1",
@@ -13014,7 +13574,9 @@
     },
     {
       "purl": "pkg:npm/es-object-atoms@1.1.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#26342"
+      ]
     },
     {
       "purl": "pkg:npm/es-set-tostringtag@2.0.2",
@@ -13024,7 +13586,9 @@
     },
     {
       "purl": "pkg:npm/es-set-tostringtag@2.0.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#26362"
+      ]
     },
     {
       "purl": "pkg:npm/es-set-tostringtag@2.1.0",
@@ -13094,7 +13658,9 @@
     },
     {
       "purl": "pkg:npm/esbuild@0.18.20",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#26488"
+      ]
     },
     {
       "purl": "pkg:npm/esbuild@0.19.8",
@@ -13134,7 +13700,9 @@
     },
     {
       "purl": "pkg:npm/escape-html@1.0.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#26902"
+      ]
     },
     {
       "purl": "pkg:npm/escape-string-regexp@1.0.5",
@@ -13150,7 +13718,9 @@
     },
     {
       "purl": "pkg:npm/escape-string-regexp@4.0.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#26909"
+      ]
     },
     {
       "purl": "pkg:npm/escape-string-regexp@5.0.0",
@@ -13316,7 +13886,9 @@
     },
     {
       "purl": "pkg:npm/eslint-scope@5.1.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#27358"
+      ]
     },
     {
       "purl": "pkg:npm/eslint-scope@8.4.0",
@@ -13344,7 +13916,9 @@
     },
     {
       "purl": "pkg:npm/eslint-visitor-keys@3.4.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#27403"
+      ]
     },
     {
       "purl": "pkg:npm/eslint-visitor-keys@4.2.0",
@@ -13384,7 +13958,9 @@
     },
     {
       "purl": "pkg:npm/esprima@4.0.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#27503"
+      ]
     },
     {
       "purl": "pkg:npm/esquery@1.6.0",
@@ -13406,7 +13982,9 @@
     },
     {
       "purl": "pkg:npm/estraverse@5.3.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#27538"
+      ]
     },
     {
       "purl": "pkg:npm/estree-util-attach-comments@3.0.0",
@@ -13464,7 +14042,9 @@
     },
     {
       "purl": "pkg:npm/estree-walker@3.0.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#27629"
+      ]
     },
     {
       "purl": "pkg:npm/esutils@2.0.3",
@@ -13474,7 +14054,9 @@
     },
     {
       "purl": "pkg:npm/etag@1.8.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#27645"
+      ]
     },
     {
       "purl": "pkg:npm/event-target-shim@5.0.1",
@@ -13484,7 +14066,9 @@
     },
     {
       "purl": "pkg:npm/eventemitter3@4.0.7",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#27659"
+      ]
     },
     {
       "purl": "pkg:npm/eventemitter3@5.0.1",
@@ -13494,11 +14078,15 @@
     },
     {
       "purl": "pkg:npm/events@3.3.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#27673"
+      ]
     },
     {
       "purl": "pkg:npm/eventsource-parser@3.0.6",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#27680"
+      ]
     },
     {
       "purl": "pkg:npm/eventsource@3.0.7",
@@ -13508,7 +14096,9 @@
     },
     {
       "purl": "pkg:npm/evp_bytestokey@1.0.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#27696"
+      ]
     },
     {
       "purl": "pkg:npm/ews-javascript-api@0.11.0",
@@ -13518,7 +14108,9 @@
     },
     {
       "purl": "pkg:npm/execa@5.1.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#27727"
+      ]
     },
     {
       "purl": "pkg:npm/execa@9.3.0",
@@ -13582,7 +14174,9 @@
     },
     {
       "purl": "pkg:npm/express@5.1.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#27874"
+      ]
     },
     {
       "purl": "pkg:npm/exsolve@1.0.7",
@@ -13598,7 +14192,9 @@
     },
     {
       "purl": "pkg:npm/extend@3.0.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#27925"
+      ]
     },
     {
       "purl": "pkg:npm/extendable-error@0.1.7",
@@ -13608,7 +14204,9 @@
     },
     {
       "purl": "pkg:npm/external-editor@3.1.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#27939"
+      ]
     },
     {
       "purl": "pkg:npm/extsprintf@1.3.0",
@@ -13636,7 +14234,9 @@
     },
     {
       "purl": "pkg:npm/fast-deep-equal@3.1.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#27980"
+      ]
     },
     {
       "purl": "pkg:npm/fast-diff@1.2.0",
@@ -13652,7 +14252,9 @@
     },
     {
       "purl": "pkg:npm/fast-glob@3.2.11",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#28014"
+      ]
     },
     {
       "purl": "pkg:npm/fast-glob@3.2.12",
@@ -13668,7 +14270,9 @@
     },
     {
       "purl": "pkg:npm/fast-glob@3.3.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#28040"
+      ]
     },
     {
       "purl": "pkg:npm/fast-glob@3.3.3",
@@ -13678,7 +14282,9 @@
     },
     {
       "purl": "pkg:npm/fast-json-stable-stringify@2.1.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#28066"
+      ]
     },
     {
       "purl": "pkg:npm/fast-levenshtein@2.0.6",
@@ -13700,7 +14306,9 @@
     },
     {
       "purl": "pkg:npm/fast-safe-stringify@2.1.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#28096"
+      ]
     },
     {
       "purl": "pkg:npm/fast-sha256@1.3.0",
@@ -13812,7 +14420,9 @@
     },
     {
       "purl": "pkg:npm/fetch-blob@3.2.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#28270"
+      ]
     },
     {
       "purl": "pkg:npm/fetch-retry@6.0.0",
@@ -13858,7 +14468,9 @@
     },
     {
       "purl": "pkg:npm/figures@3.2.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#28339"
+      ]
     },
     {
       "purl": "pkg:npm/figures@5.0.0",
@@ -13952,7 +14564,9 @@
     },
     {
       "purl": "pkg:npm/find-up@4.1.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#28498"
+      ]
     },
     {
       "purl": "pkg:npm/find-up@5.0.0",
@@ -13998,7 +14612,9 @@
     },
     {
       "purl": "pkg:npm/follow-redirects@1.14.9",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#28575"
+      ]
     },
     {
       "purl": "pkg:npm/follow-redirects@1.15.2",
@@ -14008,7 +14624,9 @@
     },
     {
       "purl": "pkg:npm/follow-redirects@1.15.6",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#28565"
+      ]
     },
     {
       "purl": "pkg:npm/for-each@0.3.3",
@@ -14072,7 +14690,9 @@
     },
     {
       "purl": "pkg:npm/form-data@3.0.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#28688"
+      ]
     },
     {
       "purl": "pkg:npm/form-data@4.0.0",
@@ -14142,7 +14762,9 @@
     },
     {
       "purl": "pkg:npm/fresh@0.5.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#28815"
+      ]
     },
     {
       "purl": "pkg:npm/fresh@2.0.0",
@@ -14170,7 +14792,9 @@
     },
     {
       "purl": "pkg:npm/fs-extra@11.2.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#28869"
+      ]
     },
     {
       "purl": "pkg:npm/fs-extra@11.3.0",
@@ -14180,7 +14804,9 @@
     },
     {
       "purl": "pkg:npm/fs-extra@7.0.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#28880"
+      ]
     },
     {
       "purl": "pkg:npm/fs-extra@8.1.0",
@@ -14190,11 +14816,15 @@
     },
     {
       "purl": "pkg:npm/fs-extra@9.1.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#28902"
+      ]
     },
     {
       "purl": "pkg:npm/fs-minipass@2.1.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#28914"
+      ]
     },
     {
       "purl": "pkg:npm/fs-minipass@3.0.3",
@@ -14216,11 +14846,15 @@
     },
     {
       "purl": "pkg:npm/fsevents@2.3.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#28946"
+      ]
     },
     {
       "purl": "pkg:npm/fsevents@2.3.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#28956"
+      ]
     },
     {
       "purl": "pkg:npm/fumadocs-core@14.4.0",
@@ -14284,7 +14918,9 @@
     },
     {
       "purl": "pkg:npm/functions-have-names@1.2.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#29196"
+      ]
     },
     {
       "purl": "pkg:npm/fwd-stream@1.0.4",
@@ -14306,7 +14942,9 @@
     },
     {
       "purl": "pkg:npm/gaxios@6.1.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#29241"
+      ]
     },
     {
       "purl": "pkg:npm/gcp-metadata@4.3.1",
@@ -14340,11 +14978,15 @@
     },
     {
       "purl": "pkg:npm/get-caller-file@2.0.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#29296"
+      ]
     },
     {
       "purl": "pkg:npm/get-east-asian-width@1.3.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#29303"
+      ]
     },
     {
       "purl": "pkg:npm/get-func-name@2.0.2",
@@ -14354,7 +14996,9 @@
     },
     {
       "purl": "pkg:npm/get-intrinsic@1.1.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#29317"
+      ]
     },
     {
       "purl": "pkg:npm/get-intrinsic@1.1.3",
@@ -14364,15 +15008,21 @@
     },
     {
       "purl": "pkg:npm/get-intrinsic@1.2.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#29339"
+      ]
     },
     {
       "purl": "pkg:npm/get-intrinsic@1.2.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#29351"
+      ]
     },
     {
       "purl": "pkg:npm/get-intrinsic@1.3.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#29364"
+      ]
     },
     {
       "purl": "pkg:npm/get-nonce@1.0.1",
@@ -14394,7 +15044,9 @@
     },
     {
       "purl": "pkg:npm/get-proto@1.0.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#29403"
+      ]
     },
     {
       "purl": "pkg:npm/get-stream@6.0.1",
@@ -14488,7 +15140,9 @@
     },
     {
       "purl": "pkg:npm/glob-parent@5.1.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#29555"
+      ]
     },
     {
       "purl": "pkg:npm/glob-parent@6.0.2",
@@ -14510,11 +15164,15 @@
     },
     {
       "purl": "pkg:npm/glob@10.3.10",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#29595"
+      ]
     },
     {
       "purl": "pkg:npm/glob@10.4.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#29638"
+      ]
     },
     {
       "purl": "pkg:npm/glob@7.1.6",
@@ -14530,7 +15188,9 @@
     },
     {
       "purl": "pkg:npm/glob@7.2.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#29668"
+      ]
     },
     {
       "purl": "pkg:npm/glob@7.2.3",
@@ -14546,7 +15206,9 @@
     },
     {
       "purl": "pkg:npm/glob@9.3.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#29695"
+      ]
     },
     {
       "purl": "pkg:npm/global@4.4.0",
@@ -14592,7 +15254,9 @@
     },
     {
       "purl": "pkg:npm/globby@11.1.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#29764"
+      ]
     },
     {
       "purl": "pkg:npm/globby@13.1.3",
@@ -14614,7 +15278,9 @@
     },
     {
       "purl": "pkg:npm/google-auth-library@7.14.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#29807"
+      ]
     },
     {
       "purl": "pkg:npm/google-auth-library@9.15.0",
@@ -14666,15 +15332,21 @@
     },
     {
       "purl": "pkg:npm/graceful-fs@4.2.10",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#29917"
+      ]
     },
     {
       "purl": "pkg:npm/graceful-fs@4.2.11",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#29931"
+      ]
     },
     {
       "purl": "pkg:npm/graceful-fs@4.2.9",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#29924"
+      ]
     },
     {
       "purl": "pkg:npm/gradient-string@2.0.0",
@@ -14702,7 +15374,9 @@
     },
     {
       "purl": "pkg:npm/graphql-config@5.1.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#29972"
+      ]
     },
     {
       "purl": "pkg:npm/graphql-introspection-json-to-sdl@1.0.3",
@@ -14862,7 +15536,9 @@
     },
     {
       "purl": "pkg:npm/has-symbols@1.0.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#30244"
+      ]
     },
     {
       "purl": "pkg:npm/has-symbols@1.1.0",
@@ -14902,7 +15578,9 @@
     },
     {
       "purl": "pkg:npm/hash.js@1.1.7",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#30303"
+      ]
     },
     {
       "purl": "pkg:npm/hasown@2.0.0",
@@ -14912,19 +15590,27 @@
     },
     {
       "purl": "pkg:npm/hasown@2.0.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#30322"
+      ]
     },
     {
       "purl": "pkg:npm/hast-util-to-estree@3.1.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#30331"
+      ]
     },
     {
       "purl": "pkg:npm/hast-util-to-html@9.0.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#30355"
+      ]
     },
     {
       "purl": "pkg:npm/hast-util-to-jsx-runtime@2.3.6",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#30374"
+      ]
     },
     {
       "purl": "pkg:npm/hast-util-to-string@3.0.1",
@@ -14940,7 +15626,9 @@
     },
     {
       "purl": "pkg:npm/he@1.2.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#30415"
+      ]
     },
     {
       "purl": "pkg:npm/header-case@2.0.4",
@@ -14992,7 +15680,9 @@
     },
     {
       "purl": "pkg:npm/hoist-non-react-statics@3.3.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#30490"
+      ]
     },
     {
       "purl": "pkg:npm/hosted-git-info@2.8.9",
@@ -15020,7 +15710,9 @@
     },
     {
       "purl": "pkg:npm/html-escaper@2.0.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#30533"
+      ]
     },
     {
       "purl": "pkg:npm/html-parse-stringify@3.0.1",
@@ -15054,7 +15746,9 @@
     },
     {
       "purl": "pkg:npm/http-cache-semantics@4.1.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#30575"
+      ]
     },
     {
       "purl": "pkg:npm/http-call@5.3.0",
@@ -15076,7 +15770,9 @@
     },
     {
       "purl": "pkg:npm/http-errors@2.0.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#30627"
+      ]
     },
     {
       "purl": "pkg:npm/http-parser-js@0.5.8",
@@ -15098,7 +15794,9 @@
     },
     {
       "purl": "pkg:npm/http-proxy-agent@7.0.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#30669"
+      ]
     },
     {
       "purl": "pkg:npm/http-proxy-middleware@2.0.6",
@@ -15132,7 +15830,9 @@
     },
     {
       "purl": "pkg:npm/https-proxy-agent@5.0.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#30740"
+      ]
     },
     {
       "purl": "pkg:npm/https-proxy-agent@5.0.1",
@@ -15226,11 +15926,15 @@
     },
     {
       "purl": "pkg:npm/iconv-lite@0.4.24",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#30881"
+      ]
     },
     {
       "purl": "pkg:npm/iconv-lite@0.6.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#30890"
+      ]
     },
     {
       "purl": "pkg:npm/ics@2.37.0",
@@ -15246,7 +15950,9 @@
     },
     {
       "purl": "pkg:npm/ieee754@1.2.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#30916"
+      ]
     },
     {
       "purl": "pkg:npm/ignore@5.2.0",
@@ -15274,11 +15980,15 @@
     },
     {
       "purl": "pkg:npm/image-size@1.2.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#30953"
+      ]
     },
     {
       "purl": "pkg:npm/immer@10.1.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#30964"
+      ]
     },
     {
       "purl": "pkg:npm/immutable@3.7.6",
@@ -15294,7 +16004,9 @@
     },
     {
       "purl": "pkg:npm/import-fresh@3.3.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#30985"
+      ]
     },
     {
       "purl": "pkg:npm/import-from@4.0.0",
@@ -15328,7 +16040,9 @@
     },
     {
       "purl": "pkg:npm/indent-string@4.0.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#31040"
+      ]
     },
     {
       "purl": "pkg:npm/indent-string@5.0.0",
@@ -15356,7 +16070,9 @@
     },
     {
       "purl": "pkg:npm/inherits@2.0.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#31078"
+      ]
     },
     {
       "purl": "pkg:npm/ini@1.3.8",
@@ -15444,7 +16160,9 @@
     },
     {
       "purl": "pkg:npm/inquirer@8.2.6",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#31275"
+      ]
     },
     {
       "purl": "pkg:npm/inquirer@9.2.12",
@@ -15556,7 +16274,9 @@
     },
     {
       "purl": "pkg:npm/is-array-buffer@3.0.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#31527"
+      ]
     },
     {
       "purl": "pkg:npm/is-array-buffer@3.0.4",
@@ -15638,11 +16358,15 @@
     },
     {
       "purl": "pkg:npm/is-callable@1.2.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#31661"
+      ]
     },
     {
       "purl": "pkg:npm/is-callable@1.2.7",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#31654"
+      ]
     },
     {
       "purl": "pkg:npm/is-ci@2.0.0",
@@ -15670,19 +16394,27 @@
     },
     {
       "purl": "pkg:npm/is-core-module@2.13.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#31690"
+      ]
     },
     {
       "purl": "pkg:npm/is-core-module@2.16.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#31717"
+      ]
     },
     {
       "purl": "pkg:npm/is-core-module@2.8.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#31726"
+      ]
     },
     {
       "purl": "pkg:npm/is-core-module@2.9.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#31735"
+      ]
     },
     {
       "purl": "pkg:npm/is-data-view@1.0.1",
@@ -15698,7 +16430,9 @@
     },
     {
       "purl": "pkg:npm/is-date-object@1.0.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#31764"
+      ]
     },
     {
       "purl": "pkg:npm/is-date-object@1.1.0",
@@ -15714,7 +16448,9 @@
     },
     {
       "purl": "pkg:npm/is-docker@2.2.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#31790"
+      ]
     },
     {
       "purl": "pkg:npm/is-docker@3.0.0",
@@ -15778,11 +16514,15 @@
     },
     {
       "purl": "pkg:npm/is-generator-function@1.0.10",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#31877"
+      ]
     },
     {
       "purl": "pkg:npm/is-glob@4.0.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#31886"
+      ]
     },
     {
       "purl": "pkg:npm/is-hexadecimal@2.0.1",
@@ -15912,7 +16652,9 @@
     },
     {
       "purl": "pkg:npm/is-plain-obj@4.1.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#32058"
+      ]
     },
     {
       "purl": "pkg:npm/is-plain-object@3.0.1",
@@ -15922,7 +16664,9 @@
     },
     {
       "purl": "pkg:npm/is-plain-object@5.0.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#32065"
+      ]
     },
     {
       "purl": "pkg:npm/is-potential-custom-element-name@1.0.1",
@@ -15986,7 +16730,9 @@
     },
     {
       "purl": "pkg:npm/is-shared-array-buffer@1.0.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#32161"
+      ]
     },
     {
       "purl": "pkg:npm/is-shared-array-buffer@1.0.3",
@@ -16014,7 +16760,9 @@
     },
     {
       "purl": "pkg:npm/is-string@1.0.7",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#32202"
+      ]
     },
     {
       "purl": "pkg:npm/is-string@1.1.1",
@@ -16030,15 +16778,21 @@
     },
     {
       "purl": "pkg:npm/is-symbol@1.0.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#32230"
+      ]
     },
     {
       "purl": "pkg:npm/is-symbol@1.1.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#32239"
+      ]
     },
     {
       "purl": "pkg:npm/is-typed-array@1.1.12",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#32250"
+      ]
     },
     {
       "purl": "pkg:npm/is-typed-array@1.1.13",
@@ -16048,7 +16802,9 @@
     },
     {
       "purl": "pkg:npm/is-typed-array@1.1.15",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#32268"
+      ]
     },
     {
       "purl": "pkg:npm/is-typedarray@1.0.0",
@@ -16070,7 +16826,9 @@
     },
     {
       "purl": "pkg:npm/is-unicode-supported@1.3.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#32300"
+      ]
     },
     {
       "purl": "pkg:npm/is-unicode-supported@2.0.0",
@@ -16110,7 +16868,9 @@
     },
     {
       "purl": "pkg:npm/is-weakref@1.1.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#32355"
+      ]
     },
     {
       "purl": "pkg:npm/is-weakset@2.0.3",
@@ -16126,7 +16886,9 @@
     },
     {
       "purl": "pkg:npm/is-windows@1.0.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#32381"
+      ]
     },
     {
       "purl": "pkg:npm/is-wsl@1.1.0",
@@ -16166,7 +16928,9 @@
     },
     {
       "purl": "pkg:npm/isarray@2.0.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#32427"
+      ]
     },
     {
       "purl": "pkg:npm/isbot@5.1.30",
@@ -16212,7 +16976,9 @@
     },
     {
       "purl": "pkg:npm/istanbul-lib-coverage@3.2.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#32492"
+      ]
     },
     {
       "purl": "pkg:npm/istanbul-lib-instrument@5.1.0",
@@ -16276,7 +17042,9 @@
     },
     {
       "purl": "pkg:npm/jackspeak@2.3.6",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#32608"
+      ]
     },
     {
       "purl": "pkg:npm/jackspeak@3.4.3",
@@ -16472,7 +17240,9 @@
     },
     {
       "purl": "pkg:npm/jest-util@29.7.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#33093"
+      ]
     },
     {
       "purl": "pkg:npm/jest-validate@29.7.0",
@@ -16524,11 +17294,15 @@
     },
     {
       "purl": "pkg:npm/jiti@1.21.7",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#33215"
+      ]
     },
     {
       "purl": "pkg:npm/jiti@2.4.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#33206"
+      ]
     },
     {
       "purl": "pkg:npm/jiti@2.5.1",
@@ -16550,7 +17324,9 @@
     },
     {
       "purl": "pkg:npm/jose@4.13.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#33272"
+      ]
     },
     {
       "purl": "pkg:npm/jose@5.10.0",
@@ -16620,15 +17396,21 @@
     },
     {
       "purl": "pkg:npm/js-tokens@4.0.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#33357"
+      ]
     },
     {
       "purl": "pkg:npm/js-yaml@3.14.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#33375"
+      ]
     },
     {
       "purl": "pkg:npm/js-yaml@4.1.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#33364"
+      ]
     },
     {
       "purl": "pkg:npm/jsbn@0.1.1",
@@ -16698,7 +17480,9 @@
     },
     {
       "purl": "pkg:npm/json-parse-even-better-errors@2.3.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#33544"
+      ]
     },
     {
       "purl": "pkg:npm/json-schema-traverse@0.4.1",
@@ -16720,7 +17504,9 @@
     },
     {
       "purl": "pkg:npm/json-schema@0.4.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#33572"
+      ]
     },
     {
       "purl": "pkg:npm/json-stable-stringify-without-jsonify@1.0.1",
@@ -16754,7 +17540,9 @@
     },
     {
       "purl": "pkg:npm/json5@2.2.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#33623"
+      ]
     },
     {
       "purl": "pkg:npm/jsonc-parser@3.2.0",
@@ -16806,7 +17594,9 @@
     },
     {
       "purl": "pkg:npm/jsonwebtoken@9.0.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#33700"
+      ]
     },
     {
       "purl": "pkg:npm/jsprim@1.4.2",
@@ -16882,7 +17672,9 @@
     },
     {
       "purl": "pkg:npm/kind-of@6.0.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#33869"
+      ]
     },
     {
       "purl": "pkg:npm/kleur@3.0.3",
@@ -16964,7 +17756,9 @@
     },
     {
       "purl": "pkg:npm/level-peek@1.0.6",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#33998"
+      ]
     },
     {
       "purl": "pkg:npm/level-sublevel@5.2.3",
@@ -17010,7 +17804,9 @@
     },
     {
       "purl": "pkg:npm/lilconfig@2.0.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#34079"
+      ]
     },
     {
       "purl": "pkg:npm/lilconfig@2.1.0",
@@ -17020,7 +17816,9 @@
     },
     {
       "purl": "pkg:npm/lilconfig@3.1.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#34093"
+      ]
     },
     {
       "purl": "pkg:npm/limiter@1.1.5",
@@ -17078,7 +17876,9 @@
     },
     {
       "purl": "pkg:npm/load-bmfont@1.4.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#34311"
+      ]
     },
     {
       "purl": "pkg:npm/load-json-file@4.0.0",
@@ -17154,7 +17954,9 @@
     },
     {
       "purl": "pkg:npm/lodash.get@4.4.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#34429"
+      ]
     },
     {
       "purl": "pkg:npm/lodash.includes@4.3.0",
@@ -17206,7 +18008,9 @@
     },
     {
       "purl": "pkg:npm/lodash.memoize@4.1.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#34492"
+      ]
     },
     {
       "purl": "pkg:npm/lodash.merge@4.6.2",
@@ -17222,7 +18026,9 @@
     },
     {
       "purl": "pkg:npm/lodash.once@4.1.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#34513"
+      ]
     },
     {
       "purl": "pkg:npm/lodash.reduce@4.6.0",
@@ -17256,11 +18062,15 @@
     },
     {
       "purl": "pkg:npm/lodash@4.17.21",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#34555"
+      ]
     },
     {
       "purl": "pkg:npm/log-symbols@4.1.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#34562"
+      ]
     },
     {
       "purl": "pkg:npm/log-symbols@6.0.0",
@@ -17324,7 +18134,9 @@
     },
     {
       "purl": "pkg:npm/loose-envify@1.4.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#34670"
+      ]
     },
     {
       "purl": "pkg:npm/lottie-react@2.3.1",
@@ -17364,7 +18176,9 @@
     },
     {
       "purl": "pkg:npm/lower-case@1.1.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#34734"
+      ]
     },
     {
       "purl": "pkg:npm/lower-case@2.0.2",
@@ -17380,7 +18194,9 @@
     },
     {
       "purl": "pkg:npm/lru-cache@10.4.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#34750"
+      ]
     },
     {
       "purl": "pkg:npm/lru-cache@4.0.2",
@@ -17420,7 +18236,9 @@
     },
     {
       "purl": "pkg:npm/lru-memoizer@2.1.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#34813"
+      ]
     },
     {
       "purl": "pkg:npm/lru.min@1.1.2",
@@ -17466,7 +18284,9 @@
     },
     {
       "purl": "pkg:npm/luxon@3.4.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#34874"
+      ]
     },
     {
       "purl": "pkg:npm/lz-string@1.4.4",
@@ -17494,7 +18314,9 @@
     },
     {
       "purl": "pkg:npm/magic-string@0.30.8",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#34899"
+      ]
     },
     {
       "purl": "pkg:npm/mailhog@4.16.0",
@@ -17504,11 +18326,15 @@
     },
     {
       "purl": "pkg:npm/make-dir@3.1.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#34938"
+      ]
     },
     {
       "purl": "pkg:npm/make-error@1.3.6",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#34947"
+      ]
     },
     {
       "purl": "pkg:npm/make-event-props@1.3.0",
@@ -17632,7 +18458,9 @@
     },
     {
       "purl": "pkg:npm/mdast-util-from-markdown@2.0.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#35170"
+      ]
     },
     {
       "purl": "pkg:npm/mdast-util-frontmatter@2.0.1",
@@ -17672,7 +18500,9 @@
     },
     {
       "purl": "pkg:npm/mdast-util-gfm@3.1.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#35266"
+      ]
     },
     {
       "purl": "pkg:npm/mdast-util-mdx-expression@2.0.1",
@@ -17796,7 +18626,9 @@
     },
     {
       "purl": "pkg:npm/merge-descriptors@1.0.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#35496"
+      ]
     },
     {
       "purl": "pkg:npm/merge-descriptors@2.0.0",
@@ -17818,7 +18650,9 @@
     },
     {
       "purl": "pkg:npm/merge2@1.4.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#35524"
+      ]
     },
     {
       "purl": "pkg:npm/meros@1.3.0",
@@ -17828,7 +18662,9 @@
     },
     {
       "purl": "pkg:npm/methods@1.1.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#35543"
+      ]
     },
     {
       "purl": "pkg:npm/micro@10.0.1",
@@ -18054,7 +18890,9 @@
     },
     {
       "purl": "pkg:npm/micromatch@4.0.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#36012"
+      ]
     },
     {
       "purl": "pkg:npm/micromatch@4.0.8",
@@ -18082,19 +18920,27 @@
     },
     {
       "purl": "pkg:npm/mime-types@2.1.35",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#36058"
+      ]
     },
     {
       "purl": "pkg:npm/mime-types@3.0.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#36067"
+      ]
     },
     {
       "purl": "pkg:npm/mime@1.6.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#36076"
+      ]
     },
     {
       "purl": "pkg:npm/mime@2.6.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#36085"
+      ]
     },
     {
       "purl": "pkg:npm/mimic-fn@2.1.0",
@@ -18140,7 +18986,9 @@
     },
     {
       "purl": "pkg:npm/minimalistic-assert@1.0.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#36147"
+      ]
     },
     {
       "purl": "pkg:npm/minimalistic-crypto-utils@1.0.1",
@@ -18150,7 +18998,9 @@
     },
     {
       "purl": "pkg:npm/minimatch@3.1.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#36170"
+      ]
     },
     {
       "purl": "pkg:npm/minimatch@5.1.6",
@@ -18166,11 +19016,15 @@
     },
     {
       "purl": "pkg:npm/minimatch@9.0.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#36161"
+      ]
     },
     {
       "purl": "pkg:npm/minimatch@9.0.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#36197"
+      ]
     },
     {
       "purl": "pkg:npm/minimist-options@4.1.0",
@@ -18180,11 +19034,15 @@
     },
     {
       "purl": "pkg:npm/minimist@1.2.7",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#36224"
+      ]
     },
     {
       "purl": "pkg:npm/minimist@1.2.8",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#36217"
+      ]
     },
     {
       "purl": "pkg:npm/minipass-collect@1.0.2",
@@ -18224,7 +19082,9 @@
     },
     {
       "purl": "pkg:npm/minipass-pipeline@1.2.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#36303"
+      ]
     },
     {
       "purl": "pkg:npm/minipass-sized@1.0.3",
@@ -18234,11 +19094,15 @@
     },
     {
       "purl": "pkg:npm/minipass@3.3.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#36321"
+      ]
     },
     {
       "purl": "pkg:npm/minipass@3.3.6",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#36330"
+      ]
     },
     {
       "purl": "pkg:npm/minipass@4.2.5",
@@ -18272,11 +19136,15 @@
     },
     {
       "purl": "pkg:npm/minipass@7.1.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#36374"
+      ]
     },
     {
       "purl": "pkg:npm/minizlib@2.1.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#36381"
+      ]
     },
     {
       "purl": "pkg:npm/mixpanel@0.18.1",
@@ -18286,15 +19154,21 @@
     },
     {
       "purl": "pkg:npm/mkdirp-classic@0.5.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#36400"
+      ]
     },
     {
       "purl": "pkg:npm/mkdirp@0.5.6",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#36407"
+      ]
     },
     {
       "purl": "pkg:npm/mkdirp@1.0.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#36418"
+      ]
     },
     {
       "purl": "pkg:npm/mnemonist@0.38.3",
@@ -18328,7 +19202,9 @@
     },
     {
       "purl": "pkg:npm/moment@2.29.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#36468"
+      ]
     },
     {
       "purl": "pkg:npm/moment@2.29.4",
@@ -18386,7 +19262,9 @@
     },
     {
       "purl": "pkg:npm/ms@2.1.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#36594"
+      ]
     },
     {
       "purl": "pkg:npm/msgpackr-extract@3.0.3",
@@ -18564,7 +19442,9 @@
     },
     {
       "purl": "pkg:npm/negotiator@0.6.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#36952"
+      ]
     },
     {
       "purl": "pkg:npm/negotiator@0.6.4",
@@ -18580,7 +19460,9 @@
     },
     {
       "purl": "pkg:npm/neo-async@2.6.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#36973"
+      ]
     },
     {
       "purl": "pkg:npm/nest-winston@1.9.4",
@@ -18722,7 +19604,9 @@
     },
     {
       "purl": "pkg:npm/node-domexception@1.0.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#37432"
+      ]
     },
     {
       "purl": "pkg:npm/node-emoji@1.11.0",
@@ -18738,11 +19622,15 @@
     },
     {
       "purl": "pkg:npm/node-fetch@2.6.7",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#37455"
+      ]
     },
     {
       "purl": "pkg:npm/node-fetch@2.7.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#37469"
+      ]
     },
     {
       "purl": "pkg:npm/node-fetch@3.3.2",
@@ -18752,7 +19640,9 @@
     },
     {
       "purl": "pkg:npm/node-forge@1.3.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#37494"
+      ]
     },
     {
       "purl": "pkg:npm/node-gyp-build-optional-packages@5.2.2",
@@ -18888,7 +19778,9 @@
     },
     {
       "purl": "pkg:npm/normalize-package-data@2.5.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#37789"
+      ]
     },
     {
       "purl": "pkg:npm/normalize-package-data@3.0.3",
@@ -18904,7 +19796,9 @@
     },
     {
       "purl": "pkg:npm/normalize-path@3.0.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#37822"
+      ]
     },
     {
       "purl": "pkg:npm/normalize-range@0.1.2",
@@ -19016,7 +19910,9 @@
     },
     {
       "purl": "pkg:npm/object-assign@4.1.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#38027"
+      ]
     },
     {
       "purl": "pkg:npm/object-hash@2.2.0",
@@ -19032,7 +19928,9 @@
     },
     {
       "purl": "pkg:npm/object-inspect@1.12.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#38048"
+      ]
     },
     {
       "purl": "pkg:npm/object-inspect@1.12.2",
@@ -19048,7 +19946,9 @@
     },
     {
       "purl": "pkg:npm/object-inspect@1.13.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#38069"
+      ]
     },
     {
       "purl": "pkg:npm/object-is@1.1.5",
@@ -19070,7 +19970,9 @@
     },
     {
       "purl": "pkg:npm/object-keys@1.1.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#38086"
+      ]
     },
     {
       "purl": "pkg:npm/object-treeify@1.1.33",
@@ -19230,7 +20132,9 @@
     },
     {
       "purl": "pkg:npm/omggif@1.0.10",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#38395"
+      ]
     },
     {
       "purl": "pkg:npm/on-finished@2.3.0",
@@ -19240,11 +20144,15 @@
     },
     {
       "purl": "pkg:npm/on-finished@2.4.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#38402"
+      ]
     },
     {
       "purl": "pkg:npm/once@1.4.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#38420"
+      ]
     },
     {
       "purl": "pkg:npm/one-time@1.0.0",
@@ -19254,7 +20162,9 @@
     },
     {
       "purl": "pkg:npm/onetime@5.1.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#38438"
+      ]
     },
     {
       "purl": "pkg:npm/onetime@7.0.0",
@@ -19300,7 +20210,9 @@
     },
     {
       "purl": "pkg:npm/open@8.4.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#38497"
+      ]
     },
     {
       "purl": "pkg:npm/opener@1.5.2",
@@ -19340,7 +20252,9 @@
     },
     {
       "purl": "pkg:npm/ora@5.4.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#38593"
+      ]
     },
     {
       "purl": "pkg:npm/ora@8.2.0",
@@ -19374,11 +20288,15 @@
     },
     {
       "purl": "pkg:npm/outvariant@1.3.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#38659"
+      ]
     },
     {
       "purl": "pkg:npm/outvariant@1.4.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#38666"
+      ]
     },
     {
       "purl": "pkg:npm/own-keys@1.0.1",
@@ -19400,11 +20318,15 @@
     },
     {
       "purl": "pkg:npm/p-limit@2.3.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#38709"
+      ]
     },
     {
       "purl": "pkg:npm/p-limit@3.1.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#38700"
+      ]
     },
     {
       "purl": "pkg:npm/p-limit@6.2.0",
@@ -19480,7 +20402,9 @@
     },
     {
       "purl": "pkg:npm/pako@1.0.11",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#38819"
+      ]
     },
     {
       "purl": "pkg:npm/param-case@1.1.2",
@@ -19502,7 +20426,9 @@
     },
     {
       "purl": "pkg:npm/parse-asn1@5.1.6",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#38854"
+      ]
     },
     {
       "purl": "pkg:npm/parse-bmfont-ascii@1.0.6",
@@ -19554,7 +20480,9 @@
     },
     {
       "purl": "pkg:npm/parse-json@5.2.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#38944"
+      ]
     },
     {
       "purl": "pkg:npm/parse-ms@4.0.0",
@@ -19588,7 +20516,9 @@
     },
     {
       "purl": "pkg:npm/parseurl@1.3.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#38998"
+      ]
     },
     {
       "purl": "pkg:npm/partial-json@0.1.7",
@@ -19616,7 +20546,9 @@
     },
     {
       "purl": "pkg:npm/passport-strategy@1.0.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#39042"
+      ]
     },
     {
       "purl": "pkg:npm/passport@0.7.0",
@@ -19686,7 +20618,9 @@
     },
     {
       "purl": "pkg:npm/path-key@3.1.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#39138"
+      ]
     },
     {
       "purl": "pkg:npm/path-key@4.0.0",
@@ -19696,7 +20630,9 @@
     },
     {
       "purl": "pkg:npm/path-parse@1.0.7",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#39152"
+      ]
     },
     {
       "purl": "pkg:npm/path-root-regex@0.1.2",
@@ -19712,7 +20648,9 @@
     },
     {
       "purl": "pkg:npm/path-scurry@1.10.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#39175"
+      ]
     },
     {
       "purl": "pkg:npm/path-scurry@1.11.1",
@@ -19866,7 +20804,9 @@
     },
     {
       "purl": "pkg:npm/pg-types@2.2.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#39375"
+      ]
     },
     {
       "purl": "pkg:npm/pg-types@4.0.2",
@@ -19888,7 +20828,9 @@
     },
     {
       "purl": "pkg:npm/pgpass@1.0.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#39447"
+      ]
     },
     {
       "purl": "pkg:npm/phin@2.9.3",
@@ -19934,7 +20876,9 @@
     },
     {
       "purl": "pkg:npm/picomatch@2.3.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#39514"
+      ]
     },
     {
       "purl": "pkg:npm/picomatch@3.0.1",
@@ -20010,7 +20954,9 @@
     },
     {
       "purl": "pkg:npm/pkg-dir@4.2.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#39606"
+      ]
     },
     {
       "purl": "pkg:npm/pkg-dir@5.0.0",
@@ -20056,7 +21002,9 @@
     },
     {
       "purl": "pkg:npm/pngjs@3.4.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#39686"
+      ]
     },
     {
       "purl": "pkg:npm/pngjs@5.0.0",
@@ -20150,11 +21098,15 @@
     },
     {
       "purl": "pkg:npm/postcss-selector-parser@6.1.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#39858"
+      ]
     },
     {
       "purl": "pkg:npm/postcss-value-parser@4.2.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#39868"
+      ]
     },
     {
       "purl": "pkg:npm/postcss@8.4.18",
@@ -20182,7 +21134,9 @@
     },
     {
       "purl": "pkg:npm/postcss@8.4.35",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#39886"
+      ]
     },
     {
       "purl": "pkg:npm/postcss@8.4.38",
@@ -20354,7 +21308,9 @@
     },
     {
       "purl": "pkg:npm/pretty-format@29.6.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#40224"
+      ]
     },
     {
       "purl": "pkg:npm/pretty-format@29.7.0",
@@ -20412,7 +21368,9 @@
     },
     {
       "purl": "pkg:npm/proc-log@4.2.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#40353"
+      ]
     },
     {
       "purl": "pkg:npm/process-es6@0.11.6",
@@ -20422,7 +21380,9 @@
     },
     {
       "purl": "pkg:npm/process-nextick-args@2.0.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#40367"
+      ]
     },
     {
       "purl": "pkg:npm/process-wrapper@1.0.0",
@@ -20462,11 +21422,15 @@
     },
     {
       "purl": "pkg:npm/prompts@2.4.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#40421"
+      ]
     },
     {
       "purl": "pkg:npm/prop-types@15.8.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#40431"
+      ]
     },
     {
       "purl": "pkg:npm/property-expr@2.0.5",
@@ -20488,15 +21452,21 @@
     },
     {
       "purl": "pkg:npm/protobufjs@7.4.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#40476"
+      ]
     },
     {
       "purl": "pkg:npm/proxy-addr@2.0.7",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#40496"
+      ]
     },
     {
       "purl": "pkg:npm/proxy-from-env@1.1.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#40506"
+      ]
     },
     {
       "purl": "pkg:npm/prr@0.0.0",
@@ -20524,7 +21494,9 @@
     },
     {
       "purl": "pkg:npm/psl@1.8.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#40543"
+      ]
     },
     {
       "purl": "pkg:npm/public-encrypt@4.0.3",
@@ -20546,7 +21518,9 @@
     },
     {
       "purl": "pkg:npm/punycode@2.1.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#40581"
+      ]
     },
     {
       "purl": "pkg:npm/punycode@2.3.0",
@@ -20598,15 +21572,21 @@
     },
     {
       "purl": "pkg:npm/qs@6.10.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#40664"
+      ]
     },
     {
       "purl": "pkg:npm/qs@6.11.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#40655"
+      ]
     },
     {
       "purl": "pkg:npm/qs@6.12.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#40673"
+      ]
     },
     {
       "purl": "pkg:npm/qs@6.14.0",
@@ -20652,7 +21632,9 @@
     },
     {
       "purl": "pkg:npm/queue@6.0.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#40733"
+      ]
     },
     {
       "purl": "pkg:npm/quick-lru@4.0.1",
@@ -20668,7 +21650,9 @@
     },
     {
       "purl": "pkg:npm/randombytes@2.1.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#40756"
+      ]
     },
     {
       "purl": "pkg:npm/randomfill@1.0.4",
@@ -20678,7 +21662,9 @@
     },
     {
       "purl": "pkg:npm/range-parser@1.2.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#40775"
+      ]
     },
     {
       "purl": "pkg:npm/rate-limiter-flexible@4.0.1",
@@ -20694,7 +21680,9 @@
     },
     {
       "purl": "pkg:npm/raw-body@2.5.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#40801"
+      ]
     },
     {
       "purl": "pkg:npm/raw-body@2.5.2",
@@ -20746,7 +21734,9 @@
     },
     {
       "purl": "pkg:npm/react-date-picker@8.4.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#40935"
+      ]
     },
     {
       "purl": "pkg:npm/react-day-picker@8.10.1",
@@ -20768,7 +21758,9 @@
     },
     {
       "purl": "pkg:npm/react-dom@18.2.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#40983"
+      ]
     },
     {
       "purl": "pkg:npm/react-dom@18.3.1",
@@ -20790,7 +21782,9 @@
     },
     {
       "purl": "pkg:npm/react-error-boundary@3.1.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#41034"
+      ]
     },
     {
       "purl": "pkg:npm/react-fit@1.4.0",
@@ -20830,11 +21824,15 @@
     },
     {
       "purl": "pkg:npm/react-is@16.13.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#41126"
+      ]
     },
     {
       "purl": "pkg:npm/react-is@17.0.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#41133"
+      ]
     },
     {
       "purl": "pkg:npm/react-is@18.1.0",
@@ -20952,7 +21950,9 @@
     },
     {
       "purl": "pkg:npm/react-remove-scroll@2.6.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#41402"
+      ]
     },
     {
       "purl": "pkg:npm/react-schemaorg@2.0.0",
@@ -20992,7 +21992,9 @@
     },
     {
       "purl": "pkg:npm/react-style-singleton@2.2.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#41515"
+      ]
     },
     {
       "purl": "pkg:npm/react-timezone-select@1.4.0",
@@ -21038,11 +22040,15 @@
     },
     {
       "purl": "pkg:npm/react@18.2.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#41626"
+      ]
     },
     {
       "purl": "pkg:npm/react@18.3.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#41635"
+      ]
     },
     {
       "purl": "pkg:npm/read-cache@1.0.0",
@@ -21076,7 +22082,9 @@
     },
     {
       "purl": "pkg:npm/readable-stream@1.0.34",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#41789"
+      ]
     },
     {
       "purl": "pkg:npm/readable-stream@1.1.14",
@@ -21086,7 +22094,9 @@
     },
     {
       "purl": "pkg:npm/readable-stream@2.3.7",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#41711"
+      ]
     },
     {
       "purl": "pkg:npm/readable-stream@2.3.8",
@@ -21096,11 +22106,15 @@
     },
     {
       "purl": "pkg:npm/readable-stream@3.6.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#41752"
+      ]
     },
     {
       "purl": "pkg:npm/readable-stream@3.6.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#41741"
+      ]
     },
     {
       "purl": "pkg:npm/readable-stream@4.5.2",
@@ -21182,7 +22196,9 @@
     },
     {
       "purl": "pkg:npm/redis-errors@1.2.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#41932"
+      ]
     },
     {
       "purl": "pkg:npm/redis-parser@3.0.0",
@@ -21234,7 +22250,9 @@
     },
     {
       "purl": "pkg:npm/reflect.getprototypeof@1.0.10",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#42025"
+      ]
     },
     {
       "purl": "pkg:npm/reflect.getprototypeof@1.0.5",
@@ -21310,11 +22328,15 @@
     },
     {
       "purl": "pkg:npm/regexp.prototype.flags@1.5.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#42127"
+      ]
     },
     {
       "purl": "pkg:npm/regexp.prototype.flags@1.5.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#42150"
+      ]
     },
     {
       "purl": "pkg:npm/regexpp@3.2.0",
@@ -21360,7 +22382,9 @@
     },
     {
       "purl": "pkg:npm/remark-gfm@4.0.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#42232"
+      ]
     },
     {
       "purl": "pkg:npm/remark-mdx-frontmatter@5.2.0",
@@ -21388,7 +22412,9 @@
     },
     {
       "purl": "pkg:npm/remark-rehype@11.1.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#42292"
+      ]
     },
     {
       "purl": "pkg:npm/remark-rehype@11.1.2",
@@ -21404,7 +22430,9 @@
     },
     {
       "purl": "pkg:npm/remark@15.0.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#42329"
+      ]
     },
     {
       "purl": "pkg:npm/remedial@1.0.8",
@@ -21474,7 +22502,9 @@
     },
     {
       "purl": "pkg:npm/reselect@5.1.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#42443"
+      ]
     },
     {
       "purl": "pkg:npm/resize-observer-polyfill@1.5.1",
@@ -21496,7 +22526,9 @@
     },
     {
       "purl": "pkg:npm/resolve-from@5.0.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#42466"
+      ]
     },
     {
       "purl": "pkg:npm/resolve-pkg-maps@1.0.0",
@@ -21518,11 +22550,15 @@
     },
     {
       "purl": "pkg:npm/resolve@1.22.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#42520"
+      ]
     },
     {
       "purl": "pkg:npm/resolve@1.22.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#42507"
+      ]
     },
     {
       "purl": "pkg:npm/resolve@1.22.10",
@@ -21532,7 +22568,9 @@
     },
     {
       "purl": "pkg:npm/resolve@1.22.8",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#42494"
+      ]
     },
     {
       "purl": "pkg:npm/resolve@2.0.0-next.3",
@@ -21626,7 +22664,9 @@
     },
     {
       "purl": "pkg:npm/ripemd160@2.0.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#42793"
+      ]
     },
     {
       "purl": "pkg:npm/rollup-plugin-node-builtins@2.1.2",
@@ -21756,11 +22796,15 @@
     },
     {
       "purl": "pkg:npm/rxjs@7.8.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#43211"
+      ]
     },
     {
       "purl": "pkg:npm/rxjs@7.8.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#43202"
+      ]
     },
     {
       "purl": "pkg:npm/safe-array-concat@1.1.0",
@@ -21782,11 +22826,15 @@
     },
     {
       "purl": "pkg:npm/safe-buffer@5.1.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#43273"
+      ]
     },
     {
       "purl": "pkg:npm/safe-buffer@5.2.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#43266"
+      ]
     },
     {
       "purl": "pkg:npm/safe-push-apply@1.0.0",
@@ -21820,7 +22868,9 @@
     },
     {
       "purl": "pkg:npm/safer-buffer@2.1.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#43330"
+      ]
     },
     {
       "purl": "pkg:npm/sanitize-html@2.10.0",
@@ -21836,7 +22886,9 @@
     },
     {
       "purl": "pkg:npm/sax@1.2.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#43369"
+      ]
     },
     {
       "purl": "pkg:npm/saxes@6.0.0",
@@ -21936,7 +22988,9 @@
     },
     {
       "purl": "pkg:npm/semver@5.7.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#43507"
+      ]
     },
     {
       "purl": "pkg:npm/semver@5.7.2",
@@ -21946,7 +23000,9 @@
     },
     {
       "purl": "pkg:npm/semver@6.3.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#43525"
+      ]
     },
     {
       "purl": "pkg:npm/semver@6.3.1",
@@ -21962,11 +23018,15 @@
     },
     {
       "purl": "pkg:npm/semver@7.3.7",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#43554"
+      ]
     },
     {
       "purl": "pkg:npm/semver@7.5.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#43565"
+      ]
     },
     {
       "purl": "pkg:npm/semver@7.6.2",
@@ -21976,11 +23036,15 @@
     },
     {
       "purl": "pkg:npm/semver@7.7.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#43585"
+      ]
     },
     {
       "purl": "pkg:npm/semver@7.7.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#43594"
+      ]
     },
     {
       "purl": "pkg:npm/send@0.18.0",
@@ -21990,11 +23054,15 @@
     },
     {
       "purl": "pkg:npm/send@1.2.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#43633"
+      ]
     },
     {
       "purl": "pkg:npm/sentence-case@1.1.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#43652"
+      ]
     },
     {
       "purl": "pkg:npm/sentence-case@3.0.4",
@@ -22058,11 +23126,15 @@
     },
     {
       "purl": "pkg:npm/set-function-length@1.2.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#43752"
+      ]
     },
     {
       "purl": "pkg:npm/set-function-name@2.0.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#43766"
+      ]
     },
     {
       "purl": "pkg:npm/set-function-name@2.0.2",
@@ -22084,7 +23156,9 @@
     },
     {
       "purl": "pkg:npm/setimmediate@1.0.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#43807"
+      ]
     },
     {
       "purl": "pkg:npm/setprototypeof@1.1.1",
@@ -22100,11 +23174,15 @@
     },
     {
       "purl": "pkg:npm/sha.js@2.4.11",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#43828"
+      ]
     },
     {
       "purl": "pkg:npm/sharp@0.33.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#43840"
+      ]
     },
     {
       "purl": "pkg:npm/sharp@0.34.3",
@@ -22144,7 +23222,9 @@
     },
     {
       "purl": "pkg:npm/shell-quote@1.8.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#44026"
+      ]
     },
     {
       "purl": "pkg:npm/shelljs@0.8.5",
@@ -22154,11 +23234,15 @@
     },
     {
       "purl": "pkg:npm/shiki@1.29.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#44046"
+      ]
     },
     {
       "purl": "pkg:npm/shiki@2.5.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#44062"
+      ]
     },
     {
       "purl": "pkg:npm/shiki@3.2.1",
@@ -22222,11 +23306,15 @@
     },
     {
       "purl": "pkg:npm/signal-exit@3.0.7",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#44189"
+      ]
     },
     {
       "purl": "pkg:npm/signal-exit@4.1.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#44196"
+      ]
     },
     {
       "purl": "pkg:npm/signedsource@1.0.0",
@@ -22260,7 +23348,9 @@
     },
     {
       "purl": "pkg:npm/sirv@2.0.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#44244"
+      ]
     },
     {
       "purl": "pkg:npm/sirv@3.0.2",
@@ -22402,7 +23492,9 @@
     },
     {
       "purl": "pkg:npm/source-map-support@0.5.21",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#44466"
+      ]
     },
     {
       "purl": "pkg:npm/source-map@0.5.6",
@@ -22412,15 +23504,21 @@
     },
     {
       "purl": "pkg:npm/source-map@0.5.7",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#44490"
+      ]
     },
     {
       "purl": "pkg:npm/source-map@0.6.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#44497"
+      ]
     },
     {
       "purl": "pkg:npm/source-map@0.7.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#44483"
+      ]
     },
     {
       "purl": "pkg:npm/sourcemap-codec@1.4.8",
@@ -22550,7 +23648,9 @@
     },
     {
       "purl": "pkg:npm/ssri@8.0.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#44698"
+      ]
     },
     {
       "purl": "pkg:npm/ssri@9.0.1",
@@ -22584,7 +23684,9 @@
     },
     {
       "purl": "pkg:npm/stack-utils@2.0.6",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#44748"
+      ]
     },
     {
       "purl": "pkg:npm/stackback@0.0.2",
@@ -22624,11 +23726,15 @@
     },
     {
       "purl": "pkg:npm/statuses@1.5.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#44815"
+      ]
     },
     {
       "purl": "pkg:npm/statuses@2.0.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#44808"
+      ]
     },
     {
       "purl": "pkg:npm/std-env@3.9.0",
@@ -22686,7 +23792,9 @@
     },
     {
       "purl": "pkg:npm/strict-event-emitter@0.2.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#44896"
+      ]
     },
     {
       "purl": "pkg:npm/strict-event-emitter@0.5.1",
@@ -22708,7 +23816,9 @@
     },
     {
       "purl": "pkg:npm/string_decoder@1.3.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#45179"
+      ]
     },
     {
       "purl": "pkg:npm/string-argv@0.3.1",
@@ -22718,7 +23828,9 @@
     },
     {
       "purl": "pkg:npm/string-argv@0.3.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#44919"
+      ]
     },
     {
       "purl": "pkg:npm/string-env-interpolation@1.0.1",
@@ -22734,7 +23846,9 @@
     },
     {
       "purl": "pkg:npm/string-range@1.2.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#44943"
+      ]
     },
     {
       "purl": "pkg:npm/string-width-cjs@4.2.3",
@@ -22742,15 +23856,21 @@
     },
     {
       "purl": "pkg:npm/string-width@4.2.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#44950"
+      ]
     },
     {
       "purl": "pkg:npm/string-width@5.1.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#44961"
+      ]
     },
     {
       "purl": "pkg:npm/string-width@7.2.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#44972"
+      ]
     },
     {
       "purl": "pkg:npm/string.prototype.codepointat@0.2.1",
@@ -22860,7 +23980,9 @@
     },
     {
       "purl": "pkg:npm/strip-ansi@6.0.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#45214"
+      ]
     },
     {
       "purl": "pkg:npm/strip-ansi@7.0.1",
@@ -22918,7 +24040,9 @@
     },
     {
       "purl": "pkg:npm/strip-json-comments@3.1.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#45285"
+      ]
     },
     {
       "purl": "pkg:npm/stripe-event-types@3.1.0",
@@ -23012,7 +24136,9 @@
     },
     {
       "purl": "pkg:npm/superagent@8.1.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#45471"
+      ]
     },
     {
       "purl": "pkg:npm/superjson@1.9.1",
@@ -23034,11 +24160,15 @@
     },
     {
       "purl": "pkg:npm/supports-color@7.2.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#45517"
+      ]
     },
     {
       "purl": "pkg:npm/supports-color@8.1.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#45526"
+      ]
     },
     {
       "purl": "pkg:npm/supports-color@9.2.2",
@@ -23192,7 +24322,9 @@
     },
     {
       "purl": "pkg:npm/tapable@2.2.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#45838"
+      ]
     },
     {
       "purl": "pkg:npm/tar-fs@2.1.2",
@@ -23208,11 +24340,15 @@
     },
     {
       "purl": "pkg:npm/tar@6.1.13",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#45884"
+      ]
     },
     {
       "purl": "pkg:npm/tar@6.2.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#45870"
+      ]
     },
     {
       "purl": "pkg:npm/tarn@3.0.2",
@@ -23306,7 +24442,9 @@
     },
     {
       "purl": "pkg:npm/through@2.3.8",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#46046"
+      ]
     },
     {
       "purl": "pkg:npm/timeout-signal@2.0.0",
@@ -23364,7 +24502,9 @@
     },
     {
       "purl": "pkg:npm/tiny-warning@1.0.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#46121"
+      ]
     },
     {
       "purl": "pkg:npm/tinybench@2.9.0",
@@ -23374,7 +24514,9 @@
     },
     {
       "purl": "pkg:npm/tinycolor2@1.4.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#46135"
+      ]
     },
     {
       "purl": "pkg:npm/tinyexec@0.3.2",
@@ -23390,7 +24532,9 @@
     },
     {
       "purl": "pkg:npm/tinyglobby@0.2.15",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#46156"
+      ]
     },
     {
       "purl": "pkg:npm/tinygradient@1.1.5",
@@ -23532,11 +24676,15 @@
     },
     {
       "purl": "pkg:npm/tough-cookie@4.1.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#46338"
+      ]
     },
     {
       "purl": "pkg:npm/tough-cookie@4.1.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#46350"
+      ]
     },
     {
       "purl": "pkg:npm/tough-cookie@5.1.2",
@@ -23564,7 +24712,9 @@
     },
     {
       "purl": "pkg:npm/tree-kill@1.2.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#46406"
+      ]
     },
     {
       "purl": "pkg:npm/trim-lines@3.0.1",
@@ -23706,7 +24856,9 @@
     },
     {
       "purl": "pkg:npm/tsconfig-paths@4.2.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#46712"
+      ]
     },
     {
       "purl": "pkg:npm/tsdav@2.0.3",
@@ -23716,7 +24868,9 @@
     },
     {
       "purl": "pkg:npm/tslib@1.14.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#46779"
+      ]
     },
     {
       "purl": "pkg:npm/tslib@2.0.1",
@@ -23726,7 +24880,9 @@
     },
     {
       "purl": "pkg:npm/tslib@2.3.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#46786"
+      ]
     },
     {
       "purl": "pkg:npm/tslib@2.4.1",
@@ -23736,11 +24892,15 @@
     },
     {
       "purl": "pkg:npm/tslib@2.5.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#46800"
+      ]
     },
     {
       "purl": "pkg:npm/tslib@2.6.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#46772"
+      ]
     },
     {
       "purl": "pkg:npm/tslib@2.6.3",
@@ -23750,7 +24910,9 @@
     },
     {
       "purl": "pkg:npm/tslib@2.8.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#46758"
+      ]
     },
     {
       "purl": "pkg:npm/tslog@4.9.2",
@@ -23772,7 +24934,9 @@
     },
     {
       "purl": "pkg:npm/tunnel-agent@0.6.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#46839"
+      ]
     },
     {
       "purl": "pkg:npm/tunnel@0.0.6",
@@ -23830,7 +24994,9 @@
     },
     {
       "purl": "pkg:npm/tweetnacl@0.14.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#46935"
+      ]
     },
     {
       "purl": "pkg:npm/twilio@3.84.1",
@@ -23840,7 +25006,9 @@
     },
     {
       "purl": "pkg:npm/type-check@0.4.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#46961"
+      ]
     },
     {
       "purl": "pkg:npm/type-detect@4.0.8",
@@ -23904,7 +25072,9 @@
     },
     {
       "purl": "pkg:npm/type-fest@2.19.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#47040"
+      ]
     },
     {
       "purl": "pkg:npm/type-fest@4.34.1",
@@ -23920,11 +25090,15 @@
     },
     {
       "purl": "pkg:npm/type-is@1.6.18",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#47061"
+      ]
     },
     {
       "purl": "pkg:npm/type-is@2.0.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#47071"
+      ]
     },
     {
       "purl": "pkg:npm/typed-array-buffer@1.0.0",
@@ -24048,7 +25222,9 @@
     },
     {
       "purl": "pkg:npm/typescript@5.9.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#47374"
+      ]
     },
     {
       "purl": "pkg:npm/tzdata@1.0.40",
@@ -24064,7 +25240,9 @@
     },
     {
       "purl": "pkg:npm/uc.micro@1.0.6",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#47450"
+      ]
     },
     {
       "purl": "pkg:npm/uglify-js@3.17.4",
@@ -24122,7 +25300,9 @@
     },
     {
       "purl": "pkg:npm/unified@11.0.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#47542"
+      ]
     },
     {
       "purl": "pkg:npm/unique-filename@1.1.1",
@@ -24210,7 +25390,9 @@
     },
     {
       "purl": "pkg:npm/universal-user-agent@7.0.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#47690"
+      ]
     },
     {
       "purl": "pkg:npm/universalify@0.1.2",
@@ -24238,7 +25420,9 @@
     },
     {
       "purl": "pkg:npm/unpipe@1.0.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#47727"
+      ]
     },
     {
       "purl": "pkg:npm/unplugin@1.0.1",
@@ -24302,7 +25486,9 @@
     },
     {
       "purl": "pkg:npm/upper-case@1.1.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#47906"
+      ]
     },
     {
       "purl": "pkg:npm/upper-case@2.0.2",
@@ -24318,7 +25504,9 @@
     },
     {
       "purl": "pkg:npm/url-parse@1.5.10",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#47931"
+      ]
     },
     {
       "purl": "pkg:npm/url-template@2.0.8",
@@ -24394,7 +25582,9 @@
     },
     {
       "purl": "pkg:npm/use-sync-external-store@1.5.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#48085"
+      ]
     },
     {
       "purl": "pkg:npm/utif@2.0.1",
@@ -24404,15 +25594,21 @@
     },
     {
       "purl": "pkg:npm/util-deprecate@1.0.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#48103"
+      ]
     },
     {
       "purl": "pkg:npm/util@0.12.5",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#48110"
+      ]
     },
     {
       "purl": "pkg:npm/utils-merge@1.0.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#48123"
+      ]
     },
     {
       "purl": "pkg:npm/uuid@11.1.0",
@@ -24428,7 +25624,9 @@
     },
     {
       "purl": "pkg:npm/uuid@8.3.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#48166"
+      ]
     },
     {
       "purl": "pkg:npm/uuid@9.0.0",
@@ -24438,7 +25636,9 @@
     },
     {
       "purl": "pkg:npm/uuid@9.0.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#48139"
+      ]
     },
     {
       "purl": "pkg:npm/v8-compile-cache-lib@3.0.1",
@@ -24448,7 +25648,9 @@
     },
     {
       "purl": "pkg:npm/v8-to-istanbul@9.2.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#48182"
+      ]
     },
     {
       "purl": "pkg:npm/validate-npm-package-license@3.0.4",
@@ -24458,11 +25660,15 @@
     },
     {
       "purl": "pkg:npm/validator@13.11.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#48203"
+      ]
     },
     {
       "purl": "pkg:npm/vary@1.1.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#48210"
+      ]
     },
     {
       "purl": "pkg:npm/verror@1.10.0",
@@ -24478,7 +25684,9 @@
     },
     {
       "purl": "pkg:npm/vfile@6.0.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#48238"
+      ]
     },
     {
       "purl": "pkg:npm/victory-vendor@37.3.6",
@@ -24494,7 +25702,9 @@
     },
     {
       "purl": "pkg:npm/vite-plugin-dts@3.7.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#48285"
+      ]
     },
     {
       "purl": "pkg:npm/vite-plugin-environment@1.1.3",
@@ -24528,7 +25738,9 @@
     },
     {
       "purl": "pkg:npm/vite@5.1.6",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#48511"
+      ]
     },
     {
       "purl": "pkg:npm/vite@5.2.9",
@@ -24730,7 +25942,9 @@
     },
     {
       "purl": "pkg:npm/whatwg-fetch@3.6.20",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#48909"
+      ]
     },
     {
       "purl": "pkg:npm/whatwg-mimetype@3.0.0",
@@ -24746,7 +25960,9 @@
     },
     {
       "purl": "pkg:npm/whatwg-url@12.0.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#48930"
+      ]
     },
     {
       "purl": "pkg:npm/whatwg-url@13.0.0",
@@ -24774,7 +25990,9 @@
     },
     {
       "purl": "pkg:npm/which-boxed-primitive@1.1.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#48983"
+      ]
     },
     {
       "purl": "pkg:npm/which-builtin-type@1.1.3",
@@ -24790,7 +26008,9 @@
     },
     {
       "purl": "pkg:npm/which-collection@1.0.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#49037"
+      ]
     },
     {
       "purl": "pkg:npm/which-module@2.0.1",
@@ -24806,11 +26026,15 @@
     },
     {
       "purl": "pkg:npm/which-typed-array@1.1.15",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#49069"
+      ]
     },
     {
       "purl": "pkg:npm/which-typed-array@1.1.19",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#49082"
+      ]
     },
     {
       "purl": "pkg:npm/which@1.3.1",
@@ -24820,7 +26044,9 @@
     },
     {
       "purl": "pkg:npm/which@2.0.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#49108"
+      ]
     },
     {
       "purl": "pkg:npm/which@4.0.0",
@@ -24860,7 +26086,9 @@
     },
     {
       "purl": "pkg:npm/winston-transport@4.9.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#49169"
+      ]
     },
     {
       "purl": "pkg:npm/winston@3.17.0",
@@ -24892,11 +26120,15 @@
     },
     {
       "purl": "pkg:npm/wrap-ansi@6.2.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#49242"
+      ]
     },
     {
       "purl": "pkg:npm/wrap-ansi@7.0.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#49231"
+      ]
     },
     {
       "purl": "pkg:npm/wrap-ansi@8.1.0",
@@ -24924,7 +26156,9 @@
     },
     {
       "purl": "pkg:npm/ws@7.5.9",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#49292"
+      ]
     },
     {
       "purl": "pkg:npm/ws@8.16.0",
@@ -24940,7 +26174,9 @@
     },
     {
       "purl": "pkg:npm/ws@8.18.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#49307"
+      ]
     },
     {
       "purl": "pkg:npm/wsl-utils@0.1.0",
@@ -25016,7 +26252,9 @@
     },
     {
       "purl": "pkg:npm/xml2js@0.6.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#49443"
+      ]
     },
     {
       "purl": "pkg:npm/xmlbuilder@11.0.1",
@@ -25032,7 +26270,9 @@
     },
     {
       "purl": "pkg:npm/xmlbuilder@15.1.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#49473"
+      ]
     },
     {
       "purl": "pkg:npm/xmlchars@2.2.0",
@@ -25084,7 +26324,9 @@
     },
     {
       "purl": "pkg:npm/xtend@4.0.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#49529"
+      ]
     },
     {
       "purl": "pkg:npm/y18n@4.0.3",
@@ -25112,7 +26354,9 @@
     },
     {
       "purl": "pkg:npm/yallist@4.0.0",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#49576"
+      ]
     },
     {
       "purl": "pkg:npm/yaml-ast-parser@0.0.43",
@@ -25122,7 +26366,9 @@
     },
     {
       "purl": "pkg:npm/yaml@1.10.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#49611"
+      ]
     },
     {
       "purl": "pkg:npm/yaml@2.0.0-1",
@@ -25138,11 +26384,15 @@
     },
     {
       "purl": "pkg:npm/yaml@2.7.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#49634"
+      ]
     },
     {
       "purl": "pkg:npm/yaml@2.8.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#49618"
+      ]
     },
     {
       "purl": "pkg:npm/yargs-parser@18.1.3",
@@ -25152,11 +26402,15 @@
     },
     {
       "purl": "pkg:npm/yargs-parser@20.2.9",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#49660"
+      ]
     },
     {
       "purl": "pkg:npm/yargs-parser@21.1.1",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#49643"
+      ]
     },
     {
       "purl": "pkg:npm/yargs@15.4.1",
@@ -25172,7 +26426,9 @@
     },
     {
       "purl": "pkg:npm/yargs@17.7.2",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#49701"
+      ]
     },
     {
       "purl": "pkg:npm/yarn@1.22.19",
@@ -25218,7 +26474,9 @@
     },
     {
       "purl": "pkg:npm/yoga-wasm-web@0.3.3",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#49770"
+      ]
     },
     {
       "purl": "pkg:npm/yup@0.32.11",
@@ -25246,7 +26504,9 @@
     },
     {
       "purl": "pkg:npm/zod-to-json-schema@3.24.6",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#49843"
+      ]
     },
     {
       "purl": "pkg:npm/zod@3.22.4",
@@ -25262,7 +26522,9 @@
     },
     {
       "purl": "pkg:npm/zod@3.25.76",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#49852"
+      ]
     },
     {
       "purl": "pkg:npm/zod@4.1.8",
@@ -25278,7 +26540,9 @@
     },
     {
       "purl": "pkg:npm/zwitch@2.0.4",
-      "evidence": []
+      "evidence": [
+        "<repositories>/calcom+cal.com/yarn.lock#49900"
+      ]
     }
   ],
   "subprojects": [

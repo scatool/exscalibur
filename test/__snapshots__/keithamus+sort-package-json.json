@@ -3932,10 +3932,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/string-width-cjs@4.2.3",
-      "evidence": []
-    },
-    {
       "purl": "pkg:npm/string-width@4.2.3",
       "evidence": [
         "<repositories>/keithamus+sort-package-json/package-lock.json#10191",
@@ -3961,10 +3957,6 @@
       "evidence": [
         "<repositories>/keithamus+sort-package-json/package-lock.json#10173"
       ]
-    },
-    {
-      "purl": "pkg:npm/strip-ansi-cjs@6.0.1",
-      "evidence": []
     },
     {
       "purl": "pkg:npm/strip-ansi@6.0.1",
@@ -4379,10 +4371,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/wrap-ansi-cjs@7.0.0",
-      "evidence": []
-    },
-    {
       "purl": "pkg:npm/wrap-ansi@7.0.0",
       "evidence": [
         "<repositories>/keithamus+sort-package-json/package-lock.json#10803",
@@ -4730,11 +4718,11 @@
     {
       "from": "pkg:npm/%40isaacs/cliui@8.0.2",
       "to": [
-        "pkg:npm/string-width-cjs@4.2.3",
+        "pkg:npm/string-width@4.2.3",
         "pkg:npm/string-width@7.2.0",
-        "pkg:npm/strip-ansi-cjs@6.0.1",
+        "pkg:npm/strip-ansi@6.0.1",
         "pkg:npm/strip-ansi@7.1.0",
-        "pkg:npm/wrap-ansi-cjs@7.0.0",
+        "pkg:npm/wrap-ansi@7.0.0",
         "pkg:npm/wrap-ansi@9.0.0"
       ]
     },

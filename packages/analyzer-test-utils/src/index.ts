@@ -33,6 +33,13 @@ export function normalizeResult(
     subproject.definitionFile = subproject.definitionFile.replace(basePath, replacement);
   }
 
+  // Normalize paths in issue files
+  for (const issue of result.issues) {
+    if (issue.file) {
+      issue.file = issue.file.replace(basePath, replacement);
+    }
+  }
+
   return result;
 }
 

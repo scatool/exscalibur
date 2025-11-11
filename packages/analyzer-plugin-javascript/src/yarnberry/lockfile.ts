@@ -28,6 +28,8 @@ export interface YarnBerryLockPackage {
   linkType?: string;
   /** Language name */
   languageName?: string;
+  /** The original combined pattern from the lockfile (for evidence tracking) */
+  originalPattern?: string;
 }
 
 /**
@@ -144,6 +146,9 @@ function parsePackageEntry(
     .split(', ')
     .map((p) => p.trim())
     .filter((p) => p);
+
+  // Store the original combined pattern for evidence tracking
+  packageEntry.originalPattern = cleanHeader;
 
   let i = startIndex + 1;
   let currentDepsType: 'dependencies' | 'optionalDependencies' | 'peerDependencies' | null = null;
