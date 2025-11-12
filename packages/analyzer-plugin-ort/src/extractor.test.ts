@@ -6,12 +6,12 @@ import { Glob } from 'bun';
 
 const fixturesDir = join(import.meta.dir, '__fixtures__');
 
-// Scan for issues fixtures (need custom logic for nested directory structure)
-const glob = new Glob('issues/*/analyzer-result.json');
+// Scan for all fixtures (npm, gradle, issues, etc.)
+const glob = new Glob('*/*/analyzer-result.json');
 const fixtures: string[] = [];
 
 for await (const file of glob.scan({ cwd: fixturesDir })) {
-  // Extract "issues/various-severities" from "issues/various-severities/analyzer-result.json"
+  // Extract "npm/basic" from "npm/basic/analyzer-result.json"
   const dir = file.substring(0, file.lastIndexOf('/'));
   fixtures.push(dir);
 }
