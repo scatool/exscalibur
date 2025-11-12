@@ -219,13 +219,9 @@ export const extractor: Extractor = filesExtractor({
           continue;
         }
 
-        // Get or create project entry
         if (!projectMap.has(projectPath)) {
-          // Try to get project info from the metadata we fetched
           const info = projectInfoMap.get(projectPath);
-
           if (info) {
-            // Use actual project metadata
             projectMap.set(projectPath, {
               name: info.name,
               group: info.group,
@@ -234,19 +230,17 @@ export const extractor: Extractor = filesExtractor({
               directDeps: new Set(),
             });
           } else {
-            // Fallback: extract name from rootOrigin and use placeholders
             const originId = config.rootOrigin.id;
             const projectName = originId.replace(/^(project|build)\s+/, '').replace(':', '') || 'root';
 
             projectMap.set(projectPath, {
               name: projectName,
-              group: 'unknown',
-              version: 'unknown',
+              group: '',
+              version: '',
               scopes: new Map(),
               directDeps: new Set(),
             });
 
-            // Add an issue for this fallback
             if (!issues.some((i) => i.message.includes('using fallback values for project'))) {
               issues.push({
                 message: `Could not determine project metadata for '${projectPath}', using fallback values`,
@@ -281,23 +275,22 @@ export const extractor: Extractor = filesExtractor({
             dep.repositoryUrl,
           );
 
-          // Add to package map with evidence
+          // Add to package map with evidence (includes both direct and transitive)
           if (!packageMap.has(depPurl)) {
             packageMap.set(depPurl, { purl: depPurl, evidence: new Set([file]) });
           } else {
             packageMap.get(depPurl)!.evidence.add(file);
           }
 
-          // Use the configuration scope directly
-          const effectiveScope = configScope;
-
-          if (!project.scopes.has(effectiveScope)) {
-            project.scopes.set(effectiveScope, new Set());
-          }
-          project.scopes.get(effectiveScope)!.add(depPurl);
-
-          // Track direct dependencies
+          // Only add direct dependencies to scopes
+          // Transitive dependencies are tracked via relationships
           if (dep.isDirect) {
+            const effectiveScope = configScope;
+            if (!project.scopes.has(effectiveScope)) {
+              project.scopes.set(effectiveScope, new Set());
+            }
+
+            project.scopes.get(effectiveScope)!.add(depPurl);
             project.directDeps.add(depPurl);
           }
 
@@ -339,18 +332,15 @@ export const extractor: Extractor = filesExtractor({
 
         if (scopes.length > 0) {
           // Create a PURL for the project
-          const projectPurl = createMavenPurl(project.group, project.name, project.version);
+          // Omit version if it's "unspecified" (Gradle's default when not set in build.gradle)
+          const projectVersion = project.version === 'unspecified' ? '' : project.version;
+          const projectPurl = createMavenPurl(project.group, project.name, projectVersion);
 
           subprojects.push({
             purl: projectPurl,
             definitionFile: file,
             scopes,
           });
-
-          // Add relationship from project to its direct dependencies
-          if (project.directDeps.size > 0) {
-            relationshipsMap.set(projectPurl, project.directDeps);
-          }
         }
       }
     } catch (error) {

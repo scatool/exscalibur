@@ -67,14 +67,6 @@ exports[`basic 1`] = `
   ],
   "relationships": [
     {
-      "from": "pkg:maven/com.example/basic-example@1.0.0",
-      "to": [
-        "pkg:maven/com.google.guava/guava@31.1-jre",
-        "pkg:maven/junit/junit@4.13.2",
-        "pkg:maven/org.slf4j/slf4j-api@2.0.7",
-      ],
-    },
-    {
       "from": "pkg:maven/com.google.guava/guava@31.1-jre",
       "to": [
         "pkg:maven/com.google.code.findbugs/jsr305@3.0.2",
@@ -99,56 +91,30 @@ exports[`basic 1`] = `
       "scopes": [
         {
           "packages": [
-            "pkg:maven/com.google.code.findbugs/jsr305@3.0.2",
-            "pkg:maven/com.google.errorprone/error_prone_annotations@2.11.0",
-            "pkg:maven/com.google.guava/failureaccess@1.0.1",
             "pkg:maven/com.google.guava/guava@31.1-jre",
-            "pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava",
-            "pkg:maven/com.google.j2objc/j2objc-annotations@1.3",
-            "pkg:maven/org.checkerframework/checker-qual@3.12.0",
             "pkg:maven/org.slf4j/slf4j-api@2.0.7",
           ],
           "scope": "compileClasspath",
         },
         {
           "packages": [
-            "pkg:maven/com.google.code.findbugs/jsr305@3.0.2",
-            "pkg:maven/com.google.errorprone/error_prone_annotations@2.11.0",
-            "pkg:maven/com.google.guava/failureaccess@1.0.1",
             "pkg:maven/com.google.guava/guava@31.1-jre",
-            "pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava",
-            "pkg:maven/com.google.j2objc/j2objc-annotations@1.3",
-            "pkg:maven/org.checkerframework/checker-qual@3.12.0",
             "pkg:maven/org.slf4j/slf4j-api@2.0.7",
           ],
           "scope": "runtimeClasspath",
         },
         {
           "packages": [
-            "pkg:maven/com.google.code.findbugs/jsr305@3.0.2",
-            "pkg:maven/com.google.errorprone/error_prone_annotations@2.11.0",
-            "pkg:maven/com.google.guava/failureaccess@1.0.1",
             "pkg:maven/com.google.guava/guava@31.1-jre",
-            "pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava",
-            "pkg:maven/com.google.j2objc/j2objc-annotations@1.3",
             "pkg:maven/junit/junit@4.13.2",
-            "pkg:maven/org.checkerframework/checker-qual@3.12.0",
-            "pkg:maven/org.hamcrest/hamcrest-core@1.3",
             "pkg:maven/org.slf4j/slf4j-api@2.0.7",
           ],
           "scope": "testCompileClasspath",
         },
         {
           "packages": [
-            "pkg:maven/com.google.code.findbugs/jsr305@3.0.2",
-            "pkg:maven/com.google.errorprone/error_prone_annotations@2.11.0",
-            "pkg:maven/com.google.guava/failureaccess@1.0.1",
             "pkg:maven/com.google.guava/guava@31.1-jre",
-            "pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava",
-            "pkg:maven/com.google.j2objc/j2objc-annotations@1.3",
             "pkg:maven/junit/junit@4.13.2",
-            "pkg:maven/org.checkerframework/checker-qual@3.12.0",
-            "pkg:maven/org.hamcrest/hamcrest-core@1.3",
             "pkg:maven/org.slf4j/slf4j-api@2.0.7",
           ],
           "scope": "testRuntimeClasspath",
@@ -242,76 +208,36 @@ exports[`multimodule 1`] = `
         "pkg:maven/org.hamcrest/hamcrest-core@1.3",
       ],
     },
-    {
-      "from": "pkg:maven/multimodule-example/app@unspecified",
-      "to": [
-        "pkg:maven/com.google.guava/guava@31.1-jre",
-        "pkg:maven/junit/junit@4.13.2",
-        "pkg:maven/org.slf4j/slf4j-api@2.0.7",
-      ],
-    },
-    {
-      "from": "pkg:maven/multimodule-example/lib@unspecified",
-      "to": [
-        "pkg:maven/org.slf4j/slf4j-api@2.0.7",
-      ],
-    },
   ],
   "subprojects": [
     {
       "definitionFile": "<fixtures>/multimodule/build.gradle",
-      "purl": "pkg:maven/multimodule-example/app@unspecified",
+      "purl": "pkg:maven/multimodule-example/app",
       "scopes": [
         {
           "packages": [
-            "pkg:maven/com.google.code.findbugs/jsr305@3.0.2",
-            "pkg:maven/com.google.errorprone/error_prone_annotations@2.11.0",
-            "pkg:maven/com.google.guava/failureaccess@1.0.1",
             "pkg:maven/com.google.guava/guava@31.1-jre",
-            "pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava",
-            "pkg:maven/com.google.j2objc/j2objc-annotations@1.3",
-            "pkg:maven/org.checkerframework/checker-qual@3.12.0",
           ],
           "scope": "compileClasspath",
         },
         {
           "packages": [
-            "pkg:maven/com.google.code.findbugs/jsr305@3.0.2",
-            "pkg:maven/com.google.errorprone/error_prone_annotations@2.11.0",
-            "pkg:maven/com.google.guava/failureaccess@1.0.1",
             "pkg:maven/com.google.guava/guava@31.1-jre",
-            "pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava",
-            "pkg:maven/com.google.j2objc/j2objc-annotations@1.3",
-            "pkg:maven/org.checkerframework/checker-qual@3.12.0",
             "pkg:maven/org.slf4j/slf4j-api@2.0.7",
           ],
           "scope": "runtimeClasspath",
         },
         {
           "packages": [
-            "pkg:maven/com.google.code.findbugs/jsr305@3.0.2",
-            "pkg:maven/com.google.errorprone/error_prone_annotations@2.11.0",
-            "pkg:maven/com.google.guava/failureaccess@1.0.1",
             "pkg:maven/com.google.guava/guava@31.1-jre",
-            "pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava",
-            "pkg:maven/com.google.j2objc/j2objc-annotations@1.3",
             "pkg:maven/junit/junit@4.13.2",
-            "pkg:maven/org.checkerframework/checker-qual@3.12.0",
-            "pkg:maven/org.hamcrest/hamcrest-core@1.3",
           ],
           "scope": "testCompileClasspath",
         },
         {
           "packages": [
-            "pkg:maven/com.google.code.findbugs/jsr305@3.0.2",
-            "pkg:maven/com.google.errorprone/error_prone_annotations@2.11.0",
-            "pkg:maven/com.google.guava/failureaccess@1.0.1",
             "pkg:maven/com.google.guava/guava@31.1-jre",
-            "pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava",
-            "pkg:maven/com.google.j2objc/j2objc-annotations@1.3",
             "pkg:maven/junit/junit@4.13.2",
-            "pkg:maven/org.checkerframework/checker-qual@3.12.0",
-            "pkg:maven/org.hamcrest/hamcrest-core@1.3",
             "pkg:maven/org.slf4j/slf4j-api@2.0.7",
           ],
           "scope": "testRuntimeClasspath",
@@ -320,7 +246,7 @@ exports[`multimodule 1`] = `
     },
     {
       "definitionFile": "<fixtures>/multimodule/build.gradle",
-      "purl": "pkg:maven/multimodule-example/lib@unspecified",
+      "purl": "pkg:maven/multimodule-example/lib",
       "scopes": [
         {
           "packages": [
