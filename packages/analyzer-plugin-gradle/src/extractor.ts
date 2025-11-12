@@ -219,13 +219,9 @@ export const extractor: Extractor = filesExtractor({
           continue;
         }
 
-        // Get or create project entry
         if (!projectMap.has(projectPath)) {
-          // Try to get project info from the metadata we fetched
           const info = projectInfoMap.get(projectPath);
-
           if (info) {
-            // Use actual project metadata
             projectMap.set(projectPath, {
               name: info.name,
               group: info.group,
@@ -234,19 +230,17 @@ export const extractor: Extractor = filesExtractor({
               directDeps: new Set(),
             });
           } else {
-            // Fallback: extract name from rootOrigin and use placeholders
             const originId = config.rootOrigin.id;
             const projectName = originId.replace(/^(project|build)\s+/, '').replace(':', '') || 'root';
 
             projectMap.set(projectPath, {
               name: projectName,
-              group: 'unknown',
-              version: 'unknown',
+              group: '',
+              version: '',
               scopes: new Map(),
               directDeps: new Set(),
             });
 
-            // Add an issue for this fallback
             if (!issues.some((i) => i.message.includes('using fallback values for project'))) {
               issues.push({
                 message: `Could not determine project metadata for '${projectPath}', using fallback values`,
@@ -269,40 +263,34 @@ export const extractor: Extractor = filesExtractor({
 
         // Process all dependencies in this configuration
         for (const dep of config.allDependencies) {
-          // Skip project dependencies (internal workspace dependencies)
-          if (dep.isProject) {
-            continue;
+          // Normalize version: omit "unspecified" for internal projects
+          const version = dep.isProject && dep.coordinates.version === 'unspecified' ? '' : dep.coordinates.version;
+
+          const depPurl = createMavenPurl(dep.coordinates.group, dep.coordinates.module, version, dep.repositoryUrl);
+
+          // Only add external packages to package map (not internal projects)
+          if (!dep.isProject) {
+            // Add to package map with evidence (includes both direct and transitive)
+            if (!packageMap.has(depPurl)) {
+              packageMap.set(depPurl, { purl: depPurl, evidence: new Set([file]) });
+            } else {
+              packageMap.get(depPurl)!.evidence.add(file);
+            }
           }
 
-          const depPurl = createMavenPurl(
-            dep.coordinates.group,
-            dep.coordinates.module,
-            dep.coordinates.version,
-            dep.repositoryUrl,
-          );
-
-          // Add to package map with evidence
-          if (!packageMap.has(depPurl)) {
-            packageMap.set(depPurl, { purl: depPurl, evidence: new Set([file]) });
-          } else {
-            packageMap.get(depPurl)!.evidence.add(file);
-          }
-
-          // Use the configuration scope directly
-          const effectiveScope = configScope;
-
-          if (!project.scopes.has(effectiveScope)) {
-            project.scopes.set(effectiveScope, new Set());
-          }
-          project.scopes.get(effectiveScope)!.add(depPurl);
-
-          // Track direct dependencies
+          // Add all direct dependencies to scopes (both projects and external packages)
           if (dep.isDirect) {
+            const effectiveScope = configScope;
+            if (!project.scopes.has(effectiveScope)) {
+              project.scopes.set(effectiveScope, new Set());
+            }
+
+            project.scopes.get(effectiveScope)!.add(depPurl);
             project.directDeps.add(depPurl);
           }
 
-          // Add relationships between dependencies
-          if (dep.dependencies && dep.dependencies.length > 0) {
+          // Add relationships between external dependencies only (not from/to projects)
+          if (!dep.isProject && dep.dependencies && dep.dependencies.length > 0) {
             if (!relationshipsMap.has(depPurl)) {
               relationshipsMap.set(depPurl, new Set());
             }
@@ -339,18 +327,15 @@ export const extractor: Extractor = filesExtractor({
 
         if (scopes.length > 0) {
           // Create a PURL for the project
-          const projectPurl = createMavenPurl(project.group, project.name, project.version);
+          // Omit version if it's "unspecified" (Gradle's default when not set in build.gradle)
+          const projectVersion = project.version === 'unspecified' ? '' : project.version;
+          const projectPurl = createMavenPurl(project.group, project.name, projectVersion);
 
           subprojects.push({
             purl: projectPurl,
             definitionFile: file,
             scopes,
           });
-
-          // Add relationship from project to its direct dependencies
-          if (project.directDeps.size > 0) {
-            relationshipsMap.set(projectPurl, project.directDeps);
-          }
         }
       }
     } catch (error) {

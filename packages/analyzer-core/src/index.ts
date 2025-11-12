@@ -49,21 +49,23 @@ export type AnalyzerResult = {
   issues: Issue[];
 };
 
-export type Extractor = {
+export type Extractor<Options = unknown> = {
   name: string;
   version: 1;
   extract: (codebase: string) => Promise<AnalyzerResult>;
+  options?: () => Promise<Options>;
 };
 
 export type MarkFileContext = {
   markFile: (file: string) => void;
 };
 
-export type FilesExtractor = {
+export type FilesExtractor<Options = unknown> = {
   name: string;
   version: 1;
-  markFiles: (this: MarkFileContext, codebase: string) => Promise<void>;
-  extractFile?: (file: string) => Promise<AnalyzerResult>;
+  markFiles: (this: MarkFileContext, codebase: string, options: Options) => Promise<void>;
+  extractFile?: (file: string, options: Options) => Promise<AnalyzerResult>;
+  options?: () => Promise<Options>;
 };
 
 /**
@@ -132,7 +134,7 @@ export function normalizeResult(result: AnalyzerResult): AnalyzerResult {
   };
 }
 
-export const filesExtractor = (config: FilesExtractor): Extractor => {
+export const filesExtractor = <Options = unknown>(config: FilesExtractor<Options>): Extractor<Options> => {
   return {
     name: config.name,
     version: config.version,
@@ -145,15 +147,18 @@ export const filesExtractor = (config: FilesExtractor): Extractor => {
         },
       };
 
+      // Call options function to get the resolved options
+      const options = config.options ? await config.options() : ({} as Options);
+
       // First, mark all relevant files
-      await config.markFiles.call(context, codebase);
+      await config.markFiles.call(context, codebase, options);
 
       // Then process each marked file
       const results: AnalyzerResult[] = [];
 
       for (const file of markedFiles) {
         if (config.extractFile) {
-          const fileResult = await config.extractFile(file);
+          const fileResult = await config.extractFile(file, options);
           results.push(fileResult);
         }
       }
@@ -161,5 +166,6 @@ export const filesExtractor = (config: FilesExtractor): Extractor => {
       // Merge and normalize all results
       return mergeResults(results);
     },
+    ...(config.options !== undefined && { options: config.options }),
   };
 };

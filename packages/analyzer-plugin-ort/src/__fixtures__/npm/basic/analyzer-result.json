@@ -1,0 +1,124 @@
+{
+  "projects": [
+    {
+      "id": "NPM::simple-npm-fixture:1.0.0",
+      "definition_file_path": "package.json",
+      "declared_licenses": [],
+      "declared_licenses_processed": {},
+      "vcs": {
+        "type": "",
+        "url": "",
+        "revision": "",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/lukasnehrke/excalibur.git",
+        "revision": "9e3843a07cf7f5d85aece7c6d829f4c684f9ef88",
+        "path": "packages/analyzer-plugin-ort/src/__fixtures__/simple-npm"
+      },
+      "description": "Test fixture for ORT analyzer",
+      "homepage_url": "",
+      "scope_names": ["dependencies", "devDependencies"]
+    }
+  ],
+  "packages": [
+    {
+      "id": "NPM::lodash:4.17.21",
+      "purl": "pkg:npm/lodash@4.17.21",
+      "authors": ["John-David Dalton"],
+      "declared_licenses": ["MIT"],
+      "declared_licenses_processed": {
+        "spdx_expression": "MIT"
+      },
+      "description": "Lodash modular utilities.",
+      "homepage_url": "https://lodash.com/",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz",
+        "hash": {
+          "value": "679591c564c3bffaae8454cf0b3df370c3d6911c",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "https://github.com/lodash/lodash.git",
+        "revision": "c6e281b878b315c7a10d90f9c2af4cdb112d9625",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/lodash/lodash.git",
+        "revision": "c6e281b878b315c7a10d90f9c2af4cdb112d9625",
+        "path": ""
+      }
+    },
+    {
+      "id": "NPM::typescript:5.3.3",
+      "purl": "pkg:npm/typescript@5.3.3",
+      "authors": ["Microsoft Corp."],
+      "declared_licenses": ["Apache-2.0"],
+      "declared_licenses_processed": {
+        "spdx_expression": "Apache-2.0"
+      },
+      "description": "TypeScript is a language for application scale JavaScript development",
+      "homepage_url": "https://www.typescriptlang.org/",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/typescript/-/typescript-5.3.3.tgz",
+        "hash": {
+          "value": "b3ce6ba258e72e6305ba66f5c9b452aaee3ffe37",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "https://github.com/Microsoft/TypeScript.git",
+        "revision": "",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/Microsoft/TypeScript.git",
+        "revision": "",
+        "path": ""
+      }
+    }
+  ],
+  "dependency_graphs": {
+    "NPM": {
+      "packages": ["NPM::lodash:4.17.21", "NPM::typescript:5.3.3"],
+      "scopes": {
+        ":simple-npm-fixture:1.0.0:dependencies": [
+          {
+            "root": 0
+          }
+        ],
+        ":simple-npm-fixture:1.0.0:devDependencies": [
+          {
+            "root": 1
+          }
+        ]
+      },
+      "nodes": [
+        {},
+        {
+          "pkg": 1
+        }
+      ]
+    }
+  }
+}
