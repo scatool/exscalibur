@@ -1,0 +1,76 @@
+{
+  "projects": [
+    {
+      "id": "NPM::test-project:1.0.0",
+      "definition_file_path": "package.json",
+      "declared_licenses": [],
+      "declared_licenses_processed": {},
+      "vcs": {
+        "type": "",
+        "url": "",
+        "revision": "",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "",
+        "url": "",
+        "revision": "",
+        "path": ""
+      },
+      "scope_names": []
+    }
+  ],
+  "packages": [],
+  "dependency_graphs": {
+    "NPM": {
+      "packages": [],
+      "scopes": {},
+      "nodes": []
+    }
+  },
+  "issues": {
+    "NPM::package.json:": [
+      {
+        "timestamp": "2025-01-01T10:00:00.000Z",
+        "source": "NPM",
+        "message": "Package resolution succeeded for @types/node@20.10.0 using registry fallback",
+        "severity": "HINT"
+      },
+      {
+        "timestamp": "2025-01-01T10:00:01.000Z",
+        "source": "NPM",
+        "message": "Optional dependency @esbuild/linux-x64@0.19.0 could not be resolved on this platform",
+        "severity": "HINT",
+        "affectedPath": "package.json"
+      },
+      {
+        "timestamp": "2025-01-01T10:00:02.000Z",
+        "source": "NPM",
+        "message": "Dependency version mismatch: package-a requires lodash@^4.0.0 but package-b requires lodash@^3.0.0",
+        "severity": "WARNING",
+        "affectedPath": "package.json"
+      },
+      {
+        "timestamp": "2025-01-01T10:00:03.000Z",
+        "source": "NPM",
+        "message": "Package manifest is missing required field 'version' for local dependency",
+        "severity": "WARNING",
+        "affectedPath": "packages/utils/package.json"
+      },
+      {
+        "timestamp": "2025-01-01T10:00:04.000Z",
+        "source": "NPM",
+        "message": "Failed to resolve dependency: package-that-does-not-exist@1.0.0 not found in registry",
+        "severity": "ERROR",
+        "affectedPath": "package.json"
+      },
+      {
+        "timestamp": "2025-01-01T10:00:05.000Z",
+        "source": "NPM",
+        "message": "Failed to parse package-lock.json: Invalid JSON at line 42",
+        "severity": "ERROR",
+        "affectedPath": "package-lock.json"
+      }
+    ]
+  }
+}

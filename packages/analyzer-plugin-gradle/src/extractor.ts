@@ -263,27 +263,22 @@ export const extractor: Extractor = filesExtractor({
 
         // Process all dependencies in this configuration
         for (const dep of config.allDependencies) {
-          // Skip project dependencies (internal workspace dependencies)
-          if (dep.isProject) {
-            continue;
+          // Normalize version: omit "unspecified" for internal projects
+          const version = dep.isProject && dep.coordinates.version === 'unspecified' ? '' : dep.coordinates.version;
+
+          const depPurl = createMavenPurl(dep.coordinates.group, dep.coordinates.module, version, dep.repositoryUrl);
+
+          // Only add external packages to package map (not internal projects)
+          if (!dep.isProject) {
+            // Add to package map with evidence (includes both direct and transitive)
+            if (!packageMap.has(depPurl)) {
+              packageMap.set(depPurl, { purl: depPurl, evidence: new Set([file]) });
+            } else {
+              packageMap.get(depPurl)!.evidence.add(file);
+            }
           }
 
-          const depPurl = createMavenPurl(
-            dep.coordinates.group,
-            dep.coordinates.module,
-            dep.coordinates.version,
-            dep.repositoryUrl,
-          );
-
-          // Add to package map with evidence (includes both direct and transitive)
-          if (!packageMap.has(depPurl)) {
-            packageMap.set(depPurl, { purl: depPurl, evidence: new Set([file]) });
-          } else {
-            packageMap.get(depPurl)!.evidence.add(file);
-          }
-
-          // Only add direct dependencies to scopes
-          // Transitive dependencies are tracked via relationships
+          // Add all direct dependencies to scopes (both projects and external packages)
           if (dep.isDirect) {
             const effectiveScope = configScope;
             if (!project.scopes.has(effectiveScope)) {
@@ -294,8 +289,8 @@ export const extractor: Extractor = filesExtractor({
             project.directDeps.add(depPurl);
           }
 
-          // Add relationships between dependencies
-          if (dep.dependencies && dep.dependencies.length > 0) {
+          // Add relationships between external dependencies only (not from/to projects)
+          if (!dep.isProject && dep.dependencies && dep.dependencies.length > 0) {
             if (!relationshipsMap.has(depPurl)) {
               relationshipsMap.set(depPurl, new Set());
             }

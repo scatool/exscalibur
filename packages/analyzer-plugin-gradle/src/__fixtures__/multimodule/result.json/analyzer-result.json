@@ -1,0 +1,702 @@
+{
+  "repository": {
+    "vcs": {
+      "type": "Git",
+      "url": "https://github.com/lukasnehrke/excalibur",
+      "revision": "be6ffa25779425a8f9ca73d63e11f9e4415cd96c",
+      "path": "packages/analyzer-plugin-gradle/src/__fixtures__/multimodule"
+    },
+    "vcs_processed": {
+      "type": "Git",
+      "url": "https://github.com/lukasnehrke/excalibur.git",
+      "revision": "be6ffa25779425a8f9ca73d63e11f9e4415cd96c",
+      "path": "packages/analyzer-plugin-gradle/src/__fixtures__/multimodule"
+    },
+    "config": {}
+  },
+  "analyzer": {
+    "start_time": "2025-11-12T08:32:58.950142758Z",
+    "end_time": "2025-11-12T08:33:02.787461665Z",
+    "environment": {
+      "ort_version": "71.2.0",
+      "build_jdk": "21.0.9+10-LTS",
+      "java_version": "21",
+      "os": "Linux",
+      "processors": 12,
+      "max_memory": 8229224448,
+      "variables": {
+        "HOME": "/home/lukasnehrke",
+        "SHELL": "/usr/bin/zsh",
+        "TERM": "xterm-256color",
+        "JAVA_HOME": "/home/lukasnehrke/.sdkman/candidates/java/21-tem"
+      }
+    },
+    "config": {
+      "allow_dynamic_versions": false,
+      "enabled_package_managers": [
+        "Bazel",
+        "Bower",
+        "Bundler",
+        "Cargo",
+        "Carthage",
+        "CocoaPods",
+        "Composer",
+        "Conan",
+        "GoMod",
+        "GradleInspector",
+        "Maven",
+        "NPM",
+        "NuGet",
+        "PIP",
+        "Pipenv",
+        "PNPM",
+        "Poetry",
+        "Pub",
+        "SBT",
+        "SpdxDocumentFile",
+        "Stack",
+        "SwiftPM",
+        "Tycho",
+        "Unmanaged",
+        "Yarn",
+        "Yarn2"
+      ],
+      "skip_excluded": false
+    },
+    "result": {
+      "projects": [
+        {
+          "id": "Gradle:com.example:multimodule-example:1.0.0",
+          "definition_file_path": "packages/analyzer-plugin-gradle/src/__fixtures__/multimodule/build.gradle",
+          "declared_licenses": [],
+          "declared_licenses_processed": {},
+          "vcs": {
+            "type": "",
+            "url": "",
+            "revision": "",
+            "path": ""
+          },
+          "vcs_processed": {
+            "type": "Git",
+            "url": "https://github.com/lukasnehrke/excalibur.git",
+            "revision": "be6ffa25779425a8f9ca73d63e11f9e4415cd96c",
+            "path": "packages/analyzer-plugin-gradle/src/__fixtures__/multimodule"
+          },
+          "homepage_url": "",
+          "scope_names": []
+        },
+        {
+          "id": "Gradle:multimodule-example:app:",
+          "definition_file_path": "packages/analyzer-plugin-gradle/src/__fixtures__/multimodule/app/build.gradle",
+          "declared_licenses": [],
+          "declared_licenses_processed": {},
+          "vcs": {
+            "type": "",
+            "url": "",
+            "revision": "",
+            "path": ""
+          },
+          "vcs_processed": {
+            "type": "Git",
+            "url": "https://github.com/lukasnehrke/excalibur.git",
+            "revision": "be6ffa25779425a8f9ca73d63e11f9e4415cd96c",
+            "path": "packages/analyzer-plugin-gradle/src/__fixtures__/multimodule/app"
+          },
+          "homepage_url": "",
+          "scope_names": ["compileClasspath", "runtimeClasspath", "testCompileClasspath", "testRuntimeClasspath"]
+        },
+        {
+          "id": "Gradle:multimodule-example:lib:",
+          "definition_file_path": "packages/analyzer-plugin-gradle/src/__fixtures__/multimodule/lib/build.gradle",
+          "declared_licenses": [],
+          "declared_licenses_processed": {},
+          "vcs": {
+            "type": "",
+            "url": "",
+            "revision": "",
+            "path": ""
+          },
+          "vcs_processed": {
+            "type": "Git",
+            "url": "https://github.com/lukasnehrke/excalibur.git",
+            "revision": "be6ffa25779425a8f9ca73d63e11f9e4415cd96c",
+            "path": "packages/analyzer-plugin-gradle/src/__fixtures__/multimodule/lib"
+          },
+          "homepage_url": "",
+          "scope_names": ["compileClasspath", "runtimeClasspath", "testCompileClasspath", "testRuntimeClasspath"]
+        }
+      ],
+      "packages": [
+        {
+          "id": "Maven:com.google.code.findbugs:jsr305:3.0.2",
+          "purl": "pkg:maven/com.google.code.findbugs/jsr305@3.0.2",
+          "declared_licenses": ["The Apache Software License, Version 2.0"],
+          "declared_licenses_processed": {
+            "spdx_expression": "Apache-2.0",
+            "mapped": {
+              "The Apache Software License, Version 2.0": "Apache-2.0"
+            }
+          },
+          "description": "JSR305 Annotations for Findbugs",
+          "homepage_url": "http://findbugs.sourceforge.net/",
+          "binary_artifact": {
+            "url": "https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar",
+            "hash": {
+              "value": "25ea2e8b0c338a877313bd4672d3fe056ea78f0d",
+              "algorithm": "SHA-1"
+            }
+          },
+          "source_artifact": {
+            "url": "https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2-sources.jar",
+            "hash": {
+              "value": "b19b5927c2c25b6c70f093767041e641ae0b1b35",
+              "algorithm": "SHA-1"
+            }
+          },
+          "vcs": {
+            "type": "Git",
+            "url": "https://code.google.com/p/jsr-305/",
+            "revision": "",
+            "path": ""
+          },
+          "vcs_processed": {
+            "type": "Git",
+            "url": "https://code.google.com/p/jsr-305",
+            "revision": "",
+            "path": ""
+          }
+        },
+        {
+          "id": "Maven:com.google.errorprone:error_prone_annotations:2.11.0",
+          "purl": "pkg:maven/com.google.errorprone/error_prone_annotations@2.11.0",
+          "authors": ["Eddie Aftandilian", "Google LLC"],
+          "declared_licenses": ["Apache 2.0"],
+          "declared_licenses_processed": {
+            "spdx_expression": "Apache-2.0",
+            "mapped": {
+              "Apache 2.0": "Apache-2.0"
+            }
+          },
+          "description": "Error Prone is a static analysis tool for Java that catches common programming mistakes at compile-time.",
+          "homepage_url": "https://errorprone.info/error_prone_annotations",
+          "binary_artifact": {
+            "url": "https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.11.0/error_prone_annotations-2.11.0.jar",
+            "hash": {
+              "value": "c5a0ace696d3f8b1c1d8cc036d8c03cc0cbe6b69",
+              "algorithm": "SHA-1"
+            }
+          },
+          "source_artifact": {
+            "url": "https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.11.0/error_prone_annotations-2.11.0-sources.jar",
+            "hash": {
+              "value": "d060e42b6aa896a3abe2ec612e1cf8cc307f8a49",
+              "algorithm": "SHA-1"
+            }
+          },
+          "vcs": {
+            "type": "Git",
+            "url": "https://github.com/google/error-prone.git",
+            "revision": "",
+            "path": ""
+          },
+          "vcs_processed": {
+            "type": "Git",
+            "url": "https://github.com/google/error-prone.git",
+            "revision": "",
+            "path": ""
+          }
+        },
+        {
+          "id": "Maven:com.google.guava:failureaccess:1.0.1",
+          "purl": "pkg:maven/com.google.guava/failureaccess@1.0.1",
+          "authors": ["Google"],
+          "declared_licenses": ["The Apache Software License, Version 2.0"],
+          "declared_licenses_processed": {
+            "spdx_expression": "Apache-2.0",
+            "mapped": {
+              "The Apache Software License, Version 2.0": "Apache-2.0"
+            }
+          },
+          "description": "Contains\n    com.google.common.util.concurrent.internal.InternalFutureFailureAccess and\n    InternalFutures. Most users will never need to use this artifact. Its\n    classes is conceptually a part of Guava, but they're in this separate\n    artifact so that Android libraries can use them without pulling in all of\n    Guava (just as they can use ListenableFuture by depending on the\n    listenablefuture artifact).",
+          "homepage_url": "https://github.com/google/guava/failureaccess",
+          "binary_artifact": {
+            "url": "https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar",
+            "hash": {
+              "value": "1dcf1de382a0bf95a3d8b0849546c88bac1292c9",
+              "algorithm": "SHA-1"
+            }
+          },
+          "source_artifact": {
+            "url": "https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1-sources.jar",
+            "hash": {
+              "value": "1d064e61aad6c51cc77f9b59dc2cccc78e792f5a",
+              "algorithm": "SHA-1"
+            }
+          },
+          "vcs": {
+            "type": "Git",
+            "url": "https://github.com/google/guava.git",
+            "revision": "",
+            "path": ""
+          },
+          "vcs_processed": {
+            "type": "Git",
+            "url": "https://github.com/google/guava.git",
+            "revision": "",
+            "path": ""
+          }
+        },
+        {
+          "id": "Maven:com.google.guava:guava:31.1-jre",
+          "purl": "pkg:maven/com.google.guava/guava@31.1-jre",
+          "authors": ["Google"],
+          "declared_licenses": ["Apache License, Version 2.0"],
+          "declared_licenses_processed": {
+            "spdx_expression": "Apache-2.0",
+            "mapped": {
+              "Apache License, Version 2.0": "Apache-2.0"
+            }
+          },
+          "description": "Guava is a suite of core and expanded libraries that include\n    utility classes, Google's collections, I/O classes, and\n    much more.",
+          "homepage_url": "https://github.com/google/guava",
+          "binary_artifact": {
+            "url": "https://repo.maven.apache.org/maven2/com/google/guava/guava/31.1-jre/guava-31.1-jre.jar",
+            "hash": {
+              "value": "60458f877d055d0c9114d9e1a2efb737b4bc282c",
+              "algorithm": "SHA-1"
+            }
+          },
+          "source_artifact": {
+            "url": "https://repo.maven.apache.org/maven2/com/google/guava/guava/31.1-jre/guava-31.1-jre-sources.jar",
+            "hash": {
+              "value": "c388a68bc2b17a314dfa7c769d858ada0fc32dcf",
+              "algorithm": "SHA-1"
+            }
+          },
+          "vcs": {
+            "type": "Git",
+            "url": "https://github.com/google/guava.git",
+            "revision": "",
+            "path": ""
+          },
+          "vcs_processed": {
+            "type": "Git",
+            "url": "https://github.com/google/guava.git",
+            "revision": "",
+            "path": ""
+          }
+        },
+        {
+          "id": "Maven:com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+          "purl": "pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava",
+          "authors": ["Google"],
+          "declared_licenses": ["The Apache Software License, Version 2.0"],
+          "declared_licenses_processed": {
+            "spdx_expression": "Apache-2.0",
+            "mapped": {
+              "The Apache Software License, Version 2.0": "Apache-2.0"
+            }
+          },
+          "description": "An empty artifact that Guava depends on to signal that it is providing\n    ListenableFuture -- but is also available in a second \"version\" that\n    contains com.google.common.util.concurrent.ListenableFuture class, without\n    any other Guava classes. The idea is:\n\n    - If users want only ListenableFuture, they depend on listenablefuture-1.0.\n\n    - If users want all of Guava, they depend on guava, which, as of Guava\n    27.0, depends on\n    listenablefuture-9999.0-empty-to-avoid-conflict-with-guava. The 9999.0-...\n    version number is enough for some build systems (notably, Gradle) to select\n    that empty artifact over the \"real\" listenablefuture-1.0 -- avoiding a\n    conflict with the copy of ListenableFuture in guava itself. If users are\n    using an older version of Guava or a build system other than Gradle, they\n    may see class conflicts. If so, they can solve them by manually excluding\n    the listenablefuture artifact or manually forcing their build systems to\n    use 9999.0-....",
+          "homepage_url": "https://github.com/google/guava/listenablefuture",
+          "binary_artifact": {
+            "url": "https://repo.maven.apache.org/maven2/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar",
+            "hash": {
+              "value": "b421526c5f297295adef1c886e5246c39d4ac629",
+              "algorithm": "SHA-1"
+            }
+          },
+          "source_artifact": {
+            "url": "https://repo.maven.apache.org/maven2/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava-sources.jar",
+            "hash": {
+              "value": "",
+              "algorithm": ""
+            }
+          },
+          "vcs": {
+            "type": "Git",
+            "url": "https://github.com/google/guava.git",
+            "revision": "",
+            "path": ""
+          },
+          "vcs_processed": {
+            "type": "Git",
+            "url": "https://github.com/google/guava.git",
+            "revision": "",
+            "path": ""
+          }
+        },
+        {
+          "id": "Maven:com.google.j2objc:j2objc-annotations:1.3",
+          "purl": "pkg:maven/com.google.j2objc/j2objc-annotations@1.3",
+          "declared_licenses": ["The Apache Software License, Version 2.0"],
+          "declared_licenses_processed": {
+            "spdx_expression": "Apache-2.0",
+            "mapped": {
+              "The Apache Software License, Version 2.0": "Apache-2.0"
+            }
+          },
+          "description": "A set of annotations that provide additional information to the J2ObjC\n    translator to modify the result of translation.",
+          "homepage_url": "https://github.com/google/j2objc/",
+          "binary_artifact": {
+            "url": "https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar",
+            "hash": {
+              "value": "ba035118bc8bac37d7eff77700720999acd9986d",
+              "algorithm": "SHA-1"
+            }
+          },
+          "source_artifact": {
+            "url": "https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3-sources.jar",
+            "hash": {
+              "value": "d26c56180205cbb50447c3eca98ecb617cf9f58b",
+              "algorithm": "SHA-1"
+            }
+          },
+          "vcs": {
+            "type": "Subversion",
+            "url": "http://svn.sonatype.org/spice/tags/oss-parent-7",
+            "revision": "",
+            "path": ""
+          },
+          "vcs_processed": {
+            "type": "Subversion",
+            "url": "http://svn.sonatype.org/spice",
+            "revision": "tags/oss-parent-7",
+            "path": ""
+          }
+        },
+        {
+          "id": "Maven:junit:junit:4.13.2",
+          "purl": "pkg:maven/junit/junit@4.13.2",
+          "authors": ["David Saff", "JUnit", "Kevin Cooney", "Marc Philipp", "Stefan Birkner"],
+          "declared_licenses": ["Eclipse Public License 1.0"],
+          "declared_licenses_processed": {
+            "spdx_expression": "EPL-1.0",
+            "mapped": {
+              "Eclipse Public License 1.0": "EPL-1.0"
+            }
+          },
+          "description": "JUnit is a unit testing framework for Java, created by Erich Gamma and Kent Beck.",
+          "homepage_url": "http://junit.org",
+          "binary_artifact": {
+            "url": "https://repo.maven.apache.org/maven2/junit/junit/4.13.2/junit-4.13.2.jar",
+            "hash": {
+              "value": "8ac9e16d933b6fb43bc7f576336b8f4d7eb5ba12",
+              "algorithm": "SHA-1"
+            }
+          },
+          "source_artifact": {
+            "url": "https://repo.maven.apache.org/maven2/junit/junit/4.13.2/junit-4.13.2-sources.jar",
+            "hash": {
+              "value": "33987872a811fe4d4001ed494b07854822257f42",
+              "algorithm": "SHA-1"
+            }
+          },
+          "vcs": {
+            "type": "Git",
+            "url": "git://github.com/junit-team/junit4.git",
+            "revision": "r4.13.2",
+            "path": ""
+          },
+          "vcs_processed": {
+            "type": "Git",
+            "url": "https://github.com/junit-team/junit4.git",
+            "revision": "r4.13.2",
+            "path": ""
+          }
+        },
+        {
+          "id": "Maven:org.checkerframework:checker-qual:3.12.0",
+          "purl": "pkg:maven/org.checkerframework/checker-qual@3.12.0",
+          "authors": ["University of Washington"],
+          "declared_licenses": ["The MIT License"],
+          "declared_licenses_processed": {
+            "spdx_expression": "MIT",
+            "mapped": {
+              "The MIT License": "MIT"
+            }
+          },
+          "description": "checker-qual contains annotations (type qualifiers) that a programmer\nwrites to specify Java code for type-checking by the Checker Framework.",
+          "homepage_url": "https://checkerframework.org",
+          "binary_artifact": {
+            "url": "https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/3.12.0/checker-qual-3.12.0.jar",
+            "hash": {
+              "value": "d5692f0526415fcc6de94bb5bfbd3afd9dd3b3e5",
+              "algorithm": "SHA-1"
+            }
+          },
+          "source_artifact": {
+            "url": "https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/3.12.0/checker-qual-3.12.0-sources.jar",
+            "hash": {
+              "value": "10dacb8b36398debceca36cd0db5f3316967f80e",
+              "algorithm": "SHA-1"
+            }
+          },
+          "vcs": {
+            "type": "Git",
+            "url": "git://github.com/typetools/checker-framework.git",
+            "revision": "",
+            "path": ""
+          },
+          "vcs_processed": {
+            "type": "Git",
+            "url": "https://github.com/typetools/checker-framework.git",
+            "revision": "",
+            "path": ""
+          }
+        },
+        {
+          "id": "Maven:org.hamcrest:hamcrest-core:1.3",
+          "purl": "pkg:maven/org.hamcrest/hamcrest-core@1.3",
+          "authors": ["Joe Walnes", "Nat Pryce", "Neil Dunn", "Steve Freeman", "Tom Denley"],
+          "declared_licenses": ["New BSD License"],
+          "declared_licenses_processed": {
+            "spdx_expression": "BSD-3-Clause",
+            "mapped": {
+              "New BSD License": "BSD-3-Clause"
+            }
+          },
+          "description": "This is the core API of hamcrest matcher framework to be used by third-party framework providers. This includes the a foundation set of matcher implementations for common operations.",
+          "homepage_url": "https://github.com/hamcrest/JavaHamcrest/hamcrest-core",
+          "binary_artifact": {
+            "url": "https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar",
+            "hash": {
+              "value": "42a25dc3219429f0e5d060061f71acb49bf010a0",
+              "algorithm": "SHA-1"
+            }
+          },
+          "source_artifact": {
+            "url": "https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3-sources.jar",
+            "hash": {
+              "value": "1dc37250fbc78e23a65a67fbbaf71d2e9cbc3c0b",
+              "algorithm": "SHA-1"
+            }
+          },
+          "vcs": {
+            "type": "Git",
+            "url": "git@github.com:hamcrest/JavaHamcrest.git",
+            "revision": "",
+            "path": ""
+          },
+          "vcs_processed": {
+            "type": "Git",
+            "url": "ssh://git@github.com/hamcrest/JavaHamcrest.git",
+            "revision": "",
+            "path": ""
+          }
+        },
+        {
+          "id": "Maven:org.slf4j:slf4j-api:2.0.7",
+          "purl": "pkg:maven/org.slf4j/slf4j-api@2.0.7",
+          "authors": ["Ceki Gulcu", "QOS.ch"],
+          "declared_licenses": ["MIT License"],
+          "declared_licenses_processed": {
+            "spdx_expression": "MIT",
+            "mapped": {
+              "MIT License": "MIT"
+            }
+          },
+          "description": "The slf4j API",
+          "homepage_url": "http://www.slf4j.org",
+          "binary_artifact": {
+            "url": "https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/2.0.7/slf4j-api-2.0.7.jar",
+            "hash": {
+              "value": "41eb7184ea9d556f23e18b5cb99cad1f8581fc00",
+              "algorithm": "SHA-1"
+            }
+          },
+          "source_artifact": {
+            "url": "https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/2.0.7/slf4j-api-2.0.7-sources.jar",
+            "hash": {
+              "value": "f887f95694cd20d51a062446b6e3d09dd02d98ff",
+              "algorithm": "SHA-1"
+            }
+          },
+          "vcs": {
+            "type": "Git",
+            "url": "https://github.com/qos-ch/slf4j.git",
+            "revision": "",
+            "path": ""
+          },
+          "vcs_processed": {
+            "type": "Git",
+            "url": "https://github.com/qos-ch/slf4j.git",
+            "revision": "",
+            "path": ""
+          }
+        }
+      ],
+      "dependency_graphs": {
+        "GradleInspector": {
+          "packages": [
+            "Gradle:multimodule-example:lib:",
+            "Maven:com.google.code.findbugs:jsr305:3.0.2",
+            "Maven:com.google.errorprone:error_prone_annotations:2.11.0",
+            "Maven:com.google.guava:failureaccess:1.0.1",
+            "Maven:com.google.guava:guava:31.1-jre",
+            "Maven:com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+            "Maven:com.google.j2objc:j2objc-annotations:1.3",
+            "Maven:junit:junit:4.13.2",
+            "Maven:org.checkerframework:checker-qual:3.12.0",
+            "Maven:org.hamcrest:hamcrest-core:1.3",
+            "Maven:org.slf4j:slf4j-api:2.0.7"
+          ],
+          "scopes": {
+            "multimodule-example:app::compileClasspath": [
+              {
+                "root": 0
+              },
+              {
+                "root": 4
+              }
+            ],
+            "multimodule-example:app::runtimeClasspath": [
+              {
+                "root": 0,
+                "fragment": 1
+              },
+              {
+                "root": 4
+              }
+            ],
+            "multimodule-example:app::testCompileClasspath": [
+              {
+                "root": 0
+              },
+              {
+                "root": 4
+              },
+              {
+                "root": 7
+              }
+            ],
+            "multimodule-example:app::testRuntimeClasspath": [
+              {
+                "root": 0,
+                "fragment": 1
+              },
+              {
+                "root": 4
+              },
+              {
+                "root": 7
+              }
+            ],
+            "multimodule-example:lib::compileClasspath": [
+              {
+                "root": 10
+              }
+            ],
+            "multimodule-example:lib::runtimeClasspath": [
+              {
+                "root": 10
+              }
+            ],
+            "multimodule-example:lib::testCompileClasspath": [
+              {
+                "root": 10
+              }
+            ],
+            "multimodule-example:lib::testRuntimeClasspath": [
+              {
+                "root": 10
+              }
+            ]
+          },
+          "nodes": [
+            {
+              "linkage": "PROJECT_DYNAMIC"
+            },
+            {
+              "pkg": 3
+            },
+            {
+              "pkg": 5
+            },
+            {
+              "pkg": 1
+            },
+            {
+              "pkg": 8
+            },
+            {
+              "pkg": 2
+            },
+            {
+              "pkg": 6
+            },
+            {
+              "pkg": 4
+            },
+            {
+              "pkg": 10
+            },
+            {
+              "fragment": 1,
+              "linkage": "PROJECT_DYNAMIC"
+            },
+            {
+              "pkg": 9
+            },
+            {
+              "pkg": 7
+            }
+          ],
+          "edges": [
+            {
+              "from": 7,
+              "to": 1
+            },
+            {
+              "from": 7,
+              "to": 2
+            },
+            {
+              "from": 7,
+              "to": 3
+            },
+            {
+              "from": 7,
+              "to": 4
+            },
+            {
+              "from": 7,
+              "to": 5
+            },
+            {
+              "from": 7,
+              "to": 6
+            },
+            {
+              "from": 9,
+              "to": 8
+            },
+            {
+              "from": 11,
+              "to": 10
+            }
+          ]
+        }
+      }
+    }
+  },
+  "scanner": null,
+  "advisor": null,
+  "evaluator": null,
+  "resolved_configuration": {
+    "package_curations": [
+      {
+        "provider": {
+          "id": "DefaultDir"
+        },
+        "curations": []
+      },
+      {
+        "provider": {
+          "id": "DefaultFile"
+        },
+        "curations": []
+      }
+    ]
+  }
+}

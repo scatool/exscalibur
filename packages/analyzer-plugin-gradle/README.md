@@ -1,5 +1,7 @@
 # @scatool/analyzer-plugin-gradle
 
+**Note**: This plugin is experimental.
+
 Gradle plugin for Excalibur dependency analyzer.
 
 This plugin uses the [GitHub Dependency Graph Gradle Plugin](https://github.com/gradle/github-dependency-graph-gradle-plugin) to extract comprehensive dependency information from Gradle projects.
@@ -14,12 +16,5 @@ This plugin uses the [GitHub Dependency Graph Gradle Plugin](https://github.com/
 ```typescript
 import { gradleExtractor } from '@scatool/analyzer-plugin-gradle';
 
-const result = await gradleExtractor.extract('/path/to/gradle/project');
-```
-
-## Testing
-
-```bash
-bun test           # Run all tests
-bun run typecheck  # TypeScript type checking
+const result = await gradleExtractor.extract('/path/to/codebase');
 ```

@@ -1,0 +1,2114 @@
+{
+  "projects": [
+    {
+      "id": "NPM:@scatest:workspace:0.0.0",
+      "definition_file_path": "package.json",
+      "declared_licenses": [],
+      "declared_licenses_processed": {},
+      "vcs": {
+        "type": "",
+        "url": "",
+        "revision": "",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/lukasnehrke/excalibur.git",
+        "revision": "9e3843a07cf7f5d85aece7c6d829f4c684f9ef88",
+        "path": "packages/analyzer-plugin-javascript/src/packagelockjson/__fixtures__/workspace"
+      },
+      "description": "The root of this workspace",
+      "homepage_url": "",
+      "scope_names": ["dependencies", "devDependencies"]
+    }
+  ],
+  "packages": [
+    {
+      "id": "NPM::busboy:1.6.0",
+      "purl": "pkg:npm/busboy@1.6.0",
+      "authors": ["Brian White"],
+      "declared_licenses": ["MIT"],
+      "declared_licenses_processed": {
+        "spdx_expression": "MIT"
+      },
+      "description": "A streaming parser for HTML form data for node.js",
+      "homepage_url": "https://github.com/mscdex/busboy#readme",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/busboy/-/busboy-1.6.0.tgz",
+        "hash": {
+          "value": "966ea36a9502e43cdb9146962523b92f531f6893",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "http://github.com/mscdex/busboy.git",
+        "revision": "",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/mscdex/busboy.git",
+        "revision": "",
+        "path": ""
+      }
+    },
+    {
+      "id": "NPM::caniuse-lite:1.0.30001700",
+      "purl": "pkg:npm/caniuse-lite@1.0.30001700",
+      "authors": ["Ben Briggs"],
+      "declared_licenses": ["CC-BY-4.0"],
+      "declared_licenses_processed": {
+        "spdx_expression": "CC-BY-4.0"
+      },
+      "description": "A smaller version of caniuse-db, with only the essentials!",
+      "homepage_url": "https://github.com/browserslist/caniuse-lite#readme",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001700.tgz",
+        "hash": {
+          "value": "26cd429cf09b4fd4e745daf4916039c794d720f6",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "https://github.com/browserslist/caniuse-lite.git",
+        "revision": "7de8a300f43092b4e371754af86f92bae1097cb5",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/browserslist/caniuse-lite.git",
+        "revision": "7de8a300f43092b4e371754af86f92bae1097cb5",
+        "path": ""
+      }
+    },
+    {
+      "id": "NPM::client-only:0.0.1",
+      "purl": "pkg:npm/client-only@0.0.1",
+      "declared_licenses": ["MIT"],
+      "declared_licenses_processed": {
+        "spdx_expression": "MIT"
+      },
+      "description": "This is a marker package to indicate that a module can only be used in Client Components.",
+      "homepage_url": "https://reactjs.org/",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/client-only/-/client-only-0.0.1.tgz",
+        "hash": {
+          "value": "38bba5d403c41ab150bff64a95c85013cf73bca1",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "",
+        "url": "",
+        "revision": "",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "",
+        "url": "",
+        "revision": "",
+        "path": ""
+      }
+    },
+    {
+      "id": "NPM::color:4.2.3",
+      "purl": "pkg:npm/color@4.2.3",
+      "declared_licenses": ["MIT"],
+      "declared_licenses_processed": {
+        "spdx_expression": "MIT"
+      },
+      "description": "Color conversion and manipulation with CSS string support",
+      "homepage_url": "https://github.com/Qix-/color#readme",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/color/-/color-4.2.3.tgz",
+        "hash": {
+          "value": "d781ecb5e57224ee43ea9627560107c0e0c6463a",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "https://github.com/Qix-/color.git",
+        "revision": "561a34c111c3d4f736b7d7516cafd1d290392186",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/Qix-/color.git",
+        "revision": "561a34c111c3d4f736b7d7516cafd1d290392186",
+        "path": ""
+      }
+    },
+    {
+      "id": "NPM::color-convert:2.0.1",
+      "purl": "pkg:npm/color-convert@2.0.1",
+      "authors": ["Heather Arthur"],
+      "declared_licenses": ["MIT"],
+      "declared_licenses_processed": {
+        "spdx_expression": "MIT"
+      },
+      "description": "Plain color conversion functions",
+      "homepage_url": "https://github.com/Qix-/color-convert#readme",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/color-convert/-/color-convert-2.0.1.tgz",
+        "hash": {
+          "value": "72d3a68d598c9bdb3af2ad1e84f21d896abd4de3",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "https://github.com/Qix-/color-convert.git",
+        "revision": "e1cb7846258e1d7aa25873814684d4fbbbca53ed",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/Qix-/color-convert.git",
+        "revision": "e1cb7846258e1d7aa25873814684d4fbbbca53ed",
+        "path": ""
+      }
+    },
+    {
+      "id": "NPM::color-name:1.1.4",
+      "purl": "pkg:npm/color-name@1.1.4",
+      "authors": ["DY"],
+      "declared_licenses": ["MIT"],
+      "declared_licenses_processed": {
+        "spdx_expression": "MIT"
+      },
+      "description": "A list of color names and its values",
+      "homepage_url": "https://github.com/colorjs/color-name",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/color-name/-/color-name-1.1.4.tgz",
+        "hash": {
+          "value": "c2a09a87acbde69543de6f63fa3995c826c536a2",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "git@github.com:colorjs/color-name.git",
+        "revision": "4536ce5944f56659a2dfb2198eaf81b5ad5f2ad9",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "ssh://git@github.com/colorjs/color-name.git",
+        "revision": "4536ce5944f56659a2dfb2198eaf81b5ad5f2ad9",
+        "path": ""
+      }
+    },
+    {
+      "id": "NPM::color-string:1.9.1",
+      "purl": "pkg:npm/color-string@1.9.1",
+      "authors": ["Heather Arthur"],
+      "declared_licenses": ["MIT"],
+      "declared_licenses_processed": {
+        "spdx_expression": "MIT"
+      },
+      "description": "Parser and generator for CSS color strings",
+      "homepage_url": "https://github.com/Qix-/color-string#readme",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/color-string/-/color-string-1.9.1.tgz",
+        "hash": {
+          "value": "4467f9146f036f855b764dfb5bf8582bf342c7a4",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "https://github.com/Qix-/color-string.git",
+        "revision": "d9b04bb2989b2279079ed1b48ac2e9d61291ef64",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/Qix-/color-string.git",
+        "revision": "d9b04bb2989b2279079ed1b48ac2e9d61291ef64",
+        "path": ""
+      }
+    },
+    {
+      "id": "NPM::detect-libc:2.0.3",
+      "purl": "pkg:npm/detect-libc@2.0.3",
+      "authors": ["Lovell Fuller"],
+      "declared_licenses": ["Apache-2.0"],
+      "declared_licenses_processed": {
+        "spdx_expression": "Apache-2.0"
+      },
+      "description": "Node.js module to detect the C standard library (libc) implementation family and version",
+      "homepage_url": "https://github.com/lovell/detect-libc#readme",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/detect-libc/-/detect-libc-2.0.3.tgz",
+        "hash": {
+          "value": "f0cd503b40f9939b894697d19ad50895e30cf700",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "git://github.com/lovell/detect-libc",
+        "revision": "db8ea62694a6bd274366c2b4d982b13c074537a3",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/lovell/detect-libc.git",
+        "revision": "db8ea62694a6bd274366c2b4d982b13c074537a3",
+        "path": ""
+      }
+    },
+    {
+      "id": "NPM::esbuild:0.24.2",
+      "purl": "pkg:npm/esbuild@0.24.2",
+      "declared_licenses": ["MIT"],
+      "declared_licenses_processed": {
+        "spdx_expression": "MIT"
+      },
+      "description": "An extremely fast JavaScript and CSS bundler and minifier.",
+      "homepage_url": "https://github.com/evanw/esbuild#readme",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/esbuild/-/esbuild-0.24.2.tgz",
+        "hash": {
+          "value": "b5b55bee7de017bff5fb8a4e3e44f2ebe2c3567d",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "git+https://github.com/evanw/esbuild.git",
+        "revision": "745abd9f0c06f73ca40fbe198546a9bc36c23b81",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/evanw/esbuild.git",
+        "revision": "745abd9f0c06f73ca40fbe198546a9bc36c23b81",
+        "path": ""
+      }
+    },
+    {
+      "id": "NPM::is-arrayish:0.3.2",
+      "purl": "pkg:npm/is-arrayish@0.3.2",
+      "authors": ["Qix"],
+      "declared_licenses": ["MIT"],
+      "declared_licenses_processed": {
+        "spdx_expression": "MIT"
+      },
+      "description": "Determines if an object can be used as an array",
+      "homepage_url": "https://github.com/qix-/node-is-arrayish#readme",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/is-arrayish/-/is-arrayish-0.3.2.tgz",
+        "hash": {
+          "value": "4574a2ae56f7ab206896fb431eaeed066fdf8f03",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "https://github.com/qix-/node-is-arrayish.git",
+        "revision": "8ef97ff99d606e911aeaf003b86318b882b4fba1",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/qix-/node-is-arrayish.git",
+        "revision": "8ef97ff99d606e911aeaf003b86318b882b4fba1",
+        "path": ""
+      }
+    },
+    {
+      "id": "NPM::nanoid:3.3.8",
+      "purl": "pkg:npm/nanoid@3.3.8",
+      "authors": ["Andrey Sitnik"],
+      "declared_licenses": ["MIT"],
+      "declared_licenses_processed": {
+        "spdx_expression": "MIT"
+      },
+      "description": "A tiny (116 bytes), secure URL-friendly unique string ID generator",
+      "homepage_url": "https://github.com/ai/nanoid#readme",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/nanoid/-/nanoid-3.3.8.tgz",
+        "hash": {
+          "value": "b1be3030bee36aaff18bacb375e5cce521684baf",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "https://github.com/ai/nanoid.git",
+        "revision": "3044cd5e73f4cf31795f61f6e6b961c8c0a5c744",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/ai/nanoid.git",
+        "revision": "3044cd5e73f4cf31795f61f6e6b961c8c0a5c744",
+        "path": ""
+      }
+    },
+    {
+      "id": "NPM::next:15.1.7",
+      "purl": "pkg:npm/next@15.1.7",
+      "declared_licenses": ["MIT"],
+      "declared_licenses_processed": {
+        "spdx_expression": "MIT"
+      },
+      "description": "The React Framework",
+      "homepage_url": "https://nextjs.org",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/next/-/next-15.1.7.tgz",
+        "hash": {
+          "value": "e814845e7cdb0294aee88ceab0bb962de83e8e6f",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "https://github.com/vercel/next.js.git",
+        "revision": "eb883cdcfb22517e4babec6f38d3fe86961e2811",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/vercel/next.js.git",
+        "revision": "eb883cdcfb22517e4babec6f38d3fe86961e2811",
+        "path": ""
+      }
+    },
+    {
+      "id": "NPM::picocolors:1.1.1",
+      "purl": "pkg:npm/picocolors@1.1.1",
+      "authors": ["Alexey Raspopov"],
+      "declared_licenses": ["ISC"],
+      "declared_licenses_processed": {
+        "spdx_expression": "ISC"
+      },
+      "description": "The tiniest and the fastest library for terminal output formatting with ANSI colors",
+      "homepage_url": "https://github.com/alexeyraspopov/picocolors#readme",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/picocolors/-/picocolors-1.1.1.tgz",
+        "hash": {
+          "value": "3d321af3eab939b083c8f929a1d12cda81c26b6b",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "https://github.com/alexeyraspopov/picocolors.git",
+        "revision": "6f0a4638348ed20633d623ee973f9c9a96f65104",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/alexeyraspopov/picocolors.git",
+        "revision": "6f0a4638348ed20633d623ee973f9c9a96f65104",
+        "path": ""
+      }
+    },
+    {
+      "id": "NPM::postcss:8.4.31",
+      "purl": "pkg:npm/postcss@8.4.31",
+      "authors": ["Andrey Sitnik"],
+      "declared_licenses": ["MIT"],
+      "declared_licenses_processed": {
+        "spdx_expression": "MIT"
+      },
+      "description": "Tool for transforming styles with JS plugins",
+      "homepage_url": "https://postcss.org/",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/postcss/-/postcss-8.4.31.tgz",
+        "hash": {
+          "value": "92b451050a9f914da6755af352bdc0192508656d",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "https://github.com/postcss/postcss.git",
+        "revision": "90208de8805dd762596c0028b8637ffbed23e371",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/postcss/postcss.git",
+        "revision": "90208de8805dd762596c0028b8637ffbed23e371",
+        "path": ""
+      }
+    },
+    {
+      "id": "NPM::postcss:8.5.3",
+      "purl": "pkg:npm/postcss@8.5.3",
+      "authors": ["Andrey Sitnik"],
+      "declared_licenses": ["MIT"],
+      "declared_licenses_processed": {
+        "spdx_expression": "MIT"
+      },
+      "description": "Tool for transforming styles with JS plugins",
+      "homepage_url": "https://postcss.org/",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/postcss/-/postcss-8.5.3.tgz",
+        "hash": {
+          "value": "1463b6f1c7fb16fe258736cba29a2de35237eafb",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "https://github.com/postcss/postcss.git",
+        "revision": "22c309d32924e1eeb33c80a6a50b7ba8a43a1832",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/postcss/postcss.git",
+        "revision": "22c309d32924e1eeb33c80a6a50b7ba8a43a1832",
+        "path": ""
+      }
+    },
+    {
+      "id": "NPM::react:19.0.0",
+      "purl": "pkg:npm/react@19.0.0",
+      "declared_licenses": ["MIT"],
+      "declared_licenses_processed": {
+        "spdx_expression": "MIT"
+      },
+      "description": "React is a JavaScript library for building user interfaces.",
+      "homepage_url": "https://react.dev/",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/react/-/react-19.0.0.tgz",
+        "hash": {
+          "value": "6e1969251b9f108870aa4bff37a0ce9ddfaaabdd",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "https://github.com/facebook/react.git",
+        "revision": "63cde684f5340b1ca73f6244501aac1c3d2c92a8",
+        "path": "packages/react"
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/facebook/react.git",
+        "revision": "63cde684f5340b1ca73f6244501aac1c3d2c92a8",
+        "path": "packages/react"
+      }
+    },
+    {
+      "id": "NPM::react-dom:19.0.0",
+      "purl": "pkg:npm/react-dom@19.0.0",
+      "declared_licenses": ["MIT"],
+      "declared_licenses_processed": {
+        "spdx_expression": "MIT"
+      },
+      "description": "React package for working with the DOM.",
+      "homepage_url": "https://react.dev/",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/react-dom/-/react-dom-19.0.0.tgz",
+        "hash": {
+          "value": "43446f1f01c65a4cd7f7588083e686a6726cfb57",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "https://github.com/facebook/react.git",
+        "revision": "63cde684f5340b1ca73f6244501aac1c3d2c92a8",
+        "path": "packages/react-dom"
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/facebook/react.git",
+        "revision": "63cde684f5340b1ca73f6244501aac1c3d2c92a8",
+        "path": "packages/react-dom"
+      }
+    },
+    {
+      "id": "NPM::rollup:4.34.8",
+      "purl": "pkg:npm/rollup@4.34.8",
+      "authors": ["Rich Harris"],
+      "declared_licenses": ["MIT"],
+      "declared_licenses_processed": {
+        "spdx_expression": "MIT"
+      },
+      "description": "Next-generation ES module bundler",
+      "homepage_url": "https://rollupjs.org/",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/rollup/-/rollup-4.34.8.tgz",
+        "hash": {
+          "value": "e859c1a51d899aba9bcf451d4eed1d11fb8e2a6e",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "https://github.com/rollup/rollup.git",
+        "revision": "8f667b7c15b176728449a4917cb29fe5ee3a1c0c",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/rollup/rollup.git",
+        "revision": "8f667b7c15b176728449a4917cb29fe5ee3a1c0c",
+        "path": ""
+      }
+    },
+    {
+      "id": "NPM::scheduler:0.25.0",
+      "purl": "pkg:npm/scheduler@0.25.0",
+      "declared_licenses": ["MIT"],
+      "declared_licenses_processed": {
+        "spdx_expression": "MIT"
+      },
+      "description": "Cooperative scheduler for the browser environment.",
+      "homepage_url": "https://react.dev/",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/scheduler/-/scheduler-0.25.0.tgz",
+        "hash": {
+          "value": "336cd9768e8cceebf52d3c80e3dcf5de23e7e015",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "https://github.com/facebook/react.git",
+        "revision": "63cde684f5340b1ca73f6244501aac1c3d2c92a8",
+        "path": "packages/scheduler"
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/facebook/react.git",
+        "revision": "63cde684f5340b1ca73f6244501aac1c3d2c92a8",
+        "path": "packages/scheduler"
+      }
+    },
+    {
+      "id": "NPM::semver:7.7.1",
+      "purl": "pkg:npm/semver@7.7.1",
+      "authors": ["GitHub Inc."],
+      "declared_licenses": ["ISC"],
+      "declared_licenses_processed": {
+        "spdx_expression": "ISC"
+      },
+      "description": "The semantic version parser used by npm.",
+      "homepage_url": "https://github.com/npm/node-semver#readme",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/semver/-/semver-7.7.1.tgz",
+        "hash": {
+          "value": "abd5098d82b18c6c81f6074ff2647fd3e7220c9f",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "git+https://github.com/npm/node-semver.git",
+        "revision": "30c438bb46c74f319aa8783f96d233ebf5f4a90d",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/npm/node-semver.git",
+        "revision": "30c438bb46c74f319aa8783f96d233ebf5f4a90d",
+        "path": ""
+      }
+    },
+    {
+      "id": "NPM::sharp:0.33.5",
+      "purl": "pkg:npm/sharp@0.33.5",
+      "authors": ["Lovell Fuller"],
+      "declared_licenses": ["Apache-2.0"],
+      "declared_licenses_processed": {
+        "spdx_expression": "Apache-2.0"
+      },
+      "description": "High performance Node.js image processing, the fastest module to resize JPEG, PNG, WebP, GIF, AVIF and TIFF images",
+      "homepage_url": "https://sharp.pixelplumbing.com",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/sharp/-/sharp-0.33.5.tgz",
+        "hash": {
+          "value": "13e0e4130cc309d6a9497596715240b2ec0c594e",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "git://github.com/lovell/sharp.git",
+        "revision": "fc32e0bd3f9111b80cf078df7b0cfc355695674e",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/lovell/sharp.git",
+        "revision": "fc32e0bd3f9111b80cf078df7b0cfc355695674e",
+        "path": ""
+      }
+    },
+    {
+      "id": "NPM::simple-swizzle:0.2.2",
+      "purl": "pkg:npm/simple-swizzle@0.2.2",
+      "authors": ["Qix"],
+      "declared_licenses": ["MIT"],
+      "declared_licenses_processed": {
+        "spdx_expression": "MIT"
+      },
+      "description": "Simply swizzle your arguments",
+      "homepage_url": "https://github.com/qix-/node-simple-swizzle#readme",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/simple-swizzle/-/simple-swizzle-0.2.2.tgz",
+        "hash": {
+          "value": "a4da6b635ffcccca33f70d17cb92592de95e557a",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "https://github.com/qix-/node-simple-swizzle.git",
+        "revision": "54cfffdb7c115c4fc52ce7c2f2af9f6351091c88",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/qix-/node-simple-swizzle.git",
+        "revision": "54cfffdb7c115c4fc52ce7c2f2af9f6351091c88",
+        "path": ""
+      }
+    },
+    {
+      "id": "NPM::source-map-js:1.2.1",
+      "purl": "pkg:npm/source-map-js@1.2.1",
+      "authors": ["Valentin 7rulnik Semirulnik"],
+      "declared_licenses": ["BSD-3-Clause"],
+      "declared_licenses_processed": {
+        "spdx_expression": "BSD-3-Clause"
+      },
+      "description": "Generates and consumes source maps",
+      "homepage_url": "https://github.com/7rulnik/source-map-js",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz",
+        "hash": {
+          "value": "1ce5650fddd87abc099eda37dcff024c2667ae46",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "https://github.com/7rulnik/source-map-js.git",
+        "revision": "428d49f6b1e1614f082b7706fa879a3d9c64f728",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/7rulnik/source-map-js.git",
+        "revision": "428d49f6b1e1614f082b7706fa879a3d9c64f728",
+        "path": ""
+      }
+    },
+    {
+      "id": "NPM::streamsearch:1.1.0",
+      "purl": "pkg:npm/streamsearch@1.1.0",
+      "authors": ["Brian White"],
+      "declared_licenses": ["MIT"],
+      "declared_licenses_processed": {
+        "spdx_expression": "MIT"
+      },
+      "description": "Streaming Boyer-Moore-Horspool searching for node.js",
+      "homepage_url": "https://github.com/mscdex/streamsearch#readme",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/streamsearch/-/streamsearch-1.1.0.tgz",
+        "hash": {
+          "value": "404dd1e2247ca94af554e841a8ef0eaa238da764",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "http://github.com/mscdex/streamsearch.git",
+        "revision": "",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/mscdex/streamsearch.git",
+        "revision": "",
+        "path": ""
+      }
+    },
+    {
+      "id": "NPM::styled-jsx:5.1.6",
+      "purl": "pkg:npm/styled-jsx@5.1.6",
+      "declared_licenses": ["MIT"],
+      "declared_licenses_processed": {
+        "spdx_expression": "MIT"
+      },
+      "description": "Full CSS support for JSX without compromises",
+      "homepage_url": "https://github.com/vercel/styled-jsx#readme",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/styled-jsx/-/styled-jsx-5.1.6.tgz",
+        "hash": {
+          "value": "83b90c077e6c6a80f7f5e8781d0f311b2fe41499",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "https://github.com/vercel/styled-jsx.git",
+        "revision": "d5bd4edc826cfb17332b81d5635be95d513867de",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/vercel/styled-jsx.git",
+        "revision": "d5bd4edc826cfb17332b81d5635be95d513867de",
+        "path": ""
+      }
+    },
+    {
+      "id": "NPM::tslib:2.8.1",
+      "purl": "pkg:npm/tslib@2.8.1",
+      "authors": ["Microsoft Corp."],
+      "declared_licenses": ["0BSD"],
+      "declared_licenses_processed": {
+        "spdx_expression": "0BSD"
+      },
+      "description": "Runtime library for TypeScript helper functions",
+      "homepage_url": "https://www.typescriptlang.org/",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz",
+        "hash": {
+          "value": "612efe4ed235d567e8aba5f2a5fab70280ade83f",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "https://github.com/Microsoft/tslib.git",
+        "revision": "d72d6f70b36286bc3f94a3dda1e64dcb568b1370",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/Microsoft/tslib.git",
+        "revision": "d72d6f70b36286bc3f94a3dda1e64dcb568b1370",
+        "path": ""
+      }
+    },
+    {
+      "id": "NPM::turbo:2.4.2",
+      "purl": "pkg:npm/turbo@2.4.2",
+      "declared_licenses": ["MIT"],
+      "declared_licenses_processed": {
+        "spdx_expression": "MIT"
+      },
+      "description": "Turborepo is a high-performance build system for JavaScript and TypeScript codebases.",
+      "homepage_url": "https://turbo.build/repo",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/turbo/-/turbo-2.4.2.tgz",
+        "hash": {
+          "value": "3e2b285b63535e3631632febb8d05fad54e19697",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "https://github.com/vercel/turborepo",
+        "revision": "",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/vercel/turborepo.git",
+        "revision": "",
+        "path": ""
+      }
+    },
+    {
+      "id": "NPM::turbo-linux-64:2.4.2",
+      "purl": "pkg:npm/turbo-linux-64@2.4.2",
+      "declared_licenses": ["MIT"],
+      "declared_licenses_processed": {
+        "spdx_expression": "MIT"
+      },
+      "description": "The linux-x64 binary for turbo, a monorepo build system.",
+      "homepage_url": "https://turbo.build/repo",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/turbo-linux-64/-/turbo-linux-64-2.4.2.tgz",
+        "hash": {
+          "value": "b49977e5f60e9e44e91b730debf934eb80fa0a3e",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "https://github.com/vercel/turborepo",
+        "revision": "",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/vercel/turborepo.git",
+        "revision": "",
+        "path": ""
+      }
+    },
+    {
+      "id": "NPM::typescript:5.7.3",
+      "purl": "pkg:npm/typescript@5.7.3",
+      "authors": ["Microsoft Corp."],
+      "declared_licenses": ["Apache-2.0"],
+      "declared_licenses_processed": {
+        "spdx_expression": "Apache-2.0"
+      },
+      "description": "TypeScript is a language for application scale JavaScript development",
+      "homepage_url": "https://www.typescriptlang.org/",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/typescript/-/typescript-5.7.3.tgz",
+        "hash": {
+          "value": "919b44a7dbb8583a9b856d162be24a54bf80073e",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "https://github.com/microsoft/TypeScript.git",
+        "revision": "a5e123d9e0690fcea92878ea8a0a382922009fc9",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/microsoft/TypeScript.git",
+        "revision": "a5e123d9e0690fcea92878ea8a0a382922009fc9",
+        "path": ""
+      }
+    },
+    {
+      "id": "NPM::vite:6.1.1",
+      "purl": "pkg:npm/vite@6.1.1",
+      "authors": ["Evan You"],
+      "declared_licenses": ["MIT"],
+      "declared_licenses_processed": {
+        "spdx_expression": "MIT"
+      },
+      "description": "Native-ESM powered web dev build tool",
+      "homepage_url": "https://vite.dev",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/vite/-/vite-6.1.1.tgz",
+        "hash": {
+          "value": "c1f221749298357b9230782a04483e60ad83c8db",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "git+https://github.com/vitejs/vite.git",
+        "revision": "",
+        "path": "packages/vite"
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/vitejs/vite.git",
+        "revision": "",
+        "path": "packages/vite"
+      }
+    },
+    {
+      "id": "NPM:@esbuild:linux-x64:0.24.2",
+      "purl": "pkg:npm/%40esbuild/linux-x64@0.24.2",
+      "declared_licenses": ["MIT"],
+      "declared_licenses_processed": {
+        "spdx_expression": "MIT"
+      },
+      "description": "The Linux 64-bit binary for esbuild, a JavaScript bundler.",
+      "homepage_url": "https://github.com/evanw/esbuild#readme",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/@esbuild/linux-x64/-/linux-x64-0.24.2.tgz",
+        "hash": {
+          "value": "8140c9b40da634d380b0b29c837a0b4267aff38f",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "git+https://github.com/evanw/esbuild.git",
+        "revision": "745abd9f0c06f73ca40fbe198546a9bc36c23b81",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/evanw/esbuild.git",
+        "revision": "745abd9f0c06f73ca40fbe198546a9bc36c23b81",
+        "path": ""
+      }
+    },
+    {
+      "id": "NPM:@img:sharp-libvips-linux-x64:1.0.4",
+      "purl": "pkg:npm/%40img/sharp-libvips-linux-x64@1.0.4",
+      "authors": ["Lovell Fuller"],
+      "declared_licenses": ["LGPL-3.0-or-later"],
+      "declared_licenses_processed": {
+        "spdx_expression": "LGPL-3.0-or-later"
+      },
+      "description": "Prebuilt libvips and dependencies for use with sharp on Linux (glibc) x64",
+      "homepage_url": "https://sharp.pixelplumbing.com",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/@img/sharp-libvips-linux-x64/-/sharp-libvips-linux-x64-1.0.4.tgz",
+        "hash": {
+          "value": "d4c4619cdd157774906e15770ee119931c7ef5e0",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "git+https://github.com/lovell/sharp-libvips.git",
+        "revision": "cb57c8e09460fa0b5c550806b667a2dfc3f7480b",
+        "path": "npm/linux-x64"
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/lovell/sharp-libvips.git",
+        "revision": "cb57c8e09460fa0b5c550806b667a2dfc3f7480b",
+        "path": "npm/linux-x64"
+      }
+    },
+    {
+      "id": "NPM:@img:sharp-libvips-linuxmusl-x64:1.0.4",
+      "purl": "pkg:npm/%40img/sharp-libvips-linuxmusl-x64@1.0.4",
+      "authors": ["Lovell Fuller"],
+      "declared_licenses": ["LGPL-3.0-or-later"],
+      "declared_licenses_processed": {
+        "spdx_expression": "LGPL-3.0-or-later"
+      },
+      "description": "Prebuilt libvips and dependencies for use with sharp on Linux (musl) x64",
+      "homepage_url": "https://sharp.pixelplumbing.com",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/@img/sharp-libvips-linuxmusl-x64/-/sharp-libvips-linuxmusl-x64-1.0.4.tgz",
+        "hash": {
+          "value": "93794e4d7720b077fcad3e02982f2f1c246751ff",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "git+https://github.com/lovell/sharp-libvips.git",
+        "revision": "cb57c8e09460fa0b5c550806b667a2dfc3f7480b",
+        "path": "npm/linuxmusl-x64"
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/lovell/sharp-libvips.git",
+        "revision": "cb57c8e09460fa0b5c550806b667a2dfc3f7480b",
+        "path": "npm/linuxmusl-x64"
+      }
+    },
+    {
+      "id": "NPM:@img:sharp-linux-x64:0.33.5",
+      "purl": "pkg:npm/%40img/sharp-linux-x64@0.33.5",
+      "authors": ["Lovell Fuller"],
+      "declared_licenses": ["Apache-2.0"],
+      "declared_licenses_processed": {
+        "spdx_expression": "Apache-2.0"
+      },
+      "description": "Prebuilt sharp for use with Linux (glibc) x64",
+      "homepage_url": "https://sharp.pixelplumbing.com",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/@img/sharp-linux-x64/-/sharp-linux-x64-0.33.5.tgz",
+        "hash": {
+          "value": "d806e0afd71ae6775cc87f0da8f2d03a7c2209cb",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "git+https://github.com/lovell/sharp.git",
+        "revision": "fc32e0bd3f9111b80cf078df7b0cfc355695674e",
+        "path": "npm/linux-x64"
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/lovell/sharp.git",
+        "revision": "fc32e0bd3f9111b80cf078df7b0cfc355695674e",
+        "path": "npm/linux-x64"
+      }
+    },
+    {
+      "id": "NPM:@img:sharp-linuxmusl-x64:0.33.5",
+      "purl": "pkg:npm/%40img/sharp-linuxmusl-x64@0.33.5",
+      "authors": ["Lovell Fuller"],
+      "declared_licenses": ["Apache-2.0"],
+      "declared_licenses_processed": {
+        "spdx_expression": "Apache-2.0"
+      },
+      "description": "Prebuilt sharp for use with Linux (musl) x64",
+      "homepage_url": "https://sharp.pixelplumbing.com",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/@img/sharp-linuxmusl-x64/-/sharp-linuxmusl-x64-0.33.5.tgz",
+        "hash": {
+          "value": "3f4609ac5d8ef8ec7dadee80b560961a60fd4f48",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "git+https://github.com/lovell/sharp.git",
+        "revision": "fc32e0bd3f9111b80cf078df7b0cfc355695674e",
+        "path": "npm/linuxmusl-x64"
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/lovell/sharp.git",
+        "revision": "fc32e0bd3f9111b80cf078df7b0cfc355695674e",
+        "path": "npm/linuxmusl-x64"
+      }
+    },
+    {
+      "id": "NPM:@next:env:15.1.7",
+      "purl": "pkg:npm/%40next/env@15.1.7",
+      "authors": ["Next.js Team"],
+      "declared_licenses": ["MIT"],
+      "declared_licenses_processed": {
+        "spdx_expression": "MIT"
+      },
+      "description": "Next.js dotenv file loading",
+      "homepage_url": "https://github.com/vercel/next.js#readme",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/@next/env/-/env-15.1.7.tgz",
+        "hash": {
+          "value": "14e2678f893aec50ff2dcb7a6665092fb9e1263d",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "https://github.com/vercel/next.js",
+        "revision": "eb883cdcfb22517e4babec6f38d3fe86961e2811",
+        "path": "packages/next-env"
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/vercel/next.js.git",
+        "revision": "eb883cdcfb22517e4babec6f38d3fe86961e2811",
+        "path": "packages/next-env"
+      }
+    },
+    {
+      "id": "NPM:@next:swc-linux-x64-gnu:15.1.7",
+      "purl": "pkg:npm/%40next/swc-linux-x64-gnu@15.1.7",
+      "declared_licenses": ["MIT"],
+      "declared_licenses_processed": {
+        "spdx_expression": "MIT"
+      },
+      "description": "This is the **x86_64-unknown-linux-gnu** binary for `@next/swc`",
+      "homepage_url": "https://github.com/vercel/next.js#readme",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/@next/swc-linux-x64-gnu/-/swc-linux-x64-gnu-15.1.7.tgz",
+        "hash": {
+          "value": "cf6e338a1fbb1c9b019c158a76a7ab4f143929ce",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "https://github.com/vercel/next.js",
+        "revision": "eb883cdcfb22517e4babec6f38d3fe86961e2811",
+        "path": "crates/napi/npm/linux-x64-gnu"
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/vercel/next.js.git",
+        "revision": "eb883cdcfb22517e4babec6f38d3fe86961e2811",
+        "path": "crates/napi/npm/linux-x64-gnu"
+      }
+    },
+    {
+      "id": "NPM:@next:swc-linux-x64-musl:15.1.7",
+      "purl": "pkg:npm/%40next/swc-linux-x64-musl@15.1.7",
+      "declared_licenses": ["MIT"],
+      "declared_licenses_processed": {
+        "spdx_expression": "MIT"
+      },
+      "description": "This is the **linux-x64-musl** binary for `@next/swc`",
+      "homepage_url": "https://github.com/vercel/next.js#readme",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/@next/swc-linux-x64-musl/-/swc-linux-x64-musl-15.1.7.tgz",
+        "hash": {
+          "value": "94c9117ece8e5851e7e6674f12d6b82b435e3a6f",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "https://github.com/vercel/next.js",
+        "revision": "eb883cdcfb22517e4babec6f38d3fe86961e2811",
+        "path": "crates/napi/npm/linux-x64-musl"
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/vercel/next.js.git",
+        "revision": "eb883cdcfb22517e4babec6f38d3fe86961e2811",
+        "path": "crates/napi/npm/linux-x64-musl"
+      }
+    },
+    {
+      "id": "NPM:@rollup:rollup-linux-x64-gnu:4.34.8",
+      "purl": "pkg:npm/%40rollup/rollup-linux-x64-gnu@4.34.8",
+      "authors": ["Lukas Taegert-Atkinson"],
+      "declared_licenses": ["MIT"],
+      "declared_licenses_processed": {
+        "spdx_expression": "MIT"
+      },
+      "description": "Native bindings for Rollup",
+      "homepage_url": "https://rollupjs.org/",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/@rollup/rollup-linux-x64-gnu/-/rollup-linux-x64-gnu-4.34.8.tgz",
+        "hash": {
+          "value": "5783fc0adcab7dc069692056e8ca8d83709855ce",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "https://github.com/rollup/rollup.git",
+        "revision": "8f667b7c15b176728449a4917cb29fe5ee3a1c0c",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/rollup/rollup.git",
+        "revision": "8f667b7c15b176728449a4917cb29fe5ee3a1c0c",
+        "path": ""
+      }
+    },
+    {
+      "id": "NPM:@rollup:rollup-linux-x64-musl:4.34.8",
+      "purl": "pkg:npm/%40rollup/rollup-linux-x64-musl@4.34.8",
+      "authors": ["Lukas Taegert-Atkinson"],
+      "declared_licenses": ["MIT"],
+      "declared_licenses_processed": {
+        "spdx_expression": "MIT"
+      },
+      "description": "Native bindings for Rollup",
+      "homepage_url": "https://rollupjs.org/",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/@rollup/rollup-linux-x64-musl/-/rollup-linux-x64-musl-4.34.8.tgz",
+        "hash": {
+          "value": "00b6c29b298197a384e3c659910b47943003a678",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "https://github.com/rollup/rollup.git",
+        "revision": "8f667b7c15b176728449a4917cb29fe5ee3a1c0c",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/rollup/rollup.git",
+        "revision": "8f667b7c15b176728449a4917cb29fe5ee3a1c0c",
+        "path": ""
+      }
+    },
+    {
+      "id": "NPM:@scatest:docs:1.0.0",
+      "purl": "pkg:npm/%40scatest/docs@1.0.0",
+      "declared_licenses": [],
+      "declared_licenses_processed": {},
+      "description": "The documentation site",
+      "homepage_url": "",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "vcs": {
+        "type": "",
+        "url": "",
+        "revision": "",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "",
+        "url": "",
+        "revision": "",
+        "path": ""
+      }
+    },
+    {
+      "id": "NPM:@scatest:www:2.0.0",
+      "purl": "pkg:npm/%40scatest/www@2.0.0",
+      "declared_licenses": [],
+      "declared_licenses_processed": {},
+      "description": "The homepage",
+      "homepage_url": "",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "vcs": {
+        "type": "",
+        "url": "",
+        "revision": "",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "",
+        "url": "",
+        "revision": "",
+        "path": ""
+      }
+    },
+    {
+      "id": "NPM:@swc:counter:0.1.3",
+      "purl": "pkg:npm/%40swc/counter@0.1.3",
+      "authors": ["강동윤"],
+      "declared_licenses": ["Apache-2.0"],
+      "declared_licenses_processed": {
+        "spdx_expression": "Apache-2.0"
+      },
+      "description": "Downloade counter for the swc project",
+      "homepage_url": "https://swc.rs",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/@swc/counter/-/counter-0.1.3.tgz",
+        "hash": {
+          "value": "cc7463bd02949611c6329596fccd2b0ec782b0e9",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "git+https://github.com/swc-project/pkgs.git",
+        "revision": "",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/swc-project/pkgs.git",
+        "revision": "",
+        "path": ""
+      }
+    },
+    {
+      "id": "NPM:@swc:helpers:0.5.15",
+      "purl": "pkg:npm/%40swc/helpers@0.5.15",
+      "authors": ["강동윤"],
+      "declared_licenses": ["Apache-2.0"],
+      "declared_licenses_processed": {
+        "spdx_expression": "Apache-2.0"
+      },
+      "description": "External helpers for the swc project.",
+      "homepage_url": "https://swc.rs",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/@swc/helpers/-/helpers-0.5.15.tgz",
+        "hash": {
+          "value": "79efab344c5819ecf83a43f3f9f811fc84b516d7",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "git+https://github.com/swc-project/swc.git",
+        "revision": "9dfa3f541d7452d07c0849918f599237d1489d32",
+        "path": ""
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/swc-project/swc.git",
+        "revision": "9dfa3f541d7452d07c0849918f599237d1489d32",
+        "path": ""
+      }
+    },
+    {
+      "id": "NPM:@types:estree:1.0.6",
+      "purl": "pkg:npm/%40types/estree@1.0.6",
+      "declared_licenses": ["MIT"],
+      "declared_licenses_processed": {
+        "spdx_expression": "MIT"
+      },
+      "description": "TypeScript definitions for estree",
+      "homepage_url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/estree",
+      "binary_artifact": {
+        "url": "",
+        "hash": {
+          "value": "",
+          "algorithm": ""
+        }
+      },
+      "source_artifact": {
+        "url": "https://registry.npmjs.org/@types/estree/-/estree-1.0.6.tgz",
+        "hash": {
+          "value": "628effeeae2064a1b4e79f78e81d87b7e5fc7b50",
+          "algorithm": "SHA-1"
+        }
+      },
+      "vcs": {
+        "type": "Git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "revision": "",
+        "path": "types/estree"
+      },
+      "vcs_processed": {
+        "type": "Git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "revision": "",
+        "path": "types/estree"
+      }
+    }
+  ],
+  "dependency_graphs": {
+    "NPM": {
+      "packages": [
+        "NPM::busboy:1.6.0",
+        "NPM::caniuse-lite:1.0.30001700",
+        "NPM::client-only:0.0.1",
+        "NPM::color-convert:2.0.1",
+        "NPM::color-name:1.1.4",
+        "NPM::color-string:1.9.1",
+        "NPM::color:4.2.3",
+        "NPM::detect-libc:2.0.3",
+        "NPM::esbuild:0.24.2",
+        "NPM::is-arrayish:0.3.2",
+        "NPM::nanoid:3.3.8",
+        "NPM::next:15.1.7",
+        "NPM::picocolors:1.1.1",
+        "NPM::postcss:8.4.31",
+        "NPM::postcss:8.5.3",
+        "NPM::react-dom:19.0.0",
+        "NPM::react:19.0.0",
+        "NPM::rollup:4.34.8",
+        "NPM::scheduler:0.25.0",
+        "NPM::semver:7.7.1",
+        "NPM::sharp:0.33.5",
+        "NPM::simple-swizzle:0.2.2",
+        "NPM::source-map-js:1.2.1",
+        "NPM::streamsearch:1.1.0",
+        "NPM::styled-jsx:5.1.6",
+        "NPM::tslib:2.8.1",
+        "NPM::turbo-linux-64:2.4.2",
+        "NPM::turbo:2.4.2",
+        "NPM::typescript:5.7.3",
+        "NPM::vite:6.1.1",
+        "NPM:@esbuild:linux-x64:0.24.2",
+        "NPM:@img:sharp-libvips-linux-x64:1.0.4",
+        "NPM:@img:sharp-libvips-linuxmusl-x64:1.0.4",
+        "NPM:@img:sharp-linux-x64:0.33.5",
+        "NPM:@img:sharp-linuxmusl-x64:0.33.5",
+        "NPM:@next:env:15.1.7",
+        "NPM:@next:swc-linux-x64-gnu:15.1.7",
+        "NPM:@next:swc-linux-x64-musl:15.1.7",
+        "NPM:@rollup:rollup-linux-x64-gnu:4.34.8",
+        "NPM:@rollup:rollup-linux-x64-musl:4.34.8",
+        "NPM:@scatest:docs:1.0.0",
+        "NPM:@scatest:ui:1.0.7",
+        "NPM:@scatest:www:2.0.0",
+        "NPM:@swc:counter:0.1.3",
+        "NPM:@swc:helpers:0.5.15",
+        "NPM:@types:estree:1.0.6"
+      ],
+      "scopes": {
+        "@scatest:workspace:0.0.0:dependencies": [
+          {
+            "root": 40
+          },
+          {
+            "root": 41
+          },
+          {
+            "root": 42
+          }
+        ],
+        "@scatest:workspace:0.0.0:devDependencies": [
+          {
+            "root": 27
+          },
+          {
+            "root": 28
+          }
+        ]
+      },
+      "nodes": [
+        {
+          "pkg": 16
+        },
+        {
+          "pkg": 41,
+          "linkage": "PROJECT_DYNAMIC"
+        },
+        {
+          "pkg": 18
+        },
+        {
+          "pkg": 15
+        },
+        {
+          "pkg": 30
+        },
+        {
+          "pkg": 8
+        },
+        {
+          "pkg": 10
+        },
+        {
+          "pkg": 12
+        },
+        {
+          "pkg": 22
+        },
+        {
+          "pkg": 14
+        },
+        {
+          "pkg": 38
+        },
+        {
+          "pkg": 39
+        },
+        {
+          "pkg": 45
+        },
+        {
+          "pkg": 17
+        },
+        {
+          "pkg": 29
+        },
+        {
+          "pkg": 40
+        },
+        {
+          "pkg": 35
+        },
+        {
+          "pkg": 36
+        },
+        {
+          "pkg": 37
+        },
+        {
+          "pkg": 43
+        },
+        {
+          "pkg": 25
+        },
+        {
+          "pkg": 44
+        },
+        {
+          "pkg": 23
+        },
+        {},
+        {
+          "pkg": 1
+        },
+        {
+          "pkg": 13
+        },
+        {
+          "pkg": 31
+        },
+        {
+          "pkg": 32
+        },
+        {
+          "pkg": 33
+        },
+        {
+          "pkg": 34
+        },
+        {
+          "pkg": 4
+        },
+        {
+          "pkg": 3
+        },
+        {
+          "pkg": 9
+        },
+        {
+          "pkg": 21
+        },
+        {
+          "pkg": 5
+        },
+        {
+          "pkg": 6
+        },
+        {
+          "pkg": 7
+        },
+        {
+          "pkg": 19
+        },
+        {
+          "pkg": 20
+        },
+        {
+          "pkg": 2
+        },
+        {
+          "pkg": 24
+        },
+        {
+          "pkg": 11
+        },
+        {
+          "pkg": 28
+        },
+        {
+          "pkg": 42
+        },
+        {
+          "pkg": 26
+        },
+        {
+          "pkg": 27
+        }
+      ],
+      "edges": [
+        {
+          "from": 1,
+          "to": 0
+        },
+        {
+          "from": 3,
+          "to": 0
+        },
+        {
+          "from": 3,
+          "to": 2
+        },
+        {
+          "from": 5,
+          "to": 4
+        },
+        {
+          "from": 9,
+          "to": 6
+        },
+        {
+          "from": 9,
+          "to": 7
+        },
+        {
+          "from": 9,
+          "to": 8
+        },
+        {
+          "from": 13,
+          "to": 10
+        },
+        {
+          "from": 13,
+          "to": 11
+        },
+        {
+          "from": 13,
+          "to": 12
+        },
+        {
+          "from": 14,
+          "to": 5
+        },
+        {
+          "from": 14,
+          "to": 9
+        },
+        {
+          "from": 14,
+          "to": 13
+        },
+        {
+          "from": 15,
+          "to": 0
+        },
+        {
+          "from": 15,
+          "to": 1
+        },
+        {
+          "from": 15,
+          "to": 3
+        },
+        {
+          "from": 15,
+          "to": 14
+        },
+        {
+          "from": 21,
+          "to": 20
+        },
+        {
+          "from": 23,
+          "to": 22
+        },
+        {
+          "from": 25,
+          "to": 6
+        },
+        {
+          "from": 25,
+          "to": 7
+        },
+        {
+          "from": 25,
+          "to": 8
+        },
+        {
+          "from": 28,
+          "to": 26
+        },
+        {
+          "from": 29,
+          "to": 27
+        },
+        {
+          "from": 31,
+          "to": 30
+        },
+        {
+          "from": 33,
+          "to": 32
+        },
+        {
+          "from": 34,
+          "to": 30
+        },
+        {
+          "from": 34,
+          "to": 33
+        },
+        {
+          "from": 35,
+          "to": 31
+        },
+        {
+          "from": 35,
+          "to": 34
+        },
+        {
+          "from": 38,
+          "to": 26
+        },
+        {
+          "from": 38,
+          "to": 27
+        },
+        {
+          "from": 38,
+          "to": 28
+        },
+        {
+          "from": 38,
+          "to": 29
+        },
+        {
+          "from": 38,
+          "to": 35
+        },
+        {
+          "from": 38,
+          "to": 36
+        },
+        {
+          "from": 38,
+          "to": 37
+        },
+        {
+          "from": 40,
+          "to": 0
+        },
+        {
+          "from": 40,
+          "to": 39
+        },
+        {
+          "from": 41,
+          "to": 0
+        },
+        {
+          "from": 41,
+          "to": 3
+        },
+        {
+          "from": 41,
+          "to": 16
+        },
+        {
+          "from": 41,
+          "to": 17
+        },
+        {
+          "from": 41,
+          "to": 18
+        },
+        {
+          "from": 41,
+          "to": 19
+        },
+        {
+          "from": 41,
+          "to": 21
+        },
+        {
+          "from": 41,
+          "to": 23
+        },
+        {
+          "from": 41,
+          "to": 24
+        },
+        {
+          "from": 41,
+          "to": 25
+        },
+        {
+          "from": 41,
+          "to": 38
+        },
+        {
+          "from": 41,
+          "to": 40
+        },
+        {
+          "from": 43,
+          "to": 0
+        },
+        {
+          "from": 43,
+          "to": 1
+        },
+        {
+          "from": 43,
+          "to": 3
+        },
+        {
+          "from": 43,
+          "to": 41
+        },
+        {
+          "from": 43,
+          "to": 42
+        },
+        {
+          "from": 45,
+          "to": 44
+        }
+      ]
+    }
+  }
+}

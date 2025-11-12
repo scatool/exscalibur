@@ -217,12 +217,14 @@ exports[`multimodule 1`] = `
         {
           "packages": [
             "pkg:maven/com.google.guava/guava@31.1-jre",
+            "pkg:maven/multimodule-example/lib",
           ],
           "scope": "compileClasspath",
         },
         {
           "packages": [
             "pkg:maven/com.google.guava/guava@31.1-jre",
+            "pkg:maven/multimodule-example/lib",
             "pkg:maven/org.slf4j/slf4j-api@2.0.7",
           ],
           "scope": "runtimeClasspath",
@@ -231,6 +233,7 @@ exports[`multimodule 1`] = `
           "packages": [
             "pkg:maven/com.google.guava/guava@31.1-jre",
             "pkg:maven/junit/junit@4.13.2",
+            "pkg:maven/multimodule-example/lib",
           ],
           "scope": "testCompileClasspath",
         },
@@ -238,6 +241,7 @@ exports[`multimodule 1`] = `
           "packages": [
             "pkg:maven/com.google.guava/guava@31.1-jre",
             "pkg:maven/junit/junit@4.13.2",
+            "pkg:maven/multimodule-example/lib",
             "pkg:maven/org.slf4j/slf4j-api@2.0.7",
           ],
           "scope": "testRuntimeClasspath",
