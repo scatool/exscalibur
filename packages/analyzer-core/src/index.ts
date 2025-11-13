@@ -186,12 +186,13 @@ function makePathsRelative(result: AnalyzerResult, codebase: string): void {
   // Convert evidence paths from absolute to relative
   for (const pkg of result.packages) {
     pkg.evidence = pkg.evidence.map((e) => {
-      // Evidence format: "path:lineNumber" or "path#lineNumber"
+      // Evidence format: "path:lineNumber" or "path#lineNumber" or just "path"
       const colonMatch = e.match(/^(.+?):(\d+)$/);
       const hashMatch = e.match(/^(.+?)#(\d+)$/);
       const match = colonMatch || hashMatch;
 
       if (match && match[1] && match[2]) {
+        // Evidence with line number
         const path = match[1];
         const lineNumber = match[2];
         const separator = colonMatch ? ':' : '#';
@@ -199,8 +200,10 @@ function makePathsRelative(result: AnalyzerResult, codebase: string): void {
           ? path.substring(normalizedCodebase.length + 1)
           : path;
         return `${relativePath}${separator}${lineNumber}`;
+      } else {
+        // Evidence without line number (just a path)
+        return e.startsWith(normalizedCodebase + '/') ? e.substring(normalizedCodebase.length + 1) : e;
       }
-      return e;
     });
   }
 
