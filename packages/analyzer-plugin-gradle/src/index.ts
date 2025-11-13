@@ -1,1 +1,1 @@
-export { extractor as gradleExtractor } from './extractor.ts';
+export { extractor as gradleExtractor, type GradleOptions } from './extractor.ts';
