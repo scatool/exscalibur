@@ -10,7 +10,8 @@ for (const file of fixtureFiles) {
   test(file, async () => {
     const filePath = join(fixturesDir, file);
     const content = await Bun.file(filePath).text();
-    const result = await extractWorkflow(content, filePath);
+    // Pass relative path to match the extractor's behavior
+    const result = await extractWorkflow(content, file);
     normalizeResult(result, fixturesDir);
     expect(result).toMatchSnapshot();
   });
