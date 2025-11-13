@@ -5,3 +5,4 @@ export { extractor as packageLockJsonExtractor } from './packagelockjson/index.t
 export { extractor as pnpmLockExtractor } from './pnpmlock/index.ts';
 export { extractor as yarnBerryExtractor } from './yarnberry/index.ts';
 export { extractor as yarnLockExtractor } from './yarnlock/index.ts';
+export type { JavaScriptOptions } from './options.ts';

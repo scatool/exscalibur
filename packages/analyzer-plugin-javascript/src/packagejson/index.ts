@@ -3,6 +3,7 @@ import { Glob } from 'bun';
 import { PackageURL } from 'packageurl-js';
 import { dirname } from 'node:path';
 import { existsSync } from 'node:fs';
+import type { JavaScriptOptions } from '../options.ts';
 
 async function hasLockfileInDirectory(dir: string, codebase: string): Promise<boolean> {
   const lockfiles = ['package-lock.json', 'npm-shrinkwrap.json', 'yarn.lock', 'pnpm-lock.yaml', 'bun.lockb'];
@@ -28,19 +29,20 @@ async function hasLockfileInDirectory(dir: string, codebase: string): Promise<bo
   return false;
 }
 
-export const extractor: Extractor = filesExtractor({
+export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScriptOptions>({
   name: 'packagejson',
   version: 1,
-  markFiles: async function (codebase: string) {
-    // Find all package.json files in the codebase
-    const glob = new Glob('**/package.json');
+  options: async () => ({
+    ignore: ['**/node_modules/**'],
+  }),
+  markFiles: async function (codebase: string, options: JavaScriptOptions) {
+    const ignorePatterns = options.ignore ?? [];
+    const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));
 
-    for await (const file of glob.scan({
-      cwd: codebase,
-      absolute: true,
-    })) {
-      // Skip node_modules
-      if (file.includes('/node_modules/')) {
+    const glob = new Glob('**/package.json');
+    for await (const file of glob.scan({ cwd: codebase, absolute: true })) {
+      const shouldIgnore = ignoreGlobs.some((glob) => glob.match(file));
+      if (shouldIgnore) {
         continue;
       }
 

@@ -25,15 +25,22 @@ import {
 } from './lockfile.ts';
 import type { PackageJson } from '../types.ts';
 import { createNpmPurl, NPM_DEPENDENCY_SCOPES } from '../npm-utils.ts';
+import type { JavaScriptOptions } from '../options.ts';
 
-const lockfileGlob = new Glob('**/pnpm-lock.yaml');
-
-export const extractor: Extractor = filesExtractor({
+export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScriptOptions>({
   name: 'pnpmlock',
   version: 1,
-  markFiles: async function (codebase: string) {
+  options: async () => ({
+    ignore: ['**/node_modules/**'],
+  }),
+  markFiles: async function (codebase: string, options: JavaScriptOptions) {
+    const ignorePatterns = options.ignore ?? [];
+    const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));
+
+    const lockfileGlob = new Glob('**/pnpm-lock.yaml');
     for await (const file of lockfileGlob.scan({ cwd: codebase, absolute: true })) {
-      if (!file.includes('/node_modules/')) {
+      const shouldIgnore = ignoreGlobs.some((glob) => glob.match(file));
+      if (!shouldIgnore) {
         this.markFile(file);
       }
     }

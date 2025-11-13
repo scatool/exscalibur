@@ -1,31 +1,37 @@
 import {
-  type AnalyzerResult,
-  type DependencyScope,
-  type Extractor,
-  filesExtractor,
-  type Subproject,
-  initializeExtractionMaps,
   addRelationship,
-  ensurePackageExists,
+  aggregateSubprojectRelationships,
+  type AnalyzerResult,
   convertPackageMapToArray,
   convertRelationshipsMapToArray,
-  aggregateSubprojectRelationships,
+  type DependencyScope,
+  ensurePackageExists,
+  type Extractor,
+  filesExtractor,
+  initializeExtractionMaps,
+  type Subproject,
 } from '@scatool/analyzer-core/src/index.ts';
 import { Glob } from 'bun';
 import { PackageURL } from 'packageurl-js';
 import { dirname, join } from 'node:path';
-import { findLineNumber, parseDenoLockfile, parseJsrPackage, parseNpmPackage, type DenoLockfile } from './lockfile.ts';
-import type { PackageJson } from '../types.ts';
+import { type DenoLockfile, findLineNumber, parseDenoLockfile, parseJsrPackage, parseNpmPackage } from './lockfile.ts';
 import { createNpmPurl } from '../npm-utils.ts';
+import type { JavaScriptOptions } from '../options.ts';
 
-const lockfileGlob = new Glob('**/deno.lock');
-
-export const extractor: Extractor = filesExtractor({
+export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScriptOptions>({
   name: 'denolock',
   version: 1,
-  markFiles: async function (codebase: string) {
+  options: async () => ({
+    ignore: ['**/node_modules/**'],
+  }),
+  markFiles: async function (codebase: string, options: JavaScriptOptions) {
+    const ignorePatterns = options.ignore ?? [];
+    const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));
+
+    const lockfileGlob = new Glob('**/deno.lock');
     for await (const file of lockfileGlob.scan({ cwd: codebase, absolute: true })) {
-      if (!file.includes('/node_modules/')) {
+      const shouldIgnore = ignoreGlobs.some((glob) => glob.match(file));
+      if (!shouldIgnore) {
         this.markFile(file);
       }
     }
