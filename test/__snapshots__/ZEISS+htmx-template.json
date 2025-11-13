@@ -1811,12 +1811,6 @@
       ]
     },
     {
-      "purl": "pkg:golang/github.com%2Fzeiss%2Fhtmx-template@0.0.0-00010101000000-000000000000",
-      "evidence": [
-        "<repositories>/ZEISS+htmx-template/go.mod#1"
-      ]
-    },
-    {
       "purl": "pkg:golang/gitlab.com%2Fbosi%2Fdecorder@v0.4.1",
       "evidence": [
         "<repositories>/ZEISS+htmx-template/go.mod#188",
@@ -2134,12 +2128,6 @@
     {
       "purl": "pkg:golang/rsc.io%2Fsampler@v1.3.0",
       "evidence": []
-    },
-    {
-      "purl": "pkg:golang/tools@0.0.0-00010101000000-000000000000",
-      "evidence": [
-        "<repositories>/ZEISS+htmx-template/tools/go.mod#1"
-      ]
     },
     {
       "purl": "pkg:npm/%40alloc/quick-lru@5.2.0",
@@ -3761,7 +3749,7 @@
   ],
   "subprojects": [
     {
-      "purl": "pkg:golang/github.com%2Fzeiss%2Fhtmx-template@0.0.0-00010101000000-000000000000",
+      "purl": "pkg:golang/github.com%2Fzeiss%2Fhtmx-template",
       "definitionFile": "<repositories>/ZEISS+htmx-template/go.mod",
       "scopes": [
         {
@@ -4120,7 +4108,7 @@
       ]
     },
     {
-      "purl": "pkg:golang/tools@0.0.0-00010101000000-000000000000",
+      "purl": "pkg:golang/tools",
       "definitionFile": "<repositories>/ZEISS+htmx-template/tools/go.mod",
       "scopes": [
         {
@@ -5948,7 +5936,7 @@
       ]
     },
     {
-      "from": "pkg:golang/github.com%2Fzeiss%2Fhtmx-template@0.0.0-00010101000000-000000000000",
+      "from": "pkg:golang/github.com%2Fzeiss%2Fhtmx-template",
       "to": [
         "pkg:golang/4d63.com%2Fgocheckcompilerdirectives@v1.2.1",
         "pkg:golang/4d63.com%2Fgochecknoglobals@v0.2.1",
@@ -6267,7 +6255,7 @@
       ]
     },
     {
-      "from": "pkg:golang/tools@0.0.0-00010101000000-000000000000",
+      "from": "pkg:golang/tools",
       "to": [
         "pkg:golang/4d63.com%2Fgocheckcompilerdirectives@v1.2.1",
         "pkg:golang/4d63.com%2Fgochecknoglobals@v0.2.1",

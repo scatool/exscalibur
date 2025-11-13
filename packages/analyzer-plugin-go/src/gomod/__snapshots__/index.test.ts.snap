@@ -6,12 +6,6 @@ exports[`basic 1`] = `
   "packages": [
     {
       "evidence": [
-        "<fixtures>/basic/go.mod#1",
-      ],
-      "purl": "pkg:golang/example.com%2Fmyapp@0.0.0-00010101000000-000000000000",
-    },
-    {
-      "evidence": [
         "<fixtures>/basic/go.mod#12",
       ],
       "purl": "pkg:golang/github.com%2Fbytedance%2Fsonic@v1.9.1",
@@ -251,7 +245,7 @@ exports[`basic 1`] = `
   ],
   "relationships": [
     {
-      "from": "pkg:golang/example.com%2Fmyapp@0.0.0-00010101000000-000000000000",
+      "from": "pkg:golang/example.com%2Fmyapp",
       "to": [
         "pkg:golang/github.com%2Fbytedance%2Fsonic@v1.9.1",
         "pkg:golang/github.com%2Fchenzhuoyu%2Fbase64x@v0.0.0-20221115062448-fe3a3abad311",
@@ -443,7 +437,7 @@ exports[`basic 1`] = `
   "subprojects": [
     {
       "definitionFile": "<fixtures>/basic/go.mod",
-      "purl": "pkg:golang/example.com%2Fmyapp@0.0.0-00010101000000-000000000000",
+      "purl": "pkg:golang/example.com%2Fmyapp",
       "scopes": [
         {
           "packages": [
@@ -512,28 +506,10 @@ exports[`monorepo 1`] = `
   "packages": [
     {
       "evidence": [
-        "<fixtures>/monorepo/go.mod#1",
-      ],
-      "purl": "pkg:golang/example.com%2Fmonorepo@0.0.0-00010101000000-000000000000",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/pkg1/go.mod#1",
-      ],
-      "purl": "pkg:golang/example.com%2Fmonorepo%2Fpkg1@0.0.0-00010101000000-000000000000",
-    },
-    {
-      "evidence": [
         "<fixtures>/monorepo/go.mod#6",
         "<fixtures>/monorepo/pkg2/go.mod#6",
       ],
       "purl": "pkg:golang/example.com%2Fmonorepo%2Fpkg1@v0.0.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/pkg2/go.mod#1",
-      ],
-      "purl": "pkg:golang/example.com%2Fmonorepo%2Fpkg2@0.0.0-00010101000000-000000000000",
     },
     {
       "evidence": [
@@ -600,7 +576,7 @@ exports[`monorepo 1`] = `
   ],
   "relationships": [
     {
-      "from": "pkg:golang/example.com%2Fmonorepo@0.0.0-00010101000000-000000000000",
+      "from": "pkg:golang/example.com%2Fmonorepo",
       "to": [
         "pkg:golang/example.com%2Fmonorepo%2Fpkg1@v0.0.0",
         "pkg:golang/example.com%2Fmonorepo%2Fpkg2@v0.0.0",
@@ -611,7 +587,7 @@ exports[`monorepo 1`] = `
       ],
     },
     {
-      "from": "pkg:golang/example.com%2Fmonorepo%2Fpkg1@0.0.0-00010101000000-000000000000",
+      "from": "pkg:golang/example.com%2Fmonorepo%2Fpkg1",
       "to": [
         "pkg:golang/github.com%2Fgoogle%2Fuuid@v1.3.0",
       ],
@@ -623,7 +599,7 @@ exports[`monorepo 1`] = `
       ],
     },
     {
-      "from": "pkg:golang/example.com%2Fmonorepo%2Fpkg2@0.0.0-00010101000000-000000000000",
+      "from": "pkg:golang/example.com%2Fmonorepo%2Fpkg2",
       "to": [
         "pkg:golang/example.com%2Fmonorepo%2Fpkg1@v0.0.0",
         "pkg:golang/golang.org%2Fx%2Ftext@v0.12.0",
@@ -663,7 +639,7 @@ exports[`monorepo 1`] = `
   "subprojects": [
     {
       "definitionFile": "<fixtures>/monorepo/go.mod",
-      "purl": "pkg:golang/example.com%2Fmonorepo@0.0.0-00010101000000-000000000000",
+      "purl": "pkg:golang/example.com%2Fmonorepo",
       "scopes": [
         {
           "packages": [
@@ -689,7 +665,7 @@ exports[`monorepo 1`] = `
     },
     {
       "definitionFile": "<fixtures>/monorepo/pkg1/go.mod",
-      "purl": "pkg:golang/example.com%2Fmonorepo%2Fpkg1@0.0.0-00010101000000-000000000000",
+      "purl": "pkg:golang/example.com%2Fmonorepo%2Fpkg1",
       "scopes": [
         {
           "packages": [
@@ -701,7 +677,7 @@ exports[`monorepo 1`] = `
     },
     {
       "definitionFile": "<fixtures>/monorepo/pkg2/go.mod",
-      "purl": "pkg:golang/example.com%2Fmonorepo%2Fpkg2@0.0.0-00010101000000-000000000000",
+      "purl": "pkg:golang/example.com%2Fmonorepo%2Fpkg2",
       "scopes": [
         {
           "packages": [
@@ -729,18 +705,6 @@ exports[`replace-directive 1`] = `
 {
   "issues": [],
   "packages": [
-    {
-      "evidence": [
-        "<fixtures>/replace-directive/go.mod#1",
-      ],
-      "purl": "pkg:golang/example.com%2Fapp@0.0.0-00010101000000-000000000000",
-    },
-    {
-      "evidence": [
-        "<fixtures>/replace-directive/internal/utils/go.mod#1",
-      ],
-      "purl": "pkg:golang/example.com%2Finternal%2Futils@0.0.0-00010101000000-000000000000",
-    },
     {
       "evidence": [
         "<fixtures>/replace-directive/go.mod#7",
@@ -774,7 +738,7 @@ exports[`replace-directive 1`] = `
   ],
   "relationships": [
     {
-      "from": "pkg:golang/example.com%2Fapp@0.0.0-00010101000000-000000000000",
+      "from": "pkg:golang/example.com%2Fapp",
       "to": [
         "pkg:golang/example.com%2Finternal%2Futils@v0.0.0",
         "pkg:golang/github.com%2Fgoogle%2Fuuid@v1.3.0",
@@ -793,7 +757,7 @@ exports[`replace-directive 1`] = `
   "subprojects": [
     {
       "definitionFile": "<fixtures>/replace-directive/go.mod",
-      "purl": "pkg:golang/example.com%2Fapp@0.0.0-00010101000000-000000000000",
+      "purl": "pkg:golang/example.com%2Fapp",
       "scopes": [
         {
           "packages": [
@@ -815,7 +779,7 @@ exports[`replace-directive 1`] = `
     },
     {
       "definitionFile": "<fixtures>/replace-directive/internal/utils/go.mod",
-      "purl": "pkg:golang/example.com%2Finternal%2Futils@0.0.0-00010101000000-000000000000",
+      "purl": "pkg:golang/example.com%2Finternal%2Futils",
       "scopes": [],
     },
   ],

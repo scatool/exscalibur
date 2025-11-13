@@ -2363,12 +2363,6 @@
       ]
     },
     {
-      "purl": "pkg:golang/github.com%2Fory%2Fclient-go@0.0.0-00010101000000-000000000000",
-      "evidence": [
-        "<repositories>/ory+kratos/internal/client-go/go.mod#1"
-      ]
-    },
-    {
       "purl": "pkg:golang/github.com%2Fory%2Fclient-go@v0.0.0-00010101000000-000000000000",
       "evidence": [
         "<repositories>/ory+kratos/go.mod#59"
@@ -2442,24 +2436,6 @@
       ]
     },
     {
-      "purl": "pkg:golang/github.com%2Fory%2Fkratos@0.0.0-00010101000000-000000000000",
-      "evidence": [
-        "<repositories>/ory+kratos/go.mod#1"
-      ]
-    },
-    {
-      "purl": "pkg:golang/github.com%2Fory%2Fkratos%2Ftest%2Fe2e%2Fhydra-kratos-login-consent@0.0.0-00010101000000-000000000000",
-      "evidence": [
-        "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod#1"
-      ]
-    },
-    {
-      "purl": "pkg:golang/github.com%2Fory%2Fkratos%2Ftest%2Fe2e%2Fhydra-login-consent@0.0.0-00010101000000-000000000000",
-      "evidence": [
-        "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod#1"
-      ]
-    },
-    {
       "purl": "pkg:golang/github.com%2Fory%2Fmail@v2.3.1+incompatible",
       "evidence": []
     },
@@ -2467,13 +2443,6 @@
       "purl": "pkg:golang/github.com%2Fory%2Fmail%2Fv3@v3.0.0",
       "evidence": [
         "<repositories>/ory+kratos/go.mod#65"
-      ]
-    },
-    {
-      "purl": "pkg:golang/github.com%2Fory%2Fmock@0.0.0-00010101000000-000000000000",
-      "evidence": [
-        "<repositories>/ory+kratos/test/e2e/mock/httptarget/go.mod#1",
-        "<repositories>/ory+kratos/test/e2e/mock/webhook/go.mod#1"
       ]
     },
     {
@@ -2494,12 +2463,6 @@
       "evidence": [
         "<repositories>/ory+kratos/go.mod#67",
         "<repositories>/ory+kratos/oryx/go.mod#53"
-      ]
-    },
-    {
-      "purl": "pkg:golang/github.com%2Fory%2Fx@0.0.0-00010101000000-000000000000",
-      "evidence": [
-        "<repositories>/ory+kratos/oryx/go.mod#1"
       ]
     },
     {
@@ -2524,12 +2487,6 @@
       "purl": "pkg:golang/github.com%2Fory%2Fx@v0.0.729",
       "evidence": [
         "<repositories>/ory+kratos/oryx/randx/strength/go.mod#8"
-      ]
-    },
-    {
-      "purl": "pkg:golang/github.com%2Fory%2Fx%2Frandx%2Fstrength@0.0.0-00010101000000-000000000000",
-      "evidence": [
-        "<repositories>/ory+kratos/oryx/randx/strength/go.mod#1"
       ]
     },
     {
@@ -7276,12 +7233,12 @@
   ],
   "subprojects": [
     {
-      "purl": "pkg:golang/github.com%2Fory%2Fclient-go@0.0.0-00010101000000-000000000000",
+      "purl": "pkg:golang/github.com%2Fory%2Fclient-go",
       "definitionFile": "<repositories>/ory+kratos/internal/client-go/go.mod",
       "scopes": []
     },
     {
-      "purl": "pkg:golang/github.com%2Fory%2Fkratos@0.0.0-00010101000000-000000000000",
+      "purl": "pkg:golang/github.com%2Fory%2Fkratos",
       "definitionFile": "<repositories>/ory+kratos/go.mod",
       "scopes": [
         {
@@ -7797,7 +7754,7 @@
       ]
     },
     {
-      "purl": "pkg:golang/github.com%2Fory%2Fkratos%2Ftest%2Fe2e%2Fhydra-kratos-login-consent@0.0.0-00010101000000-000000000000",
+      "purl": "pkg:golang/github.com%2Fory%2Fkratos%2Ftest%2Fe2e%2Fhydra-kratos-login-consent",
       "definitionFile": "<repositories>/ory+kratos/test/e2e/hydra-kratos-login-consent/go.mod",
       "scopes": [
         {
@@ -8078,7 +8035,7 @@
       ]
     },
     {
-      "purl": "pkg:golang/github.com%2Fory%2Fkratos%2Ftest%2Fe2e%2Fhydra-login-consent@0.0.0-00010101000000-000000000000",
+      "purl": "pkg:golang/github.com%2Fory%2Fkratos%2Ftest%2Fe2e%2Fhydra-login-consent",
       "definitionFile": "<repositories>/ory+kratos/test/e2e/hydra-login-consent/go.mod",
       "scopes": [
         {
@@ -8339,12 +8296,12 @@
       ]
     },
     {
-      "purl": "pkg:golang/github.com%2Fory%2Fmock@0.0.0-00010101000000-000000000000",
+      "purl": "pkg:golang/github.com%2Fory%2Fmock",
       "definitionFile": "<repositories>/ory+kratos/test/e2e/mock/httptarget/go.mod",
       "scopes": []
     },
     {
-      "purl": "pkg:golang/github.com%2Fory%2Fmock@0.0.0-00010101000000-000000000000",
+      "purl": "pkg:golang/github.com%2Fory%2Fmock",
       "definitionFile": "<repositories>/ory+kratos/test/e2e/mock/webhook/go.mod",
       "scopes": [
         {
@@ -8368,7 +8325,7 @@
       ]
     },
     {
-      "purl": "pkg:golang/github.com%2Fory%2Fx@0.0.0-00010101000000-000000000000",
+      "purl": "pkg:golang/github.com%2Fory%2Fx",
       "definitionFile": "<repositories>/ory+kratos/oryx/go.mod",
       "scopes": [
         {
@@ -8750,7 +8707,7 @@
       ]
     },
     {
-      "purl": "pkg:golang/github.com%2Fory%2Fx%2Frandx%2Fstrength@0.0.0-00010101000000-000000000000",
+      "purl": "pkg:golang/github.com%2Fory%2Fx%2Frandx%2Fstrength",
       "definitionFile": "<repositories>/ory+kratos/oryx/randx/strength/go.mod",
       "scopes": [
         {
@@ -10183,7 +10140,7 @@
       ]
     },
     {
-      "from": "pkg:golang/github.com%2Fory%2Fkratos@0.0.0-00010101000000-000000000000",
+      "from": "pkg:golang/github.com%2Fory%2Fkratos",
       "to": [
         "pkg:golang/code.dny.dev%2Fssrf@v0.2.0",
         "pkg:golang/dario.cat%2Fmergo@v1.0.2",
@@ -10496,7 +10453,7 @@
       ]
     },
     {
-      "from": "pkg:golang/github.com%2Fory%2Fkratos%2Ftest%2Fe2e%2Fhydra-kratos-login-consent@0.0.0-00010101000000-000000000000",
+      "from": "pkg:golang/github.com%2Fory%2Fkratos%2Ftest%2Fe2e%2Fhydra-kratos-login-consent",
       "to": [
         "pkg:golang/code.dny.dev%2Fssrf@v0.2.0",
         "pkg:golang/github.com%2Fasaskevich%2Fgovalidator@v0.0.0-20230301143203-a9d515a09cc2",
@@ -10559,7 +10516,7 @@
       ]
     },
     {
-      "from": "pkg:golang/github.com%2Fory%2Fkratos%2Ftest%2Fe2e%2Fhydra-login-consent@0.0.0-00010101000000-000000000000",
+      "from": "pkg:golang/github.com%2Fory%2Fkratos%2Ftest%2Fe2e%2Fhydra-login-consent",
       "to": [
         "pkg:golang/code.dny.dev%2Fssrf@v0.2.0",
         "pkg:golang/github.com%2Favast%2Fretry-go%2Fv4@v4.6.1",
@@ -10619,7 +10576,7 @@
       ]
     },
     {
-      "from": "pkg:golang/github.com%2Fory%2Fmock@0.0.0-00010101000000-000000000000",
+      "from": "pkg:golang/github.com%2Fory%2Fmock",
       "to": [
         "pkg:golang/github.com%2Fsirupsen%2Flogrus@v1.8.1",
         "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.7.0",
@@ -10738,7 +10695,7 @@
       ]
     },
     {
-      "from": "pkg:golang/github.com%2Fory%2Fx@0.0.0-00010101000000-000000000000",
+      "from": "pkg:golang/github.com%2Fory%2Fx",
       "to": [
         "pkg:golang/code.dny.dev%2Fssrf@v0.2.0",
         "pkg:golang/dario.cat%2Fmergo@v1.0.2",
@@ -11779,7 +11736,7 @@
       ]
     },
     {
-      "from": "pkg:golang/github.com%2Fory%2Fx%2Frandx%2Fstrength@0.0.0-00010101000000-000000000000",
+      "from": "pkg:golang/github.com%2Fory%2Fx%2Frandx%2Fstrength",
       "to": [
         "pkg:golang/codeberg.org%2Fgo-fonts%2Fliberation@v0.5.0",
         "pkg:golang/codeberg.org%2Fgo-latex%2Flatex@v0.1.0",
