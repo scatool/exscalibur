@@ -93,6 +93,7 @@ export const extractor: Extractor = filesExtractor({
 
     const { packageMap, relationshipsMap } = initializeExtractionMaps();
     const subprojects: Subproject[] = [];
+    const subprojectPurls = new Set<string>();
 
     // Parse the graph output
     const graphLines = graphOutput.split('\n').filter((line) => line.trim());
@@ -111,8 +112,8 @@ export const extractor: Extractor = filesExtractor({
       if (!fromParsed || !toParsed) continue;
 
       // Normalize to module@version format for selectedModules check
-      const fromNormalized = `${fromParsed.path}@${fromParsed.version}`;
-      const toNormalized = `${toParsed.path}@${toParsed.version}`;
+      const fromNormalized = `${fromParsed.path}@${fromParsed.version ?? '0.0.0-00010101000000-000000000000'}`;
+      const toNormalized = `${toParsed.path}@${toParsed.version ?? '0.0.0-00010101000000-000000000000'}`;
 
       // Filter: Only include edges where both endpoints are in selectedModules
       // This removes duplicate versions and keeps only MVS-selected versions
@@ -129,7 +130,7 @@ export const extractor: Extractor = filesExtractor({
       const toPurl = createGoPurl(toParsed.path, toParsed.version);
 
       // Track all dependencies
-      if (toParsed.path !== moduleName) {
+      if (toParsed.path !== moduleName && toParsed.version) {
         allDeps.add(`${toParsed.path}@${toParsed.version}`);
       }
 
@@ -141,13 +142,9 @@ export const extractor: Extractor = filesExtractor({
       addRelationship(relationshipsMap, fromPurl, toPurl);
     }
 
-    // Add evidence for the main module
-    const modulePurl = createGoPurl(moduleName, '0.0.0-00010101000000-000000000000');
-    ensurePackageExists(packageMap, modulePurl);
-    const moduleLineNumber = findModuleLineNumber(lines, moduleName);
-    if (moduleLineNumber !== undefined) {
-      packageMap.get(modulePurl)!.evidence.add(`${file}#${moduleLineNumber}`);
-    }
+    // Create PURL for the main module (used in subproject, not in packages)
+    const modulePurl = createGoPurl(moduleName);
+    subprojectPurls.add(modulePurl);
 
     // Add evidence for dependencies from go.mod
     const directDeps: string[] = [];
@@ -194,7 +191,8 @@ export const extractor: Extractor = filesExtractor({
     });
 
     // Convert maps to arrays
-    const packages = convertPackageMapToArray(packageMap);
+    const allPackages = convertPackageMapToArray(packageMap);
+    const packages = allPackages.filter((pkg) => !subprojectPurls.has(pkg.purl));
     const relationships = convertRelationshipsMapToArray(relationshipsMap);
 
     return {
@@ -365,13 +363,13 @@ function parseRequireLine(line: string): Dependency | null {
 /**
  * Parse "path@version" or "path" (main module) into components
  */
-function parseModuleVersion(input: string): { path: string; version: string } | null {
+function parseModuleVersion(input: string): { path: string; version?: string } | null {
   const atIndex = input.lastIndexOf('@');
   if (atIndex === -1) {
     // Main module without version
     return {
       path: input,
-      version: '0.0.0-00010101000000-000000000000',
+      version: undefined,
     };
   }
 

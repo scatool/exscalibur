@@ -52,7 +52,7 @@ export type AnalyzerResult = {
 export type Extractor<Options = unknown> = {
   name: string;
   version: 1;
-  extract: (codebase: string) => Promise<AnalyzerResult>;
+  extract: (codebase: string, options?: Partial<Options>) => Promise<AnalyzerResult>;
   options?: () => Promise<Options>;
 };
 
@@ -138,7 +138,7 @@ export const filesExtractor = <Options = unknown>(config: FilesExtractor<Options
   return {
     name: config.name,
     version: config.version,
-    extract: async (codebase: string) => {
+    extract: async (codebase: string, runtimeOptions?: Partial<Options>) => {
       const markedFiles: string[] = [];
 
       const context: MarkFileContext = {
@@ -147,8 +147,8 @@ export const filesExtractor = <Options = unknown>(config: FilesExtractor<Options
         },
       };
 
-      // Call options function to get the resolved options
-      const options = config.options ? await config.options() : ({} as Options);
+      const defaultOptions = config.options ? await config.options() : ({} as Options);
+      const options = { ...defaultOptions, ...runtimeOptions } as Options;
 
       // First, mark all relevant files
       await config.markFiles.call(context, codebase, options);

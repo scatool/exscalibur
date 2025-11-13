@@ -12,7 +12,20 @@ import { PackageURL } from 'packageurl-js';
 import { dirname, join } from 'node:path';
 import { existsSync } from 'node:fs';
 
-const buildFileGlob = new Glob('**/build.gradle{,.kts}');
+export interface GradleOptions {
+  /**
+   * Array of glob patterns to ignore when scanning for build files.
+   * Files matching any of these patterns will be excluded from extraction.
+   * @default ['**\/build\/**', '**\/.gradle\/**']
+   */
+  ignore?: string[];
+
+  /**
+   * Path to the Java home directory.
+   * If not specified, the JAVA_HOME environment variable will be used.
+   */
+  javaHome?: string;
+}
 
 interface DependencyCoordinates {
   group: string;
@@ -45,17 +58,25 @@ interface ConfigurationGraph {
 
 type DependencyGraphOutput = ConfigurationGraph[];
 
-export const extractor: Extractor = filesExtractor({
+export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>({
   name: 'gradle',
   version: 1,
-  markFiles: async function (codebase: string) {
-    for await (const file of buildFileGlob.scan({ cwd: codebase, absolute: true })) {
-      if (!file.includes('/build/')) {
+  options: async () => ({
+    ignore: ['**/build/**', '**/.gradle/**'],
+  }),
+  markFiles: async function (codebase: string, options: GradleOptions) {
+    const ignorePatterns = options.ignore ?? [];
+    const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));
+
+    const glob = new Glob('**/build.gradle{,.kts}');
+    for await (const file of glob.scan({ cwd: codebase, absolute: true, onlyFiles: true })) {
+      const shouldIgnore = ignoreGlobs.some((glob) => glob.match(file));
+      if (!shouldIgnore) {
         this.markFile(file);
       }
     }
   },
-  extractFile: async (file: string): Promise<AnalyzerResult> => {
+  extractFile: async (file: string, options: GradleOptions): Promise<AnalyzerResult> => {
     const dir = dirname(file);
     const packageMap = new Map<string, { purl: string; evidence: Set<string> }>();
     const relationshipsMap = new Map<string, Set<string>>();
@@ -84,11 +105,16 @@ export const extractor: Extractor = filesExtractor({
       const projectInfoScriptPath = join(import.meta.dir, 'project-info.gradle');
       const projectInfoCommand = [gradleWrapper, '-I', projectInfoScriptPath, '-q'];
 
+      const env = { ...process.env };
+      if (options.javaHome) {
+        env.JAVA_HOME = options.javaHome;
+      }
+
       const projectInfoProc = Bun.spawn(projectInfoCommand, {
         cwd: dir,
         stdout: 'pipe',
         stderr: 'inherit',
-        env: process.env,
+        env,
       });
 
       const projectInfoOutput = await new Response(projectInfoProc.stdout).text();
@@ -154,7 +180,7 @@ export const extractor: Extractor = filesExtractor({
         cwd: dir,
         stdout: 'inherit',
         stderr: 'inherit',
-        env: process.env,
+        env,
       });
 
       const exitCode = await proc.exited;
