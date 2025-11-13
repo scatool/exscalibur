@@ -139,11 +139,13 @@ export const filesExtractor = <Options = unknown>(config: FilesExtractor<Options
     name: config.name,
     version: config.version,
     extract: async (codebase: string, runtimeOptions?: Partial<Options>) => {
-      const markedFiles: string[] = [];
+      const markedFiles: Array<{ relative: string; absolute: string }> = [];
 
       const context: MarkFileContext = {
         markFile: (file: string) => {
-          markedFiles.push(file);
+          // Assume file is relative to codebase, convert to absolute for file operations
+          const absolutePath = file.startsWith('/') ? file : `${codebase}/${file}`;
+          markedFiles.push({ relative: file, absolute: absolutePath });
         },
       };
 
@@ -158,7 +160,10 @@ export const filesExtractor = <Options = unknown>(config: FilesExtractor<Options
 
       for (const file of markedFiles) {
         if (config.extractFile) {
-          const fileResult = await config.extractFile(file, options);
+          // Pass absolute path to extractFile for file operations
+          const fileResult = await config.extractFile(file.absolute, options);
+          // Convert all absolute paths in result to relative paths
+          makePathsRelative(fileResult, codebase);
           results.push(fileResult);
         }
       }
@@ -169,3 +174,47 @@ export const filesExtractor = <Options = unknown>(config: FilesExtractor<Options
     ...(config.options !== undefined && { options: config.options }),
   };
 };
+
+/**
+ * Convert absolute paths to relative paths in an AnalyzerResult.
+ * Mutates the result in place.
+ */
+function makePathsRelative(result: AnalyzerResult, codebase: string): void {
+  // Normalize codebase path (remove trailing slash)
+  const normalizedCodebase = codebase.endsWith('/') ? codebase.slice(0, -1) : codebase;
+
+  // Convert evidence paths from absolute to relative
+  for (const pkg of result.packages) {
+    pkg.evidence = pkg.evidence.map((e) => {
+      // Evidence format: "path:lineNumber" or "path#lineNumber"
+      const colonMatch = e.match(/^(.+?):(\d+)$/);
+      const hashMatch = e.match(/^(.+?)#(\d+)$/);
+      const match = colonMatch || hashMatch;
+
+      if (match && match[1] && match[2]) {
+        const path = match[1];
+        const lineNumber = match[2];
+        const separator = colonMatch ? ':' : '#';
+        const relativePath = path.startsWith(normalizedCodebase + '/')
+          ? path.substring(normalizedCodebase.length + 1)
+          : path;
+        return `${relativePath}${separator}${lineNumber}`;
+      }
+      return e;
+    });
+  }
+
+  // Convert subproject definitionFile from absolute to relative
+  for (const subproject of result.subprojects) {
+    if (subproject.definitionFile.startsWith(normalizedCodebase + '/')) {
+      subproject.definitionFile = subproject.definitionFile.substring(normalizedCodebase.length + 1);
+    }
+  }
+
+  // Convert issue.file from absolute to relative
+  for (const issue of result.issues) {
+    if (issue.file && issue.file.startsWith(normalizedCodebase + '/')) {
+      issue.file = issue.file.substring(normalizedCodebase.length + 1);
+    }
+  }
+}

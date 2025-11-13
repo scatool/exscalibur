@@ -29,13 +29,14 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));
 
     const lockfileGlob = new Glob('**/yarn.lock');
-    for await (const file of lockfileGlob.scan({ cwd: codebase, absolute: true })) {
+    for await (const file of lockfileGlob.scan({ cwd: codebase })) {
       const shouldIgnore = ignoreGlobs.some((glob) => glob.match(file));
       if (!shouldIgnore) {
         // Only mark Yarn Classic (v1) lockfiles
         // Yarn Berry lockfiles have "__metadata:" section with version 8+
         try {
-          const fileHandle = Bun.file(file);
+          const absolutePath = join(codebase, file);
+          const fileHandle = Bun.file(absolutePath);
           const stream = fileHandle.stream();
           const reader = stream.getReader();
 

@@ -1,7 +1,7 @@
 import { type Extractor, filesExtractor, type AnalyzerResult } from '@scatool/analyzer-core/src/index.ts';
 import { Glob } from 'bun';
 import { PackageURL } from 'packageurl-js';
-import { dirname } from 'node:path';
+import { dirname, join } from 'node:path';
 import { existsSync } from 'node:fs';
 import type { JavaScriptOptions } from '../options.ts';
 
@@ -40,14 +40,15 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));
 
     const glob = new Glob('**/package.json');
-    for await (const file of glob.scan({ cwd: codebase, absolute: true })) {
+    for await (const file of glob.scan({ cwd: codebase })) {
       const shouldIgnore = ignoreGlobs.some((glob) => glob.match(file));
       if (shouldIgnore) {
         continue;
       }
 
       // Skip if a lockfile exists in the same directory or any parent directory
-      const dir = dirname(file);
+      const absolutePath = join(codebase, file);
+      const dir = dirname(absolutePath);
       if (await hasLockfileInDirectory(dir, codebase)) {
         continue;
       }

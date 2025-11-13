@@ -69,7 +69,7 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
     const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));
 
     const glob = new Glob('**/build.gradle{,.kts}');
-    for await (const file of glob.scan({ cwd: codebase, absolute: true, onlyFiles: true })) {
+    for await (const file of glob.scan({ cwd: codebase, onlyFiles: true })) {
       const shouldIgnore = ignoreGlobs.some((glob) => glob.match(file));
       if (!shouldIgnore) {
         this.markFile(file);

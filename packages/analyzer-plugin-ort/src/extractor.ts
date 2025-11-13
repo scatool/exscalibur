@@ -19,7 +19,7 @@ export const extractor = filesExtractor<OrtExtractorOptions>({
   }),
   markFiles: async function (codebase) {
     const glob = new Glob('**/analyzer-result.json');
-    for await (const file of glob.scan({ cwd: codebase, absolute: true })) {
+    for await (const file of glob.scan({ cwd: codebase })) {
       this.markFile(file);
     }
   },

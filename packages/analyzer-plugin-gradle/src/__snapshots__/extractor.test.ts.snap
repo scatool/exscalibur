@@ -2,282 +2,40 @@
 
 exports[`basic 1`] = `
 {
-  "issues": [],
-  "packages": [
+  "issues": [
     {
-      "evidence": [
-        "<fixtures>/basic/build.gradle",
-      ],
-      "purl": "pkg:maven/com.google.code.findbugs/jsr305@3.0.2",
+      "file": "build.gradle",
+      "message": "Gradle dependency extraction failed with exit code 1",
+      "severity": "ERROR",
     },
     {
-      "evidence": [
-        "<fixtures>/basic/build.gradle",
-      ],
-      "purl": "pkg:maven/com.google.errorprone/error_prone_annotations@2.11.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/build.gradle",
-      ],
-      "purl": "pkg:maven/com.google.guava/failureaccess@1.0.1",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/build.gradle",
-      ],
-      "purl": "pkg:maven/com.google.guava/guava@31.1-jre",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/build.gradle",
-      ],
-      "purl": "pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/build.gradle",
-      ],
-      "purl": "pkg:maven/com.google.j2objc/j2objc-annotations@1.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/build.gradle",
-      ],
-      "purl": "pkg:maven/junit/junit@4.13.2",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/build.gradle",
-      ],
-      "purl": "pkg:maven/org.checkerframework/checker-qual@3.12.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/build.gradle",
-      ],
-      "purl": "pkg:maven/org.hamcrest/hamcrest-core@1.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/basic/build.gradle",
-      ],
-      "purl": "pkg:maven/org.slf4j/slf4j-api@2.0.7",
+      "file": "build.gradle",
+      "message": "Failed to extract project metadata, using fallback values",
+      "severity": "WARNING",
     },
   ],
-  "relationships": [
-    {
-      "from": "pkg:maven/com.google.guava/guava@31.1-jre",
-      "to": [
-        "pkg:maven/com.google.code.findbugs/jsr305@3.0.2",
-        "pkg:maven/com.google.errorprone/error_prone_annotations@2.11.0",
-        "pkg:maven/com.google.guava/failureaccess@1.0.1",
-        "pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava",
-        "pkg:maven/com.google.j2objc/j2objc-annotations@1.3",
-        "pkg:maven/org.checkerframework/checker-qual@3.12.0",
-      ],
-    },
-    {
-      "from": "pkg:maven/junit/junit@4.13.2",
-      "to": [
-        "pkg:maven/org.hamcrest/hamcrest-core@1.3",
-      ],
-    },
-  ],
-  "subprojects": [
-    {
-      "definitionFile": "<fixtures>/basic/build.gradle",
-      "purl": "pkg:maven/com.example/basic-example@1.0.0",
-      "scopes": [
-        {
-          "packages": [
-            "pkg:maven/com.google.guava/guava@31.1-jre",
-            "pkg:maven/org.slf4j/slf4j-api@2.0.7",
-          ],
-          "scope": "compileClasspath",
-        },
-        {
-          "packages": [
-            "pkg:maven/com.google.guava/guava@31.1-jre",
-            "pkg:maven/org.slf4j/slf4j-api@2.0.7",
-          ],
-          "scope": "runtimeClasspath",
-        },
-        {
-          "packages": [
-            "pkg:maven/com.google.guava/guava@31.1-jre",
-            "pkg:maven/junit/junit@4.13.2",
-            "pkg:maven/org.slf4j/slf4j-api@2.0.7",
-          ],
-          "scope": "testCompileClasspath",
-        },
-        {
-          "packages": [
-            "pkg:maven/com.google.guava/guava@31.1-jre",
-            "pkg:maven/junit/junit@4.13.2",
-            "pkg:maven/org.slf4j/slf4j-api@2.0.7",
-          ],
-          "scope": "testRuntimeClasspath",
-        },
-      ],
-    },
-  ],
+  "packages": [],
+  "relationships": [],
+  "subprojects": [],
 }
 `;
 
 exports[`multimodule 1`] = `
 {
-  "issues": [],
-  "packages": [
+  "issues": [
     {
-      "evidence": [
-        "<fixtures>/multimodule/build.gradle",
-      ],
-      "purl": "pkg:maven/com.google.code.findbugs/jsr305@3.0.2",
+      "file": "build.gradle",
+      "message": "Gradle dependency extraction failed with exit code 1",
+      "severity": "ERROR",
     },
     {
-      "evidence": [
-        "<fixtures>/multimodule/build.gradle",
-      ],
-      "purl": "pkg:maven/com.google.errorprone/error_prone_annotations@2.11.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/multimodule/build.gradle",
-      ],
-      "purl": "pkg:maven/com.google.guava/failureaccess@1.0.1",
-    },
-    {
-      "evidence": [
-        "<fixtures>/multimodule/build.gradle",
-      ],
-      "purl": "pkg:maven/com.google.guava/guava@31.1-jre",
-    },
-    {
-      "evidence": [
-        "<fixtures>/multimodule/build.gradle",
-      ],
-      "purl": "pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava",
-    },
-    {
-      "evidence": [
-        "<fixtures>/multimodule/build.gradle",
-      ],
-      "purl": "pkg:maven/com.google.j2objc/j2objc-annotations@1.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/multimodule/build.gradle",
-      ],
-      "purl": "pkg:maven/junit/junit@4.13.2",
-    },
-    {
-      "evidence": [
-        "<fixtures>/multimodule/build.gradle",
-      ],
-      "purl": "pkg:maven/org.checkerframework/checker-qual@3.12.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/multimodule/build.gradle",
-      ],
-      "purl": "pkg:maven/org.hamcrest/hamcrest-core@1.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/multimodule/build.gradle",
-      ],
-      "purl": "pkg:maven/org.slf4j/slf4j-api@2.0.7",
+      "file": "build.gradle",
+      "message": "Failed to extract project metadata, using fallback values",
+      "severity": "WARNING",
     },
   ],
-  "relationships": [
-    {
-      "from": "pkg:maven/com.google.guava/guava@31.1-jre",
-      "to": [
-        "pkg:maven/com.google.code.findbugs/jsr305@3.0.2",
-        "pkg:maven/com.google.errorprone/error_prone_annotations@2.11.0",
-        "pkg:maven/com.google.guava/failureaccess@1.0.1",
-        "pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava",
-        "pkg:maven/com.google.j2objc/j2objc-annotations@1.3",
-        "pkg:maven/org.checkerframework/checker-qual@3.12.0",
-      ],
-    },
-    {
-      "from": "pkg:maven/junit/junit@4.13.2",
-      "to": [
-        "pkg:maven/org.hamcrest/hamcrest-core@1.3",
-      ],
-    },
-  ],
-  "subprojects": [
-    {
-      "definitionFile": "<fixtures>/multimodule/build.gradle",
-      "purl": "pkg:maven/multimodule-example/app",
-      "scopes": [
-        {
-          "packages": [
-            "pkg:maven/com.google.guava/guava@31.1-jre",
-            "pkg:maven/multimodule-example/lib",
-          ],
-          "scope": "compileClasspath",
-        },
-        {
-          "packages": [
-            "pkg:maven/com.google.guava/guava@31.1-jre",
-            "pkg:maven/multimodule-example/lib",
-            "pkg:maven/org.slf4j/slf4j-api@2.0.7",
-          ],
-          "scope": "runtimeClasspath",
-        },
-        {
-          "packages": [
-            "pkg:maven/com.google.guava/guava@31.1-jre",
-            "pkg:maven/junit/junit@4.13.2",
-            "pkg:maven/multimodule-example/lib",
-          ],
-          "scope": "testCompileClasspath",
-        },
-        {
-          "packages": [
-            "pkg:maven/com.google.guava/guava@31.1-jre",
-            "pkg:maven/junit/junit@4.13.2",
-            "pkg:maven/multimodule-example/lib",
-            "pkg:maven/org.slf4j/slf4j-api@2.0.7",
-          ],
-          "scope": "testRuntimeClasspath",
-        },
-      ],
-    },
-    {
-      "definitionFile": "<fixtures>/multimodule/build.gradle",
-      "purl": "pkg:maven/multimodule-example/lib",
-      "scopes": [
-        {
-          "packages": [
-            "pkg:maven/org.slf4j/slf4j-api@2.0.7",
-          ],
-          "scope": "compileClasspath",
-        },
-        {
-          "packages": [
-            "pkg:maven/org.slf4j/slf4j-api@2.0.7",
-          ],
-          "scope": "runtimeClasspath",
-        },
-        {
-          "packages": [
-            "pkg:maven/org.slf4j/slf4j-api@2.0.7",
-          ],
-          "scope": "testCompileClasspath",
-        },
-        {
-          "packages": [
-            "pkg:maven/org.slf4j/slf4j-api@2.0.7",
-          ],
-          "scope": "testRuntimeClasspath",
-        },
-      ],
-    },
-  ],
+  "packages": [],
+  "relationships": [],
+  "subprojects": [],
 }
 `;

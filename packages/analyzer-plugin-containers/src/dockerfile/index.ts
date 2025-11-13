@@ -13,7 +13,6 @@ export const extractor: Extractor = filesExtractor({
     const dockerfiles = new Glob('**/Dockerfile*');
     for await (const file of dockerfiles.scan({
       cwd: codebase,
-      absolute: true,
     })) {
       this.markFile(file);
     }
