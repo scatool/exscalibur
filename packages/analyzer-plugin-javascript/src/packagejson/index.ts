@@ -124,7 +124,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
 
             // Find line number for evidence
             const lineNumber = findLineNumber(lines, name);
-            const evidence = lineNumber ? [`${file}:${lineNumber}`] : [];
+            const evidence = lineNumber ? [`${file}#${lineNumber}`] : [];
 
             packages.push({
               purl: purl.toString(),
