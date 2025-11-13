@@ -1,5 +1,107 @@
 // Bun Snapshot v1, https://bun.sh/docs/test/snapshots
 
+exports[`aliases 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "<fixtures>/aliases/pnpm-lock.yaml#39",
+      ],
+      "purl": "pkg:npm/%40docusaurus/react-loadable@6.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/aliases/pnpm-lock.yaml#44",
+      ],
+      "purl": "pkg:npm/react@18.2.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/aliases/pnpm-lock.yaml#15",
+      ],
+      "purl": "pkg:npm/string-width@4.2.3",
+    },
+    {
+      "evidence": [
+        "<fixtures>/aliases/pnpm-lock.yaml#19",
+      ],
+      "purl": "pkg:npm/string-width@5.1.2",
+    },
+    {
+      "evidence": [
+        "<fixtures>/aliases/pnpm-lock.yaml#23",
+      ],
+      "purl": "pkg:npm/strip-ansi@6.0.1",
+    },
+    {
+      "evidence": [
+        "<fixtures>/aliases/pnpm-lock.yaml#27",
+      ],
+      "purl": "pkg:npm/strip-ansi@7.1.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/aliases/pnpm-lock.yaml#48",
+      ],
+      "purl": "pkg:npm/test-package@1.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/aliases/pnpm-lock.yaml#31",
+      ],
+      "purl": "pkg:npm/wrap-ansi@7.0.0",
+    },
+    {
+      "evidence": [
+        "<fixtures>/aliases/pnpm-lock.yaml#35",
+      ],
+      "purl": "pkg:npm/wrap-ansi@8.1.0",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:npm/%40docusaurus/react-loadable@6.0.0",
+      "to": [
+        "pkg:npm/react@18.2.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/aliases-test@1.0.0",
+      "to": [
+        "pkg:npm/test-package@1.0.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/test-package@1.0.0",
+      "to": [
+        "pkg:npm/%40docusaurus/react-loadable@6.0.0",
+        "pkg:npm/string-width@4.2.3",
+        "pkg:npm/string-width@5.1.2",
+        "pkg:npm/strip-ansi@6.0.1",
+        "pkg:npm/strip-ansi@7.1.0",
+        "pkg:npm/wrap-ansi@7.0.0",
+        "pkg:npm/wrap-ansi@8.1.0",
+      ],
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "<fixtures>/aliases/package.json",
+      "purl": "pkg:npm/aliases-test@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/test-package@1.0.0",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
+
 exports[`basic 1`] = `
 {
   "issues": [],
@@ -3482,108 +3584,6 @@ exports[`workspace 1`] = `
             "pkg:npm/typescript@5.9.3",
           ],
           "scope": "devDependencies",
-        },
-      ],
-    },
-  ],
-}
-`;
-
-exports[`aliases 1`] = `
-{
-  "issues": [],
-  "packages": [
-    {
-      "evidence": [
-        "<fixtures>/aliases/pnpm-lock.yaml#39",
-      ],
-      "purl": "pkg:npm/%40docusaurus/react-loadable@6.0.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/aliases/pnpm-lock.yaml#44",
-      ],
-      "purl": "pkg:npm/react@18.2.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/aliases/pnpm-lock.yaml#15",
-      ],
-      "purl": "pkg:npm/string-width@4.2.3",
-    },
-    {
-      "evidence": [
-        "<fixtures>/aliases/pnpm-lock.yaml#19",
-      ],
-      "purl": "pkg:npm/string-width@5.1.2",
-    },
-    {
-      "evidence": [
-        "<fixtures>/aliases/pnpm-lock.yaml#23",
-      ],
-      "purl": "pkg:npm/strip-ansi@6.0.1",
-    },
-    {
-      "evidence": [
-        "<fixtures>/aliases/pnpm-lock.yaml#27",
-      ],
-      "purl": "pkg:npm/strip-ansi@7.1.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/aliases/pnpm-lock.yaml#48",
-      ],
-      "purl": "pkg:npm/test-package@1.0.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/aliases/pnpm-lock.yaml#31",
-      ],
-      "purl": "pkg:npm/wrap-ansi@7.0.0",
-    },
-    {
-      "evidence": [
-        "<fixtures>/aliases/pnpm-lock.yaml#35",
-      ],
-      "purl": "pkg:npm/wrap-ansi@8.1.0",
-    },
-  ],
-  "relationships": [
-    {
-      "from": "pkg:npm/%40docusaurus/react-loadable@6.0.0",
-      "to": [
-        "pkg:npm/react@18.2.0",
-      ],
-    },
-    {
-      "from": "pkg:npm/aliases-test@1.0.0",
-      "to": [
-        "pkg:npm/test-package@1.0.0",
-      ],
-    },
-    {
-      "from": "pkg:npm/test-package@1.0.0",
-      "to": [
-        "pkg:npm/%40docusaurus/react-loadable@6.0.0",
-        "pkg:npm/string-width@4.2.3",
-        "pkg:npm/string-width@5.1.2",
-        "pkg:npm/strip-ansi@6.0.1",
-        "pkg:npm/strip-ansi@7.1.0",
-        "pkg:npm/wrap-ansi@7.0.0",
-        "pkg:npm/wrap-ansi@8.1.0",
-      ],
-    },
-  ],
-  "subprojects": [
-    {
-      "definitionFile": "<fixtures>/aliases/package.json",
-      "purl": "pkg:npm/aliases-test@1.0.0",
-      "scopes": [
-        {
-          "packages": [
-            "pkg:npm/test-package@1.0.0",
-          ],
-          "scope": "dependencies",
         },
       ],
     },

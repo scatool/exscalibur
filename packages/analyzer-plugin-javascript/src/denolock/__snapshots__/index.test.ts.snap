@@ -180,66 +180,6 @@ exports[`edge-cases 1`] = `
 }
 `;
 
-exports[`monorepo 1`] = `
-{
-  "issues": [],
-  "packages": [
-    {
-      "evidence": [
-        "<fixtures>/monorepo/project-b/deno.lock#5",
-      ],
-      "purl": "pkg:jsr/oak/oak@17.1.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/project-a/deno.lock#5",
-      ],
-      "purl": "pkg:jsr/std/assert@1.0.9",
-    },
-  ],
-  "relationships": [
-    {
-      "from": "pkg:generic/project-a@1.0.0",
-      "to": [
-        "pkg:jsr/std/assert@1.0.9",
-      ],
-    },
-    {
-      "from": "pkg:generic/project-b@2.0.0",
-      "to": [
-        "pkg:jsr/oak/oak@17.1.4",
-      ],
-    },
-  ],
-  "subprojects": [
-    {
-      "definitionFile": "<fixtures>/monorepo/project-a/deno.json",
-      "purl": "pkg:generic/project-a@1.0.0",
-      "scopes": [
-        {
-          "packages": [
-            "pkg:jsr/std/assert@1.0.9",
-          ],
-          "scope": "dependencies",
-        },
-      ],
-    },
-    {
-      "definitionFile": "<fixtures>/monorepo/project-b/deno.json",
-      "purl": "pkg:generic/project-b@2.0.0",
-      "scopes": [
-        {
-          "packages": [
-            "pkg:jsr/oak/oak@17.1.4",
-          ],
-          "scope": "dependencies",
-        },
-      ],
-    },
-  ],
-}
-`;
-
 exports[`remote-deps 1`] = `
 {
   "issues": [],
