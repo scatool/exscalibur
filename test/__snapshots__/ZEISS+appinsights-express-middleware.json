@@ -4111,29 +4111,6 @@
       ]
     },
     {
-      "from": "pkg:npm/appinsights-express-middleware@0.1.2",
-      "to": [
-        "pkg:npm/%40types/express@4.16.0",
-        "pkg:npm/%40types/jest@23.3.10",
-        "pkg:npm/%40types/node@10.12.10",
-        "pkg:npm/%40types/uuid@3.4.4",
-        "pkg:npm/applicationinsights@1.0.7",
-        "pkg:npm/cross-env@5.2.0",
-        "pkg:npm/express@4.16.4",
-        "pkg:npm/husky@1.2.0",
-        "pkg:npm/jest@23.6.0",
-        "pkg:npm/lint-staged@8.1.0",
-        "pkg:npm/prettier@1.15.2",
-        "pkg:npm/rimraf@2.6.2",
-        "pkg:npm/ts-jest@23.10.5",
-        "pkg:npm/tslint-config-prettier@1.17.0",
-        "pkg:npm/tslint-plugin-prettier@2.0.1",
-        "pkg:npm/tslint@5.11.0",
-        "pkg:npm/typescript@2.9.2",
-        "pkg:npm/uuid@3.3.2"
-      ]
-    },
-    {
       "from": "pkg:npm/applicationinsights@1.0.7",
       "to": [
         "pkg:npm/diagnostic-channel-publishers@0.2.1",
