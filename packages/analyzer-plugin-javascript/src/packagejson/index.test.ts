@@ -1,22 +1,11 @@
-import { test, expect } from 'bun:test';
+import { join } from 'node:path';
 import { extractor } from './index.ts';
-import { resolve } from 'path';
-import { normalizeResult } from '@scatool/analyzer-test-utils';
+import { createExtractorTests } from '@scatool/analyzer-test-utils';
 
-test('package.json extractor should extract package URLs from package.json', async () => {
-  // Path to the test fixture
-  const fixturesDir = resolve(import.meta.dir, './__fixtures__');
-  const fixturePath = resolve(fixturesDir, 'simple');
+const fixturesDir = join(import.meta.dir, '__fixtures__');
 
-  // Run the extractor
-  const result = await extractor.extract(fixturePath);
-
-  // Verify the structure
-  expect(result).toHaveProperty('packages');
-  expect(Array.isArray(result.packages)).toBe(true);
-
-  normalizeResult(result, fixturesDir);
-
-  // Snapshot test
-  expect(result).toMatchSnapshot();
+await createExtractorTests({
+  extractor,
+  fixturesDir,
+  pattern: '*/package.json',
 });

@@ -11091,128 +11091,6 @@
       ]
     },
     {
-      "from": "pkg:npm/%40xyflow/eslint-config@0.0.1",
-      "to": [
-        "pkg:npm/%40typescript-eslint/eslint-plugin@8.34.0",
-        "pkg:npm/%40typescript-eslint/parser@8.34.0",
-        "pkg:npm/eslint-config-prettier@10.1.5",
-        "pkg:npm/eslint-config-turbo@2.5.4",
-        "pkg:npm/eslint-plugin-prettier@4.2.1",
-        "pkg:npm/eslint-plugin-react@7.37.5",
-        "pkg:npm/eslint@8.57.0"
-      ]
-    },
-    {
-      "from": "pkg:npm/%40xyflow/monorepo@0.0.0",
-      "to": [
-        "pkg:npm/%40changesets/changelog-github@0.4.7",
-        "pkg:npm/%40changesets/cli@2.25.0",
-        "pkg:npm/%40playwright/test@1.44.1",
-        "pkg:npm/concurrently@7.6.0",
-        "pkg:npm/eslint@8.57.0",
-        "pkg:npm/prettier@2.8.8",
-        "pkg:npm/react-dom@18.2.0",
-        "pkg:npm/react@18.2.0",
-        "pkg:npm/rimraf@3.0.2",
-        "pkg:npm/rollup@4.18.0",
-        "pkg:npm/turbo@2.0.3",
-        "pkg:npm/typescript@5.4.5"
-      ]
-    },
-    {
-      "from": "pkg:npm/%40xyflow/react@12.9.0",
-      "to": [
-        "pkg:npm/%40types/node@18.7.16",
-        "pkg:npm/%40types/react-dom@18.2.8",
-        "pkg:npm/%40types/react@18.2.24",
-        "pkg:npm/%40xyflow/eslint-config@0.0.1",
-        "pkg:npm/%40xyflow/rollup-config@0.0.0",
-        "pkg:npm/%40xyflow/system@0.0.71",
-        "pkg:npm/%40xyflow/tsconfig@0.0.0",
-        "pkg:npm/autoprefixer@10.4.15",
-        "pkg:npm/classcat@5.0.4",
-        "pkg:npm/cssnano@6.0.1",
-        "pkg:npm/postcss-cli@11.0.0",
-        "pkg:npm/postcss-combine-duplicated-selectors@10.0.3",
-        "pkg:npm/postcss-import@15.1.0",
-        "pkg:npm/postcss-nested@6.0.0",
-        "pkg:npm/postcss-rename@0.6.1",
-        "pkg:npm/postcss@8.4.21",
-        "pkg:npm/react-dom@18.2.0",
-        "pkg:npm/react@18.2.0",
-        "pkg:npm/typescript@5.4.5",
-        "pkg:npm/zustand@4.4.1"
-      ]
-    },
-    {
-      "from": "pkg:npm/%40xyflow/rollup-config@0.0.0",
-      "to": [
-        "pkg:npm/%40rollup/plugin-commonjs@25.0.8",
-        "pkg:npm/%40rollup/plugin-node-resolve@15.2.3",
-        "pkg:npm/%40rollup/plugin-replace@5.0.6",
-        "pkg:npm/%40rollup/plugin-terser@0.4.4",
-        "pkg:npm/%40rollup/plugin-typescript@11.1.6",
-        "pkg:npm/rollup-plugin-peer-deps-external@2.2.4",
-        "pkg:npm/rollup@4.18.0",
-        "pkg:npm/typescript@5.7.3"
-      ]
-    },
-    {
-      "from": "pkg:npm/%40xyflow/svelte@1.4.0",
-      "to": [
-        "pkg:npm/%40eslint/js@9.28.0",
-        "pkg:npm/%40svelte-put/shortcut@4.1.0",
-        "pkg:npm/%40sveltejs/adapter-auto@6.0.1",
-        "pkg:npm/%40sveltejs/kit@2.21.4",
-        "pkg:npm/%40sveltejs/package@2.3.11",
-        "pkg:npm/%40sveltejs/vite-plugin-svelte@5.1.0",
-        "pkg:npm/%40typescript-eslint/eslint-plugin@8.34.0",
-        "pkg:npm/%40typescript-eslint/parser@8.34.0",
-        "pkg:npm/%40xyflow/system@0.0.71",
-        "pkg:npm/autoprefixer@10.4.21",
-        "pkg:npm/cssnano@7.0.7",
-        "pkg:npm/dotenv@16.5.0",
-        "pkg:npm/eslint-config-prettier@10.1.5",
-        "pkg:npm/eslint-plugin-svelte@3.9.2",
-        "pkg:npm/eslint@9.28.0",
-        "pkg:npm/globals@16.2.0",
-        "pkg:npm/postcss-cli@11.0.1",
-        "pkg:npm/postcss-combine-duplicated-selectors@10.0.3",
-        "pkg:npm/postcss-import@16.1.0",
-        "pkg:npm/postcss-nested@7.0.2",
-        "pkg:npm/postcss-rename@0.8.0",
-        "pkg:npm/postcss@8.5.4",
-        "pkg:npm/prettier-plugin-svelte@3.4.0",
-        "pkg:npm/prettier@3.5.3",
-        "pkg:npm/svelte-check@4.2.1",
-        "pkg:npm/svelte-eslint-parser@1.2.0",
-        "pkg:npm/svelte-preprocess@6.0.3",
-        "pkg:npm/svelte@5.33.19",
-        "pkg:npm/tslib@2.8.1",
-        "pkg:npm/typescript-eslint@8.34.0",
-        "pkg:npm/typescript@5.8.3"
-      ]
-    },
-    {
-      "from": "pkg:npm/%40xyflow/system@0.0.71",
-      "to": [
-        "pkg:npm/%40types/d3-drag@3.0.7",
-        "pkg:npm/%40types/d3-interpolate@3.0.4",
-        "pkg:npm/%40types/d3-selection@3.0.10",
-        "pkg:npm/%40types/d3-transition@3.0.8",
-        "pkg:npm/%40types/d3-zoom@3.0.8",
-        "pkg:npm/%40types/node@18.7.16",
-        "pkg:npm/%40xyflow/eslint-config@0.0.1",
-        "pkg:npm/%40xyflow/rollup-config@0.0.0",
-        "pkg:npm/%40xyflow/tsconfig@0.0.0",
-        "pkg:npm/d3-drag@3.0.0",
-        "pkg:npm/d3-interpolate@3.0.1",
-        "pkg:npm/d3-selection@3.0.0",
-        "pkg:npm/d3-zoom@3.0.0",
-        "pkg:npm/typescript@5.4.5"
-      ]
-    },
-    {
       "from": "pkg:npm/acorn-jsx@5.3.2",
       "to": [
         "pkg:npm/acorn@8.14.0",
@@ -11364,21 +11242,6 @@
       "from": "pkg:npm/asn1@0.2.6",
       "to": [
         "pkg:npm/safer-buffer@2.1.2"
-      ]
-    },
-    {
-      "from": "pkg:npm/astro-examples@0.0.1",
-      "to": [
-        "pkg:npm/%40astrojs/react@4.3.0",
-        "pkg:npm/%40astrojs/svelte@7.1.0",
-        "pkg:npm/%40types/react-dom@18.2.8",
-        "pkg:npm/%40types/react@18.2.24",
-        "pkg:npm/%40xyflow/react@12.9.0",
-        "pkg:npm/%40xyflow/svelte@1.4.0",
-        "pkg:npm/astro@5.13.5",
-        "pkg:npm/react-dom@18.2.0",
-        "pkg:npm/react@18.2.0",
-        "pkg:npm/svelte@5.38.7"
       ]
     },
     {
@@ -14537,19 +14400,6 @@
       ]
     },
     {
-      "from": "pkg:npm/playwright@1.0.0",
-      "to": [
-        "pkg:npm/%40playwright/experimental-ct-react@1.51.1",
-        "pkg:npm/%40playwright/test@1.51.1",
-        "pkg:npm/%40types/node@20.14.6",
-        "pkg:npm/%40types/react-dom@18.3.0",
-        "pkg:npm/%40types/react@18.3.3",
-        "pkg:npm/react-dom@18.3.1",
-        "pkg:npm/react@18.3.1",
-        "pkg:npm/typescript@5.7.3"
-      ]
-    },
-    {
       "from": "pkg:npm/playwright@1.44.1",
       "to": [
         "pkg:npm/fsevents@2.3.2",
@@ -15233,34 +15083,6 @@
         "pkg:npm/loose-envify@1.4.0",
         "pkg:npm/react@18.3.1",
         "pkg:npm/scheduler@0.23.2"
-      ]
-    },
-    {
-      "from": "pkg:npm/react-examples@0.0.0",
-      "to": [
-        "pkg:npm/%40cypress/skip-test@2.6.1",
-        "pkg:npm/%40reduxjs/toolkit@2.2.3",
-        "pkg:npm/%40types/dagre@0.7.52",
-        "pkg:npm/%40types/react-dom@18.2.14",
-        "pkg:npm/%40types/react@18.2.36",
-        "pkg:npm/%40vitejs/plugin-react-swc@3.4.1",
-        "pkg:npm/%40vitejs/plugin-react@4.1.1",
-        "pkg:npm/%40xyflow/react@12.9.0",
-        "pkg:npm/%40xyflow/system@0.0.71",
-        "pkg:npm/classcat@5.0.4",
-        "pkg:npm/cypress-real-events@1.12.0",
-        "pkg:npm/cypress@13.6.6",
-        "pkg:npm/dagre@0.8.5",
-        "pkg:npm/localforage@1.10.0",
-        "pkg:npm/react-dom@18.2.0",
-        "pkg:npm/react-redux@9.1.1",
-        "pkg:npm/react-router-dom@6.18.0",
-        "pkg:npm/react@18.2.0",
-        "pkg:npm/redux@5.0.1",
-        "pkg:npm/start-server-and-test@2.0.2",
-        "pkg:npm/typescript@5.4.5",
-        "pkg:npm/vite@4.5.0",
-        "pkg:npm/zustand@4.4.6"
       ]
     },
     {
@@ -16189,28 +16011,6 @@
         "pkg:npm/postcss-selector-parser@7.0.0",
         "pkg:npm/postcss@8.5.4",
         "pkg:npm/svelte@5.33.19"
-      ]
-    },
-    {
-      "from": "pkg:npm/svelte-examples@0.0.1",
-      "to": [
-        "pkg:npm/%40dagrejs/dagre@1.1.4",
-        "pkg:npm/%40sveltejs/adapter-auto@6.0.0",
-        "pkg:npm/%40sveltejs/kit@2.20.7",
-        "pkg:npm/%40sveltejs/vite-plugin-svelte@5.0.3",
-        "pkg:npm/%40typescript-eslint/eslint-plugin@8.34.0",
-        "pkg:npm/%40typescript-eslint/parser@8.34.0",
-        "pkg:npm/%40xyflow/svelte@1.4.0",
-        "pkg:npm/eslint-config-prettier@10.1.2",
-        "pkg:npm/eslint-plugin-svelte@3.5.1",
-        "pkg:npm/eslint@9.24.0",
-        "pkg:npm/prettier-plugin-svelte@3.3.3",
-        "pkg:npm/prettier@3.5.3",
-        "pkg:npm/svelte-check@4.1.6",
-        "pkg:npm/svelte@5.27.0",
-        "pkg:npm/tslib@2.8.1",
-        "pkg:npm/typescript@5.8.3",
-        "pkg:npm/vite@6.3.0"
       ]
     },
     {

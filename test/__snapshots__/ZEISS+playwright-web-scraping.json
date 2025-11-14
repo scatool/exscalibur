@@ -2554,15 +2554,6 @@
       ]
     },
     {
-      "from": "pkg:npm/playwright-web-scraping@1.0.0",
-      "to": [
-        "pkg:npm/eslint-config-prettier@9.1.0",
-        "pkg:npm/eslint-plugin-github@5.0.2",
-        "pkg:npm/eslint@8.57.1",
-        "pkg:npm/playwright@1.49.0"
-      ]
-    },
-    {
       "from": "pkg:npm/playwright@1.27.0",
       "to": [
         "pkg:npm/playwright-core@1.27.0"

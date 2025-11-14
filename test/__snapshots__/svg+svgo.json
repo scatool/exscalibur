@@ -5621,43 +5621,6 @@
       ]
     },
     {
-      "from": "pkg:npm/svgo@4.0.0",
-      "to": [
-        "pkg:npm/%40eslint/js@9.25.1",
-        "pkg:npm/%40jest/globals@29.7.0",
-        "pkg:npm/%40rollup/plugin-commonjs@26.0.3",
-        "pkg:npm/%40rollup/plugin-node-resolve@15.2.3",
-        "pkg:npm/%40rollup/plugin-terser@0.4.4",
-        "pkg:npm/%40types/css-tree@2.3.10",
-        "pkg:npm/%40types/csso@5.0.4",
-        "pkg:npm/%40types/jest@29.5.14",
-        "pkg:npm/%40types/node@22.15.3",
-        "pkg:npm/%40types/pngjs@6.0.5",
-        "pkg:npm/%40types/sax@1.2.7",
-        "pkg:npm/%40types/tar-stream@3.1.3",
-        "pkg:npm/commander@11.1.0",
-        "pkg:npm/cross-env@7.0.3",
-        "pkg:npm/css-select@5.1.0",
-        "pkg:npm/css-tree@3.0.1",
-        "pkg:npm/css-what@6.1.0",
-        "pkg:npm/csso@5.0.5",
-        "pkg:npm/eslint@9.25.1",
-        "pkg:npm/globals@14.0.0",
-        "pkg:npm/jest@29.7.0",
-        "pkg:npm/picocolors@1.1.1",
-        "pkg:npm/pixelmatch@7.1.0",
-        "pkg:npm/playwright@1.53.2",
-        "pkg:npm/pngjs@7.0.0",
-        "pkg:npm/prettier@3.5.3",
-        "pkg:npm/rimraf@5.0.10",
-        "pkg:npm/rollup@4.40.1",
-        "pkg:npm/sax@1.4.1",
-        "pkg:npm/tar-stream@3.1.7",
-        "pkg:npm/tsd@0.32.0",
-        "pkg:npm/typescript@5.8.3"
-      ]
-    },
-    {
       "from": "pkg:npm/tar-stream@3.1.7",
       "to": [
         "pkg:npm/b4a@1.6.6",

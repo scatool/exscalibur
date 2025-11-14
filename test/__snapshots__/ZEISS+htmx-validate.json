@@ -2737,23 +2737,6 @@
       ]
     },
     {
-      "from": "pkg:npm/%40htmx/template-element@0.0.0",
-      "to": [
-        "pkg:npm/%40github/prettier-config@0.0.6",
-        "pkg:npm/%40open-wc/testing-helpers@3.0.1",
-        "pkg:npm/%40types/jest@29.5.14",
-        "pkg:npm/construct-style-sheets-polyfill@3.1.0",
-        "pkg:npm/eslint-plugin-github@5.1.8",
-        "pkg:npm/eslint@9.20.0",
-        "pkg:npm/http-server@14.1.1",
-        "pkg:npm/jsdom@25.0.1",
-        "pkg:npm/tsc-watch@6.2.1",
-        "pkg:npm/typescript@5.7.3",
-        "pkg:npm/vite@6.1.0",
-        "pkg:npm/vitest@3.0.5"
-      ]
-    },
-    {
       "from": "pkg:npm/%40humanfs/node@0.16.6",
       "to": [
         "pkg:npm/%40humanfs/core@0.19.1",

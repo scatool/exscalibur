@@ -3,7 +3,7 @@ import { join } from 'node:path';
 import { mkdtempSync, rmSync, cpSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { extractor } from './index.ts';
-import { normalizeResult, scanFixtures } from '@scatool/analyzer-test-utils';
+import { validateResult, scanFixtures } from '@scatool/analyzer-test-utils';
 
 const fixturesDir = join(import.meta.dir, '__fixtures__');
 const fixtures = await scanFixtures(fixturesDir, '*/yarn.lock');
@@ -26,7 +26,7 @@ for (const dir of fixtures) {
   test(dir, async () => {
     const fixturePath = join(tmpFixturesDir, dir);
     const result = await extractor.extract(fixturePath);
-    normalizeResult(result, tmpFixturesDir);
+    validateResult(result);
     expect(result).toMatchSnapshot();
   });
 }
