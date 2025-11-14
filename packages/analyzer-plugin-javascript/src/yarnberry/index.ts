@@ -35,7 +35,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));
 
     const lockfileGlob = new Glob('**/yarn.lock');
-    for await (const file of lockfileGlob.scan({ cwd: codebase, absolute: true })) {
+    for await (const file of lockfileGlob.scan({ cwd: codebase, absolute: true, onlyFiles: true })) {
       const shouldIgnore = ignoreGlobs.some((glob) => glob.match(file));
       if (!shouldIgnore) {
         // Only mark Yarn Berry lockfiles (version 8+)

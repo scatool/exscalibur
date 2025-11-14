@@ -6,61 +6,61 @@ exports[`gradle/multimodule 1`] = `
   "packages": [
     {
       "evidence": [
-        "<fixtures>/gradle/multimodule/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:maven/com.google.code.findbugs/jsr305@3.0.2",
     },
     {
       "evidence": [
-        "<fixtures>/gradle/multimodule/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:maven/com.google.errorprone/error_prone_annotations@2.11.0",
     },
     {
       "evidence": [
-        "<fixtures>/gradle/multimodule/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:maven/com.google.guava/failureaccess@1.0.1",
     },
     {
       "evidence": [
-        "<fixtures>/gradle/multimodule/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:maven/com.google.guava/guava@31.1-jre",
     },
     {
       "evidence": [
-        "<fixtures>/gradle/multimodule/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava",
     },
     {
       "evidence": [
-        "<fixtures>/gradle/multimodule/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:maven/com.google.j2objc/j2objc-annotations@1.3",
     },
     {
       "evidence": [
-        "<fixtures>/gradle/multimodule/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:maven/junit/junit@4.13.2",
     },
     {
       "evidence": [
-        "<fixtures>/gradle/multimodule/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:maven/org.checkerframework/checker-qual@3.12.0",
     },
     {
       "evidence": [
-        "<fixtures>/gradle/multimodule/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:maven/org.hamcrest/hamcrest-core@1.3",
     },
     {
       "evidence": [
-        "<fixtures>/gradle/multimodule/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:maven/org.slf4j/slf4j-api@2.0.7",
     },
@@ -86,7 +86,7 @@ exports[`gradle/multimodule 1`] = `
   ],
   "subprojects": [
     {
-      "definitionFile": "<fixtures>/gradle/multimodule/analyzer-result.json",
+      "definitionFile": "analyzer-result.json",
       "purl": "pkg:maven/multimodule-example/app",
       "scopes": [
         {
@@ -126,7 +126,7 @@ exports[`gradle/multimodule 1`] = `
       ],
     },
     {
-      "definitionFile": "<fixtures>/gradle/multimodule/analyzer-result.json",
+      "definitionFile": "analyzer-result.json",
       "purl": "pkg:maven/multimodule-example/lib",
       "scopes": [
         {
@@ -215,13 +215,13 @@ exports[`npm/basic 1`] = `
   "packages": [
     {
       "evidence": [
-        "<fixtures>/npm/basic/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/lodash@4.17.21",
     },
     {
       "evidence": [
-        "<fixtures>/npm/basic/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/typescript@5.3.3",
     },
@@ -229,7 +229,7 @@ exports[`npm/basic 1`] = `
   "relationships": [],
   "subprojects": [
     {
-      "definitionFile": "<fixtures>/npm/basic/analyzer-result.json",
+      "definitionFile": "analyzer-result.json",
       "purl": "pkg:npm/simple-npm-fixture@1.0.0",
       "scopes": [
         {
@@ -256,271 +256,271 @@ exports[`npm/workspace 1`] = `
   "packages": [
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/%40esbuild/linux-x64@0.24.2",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/%40img/sharp-libvips-linux-x64@1.0.4",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/%40img/sharp-libvips-linuxmusl-x64@1.0.4",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/%40img/sharp-linux-x64@0.33.5",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/%40img/sharp-linuxmusl-x64@0.33.5",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/%40next/env@15.1.7",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/%40next/swc-linux-x64-gnu@15.1.7",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/%40next/swc-linux-x64-musl@15.1.7",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/%40rollup/rollup-linux-x64-gnu@4.34.8",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/%40rollup/rollup-linux-x64-musl@4.34.8",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/%40scatest/docs@1.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/%40scatest/www@2.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/%40swc/counter@0.1.3",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/%40swc/helpers@0.5.15",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/%40types/estree@1.0.6",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/busboy@1.6.0",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/caniuse-lite@1.0.30001700",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/client-only@0.0.1",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/color-convert@2.0.1",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/color-name@1.1.4",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/color-string@1.9.1",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/color@4.2.3",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/detect-libc@2.0.3",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/esbuild@0.24.2",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/is-arrayish@0.3.2",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/nanoid@3.3.8",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/next@15.1.7",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/picocolors@1.1.1",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/postcss@8.4.31",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/postcss@8.5.3",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/react-dom@19.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/react@19.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/rollup@4.34.8",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/scheduler@0.25.0",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/semver@7.7.1",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/sharp@0.33.5",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/simple-swizzle@0.2.2",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/source-map-js@1.2.1",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/streamsearch@1.1.0",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/styled-jsx@5.1.6",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/tslib@2.8.1",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/turbo-linux-64@2.4.2",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/turbo@2.4.2",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/typescript@5.7.3",
     },
     {
       "evidence": [
-        "<fixtures>/npm/workspace/analyzer-result.json",
+        "analyzer-result.json",
       ],
       "purl": "pkg:npm/vite@6.1.1",
     },
@@ -683,7 +683,7 @@ exports[`npm/workspace 1`] = `
   ],
   "subprojects": [
     {
-      "definitionFile": "<fixtures>/npm/workspace/analyzer-result.json",
+      "definitionFile": "analyzer-result.json",
       "purl": "pkg:npm/%40scatest/workspace@0.0.0",
       "scopes": [
         {

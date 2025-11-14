@@ -11,7 +11,6 @@ export const extractor: Extractor = filesExtractor({
     for await (const file of glob.scan({
       cwd: codebase,
       dot: true,
-      absolute: true,
     })) {
       this.markFile(file);
     }

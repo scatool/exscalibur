@@ -5,41 +5,21 @@ import { join } from 'node:path';
 
 /**
  * Normalizes paths in an AnalyzerResult for snapshot testing.
- * Replaces a base path (typically fixturesDir) with a placeholder (typically '<fixtures>')
- * in both package evidence and subproject definition files.
+ * As of the relative paths update, this function is now a no-op since paths
+ * are already relative to the codebase. Kept for backward compatibility.
  *
  * @param result - The AnalyzerResult to normalize (will be mutated)
- * @param basePath - The path to replace (e.g., '/path/to/fixtures')
- * @param replacement - The replacement string (default: '<fixtures>')
- * @returns The normalized result (same object, mutated for convenience)
+ * @param basePath - No longer used, kept for API compatibility
+ * @param replacement - No longer used, kept for API compatibility
+ * @returns The normalized result (same object, returned for convenience)
  *
  * @example
  * const result = await extractor.extract(fixturePath);
  * normalizeResult(result, fixturesDir);
  * expect(result).toMatchSnapshot();
  */
-export function normalizeResult(
-  result: AnalyzerResult,
-  basePath: string,
-  replacement: string = '<fixtures>',
-): AnalyzerResult {
-  // Normalize paths in package evidence
-  for (const pkg of result.packages) {
-    pkg.evidence = pkg.evidence.map((e: string) => e.replace(basePath, replacement));
-  }
-
-  // Normalize paths in subproject definition files
-  for (const subproject of result.subprojects) {
-    subproject.definitionFile = subproject.definitionFile.replace(basePath, replacement);
-  }
-
-  // Normalize paths in issue files
-  for (const issue of result.issues) {
-    if (issue.file) {
-      issue.file = issue.file.replace(basePath, replacement);
-    }
-  }
-
+export function normalizeResult(result: AnalyzerResult, _basePath?: string, _replacement?: string): AnalyzerResult {
+  // Paths are now relative to the codebase, so no normalization needed
   return result;
 }
 

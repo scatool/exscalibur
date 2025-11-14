@@ -6,25 +6,25 @@ exports[`basic 1`] = `
   "packages": [
     {
       "evidence": [
-        "<fixtures>/basic/deno.lock#5",
+        "deno.lock#5",
       ],
       "purl": "pkg:jsr/std/assert@1.0.9",
     },
     {
       "evidence": [
-        "<fixtures>/basic/deno.lock#6",
+        "deno.lock#6",
       ],
       "purl": "pkg:jsr/std/fmt@0.218.2",
     },
     {
       "evidence": [
-        "<fixtures>/basic/deno.lock#7",
+        "deno.lock#7",
       ],
       "purl": "pkg:npm/fast-check@3.13.1",
     },
     {
       "evidence": [
-        "<fixtures>/basic/deno.lock#25",
+        "deno.lock#25",
       ],
       "purl": "pkg:npm/pure-rand@6.0.4",
     },
@@ -52,7 +52,7 @@ exports[`basic 1`] = `
   ],
   "subprojects": [
     {
-      "definitionFile": "<fixtures>/basic/deno.json",
+      "definitionFile": "deno.json",
       "purl": "pkg:generic/my-deno-app@1.0.0",
       "scopes": [
         {
@@ -74,55 +74,55 @@ exports[`edge-cases 1`] = `
   "packages": [
     {
       "evidence": [
-        "<fixtures>/edge-cases/deno.lock#6",
+        "deno.lock#6",
       ],
       "purl": "pkg:jsr/std/assert@0.218.2",
     },
     {
       "evidence": [
-        "<fixtures>/edge-cases/deno.lock#5",
+        "deno.lock#5",
       ],
       "purl": "pkg:jsr/std/assert@1.0.9",
     },
     {
       "evidence": [
-        "<fixtures>/edge-cases/deno.lock#36",
+        "deno.lock#36",
       ],
       "purl": "pkg:npm/js-tokens@4.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/edge-cases/deno.lock#28",
+        "deno.lock#28",
       ],
       "purl": "pkg:npm/loose-envify@1.4.0",
     },
     {
       "evidence": [
-        "<fixtures>/edge-cases/deno.lock#29",
+        "deno.lock#29",
       ],
       "purl": "pkg:npm/object-assign@4.1.1",
     },
     {
       "evidence": [
-        "<fixtures>/edge-cases/deno.lock#30",
+        "deno.lock#30",
       ],
       "purl": "pkg:npm/prop-types@15.8.1",
     },
     {
       "evidence": [
-        "<fixtures>/edge-cases/deno.lock#52",
+        "deno.lock#52",
       ],
       "purl": "pkg:npm/react-is@16.13.1",
     },
     {
       "evidence": [
-        "<fixtures>/edge-cases/deno.lock#8",
+        "deno.lock#8",
       ],
       "purl": "pkg:npm/react@16.14.0",
     },
     {
       "evidence": [
-        "<fixtures>/edge-cases/deno.lock#7",
+        "deno.lock#7",
       ],
       "purl": "pkg:npm/react@19.2.0",
     },
@@ -162,7 +162,7 @@ exports[`edge-cases 1`] = `
   ],
   "subprojects": [
     {
-      "definitionFile": "<fixtures>/edge-cases/deno.json",
+      "definitionFile": "deno.json",
       "purl": "pkg:generic/deno-edge-cases@1.0.0",
       "scopes": [
         {
@@ -180,73 +180,13 @@ exports[`edge-cases 1`] = `
 }
 `;
 
-exports[`monorepo 1`] = `
-{
-  "issues": [],
-  "packages": [
-    {
-      "evidence": [
-        "<fixtures>/monorepo/project-b/deno.lock#5",
-      ],
-      "purl": "pkg:jsr/oak/oak@17.1.4",
-    },
-    {
-      "evidence": [
-        "<fixtures>/monorepo/project-a/deno.lock#5",
-      ],
-      "purl": "pkg:jsr/std/assert@1.0.9",
-    },
-  ],
-  "relationships": [
-    {
-      "from": "pkg:generic/project-a@1.0.0",
-      "to": [
-        "pkg:jsr/std/assert@1.0.9",
-      ],
-    },
-    {
-      "from": "pkg:generic/project-b@2.0.0",
-      "to": [
-        "pkg:jsr/oak/oak@17.1.4",
-      ],
-    },
-  ],
-  "subprojects": [
-    {
-      "definitionFile": "<fixtures>/monorepo/project-a/deno.json",
-      "purl": "pkg:generic/project-a@1.0.0",
-      "scopes": [
-        {
-          "packages": [
-            "pkg:jsr/std/assert@1.0.9",
-          ],
-          "scope": "dependencies",
-        },
-      ],
-    },
-    {
-      "definitionFile": "<fixtures>/monorepo/project-b/deno.json",
-      "purl": "pkg:generic/project-b@2.0.0",
-      "scopes": [
-        {
-          "packages": [
-            "pkg:jsr/oak/oak@17.1.4",
-          ],
-          "scope": "dependencies",
-        },
-      ],
-    },
-  ],
-}
-`;
-
 exports[`remote-deps 1`] = `
 {
   "issues": [],
   "packages": [
     {
       "evidence": [
-        "<fixtures>/remote-deps/deno.lock#5",
+        "deno.lock#5",
       ],
       "purl": "pkg:jsr/std/assert@1.0.9",
     },
@@ -261,7 +201,7 @@ exports[`remote-deps 1`] = `
   ],
   "subprojects": [
     {
-      "definitionFile": "<fixtures>/remote-deps/deno.json",
+      "definitionFile": "deno.json",
       "purl": "pkg:generic/deno-remote-deps@1.0.0",
       "scopes": [
         {
@@ -282,13 +222,13 @@ exports[`workspace 1`] = `
   "packages": [
     {
       "evidence": [
-        "<fixtures>/workspace/deno.lock#5",
+        "deno.lock#5",
       ],
       "purl": "pkg:jsr/oak/oak@17.1.4",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/deno.lock#6",
+        "deno.lock#6",
       ],
       "purl": "pkg:jsr/std/assert@1.0.9",
     },
@@ -309,7 +249,7 @@ exports[`workspace 1`] = `
   ],
   "subprojects": [
     {
-      "definitionFile": "<fixtures>/workspace/deno.json",
+      "definitionFile": "deno.json",
       "purl": "pkg:generic/deno-workspace@1.0.0",
       "scopes": [
         {

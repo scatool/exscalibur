@@ -10,7 +10,7 @@ for (const file of fixtureFiles) {
   test(file, async () => {
     const filePath = join(fixturesDir, file);
     const content = await Bun.file(filePath).text();
-    const result = await extractDockerfile(content, filePath);
+    const result = await extractDockerfile(content, file);
     normalizeResult(result, fixturesDir);
     expect(result).toMatchSnapshot();
   });

@@ -36,8 +36,8 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     const ignorePatterns = options.ignore ?? [];
     const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));
 
-    const lockfileGlob = new Glob('**/{package-lock.json,npm-shrinkwrap.json}');
-    for await (const file of lockfileGlob.scan({ cwd: codebase, absolute: true })) {
+    const glob = new Glob('**/{package-lock.json,npm-shrinkwrap.json}');
+    for await (const file of glob.scan({ cwd: codebase, absolute: true, onlyFiles: true })) {
       const shouldIgnore = ignoreGlobs.some((glob) => glob.match(file));
       if (!shouldIgnore) {
         this.markFile(file);

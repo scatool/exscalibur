@@ -26,7 +26,7 @@ export const extractor: Extractor = filesExtractor({
   name: 'gomod',
   version: 1,
   markFiles: async function (codebase: string) {
-    for await (const file of glob.scan({ cwd: codebase, absolute: true })) {
+    for await (const file of glob.scan({ cwd: codebase })) {
       // Exclude vendor and common module cache directories
       if (!file.includes('/vendor/') && !file.includes('/.cache/')) {
         this.markFile(file);
