@@ -1,7 +1,7 @@
 import { type Extractor, filesExtractor, type AnalyzerResult } from '@scatool/analyzer-core/src/index.ts';
 import { Glob } from 'bun';
 import { PackageURL } from 'packageurl-js';
-import { dirname } from 'node:path';
+import { dirname, join } from 'node:path';
 import { existsSync } from 'node:fs';
 import type { JavaScriptOptions } from '../options.ts';
 
@@ -40,7 +40,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));
 
     const glob = new Glob('**/package.json');
-    for await (const file of glob.scan({ cwd: codebase, absolute: true })) {
+    for await (const file of glob.scan({ cwd: codebase, absolute: true, onlyFiles: true })) {
       const shouldIgnore = ignoreGlobs.some((glob) => glob.match(file));
       if (shouldIgnore) {
         continue;
@@ -123,7 +123,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
 
             // Find line number for evidence
             const lineNumber = findLineNumber(lines, name);
-            const evidence = lineNumber ? [`${file}:${lineNumber}`] : [];
+            const evidence = lineNumber ? [`${file}#${lineNumber}`] : [];
 
             packages.push({
               purl: purl.toString(),

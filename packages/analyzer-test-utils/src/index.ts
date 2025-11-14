@@ -1,46 +1,51 @@
-import type { AnalyzerResult, Extractor } from '@scatool/analyzer-core';
+import type { Extractor } from '@scatool/analyzer-core';
 import { Glob } from 'bun';
 import { expect, test } from 'bun:test';
 import { join } from 'node:path';
+import { validateResult } from './validate.ts';
+
+export { validateResult } from './validate.ts';
 
 /**
- * Normalizes paths in an AnalyzerResult for snapshot testing.
- * Replaces a base path (typically fixturesDir) with a placeholder (typically '<fixtures>')
- * in both package evidence and subproject definition files.
+ * Creates standardized tests for file content extraction functions.
+ * This helper is for functions that extract from file content rather than directories.
  *
- * @param result - The AnalyzerResult to normalize (will be mutated)
- * @param basePath - The path to replace (e.g., '/path/to/fixtures')
- * @param replacement - The replacement string (default: '<fixtures>')
- * @returns The normalized result (same object, mutated for convenience)
+ * @param options - Configuration for the test factory
+ * @param options.extractFn - Function that takes (content, filename) and returns AnalyzerResult
+ * @param options.fixturesDir - Directory containing test fixtures
+ * @param options.pattern - Glob pattern to find fixture files
  *
  * @example
- * const result = await extractor.extract(fixturePath);
- * normalizeResult(result, fixturesDir);
- * expect(result).toMatchSnapshot();
+ * import { extractDockerfile } from './index.ts';
+ * import { createFileContentTests } from '@scatool/analyzer-test-utils';
+ * import { join } from 'node:path';
+ *
+ * const fixturesDir = join(import.meta.dir, '__fixtures__');
+ *
+ * await createFileContentTests({
+ *   extractFn: extractDockerfile,
+ *   fixturesDir,
+ *   pattern: 'Dockerfile.*',
+ * });
  */
-export function normalizeResult(
-  result: AnalyzerResult,
-  basePath: string,
-  replacement: string = '<fixtures>',
-): AnalyzerResult {
-  // Normalize paths in package evidence
-  for (const pkg of result.packages) {
-    pkg.evidence = pkg.evidence.map((e: string) => e.replace(basePath, replacement));
-  }
+export async function createFileContentTests(options: {
+  extractFn: (content: string, filename: string) => Promise<import('@scatool/analyzer-core').AnalyzerResult>;
+  fixturesDir: string;
+  pattern: string;
+}): Promise<void> {
+  const { extractFn, fixturesDir, pattern } = options;
 
-  // Normalize paths in subproject definition files
-  for (const subproject of result.subprojects) {
-    subproject.definitionFile = subproject.definitionFile.replace(basePath, replacement);
-  }
+  const fixtureFiles = await scanFixtureFiles(fixturesDir, pattern);
 
-  // Normalize paths in issue files
-  for (const issue of result.issues) {
-    if (issue.file) {
-      issue.file = issue.file.replace(basePath, replacement);
-    }
+  for (const file of fixtureFiles) {
+    test(file, async () => {
+      const filePath = join(fixturesDir, file);
+      const content = await Bun.file(filePath).text();
+      const result = await extractFn(content, file);
+      validateResult(result);
+      expect(result).toMatchSnapshot();
+    });
   }
-
-  return result;
 }
 
 /**
@@ -103,7 +108,7 @@ export async function scanFixtureFiles(fixturesDir: string, pattern: string): Pr
  * This helper reduces boilerplate by automating the common pattern of:
  * 1. Scanning for fixtures
  * 2. Running the extractor on each fixture
- * 3. Normalizing paths
+ * 3. Validating the result
  * 4. Comparing against snapshots
  *
  * @param options - Configuration for the test factory
@@ -111,6 +116,8 @@ export async function scanFixtureFiles(fixturesDir: string, pattern: string): Pr
  * @param options.fixturesDir - Directory containing test fixtures
  * @param options.pattern - Glob pattern to find fixture directories/files
  * @param options.useFiles - If true, uses scanFixtureFiles instead of scanFixtures (default: false)
+ * @param options.extractDirectory - If true, extracts directory path from file paths (e.g., "npm/basic/file.json" -> "npm/basic") (default: false)
+ * @param options.timeout - Test timeout in milliseconds (optional)
  *
  * @example
  * // In your test file:
@@ -125,25 +132,46 @@ export async function scanFixtureFiles(fixturesDir: string, pattern: string): Pr
  *   fixturesDir,
  *   pattern: '* /bun.lock',
  * });
+ *
+ * @example
+ * // For nested fixtures with files (e.g., ORT):
+ * createExtractorTests({
+ *   extractor,
+ *   fixturesDir,
+ *   pattern: '* /* /analyzer-result.json',
+ *   useFiles: true,
+ *   extractDirectory: true,
+ * });
  */
 export async function createExtractorTests(options: {
   extractor: Extractor;
   fixturesDir: string;
   pattern: string;
   useFiles?: boolean;
+  extractDirectory?: boolean;
+  timeout?: number;
 }): Promise<void> {
-  const { extractor, fixturesDir, pattern, useFiles = false } = options;
+  const { extractor, fixturesDir, pattern, useFiles = false, extractDirectory = false, timeout } = options;
 
   // Scan for fixtures
-  const fixtures = useFiles ? await scanFixtureFiles(fixturesDir, pattern) : await scanFixtures(fixturesDir, pattern);
+  let fixtures = useFiles ? await scanFixtureFiles(fixturesDir, pattern) : await scanFixtures(fixturesDir, pattern);
+
+  // Extract directory paths if needed (e.g., "npm/basic/file.json" -> "npm/basic")
+  if (extractDirectory) {
+    fixtures = fixtures.map((file) => file.substring(0, file.lastIndexOf('/')));
+  }
 
   // Create a test for each fixture
   for (const fixture of fixtures) {
-    test(fixture, async () => {
-      const fixturePath = useFiles ? join(fixturesDir, fixture) : join(fixturesDir, fixture);
-      const result = await extractor.extract(fixturePath);
-      normalizeResult(result, fixturesDir);
-      expect(result).toMatchSnapshot();
-    });
+    test(
+      fixture,
+      async () => {
+        const fixturePath = join(fixturesDir, fixture);
+        const result = await extractor.extract(fixturePath);
+        validateResult(result);
+        expect(result).toMatchSnapshot();
+      },
+      timeout ? { timeout } : undefined,
+    );
   }
 }

@@ -1,6 +1,5 @@
 import {
   addRelationship,
-  aggregateSubprojectRelationships,
   type AnalyzerResult,
   convertPackageMapToArray,
   convertRelationshipsMapToArray,
@@ -29,7 +28,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));
 
     const lockfileGlob = new Glob('**/deno.lock');
-    for await (const file of lockfileGlob.scan({ cwd: codebase, absolute: true })) {
+    for await (const file of lockfileGlob.scan({ cwd: codebase, absolute: true, onlyFiles: true })) {
       const shouldIgnore = ignoreGlobs.some((glob) => glob.match(file));
       if (!shouldIgnore) {
         this.markFile(file);
@@ -195,7 +194,6 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
       }
 
       // Add relationships from subprojects to their dependencies
-      aggregateSubprojectRelationships(subprojects, relationshipsMap);
     } catch (error) {
       // Silently skip files that fail to parse
     }

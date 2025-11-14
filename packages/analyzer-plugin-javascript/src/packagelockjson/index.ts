@@ -8,7 +8,6 @@ import {
   ensurePackageExists,
   convertPackageMapToArray,
   convertRelationshipsMapToArray,
-  aggregateSubprojectRelationships,
   initializeExtractionMaps,
 } from '@scatool/analyzer-core/src/index.ts';
 import { Glob } from 'bun';
@@ -36,8 +35,8 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     const ignorePatterns = options.ignore ?? [];
     const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));
 
-    const lockfileGlob = new Glob('**/{package-lock.json,npm-shrinkwrap.json}');
-    for await (const file of lockfileGlob.scan({ cwd: codebase, absolute: true })) {
+    const glob = new Glob('**/{package-lock.json,npm-shrinkwrap.json}');
+    for await (const file of glob.scan({ cwd: codebase, absolute: true, onlyFiles: true })) {
       const shouldIgnore = ignoreGlobs.some((glob) => glob.match(file));
       if (!shouldIgnore) {
         this.markFile(file);
@@ -153,20 +152,6 @@ async function extractFromV1Lockfile(
         definitionFile: packageJsonPath,
         scopes: rootScopes,
       });
-
-      // Add relationships from root to its dependencies
-      if (rootScopes.length > 0) {
-        const allDeps = new Set<string>();
-        for (const scope of rootScopes) {
-          for (const pkg of scope.packages) {
-            allDeps.add(pkg);
-          }
-        }
-
-        if (allDeps.size > 0) {
-          relationshipsMap.set(rootPurl, allDeps);
-        }
-      }
     }
   } catch {
     // Skip if package.json doesn't exist
@@ -391,9 +376,6 @@ async function extractFromV2Lockfile(
       relationshipsMap,
     );
   }
-
-  // Add relationships from subprojects to their dependencies
-  aggregateSubprojectRelationships(subprojects, relationshipsMap);
 
   // Convert maps to arrays
   const packages = convertPackageMapToArray(packageMap);

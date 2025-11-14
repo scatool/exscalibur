@@ -8,7 +8,6 @@ import {
   ensurePackageExists,
   convertPackageMapToArray,
   convertRelationshipsMapToArray,
-  aggregateSubprojectRelationships,
   initializeExtractionMaps,
 } from '@scatool/analyzer-core/src/index.ts';
 import { Glob } from 'bun';
@@ -29,7 +28,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));
 
     const lockfileGlob = new Glob('**/yarn.lock');
-    for await (const file of lockfileGlob.scan({ cwd: codebase, absolute: true })) {
+    for await (const file of lockfileGlob.scan({ cwd: codebase, absolute: true, onlyFiles: true })) {
       const shouldIgnore = ignoreGlobs.some((glob) => glob.match(file));
       if (!shouldIgnore) {
         // Only mark Yarn Classic (v1) lockfiles
@@ -233,7 +232,6 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
       }
 
       // Add relationships from subprojects to their dependencies
-      aggregateSubprojectRelationships(subprojects, relationshipsMap);
     } catch (error) {
       // Silently skip files that fail to parse
     }
