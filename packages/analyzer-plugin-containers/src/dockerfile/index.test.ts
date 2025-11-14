@@ -1,17 +1,11 @@
-import { expect, test } from 'bun:test';
 import { join } from 'node:path';
 import { extractDockerfile } from './index.ts';
-import { normalizeResult, scanFixtureFiles } from '@scatool/analyzer-test-utils';
+import { createFileContentTests } from '@scatool/analyzer-test-utils';
 
 const fixturesDir = join(import.meta.dir, '__fixtures__');
-const fixtureFiles = await scanFixtureFiles(fixturesDir, 'Dockerfile.*');
 
-for (const file of fixtureFiles) {
-  test(file, async () => {
-    const filePath = join(fixturesDir, file);
-    const content = await Bun.file(filePath).text();
-    const result = await extractDockerfile(content, file);
-    normalizeResult(result, fixturesDir);
-    expect(result).toMatchSnapshot();
-  });
-}
+await createFileContentTests({
+  extractFn: extractDockerfile,
+  fixturesDir,
+  pattern: 'Dockerfile.*',
+});

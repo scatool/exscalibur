@@ -33,3 +33,37 @@ exports[`package.json extractor should extract package URLs from package.json 1`
   "subprojects": [],
 }
 `;
+
+exports[`simple 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "package.json#10",
+      ],
+      "purl": "pkg:npm/%40types/react-dom@19.0.0",
+    },
+    {
+      "evidence": [
+        "package.json#9",
+      ],
+      "purl": "pkg:npm/%40types/react@19.0.0",
+    },
+    {
+      "evidence": [
+        "package.json#6",
+      ],
+      "purl": "pkg:npm/react-dom@19.0.0",
+    },
+    {
+      "evidence": [
+        "package.json#5",
+      ],
+      "purl": "pkg:npm/react@19.0.0",
+    },
+  ],
+  "relationships": [],
+  "subprojects": [],
+}
+`;
