@@ -117,6 +117,7 @@ export async function scanFixtureFiles(fixturesDir: string, pattern: string): Pr
  * @param options.pattern - Glob pattern to find fixture directories/files
  * @param options.useFiles - If true, uses scanFixtureFiles instead of scanFixtures (default: false)
  * @param options.extractDirectory - If true, extracts directory path from file paths (e.g., "npm/basic/file.json" -> "npm/basic") (default: false)
+ * @param options.timeout - Test timeout in milliseconds (optional)
  *
  * @example
  * // In your test file:
@@ -148,8 +149,9 @@ export async function createExtractorTests(options: {
   pattern: string;
   useFiles?: boolean;
   extractDirectory?: boolean;
+  timeout?: number;
 }): Promise<void> {
-  const { extractor, fixturesDir, pattern, useFiles = false, extractDirectory = false } = options;
+  const { extractor, fixturesDir, pattern, useFiles = false, extractDirectory = false, timeout } = options;
 
   // Scan for fixtures
   let fixtures = useFiles ? await scanFixtureFiles(fixturesDir, pattern) : await scanFixtures(fixturesDir, pattern);
@@ -161,11 +163,15 @@ export async function createExtractorTests(options: {
 
   // Create a test for each fixture
   for (const fixture of fixtures) {
-    test(fixture, async () => {
-      const fixturePath = join(fixturesDir, fixture);
-      const result = await extractor.extract(fixturePath);
-      validateResult(result);
-      expect(result).toMatchSnapshot();
-    });
+    test(
+      fixture,
+      async () => {
+        const fixturePath = join(fixturesDir, fixture);
+        const result = await extractor.extract(fixturePath);
+        validateResult(result);
+        expect(result).toMatchSnapshot();
+      },
+      timeout ? { timeout } : undefined,
+    );
   }
 }

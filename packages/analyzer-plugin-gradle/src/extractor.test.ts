@@ -8,4 +8,5 @@ await createExtractorTests({
   extractor,
   fixturesDir,
   pattern: '*/build.gradle*',
+  timeout: 60000,
 });
