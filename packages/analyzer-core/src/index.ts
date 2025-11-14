@@ -1,7 +1,5 @@
 export { mergeResults } from './merge.ts';
 import { mergeResults } from './merge.ts';
-
-// Export map utilities (generic, not package-manager specific)
 export {
   addRelationship,
   ensurePackageExists,
@@ -139,69 +137,42 @@ export const filesExtractor = <Options = unknown>(config: FilesExtractor<Options
     name: config.name,
     version: config.version,
     extract: async (codebase: string, runtimeOptions?: Partial<Options>) => {
-      const markedFiles: Array<{ relative: string; absolute: string }> = [];
+      const markedFiles: string[] = [];
 
       const context: MarkFileContext = {
         markFile: (file: string) => {
-          // Assume file is relative to codebase, convert to absolute for file operations
           const absolutePath = file.startsWith('/') ? file : `${codebase}/${file}`;
-          markedFiles.push({ relative: file, absolute: absolutePath });
+          markedFiles.push(absolutePath);
         },
       };
 
       const defaultOptions = config.options ? await config.options() : ({} as Options);
       const options = { ...defaultOptions, ...runtimeOptions } as Options;
 
-      // First, mark all relevant files
       await config.markFiles.call(context, codebase, options);
 
-      // Then process each marked file
       const results: AnalyzerResult[] = [];
-
       for (const file of markedFiles) {
         if (config.extractFile) {
-          // Pass absolute path to extractFile for file operations
-          const fileResult = await config.extractFile(file.absolute, options);
-          // Convert all absolute paths in result to relative paths
-          makePathsRelative(fileResult, codebase);
-          results.push(fileResult);
+          const result = await config.extractFile(file, options);
+          results.push(result);
         }
       }
 
-      // Merge and normalize all results
-      return mergeResults(results);
+      return makePathsRelative(mergeResults(results), codebase);
     },
     ...(config.options !== undefined && { options: config.options }),
   };
 };
 
-/**
- * Convert absolute paths to relative paths in an AnalyzerResult.
- * Mutates the result in place.
- */
-function makePathsRelative(result: AnalyzerResult, codebase: string): void {
-  // Normalize codebase path (remove trailing slash)
+function makePathsRelative(result: AnalyzerResult, codebase: string): AnalyzerResult {
   const normalizedCodebase = codebase.endsWith('/') ? codebase.slice(0, -1) : codebase;
 
   // Convert evidence paths from absolute to relative
   for (const pkg of result.packages) {
-    pkg.evidence = pkg.evidence.map((e) => {
-      // Evidence format: "path#lineNumber" or just "path"
-      const match = e.match(/^(.+?)#(\d+)$/);
-
-      if (match && match[1] && match[2]) {
-        // Evidence with line number
-        const path = match[1];
-        const lineNumber = match[2];
-        const relativePath = path.startsWith(normalizedCodebase + '/')
-          ? path.substring(normalizedCodebase.length + 1)
-          : path;
-        return `${relativePath}#${lineNumber}`;
-      } else {
-        // Evidence without line number (just a path)
-        return e.startsWith(normalizedCodebase + '/') ? e.substring(normalizedCodebase.length + 1) : e;
-      }
-    });
+    pkg.evidence = pkg.evidence.map((e) =>
+      e.startsWith(normalizedCodebase + '/') ? e.substring(normalizedCodebase.length + 1) : e,
+    );
   }
 
   // Convert subproject definitionFile from absolute to relative
@@ -217,4 +188,6 @@ function makePathsRelative(result: AnalyzerResult, codebase: string): void {
       issue.file = issue.file.substring(normalizedCodebase.length + 1);
     }
   }
+
+  return result;
 }
