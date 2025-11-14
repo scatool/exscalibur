@@ -40,15 +40,14 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));
 
     const glob = new Glob('**/package.json');
-    for await (const file of glob.scan({ cwd: codebase })) {
+    for await (const file of glob.scan({ cwd: codebase, absolute: true, onlyFiles: true })) {
       const shouldIgnore = ignoreGlobs.some((glob) => glob.match(file));
       if (shouldIgnore) {
         continue;
       }
 
       // Skip if a lockfile exists in the same directory or any parent directory
-      const absolutePath = join(codebase, file);
-      const dir = dirname(absolutePath);
+      const dir = dirname(file);
       if (await hasLockfileInDirectory(dir, codebase)) {
         continue;
       }

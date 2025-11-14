@@ -29,7 +29,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));
 
     const lockfileGlob = new Glob('**/deno.lock');
-    for await (const file of lockfileGlob.scan({ cwd: codebase })) {
+    for await (const file of lockfileGlob.scan({ cwd: codebase, absolute: true, onlyFiles: true })) {
       const shouldIgnore = ignoreGlobs.some((glob) => glob.match(file));
       if (!shouldIgnore) {
         this.markFile(file);
