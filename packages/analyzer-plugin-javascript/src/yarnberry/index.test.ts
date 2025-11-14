@@ -26,7 +26,7 @@ for (const dir of fixtures) {
   test(dir, async () => {
     const fixturePath = join(tmpFixturesDir, dir);
     const result = await extractor.extract(fixturePath);
-    validateResult(result, tmpFixturesDir);
+    validateResult(result);
     expect(result).toMatchSnapshot();
   });
 }
