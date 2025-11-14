@@ -8,7 +8,6 @@ import {
   ensurePackageExists,
   convertPackageMapToArray,
   convertRelationshipsMapToArray,
-  aggregateSubprojectRelationships,
   initializeExtractionMaps,
 } from '@scatool/analyzer-core/src/index.ts';
 import { Glob } from 'bun';
@@ -279,7 +278,6 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
       }
 
       // Add relationships from subprojects to their dependencies
-      aggregateSubprojectRelationships(subprojects, relationshipsMap);
     } catch (error) {
       // Silently skip files that fail to parse
     }

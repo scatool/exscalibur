@@ -1,6 +1,5 @@
 import {
   addRelationship,
-  aggregateSubprojectRelationships,
   type AnalyzerResult,
   convertPackageMapToArray,
   convertRelationshipsMapToArray,
@@ -195,7 +194,6 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
       }
 
       // Add relationships from subprojects to their dependencies
-      aggregateSubprojectRelationships(subprojects, relationshipsMap);
     } catch (error) {
       // Silently skip files that fail to parse
     }

@@ -67,12 +67,6 @@ exports[`aliases 1`] = `
       ],
     },
     {
-      "from": "pkg:npm/aliases-test@1.0.0",
-      "to": [
-        "pkg:npm/test-package@1.0.0",
-      ],
-    },
-    {
       "from": "pkg:npm/test-package@1.0.0",
       "to": [
         "pkg:npm/%40docusaurus/react-loadable@6.0.0",
@@ -499,15 +493,6 @@ exports[`basic 1`] = `
         "pkg:npm/react@19.2.0",
         "pkg:npm/sharp@0.34.4",
         "pkg:npm/styled-jsx@5.1.6",
-      ],
-    },
-    {
-      "from": "pkg:npm/npm-basic@1.0.0",
-      "to": [
-        "pkg:npm/next@15.5.6",
-        "pkg:npm/react-dom@19.2.0",
-        "pkg:npm/react@19.2.0",
-        "pkg:npm/typescript@5.9.3",
       ],
     },
     {
@@ -1478,15 +1463,6 @@ exports[`git-deps 1`] = `
       ],
     },
     {
-      "from": "pkg:npm/test-git-deps@1.0.0",
-      "to": [
-        "pkg:npm/express@5.1.0",
-        "pkg:npm/is-even@1.0.0",
-        "pkg:npm/lodash@4.17.21",
-        "pkg:npm/mocha@2.0.1",
-      ],
-    },
-    {
       "from": "pkg:npm/type-is@2.0.1",
       "to": [
         "pkg:npm/content-type@1.0.5",
@@ -2246,20 +2222,6 @@ exports[`monorepo 1`] = `
       ],
     },
     {
-      "from": "pkg:npm/a@1.5.2",
-      "to": [
-        "pkg:npm/next@15.5.6",
-        "pkg:npm/typescript@5.9.3",
-      ],
-    },
-    {
-      "from": "pkg:npm/b@1.5.2",
-      "to": [
-        "pkg:npm/typescript@5.9.3",
-        "pkg:npm/vite@6.4.1",
-      ],
-    },
-    {
       "from": "pkg:npm/esbuild@0.25.11",
       "to": [
         "pkg:npm/%40esbuild/aix-ppc64@0.25.11",
@@ -2414,12 +2376,6 @@ exports[`monorepo 1`] = `
       ],
     },
     {
-      "from": "pkg:npm/utils@0.0.0",
-      "to": [
-        "pkg:npm/prettier@3.6.2",
-      ],
-    },
-    {
       "from": "pkg:npm/vite@6.4.1",
       "to": [
         "pkg:npm/esbuild@0.25.11",
@@ -2525,13 +2481,6 @@ exports[`tarball-deps 1`] = `
       "from": "pkg:npm/react@18.3.1",
       "to": [
         "pkg:npm/loose-envify@1.4.0",
-      ],
-    },
-    {
-      "from": "pkg:npm/test-tarball-deps@1.0.0",
-      "to": [
-        "pkg:npm/lodash@4.17.21",
-        "pkg:npm/react@18.3.1",
       ],
     },
   ],
@@ -3307,38 +3256,6 @@ exports[`workspace 1`] = `
       "from": "pkg:npm/%40img/sharp-wasm32@0.34.4",
       "to": [
         "pkg:npm/%40emnapi/runtime@1.6.0",
-      ],
-    },
-    {
-      "from": "pkg:npm/%40scatest/docs@1.0.0",
-      "to": [
-        "pkg:npm/%40scatest/ui@1.0.7",
-        "pkg:npm/react-dom@19.2.0",
-        "pkg:npm/react@19.2.0",
-        "pkg:npm/vite@6.4.1",
-      ],
-    },
-    {
-      "from": "pkg:npm/%40scatest/ui@1.0.7",
-      "to": [
-        "pkg:npm/react@19.2.0",
-      ],
-    },
-    {
-      "from": "pkg:npm/%40scatest/workspace@0.0.0",
-      "to": [
-        "pkg:npm/turbo@2.5.8",
-        "pkg:npm/typescript@5.9.3",
-      ],
-    },
-    {
-      "from": "pkg:npm/%40scatest/www@2.0.0",
-      "to": [
-        "pkg:npm/%40scatest/ui@1.0.7",
-        "pkg:npm/next@15.5.6",
-        "pkg:npm/react-dom@19.2.0",
-        "pkg:npm/react@19.2.0",
-        "pkg:npm/typescript@5.9.3",
       ],
     },
     {

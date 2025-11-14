@@ -138,8 +138,9 @@ export const extractor: Extractor = filesExtractor({
       ensurePackageExists(packageMap, fromPurl);
       ensurePackageExists(packageMap, toPurl);
 
-      // Add relationship
-      addRelationship(relationshipsMap, fromPurl, toPurl);
+      if (fromParsed.path !== moduleName && toParsed.path !== moduleName) {
+        addRelationship(relationshipsMap, fromPurl, toPurl);
+      }
     }
 
     // Create PURL for the main module (used in subproject, not in packages)

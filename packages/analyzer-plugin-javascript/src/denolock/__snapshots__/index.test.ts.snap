@@ -31,13 +31,6 @@ exports[`basic 1`] = `
   ],
   "relationships": [
     {
-      "from": "pkg:generic/my-deno-app@1.0.0",
-      "to": [
-        "pkg:jsr/std/assert@1.0.9",
-        "pkg:npm/fast-check@3.13.1",
-      ],
-    },
-    {
       "from": "pkg:jsr/std/assert@1.0.9",
       "to": [
         "pkg:jsr/std/fmt@0.218.2",
@@ -129,15 +122,6 @@ exports[`edge-cases 1`] = `
   ],
   "relationships": [
     {
-      "from": "pkg:generic/deno-edge-cases@1.0.0",
-      "to": [
-        "pkg:jsr/std/assert@0.218.2",
-        "pkg:jsr/std/assert@1.0.9",
-        "pkg:npm/react@16.14.0",
-        "pkg:npm/react@19.2.0",
-      ],
-    },
-    {
       "from": "pkg:npm/loose-envify@1.4.0",
       "to": [
         "pkg:npm/js-tokens@4.0.0",
@@ -191,14 +175,7 @@ exports[`remote-deps 1`] = `
       "purl": "pkg:jsr/std/assert@1.0.9",
     },
   ],
-  "relationships": [
-    {
-      "from": "pkg:generic/deno-remote-deps@1.0.0",
-      "to": [
-        "pkg:jsr/std/assert@1.0.9",
-      ],
-    },
-  ],
+  "relationships": [],
   "subprojects": [
     {
       "definitionFile": "deno.json",
@@ -234,12 +211,6 @@ exports[`workspace 1`] = `
     },
   ],
   "relationships": [
-    {
-      "from": "pkg:generic/deno-workspace@1.0.0",
-      "to": [
-        "pkg:jsr/oak/oak@17.1.4",
-      ],
-    },
     {
       "from": "pkg:jsr/oak/oak@17.1.4",
       "to": [
