@@ -187,9 +187,24 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
           for (const depType of NPM_DEPENDENCY_SCOPES) {
             const deps = metadata[depType];
             if (deps && typeof deps === 'object') {
-              for (const [depName, depVersion] of Object.entries(deps)) {
-                if (typeof depVersion === 'string') {
-                  const depPurl = createNpmPurl(depName, depVersion);
+              for (const [depName, depVersionRange] of Object.entries(deps)) {
+                if (typeof depVersionRange !== 'string') continue;
+
+                // Check if this is a workspace package
+                if (depVersionRange.startsWith('workspace:')) {
+                  const workspaceVersion = workspacePackages.get(depName);
+                  if (workspaceVersion) {
+                    const depPurl = createNpmPurl(depName, workspaceVersion);
+                    addRelationship(relationshipsMap, purl, depPurl);
+                    ensurePackageExists(packageMap, depPurl);
+                  }
+                  continue;
+                }
+
+                // Look up the resolved version from the resolutionMap
+                const resolvedVersion = resolutionMap.get(depName);
+                if (resolvedVersion) {
+                  const depPurl = createNpmPurl(depName, resolvedVersion);
                   addRelationship(relationshipsMap, purl, depPurl);
                   ensurePackageExists(packageMap, depPurl);
                 }

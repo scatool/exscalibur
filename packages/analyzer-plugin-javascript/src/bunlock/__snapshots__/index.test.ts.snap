@@ -5,18 +5,10 @@ exports[`basic 1`] = `
   "issues": [],
   "packages": [
     {
-      "evidence": [],
-      "purl": "pkg:npm/%40emnapi/runtime@%5E1.5.0",
-    },
-    {
       "evidence": [
         "bun.lock#17",
       ],
       "purl": "pkg:npm/%40emnapi/runtime@1.6.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/%40img/colour@%5E1.0.0",
     },
     {
       "evidence": [
@@ -211,26 +203,10 @@ exports[`basic 1`] = `
       "purl": "pkg:npm/%40next/swc-win32-x64-msvc@15.5.6",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/%40opentelemetry/api@%5E1.1.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/%40playwright/test@%5E1.51.1",
-    },
-    {
       "evidence": [
         "bun.lock#83",
       ],
       "purl": "pkg:npm/%40swc/helpers@0.5.15",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/babel-plugin-react-compiler@*",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/caniuse-lite@%5E1.0.30001579",
     },
     {
       "evidence": [
@@ -245,18 +221,10 @@ exports[`basic 1`] = `
       "purl": "pkg:npm/client-only@0.0.1",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/detect-libc@%5E2.1.0",
-    },
-    {
       "evidence": [
         "bun.lock#89",
       ],
       "purl": "pkg:npm/detect-libc@2.1.2",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/nanoid@%5E3.3.6",
     },
     {
       "evidence": [
@@ -271,10 +239,6 @@ exports[`basic 1`] = `
       "purl": "pkg:npm/next@15.5.6",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/picocolors@%5E1.0.0",
-    },
-    {
       "evidence": [
         "bun.lock#95",
       ],
@@ -287,26 +251,10 @@ exports[`basic 1`] = `
       "purl": "pkg:npm/postcss@8.4.31",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/react-dom@%5E18.2.0%20%7C%7C%2019.0.0-rc-de68d2f4-20241204%20%7C%7C%20%5E19.0.0",
-    },
-    {
       "evidence": [
         "bun.lock#9",
       ],
       "purl": "pkg:npm/react-dom@19.2.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/react@%3E%3D%2016.8.0%20%7C%7C%2017.x.x%20%7C%7C%20%5E18.0.0-0%20%7C%7C%20%5E19.0.0-0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/react@%5E18.2.0%20%7C%7C%2019.0.0-rc-de68d2f4-20241204%20%7C%7C%20%5E19.0.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/react@%5E19.2.0",
     },
     {
       "evidence": [
@@ -315,22 +263,10 @@ exports[`basic 1`] = `
       "purl": "pkg:npm/react@19.2.0",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/sass@%5E1.3.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/scheduler@%5E0.27.0",
-    },
-    {
       "evidence": [
         "bun.lock#103",
       ],
       "purl": "pkg:npm/scheduler@0.27.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/semver@%5E7.7.2",
     },
     {
       "evidence": [
@@ -339,18 +275,10 @@ exports[`basic 1`] = `
       "purl": "pkg:npm/semver@7.7.3",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/sharp@%5E0.34.3",
-    },
-    {
       "evidence": [
         "bun.lock#107",
       ],
       "purl": "pkg:npm/sharp@0.34.4",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/source-map-js@%5E1.0.2",
     },
     {
       "evidence": [
@@ -363,14 +291,6 @@ exports[`basic 1`] = `
         "bun.lock#111",
       ],
       "purl": "pkg:npm/styled-jsx@5.1.6",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/tslib@%5E2.4.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/tslib@%5E2.8.0",
     },
     {
       "evidence": [
@@ -389,7 +309,7 @@ exports[`basic 1`] = `
     {
       "from": "pkg:npm/%40emnapi/runtime@1.6.0",
       "to": [
-        "pkg:npm/tslib@%5E2.4.0",
+        "pkg:npm/tslib@2.8.1",
       ],
     },
     {
@@ -449,13 +369,13 @@ exports[`basic 1`] = `
     {
       "from": "pkg:npm/%40img/sharp-wasm32@0.34.4",
       "to": [
-        "pkg:npm/%40emnapi/runtime@%5E1.5.0",
+        "pkg:npm/%40emnapi/runtime@1.6.0",
       ],
     },
     {
       "from": "pkg:npm/%40swc/helpers@0.5.15",
       "to": [
-        "pkg:npm/tslib@%5E2.8.0",
+        "pkg:npm/tslib@2.8.1",
       ],
     },
     {
@@ -470,38 +390,34 @@ exports[`basic 1`] = `
         "pkg:npm/%40next/swc-linux-x64-musl@15.5.6",
         "pkg:npm/%40next/swc-win32-arm64-msvc@15.5.6",
         "pkg:npm/%40next/swc-win32-x64-msvc@15.5.6",
-        "pkg:npm/%40opentelemetry/api@%5E1.1.0",
-        "pkg:npm/%40playwright/test@%5E1.51.1",
         "pkg:npm/%40swc/helpers@0.5.15",
-        "pkg:npm/babel-plugin-react-compiler@*",
-        "pkg:npm/caniuse-lite@%5E1.0.30001579",
+        "pkg:npm/caniuse-lite@1.0.30001752",
         "pkg:npm/postcss@8.4.31",
-        "pkg:npm/react-dom@%5E18.2.0%20%7C%7C%2019.0.0-rc-de68d2f4-20241204%20%7C%7C%20%5E19.0.0",
-        "pkg:npm/react@%5E18.2.0%20%7C%7C%2019.0.0-rc-de68d2f4-20241204%20%7C%7C%20%5E19.0.0",
-        "pkg:npm/sass@%5E1.3.0",
-        "pkg:npm/sharp@%5E0.34.3",
+        "pkg:npm/react-dom@19.2.0",
+        "pkg:npm/react@19.2.0",
+        "pkg:npm/sharp@0.34.4",
         "pkg:npm/styled-jsx@5.1.6",
       ],
     },
     {
       "from": "pkg:npm/postcss@8.4.31",
       "to": [
-        "pkg:npm/nanoid@%5E3.3.6",
-        "pkg:npm/picocolors@%5E1.0.0",
-        "pkg:npm/source-map-js@%5E1.0.2",
+        "pkg:npm/nanoid@3.3.11",
+        "pkg:npm/picocolors@1.1.1",
+        "pkg:npm/source-map-js@1.2.1",
       ],
     },
     {
       "from": "pkg:npm/react-dom@19.2.0",
       "to": [
-        "pkg:npm/react@%5E19.2.0",
-        "pkg:npm/scheduler@%5E0.27.0",
+        "pkg:npm/react@19.2.0",
+        "pkg:npm/scheduler@0.27.0",
       ],
     },
     {
       "from": "pkg:npm/sharp@0.34.4",
       "to": [
-        "pkg:npm/%40img/colour@%5E1.0.0",
+        "pkg:npm/%40img/colour@1.0.0",
         "pkg:npm/%40img/sharp-darwin-arm64@0.34.4",
         "pkg:npm/%40img/sharp-darwin-x64@0.34.4",
         "pkg:npm/%40img/sharp-libvips-darwin-arm64@1.2.3",
@@ -524,15 +440,15 @@ exports[`basic 1`] = `
         "pkg:npm/%40img/sharp-win32-arm64@0.34.4",
         "pkg:npm/%40img/sharp-win32-ia32@0.34.4",
         "pkg:npm/%40img/sharp-win32-x64@0.34.4",
-        "pkg:npm/detect-libc@%5E2.1.0",
-        "pkg:npm/semver@%5E7.7.2",
+        "pkg:npm/detect-libc@2.1.2",
+        "pkg:npm/semver@7.7.3",
       ],
     },
     {
       "from": "pkg:npm/styled-jsx@5.1.6",
       "to": [
         "pkg:npm/client-only@0.0.1",
-        "pkg:npm/react@%3E%3D%2016.8.0%20%7C%7C%2017.x.x%20%7C%7C%20%5E18.0.0-0%20%7C%7C%20%5E19.0.0-0",
+        "pkg:npm/react@19.2.0",
       ],
     },
   ],
@@ -578,32 +494,16 @@ exports[`git-deps 1`] = `
       "purl": "pkg:npm/body-parser@2.2.0",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/bytes@%5E3.1.2",
-    },
-    {
       "evidence": [
         "bun.lock#19",
       ],
       "purl": "pkg:npm/bytes@3.1.2",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/call-bind-apply-helpers@%5E1.0.1",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/call-bind-apply-helpers@%5E1.0.2",
-    },
-    {
       "evidence": [
         "bun.lock#21",
       ],
       "purl": "pkg:npm/call-bind-apply-helpers@1.0.2",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/call-bound@%5E1.0.2",
     },
     {
       "evidence": [
@@ -630,10 +530,6 @@ exports[`git-deps 1`] = `
       "purl": "pkg:npm/content-disposition@1.0.0",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/content-type@%5E1.0.5",
-    },
-    {
       "evidence": [
         "bun.lock#29",
       ],
@@ -652,14 +548,6 @@ exports[`git-deps 1`] = `
       "purl": "pkg:npm/cookie@0.7.2",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/debug@%5E4.3.5",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/debug@%5E4.4.0",
-    },
-    {
       "evidence": [
         "bun.lock#191",
       ],
@@ -670,10 +558,6 @@ exports[`git-deps 1`] = `
         "bun.lock#35",
       ],
       "purl": "pkg:npm/debug@4.4.3",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/depd@%5E2.0.0",
     },
     {
       "evidence": [
@@ -688,10 +572,6 @@ exports[`git-deps 1`] = `
       "purl": "pkg:npm/diff@1.0.8",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/dunder-proto@%5E1.0.1",
-    },
-    {
       "evidence": [
         "bun.lock#41",
       ],
@@ -704,18 +584,10 @@ exports[`git-deps 1`] = `
       "purl": "pkg:npm/ee-first@1.1.1",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/encodeurl@%5E2.0.0",
-    },
-    {
       "evidence": [
         "bun.lock#45",
       ],
       "purl": "pkg:npm/encodeurl@2.0.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/es-define-property@%5E1.0.1",
     },
     {
       "evidence": [
@@ -724,32 +596,16 @@ exports[`git-deps 1`] = `
       "purl": "pkg:npm/es-define-property@1.0.1",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/es-errors@%5E1.3.0",
-    },
-    {
       "evidence": [
         "bun.lock#49",
       ],
       "purl": "pkg:npm/es-errors@1.3.0",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/es-object-atoms@%5E1.0.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/es-object-atoms@%5E1.1.1",
-    },
-    {
       "evidence": [
         "bun.lock#51",
       ],
       "purl": "pkg:npm/es-object-atoms@1.1.1",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/escape-html@%5E1.0.3",
     },
     {
       "evidence": [
@@ -762,10 +618,6 @@ exports[`git-deps 1`] = `
         "bun.lock#55",
       ],
       "purl": "pkg:npm/escape-string-regexp@1.0.2",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/etag@%5E1.8.1",
     },
     {
       "evidence": [
@@ -792,18 +644,10 @@ exports[`git-deps 1`] = `
       "purl": "pkg:npm/forwarded@0.2.0",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/fresh@%5E2.0.0",
-    },
-    {
       "evidence": [
         "bun.lock#65",
       ],
       "purl": "pkg:npm/fresh@2.0.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/function-bind@%5E1.1.2",
     },
     {
       "evidence": [
@@ -812,22 +656,10 @@ exports[`git-deps 1`] = `
       "purl": "pkg:npm/function-bind@1.1.2",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/get-intrinsic@%5E1.2.5",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/get-intrinsic@%5E1.3.0",
-    },
-    {
       "evidence": [
         "bun.lock#69",
       ],
       "purl": "pkg:npm/get-intrinsic@1.3.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/get-proto@%5E1.0.1",
     },
     {
       "evidence": [
@@ -842,18 +674,10 @@ exports[`git-deps 1`] = `
       "purl": "pkg:npm/glob@3.2.3",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/gopd@%5E1.2.0",
-    },
-    {
       "evidence": [
         "bun.lock#75",
       ],
       "purl": "pkg:npm/gopd@1.2.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/graceful-fs@~2.0.0",
     },
     {
       "evidence": [
@@ -868,18 +692,10 @@ exports[`git-deps 1`] = `
       "purl": "pkg:npm/growl@1.8.1",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/has-symbols@%5E1.1.0",
-    },
-    {
       "evidence": [
         "bun.lock#81",
       ],
       "purl": "pkg:npm/has-symbols@1.1.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/hasown@%5E2.0.2",
     },
     {
       "evidence": [
@@ -888,18 +704,10 @@ exports[`git-deps 1`] = `
       "purl": "pkg:npm/hasown@2.0.2",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/http-errors@%5E2.0.0",
-    },
-    {
       "evidence": [
         "bun.lock#85",
       ],
       "purl": "pkg:npm/http-errors@2.0.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/iconv-lite@%5E0.6.3",
     },
     {
       "evidence": [
@@ -914,10 +722,6 @@ exports[`git-deps 1`] = `
       "purl": "pkg:npm/iconv-lite@0.7.0",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/inherits@2",
-    },
-    {
       "evidence": [
         "bun.lock#89",
       ],
@@ -928,10 +732,6 @@ exports[`git-deps 1`] = `
         "bun.lock#91",
       ],
       "purl": "pkg:npm/ipaddr.js@1.9.1",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/is-buffer@%5E1.1.5",
     },
     {
       "evidence": [
@@ -946,10 +746,6 @@ exports[`git-deps 1`] = `
       "purl": "pkg:npm/is-even@github:jonschlinkert%2Fis-even%230990c36",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/is-number@%5E3.0.0",
-    },
-    {
       "evidence": [
         "bun.lock#97",
       ],
@@ -960,10 +756,6 @@ exports[`git-deps 1`] = `
         "bun.lock#99",
       ],
       "purl": "pkg:npm/is-odd@0.1.2",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/is-promise@%5E4.0.0",
     },
     {
       "evidence": [
@@ -978,10 +770,6 @@ exports[`git-deps 1`] = `
       "purl": "pkg:npm/jade@0.26.3",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/kind-of@%5E3.0.2",
-    },
-    {
       "evidence": [
         "bun.lock#105",
       ],
@@ -994,28 +782,16 @@ exports[`git-deps 1`] = `
       "purl": "pkg:npm/lodash@4.17.21",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/lru-cache@2",
-    },
-    {
       "evidence": [
         "bun.lock#109",
       ],
       "purl": "pkg:npm/lru-cache@2.7.3",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/math-intrinsics@%5E1.1.0",
-    },
-    {
       "evidence": [
         "bun.lock#111",
       ],
       "purl": "pkg:npm/math-intrinsics@1.1.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/media-typer@%5E1.1.0",
     },
     {
       "evidence": [
@@ -1030,32 +806,16 @@ exports[`git-deps 1`] = `
       "purl": "pkg:npm/merge-descriptors@2.0.0",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/mime-db@%5E1.54.0",
-    },
-    {
       "evidence": [
         "bun.lock#117",
       ],
       "purl": "pkg:npm/mime-db@1.54.0",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/mime-types@%5E3.0.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/mime-types@%5E3.0.1",
-    },
-    {
       "evidence": [
         "bun.lock#119",
       ],
       "purl": "pkg:npm/mime-types@3.0.1",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/minimatch@~0.2.11",
     },
     {
       "evidence": [
@@ -1088,10 +848,6 @@ exports[`git-deps 1`] = `
       "purl": "pkg:npm/mocha@github:mochajs%2Fmocha%234727d35",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/ms@%5E2.1.3",
-    },
-    {
       "evidence": [
         "bun.lock#195",
       ],
@@ -1104,28 +860,16 @@ exports[`git-deps 1`] = `
       "purl": "pkg:npm/ms@2.1.3",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/negotiator@%5E1.0.0",
-    },
-    {
       "evidence": [
         "bun.lock#131",
       ],
       "purl": "pkg:npm/negotiator@1.0.0",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/object-inspect@%5E1.13.3",
-    },
-    {
       "evidence": [
         "bun.lock#133",
       ],
       "purl": "pkg:npm/object-inspect@1.13.4",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/on-finished@%5E2.4.1",
     },
     {
       "evidence": [
@@ -1140,18 +884,10 @@ exports[`git-deps 1`] = `
       "purl": "pkg:npm/once@1.4.0",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/parseurl@%5E1.3.3",
-    },
-    {
       "evidence": [
         "bun.lock#139",
       ],
       "purl": "pkg:npm/parseurl@1.3.3",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/path-to-regexp@%5E8.0.0",
     },
     {
       "evidence": [
@@ -1166,28 +902,16 @@ exports[`git-deps 1`] = `
       "purl": "pkg:npm/proxy-addr@2.0.7",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/qs@%5E6.14.0",
-    },
-    {
       "evidence": [
         "bun.lock#145",
       ],
       "purl": "pkg:npm/qs@6.14.0",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/range-parser@%5E1.2.1",
-    },
-    {
       "evidence": [
         "bun.lock#147",
       ],
       "purl": "pkg:npm/range-parser@1.2.1",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/raw-body@%5E3.0.0",
     },
     {
       "evidence": [
@@ -1208,18 +932,10 @@ exports[`git-deps 1`] = `
       "purl": "pkg:npm/safe-buffer@5.2.1",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/safer-buffer@%3E%3D%202.1.2%20%3C%203.0.0",
-    },
-    {
       "evidence": [
         "bun.lock#155",
       ],
       "purl": "pkg:npm/safer-buffer@2.1.2",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/send@%5E1.2.0",
     },
     {
       "evidence": [
@@ -1240,18 +956,10 @@ exports[`git-deps 1`] = `
       "purl": "pkg:npm/setprototypeof@1.2.0",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/side-channel-list@%5E1.0.0",
-    },
-    {
       "evidence": [
         "bun.lock#165",
       ],
       "purl": "pkg:npm/side-channel-list@1.0.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/side-channel-map@%5E1.0.1",
     },
     {
       "evidence": [
@@ -1260,18 +968,10 @@ exports[`git-deps 1`] = `
       "purl": "pkg:npm/side-channel-map@1.0.1",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/side-channel-weakmap@%5E1.0.2",
-    },
-    {
       "evidence": [
         "bun.lock#169",
       ],
       "purl": "pkg:npm/side-channel-weakmap@1.0.2",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/side-channel@%5E1.1.0",
     },
     {
       "evidence": [
@@ -1280,18 +980,10 @@ exports[`git-deps 1`] = `
       "purl": "pkg:npm/side-channel@1.1.0",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/sigmund@~1.0.0",
-    },
-    {
       "evidence": [
         "bun.lock#171",
       ],
       "purl": "pkg:npm/sigmund@1.0.1",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/statuses@%5E2.0.1",
     },
     {
       "evidence": [
@@ -1312,10 +1004,6 @@ exports[`git-deps 1`] = `
       "purl": "pkg:npm/toidentifier@1.0.1",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/type-is@%5E2.0.0",
-    },
-    {
       "evidence": [
         "bun.lock#177",
       ],
@@ -1334,10 +1022,6 @@ exports[`git-deps 1`] = `
       "purl": "pkg:npm/vary@1.1.2",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/wrappy@1",
-    },
-    {
       "evidence": [
         "bun.lock#183",
       ],
@@ -1348,36 +1032,36 @@ exports[`git-deps 1`] = `
     {
       "from": "pkg:npm/accepts@2.0.0",
       "to": [
-        "pkg:npm/mime-types@%5E3.0.0",
-        "pkg:npm/negotiator@%5E1.0.0",
+        "pkg:npm/mime-types@3.0.1",
+        "pkg:npm/negotiator@1.0.0",
       ],
     },
     {
       "from": "pkg:npm/body-parser@2.2.0",
       "to": [
-        "pkg:npm/bytes@%5E3.1.2",
-        "pkg:npm/content-type@%5E1.0.5",
-        "pkg:npm/debug@%5E4.4.0",
-        "pkg:npm/http-errors@%5E2.0.0",
-        "pkg:npm/iconv-lite@%5E0.6.3",
-        "pkg:npm/on-finished@%5E2.4.1",
-        "pkg:npm/qs@%5E6.14.0",
-        "pkg:npm/raw-body@%5E3.0.0",
-        "pkg:npm/type-is@%5E2.0.0",
+        "pkg:npm/bytes@3.1.2",
+        "pkg:npm/content-type@1.0.5",
+        "pkg:npm/debug@2.0.0",
+        "pkg:npm/http-errors@2.0.0",
+        "pkg:npm/iconv-lite@0.7.0",
+        "pkg:npm/on-finished@2.4.1",
+        "pkg:npm/qs@6.14.0",
+        "pkg:npm/raw-body@3.0.1",
+        "pkg:npm/type-is@2.0.1",
       ],
     },
     {
       "from": "pkg:npm/call-bind-apply-helpers@1.0.2",
       "to": [
-        "pkg:npm/es-errors@%5E1.3.0",
-        "pkg:npm/function-bind@%5E1.1.2",
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/function-bind@1.1.2",
       ],
     },
     {
       "from": "pkg:npm/call-bound@1.0.4",
       "to": [
-        "pkg:npm/call-bind-apply-helpers@%5E1.0.2",
-        "pkg:npm/get-intrinsic@%5E1.3.0",
+        "pkg:npm/call-bind-apply-helpers@1.0.2",
+        "pkg:npm/get-intrinsic@1.3.0",
       ],
     },
     {
@@ -1395,68 +1079,68 @@ exports[`git-deps 1`] = `
     {
       "from": "pkg:npm/debug@4.4.3",
       "to": [
-        "pkg:npm/ms@%5E2.1.3",
+        "pkg:npm/ms@0.6.2",
       ],
     },
     {
       "from": "pkg:npm/dunder-proto@1.0.1",
       "to": [
-        "pkg:npm/call-bind-apply-helpers@%5E1.0.1",
-        "pkg:npm/es-errors@%5E1.3.0",
-        "pkg:npm/gopd@%5E1.2.0",
+        "pkg:npm/call-bind-apply-helpers@1.0.2",
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/gopd@1.2.0",
       ],
     },
     {
       "from": "pkg:npm/es-object-atoms@1.1.1",
       "to": [
-        "pkg:npm/es-errors@%5E1.3.0",
+        "pkg:npm/es-errors@1.3.0",
       ],
     },
     {
       "from": "pkg:npm/finalhandler@2.1.0",
       "to": [
-        "pkg:npm/debug@%5E4.4.0",
-        "pkg:npm/encodeurl@%5E2.0.0",
-        "pkg:npm/escape-html@%5E1.0.3",
-        "pkg:npm/on-finished@%5E2.4.1",
-        "pkg:npm/parseurl@%5E1.3.3",
-        "pkg:npm/statuses@%5E2.0.1",
+        "pkg:npm/debug@2.0.0",
+        "pkg:npm/encodeurl@2.0.0",
+        "pkg:npm/escape-html@1.0.3",
+        "pkg:npm/on-finished@2.4.1",
+        "pkg:npm/parseurl@1.3.3",
+        "pkg:npm/statuses@2.0.1",
       ],
     },
     {
       "from": "pkg:npm/get-intrinsic@1.3.0",
       "to": [
-        "pkg:npm/call-bind-apply-helpers@%5E1.0.2",
-        "pkg:npm/es-define-property@%5E1.0.1",
-        "pkg:npm/es-errors@%5E1.3.0",
-        "pkg:npm/es-object-atoms@%5E1.1.1",
-        "pkg:npm/function-bind@%5E1.1.2",
-        "pkg:npm/get-proto@%5E1.0.1",
-        "pkg:npm/gopd@%5E1.2.0",
-        "pkg:npm/has-symbols@%5E1.1.0",
-        "pkg:npm/hasown@%5E2.0.2",
-        "pkg:npm/math-intrinsics@%5E1.1.0",
+        "pkg:npm/call-bind-apply-helpers@1.0.2",
+        "pkg:npm/es-define-property@1.0.1",
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/es-object-atoms@1.1.1",
+        "pkg:npm/function-bind@1.1.2",
+        "pkg:npm/get-proto@1.0.1",
+        "pkg:npm/gopd@1.2.0",
+        "pkg:npm/has-symbols@1.1.0",
+        "pkg:npm/hasown@2.0.2",
+        "pkg:npm/math-intrinsics@1.1.0",
       ],
     },
     {
       "from": "pkg:npm/get-proto@1.0.1",
       "to": [
-        "pkg:npm/dunder-proto@%5E1.0.1",
-        "pkg:npm/es-object-atoms@%5E1.0.0",
+        "pkg:npm/dunder-proto@1.0.1",
+        "pkg:npm/es-object-atoms@1.1.1",
       ],
     },
     {
       "from": "pkg:npm/glob@3.2.3",
       "to": [
-        "pkg:npm/graceful-fs@~2.0.0",
-        "pkg:npm/inherits@2",
-        "pkg:npm/minimatch@~0.2.11",
+        "pkg:npm/graceful-fs@2.0.3",
+        "pkg:npm/inherits@2.0.4",
+        "pkg:npm/minimatch@0.2.14",
       ],
     },
     {
       "from": "pkg:npm/hasown@2.0.2",
       "to": [
-        "pkg:npm/function-bind@%5E1.1.2",
+        "pkg:npm/function-bind@1.1.2",
       ],
     },
     {
@@ -1472,25 +1156,25 @@ exports[`git-deps 1`] = `
     {
       "from": "pkg:npm/iconv-lite@0.6.3",
       "to": [
-        "pkg:npm/safer-buffer@%3E%3D%202.1.2%20%3C%203.0.0",
+        "pkg:npm/safer-buffer@2.1.2",
       ],
     },
     {
       "from": "pkg:npm/iconv-lite@0.7.0",
       "to": [
-        "pkg:npm/safer-buffer@%3E%3D%202.1.2%20%3C%203.0.0",
+        "pkg:npm/safer-buffer@2.1.2",
       ],
     },
     {
       "from": "pkg:npm/is-number@3.0.0",
       "to": [
-        "pkg:npm/kind-of@%5E3.0.2",
+        "pkg:npm/kind-of@3.2.2",
       ],
     },
     {
       "from": "pkg:npm/is-odd@0.1.2",
       "to": [
-        "pkg:npm/is-number@%5E3.0.0",
+        "pkg:npm/is-number@3.0.0",
       ],
     },
     {
@@ -1503,20 +1187,20 @@ exports[`git-deps 1`] = `
     {
       "from": "pkg:npm/kind-of@3.2.2",
       "to": [
-        "pkg:npm/is-buffer@%5E1.1.5",
+        "pkg:npm/is-buffer@1.1.6",
       ],
     },
     {
       "from": "pkg:npm/mime-types@3.0.1",
       "to": [
-        "pkg:npm/mime-db@%5E1.54.0",
+        "pkg:npm/mime-db@1.54.0",
       ],
     },
     {
       "from": "pkg:npm/minimatch@0.2.14",
       "to": [
-        "pkg:npm/lru-cache@2",
-        "pkg:npm/sigmund@~1.0.0",
+        "pkg:npm/lru-cache@2.7.3",
+        "pkg:npm/sigmund@1.0.1",
       ],
     },
     {
@@ -1534,7 +1218,7 @@ exports[`git-deps 1`] = `
     {
       "from": "pkg:npm/once@1.4.0",
       "to": [
-        "pkg:npm/wrappy@1",
+        "pkg:npm/wrappy@1.0.2",
       ],
     },
     {
@@ -1547,7 +1231,7 @@ exports[`git-deps 1`] = `
     {
       "from": "pkg:npm/qs@6.14.0",
       "to": [
-        "pkg:npm/side-channel@%5E1.1.0",
+        "pkg:npm/side-channel@1.1.0",
       ],
     },
     {
@@ -1562,80 +1246,80 @@ exports[`git-deps 1`] = `
     {
       "from": "pkg:npm/router@2.2.0",
       "to": [
-        "pkg:npm/debug@%5E4.4.0",
-        "pkg:npm/depd@%5E2.0.0",
-        "pkg:npm/is-promise@%5E4.0.0",
-        "pkg:npm/parseurl@%5E1.3.3",
-        "pkg:npm/path-to-regexp@%5E8.0.0",
+        "pkg:npm/debug@2.0.0",
+        "pkg:npm/depd@2.0.0",
+        "pkg:npm/is-promise@4.0.0",
+        "pkg:npm/parseurl@1.3.3",
+        "pkg:npm/path-to-regexp@8.3.0",
       ],
     },
     {
       "from": "pkg:npm/send@1.2.0",
       "to": [
-        "pkg:npm/debug@%5E4.3.5",
-        "pkg:npm/encodeurl@%5E2.0.0",
-        "pkg:npm/escape-html@%5E1.0.3",
-        "pkg:npm/etag@%5E1.8.1",
-        "pkg:npm/fresh@%5E2.0.0",
-        "pkg:npm/http-errors@%5E2.0.0",
-        "pkg:npm/mime-types@%5E3.0.1",
-        "pkg:npm/ms@%5E2.1.3",
-        "pkg:npm/on-finished@%5E2.4.1",
-        "pkg:npm/range-parser@%5E1.2.1",
-        "pkg:npm/statuses@%5E2.0.1",
+        "pkg:npm/debug@2.0.0",
+        "pkg:npm/encodeurl@2.0.0",
+        "pkg:npm/escape-html@1.0.3",
+        "pkg:npm/etag@1.8.1",
+        "pkg:npm/fresh@2.0.0",
+        "pkg:npm/http-errors@2.0.0",
+        "pkg:npm/mime-types@3.0.1",
+        "pkg:npm/ms@0.6.2",
+        "pkg:npm/on-finished@2.4.1",
+        "pkg:npm/range-parser@1.2.1",
+        "pkg:npm/statuses@2.0.1",
       ],
     },
     {
       "from": "pkg:npm/serve-static@2.2.0",
       "to": [
-        "pkg:npm/encodeurl@%5E2.0.0",
-        "pkg:npm/escape-html@%5E1.0.3",
-        "pkg:npm/parseurl@%5E1.3.3",
-        "pkg:npm/send@%5E1.2.0",
+        "pkg:npm/encodeurl@2.0.0",
+        "pkg:npm/escape-html@1.0.3",
+        "pkg:npm/parseurl@1.3.3",
+        "pkg:npm/send@1.2.0",
       ],
     },
     {
       "from": "pkg:npm/side-channel-list@1.0.0",
       "to": [
-        "pkg:npm/es-errors@%5E1.3.0",
-        "pkg:npm/object-inspect@%5E1.13.3",
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/object-inspect@1.13.4",
       ],
     },
     {
       "from": "pkg:npm/side-channel-map@1.0.1",
       "to": [
-        "pkg:npm/call-bound@%5E1.0.2",
-        "pkg:npm/es-errors@%5E1.3.0",
-        "pkg:npm/get-intrinsic@%5E1.2.5",
-        "pkg:npm/object-inspect@%5E1.13.3",
+        "pkg:npm/call-bound@1.0.4",
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/get-intrinsic@1.3.0",
+        "pkg:npm/object-inspect@1.13.4",
       ],
     },
     {
       "from": "pkg:npm/side-channel-weakmap@1.0.2",
       "to": [
-        "pkg:npm/call-bound@%5E1.0.2",
-        "pkg:npm/es-errors@%5E1.3.0",
-        "pkg:npm/get-intrinsic@%5E1.2.5",
-        "pkg:npm/object-inspect@%5E1.13.3",
-        "pkg:npm/side-channel-map@%5E1.0.1",
+        "pkg:npm/call-bound@1.0.4",
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/get-intrinsic@1.3.0",
+        "pkg:npm/object-inspect@1.13.4",
+        "pkg:npm/side-channel-map@1.0.1",
       ],
     },
     {
       "from": "pkg:npm/side-channel@1.1.0",
       "to": [
-        "pkg:npm/es-errors@%5E1.3.0",
-        "pkg:npm/object-inspect@%5E1.13.3",
-        "pkg:npm/side-channel-list@%5E1.0.0",
-        "pkg:npm/side-channel-map@%5E1.0.1",
-        "pkg:npm/side-channel-weakmap@%5E1.0.2",
+        "pkg:npm/es-errors@1.3.0",
+        "pkg:npm/object-inspect@1.13.4",
+        "pkg:npm/side-channel-list@1.0.0",
+        "pkg:npm/side-channel-map@1.0.1",
+        "pkg:npm/side-channel-weakmap@1.0.2",
       ],
     },
     {
       "from": "pkg:npm/type-is@2.0.1",
       "to": [
-        "pkg:npm/content-type@%5E1.0.5",
-        "pkg:npm/media-typer@%5E1.1.0",
-        "pkg:npm/mime-types@%5E3.0.0",
+        "pkg:npm/content-type@1.0.5",
+        "pkg:npm/media-typer@1.1.0",
+        "pkg:npm/mime-types@3.0.1",
       ],
     },
   ],
@@ -1663,10 +1347,6 @@ exports[`monorepo 1`] = `
 {
   "issues": [],
   "packages": [
-    {
-      "evidence": [],
-      "purl": "pkg:npm/%40emnapi/runtime@%5E1.5.0",
-    },
     {
       "evidence": [
         "a/bun.lock#15",
@@ -1828,10 +1508,6 @@ exports[`monorepo 1`] = `
         "b/bun.lock#65",
       ],
       "purl": "pkg:npm/%40esbuild/win32-x64@0.25.11",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/%40img/colour@%5E1.0.0",
     },
     {
       "evidence": [
@@ -2026,14 +1702,6 @@ exports[`monorepo 1`] = `
       "purl": "pkg:npm/%40next/swc-win32-x64-msvc@15.5.6",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/%40opentelemetry/api@%5E1.1.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/%40playwright/test@%5E1.51.1",
-    },
-    {
       "evidence": [
         "b/bun.lock#67",
       ],
@@ -2178,18 +1846,6 @@ exports[`monorepo 1`] = `
       "purl": "pkg:npm/%40types/estree@1.0.8",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/%40types/node@%5E18.0.0%20%7C%7C%20%5E20.0.0%20%7C%7C%20%3E%3D22.0.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/babel-plugin-react-compiler@*",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/caniuse-lite@%5E1.0.30001579",
-    },
-    {
       "evidence": [
         "a/bun.lock#83",
       ],
@@ -2202,18 +1858,10 @@ exports[`monorepo 1`] = `
       "purl": "pkg:npm/client-only@0.0.1",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/detect-libc@%5E2.1.0",
-    },
-    {
       "evidence": [
         "a/bun.lock#87",
       ],
       "purl": "pkg:npm/detect-libc@2.1.2",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/esbuild@%5E0.25.0",
     },
     {
       "evidence": [
@@ -2222,52 +1870,16 @@ exports[`monorepo 1`] = `
       "purl": "pkg:npm/esbuild@0.25.11",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/fdir@%5E6.4.4",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/fdir@%5E6.5.0",
-    },
-    {
       "evidence": [
         "b/bun.lock#115",
       ],
       "purl": "pkg:npm/fdir@6.5.0",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/fsevents@~2.3.2",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/fsevents@~2.3.3",
-    },
-    {
       "evidence": [
         "b/bun.lock#117",
       ],
       "purl": "pkg:npm/fsevents@2.3.3",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/jiti@%3E%3D1.21.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/less@*",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/lightningcss@%5E1.21.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/nanoid@%5E3.3.11",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/nanoid@%5E3.3.6",
     },
     {
       "evidence": [
@@ -2283,14 +1895,6 @@ exports[`monorepo 1`] = `
       "purl": "pkg:npm/next@15.5.6",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/picocolors@%5E1.0.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/picocolors@%5E1.1.1",
-    },
-    {
       "evidence": [
         "a/bun.lock#93",
         "b/bun.lock#121",
@@ -2298,26 +1902,10 @@ exports[`monorepo 1`] = `
       "purl": "pkg:npm/picocolors@1.1.1",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/picomatch@%5E3%20%7C%7C%20%5E4",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/picomatch@%5E4.0.2",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/picomatch@%5E4.0.3",
-    },
-    {
       "evidence": [
         "b/bun.lock#123",
       ],
       "purl": "pkg:npm/picomatch@4.0.3",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/postcss@%5E8.5.3",
     },
     {
       "evidence": [
@@ -2338,26 +1926,10 @@ exports[`monorepo 1`] = `
       "purl": "pkg:npm/prettier@3.6.2",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/react-dom@%5E18.2.0%20%7C%7C%2019.0.0-rc-de68d2f4-20241204%20%7C%7C%20%5E19.0.0",
-    },
-    {
       "evidence": [
         "a/bun.lock#99",
       ],
       "purl": "pkg:npm/react-dom@19.2.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/react@%3E%3D%2016.8.0%20%7C%7C%2017.x.x%20%7C%7C%20%5E18.0.0-0%20%7C%7C%20%5E19.0.0-0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/react@%5E18.2.0%20%7C%7C%2019.0.0-rc-de68d2f4-20241204%20%7C%7C%20%5E19.0.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/react@%5E19.2.0",
     },
     {
       "evidence": [
@@ -2366,30 +1938,10 @@ exports[`monorepo 1`] = `
       "purl": "pkg:npm/react@19.2.0",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/rollup@%5E4.34.9",
-    },
-    {
       "evidence": [
         "b/bun.lock#127",
       ],
       "purl": "pkg:npm/rollup@4.52.5",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/sass-embedded@*",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/sass@*",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/sass@%5E1.3.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/scheduler@%5E0.27.0",
     },
     {
       "evidence": [
@@ -2398,32 +1950,16 @@ exports[`monorepo 1`] = `
       "purl": "pkg:npm/scheduler@0.27.0",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/semver@%5E7.7.2",
-    },
-    {
       "evidence": [
         "a/bun.lock#103",
       ],
       "purl": "pkg:npm/semver@7.7.3",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/sharp@%5E0.34.3",
-    },
-    {
       "evidence": [
         "a/bun.lock#105",
       ],
       "purl": "pkg:npm/sharp@0.34.4",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/source-map-js@%5E1.0.2",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/source-map-js@%5E1.2.1",
     },
     {
       "evidence": [
@@ -2439,44 +1975,16 @@ exports[`monorepo 1`] = `
       "purl": "pkg:npm/styled-jsx@5.1.6",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/stylus@*",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/sugarss@*",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/terser@%5E5.16.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/tinyglobby@%5E0.2.13",
-    },
-    {
       "evidence": [
         "b/bun.lock#131",
       ],
       "purl": "pkg:npm/tinyglobby@0.2.15",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/tslib@%5E2.4.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/tslib@%5E2.8.0",
-    },
-    {
       "evidence": [
         "a/bun.lock#111",
       ],
       "purl": "pkg:npm/tslib@2.8.1",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/tsx@%5E4.8.1",
     },
     {
       "evidence": [
@@ -2491,16 +1999,12 @@ exports[`monorepo 1`] = `
       ],
       "purl": "pkg:npm/vite@6.4.1",
     },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/yaml@%5E2.4.2",
-    },
   ],
   "relationships": [
     {
       "from": "pkg:npm/%40emnapi/runtime@1.6.0",
       "to": [
-        "pkg:npm/tslib@%5E2.4.0",
+        "pkg:npm/tslib@2.8.1",
       ],
     },
     {
@@ -2560,13 +2064,13 @@ exports[`monorepo 1`] = `
     {
       "from": "pkg:npm/%40img/sharp-wasm32@0.34.4",
       "to": [
-        "pkg:npm/%40emnapi/runtime@%5E1.5.0",
+        "pkg:npm/%40emnapi/runtime@1.6.0",
       ],
     },
     {
       "from": "pkg:npm/%40swc/helpers@0.5.15",
       "to": [
-        "pkg:npm/tslib@%5E2.8.0",
+        "pkg:npm/tslib@2.8.1",
       ],
     },
     {
@@ -2603,7 +2107,7 @@ exports[`monorepo 1`] = `
     {
       "from": "pkg:npm/fdir@6.5.0",
       "to": [
-        "pkg:npm/picomatch@%5E3%20%7C%7C%20%5E4",
+        "pkg:npm/picomatch@4.0.3",
       ],
     },
     {
@@ -2618,40 +2122,36 @@ exports[`monorepo 1`] = `
         "pkg:npm/%40next/swc-linux-x64-musl@15.5.6",
         "pkg:npm/%40next/swc-win32-arm64-msvc@15.5.6",
         "pkg:npm/%40next/swc-win32-x64-msvc@15.5.6",
-        "pkg:npm/%40opentelemetry/api@%5E1.1.0",
-        "pkg:npm/%40playwright/test@%5E1.51.1",
         "pkg:npm/%40swc/helpers@0.5.15",
-        "pkg:npm/babel-plugin-react-compiler@*",
-        "pkg:npm/caniuse-lite@%5E1.0.30001579",
+        "pkg:npm/caniuse-lite@1.0.30001752",
         "pkg:npm/postcss@8.4.31",
-        "pkg:npm/react-dom@%5E18.2.0%20%7C%7C%2019.0.0-rc-de68d2f4-20241204%20%7C%7C%20%5E19.0.0",
-        "pkg:npm/react@%5E18.2.0%20%7C%7C%2019.0.0-rc-de68d2f4-20241204%20%7C%7C%20%5E19.0.0",
-        "pkg:npm/sass@%5E1.3.0",
-        "pkg:npm/sharp@%5E0.34.3",
+        "pkg:npm/react-dom@19.2.0",
+        "pkg:npm/react@19.2.0",
+        "pkg:npm/sharp@0.34.4",
         "pkg:npm/styled-jsx@5.1.6",
       ],
     },
     {
       "from": "pkg:npm/postcss@8.4.31",
       "to": [
-        "pkg:npm/nanoid@%5E3.3.6",
-        "pkg:npm/picocolors@%5E1.0.0",
-        "pkg:npm/source-map-js@%5E1.0.2",
+        "pkg:npm/nanoid@3.3.11",
+        "pkg:npm/picocolors@1.1.1",
+        "pkg:npm/source-map-js@1.2.1",
       ],
     },
     {
       "from": "pkg:npm/postcss@8.5.6",
       "to": [
-        "pkg:npm/nanoid@%5E3.3.11",
-        "pkg:npm/picocolors@%5E1.1.1",
-        "pkg:npm/source-map-js@%5E1.2.1",
+        "pkg:npm/nanoid@3.3.11",
+        "pkg:npm/picocolors@1.1.1",
+        "pkg:npm/source-map-js@1.2.1",
       ],
     },
     {
       "from": "pkg:npm/react-dom@19.2.0",
       "to": [
-        "pkg:npm/react@%5E19.2.0",
-        "pkg:npm/scheduler@%5E0.27.0",
+        "pkg:npm/react@19.2.0",
+        "pkg:npm/scheduler@0.27.0",
       ],
     },
     {
@@ -2680,13 +2180,13 @@ exports[`monorepo 1`] = `
         "pkg:npm/%40rollup/rollup-win32-x64-gnu@4.52.5",
         "pkg:npm/%40rollup/rollup-win32-x64-msvc@4.52.5",
         "pkg:npm/%40types/estree@1.0.8",
-        "pkg:npm/fsevents@~2.3.2",
+        "pkg:npm/fsevents@2.3.3",
       ],
     },
     {
       "from": "pkg:npm/sharp@0.34.4",
       "to": [
-        "pkg:npm/%40img/colour@%5E1.0.0",
+        "pkg:npm/%40img/colour@1.0.0",
         "pkg:npm/%40img/sharp-darwin-arm64@0.34.4",
         "pkg:npm/%40img/sharp-darwin-x64@0.34.4",
         "pkg:npm/%40img/sharp-libvips-darwin-arm64@1.2.3",
@@ -2709,45 +2209,34 @@ exports[`monorepo 1`] = `
         "pkg:npm/%40img/sharp-win32-arm64@0.34.4",
         "pkg:npm/%40img/sharp-win32-ia32@0.34.4",
         "pkg:npm/%40img/sharp-win32-x64@0.34.4",
-        "pkg:npm/detect-libc@%5E2.1.0",
-        "pkg:npm/semver@%5E7.7.2",
+        "pkg:npm/detect-libc@2.1.2",
+        "pkg:npm/semver@7.7.3",
       ],
     },
     {
       "from": "pkg:npm/styled-jsx@5.1.6",
       "to": [
         "pkg:npm/client-only@0.0.1",
-        "pkg:npm/react@%3E%3D%2016.8.0%20%7C%7C%2017.x.x%20%7C%7C%20%5E18.0.0-0%20%7C%7C%20%5E19.0.0-0",
+        "pkg:npm/react@19.2.0",
       ],
     },
     {
       "from": "pkg:npm/tinyglobby@0.2.15",
       "to": [
-        "pkg:npm/fdir@%5E6.5.0",
-        "pkg:npm/picomatch@%5E4.0.3",
+        "pkg:npm/fdir@6.5.0",
+        "pkg:npm/picomatch@4.0.3",
       ],
     },
     {
       "from": "pkg:npm/vite@6.4.1",
       "to": [
-        "pkg:npm/%40types/node@%5E18.0.0%20%7C%7C%20%5E20.0.0%20%7C%7C%20%3E%3D22.0.0",
-        "pkg:npm/esbuild@%5E0.25.0",
-        "pkg:npm/fdir@%5E6.4.4",
-        "pkg:npm/fsevents@~2.3.3",
-        "pkg:npm/jiti@%3E%3D1.21.0",
-        "pkg:npm/less@*",
-        "pkg:npm/lightningcss@%5E1.21.0",
-        "pkg:npm/picomatch@%5E4.0.2",
-        "pkg:npm/postcss@%5E8.5.3",
-        "pkg:npm/rollup@%5E4.34.9",
-        "pkg:npm/sass-embedded@*",
-        "pkg:npm/sass@*",
-        "pkg:npm/stylus@*",
-        "pkg:npm/sugarss@*",
-        "pkg:npm/terser@%5E5.16.0",
-        "pkg:npm/tinyglobby@%5E0.2.13",
-        "pkg:npm/tsx@%5E4.8.1",
-        "pkg:npm/yaml@%5E2.4.2",
+        "pkg:npm/esbuild@0.25.11",
+        "pkg:npm/fdir@6.5.0",
+        "pkg:npm/fsevents@2.3.3",
+        "pkg:npm/picomatch@4.0.3",
+        "pkg:npm/postcss@8.5.6",
+        "pkg:npm/rollup@4.52.5",
+        "pkg:npm/tinyglobby@0.2.15",
       ],
     },
   ],
@@ -2881,10 +2370,6 @@ exports[`react 1`] = `
       "purl": "pkg:npm/%40types/bun@1.3.0",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/%40types/node@*",
-    },
-    {
       "evidence": [
         "bun.lock#44",
       ],
@@ -2895,14 +2380,6 @@ exports[`react 1`] = `
         "bun.lock#15",
       ],
       "purl": "pkg:npm/%40types/react-dom@19.2.2",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/%40types/react@%5E19",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/%40types/react@%5E19.2.0",
     },
     {
       "evidence": [
@@ -2923,18 +2400,10 @@ exports[`react 1`] = `
       "purl": "pkg:npm/bun-types@1.3.0",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/bun@%3E%3D1.0.0",
-    },
-    {
       "evidence": [
         "bun.lock#50",
       ],
       "purl": "pkg:npm/bun@1.3.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/csstype@%5E3.0.2",
     },
     {
       "evidence": [
@@ -2949,18 +2418,10 @@ exports[`react 1`] = `
       "purl": "pkg:npm/react-dom@19.2.0",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/react@%5E19.2.0",
-    },
-    {
       "evidence": [
         "bun.lock#8",
       ],
       "purl": "pkg:npm/react@19.2.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/scheduler@%5E0.27.0",
     },
     {
       "evidence": [
@@ -2973,10 +2434,6 @@ exports[`react 1`] = `
         "bun.lock#10",
       ],
       "purl": "pkg:npm/tailwindcss@4.1.15",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/undici-types@~7.16.0",
     },
     {
       "evidence": [
@@ -2995,32 +2452,32 @@ exports[`react 1`] = `
     {
       "from": "pkg:npm/%40types/node@24.9.1",
       "to": [
-        "pkg:npm/undici-types@~7.16.0",
+        "pkg:npm/undici-types@7.16.0",
       ],
     },
     {
       "from": "pkg:npm/%40types/react-dom@19.2.2",
       "to": [
-        "pkg:npm/%40types/react@%5E19.2.0",
+        "pkg:npm/%40types/react@19.2.2",
       ],
     },
     {
       "from": "pkg:npm/%40types/react@19.2.2",
       "to": [
-        "pkg:npm/csstype@%5E3.0.2",
+        "pkg:npm/csstype@3.1.3",
       ],
     },
     {
       "from": "pkg:npm/bun-plugin-tailwind@0.1.2",
       "to": [
-        "pkg:npm/bun@%3E%3D1.0.0",
+        "pkg:npm/bun@1.3.0",
       ],
     },
     {
       "from": "pkg:npm/bun-types@1.3.0",
       "to": [
-        "pkg:npm/%40types/node@*",
-        "pkg:npm/%40types/react@%5E19",
+        "pkg:npm/%40types/node@24.9.1",
+        "pkg:npm/%40types/react@19.2.2",
       ],
     },
     {
@@ -3042,8 +2499,8 @@ exports[`react 1`] = `
     {
       "from": "pkg:npm/react-dom@19.2.0",
       "to": [
-        "pkg:npm/react@%5E19.2.0",
-        "pkg:npm/scheduler@%5E0.27.0",
+        "pkg:npm/react@19.2.0",
+        "pkg:npm/scheduler@0.27.0",
       ],
     },
   ],
@@ -3080,10 +2537,6 @@ exports[`tarball-deps 1`] = `
   "issues": [],
   "packages": [
     {
-      "evidence": [],
-      "purl": "pkg:npm/js-tokens@%5E3.0.0%20%7C%7C%20%5E4.0.0",
-    },
-    {
       "evidence": [
         "bun.lock#13",
       ],
@@ -3094,10 +2547,6 @@ exports[`tarball-deps 1`] = `
         "bun.lock#7",
       ],
       "purl": "pkg:npm/lodash@https:%2F%2Fregistry.npmjs.org%2Flodash%2F-%2Flodash-4.17.21.tgz",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/loose-envify@%5E1.1.0",
     },
     {
       "evidence": [
@@ -3116,13 +2565,13 @@ exports[`tarball-deps 1`] = `
     {
       "from": "pkg:npm/loose-envify@1.4.0",
       "to": [
-        "pkg:npm/js-tokens@%5E3.0.0%20%7C%7C%20%5E4.0.0",
+        "pkg:npm/js-tokens@4.0.0",
       ],
     },
     {
       "from": "pkg:npm/react@18.3.1",
       "to": [
-        "pkg:npm/loose-envify@%5E1.1.0",
+        "pkg:npm/loose-envify@1.4.0",
       ],
     },
   ],
@@ -3148,10 +2597,6 @@ exports[`workspace 1`] = `
 {
   "issues": [],
   "packages": [
-    {
-      "evidence": [],
-      "purl": "pkg:npm/%40emnapi/runtime@%5E1.5.0",
-    },
     {
       "evidence": [
         "bun.lock#43",
@@ -3313,10 +2758,6 @@ exports[`workspace 1`] = `
         "bun.lock#95",
       ],
       "purl": "pkg:npm/%40esbuild/win32-x64@0.25.11",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/%40img/colour@%5E1.0.0",
     },
     {
       "evidence": [
@@ -3511,14 +2952,6 @@ exports[`workspace 1`] = `
       "purl": "pkg:npm/%40next/swc-win32-x64-msvc@15.5.6",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/%40opentelemetry/api@%5E1.1.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/%40playwright/test@%5E1.51.1",
-    },
-    {
       "evidence": [
         "bun.lock#161",
       ],
@@ -3681,18 +3114,6 @@ exports[`workspace 1`] = `
       "purl": "pkg:npm/%40types/estree@1.0.8",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/%40types/node@%5E18.0.0%20%7C%7C%20%5E20.0.0%20%7C%7C%20%3E%3D22.0.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/babel-plugin-react-compiler@*",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/caniuse-lite@%5E1.0.30001579",
-    },
-    {
       "evidence": [
         "bun.lock#215",
       ],
@@ -3705,18 +3126,10 @@ exports[`workspace 1`] = `
       "purl": "pkg:npm/client-only@0.0.1",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/detect-libc@%5E2.1.0",
-    },
-    {
       "evidence": [
         "bun.lock#219",
       ],
       "purl": "pkg:npm/detect-libc@2.1.2",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/esbuild@%5E0.25.0",
     },
     {
       "evidence": [
@@ -3725,52 +3138,16 @@ exports[`workspace 1`] = `
       "purl": "pkg:npm/esbuild@0.25.11",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/fdir@%5E6.4.4",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/fdir@%5E6.5.0",
-    },
-    {
       "evidence": [
         "bun.lock#223",
       ],
       "purl": "pkg:npm/fdir@6.5.0",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/fsevents@~2.3.2",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/fsevents@~2.3.3",
-    },
-    {
       "evidence": [
         "bun.lock#225",
       ],
       "purl": "pkg:npm/fsevents@2.3.3",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/jiti@%3E%3D1.21.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/less@*",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/lightningcss@%5E1.21.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/nanoid@%5E3.3.11",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/nanoid@%5E3.3.6",
     },
     {
       "evidence": [
@@ -3785,40 +3162,16 @@ exports[`workspace 1`] = `
       "purl": "pkg:npm/next@15.5.6",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/picocolors@%5E1.0.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/picocolors@%5E1.1.1",
-    },
-    {
       "evidence": [
         "bun.lock#231",
       ],
       "purl": "pkg:npm/picocolors@1.1.1",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/picomatch@%5E3%20%7C%7C%20%5E4",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/picomatch@%5E4.0.2",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/picomatch@%5E4.0.3",
-    },
-    {
       "evidence": [
         "bun.lock#233",
       ],
       "purl": "pkg:npm/picomatch@4.0.3",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/postcss@%5E8.5.3",
     },
     {
       "evidence": [
@@ -3833,26 +3186,10 @@ exports[`workspace 1`] = `
       "purl": "pkg:npm/postcss@8.5.6",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/react-dom@%5E18.2.0%20%7C%7C%2019.0.0-rc-de68d2f4-20241204%20%7C%7C%20%5E19.0.0",
-    },
-    {
       "evidence": [
         "bun.lock#17",
       ],
       "purl": "pkg:npm/react-dom@19.2.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/react@%3E%3D%2016.8.0%20%7C%7C%2017.x.x%20%7C%7C%20%5E18.0.0-0%20%7C%7C%20%5E19.0.0-0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/react@%5E18.2.0%20%7C%7C%2019.0.0-rc-de68d2f4-20241204%20%7C%7C%20%5E19.0.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/react@%5E19.2.0",
     },
     {
       "evidence": [
@@ -3861,30 +3198,10 @@ exports[`workspace 1`] = `
       "purl": "pkg:npm/react@19.2.0",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/rollup@%5E4.34.9",
-    },
-    {
       "evidence": [
         "bun.lock#241",
       ],
       "purl": "pkg:npm/rollup@4.52.5",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/sass-embedded@*",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/sass@*",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/sass@%5E1.3.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/scheduler@%5E0.27.0",
     },
     {
       "evidence": [
@@ -3893,32 +3210,16 @@ exports[`workspace 1`] = `
       "purl": "pkg:npm/scheduler@0.27.0",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/semver@%5E7.7.2",
-    },
-    {
       "evidence": [
         "bun.lock#245",
       ],
       "purl": "pkg:npm/semver@7.7.3",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/sharp@%5E0.34.3",
-    },
-    {
       "evidence": [
         "bun.lock#247",
       ],
       "purl": "pkg:npm/sharp@0.34.4",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/source-map-js@%5E1.0.2",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/source-map-js@%5E1.2.1",
     },
     {
       "evidence": [
@@ -3933,44 +3234,16 @@ exports[`workspace 1`] = `
       "purl": "pkg:npm/styled-jsx@5.1.6",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/stylus@*",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/sugarss@*",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/terser@%5E5.16.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/tinyglobby@%5E0.2.13",
-    },
-    {
       "evidence": [
         "bun.lock#253",
       ],
       "purl": "pkg:npm/tinyglobby@0.2.15",
     },
     {
-      "evidence": [],
-      "purl": "pkg:npm/tslib@%5E2.4.0",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/tslib@%5E2.8.0",
-    },
-    {
       "evidence": [
         "bun.lock#255",
       ],
       "purl": "pkg:npm/tslib@2.8.1",
-    },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/tsx@%5E4.8.1",
     },
     {
       "evidence": [
@@ -4026,16 +3299,12 @@ exports[`workspace 1`] = `
       ],
       "purl": "pkg:npm/vite@6.4.1",
     },
-    {
-      "evidence": [],
-      "purl": "pkg:npm/yaml@%5E2.4.2",
-    },
   ],
   "relationships": [
     {
       "from": "pkg:npm/%40emnapi/runtime@1.6.0",
       "to": [
-        "pkg:npm/tslib@%5E2.4.0",
+        "pkg:npm/tslib@2.8.1",
       ],
     },
     {
@@ -4095,13 +3364,13 @@ exports[`workspace 1`] = `
     {
       "from": "pkg:npm/%40img/sharp-wasm32@0.34.4",
       "to": [
-        "pkg:npm/%40emnapi/runtime@%5E1.5.0",
+        "pkg:npm/%40emnapi/runtime@1.6.0",
       ],
     },
     {
       "from": "pkg:npm/%40swc/helpers@0.5.15",
       "to": [
-        "pkg:npm/tslib@%5E2.8.0",
+        "pkg:npm/tslib@2.8.1",
       ],
     },
     {
@@ -4138,7 +3407,7 @@ exports[`workspace 1`] = `
     {
       "from": "pkg:npm/fdir@6.5.0",
       "to": [
-        "pkg:npm/picomatch@%5E3%20%7C%7C%20%5E4",
+        "pkg:npm/picomatch@4.0.3",
       ],
     },
     {
@@ -4153,40 +3422,36 @@ exports[`workspace 1`] = `
         "pkg:npm/%40next/swc-linux-x64-musl@15.5.6",
         "pkg:npm/%40next/swc-win32-arm64-msvc@15.5.6",
         "pkg:npm/%40next/swc-win32-x64-msvc@15.5.6",
-        "pkg:npm/%40opentelemetry/api@%5E1.1.0",
-        "pkg:npm/%40playwright/test@%5E1.51.1",
         "pkg:npm/%40swc/helpers@0.5.15",
-        "pkg:npm/babel-plugin-react-compiler@*",
-        "pkg:npm/caniuse-lite@%5E1.0.30001579",
+        "pkg:npm/caniuse-lite@1.0.30001752",
         "pkg:npm/postcss@8.4.31",
-        "pkg:npm/react-dom@%5E18.2.0%20%7C%7C%2019.0.0-rc-de68d2f4-20241204%20%7C%7C%20%5E19.0.0",
-        "pkg:npm/react@%5E18.2.0%20%7C%7C%2019.0.0-rc-de68d2f4-20241204%20%7C%7C%20%5E19.0.0",
-        "pkg:npm/sass@%5E1.3.0",
-        "pkg:npm/sharp@%5E0.34.3",
+        "pkg:npm/react-dom@19.2.0",
+        "pkg:npm/react@19.2.0",
+        "pkg:npm/sharp@0.34.4",
         "pkg:npm/styled-jsx@5.1.6",
       ],
     },
     {
       "from": "pkg:npm/postcss@8.4.31",
       "to": [
-        "pkg:npm/nanoid@%5E3.3.6",
-        "pkg:npm/picocolors@%5E1.0.0",
-        "pkg:npm/source-map-js@%5E1.0.2",
+        "pkg:npm/nanoid@3.3.11",
+        "pkg:npm/picocolors@1.1.1",
+        "pkg:npm/source-map-js@1.2.1",
       ],
     },
     {
       "from": "pkg:npm/postcss@8.5.6",
       "to": [
-        "pkg:npm/nanoid@%5E3.3.11",
-        "pkg:npm/picocolors@%5E1.1.1",
-        "pkg:npm/source-map-js@%5E1.2.1",
+        "pkg:npm/nanoid@3.3.11",
+        "pkg:npm/picocolors@1.1.1",
+        "pkg:npm/source-map-js@1.2.1",
       ],
     },
     {
       "from": "pkg:npm/react-dom@19.2.0",
       "to": [
-        "pkg:npm/react@%5E19.2.0",
-        "pkg:npm/scheduler@%5E0.27.0",
+        "pkg:npm/react@19.2.0",
+        "pkg:npm/scheduler@0.27.0",
       ],
     },
     {
@@ -4215,13 +3480,13 @@ exports[`workspace 1`] = `
         "pkg:npm/%40rollup/rollup-win32-x64-gnu@4.52.5",
         "pkg:npm/%40rollup/rollup-win32-x64-msvc@4.52.5",
         "pkg:npm/%40types/estree@1.0.8",
-        "pkg:npm/fsevents@~2.3.2",
+        "pkg:npm/fsevents@2.3.3",
       ],
     },
     {
       "from": "pkg:npm/sharp@0.34.4",
       "to": [
-        "pkg:npm/%40img/colour@%5E1.0.0",
+        "pkg:npm/%40img/colour@1.0.0",
         "pkg:npm/%40img/sharp-darwin-arm64@0.34.4",
         "pkg:npm/%40img/sharp-darwin-x64@0.34.4",
         "pkg:npm/%40img/sharp-libvips-darwin-arm64@1.2.3",
@@ -4244,22 +3509,22 @@ exports[`workspace 1`] = `
         "pkg:npm/%40img/sharp-win32-arm64@0.34.4",
         "pkg:npm/%40img/sharp-win32-ia32@0.34.4",
         "pkg:npm/%40img/sharp-win32-x64@0.34.4",
-        "pkg:npm/detect-libc@%5E2.1.0",
-        "pkg:npm/semver@%5E7.7.2",
+        "pkg:npm/detect-libc@2.1.2",
+        "pkg:npm/semver@7.7.3",
       ],
     },
     {
       "from": "pkg:npm/styled-jsx@5.1.6",
       "to": [
         "pkg:npm/client-only@0.0.1",
-        "pkg:npm/react@%3E%3D%2016.8.0%20%7C%7C%2017.x.x%20%7C%7C%20%5E18.0.0-0%20%7C%7C%20%5E19.0.0-0",
+        "pkg:npm/react@19.2.0",
       ],
     },
     {
       "from": "pkg:npm/tinyglobby@0.2.15",
       "to": [
-        "pkg:npm/fdir@%5E6.5.0",
-        "pkg:npm/picomatch@%5E4.0.3",
+        "pkg:npm/fdir@6.5.0",
+        "pkg:npm/picomatch@4.0.3",
       ],
     },
     {
@@ -4276,24 +3541,13 @@ exports[`workspace 1`] = `
     {
       "from": "pkg:npm/vite@6.4.1",
       "to": [
-        "pkg:npm/%40types/node@%5E18.0.0%20%7C%7C%20%5E20.0.0%20%7C%7C%20%3E%3D22.0.0",
-        "pkg:npm/esbuild@%5E0.25.0",
-        "pkg:npm/fdir@%5E6.4.4",
-        "pkg:npm/fsevents@~2.3.3",
-        "pkg:npm/jiti@%3E%3D1.21.0",
-        "pkg:npm/less@*",
-        "pkg:npm/lightningcss@%5E1.21.0",
-        "pkg:npm/picomatch@%5E4.0.2",
-        "pkg:npm/postcss@%5E8.5.3",
-        "pkg:npm/rollup@%5E4.34.9",
-        "pkg:npm/sass-embedded@*",
-        "pkg:npm/sass@*",
-        "pkg:npm/stylus@*",
-        "pkg:npm/sugarss@*",
-        "pkg:npm/terser@%5E5.16.0",
-        "pkg:npm/tinyglobby@%5E0.2.13",
-        "pkg:npm/tsx@%5E4.8.1",
-        "pkg:npm/yaml@%5E2.4.2",
+        "pkg:npm/esbuild@0.25.11",
+        "pkg:npm/fdir@6.5.0",
+        "pkg:npm/fsevents@2.3.3",
+        "pkg:npm/picomatch@4.0.3",
+        "pkg:npm/postcss@8.4.31",
+        "pkg:npm/rollup@4.52.5",
+        "pkg:npm/tinyglobby@0.2.15",
       ],
     },
   ],
