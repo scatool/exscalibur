@@ -1,0 +1,10 @@
+[package]
+name = "multiple-versions-example"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# This example shows a project with multiple versions of the same crate
+syn = "2.0.41"
+# Indirectly depends on syn 1.0 through an older dependency
+old-package = "0.1.0"

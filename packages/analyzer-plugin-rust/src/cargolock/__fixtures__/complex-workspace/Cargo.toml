@@ -1,0 +1,7 @@
+[workspace]
+members = ["server", "client", "shared"]
+resolver = "2"
+
+[workspace.dependencies]
+serde = "1.0.193"
+tokio = "1.35.0"

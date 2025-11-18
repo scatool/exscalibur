@@ -3,11 +3,16 @@ import {
   type DependencyScope,
   type Extractor,
   filesExtractor,
-  type Relationship,
   type Subproject,
+  addRelationship,
+  ensurePackageExists,
+  addPackageEvidence,
+  convertPackageMapToArray,
+  convertRelationshipsMapToArray,
+  aggregateSubprojectRelationships,
+  initializeExtractionMaps,
 } from '@scatool/analyzer-core/src/index.ts';
 import { Glob } from 'bun';
-import { PackageURL } from 'packageurl-js';
 import { dirname, join } from 'node:path';
 import {
   findLineNumber,
@@ -17,16 +22,23 @@ import {
   parseDependency,
   type CargoLockPackage,
 } from './lockfile.ts';
+import { createCargoPurl } from '../cargo-utils.ts';
+import type { RustOptions } from '../options.ts';
 
-const lockfileGlob = new Glob('**/Cargo.lock');
-
-export const extractor: Extractor = filesExtractor({
+export const extractor: Extractor<RustOptions> = filesExtractor<RustOptions>({
   name: 'cargolock',
   version: 1,
-  markFiles: async function (codebase: string) {
-    for await (const file of lockfileGlob.scan({ cwd: codebase, absolute: true })) {
-      // Skip files in target directory (build output)
-      if (!file.includes('/target/')) {
+  options: async () => ({
+    ignore: ['**/target/**'],
+  }),
+  markFiles: async function (codebase: string, options: RustOptions) {
+    const ignorePatterns = options.ignore ?? [];
+    const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));
+
+    const lockfileGlob = new Glob('**/Cargo.lock');
+    for await (const file of lockfileGlob.scan({ cwd: codebase, absolute: true, onlyFiles: true })) {
+      const shouldIgnore = ignoreGlobs.some((glob) => glob.match(file));
+      if (!shouldIgnore) {
         this.markFile(file);
       }
     }
@@ -34,8 +46,7 @@ export const extractor: Extractor = filesExtractor({
   extractFile: async (file: string): Promise<AnalyzerResult> => {
     const dir = dirname(file);
 
-    const packageMap = new Map<string, { purl: string; evidence: Set<string> }>();
-    const relationshipsMap = new Map<string, Set<string>>();
+    const { packageMap, relationshipsMap } = initializeExtractionMaps();
     const subprojects: Subproject[] = [];
 
     try {
@@ -95,14 +106,14 @@ export const extractor: Extractor = filesExtractor({
             const memberCargoToml = parseCargoToml(memberCargoTomlContent);
 
             if (memberCargoToml.package?.name && memberCargoToml.package?.version) {
-              const purl = createPurl(memberCargoToml.package.name, memberCargoToml.package.version);
+              const purl = createCargoPurl(memberCargoToml.package.name, memberCargoToml.package.version);
 
               // Find this package in the lockfile to get its dependencies
               const pkg = (lockfile.package || []).find(
                 (p) => p.name === memberCargoToml.package!.name && p.version === memberCargoToml.package!.version,
               );
 
-              const scopes = extractScopes(pkg, packagesByName, workspacePackages);
+              const scopes = extractScopes(pkg, packagesByName);
 
               subprojects.push({
                 purl,
@@ -117,14 +128,14 @@ export const extractor: Extractor = filesExtractor({
         }
       } else if (rootPackageName && rootPackageVersion) {
         // Single package project (not a workspace)
-        const purl = createPurl(rootPackageName, rootPackageVersion);
+        const purl = createCargoPurl(rootPackageName, rootPackageVersion);
 
         // Find this package in the lockfile to get its dependencies
         const pkg = (lockfile.package || []).find(
           (p) => p.name === rootPackageName && p.version === rootPackageVersion,
         );
 
-        const scopes = extractScopes(pkg, packagesByName, workspacePackages);
+        const scopes = extractScopes(pkg, packagesByName);
 
         subprojects.push({
           purl,
@@ -135,17 +146,15 @@ export const extractor: Extractor = filesExtractor({
 
       // Process all packages in the lockfile
       for (const pkg of lockfile.package || []) {
-        const purl = createPurl(pkg.name, pkg.version);
+        const purl = createCargoPurl(pkg.name, pkg.version);
 
         // Add package to map
-        if (!packageMap.has(purl)) {
-          packageMap.set(purl, { purl, evidence: new Set() });
-        }
+        ensurePackageExists(packageMap, purl);
 
         // Add evidence (file path and line number)
         const lineNumber = findLineNumber(lockfileContent, pkg.name);
         if (lineNumber !== undefined) {
-          packageMap.get(purl)!.evidence.add(`${file}#${lineNumber}`);
+          addPackageEvidence(packageMap, purl, `${file}#${lineNumber}`);
         }
 
         // Process dependencies
@@ -165,7 +174,7 @@ export const extractor: Extractor = filesExtractor({
               }
 
               if (depPkg) {
-                const depPurl = createPurl(depPkg.name, depPkg.version);
+                const depPurl = createCargoPurl(depPkg.name, depPkg.version);
                 addRelationship(relationshipsMap, purl, depPurl);
                 ensurePackageExists(packageMap, depPurl);
               }
@@ -175,37 +184,14 @@ export const extractor: Extractor = filesExtractor({
       }
 
       // Add relationships from subprojects to their dependencies
-      for (const subproject of subprojects) {
-        const allDeps = new Set<string>();
-        for (const scope of subproject.scopes) {
-          for (const pkg of scope.packages) {
-            allDeps.add(pkg);
-          }
-        }
-
-        if (allDeps.size > 0) {
-          const existing = relationshipsMap.get(subproject.purl);
-          if (existing) {
-            allDeps.forEach((dep) => existing.add(dep));
-          } else {
-            relationshipsMap.set(subproject.purl, allDeps);
-          }
-        }
-      }
+      aggregateSubprojectRelationships(subprojects, relationshipsMap);
     } catch (error) {
       // Silently skip files that fail to parse
     }
 
     // Convert maps to arrays
-    const packages = Array.from(packageMap.values()).map(({ purl, evidence }) => ({
-      purl,
-      evidence: Array.from(evidence),
-    }));
-
-    const relationships: Relationship[] = Array.from(relationshipsMap.entries()).map(([from, toSet]) => ({
-      from,
-      to: Array.from(toSet),
-    }));
+    const packages = convertPackageMapToArray(packageMap);
+    const relationships = convertRelationshipsMapToArray(relationshipsMap);
 
     return {
       packages,
@@ -224,7 +210,6 @@ export const extractor: Extractor = filesExtractor({
 function extractScopes(
   pkg: CargoLockPackage | undefined,
   packagesByName: Map<string, CargoLockPackage[]>,
-  workspacePackages: Map<string, string>,
 ): DependencyScope[] {
   if (!pkg || !pkg.dependencies || pkg.dependencies.length === 0) {
     return [];
@@ -247,7 +232,7 @@ function extractScopes(
       }
 
       if (depPkg) {
-        const depPurl = createPurl(depPkg.name, depPkg.version);
+        const depPurl = createCargoPurl(depPkg.name, depPkg.version);
         scopePackages.push(depPurl);
       }
     }
@@ -263,32 +248,4 @@ function extractScopes(
       packages: scopePackages,
     },
   ];
-}
-
-/**
- * Create a PURL for a Cargo package
- */
-function createPurl(name: string, version: string): string {
-  return new PackageURL('cargo', null, name, version, null, null).toString();
-}
-
-/**
- * Add a relationship to the relationships map
- */
-function addRelationship(relationshipsMap: Map<string, Set<string>>, from: string, to: string): void {
-  const existing = relationshipsMap.get(from);
-  if (existing) {
-    existing.add(to);
-  } else {
-    relationshipsMap.set(from, new Set([to]));
-  }
-}
-
-/**
- * Ensure a package exists in the package map
- */
-function ensurePackageExists(packageMap: Map<string, { purl: string; evidence: Set<string> }>, purl: string): void {
-  if (!packageMap.has(purl)) {
-    packageMap.set(purl, { purl, evidence: new Set() });
-  }
 }

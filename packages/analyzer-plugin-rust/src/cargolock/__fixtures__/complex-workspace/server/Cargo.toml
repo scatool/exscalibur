@@ -1,0 +1,9 @@
+[package]
+name = "my-server"
+version = "1.0.0"
+edition = "2021"
+
+[dependencies]
+shared = { path = "../shared" }
+tokio = { workspace = true, features = ["full"] }
+axum = "0.7.0"

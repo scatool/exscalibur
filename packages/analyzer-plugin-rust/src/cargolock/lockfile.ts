@@ -1,5 +1,3 @@
-import { parse } from 'toml';
-
 export type CargoLockPackage = {
   name: string;
   version: string;
@@ -24,19 +22,17 @@ export type CargoToml = {
 };
 
 /**
- * Parse a Cargo.lock file (TOML format)
+ * Parse a Cargo.lock file (TOML format) using Bun's native TOML parser
  */
 export function parseCargoLockfile(content: string): CargoLockfile {
-  const parsed = parse(content) as CargoLockfile;
-  return parsed;
+  return Bun.TOML.parse(content) as CargoLockfile;
 }
 
 /**
- * Parse a Cargo.toml file (TOML format)
+ * Parse a Cargo.toml file (TOML format) using Bun's native TOML parser
  */
 export function parseCargoToml(content: string): CargoToml {
-  const parsed = parse(content) as CargoToml;
-  return parsed;
+  return Bun.TOML.parse(content) as CargoToml;
 }
 
 /**
