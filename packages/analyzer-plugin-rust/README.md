@@ -4,11 +4,12 @@ Rust dependency analyzer plugin for Excalibur. Extracts dependency graphs from R
 
 ## Features
 
-- **Cargo.lock parsing**: Extracts packages and relationships from Cargo.lock files (TOML format)
+- **Cargo.lock parsing**: Extracts packages and relationships from Cargo.lock files using Bun's native TOML parser
 - **Workspace support**: Handles both single-package projects and Cargo workspaces
 - **Complete dependency graph**: Tracks relationships between all packages
 - **Evidence tracking**: Records file paths and line numbers for each package reference
 - **PURL support**: Creates Package URLs (PURLs) with the `cargo` namespace
+- **Configurable ignore patterns**: Excludes files in `/target/` by default, customizable via options
 
 ## Extractors
 
