@@ -1,0 +1,109 @@
+// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
+
+exports[`basic 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "requirements.txt#3",
+      ],
+      "purl": "pkg:pypi/django@0.0.0",
+    },
+    {
+      "evidence": [
+        "requirements.txt#2",
+      ],
+      "purl": "pkg:pypi/flask@0.0.0",
+    },
+    {
+      "evidence": [
+        "requirements.txt#1",
+      ],
+      "purl": "pkg:pypi/requests@0.0.0",
+    },
+  ],
+  "relationships": [],
+  "subprojects": [],
+}
+`;
+
+exports[`dev-deps 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "requirements-dev.txt#3",
+      ],
+      "purl": "pkg:pypi/black%3D%3D23.9.1@23.9.1",
+    },
+    {
+      "evidence": [
+        "requirements.txt#1",
+      ],
+      "purl": "pkg:pypi/flask%3D%3D2.3.3@2.3.3",
+    },
+    {
+      "evidence": [
+        "requirements-dev.txt#2",
+      ],
+      "purl": "pkg:pypi/pytest-cov%3D%3D4.1.0@4.1.0",
+    },
+    {
+      "evidence": [
+        "requirements-dev.txt#1",
+      ],
+      "purl": "pkg:pypi/pytest%3D%3D7.4.2@7.4.2",
+    },
+    {
+      "evidence": [
+        "requirements.txt#2",
+      ],
+      "purl": "pkg:pypi/requests%3D%3D2.31.0@2.31.0",
+    },
+  ],
+  "relationships": [],
+  "subprojects": [],
+}
+`;
+
+exports[`with-versions 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "requirements.txt#6",
+      ],
+      "purl": "pkg:pypi/django%3E%3D4.2.0%2C%3C5.0.0@4.2.0",
+    },
+    {
+      "evidence": [
+        "requirements.txt#5",
+      ],
+      "purl": "pkg:pypi/flask%3D%3D2.3.3@2.3.3",
+    },
+    {
+      "evidence": [
+        "requirements.txt#12",
+      ],
+      "purl": "pkg:pypi/pytest%3E%3D7.4.0@7.4.0",
+    },
+    {
+      "evidence": [
+        "requirements.txt#2",
+      ],
+      "purl": "pkg:pypi/requests%3D%3D2.31.0@2.31.0",
+    },
+    {
+      "evidence": [
+        "requirements.txt#9",
+      ],
+      "purl": "pkg:pypi/sqlalchemy%3D%3D2.0.21@2.0.21",
+    },
+  ],
+  "relationships": [],
+  "subprojects": [],
+}
+`;

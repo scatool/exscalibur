@@ -1,0 +1,123 @@
+// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
+
+exports[`basic 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "poetry.lock#4",
+      ],
+      "purl": "pkg:pypi/certifi@2023.7.22",
+    },
+    {
+      "evidence": [
+        "poetry.lock#12",
+      ],
+      "purl": "pkg:pypi/charset-normalizer@3.2.0",
+    },
+    {
+      "evidence": [
+        "poetry.lock#20",
+      ],
+      "purl": "pkg:pypi/idna@3.4",
+    },
+    {
+      "evidence": [
+        "poetry.lock#28",
+      ],
+      "purl": "pkg:pypi/requests@2.31.0",
+    },
+    {
+      "evidence": [
+        "poetry.lock#42",
+      ],
+      "purl": "pkg:pypi/urllib3@2.0.4",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:pypi/requests@2.31.0",
+      "to": [
+        "pkg:pypi/certifi@2023.7.22",
+        "pkg:pypi/charset-normalizer@3.2.0",
+        "pkg:pypi/idna@3.4",
+      ],
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "pyproject.toml",
+      "purl": "pkg:pypi/my-project@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:pypi/requests@2.31.0",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
+
+exports[`with-groups 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "poetry.lock#17",
+      ],
+      "purl": "pkg:pypi/asgiref@3.7.2",
+    },
+    {
+      "evidence": [
+        "poetry.lock#44",
+      ],
+      "purl": "pkg:pypi/black@23.9.1",
+    },
+    {
+      "evidence": [
+        "poetry.lock#4",
+      ],
+      "purl": "pkg:pypi/django@4.2.5",
+    },
+    {
+      "evidence": [
+        "poetry.lock#35",
+      ],
+      "purl": "pkg:pypi/pytest@7.4.2",
+    },
+    {
+      "evidence": [
+        "poetry.lock#26",
+      ],
+      "purl": "pkg:pypi/sqlparse@0.4.4",
+    },
+  ],
+  "relationships": [],
+  "subprojects": [
+    {
+      "definitionFile": "pyproject.toml",
+      "purl": "pkg:pypi/django-app@2.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:pypi/django@4.2.5",
+          ],
+          "scope": "dependencies",
+        },
+        {
+          "packages": [
+            "pkg:pypi/black@23.9.1",
+            "pkg:pypi/pytest@7.4.2",
+          ],
+          "scope": "group.dev",
+        },
+      ],
+    },
+  ],
+}
+`;

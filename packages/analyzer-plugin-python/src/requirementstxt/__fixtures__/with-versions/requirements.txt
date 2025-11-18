@@ -1,0 +1,12 @@
+# HTTP library
+requests==2.31.0
+
+# Web frameworks
+flask==2.3.3
+django>=4.2.0,<5.0.0
+
+# Database
+sqlalchemy==2.0.21
+
+# Testing
+pytest>=7.4.0

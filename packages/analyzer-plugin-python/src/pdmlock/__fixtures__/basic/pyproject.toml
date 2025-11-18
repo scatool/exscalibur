@@ -1,0 +1,12 @@
+[project]
+name = "my-pdm-project"
+version = "1.0.0"
+description = "A sample PDM project"
+dependencies = [
+    "requests>=2.31.0",
+]
+requires-python = ">=3.11"
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"

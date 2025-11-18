@@ -1,0 +1,13 @@
+[tool.poetry]
+name = "my-project"
+version = "1.0.0"
+description = "A sample Python project"
+authors = ["Developer <dev@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+requests = "^2.31.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
