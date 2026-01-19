@@ -6,7 +6,14 @@ import { existsSync } from 'node:fs';
 import type { JavaScriptOptions } from '../options.ts';
 
 async function hasLockfileInDirectory(dir: string, codebase: string): Promise<boolean> {
-  const lockfiles = ['package-lock.json', 'npm-shrinkwrap.json', 'yarn.lock', 'pnpm-lock.yaml', 'bun.lockb'];
+  const lockfiles = [
+    'package-lock.json',
+    'npm-shrinkwrap.json',
+    'yarn.lock',
+    'pnpm-lock.yaml',
+    'bun.lock',
+    'bun.lockb',
+  ];
 
   // Check current directory and all parent directories up to the codebase root
   let currentDir = dir;
