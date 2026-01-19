@@ -1773,7 +1773,7 @@
       ]
     },
     {
-      "purl": "pkg:npm/JSONStream@1.3.5",
+      "purl": "pkg:npm/jsonstream@1.3.5",
       "evidence": [
         "package-lock.json#4330"
       ]
@@ -3376,8 +3376,8 @@
     {
       "from": "pkg:npm/conventional-commits-parser@5.0.0",
       "to": [
-        "pkg:npm/JSONStream@1.3.5",
         "pkg:npm/is-text-path@2.0.0",
+        "pkg:npm/jsonstream@1.3.5",
         "pkg:npm/meow@12.1.1",
         "pkg:npm/split2@4.2.0"
       ]
@@ -3813,7 +3813,7 @@
       ]
     },
     {
-      "from": "pkg:npm/JSONStream@1.3.5",
+      "from": "pkg:npm/jsonstream@1.3.5",
       "to": [
         "pkg:npm/jsonparse@1.3.1",
         "pkg:npm/through@2.3.8"
