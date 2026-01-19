@@ -9,25 +9,13 @@
     {
       "purl": "pkg:npm/%40ai-sdk/google@2.0.11",
       "evidence": [
-        "bun.lock#243",
-        "packages/categories/package.json#23",
-        "packages/documents/package.json#21",
-        "packages/jobs/package.json#14"
+        "bun.lock#243"
       ]
     },
     {
       "purl": "pkg:npm/%40ai-sdk/mistral@2.0.12",
       "evidence": [
-        "bun.lock#284",
-        "packages/documents/package.json#22"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40ai-sdk/openai@1.3.22",
-      "evidence": [
-        "apps/api/package.json#16",
-        "apps/dashboard/package.json#18",
-        "packages/app-store/package.json#13"
+        "bun.lock#284"
       ]
     },
     {
@@ -146,12 +134,6 @@
       "purl": "pkg:npm/%40azure/msal-common@15.12.0",
       "evidence": [
         "bun.lock#563"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40azure/msal-node@3.6.0",
-      "evidence": [
-        "packages/inbox/package.json#24"
       ]
     },
     {
@@ -283,8 +265,7 @@
     {
       "purl": "pkg:npm/%40biomejs/biome@1.9.4",
       "evidence": [
-        "bun.lock#7",
-        "package.json#25"
+        "bun.lock#7"
       ]
     },
     {
@@ -414,12 +395,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40cloudflare/workers-types@4.20250803.0",
-      "evidence": [
-        "apps/engine/package.json#27"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40cloudflare/workers-types@4.20250831.0",
       "evidence": [
         "bun.lock#180"
@@ -440,7 +415,6 @@
     {
       "purl": "pkg:npm/%40date-fns/tz@1.2.0",
       "evidence": [
-        "apps/dashboard/package.json#19",
         "bun.lock#4707"
       ]
     },
@@ -451,16 +425,9 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40date-fns/utc@2.1.0",
-      "evidence": [
-        "apps/dashboard/package.json#20"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40date-fns/utc@2.1.1",
       "evidence": [
-        "bun.lock#64",
-        "packages/db/package.json#27"
+        "bun.lock#64"
       ]
     },
     {
@@ -1138,8 +1105,7 @@
     {
       "purl": "pkg:npm/%40fast-csv/format@5.0.2",
       "evidence": [
-        "bun.lock#382",
-        "packages/jobs/package.json#15"
+        "bun.lock#382"
       ]
     },
     {
@@ -1205,7 +1171,6 @@
     {
       "purl": "pkg:npm/%40hono/trpc-server@0.4.0",
       "evidence": [
-        "apps/api/package.json#17",
         "bun.lock#17"
       ]
     },
@@ -1216,29 +1181,9 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40hono/zod-openapi@0.19.8",
-      "evidence": [
-        "apps/api/package.json#18",
-        "apps/engine/package.json#16"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40hono/zod-validator@0.7.0",
-      "evidence": [
-        "apps/api/package.json#19",
-        "apps/engine/package.json#17"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40hono/zod-validator@0.7.2",
       "evidence": [
         "bun.lock#19"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40hookform/resolvers@5.1.1",
-      "evidence": [
-        "apps/dashboard/package.json#21"
       ]
     },
     {
@@ -1822,15 +1767,13 @@
     {
       "purl": "pkg:npm/%40langchain/community@0.3.46",
       "evidence": [
-        "bun.lock#285",
-        "packages/documents/package.json#23"
+        "bun.lock#285"
       ]
     },
     {
       "purl": "pkg:npm/%40langchain/core@0.3.58",
       "evidence": [
-        "bun.lock#286",
-        "packages/documents/package.json#24"
+        "bun.lock#286"
       ]
     },
     {
@@ -1860,8 +1803,7 @@
     {
       "purl": "pkg:npm/%40manypkg/cli@0.24.0",
       "evidence": [
-        "bun.lock#8",
-        "package.json#26"
+        "bun.lock#8"
       ]
     },
     {
@@ -1897,14 +1839,7 @@
     {
       "purl": "pkg:npm/%40microsoft/microsoft-graph-client@3.0.7",
       "evidence": [
-        "bun.lock#356",
-        "packages/inbox/package.json#23"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40midday/api@*",
-      "evidence": [
-        "apps/dashboard/package.json#22"
+        "bun.lock#356"
       ]
     },
     {
@@ -1914,34 +1849,15 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40midday/app-store@*",
-      "evidence": [
-        "apps/dashboard/package.json#23"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40midday/app-store@workspace:packages%2Fapp-store",
       "evidence": [
         "bun.lock#67"
       ]
     },
     {
-      "purl": "pkg:npm/%40midday/cache@*",
-      "evidence": [
-        "apps/api/package.json#20"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40midday/cache@workspace:packages%2Fcache",
       "evidence": [
         "bun.lock#20"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40midday/categories@*",
-      "evidence": [
-        "apps/api/package.json#21",
-        "packages/db/package.json#28"
       ]
     },
     {
@@ -1957,23 +1873,9 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40midday/db@*",
-      "evidence": [
-        "apps/api/package.json#22",
-        "packages/jobs/package.json#16",
-        "packages/notifications/package.json#19"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40midday/db@workspace:packages%2Fdb",
       "evidence": [
         "bun.lock#22"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40midday/desktop-client@*",
-      "evidence": [
-        "apps/dashboard/package.json#24"
       ]
     },
     {
@@ -1995,22 +1897,9 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40midday/documents@*",
-      "evidence": [
-        "apps/api/package.json#23"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40midday/documents@workspace:packages%2Fdocuments",
       "evidence": [
         "bun.lock#23"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40midday/email@*",
-      "evidence": [
-        "packages/jobs/package.json#17",
-        "packages/notifications/package.json#17"
       ]
     },
     {
@@ -2020,24 +1909,9 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40midday/encryption@*",
-      "evidence": [
-        "apps/api/package.json#24",
-        "packages/db/package.json#29",
-        "packages/inbox/package.json#19"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40midday/encryption@workspace:packages%2Fencryption",
       "evidence": [
         "bun.lock#24"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40midday/engine-client@*",
-      "evidence": [
-        "apps/api/package.json#26",
-        "packages/jobs/package.json#19"
       ]
     },
     {
@@ -2047,23 +1921,9 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40midday/engine@*",
-      "evidence": [
-        "apps/api/package.json#25",
-        "apps/dashboard/package.json#25",
-        "packages/jobs/package.json#18"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40midday/engine@workspace:apps%2Fengine",
       "evidence": [
         "bun.lock#25"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40midday/events@*",
-      "evidence": [
-        "apps/dashboard/package.json#26"
       ]
     },
     {
@@ -2079,25 +1939,9 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40midday/inbox@*",
-      "evidence": [
-        "apps/api/package.json#27",
-        "apps/dashboard/package.json#27",
-        "packages/notifications/package.json#18"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40midday/inbox@workspace:packages%2Finbox",
       "evidence": [
         "bun.lock#27"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40midday/invoice@*",
-      "evidence": [
-        "apps/api/package.json#28",
-        "apps/dashboard/package.json#28",
-        "packages/db/package.json#30"
       ]
     },
     {
@@ -2107,23 +1951,9 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40midday/jobs@*",
-      "evidence": [
-        "apps/api/package.json#29",
-        "packages/app-store/package.json#18"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40midday/jobs@workspace:packages%2Fjobs",
       "evidence": [
         "bun.lock#29"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40midday/location@*",
-      "evidence": [
-        "apps/api/package.json#30",
-        "apps/dashboard/package.json#29"
       ]
     },
     {
@@ -2133,24 +1963,9 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40midday/logger@*",
-      "evidence": [
-        "apps/api/package.json#31",
-        "packages/categories/package.json#24",
-        "packages/db/package.json#31"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40midday/logger@workspace:packages%2Flogger",
       "evidence": [
         "bun.lock#31"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40midday/notifications@*",
-      "evidence": [
-        "apps/api/package.json#32",
-        "packages/jobs/package.json#20"
       ]
     },
     {
@@ -2160,27 +1975,9 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40midday/supabase@*",
-      "evidence": [
-        "apps/api/package.json#33",
-        "apps/dashboard/package.json#30",
-        "apps/website/package.json#15",
-        "packages/inbox/package.json#20",
-        "packages/jobs/package.json#21"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40midday/supabase@workspace:packages%2Fsupabase",
       "evidence": [
         "bun.lock#33"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40midday/tsconfig@*",
-      "evidence": [
-        "apps/dashboard/package.json#83",
-        "apps/website/package.json#37",
-        "packages/notifications/package.json#25"
       ]
     },
     {
@@ -2190,27 +1987,9 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40midday/ui@*",
-      "evidence": [
-        "apps/dashboard/package.json#31",
-        "apps/website/package.json#16",
-        "packages/email/package.json#21",
-        "packages/invoice/package.json#26"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40midday/ui@workspace:packages%2Fui",
       "evidence": [
         "bun.lock#75"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40midday/utils@*",
-      "evidence": [
-        "apps/dashboard/package.json#32",
-        "packages/documents/package.json#25",
-        "packages/email/package.json#22",
-        "packages/invoice/package.json#27"
       ]
     },
     {
@@ -2288,8 +2067,7 @@
     {
       "purl": "pkg:npm/%40mistralai/mistralai@1.9.18",
       "evidence": [
-        "bun.lock#288",
-        "packages/documents/package.json#26"
+        "bun.lock#288"
       ]
     },
     {
@@ -2373,7 +2151,6 @@
     {
       "purl": "pkg:npm/%40number-flow/react@0.5.10",
       "evidence": [
-        "apps/dashboard/package.json#33",
         "bun.lock#77"
       ]
     },
@@ -2386,9 +2163,7 @@
     {
       "purl": "pkg:npm/%40openpanel/nextjs@1.0.8",
       "evidence": [
-        "apps/website/package.json#17",
-        "bun.lock#190",
-        "packages/events/package.json#14"
+        "bun.lock#190"
       ]
     },
     {
@@ -2406,7 +2181,6 @@
     {
       "purl": "pkg:npm/%40openstatus/react@0.0.3",
       "evidence": [
-        "apps/website/package.json#18",
         "bun.lock#191"
       ]
     },
@@ -2705,21 +2479,9 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40polar-sh/nextjs@0.4.0",
-      "evidence": [
-        "apps/dashboard/package.json#34"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40polar-sh/nextjs@0.4.4",
       "evidence": [
         "bun.lock#78"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40polar-sh/sdk@0.33.1",
-      "evidence": [
-        "apps/dashboard/package.json#35"
       ]
     },
     {
@@ -2732,12 +2494,6 @@
       "purl": "pkg:npm/%40polar-sh/sdk@0.34.14",
       "evidence": [
         "bun.lock#34"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40polar-sh/sdk@0.34.9",
-      "evidence": [
-        "apps/api/package.json#34"
       ]
     },
     {
@@ -2855,21 +2611,9 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40radix-ui/react-accordion@1.2.11",
-      "evidence": [
-        "packages/ui/package.json#74"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40radix-ui/react-accordion@1.2.12",
       "evidence": [
         "bun.lock#461"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40radix-ui/react-alert-dialog@1.1.14",
-      "evidence": [
-        "packages/ui/package.json#75"
       ]
     },
     {
@@ -2887,26 +2631,13 @@
     {
       "purl": "pkg:npm/%40radix-ui/react-avatar@1.1.10",
       "evidence": [
-        "bun.lock#463",
-        "packages/ui/package.json#76"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40radix-ui/react-checkbox@1.3.2",
-      "evidence": [
-        "packages/ui/package.json#77"
+        "bun.lock#463"
       ]
     },
     {
       "purl": "pkg:npm/%40radix-ui/react-checkbox@1.3.3",
       "evidence": [
         "bun.lock#464"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40radix-ui/react-collapsible@1.1.11",
-      "evidence": [
-        "packages/ui/package.json#78"
       ]
     },
     {
@@ -2928,12 +2659,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40radix-ui/react-context-menu@2.2.15",
-      "evidence": [
-        "packages/ui/package.json#79"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40radix-ui/react-context-menu@2.2.16",
       "evidence": [
         "bun.lock#466"
@@ -2943,12 +2668,6 @@
       "purl": "pkg:npm/%40radix-ui/react-context@1.1.2",
       "evidence": [
         "bun.lock#1169"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40radix-ui/react-dialog@1.1.14",
-      "evidence": [
-        "packages/ui/package.json#80"
       ]
     },
     {
@@ -2970,12 +2689,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40radix-ui/react-dropdown-menu@2.1.15",
-      "evidence": [
-        "packages/ui/package.json#81"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40radix-ui/react-dropdown-menu@2.1.16",
       "evidence": [
         "bun.lock#468"
@@ -2994,12 +2707,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40radix-ui/react-hover-card@1.1.14",
-      "evidence": [
-        "packages/ui/package.json#82"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40radix-ui/react-hover-card@1.1.15",
       "evidence": [
         "bun.lock#469"
@@ -3008,8 +2715,7 @@
     {
       "purl": "pkg:npm/%40radix-ui/react-icons@1.3.2",
       "evidence": [
-        "bun.lock#470",
-        "packages/ui/package.json#83"
+        "bun.lock#470"
       ]
     },
     {
@@ -3021,8 +2727,7 @@
     {
       "purl": "pkg:npm/%40radix-ui/react-label@2.1.7",
       "evidence": [
-        "bun.lock#471",
-        "packages/ui/package.json#84"
+        "bun.lock#471"
       ]
     },
     {
@@ -3032,21 +2737,9 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40radix-ui/react-navigation-menu@1.2.13",
-      "evidence": [
-        "packages/ui/package.json#85"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40radix-ui/react-navigation-menu@1.2.14",
       "evidence": [
         "bun.lock#472"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40radix-ui/react-popover@1.1.14",
-      "evidence": [
-        "packages/ui/package.json#86"
       ]
     },
     {
@@ -3082,14 +2775,7 @@
     {
       "purl": "pkg:npm/%40radix-ui/react-progress@1.1.7",
       "evidence": [
-        "bun.lock#474",
-        "packages/ui/package.json#87"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40radix-ui/react-radio-group@1.3.7",
-      "evidence": [
-        "packages/ui/package.json#88"
+        "bun.lock#474"
       ]
     },
     {
@@ -3111,18 +2797,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40radix-ui/react-scroll-area@1.2.9",
-      "evidence": [
-        "packages/ui/package.json#89"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40radix-ui/react-select@2.2.5",
-      "evidence": [
-        "packages/ui/package.json#90"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40radix-ui/react-select@2.2.6",
       "evidence": [
         "bun.lock#477"
@@ -3131,14 +2805,7 @@
     {
       "purl": "pkg:npm/%40radix-ui/react-separator@1.1.7",
       "evidence": [
-        "bun.lock#478",
-        "packages/ui/package.json#91"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40radix-ui/react-slider@1.3.5",
-      "evidence": [
-        "packages/ui/package.json#92"
+        "bun.lock#478"
       ]
     },
     {
@@ -3150,14 +2817,7 @@
     {
       "purl": "pkg:npm/%40radix-ui/react-slot@1.2.3",
       "evidence": [
-        "bun.lock#480",
-        "packages/ui/package.json#93"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40radix-ui/react-switch@1.2.5",
-      "evidence": [
-        "packages/ui/package.json#94"
+        "bun.lock#480"
       ]
     },
     {
@@ -3167,33 +2827,15 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40radix-ui/react-tabs@1.1.12",
-      "evidence": [
-        "packages/ui/package.json#95"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40radix-ui/react-tabs@1.1.13",
       "evidence": [
         "bun.lock#482"
       ]
     },
     {
-      "purl": "pkg:npm/%40radix-ui/react-toast@1.2.14",
-      "evidence": [
-        "packages/ui/package.json#96"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40radix-ui/react-toast@1.2.15",
       "evidence": [
         "bun.lock#483"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40radix-ui/react-tooltip@1.2.7",
-      "evidence": [
-        "packages/ui/package.json#97"
       ]
     },
     {
@@ -3301,8 +2943,7 @@
     {
       "purl": "pkg:npm/%40react-email/components@0.0.42",
       "evidence": [
-        "bun.lock#306",
-        "packages/email/package.json#23"
+        "bun.lock#306"
       ]
     },
     {
@@ -3368,8 +3009,7 @@
     {
       "purl": "pkg:npm/%40react-email/render@1.1.2",
       "evidence": [
-        "bun.lock#307",
-        "packages/email/package.json#24"
+        "bun.lock#307"
       ]
     },
     {
@@ -3387,20 +3027,13 @@
     {
       "purl": "pkg:npm/%40react-email/tailwind@1.0.5",
       "evidence": [
-        "bun.lock#308",
-        "packages/email/package.json#25"
+        "bun.lock#308"
       ]
     },
     {
       "purl": "pkg:npm/%40react-email/text@0.1.5",
       "evidence": [
         "bun.lock#1293"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40react-google-maps/api@2.20.6",
-      "evidence": [
-        "apps/dashboard/package.json#36"
       ]
     },
     {
@@ -3478,9 +3111,7 @@
     {
       "purl": "pkg:npm/%40react-pdf/renderer@4.3.0",
       "evidence": [
-        "apps/dashboard/package.json#37",
-        "bun.lock#81",
-        "packages/invoice/package.json#28"
+        "bun.lock#81"
       ]
     },
     {
@@ -3694,12 +3325,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40scalar/hono-api-reference@0.9.4",
-      "evidence": [
-        "apps/api/package.json#35"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40scalar/openapi-types@0.3.7",
       "evidence": [
         "bun.lock#1391"
@@ -3820,12 +3445,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40sentry/nextjs@10",
-      "evidence": [
-        "apps/dashboard/package.json#38"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40sentry/nextjs@10.8.0",
       "evidence": [
         "bun.lock#82"
@@ -3930,9 +3549,7 @@
     {
       "purl": "pkg:npm/%40sindresorhus/slugify@2.2.1",
       "evidence": [
-        "apps/api/package.json#36",
-        "bun.lock#36",
-        "packages/jobs/package.json#22"
+        "bun.lock#36"
       ]
     },
     {
@@ -3944,8 +3561,7 @@
     {
       "purl": "pkg:npm/%40slack/bolt@4.4.0",
       "evidence": [
-        "bun.lock#221",
-        "packages/app-store/package.json#14"
+        "bun.lock#221"
       ]
     },
     {
@@ -3976,12 +3592,6 @@
       "purl": "pkg:npm/%40slack/web-api@7.10.0",
       "evidence": [
         "bun.lock#222"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40slack/web-api@7.9.2",
-      "evidence": [
-        "packages/app-store/package.json#15"
       ]
     },
     {
@@ -4144,8 +3754,7 @@
     {
       "purl": "pkg:npm/%40supabase/postgrest-js@1.21.3",
       "evidence": [
-        "bun.lock#441",
-        "packages/supabase/package.json#13"
+        "bun.lock#441"
       ]
     },
     {
@@ -4157,20 +3766,13 @@
     {
       "purl": "pkg:npm/%40supabase/ssr@0.7.0",
       "evidence": [
-        "bun.lock#442",
-        "packages/supabase/package.json#14"
+        "bun.lock#442"
       ]
     },
     {
       "purl": "pkg:npm/%40supabase/storage-js@2.11.0",
       "evidence": [
         "bun.lock#1533"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40supabase/supabase-js@2.56.0",
-      "evidence": [
-        "packages/supabase/package.json#21"
       ]
     },
     {
@@ -4198,12 +3800,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40tanstack/react-query@5.85.5",
-      "evidence": [
-        "apps/dashboard/package.json#39"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40tanstack/react-query@5.85.6",
       "evidence": [
         "bun.lock#83"
@@ -4212,7 +3808,6 @@
     {
       "purl": "pkg:npm/%40tanstack/react-table@8.21.3",
       "evidence": [
-        "apps/dashboard/package.json#40",
         "bun.lock#84"
       ]
     },
@@ -4220,18 +3815,6 @@
       "purl": "pkg:npm/%40tanstack/table-core@8.21.3",
       "evidence": [
         "bun.lock#1547"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40tauri-apps/api@2",
-      "evidence": [
-        "apps/desktop/package.json#19"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40tauri-apps/api@2.5.0",
-      "evidence": [
-        "packages/desktop-client/package.json#7"
       ]
     },
     {
@@ -4307,21 +3890,9 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40tauri-apps/cli@2",
-      "evidence": [
-        "apps/desktop/package.json#36"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40tauri-apps/cli@2.8.3",
       "evidence": [
         "bun.lock#152"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40tauri-apps/plugin-deep-link@2",
-      "evidence": [
-        "apps/desktop/package.json#20"
       ]
     },
     {
@@ -4333,26 +3904,13 @@
     {
       "purl": "pkg:npm/%40tauri-apps/plugin-dialog@2.3.3",
       "evidence": [
-        "apps/desktop/package.json#21",
         "bun.lock#142"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40tauri-apps/plugin-global-shortcut@2",
-      "evidence": [
-        "apps/desktop/package.json#22"
       ]
     },
     {
       "purl": "pkg:npm/%40tauri-apps/plugin-global-shortcut@2.3.0",
       "evidence": [
         "bun.lock#143"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40tauri-apps/plugin-opener@2",
-      "evidence": [
-        "apps/desktop/package.json#23"
       ]
     },
     {
@@ -4364,21 +3922,13 @@
     {
       "purl": "pkg:npm/%40tauri-apps/plugin-process@2.3.0",
       "evidence": [
-        "apps/desktop/package.json#24",
         "bun.lock#145"
       ]
     },
     {
       "purl": "pkg:npm/%40tauri-apps/plugin-updater@2.9.0",
       "evidence": [
-        "apps/desktop/package.json#25",
         "bun.lock#146"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40tauri-apps/plugin-upload@2",
-      "evidence": [
-        "apps/desktop/package.json#26"
       ]
     },
     {
@@ -4396,8 +3946,6 @@
     {
       "purl": "pkg:npm/%40team-plain/typescript-sdk@5.9.0",
       "evidence": [
-        "apps/dashboard/package.json#41",
-        "apps/website/package.json#19",
         "bun.lock#4385"
       ]
     },
@@ -4411,12 +3959,6 @@
       "purl": "pkg:npm/%40tiptap/extension-blockquote@2.26.1",
       "evidence": [
         "bun.lock#1593"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40tiptap/extension-bold@2.12.0",
-      "evidence": [
-        "packages/ui/package.json#98"
       ]
     },
     {
@@ -4504,12 +4046,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40tiptap/extension-link@2.12.0",
-      "evidence": [
-        "packages/ui/package.json#99"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40tiptap/extension-link@2.26.1",
       "evidence": [
         "bun.lock#486"
@@ -4531,12 +4067,6 @@
       "purl": "pkg:npm/%40tiptap/extension-paragraph@2.26.1",
       "evidence": [
         "bun.lock#1629"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40tiptap/extension-placeholder@2.12.0",
-      "evidence": [
-        "packages/ui/package.json#100"
       ]
     },
     {
@@ -4564,21 +4094,9 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40tiptap/extension-underline@2.12.0",
-      "evidence": [
-        "packages/ui/package.json#101"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40tiptap/extension-underline@2.26.1",
       "evidence": [
         "bun.lock#488"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40tiptap/pm@2.12.0",
-      "evidence": [
-        "packages/ui/package.json#102"
       ]
     },
     {
@@ -4588,21 +4106,9 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40tiptap/react@2.12.0",
-      "evidence": [
-        "packages/ui/package.json#103"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40tiptap/react@2.26.1",
       "evidence": [
         "bun.lock#490"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40tiptap/starter-kit@2.12.0",
-      "evidence": [
-        "packages/ui/package.json#104"
       ]
     },
     {
@@ -4638,7 +4144,6 @@
     {
       "purl": "pkg:npm/%40trigger.dev/react-hooks@4.0.1",
       "evidence": [
-        "apps/dashboard/package.json#42",
         "bun.lock#86"
       ]
     },
@@ -4651,29 +4156,24 @@
     {
       "purl": "pkg:npm/%40trigger.dev/sdk@4.0.1",
       "evidence": [
-        "apps/api/package.json#37",
-        "apps/dashboard/package.json#43",
         "bun.lock#37"
       ]
     },
     {
       "purl": "pkg:npm/%40trpc/client@11.5.0",
       "evidence": [
-        "apps/dashboard/package.json#44",
         "bun.lock#88"
       ]
     },
     {
       "purl": "pkg:npm/%40trpc/server@11.5.0",
       "evidence": [
-        "apps/api/package.json#38",
         "bun.lock#38"
       ]
     },
     {
       "purl": "pkg:npm/%40trpc/tanstack-react-query@11.5.0",
       "evidence": [
-        "apps/dashboard/package.json#45",
         "bun.lock#89"
       ]
     },
@@ -4708,28 +4208,9 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40types/bun@1.2.16",
-      "evidence": [
-        "apps/api/package.json#55"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40types/bun@1.2.21",
-      "evidence": [
-        "packages/documents/package.json#35"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40types/bun@1.2.22",
       "evidence": [
         "bun.lock#55"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40types/bun@latest",
-      "evidence": [
-        "packages/db/package.json#40",
-        "packages/jobs/package.json#33"
       ]
     },
     {
@@ -4861,7 +4342,6 @@
     {
       "purl": "pkg:npm/%40types/file-saver@2.0.7",
       "evidence": [
-        "apps/dashboard/package.json#84",
         "bun.lock#128"
       ]
     },
@@ -4880,8 +4360,7 @@
     {
       "purl": "pkg:npm/%40types/heic-convert@2.1.0",
       "evidence": [
-        "bun.lock#400",
-        "packages/jobs/package.json#32"
+        "bun.lock#400"
       ]
     },
     {
@@ -4984,35 +4463,20 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40types/node@22.15.29",
-      "evidence": [
-        "apps/website/package.json#38"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40types/node@22.18.0",
       "evidence": [
         "bun.lock#4387"
       ]
     },
     {
-      "purl": "pkg:npm/%40types/node@24.0.1",
-      "evidence": [
-        "apps/dashboard/package.json#85",
-        "packages/app-store/package.json#21"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40types/node@24.3.0",
       "evidence": [
-        "bun.lock#129",
-        "packages/categories/package.json#27"
+        "bun.lock#129"
       ]
     },
     {
       "purl": "pkg:npm/%40types/papaparse@5.3.16",
       "evidence": [
-        "apps/dashboard/package.json#86",
         "bun.lock#130"
       ]
     },
@@ -5032,8 +4496,7 @@
     {
       "purl": "pkg:npm/%40types/pg@8.15.5",
       "evidence": [
-        "bun.lock#261",
-        "packages/db/package.json#32"
+        "bun.lock#261"
       ]
     },
     {
@@ -5045,8 +4508,7 @@
     {
       "purl": "pkg:npm/%40types/qrcode@1.5.5",
       "evidence": [
-        "bun.lock#374",
-        "packages/invoice/package.json#34"
+        "bun.lock#374"
       ]
     },
     {
@@ -5064,43 +4526,37 @@
     {
       "purl": "pkg:npm/%40types/react-dom@19.1.6",
       "evidence": [
-        "apps/dashboard/package.json#88",
         "bun.lock#132"
       ]
     },
     {
       "purl": "pkg:npm/%40types/react-dom@19.1.9",
       "evidence": [
-        "apps/desktop/package.json#32",
         "bun.lock#4377"
       ]
     },
     {
       "purl": "pkg:npm/%40types/react@19.1.12",
       "evidence": [
-        "apps/desktop/package.json#31",
         "bun.lock#4375"
       ]
     },
     {
       "purl": "pkg:npm/%40types/react@19.1.6",
       "evidence": [
-        "apps/website/package.json#39",
         "bun.lock#4389"
       ]
     },
     {
       "purl": "pkg:npm/%40types/react@19.1.8",
       "evidence": [
-        "apps/dashboard/package.json#87",
         "bun.lock#131"
       ]
     },
     {
       "purl": "pkg:npm/%40types/redis@4.0.11",
       "evidence": [
-        "bun.lock#235",
-        "packages/cache/package.json#16"
+        "bun.lock#235"
       ]
     },
     {
@@ -5200,21 +4656,13 @@
     {
       "purl": "pkg:npm/%40uidotdev/usehooks@2.4.1",
       "evidence": [
-        "apps/website/package.json#20",
-        "bun.lock#193",
-        "packages/ui/package.json#105"
+        "bun.lock#193"
       ]
     },
     {
       "purl": "pkg:npm/%40ungap/structured-clone@1.3.0",
       "evidence": [
         "bun.lock#1809"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40vercel/functions@2.2.0",
-      "evidence": [
-        "packages/events/package.json#15"
       ]
     },
     {
@@ -5232,7 +4680,6 @@
     {
       "purl": "pkg:npm/%40vitejs/plugin-react@5.0.2",
       "evidence": [
-        "apps/desktop/package.json#33",
         "bun.lock#155"
       ]
     },
@@ -5345,12 +4792,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40zip.js/zip.js@2.7.62",
-      "evidence": [
-        "packages/jobs/package.json#23"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40zip.js/zip.js@2.7.72",
       "evidence": [
         "bun.lock#390"
@@ -5459,26 +4900,20 @@
     {
       "purl": "pkg:npm/ai@4.3.19",
       "evidence": [
-        "apps/api/package.json#39",
-        "apps/dashboard/package.json#46",
-        "bun.lock#39",
-        "packages/app-store/package.json#16"
+        "bun.lock#39"
       ]
     },
     {
       "purl": "pkg:npm/ai@5.0.28",
       "evidence": [
         "bun.lock#4379",
-        "bun.lock#4383",
-        "packages/documents/package.json#27",
-        "packages/jobs/package.json#24"
+        "bun.lock#4383"
       ]
     },
     {
       "purl": "pkg:npm/ai@5.0.29",
       "evidence": [
-        "bun.lock#4369",
-        "packages/categories/package.json#22"
+        "bun.lock#4369"
       ]
     },
     {
@@ -5712,8 +5147,7 @@
     {
       "purl": "pkg:npm/autoprefixer@10.4.21",
       "evidence": [
-        "bun.lock#512",
-        "packages/ui/package.json#125"
+        "bun.lock#512"
       ]
     },
     {
@@ -6007,10 +5441,7 @@
     {
       "purl": "pkg:npm/camelcase-keys@9.1.3",
       "evidence": [
-        "apps/api/package.json#40",
-        "bun.lock#40",
-        "packages/db/package.json#33",
-        "packages/jobs/package.json#25"
+        "bun.lock#40"
       ]
     },
     {
@@ -6036,12 +5467,6 @@
       "purl": "pkg:npm/caniuse-lite@1.0.30001739",
       "evidence": [
         "bun.lock#2027"
-      ]
-    },
-    {
-      "purl": "pkg:npm/canvas@3.1.2",
-      "evidence": [
-        "packages/documents/package.json#28"
       ]
     },
     {
@@ -6078,9 +5503,7 @@
     {
       "purl": "pkg:npm/change-case@5.4.4",
       "evidence": [
-        "apps/dashboard/package.json#47",
-        "bun.lock#91",
-        "packages/import/package.json#14"
+        "bun.lock#91"
       ]
     },
     {
@@ -6175,8 +5598,7 @@
     {
       "purl": "pkg:npm/class-variance-authority@0.7.1",
       "evidence": [
-        "bun.lock#493",
-        "packages/ui/package.json#106"
+        "bun.lock#493"
       ]
     },
     {
@@ -6258,8 +5680,7 @@
     {
       "purl": "pkg:npm/clsx@2.1.1",
       "evidence": [
-        "bun.lock#494",
-        "packages/ui/package.json#107"
+        "bun.lock#494"
       ]
     },
     {
@@ -6277,8 +5698,7 @@
     {
       "purl": "pkg:npm/cmdk@1.1.1",
       "evidence": [
-        "bun.lock#495",
-        "packages/ui/package.json#108"
+        "bun.lock#495"
       ]
     },
     {
@@ -6664,8 +6084,7 @@
     {
       "purl": "pkg:npm/date-fns-tz@3.2.0",
       "evidence": [
-        "bun.lock#347",
-        "packages/import/package.json#15"
+        "bun.lock#347"
       ]
     },
     {
@@ -6677,14 +6096,7 @@
     {
       "purl": "pkg:npm/date-fns@4.1.0",
       "evidence": [
-        "apps/api/package.json#41",
-        "apps/dashboard/package.json#48",
-        "apps/website/package.json#21",
-        "bun.lock#41",
-        "packages/email/package.json#26",
-        "packages/invoice/package.json#29",
-        "packages/supabase/package.json#15",
-        "packages/ui/package.json#109"
+        "bun.lock#41"
       ]
     },
     {
@@ -6976,12 +6388,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/drizzle-kit@0.31.1",
-      "evidence": [
-        "packages/db/package.json#39"
-      ]
-    },
-    {
       "purl": "pkg:npm/drizzle-kit@0.31.4",
       "evidence": [
         "bun.lock#269"
@@ -6991,12 +6397,6 @@
       "purl": "pkg:npm/drizzle-orm@0.44.5",
       "evidence": [
         "bun.lock#263"
-      ]
-    },
-    {
-      "purl": "pkg:npm/drizzle-orm@0.44.6",
-      "evidence": [
-        "packages/db/package.json#34"
       ]
     },
     {
@@ -7038,8 +6438,7 @@
     {
       "purl": "pkg:npm/embla-carousel-react@8.6.0",
       "evidence": [
-        "bun.lock#497",
-        "packages/ui/package.json#110"
+        "bun.lock#497"
       ]
     },
     {
@@ -7630,7 +7029,6 @@
     {
       "purl": "pkg:npm/file-saver@2.0.5",
       "evidence": [
-        "apps/dashboard/package.json#49",
         "bun.lock#93"
       ]
     },
@@ -7763,18 +7161,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/framer-motion@12.15.0",
-      "evidence": [
-        "apps/website/package.json#22"
-      ]
-    },
-    {
-      "purl": "pkg:npm/framer-motion@12.18.1",
-      "evidence": [
-        "apps/dashboard/package.json#50"
-      ]
-    },
-    {
       "purl": "pkg:npm/framer-motion@12.23.12",
       "evidence": [
         "bun.lock#94"
@@ -7867,8 +7253,6 @@
     {
       "purl": "pkg:npm/geist@1.4.2",
       "evidence": [
-        "apps/dashboard/package.json#51",
-        "apps/website/package.json#23",
         "bun.lock#95"
       ]
     },
@@ -8033,8 +7417,7 @@
     {
       "purl": "pkg:npm/googleapis@150.0.1",
       "evidence": [
-        "bun.lock#359",
-        "packages/inbox/package.json#21"
+        "bun.lock#359"
       ]
     },
     {
@@ -8266,8 +7649,7 @@
     {
       "purl": "pkg:npm/heic-convert@1.2.4",
       "evidence": [
-        "bun.lock#393",
-        "packages/jobs/package.json#26"
+        "bun.lock#393"
       ]
     },
     {
@@ -8297,16 +7679,7 @@
     {
       "purl": "pkg:npm/hono-rate-limiter@0.4.2",
       "evidence": [
-        "apps/api/package.json#43",
         "bun.lock#43"
-      ]
-    },
-    {
-      "purl": "pkg:npm/hono@4.8.12",
-      "evidence": [
-        "apps/api/package.json#42",
-        "apps/engine/package.json#18",
-        "packages/engine-client/package.json#7"
       ]
     },
     {
@@ -8525,8 +7898,7 @@
     {
       "purl": "pkg:npm/input-otp@1.4.2",
       "evidence": [
-        "bun.lock#498",
-        "packages/ui/package.json#111"
+        "bun.lock#498"
       ]
     },
     {
@@ -8983,14 +8355,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/jose@6.0.11",
-      "evidence": [
-        "apps/api/package.json#44",
-        "apps/engine/package.json#19",
-        "packages/invoice/package.json#30"
-      ]
-    },
-    {
       "purl": "pkg:npm/jose@6.1.0",
       "evidence": [
         "bun.lock#44"
@@ -9108,12 +8472,6 @@
       "purl": "pkg:npm/jsondiffpatch@0.6.0",
       "evidence": [
         "bun.lock#2877"
-      ]
-    },
-    {
-      "purl": "pkg:npm/jsonfile@6.1.0",
-      "evidence": [
-        "packages/ui/package.json#112"
       ]
     },
     {
@@ -9287,7 +8645,6 @@
     {
       "purl": "pkg:npm/little-date@1.0.0",
       "evidence": [
-        "apps/dashboard/package.json#52",
         "bun.lock#96"
       ]
     },
@@ -9498,7 +8855,6 @@
     {
       "purl": "pkg:npm/lottie-react@2.4.1",
       "evidence": [
-        "apps/dashboard/package.json#53",
         "bun.lock#97"
       ]
     },
@@ -9548,8 +8904,7 @@
     {
       "purl": "pkg:npm/lucide-react@0.511.0",
       "evidence": [
-        "bun.lock#500",
-        "packages/ui/package.json#113"
+        "bun.lock#500"
       ]
     },
     {
@@ -9586,12 +8941,6 @@
       "purl": "pkg:npm/mammoth@1.10.0",
       "evidence": [
         "bun.lock#291"
-      ]
-    },
-    {
-      "purl": "pkg:npm/mammoth@1.9.1",
-      "evidence": [
-        "packages/documents/package.json#29"
       ]
     },
     {
@@ -10215,12 +9564,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/mintlify@4.0.562",
-      "evidence": [
-        "apps/docs/package.json#8"
-      ]
-    },
-    {
       "purl": "pkg:npm/mintlify@4.2.94",
       "evidence": [
         "bun.lock#163"
@@ -10322,9 +9665,7 @@
     {
       "purl": "pkg:npm/nanoid@5.1.5",
       "evidence": [
-        "apps/api/package.json#45",
-        "bun.lock#45",
-        "packages/notifications/package.json#20"
+        "bun.lock#45"
       ]
     },
     {
@@ -10369,7 +9710,6 @@
     {
       "purl": "pkg:npm/next-international@1.3.1",
       "evidence": [
-        "apps/dashboard/package.json#55",
         "bun.lock#99"
       ]
     },
@@ -10382,30 +9722,24 @@
     {
       "purl": "pkg:npm/next-mdx-remote@5.0.0",
       "evidence": [
-        "apps/website/package.json#25",
         "bun.lock#198"
       ]
     },
     {
       "purl": "pkg:npm/next-safe-action@7.10.8",
       "evidence": [
-        "apps/dashboard/package.json#56",
-        "apps/website/package.json#26",
         "bun.lock#100"
       ]
     },
     {
       "purl": "pkg:npm/next-themes@0.4.6",
       "evidence": [
-        "apps/dashboard/package.json#57",
         "bun.lock#101"
       ]
     },
     {
       "purl": "pkg:npm/next@15.5.2",
       "evidence": [
-        "apps/dashboard/package.json#54",
-        "apps/website/package.json#24",
         "bun.lock#98"
       ]
     },
@@ -10507,8 +9841,7 @@
     {
       "purl": "pkg:npm/node-xlsx@0.24.0",
       "evidence": [
-        "bun.lock#394",
-        "packages/jobs/package.json#28"
+        "bun.lock#394"
       ]
     },
     {
@@ -10551,12 +9884,6 @@
       "purl": "pkg:npm/number-flow@0.5.8",
       "evidence": [
         "bun.lock#3275"
-      ]
-    },
-    {
-      "purl": "pkg:npm/nuqs@2.4.3",
-      "evidence": [
-        "apps/dashboard/package.json#58"
       ]
     },
     {
@@ -10604,8 +9931,7 @@
     {
       "purl": "pkg:npm/officeparser@5.1.1",
       "evidence": [
-        "bun.lock#292",
-        "packages/documents/package.json#30"
+        "bun.lock#292"
       ]
     },
     {
@@ -10857,7 +10183,6 @@
     {
       "purl": "pkg:npm/papaparse@5.5.3",
       "evidence": [
-        "apps/dashboard/package.json#59",
         "bun.lock#103"
       ]
     },
@@ -11009,7 +10334,6 @@
     {
       "purl": "pkg:npm/pdfjs-dist@4.8.69",
       "evidence": [
-        "apps/dashboard/package.json#60",
         "bun.lock#104"
       ]
     },
@@ -11076,8 +10400,7 @@
     {
       "purl": "pkg:npm/pg@8.16.3",
       "evidence": [
-        "bun.lock#264",
-        "packages/db/package.json#35"
+        "bun.lock#264"
       ]
     },
     {
@@ -11125,8 +10448,7 @@
     {
       "purl": "pkg:npm/pino-pretty@13.1.1",
       "evidence": [
-        "bun.lock#415",
-        "packages/logger/package.json#13"
+        "bun.lock#415"
       ]
     },
     {
@@ -11136,16 +10458,9 @@
       ]
     },
     {
-      "purl": "pkg:npm/pino@9.7.0",
-      "evidence": [
-        "apps/api/package.json#46"
-      ]
-    },
-    {
       "purl": "pkg:npm/pino@9.9.0",
       "evidence": [
-        "bun.lock#46",
-        "packages/logger/package.json#12"
+        "bun.lock#46"
       ]
     },
     {
@@ -11169,7 +10484,6 @@
     {
       "purl": "pkg:npm/plaid@36.0.0",
       "evidence": [
-        "apps/engine/package.json#20",
         "bun.lock#173"
       ]
     },
@@ -11255,12 +10569,6 @@
       "purl": "pkg:npm/postcss@8.4.31",
       "evidence": [
         "bun.lock#4661"
-      ]
-    },
-    {
-      "purl": "pkg:npm/postcss@8.5.3",
-      "evidence": [
-        "packages/ui/package.json#114"
       ]
     },
     {
@@ -11554,8 +10862,7 @@
     {
       "purl": "pkg:npm/qrcode@1.5.4",
       "evidence": [
-        "bun.lock#371",
-        "packages/invoice/package.json#31"
+        "bun.lock#371"
       ]
     },
     {
@@ -11645,52 +10952,37 @@
     {
       "purl": "pkg:npm/react-colorful@5.6.1",
       "evidence": [
-        "apps/dashboard/package.json#63",
         "bun.lock#106"
       ]
     },
     {
       "purl": "pkg:npm/react-day-picker@9.8.0",
       "evidence": [
-        "bun.lock#502",
-        "packages/ui/package.json#115"
+        "bun.lock#502"
       ]
     },
     {
       "purl": "pkg:npm/react-dom@19.1.1",
       "evidence": [
-        "apps/dashboard/package.json#62",
-        "apps/desktop/package.json#28",
-        "apps/website/package.json#28",
-        "bun.lock#107",
-        "packages/ui/package.json#127"
+        "bun.lock#107"
       ]
     },
     {
       "purl": "pkg:npm/react-dropzone@14.3.8",
       "evidence": [
-        "apps/dashboard/package.json#64",
         "bun.lock#108"
       ]
     },
     {
       "purl": "pkg:npm/react-email@4.0.16",
       "evidence": [
-        "bun.lock#310",
-        "packages/email/package.json#27"
+        "bun.lock#310"
       ]
     },
     {
       "purl": "pkg:npm/react-hls-player@3.0.7",
       "evidence": [
-        "apps/website/package.json#29",
         "bun.lock#202"
-      ]
-    },
-    {
-      "purl": "pkg:npm/react-hook-form@7.57.0",
-      "evidence": [
-        "apps/dashboard/package.json#65"
       ]
     },
     {
@@ -11702,21 +10994,18 @@
     {
       "purl": "pkg:npm/react-hotkeys-hook@5.1.0",
       "evidence": [
-        "apps/dashboard/package.json#66",
         "bun.lock#110"
       ]
     },
     {
       "purl": "pkg:npm/react-icons@5.5.0",
       "evidence": [
-        "bun.lock#503",
-        "packages/ui/package.json#116"
+        "bun.lock#503"
       ]
     },
     {
       "purl": "pkg:npm/react-intersection-observer@9.16.0",
       "evidence": [
-        "apps/dashboard/package.json#67",
         "bun.lock#111"
       ]
     },
@@ -11736,28 +11025,19 @@
     {
       "purl": "pkg:npm/react-markdown@10.1.0",
       "evidence": [
-        "apps/dashboard/package.json#68",
         "bun.lock#112"
       ]
     },
     {
       "purl": "pkg:npm/react-number-format@5.4.4",
       "evidence": [
-        "bun.lock#504",
-        "packages/ui/package.json#117"
+        "bun.lock#504"
       ]
     },
     {
       "purl": "pkg:npm/react-pdf@9.2.1",
       "evidence": [
-        "apps/dashboard/package.json#69",
         "bun.lock#113"
-      ]
-    },
-    {
-      "purl": "pkg:npm/react-plaid-link@4.0.1",
-      "evidence": [
-        "apps/dashboard/package.json#70"
       ]
     },
     {
@@ -11817,8 +11097,6 @@
     {
       "purl": "pkg:npm/react-use-draggable-scroll@0.4.7",
       "evidence": [
-        "apps/dashboard/package.json#71",
-        "apps/website/package.json#30",
         "bun.lock#115"
       ]
     },
@@ -11837,12 +11115,7 @@
     {
       "purl": "pkg:npm/react@19.1.1",
       "evidence": [
-        "apps/dashboard/package.json#61",
-        "apps/desktop/package.json#27",
-        "apps/website/package.json#27",
-        "bun.lock#105",
-        "packages/supabase/package.json#16",
-        "packages/ui/package.json#126"
+        "bun.lock#105"
       ]
     },
     {
@@ -11912,13 +11185,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/recharts@2.15.3",
-      "evidence": [
-        "apps/dashboard/package.json#72",
-        "packages/ui/package.json#118"
-      ]
-    },
-    {
       "purl": "pkg:npm/recharts@2.15.4",
       "evidence": [
         "bun.lock#116"
@@ -11951,8 +11217,7 @@
     {
       "purl": "pkg:npm/redis@5.8.2",
       "evidence": [
-        "bun.lock#236",
-        "packages/cache/package.json#15"
+        "bun.lock#236"
       ]
     },
     {
@@ -12112,15 +11377,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/resend@4.6.0",
-      "evidence": [
-        "apps/api/package.json#47",
-        "apps/dashboard/package.json#73",
-        "apps/website/package.json#31",
-        "packages/notifications/package.json#21"
-      ]
-    },
-    {
       "purl": "pkg:npm/resend@4.8.0",
       "evidence": [
         "bun.lock#47"
@@ -12168,8 +11424,7 @@
     {
       "purl": "pkg:npm/responsive-react-email@0.0.5",
       "evidence": [
-        "bun.lock#311",
-        "packages/email/package.json#28"
+        "bun.lock#311"
       ]
     },
     {
@@ -12450,10 +11705,7 @@
     {
       "purl": "pkg:npm/server-only@0.0.1",
       "evidence": [
-        "apps/dashboard/package.json#74",
-        "apps/website/package.json#32",
-        "bun.lock#118",
-        "packages/supabase/package.json#17"
+        "bun.lock#118"
       ]
     },
     {
@@ -12502,10 +11754,7 @@
     {
       "purl": "pkg:npm/sharp@0.34.1",
       "evidence": [
-        "apps/dashboard/package.json#75",
-        "apps/website/package.json#33",
-        "bun.lock#119",
-        "packages/jobs/package.json#29"
+        "bun.lock#119"
       ]
     },
     {
@@ -12639,13 +11888,6 @@
       "purl": "pkg:npm/snake-case@3.0.4",
       "evidence": [
         "bun.lock#3851"
-      ]
-    },
-    {
-      "purl": "pkg:npm/snakecase-keys@8.0.1",
-      "evidence": [
-        "apps/api/package.json#48",
-        "packages/db/package.json#36"
       ]
     },
     {
@@ -12958,14 +12200,7 @@
     {
       "purl": "pkg:npm/sugar-high@0.9.3",
       "evidence": [
-        "apps/website/package.json#34",
         "bun.lock#207"
-      ]
-    },
-    {
-      "purl": "pkg:npm/supabase@2.34.3",
-      "evidence": [
-        "packages/supabase/package.json#18"
       ]
     },
     {
@@ -12983,7 +12218,6 @@
     {
       "purl": "pkg:npm/superjson@2.2.2",
       "evidence": [
-        "apps/api/package.json#49",
         "bun.lock#49"
       ]
     },
@@ -13028,21 +12262,13 @@
     {
       "purl": "pkg:npm/tailwind-merge@2.5.3",
       "evidence": [
-        "bun.lock#506",
-        "packages/ui/package.json#119"
+        "bun.lock#506"
       ]
     },
     {
       "purl": "pkg:npm/tailwindcss-animate@1.0.7",
       "evidence": [
-        "bun.lock#508",
-        "packages/ui/package.json#121"
-      ]
-    },
-    {
-      "purl": "pkg:npm/tailwindcss@3.4.13",
-      "evidence": [
-        "packages/ui/package.json#120"
+        "bun.lock#508"
       ]
     },
     {
@@ -13237,8 +12463,7 @@
     {
       "purl": "pkg:npm/trigger.dev@4.0.1",
       "evidence": [
-        "bun.lock#396",
-        "packages/jobs/package.json#27"
+        "bun.lock#396"
       ]
     },
     {
@@ -13352,14 +12577,12 @@
     {
       "purl": "pkg:npm/turbo@2.5.6",
       "evidence": [
-        "bun.lock#9",
-        "package.json#27"
+        "bun.lock#9"
       ]
     },
     {
       "purl": "pkg:npm/tus-js-client@4.3.1",
       "evidence": [
-        "apps/dashboard/package.json#76",
         "bun.lock#120"
       ]
     },
@@ -13430,27 +12653,7 @@
     {
       "purl": "pkg:npm/typescript@5.9.2",
       "evidence": [
-        "apps/dashboard/package.json#89",
-        "apps/desktop/package.json#34",
-        "bun.lock#10",
-        "package.json#28",
-        "packages/app-store/package.json#22",
-        "packages/categories/package.json#28",
-        "packages/email/package.json#31",
-        "packages/engine-client/package.json#10",
-        "packages/events/package.json#18",
-        "packages/location/package.json#22",
-        "packages/logger/package.json#16",
-        "packages/notifications/package.json#26",
-        "packages/supabase/package.json#22",
-        "packages/ui/package.json#128",
-        "packages/utils/package.json#14"
-      ]
-    },
-    {
-      "purl": "pkg:npm/typesense@2.0.3",
-      "evidence": [
-        "apps/engine/package.json#21"
+        "bun.lock#10"
       ]
     },
     {
@@ -13676,12 +12879,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/unpdf@1.1.0",
-      "evidence": [
-        "packages/documents/package.json#31"
-      ]
-    },
-    {
       "purl": "pkg:npm/unpdf@1.2.2",
       "evidence": [
         "bun.lock#293"
@@ -13750,7 +12947,6 @@
     {
       "purl": "pkg:npm/use-places-autocomplete@4.0.1",
       "evidence": [
-        "apps/dashboard/package.json#77",
         "bun.lock#121"
       ]
     },
@@ -13769,7 +12965,6 @@
     {
       "purl": "pkg:npm/usehooks-ts@3.1.1",
       "evidence": [
-        "apps/dashboard/package.json#78",
         "bun.lock#122"
       ]
     },
@@ -13804,9 +12999,7 @@
     {
       "purl": "pkg:npm/uuid@11.1.0",
       "evidence": [
-        "apps/api/package.json#50",
-        "bun.lock#50",
-        "packages/import/package.json#16"
+        "bun.lock#50"
       ]
     },
     {
@@ -13838,8 +13031,7 @@
     {
       "purl": "pkg:npm/vaul@1.1.2",
       "evidence": [
-        "bun.lock#509",
-        "packages/ui/package.json#122"
+        "bun.lock#509"
       ]
     },
     {
@@ -13876,12 +13068,6 @@
       "purl": "pkg:npm/vite-compatible-readable-stream@3.6.1",
       "evidence": [
         "bun.lock#4175"
-      ]
-    },
-    {
-      "purl": "pkg:npm/vite@7.1.3",
-      "evidence": [
-        "apps/desktop/package.json#7"
       ]
     },
     {
@@ -14011,21 +13197,9 @@
       ]
     },
     {
-      "purl": "pkg:npm/workers-ai-provider@0.6.1",
-      "evidence": [
-        "apps/engine/package.json#22"
-      ]
-    },
-    {
       "purl": "pkg:npm/workers-ai-provider@0.6.5",
       "evidence": [
         "bun.lock#175"
-      ]
-    },
-    {
-      "purl": "pkg:npm/wrangler@4.27.0",
-      "evidence": [
-        "apps/engine/package.json#28"
       ]
     },
     {
@@ -14118,7 +13292,6 @@
     {
       "purl": "pkg:npm/xior@0.7.8",
       "evidence": [
-        "apps/engine/package.json#23",
         "bun.lock#176"
       ]
     },
@@ -14295,7 +13468,6 @@
     {
       "purl": "pkg:npm/zod-openapi@4.2.4",
       "evidence": [
-        "apps/api/package.json#52",
         "bun.lock#52"
       ]
     },
@@ -14340,13 +13512,7 @@
     {
       "purl": "pkg:npm/zod@3.25.64",
       "evidence": [
-        "apps/api/package.json#51",
-        "apps/dashboard/package.json#79",
-        "apps/engine/package.json#24",
-        "bun.lock#51",
-        "packages/app-store/package.json#17",
-        "packages/inbox/package.json#22",
-        "packages/notifications/package.json#22"
+        "bun.lock#51"
       ]
     },
     {
@@ -14373,15 +13539,12 @@
         "bun.lock#4301",
         "bun.lock#4371",
         "bun.lock#4381",
-        "bun.lock#4917",
-        "packages/categories/package.json#21",
-        "packages/documents/package.json#32"
+        "bun.lock#4917"
       ]
     },
     {
       "purl": "pkg:npm/zustand@5.0.8",
       "evidence": [
-        "apps/dashboard/package.json#80",
         "bun.lock#124"
       ]
     },
