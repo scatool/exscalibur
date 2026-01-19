@@ -1,6 +1,3342 @@
 {
   "packages": [
     {
+      "purl": "pkg:cargo/addr2line@0.24.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#23"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/adler2@2.0.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#32"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/aho-corasick@1.1.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#38"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/alloc-no-stdlib@2.0.4",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#47"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/alloc-stdlib@0.2.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#53"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/android_system_properties@0.1.5",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#68"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/android-tzdata@0.1.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#62"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/anyhow@1.0.98",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#77"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/arbitrary@1.4.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#83"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/ashpd@0.11.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#92"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/async-broadcast@0.7.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#110"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/async-channel@2.3.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#122"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/async-executor@1.13.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#134"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/async-io@2.4.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#148"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/async-lock@3.4.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#167"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/async-process@2.3.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#178"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/async-recursion@1.1.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#197"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/async-signal@0.2.11",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#208"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/async-task@4.7.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#226"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/async-trait@0.1.88",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#232"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/atk-sys@0.18.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#254"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/atk@0.18.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#243"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/atomic-waker@1.1.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#266"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/autocfg@1.4.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#272"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/backtrace@0.3.75",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#278"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/base64@0.21.7",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#293"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/base64@0.22.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#293"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/bit_field@0.10.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#305"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/bitflags@1.3.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#311"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/bitflags@2.9.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#311"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/block-buffer@0.10.4",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#326"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/block2@0.5.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#335"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/block2@0.6.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#335"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/blocking@1.6.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#353"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/brotli-decompressor@4.0.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#377"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/brotli@7.0.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#366"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/bumpalo@3.18.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#387"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/bytemuck@1.23.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#393"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/byteorder@1.5.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#399"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/bytes@1.10.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#405"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/cairo-rs@0.18.5",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#414"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/cairo-sys-rs@0.18.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#428"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/camino@1.1.10",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#439"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/cargo_metadata@0.19.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#457"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/cargo_toml@0.22.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#471"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/cargo-platform@0.1.9",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#448"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/cc@1.2.26",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#481"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/cesu8@1.1.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#490"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/cfb@0.7.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#496"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/cfg_aliases@0.2.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#523"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/cfg-expr@0.15.8",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#507"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/cfg-if@1.0.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#517"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/chrono@0.4.41",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#529"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/color_quant@1.1.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#542"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/combine@4.6.7",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#548"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/concurrent-queue@2.5.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#558"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/const-random-macro@0.1.16",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#576"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/const-random@0.1.18",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#567"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/convert_case@0.4.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#587"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/cookie@0.18.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#593"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/core-foundation-sys@0.8.7",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#613"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/core-foundation@0.10.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#603"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/core-graphics-types@0.2.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#632"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/core-graphics@0.24.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#619"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/cpufeatures@0.2.17",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#643"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/crc32fast@1.4.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#652"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/crossbeam-channel@0.5.15",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#661"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/crossbeam-deque@0.8.6",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#670"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/crossbeam-epoch@0.9.18",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#680"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/crossbeam-utils@0.8.21",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#689"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/crunchy@0.2.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#695"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/crypto-common@0.1.6",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#701"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/cssparser-macros@0.6.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#728"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/cssparser@0.27.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#711"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/ctor@0.2.9",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#738"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/darling_core@0.20.11",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#758"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/darling_macro@0.20.11",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#772"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/darling@0.20.11",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#748"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/data-url@0.3.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#783"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/deranged@0.4.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#789"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/derive_arbitrary@1.4.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#799"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/derive_more@0.99.20",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#810"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/digest@0.10.7",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#823"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/dirs-sys@0.5.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#842"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/dirs@6.0.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#833"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/dispatch@0.2.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#854"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/dispatch2@0.2.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#860"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/dispatch2@0.3.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#860"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/displaydoc@0.2.5",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#882"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/dlopen2_derive@0.4.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#905"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/dlopen2@0.7.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#893"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/dlv-list@0.5.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#916"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/dpi@0.1.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#925"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/dtoa-short@0.3.5",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#940"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/dtoa@1.0.10",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#934"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/dunce@1.0.5",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#949"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/dyn-clone@1.0.19",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#955"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/either@1.15.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#961"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/embed_plist@1.2.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#981"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/embed-resource@3.0.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#967"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/endi@1.1.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#987"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/enumflags2_derive@0.7.12",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1003"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/enumflags2@0.7.12",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#993"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/equivalent@1.0.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1014"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/erased-serde@0.4.6",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1020"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/errno@0.3.12",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1030"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/event-listener-strategy@0.5.4",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1051"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/event-listener@5.4.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1040"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/exr@1.73.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1061"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/fastrand@2.3.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1076"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/fdeflate@0.3.7",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1082"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/field-offset@0.3.6",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1091"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/filetime@0.2.25",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1101"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/flate2@1.1.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1113"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/fnv@1.0.7",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1123"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/foreign-types-macros@0.2.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1139"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/foreign-types-shared@0.3.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1150"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/foreign-types@0.5.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1129"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/form_urlencoded@1.2.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1156"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/futf@0.1.5",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1165"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/futures-channel@0.3.31",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1175"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/futures-core@0.3.31",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1184"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/futures-executor@0.3.31",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1190"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/futures-io@0.3.31",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1201"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/futures-lite@2.6.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1207"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/futures-macro@0.3.31",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1220"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/futures-sink@0.3.31",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1231"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/futures-task@0.3.31",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1237"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/futures-util@0.3.31",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1243"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/fxhash@0.2.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1260"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/gdk-pixbuf-sys@0.18.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1297"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/gdk-pixbuf@0.18.5",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1284"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/gdk-sys@0.18.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1310"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/gdk@0.18.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1269"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/gdkwayland-sys@0.18.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1327"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/gdkx11-sys@0.18.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1355"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/gdkx11@0.18.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1341"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/generic-array@0.14.7",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1368"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/gethostname@0.4.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1378"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/getrandom@0.1.16",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1388"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/getrandom@0.2.16",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1388"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/getrandom@0.3.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1388"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/gif@0.13.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1426"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/gimli@0.31.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1436"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/gio-sys@0.18.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1461"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/gio@0.18.4",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1442"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/glib-macros@0.18.5",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1497"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/glib-sys@0.18.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1511"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/glib@0.18.5",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1474"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/glob@0.3.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1521"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/global-hotkey@0.7.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1527"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/gobject-sys@0.18.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1545"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/gtk-sys@0.18.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1577"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/gtk@0.18.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1556"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/gtk3-macros@0.18.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1595"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/half@2.6.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1608"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/hashbrown@0.12.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1618"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/hashbrown@0.14.5",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1618"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/hashbrown@0.15.4",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1618"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/heck@0.4.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1636"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/heck@0.5.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1636"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/hermit-abi@0.5.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1648"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/hex@0.4.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1654"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/html5ever@0.26.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1660"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/http-body-util@0.1.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1695"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/http-body@1.0.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1685"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/http@1.3.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1674"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/httparse@1.10.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1708"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/hyper-rustls@0.27.7",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1733"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/hyper-util@0.1.14",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1750"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/hyper@1.6.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1714"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/iana-time-zone-haiku@0.1.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1789"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/iana-time-zone@0.1.63",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1774"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/ico@0.4.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1798"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/icu_collections@2.0.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1808"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/icu_locale_core@2.0.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1821"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/icu_normalizer_data@2.0.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1849"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/icu_normalizer@2.0.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1834"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/icu_properties_data@2.0.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1871"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/icu_properties@2.0.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1855"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/icu_provider@2.0.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1877"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/ident_case@1.0.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1894"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/idna_adapter@1.2.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1911"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/idna@1.0.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1900"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/image@0.24.9",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1921"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/indexmap@1.9.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1939"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/indexmap@2.9.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1939"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/infer@0.19.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1961"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/ipnet@2.11.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1970"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/iri-string@0.7.8",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1976"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/is-docker@0.2.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1986"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/is-wsl@0.4.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1995"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/itoa@0.4.8",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2005"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/itoa@1.0.15",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2005"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/javascriptcore-rs-sys@1.1.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2028"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/javascriptcore-rs@1.1.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2017"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/jni-sys@0.3.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2056"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/jni@0.21.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2040"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/jpeg-decoder@0.3.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2062"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/js-sys@0.3.77",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2071"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/json-patch@3.0.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2081"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/jsonptr@0.6.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2093"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/keyboard-types@0.7.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2103"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/kuchikiki@0.8.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2114"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/lazy_static@1.5.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2127"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/lebe@0.5.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2133"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/libappindicator-sys@0.9.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2152"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/libappindicator@0.9.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2139"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/libc@0.2.172",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2163"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/libloading@0.7.4",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2169"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/libredox@0.1.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2179"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/linux-raw-sys@0.4.15",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2190"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/linux-raw-sys@0.9.4",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2190"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/litemap@0.8.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2202"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/lock_api@0.4.13",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2208"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/log@0.4.27",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2218"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/lru-slab@0.1.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2224"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/mac@0.1.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2230"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/markup5ever@0.11.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2236"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/matches@0.1.10",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2250"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/memchr@2.7.4",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2256"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/memoffset@0.9.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2262"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/mime@0.3.17",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2271"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/minisign-verify@0.2.4",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2277"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/miniz_oxide@0.8.9",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2283"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/mio@1.0.4",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2293"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/muda@0.16.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2304"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/ndk-context@0.1.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2340"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/ndk-sys@0.6.0+11769913",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2346"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/ndk@0.9.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2325"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/new_debug_unreachable@1.0.6",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2355"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/nix@0.30.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2361"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/nodrop@0.1.14",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2374"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/num_enum_derive@0.7.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2404"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/num_enum@0.7.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2395"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/num-conv@0.1.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2380"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/num-traits@0.2.19",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2386"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc-sys@0.3.5",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2416"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2-app-kit@0.3.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2442"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2-cloud-kit@0.3.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2461"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2-core-data@0.3.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2472"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2-core-foundation@0.3.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2483"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2-core-graphics@0.3.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2494"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2-core-image@0.3.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2507"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2-encode@4.1.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2517"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2-exception-helper@0.1.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2523"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2-foundation@0.2.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2532"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2-foundation@0.3.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2532"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2-io-surface@0.3.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2557"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2-metal@0.2.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2568"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2-osa-kit@0.3.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2580"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2-quartz-core@0.2.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2592"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2-quartz-core@0.3.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2592"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2-ui-kit@0.3.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2616"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2-web-kit@0.3.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2628"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2@0.5.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2422"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2@0.6.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2422"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/object@0.36.7",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2642"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/once_cell@1.21.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2651"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/open@5.3.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2657"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/option-ext@0.2.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2669"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/ordered-multimap@0.7.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2675"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/ordered-stream@0.2.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2685"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/osakit@0.3.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2695"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/pango-sys@0.18.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2722"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/pango@0.18.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2709"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/parking_lot_core@0.9.11",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2750"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/parking_lot@0.12.4",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2740"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/parking@2.2.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2734"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/pathdiff@0.2.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2763"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/percent-encoding@2.3.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2769"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/phf_codegen@0.10.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2805"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/phf_codegen@0.8.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2805"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/phf_generator@0.10.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2825"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/phf_generator@0.11.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2825"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/phf_generator@0.8.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2825"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/phf_macros@0.11.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2855"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/phf_macros@0.8.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2855"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/phf_shared@0.10.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2882"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/phf_shared@0.11.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2882"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/phf_shared@0.8.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2882"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/phf@0.10.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2775"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/phf@0.11.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2775"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/phf@0.8.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2775"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/pin-project-lite@0.2.16",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2909"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/pin-utils@0.1.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2915"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/piper@0.2.4",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2921"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/pkg-config@0.3.32",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2932"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/plist@1.7.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2938"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/png@0.17.16",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2951"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/polling@3.8.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2964"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/potential_utf@0.1.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2979"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/powerfmt@0.2.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2988"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/ppv-lite86@0.2.21",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2994"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/precomputed-hash@0.1.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3003"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/proc-macro-crate@1.3.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3009"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/proc-macro-crate@2.0.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3009"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/proc-macro-crate@3.3.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3009"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/proc-macro-error-attr@1.0.4",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3050"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/proc-macro-error@1.0.4",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3037"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/proc-macro-hack@0.5.20+deprecated",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3061"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/proc-macro2@1.0.95",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3067"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/qoi@0.4.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3076"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/quick-xml@0.32.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3085"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/quinn-proto@0.11.12",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3114"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/quinn-udp@0.5.12",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3135"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/quinn@0.11.8",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3094"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/quote@1.0.40",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3149"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/r-efi@5.2.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3158"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/rand_chacha@0.2.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3199"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/rand_chacha@0.3.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3199"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/rand_chacha@0.9.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3199"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/rand_core@0.5.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3229"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/rand_core@0.6.4",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3229"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/rand_core@0.9.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3229"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/rand_hc@0.2.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3256"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/rand_pcg@0.2.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3265"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/rand@0.7.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3164"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/rand@0.8.5",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3164"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/rand@0.9.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3164"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/raw-window-handle@0.6.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3274"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/rayon-core@1.12.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3290"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/rayon@1.10.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3280"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/redox_syscall@0.5.12",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3300"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/redox_users@0.5.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3309"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/regex-automata@0.4.9",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3332"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/regex-syntax@0.8.5",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3343"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/regex@1.11.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3320"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/reqwest@0.12.20",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3349"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/rfd@0.15.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3390"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/ring@0.17.14",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3415"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/rust-ini@0.21.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3429"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/rustc_version@0.4.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3452"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/rustc-demangle@0.1.25",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3440"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/rustc-hash@2.1.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3446"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/rustix@0.38.44",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3461"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/rustix@1.0.7",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3461"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/rustls-pki-types@1.12.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3501"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/rustls-webpki@0.103.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3511"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/rustls@0.23.27",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3487"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/rustversion@1.0.21",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3522"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/ryu@1.0.20",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3528"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/same-file@1.0.6",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3534"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/schemars_derive@0.8.22",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3558"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/schemars@0.8.22",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3543"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/scopeguard@1.2.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3570"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/selectors@0.22.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3576"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/semver@1.0.26",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3596"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/serde_derive_internals@0.29.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3636"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/serde_derive@1.0.219",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3625"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/serde_json@1.0.140",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3647"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/serde_repr@0.1.20",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3659"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/serde_spanned@0.6.9",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3670"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/serde_urlencoded@0.7.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3679"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/serde_with_macros@3.12.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3709"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/serde_with@3.12.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3691"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/serde-untagged@0.1.7",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3614"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/serde@1.0.219",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3605"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/serialize-to-javascript-impl@0.1.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3732"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/serialize-to-javascript@0.1.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3721"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/servo_arc@0.1.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3743"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/sha2@0.10.9",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3753"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/shlex@1.3.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3764"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/signal-hook-registry@1.4.5",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3770"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/simd-adler32@0.3.7",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3779"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/siphasher@0.3.11",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3785"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/siphasher@1.0.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3785"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/slab@0.4.9",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3797"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/smallvec@1.15.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3806"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/socket2@0.5.10",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3812"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/softbuffer@0.4.6",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3822"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/soup3-sys@0.5.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3857"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/soup3@0.5.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3844"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/stable_deref_trait@1.2.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3870"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/static_assertions@1.1.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3876"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/string_cache_codegen@0.5.4",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3895"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/string_cache@0.8.9",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3882"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/strsim@0.11.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3907"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/subtle@2.6.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3913"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/swift-rs@1.0.7",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3919"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/syn@1.0.109",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3930"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/syn@2.0.102",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3930"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/sync_wrapper@1.0.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3952"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/synstructure@0.13.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3961"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/system-deps@6.2.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3972"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tao-macros@0.1.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4024"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tao@0.33.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3985"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tar@0.4.44",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4035"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/target-lexicon@0.12.16",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4046"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tauri-build@2.2.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4104"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tauri-codegen@2.2.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4126"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tauri-macros@2.2.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4153"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tauri-plugin-deep-link@2.3.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4184"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tauri-plugin-dialog@2.2.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4204"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tauri-plugin-fs@2.3.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4222"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tauri-plugin-global-shortcut@2.2.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4244"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tauri-plugin-opener@2.2.7",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4259"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tauri-plugin-process@2.2.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4281"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tauri-plugin-updater@2.7.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4291"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tauri-plugin@2.2.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4167"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tauri-runtime-wry@2.6.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4345"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tauri-runtime@2.6.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4323"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tauri-utils@2.4.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4372"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tauri-winres@0.3.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4410"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tauri@2.5.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4052"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tempfile@3.20.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4421"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tendril@0.4.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4434"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/thin-slice@0.1.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4445"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/thiserror-impl@1.0.69",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4469"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/thiserror-impl@2.0.12",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4469"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/thiserror@1.0.69",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4451"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/thiserror@2.0.12",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4451"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tiff@0.9.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4491"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/time-core@0.1.4",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4517"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/time-macros@0.2.22",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4523"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/time@0.3.41",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4502"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tiny-keccak@2.0.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4533"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tinystr@0.8.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4542"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tinyvec_macros@0.1.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4561"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tinyvec@1.9.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4552"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tokio-rustls@0.26.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4584"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tokio-util@0.7.15",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4594"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tokio@1.45.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4567"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/toml_datetime@0.6.11",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4619"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/toml_edit@0.19.15",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4628"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/toml_edit@0.20.7",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4628"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/toml_edit@0.22.27",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4628"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/toml_write@0.1.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4664"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/toml@0.8.23",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4607"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tower-http@0.6.6",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4685"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tower-layer@0.3.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4703"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tower-service@0.3.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4709"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tower@0.5.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4670"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tracing-attributes@0.1.29",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4726"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tracing-core@0.1.34",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4737"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tracing@0.1.41",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4715"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tray-icon@0.20.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4746"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/trim-in-place@0.1.7",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4768"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/try-lock@0.2.5",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4774"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/typeid@1.0.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4780"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/typenum@1.18.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4786"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/uds_windows@1.1.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4792"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/unic-char-property@0.9.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4803"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/unic-char-range@0.9.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4812"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/unic-common@0.9.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4818"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/unic-ucd-ident@0.9.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4824"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/unic-ucd-version@0.9.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4835"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/unicode-ident@1.0.18",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4844"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/unicode-segmentation@1.12.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4850"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/untrusted@0.9.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4856"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/url@2.5.4",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4862"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/urlpattern@0.3.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4874"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/utf-8@0.7.6",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4886"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/utf8_iter@1.0.4",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4892"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/uuid@1.17.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4898"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/version_check@0.9.5",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4916"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/version-compare@0.2.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4910"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/vswhom-sys@0.1.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4932"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/vswhom@0.1.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4922"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/walkdir@2.5.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4942"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/want@0.3.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4952"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/wasi@0.11.1+wasi-snapshot-preview1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4961"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/wasi@0.14.2+wasi-0.2.4",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4961"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/wasi@0.9.0+wasi-snapshot-preview1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4961"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/wasm-bindgen-backend@0.2.100",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4994"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/wasm-bindgen-futures@0.4.50",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5008"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/wasm-bindgen-macro-support@0.2.100",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5031"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/wasm-bindgen-macro@0.2.100",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5021"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/wasm-bindgen-shared@0.2.100",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5044"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/wasm-bindgen@0.2.100",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4982"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/wasm-streams@0.4.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5053"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/web-sys@0.3.77",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5066"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/web-time@1.1.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5076"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/webkit2gtk-sys@2.0.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5110"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/webkit2gtk@2.0.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5086"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/webpki-roots@1.0.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5130"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/webview2-com-macros@0.8.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5153"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/webview2-com-sys@0.37.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5164"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/webview2-com@0.37.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5139"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/weezl@0.1.10",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5175"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/winapi-i686-pc-windows-gnu@0.4.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5191"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/winapi-util@0.1.9",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5197"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/winapi-x86_64-pc-windows-gnu@0.4.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5206"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/winapi@0.3.9",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5181"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/window-vibrancy@0.6.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5212"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_aarch64_gnullvm@0.42.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5431"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_aarch64_gnullvm@0.48.5",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5431"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_aarch64_gnullvm@0.52.6",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5431"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_aarch64_msvc@0.42.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5449"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_aarch64_msvc@0.48.5",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5449"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_aarch64_msvc@0.52.6",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5449"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_i686_gnu@0.42.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5467"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_i686_gnu@0.48.5",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5467"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_i686_gnu@0.52.6",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5467"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_i686_gnullvm@0.52.6",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5485"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_i686_msvc@0.42.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5491"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_i686_msvc@0.48.5",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5491"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_i686_msvc@0.52.6",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5491"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_x86_64_gnu@0.42.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5509"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_x86_64_gnu@0.48.5",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5509"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_x86_64_gnu@0.52.6",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5509"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_x86_64_gnullvm@0.42.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5527"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_x86_64_gnullvm@0.48.5",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5527"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_x86_64_gnullvm@0.52.6",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5527"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_x86_64_msvc@0.42.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5545"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_x86_64_msvc@0.48.5",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5545"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_x86_64_msvc@0.52.6",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5545"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-collections@0.2.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5240"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-core@0.61.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5249"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-future@0.2.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5262"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-implement@0.60.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5273"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-interface@0.59.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5284"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-link@0.1.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5295"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-numerics@0.2.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5301"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-registry@0.5.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5311"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-result@0.3.4",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5322"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-strings@0.4.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5331"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-sys@0.45.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5340"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-sys@0.52.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5340"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-sys@0.59.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5340"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-targets@0.42.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5367"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-targets@0.48.5",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5367"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-targets@0.52.6",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5367"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-threading@0.1.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5413"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-version@0.1.4",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5422"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows@0.61.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5227"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/winnow@0.5.40",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5563"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/winnow@0.7.11",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5563"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/winreg@0.55.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5581"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/wit-bindgen-rt@0.39.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5591"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/writeable@0.6.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5600"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/wry@0.51.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5606"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/x11-dl@2.21.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5660"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/x11@2.21.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5650"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/x11rb-protocol@0.13.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5682"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/x11rb@0.13.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5671"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/xattr@1.5.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5688"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/xkeysym@0.2.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5698"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/yoke-derive@0.8.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5716"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/yoke@0.8.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5704"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/zbus_macros@5.7.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5762"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/zbus_names@4.2.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5777"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/zbus@5.7.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5728"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/zerocopy-derive@0.8.25",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5798"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/zerocopy@0.8.25",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5789"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/zerofrom-derive@0.1.6",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5818"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/zerofrom@0.1.6",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5809"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/zeroize@1.8.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5830"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/zerotrie@0.2.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5836"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/zerovec-derive@0.11.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5858"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/zerovec@0.11.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5847"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/zip@2.4.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5869"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/zune-inflate@0.2.54",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5884"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/zvariant_derive@5.5.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5908"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/zvariant_utils@3.2.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5921"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/zvariant@5.5.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5893"
+      ]
+    },
+    {
       "purl": "pkg:npm/%40ai-sdk/gateway@1.0.15",
       "evidence": [
         "bun.lock#527"
@@ -13557,6 +16893,11 @@
   ],
   "subprojects": [
     {
+      "purl": "pkg:cargo/Midday@0.3.0",
+      "definitionFile": "apps/desktop/src-tauri/Cargo.toml",
+      "scopes": []
+    },
+    {
       "purl": "pkg:npm/%40midday/app-store@1.0.0",
       "definitionFile": "packages/app-store/package.json",
       "scopes": [
@@ -14106,6 +17447,3788 @@
     }
   ],
   "relationships": [
+    {
+      "from": "pkg:cargo/addr2line@0.24.2",
+      "to": [
+        "pkg:cargo/gimli@0.31.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/aho-corasick@1.1.3",
+      "to": [
+        "pkg:cargo/memchr@2.7.4"
+      ]
+    },
+    {
+      "from": "pkg:cargo/alloc-stdlib@0.2.2",
+      "to": [
+        "pkg:cargo/alloc-no-stdlib@2.0.4"
+      ]
+    },
+    {
+      "from": "pkg:cargo/android_system_properties@0.1.5",
+      "to": [
+        "pkg:cargo/libc@0.2.172"
+      ]
+    },
+    {
+      "from": "pkg:cargo/arbitrary@1.4.1",
+      "to": [
+        "pkg:cargo/derive_arbitrary@1.4.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/ashpd@0.11.0",
+      "to": [
+        "pkg:cargo/enumflags2@0.7.12",
+        "pkg:cargo/futures-channel@0.3.31",
+        "pkg:cargo/futures-util@0.3.31",
+        "pkg:cargo/rand@0.9.1",
+        "pkg:cargo/raw-window-handle@0.6.2",
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/serde_repr@0.1.20",
+        "pkg:cargo/tokio@1.45.1",
+        "pkg:cargo/url@2.5.4",
+        "pkg:cargo/zbus@5.7.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/async-broadcast@0.7.2",
+      "to": [
+        "pkg:cargo/event-listener-strategy@0.5.4",
+        "pkg:cargo/event-listener@5.4.0",
+        "pkg:cargo/futures-core@0.3.31",
+        "pkg:cargo/pin-project-lite@0.2.16"
+      ]
+    },
+    {
+      "from": "pkg:cargo/async-channel@2.3.1",
+      "to": [
+        "pkg:cargo/concurrent-queue@2.5.0",
+        "pkg:cargo/event-listener-strategy@0.5.4",
+        "pkg:cargo/futures-core@0.3.31",
+        "pkg:cargo/pin-project-lite@0.2.16"
+      ]
+    },
+    {
+      "from": "pkg:cargo/async-executor@1.13.2",
+      "to": [
+        "pkg:cargo/async-task@4.7.1",
+        "pkg:cargo/concurrent-queue@2.5.0",
+        "pkg:cargo/fastrand@2.3.0",
+        "pkg:cargo/futures-lite@2.6.0",
+        "pkg:cargo/pin-project-lite@0.2.16",
+        "pkg:cargo/slab@0.4.9"
+      ]
+    },
+    {
+      "from": "pkg:cargo/async-io@2.4.1",
+      "to": [
+        "pkg:cargo/async-lock@3.4.0",
+        "pkg:cargo/cfg-if@1.0.1",
+        "pkg:cargo/concurrent-queue@2.5.0",
+        "pkg:cargo/futures-io@0.3.31",
+        "pkg:cargo/futures-lite@2.6.0",
+        "pkg:cargo/parking@2.2.1",
+        "pkg:cargo/polling@3.8.0",
+        "pkg:cargo/rustix@1.0.7",
+        "pkg:cargo/slab@0.4.9",
+        "pkg:cargo/tracing@0.1.41",
+        "pkg:cargo/windows-sys@0.59.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/async-lock@3.4.0",
+      "to": [
+        "pkg:cargo/event-listener-strategy@0.5.4",
+        "pkg:cargo/event-listener@5.4.0",
+        "pkg:cargo/pin-project-lite@0.2.16"
+      ]
+    },
+    {
+      "from": "pkg:cargo/async-process@2.3.1",
+      "to": [
+        "pkg:cargo/async-channel@2.3.1",
+        "pkg:cargo/async-io@2.4.1",
+        "pkg:cargo/async-lock@3.4.0",
+        "pkg:cargo/async-signal@0.2.11",
+        "pkg:cargo/async-task@4.7.1",
+        "pkg:cargo/blocking@1.6.1",
+        "pkg:cargo/cfg-if@1.0.1",
+        "pkg:cargo/event-listener@5.4.0",
+        "pkg:cargo/futures-lite@2.6.0",
+        "pkg:cargo/rustix@1.0.7",
+        "pkg:cargo/tracing@0.1.41"
+      ]
+    },
+    {
+      "from": "pkg:cargo/async-recursion@1.1.1",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102"
+      ]
+    },
+    {
+      "from": "pkg:cargo/async-signal@0.2.11",
+      "to": [
+        "pkg:cargo/async-io@2.4.1",
+        "pkg:cargo/async-lock@3.4.0",
+        "pkg:cargo/atomic-waker@1.1.2",
+        "pkg:cargo/cfg-if@1.0.1",
+        "pkg:cargo/futures-core@0.3.31",
+        "pkg:cargo/futures-io@0.3.31",
+        "pkg:cargo/rustix@1.0.7",
+        "pkg:cargo/signal-hook-registry@1.4.5",
+        "pkg:cargo/slab@0.4.9",
+        "pkg:cargo/windows-sys@0.59.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/async-trait@0.1.88",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102"
+      ]
+    },
+    {
+      "from": "pkg:cargo/atk-sys@0.18.2",
+      "to": [
+        "pkg:cargo/glib-sys@0.18.1",
+        "pkg:cargo/gobject-sys@0.18.0",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/system-deps@6.2.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/atk@0.18.2",
+      "to": [
+        "pkg:cargo/atk-sys@0.18.2",
+        "pkg:cargo/glib@0.18.5",
+        "pkg:cargo/libc@0.2.172"
+      ]
+    },
+    {
+      "from": "pkg:cargo/backtrace@0.3.75",
+      "to": [
+        "pkg:cargo/addr2line@0.24.2",
+        "pkg:cargo/cfg-if@1.0.1",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/miniz_oxide@0.8.9",
+        "pkg:cargo/object@0.36.7",
+        "pkg:cargo/rustc-demangle@0.1.25",
+        "pkg:cargo/windows-targets@0.52.6"
+      ]
+    },
+    {
+      "from": "pkg:cargo/bitflags@2.9.1",
+      "to": [
+        "pkg:cargo/serde@1.0.219"
+      ]
+    },
+    {
+      "from": "pkg:cargo/block-buffer@0.10.4",
+      "to": [
+        "pkg:cargo/generic-array@0.14.7"
+      ]
+    },
+    {
+      "from": "pkg:cargo/block2@0.5.1",
+      "to": [
+        "pkg:cargo/objc2@0.5.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/block2@0.6.1",
+      "to": [
+        "pkg:cargo/objc2@0.6.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/blocking@1.6.1",
+      "to": [
+        "pkg:cargo/async-channel@2.3.1",
+        "pkg:cargo/async-task@4.7.1",
+        "pkg:cargo/futures-io@0.3.31",
+        "pkg:cargo/futures-lite@2.6.0",
+        "pkg:cargo/piper@0.2.4"
+      ]
+    },
+    {
+      "from": "pkg:cargo/brotli-decompressor@4.0.3",
+      "to": [
+        "pkg:cargo/alloc-no-stdlib@2.0.4",
+        "pkg:cargo/alloc-stdlib@0.2.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/brotli@7.0.0",
+      "to": [
+        "pkg:cargo/alloc-no-stdlib@2.0.4",
+        "pkg:cargo/alloc-stdlib@0.2.2",
+        "pkg:cargo/brotli-decompressor@4.0.3"
+      ]
+    },
+    {
+      "from": "pkg:cargo/bytes@1.10.1",
+      "to": [
+        "pkg:cargo/serde@1.0.219"
+      ]
+    },
+    {
+      "from": "pkg:cargo/cairo-rs@0.18.5",
+      "to": [
+        "pkg:cargo/bitflags@2.9.1",
+        "pkg:cargo/cairo-sys-rs@0.18.2",
+        "pkg:cargo/glib@0.18.5",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/once_cell@1.21.3",
+        "pkg:cargo/thiserror@1.0.69"
+      ]
+    },
+    {
+      "from": "pkg:cargo/cairo-sys-rs@0.18.2",
+      "to": [
+        "pkg:cargo/glib-sys@0.18.1",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/system-deps@6.2.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/camino@1.1.10",
+      "to": [
+        "pkg:cargo/serde@1.0.219"
+      ]
+    },
+    {
+      "from": "pkg:cargo/cargo_metadata@0.19.2",
+      "to": [
+        "pkg:cargo/camino@1.1.10",
+        "pkg:cargo/cargo-platform@0.1.9",
+        "pkg:cargo/semver@1.0.26",
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/serde_json@1.0.140",
+        "pkg:cargo/thiserror@2.0.12"
+      ]
+    },
+    {
+      "from": "pkg:cargo/cargo_toml@0.22.1",
+      "to": [
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/toml@0.8.23"
+      ]
+    },
+    {
+      "from": "pkg:cargo/cargo-platform@0.1.9",
+      "to": [
+        "pkg:cargo/serde@1.0.219"
+      ]
+    },
+    {
+      "from": "pkg:cargo/cc@1.2.26",
+      "to": [
+        "pkg:cargo/shlex@1.3.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/cfb@0.7.3",
+      "to": [
+        "pkg:cargo/byteorder@1.5.0",
+        "pkg:cargo/fnv@1.0.7",
+        "pkg:cargo/uuid@1.17.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/cfg-expr@0.15.8",
+      "to": [
+        "pkg:cargo/smallvec@1.15.1",
+        "pkg:cargo/target-lexicon@0.12.16"
+      ]
+    },
+    {
+      "from": "pkg:cargo/chrono@0.4.41",
+      "to": [
+        "pkg:cargo/android-tzdata@0.1.1",
+        "pkg:cargo/iana-time-zone@0.1.63",
+        "pkg:cargo/num-traits@0.2.19",
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/windows-link@0.1.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/combine@4.6.7",
+      "to": [
+        "pkg:cargo/bytes@1.10.1",
+        "pkg:cargo/memchr@2.7.4"
+      ]
+    },
+    {
+      "from": "pkg:cargo/concurrent-queue@2.5.0",
+      "to": [
+        "pkg:cargo/crossbeam-utils@0.8.21"
+      ]
+    },
+    {
+      "from": "pkg:cargo/const-random-macro@0.1.16",
+      "to": [
+        "pkg:cargo/getrandom@0.2.16",
+        "pkg:cargo/once_cell@1.21.3",
+        "pkg:cargo/tiny-keccak@2.0.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/const-random@0.1.18",
+      "to": [
+        "pkg:cargo/const-random-macro@0.1.16"
+      ]
+    },
+    {
+      "from": "pkg:cargo/cookie@0.18.1",
+      "to": [
+        "pkg:cargo/time@0.3.41",
+        "pkg:cargo/version_check@0.9.5"
+      ]
+    },
+    {
+      "from": "pkg:cargo/core-foundation@0.10.1",
+      "to": [
+        "pkg:cargo/core-foundation-sys@0.8.7",
+        "pkg:cargo/libc@0.2.172"
+      ]
+    },
+    {
+      "from": "pkg:cargo/core-graphics-types@0.2.0",
+      "to": [
+        "pkg:cargo/bitflags@2.9.1",
+        "pkg:cargo/core-foundation@0.10.1",
+        "pkg:cargo/libc@0.2.172"
+      ]
+    },
+    {
+      "from": "pkg:cargo/core-graphics@0.24.0",
+      "to": [
+        "pkg:cargo/bitflags@2.9.1",
+        "pkg:cargo/core-foundation@0.10.1",
+        "pkg:cargo/core-graphics-types@0.2.0",
+        "pkg:cargo/foreign-types@0.5.0",
+        "pkg:cargo/libc@0.2.172"
+      ]
+    },
+    {
+      "from": "pkg:cargo/cpufeatures@0.2.17",
+      "to": [
+        "pkg:cargo/libc@0.2.172"
+      ]
+    },
+    {
+      "from": "pkg:cargo/crc32fast@1.4.2",
+      "to": [
+        "pkg:cargo/cfg-if@1.0.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/crossbeam-channel@0.5.15",
+      "to": [
+        "pkg:cargo/crossbeam-utils@0.8.21"
+      ]
+    },
+    {
+      "from": "pkg:cargo/crossbeam-deque@0.8.6",
+      "to": [
+        "pkg:cargo/crossbeam-epoch@0.9.18",
+        "pkg:cargo/crossbeam-utils@0.8.21"
+      ]
+    },
+    {
+      "from": "pkg:cargo/crossbeam-epoch@0.9.18",
+      "to": [
+        "pkg:cargo/crossbeam-utils@0.8.21"
+      ]
+    },
+    {
+      "from": "pkg:cargo/crypto-common@0.1.6",
+      "to": [
+        "pkg:cargo/generic-array@0.14.7",
+        "pkg:cargo/typenum@1.18.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/cssparser-macros@0.6.1",
+      "to": [
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102"
+      ]
+    },
+    {
+      "from": "pkg:cargo/cssparser@0.27.2",
+      "to": [
+        "pkg:cargo/cssparser-macros@0.6.1",
+        "pkg:cargo/dtoa-short@0.3.5",
+        "pkg:cargo/itoa@0.4.8",
+        "pkg:cargo/matches@0.1.10",
+        "pkg:cargo/phf@0.8.0",
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/smallvec@1.15.1",
+        "pkg:cargo/syn@1.0.109"
+      ]
+    },
+    {
+      "from": "pkg:cargo/ctor@0.2.9",
+      "to": [
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102"
+      ]
+    },
+    {
+      "from": "pkg:cargo/darling_core@0.20.11",
+      "to": [
+        "pkg:cargo/fnv@1.0.7",
+        "pkg:cargo/ident_case@1.0.1",
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/strsim@0.11.1",
+        "pkg:cargo/syn@2.0.102"
+      ]
+    },
+    {
+      "from": "pkg:cargo/darling_macro@0.20.11",
+      "to": [
+        "pkg:cargo/darling_core@0.20.11",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102"
+      ]
+    },
+    {
+      "from": "pkg:cargo/darling@0.20.11",
+      "to": [
+        "pkg:cargo/darling_core@0.20.11",
+        "pkg:cargo/darling_macro@0.20.11"
+      ]
+    },
+    {
+      "from": "pkg:cargo/deranged@0.4.0",
+      "to": [
+        "pkg:cargo/powerfmt@0.2.0",
+        "pkg:cargo/serde@1.0.219"
+      ]
+    },
+    {
+      "from": "pkg:cargo/derive_arbitrary@1.4.1",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102"
+      ]
+    },
+    {
+      "from": "pkg:cargo/derive_more@0.99.20",
+      "to": [
+        "pkg:cargo/convert_case@0.4.0",
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/rustc_version@0.4.1",
+        "pkg:cargo/syn@2.0.102"
+      ]
+    },
+    {
+      "from": "pkg:cargo/digest@0.10.7",
+      "to": [
+        "pkg:cargo/block-buffer@0.10.4",
+        "pkg:cargo/crypto-common@0.1.6"
+      ]
+    },
+    {
+      "from": "pkg:cargo/dirs-sys@0.5.0",
+      "to": [
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/option-ext@0.2.0",
+        "pkg:cargo/redox_users@0.5.0",
+        "pkg:cargo/windows-sys@0.59.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/dirs@6.0.0",
+      "to": [
+        "pkg:cargo/dirs-sys@0.5.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/dispatch2@0.2.0",
+      "to": [
+        "pkg:cargo/bitflags@2.9.1",
+        "pkg:cargo/block2@0.6.1",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/objc2@0.6.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/dispatch2@0.3.0",
+      "to": [
+        "pkg:cargo/bitflags@2.9.1",
+        "pkg:cargo/objc2@0.6.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/displaydoc@0.2.5",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102"
+      ]
+    },
+    {
+      "from": "pkg:cargo/dlopen2_derive@0.4.1",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102"
+      ]
+    },
+    {
+      "from": "pkg:cargo/dlopen2@0.7.0",
+      "to": [
+        "pkg:cargo/dlopen2_derive@0.4.1",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/once_cell@1.21.3",
+        "pkg:cargo/winapi@0.3.9"
+      ]
+    },
+    {
+      "from": "pkg:cargo/dlv-list@0.5.2",
+      "to": [
+        "pkg:cargo/const-random@0.1.18"
+      ]
+    },
+    {
+      "from": "pkg:cargo/dpi@0.1.2",
+      "to": [
+        "pkg:cargo/serde@1.0.219"
+      ]
+    },
+    {
+      "from": "pkg:cargo/dtoa-short@0.3.5",
+      "to": [
+        "pkg:cargo/dtoa@1.0.10"
+      ]
+    },
+    {
+      "from": "pkg:cargo/embed-resource@3.0.3",
+      "to": [
+        "pkg:cargo/cc@1.2.26",
+        "pkg:cargo/memchr@2.7.4",
+        "pkg:cargo/rustc_version@0.4.1",
+        "pkg:cargo/toml@0.8.23",
+        "pkg:cargo/vswhom@0.1.0",
+        "pkg:cargo/winreg@0.55.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/enumflags2_derive@0.7.12",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102"
+      ]
+    },
+    {
+      "from": "pkg:cargo/enumflags2@0.7.12",
+      "to": [
+        "pkg:cargo/enumflags2_derive@0.7.12",
+        "pkg:cargo/serde@1.0.219"
+      ]
+    },
+    {
+      "from": "pkg:cargo/erased-serde@0.4.6",
+      "to": [
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/typeid@1.0.3"
+      ]
+    },
+    {
+      "from": "pkg:cargo/errno@0.3.12",
+      "to": [
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/windows-sys@0.59.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/event-listener-strategy@0.5.4",
+      "to": [
+        "pkg:cargo/event-listener@5.4.0",
+        "pkg:cargo/pin-project-lite@0.2.16"
+      ]
+    },
+    {
+      "from": "pkg:cargo/event-listener@5.4.0",
+      "to": [
+        "pkg:cargo/concurrent-queue@2.5.0",
+        "pkg:cargo/parking@2.2.1",
+        "pkg:cargo/pin-project-lite@0.2.16"
+      ]
+    },
+    {
+      "from": "pkg:cargo/exr@1.73.0",
+      "to": [
+        "pkg:cargo/bit_field@0.10.2",
+        "pkg:cargo/half@2.6.0",
+        "pkg:cargo/lebe@0.5.2",
+        "pkg:cargo/miniz_oxide@0.8.9",
+        "pkg:cargo/rayon-core@1.12.1",
+        "pkg:cargo/smallvec@1.15.1",
+        "pkg:cargo/zune-inflate@0.2.54"
+      ]
+    },
+    {
+      "from": "pkg:cargo/fdeflate@0.3.7",
+      "to": [
+        "pkg:cargo/simd-adler32@0.3.7"
+      ]
+    },
+    {
+      "from": "pkg:cargo/field-offset@0.3.6",
+      "to": [
+        "pkg:cargo/memoffset@0.9.1",
+        "pkg:cargo/rustc_version@0.4.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/filetime@0.2.25",
+      "to": [
+        "pkg:cargo/cfg-if@1.0.1",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/libredox@0.1.3",
+        "pkg:cargo/windows-sys@0.59.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/flate2@1.1.2",
+      "to": [
+        "pkg:cargo/crc32fast@1.4.2",
+        "pkg:cargo/miniz_oxide@0.8.9"
+      ]
+    },
+    {
+      "from": "pkg:cargo/foreign-types-macros@0.2.3",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102"
+      ]
+    },
+    {
+      "from": "pkg:cargo/foreign-types@0.5.0",
+      "to": [
+        "pkg:cargo/foreign-types-macros@0.2.3",
+        "pkg:cargo/foreign-types-shared@0.3.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/form_urlencoded@1.2.1",
+      "to": [
+        "pkg:cargo/percent-encoding@2.3.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/futf@0.1.5",
+      "to": [
+        "pkg:cargo/mac@0.1.1",
+        "pkg:cargo/new_debug_unreachable@1.0.6"
+      ]
+    },
+    {
+      "from": "pkg:cargo/futures-channel@0.3.31",
+      "to": [
+        "pkg:cargo/futures-core@0.3.31"
+      ]
+    },
+    {
+      "from": "pkg:cargo/futures-executor@0.3.31",
+      "to": [
+        "pkg:cargo/futures-core@0.3.31",
+        "pkg:cargo/futures-task@0.3.31",
+        "pkg:cargo/futures-util@0.3.31"
+      ]
+    },
+    {
+      "from": "pkg:cargo/futures-lite@2.6.0",
+      "to": [
+        "pkg:cargo/fastrand@2.3.0",
+        "pkg:cargo/futures-core@0.3.31",
+        "pkg:cargo/futures-io@0.3.31",
+        "pkg:cargo/parking@2.2.1",
+        "pkg:cargo/pin-project-lite@0.2.16"
+      ]
+    },
+    {
+      "from": "pkg:cargo/futures-macro@0.3.31",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102"
+      ]
+    },
+    {
+      "from": "pkg:cargo/futures-util@0.3.31",
+      "to": [
+        "pkg:cargo/futures-core@0.3.31",
+        "pkg:cargo/futures-io@0.3.31",
+        "pkg:cargo/futures-macro@0.3.31",
+        "pkg:cargo/futures-sink@0.3.31",
+        "pkg:cargo/futures-task@0.3.31",
+        "pkg:cargo/memchr@2.7.4",
+        "pkg:cargo/pin-project-lite@0.2.16",
+        "pkg:cargo/pin-utils@0.1.0",
+        "pkg:cargo/slab@0.4.9"
+      ]
+    },
+    {
+      "from": "pkg:cargo/fxhash@0.2.1",
+      "to": [
+        "pkg:cargo/byteorder@1.5.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/gdk-pixbuf-sys@0.18.0",
+      "to": [
+        "pkg:cargo/gio-sys@0.18.1",
+        "pkg:cargo/glib-sys@0.18.1",
+        "pkg:cargo/gobject-sys@0.18.0",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/system-deps@6.2.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/gdk-pixbuf@0.18.5",
+      "to": [
+        "pkg:cargo/gdk-pixbuf-sys@0.18.0",
+        "pkg:cargo/gio@0.18.4",
+        "pkg:cargo/glib@0.18.5",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/once_cell@1.21.3"
+      ]
+    },
+    {
+      "from": "pkg:cargo/gdk-sys@0.18.2",
+      "to": [
+        "pkg:cargo/cairo-sys-rs@0.18.2",
+        "pkg:cargo/gdk-pixbuf-sys@0.18.0",
+        "pkg:cargo/gio-sys@0.18.1",
+        "pkg:cargo/glib-sys@0.18.1",
+        "pkg:cargo/gobject-sys@0.18.0",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/pango-sys@0.18.0",
+        "pkg:cargo/pkg-config@0.3.32",
+        "pkg:cargo/system-deps@6.2.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/gdk@0.18.2",
+      "to": [
+        "pkg:cargo/cairo-rs@0.18.5",
+        "pkg:cargo/gdk-pixbuf@0.18.5",
+        "pkg:cargo/gdk-sys@0.18.2",
+        "pkg:cargo/gio@0.18.4",
+        "pkg:cargo/glib@0.18.5",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/pango@0.18.3"
+      ]
+    },
+    {
+      "from": "pkg:cargo/gdkwayland-sys@0.18.2",
+      "to": [
+        "pkg:cargo/gdk-sys@0.18.2",
+        "pkg:cargo/glib-sys@0.18.1",
+        "pkg:cargo/gobject-sys@0.18.0",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/pkg-config@0.3.32",
+        "pkg:cargo/system-deps@6.2.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/gdkx11-sys@0.18.2",
+      "to": [
+        "pkg:cargo/gdk-sys@0.18.2",
+        "pkg:cargo/glib-sys@0.18.1",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/system-deps@6.2.2",
+        "pkg:cargo/x11@2.21.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/gdkx11@0.18.2",
+      "to": [
+        "pkg:cargo/gdk@0.18.2",
+        "pkg:cargo/gdkx11-sys@0.18.2",
+        "pkg:cargo/gio@0.18.4",
+        "pkg:cargo/glib@0.18.5",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/x11@2.21.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/generic-array@0.14.7",
+      "to": [
+        "pkg:cargo/typenum@1.18.0",
+        "pkg:cargo/version_check@0.9.5"
+      ]
+    },
+    {
+      "from": "pkg:cargo/gethostname@0.4.3",
+      "to": [
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/windows-targets@0.48.5"
+      ]
+    },
+    {
+      "from": "pkg:cargo/getrandom@0.1.16",
+      "to": [
+        "pkg:cargo/cfg-if@1.0.1",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/wasi@0.9.0+wasi-snapshot-preview1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/getrandom@0.2.16",
+      "to": [
+        "pkg:cargo/cfg-if@1.0.1",
+        "pkg:cargo/js-sys@0.3.77",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/wasi@0.11.1+wasi-snapshot-preview1",
+        "pkg:cargo/wasm-bindgen@0.2.100"
+      ]
+    },
+    {
+      "from": "pkg:cargo/getrandom@0.3.3",
+      "to": [
+        "pkg:cargo/cfg-if@1.0.1",
+        "pkg:cargo/js-sys@0.3.77",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/r-efi@5.2.0",
+        "pkg:cargo/wasi@0.14.2+wasi-0.2.4",
+        "pkg:cargo/wasm-bindgen@0.2.100"
+      ]
+    },
+    {
+      "from": "pkg:cargo/gif@0.13.1",
+      "to": [
+        "pkg:cargo/color_quant@1.1.0",
+        "pkg:cargo/weezl@0.1.10"
+      ]
+    },
+    {
+      "from": "pkg:cargo/gio-sys@0.18.1",
+      "to": [
+        "pkg:cargo/glib-sys@0.18.1",
+        "pkg:cargo/gobject-sys@0.18.0",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/system-deps@6.2.2",
+        "pkg:cargo/winapi@0.3.9"
+      ]
+    },
+    {
+      "from": "pkg:cargo/gio@0.18.4",
+      "to": [
+        "pkg:cargo/futures-channel@0.3.31",
+        "pkg:cargo/futures-core@0.3.31",
+        "pkg:cargo/futures-io@0.3.31",
+        "pkg:cargo/futures-util@0.3.31",
+        "pkg:cargo/gio-sys@0.18.1",
+        "pkg:cargo/glib@0.18.5",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/once_cell@1.21.3",
+        "pkg:cargo/pin-project-lite@0.2.16",
+        "pkg:cargo/smallvec@1.15.1",
+        "pkg:cargo/thiserror@1.0.69"
+      ]
+    },
+    {
+      "from": "pkg:cargo/glib-macros@0.18.5",
+      "to": [
+        "pkg:cargo/heck@0.4.1",
+        "pkg:cargo/proc-macro-crate@2.0.0",
+        "pkg:cargo/proc-macro-error@1.0.4",
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102"
+      ]
+    },
+    {
+      "from": "pkg:cargo/glib-sys@0.18.1",
+      "to": [
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/system-deps@6.2.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/glib@0.18.5",
+      "to": [
+        "pkg:cargo/bitflags@2.9.1",
+        "pkg:cargo/futures-channel@0.3.31",
+        "pkg:cargo/futures-core@0.3.31",
+        "pkg:cargo/futures-executor@0.3.31",
+        "pkg:cargo/futures-task@0.3.31",
+        "pkg:cargo/futures-util@0.3.31",
+        "pkg:cargo/gio-sys@0.18.1",
+        "pkg:cargo/glib-macros@0.18.5",
+        "pkg:cargo/glib-sys@0.18.1",
+        "pkg:cargo/gobject-sys@0.18.0",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/memchr@2.7.4",
+        "pkg:cargo/once_cell@1.21.3",
+        "pkg:cargo/smallvec@1.15.1",
+        "pkg:cargo/thiserror@1.0.69"
+      ]
+    },
+    {
+      "from": "pkg:cargo/global-hotkey@0.7.0",
+      "to": [
+        "pkg:cargo/crossbeam-channel@0.5.15",
+        "pkg:cargo/keyboard-types@0.7.0",
+        "pkg:cargo/objc2-app-kit@0.3.1",
+        "pkg:cargo/objc2@0.6.1",
+        "pkg:cargo/once_cell@1.21.3",
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/thiserror@2.0.12",
+        "pkg:cargo/windows-sys@0.59.0",
+        "pkg:cargo/x11rb@0.13.1",
+        "pkg:cargo/xkeysym@0.2.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/gobject-sys@0.18.0",
+      "to": [
+        "pkg:cargo/glib-sys@0.18.1",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/system-deps@6.2.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/gtk-sys@0.18.2",
+      "to": [
+        "pkg:cargo/atk-sys@0.18.2",
+        "pkg:cargo/cairo-sys-rs@0.18.2",
+        "pkg:cargo/gdk-pixbuf-sys@0.18.0",
+        "pkg:cargo/gdk-sys@0.18.2",
+        "pkg:cargo/gio-sys@0.18.1",
+        "pkg:cargo/glib-sys@0.18.1",
+        "pkg:cargo/gobject-sys@0.18.0",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/pango-sys@0.18.0",
+        "pkg:cargo/system-deps@6.2.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/gtk@0.18.2",
+      "to": [
+        "pkg:cargo/atk@0.18.2",
+        "pkg:cargo/cairo-rs@0.18.5",
+        "pkg:cargo/field-offset@0.3.6",
+        "pkg:cargo/futures-channel@0.3.31",
+        "pkg:cargo/gdk-pixbuf@0.18.5",
+        "pkg:cargo/gdk@0.18.2",
+        "pkg:cargo/gio@0.18.4",
+        "pkg:cargo/glib@0.18.5",
+        "pkg:cargo/gtk-sys@0.18.2",
+        "pkg:cargo/gtk3-macros@0.18.2",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/pango@0.18.3",
+        "pkg:cargo/pkg-config@0.3.32"
+      ]
+    },
+    {
+      "from": "pkg:cargo/gtk3-macros@0.18.2",
+      "to": [
+        "pkg:cargo/proc-macro-crate@1.3.1",
+        "pkg:cargo/proc-macro-error@1.0.4",
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102"
+      ]
+    },
+    {
+      "from": "pkg:cargo/half@2.6.0",
+      "to": [
+        "pkg:cargo/cfg-if@1.0.1",
+        "pkg:cargo/crunchy@0.2.3"
+      ]
+    },
+    {
+      "from": "pkg:cargo/html5ever@0.26.0",
+      "to": [
+        "pkg:cargo/log@0.4.27",
+        "pkg:cargo/mac@0.1.1",
+        "pkg:cargo/markup5ever@0.11.0",
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@1.0.109"
+      ]
+    },
+    {
+      "from": "pkg:cargo/http-body-util@0.1.3",
+      "to": [
+        "pkg:cargo/bytes@1.10.1",
+        "pkg:cargo/futures-core@0.3.31",
+        "pkg:cargo/http-body@1.0.1",
+        "pkg:cargo/http@1.3.1",
+        "pkg:cargo/pin-project-lite@0.2.16"
+      ]
+    },
+    {
+      "from": "pkg:cargo/http-body@1.0.1",
+      "to": [
+        "pkg:cargo/bytes@1.10.1",
+        "pkg:cargo/http@1.3.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/http@1.3.1",
+      "to": [
+        "pkg:cargo/bytes@1.10.1",
+        "pkg:cargo/fnv@1.0.7",
+        "pkg:cargo/itoa@1.0.15"
+      ]
+    },
+    {
+      "from": "pkg:cargo/hyper-rustls@0.27.7",
+      "to": [
+        "pkg:cargo/http@1.3.1",
+        "pkg:cargo/hyper-util@0.1.14",
+        "pkg:cargo/hyper@1.6.0",
+        "pkg:cargo/rustls-pki-types@1.12.0",
+        "pkg:cargo/rustls@0.23.27",
+        "pkg:cargo/tokio-rustls@0.26.2",
+        "pkg:cargo/tokio@1.45.1",
+        "pkg:cargo/tower-service@0.3.3",
+        "pkg:cargo/webpki-roots@1.0.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/hyper-util@0.1.14",
+      "to": [
+        "pkg:cargo/base64@0.22.1",
+        "pkg:cargo/bytes@1.10.1",
+        "pkg:cargo/futures-channel@0.3.31",
+        "pkg:cargo/futures-core@0.3.31",
+        "pkg:cargo/futures-util@0.3.31",
+        "pkg:cargo/http-body@1.0.1",
+        "pkg:cargo/http@1.3.1",
+        "pkg:cargo/hyper@1.6.0",
+        "pkg:cargo/ipnet@2.11.0",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/percent-encoding@2.3.1",
+        "pkg:cargo/pin-project-lite@0.2.16",
+        "pkg:cargo/socket2@0.5.10",
+        "pkg:cargo/tokio@1.45.1",
+        "pkg:cargo/tower-service@0.3.3",
+        "pkg:cargo/tracing@0.1.41"
+      ]
+    },
+    {
+      "from": "pkg:cargo/hyper@1.6.0",
+      "to": [
+        "pkg:cargo/bytes@1.10.1",
+        "pkg:cargo/futures-channel@0.3.31",
+        "pkg:cargo/futures-util@0.3.31",
+        "pkg:cargo/http-body@1.0.1",
+        "pkg:cargo/http@1.3.1",
+        "pkg:cargo/httparse@1.10.1",
+        "pkg:cargo/itoa@1.0.15",
+        "pkg:cargo/pin-project-lite@0.2.16",
+        "pkg:cargo/smallvec@1.15.1",
+        "pkg:cargo/tokio@1.45.1",
+        "pkg:cargo/want@0.3.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/iana-time-zone-haiku@0.1.2",
+      "to": [
+        "pkg:cargo/cc@1.2.26"
+      ]
+    },
+    {
+      "from": "pkg:cargo/iana-time-zone@0.1.63",
+      "to": [
+        "pkg:cargo/android_system_properties@0.1.5",
+        "pkg:cargo/core-foundation-sys@0.8.7",
+        "pkg:cargo/iana-time-zone-haiku@0.1.2",
+        "pkg:cargo/js-sys@0.3.77",
+        "pkg:cargo/log@0.4.27",
+        "pkg:cargo/wasm-bindgen@0.2.100",
+        "pkg:cargo/windows-core@0.61.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/ico@0.4.0",
+      "to": [
+        "pkg:cargo/byteorder@1.5.0",
+        "pkg:cargo/png@0.17.16"
+      ]
+    },
+    {
+      "from": "pkg:cargo/icu_collections@2.0.0",
+      "to": [
+        "pkg:cargo/displaydoc@0.2.5",
+        "pkg:cargo/potential_utf@0.1.2",
+        "pkg:cargo/yoke@0.8.0",
+        "pkg:cargo/zerofrom@0.1.6",
+        "pkg:cargo/zerovec@0.11.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/icu_locale_core@2.0.0",
+      "to": [
+        "pkg:cargo/displaydoc@0.2.5",
+        "pkg:cargo/litemap@0.8.0",
+        "pkg:cargo/tinystr@0.8.1",
+        "pkg:cargo/writeable@0.6.1",
+        "pkg:cargo/zerovec@0.11.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/icu_normalizer@2.0.0",
+      "to": [
+        "pkg:cargo/displaydoc@0.2.5",
+        "pkg:cargo/icu_collections@2.0.0",
+        "pkg:cargo/icu_normalizer_data@2.0.0",
+        "pkg:cargo/icu_properties@2.0.1",
+        "pkg:cargo/icu_provider@2.0.0",
+        "pkg:cargo/smallvec@1.15.1",
+        "pkg:cargo/zerovec@0.11.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/icu_properties@2.0.1",
+      "to": [
+        "pkg:cargo/displaydoc@0.2.5",
+        "pkg:cargo/icu_collections@2.0.0",
+        "pkg:cargo/icu_locale_core@2.0.0",
+        "pkg:cargo/icu_properties_data@2.0.1",
+        "pkg:cargo/icu_provider@2.0.0",
+        "pkg:cargo/potential_utf@0.1.2",
+        "pkg:cargo/zerotrie@0.2.2",
+        "pkg:cargo/zerovec@0.11.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/icu_provider@2.0.0",
+      "to": [
+        "pkg:cargo/displaydoc@0.2.5",
+        "pkg:cargo/icu_locale_core@2.0.0",
+        "pkg:cargo/stable_deref_trait@1.2.0",
+        "pkg:cargo/tinystr@0.8.1",
+        "pkg:cargo/writeable@0.6.1",
+        "pkg:cargo/yoke@0.8.0",
+        "pkg:cargo/zerofrom@0.1.6",
+        "pkg:cargo/zerotrie@0.2.2",
+        "pkg:cargo/zerovec@0.11.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/idna_adapter@1.2.1",
+      "to": [
+        "pkg:cargo/icu_normalizer@2.0.0",
+        "pkg:cargo/icu_properties@2.0.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/idna@1.0.3",
+      "to": [
+        "pkg:cargo/idna_adapter@1.2.1",
+        "pkg:cargo/smallvec@1.15.1",
+        "pkg:cargo/utf8_iter@1.0.4"
+      ]
+    },
+    {
+      "from": "pkg:cargo/image@0.24.9",
+      "to": [
+        "pkg:cargo/bytemuck@1.23.1",
+        "pkg:cargo/byteorder@1.5.0",
+        "pkg:cargo/color_quant@1.1.0",
+        "pkg:cargo/exr@1.73.0",
+        "pkg:cargo/gif@0.13.1",
+        "pkg:cargo/jpeg-decoder@0.3.1",
+        "pkg:cargo/num-traits@0.2.19",
+        "pkg:cargo/png@0.17.16",
+        "pkg:cargo/qoi@0.4.1",
+        "pkg:cargo/tiff@0.9.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/indexmap@1.9.3",
+      "to": [
+        "pkg:cargo/autocfg@1.4.0",
+        "pkg:cargo/hashbrown@0.12.3",
+        "pkg:cargo/serde@1.0.219"
+      ]
+    },
+    {
+      "from": "pkg:cargo/indexmap@2.9.0",
+      "to": [
+        "pkg:cargo/equivalent@1.0.2",
+        "pkg:cargo/hashbrown@0.15.4",
+        "pkg:cargo/serde@1.0.219"
+      ]
+    },
+    {
+      "from": "pkg:cargo/infer@0.19.0",
+      "to": [
+        "pkg:cargo/cfb@0.7.3"
+      ]
+    },
+    {
+      "from": "pkg:cargo/iri-string@0.7.8",
+      "to": [
+        "pkg:cargo/memchr@2.7.4",
+        "pkg:cargo/serde@1.0.219"
+      ]
+    },
+    {
+      "from": "pkg:cargo/is-docker@0.2.0",
+      "to": [
+        "pkg:cargo/once_cell@1.21.3"
+      ]
+    },
+    {
+      "from": "pkg:cargo/is-wsl@0.4.0",
+      "to": [
+        "pkg:cargo/is-docker@0.2.0",
+        "pkg:cargo/once_cell@1.21.3"
+      ]
+    },
+    {
+      "from": "pkg:cargo/javascriptcore-rs-sys@1.1.1",
+      "to": [
+        "pkg:cargo/glib-sys@0.18.1",
+        "pkg:cargo/gobject-sys@0.18.0",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/system-deps@6.2.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/javascriptcore-rs@1.1.2",
+      "to": [
+        "pkg:cargo/bitflags@1.3.2",
+        "pkg:cargo/glib@0.18.5",
+        "pkg:cargo/javascriptcore-rs-sys@1.1.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/jni@0.21.1",
+      "to": [
+        "pkg:cargo/cesu8@1.1.0",
+        "pkg:cargo/cfg-if@1.0.1",
+        "pkg:cargo/combine@4.6.7",
+        "pkg:cargo/jni-sys@0.3.0",
+        "pkg:cargo/log@0.4.27",
+        "pkg:cargo/thiserror@1.0.69",
+        "pkg:cargo/walkdir@2.5.0",
+        "pkg:cargo/windows-sys@0.45.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/jpeg-decoder@0.3.1",
+      "to": [
+        "pkg:cargo/rayon@1.10.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/js-sys@0.3.77",
+      "to": [
+        "pkg:cargo/once_cell@1.21.3",
+        "pkg:cargo/wasm-bindgen@0.2.100"
+      ]
+    },
+    {
+      "from": "pkg:cargo/json-patch@3.0.1",
+      "to": [
+        "pkg:cargo/jsonptr@0.6.3",
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/serde_json@1.0.140",
+        "pkg:cargo/thiserror@1.0.69"
+      ]
+    },
+    {
+      "from": "pkg:cargo/jsonptr@0.6.3",
+      "to": [
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/serde_json@1.0.140"
+      ]
+    },
+    {
+      "from": "pkg:cargo/keyboard-types@0.7.0",
+      "to": [
+        "pkg:cargo/bitflags@2.9.1",
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/unicode-segmentation@1.12.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/kuchikiki@0.8.2",
+      "to": [
+        "pkg:cargo/cssparser@0.27.2",
+        "pkg:cargo/html5ever@0.26.0",
+        "pkg:cargo/indexmap@1.9.3",
+        "pkg:cargo/matches@0.1.10",
+        "pkg:cargo/selectors@0.22.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/libappindicator-sys@0.9.0",
+      "to": [
+        "pkg:cargo/gtk-sys@0.18.2",
+        "pkg:cargo/libloading@0.7.4",
+        "pkg:cargo/once_cell@1.21.3"
+      ]
+    },
+    {
+      "from": "pkg:cargo/libappindicator@0.9.0",
+      "to": [
+        "pkg:cargo/glib@0.18.5",
+        "pkg:cargo/gtk-sys@0.18.2",
+        "pkg:cargo/gtk@0.18.2",
+        "pkg:cargo/libappindicator-sys@0.9.0",
+        "pkg:cargo/log@0.4.27"
+      ]
+    },
+    {
+      "from": "pkg:cargo/libloading@0.7.4",
+      "to": [
+        "pkg:cargo/cfg-if@1.0.1",
+        "pkg:cargo/winapi@0.3.9"
+      ]
+    },
+    {
+      "from": "pkg:cargo/libredox@0.1.3",
+      "to": [
+        "pkg:cargo/bitflags@2.9.1",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/redox_syscall@0.5.12"
+      ]
+    },
+    {
+      "from": "pkg:cargo/lock_api@0.4.13",
+      "to": [
+        "pkg:cargo/autocfg@1.4.0",
+        "pkg:cargo/scopeguard@1.2.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/markup5ever@0.11.0",
+      "to": [
+        "pkg:cargo/log@0.4.27",
+        "pkg:cargo/phf@0.10.1",
+        "pkg:cargo/phf_codegen@0.10.0",
+        "pkg:cargo/string_cache@0.8.9",
+        "pkg:cargo/string_cache_codegen@0.5.4",
+        "pkg:cargo/tendril@0.4.3"
+      ]
+    },
+    {
+      "from": "pkg:cargo/memoffset@0.9.1",
+      "to": [
+        "pkg:cargo/autocfg@1.4.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/miniz_oxide@0.8.9",
+      "to": [
+        "pkg:cargo/adler2@2.0.1",
+        "pkg:cargo/simd-adler32@0.3.7"
+      ]
+    },
+    {
+      "from": "pkg:cargo/mio@1.0.4",
+      "to": [
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/wasi@0.11.1+wasi-snapshot-preview1",
+        "pkg:cargo/windows-sys@0.59.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/muda@0.16.1",
+      "to": [
+        "pkg:cargo/crossbeam-channel@0.5.15",
+        "pkg:cargo/dpi@0.1.2",
+        "pkg:cargo/gtk@0.18.2",
+        "pkg:cargo/keyboard-types@0.7.0",
+        "pkg:cargo/objc2-app-kit@0.3.1",
+        "pkg:cargo/objc2-core-foundation@0.3.1",
+        "pkg:cargo/objc2-foundation@0.3.1",
+        "pkg:cargo/objc2@0.6.1",
+        "pkg:cargo/once_cell@1.21.3",
+        "pkg:cargo/png@0.17.16",
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/thiserror@2.0.12",
+        "pkg:cargo/windows-sys@0.59.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/ndk-sys@0.6.0+11769913",
+      "to": [
+        "pkg:cargo/jni-sys@0.3.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/ndk@0.9.0",
+      "to": [
+        "pkg:cargo/bitflags@2.9.1",
+        "pkg:cargo/jni-sys@0.3.0",
+        "pkg:cargo/log@0.4.27",
+        "pkg:cargo/ndk-sys@0.6.0+11769913",
+        "pkg:cargo/num_enum@0.7.3",
+        "pkg:cargo/raw-window-handle@0.6.2",
+        "pkg:cargo/thiserror@1.0.69"
+      ]
+    },
+    {
+      "from": "pkg:cargo/nix@0.30.1",
+      "to": [
+        "pkg:cargo/bitflags@2.9.1",
+        "pkg:cargo/cfg-if@1.0.1",
+        "pkg:cargo/cfg_aliases@0.2.1",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/memoffset@0.9.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/num_enum_derive@0.7.3",
+      "to": [
+        "pkg:cargo/proc-macro-crate@3.3.0",
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102"
+      ]
+    },
+    {
+      "from": "pkg:cargo/num_enum@0.7.3",
+      "to": [
+        "pkg:cargo/num_enum_derive@0.7.3"
+      ]
+    },
+    {
+      "from": "pkg:cargo/num-traits@0.2.19",
+      "to": [
+        "pkg:cargo/autocfg@1.4.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/objc2-app-kit@0.3.1",
+      "to": [
+        "pkg:cargo/bitflags@2.9.1",
+        "pkg:cargo/block2@0.6.1",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/objc2-cloud-kit@0.3.1",
+        "pkg:cargo/objc2-core-data@0.3.1",
+        "pkg:cargo/objc2-core-foundation@0.3.1",
+        "pkg:cargo/objc2-core-graphics@0.3.1",
+        "pkg:cargo/objc2-core-image@0.3.1",
+        "pkg:cargo/objc2-foundation@0.3.1",
+        "pkg:cargo/objc2-quartz-core@0.3.1",
+        "pkg:cargo/objc2@0.6.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/objc2-cloud-kit@0.3.1",
+      "to": [
+        "pkg:cargo/bitflags@2.9.1",
+        "pkg:cargo/objc2-foundation@0.3.1",
+        "pkg:cargo/objc2@0.6.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/objc2-core-data@0.3.1",
+      "to": [
+        "pkg:cargo/bitflags@2.9.1",
+        "pkg:cargo/objc2-foundation@0.3.1",
+        "pkg:cargo/objc2@0.6.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/objc2-core-foundation@0.3.1",
+      "to": [
+        "pkg:cargo/bitflags@2.9.1",
+        "pkg:cargo/dispatch2@0.3.0",
+        "pkg:cargo/objc2@0.6.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/objc2-core-graphics@0.3.1",
+      "to": [
+        "pkg:cargo/bitflags@2.9.1",
+        "pkg:cargo/dispatch2@0.3.0",
+        "pkg:cargo/objc2-core-foundation@0.3.1",
+        "pkg:cargo/objc2-io-surface@0.3.1",
+        "pkg:cargo/objc2@0.6.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/objc2-core-image@0.3.1",
+      "to": [
+        "pkg:cargo/objc2-foundation@0.3.1",
+        "pkg:cargo/objc2@0.6.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/objc2-exception-helper@0.1.1",
+      "to": [
+        "pkg:cargo/cc@1.2.26"
+      ]
+    },
+    {
+      "from": "pkg:cargo/objc2-foundation@0.2.2",
+      "to": [
+        "pkg:cargo/bitflags@2.9.1",
+        "pkg:cargo/block2@0.5.1",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/objc2@0.5.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/objc2-foundation@0.3.1",
+      "to": [
+        "pkg:cargo/bitflags@2.9.1",
+        "pkg:cargo/block2@0.6.1",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/objc2-core-foundation@0.3.1",
+        "pkg:cargo/objc2@0.6.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/objc2-io-surface@0.3.1",
+      "to": [
+        "pkg:cargo/bitflags@2.9.1",
+        "pkg:cargo/objc2-core-foundation@0.3.1",
+        "pkg:cargo/objc2@0.6.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/objc2-metal@0.2.2",
+      "to": [
+        "pkg:cargo/bitflags@2.9.1",
+        "pkg:cargo/block2@0.5.1",
+        "pkg:cargo/objc2-foundation@0.2.2",
+        "pkg:cargo/objc2@0.5.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/objc2-osa-kit@0.3.1",
+      "to": [
+        "pkg:cargo/bitflags@2.9.1",
+        "pkg:cargo/objc2-app-kit@0.3.1",
+        "pkg:cargo/objc2-foundation@0.3.1",
+        "pkg:cargo/objc2@0.6.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/objc2-quartz-core@0.2.2",
+      "to": [
+        "pkg:cargo/bitflags@2.9.1",
+        "pkg:cargo/block2@0.5.1",
+        "pkg:cargo/objc2-foundation@0.2.2",
+        "pkg:cargo/objc2-metal@0.2.2",
+        "pkg:cargo/objc2@0.5.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/objc2-quartz-core@0.3.1",
+      "to": [
+        "pkg:cargo/bitflags@2.9.1",
+        "pkg:cargo/objc2-foundation@0.3.1",
+        "pkg:cargo/objc2@0.6.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/objc2-ui-kit@0.3.1",
+      "to": [
+        "pkg:cargo/bitflags@2.9.1",
+        "pkg:cargo/objc2-core-foundation@0.3.1",
+        "pkg:cargo/objc2-foundation@0.3.1",
+        "pkg:cargo/objc2@0.6.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/objc2-web-kit@0.3.1",
+      "to": [
+        "pkg:cargo/bitflags@2.9.1",
+        "pkg:cargo/block2@0.6.1",
+        "pkg:cargo/objc2-app-kit@0.3.1",
+        "pkg:cargo/objc2-core-foundation@0.3.1",
+        "pkg:cargo/objc2-foundation@0.3.1",
+        "pkg:cargo/objc2@0.6.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/objc2@0.5.2",
+      "to": [
+        "pkg:cargo/objc-sys@0.3.5",
+        "pkg:cargo/objc2-encode@4.1.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/objc2@0.6.1",
+      "to": [
+        "pkg:cargo/objc2-encode@4.1.0",
+        "pkg:cargo/objc2-exception-helper@0.1.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/object@0.36.7",
+      "to": [
+        "pkg:cargo/memchr@2.7.4"
+      ]
+    },
+    {
+      "from": "pkg:cargo/open@5.3.2",
+      "to": [
+        "pkg:cargo/dunce@1.0.5",
+        "pkg:cargo/is-wsl@0.4.0",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/pathdiff@0.2.3"
+      ]
+    },
+    {
+      "from": "pkg:cargo/ordered-multimap@0.7.3",
+      "to": [
+        "pkg:cargo/dlv-list@0.5.2",
+        "pkg:cargo/hashbrown@0.14.5"
+      ]
+    },
+    {
+      "from": "pkg:cargo/ordered-stream@0.2.0",
+      "to": [
+        "pkg:cargo/futures-core@0.3.31",
+        "pkg:cargo/pin-project-lite@0.2.16"
+      ]
+    },
+    {
+      "from": "pkg:cargo/osakit@0.3.1",
+      "to": [
+        "pkg:cargo/objc2-foundation@0.3.1",
+        "pkg:cargo/objc2-osa-kit@0.3.1",
+        "pkg:cargo/objc2@0.6.1",
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/serde_json@1.0.140",
+        "pkg:cargo/thiserror@2.0.12"
+      ]
+    },
+    {
+      "from": "pkg:cargo/pango-sys@0.18.0",
+      "to": [
+        "pkg:cargo/glib-sys@0.18.1",
+        "pkg:cargo/gobject-sys@0.18.0",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/system-deps@6.2.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/pango@0.18.3",
+      "to": [
+        "pkg:cargo/gio@0.18.4",
+        "pkg:cargo/glib@0.18.5",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/once_cell@1.21.3",
+        "pkg:cargo/pango-sys@0.18.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/parking_lot_core@0.9.11",
+      "to": [
+        "pkg:cargo/cfg-if@1.0.1",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/redox_syscall@0.5.12",
+        "pkg:cargo/smallvec@1.15.1",
+        "pkg:cargo/windows-targets@0.52.6"
+      ]
+    },
+    {
+      "from": "pkg:cargo/parking_lot@0.12.4",
+      "to": [
+        "pkg:cargo/lock_api@0.4.13",
+        "pkg:cargo/parking_lot_core@0.9.11"
+      ]
+    },
+    {
+      "from": "pkg:cargo/phf_codegen@0.10.0",
+      "to": [
+        "pkg:cargo/phf_generator@0.10.0",
+        "pkg:cargo/phf_shared@0.10.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/phf_codegen@0.8.0",
+      "to": [
+        "pkg:cargo/phf_generator@0.8.0",
+        "pkg:cargo/phf_shared@0.8.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/phf_generator@0.10.0",
+      "to": [
+        "pkg:cargo/phf_shared@0.10.0",
+        "pkg:cargo/rand@0.8.5"
+      ]
+    },
+    {
+      "from": "pkg:cargo/phf_generator@0.11.3",
+      "to": [
+        "pkg:cargo/phf_shared@0.11.3",
+        "pkg:cargo/rand@0.8.5"
+      ]
+    },
+    {
+      "from": "pkg:cargo/phf_generator@0.8.0",
+      "to": [
+        "pkg:cargo/phf_shared@0.8.0",
+        "pkg:cargo/rand@0.7.3"
+      ]
+    },
+    {
+      "from": "pkg:cargo/phf_macros@0.11.3",
+      "to": [
+        "pkg:cargo/phf_generator@0.11.3",
+        "pkg:cargo/phf_shared@0.11.3",
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102"
+      ]
+    },
+    {
+      "from": "pkg:cargo/phf_macros@0.8.0",
+      "to": [
+        "pkg:cargo/phf_generator@0.8.0",
+        "pkg:cargo/phf_shared@0.8.0",
+        "pkg:cargo/proc-macro-hack@0.5.20+deprecated",
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@1.0.109"
+      ]
+    },
+    {
+      "from": "pkg:cargo/phf_shared@0.10.0",
+      "to": [
+        "pkg:cargo/siphasher@0.3.11"
+      ]
+    },
+    {
+      "from": "pkg:cargo/phf_shared@0.11.3",
+      "to": [
+        "pkg:cargo/siphasher@1.0.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/phf_shared@0.8.0",
+      "to": [
+        "pkg:cargo/siphasher@0.3.11"
+      ]
+    },
+    {
+      "from": "pkg:cargo/phf@0.10.1",
+      "to": [
+        "pkg:cargo/phf_shared@0.10.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/phf@0.11.3",
+      "to": [
+        "pkg:cargo/phf_macros@0.11.3",
+        "pkg:cargo/phf_shared@0.11.3"
+      ]
+    },
+    {
+      "from": "pkg:cargo/phf@0.8.0",
+      "to": [
+        "pkg:cargo/phf_macros@0.8.0",
+        "pkg:cargo/phf_shared@0.8.0",
+        "pkg:cargo/proc-macro-hack@0.5.20+deprecated"
+      ]
+    },
+    {
+      "from": "pkg:cargo/piper@0.2.4",
+      "to": [
+        "pkg:cargo/atomic-waker@1.1.2",
+        "pkg:cargo/fastrand@2.3.0",
+        "pkg:cargo/futures-io@0.3.31"
+      ]
+    },
+    {
+      "from": "pkg:cargo/plist@1.7.1",
+      "to": [
+        "pkg:cargo/base64@0.22.1",
+        "pkg:cargo/indexmap@2.9.0",
+        "pkg:cargo/quick-xml@0.32.0",
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/time@0.3.41"
+      ]
+    },
+    {
+      "from": "pkg:cargo/png@0.17.16",
+      "to": [
+        "pkg:cargo/bitflags@1.3.2",
+        "pkg:cargo/crc32fast@1.4.2",
+        "pkg:cargo/fdeflate@0.3.7",
+        "pkg:cargo/flate2@1.1.2",
+        "pkg:cargo/miniz_oxide@0.8.9"
+      ]
+    },
+    {
+      "from": "pkg:cargo/polling@3.8.0",
+      "to": [
+        "pkg:cargo/cfg-if@1.0.1",
+        "pkg:cargo/concurrent-queue@2.5.0",
+        "pkg:cargo/hermit-abi@0.5.1",
+        "pkg:cargo/pin-project-lite@0.2.16",
+        "pkg:cargo/rustix@1.0.7",
+        "pkg:cargo/tracing@0.1.41",
+        "pkg:cargo/windows-sys@0.59.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/potential_utf@0.1.2",
+      "to": [
+        "pkg:cargo/zerovec@0.11.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/ppv-lite86@0.2.21",
+      "to": [
+        "pkg:cargo/zerocopy@0.8.25"
+      ]
+    },
+    {
+      "from": "pkg:cargo/proc-macro-crate@1.3.1",
+      "to": [
+        "pkg:cargo/once_cell@1.21.3",
+        "pkg:cargo/toml_edit@0.19.15"
+      ]
+    },
+    {
+      "from": "pkg:cargo/proc-macro-crate@2.0.0",
+      "to": [
+        "pkg:cargo/toml_edit@0.20.7"
+      ]
+    },
+    {
+      "from": "pkg:cargo/proc-macro-crate@3.3.0",
+      "to": [
+        "pkg:cargo/toml_edit@0.22.27"
+      ]
+    },
+    {
+      "from": "pkg:cargo/proc-macro-error-attr@1.0.4",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/version_check@0.9.5"
+      ]
+    },
+    {
+      "from": "pkg:cargo/proc-macro-error@1.0.4",
+      "to": [
+        "pkg:cargo/proc-macro-error-attr@1.0.4",
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@1.0.109",
+        "pkg:cargo/version_check@0.9.5"
+      ]
+    },
+    {
+      "from": "pkg:cargo/proc-macro2@1.0.95",
+      "to": [
+        "pkg:cargo/unicode-ident@1.0.18"
+      ]
+    },
+    {
+      "from": "pkg:cargo/qoi@0.4.1",
+      "to": [
+        "pkg:cargo/bytemuck@1.23.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/quick-xml@0.32.0",
+      "to": [
+        "pkg:cargo/memchr@2.7.4"
+      ]
+    },
+    {
+      "from": "pkg:cargo/quinn-proto@0.11.12",
+      "to": [
+        "pkg:cargo/bytes@1.10.1",
+        "pkg:cargo/getrandom@0.3.3",
+        "pkg:cargo/lru-slab@0.1.2",
+        "pkg:cargo/rand@0.9.1",
+        "pkg:cargo/ring@0.17.14",
+        "pkg:cargo/rustc-hash@2.1.1",
+        "pkg:cargo/rustls-pki-types@1.12.0",
+        "pkg:cargo/rustls@0.23.27",
+        "pkg:cargo/slab@0.4.9",
+        "pkg:cargo/thiserror@2.0.12",
+        "pkg:cargo/tinyvec@1.9.0",
+        "pkg:cargo/tracing@0.1.41",
+        "pkg:cargo/web-time@1.1.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/quinn-udp@0.5.12",
+      "to": [
+        "pkg:cargo/cfg_aliases@0.2.1",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/once_cell@1.21.3",
+        "pkg:cargo/socket2@0.5.10",
+        "pkg:cargo/tracing@0.1.41",
+        "pkg:cargo/windows-sys@0.59.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/quinn@0.11.8",
+      "to": [
+        "pkg:cargo/bytes@1.10.1",
+        "pkg:cargo/cfg_aliases@0.2.1",
+        "pkg:cargo/pin-project-lite@0.2.16",
+        "pkg:cargo/quinn-proto@0.11.12",
+        "pkg:cargo/quinn-udp@0.5.12",
+        "pkg:cargo/rustc-hash@2.1.1",
+        "pkg:cargo/rustls@0.23.27",
+        "pkg:cargo/socket2@0.5.10",
+        "pkg:cargo/thiserror@2.0.12",
+        "pkg:cargo/tokio@1.45.1",
+        "pkg:cargo/tracing@0.1.41",
+        "pkg:cargo/web-time@1.1.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/quote@1.0.40",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.95"
+      ]
+    },
+    {
+      "from": "pkg:cargo/rand_chacha@0.2.2",
+      "to": [
+        "pkg:cargo/ppv-lite86@0.2.21",
+        "pkg:cargo/rand_core@0.5.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/rand_chacha@0.3.1",
+      "to": [
+        "pkg:cargo/ppv-lite86@0.2.21",
+        "pkg:cargo/rand_core@0.6.4"
+      ]
+    },
+    {
+      "from": "pkg:cargo/rand_chacha@0.9.0",
+      "to": [
+        "pkg:cargo/ppv-lite86@0.2.21",
+        "pkg:cargo/rand_core@0.9.3"
+      ]
+    },
+    {
+      "from": "pkg:cargo/rand_core@0.5.1",
+      "to": [
+        "pkg:cargo/getrandom@0.1.16"
+      ]
+    },
+    {
+      "from": "pkg:cargo/rand_core@0.6.4",
+      "to": [
+        "pkg:cargo/getrandom@0.2.16"
+      ]
+    },
+    {
+      "from": "pkg:cargo/rand_core@0.9.3",
+      "to": [
+        "pkg:cargo/getrandom@0.3.3"
+      ]
+    },
+    {
+      "from": "pkg:cargo/rand_hc@0.2.0",
+      "to": [
+        "pkg:cargo/rand_core@0.5.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/rand_pcg@0.2.1",
+      "to": [
+        "pkg:cargo/rand_core@0.5.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/rand@0.7.3",
+      "to": [
+        "pkg:cargo/getrandom@0.1.16",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/rand_chacha@0.2.2",
+        "pkg:cargo/rand_core@0.5.1",
+        "pkg:cargo/rand_hc@0.2.0",
+        "pkg:cargo/rand_pcg@0.2.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/rand@0.8.5",
+      "to": [
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/rand_chacha@0.3.1",
+        "pkg:cargo/rand_core@0.6.4"
+      ]
+    },
+    {
+      "from": "pkg:cargo/rand@0.9.1",
+      "to": [
+        "pkg:cargo/rand_chacha@0.9.0",
+        "pkg:cargo/rand_core@0.9.3"
+      ]
+    },
+    {
+      "from": "pkg:cargo/rayon-core@1.12.1",
+      "to": [
+        "pkg:cargo/crossbeam-deque@0.8.6",
+        "pkg:cargo/crossbeam-utils@0.8.21"
+      ]
+    },
+    {
+      "from": "pkg:cargo/rayon@1.10.0",
+      "to": [
+        "pkg:cargo/either@1.15.0",
+        "pkg:cargo/rayon-core@1.12.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/redox_syscall@0.5.12",
+      "to": [
+        "pkg:cargo/bitflags@2.9.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/redox_users@0.5.0",
+      "to": [
+        "pkg:cargo/getrandom@0.2.16",
+        "pkg:cargo/libredox@0.1.3",
+        "pkg:cargo/thiserror@2.0.12"
+      ]
+    },
+    {
+      "from": "pkg:cargo/regex-automata@0.4.9",
+      "to": [
+        "pkg:cargo/aho-corasick@1.1.3",
+        "pkg:cargo/memchr@2.7.4",
+        "pkg:cargo/regex-syntax@0.8.5"
+      ]
+    },
+    {
+      "from": "pkg:cargo/regex@1.11.1",
+      "to": [
+        "pkg:cargo/aho-corasick@1.1.3",
+        "pkg:cargo/memchr@2.7.4",
+        "pkg:cargo/regex-automata@0.4.9",
+        "pkg:cargo/regex-syntax@0.8.5"
+      ]
+    },
+    {
+      "from": "pkg:cargo/reqwest@0.12.20",
+      "to": [
+        "pkg:cargo/base64@0.22.1",
+        "pkg:cargo/bytes@1.10.1",
+        "pkg:cargo/futures-core@0.3.31",
+        "pkg:cargo/futures-util@0.3.31",
+        "pkg:cargo/http-body-util@0.1.3",
+        "pkg:cargo/http-body@1.0.1",
+        "pkg:cargo/http@1.3.1",
+        "pkg:cargo/hyper-rustls@0.27.7",
+        "pkg:cargo/hyper-util@0.1.14",
+        "pkg:cargo/hyper@1.6.0",
+        "pkg:cargo/js-sys@0.3.77",
+        "pkg:cargo/log@0.4.27",
+        "pkg:cargo/percent-encoding@2.3.1",
+        "pkg:cargo/pin-project-lite@0.2.16",
+        "pkg:cargo/quinn@0.11.8",
+        "pkg:cargo/rustls-pki-types@1.12.0",
+        "pkg:cargo/rustls@0.23.27",
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/serde_json@1.0.140",
+        "pkg:cargo/serde_urlencoded@0.7.1",
+        "pkg:cargo/sync_wrapper@1.0.2",
+        "pkg:cargo/tokio-rustls@0.26.2",
+        "pkg:cargo/tokio-util@0.7.15",
+        "pkg:cargo/tokio@1.45.1",
+        "pkg:cargo/tower-http@0.6.6",
+        "pkg:cargo/tower-service@0.3.3",
+        "pkg:cargo/tower@0.5.2",
+        "pkg:cargo/url@2.5.4",
+        "pkg:cargo/wasm-bindgen-futures@0.4.50",
+        "pkg:cargo/wasm-bindgen@0.2.100",
+        "pkg:cargo/wasm-streams@0.4.2",
+        "pkg:cargo/web-sys@0.3.77",
+        "pkg:cargo/webpki-roots@1.0.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/rfd@0.15.3",
+      "to": [
+        "pkg:cargo/ashpd@0.11.0",
+        "pkg:cargo/block2@0.6.1",
+        "pkg:cargo/dispatch2@0.2.0",
+        "pkg:cargo/glib-sys@0.18.1",
+        "pkg:cargo/gobject-sys@0.18.0",
+        "pkg:cargo/gtk-sys@0.18.2",
+        "pkg:cargo/js-sys@0.3.77",
+        "pkg:cargo/log@0.4.27",
+        "pkg:cargo/objc2-app-kit@0.3.1",
+        "pkg:cargo/objc2-core-foundation@0.3.1",
+        "pkg:cargo/objc2-foundation@0.3.1",
+        "pkg:cargo/objc2@0.6.1",
+        "pkg:cargo/raw-window-handle@0.6.2",
+        "pkg:cargo/wasm-bindgen-futures@0.4.50",
+        "pkg:cargo/wasm-bindgen@0.2.100",
+        "pkg:cargo/web-sys@0.3.77",
+        "pkg:cargo/windows-sys@0.59.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/ring@0.17.14",
+      "to": [
+        "pkg:cargo/cc@1.2.26",
+        "pkg:cargo/cfg-if@1.0.1",
+        "pkg:cargo/getrandom@0.2.16",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/untrusted@0.9.0",
+        "pkg:cargo/windows-sys@0.52.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/rust-ini@0.21.1",
+      "to": [
+        "pkg:cargo/cfg-if@1.0.1",
+        "pkg:cargo/ordered-multimap@0.7.3",
+        "pkg:cargo/trim-in-place@0.1.7"
+      ]
+    },
+    {
+      "from": "pkg:cargo/rustc_version@0.4.1",
+      "to": [
+        "pkg:cargo/semver@1.0.26"
+      ]
+    },
+    {
+      "from": "pkg:cargo/rustix@0.38.44",
+      "to": [
+        "pkg:cargo/bitflags@2.9.1",
+        "pkg:cargo/errno@0.3.12",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/linux-raw-sys@0.4.15",
+        "pkg:cargo/windows-sys@0.59.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/rustix@1.0.7",
+      "to": [
+        "pkg:cargo/bitflags@2.9.1",
+        "pkg:cargo/errno@0.3.12",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/linux-raw-sys@0.9.4",
+        "pkg:cargo/windows-sys@0.59.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/rustls-pki-types@1.12.0",
+      "to": [
+        "pkg:cargo/web-time@1.1.0",
+        "pkg:cargo/zeroize@1.8.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/rustls-webpki@0.103.3",
+      "to": [
+        "pkg:cargo/ring@0.17.14",
+        "pkg:cargo/rustls-pki-types@1.12.0",
+        "pkg:cargo/untrusted@0.9.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/rustls@0.23.27",
+      "to": [
+        "pkg:cargo/once_cell@1.21.3",
+        "pkg:cargo/ring@0.17.14",
+        "pkg:cargo/rustls-pki-types@1.12.0",
+        "pkg:cargo/rustls-webpki@0.103.3",
+        "pkg:cargo/subtle@2.6.1",
+        "pkg:cargo/zeroize@1.8.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/same-file@1.0.6",
+      "to": [
+        "pkg:cargo/winapi-util@0.1.9"
+      ]
+    },
+    {
+      "from": "pkg:cargo/schemars_derive@0.8.22",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/serde_derive_internals@0.29.1",
+        "pkg:cargo/syn@2.0.102"
+      ]
+    },
+    {
+      "from": "pkg:cargo/schemars@0.8.22",
+      "to": [
+        "pkg:cargo/dyn-clone@1.0.19",
+        "pkg:cargo/indexmap@1.9.3",
+        "pkg:cargo/schemars_derive@0.8.22",
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/serde_json@1.0.140",
+        "pkg:cargo/url@2.5.4",
+        "pkg:cargo/uuid@1.17.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/selectors@0.22.0",
+      "to": [
+        "pkg:cargo/bitflags@1.3.2",
+        "pkg:cargo/cssparser@0.27.2",
+        "pkg:cargo/derive_more@0.99.20",
+        "pkg:cargo/fxhash@0.2.1",
+        "pkg:cargo/log@0.4.27",
+        "pkg:cargo/matches@0.1.10",
+        "pkg:cargo/phf@0.8.0",
+        "pkg:cargo/phf_codegen@0.8.0",
+        "pkg:cargo/precomputed-hash@0.1.1",
+        "pkg:cargo/servo_arc@0.1.1",
+        "pkg:cargo/smallvec@1.15.1",
+        "pkg:cargo/thin-slice@0.1.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/semver@1.0.26",
+      "to": [
+        "pkg:cargo/serde@1.0.219"
+      ]
+    },
+    {
+      "from": "pkg:cargo/serde_derive_internals@0.29.1",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102"
+      ]
+    },
+    {
+      "from": "pkg:cargo/serde_derive@1.0.219",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102"
+      ]
+    },
+    {
+      "from": "pkg:cargo/serde_json@1.0.140",
+      "to": [
+        "pkg:cargo/itoa@1.0.15",
+        "pkg:cargo/memchr@2.7.4",
+        "pkg:cargo/ryu@1.0.20",
+        "pkg:cargo/serde@1.0.219"
+      ]
+    },
+    {
+      "from": "pkg:cargo/serde_repr@0.1.20",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102"
+      ]
+    },
+    {
+      "from": "pkg:cargo/serde_spanned@0.6.9",
+      "to": [
+        "pkg:cargo/serde@1.0.219"
+      ]
+    },
+    {
+      "from": "pkg:cargo/serde_urlencoded@0.7.1",
+      "to": [
+        "pkg:cargo/form_urlencoded@1.2.1",
+        "pkg:cargo/itoa@1.0.15",
+        "pkg:cargo/ryu@1.0.20",
+        "pkg:cargo/serde@1.0.219"
+      ]
+    },
+    {
+      "from": "pkg:cargo/serde_with_macros@3.12.0",
+      "to": [
+        "pkg:cargo/darling@0.20.11",
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102"
+      ]
+    },
+    {
+      "from": "pkg:cargo/serde_with@3.12.0",
+      "to": [
+        "pkg:cargo/base64@0.22.1",
+        "pkg:cargo/chrono@0.4.41",
+        "pkg:cargo/hex@0.4.3",
+        "pkg:cargo/indexmap@1.9.3",
+        "pkg:cargo/indexmap@2.9.0",
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/serde_derive@1.0.219",
+        "pkg:cargo/serde_json@1.0.140",
+        "pkg:cargo/serde_with_macros@3.12.0",
+        "pkg:cargo/time@0.3.41"
+      ]
+    },
+    {
+      "from": "pkg:cargo/serde-untagged@0.1.7",
+      "to": [
+        "pkg:cargo/erased-serde@0.4.6",
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/typeid@1.0.3"
+      ]
+    },
+    {
+      "from": "pkg:cargo/serde@1.0.219",
+      "to": [
+        "pkg:cargo/serde_derive@1.0.219"
+      ]
+    },
+    {
+      "from": "pkg:cargo/serialize-to-javascript-impl@0.1.1",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@1.0.109"
+      ]
+    },
+    {
+      "from": "pkg:cargo/serialize-to-javascript@0.1.1",
+      "to": [
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/serde_json@1.0.140",
+        "pkg:cargo/serialize-to-javascript-impl@0.1.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/servo_arc@0.1.1",
+      "to": [
+        "pkg:cargo/nodrop@0.1.14",
+        "pkg:cargo/stable_deref_trait@1.2.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/sha2@0.10.9",
+      "to": [
+        "pkg:cargo/cfg-if@1.0.1",
+        "pkg:cargo/cpufeatures@0.2.17",
+        "pkg:cargo/digest@0.10.7"
+      ]
+    },
+    {
+      "from": "pkg:cargo/signal-hook-registry@1.4.5",
+      "to": [
+        "pkg:cargo/libc@0.2.172"
+      ]
+    },
+    {
+      "from": "pkg:cargo/slab@0.4.9",
+      "to": [
+        "pkg:cargo/autocfg@1.4.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/socket2@0.5.10",
+      "to": [
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/windows-sys@0.52.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/softbuffer@0.4.6",
+      "to": [
+        "pkg:cargo/bytemuck@1.23.1",
+        "pkg:cargo/cfg_aliases@0.2.1",
+        "pkg:cargo/core-graphics@0.24.0",
+        "pkg:cargo/foreign-types@0.5.0",
+        "pkg:cargo/js-sys@0.3.77",
+        "pkg:cargo/log@0.4.27",
+        "pkg:cargo/objc2-foundation@0.2.2",
+        "pkg:cargo/objc2-quartz-core@0.2.2",
+        "pkg:cargo/objc2@0.5.2",
+        "pkg:cargo/raw-window-handle@0.6.2",
+        "pkg:cargo/redox_syscall@0.5.12",
+        "pkg:cargo/wasm-bindgen@0.2.100",
+        "pkg:cargo/web-sys@0.3.77",
+        "pkg:cargo/windows-sys@0.59.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/soup3-sys@0.5.0",
+      "to": [
+        "pkg:cargo/gio-sys@0.18.1",
+        "pkg:cargo/glib-sys@0.18.1",
+        "pkg:cargo/gobject-sys@0.18.0",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/system-deps@6.2.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/soup3@0.5.0",
+      "to": [
+        "pkg:cargo/futures-channel@0.3.31",
+        "pkg:cargo/gio@0.18.4",
+        "pkg:cargo/glib@0.18.5",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/soup3-sys@0.5.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/string_cache_codegen@0.5.4",
+      "to": [
+        "pkg:cargo/phf_generator@0.11.3",
+        "pkg:cargo/phf_shared@0.11.3",
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40"
+      ]
+    },
+    {
+      "from": "pkg:cargo/string_cache@0.8.9",
+      "to": [
+        "pkg:cargo/new_debug_unreachable@1.0.6",
+        "pkg:cargo/parking_lot@0.12.4",
+        "pkg:cargo/phf_shared@0.11.3",
+        "pkg:cargo/precomputed-hash@0.1.1",
+        "pkg:cargo/serde@1.0.219"
+      ]
+    },
+    {
+      "from": "pkg:cargo/swift-rs@1.0.7",
+      "to": [
+        "pkg:cargo/base64@0.21.7",
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/serde_json@1.0.140"
+      ]
+    },
+    {
+      "from": "pkg:cargo/syn@1.0.109",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/unicode-ident@1.0.18"
+      ]
+    },
+    {
+      "from": "pkg:cargo/syn@2.0.102",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/unicode-ident@1.0.18"
+      ]
+    },
+    {
+      "from": "pkg:cargo/sync_wrapper@1.0.2",
+      "to": [
+        "pkg:cargo/futures-core@0.3.31"
+      ]
+    },
+    {
+      "from": "pkg:cargo/synstructure@0.13.2",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102"
+      ]
+    },
+    {
+      "from": "pkg:cargo/system-deps@6.2.2",
+      "to": [
+        "pkg:cargo/cfg-expr@0.15.8",
+        "pkg:cargo/heck@0.5.0",
+        "pkg:cargo/pkg-config@0.3.32",
+        "pkg:cargo/toml@0.8.23",
+        "pkg:cargo/version-compare@0.2.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tao-macros@0.1.3",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tao@0.33.0",
+      "to": [
+        "pkg:cargo/bitflags@2.9.1",
+        "pkg:cargo/core-foundation@0.10.1",
+        "pkg:cargo/core-graphics@0.24.0",
+        "pkg:cargo/crossbeam-channel@0.5.15",
+        "pkg:cargo/dispatch@0.2.0",
+        "pkg:cargo/dlopen2@0.7.0",
+        "pkg:cargo/dpi@0.1.2",
+        "pkg:cargo/gdkwayland-sys@0.18.2",
+        "pkg:cargo/gdkx11-sys@0.18.2",
+        "pkg:cargo/gtk@0.18.2",
+        "pkg:cargo/jni@0.21.1",
+        "pkg:cargo/lazy_static@1.5.0",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/log@0.4.27",
+        "pkg:cargo/ndk-context@0.1.1",
+        "pkg:cargo/ndk-sys@0.6.0+11769913",
+        "pkg:cargo/ndk@0.9.0",
+        "pkg:cargo/objc2-app-kit@0.3.1",
+        "pkg:cargo/objc2-foundation@0.3.1",
+        "pkg:cargo/objc2@0.6.1",
+        "pkg:cargo/once_cell@1.21.3",
+        "pkg:cargo/parking_lot@0.12.4",
+        "pkg:cargo/raw-window-handle@0.6.2",
+        "pkg:cargo/scopeguard@1.2.0",
+        "pkg:cargo/tao-macros@0.1.3",
+        "pkg:cargo/unicode-segmentation@1.12.0",
+        "pkg:cargo/url@2.5.4",
+        "pkg:cargo/windows-core@0.61.2",
+        "pkg:cargo/windows-version@0.1.4",
+        "pkg:cargo/windows@0.61.1",
+        "pkg:cargo/x11-dl@2.21.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tar@0.4.44",
+      "to": [
+        "pkg:cargo/filetime@0.2.25",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/xattr@1.5.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tauri-build@2.2.0",
+      "to": [
+        "pkg:cargo/anyhow@1.0.98",
+        "pkg:cargo/cargo_toml@0.22.1",
+        "pkg:cargo/dirs@6.0.0",
+        "pkg:cargo/glob@0.3.2",
+        "pkg:cargo/heck@0.5.0",
+        "pkg:cargo/json-patch@3.0.1",
+        "pkg:cargo/schemars@0.8.22",
+        "pkg:cargo/semver@1.0.26",
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/serde_json@1.0.140",
+        "pkg:cargo/tauri-utils@2.4.0",
+        "pkg:cargo/tauri-winres@0.3.1",
+        "pkg:cargo/toml@0.8.23",
+        "pkg:cargo/walkdir@2.5.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tauri-codegen@2.2.0",
+      "to": [
+        "pkg:cargo/base64@0.22.1",
+        "pkg:cargo/brotli@7.0.0",
+        "pkg:cargo/ico@0.4.0",
+        "pkg:cargo/json-patch@3.0.1",
+        "pkg:cargo/plist@1.7.1",
+        "pkg:cargo/png@0.17.16",
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/semver@1.0.26",
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/serde_json@1.0.140",
+        "pkg:cargo/sha2@0.10.9",
+        "pkg:cargo/syn@2.0.102",
+        "pkg:cargo/tauri-utils@2.4.0",
+        "pkg:cargo/thiserror@2.0.12",
+        "pkg:cargo/time@0.3.41",
+        "pkg:cargo/url@2.5.4",
+        "pkg:cargo/uuid@1.17.0",
+        "pkg:cargo/walkdir@2.5.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tauri-macros@2.2.0",
+      "to": [
+        "pkg:cargo/heck@0.5.0",
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102",
+        "pkg:cargo/tauri-codegen@2.2.0",
+        "pkg:cargo/tauri-utils@2.4.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tauri-plugin-deep-link@2.3.0",
+      "to": [
+        "pkg:cargo/dunce@1.0.5",
+        "pkg:cargo/rust-ini@0.21.1",
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/serde_json@1.0.140",
+        "pkg:cargo/tauri-plugin@2.2.0",
+        "pkg:cargo/tauri-utils@2.4.0",
+        "pkg:cargo/tauri@2.5.1",
+        "pkg:cargo/thiserror@2.0.12",
+        "pkg:cargo/tracing@0.1.41",
+        "pkg:cargo/url@2.5.4",
+        "pkg:cargo/windows-registry@0.5.2",
+        "pkg:cargo/windows-result@0.3.4"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tauri-plugin-dialog@2.2.2",
+      "to": [
+        "pkg:cargo/log@0.4.27",
+        "pkg:cargo/raw-window-handle@0.6.2",
+        "pkg:cargo/rfd@0.15.3",
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/serde_json@1.0.140",
+        "pkg:cargo/tauri-plugin-fs@2.3.0",
+        "pkg:cargo/tauri-plugin@2.2.0",
+        "pkg:cargo/tauri@2.5.1",
+        "pkg:cargo/thiserror@2.0.12",
+        "pkg:cargo/url@2.5.4"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tauri-plugin-fs@2.3.0",
+      "to": [
+        "pkg:cargo/anyhow@1.0.98",
+        "pkg:cargo/dunce@1.0.5",
+        "pkg:cargo/glob@0.3.2",
+        "pkg:cargo/percent-encoding@2.3.1",
+        "pkg:cargo/schemars@0.8.22",
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/serde_json@1.0.140",
+        "pkg:cargo/serde_repr@0.1.20",
+        "pkg:cargo/tauri-plugin@2.2.0",
+        "pkg:cargo/tauri-utils@2.4.0",
+        "pkg:cargo/tauri@2.5.1",
+        "pkg:cargo/thiserror@2.0.12",
+        "pkg:cargo/toml@0.8.23",
+        "pkg:cargo/url@2.5.4"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tauri-plugin-global-shortcut@2.2.1",
+      "to": [
+        "pkg:cargo/global-hotkey@0.7.0",
+        "pkg:cargo/log@0.4.27",
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/serde_json@1.0.140",
+        "pkg:cargo/tauri-plugin@2.2.0",
+        "pkg:cargo/tauri@2.5.1",
+        "pkg:cargo/thiserror@2.0.12"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tauri-plugin-opener@2.2.7",
+      "to": [
+        "pkg:cargo/dunce@1.0.5",
+        "pkg:cargo/glob@0.3.2",
+        "pkg:cargo/objc2-app-kit@0.3.1",
+        "pkg:cargo/objc2-foundation@0.3.1",
+        "pkg:cargo/open@5.3.2",
+        "pkg:cargo/schemars@0.8.22",
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/serde_json@1.0.140",
+        "pkg:cargo/tauri-plugin@2.2.0",
+        "pkg:cargo/tauri@2.5.1",
+        "pkg:cargo/thiserror@2.0.12",
+        "pkg:cargo/url@2.5.4",
+        "pkg:cargo/windows@0.61.1",
+        "pkg:cargo/zbus@5.7.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tauri-plugin-process@2.2.1",
+      "to": [
+        "pkg:cargo/tauri-plugin@2.2.0",
+        "pkg:cargo/tauri@2.5.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tauri-plugin-updater@2.7.1",
+      "to": [
+        "pkg:cargo/base64@0.22.1",
+        "pkg:cargo/dirs@6.0.0",
+        "pkg:cargo/flate2@1.1.2",
+        "pkg:cargo/futures-util@0.3.31",
+        "pkg:cargo/http@1.3.1",
+        "pkg:cargo/infer@0.19.0",
+        "pkg:cargo/log@0.4.27",
+        "pkg:cargo/minisign-verify@0.2.4",
+        "pkg:cargo/osakit@0.3.1",
+        "pkg:cargo/percent-encoding@2.3.1",
+        "pkg:cargo/reqwest@0.12.20",
+        "pkg:cargo/semver@1.0.26",
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/serde_json@1.0.140",
+        "pkg:cargo/tar@0.4.44",
+        "pkg:cargo/tauri-plugin@2.2.0",
+        "pkg:cargo/tauri@2.5.1",
+        "pkg:cargo/tempfile@3.20.0",
+        "pkg:cargo/thiserror@2.0.12",
+        "pkg:cargo/time@0.3.41",
+        "pkg:cargo/tokio@1.45.1",
+        "pkg:cargo/url@2.5.4",
+        "pkg:cargo/windows-sys@0.59.0",
+        "pkg:cargo/zip@2.4.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tauri-plugin@2.2.0",
+      "to": [
+        "pkg:cargo/anyhow@1.0.98",
+        "pkg:cargo/glob@0.3.2",
+        "pkg:cargo/plist@1.7.1",
+        "pkg:cargo/schemars@0.8.22",
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/serde_json@1.0.140",
+        "pkg:cargo/tauri-utils@2.4.0",
+        "pkg:cargo/toml@0.8.23",
+        "pkg:cargo/walkdir@2.5.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tauri-runtime-wry@2.6.0",
+      "to": [
+        "pkg:cargo/gtk@0.18.2",
+        "pkg:cargo/http@1.3.1",
+        "pkg:cargo/jni@0.21.1",
+        "pkg:cargo/log@0.4.27",
+        "pkg:cargo/objc2-app-kit@0.3.1",
+        "pkg:cargo/objc2-foundation@0.3.1",
+        "pkg:cargo/objc2@0.6.1",
+        "pkg:cargo/once_cell@1.21.3",
+        "pkg:cargo/percent-encoding@2.3.1",
+        "pkg:cargo/raw-window-handle@0.6.2",
+        "pkg:cargo/softbuffer@0.4.6",
+        "pkg:cargo/tao@0.33.0",
+        "pkg:cargo/tauri-runtime@2.6.0",
+        "pkg:cargo/tauri-utils@2.4.0",
+        "pkg:cargo/url@2.5.4",
+        "pkg:cargo/webkit2gtk@2.0.1",
+        "pkg:cargo/webview2-com@0.37.0",
+        "pkg:cargo/windows@0.61.1",
+        "pkg:cargo/wry@0.51.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tauri-runtime@2.6.0",
+      "to": [
+        "pkg:cargo/cookie@0.18.1",
+        "pkg:cargo/dpi@0.1.2",
+        "pkg:cargo/gtk@0.18.2",
+        "pkg:cargo/http@1.3.1",
+        "pkg:cargo/jni@0.21.1",
+        "pkg:cargo/objc2-ui-kit@0.3.1",
+        "pkg:cargo/objc2@0.6.1",
+        "pkg:cargo/raw-window-handle@0.6.2",
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/serde_json@1.0.140",
+        "pkg:cargo/tauri-utils@2.4.0",
+        "pkg:cargo/thiserror@2.0.12",
+        "pkg:cargo/url@2.5.4",
+        "pkg:cargo/windows@0.61.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tauri-utils@2.4.0",
+      "to": [
+        "pkg:cargo/anyhow@1.0.98",
+        "pkg:cargo/brotli@7.0.0",
+        "pkg:cargo/cargo_metadata@0.19.2",
+        "pkg:cargo/ctor@0.2.9",
+        "pkg:cargo/dunce@1.0.5",
+        "pkg:cargo/glob@0.3.2",
+        "pkg:cargo/html5ever@0.26.0",
+        "pkg:cargo/http@1.3.1",
+        "pkg:cargo/infer@0.19.0",
+        "pkg:cargo/json-patch@3.0.1",
+        "pkg:cargo/kuchikiki@0.8.2",
+        "pkg:cargo/log@0.4.27",
+        "pkg:cargo/memchr@2.7.4",
+        "pkg:cargo/phf@0.11.3",
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/regex@1.11.1",
+        "pkg:cargo/schemars@0.8.22",
+        "pkg:cargo/semver@1.0.26",
+        "pkg:cargo/serde-untagged@0.1.7",
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/serde_json@1.0.140",
+        "pkg:cargo/serde_with@3.12.0",
+        "pkg:cargo/swift-rs@1.0.7",
+        "pkg:cargo/thiserror@2.0.12",
+        "pkg:cargo/toml@0.8.23",
+        "pkg:cargo/url@2.5.4",
+        "pkg:cargo/urlpattern@0.3.0",
+        "pkg:cargo/uuid@1.17.0",
+        "pkg:cargo/walkdir@2.5.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tauri-winres@0.3.1",
+      "to": [
+        "pkg:cargo/embed-resource@3.0.3",
+        "pkg:cargo/indexmap@2.9.0",
+        "pkg:cargo/toml@0.8.23"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tauri@2.5.1",
+      "to": [
+        "pkg:cargo/anyhow@1.0.98",
+        "pkg:cargo/bytes@1.10.1",
+        "pkg:cargo/data-url@0.3.1",
+        "pkg:cargo/dirs@6.0.0",
+        "pkg:cargo/dunce@1.0.5",
+        "pkg:cargo/embed_plist@1.2.2",
+        "pkg:cargo/futures-util@0.3.31",
+        "pkg:cargo/getrandom@0.2.16",
+        "pkg:cargo/glob@0.3.2",
+        "pkg:cargo/gtk@0.18.2",
+        "pkg:cargo/heck@0.5.0",
+        "pkg:cargo/http@1.3.1",
+        "pkg:cargo/jni@0.21.1",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/log@0.4.27",
+        "pkg:cargo/mime@0.3.17",
+        "pkg:cargo/muda@0.16.1",
+        "pkg:cargo/objc2-app-kit@0.3.1",
+        "pkg:cargo/objc2-foundation@0.3.1",
+        "pkg:cargo/objc2-ui-kit@0.3.1",
+        "pkg:cargo/objc2@0.6.1",
+        "pkg:cargo/percent-encoding@2.3.1",
+        "pkg:cargo/plist@1.7.1",
+        "pkg:cargo/raw-window-handle@0.6.2",
+        "pkg:cargo/reqwest@0.12.20",
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/serde_json@1.0.140",
+        "pkg:cargo/serde_repr@0.1.20",
+        "pkg:cargo/serialize-to-javascript@0.1.1",
+        "pkg:cargo/swift-rs@1.0.7",
+        "pkg:cargo/tauri-build@2.2.0",
+        "pkg:cargo/tauri-macros@2.2.0",
+        "pkg:cargo/tauri-runtime-wry@2.6.0",
+        "pkg:cargo/tauri-runtime@2.6.0",
+        "pkg:cargo/tauri-utils@2.4.0",
+        "pkg:cargo/thiserror@2.0.12",
+        "pkg:cargo/tokio@1.45.1",
+        "pkg:cargo/tray-icon@0.20.1",
+        "pkg:cargo/url@2.5.4",
+        "pkg:cargo/urlpattern@0.3.0",
+        "pkg:cargo/webkit2gtk@2.0.1",
+        "pkg:cargo/webview2-com@0.37.0",
+        "pkg:cargo/window-vibrancy@0.6.0",
+        "pkg:cargo/windows@0.61.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tempfile@3.20.0",
+      "to": [
+        "pkg:cargo/fastrand@2.3.0",
+        "pkg:cargo/getrandom@0.3.3",
+        "pkg:cargo/once_cell@1.21.3",
+        "pkg:cargo/rustix@1.0.7",
+        "pkg:cargo/windows-sys@0.59.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tendril@0.4.3",
+      "to": [
+        "pkg:cargo/futf@0.1.5",
+        "pkg:cargo/mac@0.1.1",
+        "pkg:cargo/utf-8@0.7.6"
+      ]
+    },
+    {
+      "from": "pkg:cargo/thiserror-impl@1.0.69",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102"
+      ]
+    },
+    {
+      "from": "pkg:cargo/thiserror-impl@2.0.12",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102"
+      ]
+    },
+    {
+      "from": "pkg:cargo/thiserror@1.0.69",
+      "to": [
+        "pkg:cargo/thiserror-impl@1.0.69"
+      ]
+    },
+    {
+      "from": "pkg:cargo/thiserror@2.0.12",
+      "to": [
+        "pkg:cargo/thiserror-impl@2.0.12"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tiff@0.9.1",
+      "to": [
+        "pkg:cargo/flate2@1.1.2",
+        "pkg:cargo/jpeg-decoder@0.3.1",
+        "pkg:cargo/weezl@0.1.10"
+      ]
+    },
+    {
+      "from": "pkg:cargo/time-macros@0.2.22",
+      "to": [
+        "pkg:cargo/num-conv@0.1.0",
+        "pkg:cargo/time-core@0.1.4"
+      ]
+    },
+    {
+      "from": "pkg:cargo/time@0.3.41",
+      "to": [
+        "pkg:cargo/deranged@0.4.0",
+        "pkg:cargo/itoa@1.0.15",
+        "pkg:cargo/num-conv@0.1.0",
+        "pkg:cargo/powerfmt@0.2.0",
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/time-core@0.1.4",
+        "pkg:cargo/time-macros@0.2.22"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tiny-keccak@2.0.2",
+      "to": [
+        "pkg:cargo/crunchy@0.2.3"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tinystr@0.8.1",
+      "to": [
+        "pkg:cargo/displaydoc@0.2.5",
+        "pkg:cargo/zerovec@0.11.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tinyvec@1.9.0",
+      "to": [
+        "pkg:cargo/tinyvec_macros@0.1.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tokio-rustls@0.26.2",
+      "to": [
+        "pkg:cargo/rustls@0.23.27",
+        "pkg:cargo/tokio@1.45.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tokio-util@0.7.15",
+      "to": [
+        "pkg:cargo/bytes@1.10.1",
+        "pkg:cargo/futures-core@0.3.31",
+        "pkg:cargo/futures-sink@0.3.31",
+        "pkg:cargo/pin-project-lite@0.2.16",
+        "pkg:cargo/tokio@1.45.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tokio@1.45.1",
+      "to": [
+        "pkg:cargo/backtrace@0.3.75",
+        "pkg:cargo/bytes@1.10.1",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/mio@1.0.4",
+        "pkg:cargo/pin-project-lite@0.2.16",
+        "pkg:cargo/signal-hook-registry@1.4.5",
+        "pkg:cargo/socket2@0.5.10",
+        "pkg:cargo/tracing@0.1.41",
+        "pkg:cargo/windows-sys@0.52.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/toml_datetime@0.6.11",
+      "to": [
+        "pkg:cargo/serde@1.0.219"
+      ]
+    },
+    {
+      "from": "pkg:cargo/toml_edit@0.19.15",
+      "to": [
+        "pkg:cargo/indexmap@2.9.0",
+        "pkg:cargo/toml_datetime@0.6.11",
+        "pkg:cargo/winnow@0.5.40"
+      ]
+    },
+    {
+      "from": "pkg:cargo/toml_edit@0.20.7",
+      "to": [
+        "pkg:cargo/indexmap@2.9.0",
+        "pkg:cargo/toml_datetime@0.6.11",
+        "pkg:cargo/winnow@0.5.40"
+      ]
+    },
+    {
+      "from": "pkg:cargo/toml_edit@0.22.27",
+      "to": [
+        "pkg:cargo/indexmap@2.9.0",
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/serde_spanned@0.6.9",
+        "pkg:cargo/toml_datetime@0.6.11",
+        "pkg:cargo/toml_write@0.1.2",
+        "pkg:cargo/winnow@0.7.11"
+      ]
+    },
+    {
+      "from": "pkg:cargo/toml@0.8.23",
+      "to": [
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/serde_spanned@0.6.9",
+        "pkg:cargo/toml_datetime@0.6.11",
+        "pkg:cargo/toml_edit@0.22.27"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tower-http@0.6.6",
+      "to": [
+        "pkg:cargo/bitflags@2.9.1",
+        "pkg:cargo/bytes@1.10.1",
+        "pkg:cargo/futures-util@0.3.31",
+        "pkg:cargo/http-body@1.0.1",
+        "pkg:cargo/http@1.3.1",
+        "pkg:cargo/iri-string@0.7.8",
+        "pkg:cargo/pin-project-lite@0.2.16",
+        "pkg:cargo/tower-layer@0.3.3",
+        "pkg:cargo/tower-service@0.3.3",
+        "pkg:cargo/tower@0.5.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tower@0.5.2",
+      "to": [
+        "pkg:cargo/futures-core@0.3.31",
+        "pkg:cargo/futures-util@0.3.31",
+        "pkg:cargo/pin-project-lite@0.2.16",
+        "pkg:cargo/sync_wrapper@1.0.2",
+        "pkg:cargo/tokio@1.45.1",
+        "pkg:cargo/tower-layer@0.3.3",
+        "pkg:cargo/tower-service@0.3.3"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tracing-attributes@0.1.29",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tracing-core@0.1.34",
+      "to": [
+        "pkg:cargo/once_cell@1.21.3"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tracing@0.1.41",
+      "to": [
+        "pkg:cargo/pin-project-lite@0.2.16",
+        "pkg:cargo/tracing-attributes@0.1.29",
+        "pkg:cargo/tracing-core@0.1.34"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tray-icon@0.20.1",
+      "to": [
+        "pkg:cargo/crossbeam-channel@0.5.15",
+        "pkg:cargo/dirs@6.0.0",
+        "pkg:cargo/libappindicator@0.9.0",
+        "pkg:cargo/muda@0.16.1",
+        "pkg:cargo/objc2-app-kit@0.3.1",
+        "pkg:cargo/objc2-core-foundation@0.3.1",
+        "pkg:cargo/objc2-core-graphics@0.3.1",
+        "pkg:cargo/objc2-foundation@0.3.1",
+        "pkg:cargo/objc2@0.6.1",
+        "pkg:cargo/once_cell@1.21.3",
+        "pkg:cargo/png@0.17.16",
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/thiserror@2.0.12",
+        "pkg:cargo/windows-sys@0.59.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/uds_windows@1.1.0",
+      "to": [
+        "pkg:cargo/memoffset@0.9.1",
+        "pkg:cargo/tempfile@3.20.0",
+        "pkg:cargo/winapi@0.3.9"
+      ]
+    },
+    {
+      "from": "pkg:cargo/unic-char-property@0.9.0",
+      "to": [
+        "pkg:cargo/unic-char-range@0.9.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/unic-ucd-ident@0.9.0",
+      "to": [
+        "pkg:cargo/unic-char-property@0.9.0",
+        "pkg:cargo/unic-char-range@0.9.0",
+        "pkg:cargo/unic-ucd-version@0.9.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/unic-ucd-version@0.9.0",
+      "to": [
+        "pkg:cargo/unic-common@0.9.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/url@2.5.4",
+      "to": [
+        "pkg:cargo/form_urlencoded@1.2.1",
+        "pkg:cargo/idna@1.0.3",
+        "pkg:cargo/percent-encoding@2.3.1",
+        "pkg:cargo/serde@1.0.219"
+      ]
+    },
+    {
+      "from": "pkg:cargo/urlpattern@0.3.0",
+      "to": [
+        "pkg:cargo/regex@1.11.1",
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/unic-ucd-ident@0.9.0",
+        "pkg:cargo/url@2.5.4"
+      ]
+    },
+    {
+      "from": "pkg:cargo/uuid@1.17.0",
+      "to": [
+        "pkg:cargo/getrandom@0.3.3",
+        "pkg:cargo/js-sys@0.3.77",
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/wasm-bindgen@0.2.100"
+      ]
+    },
+    {
+      "from": "pkg:cargo/vswhom-sys@0.1.3",
+      "to": [
+        "pkg:cargo/cc@1.2.26",
+        "pkg:cargo/libc@0.2.172"
+      ]
+    },
+    {
+      "from": "pkg:cargo/vswhom@0.1.0",
+      "to": [
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/vswhom-sys@0.1.3"
+      ]
+    },
+    {
+      "from": "pkg:cargo/walkdir@2.5.0",
+      "to": [
+        "pkg:cargo/same-file@1.0.6",
+        "pkg:cargo/winapi-util@0.1.9"
+      ]
+    },
+    {
+      "from": "pkg:cargo/want@0.3.1",
+      "to": [
+        "pkg:cargo/try-lock@0.2.5"
+      ]
+    },
+    {
+      "from": "pkg:cargo/wasi@0.14.2+wasi-0.2.4",
+      "to": [
+        "pkg:cargo/wit-bindgen-rt@0.39.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/wasm-bindgen-backend@0.2.100",
+      "to": [
+        "pkg:cargo/bumpalo@3.18.1",
+        "pkg:cargo/log@0.4.27",
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102",
+        "pkg:cargo/wasm-bindgen-shared@0.2.100"
+      ]
+    },
+    {
+      "from": "pkg:cargo/wasm-bindgen-futures@0.4.50",
+      "to": [
+        "pkg:cargo/cfg-if@1.0.1",
+        "pkg:cargo/js-sys@0.3.77",
+        "pkg:cargo/once_cell@1.21.3",
+        "pkg:cargo/wasm-bindgen@0.2.100",
+        "pkg:cargo/web-sys@0.3.77"
+      ]
+    },
+    {
+      "from": "pkg:cargo/wasm-bindgen-macro-support@0.2.100",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102",
+        "pkg:cargo/wasm-bindgen-backend@0.2.100",
+        "pkg:cargo/wasm-bindgen-shared@0.2.100"
+      ]
+    },
+    {
+      "from": "pkg:cargo/wasm-bindgen-macro@0.2.100",
+      "to": [
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/wasm-bindgen-macro-support@0.2.100"
+      ]
+    },
+    {
+      "from": "pkg:cargo/wasm-bindgen-shared@0.2.100",
+      "to": [
+        "pkg:cargo/unicode-ident@1.0.18"
+      ]
+    },
+    {
+      "from": "pkg:cargo/wasm-bindgen@0.2.100",
+      "to": [
+        "pkg:cargo/cfg-if@1.0.1",
+        "pkg:cargo/once_cell@1.21.3",
+        "pkg:cargo/rustversion@1.0.21",
+        "pkg:cargo/wasm-bindgen-macro@0.2.100"
+      ]
+    },
+    {
+      "from": "pkg:cargo/wasm-streams@0.4.2",
+      "to": [
+        "pkg:cargo/futures-util@0.3.31",
+        "pkg:cargo/js-sys@0.3.77",
+        "pkg:cargo/wasm-bindgen-futures@0.4.50",
+        "pkg:cargo/wasm-bindgen@0.2.100",
+        "pkg:cargo/web-sys@0.3.77"
+      ]
+    },
+    {
+      "from": "pkg:cargo/web-sys@0.3.77",
+      "to": [
+        "pkg:cargo/js-sys@0.3.77",
+        "pkg:cargo/wasm-bindgen@0.2.100"
+      ]
+    },
+    {
+      "from": "pkg:cargo/web-time@1.1.0",
+      "to": [
+        "pkg:cargo/js-sys@0.3.77",
+        "pkg:cargo/wasm-bindgen@0.2.100"
+      ]
+    },
+    {
+      "from": "pkg:cargo/webkit2gtk-sys@2.0.1",
+      "to": [
+        "pkg:cargo/bitflags@1.3.2",
+        "pkg:cargo/cairo-sys-rs@0.18.2",
+        "pkg:cargo/gdk-sys@0.18.2",
+        "pkg:cargo/gio-sys@0.18.1",
+        "pkg:cargo/glib-sys@0.18.1",
+        "pkg:cargo/gobject-sys@0.18.0",
+        "pkg:cargo/gtk-sys@0.18.2",
+        "pkg:cargo/javascriptcore-rs-sys@1.1.1",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/pkg-config@0.3.32",
+        "pkg:cargo/soup3-sys@0.5.0",
+        "pkg:cargo/system-deps@6.2.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/webkit2gtk@2.0.1",
+      "to": [
+        "pkg:cargo/bitflags@1.3.2",
+        "pkg:cargo/cairo-rs@0.18.5",
+        "pkg:cargo/gdk-sys@0.18.2",
+        "pkg:cargo/gdk@0.18.2",
+        "pkg:cargo/gio-sys@0.18.1",
+        "pkg:cargo/gio@0.18.4",
+        "pkg:cargo/glib-sys@0.18.1",
+        "pkg:cargo/glib@0.18.5",
+        "pkg:cargo/gobject-sys@0.18.0",
+        "pkg:cargo/gtk-sys@0.18.2",
+        "pkg:cargo/gtk@0.18.2",
+        "pkg:cargo/javascriptcore-rs@1.1.2",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/once_cell@1.21.3",
+        "pkg:cargo/soup3@0.5.0",
+        "pkg:cargo/webkit2gtk-sys@2.0.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/webpki-roots@1.0.0",
+      "to": [
+        "pkg:cargo/rustls-pki-types@1.12.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/webview2-com-macros@0.8.0",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102"
+      ]
+    },
+    {
+      "from": "pkg:cargo/webview2-com-sys@0.37.0",
+      "to": [
+        "pkg:cargo/thiserror@2.0.12",
+        "pkg:cargo/windows-core@0.61.2",
+        "pkg:cargo/windows@0.61.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/webview2-com@0.37.0",
+      "to": [
+        "pkg:cargo/webview2-com-macros@0.8.0",
+        "pkg:cargo/webview2-com-sys@0.37.0",
+        "pkg:cargo/windows-core@0.61.2",
+        "pkg:cargo/windows-implement@0.60.0",
+        "pkg:cargo/windows-interface@0.59.1",
+        "pkg:cargo/windows@0.61.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/winapi-util@0.1.9",
+      "to": [
+        "pkg:cargo/windows-sys@0.59.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/winapi@0.3.9",
+      "to": [
+        "pkg:cargo/winapi-i686-pc-windows-gnu@0.4.0",
+        "pkg:cargo/winapi-x86_64-pc-windows-gnu@0.4.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/window-vibrancy@0.6.0",
+      "to": [
+        "pkg:cargo/objc2-app-kit@0.3.1",
+        "pkg:cargo/objc2-core-foundation@0.3.1",
+        "pkg:cargo/objc2-foundation@0.3.1",
+        "pkg:cargo/objc2@0.6.1",
+        "pkg:cargo/raw-window-handle@0.6.2",
+        "pkg:cargo/windows-sys@0.59.0",
+        "pkg:cargo/windows-version@0.1.4"
+      ]
+    },
+    {
+      "from": "pkg:cargo/windows-collections@0.2.0",
+      "to": [
+        "pkg:cargo/windows-core@0.61.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/windows-core@0.61.2",
+      "to": [
+        "pkg:cargo/windows-implement@0.60.0",
+        "pkg:cargo/windows-interface@0.59.1",
+        "pkg:cargo/windows-link@0.1.1",
+        "pkg:cargo/windows-result@0.3.4",
+        "pkg:cargo/windows-strings@0.4.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/windows-future@0.2.1",
+      "to": [
+        "pkg:cargo/windows-core@0.61.2",
+        "pkg:cargo/windows-link@0.1.1",
+        "pkg:cargo/windows-threading@0.1.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/windows-implement@0.60.0",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102"
+      ]
+    },
+    {
+      "from": "pkg:cargo/windows-interface@0.59.1",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102"
+      ]
+    },
+    {
+      "from": "pkg:cargo/windows-numerics@0.2.0",
+      "to": [
+        "pkg:cargo/windows-core@0.61.2",
+        "pkg:cargo/windows-link@0.1.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/windows-registry@0.5.2",
+      "to": [
+        "pkg:cargo/windows-link@0.1.1",
+        "pkg:cargo/windows-result@0.3.4",
+        "pkg:cargo/windows-strings@0.4.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/windows-result@0.3.4",
+      "to": [
+        "pkg:cargo/windows-link@0.1.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/windows-strings@0.4.2",
+      "to": [
+        "pkg:cargo/windows-link@0.1.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/windows-sys@0.45.0",
+      "to": [
+        "pkg:cargo/windows-targets@0.42.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/windows-sys@0.52.0",
+      "to": [
+        "pkg:cargo/windows-targets@0.52.6"
+      ]
+    },
+    {
+      "from": "pkg:cargo/windows-sys@0.59.0",
+      "to": [
+        "pkg:cargo/windows-targets@0.52.6"
+      ]
+    },
+    {
+      "from": "pkg:cargo/windows-targets@0.42.2",
+      "to": [
+        "pkg:cargo/windows_aarch64_gnullvm@0.42.2",
+        "pkg:cargo/windows_aarch64_msvc@0.42.2",
+        "pkg:cargo/windows_i686_gnu@0.42.2",
+        "pkg:cargo/windows_i686_msvc@0.42.2",
+        "pkg:cargo/windows_x86_64_gnu@0.42.2",
+        "pkg:cargo/windows_x86_64_gnullvm@0.42.2",
+        "pkg:cargo/windows_x86_64_msvc@0.42.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/windows-targets@0.48.5",
+      "to": [
+        "pkg:cargo/windows_aarch64_gnullvm@0.48.5",
+        "pkg:cargo/windows_aarch64_msvc@0.48.5",
+        "pkg:cargo/windows_i686_gnu@0.48.5",
+        "pkg:cargo/windows_i686_msvc@0.48.5",
+        "pkg:cargo/windows_x86_64_gnu@0.48.5",
+        "pkg:cargo/windows_x86_64_gnullvm@0.48.5",
+        "pkg:cargo/windows_x86_64_msvc@0.48.5"
+      ]
+    },
+    {
+      "from": "pkg:cargo/windows-targets@0.52.6",
+      "to": [
+        "pkg:cargo/windows_aarch64_gnullvm@0.52.6",
+        "pkg:cargo/windows_aarch64_msvc@0.52.6",
+        "pkg:cargo/windows_i686_gnu@0.52.6",
+        "pkg:cargo/windows_i686_gnullvm@0.52.6",
+        "pkg:cargo/windows_i686_msvc@0.52.6",
+        "pkg:cargo/windows_x86_64_gnu@0.52.6",
+        "pkg:cargo/windows_x86_64_gnullvm@0.52.6",
+        "pkg:cargo/windows_x86_64_msvc@0.52.6"
+      ]
+    },
+    {
+      "from": "pkg:cargo/windows-threading@0.1.0",
+      "to": [
+        "pkg:cargo/windows-link@0.1.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/windows-version@0.1.4",
+      "to": [
+        "pkg:cargo/windows-link@0.1.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/windows@0.61.1",
+      "to": [
+        "pkg:cargo/windows-collections@0.2.0",
+        "pkg:cargo/windows-core@0.61.2",
+        "pkg:cargo/windows-future@0.2.1",
+        "pkg:cargo/windows-link@0.1.1",
+        "pkg:cargo/windows-numerics@0.2.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/winnow@0.5.40",
+      "to": [
+        "pkg:cargo/memchr@2.7.4"
+      ]
+    },
+    {
+      "from": "pkg:cargo/winnow@0.7.11",
+      "to": [
+        "pkg:cargo/memchr@2.7.4"
+      ]
+    },
+    {
+      "from": "pkg:cargo/winreg@0.55.0",
+      "to": [
+        "pkg:cargo/cfg-if@1.0.1",
+        "pkg:cargo/windows-sys@0.59.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/wit-bindgen-rt@0.39.0",
+      "to": [
+        "pkg:cargo/bitflags@2.9.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/wry@0.51.2",
+      "to": [
+        "pkg:cargo/base64@0.22.1",
+        "pkg:cargo/block2@0.6.1",
+        "pkg:cargo/cookie@0.18.1",
+        "pkg:cargo/crossbeam-channel@0.5.15",
+        "pkg:cargo/dpi@0.1.2",
+        "pkg:cargo/dunce@1.0.5",
+        "pkg:cargo/gdkx11@0.18.2",
+        "pkg:cargo/gtk@0.18.2",
+        "pkg:cargo/html5ever@0.26.0",
+        "pkg:cargo/http@1.3.1",
+        "pkg:cargo/javascriptcore-rs@1.1.2",
+        "pkg:cargo/jni@0.21.1",
+        "pkg:cargo/kuchikiki@0.8.2",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/ndk@0.9.0",
+        "pkg:cargo/objc2-app-kit@0.3.1",
+        "pkg:cargo/objc2-core-foundation@0.3.1",
+        "pkg:cargo/objc2-foundation@0.3.1",
+        "pkg:cargo/objc2-ui-kit@0.3.1",
+        "pkg:cargo/objc2-web-kit@0.3.1",
+        "pkg:cargo/objc2@0.6.1",
+        "pkg:cargo/once_cell@1.21.3",
+        "pkg:cargo/percent-encoding@2.3.1",
+        "pkg:cargo/raw-window-handle@0.6.2",
+        "pkg:cargo/sha2@0.10.9",
+        "pkg:cargo/soup3@0.5.0",
+        "pkg:cargo/tao-macros@0.1.3",
+        "pkg:cargo/thiserror@2.0.12",
+        "pkg:cargo/url@2.5.4",
+        "pkg:cargo/webkit2gtk-sys@2.0.1",
+        "pkg:cargo/webkit2gtk@2.0.1",
+        "pkg:cargo/webview2-com@0.37.0",
+        "pkg:cargo/windows-core@0.61.2",
+        "pkg:cargo/windows-version@0.1.4",
+        "pkg:cargo/windows@0.61.1",
+        "pkg:cargo/x11-dl@2.21.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/x11-dl@2.21.0",
+      "to": [
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/once_cell@1.21.3",
+        "pkg:cargo/pkg-config@0.3.32"
+      ]
+    },
+    {
+      "from": "pkg:cargo/x11@2.21.0",
+      "to": [
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/pkg-config@0.3.32"
+      ]
+    },
+    {
+      "from": "pkg:cargo/x11rb@0.13.1",
+      "to": [
+        "pkg:cargo/gethostname@0.4.3",
+        "pkg:cargo/rustix@0.38.44",
+        "pkg:cargo/x11rb-protocol@0.13.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/xattr@1.5.0",
+      "to": [
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/rustix@1.0.7"
+      ]
+    },
+    {
+      "from": "pkg:cargo/yoke-derive@0.8.0",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102",
+        "pkg:cargo/synstructure@0.13.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/yoke@0.8.0",
+      "to": [
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/stable_deref_trait@1.2.0",
+        "pkg:cargo/yoke-derive@0.8.0",
+        "pkg:cargo/zerofrom@0.1.6"
+      ]
+    },
+    {
+      "from": "pkg:cargo/zbus_macros@5.7.1",
+      "to": [
+        "pkg:cargo/proc-macro-crate@3.3.0",
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102",
+        "pkg:cargo/zbus_names@4.2.0",
+        "pkg:cargo/zvariant@5.5.3",
+        "pkg:cargo/zvariant_utils@3.2.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/zbus_names@4.2.0",
+      "to": [
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/static_assertions@1.1.0",
+        "pkg:cargo/winnow@0.7.11",
+        "pkg:cargo/zvariant@5.5.3"
+      ]
+    },
+    {
+      "from": "pkg:cargo/zbus@5.7.1",
+      "to": [
+        "pkg:cargo/async-broadcast@0.7.2",
+        "pkg:cargo/async-executor@1.13.2",
+        "pkg:cargo/async-io@2.4.1",
+        "pkg:cargo/async-lock@3.4.0",
+        "pkg:cargo/async-process@2.3.1",
+        "pkg:cargo/async-recursion@1.1.1",
+        "pkg:cargo/async-task@4.7.1",
+        "pkg:cargo/async-trait@0.1.88",
+        "pkg:cargo/blocking@1.6.1",
+        "pkg:cargo/enumflags2@0.7.12",
+        "pkg:cargo/event-listener@5.4.0",
+        "pkg:cargo/futures-core@0.3.31",
+        "pkg:cargo/futures-lite@2.6.0",
+        "pkg:cargo/hex@0.4.3",
+        "pkg:cargo/nix@0.30.1",
+        "pkg:cargo/ordered-stream@0.2.0",
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/serde_repr@0.1.20",
+        "pkg:cargo/tokio@1.45.1",
+        "pkg:cargo/tracing@0.1.41",
+        "pkg:cargo/uds_windows@1.1.0",
+        "pkg:cargo/windows-sys@0.59.0",
+        "pkg:cargo/winnow@0.7.11",
+        "pkg:cargo/zbus_macros@5.7.1",
+        "pkg:cargo/zbus_names@4.2.0",
+        "pkg:cargo/zvariant@5.5.3"
+      ]
+    },
+    {
+      "from": "pkg:cargo/zerocopy-derive@0.8.25",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102"
+      ]
+    },
+    {
+      "from": "pkg:cargo/zerocopy@0.8.25",
+      "to": [
+        "pkg:cargo/zerocopy-derive@0.8.25"
+      ]
+    },
+    {
+      "from": "pkg:cargo/zerofrom-derive@0.1.6",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102",
+        "pkg:cargo/synstructure@0.13.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/zerofrom@0.1.6",
+      "to": [
+        "pkg:cargo/zerofrom-derive@0.1.6"
+      ]
+    },
+    {
+      "from": "pkg:cargo/zerotrie@0.2.2",
+      "to": [
+        "pkg:cargo/displaydoc@0.2.5",
+        "pkg:cargo/yoke@0.8.0",
+        "pkg:cargo/zerofrom@0.1.6"
+      ]
+    },
+    {
+      "from": "pkg:cargo/zerovec-derive@0.11.1",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102"
+      ]
+    },
+    {
+      "from": "pkg:cargo/zerovec@0.11.2",
+      "to": [
+        "pkg:cargo/yoke@0.8.0",
+        "pkg:cargo/zerofrom@0.1.6",
+        "pkg:cargo/zerovec-derive@0.11.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/zip@2.4.2",
+      "to": [
+        "pkg:cargo/arbitrary@1.4.1",
+        "pkg:cargo/crc32fast@1.4.2",
+        "pkg:cargo/crossbeam-utils@0.8.21",
+        "pkg:cargo/displaydoc@0.2.5",
+        "pkg:cargo/indexmap@2.9.0",
+        "pkg:cargo/memchr@2.7.4",
+        "pkg:cargo/thiserror@2.0.12"
+      ]
+    },
+    {
+      "from": "pkg:cargo/zune-inflate@0.2.54",
+      "to": [
+        "pkg:cargo/simd-adler32@0.3.7"
+      ]
+    },
+    {
+      "from": "pkg:cargo/zvariant_derive@5.5.3",
+      "to": [
+        "pkg:cargo/proc-macro-crate@3.3.0",
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102",
+        "pkg:cargo/zvariant_utils@3.2.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/zvariant_utils@3.2.0",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/static_assertions@1.1.0",
+        "pkg:cargo/syn@2.0.102",
+        "pkg:cargo/winnow@0.7.11"
+      ]
+    },
+    {
+      "from": "pkg:cargo/zvariant@5.5.3",
+      "to": [
+        "pkg:cargo/endi@1.1.0",
+        "pkg:cargo/enumflags2@0.7.12",
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/url@2.5.4",
+        "pkg:cargo/winnow@0.7.11",
+        "pkg:cargo/zvariant_derive@5.5.3",
+        "pkg:cargo/zvariant_utils@3.2.0"
+      ]
+    },
     {
       "from": "pkg:npm/%40ai-sdk/gateway@1.0.15",
       "to": [

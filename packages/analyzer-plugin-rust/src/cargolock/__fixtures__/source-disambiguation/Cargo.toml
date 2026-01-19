@@ -1,0 +1,10 @@
+[package]
+name = "disambiguation-example"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Local path dependency
+mylib = { path = "./mylib" }
+# Registry dependency with same name
+mylib-registry = { package = "mylib", version = "0.1.0" }

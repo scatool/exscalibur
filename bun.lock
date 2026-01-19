@@ -168,6 +168,21 @@
         "typescript": "^5",
       },
     },
+    "packages/analyzer-plugin-rust": {
+      "name": "@scatool/analyzer-plugin-rust",
+      "version": "0.0.1",
+      "dependencies": {
+        "@scatool/analyzer-core": "workspace:*",
+        "packageurl-js": "^2.0.1",
+      },
+      "devDependencies": {
+        "@scatool/analyzer-test-utils": "workspace:*",
+        "@types/bun": "^1.3.6",
+      },
+      "peerDependencies": {
+        "typescript": "^5",
+      },
+    },
     "packages/analyzer-test-utils": {
       "name": "@scatool/analyzer-test-utils",
       "version": "0.0.2",
@@ -191,6 +206,7 @@
         "@scatool/analyzer-plugin-go": "workspace:*",
         "@scatool/analyzer-plugin-gradle": "workspace:*",
         "@scatool/analyzer-plugin-javascript": "workspace:*",
+        "@scatool/analyzer-plugin-rust": "workspace:*",
       },
       "devDependencies": {
         "@types/bun": "^1.3.6",
@@ -243,6 +259,8 @@
     "@scatool/analyzer-plugin-maven": ["@scatool/analyzer-plugin-maven@workspace:packages/analyzer-plugin-maven"],
 
     "@scatool/analyzer-plugin-ort": ["@scatool/analyzer-plugin-ort@workspace:packages/analyzer-plugin-ort"],
+
+    "@scatool/analyzer-plugin-rust": ["@scatool/analyzer-plugin-rust@workspace:packages/analyzer-plugin-rust"],
 
     "@scatool/analyzer-test": ["@scatool/analyzer-test@workspace:test"],
 

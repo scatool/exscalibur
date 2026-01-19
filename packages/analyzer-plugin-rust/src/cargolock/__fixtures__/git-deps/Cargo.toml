@@ -1,0 +1,9 @@
+[package]
+name = "git-deps-example"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+serde = "1.0.193"
+# This would be a git dependency in a real project
+my-git-dep = { git = "https://github.com/example/my-git-dep", tag = "v0.1.0" }
