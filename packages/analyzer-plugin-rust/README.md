@@ -1,32 +1,23 @@
 # @scatool/analyzer-plugin-rust
 
-Rust dependency analyzer plugin for Excalibur. Extracts dependency graphs from Rust projects using Cargo.lock files.
+**Note**: This plugin is experimental.
 
-## Features
+Rust (Cargo) dependency analyzer plugin for Excalibur.
 
-- **Cargo.lock parsing**: Extracts packages and relationships from Cargo.lock files using Bun's native TOML parser
-- **Workspace support**: Handles both single-package projects and Cargo workspaces
-- **Complete dependency graph**: Tracks relationships between all packages
-- **Evidence tracking**: Records file paths and line numbers for each package reference
-- **PURL support**: Creates Package URLs (PURLs) with the `cargo` namespace
-- **Configurable ignore patterns**: Excludes files in `/target/` by default, customizable via options
+## Requirements
 
-## Extractors
+- `Cargo.lock` file must be present in the project
+- `Cargo.toml` file is used to identify workspace members and subprojects
 
-### `cargoLockExtractor`
+No external tools (Cargo, Rust) are required - the plugin parses lockfiles directly.
 
-Parses `Cargo.lock` files to extract dependency information.
+## Usage
 
-**Pattern**: `**/Cargo.lock` (excluding files in `/target/` directories)
+```typescript
+import { cargoLockExtractor } from '@scatool/analyzer-plugin-rust';
 
-**What it extracts**:
-
-- All packages with their versions
-- Direct and transitive dependencies
-- Subprojects (workspace members or root package)
-- Dependency relationships
-
-**Example PURL**: `pkg:cargo/serde@1.0.193`
+const result = await cargoLockExtractor.extract('/path/to/codebase');
+```
 
 ## Limitations
 
@@ -42,21 +33,3 @@ Parses `Cargo.lock` files to extract dependency information.
    - The source URL or path is not preserved in the PURL
 
 5. **Patch and replace directives**: Cargo's `[patch]` and `[replace]` sections are not explicitly tracked. The extractor uses the resolved versions from the lockfile.
-
-6. **Build artifacts**: The extractor automatically skips `Cargo.lock` files in `/target/` directories (Cargo's build output).
-
-7. **Multiple versions**: When a project depends on multiple versions of the same crate, all versions are included with their respective relationships.
-
-## Testing
-
-Run tests with:
-
-```bash
-bun test
-```
-
-Run type checking with:
-
-```bash
-bun run typecheck
-```

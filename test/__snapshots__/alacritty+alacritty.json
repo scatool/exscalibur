@@ -1,0 +1,3408 @@
+{
+  "packages": [
+    {
+      "purl": "pkg:cargo/adler2@2.0.1",
+      "evidence": [
+        "Cargo.lock#6"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/ahash@0.8.12",
+      "evidence": [
+        "Cargo.lock#12"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/aho-corasick@1.1.3",
+      "evidence": [
+        "Cargo.lock#25"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/android-activity@0.6.0",
+      "evidence": [
+        "Cargo.lock#119"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/android-properties@0.2.2",
+      "evidence": [
+        "Cargo.lock#140"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/anstream@0.6.21",
+      "evidence": [
+        "Cargo.lock#146"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/anstyle-parse@0.2.7",
+      "evidence": [
+        "Cargo.lock#167"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/anstyle-query@1.1.4",
+      "evidence": [
+        "Cargo.lock#176"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/anstyle-wincon@3.0.10",
+      "evidence": [
+        "Cargo.lock#185"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/anstyle@1.0.13",
+      "evidence": [
+        "Cargo.lock#161"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/arrayref@0.3.9",
+      "evidence": [
+        "Cargo.lock#196"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/arrayvec@0.7.6",
+      "evidence": [
+        "Cargo.lock#202"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/as-raw-xcb-connection@1.0.1",
+      "evidence": [
+        "Cargo.lock#208"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/atomic-waker@1.1.2",
+      "evidence": [
+        "Cargo.lock#214"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/base64@0.22.1",
+      "evidence": [
+        "Cargo.lock#220"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/bitflags@1.3.2",
+      "evidence": [
+        "Cargo.lock#226"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/bitflags@2.9.4",
+      "evidence": [
+        "Cargo.lock#226"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/block2@0.5.1",
+      "evidence": [
+        "Cargo.lock#241"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/bumpalo@3.19.0",
+      "evidence": [
+        "Cargo.lock#250"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/bytemuck@1.24.0",
+      "evidence": [
+        "Cargo.lock#256"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/bytes@1.10.1",
+      "evidence": [
+        "Cargo.lock#262"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/calloop-wayland-source@0.3.0",
+      "evidence": [
+        "Cargo.lock#282"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/calloop@0.13.0",
+      "evidence": [
+        "Cargo.lock#268"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/cc@1.2.40",
+      "evidence": [
+        "Cargo.lock#294"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/cesu8@1.1.0",
+      "evidence": [
+        "Cargo.lock#306"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/cfg_aliases@0.2.1",
+      "evidence": [
+        "Cargo.lock#318"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/cfg-if@1.0.3",
+      "evidence": [
+        "Cargo.lock#312"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/cgl@0.3.2",
+      "evidence": [
+        "Cargo.lock#324"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/clap_builder@4.5.48",
+      "evidence": [
+        "Cargo.lock#343"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/clap_complete@4.5.58",
+      "evidence": [
+        "Cargo.lock#355"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/clap_derive@4.5.47",
+      "evidence": [
+        "Cargo.lock#364"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/clap_lex@0.7.5",
+      "evidence": [
+        "Cargo.lock#376"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/clap@4.5.48",
+      "evidence": [
+        "Cargo.lock#333"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/clipboard-win@5.4.1",
+      "evidence": [
+        "Cargo.lock#382"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/colorchoice@1.0.4",
+      "evidence": [
+        "Cargo.lock#391"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/combine@4.6.7",
+      "evidence": [
+        "Cargo.lock#397"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/concurrent-queue@2.5.0",
+      "evidence": [
+        "Cargo.lock#407"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/copypasta@0.10.2",
+      "evidence": [
+        "Cargo.lock#416"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/core-foundation-sys@0.8.7",
+      "evidence": [
+        "Cargo.lock#440"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/core-foundation@0.9.4",
+      "evidence": [
+        "Cargo.lock#430"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/core-graphics-types@0.1.3",
+      "evidence": [
+        "Cargo.lock#459"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/core-graphics@0.23.2",
+      "evidence": [
+        "Cargo.lock#446"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/core-text@20.1.0",
+      "evidence": [
+        "Cargo.lock#470"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/crc32fast@1.5.0",
+      "evidence": [
+        "Cargo.lock#482"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/crossbeam-utils@0.8.21",
+      "evidence": [
+        "Cargo.lock#491"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/crossfont@0.8.1",
+      "evidence": [
+        "Cargo.lock#497"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/cstr@0.2.12",
+      "evidence": [
+        "Cargo.lock#520"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/cursor-icon@1.2.0",
+      "evidence": [
+        "Cargo.lock#530"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/dirs-sys@0.5.0",
+      "evidence": [
+        "Cargo.lock#548"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/dirs@6.0.0",
+      "evidence": [
+        "Cargo.lock#539"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/dispatch@0.2.0",
+      "evidence": [
+        "Cargo.lock#560"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/dispatch2@0.3.0",
+      "evidence": [
+        "Cargo.lock#566"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/dlib@0.5.2",
+      "evidence": [
+        "Cargo.lock#576"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/downcast-rs@1.2.1",
+      "evidence": [
+        "Cargo.lock#585"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/dpi@0.1.2",
+      "evidence": [
+        "Cargo.lock#591"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/dwrote@0.11.5",
+      "evidence": [
+        "Cargo.lock#600"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/embed-resource@3.0.6",
+      "evidence": [
+        "Cargo.lock#614"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/equivalent@1.0.2",
+      "evidence": [
+        "Cargo.lock#628"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/errno@0.3.14",
+      "evidence": [
+        "Cargo.lock#634"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/error-code@3.3.2",
+      "evidence": [
+        "Cargo.lock#644"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/fastrand@2.3.0",
+      "evidence": [
+        "Cargo.lock#650"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/fdeflate@0.3.7",
+      "evidence": [
+        "Cargo.lock#656"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/find-msvc-tools@0.1.3",
+      "evidence": [
+        "Cargo.lock#665"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/flate2@1.1.4",
+      "evidence": [
+        "Cargo.lock#671"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/foreign-types-macros@0.2.3",
+      "evidence": [
+        "Cargo.lock#691"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/foreign-types-shared@0.3.1",
+      "evidence": [
+        "Cargo.lock#702"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/foreign-types@0.5.0",
+      "evidence": [
+        "Cargo.lock#681"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/freetype-rs@0.36.0",
+      "evidence": [
+        "Cargo.lock#708"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/freetype-sys@0.20.1",
+      "evidence": [
+        "Cargo.lock#719"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/fsevent-sys@4.1.0",
+      "evidence": [
+        "Cargo.lock#730"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/futures-io@0.3.31",
+      "evidence": [
+        "Cargo.lock#739"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/gethostname@1.0.2",
+      "evidence": [
+        "Cargo.lock#745"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/getrandom@0.2.16",
+      "evidence": [
+        "Cargo.lock#755"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/getrandom@0.3.3",
+      "evidence": [
+        "Cargo.lock#755"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/gl_generator@0.14.0",
+      "evidence": [
+        "Cargo.lock#778"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/glutin_egl_sys@0.7.1",
+      "evidence": [
+        "Cargo.lock#814"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/glutin_glx_sys@0.6.1",
+      "evidence": [
+        "Cargo.lock#824"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/glutin_wgl_sys@0.6.1",
+      "evidence": [
+        "Cargo.lock#834"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/glutin@0.32.3",
+      "evidence": [
+        "Cargo.lock#789"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/hashbrown@0.16.0",
+      "evidence": [
+        "Cargo.lock#843"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/heck@0.5.0",
+      "evidence": [
+        "Cargo.lock#849"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/hermit-abi@0.5.2",
+      "evidence": [
+        "Cargo.lock#855"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/home@0.5.11",
+      "evidence": [
+        "Cargo.lock#861"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/indexmap@2.11.4",
+      "evidence": [
+        "Cargo.lock#870"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/inotify-sys@0.1.5",
+      "evidence": [
+        "Cargo.lock#891"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/inotify@0.11.0",
+      "evidence": [
+        "Cargo.lock#880"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/is_terminal_polyfill@1.70.1",
+      "evidence": [
+        "Cargo.lock#900"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/itoa@1.0.15",
+      "evidence": [
+        "Cargo.lock#906"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/jni-sys@0.3.0",
+      "evidence": [
+        "Cargo.lock#928"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/jni@0.21.1",
+      "evidence": [
+        "Cargo.lock#912"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/jobserver@0.1.34",
+      "evidence": [
+        "Cargo.lock#934"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/js-sys@0.3.81",
+      "evidence": [
+        "Cargo.lock#944"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/khronos_api@3.1.0",
+      "evidence": [
+        "Cargo.lock#954"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/kqueue-sys@1.0.4",
+      "evidence": [
+        "Cargo.lock#970"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/kqueue@1.1.1",
+      "evidence": [
+        "Cargo.lock#960"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/lazy_static@1.5.0",
+      "evidence": [
+        "Cargo.lock#980"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/libc@0.2.176",
+      "evidence": [
+        "Cargo.lock#986"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/libloading@0.8.9",
+      "evidence": [
+        "Cargo.lock#992"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/libredox@0.1.10",
+      "evidence": [
+        "Cargo.lock#1002"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/linux-raw-sys@0.11.0",
+      "evidence": [
+        "Cargo.lock#1013"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/linux-raw-sys@0.4.15",
+      "evidence": [
+        "Cargo.lock#1013"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/lock_api@0.4.14",
+      "evidence": [
+        "Cargo.lock#1025"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/log@0.4.28",
+      "evidence": [
+        "Cargo.lock#1034"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/memchr@2.7.6",
+      "evidence": [
+        "Cargo.lock#1043"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/memmap2@0.9.8",
+      "evidence": [
+        "Cargo.lock#1049"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/miniz_oxide@0.8.9",
+      "evidence": [
+        "Cargo.lock#1058"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/mio@1.0.4",
+      "evidence": [
+        "Cargo.lock#1068"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/miow@0.6.1",
+      "evidence": [
+        "Cargo.lock#1080"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/ndk-context@0.1.1",
+      "evidence": [
+        "Cargo.lock#1104"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/ndk-sys@0.6.0+11769913",
+      "evidence": [
+        "Cargo.lock#1110"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/ndk@0.9.0",
+      "evidence": [
+        "Cargo.lock#1089"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/notify-types@2.0.0",
+      "evidence": [
+        "Cargo.lock#1137"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/notify@8.2.0",
+      "evidence": [
+        "Cargo.lock#1119"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/num_enum_derive@0.7.4",
+      "evidence": [
+        "Cargo.lock#1153"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/num_enum@0.7.4",
+      "evidence": [
+        "Cargo.lock#1143"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc-sys@0.3.5",
+      "evidence": [
+        "Cargo.lock#1165"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2-app-kit@0.2.2",
+      "evidence": [
+        "Cargo.lock#1190"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2-app-kit@0.3.2",
+      "evidence": [
+        "Cargo.lock#1190"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2-cloud-kit@0.2.2",
+      "evidence": [
+        "Cargo.lock#1218"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2-contacts@0.2.2",
+      "evidence": [
+        "Cargo.lock#1231"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2-core-data@0.2.2",
+      "evidence": [
+        "Cargo.lock#1242"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2-core-foundation@0.3.2",
+      "evidence": [
+        "Cargo.lock#1254"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2-core-image@0.2.2",
+      "evidence": [
+        "Cargo.lock#1265"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2-core-location@0.2.2",
+      "evidence": [
+        "Cargo.lock#1277"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2-encode@4.1.0",
+      "evidence": [
+        "Cargo.lock#1289"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2-foundation@0.2.2",
+      "evidence": [
+        "Cargo.lock#1295"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2-foundation@0.3.2",
+      "evidence": [
+        "Cargo.lock#1295"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2-link-presentation@0.2.2",
+      "evidence": [
+        "Cargo.lock#1319"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2-metal@0.2.2",
+      "evidence": [
+        "Cargo.lock#1331"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2-quartz-core@0.2.2",
+      "evidence": [
+        "Cargo.lock#1343"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2-symbols@0.2.2",
+      "evidence": [
+        "Cargo.lock#1356"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2-ui-kit@0.2.2",
+      "evidence": [
+        "Cargo.lock#1366"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2-uniform-type-identifiers@0.2.2",
+      "evidence": [
+        "Cargo.lock#1387"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2-user-notifications@0.2.2",
+      "evidence": [
+        "Cargo.lock#1398"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2@0.5.2",
+      "evidence": [
+        "Cargo.lock#1171"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/objc2@0.6.3",
+      "evidence": [
+        "Cargo.lock#1171"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/once_cell_polyfill@1.70.1",
+      "evidence": [
+        "Cargo.lock#1417"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/once_cell@1.21.3",
+      "evidence": [
+        "Cargo.lock#1411"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/option-ext@0.2.0",
+      "evidence": [
+        "Cargo.lock#1423"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/orbclient@0.3.48",
+      "evidence": [
+        "Cargo.lock#1429"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/parking_lot_core@0.9.12",
+      "evidence": [
+        "Cargo.lock#1448"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/parking_lot@0.12.5",
+      "evidence": [
+        "Cargo.lock#1438"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/percent-encoding@2.3.2",
+      "evidence": [
+        "Cargo.lock#1461"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/pin-project-internal@1.1.10",
+      "evidence": [
+        "Cargo.lock#1476"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/pin-project-lite@0.2.16",
+      "evidence": [
+        "Cargo.lock#1487"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/pin-project@1.1.10",
+      "evidence": [
+        "Cargo.lock#1467"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/piper@0.2.4",
+      "evidence": [
+        "Cargo.lock#1493"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/pkg-config@0.3.32",
+      "evidence": [
+        "Cargo.lock#1504"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/png@0.17.16",
+      "evidence": [
+        "Cargo.lock#1510"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/polling@3.11.0",
+      "evidence": [
+        "Cargo.lock#1523"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/proc-macro-crate@3.4.0",
+      "evidence": [
+        "Cargo.lock#1537"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/proc-macro2@1.0.101",
+      "evidence": [
+        "Cargo.lock#1546"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/quick-xml@0.37.5",
+      "evidence": [
+        "Cargo.lock#1555"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/quote@1.0.41",
+      "evidence": [
+        "Cargo.lock#1564"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/r-efi@5.3.0",
+      "evidence": [
+        "Cargo.lock#1573"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/raw-window-handle@0.6.2",
+      "evidence": [
+        "Cargo.lock#1579"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/redox_syscall@0.4.1",
+      "evidence": [
+        "Cargo.lock#1585"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/redox_syscall@0.5.18",
+      "evidence": [
+        "Cargo.lock#1585"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/redox_users@0.5.2",
+      "evidence": [
+        "Cargo.lock#1603"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/regex-automata@0.4.11",
+      "evidence": [
+        "Cargo.lock#1614"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/regex-syntax@0.8.6",
+      "evidence": [
+        "Cargo.lock#1625"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/rustc_version@0.4.1",
+      "evidence": [
+        "Cargo.lock#1631"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/rustix-openpty@0.2.0",
+      "evidence": [
+        "Cargo.lock#1666"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/rustix@0.38.44",
+      "evidence": [
+        "Cargo.lock#1640"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/rustix@1.1.2",
+      "evidence": [
+        "Cargo.lock#1640"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/rustversion@1.0.22",
+      "evidence": [
+        "Cargo.lock#1677"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/ryu@1.0.20",
+      "evidence": [
+        "Cargo.lock#1683"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/same-file@1.0.6",
+      "evidence": [
+        "Cargo.lock#1689"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/scoped-tls@1.0.1",
+      "evidence": [
+        "Cargo.lock#1698"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/scopeguard@1.2.0",
+      "evidence": [
+        "Cargo.lock#1704"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/sctk-adwaita@0.10.1",
+      "evidence": [
+        "Cargo.lock#1710"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/semver@1.0.27",
+      "evidence": [
+        "Cargo.lock#1722"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/serde_core@1.0.228",
+      "evidence": [
+        "Cargo.lock#1738"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/serde_derive@1.0.228",
+      "evidence": [
+        "Cargo.lock#1747"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/serde_json@1.0.145",
+      "evidence": [
+        "Cargo.lock#1758"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/serde_spanned@1.0.4",
+      "evidence": [
+        "Cargo.lock#1771"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/serde_yaml@0.9.34+deprecated",
+      "evidence": [
+        "Cargo.lock#1780"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/serde@1.0.228",
+      "evidence": [
+        "Cargo.lock#1728"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/shlex@1.3.0",
+      "evidence": [
+        "Cargo.lock#1793"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/signal-hook-registry@1.4.6",
+      "evidence": [
+        "Cargo.lock#1809"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/signal-hook@0.3.18",
+      "evidence": [
+        "Cargo.lock#1799"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/simd-adler32@0.3.7",
+      "evidence": [
+        "Cargo.lock#1818"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/slab@0.4.11",
+      "evidence": [
+        "Cargo.lock#1824"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/smallvec@1.15.1",
+      "evidence": [
+        "Cargo.lock#1830"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/smithay-client-toolkit@0.19.2",
+      "evidence": [
+        "Cargo.lock#1836"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/smithay-clipboard@0.7.2",
+      "evidence": [
+        "Cargo.lock#1861"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/smol_str@0.2.2",
+      "evidence": [
+        "Cargo.lock#1872"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/strict-num@0.1.1",
+      "evidence": [
+        "Cargo.lock#1881"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/strsim@0.11.1",
+      "evidence": [
+        "Cargo.lock#1887"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/syn@2.0.106",
+      "evidence": [
+        "Cargo.lock#1893"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tempfile@3.23.0",
+      "evidence": [
+        "Cargo.lock#1904"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/thiserror-impl@1.0.69",
+      "evidence": [
+        "Cargo.lock#1935"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/thiserror-impl@2.0.17",
+      "evidence": [
+        "Cargo.lock#1935"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/thiserror@1.0.69",
+      "evidence": [
+        "Cargo.lock#1917"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/thiserror@2.0.17",
+      "evidence": [
+        "Cargo.lock#1917"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tiny-skia-path@0.11.4",
+      "evidence": [
+        "Cargo.lock#1971"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tiny-skia@0.11.4",
+      "evidence": [
+        "Cargo.lock#1957"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/toml_datetime@0.7.5+spec-1.1.0",
+      "evidence": [
+        "Cargo.lock#1997"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/toml_edit@0.23.10+spec-1.0.0",
+      "evidence": [
+        "Cargo.lock#2006"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/toml_edit@0.24.0+spec-1.1.0",
+      "evidence": [
+        "Cargo.lock#2006"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/toml_parser@1.0.6+spec-1.1.0",
+      "evidence": [
+        "Cargo.lock#2031"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/toml_writer@1.0.6+spec-1.1.0",
+      "evidence": [
+        "Cargo.lock#2040"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/toml@0.9.11+spec-1.1.0",
+      "evidence": [
+        "Cargo.lock#1982"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tracing-core@0.1.34",
+      "evidence": [
+        "Cargo.lock#2056"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tracing@0.1.41",
+      "evidence": [
+        "Cargo.lock#2046"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/unicode-ident@1.0.19",
+      "evidence": [
+        "Cargo.lock#2062"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/unicode-segmentation@1.12.0",
+      "evidence": [
+        "Cargo.lock#2068"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/unicode-width@0.2.2",
+      "evidence": [
+        "Cargo.lock#2074"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/unsafe-libyaml@0.2.11",
+      "evidence": [
+        "Cargo.lock#2080"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/utf8parse@0.2.2",
+      "evidence": [
+        "Cargo.lock#2086"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/version_check@0.9.5",
+      "evidence": [
+        "Cargo.lock#2092"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/vswhom-sys@0.1.3",
+      "evidence": [
+        "Cargo.lock#2108"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/vswhom@0.1.0",
+      "evidence": [
+        "Cargo.lock#2098"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/vte@0.15.0",
+      "evidence": [
+        "Cargo.lock#2118"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/walkdir@2.5.0",
+      "evidence": [
+        "Cargo.lock#2132"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/wasi@0.11.1+wasi-snapshot-preview1",
+      "evidence": [
+        "Cargo.lock#2142"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/wasi@0.14.7+wasi-0.2.4",
+      "evidence": [
+        "Cargo.lock#2142"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/wasip2@1.0.1+wasi-0.2.4",
+      "evidence": [
+        "Cargo.lock#2157"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/wasm-bindgen-backend@0.2.104",
+      "evidence": [
+        "Cargo.lock#2179"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/wasm-bindgen-futures@0.4.54",
+      "evidence": [
+        "Cargo.lock#2193"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/wasm-bindgen-macro-support@0.2.104",
+      "evidence": [
+        "Cargo.lock#2216"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/wasm-bindgen-macro@0.2.104",
+      "evidence": [
+        "Cargo.lock#2206"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/wasm-bindgen-shared@0.2.104",
+      "evidence": [
+        "Cargo.lock#2229"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/wasm-bindgen@0.2.104",
+      "evidence": [
+        "Cargo.lock#2166"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/wayland-backend@0.3.11",
+      "evidence": [
+        "Cargo.lock#2238"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/wayland-client@0.31.11",
+      "evidence": [
+        "Cargo.lock#2252"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/wayland-csd-frame@0.3.0",
+      "evidence": [
+        "Cargo.lock#2264"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/wayland-cursor@0.31.11",
+      "evidence": [
+        "Cargo.lock#2275"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/wayland-protocols-plasma@0.3.9",
+      "evidence": [
+        "Cargo.lock#2298"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/wayland-protocols-wlr@0.3.9",
+      "evidence": [
+        "Cargo.lock#2311"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/wayland-protocols@0.32.9",
+      "evidence": [
+        "Cargo.lock#2286"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/wayland-scanner@0.31.7",
+      "evidence": [
+        "Cargo.lock#2324"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/wayland-sys@0.31.7",
+      "evidence": [
+        "Cargo.lock#2335"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/web-sys@0.3.81",
+      "evidence": [
+        "Cargo.lock#2347"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/web-time@1.1.0",
+      "evidence": [
+        "Cargo.lock#2357"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/winapi-i686-pc-windows-gnu@0.4.0",
+      "evidence": [
+        "Cargo.lock#2377"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/winapi-util@0.1.11",
+      "evidence": [
+        "Cargo.lock#2383"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/winapi-x86_64-pc-windows-gnu@0.4.0",
+      "evidence": [
+        "Cargo.lock#2392"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/winapi@0.3.9",
+      "evidence": [
+        "Cargo.lock#2367"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_aarch64_gnullvm@0.42.2",
+      "evidence": [
+        "Cargo.lock#2497"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_aarch64_gnullvm@0.52.6",
+      "evidence": [
+        "Cargo.lock#2497"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_aarch64_gnullvm@0.53.1",
+      "evidence": [
+        "Cargo.lock#2497"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_aarch64_msvc@0.42.2",
+      "evidence": [
+        "Cargo.lock#2515"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_aarch64_msvc@0.52.6",
+      "evidence": [
+        "Cargo.lock#2515"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_aarch64_msvc@0.53.1",
+      "evidence": [
+        "Cargo.lock#2515"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_i686_gnu@0.42.2",
+      "evidence": [
+        "Cargo.lock#2533"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_i686_gnu@0.52.6",
+      "evidence": [
+        "Cargo.lock#2533"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_i686_gnu@0.53.1",
+      "evidence": [
+        "Cargo.lock#2533"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_i686_gnullvm@0.52.6",
+      "evidence": [
+        "Cargo.lock#2551"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_i686_gnullvm@0.53.1",
+      "evidence": [
+        "Cargo.lock#2551"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_i686_msvc@0.42.2",
+      "evidence": [
+        "Cargo.lock#2563"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_i686_msvc@0.52.6",
+      "evidence": [
+        "Cargo.lock#2563"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_i686_msvc@0.53.1",
+      "evidence": [
+        "Cargo.lock#2563"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_x86_64_gnu@0.42.2",
+      "evidence": [
+        "Cargo.lock#2581"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_x86_64_gnu@0.52.6",
+      "evidence": [
+        "Cargo.lock#2581"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_x86_64_gnu@0.53.1",
+      "evidence": [
+        "Cargo.lock#2581"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_x86_64_gnullvm@0.42.2",
+      "evidence": [
+        "Cargo.lock#2599"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_x86_64_gnullvm@0.52.6",
+      "evidence": [
+        "Cargo.lock#2599"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_x86_64_gnullvm@0.53.1",
+      "evidence": [
+        "Cargo.lock#2599"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_x86_64_msvc@0.42.2",
+      "evidence": [
+        "Cargo.lock#2617"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_x86_64_msvc@0.52.6",
+      "evidence": [
+        "Cargo.lock#2617"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows_x86_64_msvc@0.53.1",
+      "evidence": [
+        "Cargo.lock#2617"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-link@0.2.1",
+      "evidence": [
+        "Cargo.lock#2398"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-sys@0.45.0",
+      "evidence": [
+        "Cargo.lock#2404"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-sys@0.52.0",
+      "evidence": [
+        "Cargo.lock#2404"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-sys@0.59.0",
+      "evidence": [
+        "Cargo.lock#2404"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-sys@0.60.2",
+      "evidence": [
+        "Cargo.lock#2404"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-sys@0.61.2",
+      "evidence": [
+        "Cargo.lock#2404"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-targets@0.42.2",
+      "evidence": [
+        "Cargo.lock#2449"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-targets@0.52.6",
+      "evidence": [
+        "Cargo.lock#2449"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-targets@0.53.5",
+      "evidence": [
+        "Cargo.lock#2449"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/winit@0.30.12",
+      "evidence": [
+        "Cargo.lock#2635"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/winnow@0.7.13",
+      "evidence": [
+        "Cargo.lock#2688"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/winreg@0.55.0",
+      "evidence": [
+        "Cargo.lock#2697"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/wio@0.2.2",
+      "evidence": [
+        "Cargo.lock#2707"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/wit-bindgen@0.46.0",
+      "evidence": [
+        "Cargo.lock#2716"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/x11-clipboard@0.9.3",
+      "evidence": [
+        "Cargo.lock#2722"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/x11-dl@2.21.0",
+      "evidence": [
+        "Cargo.lock#2732"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/x11rb-protocol@0.13.2",
+      "evidence": [
+        "Cargo.lock#2758"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/x11rb@0.13.2",
+      "evidence": [
+        "Cargo.lock#2743"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/xcursor@0.3.10",
+      "evidence": [
+        "Cargo.lock#2764"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/xdg@3.0.0",
+      "evidence": [
+        "Cargo.lock#2770"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/xkbcommon-dl@0.4.2",
+      "evidence": [
+        "Cargo.lock#2776"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/xkeysym@0.2.1",
+      "evidence": [
+        "Cargo.lock#2789"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/xml-rs@0.8.27",
+      "evidence": [
+        "Cargo.lock#2795"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/yeslogic-fontconfig-sys@5.0.0",
+      "evidence": [
+        "Cargo.lock#2801"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/zerocopy-derive@0.8.27",
+      "evidence": [
+        "Cargo.lock#2822"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/zerocopy@0.8.27",
+      "evidence": [
+        "Cargo.lock#2813"
+      ]
+    }
+  ],
+  "subprojects": [
+    {
+      "purl": "pkg:cargo/alacritty_config_derive@0.2.6-dev",
+      "definitionFile": "alacritty_config_derive/Cargo.toml",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:cargo/alacritty_config@0.2.4-dev",
+            "pkg:cargo/log@0.4.28",
+            "pkg:cargo/proc-macro2@1.0.101",
+            "pkg:cargo/quote@1.0.41",
+            "pkg:cargo/serde@1.0.228",
+            "pkg:cargo/syn@2.0.106",
+            "pkg:cargo/toml@0.9.11+spec-1.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "purl": "pkg:cargo/alacritty_config@0.2.4-dev",
+      "definitionFile": "alacritty_config/Cargo.toml",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:cargo/alacritty_config_derive@0.2.6-dev",
+            "pkg:cargo/log@0.4.28",
+            "pkg:cargo/serde@1.0.228",
+            "pkg:cargo/toml@0.9.11+spec-1.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "purl": "pkg:cargo/alacritty_terminal@0.25.2-dev",
+      "definitionFile": "alacritty_terminal/Cargo.toml",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:cargo/base64@0.22.1",
+            "pkg:cargo/bitflags@2.9.4",
+            "pkg:cargo/home@0.5.11",
+            "pkg:cargo/libc@0.2.176",
+            "pkg:cargo/log@0.4.28",
+            "pkg:cargo/miow@0.6.1",
+            "pkg:cargo/parking_lot@0.12.5",
+            "pkg:cargo/piper@0.2.4",
+            "pkg:cargo/polling@3.11.0",
+            "pkg:cargo/regex-automata@0.4.11",
+            "pkg:cargo/rustix-openpty@0.2.0",
+            "pkg:cargo/rustix@1.1.2",
+            "pkg:cargo/serde@1.0.228",
+            "pkg:cargo/serde_json@1.0.145",
+            "pkg:cargo/signal-hook@0.3.18",
+            "pkg:cargo/unicode-width@0.2.2",
+            "pkg:cargo/vte@0.15.0",
+            "pkg:cargo/windows-sys@0.59.0"
+          ]
+        }
+      ]
+    },
+    {
+      "purl": "pkg:cargo/alacritty@0.17.0-dev",
+      "definitionFile": "alacritty/Cargo.toml",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:cargo/ahash@0.8.12",
+            "pkg:cargo/alacritty_config@0.2.4-dev",
+            "pkg:cargo/alacritty_config_derive@0.2.6-dev",
+            "pkg:cargo/alacritty_terminal@0.25.2-dev",
+            "pkg:cargo/bitflags@2.9.4",
+            "pkg:cargo/clap@4.5.48",
+            "pkg:cargo/clap_complete@4.5.58",
+            "pkg:cargo/copypasta@0.10.2",
+            "pkg:cargo/crossfont@0.8.1",
+            "pkg:cargo/dirs@6.0.0",
+            "pkg:cargo/embed-resource@3.0.6",
+            "pkg:cargo/gl_generator@0.14.0",
+            "pkg:cargo/glutin@0.32.3",
+            "pkg:cargo/home@0.5.11",
+            "pkg:cargo/libc@0.2.176",
+            "pkg:cargo/log@0.4.28",
+            "pkg:cargo/notify@8.2.0",
+            "pkg:cargo/objc2-app-kit@0.3.2",
+            "pkg:cargo/objc2-foundation@0.3.2",
+            "pkg:cargo/objc2@0.6.3",
+            "pkg:cargo/parking_lot@0.12.5",
+            "pkg:cargo/png@0.17.16",
+            "pkg:cargo/serde@1.0.228",
+            "pkg:cargo/serde_json@1.0.145",
+            "pkg:cargo/serde_yaml@0.9.34+deprecated",
+            "pkg:cargo/tempfile@3.23.0",
+            "pkg:cargo/toml@0.9.11+spec-1.1.0",
+            "pkg:cargo/toml_edit@0.24.0+spec-1.1.0",
+            "pkg:cargo/unicode-width@0.2.2",
+            "pkg:cargo/windows-sys@0.59.0",
+            "pkg:cargo/winit@0.30.12",
+            "pkg:cargo/xdg@3.0.0"
+          ]
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "from": "pkg:cargo/ahash@0.8.12",
+      "to": [
+        "pkg:cargo/cfg-if@1.0.3",
+        "pkg:cargo/getrandom@0.3.3",
+        "pkg:cargo/once_cell@1.21.3",
+        "pkg:cargo/version_check@0.9.5",
+        "pkg:cargo/zerocopy@0.8.27"
+      ]
+    },
+    {
+      "from": "pkg:cargo/aho-corasick@1.1.3",
+      "to": [
+        "pkg:cargo/memchr@2.7.6"
+      ]
+    },
+    {
+      "from": "pkg:cargo/android-activity@0.6.0",
+      "to": [
+        "pkg:cargo/android-properties@0.2.2",
+        "pkg:cargo/bitflags@2.9.4",
+        "pkg:cargo/cc@1.2.40",
+        "pkg:cargo/cesu8@1.1.0",
+        "pkg:cargo/jni-sys@0.3.0",
+        "pkg:cargo/jni@0.21.1",
+        "pkg:cargo/libc@0.2.176",
+        "pkg:cargo/log@0.4.28",
+        "pkg:cargo/ndk-context@0.1.1",
+        "pkg:cargo/ndk-sys@0.6.0+11769913",
+        "pkg:cargo/ndk@0.9.0",
+        "pkg:cargo/num_enum@0.7.4",
+        "pkg:cargo/thiserror@1.0.69"
+      ]
+    },
+    {
+      "from": "pkg:cargo/anstream@0.6.21",
+      "to": [
+        "pkg:cargo/anstyle-parse@0.2.7",
+        "pkg:cargo/anstyle-query@1.1.4",
+        "pkg:cargo/anstyle-wincon@3.0.10",
+        "pkg:cargo/anstyle@1.0.13",
+        "pkg:cargo/colorchoice@1.0.4",
+        "pkg:cargo/is_terminal_polyfill@1.70.1",
+        "pkg:cargo/utf8parse@0.2.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/anstyle-parse@0.2.7",
+      "to": [
+        "pkg:cargo/utf8parse@0.2.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/anstyle-query@1.1.4",
+      "to": [
+        "pkg:cargo/windows-sys@0.60.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/anstyle-wincon@3.0.10",
+      "to": [
+        "pkg:cargo/anstyle@1.0.13",
+        "pkg:cargo/once_cell_polyfill@1.70.1",
+        "pkg:cargo/windows-sys@0.60.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/bitflags@2.9.4",
+      "to": [
+        "pkg:cargo/serde@1.0.228"
+      ]
+    },
+    {
+      "from": "pkg:cargo/block2@0.5.1",
+      "to": [
+        "pkg:cargo/objc2@0.5.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/calloop-wayland-source@0.3.0",
+      "to": [
+        "pkg:cargo/calloop@0.13.0",
+        "pkg:cargo/rustix@0.38.44",
+        "pkg:cargo/wayland-backend@0.3.11",
+        "pkg:cargo/wayland-client@0.31.11"
+      ]
+    },
+    {
+      "from": "pkg:cargo/calloop@0.13.0",
+      "to": [
+        "pkg:cargo/bitflags@2.9.4",
+        "pkg:cargo/log@0.4.28",
+        "pkg:cargo/polling@3.11.0",
+        "pkg:cargo/rustix@0.38.44",
+        "pkg:cargo/slab@0.4.11",
+        "pkg:cargo/thiserror@1.0.69"
+      ]
+    },
+    {
+      "from": "pkg:cargo/cc@1.2.40",
+      "to": [
+        "pkg:cargo/find-msvc-tools@0.1.3",
+        "pkg:cargo/jobserver@0.1.34",
+        "pkg:cargo/libc@0.2.176",
+        "pkg:cargo/shlex@1.3.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/cgl@0.3.2",
+      "to": [
+        "pkg:cargo/libc@0.2.176"
+      ]
+    },
+    {
+      "from": "pkg:cargo/clap_builder@4.5.48",
+      "to": [
+        "pkg:cargo/anstream@0.6.21",
+        "pkg:cargo/anstyle@1.0.13",
+        "pkg:cargo/clap_lex@0.7.5",
+        "pkg:cargo/strsim@0.11.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/clap_complete@4.5.58",
+      "to": [
+        "pkg:cargo/clap@4.5.48"
+      ]
+    },
+    {
+      "from": "pkg:cargo/clap_derive@4.5.47",
+      "to": [
+        "pkg:cargo/heck@0.5.0",
+        "pkg:cargo/proc-macro2@1.0.101",
+        "pkg:cargo/quote@1.0.41",
+        "pkg:cargo/syn@2.0.106"
+      ]
+    },
+    {
+      "from": "pkg:cargo/clap@4.5.48",
+      "to": [
+        "pkg:cargo/clap_builder@4.5.48",
+        "pkg:cargo/clap_derive@4.5.47"
+      ]
+    },
+    {
+      "from": "pkg:cargo/clipboard-win@5.4.1",
+      "to": [
+        "pkg:cargo/error-code@3.3.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/combine@4.6.7",
+      "to": [
+        "pkg:cargo/bytes@1.10.1",
+        "pkg:cargo/memchr@2.7.6"
+      ]
+    },
+    {
+      "from": "pkg:cargo/concurrent-queue@2.5.0",
+      "to": [
+        "pkg:cargo/crossbeam-utils@0.8.21"
+      ]
+    },
+    {
+      "from": "pkg:cargo/copypasta@0.10.2",
+      "to": [
+        "pkg:cargo/clipboard-win@5.4.1",
+        "pkg:cargo/objc2-app-kit@0.2.2",
+        "pkg:cargo/objc2-foundation@0.2.2",
+        "pkg:cargo/objc2@0.5.2",
+        "pkg:cargo/smithay-clipboard@0.7.2",
+        "pkg:cargo/x11-clipboard@0.9.3"
+      ]
+    },
+    {
+      "from": "pkg:cargo/core-foundation@0.9.4",
+      "to": [
+        "pkg:cargo/core-foundation-sys@0.8.7",
+        "pkg:cargo/libc@0.2.176"
+      ]
+    },
+    {
+      "from": "pkg:cargo/core-graphics-types@0.1.3",
+      "to": [
+        "pkg:cargo/bitflags@1.3.2",
+        "pkg:cargo/core-foundation@0.9.4",
+        "pkg:cargo/libc@0.2.176"
+      ]
+    },
+    {
+      "from": "pkg:cargo/core-graphics@0.23.2",
+      "to": [
+        "pkg:cargo/bitflags@1.3.2",
+        "pkg:cargo/core-foundation@0.9.4",
+        "pkg:cargo/core-graphics-types@0.1.3",
+        "pkg:cargo/foreign-types@0.5.0",
+        "pkg:cargo/libc@0.2.176"
+      ]
+    },
+    {
+      "from": "pkg:cargo/core-text@20.1.0",
+      "to": [
+        "pkg:cargo/core-foundation@0.9.4",
+        "pkg:cargo/core-graphics@0.23.2",
+        "pkg:cargo/foreign-types@0.5.0",
+        "pkg:cargo/libc@0.2.176"
+      ]
+    },
+    {
+      "from": "pkg:cargo/crc32fast@1.5.0",
+      "to": [
+        "pkg:cargo/cfg-if@1.0.3"
+      ]
+    },
+    {
+      "from": "pkg:cargo/crossfont@0.8.1",
+      "to": [
+        "pkg:cargo/core-foundation-sys@0.8.7",
+        "pkg:cargo/core-foundation@0.9.4",
+        "pkg:cargo/core-graphics@0.23.2",
+        "pkg:cargo/core-text@20.1.0",
+        "pkg:cargo/dwrote@0.11.5",
+        "pkg:cargo/foreign-types@0.5.0",
+        "pkg:cargo/freetype-rs@0.36.0",
+        "pkg:cargo/libc@0.2.176",
+        "pkg:cargo/log@0.4.28",
+        "pkg:cargo/objc2-foundation@0.2.2",
+        "pkg:cargo/objc2@0.5.2",
+        "pkg:cargo/once_cell@1.21.3",
+        "pkg:cargo/pkg-config@0.3.32",
+        "pkg:cargo/winapi@0.3.9",
+        "pkg:cargo/yeslogic-fontconfig-sys@5.0.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/cstr@0.2.12",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.101",
+        "pkg:cargo/quote@1.0.41"
+      ]
+    },
+    {
+      "from": "pkg:cargo/cursor-icon@1.2.0",
+      "to": [
+        "pkg:cargo/serde@1.0.228"
+      ]
+    },
+    {
+      "from": "pkg:cargo/dirs-sys@0.5.0",
+      "to": [
+        "pkg:cargo/libc@0.2.176",
+        "pkg:cargo/option-ext@0.2.0",
+        "pkg:cargo/redox_users@0.5.2",
+        "pkg:cargo/windows-sys@0.61.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/dirs@6.0.0",
+      "to": [
+        "pkg:cargo/dirs-sys@0.5.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/dispatch2@0.3.0",
+      "to": [
+        "pkg:cargo/bitflags@2.9.4",
+        "pkg:cargo/objc2@0.6.3"
+      ]
+    },
+    {
+      "from": "pkg:cargo/dlib@0.5.2",
+      "to": [
+        "pkg:cargo/libloading@0.8.9"
+      ]
+    },
+    {
+      "from": "pkg:cargo/dpi@0.1.2",
+      "to": [
+        "pkg:cargo/serde@1.0.228"
+      ]
+    },
+    {
+      "from": "pkg:cargo/dwrote@0.11.5",
+      "to": [
+        "pkg:cargo/lazy_static@1.5.0",
+        "pkg:cargo/libc@0.2.176",
+        "pkg:cargo/serde@1.0.228",
+        "pkg:cargo/serde_derive@1.0.228",
+        "pkg:cargo/winapi@0.3.9",
+        "pkg:cargo/wio@0.2.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/embed-resource@3.0.6",
+      "to": [
+        "pkg:cargo/cc@1.2.40",
+        "pkg:cargo/memchr@2.7.6",
+        "pkg:cargo/rustc_version@0.4.1",
+        "pkg:cargo/toml@0.9.11+spec-1.1.0",
+        "pkg:cargo/vswhom@0.1.0",
+        "pkg:cargo/winreg@0.55.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/errno@0.3.14",
+      "to": [
+        "pkg:cargo/libc@0.2.176",
+        "pkg:cargo/windows-sys@0.61.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/fdeflate@0.3.7",
+      "to": [
+        "pkg:cargo/simd-adler32@0.3.7"
+      ]
+    },
+    {
+      "from": "pkg:cargo/flate2@1.1.4",
+      "to": [
+        "pkg:cargo/crc32fast@1.5.0",
+        "pkg:cargo/miniz_oxide@0.8.9"
+      ]
+    },
+    {
+      "from": "pkg:cargo/foreign-types-macros@0.2.3",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.101",
+        "pkg:cargo/quote@1.0.41",
+        "pkg:cargo/syn@2.0.106"
+      ]
+    },
+    {
+      "from": "pkg:cargo/foreign-types@0.5.0",
+      "to": [
+        "pkg:cargo/foreign-types-macros@0.2.3",
+        "pkg:cargo/foreign-types-shared@0.3.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/freetype-rs@0.36.0",
+      "to": [
+        "pkg:cargo/bitflags@2.9.4",
+        "pkg:cargo/freetype-sys@0.20.1",
+        "pkg:cargo/libc@0.2.176"
+      ]
+    },
+    {
+      "from": "pkg:cargo/freetype-sys@0.20.1",
+      "to": [
+        "pkg:cargo/cc@1.2.40",
+        "pkg:cargo/libc@0.2.176",
+        "pkg:cargo/pkg-config@0.3.32"
+      ]
+    },
+    {
+      "from": "pkg:cargo/fsevent-sys@4.1.0",
+      "to": [
+        "pkg:cargo/libc@0.2.176"
+      ]
+    },
+    {
+      "from": "pkg:cargo/gethostname@1.0.2",
+      "to": [
+        "pkg:cargo/rustix@1.1.2",
+        "pkg:cargo/windows-targets@0.52.6"
+      ]
+    },
+    {
+      "from": "pkg:cargo/getrandom@0.2.16",
+      "to": [
+        "pkg:cargo/cfg-if@1.0.3",
+        "pkg:cargo/libc@0.2.176",
+        "pkg:cargo/wasi@0.11.1+wasi-snapshot-preview1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/getrandom@0.3.3",
+      "to": [
+        "pkg:cargo/cfg-if@1.0.3",
+        "pkg:cargo/libc@0.2.176",
+        "pkg:cargo/r-efi@5.3.0",
+        "pkg:cargo/wasi@0.14.7+wasi-0.2.4"
+      ]
+    },
+    {
+      "from": "pkg:cargo/gl_generator@0.14.0",
+      "to": [
+        "pkg:cargo/khronos_api@3.1.0",
+        "pkg:cargo/log@0.4.28",
+        "pkg:cargo/xml-rs@0.8.27"
+      ]
+    },
+    {
+      "from": "pkg:cargo/glutin_egl_sys@0.7.1",
+      "to": [
+        "pkg:cargo/gl_generator@0.14.0",
+        "pkg:cargo/windows-sys@0.52.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/glutin_glx_sys@0.6.1",
+      "to": [
+        "pkg:cargo/gl_generator@0.14.0",
+        "pkg:cargo/x11-dl@2.21.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/glutin_wgl_sys@0.6.1",
+      "to": [
+        "pkg:cargo/gl_generator@0.14.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/glutin@0.32.3",
+      "to": [
+        "pkg:cargo/bitflags@2.9.4",
+        "pkg:cargo/cfg_aliases@0.2.1",
+        "pkg:cargo/cgl@0.3.2",
+        "pkg:cargo/dispatch2@0.3.0",
+        "pkg:cargo/glutin_egl_sys@0.7.1",
+        "pkg:cargo/glutin_glx_sys@0.6.1",
+        "pkg:cargo/glutin_wgl_sys@0.6.1",
+        "pkg:cargo/libloading@0.8.9",
+        "pkg:cargo/objc2-app-kit@0.3.2",
+        "pkg:cargo/objc2-core-foundation@0.3.2",
+        "pkg:cargo/objc2-foundation@0.3.2",
+        "pkg:cargo/objc2@0.6.3",
+        "pkg:cargo/once_cell@1.21.3",
+        "pkg:cargo/raw-window-handle@0.6.2",
+        "pkg:cargo/wayland-sys@0.31.7",
+        "pkg:cargo/windows-sys@0.52.0",
+        "pkg:cargo/x11-dl@2.21.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/home@0.5.11",
+      "to": [
+        "pkg:cargo/windows-sys@0.59.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/indexmap@2.11.4",
+      "to": [
+        "pkg:cargo/equivalent@1.0.2",
+        "pkg:cargo/hashbrown@0.16.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/inotify-sys@0.1.5",
+      "to": [
+        "pkg:cargo/libc@0.2.176"
+      ]
+    },
+    {
+      "from": "pkg:cargo/inotify@0.11.0",
+      "to": [
+        "pkg:cargo/bitflags@2.9.4",
+        "pkg:cargo/inotify-sys@0.1.5",
+        "pkg:cargo/libc@0.2.176"
+      ]
+    },
+    {
+      "from": "pkg:cargo/jni@0.21.1",
+      "to": [
+        "pkg:cargo/cesu8@1.1.0",
+        "pkg:cargo/cfg-if@1.0.3",
+        "pkg:cargo/combine@4.6.7",
+        "pkg:cargo/jni-sys@0.3.0",
+        "pkg:cargo/log@0.4.28",
+        "pkg:cargo/thiserror@1.0.69",
+        "pkg:cargo/walkdir@2.5.0",
+        "pkg:cargo/windows-sys@0.45.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/jobserver@0.1.34",
+      "to": [
+        "pkg:cargo/getrandom@0.3.3",
+        "pkg:cargo/libc@0.2.176"
+      ]
+    },
+    {
+      "from": "pkg:cargo/js-sys@0.3.81",
+      "to": [
+        "pkg:cargo/once_cell@1.21.3",
+        "pkg:cargo/wasm-bindgen@0.2.104"
+      ]
+    },
+    {
+      "from": "pkg:cargo/kqueue-sys@1.0.4",
+      "to": [
+        "pkg:cargo/bitflags@1.3.2",
+        "pkg:cargo/libc@0.2.176"
+      ]
+    },
+    {
+      "from": "pkg:cargo/kqueue@1.1.1",
+      "to": [
+        "pkg:cargo/kqueue-sys@1.0.4",
+        "pkg:cargo/libc@0.2.176"
+      ]
+    },
+    {
+      "from": "pkg:cargo/libloading@0.8.9",
+      "to": [
+        "pkg:cargo/cfg-if@1.0.3",
+        "pkg:cargo/windows-link@0.2.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/libredox@0.1.10",
+      "to": [
+        "pkg:cargo/bitflags@2.9.4",
+        "pkg:cargo/libc@0.2.176",
+        "pkg:cargo/redox_syscall@0.5.18"
+      ]
+    },
+    {
+      "from": "pkg:cargo/lock_api@0.4.14",
+      "to": [
+        "pkg:cargo/scopeguard@1.2.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/log@0.4.28",
+      "to": [
+        "pkg:cargo/serde@1.0.228"
+      ]
+    },
+    {
+      "from": "pkg:cargo/memmap2@0.9.8",
+      "to": [
+        "pkg:cargo/libc@0.2.176"
+      ]
+    },
+    {
+      "from": "pkg:cargo/miniz_oxide@0.8.9",
+      "to": [
+        "pkg:cargo/adler2@2.0.1",
+        "pkg:cargo/simd-adler32@0.3.7"
+      ]
+    },
+    {
+      "from": "pkg:cargo/mio@1.0.4",
+      "to": [
+        "pkg:cargo/libc@0.2.176",
+        "pkg:cargo/log@0.4.28",
+        "pkg:cargo/wasi@0.11.1+wasi-snapshot-preview1",
+        "pkg:cargo/windows-sys@0.59.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/miow@0.6.1",
+      "to": [
+        "pkg:cargo/windows-sys@0.61.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/ndk-sys@0.6.0+11769913",
+      "to": [
+        "pkg:cargo/jni-sys@0.3.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/ndk@0.9.0",
+      "to": [
+        "pkg:cargo/bitflags@2.9.4",
+        "pkg:cargo/jni-sys@0.3.0",
+        "pkg:cargo/log@0.4.28",
+        "pkg:cargo/ndk-sys@0.6.0+11769913",
+        "pkg:cargo/num_enum@0.7.4",
+        "pkg:cargo/raw-window-handle@0.6.2",
+        "pkg:cargo/thiserror@1.0.69"
+      ]
+    },
+    {
+      "from": "pkg:cargo/notify@8.2.0",
+      "to": [
+        "pkg:cargo/bitflags@2.9.4",
+        "pkg:cargo/fsevent-sys@4.1.0",
+        "pkg:cargo/inotify@0.11.0",
+        "pkg:cargo/kqueue@1.1.1",
+        "pkg:cargo/libc@0.2.176",
+        "pkg:cargo/log@0.4.28",
+        "pkg:cargo/mio@1.0.4",
+        "pkg:cargo/notify-types@2.0.0",
+        "pkg:cargo/walkdir@2.5.0",
+        "pkg:cargo/windows-sys@0.60.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/num_enum_derive@0.7.4",
+      "to": [
+        "pkg:cargo/proc-macro-crate@3.4.0",
+        "pkg:cargo/proc-macro2@1.0.101",
+        "pkg:cargo/quote@1.0.41",
+        "pkg:cargo/syn@2.0.106"
+      ]
+    },
+    {
+      "from": "pkg:cargo/num_enum@0.7.4",
+      "to": [
+        "pkg:cargo/num_enum_derive@0.7.4",
+        "pkg:cargo/rustversion@1.0.22"
+      ]
+    },
+    {
+      "from": "pkg:cargo/objc2-app-kit@0.2.2",
+      "to": [
+        "pkg:cargo/bitflags@2.9.4",
+        "pkg:cargo/block2@0.5.1",
+        "pkg:cargo/libc@0.2.176",
+        "pkg:cargo/objc2-core-data@0.2.2",
+        "pkg:cargo/objc2-core-image@0.2.2",
+        "pkg:cargo/objc2-foundation@0.2.2",
+        "pkg:cargo/objc2-quartz-core@0.2.2",
+        "pkg:cargo/objc2@0.5.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/objc2-app-kit@0.3.2",
+      "to": [
+        "pkg:cargo/bitflags@2.9.4",
+        "pkg:cargo/objc2-core-foundation@0.3.2",
+        "pkg:cargo/objc2-foundation@0.3.2",
+        "pkg:cargo/objc2@0.6.3"
+      ]
+    },
+    {
+      "from": "pkg:cargo/objc2-cloud-kit@0.2.2",
+      "to": [
+        "pkg:cargo/bitflags@2.9.4",
+        "pkg:cargo/block2@0.5.1",
+        "pkg:cargo/objc2-core-location@0.2.2",
+        "pkg:cargo/objc2-foundation@0.2.2",
+        "pkg:cargo/objc2@0.5.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/objc2-contacts@0.2.2",
+      "to": [
+        "pkg:cargo/block2@0.5.1",
+        "pkg:cargo/objc2-foundation@0.2.2",
+        "pkg:cargo/objc2@0.5.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/objc2-core-data@0.2.2",
+      "to": [
+        "pkg:cargo/bitflags@2.9.4",
+        "pkg:cargo/block2@0.5.1",
+        "pkg:cargo/objc2-foundation@0.2.2",
+        "pkg:cargo/objc2@0.5.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/objc2-core-foundation@0.3.2",
+      "to": [
+        "pkg:cargo/bitflags@2.9.4",
+        "pkg:cargo/dispatch2@0.3.0",
+        "pkg:cargo/objc2@0.6.3"
+      ]
+    },
+    {
+      "from": "pkg:cargo/objc2-core-image@0.2.2",
+      "to": [
+        "pkg:cargo/block2@0.5.1",
+        "pkg:cargo/objc2-foundation@0.2.2",
+        "pkg:cargo/objc2-metal@0.2.2",
+        "pkg:cargo/objc2@0.5.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/objc2-core-location@0.2.2",
+      "to": [
+        "pkg:cargo/block2@0.5.1",
+        "pkg:cargo/objc2-contacts@0.2.2",
+        "pkg:cargo/objc2-foundation@0.2.2",
+        "pkg:cargo/objc2@0.5.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/objc2-foundation@0.2.2",
+      "to": [
+        "pkg:cargo/bitflags@2.9.4",
+        "pkg:cargo/block2@0.5.1",
+        "pkg:cargo/dispatch@0.2.0",
+        "pkg:cargo/libc@0.2.176",
+        "pkg:cargo/objc2@0.5.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/objc2-foundation@0.3.2",
+      "to": [
+        "pkg:cargo/bitflags@2.9.4",
+        "pkg:cargo/objc2-core-foundation@0.3.2",
+        "pkg:cargo/objc2@0.6.3"
+      ]
+    },
+    {
+      "from": "pkg:cargo/objc2-link-presentation@0.2.2",
+      "to": [
+        "pkg:cargo/block2@0.5.1",
+        "pkg:cargo/objc2-app-kit@0.2.2",
+        "pkg:cargo/objc2-foundation@0.2.2",
+        "pkg:cargo/objc2@0.5.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/objc2-metal@0.2.2",
+      "to": [
+        "pkg:cargo/bitflags@2.9.4",
+        "pkg:cargo/block2@0.5.1",
+        "pkg:cargo/objc2-foundation@0.2.2",
+        "pkg:cargo/objc2@0.5.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/objc2-quartz-core@0.2.2",
+      "to": [
+        "pkg:cargo/bitflags@2.9.4",
+        "pkg:cargo/block2@0.5.1",
+        "pkg:cargo/objc2-foundation@0.2.2",
+        "pkg:cargo/objc2-metal@0.2.2",
+        "pkg:cargo/objc2@0.5.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/objc2-symbols@0.2.2",
+      "to": [
+        "pkg:cargo/objc2-foundation@0.2.2",
+        "pkg:cargo/objc2@0.5.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/objc2-ui-kit@0.2.2",
+      "to": [
+        "pkg:cargo/bitflags@2.9.4",
+        "pkg:cargo/block2@0.5.1",
+        "pkg:cargo/objc2-cloud-kit@0.2.2",
+        "pkg:cargo/objc2-core-data@0.2.2",
+        "pkg:cargo/objc2-core-image@0.2.2",
+        "pkg:cargo/objc2-core-location@0.2.2",
+        "pkg:cargo/objc2-foundation@0.2.2",
+        "pkg:cargo/objc2-link-presentation@0.2.2",
+        "pkg:cargo/objc2-quartz-core@0.2.2",
+        "pkg:cargo/objc2-symbols@0.2.2",
+        "pkg:cargo/objc2-uniform-type-identifiers@0.2.2",
+        "pkg:cargo/objc2-user-notifications@0.2.2",
+        "pkg:cargo/objc2@0.5.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/objc2-uniform-type-identifiers@0.2.2",
+      "to": [
+        "pkg:cargo/block2@0.5.1",
+        "pkg:cargo/objc2-foundation@0.2.2",
+        "pkg:cargo/objc2@0.5.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/objc2-user-notifications@0.2.2",
+      "to": [
+        "pkg:cargo/bitflags@2.9.4",
+        "pkg:cargo/block2@0.5.1",
+        "pkg:cargo/objc2-core-location@0.2.2",
+        "pkg:cargo/objc2-foundation@0.2.2",
+        "pkg:cargo/objc2@0.5.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/objc2@0.5.2",
+      "to": [
+        "pkg:cargo/objc-sys@0.3.5",
+        "pkg:cargo/objc2-encode@4.1.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/objc2@0.6.3",
+      "to": [
+        "pkg:cargo/objc2-encode@4.1.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/orbclient@0.3.48",
+      "to": [
+        "pkg:cargo/libredox@0.1.10"
+      ]
+    },
+    {
+      "from": "pkg:cargo/parking_lot_core@0.9.12",
+      "to": [
+        "pkg:cargo/cfg-if@1.0.3",
+        "pkg:cargo/libc@0.2.176",
+        "pkg:cargo/redox_syscall@0.5.18",
+        "pkg:cargo/smallvec@1.15.1",
+        "pkg:cargo/windows-link@0.2.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/parking_lot@0.12.5",
+      "to": [
+        "pkg:cargo/lock_api@0.4.14",
+        "pkg:cargo/parking_lot_core@0.9.12"
+      ]
+    },
+    {
+      "from": "pkg:cargo/pin-project-internal@1.1.10",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.101",
+        "pkg:cargo/quote@1.0.41",
+        "pkg:cargo/syn@2.0.106"
+      ]
+    },
+    {
+      "from": "pkg:cargo/pin-project@1.1.10",
+      "to": [
+        "pkg:cargo/pin-project-internal@1.1.10"
+      ]
+    },
+    {
+      "from": "pkg:cargo/piper@0.2.4",
+      "to": [
+        "pkg:cargo/atomic-waker@1.1.2",
+        "pkg:cargo/fastrand@2.3.0",
+        "pkg:cargo/futures-io@0.3.31"
+      ]
+    },
+    {
+      "from": "pkg:cargo/png@0.17.16",
+      "to": [
+        "pkg:cargo/bitflags@1.3.2",
+        "pkg:cargo/crc32fast@1.5.0",
+        "pkg:cargo/fdeflate@0.3.7",
+        "pkg:cargo/flate2@1.1.4",
+        "pkg:cargo/miniz_oxide@0.8.9"
+      ]
+    },
+    {
+      "from": "pkg:cargo/polling@3.11.0",
+      "to": [
+        "pkg:cargo/cfg-if@1.0.3",
+        "pkg:cargo/concurrent-queue@2.5.0",
+        "pkg:cargo/hermit-abi@0.5.2",
+        "pkg:cargo/pin-project-lite@0.2.16",
+        "pkg:cargo/rustix@1.1.2",
+        "pkg:cargo/windows-sys@0.61.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/proc-macro-crate@3.4.0",
+      "to": [
+        "pkg:cargo/toml_edit@0.23.10+spec-1.0.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/proc-macro2@1.0.101",
+      "to": [
+        "pkg:cargo/unicode-ident@1.0.19"
+      ]
+    },
+    {
+      "from": "pkg:cargo/quick-xml@0.37.5",
+      "to": [
+        "pkg:cargo/memchr@2.7.6"
+      ]
+    },
+    {
+      "from": "pkg:cargo/quote@1.0.41",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.101"
+      ]
+    },
+    {
+      "from": "pkg:cargo/redox_syscall@0.4.1",
+      "to": [
+        "pkg:cargo/bitflags@1.3.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/redox_syscall@0.5.18",
+      "to": [
+        "pkg:cargo/bitflags@2.9.4"
+      ]
+    },
+    {
+      "from": "pkg:cargo/redox_users@0.5.2",
+      "to": [
+        "pkg:cargo/getrandom@0.2.16",
+        "pkg:cargo/libredox@0.1.10",
+        "pkg:cargo/thiserror@2.0.17"
+      ]
+    },
+    {
+      "from": "pkg:cargo/regex-automata@0.4.11",
+      "to": [
+        "pkg:cargo/aho-corasick@1.1.3",
+        "pkg:cargo/memchr@2.7.6",
+        "pkg:cargo/regex-syntax@0.8.6"
+      ]
+    },
+    {
+      "from": "pkg:cargo/rustc_version@0.4.1",
+      "to": [
+        "pkg:cargo/semver@1.0.27"
+      ]
+    },
+    {
+      "from": "pkg:cargo/rustix-openpty@0.2.0",
+      "to": [
+        "pkg:cargo/errno@0.3.14",
+        "pkg:cargo/libc@0.2.176",
+        "pkg:cargo/rustix@1.1.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/rustix@0.38.44",
+      "to": [
+        "pkg:cargo/bitflags@2.9.4",
+        "pkg:cargo/errno@0.3.14",
+        "pkg:cargo/libc@0.2.176",
+        "pkg:cargo/linux-raw-sys@0.4.15",
+        "pkg:cargo/windows-sys@0.59.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/rustix@1.1.2",
+      "to": [
+        "pkg:cargo/bitflags@2.9.4",
+        "pkg:cargo/errno@0.3.14",
+        "pkg:cargo/libc@0.2.176",
+        "pkg:cargo/linux-raw-sys@0.11.0",
+        "pkg:cargo/windows-sys@0.61.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/same-file@1.0.6",
+      "to": [
+        "pkg:cargo/winapi-util@0.1.11"
+      ]
+    },
+    {
+      "from": "pkg:cargo/sctk-adwaita@0.10.1",
+      "to": [
+        "pkg:cargo/crossfont@0.8.1",
+        "pkg:cargo/log@0.4.28",
+        "pkg:cargo/smithay-client-toolkit@0.19.2",
+        "pkg:cargo/tiny-skia@0.11.4"
+      ]
+    },
+    {
+      "from": "pkg:cargo/serde_core@1.0.228",
+      "to": [
+        "pkg:cargo/serde_derive@1.0.228"
+      ]
+    },
+    {
+      "from": "pkg:cargo/serde_derive@1.0.228",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.101",
+        "pkg:cargo/quote@1.0.41",
+        "pkg:cargo/syn@2.0.106"
+      ]
+    },
+    {
+      "from": "pkg:cargo/serde_json@1.0.145",
+      "to": [
+        "pkg:cargo/itoa@1.0.15",
+        "pkg:cargo/memchr@2.7.6",
+        "pkg:cargo/ryu@1.0.20",
+        "pkg:cargo/serde@1.0.228",
+        "pkg:cargo/serde_core@1.0.228"
+      ]
+    },
+    {
+      "from": "pkg:cargo/serde_spanned@1.0.4",
+      "to": [
+        "pkg:cargo/serde_core@1.0.228"
+      ]
+    },
+    {
+      "from": "pkg:cargo/serde_yaml@0.9.34+deprecated",
+      "to": [
+        "pkg:cargo/indexmap@2.11.4",
+        "pkg:cargo/itoa@1.0.15",
+        "pkg:cargo/ryu@1.0.20",
+        "pkg:cargo/serde@1.0.228",
+        "pkg:cargo/unsafe-libyaml@0.2.11"
+      ]
+    },
+    {
+      "from": "pkg:cargo/serde@1.0.228",
+      "to": [
+        "pkg:cargo/serde_core@1.0.228",
+        "pkg:cargo/serde_derive@1.0.228"
+      ]
+    },
+    {
+      "from": "pkg:cargo/signal-hook-registry@1.4.6",
+      "to": [
+        "pkg:cargo/libc@0.2.176"
+      ]
+    },
+    {
+      "from": "pkg:cargo/signal-hook@0.3.18",
+      "to": [
+        "pkg:cargo/libc@0.2.176",
+        "pkg:cargo/signal-hook-registry@1.4.6"
+      ]
+    },
+    {
+      "from": "pkg:cargo/smithay-client-toolkit@0.19.2",
+      "to": [
+        "pkg:cargo/bitflags@2.9.4",
+        "pkg:cargo/calloop-wayland-source@0.3.0",
+        "pkg:cargo/calloop@0.13.0",
+        "pkg:cargo/cursor-icon@1.2.0",
+        "pkg:cargo/libc@0.2.176",
+        "pkg:cargo/log@0.4.28",
+        "pkg:cargo/memmap2@0.9.8",
+        "pkg:cargo/rustix@0.38.44",
+        "pkg:cargo/thiserror@1.0.69",
+        "pkg:cargo/wayland-backend@0.3.11",
+        "pkg:cargo/wayland-client@0.31.11",
+        "pkg:cargo/wayland-csd-frame@0.3.0",
+        "pkg:cargo/wayland-cursor@0.31.11",
+        "pkg:cargo/wayland-protocols-wlr@0.3.9",
+        "pkg:cargo/wayland-protocols@0.32.9",
+        "pkg:cargo/wayland-scanner@0.31.7",
+        "pkg:cargo/xkeysym@0.2.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/smithay-clipboard@0.7.2",
+      "to": [
+        "pkg:cargo/libc@0.2.176",
+        "pkg:cargo/smithay-client-toolkit@0.19.2",
+        "pkg:cargo/wayland-backend@0.3.11"
+      ]
+    },
+    {
+      "from": "pkg:cargo/smol_str@0.2.2",
+      "to": [
+        "pkg:cargo/serde@1.0.228"
+      ]
+    },
+    {
+      "from": "pkg:cargo/syn@2.0.106",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.101",
+        "pkg:cargo/quote@1.0.41",
+        "pkg:cargo/unicode-ident@1.0.19"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tempfile@3.23.0",
+      "to": [
+        "pkg:cargo/fastrand@2.3.0",
+        "pkg:cargo/getrandom@0.3.3",
+        "pkg:cargo/once_cell@1.21.3",
+        "pkg:cargo/rustix@1.1.2",
+        "pkg:cargo/windows-sys@0.61.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/thiserror-impl@1.0.69",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.101",
+        "pkg:cargo/quote@1.0.41",
+        "pkg:cargo/syn@2.0.106"
+      ]
+    },
+    {
+      "from": "pkg:cargo/thiserror-impl@2.0.17",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.101",
+        "pkg:cargo/quote@1.0.41",
+        "pkg:cargo/syn@2.0.106"
+      ]
+    },
+    {
+      "from": "pkg:cargo/thiserror@1.0.69",
+      "to": [
+        "pkg:cargo/thiserror-impl@1.0.69"
+      ]
+    },
+    {
+      "from": "pkg:cargo/thiserror@2.0.17",
+      "to": [
+        "pkg:cargo/thiserror-impl@2.0.17"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tiny-skia-path@0.11.4",
+      "to": [
+        "pkg:cargo/arrayref@0.3.9",
+        "pkg:cargo/bytemuck@1.24.0",
+        "pkg:cargo/strict-num@0.1.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tiny-skia@0.11.4",
+      "to": [
+        "pkg:cargo/arrayref@0.3.9",
+        "pkg:cargo/arrayvec@0.7.6",
+        "pkg:cargo/bytemuck@1.24.0",
+        "pkg:cargo/cfg-if@1.0.3",
+        "pkg:cargo/log@0.4.28",
+        "pkg:cargo/tiny-skia-path@0.11.4"
+      ]
+    },
+    {
+      "from": "pkg:cargo/toml_datetime@0.7.5+spec-1.1.0",
+      "to": [
+        "pkg:cargo/serde_core@1.0.228"
+      ]
+    },
+    {
+      "from": "pkg:cargo/toml_edit@0.23.10+spec-1.0.0",
+      "to": [
+        "pkg:cargo/indexmap@2.11.4",
+        "pkg:cargo/toml_datetime@0.7.5+spec-1.1.0",
+        "pkg:cargo/toml_parser@1.0.6+spec-1.1.0",
+        "pkg:cargo/winnow@0.7.13"
+      ]
+    },
+    {
+      "from": "pkg:cargo/toml_edit@0.24.0+spec-1.1.0",
+      "to": [
+        "pkg:cargo/indexmap@2.11.4",
+        "pkg:cargo/toml_datetime@0.7.5+spec-1.1.0",
+        "pkg:cargo/toml_parser@1.0.6+spec-1.1.0",
+        "pkg:cargo/toml_writer@1.0.6+spec-1.1.0",
+        "pkg:cargo/winnow@0.7.13"
+      ]
+    },
+    {
+      "from": "pkg:cargo/toml_parser@1.0.6+spec-1.1.0",
+      "to": [
+        "pkg:cargo/winnow@0.7.13"
+      ]
+    },
+    {
+      "from": "pkg:cargo/toml@0.9.11+spec-1.1.0",
+      "to": [
+        "pkg:cargo/indexmap@2.11.4",
+        "pkg:cargo/serde_core@1.0.228",
+        "pkg:cargo/serde_spanned@1.0.4",
+        "pkg:cargo/toml_datetime@0.7.5+spec-1.1.0",
+        "pkg:cargo/toml_parser@1.0.6+spec-1.1.0",
+        "pkg:cargo/toml_writer@1.0.6+spec-1.1.0",
+        "pkg:cargo/winnow@0.7.13"
+      ]
+    },
+    {
+      "from": "pkg:cargo/tracing@0.1.41",
+      "to": [
+        "pkg:cargo/pin-project-lite@0.2.16",
+        "pkg:cargo/tracing-core@0.1.34"
+      ]
+    },
+    {
+      "from": "pkg:cargo/vswhom-sys@0.1.3",
+      "to": [
+        "pkg:cargo/cc@1.2.40",
+        "pkg:cargo/libc@0.2.176"
+      ]
+    },
+    {
+      "from": "pkg:cargo/vswhom@0.1.0",
+      "to": [
+        "pkg:cargo/libc@0.2.176",
+        "pkg:cargo/vswhom-sys@0.1.3"
+      ]
+    },
+    {
+      "from": "pkg:cargo/vte@0.15.0",
+      "to": [
+        "pkg:cargo/arrayvec@0.7.6",
+        "pkg:cargo/bitflags@2.9.4",
+        "pkg:cargo/cursor-icon@1.2.0",
+        "pkg:cargo/log@0.4.28",
+        "pkg:cargo/memchr@2.7.6",
+        "pkg:cargo/serde@1.0.228"
+      ]
+    },
+    {
+      "from": "pkg:cargo/walkdir@2.5.0",
+      "to": [
+        "pkg:cargo/same-file@1.0.6",
+        "pkg:cargo/winapi-util@0.1.11"
+      ]
+    },
+    {
+      "from": "pkg:cargo/wasi@0.14.7+wasi-0.2.4",
+      "to": [
+        "pkg:cargo/wasip2@1.0.1+wasi-0.2.4"
+      ]
+    },
+    {
+      "from": "pkg:cargo/wasip2@1.0.1+wasi-0.2.4",
+      "to": [
+        "pkg:cargo/wit-bindgen@0.46.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/wasm-bindgen-backend@0.2.104",
+      "to": [
+        "pkg:cargo/bumpalo@3.19.0",
+        "pkg:cargo/log@0.4.28",
+        "pkg:cargo/proc-macro2@1.0.101",
+        "pkg:cargo/quote@1.0.41",
+        "pkg:cargo/syn@2.0.106",
+        "pkg:cargo/wasm-bindgen-shared@0.2.104"
+      ]
+    },
+    {
+      "from": "pkg:cargo/wasm-bindgen-futures@0.4.54",
+      "to": [
+        "pkg:cargo/cfg-if@1.0.3",
+        "pkg:cargo/js-sys@0.3.81",
+        "pkg:cargo/once_cell@1.21.3",
+        "pkg:cargo/wasm-bindgen@0.2.104",
+        "pkg:cargo/web-sys@0.3.81"
+      ]
+    },
+    {
+      "from": "pkg:cargo/wasm-bindgen-macro-support@0.2.104",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.101",
+        "pkg:cargo/quote@1.0.41",
+        "pkg:cargo/syn@2.0.106",
+        "pkg:cargo/wasm-bindgen-backend@0.2.104",
+        "pkg:cargo/wasm-bindgen-shared@0.2.104"
+      ]
+    },
+    {
+      "from": "pkg:cargo/wasm-bindgen-macro@0.2.104",
+      "to": [
+        "pkg:cargo/quote@1.0.41",
+        "pkg:cargo/wasm-bindgen-macro-support@0.2.104"
+      ]
+    },
+    {
+      "from": "pkg:cargo/wasm-bindgen-shared@0.2.104",
+      "to": [
+        "pkg:cargo/unicode-ident@1.0.19"
+      ]
+    },
+    {
+      "from": "pkg:cargo/wasm-bindgen@0.2.104",
+      "to": [
+        "pkg:cargo/cfg-if@1.0.3",
+        "pkg:cargo/once_cell@1.21.3",
+        "pkg:cargo/rustversion@1.0.22",
+        "pkg:cargo/wasm-bindgen-macro@0.2.104",
+        "pkg:cargo/wasm-bindgen-shared@0.2.104"
+      ]
+    },
+    {
+      "from": "pkg:cargo/wayland-backend@0.3.11",
+      "to": [
+        "pkg:cargo/cc@1.2.40",
+        "pkg:cargo/downcast-rs@1.2.1",
+        "pkg:cargo/rustix@1.1.2",
+        "pkg:cargo/scoped-tls@1.0.1",
+        "pkg:cargo/smallvec@1.15.1",
+        "pkg:cargo/wayland-sys@0.31.7"
+      ]
+    },
+    {
+      "from": "pkg:cargo/wayland-client@0.31.11",
+      "to": [
+        "pkg:cargo/bitflags@2.9.4",
+        "pkg:cargo/rustix@1.1.2",
+        "pkg:cargo/wayland-backend@0.3.11",
+        "pkg:cargo/wayland-scanner@0.31.7"
+      ]
+    },
+    {
+      "from": "pkg:cargo/wayland-csd-frame@0.3.0",
+      "to": [
+        "pkg:cargo/bitflags@2.9.4",
+        "pkg:cargo/cursor-icon@1.2.0",
+        "pkg:cargo/wayland-backend@0.3.11"
+      ]
+    },
+    {
+      "from": "pkg:cargo/wayland-cursor@0.31.11",
+      "to": [
+        "pkg:cargo/rustix@1.1.2",
+        "pkg:cargo/wayland-client@0.31.11",
+        "pkg:cargo/xcursor@0.3.10"
+      ]
+    },
+    {
+      "from": "pkg:cargo/wayland-protocols-plasma@0.3.9",
+      "to": [
+        "pkg:cargo/bitflags@2.9.4",
+        "pkg:cargo/wayland-backend@0.3.11",
+        "pkg:cargo/wayland-client@0.31.11",
+        "pkg:cargo/wayland-protocols@0.32.9",
+        "pkg:cargo/wayland-scanner@0.31.7"
+      ]
+    },
+    {
+      "from": "pkg:cargo/wayland-protocols-wlr@0.3.9",
+      "to": [
+        "pkg:cargo/bitflags@2.9.4",
+        "pkg:cargo/wayland-backend@0.3.11",
+        "pkg:cargo/wayland-client@0.31.11",
+        "pkg:cargo/wayland-protocols@0.32.9",
+        "pkg:cargo/wayland-scanner@0.31.7"
+      ]
+    },
+    {
+      "from": "pkg:cargo/wayland-protocols@0.32.9",
+      "to": [
+        "pkg:cargo/bitflags@2.9.4",
+        "pkg:cargo/wayland-backend@0.3.11",
+        "pkg:cargo/wayland-client@0.31.11",
+        "pkg:cargo/wayland-scanner@0.31.7"
+      ]
+    },
+    {
+      "from": "pkg:cargo/wayland-scanner@0.31.7",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.101",
+        "pkg:cargo/quick-xml@0.37.5",
+        "pkg:cargo/quote@1.0.41"
+      ]
+    },
+    {
+      "from": "pkg:cargo/wayland-sys@0.31.7",
+      "to": [
+        "pkg:cargo/dlib@0.5.2",
+        "pkg:cargo/log@0.4.28",
+        "pkg:cargo/once_cell@1.21.3",
+        "pkg:cargo/pkg-config@0.3.32"
+      ]
+    },
+    {
+      "from": "pkg:cargo/web-sys@0.3.81",
+      "to": [
+        "pkg:cargo/js-sys@0.3.81",
+        "pkg:cargo/wasm-bindgen@0.2.104"
+      ]
+    },
+    {
+      "from": "pkg:cargo/web-time@1.1.0",
+      "to": [
+        "pkg:cargo/js-sys@0.3.81",
+        "pkg:cargo/wasm-bindgen@0.2.104"
+      ]
+    },
+    {
+      "from": "pkg:cargo/winapi-util@0.1.11",
+      "to": [
+        "pkg:cargo/windows-sys@0.61.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/winapi@0.3.9",
+      "to": [
+        "pkg:cargo/winapi-i686-pc-windows-gnu@0.4.0",
+        "pkg:cargo/winapi-x86_64-pc-windows-gnu@0.4.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/windows-sys@0.45.0",
+      "to": [
+        "pkg:cargo/windows-targets@0.42.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/windows-sys@0.52.0",
+      "to": [
+        "pkg:cargo/windows-targets@0.52.6"
+      ]
+    },
+    {
+      "from": "pkg:cargo/windows-sys@0.59.0",
+      "to": [
+        "pkg:cargo/windows-targets@0.52.6"
+      ]
+    },
+    {
+      "from": "pkg:cargo/windows-sys@0.60.2",
+      "to": [
+        "pkg:cargo/windows-targets@0.53.5"
+      ]
+    },
+    {
+      "from": "pkg:cargo/windows-sys@0.61.2",
+      "to": [
+        "pkg:cargo/windows-link@0.2.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/windows-targets@0.42.2",
+      "to": [
+        "pkg:cargo/windows_aarch64_gnullvm@0.42.2",
+        "pkg:cargo/windows_aarch64_msvc@0.42.2",
+        "pkg:cargo/windows_i686_gnu@0.42.2",
+        "pkg:cargo/windows_i686_msvc@0.42.2",
+        "pkg:cargo/windows_x86_64_gnu@0.42.2",
+        "pkg:cargo/windows_x86_64_gnullvm@0.42.2",
+        "pkg:cargo/windows_x86_64_msvc@0.42.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/windows-targets@0.52.6",
+      "to": [
+        "pkg:cargo/windows_aarch64_gnullvm@0.52.6",
+        "pkg:cargo/windows_aarch64_msvc@0.52.6",
+        "pkg:cargo/windows_i686_gnu@0.52.6",
+        "pkg:cargo/windows_i686_gnullvm@0.52.6",
+        "pkg:cargo/windows_i686_msvc@0.52.6",
+        "pkg:cargo/windows_x86_64_gnu@0.52.6",
+        "pkg:cargo/windows_x86_64_gnullvm@0.52.6",
+        "pkg:cargo/windows_x86_64_msvc@0.52.6"
+      ]
+    },
+    {
+      "from": "pkg:cargo/windows-targets@0.53.5",
+      "to": [
+        "pkg:cargo/windows-link@0.2.1",
+        "pkg:cargo/windows_aarch64_gnullvm@0.53.1",
+        "pkg:cargo/windows_aarch64_msvc@0.53.1",
+        "pkg:cargo/windows_i686_gnu@0.53.1",
+        "pkg:cargo/windows_i686_gnullvm@0.53.1",
+        "pkg:cargo/windows_i686_msvc@0.53.1",
+        "pkg:cargo/windows_x86_64_gnu@0.53.1",
+        "pkg:cargo/windows_x86_64_gnullvm@0.53.1",
+        "pkg:cargo/windows_x86_64_msvc@0.53.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/winit@0.30.12",
+      "to": [
+        "pkg:cargo/ahash@0.8.12",
+        "pkg:cargo/android-activity@0.6.0",
+        "pkg:cargo/atomic-waker@1.1.2",
+        "pkg:cargo/bitflags@2.9.4",
+        "pkg:cargo/block2@0.5.1",
+        "pkg:cargo/bytemuck@1.24.0",
+        "pkg:cargo/calloop@0.13.0",
+        "pkg:cargo/cfg_aliases@0.2.1",
+        "pkg:cargo/concurrent-queue@2.5.0",
+        "pkg:cargo/core-foundation@0.9.4",
+        "pkg:cargo/core-graphics@0.23.2",
+        "pkg:cargo/cursor-icon@1.2.0",
+        "pkg:cargo/dpi@0.1.2",
+        "pkg:cargo/js-sys@0.3.81",
+        "pkg:cargo/libc@0.2.176",
+        "pkg:cargo/memmap2@0.9.8",
+        "pkg:cargo/ndk@0.9.0",
+        "pkg:cargo/objc2-app-kit@0.2.2",
+        "pkg:cargo/objc2-foundation@0.2.2",
+        "pkg:cargo/objc2-ui-kit@0.2.2",
+        "pkg:cargo/objc2@0.5.2",
+        "pkg:cargo/orbclient@0.3.48",
+        "pkg:cargo/percent-encoding@2.3.2",
+        "pkg:cargo/pin-project@1.1.10",
+        "pkg:cargo/raw-window-handle@0.6.2",
+        "pkg:cargo/redox_syscall@0.4.1",
+        "pkg:cargo/rustix@0.38.44",
+        "pkg:cargo/sctk-adwaita@0.10.1",
+        "pkg:cargo/serde@1.0.228",
+        "pkg:cargo/smithay-client-toolkit@0.19.2",
+        "pkg:cargo/smol_str@0.2.2",
+        "pkg:cargo/tracing@0.1.41",
+        "pkg:cargo/unicode-segmentation@1.12.0",
+        "pkg:cargo/wasm-bindgen-futures@0.4.54",
+        "pkg:cargo/wasm-bindgen@0.2.104",
+        "pkg:cargo/wayland-backend@0.3.11",
+        "pkg:cargo/wayland-client@0.31.11",
+        "pkg:cargo/wayland-protocols-plasma@0.3.9",
+        "pkg:cargo/wayland-protocols@0.32.9",
+        "pkg:cargo/web-sys@0.3.81",
+        "pkg:cargo/web-time@1.1.0",
+        "pkg:cargo/windows-sys@0.52.0",
+        "pkg:cargo/x11-dl@2.21.0",
+        "pkg:cargo/x11rb@0.13.2",
+        "pkg:cargo/xkbcommon-dl@0.4.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/winnow@0.7.13",
+      "to": [
+        "pkg:cargo/memchr@2.7.6"
+      ]
+    },
+    {
+      "from": "pkg:cargo/winreg@0.55.0",
+      "to": [
+        "pkg:cargo/cfg-if@1.0.3",
+        "pkg:cargo/windows-sys@0.59.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/wio@0.2.2",
+      "to": [
+        "pkg:cargo/winapi@0.3.9"
+      ]
+    },
+    {
+      "from": "pkg:cargo/x11-clipboard@0.9.3",
+      "to": [
+        "pkg:cargo/libc@0.2.176",
+        "pkg:cargo/x11rb@0.13.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/x11-dl@2.21.0",
+      "to": [
+        "pkg:cargo/libc@0.2.176",
+        "pkg:cargo/once_cell@1.21.3",
+        "pkg:cargo/pkg-config@0.3.32"
+      ]
+    },
+    {
+      "from": "pkg:cargo/x11rb@0.13.2",
+      "to": [
+        "pkg:cargo/as-raw-xcb-connection@1.0.1",
+        "pkg:cargo/gethostname@1.0.2",
+        "pkg:cargo/libc@0.2.176",
+        "pkg:cargo/libloading@0.8.9",
+        "pkg:cargo/once_cell@1.21.3",
+        "pkg:cargo/rustix@1.1.2",
+        "pkg:cargo/x11rb-protocol@0.13.2"
+      ]
+    },
+    {
+      "from": "pkg:cargo/xkbcommon-dl@0.4.2",
+      "to": [
+        "pkg:cargo/bitflags@2.9.4",
+        "pkg:cargo/dlib@0.5.2",
+        "pkg:cargo/log@0.4.28",
+        "pkg:cargo/once_cell@1.21.3",
+        "pkg:cargo/xkeysym@0.2.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/yeslogic-fontconfig-sys@5.0.0",
+      "to": [
+        "pkg:cargo/cstr@0.2.12",
+        "pkg:cargo/dlib@0.5.2",
+        "pkg:cargo/once_cell@1.21.3",
+        "pkg:cargo/pkg-config@0.3.32"
+      ]
+    },
+    {
+      "from": "pkg:cargo/zerocopy-derive@0.8.27",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.101",
+        "pkg:cargo/quote@1.0.41",
+        "pkg:cargo/syn@2.0.106"
+      ]
+    },
+    {
+      "from": "pkg:cargo/zerocopy@0.8.27",
+      "to": [
+        "pkg:cargo/zerocopy-derive@0.8.27"
+      ]
+    }
+  ],
+  "issues": []
+}
