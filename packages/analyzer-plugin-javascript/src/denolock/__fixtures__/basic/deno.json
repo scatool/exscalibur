@@ -1,0 +1,8 @@
+{
+  "name": "my-deno-app",
+  "version": "1.0.0",
+  "imports": {
+    "@std/assert": "jsr:@std/assert@^1.0.9",
+    "fast-check": "npm:fast-check@^3.13.1"
+  }
+}

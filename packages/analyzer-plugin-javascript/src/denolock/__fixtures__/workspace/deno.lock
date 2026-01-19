@@ -1,0 +1,23 @@
+{
+  "version": "3",
+  "packages": {
+    "specifiers": {
+      "jsr:@oak/oak@^17.1.4": "jsr:@oak/oak@17.1.4",
+      "jsr:@std/assert@^1.0.9": "jsr:@std/assert@1.0.9"
+    },
+    "jsr": {
+      "@oak/oak@17.1.4": {
+        "integrity": "abc123def456ghi789jkl012mno345pqr678stu901vwx234yzabcdefghijklmn",
+        "dependencies": [
+          "jsr:@std/assert@^1.0.9"
+        ]
+      },
+      "@std/assert@1.0.9": {
+        "integrity": "7f0a5a1a8cf86607cd6c2c030584096e1ffad27fc9271429a8cb48cfbdee5eaf",
+        "dependencies": []
+      }
+    },
+    "npm": {}
+  },
+  "remote": {}
+}

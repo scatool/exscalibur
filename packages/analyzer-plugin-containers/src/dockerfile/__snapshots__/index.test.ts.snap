@@ -6,7 +6,7 @@ exports[`Dockerfile.arg-before-from 1`] = `
   "packages": [
     {
       "evidence": [
-        "<fixtures>/Dockerfile.arg-before-from#3",
+        "Dockerfile.arg-before-from#3",
       ],
       "purl": "pkg:docker/python@3.11-slim",
     },
@@ -22,7 +22,7 @@ exports[`Dockerfile.basic 1`] = `
   "packages": [
     {
       "evidence": [
-        "<fixtures>/Dockerfile.basic#2",
+        "Dockerfile.basic#2",
       ],
       "purl": "pkg:docker/alpine@3.18",
     },
@@ -38,7 +38,7 @@ exports[`Dockerfile.digest-only 1`] = `
   "packages": [
     {
       "evidence": [
-        "<fixtures>/Dockerfile.digest-only#2",
+        "Dockerfile.digest-only#2",
       ],
       "purl": "pkg:docker/node@sha256%253Acd39fdfb3bb0a8da539fe0b7bc13cb12b49c05d169895cbf5351c340dfe42357",
     },
@@ -54,7 +54,7 @@ exports[`Dockerfile.ghcr 1`] = `
   "packages": [
     {
       "evidence": [
-        "<fixtures>/Dockerfile.ghcr#2",
+        "Dockerfile.ghcr#2",
       ],
       "purl": "pkg:docker/actions/runner@2.319.1?repository_url=ghcr.io",
     },
@@ -70,7 +70,7 @@ exports[`Dockerfile.mcr-deep-path 1`] = `
   "packages": [
     {
       "evidence": [
-        "<fixtures>/Dockerfile.mcr-deep-path#2",
+        "Dockerfile.mcr-deep-path#2",
       ],
       "purl": "pkg:docker/dotnet/sdk@8.0?repository_url=mcr.microsoft.com",
     },
@@ -86,13 +86,13 @@ exports[`Dockerfile.multi-arg-registry-namespace 1`] = `
   "packages": [
     {
       "evidence": [
-        "<fixtures>/Dockerfile.multi-arg-registry-namespace#6",
+        "Dockerfile.multi-arg-registry-namespace#6",
       ],
       "purl": "pkg:docker/library/alpine@3.19",
     },
     {
       "evidence": [
-        "<fixtures>/Dockerfile.multi-arg-registry-namespace#9",
+        "Dockerfile.multi-arg-registry-namespace#9",
       ],
       "purl": "pkg:docker/library/busybox@1.36",
     },
@@ -108,7 +108,7 @@ exports[`Dockerfile.multistage-internal-base 1`] = `
   "packages": [
     {
       "evidence": [
-        "<fixtures>/Dockerfile.multistage-internal-base#2",
+        "Dockerfile.multistage-internal-base#2",
       ],
       "purl": "pkg:docker/alpine@latest",
     },
@@ -124,7 +124,7 @@ exports[`Dockerfile.platform-variant 1`] = `
   "packages": [
     {
       "evidence": [
-        "<fixtures>/Dockerfile.platform-variant#4",
+        "Dockerfile.platform-variant#4",
       ],
       "purl": "pkg:docker/alpine@3.18",
     },
@@ -140,7 +140,7 @@ exports[`Dockerfile.private-registry-port 1`] = `
   "packages": [
     {
       "evidence": [
-        "<fixtures>/Dockerfile.private-registry-port#2",
+        "Dockerfile.private-registry-port#2",
       ],
       "purl": "pkg:docker/private/app-base@1.2.3?repository_url=registry.example.com%3A5000",
     },
@@ -165,7 +165,7 @@ exports[`Dockerfile.tag-and-digest 1`] = `
   "packages": [
     {
       "evidence": [
-        "<fixtures>/Dockerfile.tag-and-digest#2",
+        "Dockerfile.tag-and-digest#2",
       ],
       "purl": "pkg:docker/ubuntu@sha256%253A3c282906f58630659f57e5fcae551eeeee54fa8ac4bfa2dc4c4f7deb6bf7e08c",
     },
@@ -181,7 +181,7 @@ exports[`Dockerfile.whitespace-and-comments 1`] = `
   "packages": [
     {
       "evidence": [
-        "<fixtures>/Dockerfile.whitespace-and-comments#3",
+        "Dockerfile.whitespace-and-comments#3",
       ],
       "purl": "pkg:docker/alpine@3.18",
     },

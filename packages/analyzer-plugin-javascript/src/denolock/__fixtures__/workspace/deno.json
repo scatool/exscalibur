@@ -1,0 +1,8 @@
+{
+  "name": "deno-workspace",
+  "version": "1.0.0",
+  "workspace": ["./apps/api", "./packages/utils"],
+  "imports": {
+    "@oak/oak": "jsr:@oak/oak@^17.1.4"
+  }
+}

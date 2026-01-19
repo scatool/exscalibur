@@ -1,304 +1,395 @@
 // Bun Snapshot v1, https://bun.sh/docs/test/snapshots
 
+exports[`aliases 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "yarn.lock#8",
+      ],
+      "purl": "pkg:npm/js-tokens@4.0.0",
+    },
+    {
+      "evidence": [
+        "yarn.lock#15",
+      ],
+      "purl": "pkg:npm/lodash@4.17.20",
+    },
+    {
+      "evidence": [
+        "yarn.lock#22",
+      ],
+      "purl": "pkg:npm/loose-envify@1.4.0",
+    },
+    {
+      "evidence": [
+        "yarn.lock#33",
+      ],
+      "purl": "pkg:npm/object-assign@4.1.1",
+    },
+    {
+      "evidence": [
+        "yarn.lock#40",
+      ],
+      "purl": "pkg:npm/prop-types@15.8.1",
+    },
+    {
+      "evidence": [
+        "yarn.lock#51",
+      ],
+      "purl": "pkg:npm/react-is@16.13.1",
+    },
+    {
+      "evidence": [
+        "yarn.lock#58",
+      ],
+      "purl": "pkg:npm/react@16.14.0",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:npm/loose-envify@1.4.0",
+      "to": [
+        "pkg:npm/js-tokens@4.0.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/prop-types@15.8.1",
+      "to": [
+        "pkg:npm/loose-envify@1.4.0",
+        "pkg:npm/object-assign@4.1.1",
+        "pkg:npm/react-is@16.13.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/react@16.14.0",
+      "to": [
+        "pkg:npm/loose-envify@1.4.0",
+        "pkg:npm/object-assign@4.1.1",
+        "pkg:npm/prop-types@15.8.1",
+      ],
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "package.json",
+      "purl": "pkg:npm/yarn-berry-aliases-test@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/lodash@4.17.20",
+            "pkg:npm/react@16.14.0",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
+
 exports[`basic 1`] = `
 {
   "issues": [],
   "packages": [
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#8",
+        "yarn.lock#8",
       ],
       "purl": "pkg:npm/%40emnapi/runtime@1.6.0",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#17",
+        "yarn.lock#17",
       ],
       "purl": "pkg:npm/%40img/colour@1.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#24",
+        "yarn.lock#24",
       ],
       "purl": "pkg:npm/%40img/sharp-darwin-arm64@0.34.4",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#36",
+        "yarn.lock#36",
       ],
       "purl": "pkg:npm/%40img/sharp-darwin-x64@0.34.4",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#48",
+        "yarn.lock#48",
       ],
       "purl": "pkg:npm/%40img/sharp-libvips-darwin-arm64@1.2.3",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#55",
+        "yarn.lock#55",
       ],
       "purl": "pkg:npm/%40img/sharp-libvips-darwin-x64@1.2.3",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#69",
+        "yarn.lock#69",
       ],
       "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.3",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#62",
+        "yarn.lock#62",
       ],
       "purl": "pkg:npm/%40img/sharp-libvips-linux-arm64@1.2.3",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#76",
+        "yarn.lock#76",
       ],
       "purl": "pkg:npm/%40img/sharp-libvips-linux-ppc64@1.2.3",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#83",
+        "yarn.lock#83",
       ],
       "purl": "pkg:npm/%40img/sharp-libvips-linux-s390x@1.2.3",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#90",
+        "yarn.lock#90",
       ],
       "purl": "pkg:npm/%40img/sharp-libvips-linux-x64@1.2.3",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#97",
+        "yarn.lock#97",
       ],
       "purl": "pkg:npm/%40img/sharp-libvips-linuxmusl-arm64@1.2.3",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#104",
+        "yarn.lock#104",
       ],
       "purl": "pkg:npm/%40img/sharp-libvips-linuxmusl-x64@1.2.3",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#123",
+        "yarn.lock#123",
       ],
       "purl": "pkg:npm/%40img/sharp-linux-arm@0.34.4",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#111",
+        "yarn.lock#111",
       ],
       "purl": "pkg:npm/%40img/sharp-linux-arm64@0.34.4",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#135",
+        "yarn.lock#135",
       ],
       "purl": "pkg:npm/%40img/sharp-linux-ppc64@0.34.4",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#147",
+        "yarn.lock#147",
       ],
       "purl": "pkg:npm/%40img/sharp-linux-s390x@0.34.4",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#159",
+        "yarn.lock#159",
       ],
       "purl": "pkg:npm/%40img/sharp-linux-x64@0.34.4",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#171",
+        "yarn.lock#171",
       ],
       "purl": "pkg:npm/%40img/sharp-linuxmusl-arm64@0.34.4",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#183",
+        "yarn.lock#183",
       ],
       "purl": "pkg:npm/%40img/sharp-linuxmusl-x64@0.34.4",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#195",
+        "yarn.lock#195",
       ],
       "purl": "pkg:npm/%40img/sharp-wasm32@0.34.4",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#204",
+        "yarn.lock#204",
       ],
       "purl": "pkg:npm/%40img/sharp-win32-arm64@0.34.4",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#211",
+        "yarn.lock#211",
       ],
       "purl": "pkg:npm/%40img/sharp-win32-ia32@0.34.4",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#218",
+        "yarn.lock#218",
       ],
       "purl": "pkg:npm/%40img/sharp-win32-x64@0.34.4",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#225",
+        "yarn.lock#225",
       ],
       "purl": "pkg:npm/%40next/env@15.5.6",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#232",
+        "yarn.lock#232",
       ],
       "purl": "pkg:npm/%40next/swc-darwin-arm64@15.5.6",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#239",
+        "yarn.lock#239",
       ],
       "purl": "pkg:npm/%40next/swc-darwin-x64@15.5.6",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#246",
+        "yarn.lock#246",
       ],
       "purl": "pkg:npm/%40next/swc-linux-arm64-gnu@15.5.6",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#253",
+        "yarn.lock#253",
       ],
       "purl": "pkg:npm/%40next/swc-linux-arm64-musl@15.5.6",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#260",
+        "yarn.lock#260",
       ],
       "purl": "pkg:npm/%40next/swc-linux-x64-gnu@15.5.6",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#267",
+        "yarn.lock#267",
       ],
       "purl": "pkg:npm/%40next/swc-linux-x64-musl@15.5.6",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#274",
+        "yarn.lock#274",
       ],
       "purl": "pkg:npm/%40next/swc-win32-arm64-msvc@15.5.6",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#281",
+        "yarn.lock#281",
       ],
       "purl": "pkg:npm/%40next/swc-win32-x64-msvc@15.5.6",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#288",
+        "yarn.lock#288",
       ],
       "purl": "pkg:npm/%40swc/helpers@0.5.15",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#297",
+        "yarn.lock#297",
       ],
       "purl": "pkg:npm/caniuse-lite@1.0.30001752",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#304",
+        "yarn.lock#304",
       ],
       "purl": "pkg:npm/client-only@0.0.1",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#311",
+        "yarn.lock#311",
       ],
       "purl": "pkg:npm/detect-libc@2.1.2",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#318",
+        "yarn.lock#318",
       ],
       "purl": "pkg:npm/nanoid@3.3.11",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#327",
+        "yarn.lock#327",
       ],
       "purl": "pkg:npm/next@15.5.6",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#386",
+        "yarn.lock#386",
       ],
       "purl": "pkg:npm/picocolors@1.1.1",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#393",
+        "yarn.lock#393",
       ],
       "purl": "pkg:npm/postcss@8.4.31",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#404",
+        "yarn.lock#404",
       ],
       "purl": "pkg:npm/react-dom@19.2.0",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#415",
+        "yarn.lock#415",
       ],
       "purl": "pkg:npm/react@19.2.0",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#422",
+        "yarn.lock#422",
       ],
       "purl": "pkg:npm/scheduler@0.27.0",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#429",
+        "yarn.lock#429",
       ],
       "purl": "pkg:npm/semver@7.7.3",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#438",
+        "yarn.lock#438",
       ],
       "purl": "pkg:npm/sharp@0.34.4",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#516",
+        "yarn.lock#516",
       ],
       "purl": "pkg:npm/source-map-js@1.2.1",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#523",
+        "yarn.lock#523",
       ],
       "purl": "pkg:npm/styled-jsx@5.1.6",
     },
     {
-      "evidence": [],
+      "evidence": [
+        "yarn.lock#539",
+      ],
       "purl": "pkg:npm/tslib@2.8.1",
     },
     {
       "evidence": [
-        "<fixtures>/basic/yarn.lock#546",
+        "yarn.lock#546",
       ],
       "purl": "pkg:npm/typescript@5.9.3",
     },
@@ -449,19 +540,10 @@ exports[`basic 1`] = `
         "pkg:npm/react@19.2.0",
       ],
     },
-    {
-      "from": "pkg:npm/yarn-basic@1.0.0",
-      "to": [
-        "pkg:npm/next@15.5.6",
-        "pkg:npm/react-dom@19.2.0",
-        "pkg:npm/react@19.2.0",
-        "pkg:npm/typescript@5.9.3",
-      ],
-    },
   ],
   "subprojects": [
     {
-      "definitionFile": "<fixtures>/basic/package.json",
+      "definitionFile": "package.json",
       "purl": "pkg:npm/yarn-basic@1.0.0",
       "scopes": [
         {
@@ -490,63 +572,54 @@ exports[`edge-cases 1`] = `
   "packages": [
     {
       "evidence": [
-        "<fixtures>/edge-cases/yarn.lock#77",
+        "yarn.lock#77",
       ],
       "purl": "pkg:npm/js-tokens@4.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/edge-cases/yarn.lock#19",
+        "yarn.lock#19",
       ],
       "purl": "pkg:npm/lodash@4.17.21",
     },
     {
       "evidence": [
-        "<fixtures>/edge-cases/yarn.lock#51",
+        "yarn.lock#51",
       ],
       "purl": "pkg:npm/loose-envify@1.4.0",
     },
     {
       "evidence": [
-        "<fixtures>/edge-cases/yarn.lock#60",
+        "yarn.lock#60",
       ],
       "purl": "pkg:npm/object-assign@4.1.1",
     },
     {
       "evidence": [
-        "<fixtures>/edge-cases/yarn.lock#67",
+        "yarn.lock#67",
       ],
       "purl": "pkg:npm/prop-types@15.8.1",
     },
     {
       "evidence": [
-        "<fixtures>/edge-cases/yarn.lock#26",
+        "yarn.lock#26",
       ],
       "purl": "pkg:npm/react@16.14.0",
     },
     {
       "evidence": [
-        "<fixtures>/edge-cases/yarn.lock#37",
+        "yarn.lock#37",
       ],
       "purl": "pkg:npm/react@19.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/edge-cases/yarn.lock#44",
+        "yarn.lock#44",
       ],
       "purl": "pkg:npm/typescript@5.3.3",
     },
   ],
   "relationships": [
-    {
-      "from": "pkg:npm/%40test/edge-cases@1.0.0",
-      "to": [
-        "pkg:npm/lodash@4.17.21",
-        "pkg:npm/react@16.14.0",
-        "pkg:npm/react@19.0.0",
-        "pkg:npm/typescript@5.3.3",
-      ],
-    },
     {
       "from": "pkg:npm/loose-envify@1.4.0",
       "to": [
@@ -571,7 +644,7 @@ exports[`edge-cases 1`] = `
   ],
   "subprojects": [
     {
-      "definitionFile": "<fixtures>/edge-cases/package.json",
+      "definitionFile": "package.json",
       "purl": "pkg:npm/%40test/edge-cases@1.0.0",
       "scopes": [
         {
@@ -600,525 +673,547 @@ exports[`git-deps 1`] = `
   "packages": [
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#8",
+        "yarn.lock#8",
       ],
       "purl": "pkg:npm/accepts@2.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#18",
+        "yarn.lock#18",
       ],
       "purl": "pkg:npm/async-function@1.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#25",
+        "yarn.lock#25",
       ],
       "purl": "pkg:npm/async-generator-function@1.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#32",
+        "yarn.lock#32",
       ],
       "purl": "pkg:npm/body-parser@2.2.0",
     },
     {
-      "evidence": [],
+      "evidence": [
+        "yarn.lock#49",
+      ],
       "purl": "pkg:npm/bytes@3.1.2",
     },
     {
-      "evidence": [],
+      "evidence": [
+        "yarn.lock#56",
+      ],
       "purl": "pkg:npm/call-bind-apply-helpers@1.0.2",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#66",
+        "yarn.lock#66",
       ],
       "purl": "pkg:npm/call-bound@1.0.4",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#76",
+        "yarn.lock#76",
       ],
       "purl": "pkg:npm/commander@0.6.1",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#83",
+        "yarn.lock#83",
       ],
       "purl": "pkg:npm/commander@2.3.0",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#90",
+        "yarn.lock#90",
       ],
       "purl": "pkg:npm/content-disposition@1.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#99",
+        "yarn.lock#99",
       ],
       "purl": "pkg:npm/content-type@1.0.5",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#106",
+        "yarn.lock#106",
       ],
       "purl": "pkg:npm/cookie-signature@1.2.2",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#113",
+        "yarn.lock#113",
       ],
       "purl": "pkg:npm/cookie@0.7.2",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#120",
+        "yarn.lock#120",
       ],
       "purl": "pkg:npm/debug@2.0.0",
     },
     {
-      "evidence": [],
+      "evidence": [
+        "yarn.lock#129",
+      ],
       "purl": "pkg:npm/debug@4.4.3",
     },
     {
-      "evidence": [],
+      "evidence": [
+        "yarn.lock#141",
+      ],
       "purl": "pkg:npm/depd@2.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#148",
+        "yarn.lock#148",
       ],
       "purl": "pkg:npm/diff@1.0.8",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#155",
+        "yarn.lock#155",
       ],
       "purl": "pkg:npm/dunder-proto@1.0.1",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#166",
+        "yarn.lock#166",
       ],
       "purl": "pkg:npm/ee-first@1.1.1",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#173",
+        "yarn.lock#173",
       ],
       "purl": "pkg:npm/encodeurl@2.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#180",
+        "yarn.lock#180",
       ],
       "purl": "pkg:npm/es-define-property@1.0.1",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#187",
+        "yarn.lock#187",
       ],
       "purl": "pkg:npm/es-errors@1.3.0",
     },
     {
-      "evidence": [],
+      "evidence": [
+        "yarn.lock#194",
+      ],
       "purl": "pkg:npm/es-object-atoms@1.1.1",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#203",
+        "yarn.lock#203",
       ],
       "purl": "pkg:npm/escape-html@1.0.3",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#210",
+        "yarn.lock#210",
       ],
       "purl": "pkg:npm/escape-string-regexp@1.0.2",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#217",
+        "yarn.lock#217",
       ],
       "purl": "pkg:npm/etag@1.8.1",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#260",
+        "yarn.lock#260",
       ],
       "purl": "pkg:npm/finalhandler@2.1.0",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#274",
+        "yarn.lock#274",
       ],
       "purl": "pkg:npm/forwarded@0.2.0",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#281",
+        "yarn.lock#281",
       ],
       "purl": "pkg:npm/fresh@2.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#288",
+        "yarn.lock#288",
       ],
       "purl": "pkg:npm/function-bind@1.1.2",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#295",
+        "yarn.lock#295",
       ],
       "purl": "pkg:npm/generator-function@2.0.1",
     },
     {
-      "evidence": [],
+      "evidence": [
+        "yarn.lock#302",
+      ],
       "purl": "pkg:npm/get-intrinsic@1.3.1",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#323",
+        "yarn.lock#323",
       ],
       "purl": "pkg:npm/get-proto@1.0.1",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#333",
+        "yarn.lock#333",
       ],
       "purl": "pkg:npm/glob@3.2.3",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#344",
+        "yarn.lock#344",
       ],
       "purl": "pkg:npm/gopd@1.2.0",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#351",
+        "yarn.lock#351",
       ],
       "purl": "pkg:npm/graceful-fs@2.0.3",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#358",
+        "yarn.lock#358",
       ],
       "purl": "pkg:npm/growl@1.8.1",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#365",
+        "yarn.lock#365",
       ],
       "purl": "pkg:npm/has-symbols@1.1.0",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#372",
+        "yarn.lock#372",
       ],
       "purl": "pkg:npm/hasown@2.0.2",
     },
     {
-      "evidence": [],
+      "evidence": [
+        "yarn.lock#381",
+      ],
       "purl": "pkg:npm/http-errors@2.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#403",
+        "yarn.lock#403",
       ],
       "purl": "pkg:npm/iconv-lite@0.6.3",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#394",
+        "yarn.lock#394",
       ],
       "purl": "pkg:npm/iconv-lite@0.7.0",
     },
     {
-      "evidence": [],
+      "evidence": [
+        "yarn.lock#412",
+      ],
       "purl": "pkg:npm/inherits@2.0.4",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#419",
+        "yarn.lock#419",
       ],
       "purl": "pkg:npm/ipaddr.js@1.9.1",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#426",
+        "yarn.lock#426",
       ],
       "purl": "pkg:npm/is-buffer@1.1.6",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#442",
+        "yarn.lock#442",
       ],
       "purl": "pkg:npm/is-number@3.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#451",
+        "yarn.lock#451",
       ],
       "purl": "pkg:npm/is-odd@0.1.2",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#460",
+        "yarn.lock#460",
       ],
       "purl": "pkg:npm/is-promise@4.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#467",
+        "yarn.lock#467",
       ],
       "purl": "pkg:npm/jade@0.26.3",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#479",
+        "yarn.lock#479",
       ],
       "purl": "pkg:npm/kind-of@3.2.2",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#488",
+        "yarn.lock#488",
       ],
       "purl": "pkg:npm/lodash@4.17.21",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#495",
+        "yarn.lock#495",
       ],
       "purl": "pkg:npm/lru-cache@2.7.3",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#502",
+        "yarn.lock#502",
       ],
       "purl": "pkg:npm/math-intrinsics@1.1.0",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#509",
+        "yarn.lock#509",
       ],
       "purl": "pkg:npm/media-typer@1.1.0",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#516",
+        "yarn.lock#516",
       ],
       "purl": "pkg:npm/merge-descriptors@2.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#523",
+        "yarn.lock#523",
       ],
       "purl": "pkg:npm/mime-db@1.54.0",
     },
     {
-      "evidence": [],
+      "evidence": [
+        "yarn.lock#530",
+      ],
       "purl": "pkg:npm/mime-types@3.0.1",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#539",
+        "yarn.lock#539",
       ],
       "purl": "pkg:npm/minimatch@0.2.14",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#549",
+        "yarn.lock#549",
       ],
       "purl": "pkg:npm/minimist@0.0.8",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#556",
+        "yarn.lock#556",
       ],
       "purl": "pkg:npm/mkdirp@0.3.0",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#563",
+        "yarn.lock#563",
       ],
       "purl": "pkg:npm/mkdirp@0.5.0",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#593",
+        "yarn.lock#593",
       ],
       "purl": "pkg:npm/ms@0.6.2",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#600",
+        "yarn.lock#600",
       ],
       "purl": "pkg:npm/ms@2.1.3",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#607",
+        "yarn.lock#607",
       ],
       "purl": "pkg:npm/negotiator@1.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#614",
+        "yarn.lock#614",
       ],
       "purl": "pkg:npm/object-inspect@1.13.4",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#621",
+        "yarn.lock#621",
       ],
       "purl": "pkg:npm/on-finished@2.4.1",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#630",
+        "yarn.lock#630",
       ],
       "purl": "pkg:npm/once@1.4.0",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#639",
+        "yarn.lock#639",
       ],
       "purl": "pkg:npm/parseurl@1.3.3",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#646",
+        "yarn.lock#646",
       ],
       "purl": "pkg:npm/path-to-regexp@8.3.0",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#653",
+        "yarn.lock#653",
       ],
       "purl": "pkg:npm/proxy-addr@2.0.7",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#663",
+        "yarn.lock#663",
       ],
       "purl": "pkg:npm/qs@6.14.0",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#672",
+        "yarn.lock#672",
       ],
       "purl": "pkg:npm/range-parser@1.2.1",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#679",
+        "yarn.lock#679",
       ],
       "purl": "pkg:npm/raw-body@3.0.1",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#691",
+        "yarn.lock#691",
       ],
       "purl": "pkg:npm/router@2.2.0",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#704",
+        "yarn.lock#704",
       ],
       "purl": "pkg:npm/safe-buffer@5.2.1",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#711",
+        "yarn.lock#711",
       ],
       "purl": "pkg:npm/safer-buffer@2.1.2",
     },
     {
-      "evidence": [],
+      "evidence": [
+        "yarn.lock#718",
+      ],
       "purl": "pkg:npm/send@1.2.0",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#737",
+        "yarn.lock#737",
       ],
       "purl": "pkg:npm/serve-static@2.2.0",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#749",
+        "yarn.lock#749",
       ],
       "purl": "pkg:npm/setprototypeof@1.2.0",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#756",
+        "yarn.lock#756",
       ],
       "purl": "pkg:npm/side-channel-list@1.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#766",
+        "yarn.lock#766",
       ],
       "purl": "pkg:npm/side-channel-map@1.0.1",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#778",
+        "yarn.lock#778",
       ],
       "purl": "pkg:npm/side-channel-weakmap@1.0.2",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#791",
+        "yarn.lock#791",
       ],
       "purl": "pkg:npm/side-channel@1.1.0",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#804",
+        "yarn.lock#804",
       ],
       "purl": "pkg:npm/sigmund@1.0.1",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#811",
+        "yarn.lock#811",
       ],
       "purl": "pkg:npm/statuses@2.0.1",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#818",
+        "yarn.lock#818",
       ],
       "purl": "pkg:npm/statuses@2.0.2",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#836",
+        "yarn.lock#836",
       ],
       "purl": "pkg:npm/toidentifier@1.0.1",
     },
     {
-      "evidence": [],
+      "evidence": [
+        "yarn.lock#843",
+      ],
       "purl": "pkg:npm/type-is@2.0.1",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#854",
+        "yarn.lock#854",
       ],
       "purl": "pkg:npm/unpipe@1.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#861",
+        "yarn.lock#861",
       ],
       "purl": "pkg:npm/vary@1.1.2",
     },
     {
       "evidence": [
-        "<fixtures>/git-deps/yarn.lock#868",
+        "yarn.lock#868",
       ],
       "purl": "pkg:npm/wrappy@1.0.2",
     },
@@ -1413,15 +1508,6 @@ exports[`git-deps 1`] = `
       ],
     },
     {
-      "from": "pkg:npm/test-git-deps@1.0.0",
-      "to": [
-        "pkg:npm/express@5.1.0",
-        "pkg:npm/is-even@1.0.0",
-        "pkg:npm/lodash@4.17.21",
-        "pkg:npm/mocha@2.0.1",
-      ],
-    },
-    {
       "from": "pkg:npm/type-is@2.0.1",
       "to": [
         "pkg:npm/content-type@1.0.5",
@@ -1432,7 +1518,7 @@ exports[`git-deps 1`] = `
   ],
   "subprojects": [
     {
-      "definitionFile": "<fixtures>/git-deps/package.json",
+      "definitionFile": "package.json",
       "purl": "pkg:npm/test-git-deps@1.0.0",
       "scopes": [
         {
@@ -1456,22 +1542,15 @@ exports[`monorepo 1`] = `
   "packages": [
     {
       "evidence": [
-        "<fixtures>/monorepo/yarn.lock#8",
+        "yarn.lock#8",
       ],
       "purl": "pkg:npm/prettier@3.6.2",
     },
   ],
-  "relationships": [
-    {
-      "from": "pkg:npm/utils@0.0.0",
-      "to": [
-        "pkg:npm/prettier@3.6.2",
-      ],
-    },
-  ],
+  "relationships": [],
   "subprojects": [
     {
-      "definitionFile": "<fixtures>/monorepo/package.json",
+      "definitionFile": "package.json",
       "purl": "pkg:npm/utils@0.0.0",
       "scopes": [
         {
@@ -1492,43 +1571,36 @@ exports[`patch-deps 1`] = `
   "packages": [
     {
       "evidence": [
-        "<fixtures>/patch-deps/yarn.lock#33",
+        "yarn.lock#33",
       ],
       "purl": "pkg:npm/hasown@2.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/patch-deps/yarn.lock#17",
+        "yarn.lock#17",
       ],
       "purl": "pkg:npm/is-core-module@2.13.1",
     },
     {
       "evidence": [
-        "<fixtures>/patch-deps/yarn.lock#26",
+        "yarn.lock#26",
       ],
       "purl": "pkg:npm/path-parse@1.0.7",
     },
     {
       "evidence": [
-        "<fixtures>/patch-deps/yarn.lock#40",
+        "yarn.lock#40",
       ],
       "purl": "pkg:npm/resolve@1.22.8",
     },
     {
       "evidence": [
-        "<fixtures>/patch-deps/yarn.lock#60",
+        "yarn.lock#60",
       ],
       "purl": "pkg:npm/typescript@5.3.3",
     },
   ],
   "relationships": [
-    {
-      "from": "pkg:npm/%40test/patch-deps@1.0.0",
-      "to": [
-        "pkg:npm/resolve@1.22.8",
-        "pkg:npm/typescript@5.3.3",
-      ],
-    },
     {
       "from": "pkg:npm/is-core-module@2.13.1",
       "to": [
@@ -1545,7 +1617,7 @@ exports[`patch-deps 1`] = `
   ],
   "subprojects": [
     {
-      "definitionFile": "<fixtures>/patch-deps/package.json",
+      "definitionFile": "package.json",
       "purl": "pkg:npm/%40test/patch-deps@1.0.0",
       "scopes": [
         {
@@ -1567,25 +1639,25 @@ exports[`tarball-deps 1`] = `
   "packages": [
     {
       "evidence": [
-        "<fixtures>/tarball-deps/yarn.lock#8",
+        "yarn.lock#8",
       ],
       "purl": "pkg:npm/js-tokens@4.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/tarball-deps/yarn.lock#15",
+        "yarn.lock#15",
       ],
       "purl": "pkg:npm/lodash@4.17.21",
     },
     {
       "evidence": [
-        "<fixtures>/tarball-deps/yarn.lock#22",
+        "yarn.lock#22",
       ],
       "purl": "pkg:npm/loose-envify@1.4.0",
     },
     {
       "evidence": [
-        "<fixtures>/tarball-deps/yarn.lock#33",
+        "yarn.lock#33",
       ],
       "purl": "pkg:npm/react@18.3.1",
     },
@@ -1603,17 +1675,10 @@ exports[`tarball-deps 1`] = `
         "pkg:npm/loose-envify@1.4.0",
       ],
     },
-    {
-      "from": "pkg:npm/test-tarball-deps@1.0.0",
-      "to": [
-        "pkg:npm/lodash@4.17.21",
-        "pkg:npm/react@18.3.1",
-      ],
-    },
   ],
   "subprojects": [
     {
-      "definitionFile": "<fixtures>/tarball-deps/package.json",
+      "definitionFile": "package.json",
       "purl": "pkg:npm/test-tarball-deps@1.0.0",
       "scopes": [
         {
@@ -1635,1009 +1700,1033 @@ exports[`workspace 1`] = `
   "packages": [
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#8",
+        "yarn.lock#8",
       ],
       "purl": "pkg:npm/%40emnapi/runtime@1.6.0",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#17",
+        "yarn.lock#17",
       ],
       "purl": "pkg:npm/%40esbuild/aix-ppc64@0.25.11",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#31",
+        "yarn.lock#31",
       ],
       "purl": "pkg:npm/%40esbuild/android-arm@0.25.11",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#24",
+        "yarn.lock#24",
       ],
       "purl": "pkg:npm/%40esbuild/android-arm64@0.25.11",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#38",
+        "yarn.lock#38",
       ],
       "purl": "pkg:npm/%40esbuild/android-x64@0.25.11",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#45",
+        "yarn.lock#45",
       ],
       "purl": "pkg:npm/%40esbuild/darwin-arm64@0.25.11",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#52",
+        "yarn.lock#52",
       ],
       "purl": "pkg:npm/%40esbuild/darwin-x64@0.25.11",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#59",
+        "yarn.lock#59",
       ],
       "purl": "pkg:npm/%40esbuild/freebsd-arm64@0.25.11",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#66",
+        "yarn.lock#66",
       ],
       "purl": "pkg:npm/%40esbuild/freebsd-x64@0.25.11",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#80",
+        "yarn.lock#80",
       ],
       "purl": "pkg:npm/%40esbuild/linux-arm@0.25.11",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#73",
+        "yarn.lock#73",
       ],
       "purl": "pkg:npm/%40esbuild/linux-arm64@0.25.11",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#87",
+        "yarn.lock#87",
       ],
       "purl": "pkg:npm/%40esbuild/linux-ia32@0.25.11",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#94",
+        "yarn.lock#94",
       ],
       "purl": "pkg:npm/%40esbuild/linux-loong64@0.25.11",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#101",
+        "yarn.lock#101",
       ],
       "purl": "pkg:npm/%40esbuild/linux-mips64el@0.25.11",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#108",
+        "yarn.lock#108",
       ],
       "purl": "pkg:npm/%40esbuild/linux-ppc64@0.25.11",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#115",
+        "yarn.lock#115",
       ],
       "purl": "pkg:npm/%40esbuild/linux-riscv64@0.25.11",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#122",
+        "yarn.lock#122",
       ],
       "purl": "pkg:npm/%40esbuild/linux-s390x@0.25.11",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#129",
+        "yarn.lock#129",
       ],
       "purl": "pkg:npm/%40esbuild/linux-x64@0.25.11",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#136",
+        "yarn.lock#136",
       ],
       "purl": "pkg:npm/%40esbuild/netbsd-arm64@0.25.11",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#143",
+        "yarn.lock#143",
       ],
       "purl": "pkg:npm/%40esbuild/netbsd-x64@0.25.11",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#150",
+        "yarn.lock#150",
       ],
       "purl": "pkg:npm/%40esbuild/openbsd-arm64@0.25.11",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#157",
+        "yarn.lock#157",
       ],
       "purl": "pkg:npm/%40esbuild/openbsd-x64@0.25.11",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#164",
+        "yarn.lock#164",
       ],
       "purl": "pkg:npm/%40esbuild/openharmony-arm64@0.25.11",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#171",
+        "yarn.lock#171",
       ],
       "purl": "pkg:npm/%40esbuild/sunos-x64@0.25.11",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#178",
+        "yarn.lock#178",
       ],
       "purl": "pkg:npm/%40esbuild/win32-arm64@0.25.11",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#185",
+        "yarn.lock#185",
       ],
       "purl": "pkg:npm/%40esbuild/win32-ia32@0.25.11",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#192",
+        "yarn.lock#192",
       ],
       "purl": "pkg:npm/%40esbuild/win32-x64@0.25.11",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#199",
+        "yarn.lock#199",
       ],
       "purl": "pkg:npm/%40img/colour@1.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#206",
+        "yarn.lock#206",
       ],
       "purl": "pkg:npm/%40img/sharp-darwin-arm64@0.34.4",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#218",
+        "yarn.lock#218",
       ],
       "purl": "pkg:npm/%40img/sharp-darwin-x64@0.34.4",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#230",
+        "yarn.lock#230",
       ],
       "purl": "pkg:npm/%40img/sharp-libvips-darwin-arm64@1.2.3",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#237",
+        "yarn.lock#237",
       ],
       "purl": "pkg:npm/%40img/sharp-libvips-darwin-x64@1.2.3",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#251",
+        "yarn.lock#251",
       ],
       "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.3",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#244",
+        "yarn.lock#244",
       ],
       "purl": "pkg:npm/%40img/sharp-libvips-linux-arm64@1.2.3",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#258",
+        "yarn.lock#258",
       ],
       "purl": "pkg:npm/%40img/sharp-libvips-linux-ppc64@1.2.3",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#265",
+        "yarn.lock#265",
       ],
       "purl": "pkg:npm/%40img/sharp-libvips-linux-s390x@1.2.3",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#272",
+        "yarn.lock#272",
       ],
       "purl": "pkg:npm/%40img/sharp-libvips-linux-x64@1.2.3",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#279",
+        "yarn.lock#279",
       ],
       "purl": "pkg:npm/%40img/sharp-libvips-linuxmusl-arm64@1.2.3",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#286",
+        "yarn.lock#286",
       ],
       "purl": "pkg:npm/%40img/sharp-libvips-linuxmusl-x64@1.2.3",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#305",
+        "yarn.lock#305",
       ],
       "purl": "pkg:npm/%40img/sharp-linux-arm@0.34.4",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#293",
+        "yarn.lock#293",
       ],
       "purl": "pkg:npm/%40img/sharp-linux-arm64@0.34.4",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#317",
+        "yarn.lock#317",
       ],
       "purl": "pkg:npm/%40img/sharp-linux-ppc64@0.34.4",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#329",
+        "yarn.lock#329",
       ],
       "purl": "pkg:npm/%40img/sharp-linux-s390x@0.34.4",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#341",
+        "yarn.lock#341",
       ],
       "purl": "pkg:npm/%40img/sharp-linux-x64@0.34.4",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#353",
+        "yarn.lock#353",
       ],
       "purl": "pkg:npm/%40img/sharp-linuxmusl-arm64@0.34.4",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#365",
+        "yarn.lock#365",
       ],
       "purl": "pkg:npm/%40img/sharp-linuxmusl-x64@0.34.4",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#377",
+        "yarn.lock#377",
       ],
       "purl": "pkg:npm/%40img/sharp-wasm32@0.34.4",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#386",
+        "yarn.lock#386",
       ],
       "purl": "pkg:npm/%40img/sharp-win32-arm64@0.34.4",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#393",
+        "yarn.lock#393",
       ],
       "purl": "pkg:npm/%40img/sharp-win32-ia32@0.34.4",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#400",
+        "yarn.lock#400",
       ],
       "purl": "pkg:npm/%40img/sharp-win32-x64@0.34.4",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#407",
+        "yarn.lock#407",
       ],
       "purl": "pkg:npm/%40isaacs/cliui@8.0.2",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#421",
+        "yarn.lock#421",
       ],
       "purl": "pkg:npm/%40isaacs/fs-minipass@4.0.1",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#430",
+        "yarn.lock#430",
       ],
       "purl": "pkg:npm/%40next/env@15.5.6",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#437",
+        "yarn.lock#437",
       ],
       "purl": "pkg:npm/%40next/swc-darwin-arm64@15.5.6",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#444",
+        "yarn.lock#444",
       ],
       "purl": "pkg:npm/%40next/swc-darwin-x64@15.5.6",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#451",
+        "yarn.lock#451",
       ],
       "purl": "pkg:npm/%40next/swc-linux-arm64-gnu@15.5.6",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#458",
+        "yarn.lock#458",
       ],
       "purl": "pkg:npm/%40next/swc-linux-arm64-musl@15.5.6",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#465",
+        "yarn.lock#465",
       ],
       "purl": "pkg:npm/%40next/swc-linux-x64-gnu@15.5.6",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#472",
+        "yarn.lock#472",
       ],
       "purl": "pkg:npm/%40next/swc-linux-x64-musl@15.5.6",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#479",
+        "yarn.lock#479",
       ],
       "purl": "pkg:npm/%40next/swc-win32-arm64-msvc@15.5.6",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#486",
+        "yarn.lock#486",
       ],
       "purl": "pkg:npm/%40next/swc-win32-x64-msvc@15.5.6",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#493",
+        "yarn.lock#493",
       ],
       "purl": "pkg:npm/%40npmcli/agent@3.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#506",
+        "yarn.lock#506",
       ],
       "purl": "pkg:npm/%40npmcli/fs@4.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#515",
+        "yarn.lock#515",
       ],
       "purl": "pkg:npm/%40pkgjs/parseargs@0.11.0",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#522",
+        "yarn.lock#522",
       ],
       "purl": "pkg:npm/%40rollup/rollup-android-arm-eabi@4.52.5",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#529",
+        "yarn.lock#529",
       ],
       "purl": "pkg:npm/%40rollup/rollup-android-arm64@4.52.5",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#536",
+        "yarn.lock#536",
       ],
       "purl": "pkg:npm/%40rollup/rollup-darwin-arm64@4.52.5",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#543",
+        "yarn.lock#543",
       ],
       "purl": "pkg:npm/%40rollup/rollup-darwin-x64@4.52.5",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#550",
+        "yarn.lock#550",
       ],
       "purl": "pkg:npm/%40rollup/rollup-freebsd-arm64@4.52.5",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#557",
+        "yarn.lock#557",
       ],
       "purl": "pkg:npm/%40rollup/rollup-freebsd-x64@4.52.5",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#564",
+        "yarn.lock#564",
       ],
       "purl": "pkg:npm/%40rollup/rollup-linux-arm-gnueabihf@4.52.5",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#571",
+        "yarn.lock#571",
       ],
       "purl": "pkg:npm/%40rollup/rollup-linux-arm-musleabihf@4.52.5",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#578",
+        "yarn.lock#578",
       ],
       "purl": "pkg:npm/%40rollup/rollup-linux-arm64-gnu@4.52.5",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#585",
+        "yarn.lock#585",
       ],
       "purl": "pkg:npm/%40rollup/rollup-linux-arm64-musl@4.52.5",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#592",
+        "yarn.lock#592",
       ],
       "purl": "pkg:npm/%40rollup/rollup-linux-loong64-gnu@4.52.5",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#599",
+        "yarn.lock#599",
       ],
       "purl": "pkg:npm/%40rollup/rollup-linux-ppc64-gnu@4.52.5",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#606",
+        "yarn.lock#606",
       ],
       "purl": "pkg:npm/%40rollup/rollup-linux-riscv64-gnu@4.52.5",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#613",
+        "yarn.lock#613",
       ],
       "purl": "pkg:npm/%40rollup/rollup-linux-riscv64-musl@4.52.5",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#620",
+        "yarn.lock#620",
       ],
       "purl": "pkg:npm/%40rollup/rollup-linux-s390x-gnu@4.52.5",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#627",
+        "yarn.lock#627",
       ],
       "purl": "pkg:npm/%40rollup/rollup-linux-x64-gnu@4.52.5",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#634",
+        "yarn.lock#634",
       ],
       "purl": "pkg:npm/%40rollup/rollup-linux-x64-musl@4.52.5",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#641",
+        "yarn.lock#641",
       ],
       "purl": "pkg:npm/%40rollup/rollup-openharmony-arm64@4.52.5",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#648",
+        "yarn.lock#648",
       ],
       "purl": "pkg:npm/%40rollup/rollup-win32-arm64-msvc@4.52.5",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#655",
+        "yarn.lock#655",
       ],
       "purl": "pkg:npm/%40rollup/rollup-win32-ia32-msvc@4.52.5",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#662",
+        "yarn.lock#662",
       ],
       "purl": "pkg:npm/%40rollup/rollup-win32-x64-gnu@4.52.5",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#669",
+        "yarn.lock#669",
       ],
       "purl": "pkg:npm/%40rollup/rollup-win32-x64-msvc@4.52.5",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#716",
+        "yarn.lock#716",
       ],
       "purl": "pkg:npm/%40swc/helpers@0.5.15",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#725",
+        "yarn.lock#725",
       ],
       "purl": "pkg:npm/%40types/estree@1.0.8",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#732",
+        "yarn.lock#732",
       ],
       "purl": "pkg:npm/abbrev@3.0.1",
     },
     {
-      "evidence": [],
+      "evidence": [
+        "yarn.lock#739",
+      ],
       "purl": "pkg:npm/agent-base@7.1.4",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#746",
+        "yarn.lock#746",
       ],
       "purl": "pkg:npm/ansi-regex@5.0.1",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#753",
+        "yarn.lock#753",
       ],
       "purl": "pkg:npm/ansi-regex@6.2.2",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#760",
+        "yarn.lock#760",
       ],
       "purl": "pkg:npm/ansi-styles@4.3.0",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#769",
+        "yarn.lock#769",
       ],
       "purl": "pkg:npm/ansi-styles@6.2.3",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#776",
+        "yarn.lock#776",
       ],
       "purl": "pkg:npm/balanced-match@1.0.2",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#783",
+        "yarn.lock#783",
       ],
       "purl": "pkg:npm/brace-expansion@2.0.2",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#792",
+        "yarn.lock#792",
       ],
       "purl": "pkg:npm/cacache@19.0.1",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#812",
+        "yarn.lock#812",
       ],
       "purl": "pkg:npm/caniuse-lite@1.0.30001751",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#819",
+        "yarn.lock#819",
       ],
       "purl": "pkg:npm/chownr@3.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#826",
+        "yarn.lock#826",
       ],
       "purl": "pkg:npm/client-only@0.0.1",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#833",
+        "yarn.lock#833",
       ],
       "purl": "pkg:npm/color-convert@2.0.1",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#842",
+        "yarn.lock#842",
       ],
       "purl": "pkg:npm/color-name@1.1.4",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#849",
+        "yarn.lock#849",
       ],
       "purl": "pkg:npm/cross-spawn@7.0.6",
     },
     {
-      "evidence": [],
+      "evidence": [
+        "yarn.lock#860",
+      ],
       "purl": "pkg:npm/debug@4.4.3",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#872",
+        "yarn.lock#872",
       ],
       "purl": "pkg:npm/detect-libc@2.1.2",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#879",
+        "yarn.lock#879",
       ],
       "purl": "pkg:npm/eastasianwidth@0.2.0",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#886",
+        "yarn.lock#886",
       ],
       "purl": "pkg:npm/emoji-regex@8.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#893",
+        "yarn.lock#893",
       ],
       "purl": "pkg:npm/emoji-regex@9.2.2",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#900",
+        "yarn.lock#900",
       ],
       "purl": "pkg:npm/encoding@0.1.13",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#909",
+        "yarn.lock#909",
       ],
       "purl": "pkg:npm/env-paths@2.2.1",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#916",
+        "yarn.lock#916",
       ],
       "purl": "pkg:npm/err-code@2.0.3",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#923",
+        "yarn.lock#923",
       ],
       "purl": "pkg:npm/esbuild@0.25.11",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1012",
+        "yarn.lock#1012",
       ],
       "purl": "pkg:npm/exponential-backoff@3.1.3",
     },
     {
-      "evidence": [],
+      "evidence": [
+        "yarn.lock#1019",
+      ],
       "purl": "pkg:npm/fdir@6.5.0",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1031",
+        "yarn.lock#1031",
       ],
       "purl": "pkg:npm/foreground-child@3.3.1",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1041",
+        "yarn.lock#1041",
       ],
       "purl": "pkg:npm/fs-minipass@3.0.3",
     },
     {
-      "evidence": [],
+      "evidence": [
+        "yarn.lock#1050",
+      ],
       "purl": "pkg:npm/fsevents@2.3.3",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1069",
+        "yarn.lock#1069",
       ],
       "purl": "pkg:npm/glob@10.4.5",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1085",
+        "yarn.lock#1085",
       ],
       "purl": "pkg:npm/graceful-fs@4.2.11",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1092",
+        "yarn.lock#1092",
       ],
       "purl": "pkg:npm/http-cache-semantics@4.2.0",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1099",
+        "yarn.lock#1099",
       ],
       "purl": "pkg:npm/http-proxy-agent@7.0.2",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1109",
+        "yarn.lock#1109",
       ],
       "purl": "pkg:npm/https-proxy-agent@7.0.6",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1119",
+        "yarn.lock#1119",
       ],
       "purl": "pkg:npm/iconv-lite@0.6.3",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1128",
+        "yarn.lock#1128",
       ],
       "purl": "pkg:npm/imurmurhash@0.1.4",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1135",
+        "yarn.lock#1135",
       ],
       "purl": "pkg:npm/ip-address@10.0.1",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1142",
+        "yarn.lock#1142",
       ],
       "purl": "pkg:npm/is-fullwidth-code-point@3.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1149",
+        "yarn.lock#1149",
       ],
       "purl": "pkg:npm/isexe@2.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1156",
+        "yarn.lock#1156",
       ],
       "purl": "pkg:npm/isexe@3.1.1",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1163",
+        "yarn.lock#1163",
       ],
       "purl": "pkg:npm/jackspeak@3.4.3",
     },
     {
-      "evidence": [],
+      "evidence": [
+        "yarn.lock#1176",
+      ],
       "purl": "pkg:npm/lru-cache@10.4.3",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1183",
+        "yarn.lock#1183",
       ],
       "purl": "pkg:npm/make-fetch-happen@14.0.3",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1202",
+        "yarn.lock#1202",
       ],
       "purl": "pkg:npm/minimatch@9.0.5",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1211",
+        "yarn.lock#1211",
       ],
       "purl": "pkg:npm/minipass-collect@2.0.1",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1220",
+        "yarn.lock#1220",
       ],
       "purl": "pkg:npm/minipass-fetch@4.0.1",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1235",
+        "yarn.lock#1235",
       ],
       "purl": "pkg:npm/minipass-flush@1.0.5",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1244",
+        "yarn.lock#1244",
       ],
       "purl": "pkg:npm/minipass-pipeline@1.2.4",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1253",
+        "yarn.lock#1253",
       ],
       "purl": "pkg:npm/minipass-sized@1.0.3",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1262",
+        "yarn.lock#1262",
       ],
       "purl": "pkg:npm/minipass@3.3.6",
     },
     {
-      "evidence": [],
+      "evidence": [
+        "yarn.lock#1271",
+      ],
       "purl": "pkg:npm/minipass@7.1.2",
     },
     {
-      "evidence": [],
+      "evidence": [
+        "yarn.lock#1278",
+      ],
       "purl": "pkg:npm/minizlib@3.1.0",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1287",
+        "yarn.lock#1287",
       ],
       "purl": "pkg:npm/ms@2.1.3",
     },
     {
-      "evidence": [],
+      "evidence": [
+        "yarn.lock#1294",
+      ],
       "purl": "pkg:npm/nanoid@3.3.11",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1303",
+        "yarn.lock#1303",
       ],
       "purl": "pkg:npm/negotiator@1.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1310",
+        "yarn.lock#1310",
       ],
       "purl": "pkg:npm/next@15.5.6",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1369",
+        "yarn.lock#1369",
       ],
       "purl": "pkg:npm/node-gyp@11.5.0",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1389",
+        "yarn.lock#1389",
       ],
       "purl": "pkg:npm/nopt@8.1.0",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1400",
+        "yarn.lock#1400",
       ],
       "purl": "pkg:npm/p-map@7.0.3",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1407",
+        "yarn.lock#1407",
       ],
       "purl": "pkg:npm/package-json-from-dist@1.0.1",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1414",
+        "yarn.lock#1414",
       ],
       "purl": "pkg:npm/path-key@3.1.1",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1421",
+        "yarn.lock#1421",
       ],
       "purl": "pkg:npm/path-scurry@1.11.1",
     },
     {
-      "evidence": [],
+      "evidence": [
+        "yarn.lock#1431",
+      ],
       "purl": "pkg:npm/picocolors@1.1.1",
     },
     {
-      "evidence": [],
+      "evidence": [
+        "yarn.lock#1438",
+      ],
       "purl": "pkg:npm/picomatch@4.0.3",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1445",
+        "yarn.lock#1445",
       ],
       "purl": "pkg:npm/postcss@8.4.31",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1456",
+        "yarn.lock#1456",
       ],
       "purl": "pkg:npm/postcss@8.5.6",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1467",
+        "yarn.lock#1467",
       ],
       "purl": "pkg:npm/proc-log@5.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1474",
+        "yarn.lock#1474",
       ],
       "purl": "pkg:npm/promise-retry@2.0.1",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1484",
+        "yarn.lock#1484",
       ],
       "purl": "pkg:npm/react-dom@19.2.0",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1495",
+        "yarn.lock#1495",
       ],
       "purl": "pkg:npm/react@19.2.0",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1502",
+        "yarn.lock#1502",
       ],
       "purl": "pkg:npm/retry@0.12.0",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1509",
+        "yarn.lock#1509",
       ],
       "purl": "pkg:npm/rollup@4.52.5",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1590",
+        "yarn.lock#1590",
       ],
       "purl": "pkg:npm/safer-buffer@2.1.2",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1597",
+        "yarn.lock#1597",
       ],
       "purl": "pkg:npm/scheduler@0.27.0",
     },
     {
-      "evidence": [],
+      "evidence": [
+        "yarn.lock#1604",
+      ],
       "purl": "pkg:npm/semver@7.7.3",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1613",
+        "yarn.lock#1613",
       ],
       "purl": "pkg:npm/sharp@0.34.4",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1691",
+        "yarn.lock#1691",
       ],
       "purl": "pkg:npm/shebang-command@2.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1700",
+        "yarn.lock#1700",
       ],
       "purl": "pkg:npm/shebang-regex@3.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1707",
+        "yarn.lock#1707",
       ],
       "purl": "pkg:npm/signal-exit@4.1.0",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1714",
+        "yarn.lock#1714",
       ],
       "purl": "pkg:npm/smart-buffer@4.2.0",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1721",
+        "yarn.lock#1721",
       ],
       "purl": "pkg:npm/socks-proxy-agent@8.0.5",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1732",
+        "yarn.lock#1732",
       ],
       "purl": "pkg:npm/socks@2.8.7",
     },
     {
-      "evidence": [],
+      "evidence": [
+        "yarn.lock#1742",
+      ],
       "purl": "pkg:npm/source-map-js@1.2.1",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1749",
+        "yarn.lock#1749",
       ],
       "purl": "pkg:npm/ssri@12.0.0",
     },
@@ -2646,11 +2735,15 @@ exports[`workspace 1`] = `
       "purl": "pkg:npm/string-width-cjs@4.2.3",
     },
     {
-      "evidence": [],
+      "evidence": [
+        "yarn.lock#1758",
+      ],
       "purl": "pkg:npm/string-width@4.2.3",
     },
     {
-      "evidence": [],
+      "evidence": [
+        "yarn.lock#1769",
+      ],
       "purl": "pkg:npm/string-width@5.1.2",
     },
     {
@@ -2658,110 +2751,116 @@ exports[`workspace 1`] = `
       "purl": "pkg:npm/strip-ansi-cjs@6.0.1",
     },
     {
-      "evidence": [],
+      "evidence": [
+        "yarn.lock#1780",
+      ],
       "purl": "pkg:npm/strip-ansi@6.0.1",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1789",
+        "yarn.lock#1789",
       ],
       "purl": "pkg:npm/strip-ansi@7.1.2",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1798",
+        "yarn.lock#1798",
       ],
       "purl": "pkg:npm/styled-jsx@5.1.6",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1814",
+        "yarn.lock#1814",
       ],
       "purl": "pkg:npm/tar@7.5.2",
     },
     {
-      "evidence": [],
+      "evidence": [
+        "yarn.lock#1827",
+      ],
       "purl": "pkg:npm/tinyglobby@0.2.15",
     },
     {
-      "evidence": [],
+      "evidence": [
+        "yarn.lock#1837",
+      ],
       "purl": "pkg:npm/tslib@2.8.1",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1844",
+        "yarn.lock#1844",
       ],
       "purl": "pkg:npm/turbo-darwin-64@2.5.8",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1851",
+        "yarn.lock#1851",
       ],
       "purl": "pkg:npm/turbo-darwin-arm64@2.5.8",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1858",
+        "yarn.lock#1858",
       ],
       "purl": "pkg:npm/turbo-linux-64@2.5.8",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1865",
+        "yarn.lock#1865",
       ],
       "purl": "pkg:npm/turbo-linux-arm64@2.5.8",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1872",
+        "yarn.lock#1872",
       ],
       "purl": "pkg:npm/turbo-windows-64@2.5.8",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1879",
+        "yarn.lock#1879",
       ],
       "purl": "pkg:npm/turbo-windows-arm64@2.5.8",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1886",
+        "yarn.lock#1886",
       ],
       "purl": "pkg:npm/turbo@2.5.8",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1915",
+        "yarn.lock#1915",
       ],
       "purl": "pkg:npm/typescript@5.9.3",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1935",
+        "yarn.lock#1935",
       ],
       "purl": "pkg:npm/unique-filename@4.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1944",
+        "yarn.lock#1944",
       ],
       "purl": "pkg:npm/unique-slug@5.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#1953",
+        "yarn.lock#1953",
       ],
       "purl": "pkg:npm/vite@6.4.1",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#2008",
+        "yarn.lock#2008",
       ],
       "purl": "pkg:npm/which@2.0.2",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#2019",
+        "yarn.lock#2019",
       ],
       "purl": "pkg:npm/which@5.0.0",
     },
@@ -2771,25 +2870,25 @@ exports[`workspace 1`] = `
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#2030",
+        "yarn.lock#2030",
       ],
       "purl": "pkg:npm/wrap-ansi@7.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#2041",
+        "yarn.lock#2041",
       ],
       "purl": "pkg:npm/wrap-ansi@8.1.0",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#2052",
+        "yarn.lock#2052",
       ],
       "purl": "pkg:npm/yallist@4.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/workspace/yarn.lock#2059",
+        "yarn.lock#2059",
       ],
       "purl": "pkg:npm/yallist@5.0.0",
     },
@@ -2892,38 +2991,6 @@ exports[`workspace 1`] = `
       "from": "pkg:npm/%40npmcli/fs@4.0.0",
       "to": [
         "pkg:npm/semver@7.7.3",
-      ],
-    },
-    {
-      "from": "pkg:npm/%40scatest/docs@1.0.0",
-      "to": [
-        "pkg:npm/%40scatest/ui@1.0.7",
-        "pkg:npm/react-dom@19.2.0",
-        "pkg:npm/react@19.2.0",
-        "pkg:npm/vite@6.4.1",
-      ],
-    },
-    {
-      "from": "pkg:npm/%40scatest/ui@1.0.7",
-      "to": [
-        "pkg:npm/react@19.2.0",
-      ],
-    },
-    {
-      "from": "pkg:npm/%40scatest/workspace@0.0.0",
-      "to": [
-        "pkg:npm/turbo@2.5.8",
-        "pkg:npm/typescript@5.9.3",
-      ],
-    },
-    {
-      "from": "pkg:npm/%40scatest/www@2.0.0",
-      "to": [
-        "pkg:npm/%40scatest/ui@1.0.7",
-        "pkg:npm/next@15.5.6",
-        "pkg:npm/react-dom@19.2.0",
-        "pkg:npm/react@19.2.0",
-        "pkg:npm/typescript@5.9.3",
       ],
     },
     {
@@ -3431,7 +3498,7 @@ exports[`workspace 1`] = `
   ],
   "subprojects": [
     {
-      "definitionFile": "<fixtures>/workspace/apps/docs/package.json",
+      "definitionFile": "apps/docs/package.json",
       "purl": "pkg:npm/%40scatest/docs@1.0.0",
       "scopes": [
         {
@@ -3446,7 +3513,7 @@ exports[`workspace 1`] = `
       ],
     },
     {
-      "definitionFile": "<fixtures>/workspace/packages/ui/package.json",
+      "definitionFile": "packages/ui/package.json",
       "purl": "pkg:npm/%40scatest/ui@1.0.7",
       "scopes": [
         {
@@ -3458,7 +3525,7 @@ exports[`workspace 1`] = `
       ],
     },
     {
-      "definitionFile": "<fixtures>/workspace/package.json",
+      "definitionFile": "package.json",
       "purl": "pkg:npm/%40scatest/workspace@0.0.0",
       "scopes": [
         {
@@ -3471,7 +3538,7 @@ exports[`workspace 1`] = `
       ],
     },
     {
-      "definitionFile": "<fixtures>/workspace/apps/www/package.json",
+      "definitionFile": "apps/www/package.json",
       "purl": "pkg:npm/%40scatest/www@2.0.0",
       "scopes": [
         {

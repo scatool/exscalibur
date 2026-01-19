@@ -7,11 +7,7 @@ export const extractor: Extractor = filesExtractor({
   version: 1,
   markFiles: async function (codebase: string) {
     const glob = new Glob('**/*.cdx.json');
-    for await (const file of glob.scan({
-      cwd: codebase,
-      absolute: true,
-      onlyFiles: true,
-    })) {
+    for await (const file of glob.scan({ cwd: codebase, onlyFiles: true, absolute: true })) {
       this.markFile(file);
     }
   },

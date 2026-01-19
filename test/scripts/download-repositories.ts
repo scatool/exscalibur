@@ -3,8 +3,15 @@
 import { file, spawn } from 'bun';
 import { join } from 'node:path';
 
-const REPOSITORIES_FILE = join(import.meta.dir, '..', 'repositories.txt');
+const REPOSITORIES_FILE = join(import.meta.dir, '..', 'repositories.json');
 const OUTPUT_DIR = join(import.meta.dir, '..', 'repositories');
+
+interface RepositoryConfig {
+  owner: string;
+  repository: string;
+  commit: string;
+  javaVersion?: number;
+}
 
 async function downloadAndExtract(owner: string, repo: string, commit: string, outputPath: string): Promise<void> {
   // Download archive from GitHub
@@ -47,13 +54,9 @@ async function downloadAndExtract(owner: string, repo: string, commit: string, o
 async function main() {
   console.log('Reading repositories list...');
   const repositoriesFile = file(REPOSITORIES_FILE);
-  const content = await repositoriesFile.text();
-  const lines = content
-    .split('\n')
-    .map((line) => line.trim())
-    .filter((line) => line.length > 0);
+  const repositories: RepositoryConfig[] = await repositoriesFile.json();
 
-  console.log(`Found ${lines.length} repositories to download\n`);
+  console.log(`Found ${repositories.length} repositories to download\n`);
 
   // Create output directory
   await Bun.write(join(OUTPUT_DIR, '.gitkeep'), '');
@@ -61,21 +64,13 @@ async function main() {
   let successful = 0;
   let failed = 0;
 
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i];
-    const parts = line.split('#');
-
-    if (parts.length !== 3) {
-      console.error(`❌ Invalid line format: ${line}`);
-      failed++;
-      continue;
-    }
-
-    const [owner, repo, commit] = parts;
+  for (let i = 0; i < repositories.length; i++) {
+    const config = repositories[i];
+    const { owner, repository: repo, commit } = config;
     const repoName = `${owner}+${repo}`;
     const repoPath = join(OUTPUT_DIR, repoName);
 
-    console.log(`[${i + 1}/${lines.length}] ${repoName}`);
+    console.log(`[${i + 1}/${repositories.length}] ${repoName}`);
 
     // Skip if already exists
     const packageJsonFile = file(join(repoPath, 'package.json'));

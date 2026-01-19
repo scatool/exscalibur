@@ -11,7 +11,6 @@ export const extractor: Extractor = filesExtractor({
     for await (const file of glob.scan({
       cwd: codebase,
       dot: true,
-      absolute: true,
     })) {
       this.markFile(file);
     }
@@ -107,10 +106,9 @@ function parseActionReference(uses: string): string | null {
   }
 
   const namespace = parts[0];
-  const name = parts.slice(1).join('/'); // Include path if present
+  const name = parts[1] ?? '';
+  const subpath = parts.length > 2 ? parts.slice(2).join('/') : null;
 
-  // Create PURL for GitHub action
-  // Format: pkg:github/owner/repo@ref
-  const purl = new PackageURL('github', namespace, name, ref, null, null);
+  const purl = new PackageURL('github', namespace, name, ref, null, subpath);
   return purl.toString();
 }

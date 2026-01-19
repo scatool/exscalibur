@@ -1,0 +1,14 @@
+# Tests
+*.test.ts
+*.test.js
+*.spec.ts
+*.spec.js
+__tests__
+__fixtures__
+__snapshots__
+
+# Build artifacts
+.turbo
+
+# Config files
+tsconfig.json

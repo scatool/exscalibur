@@ -3,11 +3,14 @@ import {
   type DependencyScope,
   type Extractor,
   filesExtractor,
-  type Relationship,
   type Subproject,
+  addRelationship,
+  ensurePackageExists,
+  convertPackageMapToArray,
+  convertRelationshipsMapToArray,
+  initializeExtractionMaps,
 } from '@scatool/analyzer-core/src/index.ts';
 import { Glob } from 'bun';
-import { PackageURL } from 'packageurl-js';
 import { dirname, join } from 'node:path';
 import {
   findLineNumber,
@@ -17,17 +20,23 @@ import {
   type YarnBerryLockfile,
 } from './lockfile.ts';
 import type { PackageJson } from '../types.ts';
+import { createNpmPurl, NPM_DEPENDENCY_SCOPES } from '../npm-utils.ts';
+import type { JavaScriptOptions } from '../options.ts';
 
-const lockfileGlob = new Glob('**/yarn.lock');
-
-const DEPENDENCY_TYPES = ['dependencies', 'devDependencies', 'optionalDependencies', 'peerDependencies'] as const;
-
-export const extractor: Extractor = filesExtractor({
+export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScriptOptions>({
   name: 'yarnberry',
   version: 1,
-  markFiles: async function (codebase: string) {
-    for await (const file of lockfileGlob.scan({ cwd: codebase, absolute: true })) {
-      if (!file.includes('/node_modules/')) {
+  options: async () => ({
+    ignore: ['**/node_modules/**'],
+  }),
+  markFiles: async function (codebase: string, options: JavaScriptOptions) {
+    const ignorePatterns = options.ignore ?? [];
+    const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));
+
+    const lockfileGlob = new Glob('**/yarn.lock');
+    for await (const file of lockfileGlob.scan({ cwd: codebase, absolute: true, onlyFiles: true })) {
+      const shouldIgnore = ignoreGlobs.some((glob) => glob.match(file));
+      if (!shouldIgnore) {
         // Only mark Yarn Berry lockfiles (version 8+)
         // Check the first few lines for __metadata: section
         try {
@@ -60,8 +69,7 @@ export const extractor: Extractor = filesExtractor({
   extractFile: async (file: string): Promise<AnalyzerResult> => {
     const dir = dirname(file);
 
-    const packageMap = new Map<string, { purl: string; evidence: Set<string> }>();
-    const relationshipsMap = new Map<string, Set<string>>();
+    const { packageMap, relationshipsMap } = initializeExtractionMaps();
     const subprojects: Subproject[] = [];
 
     try {
@@ -114,12 +122,11 @@ export const extractor: Extractor = filesExtractor({
         const packageJsonPath = join(workspaceDir, 'package.json');
 
         // Create PURL for this subproject
-        const purl = createPurl(name, info.version);
+        const purl = createNpmPurl(name, info.version);
 
         // Extract scopes - read from package.json to preserve original dependency types
         // (Yarn Berry lockfile normalizes all deps to just "dependencies")
         const scopes: DependencyScope[] = [];
-        const scopeNames = ['dependencies', 'devDependencies', 'optionalDependencies', 'peerDependencies'] as const;
 
         // Read package.json to get the original dependency scopes
         let packageInfo: PackageJson | null = null;
@@ -131,7 +138,7 @@ export const extractor: Extractor = filesExtractor({
           continue;
         }
 
-        for (const scopeName of scopeNames) {
+        for (const scopeName of NPM_DEPENDENCY_SCOPES) {
           const depsInScope: string[] = [];
           const packageJsonDeps = packageInfo[scopeName];
 
@@ -141,7 +148,7 @@ export const extractor: Extractor = filesExtractor({
                 // Check if this is a workspace package
                 const workspaceVersion = workspacePackages.get(depName);
                 if (workspaceVersion) {
-                  const depPurl = createPurl(depName, workspaceVersion.version);
+                  const depPurl = createNpmPurl(depName, workspaceVersion.version);
                   depsInScope.push(depPurl);
                   continue;
                 }
@@ -151,7 +158,7 @@ export const extractor: Extractor = filesExtractor({
                 const { actualName, actualRange } = parseAliasedDependency(depName, versionRange);
                 const resolvedVersion = resolvePackageVersion(lockfile, actualName, actualRange);
                 if (resolvedVersion) {
-                  const depPurl = createPurl(actualName, resolvedVersion);
+                  const depPurl = createNpmPurl(actualName, resolvedVersion);
                   depsInScope.push(depPurl);
                 }
               }
@@ -182,13 +189,12 @@ export const extractor: Extractor = filesExtractor({
           const packageInfo = JSON.parse(packageJsonContent) as PackageJson;
 
           if (packageInfo.name && packageInfo.version) {
-            const purl = createPurl(packageInfo.name, packageInfo.version);
+            const purl = createNpmPurl(packageInfo.name, packageInfo.version);
 
             // Extract scopes from package.json
             const scopes: DependencyScope[] = [];
-            const scopeNames = ['dependencies', 'devDependencies', 'optionalDependencies', 'peerDependencies'] as const;
 
-            for (const scopeName of scopeNames) {
+            for (const scopeName of NPM_DEPENDENCY_SCOPES) {
               const depsInScope: string[] = [];
               const deps = packageInfo[scopeName];
 
@@ -200,7 +206,7 @@ export const extractor: Extractor = filesExtractor({
                     const { actualName, actualRange } = parseAliasedDependency(depName, versionRange);
                     const resolvedVersion = resolvePackageVersion(lockfile, actualName, actualRange);
                     if (resolvedVersion) {
-                      const depPurl = createPurl(actualName, resolvedVersion);
+                      const depPurl = createNpmPurl(actualName, resolvedVersion);
                       depsInScope.push(depPurl);
                     }
                   }
@@ -252,14 +258,17 @@ export const extractor: Extractor = filesExtractor({
         // Skip if no version
         if (!version) continue;
 
-        const purl = createPurl(name, version);
+        const purl = createNpmPurl(name, version);
 
         // Add package with evidence
         if (!packageMap.has(purl)) {
           packageMap.set(purl, { purl, evidence: new Set() });
         }
 
-        const lineNumber = findLineNumber(lockfileContent, pattern);
+        // Use the original combined pattern for evidence tracking
+        // (handles cases where multiple patterns are comma-separated in the lockfile)
+        const patternToFind = pkg.originalPattern || pattern;
+        const lineNumber = findLineNumber(lockfileContent, patternToFind);
         if (lineNumber) {
           packageMap.get(purl)!.evidence.add(`${file}#${lineNumber}`);
         }
@@ -269,39 +278,13 @@ export const extractor: Extractor = filesExtractor({
       }
 
       // Add relationships from subprojects to their dependencies
-      for (const subproject of subprojects) {
-        if (subproject.scopes) {
-          const allDeps = new Set<string>();
-          for (const scope of subproject.scopes) {
-            for (const pkg of scope.packages) {
-              allDeps.add(pkg);
-            }
-          }
-
-          if (allDeps.size > 0) {
-            const existing = relationshipsMap.get(subproject.purl);
-            if (existing) {
-              allDeps.forEach((dep) => existing.add(dep));
-            } else {
-              relationshipsMap.set(subproject.purl, allDeps);
-            }
-          }
-        }
-      }
     } catch (error) {
       // Silently skip files that fail to parse
     }
 
     // Convert maps to arrays
-    const packages = Array.from(packageMap.values()).map(({ purl, evidence }) => ({
-      purl,
-      evidence: Array.from(evidence),
-    }));
-
-    const relationships: Relationship[] = Array.from(relationshipsMap.entries()).map(([from, toSet]) => ({
-      from,
-      to: Array.from(toSet),
-    }));
+    const packages = convertPackageMapToArray(packageMap);
+    const relationships = convertRelationshipsMapToArray(relationshipsMap);
 
     return {
       packages,
@@ -351,7 +334,7 @@ function processDependencies(
   packageMap: Map<string, { purl: string; evidence: Set<string> }>,
   relationshipsMap: Map<string, Set<string>>,
 ): void {
-  for (const depType of DEPENDENCY_TYPES) {
+  for (const depType of NPM_DEPENDENCY_SCOPES) {
     const depsInScope = deps[depType];
     if (depsInScope && typeof depsInScope === 'object') {
       for (const [depName, depRef] of Object.entries(depsInScope)) {
@@ -365,7 +348,7 @@ function processDependencies(
           // Resolve to the actual installed version
           const resolvedVersion = resolvePackageVersion(lockfile, depName, versionRange);
           if (resolvedVersion) {
-            const depPurl = createPurl(depName, resolvedVersion);
+            const depPurl = createNpmPurl(depName, resolvedVersion);
 
             addRelationship(relationshipsMap, purl, depPurl);
             ensurePackageExists(packageMap, depPurl);
@@ -374,41 +357,4 @@ function processDependencies(
       }
     }
   }
-}
-
-/**
- * Add a relationship to the relationships map
- */
-function addRelationship(relationshipsMap: Map<string, Set<string>>, from: string, to: string): void {
-  const existing = relationshipsMap.get(from);
-  if (existing) {
-    existing.add(to);
-  } else {
-    relationshipsMap.set(from, new Set([to]));
-  }
-}
-
-/**
- * Ensure a package exists in the package map
- */
-function ensurePackageExists(packageMap: Map<string, { purl: string; evidence: Set<string> }>, purl: string): void {
-  if (!packageMap.has(purl)) {
-    packageMap.set(purl, { purl, evidence: new Set() });
-  }
-}
-
-// Helper to create PURL from name and version
-function createPurl(name: string, version: string): string {
-  let namespace: string | null = null;
-  let packageName = name;
-
-  if (name.startsWith('@')) {
-    const parts = name.split('/');
-    if (parts.length === 2 && parts[0] && parts[1]) {
-      namespace = parts[0];
-      packageName = parts[1];
-    }
-  }
-
-  return new PackageURL('npm', namespace, packageName, version, null, null).toString();
 }

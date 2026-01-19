@@ -3,11 +3,14 @@ import {
   type DependencyScope,
   type Extractor,
   filesExtractor,
-  type Relationship,
   type Subproject,
+  addRelationship,
+  ensurePackageExists,
+  convertPackageMapToArray,
+  convertRelationshipsMapToArray,
+  initializeExtractionMaps,
 } from '@scatool/analyzer-core/src/index.ts';
 import { Glob } from 'bun';
-import { PackageURL } from 'packageurl-js';
 import { dirname, join } from 'node:path';
 import {
   findLineNumber,
@@ -20,17 +23,23 @@ import {
   stripPeerDepSuffix,
 } from './lockfile.ts';
 import type { PackageJson } from '../types.ts';
+import { createNpmPurl, NPM_DEPENDENCY_SCOPES } from '../npm-utils.ts';
+import type { JavaScriptOptions } from '../options.ts';
 
-const lockfileGlob = new Glob('**/pnpm-lock.yaml');
-
-const DEPENDENCY_TYPES = ['dependencies', 'devDependencies', 'optionalDependencies'] as const;
-
-export const extractor: Extractor = filesExtractor({
+export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScriptOptions>({
   name: 'pnpmlock',
   version: 1,
-  markFiles: async function (codebase: string) {
-    for await (const file of lockfileGlob.scan({ cwd: codebase, absolute: true })) {
-      if (!file.includes('/node_modules/')) {
+  options: async () => ({
+    ignore: ['**/node_modules/**'],
+  }),
+  markFiles: async function (codebase: string, options: JavaScriptOptions) {
+    const ignorePatterns = options.ignore ?? [];
+    const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));
+
+    const lockfileGlob = new Glob('**/pnpm-lock.yaml');
+    for await (const file of lockfileGlob.scan({ cwd: codebase, absolute: true, onlyFiles: true })) {
+      const shouldIgnore = ignoreGlobs.some((glob) => glob.match(file));
+      if (!shouldIgnore) {
         this.markFile(file);
       }
     }
@@ -38,8 +47,7 @@ export const extractor: Extractor = filesExtractor({
   extractFile: async (file: string): Promise<AnalyzerResult> => {
     const dir = dirname(file);
 
-    const packageMap = new Map<string, { purl: string; evidence: Set<string> }>();
-    const relationshipsMap = new Map<string, Set<string>>();
+    const { packageMap, relationshipsMap } = initializeExtractionMaps();
     const subprojects: Subproject[] = [];
 
     try {
@@ -86,13 +94,12 @@ export const extractor: Extractor = filesExtractor({
 
           if (packageInfo && packageInfo.name && packageInfo.version) {
             // Create PURL for this subproject
-            const purl = createPurl(packageInfo.name, packageInfo.version);
+            const purl = createNpmPurl(packageInfo.name, packageInfo.version);
 
             // Extract scopes - map each dependency type to resolved versions
             const scopes: DependencyScope[] = [];
-            const scopeNames = ['dependencies', 'devDependencies', 'optionalDependencies', 'peerDependencies'] as const;
 
-            for (const scopeName of scopeNames) {
+            for (const scopeName of NPM_DEPENDENCY_SCOPES) {
               const depsInScope: string[] = [];
               const importerDeps = importer[scopeName];
 
@@ -107,7 +114,7 @@ export const extractor: Extractor = filesExtractor({
                       const workspaceVersion = workspacePackages.get(depName);
                       if (workspaceVersion) {
                         // Include workspace package with its actual version
-                        const depPurl = createPurl(depName, workspaceVersion);
+                        const depPurl = createNpmPurl(depName, workspaceVersion);
                         depsInScope.push(depPurl);
                       }
                       // Skip if not a known workspace package
@@ -116,25 +123,52 @@ export const extractor: Extractor = filesExtractor({
 
                     // Regular external dependency
                     if (typeof version === 'string') {
+                      // Handle pnpm aliases: "alias-name: real-package@version"
+                      let actualName = depName;
+                      let actualVersion: string;
+
+                      // Strip peer dependency suffix FIRST before checking for aliases
+                      // to avoid matching @ inside the suffix like (react@18.2.0)
+                      const versionWithoutPeerDeps = stripPeerDepSuffix(version);
+
+                      // Check if this is an alias (version contains @ which indicates package@version format)
+                      // Aliases look like: "string-width@4.2.3" or "@docusaurus/react-loadable@6.0.0"
+                      // Regular versions look like: "19.2.0" or "1.0.0"
+                      const lastAtIndex = versionWithoutPeerDeps.lastIndexOf('@');
+                      if (lastAtIndex > 0 && !isGitPackageKey(`${depName}@${versionWithoutPeerDeps}`)) {
+                        // Check if what comes before @ looks like a package name (not starting with a digit)
+                        const beforeAt = versionWithoutPeerDeps.substring(0, lastAtIndex);
+                        if (beforeAt && !/^\d/.test(beforeAt)) {
+                          // This is an alias - extract the real package name and version
+                          actualName = beforeAt;
+                          actualVersion = versionWithoutPeerDeps.substring(lastAtIndex + 1);
+                        } else {
+                          // Not an alias - use the stripped version
+                          actualVersion = versionWithoutPeerDeps;
+                        }
+                      } else {
+                        // Not an alias - use the stripped version
+                        actualVersion = versionWithoutPeerDeps;
+                      }
+
                       // For git/tarball dependencies, look up the actual version from packages section
-                      const packageKey = `${depName}@${version}`;
+                      const packageKey = `${actualName}@${actualVersion}`;
                       if (isGitPackageKey(packageKey)) {
                         // This is a git/tarball package - look up the actual version
-                        const actualVersion = getPackageVersion(lockfile, packageKey);
-                        if (actualVersion) {
-                          const depPurl = createPurl(depName, actualVersion);
+                        const resolvedVersion = getPackageVersion(lockfile, packageKey);
+                        if (resolvedVersion) {
+                          const depPurl = createNpmPurl(actualName, resolvedVersion);
                           depsInScope.push(depPurl);
                         } else {
                           // Fallback to the git URL if we can't find the version
-                          version = stripPeerDepSuffix(version);
-                          const depPurl = createPurl(depName, version);
+                          // actualVersion is already stripped if it was an alias
+                          const depPurl = createNpmPurl(actualName, actualVersion);
                           depsInScope.push(depPurl);
                         }
                       } else {
                         // Regular package with semantic version
-                        // Strip peer dependency suffix: "19.2.0(react@19.2.0)" -> "19.2.0"
-                        version = stripPeerDepSuffix(version);
-                        const depPurl = createPurl(depName, version);
+                        // actualVersion is already stripped of peer deps (either from alias extraction or original version)
+                        const depPurl = createNpmPurl(actualName, actualVersion);
                         depsInScope.push(depPurl);
                       }
                     }
@@ -172,39 +206,13 @@ export const extractor: Extractor = filesExtractor({
       }
 
       // Add relationships from subprojects to their dependencies
-      for (const subproject of subprojects) {
-        if (subproject.scopes) {
-          const allDeps = new Set<string>();
-          for (const scope of subproject.scopes) {
-            for (const pkg of scope.packages) {
-              allDeps.add(pkg);
-            }
-          }
-
-          if (allDeps.size > 0) {
-            const existing = relationshipsMap.get(subproject.purl);
-            if (existing) {
-              allDeps.forEach((dep) => existing.add(dep));
-            } else {
-              relationshipsMap.set(subproject.purl, allDeps);
-            }
-          }
-        }
-      }
     } catch (error) {
       // Silently skip files that fail to parse
     }
 
     // Convert maps to arrays
-    const packages = Array.from(packageMap.values()).map(({ purl, evidence }) => ({
-      purl,
-      evidence: Array.from(evidence),
-    }));
-
-    const relationships: Relationship[] = Array.from(relationshipsMap.entries()).map(([from, toSet]) => ({
-      from,
-      to: Array.from(toSet),
-    }));
+    const packages = convertPackageMapToArray(packageMap);
+    const relationships = convertRelationshipsMapToArray(relationshipsMap);
 
     return {
       packages,
@@ -228,13 +236,42 @@ function processDependencies(
   packageMap: Map<string, { purl: string; evidence: Set<string> }>,
   relationshipsMap: Map<string, Set<string>>,
 ): void {
-  for (const depType of DEPENDENCY_TYPES) {
+  const depTypes = ['dependencies', 'devDependencies', 'optionalDependencies'] as const;
+  for (const depType of depTypes) {
     const depsInScope = deps[depType];
     if (depsInScope && typeof depsInScope === 'object') {
       for (const [depName, depVersion] of Object.entries(depsInScope)) {
         if (typeof depVersion === 'string') {
-          const cleanVersion = stripPeerDepSuffix(depVersion);
-          const depPurl = createPurl(depName, cleanVersion);
+          // Handle pnpm aliases: "alias-name: real-package@version"
+          // The depVersion might be "real-package@version" instead of just a version
+          let actualName = depName;
+          let actualVersion: string;
+
+          // Strip peer dependency suffix FIRST before checking for aliases
+          // to avoid matching @ inside the suffix like (react@18.2.0)
+          const versionWithoutPeerDeps = stripPeerDepSuffix(depVersion);
+
+          // Check if this is an alias (version contains @ which indicates package@version format)
+          // Aliases look like: "string-width@4.2.3" or "@docusaurus/react-loadable@6.0.0"
+          // Regular versions look like: "19.2.0" or "1.0.0"
+          const lastAtIndex = versionWithoutPeerDeps.lastIndexOf('@');
+          if (lastAtIndex > 0) {
+            // Check if what comes before @ looks like a package name (not starting with a digit)
+            const beforeAt = versionWithoutPeerDeps.substring(0, lastAtIndex);
+            if (beforeAt && !/^\d/.test(beforeAt)) {
+              // This is an alias - extract the real package name and version
+              actualName = beforeAt;
+              actualVersion = versionWithoutPeerDeps.substring(lastAtIndex + 1);
+            } else {
+              // Not an alias - use the stripped version
+              actualVersion = versionWithoutPeerDeps;
+            }
+          } else {
+            // Not an alias - use the stripped version
+            actualVersion = versionWithoutPeerDeps;
+          }
+
+          const depPurl = createNpmPurl(actualName, actualVersion);
 
           addRelationship(relationshipsMap, purl, depPurl);
           ensurePackageExists(packageMap, depPurl);
@@ -269,12 +306,10 @@ function processV9Lockfile(
         version = packageEntry.version;
       }
 
-      const purl = createPurl(name, version);
+      const purl = createNpmPurl(name, version);
 
       // Add package with evidence
-      if (!packageMap.has(purl)) {
-        packageMap.set(purl, { purl, evidence: new Set() });
-      }
+      ensurePackageExists(packageMap, purl);
 
       const lineNumber = findLineNumber(lockfileContent, packageKey);
       if (lineNumber) {
@@ -290,7 +325,7 @@ function processV9Lockfile(
       if (!parsed) continue;
 
       const { name, version } = parsed;
-      const purl = createPurl(name, version);
+      const purl = createNpmPurl(name, version);
 
       // Extract relationships from dependencies
       processDependencies(snapshotEntry, purl, packageMap, relationshipsMap);
@@ -322,12 +357,10 @@ function processV6Lockfile(
       version = packageEntry.version;
     }
 
-    const purl = createPurl(name, version);
+    const purl = createNpmPurl(name, version);
 
     // Add package with evidence
-    if (!packageMap.has(purl)) {
-      packageMap.set(purl, { purl, evidence: new Set() });
-    }
+    ensurePackageExists(packageMap, purl);
 
     const lineNumber = findLineNumber(lockfileContent, packageKey);
     if (lineNumber) {
@@ -336,27 +369,6 @@ function processV6Lockfile(
 
     // Extract relationships from dependencies
     processDependencies(packageEntry, purl, packageMap, relationshipsMap);
-  }
-}
-
-/**
- * Add a relationship to the relationships map
- */
-function addRelationship(relationshipsMap: Map<string, Set<string>>, from: string, to: string): void {
-  const existing = relationshipsMap.get(from);
-  if (existing) {
-    existing.add(to);
-  } else {
-    relationshipsMap.set(from, new Set([to]));
-  }
-}
-
-/**
- * Ensure a package exists in the package map
- */
-function ensurePackageExists(packageMap: Map<string, { purl: string; evidence: Set<string> }>, purl: string): void {
-  if (!packageMap.has(purl)) {
-    packageMap.set(purl, { purl, evidence: new Set() });
   }
 }
 
@@ -389,20 +401,4 @@ function getPackageVersion(lockfile: PnpmLockfile, packageKey: string): string |
   }
 
   return null;
-}
-
-// Helper to create PURL from name and version
-function createPurl(name: string, version: string): string {
-  let namespace: string | null = null;
-  let packageName = name;
-
-  if (name.startsWith('@')) {
-    const parts = name.split('/');
-    if (parts.length === 2 && parts[0] && parts[1]) {
-      namespace = parts[0];
-      packageName = parts[1];
-    }
-  }
-
-  return new PackageURL('npm', namespace, packageName, version, null, null).toString();
 }

@@ -3,169 +3,169 @@
     {
       "purl": "pkg:npm/%40babel/eslint-parser@7.26.10",
       "evidence": [
-        "<repositories>/yargs+yargs/package.json:46"
+        "package.json#46"
       ]
     },
     {
       "purl": "pkg:npm/%40babel/preset-typescript@7.26.0",
       "evidence": [
-        "<repositories>/yargs+yargs/package.json:47"
+        "package.json#47"
       ]
     },
     {
       "purl": "pkg:npm/%40types/chai@4.2.11",
       "evidence": [
-        "<repositories>/yargs+yargs/package.json:48"
+        "package.json#48"
       ]
     },
     {
       "purl": "pkg:npm/%40types/mocha@9.0.0",
       "evidence": [
-        "<repositories>/yargs+yargs/package.json:49"
+        "package.json#49"
       ]
     },
     {
       "purl": "pkg:npm/%40types/node@20.0.0",
       "evidence": [
-        "<repositories>/yargs+yargs/package.json:50"
+        "package.json#50"
       ]
     },
     {
       "purl": "pkg:npm/%40typescript-eslint/eslint-plugin@8.26.1",
       "evidence": [
-        "<repositories>/yargs+yargs/package.json:51"
+        "package.json#51"
       ]
     },
     {
       "purl": "pkg:npm/browserslist-generator@2.0.1",
       "evidence": [
-        "<repositories>/yargs+yargs/package.json:52"
+        "package.json#52"
       ]
     },
     {
       "purl": "pkg:npm/c8@9.1.0",
       "evidence": [
-        "<repositories>/yargs+yargs/package.json:53"
+        "package.json#53"
       ]
     },
     {
       "purl": "pkg:npm/chai@4.2.0",
       "evidence": [
-        "<repositories>/yargs+yargs/package.json:54"
+        "package.json#54"
       ]
     },
     {
       "purl": "pkg:npm/chalk@4.0.0",
       "evidence": [
-        "<repositories>/yargs+yargs/package.json:55"
+        "package.json#55"
       ]
     },
     {
       "purl": "pkg:npm/cliui@9.0.1",
       "evidence": [
-        "<repositories>/yargs+yargs/package.json:38"
+        "package.json#38"
       ]
     },
     {
       "purl": "pkg:npm/cpr@3.0.1",
       "evidence": [
-        "<repositories>/yargs+yargs/package.json:56"
+        "package.json#56"
       ]
     },
     {
       "purl": "pkg:npm/cross-env@7.0.2",
       "evidence": [
-        "<repositories>/yargs+yargs/package.json:57"
+        "package.json#57"
       ]
     },
     {
       "purl": "pkg:npm/cross-spawn@7.0.6",
       "evidence": [
-        "<repositories>/yargs+yargs/package.json:58"
+        "package.json#58"
       ]
     },
     {
       "purl": "pkg:npm/escalade@3.1.1",
       "evidence": [
-        "<repositories>/yargs+yargs/package.json:39"
+        "package.json#39"
       ]
     },
     {
       "purl": "pkg:npm/eslint-plugin-prettier@5.1.2",
       "evidence": [
-        "<repositories>/yargs+yargs/package.json:60"
+        "package.json#60"
       ]
     },
     {
       "purl": "pkg:npm/eslint@8.57.1",
       "evidence": [
-        "<repositories>/yargs+yargs/package.json:59"
+        "package.json#59"
       ]
     },
     {
       "purl": "pkg:npm/get-caller-file@2.0.5",
       "evidence": [
-        "<repositories>/yargs+yargs/package.json:40"
+        "package.json#40"
       ]
     },
     {
       "purl": "pkg:npm/gts@5.2.0",
       "evidence": [
-        "<repositories>/yargs+yargs/package.json:61"
+        "package.json#61"
       ]
     },
     {
       "purl": "pkg:npm/hashish@0.0.4",
       "evidence": [
-        "<repositories>/yargs+yargs/package.json:62"
+        "package.json#62"
       ]
     },
     {
       "purl": "pkg:npm/mocha@10.8.2",
       "evidence": [
-        "<repositories>/yargs+yargs/package.json:63"
+        "package.json#63"
       ]
     },
     {
       "purl": "pkg:npm/rimraf@3.0.2",
       "evidence": [
-        "<repositories>/yargs+yargs/package.json:64"
+        "package.json#64"
       ]
     },
     {
       "purl": "pkg:npm/string-width@7.2.0",
       "evidence": [
-        "<repositories>/yargs+yargs/package.json:41"
+        "package.json#41"
       ]
     },
     {
       "purl": "pkg:npm/typescript@5.8.3",
       "evidence": [
-        "<repositories>/yargs+yargs/package.json:65"
+        "package.json#65"
       ]
     },
     {
       "purl": "pkg:npm/which@2.0.0",
       "evidence": [
-        "<repositories>/yargs+yargs/package.json:66"
+        "package.json#66"
       ]
     },
     {
       "purl": "pkg:npm/y18n@5.0.5",
       "evidence": [
-        "<repositories>/yargs+yargs/package.json:42"
+        "package.json#42"
       ]
     },
     {
       "purl": "pkg:npm/yargs-parser@22.0.0",
       "evidence": [
-        "<repositories>/yargs+yargs/package.json:43"
+        "package.json#43"
       ]
     },
     {
       "purl": "pkg:npm/yargs-test-extends@1.0.1",
       "evidence": [
-        "<repositories>/yargs+yargs/package.json:67"
+        "package.json#67"
       ]
     }
   ],
@@ -175,7 +175,7 @@
     {
       "message": "Failed to parse package.json: JSON Parse error: Single quotes (') are not allowed in JSON",
       "severity": "ERROR",
-      "file": "<repositories>/yargs+yargs/test/fixtures/broken-json/package.json"
+      "file": "test/fixtures/broken-json/package.json"
     }
   ]
 }

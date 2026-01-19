@@ -1,0 +1,708 @@
+// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
+
+exports[`gradle/multimodule 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:maven/com.google.code.findbugs/jsr305@3.0.2",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:maven/com.google.errorprone/error_prone_annotations@2.11.0",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:maven/com.google.guava/failureaccess@1.0.1",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:maven/com.google.guava/guava@31.1-jre",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:maven/com.google.j2objc/j2objc-annotations@1.3",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:maven/junit/junit@4.13.2",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:maven/org.checkerframework/checker-qual@3.12.0",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:maven/org.hamcrest/hamcrest-core@1.3",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:maven/org.slf4j/slf4j-api@2.0.7",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:maven/com.google.guava/guava@31.1-jre",
+      "to": [
+        "pkg:maven/com.google.code.findbugs/jsr305@3.0.2",
+        "pkg:maven/com.google.errorprone/error_prone_annotations@2.11.0",
+        "pkg:maven/com.google.guava/failureaccess@1.0.1",
+        "pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava",
+        "pkg:maven/com.google.j2objc/j2objc-annotations@1.3",
+        "pkg:maven/org.checkerframework/checker-qual@3.12.0",
+      ],
+    },
+    {
+      "from": "pkg:maven/junit/junit@4.13.2",
+      "to": [
+        "pkg:maven/org.hamcrest/hamcrest-core@1.3",
+      ],
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "analyzer-result.json",
+      "purl": "pkg:maven/multimodule-example/app",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:maven/com.google.guava/guava@31.1-jre",
+            "pkg:maven/multimodule-example/lib",
+            "pkg:maven/org.slf4j/slf4j-api@2.0.7",
+          ],
+          "scope": "compileClasspath",
+        },
+        {
+          "packages": [
+            "pkg:maven/com.google.guava/guava@31.1-jre",
+            "pkg:maven/multimodule-example/lib",
+            "pkg:maven/org.slf4j/slf4j-api@2.0.7",
+          ],
+          "scope": "runtimeClasspath",
+        },
+        {
+          "packages": [
+            "pkg:maven/com.google.guava/guava@31.1-jre",
+            "pkg:maven/junit/junit@4.13.2",
+            "pkg:maven/multimodule-example/lib",
+            "pkg:maven/org.slf4j/slf4j-api@2.0.7",
+          ],
+          "scope": "testCompileClasspath",
+        },
+        {
+          "packages": [
+            "pkg:maven/com.google.guava/guava@31.1-jre",
+            "pkg:maven/junit/junit@4.13.2",
+            "pkg:maven/multimodule-example/lib",
+            "pkg:maven/org.slf4j/slf4j-api@2.0.7",
+          ],
+          "scope": "testRuntimeClasspath",
+        },
+      ],
+    },
+    {
+      "definitionFile": "analyzer-result.json",
+      "purl": "pkg:maven/multimodule-example/lib",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:maven/com.google.guava/guava@31.1-jre",
+            "pkg:maven/multimodule-example/lib",
+            "pkg:maven/org.slf4j/slf4j-api@2.0.7",
+          ],
+          "scope": "compileClasspath",
+        },
+        {
+          "packages": [
+            "pkg:maven/com.google.guava/guava@31.1-jre",
+            "pkg:maven/multimodule-example/lib",
+            "pkg:maven/org.slf4j/slf4j-api@2.0.7",
+          ],
+          "scope": "runtimeClasspath",
+        },
+        {
+          "packages": [
+            "pkg:maven/com.google.guava/guava@31.1-jre",
+            "pkg:maven/junit/junit@4.13.2",
+            "pkg:maven/multimodule-example/lib",
+            "pkg:maven/org.slf4j/slf4j-api@2.0.7",
+          ],
+          "scope": "testCompileClasspath",
+        },
+        {
+          "packages": [
+            "pkg:maven/com.google.guava/guava@31.1-jre",
+            "pkg:maven/junit/junit@4.13.2",
+            "pkg:maven/multimodule-example/lib",
+            "pkg:maven/org.slf4j/slf4j-api@2.0.7",
+          ],
+          "scope": "testRuntimeClasspath",
+        },
+      ],
+    },
+  ],
+}
+`;
+
+exports[`issues/various-severities 1`] = `
+{
+  "issues": [
+    {
+      "file": "package-lock.json",
+      "message": "Failed to parse package-lock.json: Invalid JSON at line 42",
+      "severity": "ERROR",
+    },
+    {
+      "file": "package.json",
+      "message": "Failed to resolve dependency: package-that-does-not-exist@1.0.0 not found in registry",
+      "severity": "ERROR",
+    },
+    {
+      "file": "package.json",
+      "message": "Dependency version mismatch: package-a requires lodash@^4.0.0 but package-b requires lodash@^3.0.0",
+      "severity": "WARNING",
+    },
+    {
+      "file": "packages/utils/package.json",
+      "message": "Package manifest is missing required field 'version' for local dependency",
+      "severity": "WARNING",
+    },
+    {
+      "file": "package.json",
+      "message": "Optional dependency @esbuild/linux-x64@0.19.0 could not be resolved on this platform",
+      "severity": "HINT",
+    },
+    {
+      "file": undefined,
+      "message": "Package resolution succeeded for @types/node@20.10.0 using registry fallback",
+      "severity": "HINT",
+    },
+  ],
+  "packages": [],
+  "relationships": [],
+  "subprojects": [],
+}
+`;
+
+exports[`npm/basic 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/lodash@4.17.21",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/typescript@5.3.3",
+    },
+  ],
+  "relationships": [],
+  "subprojects": [
+    {
+      "definitionFile": "analyzer-result.json",
+      "purl": "pkg:npm/simple-npm-fixture@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/lodash@4.17.21",
+          ],
+          "scope": "dependencies",
+        },
+        {
+          "packages": [
+            "pkg:npm/typescript@5.3.3",
+          ],
+          "scope": "devDependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
+
+exports[`npm/workspace 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/%40esbuild/linux-x64@0.24.2",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linux-x64@1.0.4",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linuxmusl-x64@1.0.4",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/%40img/sharp-linux-x64@0.33.5",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/%40img/sharp-linuxmusl-x64@0.33.5",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/%40next/env@15.1.7",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/%40next/swc-linux-x64-gnu@15.1.7",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/%40next/swc-linux-x64-musl@15.1.7",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-linux-x64-gnu@4.34.8",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/%40rollup/rollup-linux-x64-musl@4.34.8",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/%40scatest/docs@1.0.0",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/%40scatest/www@2.0.0",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/%40swc/counter@0.1.3",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/%40swc/helpers@0.5.15",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/%40types/estree@1.0.6",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/busboy@1.6.0",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/caniuse-lite@1.0.30001700",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/client-only@0.0.1",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/color-convert@2.0.1",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/color-name@1.1.4",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/color-string@1.9.1",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/color@4.2.3",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/detect-libc@2.0.3",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/esbuild@0.24.2",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/is-arrayish@0.3.2",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/nanoid@3.3.8",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/next@15.1.7",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/picocolors@1.1.1",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/postcss@8.4.31",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/postcss@8.5.3",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/react-dom@19.0.0",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/react@19.0.0",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/rollup@4.34.8",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/scheduler@0.25.0",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/semver@7.7.1",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/sharp@0.33.5",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/simple-swizzle@0.2.2",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/source-map-js@1.2.1",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/streamsearch@1.1.0",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/styled-jsx@5.1.6",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/tslib@2.8.1",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/turbo-linux-64@2.4.2",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/turbo@2.4.2",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/typescript@5.7.3",
+    },
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/vite@6.1.1",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:npm/%40img/sharp-linux-x64@0.33.5",
+      "to": [
+        "pkg:npm/%40img/sharp-libvips-linux-x64@1.0.4",
+      ],
+    },
+    {
+      "from": "pkg:npm/%40img/sharp-linuxmusl-x64@0.33.5",
+      "to": [
+        "pkg:npm/%40img/sharp-libvips-linuxmusl-x64@1.0.4",
+      ],
+    },
+    {
+      "from": "pkg:npm/%40scatest/docs@1.0.0",
+      "to": [
+        "pkg:npm/react-dom@19.0.0",
+        "pkg:npm/react@19.0.0",
+        "pkg:npm/vite@6.1.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/%40scatest/www@2.0.0",
+      "to": [
+        "pkg:npm/next@15.1.7",
+        "pkg:npm/react-dom@19.0.0",
+        "pkg:npm/react@19.0.0",
+        "pkg:npm/typescript@5.7.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/%40swc/helpers@0.5.15",
+      "to": [
+        "pkg:npm/tslib@2.8.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/busboy@1.6.0",
+      "to": [
+        "pkg:npm/streamsearch@1.1.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/color-convert@2.0.1",
+      "to": [
+        "pkg:npm/color-name@1.1.4",
+      ],
+    },
+    {
+      "from": "pkg:npm/color-string@1.9.1",
+      "to": [
+        "pkg:npm/color-name@1.1.4",
+        "pkg:npm/simple-swizzle@0.2.2",
+      ],
+    },
+    {
+      "from": "pkg:npm/color@4.2.3",
+      "to": [
+        "pkg:npm/color-convert@2.0.1",
+        "pkg:npm/color-string@1.9.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/esbuild@0.24.2",
+      "to": [
+        "pkg:npm/%40esbuild/linux-x64@0.24.2",
+      ],
+    },
+    {
+      "from": "pkg:npm/next@15.1.7",
+      "to": [
+        "pkg:npm/%40next/env@15.1.7",
+        "pkg:npm/%40next/swc-linux-x64-gnu@15.1.7",
+        "pkg:npm/%40next/swc-linux-x64-musl@15.1.7",
+        "pkg:npm/%40swc/counter@0.1.3",
+        "pkg:npm/%40swc/helpers@0.5.15",
+        "pkg:npm/busboy@1.6.0",
+        "pkg:npm/caniuse-lite@1.0.30001700",
+        "pkg:npm/postcss@8.4.31",
+        "pkg:npm/react-dom@19.0.0",
+        "pkg:npm/react@19.0.0",
+        "pkg:npm/sharp@0.33.5",
+        "pkg:npm/styled-jsx@5.1.6",
+      ],
+    },
+    {
+      "from": "pkg:npm/postcss@8.4.31",
+      "to": [
+        "pkg:npm/nanoid@3.3.8",
+        "pkg:npm/picocolors@1.1.1",
+        "pkg:npm/source-map-js@1.2.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/postcss@8.5.3",
+      "to": [
+        "pkg:npm/nanoid@3.3.8",
+        "pkg:npm/picocolors@1.1.1",
+        "pkg:npm/source-map-js@1.2.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/react-dom@19.0.0",
+      "to": [
+        "pkg:npm/react@19.0.0",
+        "pkg:npm/scheduler@0.25.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/rollup@4.34.8",
+      "to": [
+        "pkg:npm/%40rollup/rollup-linux-x64-gnu@4.34.8",
+        "pkg:npm/%40rollup/rollup-linux-x64-musl@4.34.8",
+        "pkg:npm/%40types/estree@1.0.6",
+      ],
+    },
+    {
+      "from": "pkg:npm/sharp@0.33.5",
+      "to": [
+        "pkg:npm/%40img/sharp-libvips-linux-x64@1.0.4",
+        "pkg:npm/%40img/sharp-libvips-linuxmusl-x64@1.0.4",
+        "pkg:npm/%40img/sharp-linux-x64@0.33.5",
+        "pkg:npm/%40img/sharp-linuxmusl-x64@0.33.5",
+        "pkg:npm/color@4.2.3",
+        "pkg:npm/detect-libc@2.0.3",
+        "pkg:npm/semver@7.7.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/simple-swizzle@0.2.2",
+      "to": [
+        "pkg:npm/is-arrayish@0.3.2",
+      ],
+    },
+    {
+      "from": "pkg:npm/styled-jsx@5.1.6",
+      "to": [
+        "pkg:npm/client-only@0.0.1",
+        "pkg:npm/react@19.0.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/turbo@2.4.2",
+      "to": [
+        "pkg:npm/turbo-linux-64@2.4.2",
+      ],
+    },
+    {
+      "from": "pkg:npm/vite@6.1.1",
+      "to": [
+        "pkg:npm/esbuild@0.24.2",
+        "pkg:npm/postcss@8.5.3",
+        "pkg:npm/rollup@4.34.8",
+      ],
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "analyzer-result.json",
+      "purl": "pkg:npm/%40scatest/workspace@0.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/%40scatest/docs@1.0.0",
+            "pkg:npm/%40scatest/ui@1.0.7",
+            "pkg:npm/%40scatest/www@2.0.0",
+          ],
+          "scope": "dependencies",
+        },
+        {
+          "packages": [
+            "pkg:npm/turbo@2.4.2",
+            "pkg:npm/typescript@5.7.3",
+          ],
+          "scope": "devDependencies",
+        },
+      ],
+    },
+  ],
+}
+`;

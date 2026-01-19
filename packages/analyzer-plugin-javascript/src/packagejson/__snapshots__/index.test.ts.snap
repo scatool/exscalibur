@@ -1,30 +1,30 @@
 // Bun Snapshot v1, https://bun.sh/docs/test/snapshots
 
-exports[`package.json extractor should extract package URLs from package.json 1`] = `
+exports[`simple 1`] = `
 {
   "issues": [],
   "packages": [
     {
       "evidence": [
-        "<fixtures>/simple/package.json:10",
+        "package.json#10",
       ],
       "purl": "pkg:npm/%40types/react-dom@19.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/simple/package.json:9",
+        "package.json#9",
       ],
       "purl": "pkg:npm/%40types/react@19.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/simple/package.json:6",
+        "package.json#6",
       ],
       "purl": "pkg:npm/react-dom@19.0.0",
     },
     {
       "evidence": [
-        "<fixtures>/simple/package.json:5",
+        "package.json#5",
       ],
       "purl": "pkg:npm/react@19.0.0",
     },
