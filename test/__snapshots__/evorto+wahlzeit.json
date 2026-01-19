@@ -1,2394 +1,2248 @@
 {
   "packages": [
     {
-      "purl": "pkg:maven/ch.qos.logback/logback-classic@1.2.10?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/ch.qos.logback/logback-classic@1.2.10?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/ch.qos.logback/logback-core@1.2.10?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/ch.qos.logback/logback-core@1.2.10?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/com.sun.mail/javax.mail@1.6.2?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/com.sun.mail/javax.mail@1.6.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/commons-cli/commons-cli@1.3.1?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/commons-cli/commons-cli@1.3.1?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/commons-cli/commons-cli@1.3.1?repository_url=https%3A//plugins.gradle.org/m2",
+      "purl": "pkg:maven/commons-cli/commons-cli@1.3.1?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/commons-cli/commons-cli@1.4?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/commons-cli/commons-cli@1.4?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/commons-configuration/commons-configuration@1.10?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/commons-configuration/commons-configuration@1.10?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/commons-configuration/commons-configuration@1.10?repository_url=https%3A//plugins.gradle.org/m2",
+      "purl": "pkg:maven/commons-configuration/commons-configuration@1.10?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/commons-io/commons-io@2.11.0?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/commons-io/commons-io@2.11.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/commons-io/commons-io@2.11.0?repository_url=https%3A//plugins.gradle.org/m2",
+      "purl": "pkg:maven/commons-io/commons-io@2.11.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/commons-lang/commons-lang@2.6?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/commons-lang/commons-lang@2.6?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/commons-lang/commons-lang@2.6?repository_url=https%3A//plugins.gradle.org/m2",
+      "purl": "pkg:maven/commons-lang/commons-lang@2.6?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/commons-logging/commons-logging@1.1.1?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/commons-logging/commons-logging@1.1.1?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/commons-logging/commons-logging@1.1.1?repository_url=https%3A//plugins.gradle.org/m2",
+      "purl": "pkg:maven/commons-logging/commons-logging@1.1.1?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/javax.activation/activation@1.1?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/javax.activation/activation@1.1?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/javax.annotation/javax.annotation-api@1.2?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/javax.annotation/javax.annotation-api@1.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/javax.annotation/javax.annotation-api@1.3?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/javax.annotation/javax.annotation-api@1.3?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/javax.servlet.jsp/javax.servlet.jsp-api@2.3.1?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/javax.servlet.jsp/javax.servlet.jsp-api@2.3.1?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/javax.servlet/javax.servlet-api@3.0.1?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/javax.servlet/javax.servlet-api@3.0.1?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/javax.servlet/javax.servlet-api@3.1.0?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/javax.servlet/javax.servlet-api@3.1.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/javax.servlet/javax.servlet-api@4.0.1?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/javax.servlet/javax.servlet-api@4.0.1?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/javax.servlet/servlet-api@2.5?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/javax.servlet/servlet-api@2.5?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/javax.websocket/javax.websocket-api@1.0?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/javax.websocket/javax.websocket-api@1.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/javax.websocket/javax.websocket-client-api@1.0?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/javax.websocket/javax.websocket-client-api@1.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/junit/junit@4.12?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/junit/junit@4.12?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/log4j/log4j@1.2.17?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/log4j/log4j@1.2.17?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.apache.commons/commons-compress@1.21?repository_url=https%3A//plugins.gradle.org/m2",
+      "purl": "pkg:maven/org.apache.commons/commons-compress@1.21?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.apache.commons/commons-lang3@3.3.2?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.apache.commons/commons-lang3@3.3.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.apache.commons/commons-lang3@3.3.2?repository_url=https%3A//plugins.gradle.org/m2",
+      "purl": "pkg:maven/org.apache.commons/commons-lang3@3.3.2?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@8.5.75?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@8.5.75?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@9.0.58?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@9.0.58?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-el@8.5.75?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-el@8.5.75?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-el@9.0.58?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-el@9.0.58?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-jasper@8.5.75?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-jasper@8.5.75?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-jasper@9.0.58?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-jasper@9.0.58?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-websocket@8.5.75?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-websocket@8.5.75?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-websocket@9.0.58?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-websocket@9.0.58?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.apache.tomcat/tomcat-annotations-api@8.5.75?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.apache.tomcat/tomcat-annotations-api@8.5.75?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.apache.tomcat/tomcat-annotations-api@9.0.58?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.apache.tomcat/tomcat-annotations-api@9.0.58?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.bouncycastle/bcprov-jdk15on@1.60?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.bouncycastle/bcprov-jdk15on@1.60?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.bouncycastle/bcprov-jdk15on@1.60?repository_url=https%3A//plugins.gradle.org/m2",
+      "purl": "pkg:maven/org.bouncycastle/bcprov-jdk15on@1.60?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.codehaus.groovy/groovy-cli-commons@2.5.12?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.codehaus.groovy/groovy-cli-commons@2.5.12?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.codehaus.groovy/groovy-json@2.5.12?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.codehaus.groovy/groovy-json@2.5.12?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.codehaus.groovy/groovy@2.5.12?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.codehaus.groovy/groovy@2.5.12?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jdt.core.compiler/ecj@4.4.2?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jdt.core.compiler/ecj@4.4.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jdt/ecj@3.12.3?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jdt/ecj@3.12.3?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jdt/ecj@3.17.0?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jdt/ecj@3.17.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jdt/ecj@3.18.0?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jdt/ecj@3.18.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.orbit/com.sun.el@1.0.0.v201105211818?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.orbit/com.sun.el@1.0.0.v201105211818?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.orbit/com.sun.el@2.2.0.v201108011116?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.orbit/com.sun.el@2.2.0.v201108011116?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.orbit/javax.activation@1.1.0.v201105071233?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.orbit/javax.activation@1.1.0.v201105071233?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.orbit/javax.annotation@1.1.0.v201108011116?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.orbit/javax.annotation@1.1.0.v201108011116?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.orbit/javax.el@2.1.0.v201105211819?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.orbit/javax.el@2.1.0.v201105211819?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.orbit/javax.el@2.2.0.v201108011116?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.orbit/javax.el@2.2.0.v201108011116?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.orbit/javax.mail.glassfish@1.4.1.v201005082020?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.orbit/javax.mail.glassfish@1.4.1.v201005082020?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.orbit/javax.servlet.jsp.jstl@1.2.0.v201105211821?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.orbit/javax.servlet.jsp.jstl@1.2.0.v201105211821?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.orbit/javax.servlet.jsp@2.1.0.v201105211820?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.orbit/javax.servlet.jsp@2.1.0.v201105211820?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.orbit/javax.servlet.jsp@2.2.0.v201112011158?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.orbit/javax.servlet.jsp@2.2.0.v201112011158?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.orbit/javax.transaction@1.1.1.v201105210645?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.orbit/javax.transaction@1.1.1.v201105210645?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.orbit/org.apache.jasper.glassfish@2.1.0.v201110031002?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.orbit/org.apache.jasper.glassfish@2.1.0.v201110031002?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.orbit/org.apache.jasper.glassfish@2.2.2.v201112011158?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.orbit/org.apache.jasper.glassfish@2.2.2.v201112011158?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.orbit/org.apache.taglibs.standard.glassfish@1.2.0.v201112081803?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.orbit/org.apache.taglibs.standard.glassfish@1.2.0.v201112081803?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.orbit/org.eclipse.jdt.core@3.7.1?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.orbit/org.eclipse.jdt.core@3.7.1?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.orbit/org.eclipse.jdt.core@3.8.2.v20130121?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.orbit/org.eclipse.jdt.core@3.8.2.v20130121?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.orbit/org.objectweb.asm@3.1.0.v200803061910?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.orbit/org.objectweb.asm@3.1.0.v200803061910?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.toolchain/jetty-schemas@3.1?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.toolchain/jetty-schemas@3.1?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.toolchain/jetty-schemas@3.1.2?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.toolchain/jetty-schemas@3.1.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.toolchain/jetty-schemas@3.1.M0?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.toolchain/jetty-schemas@3.1.M0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-client-impl@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-client-impl@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-client-impl@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-client-impl@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-client-impl@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-client-impl@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-server-impl@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-server-impl@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-server-impl@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-server-impl@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-server-impl@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-server-impl@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.websocket/websocket-api@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.websocket/websocket-api@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.websocket/websocket-api@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.websocket/websocket-api@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.websocket/websocket-api@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.websocket/websocket-api@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.websocket/websocket-client@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.websocket/websocket-client@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.websocket/websocket-client@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.websocket/websocket-client@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.websocket/websocket-client@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.websocket/websocket-client@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.websocket/websocket-common@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.websocket/websocket-common@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.websocket/websocket-common@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.websocket/websocket-common@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.websocket/websocket-common@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.websocket/websocket-common@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.websocket/websocket-server@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.websocket/websocket-server@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.websocket/websocket-server@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.websocket/websocket-server@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.websocket/websocket-server@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.websocket/websocket-server@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.websocket/websocket-servlet@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.websocket/websocket-servlet@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.websocket/websocket-servlet@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.websocket/websocket-servlet@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.websocket/websocket-servlet@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty.websocket/websocket-servlet@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/apache-jsp@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/apache-jsp@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/apache-jsp@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/apache-jsp@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-annotations@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-annotations@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-annotations@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-annotations@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-annotations@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-annotations@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-annotations@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-annotations@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-client@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-client@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-continuation@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-continuation@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-continuation@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-continuation@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-http@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-http@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-http@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-http@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-http@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-http@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-http@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-http@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-http@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-http@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-io@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-io@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-io@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-io@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-io@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-io@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-io@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-io@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-io@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-io@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-jndi@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-jndi@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-jndi@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-jndi@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-jndi@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-jndi@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-jndi@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-jndi@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-jndi@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-jndi@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-jsp@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-jsp@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-jsp@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-jsp@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-jsp@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-jsp@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-plus@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-plus@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-plus@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-plus@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-plus@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-plus@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-plus@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-plus@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-plus@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-plus@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-security@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-security@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-security@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-security@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-security@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-security@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-security@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-security@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-security@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-security@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-server@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-server@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-server@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-server@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-server@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-server@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-server@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-server@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-server@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-server@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-servlet@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-servlet@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-servlet@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-servlet@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-servlet@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-servlet@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-servlet@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-servlet@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-servlet@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-servlet@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-util@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-util@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-util@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-util@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-util@8.1.22.v20160922?repository_url=https%3A//plugins.gradle.org/m2",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-util@8.1.22.v20160922?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-util@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-util@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-util@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-util@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-util@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-util@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-webapp@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-webapp@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-webapp@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-webapp@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-webapp@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-webapp@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-webapp@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-webapp@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-webapp@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-webapp@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-xml@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-xml@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-xml@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-xml@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-xml@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-xml@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-xml@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-xml@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty/jetty-xml@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.eclipse.jetty/jetty-xml@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.glassfish.web/javax.servlet.jsp.jstl@1.2.2?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.glassfish.web/javax.servlet.jsp.jstl@1.2.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.glassfish.web/javax.servlet.jsp@2.3.2?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.glassfish.web/javax.servlet.jsp@2.3.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.glassfish/javax.el@3.0.0?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.glassfish/javax.el@3.0.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.gretty/gretty-common@3.0.8?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.gretty/gretty-common@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.gretty/gretty-common@3.0.8?repository_url=https%3A//plugins.gradle.org/m2",
+      "purl": "pkg:maven/org.gretty/gretty-common@3.0.8?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.gretty/gretty-core@3.0.8?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.gretty/gretty-core@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.gretty/gretty-core@3.0.8?repository_url=https%3A//plugins.gradle.org/m2",
+      "purl": "pkg:maven/org.gretty/gretty-core@3.0.8?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.gretty/gretty-runner-jetty@3.0.8?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.gretty/gretty-runner-jetty@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.gretty/gretty-runner-jetty7@3.0.8?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.gretty/gretty-runner-jetty7@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.gretty/gretty-runner-jetty8@3.0.8?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.gretty/gretty-runner-jetty8@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.gretty/gretty-runner-jetty9@3.0.8?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.gretty/gretty-runner-jetty9@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.gretty/gretty-runner-jetty93@3.0.8?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.gretty/gretty-runner-jetty93@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.gretty/gretty-runner-jetty94@3.0.8?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.gretty/gretty-runner-jetty94@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.gretty/gretty-runner-tomcat@3.0.8?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.gretty/gretty-runner-tomcat@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.gretty/gretty-runner-tomcat85@3.0.8?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.gretty/gretty-runner-tomcat85@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.gretty/gretty-runner-tomcat8plus@3.0.8?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.gretty/gretty-runner-tomcat8plus@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.gretty/gretty-runner-tomcat9@3.0.8?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.gretty/gretty-runner-tomcat9@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.gretty/gretty-runner@3.0.8?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.gretty/gretty-runner@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.gretty/gretty-starter@3.0.8?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.gretty/gretty-starter@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.gretty/gretty@3.0.8?repository_url=https%3A//plugins.gradle.org/m2",
+      "purl": "pkg:maven/org.gretty/gretty@3.0.8?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.hamcrest/hamcrest-core@1.3?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.hamcrest/hamcrest-core@1.3?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.mortbay.jasper/apache-el@8.0.33?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.mortbay.jasper/apache-el@8.0.33?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.mortbay.jasper/apache-el@8.5.40?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.mortbay.jasper/apache-el@8.5.40?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.mortbay.jasper/apache-jsp@8.0.33?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.mortbay.jasper/apache-jsp@8.0.33?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.mortbay.jasper/apache-jsp@8.5.40?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.mortbay.jasper/apache-jsp@8.5.40?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.ow2.asm/asm-analysis@9.2?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.ow2.asm/asm-analysis@9.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.ow2.asm/asm-commons@9.2?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.ow2.asm/asm-commons@9.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.ow2.asm/asm-tree@9.2?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.ow2.asm/asm-tree@9.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.ow2.asm/asm@9.2?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.ow2.asm/asm@9.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.postgresql/postgresql@9.3-1104-jdbc41?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.postgresql/postgresql@9.3-1104-jdbc41?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.slf4j/log4j-over-slf4j@1.7.36?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.slf4j/log4j-over-slf4j@1.7.36?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.slf4j/slf4j-api@1.7.36?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.slf4j/slf4j-api@1.7.36?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.slf4j/slf4j-api@1.7.36?repository_url=https%3A//plugins.gradle.org/m2",
+      "purl": "pkg:maven/org.slf4j/slf4j-api@1.7.36?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.springframework.boot/spring-boot-autoconfigure@2.6.3?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.springframework.boot/spring-boot-autoconfigure@2.6.3?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.springframework.boot/spring-boot-autoconfigure@2.6.3?repository_url=https%3A//plugins.gradle.org/m2",
+      "purl": "pkg:maven/org.springframework.boot/spring-boot-autoconfigure@2.6.3?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.springframework.boot/spring-boot-devtools@2.6.3?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.springframework.boot/spring-boot-devtools@2.6.3?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.springframework.boot/spring-boot-devtools@2.6.3?repository_url=https%3A//plugins.gradle.org/m2",
+      "purl": "pkg:maven/org.springframework.boot/spring-boot-devtools@2.6.3?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.springframework.boot/spring-boot-loader-tools@2.6.3?repository_url=https%3A//plugins.gradle.org/m2",
+      "purl": "pkg:maven/org.springframework.boot/spring-boot-loader-tools@2.6.3?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.springframework.boot/spring-boot@2.6.3?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.springframework.boot/spring-boot@2.6.3?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.springframework.boot/spring-boot@2.6.3?repository_url=https%3A//plugins.gradle.org/m2",
+      "purl": "pkg:maven/org.springframework.boot/spring-boot@2.6.3?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.springframework/spring-aop@5.3.15?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.springframework/spring-aop@5.3.15?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.springframework/spring-aop@5.3.15?repository_url=https%3A//plugins.gradle.org/m2",
+      "purl": "pkg:maven/org.springframework/spring-aop@5.3.15?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.springframework/spring-beans@5.3.15?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.springframework/spring-beans@5.3.15?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.springframework/spring-beans@5.3.15?repository_url=https%3A//plugins.gradle.org/m2",
+      "purl": "pkg:maven/org.springframework/spring-beans@5.3.15?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.springframework/spring-context@5.3.15?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.springframework/spring-context@5.3.15?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.springframework/spring-context@5.3.15?repository_url=https%3A//plugins.gradle.org/m2",
+      "purl": "pkg:maven/org.springframework/spring-context@5.3.15?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.springframework/spring-core@5.3.15?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.springframework/spring-core@5.3.15?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.springframework/spring-core@5.3.15?repository_url=https%3A//plugins.gradle.org/m2",
+      "purl": "pkg:maven/org.springframework/spring-core@5.3.15?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.springframework/spring-expression@5.3.15?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.springframework/spring-expression@5.3.15?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.springframework/spring-expression@5.3.15?repository_url=https%3A//plugins.gradle.org/m2",
+      "purl": "pkg:maven/org.springframework/spring-expression@5.3.15?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.springframework/spring-jcl@5.3.15?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.springframework/spring-jcl@5.3.15?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.springframework/spring-jcl@5.3.15?repository_url=https%3A//plugins.gradle.org/m2",
+      "purl": "pkg:maven/org.springframework/spring-jcl@5.3.15?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
       "evidence": [
         "build.gradle"
       ]
     },
     {
-      "purl": "pkg:maven/org.springframework/springloaded@1.2.8.RELEASE?repository_url=https%3A//jcenter.bintray.com",
+      "purl": "pkg:maven/org.springframework/springloaded@1.2.8.RELEASE?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
     }
   ],
-  "subprojects": [
-    {
-      "purl": "pkg:maven/evorto%2Bwahlzeit",
-      "definitionFile": "build.gradle",
-      "scopes": [
-        {
-          "scope": "classpath",
-          "packages": [
-            "pkg:maven/org.gretty/gretty@3.0.8?repository_url=https%3A//plugins.gradle.org/m2"
-          ]
-        },
-        {
-          "scope": "compileClasspath",
-          "packages": [
-            "pkg:maven/com.sun.mail/javax.mail@1.6.2?repository_url=https%3A//jcenter.bintray.com",
-            "pkg:maven/javax.servlet/javax.servlet-api@4.0.1?repository_url=https%3A//jcenter.bintray.com",
-            "pkg:maven/javax.websocket/javax.websocket-api@1.0?repository_url=https%3A//jcenter.bintray.com",
-            "pkg:maven/log4j/log4j@1.2.17?repository_url=https%3A//jcenter.bintray.com",
-            "pkg:maven/org.postgresql/postgresql@9.3-1104-jdbc41?repository_url=https%3A//jcenter.bintray.com"
-          ]
-        },
-        {
-          "scope": "grettyProductRuntime",
-          "packages": [
-            "pkg:maven/com.sun.mail/javax.mail@1.6.2?repository_url=https%3A//jcenter.bintray.com",
-            "pkg:maven/javax.servlet/javax.servlet-api@4.0.1?repository_url=https%3A//jcenter.bintray.com",
-            "pkg:maven/javax.websocket/javax.websocket-api@1.0?repository_url=https%3A//jcenter.bintray.com",
-            "pkg:maven/log4j/log4j@1.2.17?repository_url=https%3A//jcenter.bintray.com",
-            "pkg:maven/org.postgresql/postgresql@9.3-1104-jdbc41?repository_url=https%3A//jcenter.bintray.com"
-          ]
-        },
-        {
-          "scope": "grettyProvidedCompile",
-          "packages": [
-            "pkg:maven/javax.servlet/javax.servlet-api@3.1.0?repository_url=https%3A//jcenter.bintray.com",
-            "pkg:maven/javax.websocket/javax.websocket-api@1.0?repository_url=https%3A//jcenter.bintray.com"
-          ]
-        },
-        {
-          "scope": "grettyRunnerJetty7",
-          "packages": [
-            "pkg:maven/org.gretty/gretty-runner-jetty7@3.0.8?repository_url=https%3A//jcenter.bintray.com"
-          ]
-        },
-        {
-          "scope": "grettyRunnerJetty8",
-          "packages": [
-            "pkg:maven/org.gretty/gretty-runner-jetty8@3.0.8?repository_url=https%3A//jcenter.bintray.com"
-          ]
-        },
-        {
-          "scope": "grettyRunnerJetty9",
-          "packages": [
-            "pkg:maven/org.gretty/gretty-runner-jetty9@3.0.8?repository_url=https%3A//jcenter.bintray.com"
-          ]
-        },
-        {
-          "scope": "grettyRunnerJetty93",
-          "packages": [
-            "pkg:maven/org.gretty/gretty-runner-jetty93@3.0.8?repository_url=https%3A//jcenter.bintray.com"
-          ]
-        },
-        {
-          "scope": "grettyRunnerJetty94",
-          "packages": [
-            "pkg:maven/org.gretty/gretty-runner-jetty94@3.0.8?repository_url=https%3A//jcenter.bintray.com"
-          ]
-        },
-        {
-          "scope": "grettyRunnerTomcat85",
-          "packages": [
-            "pkg:maven/org.gretty/gretty-runner-tomcat85@3.0.8?repository_url=https%3A//jcenter.bintray.com"
-          ]
-        },
-        {
-          "scope": "grettyRunnerTomcat9",
-          "packages": [
-            "pkg:maven/org.gretty/gretty-runner-tomcat9@3.0.8?repository_url=https%3A//jcenter.bintray.com"
-          ]
-        },
-        {
-          "scope": "grettySpringLoaded",
-          "packages": [
-            "pkg:maven/org.springframework/springloaded@1.2.8.RELEASE?repository_url=https%3A//jcenter.bintray.com"
-          ]
-        },
-        {
-          "scope": "grettyStarter",
-          "packages": [
-            "pkg:maven/org.codehaus.groovy/groovy-cli-commons@2.5.12?repository_url=https%3A//jcenter.bintray.com",
-            "pkg:maven/org.codehaus.groovy/groovy-json@2.5.12?repository_url=https%3A//jcenter.bintray.com",
-            "pkg:maven/org.gretty/gretty-starter@3.0.8?repository_url=https%3A//jcenter.bintray.com"
-          ]
-        },
-        {
-          "scope": "providedCompile",
-          "packages": [
-            "pkg:maven/javax.servlet/javax.servlet-api@4.0.1?repository_url=https%3A//jcenter.bintray.com",
-            "pkg:maven/javax.websocket/javax.websocket-api@1.0?repository_url=https%3A//jcenter.bintray.com"
-          ]
-        },
-        {
-          "scope": "providedRuntime",
-          "packages": [
-            "pkg:maven/javax.servlet/javax.servlet-api@4.0.1?repository_url=https%3A//jcenter.bintray.com",
-            "pkg:maven/javax.websocket/javax.websocket-api@1.0?repository_url=https%3A//jcenter.bintray.com"
-          ]
-        },
-        {
-          "scope": "runtimeClasspath",
-          "packages": [
-            "pkg:maven/com.sun.mail/javax.mail@1.6.2?repository_url=https%3A//jcenter.bintray.com",
-            "pkg:maven/javax.servlet/javax.servlet-api@4.0.1?repository_url=https%3A//jcenter.bintray.com",
-            "pkg:maven/javax.websocket/javax.websocket-api@1.0?repository_url=https%3A//jcenter.bintray.com",
-            "pkg:maven/log4j/log4j@1.2.17?repository_url=https%3A//jcenter.bintray.com",
-            "pkg:maven/org.postgresql/postgresql@9.3-1104-jdbc41?repository_url=https%3A//jcenter.bintray.com"
-          ]
-        },
-        {
-          "scope": "springBoot",
-          "packages": [
-            "pkg:maven/com.sun.mail/javax.mail@1.6.2?repository_url=https%3A//jcenter.bintray.com",
-            "pkg:maven/javax.servlet/javax.servlet-api@4.0.1?repository_url=https%3A//jcenter.bintray.com",
-            "pkg:maven/javax.websocket/javax.websocket-api@1.0?repository_url=https%3A//jcenter.bintray.com",
-            "pkg:maven/log4j/log4j@1.2.17?repository_url=https%3A//jcenter.bintray.com",
-            "pkg:maven/org.postgresql/postgresql@9.3-1104-jdbc41?repository_url=https%3A//jcenter.bintray.com"
-          ]
-        },
-        {
-          "scope": "testCompileClasspath",
-          "packages": [
-            "pkg:maven/com.sun.mail/javax.mail@1.6.2?repository_url=https%3A//jcenter.bintray.com",
-            "pkg:maven/javax.servlet/javax.servlet-api@4.0.1?repository_url=https%3A//jcenter.bintray.com",
-            "pkg:maven/javax.websocket/javax.websocket-api@1.0?repository_url=https%3A//jcenter.bintray.com",
-            "pkg:maven/junit/junit@4.12?repository_url=https%3A//jcenter.bintray.com",
-            "pkg:maven/log4j/log4j@1.2.17?repository_url=https%3A//jcenter.bintray.com",
-            "pkg:maven/org.postgresql/postgresql@9.3-1104-jdbc41?repository_url=https%3A//jcenter.bintray.com"
-          ]
-        },
-        {
-          "scope": "testRuntimeClasspath",
-          "packages": [
-            "pkg:maven/com.sun.mail/javax.mail@1.6.2?repository_url=https%3A//jcenter.bintray.com",
-            "pkg:maven/javax.servlet/javax.servlet-api@4.0.1?repository_url=https%3A//jcenter.bintray.com",
-            "pkg:maven/javax.websocket/javax.websocket-api@1.0?repository_url=https%3A//jcenter.bintray.com",
-            "pkg:maven/junit/junit@4.12?repository_url=https%3A//jcenter.bintray.com",
-            "pkg:maven/log4j/log4j@1.2.17?repository_url=https%3A//jcenter.bintray.com",
-            "pkg:maven/org.postgresql/postgresql@9.3-1104-jdbc41?repository_url=https%3A//jcenter.bintray.com"
-          ]
-        }
-      ]
-    }
-  ],
+  "subprojects": [],
   "relationships": [
     {
-      "from": "pkg:maven/ch.qos.logback/logback-classic@1.2.10?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/ch.qos.logback/logback-classic@1.2.10?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/ch.qos.logback/logback-core@1.2.10?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.slf4j/slf4j-api@1.7.36?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/ch.qos.logback/logback-core@1.2.10?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.slf4j/slf4j-api@1.7.36?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/com.sun.mail/javax.mail@1.6.2?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/com.sun.mail/javax.mail@1.6.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/javax.activation/activation@1.1?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/javax.activation/activation@1.1?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/commons-configuration/commons-configuration@1.10?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/commons-configuration/commons-configuration@1.10?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/commons-lang/commons-lang@2.6?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/commons-lang/commons-lang@2.6?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/commons-logging/commons-logging@1.1.1?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/commons-configuration/commons-configuration@1.10?repository_url=https%3A//plugins.gradle.org/m2",
+      "from": "pkg:maven/commons-configuration/commons-configuration@1.10?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
       "to": [
-        "pkg:maven/commons-lang/commons-lang@2.6?repository_url=https%3A//plugins.gradle.org/m2",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?repository_url=https%3A//plugins.gradle.org/m2"
+        "pkg:maven/commons-lang/commons-lang@2.6?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+        "pkg:maven/commons-logging/commons-logging@1.1.1?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2"
       ]
     },
     {
-      "from": "pkg:maven/junit/junit@4.12?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/junit/junit@4.12?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.hamcrest/hamcrest-core@1.3?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.hamcrest/hamcrest-core@1.3?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@8.5.75?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@8.5.75?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.apache.tomcat/tomcat-annotations-api@8.5.75?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.apache.tomcat/tomcat-annotations-api@8.5.75?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@9.0.58?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@9.0.58?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.apache.tomcat/tomcat-annotations-api@9.0.58?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.apache.tomcat/tomcat-annotations-api@9.0.58?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-jasper@8.5.75?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-jasper@8.5.75?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@8.5.75?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.apache.tomcat.embed/tomcat-embed-el@8.5.75?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jdt/ecj@3.12.3?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@8.5.75?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.apache.tomcat.embed/tomcat-embed-el@8.5.75?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jdt/ecj@3.12.3?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-jasper@9.0.58?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-jasper@9.0.58?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@9.0.58?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.apache.tomcat.embed/tomcat-embed-el@9.0.58?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jdt/ecj@3.18.0?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@9.0.58?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.apache.tomcat.embed/tomcat-embed-el@9.0.58?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jdt/ecj@3.18.0?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-websocket@8.5.75?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-websocket@8.5.75?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@8.5.75?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@8.5.75?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-websocket@9.0.58?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-websocket@9.0.58?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@9.0.58?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@9.0.58?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.codehaus.groovy/groovy-cli-commons@2.5.12?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.codehaus.groovy/groovy-cli-commons@2.5.12?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/commons-cli/commons-cli@1.4?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.codehaus.groovy/groovy@2.5.12?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/commons-cli/commons-cli@1.4?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.codehaus.groovy/groovy@2.5.12?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.codehaus.groovy/groovy-json@2.5.12?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.codehaus.groovy/groovy-json@2.5.12?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.codehaus.groovy/groovy@2.5.12?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.codehaus.groovy/groovy@2.5.12?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty.orbit/javax.mail.glassfish@1.4.1.v201005082020?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty.orbit/javax.mail.glassfish@1.4.1.v201005082020?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty.orbit/javax.activation@1.1.0.v201105071233?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty.orbit/javax.activation@1.1.0.v201105071233?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty.orbit/javax.servlet.jsp.jstl@1.2.0.v201105211821?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty.orbit/javax.servlet.jsp.jstl@1.2.0.v201105211821?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty.orbit/javax.servlet.jsp@2.1.0.v201105211820?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.orbit/javax.servlet.jsp@2.2.0.v201112011158?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty.orbit/javax.servlet.jsp@2.1.0.v201105211820?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.orbit/javax.servlet.jsp@2.2.0.v201112011158?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty.orbit/org.apache.jasper.glassfish@2.1.0.v201110031002?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty.orbit/org.apache.jasper.glassfish@2.1.0.v201110031002?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty.orbit/javax.servlet.jsp@2.1.0.v201105211820?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty.orbit/javax.servlet.jsp@2.1.0.v201105211820?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty.orbit/org.apache.jasper.glassfish@2.2.2.v201112011158?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty.orbit/org.apache.jasper.glassfish@2.2.2.v201112011158?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty.orbit/javax.servlet.jsp@2.2.0.v201112011158?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty.orbit/javax.servlet.jsp@2.2.0.v201112011158?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty.orbit/org.apache.taglibs.standard.glassfish@1.2.0.v201112081803?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty.orbit/org.apache.taglibs.standard.glassfish@1.2.0.v201112081803?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty.orbit/javax.servlet.jsp.jstl@1.2.0.v201105211821?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty.orbit/javax.servlet.jsp.jstl@1.2.0.v201105211821?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-client-impl@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-client-impl@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/javax.websocket/javax.websocket-api@1.0?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.websocket/websocket-client@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/javax.websocket/javax.websocket-api@1.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.websocket/websocket-client@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-client-impl@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-client-impl@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/javax.websocket/javax.websocket-api@1.0?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.websocket/websocket-client@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/javax.websocket/javax.websocket-api@1.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.websocket/websocket-client@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-client-impl@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-client-impl@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/javax.websocket/javax.websocket-client-api@1.0?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.websocket/websocket-client@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/javax.websocket/javax.websocket-client-api@1.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.websocket/websocket-client@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-server-impl@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-server-impl@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/javax.websocket/javax.websocket-api@1.0?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-client-impl@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.websocket/websocket-server@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-annotations@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/javax.websocket/javax.websocket-api@1.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-client-impl@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.websocket/websocket-server@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-annotations@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-server-impl@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-server-impl@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/javax.websocket/javax.websocket-api@1.0?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-client-impl@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.websocket/websocket-server@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-annotations@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/javax.websocket/javax.websocket-api@1.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-client-impl@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.websocket/websocket-server@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-annotations@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-server-impl@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-server-impl@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/javax.websocket/javax.websocket-api@1.0?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-client-impl@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.websocket/websocket-server@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-annotations@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/javax.websocket/javax.websocket-api@1.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-client-impl@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.websocket/websocket-server@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-annotations@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty.websocket/websocket-client@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty.websocket/websocket-client@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty.websocket/websocket-common@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-io@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-util@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty.websocket/websocket-common@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-io@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-util@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty.websocket/websocket-client@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty.websocket/websocket-client@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty.websocket/websocket-common@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-io@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-util@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty.websocket/websocket-common@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-io@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-util@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty.websocket/websocket-client@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty.websocket/websocket-client@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty.websocket/websocket-common@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-client@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-io@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-util@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-xml@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty.websocket/websocket-common@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-client@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-io@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-util@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-xml@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty.websocket/websocket-common@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty.websocket/websocket-common@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty.websocket/websocket-api@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-io@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-util@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty.websocket/websocket-api@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-io@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-util@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty.websocket/websocket-common@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty.websocket/websocket-common@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty.websocket/websocket-api@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-io@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-util@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty.websocket/websocket-api@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-io@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-util@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty.websocket/websocket-common@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty.websocket/websocket-common@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty.websocket/websocket-api@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-io@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-util@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty.websocket/websocket-api@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-io@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-util@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty.websocket/websocket-server@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty.websocket/websocket-server@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty.websocket/websocket-client@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.websocket/websocket-common@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.websocket/websocket-servlet@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-http@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-servlet@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty.websocket/websocket-client@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.websocket/websocket-common@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.websocket/websocket-servlet@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-http@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-servlet@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty.websocket/websocket-server@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty.websocket/websocket-server@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty.websocket/websocket-client@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.websocket/websocket-common@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.websocket/websocket-servlet@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-http@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-servlet@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty.websocket/websocket-client@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.websocket/websocket-common@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.websocket/websocket-servlet@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-http@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-servlet@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty.websocket/websocket-server@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty.websocket/websocket-server@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty.websocket/websocket-client@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.websocket/websocket-common@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.websocket/websocket-servlet@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-http@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-servlet@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty.websocket/websocket-client@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.websocket/websocket-common@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.websocket/websocket-servlet@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-http@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-servlet@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty.websocket/websocket-servlet@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty.websocket/websocket-servlet@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/javax.servlet/javax.servlet-api@3.1.0?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.websocket/websocket-api@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/javax.servlet/javax.servlet-api@3.1.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.websocket/websocket-api@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty.websocket/websocket-servlet@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty.websocket/websocket-servlet@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/javax.servlet/javax.servlet-api@3.1.0?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.websocket/websocket-api@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/javax.servlet/javax.servlet-api@3.1.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.websocket/websocket-api@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty.websocket/websocket-servlet@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty.websocket/websocket-servlet@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/javax.servlet/javax.servlet-api@3.1.0?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.websocket/websocket-api@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/javax.servlet/javax.servlet-api@3.1.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.websocket/websocket-api@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/apache-jsp@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/apache-jsp@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/javax.servlet/javax.servlet-api@3.1.0?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jdt.core.compiler/ecj@4.4.2?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.toolchain/jetty-schemas@3.1?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-util@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.mortbay.jasper/apache-jsp@8.0.33?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/javax.servlet/javax.servlet-api@3.1.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jdt.core.compiler/ecj@4.4.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.toolchain/jetty-schemas@3.1?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-util@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.mortbay.jasper/apache-jsp@8.0.33?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/apache-jsp@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/apache-jsp@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/javax.servlet/javax.servlet-api@3.1.0?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.toolchain/jetty-schemas@3.1.2?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-annotations@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-util@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.mortbay.jasper/apache-jsp@8.5.40?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/javax.servlet/javax.servlet-api@3.1.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.toolchain/jetty-schemas@3.1.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-annotations@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-util@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.mortbay.jasper/apache-jsp@8.5.40?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-annotations@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-annotations@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty.orbit/javax.annotation@1.1.0.v201108011116?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.orbit/org.objectweb.asm@3.1.0.v200803061910?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-plus@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-webapp@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty.orbit/javax.annotation@1.1.0.v201108011116?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.orbit/org.objectweb.asm@3.1.0.v200803061910?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-plus@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-webapp@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-annotations@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-annotations@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/javax.annotation/javax.annotation-api@1.2?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-plus@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-webapp@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.ow2.asm/asm-commons@9.2?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.ow2.asm/asm@9.2?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/javax.annotation/javax.annotation-api@1.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-plus@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-webapp@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.ow2.asm/asm-commons@9.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.ow2.asm/asm@9.2?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-annotations@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-annotations@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/javax.annotation/javax.annotation-api@1.2?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-plus@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-webapp@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.ow2.asm/asm-commons@9.2?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.ow2.asm/asm@9.2?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/javax.annotation/javax.annotation-api@1.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-plus@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-webapp@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.ow2.asm/asm-commons@9.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.ow2.asm/asm@9.2?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-annotations@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-annotations@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/javax.annotation/javax.annotation-api@1.3?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-plus@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-webapp@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.ow2.asm/asm-commons@9.2?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.ow2.asm/asm@9.2?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/javax.annotation/javax.annotation-api@1.3?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-plus@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-webapp@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.ow2.asm/asm-commons@9.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.ow2.asm/asm@9.2?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-client@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-client@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-http@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-io@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-http@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-io@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-http@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-http@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-io@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-io@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-http@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-http@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-io@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-io@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-http@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-http@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-util@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-util@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-http@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-http@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-util@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-util@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-http@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-http@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-io@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-util@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-io@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-util@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-io@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-io@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-util@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-util@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-io@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-io@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-util@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-util@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-io@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-io@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-util@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-util@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-io@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-io@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-util@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-util@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-io@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-io@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-util@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-util@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-jndi@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-jndi@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty.orbit/javax.mail.glassfish@1.4.1.v201005082020?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-server@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty.orbit/javax.mail.glassfish@1.4.1.v201005082020?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-server@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-jndi@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-jndi@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty.orbit/javax.mail.glassfish@1.4.1.v201005082020?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-server@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty.orbit/javax.mail.glassfish@1.4.1.v201005082020?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-server@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-jndi@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-jndi@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-util@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-util@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-jndi@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-jndi@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-util@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-util@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-jndi@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-jndi@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-util@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-util@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-jsp@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-jsp@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty.orbit/com.sun.el@1.0.0.v201105211818?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.orbit/javax.el@2.1.0.v201105211819?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.orbit/javax.servlet.jsp.jstl@1.2.0.v201105211821?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.orbit/javax.servlet.jsp@2.1.0.v201105211820?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.orbit/org.apache.jasper.glassfish@2.1.0.v201110031002?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.orbit/org.apache.taglibs.standard.glassfish@1.2.0.v201112081803?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.orbit/org.eclipse.jdt.core@3.7.1?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty.orbit/com.sun.el@1.0.0.v201105211818?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.orbit/javax.el@2.1.0.v201105211819?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.orbit/javax.servlet.jsp.jstl@1.2.0.v201105211821?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.orbit/javax.servlet.jsp@2.1.0.v201105211820?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.orbit/org.apache.jasper.glassfish@2.1.0.v201110031002?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.orbit/org.apache.taglibs.standard.glassfish@1.2.0.v201112081803?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.orbit/org.eclipse.jdt.core@3.7.1?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-jsp@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-jsp@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty.orbit/com.sun.el@2.2.0.v201108011116?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.orbit/javax.el@2.2.0.v201108011116?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.orbit/javax.servlet.jsp.jstl@1.2.0.v201105211821?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.orbit/javax.servlet.jsp@2.2.0.v201112011158?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.orbit/org.apache.jasper.glassfish@2.2.2.v201112011158?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.orbit/org.apache.taglibs.standard.glassfish@1.2.0.v201112081803?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.orbit/org.eclipse.jdt.core@3.7.1?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty.orbit/com.sun.el@2.2.0.v201108011116?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.orbit/javax.el@2.2.0.v201108011116?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.orbit/javax.servlet.jsp.jstl@1.2.0.v201105211821?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.orbit/javax.servlet.jsp@2.2.0.v201112011158?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.orbit/org.apache.jasper.glassfish@2.2.2.v201112011158?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.orbit/org.apache.taglibs.standard.glassfish@1.2.0.v201112081803?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.orbit/org.eclipse.jdt.core@3.7.1?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-jsp@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-jsp@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/javax.servlet.jsp/javax.servlet.jsp-api@2.3.1?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/javax.servlet/javax.servlet-api@3.1.0?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.orbit/javax.servlet.jsp.jstl@1.2.0.v201105211821?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.orbit/org.eclipse.jdt.core@3.8.2.v20130121?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.toolchain/jetty-schemas@3.1.M0?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.glassfish.web/javax.servlet.jsp.jstl@1.2.2?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.glassfish.web/javax.servlet.jsp@2.3.2?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.glassfish/javax.el@3.0.0?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/javax.servlet.jsp/javax.servlet.jsp-api@2.3.1?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/javax.servlet/javax.servlet-api@3.1.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.orbit/javax.servlet.jsp.jstl@1.2.0.v201105211821?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.orbit/org.eclipse.jdt.core@3.8.2.v20130121?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.toolchain/jetty-schemas@3.1.M0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.glassfish.web/javax.servlet.jsp.jstl@1.2.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.glassfish.web/javax.servlet.jsp@2.3.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.glassfish/javax.el@3.0.0?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-plus@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-plus@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty.orbit/javax.transaction@1.1.1.v201105210645?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-jndi@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-webapp@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty.orbit/javax.transaction@1.1.1.v201105210645?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-jndi@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-webapp@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-plus@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-plus@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty.orbit/javax.transaction@1.1.1.v201105210645?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-jndi@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-webapp@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty.orbit/javax.transaction@1.1.1.v201105210645?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-jndi@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-webapp@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-plus@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-plus@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-jndi@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-webapp@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-jndi@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-webapp@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-plus@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-plus@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-jndi@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-webapp@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-jndi@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-webapp@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-plus@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-plus@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-jndi@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-webapp@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-jndi@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-webapp@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-security@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-security@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-server@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-server@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-security@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-security@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-server@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-server@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-security@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-security@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-server@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-server@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-security@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-security@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-server@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-server@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-security@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-security@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-server@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-server@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-server@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-server@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-continuation@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-http@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-continuation@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-http@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-server@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-server@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-continuation@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-http@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-continuation@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-http@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-server@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-server@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/javax.servlet/javax.servlet-api@3.1.0?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-http@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-io@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/javax.servlet/javax.servlet-api@3.1.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-http@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-io@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-server@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-server@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/javax.servlet/javax.servlet-api@3.1.0?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-http@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-io@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/javax.servlet/javax.servlet-api@3.1.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-http@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-io@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-server@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-server@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/javax.servlet/javax.servlet-api@3.1.0?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-http@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-io@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/javax.servlet/javax.servlet-api@3.1.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-http@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-io@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-servlet@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-servlet@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-security@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-security@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-servlet@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-servlet@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-security@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-security@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-servlet@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-servlet@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-security@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-security@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-servlet@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-servlet@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-security@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-security@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-servlet@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-servlet@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-security@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-security@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-webapp@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-webapp@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-servlet@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-xml@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-servlet@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-xml@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-webapp@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-webapp@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-servlet@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-xml@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-servlet@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-xml@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-webapp@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-webapp@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-servlet@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-xml@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-servlet@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-xml@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-webapp@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-webapp@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-servlet@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-xml@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-servlet@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-xml@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-webapp@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-webapp@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-servlet@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-xml@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-servlet@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-xml@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-xml@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-xml@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-util@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-util@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-xml@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-xml@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-util@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-util@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-xml@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-xml@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-util@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-util@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-xml@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-xml@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-util@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-util@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.eclipse.jetty/jetty-xml@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.eclipse.jetty/jetty-xml@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-util@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty/jetty-util@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.glassfish.web/javax.servlet.jsp@2.3.2?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.glassfish.web/javax.servlet.jsp@2.3.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/javax.servlet.jsp/javax.servlet.jsp-api@2.3.1?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.glassfish/javax.el@3.0.0?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/javax.servlet.jsp/javax.servlet.jsp-api@2.3.1?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.glassfish/javax.el@3.0.0?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.gretty/gretty-common@3.0.8?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.gretty/gretty-common@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.slf4j/slf4j-api@1.7.36?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.slf4j/slf4j-api@1.7.36?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.gretty/gretty-common@3.0.8?repository_url=https%3A//plugins.gradle.org/m2",
+      "from": "pkg:maven/org.gretty/gretty-common@3.0.8?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
       "to": [
-        "pkg:maven/org.slf4j/slf4j-api@1.7.36?repository_url=https%3A//plugins.gradle.org/m2"
+        "pkg:maven/org.slf4j/slf4j-api@1.7.36?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2"
       ]
     },
     {
-      "from": "pkg:maven/org.gretty/gretty-core@3.0.8?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.gretty/gretty-core@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/ch.qos.logback/logback-classic@1.2.10?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/commons-cli/commons-cli@1.4?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/commons-configuration/commons-configuration@1.10?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/commons-io/commons-io@2.11.0?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.apache.commons/commons-lang3@3.3.2?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.bouncycastle/bcprov-jdk15on@1.60?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.gretty/gretty-common@3.0.8?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.springframework.boot/spring-boot-devtools@2.6.3?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/ch.qos.logback/logback-classic@1.2.10?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/commons-cli/commons-cli@1.4?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/commons-configuration/commons-configuration@1.10?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/commons-io/commons-io@2.11.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.apache.commons/commons-lang3@3.3.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.bouncycastle/bcprov-jdk15on@1.60?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.gretty/gretty-common@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.springframework.boot/spring-boot-devtools@2.6.3?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.gretty/gretty-core@3.0.8?repository_url=https%3A//plugins.gradle.org/m2",
+      "from": "pkg:maven/org.gretty/gretty-core@3.0.8?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
       "to": [
-        "pkg:maven/commons-cli/commons-cli@1.3.1?repository_url=https%3A//plugins.gradle.org/m2",
-        "pkg:maven/commons-configuration/commons-configuration@1.10?repository_url=https%3A//plugins.gradle.org/m2",
-        "pkg:maven/commons-io/commons-io@2.11.0?repository_url=https%3A//plugins.gradle.org/m2",
-        "pkg:maven/org.apache.commons/commons-lang3@3.3.2?repository_url=https%3A//plugins.gradle.org/m2",
-        "pkg:maven/org.bouncycastle/bcprov-jdk15on@1.60?repository_url=https%3A//plugins.gradle.org/m2",
-        "pkg:maven/org.gretty/gretty-common@3.0.8?repository_url=https%3A//plugins.gradle.org/m2",
-        "pkg:maven/org.springframework.boot/spring-boot-devtools@2.6.3?repository_url=https%3A//plugins.gradle.org/m2"
+        "pkg:maven/commons-cli/commons-cli@1.3.1?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+        "pkg:maven/commons-configuration/commons-configuration@1.10?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+        "pkg:maven/commons-io/commons-io@2.11.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+        "pkg:maven/org.apache.commons/commons-lang3@3.3.2?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+        "pkg:maven/org.bouncycastle/bcprov-jdk15on@1.60?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+        "pkg:maven/org.gretty/gretty-common@3.0.8?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+        "pkg:maven/org.springframework.boot/spring-boot-devtools@2.6.3?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2"
       ]
     },
     {
-      "from": "pkg:maven/org.gretty/gretty-runner-jetty@3.0.8?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.gretty/gretty-runner-jetty@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.gretty/gretty-runner@3.0.8?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.gretty/gretty-runner@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.gretty/gretty-runner-jetty7@3.0.8?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.gretty/gretty-runner-jetty7@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/javax.servlet/servlet-api@2.5?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-jsp@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-plus@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-security@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-server@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-servlet@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-webapp@7.6.21.v20160908?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.gretty/gretty-runner-jetty@3.0.8?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/javax.servlet/servlet-api@2.5?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-jsp@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-plus@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-security@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-server@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-servlet@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-webapp@7.6.21.v20160908?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.gretty/gretty-runner-jetty@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.gretty/gretty-runner-jetty8@3.0.8?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.gretty/gretty-runner-jetty8@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/javax.servlet/javax.servlet-api@3.0.1?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-annotations@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-jsp@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-plus@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-security@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-server@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-servlet@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-webapp@8.1.22.v20160922?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.gretty/gretty-runner-jetty@3.0.8?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/javax.servlet/javax.servlet-api@3.0.1?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-annotations@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-jsp@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-plus@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-security@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-server@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-servlet@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-webapp@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.gretty/gretty-runner-jetty@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.gretty/gretty-runner-jetty9@3.0.8?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.gretty/gretty-runner-jetty9@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/javax.servlet/javax.servlet-api@3.1.0?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-server-impl@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-annotations@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-jsp@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-plus@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-security@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-server@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-servlet@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-webapp@9.2.26.v20180806?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.gretty/gretty-runner-jetty@3.0.8?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.ow2.asm/asm-commons@9.2?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.ow2.asm/asm@9.2?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/javax.servlet/javax.servlet-api@3.1.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-server-impl@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-annotations@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-jsp@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-plus@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-security@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-server@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-servlet@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-webapp@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.gretty/gretty-runner-jetty@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.ow2.asm/asm-commons@9.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.ow2.asm/asm@9.2?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.gretty/gretty-runner-jetty93@3.0.8?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.gretty/gretty-runner-jetty93@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/javax.servlet/javax.servlet-api@3.1.0?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-server-impl@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/apache-jsp@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-annotations@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-plus@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-security@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-server@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-servlet@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-webapp@9.3.28.v20191105?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.gretty/gretty-runner-jetty@3.0.8?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.ow2.asm/asm-commons@9.2?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.ow2.asm/asm@9.2?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/javax.servlet/javax.servlet-api@3.1.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-server-impl@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/apache-jsp@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-annotations@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-plus@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-security@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-server@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-servlet@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-webapp@9.3.28.v20191105?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.gretty/gretty-runner-jetty@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.ow2.asm/asm-commons@9.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.ow2.asm/asm@9.2?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.gretty/gretty-runner-jetty94@3.0.8?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.gretty/gretty-runner-jetty94@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/javax.servlet/javax.servlet-api@3.1.0?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-server-impl@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/apache-jsp@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-annotations@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-plus@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-security@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-server@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-servlet@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-webapp@9.4.24.v20191120?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.gretty/gretty-runner-jetty@3.0.8?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.ow2.asm/asm-commons@9.2?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.ow2.asm/asm@9.2?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/javax.servlet/javax.servlet-api@3.1.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-server-impl@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/apache-jsp@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-annotations@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-plus@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-security@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-server@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-servlet@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-webapp@9.4.24.v20191120?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.gretty/gretty-runner-jetty@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.ow2.asm/asm-commons@9.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.ow2.asm/asm@9.2?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.gretty/gretty-runner-tomcat@3.0.8?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.gretty/gretty-runner-tomcat@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.gretty/gretty-runner@3.0.8?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.slf4j/log4j-over-slf4j@1.7.36?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.gretty/gretty-runner@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.slf4j/log4j-over-slf4j@1.7.36?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.gretty/gretty-runner-tomcat85@3.0.8?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.gretty/gretty-runner-tomcat85@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/javax.servlet/javax.servlet-api@3.1.0?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@8.5.75?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.apache.tomcat.embed/tomcat-embed-el@8.5.75?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.apache.tomcat.embed/tomcat-embed-jasper@8.5.75?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.apache.tomcat.embed/tomcat-embed-websocket@8.5.75?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.gretty/gretty-runner-tomcat8plus@3.0.8?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/javax.servlet/javax.servlet-api@3.1.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@8.5.75?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.apache.tomcat.embed/tomcat-embed-el@8.5.75?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.apache.tomcat.embed/tomcat-embed-jasper@8.5.75?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.apache.tomcat.embed/tomcat-embed-websocket@8.5.75?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.gretty/gretty-runner-tomcat8plus@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.gretty/gretty-runner-tomcat8plus@3.0.8?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.gretty/gretty-runner-tomcat8plus@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.gretty/gretty-runner-tomcat@3.0.8?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.gretty/gretty-runner-tomcat@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.gretty/gretty-runner-tomcat9@3.0.8?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.gretty/gretty-runner-tomcat9@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/javax.servlet/javax.servlet-api@4.0.1?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@9.0.58?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.apache.tomcat.embed/tomcat-embed-el@9.0.58?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.apache.tomcat.embed/tomcat-embed-jasper@9.0.58?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.apache.tomcat.embed/tomcat-embed-websocket@9.0.58?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.gretty/gretty-runner-tomcat85@3.0.8?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/javax.servlet/javax.servlet-api@4.0.1?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@9.0.58?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.apache.tomcat.embed/tomcat-embed-el@9.0.58?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.apache.tomcat.embed/tomcat-embed-jasper@9.0.58?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.apache.tomcat.embed/tomcat-embed-websocket@9.0.58?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.gretty/gretty-runner-tomcat85@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.gretty/gretty-runner@3.0.8?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.gretty/gretty-runner@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/ch.qos.logback/logback-classic@1.2.10?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/commons-cli/commons-cli@1.3.1?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/commons-io/commons-io@2.11.0?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.gretty/gretty-common@3.0.8?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/ch.qos.logback/logback-classic@1.2.10?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/commons-cli/commons-cli@1.3.1?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/commons-io/commons-io@2.11.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.gretty/gretty-common@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.gretty/gretty-starter@3.0.8?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.gretty/gretty-starter@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.gretty/gretty-core@3.0.8?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.gretty/gretty-core@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.gretty/gretty@3.0.8?repository_url=https%3A//plugins.gradle.org/m2",
+      "from": "pkg:maven/org.gretty/gretty@3.0.8?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
       "to": [
-        "pkg:maven/org.eclipse.jetty/jetty-util@8.1.22.v20160922?repository_url=https%3A//plugins.gradle.org/m2",
-        "pkg:maven/org.gretty/gretty-core@3.0.8?repository_url=https%3A//plugins.gradle.org/m2",
-        "pkg:maven/org.springframework.boot/spring-boot-loader-tools@2.6.3?repository_url=https%3A//plugins.gradle.org/m2"
+        "pkg:maven/org.eclipse.jetty/jetty-util@8.1.22.v20160922?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+        "pkg:maven/org.gretty/gretty-core@3.0.8?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+        "pkg:maven/org.springframework.boot/spring-boot-loader-tools@2.6.3?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2"
       ]
     },
     {
-      "from": "pkg:maven/org.mortbay.jasper/apache-jsp@8.0.33?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.mortbay.jasper/apache-jsp@8.0.33?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jetty.toolchain/jetty-schemas@3.1?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.mortbay.jasper/apache-el@8.0.33?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jetty.toolchain/jetty-schemas@3.1?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.mortbay.jasper/apache-el@8.0.33?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.mortbay.jasper/apache-jsp@8.5.40?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.mortbay.jasper/apache-jsp@8.5.40?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.eclipse.jdt/ecj@3.17.0?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.toolchain/jetty-schemas@3.1.2?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.mortbay.jasper/apache-el@8.5.40?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.eclipse.jdt/ecj@3.17.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.toolchain/jetty-schemas@3.1.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.mortbay.jasper/apache-el@8.5.40?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.ow2.asm/asm-analysis@9.2?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.ow2.asm/asm-analysis@9.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.ow2.asm/asm-tree@9.2?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.ow2.asm/asm-tree@9.2?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.ow2.asm/asm-commons@9.2?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.ow2.asm/asm-commons@9.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.ow2.asm/asm-analysis@9.2?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.ow2.asm/asm-tree@9.2?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.ow2.asm/asm@9.2?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.ow2.asm/asm-analysis@9.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.ow2.asm/asm-tree@9.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.ow2.asm/asm@9.2?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.ow2.asm/asm-tree@9.2?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.ow2.asm/asm-tree@9.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.ow2.asm/asm@9.2?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.ow2.asm/asm@9.2?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.slf4j/log4j-over-slf4j@1.7.36?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.slf4j/log4j-over-slf4j@1.7.36?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.slf4j/slf4j-api@1.7.36?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.slf4j/slf4j-api@1.7.36?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.springframework.boot/spring-boot-autoconfigure@2.6.3?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.springframework.boot/spring-boot-autoconfigure@2.6.3?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.springframework.boot/spring-boot@2.6.3?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.springframework.boot/spring-boot@2.6.3?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.springframework.boot/spring-boot-autoconfigure@2.6.3?repository_url=https%3A//plugins.gradle.org/m2",
+      "from": "pkg:maven/org.springframework.boot/spring-boot-autoconfigure@2.6.3?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
       "to": [
-        "pkg:maven/org.springframework.boot/spring-boot@2.6.3?repository_url=https%3A//plugins.gradle.org/m2"
+        "pkg:maven/org.springframework.boot/spring-boot@2.6.3?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2"
       ]
     },
     {
-      "from": "pkg:maven/org.springframework.boot/spring-boot-devtools@2.6.3?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.springframework.boot/spring-boot-devtools@2.6.3?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.springframework.boot/spring-boot-autoconfigure@2.6.3?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.springframework.boot/spring-boot@2.6.3?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.springframework.boot/spring-boot-autoconfigure@2.6.3?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.springframework.boot/spring-boot@2.6.3?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.springframework.boot/spring-boot-devtools@2.6.3?repository_url=https%3A//plugins.gradle.org/m2",
+      "from": "pkg:maven/org.springframework.boot/spring-boot-devtools@2.6.3?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
       "to": [
-        "pkg:maven/org.springframework.boot/spring-boot-autoconfigure@2.6.3?repository_url=https%3A//plugins.gradle.org/m2",
-        "pkg:maven/org.springframework.boot/spring-boot@2.6.3?repository_url=https%3A//plugins.gradle.org/m2"
+        "pkg:maven/org.springframework.boot/spring-boot-autoconfigure@2.6.3?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+        "pkg:maven/org.springframework.boot/spring-boot@2.6.3?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2"
       ]
     },
     {
-      "from": "pkg:maven/org.springframework.boot/spring-boot-loader-tools@2.6.3?repository_url=https%3A//plugins.gradle.org/m2",
+      "from": "pkg:maven/org.springframework.boot/spring-boot-loader-tools@2.6.3?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
       "to": [
-        "pkg:maven/org.apache.commons/commons-compress@1.21?repository_url=https%3A//plugins.gradle.org/m2",
-        "pkg:maven/org.springframework/spring-core@5.3.15?repository_url=https%3A//plugins.gradle.org/m2"
+        "pkg:maven/org.apache.commons/commons-compress@1.21?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+        "pkg:maven/org.springframework/spring-core@5.3.15?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2"
       ]
     },
     {
-      "from": "pkg:maven/org.springframework.boot/spring-boot@2.6.3?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.springframework.boot/spring-boot@2.6.3?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.springframework/spring-context@5.3.15?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.springframework/spring-core@5.3.15?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.springframework/spring-context@5.3.15?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.springframework/spring-core@5.3.15?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.springframework.boot/spring-boot@2.6.3?repository_url=https%3A//plugins.gradle.org/m2",
+      "from": "pkg:maven/org.springframework.boot/spring-boot@2.6.3?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
       "to": [
-        "pkg:maven/org.springframework/spring-context@5.3.15?repository_url=https%3A//plugins.gradle.org/m2",
-        "pkg:maven/org.springframework/spring-core@5.3.15?repository_url=https%3A//plugins.gradle.org/m2"
+        "pkg:maven/org.springframework/spring-context@5.3.15?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+        "pkg:maven/org.springframework/spring-core@5.3.15?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2"
       ]
     },
     {
-      "from": "pkg:maven/org.springframework/spring-aop@5.3.15?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.springframework/spring-aop@5.3.15?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.springframework/spring-beans@5.3.15?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.springframework/spring-core@5.3.15?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.springframework/spring-beans@5.3.15?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.springframework/spring-core@5.3.15?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.springframework/spring-aop@5.3.15?repository_url=https%3A//plugins.gradle.org/m2",
+      "from": "pkg:maven/org.springframework/spring-aop@5.3.15?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
       "to": [
-        "pkg:maven/org.springframework/spring-beans@5.3.15?repository_url=https%3A//plugins.gradle.org/m2",
-        "pkg:maven/org.springframework/spring-core@5.3.15?repository_url=https%3A//plugins.gradle.org/m2"
+        "pkg:maven/org.springframework/spring-beans@5.3.15?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+        "pkg:maven/org.springframework/spring-core@5.3.15?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2"
       ]
     },
     {
-      "from": "pkg:maven/org.springframework/spring-beans@5.3.15?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.springframework/spring-beans@5.3.15?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.springframework/spring-core@5.3.15?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.springframework/spring-core@5.3.15?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.springframework/spring-beans@5.3.15?repository_url=https%3A//plugins.gradle.org/m2",
+      "from": "pkg:maven/org.springframework/spring-beans@5.3.15?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
       "to": [
-        "pkg:maven/org.springframework/spring-core@5.3.15?repository_url=https%3A//plugins.gradle.org/m2"
+        "pkg:maven/org.springframework/spring-core@5.3.15?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2"
       ]
     },
     {
-      "from": "pkg:maven/org.springframework/spring-context@5.3.15?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.springframework/spring-context@5.3.15?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.springframework/spring-aop@5.3.15?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.springframework/spring-beans@5.3.15?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.springframework/spring-core@5.3.15?repository_url=https%3A//jcenter.bintray.com",
-        "pkg:maven/org.springframework/spring-expression@5.3.15?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.springframework/spring-aop@5.3.15?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.springframework/spring-beans@5.3.15?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.springframework/spring-core@5.3.15?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.springframework/spring-expression@5.3.15?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.springframework/spring-context@5.3.15?repository_url=https%3A//plugins.gradle.org/m2",
+      "from": "pkg:maven/org.springframework/spring-context@5.3.15?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
       "to": [
-        "pkg:maven/org.springframework/spring-aop@5.3.15?repository_url=https%3A//plugins.gradle.org/m2",
-        "pkg:maven/org.springframework/spring-beans@5.3.15?repository_url=https%3A//plugins.gradle.org/m2",
-        "pkg:maven/org.springframework/spring-core@5.3.15?repository_url=https%3A//plugins.gradle.org/m2",
-        "pkg:maven/org.springframework/spring-expression@5.3.15?repository_url=https%3A//plugins.gradle.org/m2"
+        "pkg:maven/org.springframework/spring-aop@5.3.15?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+        "pkg:maven/org.springframework/spring-beans@5.3.15?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+        "pkg:maven/org.springframework/spring-core@5.3.15?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+        "pkg:maven/org.springframework/spring-expression@5.3.15?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2"
       ]
     },
     {
-      "from": "pkg:maven/org.springframework/spring-core@5.3.15?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.springframework/spring-core@5.3.15?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.springframework/spring-jcl@5.3.15?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.springframework/spring-jcl@5.3.15?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.springframework/spring-core@5.3.15?repository_url=https%3A//plugins.gradle.org/m2",
+      "from": "pkg:maven/org.springframework/spring-core@5.3.15?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
       "to": [
-        "pkg:maven/org.springframework/spring-jcl@5.3.15?repository_url=https%3A//plugins.gradle.org/m2"
+        "pkg:maven/org.springframework/spring-jcl@5.3.15?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2"
       ]
     },
     {
-      "from": "pkg:maven/org.springframework/spring-expression@5.3.15?repository_url=https%3A//jcenter.bintray.com",
+      "from": "pkg:maven/org.springframework/spring-expression@5.3.15?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.springframework/spring-core@5.3.15?repository_url=https%3A//jcenter.bintray.com"
+        "pkg:maven/org.springframework/spring-core@5.3.15?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
-      "from": "pkg:maven/org.springframework/spring-expression@5.3.15?repository_url=https%3A//plugins.gradle.org/m2",
+      "from": "pkg:maven/org.springframework/spring-expression@5.3.15?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
       "to": [
-        "pkg:maven/org.springframework/spring-core@5.3.15?repository_url=https%3A//plugins.gradle.org/m2"
+        "pkg:maven/org.springframework/spring-core@5.3.15?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2"
       ]
     }
   ],
-  "issues": []
+  "issues": [
+    {
+      "message": "Failed to extract dependencies: Invalid purl: maven requires a \"namespace\" component",
+      "severity": "ERROR",
+      "file": "build.gradle"
+    }
+  ]
 }
