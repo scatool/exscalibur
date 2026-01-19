@@ -9,7 +9,6 @@ import {
   addPackageEvidence,
   convertPackageMapToArray,
   convertRelationshipsMapToArray,
-  aggregateSubprojectRelationships,
   initializeExtractionMaps,
 } from '@scatool/analyzer-core/src/index.ts';
 import { Glob } from 'bun';
@@ -146,6 +145,11 @@ export const extractor: Extractor<RustOptions> = filesExtractor<RustOptions>({
 
       // Process all packages in the lockfile
       for (const pkg of lockfile.package || []) {
+        // Skip workspace packages - they are subprojects, not dependencies
+        if (isWorkspacePackage(pkg)) {
+          continue;
+        }
+
         const purl = createCargoPurl(pkg.name, pkg.version);
 
         // Add package to map
@@ -165,13 +169,7 @@ export const extractor: Extractor<RustOptions> = filesExtractor<RustOptions>({
             // Find the matching package in the lockfile
             const depPackages = packagesByName.get(parsed.name);
             if (depPackages) {
-              // If version is specified, find exact match; otherwise use the first/only version
-              let depPkg: CargoLockPackage | undefined;
-              if (parsed.version) {
-                depPkg = depPackages.find((p) => p.version === parsed.version);
-              } else {
-                depPkg = depPackages[0];
-              }
+              const depPkg = findMatchingPackage(depPackages, parsed.version, parsed.source);
 
               if (depPkg) {
                 const depPurl = createCargoPurl(depPkg.name, depPkg.version);
@@ -182,9 +180,6 @@ export const extractor: Extractor<RustOptions> = filesExtractor<RustOptions>({
           }
         }
       }
-
-      // Add relationships from subprojects to their dependencies
-      aggregateSubprojectRelationships(subprojects, relationshipsMap);
     } catch (error) {
       // Silently skip files that fail to parse
     }
@@ -203,6 +198,37 @@ export const extractor: Extractor<RustOptions> = filesExtractor<RustOptions>({
 });
 
 /**
+ * Find a matching package from a list of packages with the same name.
+ * Uses version and source to disambiguate when there are multiple versions
+ * or packages from different sources.
+ */
+function findMatchingPackage(
+  packages: CargoLockPackage[],
+  version?: string,
+  source?: string,
+): CargoLockPackage | undefined {
+  // If source is specified, use it for exact matching
+  if (source) {
+    return packages.find((p) => p.version === version && p.source === source);
+  }
+
+  // If version is specified, find by version
+  // When there are multiple packages with the same version but different sources,
+  // prefer the path dependency (no source) over registry dependencies
+  if (version) {
+    const versionMatches = packages.filter((p) => p.version === version);
+    if (versionMatches.length === 1) {
+      return versionMatches[0];
+    }
+    // If multiple matches, prefer path dependency (no source field)
+    return versionMatches.find((p) => !p.source) ?? versionMatches[0];
+  }
+
+  // No version specified, use the first/only package
+  return packages[0];
+}
+
+/**
  * Extract dependency scopes from a package
  * Cargo doesn't distinguish between dependency types in the lockfile,
  * so we use a single "dependencies" scope
@@ -215,7 +241,7 @@ function extractScopes(
     return [];
   }
 
-  const scopePackages: string[] = [];
+  const scopePackages = new Set<string>();
 
   for (const dep of pkg.dependencies) {
     const parsed = parseDependency(dep);
@@ -223,29 +249,23 @@ function extractScopes(
     // Find the matching package in the lockfile
     const depPackages = packagesByName.get(parsed.name);
     if (depPackages) {
-      // If version is specified, find exact match; otherwise use the first/only version
-      let depPkg: CargoLockPackage | undefined;
-      if (parsed.version) {
-        depPkg = depPackages.find((p) => p.version === parsed.version);
-      } else {
-        depPkg = depPackages[0];
-      }
+      const depPkg = findMatchingPackage(depPackages, parsed.version, parsed.source);
 
       if (depPkg) {
         const depPurl = createCargoPurl(depPkg.name, depPkg.version);
-        scopePackages.push(depPurl);
+        scopePackages.add(depPurl);
       }
     }
   }
 
-  if (scopePackages.length === 0) {
+  if (scopePackages.size === 0) {
     return [];
   }
 
   return [
     {
       scope: 'dependencies',
-      packages: scopePackages,
+      packages: [...scopePackages],
     },
   ];
 }

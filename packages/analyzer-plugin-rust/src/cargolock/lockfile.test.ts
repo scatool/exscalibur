@@ -86,6 +86,24 @@ describe('parseDependency', () => {
     expect(result).toEqual({ name: 'tokio' });
   });
 
+  test('parses dependency with source disambiguation', () => {
+    const result = parseDependency('mylib 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)');
+    expect(result).toEqual({
+      name: 'mylib',
+      version: '0.1.0',
+      source: 'registry+https://github.com/rust-lang/crates.io-index',
+    });
+  });
+
+  test('parses dependency with git source', () => {
+    const result = parseDependency('foo 1.0.0 (git+https://github.com/example/foo#abc123)');
+    expect(result).toEqual({
+      name: 'foo',
+      version: '1.0.0',
+      source: 'git+https://github.com/example/foo#abc123',
+    });
+  });
+
   test('handles malformed dependency string', () => {
     const result = parseDependency('foo bar baz');
     expect(result).toEqual({ name: 'foo bar baz' });

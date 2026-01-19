@@ -40,10 +40,21 @@ export function parseCargoToml(content: string): CargoToml {
  * Dependencies can be in the format:
  * - "package-name" (version inferred)
  * - "package-name 1.0.0" (explicit version)
+ * - "package-name 1.0.0 (source+url)" (explicit version and source for disambiguation)
  *
- * Returns { name, version } or { name } if version not specified
+ * Returns { name, version, source } with version/source optional
  */
-export function parseDependency(dep: string): { name: string; version?: string } {
+export function parseDependency(dep: string): { name: string; version?: string; source?: string } {
+  // Check for source disambiguation format: "name version (source)"
+  const sourceMatch = dep.match(/^(.+?) (\S+) \((.+)\)$/);
+  if (sourceMatch) {
+    return {
+      name: sourceMatch[1]!,
+      version: sourceMatch[2],
+      source: sourceMatch[3],
+    };
+  }
+
   const parts = dep.split(' ');
   if (parts.length === 1) {
     return { name: parts[0]! };
