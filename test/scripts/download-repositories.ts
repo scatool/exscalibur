@@ -72,9 +72,16 @@ async function main() {
 
     console.log(`[${i + 1}/${repositories.length}] ${repoName}`);
 
-    // Skip if already exists
-    const packageJsonFile = file(join(repoPath, 'package.json'));
-    if (await packageJsonFile.exists()) {
+    // Skip if already exists (check for common manifest files)
+    const manifestFiles = ['package.json', 'pyproject.toml', 'Cargo.toml', 'go.mod', 'pom.xml', 'build.gradle'];
+    let alreadyExists = false;
+    for (const manifest of manifestFiles) {
+      if (await file(join(repoPath, manifest)).exists()) {
+        alreadyExists = true;
+        break;
+      }
+    }
+    if (alreadyExists) {
       console.log(`  ⏭️  Already exists, skipping`);
       successful++;
       continue;

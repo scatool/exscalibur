@@ -99,34 +99,47 @@ function parseDependency(line: string): ParsedDependency | null {
     line = line.substring(0, commentIndex).trim();
   }
 
-  // Handle git URLs and other VCS references - skip for now
-  if (line.includes('git+') || line.includes('hg+') || line.includes('svn+') || line.includes('bzr+')) {
+  if (!line) return null;
+
+  // Skip URLs and VCS references
+  if (
+    line.includes('git+') ||
+    line.includes('hg+') ||
+    line.includes('svn+') ||
+    line.includes('bzr+') ||
+    /^https?:\/\//.test(line)
+  ) {
     return null;
   }
 
-  // Handle extras: package[extra]==1.2.3
-  let name = line;
-  const bracketIndex = line.indexOf('[');
-  if (bracketIndex !== -1) {
-    name = line.substring(0, bracketIndex);
+  // Skip lines with @ URL syntax (e.g. "pip @ https://..." or "name @ gopher://...")
+  if (/@\s*https?:\/\//.test(line) || /@\s*\w+:\/\//.test(line)) {
+    return null;
   }
+
+  // Package name must start with a letter or digit (PEP 508)
+  if (!/^[a-zA-Z0-9]/.test(line)) {
+    return null;
+  }
+
+  // Extract package name: everything up to the first version specifier, extra bracket, or semicolon
+  const nameMatch = line.match(/^([a-zA-Z0-9][-a-zA-Z0-9_.]*)/);
+  if (!nameMatch) return null;
+  const name = nameMatch[1];
 
   // Parse version specifiers
   // Try to extract exact version (==)
   const exactMatch = line.match(/==\s*([0-9][^\s,;]*)/);
   if (exactMatch) {
-    const version = exactMatch[1];
-    return { name, version };
+    return { name, version: exactMatch[1] };
   }
 
   // Try other operators and extract version
   const versionMatch = line.match(/[><=!~]+\s*([0-9][^\s,;]*)/);
   if (versionMatch) {
-    const version = versionMatch[1];
-    return { name, version };
+    return { name, version: versionMatch[1] };
   }
 
-  // No version specified - use a placeholder
-  // In a real scenario, this would need resolution
+  // No version specified
   return { name, version: '0.0.0' };
 }

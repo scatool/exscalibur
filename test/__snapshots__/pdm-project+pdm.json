@@ -1,0 +1,1256 @@
+{
+  "packages": [
+    {
+      "purl": "pkg:pypi/anyio@4.12.0",
+      "evidence": [
+        "pdm.lock#14"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/anysqlite@0.0.5",
+      "evidence": [
+        "pdm.lock#30"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/arpeggio@2.0.3",
+      "evidence": [
+        "pdm.lock#44"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/attrs@25.4.0",
+      "evidence": [
+        "pdm.lock#54"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/babel@2.17.0",
+      "evidence": [
+        "pdm.lock#65"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/backports-tarfile@1.2.0",
+      "evidence": [
+        "pdm.lock#79"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/backrefs@6.1",
+      "evidence": [
+        "pdm.lock#91"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/beautifulsoup4@4.14.3",
+      "evidence": [
+        "pdm.lock#107"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/blinker@1.9.0",
+      "evidence": [
+        "pdm.lock#122"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/cachetools@6.2.3",
+      "evidence": [
+        "pdm.lock#133"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/certifi@2021.10.8",
+      "evidence": [
+        "tests/fixtures/projects/demo-package-has-dep-with-extras/pdm.lock#11",
+        "tests/fixtures/projects/demo-package-has-dep-with-extras/requirements.txt#4"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/certifi@2025.1.31",
+      "evidence": [
+        "tests/fixtures/projects/demo/pdm.lock#14"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/certifi@2025.11.12",
+      "evidence": [
+        "pdm.lock#144"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/cffi@2.0.0",
+      "evidence": [
+        "pdm.lock#155"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/chardet@3.0.4",
+      "evidence": [
+        "tests/fixtures/projects/demo/pdm.lock#26"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/chardet@5.2.0",
+      "evidence": [
+        "pdm.lock#252"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/charset-normalizer@2.0.12",
+      "evidence": [
+        "tests/fixtures/projects/demo/pdm.lock#37"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/charset-normalizer@2.0.7",
+      "evidence": [
+        "tests/fixtures/projects/demo-package-has-dep-with-extras/pdm.lock#21",
+        "tests/fixtures/projects/demo-package-has-dep-with-extras/requirements.txt#5"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/charset-normalizer@3.4.4",
+      "evidence": [
+        "pdm.lock#263"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/click@7.1.2",
+      "evidence": [
+        "tests/fixtures/projects/demo-package/pdm.lock#11",
+        "tests/fixtures/projects/demo-package/requirements.txt#4",
+        "tests/fixtures/projects/demo-package/requirements_simple.txt#4"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/click@8.1.8",
+      "evidence": [
+        "pdm.lock#370"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/colorama@0.3.9",
+      "evidence": [
+        "tests/fixtures/projects/demo/pdm.lock#49"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/colorama@0.4.6",
+      "evidence": [
+        "pdm.lock#385"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/coverage@7.10.7",
+      "evidence": [
+        "pdm.lock#396"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/cryptography@43.0.3",
+      "evidence": [
+        "pdm.lock#627"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/dep-logic@0.5.2",
+      "evidence": [
+        "pdm.lock#667"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/distlib@0.4.0",
+      "evidence": [
+        "pdm.lock#681"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/exceptiongroup@1.3.1",
+      "evidence": [
+        "pdm.lock#691"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/execnet@2.1.2",
+      "evidence": [
+        "pdm.lock#706"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/filelock@3.19.1",
+      "evidence": [
+        "pdm.lock#717"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/findpython@0.7.1",
+      "evidence": [
+        "pdm.lock#728"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/flask@1.1.4",
+      "evidence": [
+        "tests/fixtures/projects/demo-package/pdm.lock#22",
+        "tests/fixtures/projects/demo-package/requirements.txt#7",
+        "tests/fixtures/projects/demo-package/requirements_simple.txt#5"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/ghp-import@2.1.0",
+      "evidence": [
+        "pdm.lock#743"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/griffe@1.14.0",
+      "evidence": [
+        "pdm.lock#756"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/h11@0.16.0",
+      "evidence": [
+        "pdm.lock#770"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/hishel@1.1.8",
+      "evidence": [
+        "pdm.lock#781"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/httpcore@1.0.9",
+      "evidence": [
+        "pdm.lock#814"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/httpx@0.28.1",
+      "evidence": [
+        "pdm.lock#829"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/id@1.5.0",
+      "evidence": [
+        "pdm.lock#862"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/idna@2.7",
+      "evidence": [
+        "tests/fixtures/projects/demo/pdm.lock#60"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/idna@3.11",
+      "evidence": [
+        "pdm.lock#876"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/idna@3.3",
+      "evidence": [
+        "tests/fixtures/projects/demo-package-has-dep-with-extras/pdm.lock#33",
+        "tests/fixtures/projects/demo-package-has-dep-with-extras/requirements.txt#6"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/importlib-metadata@8.7.0",
+      "evidence": [
+        "pdm.lock#887"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/importlib-resources@6.5.2",
+      "evidence": [
+        "pdm.lock#903"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/iniconfig@2.1.0",
+      "evidence": [
+        "pdm.lock#918"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/installer@0.7.0",
+      "evidence": [
+        "pdm.lock#929"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/itsdangerous@1.1.0",
+      "evidence": [
+        "tests/fixtures/projects/demo-package/pdm.lock#39",
+        "tests/fixtures/projects/demo-package/requirements.txt#10",
+        "tests/fixtures/projects/demo-package/requirements_simple.txt#6"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/jaraco-classes@3.4.0",
+      "evidence": [
+        "pdm.lock#940"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/jaraco-context@6.0.1",
+      "evidence": [
+        "pdm.lock#954"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/jaraco-functools@4.3.0",
+      "evidence": [
+        "pdm.lock#968"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/jeepney@0.9.0",
+      "evidence": [
+        "pdm.lock#982"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/jinja2@2.11.3",
+      "evidence": [
+        "tests/fixtures/projects/demo-package/pdm.lock#52",
+        "tests/fixtures/projects/demo-package/requirements.txt#15",
+        "tests/fixtures/projects/demo-package/requirements_simple.txt#7"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/jinja2@3.1.6",
+      "evidence": [
+        "pdm.lock#994"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/keyring@25.7.0",
+      "evidence": [
+        "pdm.lock#1008"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/markdown-exec@1.11.0",
+      "evidence": [
+        "pdm.lock#1042"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/markdown-it-py@3.0.0",
+      "evidence": [
+        "pdm.lock#1056"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/markdown@3.9",
+      "evidence": [
+        "pdm.lock#1028"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/markdownify@1.2.2",
+      "evidence": [
+        "pdm.lock#1070"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/markupsafe@1.1.1",
+      "evidence": [
+        "tests/fixtures/projects/demo-package/pdm.lock#66",
+        "tests/fixtures/projects/demo-package/requirements.txt#18",
+        "tests/fixtures/projects/demo-package/requirements_simple.txt#8"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/markupsafe@3.0.3",
+      "evidence": [
+        "pdm.lock#1084"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/mdformat-tables@1.0.0",
+      "evidence": [
+        "pdm.lock#1198"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/mdformat@0.7.22",
+      "evidence": [
+        "pdm.lock#1182"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/mdurl@0.1.2",
+      "evidence": [
+        "pdm.lock#1213"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/mergedeep@1.3.4",
+      "evidence": [
+        "pdm.lock#1224"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/mkdocs-autorefs@1.4.3",
+      "evidence": [
+        "pdm.lock#1262"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/mkdocs-get-deps@0.2.0",
+      "evidence": [
+        "pdm.lock#1278"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/mkdocs-llmstxt@0.4.0",
+      "evidence": [
+        "pdm.lock#1295"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/mkdocs-material-extensions@1.3.1",
+      "evidence": [
+        "pdm.lock#1336"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/mkdocs-material@9.7.0",
+      "evidence": [
+        "pdm.lock#1312"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/mkdocs-redirects@1.2.2",
+      "evidence": [
+        "pdm.lock#1347"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/mkdocs-version-annotations@1.0.0",
+      "evidence": [
+        "pdm.lock#1361"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/mkdocs@1.6.1",
+      "evidence": [
+        "pdm.lock#1235"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/mkdocstrings-python@1.18.2",
+      "evidence": [
+        "pdm.lock#1392"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/mkdocstrings@0.30.1",
+      "evidence": [
+        "pdm.lock#1372"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/more-itertools@10.8.0",
+      "evidence": [
+        "pdm.lock#1425"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/msgpack@1.1.2",
+      "evidence": [
+        "pdm.lock#1436"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/packaging@26.0",
+      "evidence": [
+        "pdm.lock#1507"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/paginate@0.5.7",
+      "evidence": [
+        "pdm.lock#1518"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/parver@0.5",
+      "evidence": [
+        "pdm.lock#1528"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pathspec@0.12.1",
+      "evidence": [
+        "pdm.lock#1544"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pbs-installer@2025.12.5",
+      "evidence": [
+        "pdm.lock#1555"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/platformdirs@4.4.0",
+      "evidence": [
+        "pdm.lock#1566"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pluggy@1.6.0",
+      "evidence": [
+        "pdm.lock#1577"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/py@1.4.34",
+      "evidence": [
+        "tests/fixtures/projects/demo/pdm.lock#70"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pycomplete@0.4.0",
+      "evidence": [
+        "pdm.lock#1588"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pycparser@2.23",
+      "evidence": [
+        "pdm.lock#1599"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pygments@2.19.2",
+      "evidence": [
+        "pdm.lock#1611"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pymdown-extensions@10.19.1",
+      "evidence": [
+        "pdm.lock#1622"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pyproject-api@1.9.1",
+      "evidence": [
+        "pdm.lock#1637"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pyproject-hooks@1.2.0",
+      "evidence": [
+        "pdm.lock#1652"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pytest-cov@7.0.0",
+      "evidence": [
+        "pdm.lock#1683"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pytest-httpserver@1.1.3",
+      "evidence": [
+        "pdm.lock#1699"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pytest-httpx@0.35.0",
+      "evidence": [
+        "pdm.lock#1713"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pytest-mock@3.15.1",
+      "evidence": [
+        "pdm.lock#1728"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pytest-rerunfailures@16.0.1",
+      "evidence": [
+        "pdm.lock#1742"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pytest-xdist@3.8.0",
+      "evidence": [
+        "pdm.lock#1757"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pytest@3.2.5",
+      "evidence": [
+        "tests/fixtures/projects/demo/pdm.lock#80"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pytest@8.4.2",
+      "evidence": [
+        "pdm.lock#1663"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/python-dateutil@2.9.0.post0",
+      "evidence": [
+        "pdm.lock#1772"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/python-dotenv@1.2.1",
+      "evidence": [
+        "pdm.lock#1786"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pywin32-ctypes@0.2.3",
+      "evidence": [
+        "pdm.lock#1797"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pyyaml-env-tag@1.1",
+      "evidence": [
+        "pdm.lock#1884"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pyyaml@6.0.3",
+      "evidence": [
+        "pdm.lock#1809"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/requests@2.26.0",
+      "evidence": [
+        "tests/fixtures/projects/demo-package-has-dep-with-extras/pdm.lock#45",
+        "tests/fixtures/projects/demo-package-has-dep-with-extras/requirements.txt#7"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/requests@2.27.1",
+      "evidence": [
+        "tests/fixtures/projects/demo/pdm.lock#97"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/requests@2.32.5",
+      "evidence": [
+        "pdm.lock#1898"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/resolvelib@1.2.1",
+      "evidence": [
+        "pdm.lock#1915"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/rich@14.2.0",
+      "evidence": [
+        "pdm.lock#1926"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/secretstorage@3.3.3",
+      "evidence": [
+        "pdm.lock#1941"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/setuptools@39.2.0",
+      "evidence": [
+        "tests/fixtures/projects/demo/pdm.lock#117"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/setuptools@80.9.0",
+      "evidence": [
+        "pdm.lock#1957"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/shellingham@1.5.4",
+      "evidence": [
+        "pdm.lock#1968"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/six@1.17.0",
+      "evidence": [
+        "pdm.lock#1979"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/socksio@1.0.0",
+      "evidence": [
+        "pdm.lock#1990"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/soupsieve@2.8.1",
+      "evidence": [
+        "pdm.lock#2001"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/tomli@2.3.0",
+      "evidence": [
+        "pdm.lock#2012"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/tomlkit@0.13.3",
+      "evidence": [
+        "pdm.lock#2064"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/towncrier@25.8.0",
+      "evidence": [
+        "pdm.lock#2075"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/tox-pdm@0.7.2",
+      "evidence": [
+        "pdm.lock#2117"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/tox@4.30.3",
+      "evidence": [
+        "pdm.lock#2093"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/truststore@0.10.4",
+      "evidence": [
+        "pdm.lock#2132"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/typing-extensions@4.15.0",
+      "evidence": [
+        "pdm.lock#2144"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/unearth@0.18.1",
+      "evidence": [
+        "pdm.lock#2155"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/urllib3@1.26.20",
+      "evidence": [
+        "tests/fixtures/projects/demo/pdm.lock#128"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/urllib3@1.26.7",
+      "evidence": [
+        "tests/fixtures/projects/demo-package-has-dep-with-extras/pdm.lock#77",
+        "tests/fixtures/projects/demo-package-has-dep-with-extras/requirements.txt#8"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/urllib3@2.6.2",
+      "evidence": [
+        "pdm.lock#2170"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/virtualenv@20.35.4",
+      "evidence": [
+        "pdm.lock#2181"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/watchdog@6.0.0",
+      "evidence": [
+        "pdm.lock#2199"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/wcwidth@0.2.14",
+      "evidence": [
+        "pdm.lock#2238"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/webassets@2.0",
+      "evidence": [
+        "tests/fixtures/requirements.txt#3"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/werkzeug@0.16.0",
+      "evidence": [
+        "tests/fixtures/requirements.txt#4"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/werkzeug@1.0.1",
+      "evidence": [
+        "tests/fixtures/projects/demo-package/pdm.lock#137",
+        "tests/fixtures/projects/demo-package/requirements.txt#81",
+        "tests/fixtures/projects/demo-package/requirements_simple.txt#9"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/werkzeug@3.1.4",
+      "evidence": [
+        "pdm.lock#2249"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/whoosh@2.7.4",
+      "evidence": [
+        "tests/fixtures/requirements.txt#5"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/wtforms@2.2.1",
+      "evidence": [
+        "tests/fixtures/requirements.txt#6"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/zipp@3.23.0",
+      "evidence": [
+        "pdm.lock#2263"
+      ]
+    }
+  ],
+  "subprojects": [
+    {
+      "purl": "pkg:pypi/demo-package-has-dep-with-extras@0.0.0",
+      "definitionFile": "tests/fixtures/projects/demo-package-has-dep-with-extras/pyproject.toml",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:pypi/requests@2.26.0"
+          ]
+        }
+      ]
+    },
+    {
+      "purl": "pkg:pypi/demo@0.0.1",
+      "definitionFile": "tests/fixtures/projects/demo/pyproject.toml",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:pypi/chardet@3.0.4",
+            "pkg:pypi/idna@2.7"
+          ]
+        }
+      ]
+    },
+    {
+      "purl": "pkg:pypi/my-package@0.0.0",
+      "definitionFile": "tests/fixtures/projects/demo-package/pyproject.toml",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:pypi/flask@1.1.4"
+          ]
+        }
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pdm@0.0.0",
+      "definitionFile": "pyproject.toml",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:pypi/blinker@1.9.0",
+            "pkg:pypi/certifi@2025.11.12",
+            "pkg:pypi/dep-logic@0.5.2",
+            "pkg:pypi/filelock@3.19.1",
+            "pkg:pypi/findpython@0.7.1",
+            "pkg:pypi/hishel@1.1.8",
+            "pkg:pypi/httpcore@1.0.9",
+            "pkg:pypi/httpx@0.28.1",
+            "pkg:pypi/id@1.5.0",
+            "pkg:pypi/importlib-metadata@8.7.0",
+            "pkg:pypi/installer@0.7.0",
+            "pkg:pypi/packaging@26.0",
+            "pkg:pypi/pbs-installer@2025.12.5",
+            "pkg:pypi/platformdirs@4.4.0",
+            "pkg:pypi/pyproject-hooks@1.2.0",
+            "pkg:pypi/python-dotenv@1.2.1",
+            "pkg:pypi/resolvelib@1.2.1",
+            "pkg:pypi/rich@14.2.0",
+            "pkg:pypi/shellingham@1.5.4",
+            "pkg:pypi/tomli@2.3.0",
+            "pkg:pypi/tomlkit@0.13.3",
+            "pkg:pypi/truststore@0.10.4",
+            "pkg:pypi/unearth@0.18.1",
+            "pkg:pypi/virtualenv@20.35.4"
+          ]
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "from": "pkg:pypi/anysqlite@0.0.5",
+      "to": [
+        "pkg:pypi/anyio@4.12.0"
+      ]
+    },
+    {
+      "from": "pkg:pypi/coverage@7.10.7",
+      "to": [
+        "pkg:pypi/coverage@7.10.7"
+      ]
+    },
+    {
+      "from": "pkg:pypi/cryptography@43.0.3",
+      "to": [
+        "pkg:pypi/cffi@2.0.0"
+      ]
+    },
+    {
+      "from": "pkg:pypi/flask@1.1.4",
+      "to": [
+        "pkg:pypi/click@7.1.2"
+      ]
+    },
+    {
+      "from": "pkg:pypi/griffe@1.14.0",
+      "to": [
+        "pkg:pypi/colorama@0.4.6"
+      ]
+    },
+    {
+      "from": "pkg:pypi/hishel@1.1.8",
+      "to": [
+        "pkg:pypi/anyio@4.12.0",
+        "pkg:pypi/anysqlite@0.0.5",
+        "pkg:pypi/hishel@1.1.8"
+      ]
+    },
+    {
+      "from": "pkg:pypi/httpcore@1.0.9",
+      "to": [
+        "pkg:pypi/certifi@2025.11.12",
+        "pkg:pypi/h11@0.16.0"
+      ]
+    },
+    {
+      "from": "pkg:pypi/httpx@0.28.1",
+      "to": [
+        "pkg:pypi/anyio@4.12.0",
+        "pkg:pypi/certifi@2025.11.12",
+        "pkg:pypi/httpcore@1.0.9",
+        "pkg:pypi/httpx@0.28.1"
+      ]
+    },
+    {
+      "from": "pkg:pypi/jaraco-context@6.0.1",
+      "to": [
+        "pkg:pypi/backports-tarfile@1.2.0"
+      ]
+    },
+    {
+      "from": "pkg:pypi/keyring@25.7.0",
+      "to": [
+        "pkg:pypi/importlib-metadata@8.7.0",
+        "pkg:pypi/jaraco-classes@3.4.0",
+        "pkg:pypi/jaraco-context@6.0.1",
+        "pkg:pypi/jaraco-functools@4.3.0",
+        "pkg:pypi/jeepney@0.9.0"
+      ]
+    },
+    {
+      "from": "pkg:pypi/markdown@3.9",
+      "to": [
+        "pkg:pypi/importlib-metadata@8.7.0"
+      ]
+    },
+    {
+      "from": "pkg:pypi/markdownify@1.2.2",
+      "to": [
+        "pkg:pypi/beautifulsoup4@4.14.3"
+      ]
+    },
+    {
+      "from": "pkg:pypi/mdformat-tables@1.0.0",
+      "to": [
+        "pkg:pypi/mdformat@0.7.22"
+      ]
+    },
+    {
+      "from": "pkg:pypi/mdformat@0.7.22",
+      "to": [
+        "pkg:pypi/importlib-metadata@8.7.0",
+        "pkg:pypi/markdown-it-py@3.0.0"
+      ]
+    },
+    {
+      "from": "pkg:pypi/mkdocs-autorefs@1.4.3",
+      "to": [
+        "pkg:pypi/markdown@3.9",
+        "pkg:pypi/markupsafe@3.0.3",
+        "pkg:pypi/mkdocs@1.6.1"
+      ]
+    },
+    {
+      "from": "pkg:pypi/mkdocs-get-deps@0.2.0",
+      "to": [
+        "pkg:pypi/importlib-metadata@8.7.0",
+        "pkg:pypi/mergedeep@1.3.4"
+      ]
+    },
+    {
+      "from": "pkg:pypi/mkdocs-llmstxt@0.4.0",
+      "to": [
+        "pkg:pypi/beautifulsoup4@4.14.3",
+        "pkg:pypi/markdownify@1.2.2",
+        "pkg:pypi/mdformat-tables@1.0.0",
+        "pkg:pypi/mdformat@0.7.22"
+      ]
+    },
+    {
+      "from": "pkg:pypi/mkdocs-material@9.7.0",
+      "to": [
+        "pkg:pypi/babel@2.17.0",
+        "pkg:pypi/backrefs@6.1",
+        "pkg:pypi/colorama@0.4.6",
+        "pkg:pypi/jinja2@3.1.6",
+        "pkg:pypi/markdown@3.9",
+        "pkg:pypi/mkdocs@1.6.1"
+      ]
+    },
+    {
+      "from": "pkg:pypi/mkdocs-redirects@1.2.2",
+      "to": [
+        "pkg:pypi/mkdocs@1.6.1"
+      ]
+    },
+    {
+      "from": "pkg:pypi/mkdocs@1.6.1",
+      "to": [
+        "pkg:pypi/click@8.1.8",
+        "pkg:pypi/colorama@0.4.6",
+        "pkg:pypi/ghp-import@2.1.0",
+        "pkg:pypi/importlib-metadata@8.7.0",
+        "pkg:pypi/jinja2@3.1.6",
+        "pkg:pypi/markdown@3.9",
+        "pkg:pypi/markupsafe@3.0.3",
+        "pkg:pypi/mergedeep@1.3.4"
+      ]
+    },
+    {
+      "from": "pkg:pypi/mkdocstrings-python@1.18.2",
+      "to": [
+        "pkg:pypi/griffe@1.14.0",
+        "pkg:pypi/mkdocs-autorefs@1.4.3",
+        "pkg:pypi/mkdocstrings@0.30.1"
+      ]
+    },
+    {
+      "from": "pkg:pypi/mkdocstrings@0.30.1",
+      "to": [
+        "pkg:pypi/importlib-metadata@8.7.0",
+        "pkg:pypi/jinja2@3.1.6",
+        "pkg:pypi/markdown@3.9",
+        "pkg:pypi/markupsafe@3.0.3",
+        "pkg:pypi/mkdocs-autorefs@1.4.3",
+        "pkg:pypi/mkdocs@1.6.1",
+        "pkg:pypi/mkdocstrings-python@1.18.2",
+        "pkg:pypi/mkdocstrings@0.30.1"
+      ]
+    },
+    {
+      "from": "pkg:pypi/parver@0.5",
+      "to": [
+        "pkg:pypi/arpeggio@2.0.3",
+        "pkg:pypi/attrs@25.4.0"
+      ]
+    },
+    {
+      "from": "pkg:pypi/pymdown-extensions@10.19.1",
+      "to": [
+        "pkg:pypi/markdown@3.9"
+      ]
+    },
+    {
+      "from": "pkg:pypi/pyproject-api@1.9.1",
+      "to": [
+        "pkg:pypi/packaging@26.0"
+      ]
+    },
+    {
+      "from": "pkg:pypi/pytest-cov@7.0.0",
+      "to": [
+        "pkg:pypi/coverage@7.10.7",
+        "pkg:pypi/pluggy@1.6.0",
+        "pkg:pypi/pytest@8.4.2"
+      ]
+    },
+    {
+      "from": "pkg:pypi/pytest-httpx@0.35.0",
+      "to": [
+        "pkg:pypi/httpx@0.28.1",
+        "pkg:pypi/pytest@8.4.2"
+      ]
+    },
+    {
+      "from": "pkg:pypi/pytest-mock@3.15.1",
+      "to": [
+        "pkg:pypi/pytest@8.4.2"
+      ]
+    },
+    {
+      "from": "pkg:pypi/pytest-rerunfailures@16.0.1",
+      "to": [
+        "pkg:pypi/packaging@26.0",
+        "pkg:pypi/pytest@8.4.2"
+      ]
+    },
+    {
+      "from": "pkg:pypi/pytest-xdist@3.8.0",
+      "to": [
+        "pkg:pypi/execnet@2.1.2",
+        "pkg:pypi/pytest@8.4.2"
+      ]
+    },
+    {
+      "from": "pkg:pypi/pytest@3.2.5",
+      "to": [
+        "pkg:pypi/colorama@0.3.9",
+        "pkg:pypi/py@1.4.34"
+      ]
+    },
+    {
+      "from": "pkg:pypi/pytest@8.4.2",
+      "to": [
+        "pkg:pypi/colorama@0.4.6",
+        "pkg:pypi/exceptiongroup@1.3.1",
+        "pkg:pypi/iniconfig@2.1.0",
+        "pkg:pypi/packaging@26.0",
+        "pkg:pypi/pluggy@1.6.0",
+        "pkg:pypi/pygments@2.19.2"
+      ]
+    },
+    {
+      "from": "pkg:pypi/pyyaml-env-tag@1.1",
+      "to": [
+        "pkg:pypi/pyyaml@6.0.3"
+      ]
+    },
+    {
+      "from": "pkg:pypi/requests@2.26.0",
+      "to": [
+        "pkg:pypi/certifi@2021.10.8",
+        "pkg:pypi/charset-normalizer@2.0.7",
+        "pkg:pypi/idna@3.3",
+        "pkg:pypi/requests@2.26.0"
+      ]
+    },
+    {
+      "from": "pkg:pypi/requests@2.27.1",
+      "to": [
+        "pkg:pypi/certifi@2025.1.31",
+        "pkg:pypi/chardet@3.0.4",
+        "pkg:pypi/charset-normalizer@2.0.12",
+        "pkg:pypi/idna@2.7"
+      ]
+    },
+    {
+      "from": "pkg:pypi/requests@2.32.5",
+      "to": [
+        "pkg:pypi/certifi@2025.11.12",
+        "pkg:pypi/charset-normalizer@3.4.4",
+        "pkg:pypi/idna@3.11"
+      ]
+    },
+    {
+      "from": "pkg:pypi/rich@14.2.0",
+      "to": [
+        "pkg:pypi/markdown-it-py@3.0.0",
+        "pkg:pypi/pygments@2.19.2"
+      ]
+    },
+    {
+      "from": "pkg:pypi/secretstorage@3.3.3",
+      "to": [
+        "pkg:pypi/cryptography@43.0.3",
+        "pkg:pypi/jeepney@0.9.0"
+      ]
+    },
+    {
+      "from": "pkg:pypi/towncrier@25.8.0",
+      "to": [
+        "pkg:pypi/click@8.1.8",
+        "pkg:pypi/importlib-metadata@8.7.0",
+        "pkg:pypi/importlib-resources@6.5.2",
+        "pkg:pypi/jinja2@3.1.6",
+        "pkg:pypi/tomli@2.3.0"
+      ]
+    },
+    {
+      "from": "pkg:pypi/tox-pdm@0.7.2",
+      "to": [
+        "pkg:pypi/tomli@2.3.0",
+        "pkg:pypi/tox@4.30.3"
+      ]
+    },
+    {
+      "from": "pkg:pypi/tox@4.30.3",
+      "to": [
+        "pkg:pypi/cachetools@6.2.3",
+        "pkg:pypi/chardet@5.2.0",
+        "pkg:pypi/colorama@0.4.6",
+        "pkg:pypi/filelock@3.19.1",
+        "pkg:pypi/packaging@26.0",
+        "pkg:pypi/platformdirs@4.4.0",
+        "pkg:pypi/pluggy@1.6.0",
+        "pkg:pypi/pyproject-api@1.9.1",
+        "pkg:pypi/tomli@2.3.0"
+      ]
+    },
+    {
+      "from": "pkg:pypi/unearth@0.18.1",
+      "to": [
+        "pkg:pypi/httpx@0.28.1",
+        "pkg:pypi/packaging@26.0"
+      ]
+    },
+    {
+      "from": "pkg:pypi/virtualenv@20.35.4",
+      "to": [
+        "pkg:pypi/distlib@0.4.0",
+        "pkg:pypi/filelock@3.19.1",
+        "pkg:pypi/importlib-metadata@8.7.0",
+        "pkg:pypi/platformdirs@4.4.0",
+        "pkg:pypi/typing-extensions@4.15.0"
+      ]
+    },
+    {
+      "from": "pkg:pypi/werkzeug@3.1.4",
+      "to": [
+        "pkg:pypi/markupsafe@3.0.3"
+      ]
+    }
+  ],
+  "issues": []
+}

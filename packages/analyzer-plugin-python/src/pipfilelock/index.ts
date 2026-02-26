@@ -87,6 +87,8 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
     // Process default dependencies
     if (lockfile.default) {
       for (const [name, entry] of Object.entries(lockfile.default)) {
+        // Skip editable/path/git dependencies without a version
+        if (!entry.version) continue;
         const normalizedName = normalizePythonName(name);
         // Remove leading == from version
         const version = entry.version.startsWith('==') ? entry.version.substring(2) : entry.version;
@@ -106,6 +108,8 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
     // Process develop dependencies
     if (lockfile.develop) {
       for (const [name, entry] of Object.entries(lockfile.develop)) {
+        // Skip editable/path/git dependencies without a version
+        if (!entry.version) continue;
         const normalizedName = normalizePythonName(name);
         const version = entry.version.startsWith('==') ? entry.version.substring(2) : entry.version;
         packageVersionMap.set(normalizedName, version);
@@ -124,25 +128,33 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
     const scopes: DependencyScope[] = [];
 
     if (lockfile.default && Object.keys(lockfile.default).length > 0) {
-      const packages = Object.keys(lockfile.default).map((name) => {
-        const version = packageVersionMap.get(normalizePythonName(name))!;
-        return createPypiPurl(name, version);
-      });
-      scopes.push({
-        scope: 'dependencies',
-        packages,
-      });
+      const packages = Object.keys(lockfile.default)
+        .filter((name) => packageVersionMap.has(normalizePythonName(name)))
+        .map((name) => {
+          const version = packageVersionMap.get(normalizePythonName(name))!;
+          return createPypiPurl(name, version);
+        });
+      if (packages.length > 0) {
+        scopes.push({
+          scope: 'dependencies',
+          packages,
+        });
+      }
     }
 
     if (lockfile.develop && Object.keys(lockfile.develop).length > 0) {
-      const packages = Object.keys(lockfile.develop).map((name) => {
-        const version = packageVersionMap.get(normalizePythonName(name))!;
-        return createPypiPurl(name, version);
-      });
-      scopes.push({
-        scope: 'dev-dependencies',
-        packages,
-      });
+      const packages = Object.keys(lockfile.develop)
+        .filter((name) => packageVersionMap.has(normalizePythonName(name)))
+        .map((name) => {
+          const version = packageVersionMap.get(normalizePythonName(name))!;
+          return createPypiPurl(name, version);
+        });
+      if (packages.length > 0) {
+        scopes.push({
+          scope: 'dev-dependencies',
+          packages,
+        });
+      }
     }
 
     if (scopes.length > 0) {

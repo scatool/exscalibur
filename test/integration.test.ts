@@ -12,6 +12,12 @@ import {
 import { gomodExtractor } from '@scatool/analyzer-plugin-go/src/index.ts';
 import { gradleExtractor } from '@scatool/analyzer-plugin-gradle/src/index.ts';
 import { cargoLockExtractor } from '@scatool/analyzer-plugin-rust/src/index.ts';
+import {
+  pipfileLockExtractor,
+  poetryLockExtractor,
+  pdmLockExtractor,
+  requirementsTxtExtractor,
+} from '@scatool/analyzer-plugin-python/src/index.ts';
 import type { Extractor } from '@scatool/analyzer-core/src/index.ts';
 import { mergeResults, normalizeResult } from '@scatool/analyzer-core/src/index.ts';
 
@@ -28,6 +34,10 @@ const allExtractors: Extractor[] = [
   gomodExtractor,
   gradleExtractor,
   cargoLockExtractor,
+  pipfileLockExtractor,
+  poetryLockExtractor,
+  pdmLockExtractor,
+  requirementsTxtExtractor,
 ];
 
 interface RepositoryConfig {

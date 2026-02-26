@@ -1,0 +1,411 @@
+{
+  "packages": [
+    {
+      "purl": "pkg:pypi/alabaster@1.0.0",
+      "evidence": [
+        "docs/requirements.txt#1"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/appnope@0.1.4",
+      "evidence": [
+        "poetry.lock#4"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/asttokens@3.0.0",
+      "evidence": [
+        "poetry.lock#17"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/attrs@21.4.0",
+      "evidence": [
+        "poetry.lock#34"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/backcall@0.2.0",
+      "evidence": [
+        "poetry.lock#52"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/black@22.12.0",
+      "evidence": [
+        "poetry.lock#65"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/cfgv@3.4.0",
+      "evidence": [
+        "poetry.lock#101"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/click@8.1.8",
+      "evidence": [
+        "poetry.lock#113"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/colorama@0.4.6",
+      "evidence": [
+        "poetry.lock#128"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/comm@0.2.3",
+      "evidence": [
+        "poetry.lock#141"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/coverage@7.6.1",
+      "evidence": [
+        "poetry.lock#157"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/decorator@5.2.1",
+      "evidence": [
+        "poetry.lock#245"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/distlib@0.4.0",
+      "evidence": [
+        "poetry.lock#258"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/exceptiongroup@1.3.0",
+      "evidence": [
+        "poetry.lock#270"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/executing@2.2.1",
+      "evidence": [
+        "poetry.lock#289"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/filelock@3.16.1",
+      "evidence": [
+        "poetry.lock#305"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/identify@2.6.1",
+      "evidence": [
+        "poetry.lock#322"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/iniconfig@2.1.0",
+      "evidence": [
+        "poetry.lock#337"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/ipython@8.12.3",
+      "evidence": [
+        "poetry.lock#349"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/ipywidgets@8.1.7",
+      "evidence": [
+        "poetry.lock#390"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/jedi@0.19.2",
+      "evidence": [
+        "poetry.lock#413"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/jupyterlab-widgets@3.0.15",
+      "evidence": [
+        "poetry.lock#434"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/markdown-it-py@3.0.0",
+      "evidence": [
+        "poetry.lock#447"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/matplotlib-inline@0.1.7",
+      "evidence": [
+        "poetry.lock#472"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/mdurl@0.1.2",
+      "evidence": [
+        "poetry.lock#488"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/mypy-extensions@1.1.0",
+      "evidence": [
+        "poetry.lock#560"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/mypy@1.14.1",
+      "evidence": [
+        "poetry.lock#500"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/nodeenv@1.9.1",
+      "evidence": [
+        "poetry.lock#572"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/packaging@25.0",
+      "evidence": [
+        "poetry.lock#584"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/parso@0.8.5",
+      "evidence": [
+        "poetry.lock#596"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pathspec@0.12.1",
+      "evidence": [
+        "poetry.lock#613"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pexpect@4.9.0",
+      "evidence": [
+        "poetry.lock#625"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pickleshare@0.7.5",
+      "evidence": [
+        "poetry.lock#641"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/platformdirs@4.3.6",
+      "evidence": [
+        "poetry.lock#654"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pluggy@1.5.0",
+      "evidence": [
+        "poetry.lock#671"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pre-commit@2.21.0",
+      "evidence": [
+        "poetry.lock#687"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/prompt-toolkit@3.0.52",
+      "evidence": [
+        "poetry.lock#706"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/ptyprocess@0.7.0",
+      "evidence": [
+        "poetry.lock#722"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pure-eval@0.2.3",
+      "evidence": [
+        "poetry.lock#735"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pygments@2.19.2",
+      "evidence": [
+        "poetry.lock#751"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pytest-cov@3.0.0",
+      "evidence": [
+        "poetry.lock#789"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pytest@7.4.4",
+      "evidence": [
+        "poetry.lock#766"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pyyaml@6.0.3",
+      "evidence": [
+        "poetry.lock#808"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/sphinx-copybutton@0.5.2",
+      "evidence": [
+        "docs/requirements.txt#4"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/sphinx-rtd-theme@3.0.2",
+      "evidence": [
+        "docs/requirements.txt#3"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/sphinx@8.2.3",
+      "evidence": [
+        "docs/requirements.txt#2"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/stack-data@0.6.3",
+      "evidence": [
+        "poetry.lock#891"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/tomli@2.3.0",
+      "evidence": [
+        "poetry.lock#912"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/traitlets@5.14.3",
+      "evidence": [
+        "poetry.lock#965"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/typing-extensions@4.13.2",
+      "evidence": [
+        "poetry.lock#982"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/virtualenv@20.34.0",
+      "evidence": [
+        "poetry.lock#994"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/wcwidth@0.2.14",
+      "evidence": [
+        "poetry.lock#1016"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/widgetsnbextension@4.0.14",
+      "evidence": [
+        "poetry.lock#1029"
+      ]
+    }
+  ],
+  "subprojects": [
+    {
+      "purl": "pkg:pypi/rich@14.3.1",
+      "definitionFile": "pyproject.toml",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:pypi/ipywidgets@8.1.7",
+            "pkg:pypi/markdown-it-py@3.0.0",
+            "pkg:pypi/pygments@2.19.2"
+          ]
+        },
+        {
+          "scope": "dev-dependencies",
+          "packages": [
+            "pkg:pypi/attrs@21.4.0",
+            "pkg:pypi/black@22.12.0",
+            "pkg:pypi/mypy@1.14.1",
+            "pkg:pypi/pre-commit@2.21.0",
+            "pkg:pypi/pytest-cov@3.0.0",
+            "pkg:pypi/pytest@7.4.4",
+            "pkg:pypi/typing-extensions@4.13.2"
+          ]
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "from": "pkg:pypi/ipython@8.12.3",
+      "to": [
+        "pkg:pypi/appnope@0.1.4",
+        "pkg:pypi/backcall@0.2.0",
+        "pkg:pypi/colorama@0.4.6",
+        "pkg:pypi/decorator@5.2.1"
+      ]
+    },
+    {
+      "from": "pkg:pypi/ipywidgets@8.1.7",
+      "to": [
+        "pkg:pypi/comm@0.2.3",
+        "pkg:pypi/ipython@8.12.3"
+      ]
+    },
+    {
+      "from": "pkg:pypi/pre-commit@2.21.0",
+      "to": [
+        "pkg:pypi/cfgv@3.4.0",
+        "pkg:pypi/identify@2.6.1",
+        "pkg:pypi/nodeenv@1.9.1"
+      ]
+    },
+    {
+      "from": "pkg:pypi/pytest-cov@3.0.0",
+      "to": [
+        "pkg:pypi/coverage@7.6.1",
+        "pkg:pypi/pytest@7.4.4"
+      ]
+    },
+    {
+      "from": "pkg:pypi/pytest@7.4.4",
+      "to": [
+        "pkg:pypi/colorama@0.4.6",
+        "pkg:pypi/exceptiongroup@1.3.0",
+        "pkg:pypi/iniconfig@2.1.0",
+        "pkg:pypi/packaging@25.0",
+        "pkg:pypi/pluggy@1.5.0"
+      ]
+    },
+    {
+      "from": "pkg:pypi/stack-data@0.6.3",
+      "to": [
+        "pkg:pypi/asttokens@3.0.0",
+        "pkg:pypi/executing@2.2.1",
+        "pkg:pypi/pure-eval@0.2.3"
+      ]
+    },
+    {
+      "from": "pkg:pypi/virtualenv@20.34.0",
+      "to": [
+        "pkg:pypi/distlib@0.4.0",
+        "pkg:pypi/filelock@3.16.1",
+        "pkg:pypi/platformdirs@4.3.6",
+        "pkg:pypi/typing-extensions@4.13.2"
+      ]
+    }
+  ],
+  "issues": []
+}

@@ -32,9 +32,9 @@ Integration tests in `test/` run all extractors against real open-source reposit
 1. Download test repositories: `bun test/scripts/download-repositories.ts`
 2. Copy `test/system.example.json` to `test/system.json` and set Java paths for your system (needed for Gradle-based repos). Both files are gitignored.
 
-**Run:** `cd test && bun test integration.test.ts` — always specify the file explicitly. Never run bare `bun test` in the `test/` directory, as bun will also pick up `.test.ts` files inside the downloaded repositories, causing unexpected behavior.
+**Run:** `cd test && bun test ./integration.test.ts` — always use the exact relative path. Never run bare `bun test` or `bun test integration.test.ts` (without `./`) in the `test/` directory, as bun treats the argument as a pattern and will also pick up `.test.ts` files inside the downloaded repositories that match the suffix (e.g. `transaction-matching.integration.test.ts`), causing unexpected behavior.
 
-**Update snapshots:** `cd test && UPDATE_SNAPSHOTS=1 bun test integration.test.ts`
+**Update snapshots:** `cd test && UPDATE_SNAPSHOTS=1 bun test ./integration.test.ts`
 
 **Important:**
 

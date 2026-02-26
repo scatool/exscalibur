@@ -36,31 +36,31 @@ exports[`dev-deps 1`] = `
       "evidence": [
         "requirements-dev.txt#3",
       ],
-      "purl": "pkg:pypi/black%3D%3D23.9.1@23.9.1",
+      "purl": "pkg:pypi/black@23.9.1",
     },
     {
       "evidence": [
         "requirements.txt#1",
       ],
-      "purl": "pkg:pypi/flask%3D%3D2.3.3@2.3.3",
+      "purl": "pkg:pypi/flask@2.3.3",
     },
     {
       "evidence": [
         "requirements-dev.txt#2",
       ],
-      "purl": "pkg:pypi/pytest-cov%3D%3D4.1.0@4.1.0",
+      "purl": "pkg:pypi/pytest-cov@4.1.0",
     },
     {
       "evidence": [
         "requirements-dev.txt#1",
       ],
-      "purl": "pkg:pypi/pytest%3D%3D7.4.2@7.4.2",
+      "purl": "pkg:pypi/pytest@7.4.2",
     },
     {
       "evidence": [
         "requirements.txt#2",
       ],
-      "purl": "pkg:pypi/requests%3D%3D2.31.0@2.31.0",
+      "purl": "pkg:pypi/requests@2.31.0",
     },
   ],
   "relationships": [],
@@ -76,31 +76,31 @@ exports[`with-versions 1`] = `
       "evidence": [
         "requirements.txt#6",
       ],
-      "purl": "pkg:pypi/django%3E%3D4.2.0%2C%3C5.0.0@4.2.0",
+      "purl": "pkg:pypi/django@4.2.0",
     },
     {
       "evidence": [
         "requirements.txt#5",
       ],
-      "purl": "pkg:pypi/flask%3D%3D2.3.3@2.3.3",
+      "purl": "pkg:pypi/flask@2.3.3",
     },
     {
       "evidence": [
         "requirements.txt#12",
       ],
-      "purl": "pkg:pypi/pytest%3E%3D7.4.0@7.4.0",
+      "purl": "pkg:pypi/pytest@7.4.0",
     },
     {
       "evidence": [
         "requirements.txt#2",
       ],
-      "purl": "pkg:pypi/requests%3D%3D2.31.0@2.31.0",
+      "purl": "pkg:pypi/requests@2.31.0",
     },
     {
       "evidence": [
         "requirements.txt#9",
       ],
-      "purl": "pkg:pypi/sqlalchemy%3D%3D2.0.21@2.0.21",
+      "purl": "pkg:pypi/sqlalchemy@2.0.21",
     },
   ],
   "relationships": [],
