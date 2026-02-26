@@ -12,14 +12,35 @@ Excalibur extracts dependency graphs from software projects. It parses lockfiles
 
 ## Commands
 
-### Testing
+### Unit Tests
 
-- **Run all tests**: `bun run test` (from root, uses Turbo to run tests across all packages)
+- **Run all unit tests**: `bun run test` (from root, uses Turbo to run tests across all packages)
 - **Run tests for a specific package**: `cd packages/<package-name> && bun test`
 - **Run a single test file**: `bun test <path-to-test-file>`
 - **Update snapshots**: `bun test <path-to-test-file> --update-snapshots`
 
 Note: Do not run `bun test` from root, it will run tests in the downloaded fixtures.
+
+The Gradle plugin tests require Java 21 or lower (Gradle 8.5 doesn't support newer Java versions). Use `mise` to activate the correct version: the project `mise.toml` pins `java = "temurin-21"`.
+
+### Integration Tests
+
+Integration tests in `test/` run all extractors against real open-source repositories pinned to exact commit SHAs (configured in `test/repositories.json`).
+
+**Setup:**
+
+1. Download test repositories: `bun test/scripts/download-repositories.ts`
+2. Copy `test/system.example.json` to `test/system.json` and set Java paths for your system (needed for Gradle-based repos). Both files are gitignored.
+
+**Run:** `cd test && bun test integration.test.ts` — always specify the file explicitly. Never run bare `bun test` in the `test/` directory, as bun will also pick up `.test.ts` files inside the downloaded repositories, causing unexpected behavior.
+
+**Update snapshots:** `cd test && UPDATE_SNAPSHOTS=1 bun test integration.test.ts`
+
+**Important:**
+
+- The `test/repositories/` directory is gitignored. Do not run tools like `bunx taze` from the project root — they will modify `package.json` files inside the downloaded repos and break snapshot comparisons.
+- If snapshots are stale after a re-download, re-run with `UPDATE_SNAPSHOTS=1`.
+- Some downloaded repos contain their own `.test.ts` files that bun may pick up. These show as errors but are not real failures.
 
 ### Type Checking
 
