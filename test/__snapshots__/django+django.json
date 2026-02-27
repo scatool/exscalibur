@@ -1,0 +1,73 @@
+{
+  "packages": [
+    {
+      "purl": "pkg:npm/eslint@9.39.1",
+      "evidence": [
+        "package.json#12"
+      ]
+    },
+    {
+      "purl": "pkg:npm/grunt-cli@1.5.0",
+      "evidence": [
+        "package.json#15"
+      ]
+    },
+    {
+      "purl": "pkg:npm/grunt-contrib-qunit@10.1.1",
+      "evidence": [
+        "package.json#16"
+      ]
+    },
+    {
+      "purl": "pkg:npm/grunt@1.6.1",
+      "evidence": [
+        "package.json#14"
+      ]
+    },
+    {
+      "purl": "pkg:npm/puppeteer@24.22.0",
+      "evidence": [
+        "package.json#13"
+      ]
+    },
+    {
+      "purl": "pkg:npm/qunit@2.24.1",
+      "evidence": [
+        "package.json#17"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/blacken-docs@0.0.0",
+      "evidence": [
+        "docs/requirements.txt#4"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pyenchant@0.0.0",
+      "evidence": [
+        "docs/requirements.txt#1"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/sphinx-lint@0.0.0",
+      "evidence": [
+        "docs/requirements.txt#5"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/sphinx@4.5.0",
+      "evidence": [
+        "docs/requirements.txt#2"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/sphinxcontrib-spelling@0.0.0",
+      "evidence": [
+        "docs/requirements.txt#3"
+      ]
+    }
+  ],
+  "subprojects": [],
+  "relationships": [],
+  "issues": []
+}

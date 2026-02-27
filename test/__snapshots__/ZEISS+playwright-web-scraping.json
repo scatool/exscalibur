@@ -1537,6 +1537,12 @@
       "evidence": [
         "package-lock.json#3650"
       ]
+    },
+    {
+      "purl": "pkg:pypi/playwright@0.0.0",
+      "evidence": [
+        "python/requirements.txt#1"
+      ]
     }
   ],
   "subprojects": [
