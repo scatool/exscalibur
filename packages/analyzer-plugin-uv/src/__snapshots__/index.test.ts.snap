@@ -1,0 +1,41 @@
+// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
+
+exports[`basic 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [],
+      "purl": "pkg:pypi/certifi@2025.1.31",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:pypi/charset-normalizer@3.4.1",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:pypi/idna@3.10",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:pypi/requests@2.32.3",
+    },
+    {
+      "evidence": [],
+      "purl": "pkg:pypi/urllib3@2.3.0",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:pypi/requests@2.32.3",
+      "to": [
+        "pkg:pypi/certifi@2025.1.31",
+        "pkg:pypi/charset-normalizer@3.4.1",
+        "pkg:pypi/idna@3.10",
+        "pkg:pypi/urllib3@2.3.0",
+      ],
+    },
+  ],
+  "subprojects": [],
+}
+`;

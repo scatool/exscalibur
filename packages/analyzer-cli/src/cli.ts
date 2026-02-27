@@ -11,6 +11,7 @@ import {
 import { dockerfileExtractor } from '@scatool/analyzer-plugin-containers/src/index.ts';
 import { gradleExtractor } from '@scatool/analyzer-plugin-gradle/src/index.ts';
 import { gomodExtractor } from '@scatool/analyzer-plugin-go/src/index.ts';
+import { extractor as uvExtractor } from '@scatool/analyzer-plugin-uv/src/index.ts';
 import { mergeResults } from '@scatool/analyzer-core/src/index.ts';
 import { extractor as githubActionsExtractor } from '@scatool/analyzer-plugin-github-actions/src/index.ts';
 import type { AnalyzerResult, Extractor } from '@scatool/analyzer-core/src/index.ts';
@@ -77,6 +78,7 @@ if (positionalArgs.length < 2) {
   console.error('  github-actions    Extract from GitHub Actions workflow files');
   console.error('  gradle            Extract from Gradle projects (build.gradle)');
   console.error('  gomod             Extract from Go modules (go.mod)');
+  console.error('  uv                Extract from uv projects (uv.lock)');
   process.exit(1);
 }
 
@@ -95,6 +97,7 @@ const allExtractors: Extractor[] = [
   githubActionsExtractor,
   gradleExtractor,
   gomodExtractor,
+  uvExtractor,
 ];
 
 // Filter extractors based on enable/disable flags
