@@ -83,7 +83,7 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
       const gradleWrapper = isWindows ? join(dir, 'gradlew.bat') : join(dir, 'gradlew');
       if (!existsSync(gradleWrapper)) {
         issues.push({
-          message: `Gradle wrapper not found at expected path: ${gradleWrapper}`,
+          message: 'Gradle wrapper (gradlew) not found',
           severity: 'ERROR',
           file,
         });
