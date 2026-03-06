@@ -9,19 +9,19 @@ export interface OrtPackage {
   purl?: string;
 }
 
-export interface OrtRootDependencyIndex {
+interface OrtRootDependencyIndex {
   root: number;
   fragment?: string;
 }
 
-export interface OrtDependencyGraphNode {
+interface OrtDependencyGraphNode {
   pkg?: number;
   fragment?: number;
   linkage?: string;
   issues?: unknown[];
 }
 
-export interface OrtDependencyGraphEdge {
+interface OrtDependencyGraphEdge {
   from: number;
   to: number;
 }

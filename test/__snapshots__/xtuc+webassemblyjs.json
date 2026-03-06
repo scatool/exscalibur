@@ -3327,12 +3327,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/duplexer@0.1.2",
-      "evidence": [
-        "yarn.lock#3676"
-      ]
-    },
-    {
       "purl": "pkg:npm/duplexer2@0.1.4",
       "evidence": [
         "yarn.lock#3664"
@@ -3342,6 +3336,12 @@
       "purl": "pkg:npm/duplexer3@0.1.4",
       "evidence": [
         "yarn.lock#3671"
+      ]
+    },
+    {
+      "purl": "pkg:npm/duplexer@0.1.2",
+      "evidence": [
+        "yarn.lock#3676"
       ]
     },
     {
@@ -7572,15 +7572,15 @@
       ]
     },
     {
-      "purl": "pkg:npm/split@1.0.1",
-      "evidence": [
-        "yarn.lock#8065"
-      ]
-    },
-    {
       "purl": "pkg:npm/split2@3.2.2",
       "evidence": [
         "yarn.lock#8058"
+      ]
+    },
+    {
+      "purl": "pkg:npm/split@1.0.1",
+      "evidence": [
+        "yarn.lock#8065"
       ]
     },
     {
@@ -7633,18 +7633,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/string_decoder@0.10.31",
-      "evidence": [
-        "yarn.lock#8188"
-      ]
-    },
-    {
-      "purl": "pkg:npm/string_decoder@1.1.1",
-      "evidence": [
-        "yarn.lock#8181"
-      ]
-    },
-    {
       "purl": "pkg:npm/string-width@1.0.2",
       "evidence": [
         "yarn.lock#8119"
@@ -7684,6 +7672,18 @@
       "purl": "pkg:npm/string.prototype.trimstart@1.0.5",
       "evidence": [
         "yarn.lock#8172"
+      ]
+    },
+    {
+      "purl": "pkg:npm/string_decoder@0.10.31",
+      "evidence": [
+        "yarn.lock#8188"
+      ]
+    },
+    {
+      "purl": "pkg:npm/string_decoder@1.1.1",
+      "evidence": [
+        "yarn.lock#8181"
       ]
     },
     {
@@ -7857,12 +7857,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/through@2.3.8",
-      "evidence": [
-        "yarn.lock#8399"
-      ]
-    },
-    {
       "purl": "pkg:npm/through2@0.2.3",
       "evidence": [
         "yarn.lock#8391"
@@ -7878,6 +7872,12 @@
       "purl": "pkg:npm/through2@4.0.2",
       "evidence": [
         "yarn.lock#8384"
+      ]
+    },
+    {
+      "purl": "pkg:npm/through@2.3.8",
+      "evidence": [
+        "yarn.lock#8399"
       ]
     },
     {
@@ -14056,15 +14056,15 @@
       ]
     },
     {
-      "from": "pkg:npm/split@1.0.1",
-      "to": [
-        "pkg:npm/through@2.3.8"
-      ]
-    },
-    {
       "from": "pkg:npm/split2@3.2.2",
       "to": [
         "pkg:npm/readable-stream@3.6.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/split@1.0.1",
+      "to": [
+        "pkg:npm/through@2.3.8"
       ]
     },
     {
@@ -14111,12 +14111,6 @@
       "to": [
         "pkg:npm/define-property@0.2.5",
         "pkg:npm/object-copy@0.1.0"
-      ]
-    },
-    {
-      "from": "pkg:npm/string_decoder@1.1.1",
-      "to": [
-        "pkg:npm/safe-buffer@5.1.2"
       ]
     },
     {
@@ -14172,6 +14166,12 @@
         "pkg:npm/call-bind@1.0.2",
         "pkg:npm/define-properties@1.1.4",
         "pkg:npm/es-abstract@1.20.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/string_decoder@1.1.1",
+      "to": [
+        "pkg:npm/safe-buffer@5.1.2"
       ]
     },
     {

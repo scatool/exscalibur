@@ -31,14 +31,14 @@ export interface PnpmLockfileV9 extends PnpmLockfileBase {
  */
 export type PnpmLockfile = PnpmLockfileV6 | PnpmLockfileV9;
 
-export interface PnpmImporter {
+interface PnpmImporter {
   dependencies?: Record<string, PnpmDependencyRef>;
   devDependencies?: Record<string, PnpmDependencyRef>;
   optionalDependencies?: Record<string, PnpmDependencyRef>;
   peerDependencies?: Record<string, PnpmDependencyRef>;
 }
 
-export interface PnpmDependencyRef {
+interface PnpmDependencyRef {
   specifier: string;
   version: string;
 }

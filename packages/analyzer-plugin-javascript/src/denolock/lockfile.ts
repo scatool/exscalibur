@@ -28,7 +28,11 @@ export interface NpmPackageMetadata {
  * Parse a Deno lockfile (JSON format)
  */
 export function parseDenoLockfile(content: string): DenoLockfile {
-  return JSON.parse(content) as DenoLockfile;
+  try {
+    return JSON.parse(content) as DenoLockfile;
+  } catch (error) {
+    throw new Error(`Failed to parse Deno lockfile: ${error instanceof Error ? error.message : String(error)}`);
+  }
 }
 
 /**
@@ -88,13 +92,13 @@ export function parseNpmPackage(identifier: string): {
 /**
  * Find the line number of a string in content
  */
-export function findLineNumber(content: string, searchString: string): number | null {
+export function findLineNumber(content: string, searchString: string): number | undefined {
   const lines = content.split('\n');
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
     if (line && line.includes(searchString)) {
-      return i + 1; // Line numbers are 1-indexed
+      return i + 1;
     }
   }
-  return null;
+  return undefined;
 }

@@ -10,8 +10,8 @@ import {
   convertPackageMapToArray,
   convertRelationshipsMapToArray,
   initializeExtractionMaps,
+  scanAndMarkFiles,
 } from '@scatool/analyzer-core/src/index.ts';
-import { Glob } from 'bun';
 import { dirname, join } from 'node:path';
 import {
   findLineNumber,
@@ -31,16 +31,7 @@ export const extractor: Extractor<RustOptions> = filesExtractor<RustOptions>({
     ignore: ['**/target/**'],
   }),
   markFiles: async function (codebase: string, options: RustOptions) {
-    const ignorePatterns = options.ignore ?? [];
-    const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));
-
-    const lockfileGlob = new Glob('**/Cargo.lock');
-    for await (const file of lockfileGlob.scan({ cwd: codebase, absolute: true, onlyFiles: true })) {
-      const shouldIgnore = ignoreGlobs.some((glob) => glob.match(file));
-      if (!shouldIgnore) {
-        this.markFile(file);
-      }
-    }
+    await scanAndMarkFiles(this, codebase, '**/Cargo.lock', options.ignore ?? []);
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
     const dir = dirname(file);
@@ -181,7 +172,18 @@ export const extractor: Extractor<RustOptions> = filesExtractor<RustOptions>({
         }
       }
     } catch (error) {
-      // Silently skip files that fail to parse
+      return {
+        packages: [],
+        subprojects: [],
+        relationships: [],
+        issues: [
+          {
+            message: `Failed to parse Cargo.lock: ${error instanceof Error ? error.message : String(error)}`,
+            severity: 'ERROR',
+            file,
+          },
+        ],
+      };
     }
 
     // Convert maps to arrays

@@ -42,15 +42,15 @@ exports[`basic 1`] = `
     },
     {
       "evidence": [
-        "yarn.lock#46",
-      ],
-      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.3",
-    },
-    {
-      "evidence": [
         "yarn.lock#41",
       ],
       "purl": "pkg:npm/%40img/sharp-libvips-linux-arm64@1.2.3",
+    },
+    {
+      "evidence": [
+        "yarn.lock#46",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.3",
     },
     {
       "evidence": [
@@ -84,15 +84,15 @@ exports[`basic 1`] = `
     },
     {
       "evidence": [
-        "yarn.lock#83",
-      ],
-      "purl": "pkg:npm/%40img/sharp-linux-arm@0.34.4",
-    },
-    {
-      "evidence": [
         "yarn.lock#76",
       ],
       "purl": "pkg:npm/%40img/sharp-linux-arm64@0.34.4",
+    },
+    {
+      "evidence": [
+        "yarn.lock#83",
+      ],
+      "purl": "pkg:npm/%40img/sharp-linux-arm@0.34.4",
     },
     {
       "evidence": [
@@ -473,15 +473,15 @@ exports[`monorepo 1`] = `
     },
     {
       "evidence": [
-        "b/yarn.lock#15",
-      ],
-      "purl": "pkg:npm/%40esbuild/android-arm@0.25.11",
-    },
-    {
-      "evidence": [
         "b/yarn.lock#10",
       ],
       "purl": "pkg:npm/%40esbuild/android-arm64@0.25.11",
+    },
+    {
+      "evidence": [
+        "b/yarn.lock#15",
+      ],
+      "purl": "pkg:npm/%40esbuild/android-arm@0.25.11",
     },
     {
       "evidence": [
@@ -515,15 +515,15 @@ exports[`monorepo 1`] = `
     },
     {
       "evidence": [
-        "b/yarn.lock#50",
-      ],
-      "purl": "pkg:npm/%40esbuild/linux-arm@0.25.11",
-    },
-    {
-      "evidence": [
         "b/yarn.lock#45",
       ],
       "purl": "pkg:npm/%40esbuild/linux-arm64@0.25.11",
+    },
+    {
+      "evidence": [
+        "b/yarn.lock#50",
+      ],
+      "purl": "pkg:npm/%40esbuild/linux-arm@0.25.11",
     },
     {
       "evidence": [
@@ -653,15 +653,15 @@ exports[`monorepo 1`] = `
     },
     {
       "evidence": [
-        "a/yarn.lock#46",
-      ],
-      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.3",
-    },
-    {
-      "evidence": [
         "a/yarn.lock#41",
       ],
       "purl": "pkg:npm/%40img/sharp-libvips-linux-arm64@1.2.3",
+    },
+    {
+      "evidence": [
+        "a/yarn.lock#46",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.3",
     },
     {
       "evidence": [
@@ -695,15 +695,15 @@ exports[`monorepo 1`] = `
     },
     {
       "evidence": [
-        "a/yarn.lock#83",
-      ],
-      "purl": "pkg:npm/%40img/sharp-linux-arm@0.34.4",
-    },
-    {
-      "evidence": [
         "a/yarn.lock#76",
       ],
       "purl": "pkg:npm/%40img/sharp-linux-arm64@0.34.4",
+    },
+    {
+      "evidence": [
+        "a/yarn.lock#83",
+      ],
+      "purl": "pkg:npm/%40img/sharp-linux-arm@0.34.4",
     },
     {
       "evidence": [
@@ -1303,15 +1303,15 @@ exports[`workspace 1`] = `
     },
     {
       "evidence": [
-        "yarn.lock#22",
-      ],
-      "purl": "pkg:npm/%40esbuild/android-arm@0.25.11",
-    },
-    {
-      "evidence": [
         "yarn.lock#17",
       ],
       "purl": "pkg:npm/%40esbuild/android-arm64@0.25.11",
+    },
+    {
+      "evidence": [
+        "yarn.lock#22",
+      ],
+      "purl": "pkg:npm/%40esbuild/android-arm@0.25.11",
     },
     {
       "evidence": [
@@ -1345,15 +1345,15 @@ exports[`workspace 1`] = `
     },
     {
       "evidence": [
-        "yarn.lock#57",
-      ],
-      "purl": "pkg:npm/%40esbuild/linux-arm@0.25.11",
-    },
-    {
-      "evidence": [
         "yarn.lock#52",
       ],
       "purl": "pkg:npm/%40esbuild/linux-arm64@0.25.11",
+    },
+    {
+      "evidence": [
+        "yarn.lock#57",
+      ],
+      "purl": "pkg:npm/%40esbuild/linux-arm@0.25.11",
     },
     {
       "evidence": [
@@ -1483,15 +1483,15 @@ exports[`workspace 1`] = `
     },
     {
       "evidence": [
-        "yarn.lock#176",
-      ],
-      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.3",
-    },
-    {
-      "evidence": [
         "yarn.lock#171",
       ],
       "purl": "pkg:npm/%40img/sharp-libvips-linux-arm64@1.2.3",
+    },
+    {
+      "evidence": [
+        "yarn.lock#176",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.3",
     },
     {
       "evidence": [
@@ -1525,15 +1525,15 @@ exports[`workspace 1`] = `
     },
     {
       "evidence": [
-        "yarn.lock#213",
-      ],
-      "purl": "pkg:npm/%40img/sharp-linux-arm@0.34.4",
-    },
-    {
-      "evidence": [
         "yarn.lock#206",
       ],
       "purl": "pkg:npm/%40img/sharp-linux-arm64@0.34.4",
+    },
+    {
+      "evidence": [
+        "yarn.lock#213",
+      ],
+      "purl": "pkg:npm/%40img/sharp-linux-arm@0.34.4",
     },
     {
       "evidence": [

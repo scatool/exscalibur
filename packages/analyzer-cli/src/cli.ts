@@ -134,12 +134,8 @@ async function runAnalysis(): Promise<void> {
       const result = await extractor.extract(codebasePath);
       results.push(result);
       console.error(`  Found ${result.packages.length} packages`);
-      if (result.subprojects) {
-        console.error(`  Found ${result.subprojects.length} subprojects`);
-      }
-      if (result.relationships) {
-        console.error(`  Found ${result.relationships.length} relationships`);
-      }
+      console.error(`  Found ${result.subprojects.length} subprojects`);
+      console.error(`  Found ${result.relationships.length} relationships`);
     } catch (error) {
       console.error(`  Error: ${error instanceof Error ? error.message : String(error)}`);
     }

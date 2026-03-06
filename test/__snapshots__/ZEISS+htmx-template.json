@@ -15,15 +15,11 @@
       ]
     },
     {
-      "purl": "pkg:golang/cloud.google.com%2Fgo@v0.100.2",
+      "purl": "pkg:golang/cloud.google.com%2Fgo%2Fcompute%2Fmetadata@v0.2.0",
       "evidence": []
     },
     {
       "purl": "pkg:golang/cloud.google.com%2Fgo%2Fcompute@v1.6.1",
-      "evidence": []
-    },
-    {
-      "purl": "pkg:golang/cloud.google.com%2Fgo%2Fcompute%2Fmetadata@v0.2.0",
       "evidence": []
     },
     {
@@ -39,6 +35,10 @@
       "evidence": []
     },
     {
+      "purl": "pkg:golang/cloud.google.com%2Fgo@v0.100.2",
+      "evidence": []
+    },
+    {
       "purl": "pkg:golang/github.com%2F4meepo%2Ftagalign@v1.3.3",
       "evidence": [
         "go.mod#21",
@@ -50,6 +50,62 @@
       "evidence": [
         "go.mod#22",
         "tools/go.mod#16"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2FAntonboom%2Ferrname@v0.1.12",
+      "evidence": [
+        "go.mod#23",
+        "tools/go.mod#17"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2FAntonboom%2Fnilnil@v0.1.7",
+      "evidence": [
+        "go.mod#24",
+        "tools/go.mod#18"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2FAntonboom%2Ftestifylint@v0.2.3",
+      "evidence": [
+        "go.mod#25",
+        "tools/go.mod#19"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2FBurntSushi%2Ftoml@v1.3.2",
+      "evidence": [
+        "go.mod#26",
+        "tools/go.mod#20"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2FDjarvur%2Fgo-err113@v0.0.0-20210108212216-aea10b59be24",
+      "evidence": [
+        "go.mod#27",
+        "tools/go.mod#21"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2FGaijinEntertainment%2Fgo-exhaustruct%2Fv3@v3.1.0",
+      "evidence": [
+        "go.mod#28",
+        "tools/go.mod#22"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2FMasterminds%2Fsemver@v1.5.0",
+      "evidence": [
+        "go.mod#29",
+        "tools/go.mod#23"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2FOpenPeeDeeP%2Fdepguard%2Fv2@v2.1.0",
+      "evidence": [
+        "go.mod#30",
+        "tools/go.mod#24"
       ]
     },
     {
@@ -100,27 +156,6 @@
       "purl": "pkg:golang/github.com%2Fandybalholm%2Fbrotli@v1.0.5",
       "evidence": [
         "go.mod#35"
-      ]
-    },
-    {
-      "purl": "pkg:golang/github.com%2FAntonboom%2Ferrname@v0.1.12",
-      "evidence": [
-        "go.mod#23",
-        "tools/go.mod#17"
-      ]
-    },
-    {
-      "purl": "pkg:golang/github.com%2FAntonboom%2Fnilnil@v0.1.7",
-      "evidence": [
-        "go.mod#24",
-        "tools/go.mod#18"
-      ]
-    },
-    {
-      "purl": "pkg:golang/github.com%2FAntonboom%2Ftestifylint@v0.2.3",
-      "evidence": [
-        "go.mod#25",
-        "tools/go.mod#19"
       ]
     },
     {
@@ -191,13 +226,6 @@
       "evidence": [
         "go.mod#43",
         "tools/go.mod#37"
-      ]
-    },
-    {
-      "purl": "pkg:golang/github.com%2FBurntSushi%2Ftoml@v1.3.2",
-      "evidence": [
-        "go.mod#26",
-        "tools/go.mod#20"
       ]
     },
     {
@@ -319,13 +347,6 @@
       ]
     },
     {
-      "purl": "pkg:golang/github.com%2FDjarvur%2Fgo-err113@v0.0.0-20210108212216-aea10b59be24",
-      "evidence": [
-        "go.mod#27",
-        "tools/go.mod#21"
-      ]
-    },
-    {
       "purl": "pkg:golang/github.com%2Fdnephin%2Fpflag@v1.0.7",
       "evidence": [
         "tools/go.mod#49"
@@ -395,13 +416,6 @@
     {
       "purl": "pkg:golang/github.com%2Fgabriel-vasile%2Fmimetype@v1.4.2",
       "evidence": []
-    },
-    {
-      "purl": "pkg:golang/github.com%2FGaijinEntertainment%2Fgo-exhaustruct%2Fv3@v3.1.0",
-      "evidence": [
-        "go.mod#28",
-        "tools/go.mod#22"
-      ]
     },
     {
       "purl": "pkg:golang/github.com%2Fghodss%2Fyaml@v1.0.0",
@@ -562,10 +576,6 @@
       "evidence": []
     },
     {
-      "purl": "pkg:golang/github.com%2Fgolang-jwt%2Fjwt%2Fv4@v4.2.0",
-      "evidence": []
-    },
-    {
       "purl": "pkg:golang/github.com%2Fgolang%2Fgroupcache@v0.0.0-20210331224755-41bb18bfe9da",
       "evidence": []
     },
@@ -595,6 +605,10 @@
     },
     {
       "purl": "pkg:golang/github.com%2Fgolang%2Fsnappy@v0.0.4",
+      "evidence": []
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fgolang-jwt%2Fjwt%2Fv4@v4.2.0",
       "evidence": []
     },
     {
@@ -1090,13 +1104,6 @@
       ]
     },
     {
-      "purl": "pkg:golang/github.com%2FMasterminds%2Fsemver@v1.5.0",
-      "evidence": [
-        "go.mod#29",
-        "tools/go.mod#23"
-      ]
-    },
-    {
       "purl": "pkg:golang/github.com%2Fmatoous%2Fgodox@v0.0.0-20230222163458-006bad1f9d26",
       "evidence": [
         "go.mod#120",
@@ -1265,13 +1272,6 @@
       "evidence": []
     },
     {
-      "purl": "pkg:golang/github.com%2FOpenPeeDeeP%2Fdepguard%2Fv2@v2.1.0",
-      "evidence": [
-        "go.mod#30",
-        "tools/go.mod#24"
-      ]
-    },
-    {
       "purl": "pkg:golang/github.com%2Fotiai10%2Fcopy@v1.11.0",
       "evidence": []
     },
@@ -1284,17 +1284,17 @@
       "evidence": []
     },
     {
-      "purl": "pkg:golang/github.com%2Fpelletier%2Fgo-toml@v1.9.5",
-      "evidence": [
-        "go.mod#135",
-        "tools/go.mod#125"
-      ]
-    },
-    {
       "purl": "pkg:golang/github.com%2Fpelletier%2Fgo-toml%2Fv2@v2.0.5",
       "evidence": [
         "go.mod#136",
         "tools/go.mod#126"
+      ]
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fpelletier%2Fgo-toml@v1.9.5",
+      "evidence": [
+        "go.mod#135",
+        "tools/go.mod#125"
       ]
     },
     {
@@ -1384,19 +1384,19 @@
       ]
     },
     {
-      "purl": "pkg:golang/github.com%2Fquasilyte%2Fgo-ruleguard@v0.4.0",
-      "evidence": [
-        "go.mod#143",
-        "tools/go.mod#133"
-      ]
-    },
-    {
       "purl": "pkg:golang/github.com%2Fquasilyte%2Fgo-ruleguard%2Fdsl@v0.3.22",
       "evidence": []
     },
     {
       "purl": "pkg:golang/github.com%2Fquasilyte%2Fgo-ruleguard%2Frules@v0.0.0-20211022131956-028d6511ab71",
       "evidence": []
+    },
+    {
+      "purl": "pkg:golang/github.com%2Fquasilyte%2Fgo-ruleguard@v0.4.0",
+      "evidence": [
+        "go.mod#143",
+        "tools/go.mod#133"
+      ]
     },
     {
       "purl": "pkg:golang/github.com%2Fquasilyte%2Fgogrep@v0.5.0",
@@ -1902,17 +1902,17 @@
       "evidence": []
     },
     {
-      "purl": "pkg:golang/golang.org%2Fx%2Fexp@v0.0.0-20230510235704-dd950f8aeaea",
-      "evidence": [
-        "go.mod#193",
-        "tools/go.mod#181"
-      ]
-    },
-    {
       "purl": "pkg:golang/golang.org%2Fx%2Fexp%2Ftypeparams@v0.0.0-20230307190834-24139beb5833",
       "evidence": [
         "go.mod#194",
         "tools/go.mod#182"
+      ]
+    },
+    {
+      "purl": "pkg:golang/golang.org%2Fx%2Fexp@v0.0.0-20230510235704-dd950f8aeaea",
+      "evidence": [
+        "go.mod#193",
+        "tools/go.mod#181"
       ]
     },
     {
@@ -2004,11 +2004,11 @@
       ]
     },
     {
-      "purl": "pkg:golang/google.golang.org%2Fgenproto@v0.0.0-20220519153652-3a47de7e79bd",
+      "purl": "pkg:golang/google.golang.org%2Fgenproto%2Fgoogleapis%2Frpc@v0.0.0-20230822172742-b8732ec3820d",
       "evidence": []
     },
     {
-      "purl": "pkg:golang/google.golang.org%2Fgenproto%2Fgoogleapis%2Frpc@v0.0.0-20230822172742-b8732ec3820d",
+      "purl": "pkg:golang/google.golang.org%2Fgenproto@v0.0.0-20220519153652-3a47de7e79bd",
       "evidence": []
     },
     {
@@ -2148,15 +2148,15 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40esbuild/android-arm@0.20.0",
-      "evidence": [
-        "package-lock.json#58"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40esbuild/android-arm64@0.20.0",
       "evidence": [
         "package-lock.json#74"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/android-arm@0.20.0",
+      "evidence": [
+        "package-lock.json#58"
       ]
     },
     {
@@ -2190,15 +2190,15 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40esbuild/linux-arm@0.20.0",
-      "evidence": [
-        "package-lock.json#170"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40esbuild/linux-arm64@0.20.0",
       "evidence": [
         "package-lock.json#186"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/linux-arm@0.20.0",
+      "evidence": [
+        "package-lock.json#170"
       ]
     },
     {
@@ -4441,6 +4441,22 @@
       ]
     },
     {
+      "from": "pkg:golang/github.com%2FGaijinEntertainment%2Fgo-exhaustruct%2Fv3@v3.1.0",
+      "to": [
+        "pkg:golang/github.com%2Fdavecgh%2Fgo-spew@v1.1.1",
+        "pkg:golang/github.com%2Fpmezard%2Fgo-difflib@v1.0.0",
+        "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.8.4",
+        "pkg:golang/gopkg.in%2Fyaml.v3@v3.0.1"
+      ]
+    },
+    {
+      "from": "pkg:golang/github.com%2FOpenPeeDeeP%2Fdepguard%2Fv2@v2.1.0",
+      "to": [
+        "pkg:golang/github.com%2Fgobwas%2Fglob@v0.2.3",
+        "pkg:golang/gopkg.in%2Fyaml.v3@v3.0.1"
+      ]
+    },
+    {
       "from": "pkg:golang/github.com%2Falecthomas%2Fgo-check-sumtype@v0.1.3",
       "to": [
         "pkg:golang/github.com%2Falecthomas%2Fassert%2Fv2@v2.2.2",
@@ -4561,15 +4577,6 @@
       "from": "pkg:golang/github.com%2Ffatih%2Fcolor@v1.15.0",
       "to": [
         "pkg:golang/github.com%2Fmattn%2Fgo-colorable@v0.1.13"
-      ]
-    },
-    {
-      "from": "pkg:golang/github.com%2FGaijinEntertainment%2Fgo-exhaustruct%2Fv3@v3.1.0",
-      "to": [
-        "pkg:golang/github.com%2Fdavecgh%2Fgo-spew@v1.1.1",
-        "pkg:golang/github.com%2Fpmezard%2Fgo-difflib@v1.0.0",
-        "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.8.4",
-        "pkg:golang/gopkg.in%2Fyaml.v3@v3.0.1"
       ]
     },
     {
@@ -5159,13 +5166,6 @@
       "from": "pkg:golang/github.com%2Folekukonko%2Ftablewriter@v0.0.5",
       "to": [
         "pkg:golang/github.com%2Fmattn%2Fgo-runewidth@v0.0.9"
-      ]
-    },
-    {
-      "from": "pkg:golang/github.com%2FOpenPeeDeeP%2Fdepguard%2Fv2@v2.1.0",
-      "to": [
-        "pkg:golang/github.com%2Fgobwas%2Fglob@v0.2.3",
-        "pkg:golang/gopkg.in%2Fyaml.v3@v3.0.1"
       ]
     },
     {

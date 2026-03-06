@@ -14,7 +14,7 @@ import { Glob } from 'bun';
 import { dirname, join } from 'node:path';
 import { findLineNumber, parsePackagePattern, parseYarnLockfile, resolvePackageVersion } from './lockfile.ts';
 import type { PackageJson } from '../types.ts';
-import { createNpmPurl, NPM_DEPENDENCY_SCOPES } from '../npm-utils.ts';
+import { createNpmPurl, extractNpmScopes, NPM_DEPENDENCY_SCOPES } from '../npm-utils.ts';
 import type { JavaScriptOptions } from '../options.ts';
 
 export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScriptOptions>({
@@ -83,8 +83,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
       if (isWorkspaceRoot && rootPackageInfo) {
         const workspacePatterns = rootPackageInfo.workspaces as string[];
         for (const pattern of workspacePatterns) {
-          // Convert workspace pattern to a glob pattern for package.json
-          const pkgJsonPattern = pattern.endsWith('/*') ? `${pattern}/package.json` : `${pattern}/package.json`;
+          const pkgJsonPattern = `${pattern}/package.json`;
           const pkgJsonGlob = new Glob(pkgJsonPattern);
           for await (const pkgPath of pkgJsonGlob.scan({ cwd: dir, absolute: true })) {
             if (!pkgPath.includes('/node_modules/')) {
@@ -116,50 +115,18 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
         }
       }
 
-      // Helper to extract scopes from package.json
       const extractScopesFromPackageJson = (packageInfo: PackageJson): DependencyScope[] => {
-        const scopes: DependencyScope[] = [];
-
-        for (const scopeName of NPM_DEPENDENCY_SCOPES) {
-          const scopeDeps = packageInfo[scopeName];
-          if (scopeDeps && typeof scopeDeps === 'object') {
-            const scopePackages: string[] = [];
-
-            for (const [depName, versionRange] of Object.entries(scopeDeps)) {
-              if (typeof versionRange !== 'string') continue;
-
-              // Skip workspace protocol and link: dependencies
-              if (versionRange.startsWith('workspace:') || versionRange.startsWith('link:')) {
-                continue;
-              }
-
-              // Check if this is a workspace package (by name)
-              const workspaceVersion = workspacePackages.get(depName);
-              if (workspaceVersion) {
-                // This is a workspace package - use its version
-                const depPurl = createNpmPurl(depName, workspaceVersion);
-                scopePackages.push(depPurl);
-                continue;
-              }
-
-              // Resolve the actual installed version from the lockfile
-              const resolvedVersion = resolvePackageVersion(lockfile, depName, versionRange);
-              if (resolvedVersion) {
-                const depPurl = createNpmPurl(depName, resolvedVersion);
-                scopePackages.push(depPurl);
-              }
-            }
-
-            if (scopePackages.length > 0) {
-              scopes.push({
-                scope: scopeName,
-                packages: scopePackages,
-              });
-            }
+        return extractNpmScopes(packageInfo as Record<string, unknown>, (depName, versionRange) => {
+          if (versionRange.startsWith('workspace:') || versionRange.startsWith('link:')) {
+            return null;
           }
-        }
-
-        return scopes;
+          const workspaceVersion = workspacePackages.get(depName);
+          if (workspaceVersion) {
+            return createNpmPurl(depName, workspaceVersion);
+          }
+          const resolvedVersion = resolvePackageVersion(lockfile, depName, versionRange);
+          return resolvedVersion ? createNpmPurl(depName, resolvedVersion) : null;
+        });
       };
 
       // Create subproject for root package if it has name and version
@@ -205,7 +172,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
         const parsed = parsePackagePattern(pattern);
         if (!parsed) continue;
 
-        const { name, versionRange } = parsed;
+        const { name } = parsed;
         const version = packageEntry.version;
 
         if (!version) continue;
@@ -233,7 +200,18 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
 
       // Add relationships from subprojects to their dependencies
     } catch (error) {
-      // Silently skip files that fail to parse
+      return {
+        packages: [],
+        subprojects: [],
+        relationships: [],
+        issues: [
+          {
+            message: `Failed to parse yarn.lock: ${error instanceof Error ? error.message : String(error)}`,
+            severity: 'ERROR',
+            file,
+          },
+        ],
+      };
     }
 
     // Convert maps to arrays

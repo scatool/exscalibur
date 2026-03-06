@@ -880,15 +880,15 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40esbuild/android-arm@0.21.5",
-      "evidence": [
-        "package-lock.json#3116"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40esbuild/android-arm64@0.21.5",
       "evidence": [
         "package-lock.json#3133"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/android-arm@0.21.5",
+      "evidence": [
+        "package-lock.json#3116"
       ]
     },
     {
@@ -922,15 +922,15 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40esbuild/linux-arm@0.21.5",
-      "evidence": [
-        "package-lock.json#3235"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40esbuild/linux-arm64@0.21.5",
       "evidence": [
         "package-lock.json#3252"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/linux-arm@0.21.5",
+      "evidence": [
+        "package-lock.json#3235"
       ]
     },
     {
@@ -1330,15 +1330,15 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40lmdb/lmdb-linux-arm@3.0.12",
-      "evidence": [
-        "package-lock.json#5337"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40lmdb/lmdb-linux-arm64@3.0.12",
       "evidence": [
         "package-lock.json#5351"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40lmdb/lmdb-linux-arm@3.0.12",
+      "evidence": [
+        "package-lock.json#5337"
       ]
     },
     {
@@ -1366,15 +1366,15 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40msgpackr-extract/msgpackr-extract-linux-arm@3.0.3",
-      "evidence": [
-        "package-lock.json#5421"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40msgpackr-extract/msgpackr-extract-linux-arm64@3.0.3",
       "evidence": [
         "package-lock.json#5435"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40msgpackr-extract/msgpackr-extract-linux-arm@3.0.3",
+      "evidence": [
+        "package-lock.json#5421"
       ]
     },
     {
@@ -8631,12 +8631,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/split@0.3.3",
-      "evidence": [
-        "package-lock.json#22165"
-      ]
-    },
-    {
       "purl": "pkg:npm/split2@0.2.1",
       "evidence": [
         "package-lock.json#16897"
@@ -8646,6 +8640,12 @@
       "purl": "pkg:npm/split2@4.2.0",
       "evidence": [
         "package-lock.json#22177"
+      ]
+    },
+    {
+      "purl": "pkg:npm/split@0.3.3",
+      "evidence": [
+        "package-lock.json#22165"
       ]
     },
     {
@@ -8740,27 +8740,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/string_decoder@0.10.31",
-      "evidence": [
-        "package-lock.json#11637",
-        "package-lock.json#23268"
-      ]
-    },
-    {
-      "purl": "pkg:npm/string_decoder@1.1.1",
-      "evidence": [
-        "package-lock.json#14843",
-        "package-lock.json#16549",
-        "package-lock.json#16879"
-      ]
-    },
-    {
-      "purl": "pkg:npm/string_decoder@1.3.0",
-      "evidence": [
-        "package-lock.json#22363"
-      ]
-    },
-    {
       "purl": "pkg:npm/string-width@4.2.3",
       "evidence": [
         "package-lock.json#22390",
@@ -8781,6 +8760,27 @@
         "package-lock.json#10701",
         "package-lock.json#17092",
         "package-lock.json#17530"
+      ]
+    },
+    {
+      "purl": "pkg:npm/string_decoder@0.10.31",
+      "evidence": [
+        "package-lock.json#11637",
+        "package-lock.json#23268"
+      ]
+    },
+    {
+      "purl": "pkg:npm/string_decoder@1.1.1",
+      "evidence": [
+        "package-lock.json#14843",
+        "package-lock.json#16549",
+        "package-lock.json#16879"
+      ]
+    },
+    {
+      "purl": "pkg:npm/string_decoder@1.3.0",
+      "evidence": [
+        "package-lock.json#22363"
       ]
     },
     {
@@ -9081,15 +9081,15 @@
       ]
     },
     {
-      "purl": "pkg:npm/through@2.3.8",
-      "evidence": [
-        "package-lock.json#23235"
-      ]
-    },
-    {
       "purl": "pkg:npm/through2@0.6.5",
       "evidence": [
         "package-lock.json#23240"
+      ]
+    },
+    {
+      "purl": "pkg:npm/through@2.3.8",
+      "evidence": [
+        "package-lock.json#23235"
       ]
     },
     {
@@ -16482,15 +16482,15 @@
       ]
     },
     {
-      "from": "pkg:npm/split@0.3.3",
-      "to": [
-        "pkg:npm/through@2.3.8"
-      ]
-    },
-    {
       "from": "pkg:npm/split2@0.2.1",
       "to": [
         "pkg:npm/through2@0.6.5"
+      ]
+    },
+    {
+      "from": "pkg:npm/split@0.3.3",
+      "to": [
+        "pkg:npm/through@2.3.8"
       ]
     },
     {
@@ -16548,18 +16548,6 @@
       ]
     },
     {
-      "from": "pkg:npm/string_decoder@1.1.1",
-      "to": [
-        "pkg:npm/safe-buffer@5.1.2"
-      ]
-    },
-    {
-      "from": "pkg:npm/string_decoder@1.3.0",
-      "to": [
-        "pkg:npm/safe-buffer@5.1.2"
-      ]
-    },
-    {
       "from": "pkg:npm/string-width@4.2.3",
       "to": [
         "pkg:npm/emoji-regex@8.0.0",
@@ -16581,6 +16569,18 @@
         "pkg:npm/emoji-regex@8.0.0",
         "pkg:npm/get-east-asian-width@1.2.0",
         "pkg:npm/strip-ansi@6.0.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/string_decoder@1.1.1",
+      "to": [
+        "pkg:npm/safe-buffer@5.1.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/string_decoder@1.3.0",
+      "to": [
+        "pkg:npm/safe-buffer@5.1.2"
       ]
     },
     {

@@ -97,15 +97,15 @@
       ]
     },
     {
-      "purl": "pkg:cargo/encoding_rs_io@0.1.7",
-      "evidence": [
-        "Cargo.lock#113"
-      ]
-    },
-    {
       "purl": "pkg:cargo/encoding_rs@0.8.35",
       "evidence": [
         "Cargo.lock#104"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/encoding_rs_io@0.1.7",
+      "evidence": [
+        "Cargo.lock#113"
       ]
     },
     {
@@ -295,6 +295,18 @@
       ]
     },
     {
+      "purl": "pkg:cargo/serde@1.0.195",
+      "evidence": [
+        "fuzz/Cargo.lock#154"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/serde@1.0.228",
+      "evidence": [
+        "Cargo.lock#424"
+      ]
+    },
+    {
       "purl": "pkg:cargo/serde_core@1.0.228",
       "evidence": [
         "Cargo.lock#433"
@@ -316,18 +328,6 @@
       "purl": "pkg:cargo/serde_json@1.0.145",
       "evidence": [
         "Cargo.lock#453"
-      ]
-    },
-    {
-      "purl": "pkg:cargo/serde@1.0.195",
-      "evidence": [
-        "fuzz/Cargo.lock#154"
-      ]
-    },
-    {
-      "purl": "pkg:cargo/serde@1.0.228",
-      "evidence": [
-        "Cargo.lock#424"
       ]
     },
     {
@@ -687,15 +687,15 @@
       ]
     },
     {
-      "from": "pkg:cargo/encoding_rs_io@0.1.7",
-      "to": [
-        "pkg:cargo/encoding_rs@0.8.35"
-      ]
-    },
-    {
       "from": "pkg:cargo/encoding_rs@0.8.35",
       "to": [
         "pkg:cargo/cfg-if@1.0.4"
+      ]
+    },
+    {
+      "from": "pkg:cargo/encoding_rs_io@0.1.7",
+      "to": [
+        "pkg:cargo/encoding_rs@0.8.35"
       ]
     },
     {
@@ -806,6 +806,18 @@
       ]
     },
     {
+      "from": "pkg:cargo/serde@1.0.195",
+      "to": [
+        "pkg:cargo/serde_derive@1.0.195"
+      ]
+    },
+    {
+      "from": "pkg:cargo/serde@1.0.228",
+      "to": [
+        "pkg:cargo/serde_core@1.0.228"
+      ]
+    },
+    {
       "from": "pkg:cargo/serde_core@1.0.228",
       "to": [
         "pkg:cargo/serde_derive@1.0.228"
@@ -834,18 +846,6 @@
         "pkg:cargo/memchr@2.7.6",
         "pkg:cargo/ryu@1.0.20",
         "pkg:cargo/serde@1.0.228",
-        "pkg:cargo/serde_core@1.0.228"
-      ]
-    },
-    {
-      "from": "pkg:cargo/serde@1.0.195",
-      "to": [
-        "pkg:cargo/serde_derive@1.0.195"
-      ]
-    },
-    {
-      "from": "pkg:cargo/serde@1.0.228",
-      "to": [
         "pkg:cargo/serde_core@1.0.228"
       ]
     },

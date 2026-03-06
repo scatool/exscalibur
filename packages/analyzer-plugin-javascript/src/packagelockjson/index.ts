@@ -4,13 +4,13 @@ import {
   type Extractor,
   type Subproject,
   filesExtractor,
+  scanAndMarkFiles,
   addRelationship,
   ensurePackageExists,
   convertPackageMapToArray,
   convertRelationshipsMapToArray,
   initializeExtractionMaps,
 } from '@scatool/analyzer-core/src/index.ts';
-import { Glob } from 'bun';
 import { dirname, join } from 'node:path';
 import {
   extractPackageName,
@@ -22,7 +22,7 @@ import {
   type PackageLockPackage,
 } from './lockfile.ts';
 import type { PackageJson } from '../types.ts';
-import { createNpmPurl, NPM_DEPENDENCY_SCOPES } from '../npm-utils.ts';
+import { createNpmPurl, extractNpmScopes, NPM_DEPENDENCY_SCOPES } from '../npm-utils.ts';
 import type { JavaScriptOptions } from '../options.ts';
 
 export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScriptOptions>({
@@ -32,16 +32,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     ignore: ['**/node_modules/**'],
   }),
   markFiles: async function (codebase: string, options: JavaScriptOptions) {
-    const ignorePatterns = options.ignore ?? [];
-    const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));
-
-    const glob = new Glob('**/{package-lock.json,npm-shrinkwrap.json}');
-    for await (const file of glob.scan({ cwd: codebase, absolute: true, onlyFiles: true })) {
-      const shouldIgnore = ignoreGlobs.some((glob) => glob.match(file));
-      if (!shouldIgnore) {
-        this.markFile(file);
-      }
-    }
+    await scanAndMarkFiles(this, codebase, '**/{package-lock.json,npm-shrinkwrap.json}', options.ignore ?? []);
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
     const dir = dirname(file);
@@ -56,13 +47,32 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
       } else if (lockfile.lockfileVersion >= 2 && lockfile.packages) {
         return extractFromV2Lockfile(lockfile, lockfileContent, file, dir);
       } else {
-        console.warn(`Skipping lockfile ${file}: lockfileVersion ${lockfile.lockfileVersion} not supported`);
-        return { packages: [], subprojects: [], relationships: [], issues: [] };
+        return {
+          packages: [],
+          subprojects: [],
+          relationships: [],
+          issues: [
+            {
+              message: `Unsupported lockfileVersion ${lockfile.lockfileVersion}`,
+              severity: 'WARNING',
+              file,
+            },
+          ],
+        };
       }
     } catch (error) {
-      // Silently skip files that fail to parse
-      console.error(`Failed to parse ${file}:`, error);
-      return { packages: [], subprojects: [], relationships: [], issues: [] };
+      return {
+        packages: [],
+        subprojects: [],
+        relationships: [],
+        issues: [
+          {
+            message: `Failed to parse package-lock.json: ${error instanceof Error ? error.message : String(error)}`,
+            severity: 'ERROR',
+            file,
+          },
+        ],
+      };
     }
   },
 });
@@ -102,7 +112,7 @@ async function extractFromV1Lockfile(
 
       // Extract relationships from this package's dependencies
       if (depEntry.requires) {
-        for (const [depName, versionRange] of Object.entries(depEntry.requires)) {
+        for (const [depName] of Object.entries(depEntry.requires)) {
           // Resolve the version - check if it's in nested dependencies first
           let resolvedVersion: string | null = null;
 
@@ -169,42 +179,14 @@ async function extractFromV1Lockfile(
   };
 }
 
-/**
- * Extract dependency scopes from package.json for lockfile v1
- */
 function extractScopesV1(
   packageInfo: PackageJson,
   dependencies: Record<string, LockfileV1Dependency>,
 ): DependencyScope[] {
-  const scopes: DependencyScope[] = [];
-  const scopeNames = ['dependencies', 'devDependencies', 'optionalDependencies', 'peerDependencies'] as const;
-
-  for (const scopeName of scopeNames) {
-    const scopeDeps = packageInfo[scopeName];
-    if (!scopeDeps || typeof scopeDeps !== 'object') continue;
-
-    const scopePackages: string[] = [];
-
-    for (const [depName, versionRange] of Object.entries(scopeDeps)) {
-      if (typeof versionRange !== 'string') continue;
-
-      // Look up the version from the lockfile dependencies
-      const depEntry = dependencies[depName];
-      if (depEntry && depEntry.version) {
-        const depPurl = createNpmPurl(depName, depEntry.version);
-        scopePackages.push(depPurl);
-      }
-    }
-
-    if (scopePackages.length > 0) {
-      scopes.push({
-        scope: scopeName,
-        packages: scopePackages,
-      });
-    }
-  }
-
-  return scopes;
+  return extractNpmScopes(packageInfo as Record<string, unknown>, (depName) => {
+    const depEntry = dependencies[depName];
+    return depEntry?.version ? createNpmPurl(depName, depEntry.version) : null;
+  });
 }
 
 /**
@@ -253,7 +235,7 @@ async function extractFromV2Lockfile(
   // Process workspace packages to build a map of workspace names
   const workspacePackages = new Map<string, { version: string; path: string }>();
 
-  for (const [packagePath, packageEntry] of Object.entries(lockfile.packages)) {
+  for (const [packagePath] of Object.entries(lockfile.packages)) {
     if (isWorkspacePath(packagePath)) {
       // Read package.json for this workspace
       const packageJsonPath = join(dir, packagePath, 'package.json');
@@ -284,13 +266,7 @@ async function extractFromV2Lockfile(
         const rootPurl = createNpmPurl(packageInfo.name, packageInfo.version);
 
         // Extract scopes for the root package
-        const rootScopes = extractScopes(
-          packageInfo,
-          rootPackage,
-          lockfile.packages,
-          packageVersionMap,
-          workspacePackages,
-        );
+        const rootScopes = extractScopes(packageInfo, lockfile.packages, packageVersionMap, workspacePackages);
 
         subprojects.push({
           purl: rootPurl,
@@ -304,7 +280,7 @@ async function extractFromV2Lockfile(
   }
 
   // Extract workspace packages as subprojects
-  for (const [packagePath, packageEntry] of Object.entries(lockfile.packages)) {
+  for (const [packagePath] of Object.entries(lockfile.packages)) {
     if (isWorkspacePath(packagePath)) {
       const packageJsonPath = join(dir, packagePath, 'package.json');
 
@@ -316,13 +292,7 @@ async function extractFromV2Lockfile(
           const purl = createNpmPurl(packageInfo.name, packageInfo.version);
 
           // Extract scopes
-          const scopes = extractScopes(
-            packageInfo,
-            packageEntry,
-            lockfile.packages,
-            packageVersionMap,
-            workspacePackages,
-          );
+          const scopes = extractScopes(packageInfo, lockfile.packages, packageVersionMap, workspacePackages);
 
           subprojects.push({
             purl,
@@ -389,62 +359,19 @@ async function extractFromV2Lockfile(
   };
 }
 
-/**
- * Extract dependency scopes from package.json and resolve versions from lockfile
- */
 function extractScopes(
   packageInfo: PackageJson,
-  lockfileEntry: PackageLockPackage,
   allPackages: Record<string, PackageLockPackage>,
   packageVersionMap: Map<string, Map<string, string>>,
   workspacePackages: Map<string, { version: string; path: string }>,
 ): DependencyScope[] {
-  const scopes: DependencyScope[] = [];
-  const scopeNames = ['dependencies', 'devDependencies', 'optionalDependencies', 'peerDependencies'] as const;
+  return extractNpmScopes(packageInfo as Record<string, unknown>, (depName, versionRange) => {
+    const workspaceInfo = workspacePackages.get(depName);
+    if (workspaceInfo) return createNpmPurl(depName, workspaceInfo.version);
 
-  for (const scopeName of scopeNames) {
-    const scopeDeps = packageInfo[scopeName];
-    if (!scopeDeps || typeof scopeDeps !== 'object') continue;
-
-    const scopePackages: string[] = [];
-
-    for (const [depName, versionRange] of Object.entries(scopeDeps)) {
-      if (typeof versionRange !== 'string') continue;
-
-      // Check if this is a workspace package
-      const workspaceInfo = workspacePackages.get(depName);
-      if (workspaceInfo) {
-        // This is a workspace package - use its version
-        const depPurl = createNpmPurl(depName, workspaceInfo.version);
-        scopePackages.push(depPurl);
-        continue;
-      }
-
-      // Resolve the package info from the lockfile (handles aliases)
-      const packageInfoResolved = resolvePackageInfo(
-        depName,
-        versionRange,
-        lockfileEntry,
-        allPackages,
-        packageVersionMap,
-      );
-
-      if (packageInfoResolved) {
-        // Use the actual package name (not the alias)
-        const depPurl = createNpmPurl(packageInfoResolved.name, packageInfoResolved.version);
-        scopePackages.push(depPurl);
-      }
-    }
-
-    if (scopePackages.length > 0) {
-      scopes.push({
-        scope: scopeName,
-        packages: scopePackages,
-      });
-    }
-  }
-
-  return scopes;
+    const resolved = resolvePackageInfo(depName, versionRange, allPackages, packageVersionMap);
+    return resolved ? createNpmPurl(resolved.name, resolved.version) : null;
+  });
 }
 
 /**
@@ -474,7 +401,7 @@ function processDependencies(
       }
 
       // Resolve the actual package info (handles aliases)
-      const packageInfo = resolvePackageInfo(depName, versionRange, packageEntry, allPackages, packageVersionMap);
+      const packageInfo = resolvePackageInfo(depName, versionRange, allPackages, packageVersionMap);
 
       if (packageInfo) {
         // Use the actual package name (not the alias)
@@ -497,7 +424,6 @@ function processDependencies(
 function resolvePackageInfo(
   depName: string,
   versionRange: string,
-  packageEntry: PackageLockPackage,
   allPackages: Record<string, PackageLockPackage>,
   packageVersionMap: Map<string, Map<string, string>>,
 ): { name: string; version: string } | null {
@@ -561,19 +487,4 @@ function resolvePackageInfo(
   }
 
   return null;
-}
-
-/**
- * Resolve a dependency's version from the lockfile
- * This handles nested dependencies and version ranges
- */
-function resolveVersion(
-  depName: string,
-  versionRange: string,
-  packageEntry: PackageLockPackage,
-  allPackages: Record<string, PackageLockPackage>,
-  packageVersionMap: Map<string, Map<string, string>>,
-): string | null {
-  const info = resolvePackageInfo(depName, versionRange, packageEntry, allPackages, packageVersionMap);
-  return info?.version ?? null;
 }

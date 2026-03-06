@@ -8,13 +8,11 @@ import {
   type Extractor,
   filesExtractor,
   initializeExtractionMaps,
+  scanAndMarkFiles,
   type Subproject,
 } from '@scatool/analyzer-core/src/index.ts';
-import { Glob } from 'bun';
 import { dirname } from 'node:path';
 import { createGoPurl } from '../go-utils.ts';
-
-const glob = new Glob('**/go.mod');
 
 type Dependency = {
   path: string;
@@ -26,12 +24,7 @@ export const extractor: Extractor = filesExtractor({
   name: 'gomod',
   version: 1,
   markFiles: async function (codebase: string) {
-    for await (const file of glob.scan({ cwd: codebase })) {
-      // Exclude vendor and common module cache directories
-      if (!file.includes('/vendor/') && !file.includes('/.cache/')) {
-        this.markFile(file);
-      }
-    }
+    await scanAndMarkFiles(this, codebase, '**/go.mod', ['**/vendor/**', '**/.cache/**']);
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
     const content = await Bun.file(file).text();
@@ -216,13 +209,11 @@ async function runGoListModules(dir: string): Promise<Set<string> | null> {
       stderr: 'pipe',
     });
 
-    const output = await new Response(proc.stdout).text();
-    const error = await new Response(proc.stderr).text();
+    const [output] = await Promise.all([new Response(proc.stdout).text(), new Response(proc.stderr).text()]);
 
     await proc.exited;
 
     if (proc.exitCode !== 0) {
-      console.error(`go list -m -json all failed: ${error}`);
       return null;
     }
 
@@ -247,8 +238,7 @@ async function runGoListModules(dir: string): Promise<Set<string> | null> {
     }
 
     return selectedModules;
-  } catch (error) {
-    console.error('Failed to run go list:', error);
+  } catch {
     return null;
   }
 }
@@ -264,19 +254,16 @@ async function runGoModGraph(dir: string): Promise<string | null> {
       stderr: 'pipe',
     });
 
-    const output = await new Response(proc.stdout).text();
-    const error = await new Response(proc.stderr).text();
+    const [output] = await Promise.all([new Response(proc.stdout).text(), new Response(proc.stderr).text()]);
 
     await proc.exited;
 
     if (proc.exitCode !== 0) {
-      console.error(`go mod graph failed: ${error}`);
       return null;
     }
 
     return output;
-  } catch (error) {
-    console.error('Failed to run go mod graph:', error);
+  } catch {
     return null;
   }
 }
@@ -380,19 +367,6 @@ function parseModuleVersion(input: string): { path: string; version?: string } |
   if (!path || !version) return null;
 
   return { path, version };
-}
-
-/**
- * Find the line number where a module directive appears.
- */
-function findModuleLineNumber(lines: string[], moduleName: string): number | undefined {
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i]?.trim() || '';
-    if (line.startsWith('module ') && line.includes(moduleName)) {
-      return i + 1; // Line numbers are 1-indexed
-    }
-  }
-  return undefined;
 }
 
 /**

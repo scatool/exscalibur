@@ -121,12 +121,12 @@ export function convertOrtResult(result: OrtAnalyzerResult, options: ConvertOrtR
 
       for (const edge of depGraph.edges) {
         const fromNode = depGraph.nodes[edge.from];
-        const fromPackageIndex = fromNode?.pkg ?? 0;
-        const fromPackageId = depGraph.packages[fromPackageIndex];
+        if (fromNode?.pkg === undefined) continue;
+        const fromPackageId = depGraph.packages[fromNode.pkg];
 
         const toNode = depGraph.nodes[edge.to];
-        const toPackageIndex = toNode?.pkg ?? 0;
-        const toPackageId = depGraph.packages[toPackageIndex];
+        if (toNode?.pkg === undefined) continue;
+        const toPackageId = depGraph.packages[toNode.pkg];
 
         if (!fromPackageId || !toPackageId) {
           continue;

@@ -535,12 +535,6 @@
       ]
     },
     {
-      "purl": "pkg:cargo/serde_derive@1.0.196",
-      "evidence": [
-        "crates/oxide/fuzz/Cargo.lock#348"
-      ]
-    },
-    {
       "purl": "pkg:cargo/serde@1.0.163",
       "evidence": [
         "Cargo.lock#549"
@@ -550,6 +544,12 @@
       "purl": "pkg:cargo/serde@1.0.196",
       "evidence": [
         "crates/oxide/fuzz/Cargo.lock#339"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/serde_derive@1.0.196",
+      "evidence": [
+        "crates/oxide/fuzz/Cargo.lock#348"
       ]
     },
     {
@@ -708,6 +708,24 @@
       ]
     },
     {
+      "purl": "pkg:cargo/windows-sys@0.52.0",
+      "evidence": [
+        "Cargo.lock#765"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-sys@0.59.0",
+      "evidence": [
+        "Cargo.lock#765"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-targets@0.52.6",
+      "evidence": [
+        "Cargo.lock#783"
+      ]
+    },
+    {
       "purl": "pkg:cargo/windows_aarch64_gnullvm@0.52.6",
       "evidence": [
         "Cargo.lock#799"
@@ -753,24 +771,6 @@
       "purl": "pkg:cargo/windows_x86_64_msvc@0.52.6",
       "evidence": [
         "Cargo.lock#841"
-      ]
-    },
-    {
-      "purl": "pkg:cargo/windows-sys@0.52.0",
-      "evidence": [
-        "Cargo.lock#765"
-      ]
-    },
-    {
-      "purl": "pkg:cargo/windows-sys@0.59.0",
-      "evidence": [
-        "Cargo.lock#765"
-      ]
-    },
-    {
-      "purl": "pkg:cargo/windows-targets@0.52.6",
-      "evidence": [
-        "Cargo.lock#783"
       ]
     },
     {
@@ -945,24 +945,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40esbuild/android-arm@0.21.5",
-      "evidence": [
-        "pnpm-lock.yaml#720"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40esbuild/android-arm@0.23.1",
-      "evidence": [
-        "pnpm-lock.yaml#726"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40esbuild/android-arm@0.25.0",
-      "evidence": [
-        "pnpm-lock.yaml#732"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40esbuild/android-arm64@0.21.5",
       "evidence": [
         "pnpm-lock.yaml#702"
@@ -978,6 +960,24 @@
       "purl": "pkg:npm/%40esbuild/android-arm64@0.25.0",
       "evidence": [
         "pnpm-lock.yaml#714"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/android-arm@0.21.5",
+      "evidence": [
+        "pnpm-lock.yaml#720"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/android-arm@0.23.1",
+      "evidence": [
+        "pnpm-lock.yaml#726"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/android-arm@0.25.0",
+      "evidence": [
+        "pnpm-lock.yaml#732"
       ]
     },
     {
@@ -1071,24 +1071,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40esbuild/linux-arm@0.21.5",
-      "evidence": [
-        "pnpm-lock.yaml#846"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40esbuild/linux-arm@0.23.1",
-      "evidence": [
-        "pnpm-lock.yaml#852"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40esbuild/linux-arm@0.25.0",
-      "evidence": [
-        "pnpm-lock.yaml#858"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40esbuild/linux-arm64@0.21.5",
       "evidence": [
         "pnpm-lock.yaml#828"
@@ -1104,6 +1086,24 @@
       "purl": "pkg:npm/%40esbuild/linux-arm64@0.25.0",
       "evidence": [
         "pnpm-lock.yaml#840"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/linux-arm@0.21.5",
+      "evidence": [
+        "pnpm-lock.yaml#846"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/linux-arm@0.23.1",
+      "evidence": [
+        "pnpm-lock.yaml#852"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/linux-arm@0.25.0",
+      "evidence": [
+        "pnpm-lock.yaml#858"
       ]
     },
     {
@@ -1467,15 +1467,15 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.0",
-      "evidence": [
-        "pnpm-lock.yaml#1201"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40img/sharp-libvips-linux-arm64@1.2.0",
       "evidence": [
         "pnpm-lock.yaml#1196"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.0",
+      "evidence": [
+        "pnpm-lock.yaml#1201"
       ]
     },
     {
@@ -1509,15 +1509,15 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40img/sharp-linux-arm@0.34.3",
-      "evidence": [
-        "pnpm-lock.yaml#1237"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40img/sharp-linux-arm64@0.34.3",
       "evidence": [
         "pnpm-lock.yaml#1231"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40img/sharp-linux-arm@0.34.3",
+      "evidence": [
+        "pnpm-lock.yaml#1237"
       ]
     },
     {
@@ -6670,17 +6670,17 @@
       ]
     },
     {
+      "from": "pkg:cargo/serde@1.0.196",
+      "to": [
+        "pkg:cargo/serde_derive@1.0.196"
+      ]
+    },
+    {
       "from": "pkg:cargo/serde_derive@1.0.196",
       "to": [
         "pkg:cargo/proc-macro2@1.0.78",
         "pkg:cargo/quote@1.0.35",
         "pkg:cargo/syn@2.0.48"
-      ]
-    },
-    {
-      "from": "pkg:cargo/serde@1.0.196",
-      "to": [
-        "pkg:cargo/serde_derive@1.0.196"
       ]
     },
     {
@@ -7050,15 +7050,15 @@
       ]
     },
     {
-      "from": "pkg:npm/%40img/sharp-linux-arm@0.34.3",
-      "to": [
-        "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.0"
-      ]
-    },
-    {
       "from": "pkg:npm/%40img/sharp-linux-arm64@0.34.3",
       "to": [
         "pkg:npm/%40img/sharp-libvips-linux-arm64@1.2.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/%40img/sharp-linux-arm@0.34.3",
+      "to": [
+        "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.0"
       ]
     },
     {

@@ -1831,12 +1831,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/base@0.11.2",
-      "evidence": [
-        "package-lock.json#5680"
-      ]
-    },
-    {
       "purl": "pkg:npm/base64-js@1.3.0",
       "evidence": [
         "package-lock.json#5735"
@@ -1846,6 +1840,12 @@
       "purl": "pkg:npm/base64-js@1.5.1",
       "evidence": [
         "package-lock.json#5799"
+      ]
+    },
+    {
+      "purl": "pkg:npm/base@0.11.2",
+      "evidence": [
+        "package-lock.json#5680"
       ]
     },
     {
@@ -5917,15 +5917,15 @@
       ]
     },
     {
-      "purl": "pkg:npm/merge@2.1.1",
-      "evidence": [
-        "package-lock.json#15117"
-      ]
-    },
-    {
       "purl": "pkg:npm/merge2@1.2.3",
       "evidence": [
         "package-lock.json#15160"
+      ]
+    },
+    {
+      "purl": "pkg:npm/merge@2.1.1",
+      "evidence": [
+        "package-lock.json#15117"
       ]
     },
     {
@@ -8209,12 +8209,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/string_decoder@1.1.1",
-      "evidence": [
-        "package-lock.json#9630"
-      ]
-    },
-    {
       "purl": "pkg:npm/string-length@2.0.0",
       "evidence": [
         "package-lock.json#18791"
@@ -8254,6 +8248,12 @@
       "purl": "pkg:npm/string.prototype.trimstart@1.0.4",
       "evidence": [
         "package-lock.json#18944"
+      ]
+    },
+    {
+      "purl": "pkg:npm/string_decoder@1.1.1",
+      "evidence": [
+        "package-lock.json#9630"
       ]
     },
     {
@@ -8437,15 +8437,15 @@
       ]
     },
     {
-      "purl": "pkg:npm/through@2.3.8",
-      "evidence": [
-        "package-lock.json#19554"
-      ]
-    },
-    {
       "purl": "pkg:npm/through2@2.0.5",
       "evidence": [
         "package-lock.json#19560"
+      ]
+    },
+    {
+      "purl": "pkg:npm/through@2.3.8",
+      "evidence": [
+        "package-lock.json#19554"
       ]
     },
     {
@@ -16196,12 +16196,6 @@
       ]
     },
     {
-      "from": "pkg:npm/string_decoder@1.1.1",
-      "to": [
-        "pkg:npm/safe-buffer@5.1.2"
-      ]
-    },
-    {
       "from": "pkg:npm/string-length@2.0.0",
       "to": [
         "pkg:npm/astral-regex@1.0.0",
@@ -16251,6 +16245,12 @@
       "to": [
         "pkg:npm/call-bind@1.0.2",
         "pkg:npm/define-properties@1.1.3"
+      ]
+    },
+    {
+      "from": "pkg:npm/string_decoder@1.1.1",
+      "to": [
+        "pkg:npm/safe-buffer@5.1.2"
       ]
     },
     {

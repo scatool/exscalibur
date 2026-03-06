@@ -1,5 +1,9 @@
-import { type AnalyzerResult, type Extractor, filesExtractor } from '@scatool/analyzer-core/src/index.ts';
-import { Glob } from 'bun';
+import {
+  type AnalyzerResult,
+  type Extractor,
+  filesExtractor,
+  scanAndMarkFiles,
+} from '@scatool/analyzer-core/src/index.ts';
 import { PackageURL } from 'packageurl-js';
 import { parseContainerImage } from '@scatool/analyzer-plugin-containers/src/dockerfile/index.ts';
 
@@ -7,13 +11,7 @@ export const extractor: Extractor = filesExtractor({
   name: 'github-actions',
   version: 1,
   markFiles: async function (codebase: string) {
-    const glob = new Glob('.github/workflows/**/*.{yml,yaml}');
-    for await (const file of glob.scan({
-      cwd: codebase,
-      dot: true,
-    })) {
-      this.markFile(file);
-    }
+    await scanAndMarkFiles(this, codebase, '.github/workflows/**/*.{yml,yaml}', []);
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
     const content = await Bun.file(file).text();
@@ -21,7 +19,7 @@ export const extractor: Extractor = filesExtractor({
   },
 });
 
-export async function extractWorkflow(content: string, filePath?: string): Promise<AnalyzerResult> {
+export function extractWorkflow(content: string, filePath?: string): AnalyzerResult {
   const workflow = Bun.YAML.parse(content);
   const packages: Array<{ purl: string; lineNumber?: number }> = [];
 

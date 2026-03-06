@@ -11,7 +11,7 @@
 /**
  * Represents a parsed package entry from yarn.lock
  */
-export interface YarnLockPackage {
+interface YarnLockPackage {
   /** The resolved version of this package */
   version: string;
   /** The URL where the package was resolved from */
@@ -27,7 +27,7 @@ export interface YarnLockPackage {
 /**
  * Parsed yarn.lock file structure
  */
-export interface YarnLockfile {
+interface YarnLockfile {
   /** Map of package key patterns to their resolved packages */
   packages: Map<string, YarnLockPackage>;
 }

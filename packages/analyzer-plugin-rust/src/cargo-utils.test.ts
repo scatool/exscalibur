@@ -1,11 +1,5 @@
 import { describe, expect, test } from 'bun:test';
-import { CARGO_DEPENDENCY_SCOPES, createCargoPurl } from './cargo-utils.ts';
-
-describe('CARGO_DEPENDENCY_SCOPES', () => {
-  test('contains expected scopes', () => {
-    expect(CARGO_DEPENDENCY_SCOPES).toEqual(['dependencies']);
-  });
-});
+import { createCargoPurl } from './cargo-utils.ts';
 
 describe('createCargoPurl', () => {
   test('creates PURL for simple package', () => {

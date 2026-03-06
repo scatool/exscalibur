@@ -3,11 +3,15 @@ import {
   type DependencyScope,
   type Extractor,
   filesExtractor,
-  type Package,
-  type Relationship,
   type Subproject,
+  addRelationship,
+  ensurePackageExists,
+  addPackageEvidence,
+  convertPackageMapToArray,
+  convertRelationshipsMapToArray,
+  initializeExtractionMaps,
+  scanAndMarkFiles,
 } from '@scatool/analyzer-core/src/index.ts';
-import { Glob } from 'bun';
 import { PackageURL } from 'packageurl-js';
 import { dirname, join } from 'node:path';
 import { existsSync } from 'node:fs';
@@ -65,21 +69,11 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
     ignore: ['**/build/**', '**/.gradle/**'],
   }),
   markFiles: async function (codebase: string, options: GradleOptions) {
-    const ignorePatterns = options.ignore ?? [];
-    const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));
-
-    const glob = new Glob('**/build.gradle{,.kts}');
-    for await (const file of glob.scan({ cwd: codebase, onlyFiles: true })) {
-      const shouldIgnore = ignoreGlobs.some((glob) => glob.match(file));
-      if (!shouldIgnore) {
-        this.markFile(file);
-      }
-    }
+    await scanAndMarkFiles(this, codebase, '**/build.gradle{,.kts}', options.ignore ?? []);
   },
   extractFile: async (file: string, options: GradleOptions): Promise<AnalyzerResult> => {
     const dir = dirname(file);
-    const packageMap = new Map<string, { purl: string; evidence: Set<string> }>();
-    const relationshipsMap = new Map<string, Set<string>>();
+    const { packageMap, relationshipsMap } = initializeExtractionMaps();
     const subprojects: Subproject[] = [];
     const issues: AnalyzerResult['issues'] = [];
 
@@ -98,7 +92,7 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
           packages: [],
           subprojects: [],
           relationships: [],
-          issues: [],
+          issues,
         };
       }
 
@@ -296,12 +290,8 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
 
           // Only add external packages to package map (not internal projects)
           if (!dep.isProject) {
-            // Add to package map with evidence (includes both direct and transitive)
-            if (!packageMap.has(depPurl)) {
-              packageMap.set(depPurl, { purl: depPurl, evidence: new Set([file]) });
-            } else {
-              packageMap.get(depPurl)!.evidence.add(file);
-            }
+            ensurePackageExists(packageMap, depPurl);
+            addPackageEvidence(packageMap, depPurl, file);
           }
 
           // Add all direct dependencies to scopes (both projects and external packages)
@@ -317,12 +307,7 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
 
           // Add relationships between external dependencies only (not from/to projects)
           if (!dep.isProject && dep.dependencies && dep.dependencies.length > 0) {
-            if (!relationshipsMap.has(depPurl)) {
-              relationshipsMap.set(depPurl, new Set());
-            }
-
             for (const transitiveDep of dep.dependencies) {
-              // Find the corresponding dependency node to get its coordinates
               const transitiveNode = config.allDependencies.find((d) => d.id === transitiveDep);
               if (transitiveNode && !transitiveNode.isProject) {
                 const transitivePurl = createMavenPurl(
@@ -331,7 +316,7 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
                   transitiveNode.coordinates.version,
                   transitiveNode.repositoryUrl,
                 );
-                relationshipsMap.get(depPurl)!.add(transitivePurl);
+                addRelationship(relationshipsMap, depPurl, transitivePurl);
               }
             }
           }
@@ -372,16 +357,8 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
       });
     }
 
-    // Convert maps to arrays
-    const packages: Package[] = Array.from(packageMap.values()).map(({ purl, evidence }) => ({
-      purl,
-      evidence: Array.from(evidence),
-    }));
-
-    const relationships: Relationship[] = Array.from(relationshipsMap.entries()).map(([from, toSet]) => ({
-      from,
-      to: Array.from(toSet),
-    }));
+    const packages = convertPackageMapToArray(packageMap);
+    const relationships = convertRelationshipsMapToArray(relationshipsMap);
 
     return {
       packages,
@@ -392,13 +369,13 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
   },
 });
 
+const MAVEN_CENTRAL_URLS = ['https://repo.maven.apache.org/maven2', 'https://repo1.maven.org/maven2'] as const;
+
 function createMavenPurl(group: string, name: string, version: string, repoUrl?: string): string {
   const namespace = group || null;
 
   const isMavenCentral =
-    repoUrl === 'https://repo.maven.apache.org/maven2' ||
-    repoUrl === 'https://repo1.maven.org/maven2' ||
-    repoUrl?.startsWith('file:'); // Local Maven cache (file: URLs are machine-specific)
+    MAVEN_CENTRAL_URLS.includes(repoUrl as (typeof MAVEN_CENTRAL_URLS)[number]) || repoUrl?.startsWith('file:'); // Local Maven cache (file: URLs are machine-specific)
 
   const qualifiers = !isMavenCentral && repoUrl ? { repository_url: repoUrl } : null;
 

@@ -1,15 +1,16 @@
-import { type AnalyzerResult, type Extractor, filesExtractor } from '@scatool/analyzer-core/src/index.ts';
-import { Glob } from 'bun';
+import {
+  type AnalyzerResult,
+  type Extractor,
+  filesExtractor,
+  scanAndMarkFiles,
+} from '@scatool/analyzer-core/src/index.ts';
 import { PackageURL } from 'packageurl-js';
 
 export const extractor: Extractor = filesExtractor({
   name: 'cyclonedx',
   version: 1,
   markFiles: async function (codebase: string) {
-    const glob = new Glob('**/*.cdx.json');
-    for await (const file of glob.scan({ cwd: codebase, onlyFiles: true, absolute: true })) {
-      this.markFile(file);
-    }
+    await scanAndMarkFiles(this, codebase, '**/*.cdx.json', []);
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
     const content = await Bun.file(file).text();
@@ -44,7 +45,7 @@ type CycloneDXBom = {
   dependencies?: CycloneDXDependency[];
 };
 
-export async function extractCycloneDX(content: string, filePath?: string): Promise<AnalyzerResult> {
+export function extractCycloneDX(content: string, filePath?: string): AnalyzerResult {
   try {
     const bom: CycloneDXBom = JSON.parse(content);
 
@@ -54,7 +55,15 @@ export async function extractCycloneDX(content: string, filePath?: string): Prom
         packages: [],
         subprojects: [],
         relationships: [],
-        issues: [],
+        issues: filePath
+          ? [
+              {
+                message: `Not a CycloneDX BOM (bomFormat: ${bom.bomFormat ?? 'missing'})`,
+                severity: 'WARNING',
+                file: filePath,
+              },
+            ]
+          : [],
       };
     }
 
@@ -158,12 +167,19 @@ export async function extractCycloneDX(content: string, filePath?: string): Prom
       issues: [],
     };
   } catch (error) {
-    // If JSON parsing fails or any other error, return empty result
     return {
       packages: [],
       subprojects: [],
       relationships: [],
-      issues: [],
+      issues: filePath
+        ? [
+            {
+              message: `Failed to parse CycloneDX BOM: ${error instanceof Error ? error.message : String(error)}`,
+              severity: 'ERROR',
+              file: filePath,
+            },
+          ]
+        : [],
     };
   }
 }

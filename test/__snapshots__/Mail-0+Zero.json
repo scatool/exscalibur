@@ -667,30 +667,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40esbuild/android-arm@0.18.20",
-      "evidence": [
-        "pnpm-lock.yaml#1373"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40esbuild/android-arm@0.21.5",
-      "evidence": [
-        "pnpm-lock.yaml#1379"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40esbuild/android-arm@0.25.4",
-      "evidence": [
-        "pnpm-lock.yaml#1385"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40esbuild/android-arm@0.25.5",
-      "evidence": [
-        "pnpm-lock.yaml#1391"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40esbuild/android-arm64@0.18.20",
       "evidence": [
         "pnpm-lock.yaml#1349"
@@ -712,6 +688,30 @@
       "purl": "pkg:npm/%40esbuild/android-arm64@0.25.5",
       "evidence": [
         "pnpm-lock.yaml#1367"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/android-arm@0.18.20",
+      "evidence": [
+        "pnpm-lock.yaml#1373"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/android-arm@0.21.5",
+      "evidence": [
+        "pnpm-lock.yaml#1379"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/android-arm@0.25.4",
+      "evidence": [
+        "pnpm-lock.yaml#1385"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/android-arm@0.25.5",
+      "evidence": [
+        "pnpm-lock.yaml#1391"
       ]
     },
     {
@@ -835,30 +835,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40esbuild/linux-arm@0.18.20",
-      "evidence": [
-        "pnpm-lock.yaml#1541"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40esbuild/linux-arm@0.21.5",
-      "evidence": [
-        "pnpm-lock.yaml#1547"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40esbuild/linux-arm@0.25.4",
-      "evidence": [
-        "pnpm-lock.yaml#1553"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40esbuild/linux-arm@0.25.5",
-      "evidence": [
-        "pnpm-lock.yaml#1559"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40esbuild/linux-arm64@0.18.20",
       "evidence": [
         "pnpm-lock.yaml#1517"
@@ -880,6 +856,30 @@
       "purl": "pkg:npm/%40esbuild/linux-arm64@0.25.5",
       "evidence": [
         "pnpm-lock.yaml#1535"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/linux-arm@0.18.20",
+      "evidence": [
+        "pnpm-lock.yaml#1541"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/linux-arm@0.21.5",
+      "evidence": [
+        "pnpm-lock.yaml#1547"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/linux-arm@0.25.4",
+      "evidence": [
+        "pnpm-lock.yaml#1553"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/linux-arm@0.25.5",
+      "evidence": [
+        "pnpm-lock.yaml#1559"
       ]
     },
     {
@@ -1471,15 +1471,15 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.0.5",
-      "evidence": [
-        "pnpm-lock.yaml#2068"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40img/sharp-libvips-linux-arm64@1.0.4",
       "evidence": [
         "pnpm-lock.yaml#2063"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.0.5",
+      "evidence": [
+        "pnpm-lock.yaml#2068"
       ]
     },
     {
@@ -1507,15 +1507,15 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40img/sharp-linux-arm@0.33.5",
-      "evidence": [
-        "pnpm-lock.yaml#2099"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40img/sharp-linux-arm64@0.33.5",
       "evidence": [
         "pnpm-lock.yaml#2093"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40img/sharp-linux-arm@0.33.5",
+      "evidence": [
+        "pnpm-lock.yaml#2099"
       ]
     },
     {
@@ -2063,15 +2063,15 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40opentelemetry/instrumentation-mysql@0.45.1",
-      "evidence": [
-        "pnpm-lock.yaml#2498"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40opentelemetry/instrumentation-mysql2@0.45.2",
       "evidence": [
         "pnpm-lock.yaml#2492"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40opentelemetry/instrumentation-mysql@0.45.1",
+      "evidence": [
+        "pnpm-lock.yaml#2498"
       ]
     },
     {
@@ -3295,15 +3295,15 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40sentry/cli-linux-arm@2.50.0",
-      "evidence": [
-        "pnpm-lock.yaml#4047"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40sentry/cli-linux-arm64@2.50.0",
       "evidence": [
         "pnpm-lock.yaml#4041"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40sentry/cli-linux-arm@2.50.0",
+      "evidence": [
+        "pnpm-lock.yaml#4047"
       ]
     },
     {
@@ -10538,18 +10538,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/string_decoder@1.1.1",
-      "evidence": [
-        "pnpm-lock.yaml#8989"
-      ]
-    },
-    {
-      "purl": "pkg:npm/string_decoder@1.3.0",
-      "evidence": [
-        "pnpm-lock.yaml#8992"
-      ]
-    },
-    {
       "purl": "pkg:npm/string-collapse-leading-whitespace@7.0.9",
       "evidence": [
         "pnpm-lock.yaml#8943"
@@ -10620,6 +10608,18 @@
       "purl": "pkg:npm/string.prototype.trimstart@1.0.8",
       "evidence": [
         "pnpm-lock.yaml#8985"
+      ]
+    },
+    {
+      "purl": "pkg:npm/string_decoder@1.1.1",
+      "evidence": [
+        "pnpm-lock.yaml#8989"
+      ]
+    },
+    {
+      "purl": "pkg:npm/string_decoder@1.3.0",
+      "evidence": [
+        "pnpm-lock.yaml#8992"
       ]
     },
     {
@@ -12888,15 +12888,15 @@
       ]
     },
     {
-      "from": "pkg:npm/%40img/sharp-linux-arm@0.33.5",
-      "to": [
-        "pkg:npm/%40img/sharp-libvips-linux-arm@1.0.5"
-      ]
-    },
-    {
       "from": "pkg:npm/%40img/sharp-linux-arm64@0.33.5",
       "to": [
         "pkg:npm/%40img/sharp-libvips-linux-arm64@1.0.4"
+      ]
+    },
+    {
+      "from": "pkg:npm/%40img/sharp-linux-arm@0.33.5",
+      "to": [
+        "pkg:npm/%40img/sharp-libvips-linux-arm@1.0.5"
       ]
     },
     {
@@ -13470,21 +13470,21 @@
       ]
     },
     {
-      "from": "pkg:npm/%40opentelemetry/instrumentation-mysql@0.45.1",
-      "to": [
-        "pkg:npm/%40opentelemetry/api@1.9.0",
-        "pkg:npm/%40opentelemetry/instrumentation@0.57.2",
-        "pkg:npm/%40opentelemetry/semantic-conventions@1.36.0",
-        "pkg:npm/%40types/mysql@2.15.26"
-      ]
-    },
-    {
       "from": "pkg:npm/%40opentelemetry/instrumentation-mysql2@0.45.2",
       "to": [
         "pkg:npm/%40opentelemetry/api@1.9.0",
         "pkg:npm/%40opentelemetry/instrumentation@0.57.2",
         "pkg:npm/%40opentelemetry/semantic-conventions@1.36.0",
         "pkg:npm/%40opentelemetry/sql-common@0.40.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/%40opentelemetry/instrumentation-mysql@0.45.1",
+      "to": [
+        "pkg:npm/%40opentelemetry/api@1.9.0",
+        "pkg:npm/%40opentelemetry/instrumentation@0.57.2",
+        "pkg:npm/%40opentelemetry/semantic-conventions@1.36.0",
+        "pkg:npm/%40types/mysql@2.15.26"
       ]
     },
     {
@@ -20802,18 +20802,6 @@
       ]
     },
     {
-      "from": "pkg:npm/string_decoder@1.1.1",
-      "to": [
-        "pkg:npm/safe-buffer@5.1.2"
-      ]
-    },
-    {
-      "from": "pkg:npm/string_decoder@1.3.0",
-      "to": [
-        "pkg:npm/safe-buffer@5.2.1"
-      ]
-    },
-    {
       "from": "pkg:npm/string-left-right@6.0.20",
       "to": [
         "pkg:npm/codsen-utils@1.6.7",
@@ -20900,6 +20888,18 @@
         "pkg:npm/call-bind@1.0.8",
         "pkg:npm/define-properties@1.2.1",
         "pkg:npm/es-object-atoms@1.1.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/string_decoder@1.1.1",
+      "to": [
+        "pkg:npm/safe-buffer@5.1.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/string_decoder@1.3.0",
+      "to": [
+        "pkg:npm/safe-buffer@5.2.1"
       ]
     },
     {

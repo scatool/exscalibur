@@ -68,7 +68,7 @@ export interface PackageLockPackage {
 /**
  * The structure of package-lock.json
  */
-export interface PackageLock {
+interface PackageLock {
   /** Lockfile version (1, 2, or 3) */
   lockfileVersion: number;
   /** Root package name */
@@ -87,7 +87,11 @@ export interface PackageLock {
  * Parse a package-lock.json file
  */
 export function parsePackageLock(content: string): PackageLock {
-  return JSON.parse(content) as PackageLock;
+  try {
+    return JSON.parse(content) as PackageLock;
+  } catch (error) {
+    throw new Error(`Failed to parse package-lock.json: ${error instanceof Error ? error.message : String(error)}`);
+  }
 }
 
 /**

@@ -125,15 +125,15 @@ exports[`basic 1`] = `
     },
     {
       "evidence": [
-        "package-lock.json#106",
-      ],
-      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.0.5",
-    },
-    {
-      "evidence": [
         "package-lock.json#122",
       ],
       "purl": "pkg:npm/%40img/sharp-libvips-linux-arm64@1.0.4",
+    },
+    {
+      "evidence": [
+        "package-lock.json#106",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.0.5",
     },
     {
       "evidence": [
@@ -161,15 +161,15 @@ exports[`basic 1`] = `
     },
     {
       "evidence": [
-        "package-lock.json#202",
-      ],
-      "purl": "pkg:npm/%40img/sharp-linux-arm@0.33.5",
-    },
-    {
-      "evidence": [
         "package-lock.json#224",
       ],
       "purl": "pkg:npm/%40img/sharp-linux-arm64@0.33.5",
+    },
+    {
+      "evidence": [
+        "package-lock.json#202",
+      ],
+      "purl": "pkg:npm/%40img/sharp-linux-arm@0.33.5",
     },
     {
       "evidence": [
@@ -444,15 +444,15 @@ exports[`basic 1`] = `
       ],
     },
     {
-      "from": "pkg:npm/%40img/sharp-linux-arm@0.33.5",
-      "to": [
-        "pkg:npm/%40img/sharp-libvips-linux-arm@1.0.5",
-      ],
-    },
-    {
       "from": "pkg:npm/%40img/sharp-linux-arm64@0.33.5",
       "to": [
         "pkg:npm/%40img/sharp-libvips-linux-arm64@1.0.4",
+      ],
+    },
+    {
+      "from": "pkg:npm/%40img/sharp-linux-arm@0.33.5",
+      "to": [
+        "pkg:npm/%40img/sharp-libvips-linux-arm@1.0.5",
       ],
     },
     {
@@ -1611,15 +1611,15 @@ exports[`monorepo 1`] = `
     },
     {
       "evidence": [
-        "b/package-lock.json#34",
-      ],
-      "purl": "pkg:npm/%40esbuild/android-arm@0.24.2",
-    },
-    {
-      "evidence": [
         "b/package-lock.json#50",
       ],
       "purl": "pkg:npm/%40esbuild/android-arm64@0.24.2",
+    },
+    {
+      "evidence": [
+        "b/package-lock.json#34",
+      ],
+      "purl": "pkg:npm/%40esbuild/android-arm@0.24.2",
     },
     {
       "evidence": [
@@ -1653,15 +1653,15 @@ exports[`monorepo 1`] = `
     },
     {
       "evidence": [
-        "b/package-lock.json#146",
-      ],
-      "purl": "pkg:npm/%40esbuild/linux-arm@0.24.2",
-    },
-    {
-      "evidence": [
         "b/package-lock.json#162",
       ],
       "purl": "pkg:npm/%40esbuild/linux-arm64@0.24.2",
+    },
+    {
+      "evidence": [
+        "b/package-lock.json#146",
+      ],
+      "purl": "pkg:npm/%40esbuild/linux-arm@0.24.2",
     },
     {
       "evidence": [
@@ -1779,15 +1779,15 @@ exports[`monorepo 1`] = `
     },
     {
       "evidence": [
-        "a/package-lock.json#104",
-      ],
-      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.0.5",
-    },
-    {
-      "evidence": [
         "a/package-lock.json#120",
       ],
       "purl": "pkg:npm/%40img/sharp-libvips-linux-arm64@1.0.4",
+    },
+    {
+      "evidence": [
+        "a/package-lock.json#104",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.0.5",
     },
     {
       "evidence": [
@@ -1815,15 +1815,15 @@ exports[`monorepo 1`] = `
     },
     {
       "evidence": [
-        "a/package-lock.json#200",
-      ],
-      "purl": "pkg:npm/%40img/sharp-linux-arm@0.33.5",
-    },
-    {
-      "evidence": [
         "a/package-lock.json#222",
       ],
       "purl": "pkg:npm/%40img/sharp-linux-arm64@0.33.5",
+    },
+    {
+      "evidence": [
+        "a/package-lock.json#200",
+      ],
+      "purl": "pkg:npm/%40img/sharp-linux-arm@0.33.5",
     },
     {
       "evidence": [
@@ -2258,15 +2258,15 @@ exports[`monorepo 1`] = `
       ],
     },
     {
-      "from": "pkg:npm/%40img/sharp-linux-arm@0.33.5",
-      "to": [
-        "pkg:npm/%40img/sharp-libvips-linux-arm@1.0.5",
-      ],
-    },
-    {
       "from": "pkg:npm/%40img/sharp-linux-arm64@0.33.5",
       "to": [
         "pkg:npm/%40img/sharp-libvips-linux-arm64@1.0.4",
+      ],
+    },
+    {
+      "from": "pkg:npm/%40img/sharp-linux-arm@0.33.5",
+      "to": [
+        "pkg:npm/%40img/sharp-libvips-linux-arm@1.0.5",
       ],
     },
     {
@@ -2615,15 +2615,15 @@ exports[`workspace 1`] = `
     },
     {
       "evidence": [
-        "package-lock.json#69",
-      ],
-      "purl": "pkg:npm/%40esbuild/android-arm@0.24.2",
-    },
-    {
-      "evidence": [
         "package-lock.json#85",
       ],
       "purl": "pkg:npm/%40esbuild/android-arm64@0.24.2",
+    },
+    {
+      "evidence": [
+        "package-lock.json#69",
+      ],
+      "purl": "pkg:npm/%40esbuild/android-arm@0.24.2",
     },
     {
       "evidence": [
@@ -2657,15 +2657,15 @@ exports[`workspace 1`] = `
     },
     {
       "evidence": [
-        "package-lock.json#181",
-      ],
-      "purl": "pkg:npm/%40esbuild/linux-arm@0.24.2",
-    },
-    {
-      "evidence": [
         "package-lock.json#197",
       ],
       "purl": "pkg:npm/%40esbuild/linux-arm64@0.24.2",
+    },
+    {
+      "evidence": [
+        "package-lock.json#181",
+      ],
+      "purl": "pkg:npm/%40esbuild/linux-arm@0.24.2",
     },
     {
       "evidence": [
@@ -2783,15 +2783,15 @@ exports[`workspace 1`] = `
     },
     {
       "evidence": [
-        "package-lock.json#529",
-      ],
-      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.0.5",
-    },
-    {
-      "evidence": [
         "package-lock.json#545",
       ],
       "purl": "pkg:npm/%40img/sharp-libvips-linux-arm64@1.0.4",
+    },
+    {
+      "evidence": [
+        "package-lock.json#529",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.0.5",
     },
     {
       "evidence": [
@@ -2819,15 +2819,15 @@ exports[`workspace 1`] = `
     },
     {
       "evidence": [
-        "package-lock.json#625",
-      ],
-      "purl": "pkg:npm/%40img/sharp-linux-arm@0.33.5",
-    },
-    {
-      "evidence": [
         "package-lock.json#647",
       ],
       "purl": "pkg:npm/%40img/sharp-linux-arm64@0.33.5",
+    },
+    {
+      "evidence": [
+        "package-lock.json#625",
+      ],
+      "purl": "pkg:npm/%40img/sharp-linux-arm@0.33.5",
     },
     {
       "evidence": [
@@ -3294,15 +3294,15 @@ exports[`workspace 1`] = `
       ],
     },
     {
-      "from": "pkg:npm/%40img/sharp-linux-arm@0.33.5",
-      "to": [
-        "pkg:npm/%40img/sharp-libvips-linux-arm@1.0.5",
-      ],
-    },
-    {
       "from": "pkg:npm/%40img/sharp-linux-arm64@0.33.5",
       "to": [
         "pkg:npm/%40img/sharp-libvips-linux-arm64@1.0.4",
+      ],
+    },
+    {
+      "from": "pkg:npm/%40img/sharp-linux-arm@0.33.5",
+      "to": [
+        "pkg:npm/%40img/sharp-libvips-linux-arm@1.0.5",
       ],
     },
     {

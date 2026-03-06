@@ -1717,36 +1717,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40esbuild/android-arm@0.18.20",
-      "evidence": [
-        "yarn.lock#5278"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40esbuild/android-arm@0.19.8",
-      "evidence": [
-        "yarn.lock#5285"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40esbuild/android-arm@0.20.2",
-      "evidence": [
-        "yarn.lock#5292"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40esbuild/android-arm@0.21.5",
-      "evidence": [
-        "yarn.lock#5299"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40esbuild/android-arm@0.25.2",
-      "evidence": [
-        "yarn.lock#5306"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40esbuild/android-arm64@0.18.20",
       "evidence": [
         "yarn.lock#5243"
@@ -1774,6 +1744,36 @@
       "purl": "pkg:npm/%40esbuild/android-arm64@0.25.2",
       "evidence": [
         "yarn.lock#5271"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/android-arm@0.18.20",
+      "evidence": [
+        "yarn.lock#5278"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/android-arm@0.19.8",
+      "evidence": [
+        "yarn.lock#5285"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/android-arm@0.20.2",
+      "evidence": [
+        "yarn.lock#5292"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/android-arm@0.21.5",
+      "evidence": [
+        "yarn.lock#5299"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/android-arm@0.25.2",
+      "evidence": [
+        "yarn.lock#5306"
       ]
     },
     {
@@ -1927,36 +1927,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40esbuild/linux-arm@0.18.20",
-      "evidence": [
-        "yarn.lock#5523"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40esbuild/linux-arm@0.19.8",
-      "evidence": [
-        "yarn.lock#5530"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40esbuild/linux-arm@0.20.2",
-      "evidence": [
-        "yarn.lock#5537"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40esbuild/linux-arm@0.21.5",
-      "evidence": [
-        "yarn.lock#5544"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40esbuild/linux-arm@0.25.2",
-      "evidence": [
-        "yarn.lock#5551"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40esbuild/linux-arm64@0.18.20",
       "evidence": [
         "yarn.lock#5488"
@@ -1984,6 +1954,36 @@
       "purl": "pkg:npm/%40esbuild/linux-arm64@0.25.2",
       "evidence": [
         "yarn.lock#5516"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/linux-arm@0.18.20",
+      "evidence": [
+        "yarn.lock#5523"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/linux-arm@0.19.8",
+      "evidence": [
+        "yarn.lock#5530"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/linux-arm@0.20.2",
+      "evidence": [
+        "yarn.lock#5537"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/linux-arm@0.21.5",
+      "evidence": [
+        "yarn.lock#5544"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/linux-arm@0.25.2",
+      "evidence": [
+        "yarn.lock#5551"
       ]
     },
     {
@@ -2971,18 +2971,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.0.5",
-      "evidence": [
-        "yarn.lock#7205"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.0",
-      "evidence": [
-        "yarn.lock#7212"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40img/sharp-libvips-linux-arm64@1.0.4",
       "evidence": [
         "yarn.lock#7191"
@@ -2992,6 +2980,18 @@
       "purl": "pkg:npm/%40img/sharp-libvips-linux-arm64@1.2.0",
       "evidence": [
         "yarn.lock#7198"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.0.5",
+      "evidence": [
+        "yarn.lock#7205"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.0",
+      "evidence": [
+        "yarn.lock#7212"
       ]
     },
     {
@@ -3049,18 +3049,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40img/sharp-linux-arm@0.33.5",
-      "evidence": [
-        "yarn.lock#7306"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40img/sharp-linux-arm@0.34.3",
-      "evidence": [
-        "yarn.lock#7318"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40img/sharp-linux-arm64@0.33.5",
       "evidence": [
         "yarn.lock#7282"
@@ -3070,6 +3058,18 @@
       "purl": "pkg:npm/%40img/sharp-linux-arm64@0.34.3",
       "evidence": [
         "yarn.lock#7294"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40img/sharp-linux-arm@0.33.5",
+      "evidence": [
+        "yarn.lock#7306"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40img/sharp-linux-arm@0.34.3",
+      "evidence": [
+        "yarn.lock#7318"
       ]
     },
     {
@@ -4039,15 +4039,15 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40msgpackr-extract/msgpackr-extract-linux-arm@3.0.3",
-      "evidence": [
-        "yarn.lock#9335"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40msgpackr-extract/msgpackr-extract-linux-arm64@3.0.3",
       "evidence": [
         "yarn.lock#9328"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40msgpackr-extract/msgpackr-extract-linux-arm@3.0.3",
+      "evidence": [
+        "yarn.lock#9335"
       ]
     },
     {
@@ -4915,15 +4915,15 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40opentelemetry/instrumentation-mysql@0.45.1",
-      "evidence": [
-        "yarn.lock#10974"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40opentelemetry/instrumentation-mysql2@0.45.2",
       "evidence": [
         "yarn.lock#10961"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40opentelemetry/instrumentation-mysql@0.45.1",
+      "evidence": [
+        "yarn.lock#10974"
       ]
     },
     {
@@ -7093,15 +7093,15 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40sentry/cli-linux-arm@2.42.2",
-      "evidence": [
-        "yarn.lock#15524"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40sentry/cli-linux-arm64@2.42.2",
       "evidence": [
         "yarn.lock#15517"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40sentry/cli-linux-arm@2.42.2",
+      "evidence": [
+        "yarn.lock#15524"
       ]
     },
     {
@@ -15739,12 +15739,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/http_ece@1.2.0",
-      "evidence": [
-        "yarn.lock#30726"
-      ]
-    },
-    {
       "purl": "pkg:npm/http-cache-semantics@4.1.1",
       "evidence": [
         "yarn.lock#30575"
@@ -15820,6 +15814,12 @@
       "purl": "pkg:npm/http@0.0.1-security",
       "evidence": [
         "yarn.lock#30719"
+      ]
+    },
+    {
+      "purl": "pkg:npm/http_ece@1.2.0",
+      "evidence": [
+        "yarn.lock#30726"
       ]
     },
     {
@@ -19897,15 +19897,15 @@
       ]
     },
     {
-      "purl": "pkg:npm/oauth@0.9.15",
-      "evidence": [
-        "yarn.lock#38020"
-      ]
-    },
-    {
       "purl": "pkg:npm/oauth4webapi@3.7.0",
       "evidence": [
         "yarn.lock#38013"
+      ]
+    },
+    {
+      "purl": "pkg:npm/oauth@0.9.15",
+      "evidence": [
+        "yarn.lock#38020"
       ]
     },
     {
@@ -21697,15 +21697,15 @@
       ]
     },
     {
-      "purl": "pkg:npm/rc@1.2.8",
-      "evidence": [
-        "yarn.lock#40847"
-      ]
-    },
-    {
       "purl": "pkg:npm/rc9@2.1.2",
       "evidence": [
         "yarn.lock#40837"
+      ]
+    },
+    {
+      "purl": "pkg:npm/rc@1.2.8",
+      "evidence": [
+        "yarn.lock#40847"
       ]
     },
     {
@@ -23803,24 +23803,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/string_decoder@0.10.31",
-      "evidence": [
-        "yarn.lock#45188"
-      ]
-    },
-    {
-      "purl": "pkg:npm/string_decoder@1.1.1",
-      "evidence": [
-        "yarn.lock#45195"
-      ]
-    },
-    {
-      "purl": "pkg:npm/string_decoder@1.3.0",
-      "evidence": [
-        "yarn.lock#45179"
-      ]
-    },
-    {
       "purl": "pkg:npm/string-argv@0.3.1",
       "evidence": [
         "yarn.lock#44912"
@@ -23966,6 +23948,24 @@
       "purl": "pkg:npm/string.prototype.trimstart@1.0.8",
       "evidence": [
         "yarn.lock#45168"
+      ]
+    },
+    {
+      "purl": "pkg:npm/string_decoder@0.10.31",
+      "evidence": [
+        "yarn.lock#45188"
+      ]
+    },
+    {
+      "purl": "pkg:npm/string_decoder@1.1.1",
+      "evidence": [
+        "yarn.lock#45195"
+      ]
+    },
+    {
+      "purl": "pkg:npm/string_decoder@1.3.0",
+      "evidence": [
+        "yarn.lock#45179"
       ]
     },
     {
@@ -32513,18 +32513,6 @@
       ]
     },
     {
-      "from": "pkg:npm/%40img/sharp-linux-arm@0.33.5",
-      "to": [
-        "pkg:npm/%40img/sharp-libvips-linux-arm@1.0.5"
-      ]
-    },
-    {
-      "from": "pkg:npm/%40img/sharp-linux-arm@0.34.3",
-      "to": [
-        "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.0"
-      ]
-    },
-    {
       "from": "pkg:npm/%40img/sharp-linux-arm64@0.33.5",
       "to": [
         "pkg:npm/%40img/sharp-libvips-linux-arm64@1.0.4"
@@ -32534,6 +32522,18 @@
       "from": "pkg:npm/%40img/sharp-linux-arm64@0.34.3",
       "to": [
         "pkg:npm/%40img/sharp-libvips-linux-arm64@1.2.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/%40img/sharp-linux-arm@0.33.5",
+      "to": [
+        "pkg:npm/%40img/sharp-libvips-linux-arm@1.0.5"
+      ]
+    },
+    {
+      "from": "pkg:npm/%40img/sharp-linux-arm@0.34.3",
+      "to": [
+        "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.0"
       ]
     },
     {
@@ -34663,21 +34663,21 @@
       ]
     },
     {
-      "from": "pkg:npm/%40opentelemetry/instrumentation-mysql@0.45.1",
-      "to": [
-        "pkg:npm/%40opentelemetry/api@1.9.0",
-        "pkg:npm/%40opentelemetry/instrumentation@0.57.2",
-        "pkg:npm/%40opentelemetry/semantic-conventions@1.27.0",
-        "pkg:npm/%40types/mysql@2.15.26"
-      ]
-    },
-    {
       "from": "pkg:npm/%40opentelemetry/instrumentation-mysql2@0.45.2",
       "to": [
         "pkg:npm/%40opentelemetry/api@1.9.0",
         "pkg:npm/%40opentelemetry/instrumentation@0.57.2",
         "pkg:npm/%40opentelemetry/semantic-conventions@1.27.0",
         "pkg:npm/%40opentelemetry/sql-common@0.40.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/%40opentelemetry/instrumentation-mysql@0.45.1",
+      "to": [
+        "pkg:npm/%40opentelemetry/api@1.9.0",
+        "pkg:npm/%40opentelemetry/instrumentation@0.57.2",
+        "pkg:npm/%40opentelemetry/semantic-conventions@1.27.0",
+        "pkg:npm/%40types/mysql@2.15.26"
       ]
     },
     {
@@ -49245,19 +49245,19 @@
       ]
     },
     {
+      "from": "pkg:npm/rc9@2.1.2",
+      "to": [
+        "pkg:npm/defu@6.1.4",
+        "pkg:npm/destr@2.0.5"
+      ]
+    },
+    {
       "from": "pkg:npm/rc@1.2.8",
       "to": [
         "pkg:npm/deep-extend@0.6.0",
         "pkg:npm/ini@1.3.8",
         "pkg:npm/minimist@1.2.7",
         "pkg:npm/strip-json-comments@2.0.1"
-      ]
-    },
-    {
-      "from": "pkg:npm/rc9@2.1.2",
-      "to": [
-        "pkg:npm/defu@6.1.4",
-        "pkg:npm/destr@2.0.5"
       ]
     },
     {
@@ -51276,18 +51276,6 @@
       ]
     },
     {
-      "from": "pkg:npm/string_decoder@1.1.1",
-      "to": [
-        "pkg:npm/safe-buffer@5.1.2"
-      ]
-    },
-    {
-      "from": "pkg:npm/string_decoder@1.3.0",
-      "to": [
-        "pkg:npm/safe-buffer@5.2.1"
-      ]
-    },
-    {
       "from": "pkg:npm/string-length@4.0.2",
       "to": [
         "pkg:npm/char-regex@1.0.2",
@@ -51460,6 +51448,18 @@
         "pkg:npm/call-bind@1.0.7",
         "pkg:npm/define-properties@1.2.1",
         "pkg:npm/es-object-atoms@1.1.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/string_decoder@1.1.1",
+      "to": [
+        "pkg:npm/safe-buffer@5.1.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/string_decoder@1.3.0",
+      "to": [
+        "pkg:npm/safe-buffer@5.2.1"
       ]
     },
     {

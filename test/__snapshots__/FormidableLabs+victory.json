@@ -2107,15 +2107,15 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40esbuild/android-arm@0.18.20",
-      "evidence": [
-        "pnpm-lock.yaml#3084"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40esbuild/android-arm64@0.18.20",
       "evidence": [
         "pnpm-lock.yaml#3078"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/android-arm@0.18.20",
+      "evidence": [
+        "pnpm-lock.yaml#3084"
       ]
     },
     {
@@ -2149,15 +2149,15 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40esbuild/linux-arm@0.18.20",
-      "evidence": [
-        "pnpm-lock.yaml#3126"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40esbuild/linux-arm64@0.18.20",
       "evidence": [
         "pnpm-lock.yaml#3120"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/linux-arm@0.18.20",
+      "evidence": [
+        "pnpm-lock.yaml#3126"
       ]
     },
     {
@@ -8095,15 +8095,15 @@
       ]
     },
     {
-      "purl": "pkg:npm/find-yarn-workspace-root@2.0.0",
-      "evidence": [
-        "pnpm-lock.yaml#7073"
-      ]
-    },
-    {
       "purl": "pkg:npm/find-yarn-workspace-root2@1.2.16",
       "evidence": [
         "pnpm-lock.yaml#7070"
+      ]
+    },
+    {
+      "purl": "pkg:npm/find-yarn-workspace-root@2.0.0",
+      "evidence": [
+        "pnpm-lock.yaml#7073"
       ]
     },
     {
@@ -8431,6 +8431,12 @@
       ]
     },
     {
+      "purl": "pkg:npm/glob2base@0.0.12",
+      "evidence": [
+        "pnpm-lock.yaml#7304"
+      ]
+    },
+    {
       "purl": "pkg:npm/glob@10.3.10",
       "evidence": [
         "pnpm-lock.yaml#7308"
@@ -8458,12 +8464,6 @@
       "purl": "pkg:npm/glob@8.0.3",
       "evidence": [
         "pnpm-lock.yaml#7325"
-      ]
-    },
-    {
-      "purl": "pkg:npm/glob2base@0.0.12",
-      "evidence": [
-        "pnpm-lock.yaml#7304"
       ]
     },
     {
@@ -14131,18 +14131,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/string_decoder@1.1.1",
-      "evidence": [
-        "pnpm-lock.yaml#11033"
-      ]
-    },
-    {
-      "purl": "pkg:npm/string_decoder@1.3.0",
-      "evidence": [
-        "pnpm-lock.yaml#11036"
-      ]
-    },
-    {
       "purl": "pkg:npm/string-length@4.0.2",
       "evidence": [
         "pnpm-lock.yaml#10999"
@@ -14194,6 +14182,18 @@
       "purl": "pkg:npm/string.prototype.trimstart@1.0.8",
       "evidence": [
         "pnpm-lock.yaml#11029"
+      ]
+    },
+    {
+      "purl": "pkg:npm/string_decoder@1.1.1",
+      "evidence": [
+        "pnpm-lock.yaml#11033"
+      ]
+    },
+    {
+      "purl": "pkg:npm/string_decoder@1.3.0",
+      "evidence": [
+        "pnpm-lock.yaml#11036"
       ]
     },
     {
@@ -14563,15 +14563,15 @@
       ]
     },
     {
-      "purl": "pkg:npm/through@2.3.8",
-      "evidence": [
-        "pnpm-lock.yaml#11309"
-      ]
-    },
-    {
       "purl": "pkg:npm/through2@2.0.5",
       "evidence": [
         "pnpm-lock.yaml#11306"
+      ]
+    },
+    {
+      "purl": "pkg:npm/through@2.3.8",
+      "evidence": [
+        "pnpm-lock.yaml#11309"
       ]
     },
     {
@@ -25221,16 +25221,16 @@
       ]
     },
     {
-      "from": "pkg:npm/find-yarn-workspace-root@2.0.0",
-      "to": [
-        "pkg:npm/micromatch@4.0.5"
-      ]
-    },
-    {
       "from": "pkg:npm/find-yarn-workspace-root2@1.2.16",
       "to": [
         "pkg:npm/micromatch@4.0.5",
         "pkg:npm/pkg-dir@4.2.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/find-yarn-workspace-root@2.0.0",
+      "to": [
+        "pkg:npm/micromatch@4.0.5"
       ]
     },
     {
@@ -25441,6 +25441,12 @@
       ]
     },
     {
+      "from": "pkg:npm/glob2base@0.0.12",
+      "to": [
+        "pkg:npm/find-index@0.1.1"
+      ]
+    },
+    {
       "from": "pkg:npm/glob@10.3.10",
       "to": [
         "pkg:npm/foreground-child@3.1.1",
@@ -25490,12 +25496,6 @@
         "pkg:npm/inherits@2.0.4",
         "pkg:npm/minimatch@5.1.0",
         "pkg:npm/once@1.4.0"
-      ]
-    },
-    {
-      "from": "pkg:npm/glob2base@0.0.12",
-      "to": [
-        "pkg:npm/find-index@0.1.1"
       ]
     },
     {
@@ -30147,18 +30147,6 @@
       ]
     },
     {
-      "from": "pkg:npm/string_decoder@1.1.1",
-      "to": [
-        "pkg:npm/safe-buffer@5.1.2"
-      ]
-    },
-    {
-      "from": "pkg:npm/string_decoder@1.3.0",
-      "to": [
-        "pkg:npm/safe-buffer@5.2.1"
-      ]
-    },
-    {
       "from": "pkg:npm/string-length@4.0.2",
       "to": [
         "pkg:npm/char-regex@1.0.2",
@@ -30236,6 +30224,18 @@
         "pkg:npm/call-bind@1.0.7",
         "pkg:npm/define-properties@1.2.1",
         "pkg:npm/es-object-atoms@1.0.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/string_decoder@1.1.1",
+      "to": [
+        "pkg:npm/safe-buffer@5.1.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/string_decoder@1.3.0",
+      "to": [
+        "pkg:npm/safe-buffer@5.2.1"
       ]
     },
     {

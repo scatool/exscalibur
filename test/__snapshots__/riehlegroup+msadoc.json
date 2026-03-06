@@ -853,15 +853,15 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40esbuild/android-arm@0.17.12",
-      "evidence": [
-        "package-lock.json#2498"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40esbuild/android-arm64@0.17.12",
       "evidence": [
         "package-lock.json#2514"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/android-arm@0.17.12",
+      "evidence": [
+        "package-lock.json#2498"
       ]
     },
     {
@@ -895,15 +895,15 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40esbuild/linux-arm@0.17.12",
-      "evidence": [
-        "package-lock.json#2610"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40esbuild/linux-arm64@0.17.12",
       "evidence": [
         "package-lock.json#2626"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/linux-arm@0.17.12",
+      "evidence": [
+        "package-lock.json#2610"
       ]
     },
     {
@@ -6051,12 +6051,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/string_decoder@1.1.1",
-      "evidence": [
-        "package-lock.json#11996"
-      ]
-    },
-    {
       "purl": "pkg:npm/string-length@4.0.2",
       "evidence": [
         "package-lock.json#12003"
@@ -6090,6 +6084,12 @@
       "purl": "pkg:npm/string.prototype.trimstart@1.0.6",
       "evidence": [
         "package-lock.json#12070"
+      ]
+    },
+    {
+      "purl": "pkg:npm/string_decoder@1.1.1",
+      "evidence": [
+        "package-lock.json#11996"
       ]
     },
     {
@@ -12193,12 +12193,6 @@
       ]
     },
     {
-      "from": "pkg:npm/string_decoder@1.1.1",
-      "to": [
-        "pkg:npm/safe-buffer@5.1.2"
-      ]
-    },
-    {
       "from": "pkg:npm/string-length@4.0.2",
       "to": [
         "pkg:npm/char-regex@1.0.2",
@@ -12240,6 +12234,12 @@
         "pkg:npm/call-bind@1.0.2",
         "pkg:npm/define-properties@1.1.4",
         "pkg:npm/es-abstract@1.21.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/string_decoder@1.1.1",
+      "to": [
+        "pkg:npm/safe-buffer@5.1.2"
       ]
     },
     {

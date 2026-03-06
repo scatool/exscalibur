@@ -562,12 +562,6 @@ exports[`npm/workspace 1`] = `
       ],
     },
     {
-      "from": "pkg:npm/busboy@1.6.0",
-      "to": [
-        "pkg:npm/streamsearch@1.1.0",
-      ],
-    },
-    {
       "from": "pkg:npm/color-convert@2.0.1",
       "to": [
         "pkg:npm/color-name@1.1.4",
@@ -601,7 +595,6 @@ exports[`npm/workspace 1`] = `
         "pkg:npm/%40next/swc-linux-x64-musl@15.1.7",
         "pkg:npm/%40swc/counter@0.1.3",
         "pkg:npm/%40swc/helpers@0.5.15",
-        "pkg:npm/busboy@1.6.0",
         "pkg:npm/caniuse-lite@1.0.30001700",
         "pkg:npm/postcss@8.4.31",
         "pkg:npm/react-dom@19.0.0",

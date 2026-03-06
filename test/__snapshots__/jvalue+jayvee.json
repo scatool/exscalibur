@@ -1295,24 +1295,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40esbuild/android-arm@0.19.12",
-      "evidence": [
-        "package-lock.json#4141"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40esbuild/android-arm@0.25.3",
-      "evidence": [
-        "package-lock.json#34512"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40esbuild/android-arm@0.25.5",
-      "evidence": [
-        "package-lock.json#6013"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40esbuild/android-arm64@0.19.12",
       "evidence": [
         "package-lock.json#4158"
@@ -1328,6 +1310,24 @@
       "purl": "pkg:npm/%40esbuild/android-arm64@0.25.5",
       "evidence": [
         "package-lock.json#6030"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/android-arm@0.19.12",
+      "evidence": [
+        "package-lock.json#4141"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/android-arm@0.25.3",
+      "evidence": [
+        "package-lock.json#34512"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/android-arm@0.25.5",
+      "evidence": [
+        "package-lock.json#6013"
       ]
     },
     {
@@ -1421,24 +1421,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40esbuild/linux-arm@0.19.12",
-      "evidence": [
-        "package-lock.json#4260"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40esbuild/linux-arm@0.25.3",
-      "evidence": [
-        "package-lock.json#34631"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40esbuild/linux-arm@0.25.5",
-      "evidence": [
-        "package-lock.json#6132"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40esbuild/linux-arm64@0.19.12",
       "evidence": [
         "package-lock.json#4277"
@@ -1454,6 +1436,24 @@
       "purl": "pkg:npm/%40esbuild/linux-arm64@0.25.5",
       "evidence": [
         "package-lock.json#6149"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/linux-arm@0.19.12",
+      "evidence": [
+        "package-lock.json#4260"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/linux-arm@0.25.3",
+      "evidence": [
+        "package-lock.json#34631"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/linux-arm@0.25.5",
+      "evidence": [
+        "package-lock.json#6132"
       ]
     },
     {
@@ -6640,15 +6640,15 @@
       ]
     },
     {
-      "purl": "pkg:npm/duplexer@0.1.2",
-      "evidence": [
-        "package-lock.json#17131"
-      ]
-    },
-    {
       "purl": "pkg:npm/duplexer2@0.1.4",
       "evidence": [
         "package-lock.json#17135"
+      ]
+    },
+    {
+      "purl": "pkg:npm/duplexer@0.1.2",
+      "evidence": [
+        "package-lock.json#17131"
       ]
     },
     {
@@ -13082,15 +13082,15 @@
       ]
     },
     {
-      "purl": "pkg:npm/sass-embedded-android-arm@1.87.0",
-      "evidence": [
-        "package-lock.json#31130"
-      ]
-    },
-    {
       "purl": "pkg:npm/sass-embedded-android-arm64@1.87.0",
       "evidence": [
         "package-lock.json#31147"
+      ]
+    },
+    {
+      "purl": "pkg:npm/sass-embedded-android-arm@1.87.0",
+      "evidence": [
+        "package-lock.json#31130"
       ]
     },
     {
@@ -13124,15 +13124,15 @@
       ]
     },
     {
-      "purl": "pkg:npm/sass-embedded-linux-arm@1.87.0",
-      "evidence": [
-        "package-lock.json#31249"
-      ]
-    },
-    {
       "purl": "pkg:npm/sass-embedded-linux-arm64@1.87.0",
       "evidence": [
         "package-lock.json#31266"
+      ]
+    },
+    {
+      "purl": "pkg:npm/sass-embedded-linux-arm@1.87.0",
+      "evidence": [
+        "package-lock.json#31249"
       ]
     },
     {
@@ -13142,15 +13142,15 @@
       ]
     },
     {
-      "purl": "pkg:npm/sass-embedded-linux-musl-arm@1.87.0",
-      "evidence": [
-        "package-lock.json#31300"
-      ]
-    },
-    {
       "purl": "pkg:npm/sass-embedded-linux-musl-arm64@1.87.0",
       "evidence": [
         "package-lock.json#31317"
+      ]
+    },
+    {
+      "purl": "pkg:npm/sass-embedded-linux-musl-arm@1.87.0",
+      "evidence": [
+        "package-lock.json#31300"
       ]
     },
     {
@@ -13744,23 +13744,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/string_decoder@1.1.1",
-      "evidence": [
-        "package-lock.json#12556",
-        "package-lock.json#17159",
-        "package-lock.json#20333",
-        "package-lock.json#24017",
-        "package-lock.json#24347",
-        "package-lock.json#34002"
-      ]
-    },
-    {
-      "purl": "pkg:npm/string_decoder@1.3.0",
-      "evidence": [
-        "package-lock.json#32414"
-      ]
-    },
-    {
       "purl": "pkg:npm/string-hash@1.1.3",
       "evidence": [
         "package-lock.json#32421"
@@ -13822,6 +13805,23 @@
       "purl": "pkg:npm/string.prototype.trimstart@1.0.8",
       "evidence": [
         "package-lock.json#32541"
+      ]
+    },
+    {
+      "purl": "pkg:npm/string_decoder@1.1.1",
+      "evidence": [
+        "package-lock.json#12556",
+        "package-lock.json#17159",
+        "package-lock.json#20333",
+        "package-lock.json#24017",
+        "package-lock.json#24347",
+        "package-lock.json#34002"
+      ]
+    },
+    {
+      "purl": "pkg:npm/string_decoder@1.3.0",
+      "evidence": [
+        "package-lock.json#32414"
       ]
     },
     {
@@ -27153,18 +27153,6 @@
       ]
     },
     {
-      "from": "pkg:npm/string_decoder@1.1.1",
-      "to": [
-        "pkg:npm/safe-buffer@5.2.1"
-      ]
-    },
-    {
-      "from": "pkg:npm/string_decoder@1.3.0",
-      "to": [
-        "pkg:npm/safe-buffer@5.2.1"
-      ]
-    },
-    {
       "from": "pkg:npm/string-length@4.0.2",
       "to": [
         "pkg:npm/char-regex@1.0.2",
@@ -27239,6 +27227,18 @@
         "pkg:npm/call-bind@1.0.8",
         "pkg:npm/define-properties@1.2.1",
         "pkg:npm/es-object-atoms@1.1.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/string_decoder@1.1.1",
+      "to": [
+        "pkg:npm/safe-buffer@5.2.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/string_decoder@1.3.0",
+      "to": [
+        "pkg:npm/safe-buffer@5.2.1"
       ]
     },
     {

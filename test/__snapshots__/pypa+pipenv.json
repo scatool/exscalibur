@@ -746,32 +746,6 @@
   "subprojects": [
     {
       "purl": "pkg:pypi/pypi@0.0.0",
-      "definitionFile": "examples/Pipfile",
-      "scopes": [
-        {
-          "scope": "dependencies",
-          "packages": [
-            "pkg:pypi/certifi@2025.11.12",
-            "pkg:pypi/charset-normalizer@3.4.4",
-            "pkg:pypi/idna@3.11",
-            "pkg:pypi/requests@2.32.5",
-            "pkg:pypi/urllib3@2.6.3"
-          ]
-        },
-        {
-          "scope": "dev-dependencies",
-          "packages": [
-            "pkg:pypi/iniconfig@2.3.0",
-            "pkg:pypi/packaging@25.0",
-            "pkg:pypi/pluggy@1.6.0",
-            "pkg:pypi/pygments@2.19.2",
-            "pkg:pypi/pytest@9.0.1"
-          ]
-        }
-      ]
-    },
-    {
-      "purl": "pkg:pypi/pypi@0.0.0",
       "definitionFile": "Pipfile",
       "scopes": [
         {
@@ -885,6 +859,32 @@
             "pkg:pypi/virtualenv@20.35.4",
             "pkg:pypi/waitress@3.0.2",
             "pkg:pypi/zipp@3.21.0"
+          ]
+        }
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pypi@0.0.0",
+      "definitionFile": "examples/Pipfile",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:pypi/certifi@2025.11.12",
+            "pkg:pypi/charset-normalizer@3.4.4",
+            "pkg:pypi/idna@3.11",
+            "pkg:pypi/requests@2.32.5",
+            "pkg:pypi/urllib3@2.6.3"
+          ]
+        },
+        {
+          "scope": "dev-dependencies",
+          "packages": [
+            "pkg:pypi/iniconfig@2.3.0",
+            "pkg:pypi/packaging@25.0",
+            "pkg:pypi/pluggy@1.6.0",
+            "pkg:pypi/pygments@2.19.2",
+            "pkg:pypi/pytest@9.0.1"
           ]
         }
       ]

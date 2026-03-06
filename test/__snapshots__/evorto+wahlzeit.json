@@ -391,12 +391,6 @@
       ]
     },
     {
-      "purl": "pkg:maven/org.eclipse.jetty.toolchain/jetty-schemas@3.1?repository_url=https%3A%2F%2Fjcenter.bintray.com",
-      "evidence": [
-        "build.gradle"
-      ]
-    },
-    {
       "purl": "pkg:maven/org.eclipse.jetty.toolchain/jetty-schemas@3.1.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
@@ -404,6 +398,12 @@
     },
     {
       "purl": "pkg:maven/org.eclipse.jetty.toolchain/jetty-schemas@3.1.M0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+      "evidence": [
+        "build.gradle"
+      ]
+    },
+    {
+      "purl": "pkg:maven/org.eclipse.jetty.toolchain/jetty-schemas@3.1?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
@@ -955,12 +955,6 @@
       ]
     },
     {
-      "purl": "pkg:maven/org.gretty/gretty-runner-jetty@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
-      "evidence": [
-        "build.gradle"
-      ]
-    },
-    {
       "purl": "pkg:maven/org.gretty/gretty-runner-jetty7@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
@@ -968,12 +962,6 @@
     },
     {
       "purl": "pkg:maven/org.gretty/gretty-runner-jetty8@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
-      "evidence": [
-        "build.gradle"
-      ]
-    },
-    {
-      "purl": "pkg:maven/org.gretty/gretty-runner-jetty9@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
@@ -991,7 +979,13 @@
       ]
     },
     {
-      "purl": "pkg:maven/org.gretty/gretty-runner-tomcat@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+      "purl": "pkg:maven/org.gretty/gretty-runner-jetty9@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+      "evidence": [
+        "build.gradle"
+      ]
+    },
+    {
+      "purl": "pkg:maven/org.gretty/gretty-runner-jetty@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
@@ -1010,6 +1004,12 @@
     },
     {
       "purl": "pkg:maven/org.gretty/gretty-runner-tomcat9@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+      "evidence": [
+        "build.gradle"
+      ]
+    },
+    {
+      "purl": "pkg:maven/org.gretty/gretty-runner-tomcat@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "evidence": [
         "build.gradle"
       ]
@@ -1940,12 +1940,6 @@
       ]
     },
     {
-      "from": "pkg:maven/org.gretty/gretty-runner-jetty@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
-      "to": [
-        "pkg:maven/org.gretty/gretty-runner@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com"
-      ]
-    },
-    {
       "from": "pkg:maven/org.gretty/gretty-runner-jetty7@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
         "pkg:maven/javax.servlet/servlet-api@2.5?repository_url=https%3A%2F%2Fjcenter.bintray.com",
@@ -1970,23 +1964,6 @@
         "pkg:maven/org.eclipse.jetty/jetty-servlet@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com",
         "pkg:maven/org.eclipse.jetty/jetty-webapp@8.1.22.v20160922?repository_url=https%3A%2F%2Fjcenter.bintray.com",
         "pkg:maven/org.gretty/gretty-runner-jetty@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com"
-      ]
-    },
-    {
-      "from": "pkg:maven/org.gretty/gretty-runner-jetty9@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
-      "to": [
-        "pkg:maven/javax.servlet/javax.servlet-api@3.1.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-server-impl@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-annotations@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-jsp@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-plus@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-security@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-server@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-servlet@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
-        "pkg:maven/org.eclipse.jetty/jetty-webapp@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
-        "pkg:maven/org.gretty/gretty-runner-jetty@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
-        "pkg:maven/org.ow2.asm/asm-commons@9.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
-        "pkg:maven/org.ow2.asm/asm@9.2?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
@@ -2024,10 +2001,26 @@
       ]
     },
     {
-      "from": "pkg:maven/org.gretty/gretty-runner-tomcat@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+      "from": "pkg:maven/org.gretty/gretty-runner-jetty9@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
       "to": [
-        "pkg:maven/org.gretty/gretty-runner@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
-        "pkg:maven/org.slf4j/log4j-over-slf4j@1.7.36?repository_url=https%3A%2F%2Fjcenter.bintray.com"
+        "pkg:maven/javax.servlet/javax.servlet-api@3.1.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty.websocket/javax-websocket-server-impl@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-annotations@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-jsp@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-plus@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-security@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-server@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-servlet@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.eclipse.jetty/jetty-webapp@9.2.26.v20180806?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.gretty/gretty-runner-jetty@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.ow2.asm/asm-commons@9.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.ow2.asm/asm@9.2?repository_url=https%3A%2F%2Fjcenter.bintray.com"
+      ]
+    },
+    {
+      "from": "pkg:maven/org.gretty/gretty-runner-jetty@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+      "to": [
+        "pkg:maven/org.gretty/gretty-runner@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {
@@ -2056,6 +2049,13 @@
         "pkg:maven/org.apache.tomcat.embed/tomcat-embed-jasper@9.0.58?repository_url=https%3A%2F%2Fjcenter.bintray.com",
         "pkg:maven/org.apache.tomcat.embed/tomcat-embed-websocket@9.0.58?repository_url=https%3A%2F%2Fjcenter.bintray.com",
         "pkg:maven/org.gretty/gretty-runner-tomcat85@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com"
+      ]
+    },
+    {
+      "from": "pkg:maven/org.gretty/gretty-runner-tomcat@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+      "to": [
+        "pkg:maven/org.gretty/gretty-runner@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+        "pkg:maven/org.slf4j/log4j-over-slf4j@1.7.36?repository_url=https%3A%2F%2Fjcenter.bintray.com"
       ]
     },
     {

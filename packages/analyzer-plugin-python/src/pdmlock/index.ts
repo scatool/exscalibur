@@ -9,11 +9,11 @@ import {
   convertPackageMapToArray,
   convertRelationshipsMapToArray,
   initializeExtractionMaps,
+  scanAndMarkFiles,
 } from '@scatool/analyzer-core/src/index.ts';
-import { Glob } from 'bun';
 import { dirname, join } from 'node:path';
 import { parse as parseToml } from 'smol-toml';
-import { createPypiPurl, normalizePythonName } from '../python-utils.ts';
+import { createPypiPurl, findTomlPackageLineNumber, normalizePythonName } from '../python-utils.ts';
 import type { PythonOptions } from '../options.ts';
 
 interface PdmLock {
@@ -55,16 +55,7 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
     ignore: ['**/.venv/**', '**/venv/**', '**/__pycache__/**', '**/__pypackages__/**'],
   }),
   markFiles: async function (codebase: string, options: PythonOptions) {
-    const ignorePatterns = options.ignore ?? [];
-    const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));
-
-    const glob = new Glob('**/pdm.lock');
-    for await (const file of glob.scan({ cwd: codebase, absolute: true, onlyFiles: true })) {
-      const shouldIgnore = ignoreGlobs.some((glob) => glob.match(file));
-      if (!shouldIgnore) {
-        this.markFile(file);
-      }
-    }
+    await scanAndMarkFiles(this, codebase, '**/pdm.lock', options.ignore ?? []);
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
     const content = await Bun.file(file).text();
@@ -117,7 +108,7 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
         ensurePackageExists(packageMap, purl);
 
         // Find line number for this package
-        const lineNumber = findPackageLineNumber(lines, pkg.name);
+        const lineNumber = findTomlPackageLineNumber(lines, pkg.name);
         if (lineNumber !== undefined) {
           packageMap.get(purl)!.evidence.add(`${file}#${lineNumber}`);
         }
@@ -248,26 +239,4 @@ function parseDependencyName(spec: string): string | null {
   // Split on operators: >=, <=, ==, !=, ~=, <, >, [
   const match = spec.match(/^([a-zA-Z0-9_-]+)/);
   return match ? match[1] : null;
-}
-
-/**
- * Find the line number where a package appears in the pdm.lock
- */
-function findPackageLineNumber(lines: string[], packageName: string): number | undefined {
-  const normalizedName = normalizePythonName(packageName);
-
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i];
-    if (!line) continue;
-
-    const trimmed = line.trim();
-    // Look for: name = "package-name"
-    if (trimmed.startsWith('name = "')) {
-      const match = trimmed.match(/name = "([^"]+)"/);
-      if (match && normalizePythonName(match[1]) === normalizedName) {
-        return i + 1;
-      }
-    }
-  }
-  return undefined;
 }

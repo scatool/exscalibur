@@ -1,5 +1,5 @@
-import type { AnalyzerResult } from './index.ts';
-import { normalizeResult } from './index.ts';
+import type { AnalyzerResult } from './types.ts';
+import { normalizeResult } from './normalize.ts';
 
 /**
  * Merge multiple AnalyzerResult objects into a single result

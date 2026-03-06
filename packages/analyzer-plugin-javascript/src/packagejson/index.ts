@@ -1,11 +1,11 @@
 import { type Extractor, filesExtractor, type AnalyzerResult } from '@scatool/analyzer-core/src/index.ts';
 import { Glob } from 'bun';
-import { PackageURL } from 'packageurl-js';
-import { dirname, join } from 'node:path';
+import { dirname } from 'node:path';
 import { existsSync } from 'node:fs';
+import { createNpmPurl } from '../npm-utils.ts';
 import type { JavaScriptOptions } from '../options.ts';
 
-async function hasLockfileInDirectory(dir: string, codebase: string): Promise<boolean> {
+function hasLockfileInDirectory(dir: string, codebase: string): boolean {
   const lockfiles = [
     'package-lock.json',
     'npm-shrinkwrap.json',
@@ -55,7 +55,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
 
       // Skip if a lockfile exists in the same directory or any parent directory
       const dir = dirname(file);
-      if (await hasLockfileInDirectory(dir, codebase)) {
+      if (hasLockfileInDirectory(dir, codebase)) {
         continue;
       }
 
@@ -66,9 +66,9 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     // Process individual package.json file
     const content = await Bun.file(file).text();
 
-    let packageJson: any;
+    let packageJson: Record<string, unknown>;
     try {
-      packageJson = JSON.parse(content);
+      packageJson = JSON.parse(content) as Record<string, unknown>;
     } catch (error) {
       // Return empty result with an error issue if JSON is malformed
       return {
@@ -115,25 +115,14 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
               }
             }
 
-            // Create a proper Package URL (PURL)
-            let namespace: string | null = null;
-            let packageName = name;
-            if (name.startsWith('@')) {
-              const parts = name.split('/');
-              if (parts.length === 2 && parts[0] && parts[1]) {
-                namespace = parts[0]; // Keep @ for proper PURL encoding
-                packageName = parts[1];
-              }
-            }
-
-            const purl = new PackageURL('npm', namespace, packageName, cleanVersion, null, null);
+            const purl = createNpmPurl(name, cleanVersion);
 
             // Find line number for evidence
             const lineNumber = findLineNumber(lines, name);
             const evidence = lineNumber ? [`${file}#${lineNumber}`] : [];
 
             packages.push({
-              purl: purl.toString(),
+              purl,
               evidence,
             });
           }

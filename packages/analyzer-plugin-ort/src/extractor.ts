@@ -1,9 +1,8 @@
-import { type AnalyzerResult, filesExtractor } from '@scatool/analyzer-core/src/index.ts';
-import { Glob } from 'bun';
+import { type AnalyzerResult, filesExtractor, scanAndMarkFiles } from '@scatool/analyzer-core/src/index.ts';
 import { type OrtAnalyzerResult } from './model.ts';
 import { convertOrtResult } from './converter.ts';
 
-export interface OrtExtractorOptions {
+interface OrtExtractorOptions {
   /**
    * If true, use the definition_file_path from ORT projects as evidence (e.g., package.json, build.gradle).
    * If false (default), use the analyzer-result.json file as evidence.
@@ -18,10 +17,7 @@ export const extractor = filesExtractor<OrtExtractorOptions>({
     useDefinitionFilePaths: false,
   }),
   markFiles: async function (codebase) {
-    const glob = new Glob('**/analyzer-result.json');
-    for await (const file of glob.scan({ cwd: codebase })) {
-      this.markFile(file);
-    }
+    await scanAndMarkFiles(this, codebase, '**/analyzer-result.json', []);
   },
   extractFile: async (file, options): Promise<AnalyzerResult> => {
     try {

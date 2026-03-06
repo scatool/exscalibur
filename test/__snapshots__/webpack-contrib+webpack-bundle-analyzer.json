@@ -2051,16 +2051,16 @@
       ]
     },
     {
+      "purl": "pkg:npm/base64-js@1.3.1",
+      "evidence": [
+        "test/webpack-versions/4.44.2/package-lock.json#404"
+      ]
+    },
+    {
       "purl": "pkg:npm/base@0.11.2",
       "evidence": [
         "package-lock.json#4401",
         "test/webpack-versions/4.44.2/package-lock.json#339"
-      ]
-    },
-    {
-      "purl": "pkg:npm/base64-js@1.3.1",
-      "evidence": [
-        "test/webpack-versions/4.44.2/package-lock.json#404"
       ]
     },
     {
@@ -7792,13 +7792,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/string_decoder@1.1.1",
-      "evidence": [
-        "package-lock.json#15510",
-        "test/webpack-versions/4.44.2/package-lock.json#2928"
-      ]
-    },
-    {
       "purl": "pkg:npm/string-length@4.0.2",
       "evidence": [
         "package-lock.json#15519"
@@ -7847,6 +7840,13 @@
       "purl": "pkg:npm/string.prototype.trimstart@1.0.4",
       "evidence": [
         "package-lock.json#15600"
+      ]
+    },
+    {
+      "purl": "pkg:npm/string_decoder@1.1.1",
+      "evidence": [
+        "package-lock.json#15510",
+        "test/webpack-versions/4.44.2/package-lock.json#2928"
       ]
     },
     {
@@ -8056,12 +8056,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/through@2.3.8",
-      "evidence": [
-        "package-lock.json#16006"
-      ]
-    },
-    {
       "purl": "pkg:npm/through2-filter@3.0.0",
       "evidence": [
         "package-lock.json#16022"
@@ -8072,6 +8066,12 @@
       "evidence": [
         "package-lock.json#16012",
         "test/webpack-versions/4.44.2/package-lock.json#2998"
+      ]
+    },
+    {
+      "purl": "pkg:npm/through@2.3.8",
+      "evidence": [
+        "package-lock.json#16006"
       ]
     },
     {
@@ -15061,12 +15061,6 @@
       ]
     },
     {
-      "from": "pkg:npm/string_decoder@1.1.1",
-      "to": [
-        "pkg:npm/safe-buffer@5.1.2"
-      ]
-    },
-    {
       "from": "pkg:npm/string-length@4.0.2",
       "to": [
         "pkg:npm/char-regex@1.0.2",
@@ -15128,6 +15122,12 @@
       "to": [
         "pkg:npm/call-bind@1.0.2",
         "pkg:npm/define-properties@1.1.3"
+      ]
+    },
+    {
+      "from": "pkg:npm/string_decoder@1.1.1",
+      "to": [
+        "pkg:npm/safe-buffer@5.1.2"
       ]
     },
     {

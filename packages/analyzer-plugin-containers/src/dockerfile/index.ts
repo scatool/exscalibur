@@ -1,21 +1,20 @@
-import { type AnalyzerResult, type Extractor, filesExtractor } from '@scatool/analyzer-core/src/index.ts';
-import { Glob } from 'bun';
+import {
+  type AnalyzerResult,
+  type Extractor,
+  filesExtractor,
+  scanAndMarkFiles,
+} from '@scatool/analyzer-core/src/index.ts';
 import { PackageURL } from 'packageurl-js';
 
-const argRegex = /^\s*ARG\s+([A-Z_][A-Z0-9_]*)=(.+?)(?:\s*#.*)?$/gim;
-const stageRegex = /^\s*FROM\s+(?:--platform=\S+\s+)?\S+\s+AS\s+(\S+)(?:\s*#.*)?/gim;
-const fromRegex = /^\s*FROM\s+(?:--platform=\S+\s+)?(\S+)(?:\s|#|$)/gim;
+const ARG_PATTERN = /^\s*ARG\s+([A-Z_][A-Z0-9_]*)=(.+?)(?:\s*#.*)?$/im;
+const STAGE_PATTERN = /^\s*FROM\s+(?:--platform=\S+\s+)?\S+\s+AS\s+(\S+)(?:\s*#.*)?/im;
+const FROM_PATTERN = /^\s*FROM\s+(?:--platform=\S+\s+)?(\S+)(?:\s|#|$)/im;
 
 export const extractor: Extractor = filesExtractor({
   name: 'dockerfile',
   version: 1,
   markFiles: async function (codebase: string) {
-    const dockerfiles = new Glob('**/Dockerfile*');
-    for await (const file of dockerfiles.scan({
-      cwd: codebase,
-    })) {
-      this.markFile(file);
-    }
+    await scanAndMarkFiles(this, codebase, '**/Dockerfile*', []);
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
     const content = await Bun.file(file).text();
@@ -23,13 +22,12 @@ export const extractor: Extractor = filesExtractor({
   },
 });
 
-export async function extractDockerfile(content: string, filePath?: string): Promise<AnalyzerResult> {
+export function extractDockerfile(content: string, filePath?: string): AnalyzerResult {
   const packages: Array<{ purl: string; lineNumber: number }> = [];
 
   // Parse ARG instructions to build a variable map
   const args = new Map<string, string>();
-  let argMatch;
-  while ((argMatch = argRegex.exec(content)) !== null) {
+  for (const argMatch of content.matchAll(new RegExp(ARG_PATTERN, 'gim'))) {
     const varName = argMatch[1];
     const varValue = argMatch[2];
     if (varName && varValue) {
@@ -39,8 +37,7 @@ export async function extractDockerfile(content: string, filePath?: string): Pro
 
   // Collect all stage names to exclude internal references
   const stageNames = new Set<string>();
-  let stageMatch;
-  while ((stageMatch = stageRegex.exec(content)) !== null) {
+  for (const stageMatch of content.matchAll(new RegExp(STAGE_PATTERN, 'gim'))) {
     const stageName = stageMatch[1];
     if (stageName) {
       stageNames.add(stageName.toLowerCase());
@@ -48,8 +45,7 @@ export async function extractDockerfile(content: string, filePath?: string): Pro
   }
 
   // Match FROM instructions and track line numbers
-  let match;
-  while ((match = fromRegex.exec(content)) !== null) {
+  for (const match of content.matchAll(new RegExp(FROM_PATTERN, 'gim'))) {
     let imageRef = match[1];
 
     // Skip on scratch image
@@ -83,7 +79,7 @@ export async function extractDockerfile(content: string, filePath?: string): Pro
 }
 
 // Replace ${VAR} and $VAR with values from args map
-export function substituteArgs(str: string, args: Map<string, string>): string {
+function substituteArgs(str: string, args: Map<string, string>): string {
   let result = str;
 
   // Replace ${VAR} format

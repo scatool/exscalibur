@@ -3457,12 +3457,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/string_decoder@1.1.1",
-      "evidence": [
-        "package-lock.json#2430"
-      ]
-    },
-    {
       "purl": "pkg:npm/string-argv@0.0.2",
       "evidence": [
         "package-lock.json#6436"
@@ -3484,6 +3478,12 @@
       "purl": "pkg:npm/string-width@2.1.1",
       "evidence": [
         "package-lock.json#1034"
+      ]
+    },
+    {
+      "purl": "pkg:npm/string_decoder@1.1.1",
+      "evidence": [
+        "package-lock.json#2430"
       ]
     },
     {
@@ -6539,13 +6539,6 @@
       ]
     },
     {
-      "from": "pkg:npm/string_decoder@1.1.1",
-      "to": [
-        "pkg:npm/safe-buffer@5.1.1",
-        "pkg:npm/safe-buffer@5.1.2"
-      ]
-    },
-    {
       "from": "pkg:npm/string-length@2.0.0",
       "to": [
         "pkg:npm/astral-regex@1.0.0",
@@ -6565,6 +6558,13 @@
       "to": [
         "pkg:npm/is-fullwidth-code-point@2.0.0",
         "pkg:npm/strip-ansi@4.0.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/string_decoder@1.1.1",
+      "to": [
+        "pkg:npm/safe-buffer@5.1.1",
+        "pkg:npm/safe-buffer@5.1.2"
       ]
     },
     {

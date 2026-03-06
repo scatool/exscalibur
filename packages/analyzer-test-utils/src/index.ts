@@ -29,7 +29,10 @@ export { validateResult } from './validate.ts';
  * });
  */
 export async function createFileContentTests(options: {
-  extractFn: (content: string, filename: string) => Promise<import('@scatool/analyzer-core').AnalyzerResult>;
+  extractFn: (
+    content: string,
+    filename: string,
+  ) => import('@scatool/analyzer-core').AnalyzerResult | Promise<import('@scatool/analyzer-core').AnalyzerResult>;
   fixturesDir: string;
   pattern: string;
 }): Promise<void> {
@@ -76,7 +79,7 @@ export async function scanFixtures(fixturesDir: string, pattern: string): Promis
   }
 
   // Sort fixtures alphabetically for consistent test ordering
-  return Array.from(fixtures).sort();
+  return Array.from(fixtures).sort((a, b) => a.localeCompare(b));
 }
 
 /**
@@ -100,7 +103,7 @@ export async function scanFixtureFiles(fixturesDir: string, pattern: string): Pr
   }
 
   // Sort files alphabetically for consistent test ordering
-  return files.sort();
+  return files.sort((a, b) => a.localeCompare(b));
 }
 
 /**

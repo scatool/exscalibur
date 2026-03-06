@@ -4,12 +4,12 @@ import {
   type Extractor,
   type Subproject,
   filesExtractor,
+  scanAndMarkFiles,
   ensurePackageExists,
   convertPackageMapToArray,
   convertRelationshipsMapToArray,
   initializeExtractionMaps,
 } from '@scatool/analyzer-core/src/index.ts';
-import { Glob } from 'bun';
 import { dirname, join } from 'node:path';
 import { createPypiPurl, normalizePythonName } from '../python-utils.ts';
 import type { PythonOptions } from '../options.ts';
@@ -38,23 +38,31 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
     ignore: ['**/.venv/**', '**/venv/**', '**/__pycache__/**'],
   }),
   markFiles: async function (codebase: string, options: PythonOptions) {
-    const ignorePatterns = options.ignore ?? [];
-    const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));
-
-    const glob = new Glob('**/Pipfile.lock');
-    for await (const file of glob.scan({ cwd: codebase, absolute: true, onlyFiles: true })) {
-      const shouldIgnore = ignoreGlobs.some((glob) => glob.match(file));
-      if (!shouldIgnore) {
-        this.markFile(file);
-      }
-    }
+    await scanAndMarkFiles(this, codebase, '**/Pipfile.lock', options.ignore ?? []);
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
     const content = await Bun.file(file).text();
     const dir = dirname(file);
     const lines = content.split('\n');
 
-    const lockfile: PipfileLock = JSON.parse(content);
+    let lockfile: PipfileLock;
+    try {
+      lockfile = JSON.parse(content) as PipfileLock;
+    } catch (error) {
+      return {
+        packages: [],
+        subprojects: [],
+        relationships: [],
+        issues: [
+          {
+            message: `Failed to parse Pipfile.lock: ${error instanceof Error ? error.message : String(error)}`,
+            severity: 'ERROR',
+            file,
+          },
+        ],
+      };
+    }
+
     const { packageMap, relationshipsMap } = initializeExtractionMaps();
     const subprojects: Subproject[] = [];
 

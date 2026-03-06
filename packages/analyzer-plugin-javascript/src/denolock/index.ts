@@ -8,9 +8,9 @@ import {
   type Extractor,
   filesExtractor,
   initializeExtractionMaps,
+  scanAndMarkFiles,
   type Subproject,
 } from '@scatool/analyzer-core/src/index.ts';
-import { Glob } from 'bun';
 import { PackageURL } from 'packageurl-js';
 import { dirname, join } from 'node:path';
 import { type DenoLockfile, findLineNumber, parseDenoLockfile, parseJsrPackage, parseNpmPackage } from './lockfile.ts';
@@ -24,16 +24,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     ignore: ['**/node_modules/**'],
   }),
   markFiles: async function (codebase: string, options: JavaScriptOptions) {
-    const ignorePatterns = options.ignore ?? [];
-    const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));
-
-    const lockfileGlob = new Glob('**/deno.lock');
-    for await (const file of lockfileGlob.scan({ cwd: codebase, absolute: true, onlyFiles: true })) {
-      const shouldIgnore = ignoreGlobs.some((glob) => glob.match(file));
-      if (!shouldIgnore) {
-        this.markFile(file);
-      }
-    }
+    await scanAndMarkFiles(this, codebase, '**/deno.lock', options.ignore ?? []);
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
     const dir = dirname(file);
@@ -82,7 +73,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
           if (denoConfig.imports && typeof denoConfig.imports === 'object') {
             const dependencies: string[] = [];
 
-            for (const [alias, specifier] of Object.entries(denoConfig.imports)) {
+            for (const [, specifier] of Object.entries(denoConfig.imports)) {
               if (typeof specifier === 'string') {
                 // Resolve specifier to actual package
                 let depPurl: string | null = null;
@@ -179,7 +170,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
 
           // Process dependencies
           if (packageEntry.dependencies && typeof packageEntry.dependencies === 'object') {
-            for (const [depName, depVersion] of Object.entries(packageEntry.dependencies)) {
+            for (const [, depVersion] of Object.entries(packageEntry.dependencies)) {
               if (typeof depVersion === 'string') {
                 const depParsed = parseNpmPackage(depVersion);
                 if (depParsed) {
@@ -195,7 +186,18 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
 
       // Add relationships from subprojects to their dependencies
     } catch (error) {
-      // Silently skip files that fail to parse
+      return {
+        packages: [],
+        subprojects: [],
+        relationships: [],
+        issues: [
+          {
+            message: `Failed to parse deno.lock: ${error instanceof Error ? error.message : String(error)}`,
+            severity: 'ERROR',
+            file,
+          },
+        ],
+      };
     }
 
     // Convert maps to arrays

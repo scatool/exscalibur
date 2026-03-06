@@ -1,6 +1,10 @@
-import { type AnalyzerResult, type Extractor, filesExtractor } from '@scatool/analyzer-core/src/index.ts';
+import {
+  type AnalyzerResult,
+  type Extractor,
+  filesExtractor,
+  scanAndMarkFiles,
+} from '@scatool/analyzer-core/src/index.ts';
 import { extractCycloneDX } from '@scatool/analyzer-plugin-cdx/src/index.ts';
-import { Glob } from 'bun';
 import { dirname } from 'node:path';
 
 export interface UvOptions {
@@ -26,16 +30,7 @@ export const extractor: Extractor<UvOptions> = filesExtractor<UvOptions>({
     uvPath: 'uv',
   }),
   markFiles: async function (codebase: string, options: UvOptions) {
-    const ignorePatterns = options.ignore ?? [];
-    const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));
-
-    const glob = new Glob('**/uv.lock');
-    for await (const file of glob.scan({ cwd: codebase, onlyFiles: true })) {
-      const shouldIgnore = ignoreGlobs.some((glob) => glob.match(file));
-      if (!shouldIgnore) {
-        this.markFile(file);
-      }
-    }
+    await scanAndMarkFiles(this, codebase, '**/uv.lock', options.ignore ?? []);
   },
   extractFile: async (file: string, options: UvOptions): Promise<AnalyzerResult> => {
     const dir = dirname(file);

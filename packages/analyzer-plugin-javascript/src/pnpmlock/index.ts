@@ -9,8 +9,8 @@ import {
   convertPackageMapToArray,
   convertRelationshipsMapToArray,
   initializeExtractionMaps,
+  scanAndMarkFiles,
 } from '@scatool/analyzer-core/src/index.ts';
-import { Glob } from 'bun';
 import { dirname, join } from 'node:path';
 import {
   findLineNumber,
@@ -33,16 +33,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     ignore: ['**/node_modules/**'],
   }),
   markFiles: async function (codebase: string, options: JavaScriptOptions) {
-    const ignorePatterns = options.ignore ?? [];
-    const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));
-
-    const lockfileGlob = new Glob('**/pnpm-lock.yaml');
-    for await (const file of lockfileGlob.scan({ cwd: codebase, absolute: true, onlyFiles: true })) {
-      const shouldIgnore = ignoreGlobs.some((glob) => glob.match(file));
-      if (!shouldIgnore) {
-        this.markFile(file);
-      }
-    }
+    await scanAndMarkFiles(this, codebase, '**/pnpm-lock.yaml', options.ignore ?? []);
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
     const dir = dirname(file);
@@ -58,7 +49,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
       // We need to do this before extracting scopes so we can identify workspace dependencies
       const workspacePackages = new Map<string, string>();
       if (lockfile.importers) {
-        for (const [importerPath, importer] of Object.entries(lockfile.importers)) {
+        for (const [importerPath] of Object.entries(lockfile.importers)) {
           const importerDir = importerPath === '.' ? dir : join(dir, importerPath);
           const packageJsonPath = join(importerDir, 'package.json');
 
@@ -123,52 +114,16 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
 
                     // Regular external dependency
                     if (typeof version === 'string') {
-                      // Handle pnpm aliases: "alias-name: real-package@version"
-                      let actualName = depName;
-                      let actualVersion: string;
-
-                      // Strip peer dependency suffix FIRST before checking for aliases
-                      // to avoid matching @ inside the suffix like (react@18.2.0)
-                      const versionWithoutPeerDeps = stripPeerDepSuffix(version);
-
-                      // Check if this is an alias (version contains @ which indicates package@version format)
-                      // Aliases look like: "string-width@4.2.3" or "@docusaurus/react-loadable@6.0.0"
-                      // Regular versions look like: "19.2.0" or "1.0.0"
-                      const lastAtIndex = versionWithoutPeerDeps.lastIndexOf('@');
-                      if (lastAtIndex > 0 && !isGitPackageKey(`${depName}@${versionWithoutPeerDeps}`)) {
-                        // Check if what comes before @ looks like a package name (not starting with a digit)
-                        const beforeAt = versionWithoutPeerDeps.substring(0, lastAtIndex);
-                        if (beforeAt && !/^\d/.test(beforeAt)) {
-                          // This is an alias - extract the real package name and version
-                          actualName = beforeAt;
-                          actualVersion = versionWithoutPeerDeps.substring(lastAtIndex + 1);
-                        } else {
-                          // Not an alias - use the stripped version
-                          actualVersion = versionWithoutPeerDeps;
-                        }
-                      } else {
-                        // Not an alias - use the stripped version
-                        actualVersion = versionWithoutPeerDeps;
-                      }
+                      const resolved = resolveAlias(depName, version);
 
                       // For git/tarball dependencies, look up the actual version from packages section
-                      const packageKey = `${actualName}@${actualVersion}`;
+                      const packageKey = `${resolved.name}@${resolved.version}`;
                       if (isGitPackageKey(packageKey)) {
-                        // This is a git/tarball package - look up the actual version
                         const resolvedVersion = getPackageVersion(lockfile, packageKey);
-                        if (resolvedVersion) {
-                          const depPurl = createNpmPurl(actualName, resolvedVersion);
-                          depsInScope.push(depPurl);
-                        } else {
-                          // Fallback to the git URL if we can't find the version
-                          // actualVersion is already stripped if it was an alias
-                          const depPurl = createNpmPurl(actualName, actualVersion);
-                          depsInScope.push(depPurl);
-                        }
+                        const depPurl = createNpmPurl(resolved.name, resolvedVersion ?? resolved.version);
+                        depsInScope.push(depPurl);
                       } else {
-                        // Regular package with semantic version
-                        // actualVersion is already stripped of peer deps (either from alias extraction or original version)
-                        const depPurl = createNpmPurl(actualName, actualVersion);
+                        const depPurl = createNpmPurl(resolved.name, resolved.version);
                         depsInScope.push(depPurl);
                       }
                     }
@@ -207,7 +162,18 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
 
       // Add relationships from subprojects to their dependencies
     } catch (error) {
-      // Silently skip files that fail to parse
+      return {
+        packages: [],
+        subprojects: [],
+        relationships: [],
+        issues: [
+          {
+            message: `Failed to parse pnpm-lock.yaml: ${error instanceof Error ? error.message : String(error)}`,
+            severity: 'ERROR',
+            file,
+          },
+        ],
+      };
     }
 
     // Convert maps to arrays
@@ -223,9 +189,6 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
   },
 });
 
-/**
- * Process dependencies from a package entry and add relationships
- */
 function processDependencies(
   deps: {
     dependencies?: Record<string, string>;
@@ -242,36 +205,8 @@ function processDependencies(
     if (depsInScope && typeof depsInScope === 'object') {
       for (const [depName, depVersion] of Object.entries(depsInScope)) {
         if (typeof depVersion === 'string') {
-          // Handle pnpm aliases: "alias-name: real-package@version"
-          // The depVersion might be "real-package@version" instead of just a version
-          let actualName = depName;
-          let actualVersion: string;
-
-          // Strip peer dependency suffix FIRST before checking for aliases
-          // to avoid matching @ inside the suffix like (react@18.2.0)
-          const versionWithoutPeerDeps = stripPeerDepSuffix(depVersion);
-
-          // Check if this is an alias (version contains @ which indicates package@version format)
-          // Aliases look like: "string-width@4.2.3" or "@docusaurus/react-loadable@6.0.0"
-          // Regular versions look like: "19.2.0" or "1.0.0"
-          const lastAtIndex = versionWithoutPeerDeps.lastIndexOf('@');
-          if (lastAtIndex > 0) {
-            // Check if what comes before @ looks like a package name (not starting with a digit)
-            const beforeAt = versionWithoutPeerDeps.substring(0, lastAtIndex);
-            if (beforeAt && !/^\d/.test(beforeAt)) {
-              // This is an alias - extract the real package name and version
-              actualName = beforeAt;
-              actualVersion = versionWithoutPeerDeps.substring(lastAtIndex + 1);
-            } else {
-              // Not an alias - use the stripped version
-              actualVersion = versionWithoutPeerDeps;
-            }
-          } else {
-            // Not an alias - use the stripped version
-            actualVersion = versionWithoutPeerDeps;
-          }
-
-          const depPurl = createNpmPurl(actualName, actualVersion);
+          const resolved = resolveAlias(depName, depVersion);
+          const depPurl = createNpmPurl(resolved.name, resolved.version);
 
           addRelationship(relationshipsMap, purl, depPurl);
           ensurePackageExists(packageMap, depPurl);
@@ -281,11 +216,6 @@ function processDependencies(
   }
 }
 
-/**
- * Process lockfile v9+ format
- * - packages section: metadata only
- * - snapshots section: dependency relationships
- */
 function processV9Lockfile(
   lockfile: PnpmLockfileV9,
   lockfileContent: string,
@@ -333,10 +263,6 @@ function processV9Lockfile(
   }
 }
 
-/**
- * Process lockfile v6 and earlier format
- * - packages section contains both metadata and relationships
- */
 function processV6Lockfile(
   lockfile: PnpmLockfileV6,
   lockfileContent: string,
@@ -372,9 +298,24 @@ function processV6Lockfile(
   }
 }
 
+/** Resolves aliased versions like "string-width@4.2.3" and strips peer dep suffixes. */
+function resolveAlias(depName: string, version: string): { name: string; version: string } {
+  const versionWithoutPeerDeps = stripPeerDepSuffix(version);
+  const lastAtIndex = versionWithoutPeerDeps.lastIndexOf('@');
+
+  if (lastAtIndex > 0) {
+    const beforeAt = versionWithoutPeerDeps.substring(0, lastAtIndex);
+    if (beforeAt && !/^\d/.test(beforeAt)) {
+      return { name: beforeAt, version: versionWithoutPeerDeps.substring(lastAtIndex + 1) };
+    }
+  }
+
+  return { name: depName, version: versionWithoutPeerDeps };
+}
+
 /**
- * Get the actual semantic version for a package from the packages section
- * For git/tarball packages, the version field in the package metadata contains the real version
+ * For git/tarball packages, the version field in the package metadata contains the real
+ * semantic version rather than the git URL or tarball path used as the package key.
  */
 function getPackageVersion(lockfile: PnpmLockfile, packageKey: string): string | null {
   const lockfileVersionNum =

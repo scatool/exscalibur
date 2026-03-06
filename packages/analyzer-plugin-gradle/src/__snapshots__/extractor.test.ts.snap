@@ -127,7 +127,18 @@ exports[`basic 1`] = `
 
 exports[`multimodule 1`] = `
 {
-  "issues": [],
+  "issues": [
+    {
+      "file": "app/build.gradle",
+      "message": "Gradle wrapper not found at expected path: /home/lukasnehrke/Projects/excalibur/packages/analyzer-plugin-gradle/src/__fixtures__/multimodule/app/gradlew",
+      "severity": "ERROR",
+    },
+    {
+      "file": "lib/build.gradle",
+      "message": "Gradle wrapper not found at expected path: /home/lukasnehrke/Projects/excalibur/packages/analyzer-plugin-gradle/src/__fixtures__/multimodule/lib/gradlew",
+      "severity": "ERROR",
+    },
+  ],
   "packages": [
     {
       "evidence": [

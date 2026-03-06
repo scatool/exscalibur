@@ -30,6 +30,12 @@ exports[`basic 1`] = `
     },
     {
       "evidence": [
+        "Cargo.lock#26",
+      ],
+      "purl": "pkg:cargo/serde@1.0.193",
+    },
+    {
+      "evidence": [
         "Cargo.lock#35",
       ],
       "purl": "pkg:cargo/serde_derive@1.0.193",
@@ -39,12 +45,6 @@ exports[`basic 1`] = `
         "Cargo.lock#46",
       ],
       "purl": "pkg:cargo/serde_json@1.0.108",
-    },
-    {
-      "evidence": [
-        "Cargo.lock#26",
-      ],
-      "purl": "pkg:cargo/serde@1.0.193",
     },
     {
       "evidence": [
@@ -73,6 +73,12 @@ exports[`basic 1`] = `
       ],
     },
     {
+      "from": "pkg:cargo/serde@1.0.193",
+      "to": [
+        "pkg:cargo/serde_derive@1.0.193",
+      ],
+    },
+    {
       "from": "pkg:cargo/serde_derive@1.0.193",
       "to": [
         "pkg:cargo/proc-macro2@1.0.70",
@@ -86,12 +92,6 @@ exports[`basic 1`] = `
         "pkg:cargo/itoa@1.0.10",
         "pkg:cargo/ryu@1.0.16",
         "pkg:cargo/serde@1.0.193",
-      ],
-    },
-    {
-      "from": "pkg:cargo/serde@1.0.193",
-      "to": [
-        "pkg:cargo/serde_derive@1.0.193",
       ],
     },
     {
@@ -163,6 +163,12 @@ exports[`complex-workspace 1`] = `
     },
     {
       "evidence": [
+        "Cargo.lock#79",
+      ],
+      "purl": "pkg:cargo/serde@1.0.193",
+    },
+    {
+      "evidence": [
         "Cargo.lock#88",
       ],
       "purl": "pkg:cargo/serde_derive@1.0.193",
@@ -172,12 +178,6 @@ exports[`complex-workspace 1`] = `
         "Cargo.lock#99",
       ],
       "purl": "pkg:cargo/serde_json@1.0.108",
-    },
-    {
-      "evidence": [
-        "Cargo.lock#79",
-      ],
-      "purl": "pkg:cargo/serde@1.0.193",
     },
     {
       "evidence": [
@@ -230,6 +230,12 @@ exports[`complex-workspace 1`] = `
       ],
     },
     {
+      "from": "pkg:cargo/serde@1.0.193",
+      "to": [
+        "pkg:cargo/serde_derive@1.0.193",
+      ],
+    },
+    {
       "from": "pkg:cargo/serde_derive@1.0.193",
       "to": [
         "pkg:cargo/proc-macro2@1.0.70",
@@ -243,12 +249,6 @@ exports[`complex-workspace 1`] = `
         "pkg:cargo/itoa@1.0.10",
         "pkg:cargo/ryu@1.0.16",
         "pkg:cargo/serde@1.0.193",
-      ],
-    },
-    {
-      "from": "pkg:cargo/serde@1.0.193",
-      "to": [
-        "pkg:cargo/serde_derive@1.0.193",
       ],
     },
     {
@@ -343,15 +343,15 @@ exports[`git-deps 1`] = `
     },
     {
       "evidence": [
-        "Cargo.lock#49",
-      ],
-      "purl": "pkg:cargo/serde_derive@1.0.193",
-    },
-    {
-      "evidence": [
         "Cargo.lock#40",
       ],
       "purl": "pkg:cargo/serde@1.0.193",
+    },
+    {
+      "evidence": [
+        "Cargo.lock#49",
+      ],
+      "purl": "pkg:cargo/serde_derive@1.0.193",
     },
     {
       "evidence": [
@@ -386,17 +386,17 @@ exports[`git-deps 1`] = `
       ],
     },
     {
+      "from": "pkg:cargo/serde@1.0.193",
+      "to": [
+        "pkg:cargo/serde_derive@1.0.193",
+      ],
+    },
+    {
       "from": "pkg:cargo/serde_derive@1.0.193",
       "to": [
         "pkg:cargo/proc-macro2@1.0.70",
         "pkg:cargo/quote@1.0.33",
         "pkg:cargo/syn@2.0.41",
-      ],
-    },
-    {
-      "from": "pkg:cargo/serde@1.0.193",
-      "to": [
-        "pkg:cargo/serde_derive@1.0.193",
       ],
     },
     {
@@ -580,6 +580,12 @@ exports[`v4-lockfile 1`] = `
     },
     {
       "evidence": [
+        "Cargo.lock#36",
+      ],
+      "purl": "pkg:cargo/serde@1.0.193",
+    },
+    {
+      "evidence": [
         "Cargo.lock#45",
       ],
       "purl": "pkg:cargo/serde_derive@1.0.193",
@@ -589,12 +595,6 @@ exports[`v4-lockfile 1`] = `
         "Cargo.lock#56",
       ],
       "purl": "pkg:cargo/serde_json@1.0.108",
-    },
-    {
-      "evidence": [
-        "Cargo.lock#36",
-      ],
-      "purl": "pkg:cargo/serde@1.0.193",
     },
     {
       "evidence": [
@@ -623,6 +623,12 @@ exports[`v4-lockfile 1`] = `
       ],
     },
     {
+      "from": "pkg:cargo/serde@1.0.193",
+      "to": [
+        "pkg:cargo/serde_derive@1.0.193",
+      ],
+    },
+    {
       "from": "pkg:cargo/serde_derive@1.0.193",
       "to": [
         "pkg:cargo/proc-macro2@1.0.70",
@@ -636,12 +642,6 @@ exports[`v4-lockfile 1`] = `
         "pkg:cargo/itoa@1.0.10",
         "pkg:cargo/ryu@1.0.16",
         "pkg:cargo/serde@1.0.193",
-      ],
-    },
-    {
-      "from": "pkg:cargo/serde@1.0.193",
-      "to": [
-        "pkg:cargo/serde_derive@1.0.193",
       ],
     },
     {
@@ -689,15 +689,15 @@ exports[`workspace 1`] = `
     },
     {
       "evidence": [
-        "Cargo.lock#30",
-      ],
-      "purl": "pkg:cargo/serde_derive@1.0.193",
-    },
-    {
-      "evidence": [
         "Cargo.lock#21",
       ],
       "purl": "pkg:cargo/serde@1.0.193",
+    },
+    {
+      "evidence": [
+        "Cargo.lock#30",
+      ],
+      "purl": "pkg:cargo/serde_derive@1.0.193",
     },
     {
       "evidence": [
@@ -738,17 +738,17 @@ exports[`workspace 1`] = `
       ],
     },
     {
+      "from": "pkg:cargo/serde@1.0.193",
+      "to": [
+        "pkg:cargo/serde_derive@1.0.193",
+      ],
+    },
+    {
       "from": "pkg:cargo/serde_derive@1.0.193",
       "to": [
         "pkg:cargo/proc-macro2@1.0.70",
         "pkg:cargo/quote@1.0.33",
         "pkg:cargo/syn@2.0.41",
-      ],
-    },
-    {
-      "from": "pkg:cargo/serde@1.0.193",
-      "to": [
-        "pkg:cargo/serde_derive@1.0.193",
       ],
     },
     {

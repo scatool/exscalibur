@@ -20,7 +20,7 @@ import {
   type YarnBerryLockfile,
 } from './lockfile.ts';
 import type { PackageJson } from '../types.ts';
-import { createNpmPurl, NPM_DEPENDENCY_SCOPES } from '../npm-utils.ts';
+import { createNpmPurl, extractNpmScopes, NPM_DEPENDENCY_SCOPES } from '../npm-utils.ts';
 import type { JavaScriptOptions } from '../options.ts';
 
 export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScriptOptions>({
@@ -45,7 +45,6 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
           const reader = stream.getReader();
 
           let buffer = '';
-          let foundMetadata = false;
 
           // Read first ~500 bytes (should cover metadata section)
           const { value } = await reader.read();
@@ -138,40 +137,14 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
           continue;
         }
 
-        for (const scopeName of NPM_DEPENDENCY_SCOPES) {
-          const depsInScope: string[] = [];
-          const packageJsonDeps = packageInfo[scopeName];
-
-          if (packageJsonDeps && typeof packageJsonDeps === 'object') {
-            for (const [depName, versionRange] of Object.entries(packageJsonDeps)) {
-              if (typeof versionRange === 'string') {
-                // Check if this is a workspace package
-                const workspaceVersion = workspacePackages.get(depName);
-                if (workspaceVersion) {
-                  const depPurl = createNpmPurl(depName, workspaceVersion.version);
-                  depsInScope.push(depPurl);
-                  continue;
-                }
-
-                // Regular external dependency - resolve the version
-                // Check if this is an npm alias (e.g., "react-old": "npm:react@^16.0.0")
-                const { actualName, actualRange } = parseAliasedDependency(depName, versionRange);
-                const resolvedVersion = resolvePackageVersion(lockfile, actualName, actualRange);
-                if (resolvedVersion) {
-                  const depPurl = createNpmPurl(actualName, resolvedVersion);
-                  depsInScope.push(depPurl);
-                }
-              }
-            }
-          }
-
-          if (depsInScope.length > 0) {
-            scopes.push({
-              scope: scopeName,
-              packages: depsInScope,
-            });
-          }
-        }
+        const extractedScopes = extractNpmScopes(packageInfo as Record<string, unknown>, (depName, versionRange) => {
+          const workspaceVersion = workspacePackages.get(depName);
+          if (workspaceVersion) return createNpmPurl(depName, workspaceVersion.version);
+          const { actualName, actualRange } = parseAliasedDependency(depName, versionRange);
+          const resolvedVersion = resolvePackageVersion(lockfile, actualName, actualRange);
+          return resolvedVersion ? createNpmPurl(actualName, resolvedVersion) : null;
+        });
+        scopes.push(...extractedScopes);
 
         subprojects.push({
           purl,
@@ -191,35 +164,11 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
           if (packageInfo.name && packageInfo.version) {
             const purl = createNpmPurl(packageInfo.name, packageInfo.version);
 
-            // Extract scopes from package.json
-            const scopes: DependencyScope[] = [];
-
-            for (const scopeName of NPM_DEPENDENCY_SCOPES) {
-              const depsInScope: string[] = [];
-              const deps = packageInfo[scopeName];
-
-              if (deps && typeof deps === 'object') {
-                for (const [depName, versionRange] of Object.entries(deps)) {
-                  if (typeof versionRange === 'string') {
-                    // Resolve the actual installed version from the lockfile
-                    // Check if this is an npm alias (e.g., "react-old": "npm:react@^16.0.0")
-                    const { actualName, actualRange } = parseAliasedDependency(depName, versionRange);
-                    const resolvedVersion = resolvePackageVersion(lockfile, actualName, actualRange);
-                    if (resolvedVersion) {
-                      const depPurl = createNpmPurl(actualName, resolvedVersion);
-                      depsInScope.push(depPurl);
-                    }
-                  }
-                }
-              }
-
-              if (depsInScope.length > 0) {
-                scopes.push({
-                  scope: scopeName,
-                  packages: depsInScope,
-                });
-              }
-            }
+            const scopes = extractNpmScopes(packageInfo as Record<string, unknown>, (depName, versionRange) => {
+              const { actualName, actualRange } = parseAliasedDependency(depName, versionRange);
+              const resolvedVersion = resolvePackageVersion(lockfile, actualName, actualRange);
+              return resolvedVersion ? createNpmPurl(actualName, resolvedVersion) : null;
+            });
 
             subprojects.push({
               purl,
@@ -279,7 +228,18 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
 
       // Add relationships from subprojects to their dependencies
     } catch (error) {
-      // Silently skip files that fail to parse
+      return {
+        packages: [],
+        subprojects: [],
+        relationships: [],
+        issues: [
+          {
+            message: `Failed to parse yarn.lock: ${error instanceof Error ? error.message : String(error)}`,
+            severity: 'ERROR',
+            file,
+          },
+        ],
+      };
     }
 
     // Convert maps to arrays

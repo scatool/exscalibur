@@ -6,12 +6,12 @@ export type CargoLockPackage = {
   dependencies?: string[];
 };
 
-export type CargoLockfile = {
+type CargoLockfile = {
   version: number;
   package: CargoLockPackage[];
 };
 
-export type CargoToml = {
+type CargoToml = {
   package?: {
     name?: string;
     version?: string;

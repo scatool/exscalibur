@@ -31,15 +31,15 @@
       ]
     },
     {
-      "purl": "pkg:cargo/android_system_properties@0.1.5",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#68"
-      ]
-    },
-    {
       "purl": "pkg:cargo/android-tzdata@0.1.1",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#62"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/android_system_properties@0.1.5",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#68"
       ]
     },
     {
@@ -259,6 +259,12 @@
       ]
     },
     {
+      "purl": "pkg:cargo/cargo-platform@0.1.9",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#448"
+      ]
+    },
+    {
       "purl": "pkg:cargo/cargo_metadata@0.19.2",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#457"
@@ -268,12 +274,6 @@
       "purl": "pkg:cargo/cargo_toml@0.22.1",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#471"
-      ]
-    },
-    {
-      "purl": "pkg:cargo/cargo-platform@0.1.9",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#448"
       ]
     },
     {
@@ -295,12 +295,6 @@
       ]
     },
     {
-      "purl": "pkg:cargo/cfg_aliases@0.2.1",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#523"
-      ]
-    },
-    {
       "purl": "pkg:cargo/cfg-expr@0.15.8",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#507"
@@ -310,6 +304,12 @@
       "purl": "pkg:cargo/cfg-if@1.0.1",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#517"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/cfg_aliases@0.2.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#523"
       ]
     },
     {
@@ -451,6 +451,12 @@
       ]
     },
     {
+      "purl": "pkg:cargo/darling@0.20.11",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#748"
+      ]
+    },
+    {
       "purl": "pkg:cargo/darling_core@0.20.11",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#758"
@@ -460,12 +466,6 @@
       "purl": "pkg:cargo/darling_macro@0.20.11",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#772"
-      ]
-    },
-    {
-      "purl": "pkg:cargo/darling@0.20.11",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#748"
       ]
     },
     {
@@ -511,12 +511,6 @@
       ]
     },
     {
-      "purl": "pkg:cargo/dispatch@0.2.0",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#854"
-      ]
-    },
-    {
       "purl": "pkg:cargo/dispatch2@0.2.0",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#860"
@@ -529,21 +523,27 @@
       ]
     },
     {
+      "purl": "pkg:cargo/dispatch@0.2.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#854"
+      ]
+    },
+    {
       "purl": "pkg:cargo/displaydoc@0.2.5",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#882"
       ]
     },
     {
-      "purl": "pkg:cargo/dlopen2_derive@0.4.1",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#905"
-      ]
-    },
-    {
       "purl": "pkg:cargo/dlopen2@0.7.0",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#893"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/dlopen2_derive@0.4.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#905"
       ]
     },
     {
@@ -589,15 +589,15 @@
       ]
     },
     {
-      "purl": "pkg:cargo/embed_plist@1.2.2",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#981"
-      ]
-    },
-    {
       "purl": "pkg:cargo/embed-resource@3.0.3",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#967"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/embed_plist@1.2.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#981"
       ]
     },
     {
@@ -607,15 +607,15 @@
       ]
     },
     {
-      "purl": "pkg:cargo/enumflags2_derive@0.7.12",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#1003"
-      ]
-    },
-    {
       "purl": "pkg:cargo/enumflags2@0.7.12",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#993"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/enumflags2_derive@0.7.12",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1003"
       ]
     },
     {
@@ -919,15 +919,15 @@
       ]
     },
     {
-      "purl": "pkg:cargo/gtk@0.18.2",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#1556"
-      ]
-    },
-    {
       "purl": "pkg:cargo/gtk3-macros@0.18.2",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#1595"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/gtk@0.18.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1556"
       ]
     },
     {
@@ -1057,27 +1057,27 @@
       ]
     },
     {
-      "purl": "pkg:cargo/icu_normalizer_data@2.0.0",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#1849"
-      ]
-    },
-    {
       "purl": "pkg:cargo/icu_normalizer@2.0.0",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#1834"
       ]
     },
     {
-      "purl": "pkg:cargo/icu_properties_data@2.0.1",
+      "purl": "pkg:cargo/icu_normalizer_data@2.0.0",
       "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#1871"
+        "apps/desktop/src-tauri/Cargo.lock#1849"
       ]
     },
     {
       "purl": "pkg:cargo/icu_properties@2.0.1",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#1855"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/icu_properties_data@2.0.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1871"
       ]
     },
     {
@@ -1093,15 +1093,15 @@
       ]
     },
     {
-      "purl": "pkg:cargo/idna_adapter@1.2.1",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#1911"
-      ]
-    },
-    {
       "purl": "pkg:cargo/idna@1.0.3",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#1900"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/idna_adapter@1.2.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#1911"
       ]
     },
     {
@@ -1399,18 +1399,6 @@
       ]
     },
     {
-      "purl": "pkg:cargo/num_enum_derive@0.7.3",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#2404"
-      ]
-    },
-    {
-      "purl": "pkg:cargo/num_enum@0.7.3",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#2395"
-      ]
-    },
-    {
       "purl": "pkg:cargo/num-conv@0.1.0",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#2380"
@@ -1420,6 +1408,18 @@
       "purl": "pkg:cargo/num-traits@0.2.19",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#2386"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/num_enum@0.7.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2395"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/num_enum_derive@0.7.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2404"
       ]
     },
     {
@@ -1597,9 +1597,9 @@
       ]
     },
     {
-      "purl": "pkg:cargo/parking_lot_core@0.9.11",
+      "purl": "pkg:cargo/parking@2.2.1",
       "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#2750"
+        "apps/desktop/src-tauri/Cargo.lock#2734"
       ]
     },
     {
@@ -1609,9 +1609,9 @@
       ]
     },
     {
-      "purl": "pkg:cargo/parking@2.2.1",
+      "purl": "pkg:cargo/parking_lot_core@0.9.11",
       "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#2734"
+        "apps/desktop/src-tauri/Cargo.lock#2750"
       ]
     },
     {
@@ -1624,6 +1624,24 @@
       "purl": "pkg:cargo/percent-encoding@2.3.1",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#2769"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/phf@0.10.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2775"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/phf@0.11.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2775"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/phf@0.8.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#2775"
       ]
     },
     {
@@ -1684,24 +1702,6 @@
       "purl": "pkg:cargo/phf_shared@0.8.0",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#2882"
-      ]
-    },
-    {
-      "purl": "pkg:cargo/phf@0.10.1",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#2775"
-      ]
-    },
-    {
-      "purl": "pkg:cargo/phf@0.11.3",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#2775"
-      ]
-    },
-    {
-      "purl": "pkg:cargo/phf@0.8.0",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#2775"
       ]
     },
     {
@@ -1855,6 +1855,24 @@
       ]
     },
     {
+      "purl": "pkg:cargo/rand@0.7.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3164"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/rand@0.8.5",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3164"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/rand@0.9.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3164"
+      ]
+    },
+    {
       "purl": "pkg:cargo/rand_chacha@0.2.2",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#3199"
@@ -1900,24 +1918,6 @@
       "purl": "pkg:cargo/rand_pcg@0.2.1",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#3265"
-      ]
-    },
-    {
-      "purl": "pkg:cargo/rand@0.7.3",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#3164"
-      ]
-    },
-    {
-      "purl": "pkg:cargo/rand@0.8.5",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#3164"
-      ]
-    },
-    {
-      "purl": "pkg:cargo/rand@0.9.1",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#3164"
       ]
     },
     {
@@ -1993,12 +1993,6 @@
       ]
     },
     {
-      "purl": "pkg:cargo/rustc_version@0.4.1",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#3452"
-      ]
-    },
-    {
       "purl": "pkg:cargo/rustc-demangle@0.1.25",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#3440"
@@ -2008,6 +2002,12 @@
       "purl": "pkg:cargo/rustc-hash@2.1.1",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#3446"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/rustc_version@0.4.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3452"
       ]
     },
     {
@@ -2059,15 +2059,15 @@
       ]
     },
     {
-      "purl": "pkg:cargo/schemars_derive@0.8.22",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#3558"
-      ]
-    },
-    {
       "purl": "pkg:cargo/schemars@0.8.22",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#3543"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/schemars_derive@0.8.22",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3558"
       ]
     },
     {
@@ -2089,15 +2089,27 @@
       ]
     },
     {
-      "purl": "pkg:cargo/serde_derive_internals@0.29.1",
+      "purl": "pkg:cargo/serde-untagged@0.1.7",
       "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#3636"
+        "apps/desktop/src-tauri/Cargo.lock#3614"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/serde@1.0.219",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3605"
       ]
     },
     {
       "purl": "pkg:cargo/serde_derive@1.0.219",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#3625"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/serde_derive_internals@0.29.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3636"
       ]
     },
     {
@@ -2125,27 +2137,15 @@
       ]
     },
     {
-      "purl": "pkg:cargo/serde_with_macros@3.12.0",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#3709"
-      ]
-    },
-    {
       "purl": "pkg:cargo/serde_with@3.12.0",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#3691"
       ]
     },
     {
-      "purl": "pkg:cargo/serde-untagged@0.1.7",
+      "purl": "pkg:cargo/serde_with_macros@3.12.0",
       "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#3614"
-      ]
-    },
-    {
-      "purl": "pkg:cargo/serde@1.0.219",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#3605"
+        "apps/desktop/src-tauri/Cargo.lock#3709"
       ]
     },
     {
@@ -2251,15 +2251,15 @@
       ]
     },
     {
-      "purl": "pkg:cargo/string_cache_codegen@0.5.4",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#3895"
-      ]
-    },
-    {
       "purl": "pkg:cargo/string_cache@0.8.9",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#3882"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/string_cache_codegen@0.5.4",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#3895"
       ]
     },
     {
@@ -2509,15 +2509,15 @@
       ]
     },
     {
-      "purl": "pkg:cargo/tinyvec_macros@0.1.1",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#4561"
-      ]
-    },
-    {
       "purl": "pkg:cargo/tinyvec@1.9.0",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#4552"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/tinyvec_macros@0.1.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4561"
       ]
     },
     {
@@ -2536,6 +2536,12 @@
       "purl": "pkg:cargo/tokio@1.45.1",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#4567"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/toml@0.8.23",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4607"
       ]
     },
     {
@@ -2566,12 +2572,6 @@
       "purl": "pkg:cargo/toml_write@0.1.2",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#4664"
-      ]
-    },
-    {
-      "purl": "pkg:cargo/toml@0.8.23",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#4607"
       ]
     },
     {
@@ -2731,15 +2731,15 @@
       ]
     },
     {
-      "purl": "pkg:cargo/version_check@0.9.5",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#4916"
-      ]
-    },
-    {
       "purl": "pkg:cargo/version-compare@0.2.0",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#4910"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/version_check@0.9.5",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#4916"
       ]
     },
     {
@@ -2911,6 +2911,120 @@
       ]
     },
     {
+      "purl": "pkg:cargo/windows-collections@0.2.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5240"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-core@0.61.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5249"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-future@0.2.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5262"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-implement@0.60.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5273"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-interface@0.59.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5284"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-link@0.1.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5295"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-numerics@0.2.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5301"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-registry@0.5.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5311"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-result@0.3.4",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5322"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-strings@0.4.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5331"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-sys@0.45.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5340"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-sys@0.52.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5340"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-sys@0.59.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5340"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-targets@0.42.2",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5367"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-targets@0.48.5",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5367"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-targets@0.52.6",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5367"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-threading@0.1.0",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5413"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows-version@0.1.4",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5422"
+      ]
+    },
+    {
+      "purl": "pkg:cargo/windows@0.61.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5227"
+      ]
+    },
+    {
       "purl": "pkg:cargo/windows_aarch64_gnullvm@0.42.2",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#5431"
@@ -3043,120 +3157,6 @@
       ]
     },
     {
-      "purl": "pkg:cargo/windows-collections@0.2.0",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#5240"
-      ]
-    },
-    {
-      "purl": "pkg:cargo/windows-core@0.61.2",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#5249"
-      ]
-    },
-    {
-      "purl": "pkg:cargo/windows-future@0.2.1",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#5262"
-      ]
-    },
-    {
-      "purl": "pkg:cargo/windows-implement@0.60.0",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#5273"
-      ]
-    },
-    {
-      "purl": "pkg:cargo/windows-interface@0.59.1",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#5284"
-      ]
-    },
-    {
-      "purl": "pkg:cargo/windows-link@0.1.1",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#5295"
-      ]
-    },
-    {
-      "purl": "pkg:cargo/windows-numerics@0.2.0",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#5301"
-      ]
-    },
-    {
-      "purl": "pkg:cargo/windows-registry@0.5.2",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#5311"
-      ]
-    },
-    {
-      "purl": "pkg:cargo/windows-result@0.3.4",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#5322"
-      ]
-    },
-    {
-      "purl": "pkg:cargo/windows-strings@0.4.2",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#5331"
-      ]
-    },
-    {
-      "purl": "pkg:cargo/windows-sys@0.45.0",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#5340"
-      ]
-    },
-    {
-      "purl": "pkg:cargo/windows-sys@0.52.0",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#5340"
-      ]
-    },
-    {
-      "purl": "pkg:cargo/windows-sys@0.59.0",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#5340"
-      ]
-    },
-    {
-      "purl": "pkg:cargo/windows-targets@0.42.2",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#5367"
-      ]
-    },
-    {
-      "purl": "pkg:cargo/windows-targets@0.48.5",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#5367"
-      ]
-    },
-    {
-      "purl": "pkg:cargo/windows-targets@0.52.6",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#5367"
-      ]
-    },
-    {
-      "purl": "pkg:cargo/windows-threading@0.1.0",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#5413"
-      ]
-    },
-    {
-      "purl": "pkg:cargo/windows-version@0.1.4",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#5422"
-      ]
-    },
-    {
-      "purl": "pkg:cargo/windows@0.61.1",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#5227"
-      ]
-    },
-    {
       "purl": "pkg:cargo/winnow@0.5.40",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#5563"
@@ -3241,6 +3241,12 @@
       ]
     },
     {
+      "purl": "pkg:cargo/zbus@5.7.1",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5728"
+      ]
+    },
+    {
       "purl": "pkg:cargo/zbus_macros@5.7.1",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#5762"
@@ -3250,12 +3256,6 @@
       "purl": "pkg:cargo/zbus_names@4.2.0",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#5777"
-      ]
-    },
-    {
-      "purl": "pkg:cargo/zbus@5.7.1",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#5728"
       ]
     },
     {
@@ -3319,6 +3319,12 @@
       ]
     },
     {
+      "purl": "pkg:cargo/zvariant@5.5.3",
+      "evidence": [
+        "apps/desktop/src-tauri/Cargo.lock#5893"
+      ]
+    },
+    {
       "purl": "pkg:cargo/zvariant_derive@5.5.3",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#5908"
@@ -3328,12 +3334,6 @@
       "purl": "pkg:cargo/zvariant_utils@3.2.0",
       "evidence": [
         "apps/desktop/src-tauri/Cargo.lock#5921"
-      ]
-    },
-    {
-      "purl": "pkg:cargo/zvariant@5.5.3",
-      "evidence": [
-        "apps/desktop/src-tauri/Cargo.lock#5893"
       ]
     },
     {
@@ -3779,15 +3779,15 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40depot/cli-linux-arm@0.0.1-cli.2.80.0",
-      "evidence": [
-        "bun.lock#667"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40depot/cli-linux-arm64@0.0.1-cli.2.80.0",
       "evidence": [
         "bun.lock#669"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40depot/cli-linux-arm@0.0.1-cli.2.80.0",
+      "evidence": [
+        "bun.lock#667"
       ]
     },
     {
@@ -3875,30 +3875,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40esbuild/android-arm@0.18.20",
-      "evidence": [
-        "bun.lock#4833"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40esbuild/android-arm@0.23.1",
-      "evidence": [
-        "bun.lock#5267"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40esbuild/android-arm@0.25.4",
-      "evidence": [
-        "bun.lock#5323"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40esbuild/android-arm@0.25.9",
-      "evidence": [
-        "bun.lock#693"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40esbuild/android-arm64@0.18.20",
       "evidence": [
         "bun.lock#4835"
@@ -3920,6 +3896,30 @@
       "purl": "pkg:npm/%40esbuild/android-arm64@0.25.9",
       "evidence": [
         "bun.lock#695"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/android-arm@0.18.20",
+      "evidence": [
+        "bun.lock#4833"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/android-arm@0.23.1",
+      "evidence": [
+        "bun.lock#5267"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/android-arm@0.25.4",
+      "evidence": [
+        "bun.lock#5323"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/android-arm@0.25.9",
+      "evidence": [
+        "bun.lock#693"
       ]
     },
     {
@@ -4043,30 +4043,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40esbuild/linux-arm@0.18.20",
-      "evidence": [
-        "bun.lock#4847"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40esbuild/linux-arm@0.23.1",
-      "evidence": [
-        "bun.lock#5281"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40esbuild/linux-arm@0.25.4",
-      "evidence": [
-        "bun.lock#5337"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40esbuild/linux-arm@0.25.9",
-      "evidence": [
-        "bun.lock#707"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40esbuild/linux-arm64@0.18.20",
       "evidence": [
         "bun.lock#4849"
@@ -4088,6 +4064,30 @@
       "purl": "pkg:npm/%40esbuild/linux-arm64@0.25.9",
       "evidence": [
         "bun.lock#709"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/linux-arm@0.18.20",
+      "evidence": [
+        "bun.lock#4847"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/linux-arm@0.23.1",
+      "evidence": [
+        "bun.lock#5281"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/linux-arm@0.25.4",
+      "evidence": [
+        "bun.lock#5337"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40esbuild/linux-arm@0.25.9",
+      "evidence": [
+        "bun.lock#707"
       ]
     },
     {
@@ -4611,25 +4611,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.0.5",
-      "evidence": [
-        "bun.lock#5087",
-        "bun.lock#5163"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.1.0",
-      "evidence": [
-        "bun.lock#783"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.0",
-      "evidence": [
-        "bun.lock#5203"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40img/sharp-libvips-linux-arm64@1.0.4",
       "evidence": [
         "bun.lock#5089",
@@ -4646,6 +4627,25 @@
       "purl": "pkg:npm/%40img/sharp-libvips-linux-arm64@1.2.0",
       "evidence": [
         "bun.lock#5205"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.0.5",
+      "evidence": [
+        "bun.lock#5087",
+        "bun.lock#5163"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.1.0",
+      "evidence": [
+        "bun.lock#783"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.0",
+      "evidence": [
+        "bun.lock#5203"
       ]
     },
     {
@@ -4738,25 +4738,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40img/sharp-linux-arm@0.33.5",
-      "evidence": [
-        "bun.lock#5099",
-        "bun.lock#5175"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40img/sharp-linux-arm@0.34.1",
-      "evidence": [
-        "bun.lock#797"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40img/sharp-linux-arm@0.34.3",
-      "evidence": [
-        "bun.lock#5217"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40img/sharp-linux-arm64@0.33.5",
       "evidence": [
         "bun.lock#5101",
@@ -4773,6 +4754,25 @@
       "purl": "pkg:npm/%40img/sharp-linux-arm64@0.34.3",
       "evidence": [
         "bun.lock#5219"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40img/sharp-linux-arm@0.33.5",
+      "evidence": [
+        "bun.lock#5099",
+        "bun.lock#5175"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40img/sharp-linux-arm@0.34.1",
+      "evidence": [
+        "bun.lock#797"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40img/sharp-linux-arm@0.34.3",
+      "evidence": [
+        "bun.lock#5217"
       ]
     },
     {
@@ -5665,15 +5665,15 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40opentelemetry/instrumentation-mysql@0.49.0",
-      "evidence": [
-        "bun.lock#1065"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40opentelemetry/instrumentation-mysql2@0.50.0",
       "evidence": [
         "bun.lock#1067"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40opentelemetry/instrumentation-mysql@0.49.0",
+      "evidence": [
+        "bun.lock#1065"
       ]
     },
     {
@@ -6727,15 +6727,15 @@
       ]
     },
     {
-      "purl": "pkg:npm/%40sentry/cli-linux-arm@2.53.0",
-      "evidence": [
-        "bun.lock#1415"
-      ]
-    },
-    {
       "purl": "pkg:npm/%40sentry/cli-linux-arm64@2.53.0",
       "evidence": [
         "bun.lock#1417"
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40sentry/cli-linux-arm@2.53.0",
+      "evidence": [
+        "bun.lock#1415"
       ]
     },
     {
@@ -14274,15 +14274,15 @@
       ]
     },
     {
-      "purl": "pkg:npm/rc@1.2.8",
-      "evidence": [
-        "bun.lock#3583"
-      ]
-    },
-    {
       "purl": "pkg:npm/rc9@2.1.2",
       "evidence": [
         "bun.lock#3585"
+      ]
+    },
+    {
+      "purl": "pkg:npm/rc@1.2.8",
+      "evidence": [
+        "bun.lock#3583"
       ]
     },
     {
@@ -15385,21 +15385,6 @@
       ]
     },
     {
-      "purl": "pkg:npm/string_decoder@1.1.1",
-      "evidence": [
-        "bun.lock#4717",
-        "bun.lock#5053",
-        "bun.lock#5073",
-        "bun.lock#5259"
-      ]
-    },
-    {
-      "purl": "pkg:npm/string_decoder@1.3.0",
-      "evidence": [
-        "bun.lock#3909"
-      ]
-    },
-    {
       "purl": "pkg:npm/string-width@4.2.3",
       "evidence": [
         "bun.lock#3901",
@@ -15443,6 +15428,21 @@
       "purl": "pkg:npm/string.prototype.trimstart@1.0.8",
       "evidence": [
         "bun.lock#3907"
+      ]
+    },
+    {
+      "purl": "pkg:npm/string_decoder@1.1.1",
+      "evidence": [
+        "bun.lock#4717",
+        "bun.lock#5053",
+        "bun.lock#5073",
+        "bun.lock#5259"
+      ]
+    },
+    {
+      "purl": "pkg:npm/string_decoder@1.3.0",
+      "evidence": [
+        "bun.lock#3909"
       ]
     },
     {
@@ -17702,6 +17702,12 @@
       ]
     },
     {
+      "from": "pkg:cargo/cargo-platform@0.1.9",
+      "to": [
+        "pkg:cargo/serde@1.0.219"
+      ]
+    },
+    {
       "from": "pkg:cargo/cargo_metadata@0.19.2",
       "to": [
         "pkg:cargo/camino@1.1.10",
@@ -17717,12 +17723,6 @@
       "to": [
         "pkg:cargo/serde@1.0.219",
         "pkg:cargo/toml@0.8.23"
-      ]
-    },
-    {
-      "from": "pkg:cargo/cargo-platform@0.1.9",
-      "to": [
-        "pkg:cargo/serde@1.0.219"
       ]
     },
     {
@@ -17882,6 +17882,13 @@
       ]
     },
     {
+      "from": "pkg:cargo/darling@0.20.11",
+      "to": [
+        "pkg:cargo/darling_core@0.20.11",
+        "pkg:cargo/darling_macro@0.20.11"
+      ]
+    },
+    {
       "from": "pkg:cargo/darling_core@0.20.11",
       "to": [
         "pkg:cargo/fnv@1.0.7",
@@ -17898,13 +17905,6 @@
         "pkg:cargo/darling_core@0.20.11",
         "pkg:cargo/quote@1.0.40",
         "pkg:cargo/syn@2.0.102"
-      ]
-    },
-    {
-      "from": "pkg:cargo/darling@0.20.11",
-      "to": [
-        "pkg:cargo/darling_core@0.20.11",
-        "pkg:cargo/darling_macro@0.20.11"
       ]
     },
     {
@@ -17979,20 +17979,20 @@
       ]
     },
     {
-      "from": "pkg:cargo/dlopen2_derive@0.4.1",
-      "to": [
-        "pkg:cargo/proc-macro2@1.0.95",
-        "pkg:cargo/quote@1.0.40",
-        "pkg:cargo/syn@2.0.102"
-      ]
-    },
-    {
       "from": "pkg:cargo/dlopen2@0.7.0",
       "to": [
         "pkg:cargo/dlopen2_derive@0.4.1",
         "pkg:cargo/libc@0.2.172",
         "pkg:cargo/once_cell@1.21.3",
         "pkg:cargo/winapi@0.3.9"
+      ]
+    },
+    {
+      "from": "pkg:cargo/dlopen2_derive@0.4.1",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102"
       ]
     },
     {
@@ -18025,18 +18025,18 @@
       ]
     },
     {
+      "from": "pkg:cargo/enumflags2@0.7.12",
+      "to": [
+        "pkg:cargo/enumflags2_derive@0.7.12",
+        "pkg:cargo/serde@1.0.219"
+      ]
+    },
+    {
       "from": "pkg:cargo/enumflags2_derive@0.7.12",
       "to": [
         "pkg:cargo/proc-macro2@1.0.95",
         "pkg:cargo/quote@1.0.40",
         "pkg:cargo/syn@2.0.102"
-      ]
-    },
-    {
-      "from": "pkg:cargo/enumflags2@0.7.12",
-      "to": [
-        "pkg:cargo/enumflags2_derive@0.7.12",
-        "pkg:cargo/serde@1.0.219"
       ]
     },
     {
@@ -18420,6 +18420,16 @@
       ]
     },
     {
+      "from": "pkg:cargo/gtk3-macros@0.18.2",
+      "to": [
+        "pkg:cargo/proc-macro-crate@1.3.1",
+        "pkg:cargo/proc-macro-error@1.0.4",
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102"
+      ]
+    },
+    {
       "from": "pkg:cargo/gtk@0.18.2",
       "to": [
         "pkg:cargo/atk@0.18.2",
@@ -18435,16 +18445,6 @@
         "pkg:cargo/libc@0.2.172",
         "pkg:cargo/pango@0.18.3",
         "pkg:cargo/pkg-config@0.3.32"
-      ]
-    },
-    {
-      "from": "pkg:cargo/gtk3-macros@0.18.2",
-      "to": [
-        "pkg:cargo/proc-macro-crate@1.3.1",
-        "pkg:cargo/proc-macro-error@1.0.4",
-        "pkg:cargo/proc-macro2@1.0.95",
-        "pkg:cargo/quote@1.0.40",
-        "pkg:cargo/syn@2.0.102"
       ]
     },
     {
@@ -18626,18 +18626,18 @@
       ]
     },
     {
-      "from": "pkg:cargo/idna_adapter@1.2.1",
-      "to": [
-        "pkg:cargo/icu_normalizer@2.0.0",
-        "pkg:cargo/icu_properties@2.0.1"
-      ]
-    },
-    {
       "from": "pkg:cargo/idna@1.0.3",
       "to": [
         "pkg:cargo/idna_adapter@1.2.1",
         "pkg:cargo/smallvec@1.15.1",
         "pkg:cargo/utf8_iter@1.0.4"
+      ]
+    },
+    {
+      "from": "pkg:cargo/idna_adapter@1.2.1",
+      "to": [
+        "pkg:cargo/icu_normalizer@2.0.0",
+        "pkg:cargo/icu_properties@2.0.1"
       ]
     },
     {
@@ -18893,12 +18893,9 @@
       ]
     },
     {
-      "from": "pkg:cargo/num_enum_derive@0.7.3",
+      "from": "pkg:cargo/num-traits@0.2.19",
       "to": [
-        "pkg:cargo/proc-macro-crate@3.3.0",
-        "pkg:cargo/proc-macro2@1.0.95",
-        "pkg:cargo/quote@1.0.40",
-        "pkg:cargo/syn@2.0.102"
+        "pkg:cargo/autocfg@1.4.0"
       ]
     },
     {
@@ -18908,9 +18905,12 @@
       ]
     },
     {
-      "from": "pkg:cargo/num-traits@0.2.19",
+      "from": "pkg:cargo/num_enum_derive@0.7.3",
       "to": [
-        "pkg:cargo/autocfg@1.4.0"
+        "pkg:cargo/proc-macro-crate@3.3.0",
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102"
       ]
     },
     {
@@ -19133,6 +19133,13 @@
       ]
     },
     {
+      "from": "pkg:cargo/parking_lot@0.12.4",
+      "to": [
+        "pkg:cargo/lock_api@0.4.13",
+        "pkg:cargo/parking_lot_core@0.9.11"
+      ]
+    },
+    {
       "from": "pkg:cargo/parking_lot_core@0.9.11",
       "to": [
         "pkg:cargo/cfg-if@1.0.1",
@@ -19143,10 +19150,24 @@
       ]
     },
     {
-      "from": "pkg:cargo/parking_lot@0.12.4",
+      "from": "pkg:cargo/phf@0.10.1",
       "to": [
-        "pkg:cargo/lock_api@0.4.13",
-        "pkg:cargo/parking_lot_core@0.9.11"
+        "pkg:cargo/phf_shared@0.10.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/phf@0.11.3",
+      "to": [
+        "pkg:cargo/phf_macros@0.11.3",
+        "pkg:cargo/phf_shared@0.11.3"
+      ]
+    },
+    {
+      "from": "pkg:cargo/phf@0.8.0",
+      "to": [
+        "pkg:cargo/phf_macros@0.8.0",
+        "pkg:cargo/phf_shared@0.8.0",
+        "pkg:cargo/proc-macro-hack@0.5.20+deprecated"
       ]
     },
     {
@@ -19221,27 +19242,6 @@
       "from": "pkg:cargo/phf_shared@0.8.0",
       "to": [
         "pkg:cargo/siphasher@0.3.11"
-      ]
-    },
-    {
-      "from": "pkg:cargo/phf@0.10.1",
-      "to": [
-        "pkg:cargo/phf_shared@0.10.0"
-      ]
-    },
-    {
-      "from": "pkg:cargo/phf@0.11.3",
-      "to": [
-        "pkg:cargo/phf_macros@0.11.3",
-        "pkg:cargo/phf_shared@0.11.3"
-      ]
-    },
-    {
-      "from": "pkg:cargo/phf@0.8.0",
-      "to": [
-        "pkg:cargo/phf_macros@0.8.0",
-        "pkg:cargo/phf_shared@0.8.0",
-        "pkg:cargo/proc-macro-hack@0.5.20+deprecated"
       ]
     },
     {
@@ -19404,6 +19404,32 @@
       ]
     },
     {
+      "from": "pkg:cargo/rand@0.7.3",
+      "to": [
+        "pkg:cargo/getrandom@0.1.16",
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/rand_chacha@0.2.2",
+        "pkg:cargo/rand_core@0.5.1",
+        "pkg:cargo/rand_hc@0.2.0",
+        "pkg:cargo/rand_pcg@0.2.1"
+      ]
+    },
+    {
+      "from": "pkg:cargo/rand@0.8.5",
+      "to": [
+        "pkg:cargo/libc@0.2.172",
+        "pkg:cargo/rand_chacha@0.3.1",
+        "pkg:cargo/rand_core@0.6.4"
+      ]
+    },
+    {
+      "from": "pkg:cargo/rand@0.9.1",
+      "to": [
+        "pkg:cargo/rand_chacha@0.9.0",
+        "pkg:cargo/rand_core@0.9.3"
+      ]
+    },
+    {
       "from": "pkg:cargo/rand_chacha@0.2.2",
       "to": [
         "pkg:cargo/ppv-lite86@0.2.21",
@@ -19452,32 +19478,6 @@
       "from": "pkg:cargo/rand_pcg@0.2.1",
       "to": [
         "pkg:cargo/rand_core@0.5.1"
-      ]
-    },
-    {
-      "from": "pkg:cargo/rand@0.7.3",
-      "to": [
-        "pkg:cargo/getrandom@0.1.16",
-        "pkg:cargo/libc@0.2.172",
-        "pkg:cargo/rand_chacha@0.2.2",
-        "pkg:cargo/rand_core@0.5.1",
-        "pkg:cargo/rand_hc@0.2.0",
-        "pkg:cargo/rand_pcg@0.2.1"
-      ]
-    },
-    {
-      "from": "pkg:cargo/rand@0.8.5",
-      "to": [
-        "pkg:cargo/libc@0.2.172",
-        "pkg:cargo/rand_chacha@0.3.1",
-        "pkg:cargo/rand_core@0.6.4"
-      ]
-    },
-    {
-      "from": "pkg:cargo/rand@0.9.1",
-      "to": [
-        "pkg:cargo/rand_chacha@0.9.0",
-        "pkg:cargo/rand_core@0.9.3"
       ]
     },
     {
@@ -19663,15 +19663,6 @@
       ]
     },
     {
-      "from": "pkg:cargo/schemars_derive@0.8.22",
-      "to": [
-        "pkg:cargo/proc-macro2@1.0.95",
-        "pkg:cargo/quote@1.0.40",
-        "pkg:cargo/serde_derive_internals@0.29.1",
-        "pkg:cargo/syn@2.0.102"
-      ]
-    },
-    {
       "from": "pkg:cargo/schemars@0.8.22",
       "to": [
         "pkg:cargo/dyn-clone@1.0.19",
@@ -19681,6 +19672,15 @@
         "pkg:cargo/serde_json@1.0.140",
         "pkg:cargo/url@2.5.4",
         "pkg:cargo/uuid@1.17.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/schemars_derive@0.8.22",
+      "to": [
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/serde_derive_internals@0.29.1",
+        "pkg:cargo/syn@2.0.102"
       ]
     },
     {
@@ -19707,7 +19707,21 @@
       ]
     },
     {
-      "from": "pkg:cargo/serde_derive_internals@0.29.1",
+      "from": "pkg:cargo/serde-untagged@0.1.7",
+      "to": [
+        "pkg:cargo/erased-serde@0.4.6",
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/typeid@1.0.3"
+      ]
+    },
+    {
+      "from": "pkg:cargo/serde@1.0.219",
+      "to": [
+        "pkg:cargo/serde_derive@1.0.219"
+      ]
+    },
+    {
+      "from": "pkg:cargo/serde_derive@1.0.219",
       "to": [
         "pkg:cargo/proc-macro2@1.0.95",
         "pkg:cargo/quote@1.0.40",
@@ -19715,7 +19729,7 @@
       ]
     },
     {
-      "from": "pkg:cargo/serde_derive@1.0.219",
+      "from": "pkg:cargo/serde_derive_internals@0.29.1",
       "to": [
         "pkg:cargo/proc-macro2@1.0.95",
         "pkg:cargo/quote@1.0.40",
@@ -19755,15 +19769,6 @@
       ]
     },
     {
-      "from": "pkg:cargo/serde_with_macros@3.12.0",
-      "to": [
-        "pkg:cargo/darling@0.20.11",
-        "pkg:cargo/proc-macro2@1.0.95",
-        "pkg:cargo/quote@1.0.40",
-        "pkg:cargo/syn@2.0.102"
-      ]
-    },
-    {
       "from": "pkg:cargo/serde_with@3.12.0",
       "to": [
         "pkg:cargo/base64@0.22.1",
@@ -19779,17 +19784,12 @@
       ]
     },
     {
-      "from": "pkg:cargo/serde-untagged@0.1.7",
+      "from": "pkg:cargo/serde_with_macros@3.12.0",
       "to": [
-        "pkg:cargo/erased-serde@0.4.6",
-        "pkg:cargo/serde@1.0.219",
-        "pkg:cargo/typeid@1.0.3"
-      ]
-    },
-    {
-      "from": "pkg:cargo/serde@1.0.219",
-      "to": [
-        "pkg:cargo/serde_derive@1.0.219"
+        "pkg:cargo/darling@0.20.11",
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102"
       ]
     },
     {
@@ -19882,15 +19882,6 @@
       ]
     },
     {
-      "from": "pkg:cargo/string_cache_codegen@0.5.4",
-      "to": [
-        "pkg:cargo/phf_generator@0.11.3",
-        "pkg:cargo/phf_shared@0.11.3",
-        "pkg:cargo/proc-macro2@1.0.95",
-        "pkg:cargo/quote@1.0.40"
-      ]
-    },
-    {
       "from": "pkg:cargo/string_cache@0.8.9",
       "to": [
         "pkg:cargo/new_debug_unreachable@1.0.6",
@@ -19898,6 +19889,15 @@
         "pkg:cargo/phf_shared@0.11.3",
         "pkg:cargo/precomputed-hash@0.1.1",
         "pkg:cargo/serde@1.0.219"
+      ]
+    },
+    {
+      "from": "pkg:cargo/string_cache_codegen@0.5.4",
+      "to": [
+        "pkg:cargo/phf_generator@0.11.3",
+        "pkg:cargo/phf_shared@0.11.3",
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40"
       ]
     },
     {
@@ -20445,6 +20445,15 @@
       ]
     },
     {
+      "from": "pkg:cargo/toml@0.8.23",
+      "to": [
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/serde_spanned@0.6.9",
+        "pkg:cargo/toml_datetime@0.6.11",
+        "pkg:cargo/toml_edit@0.22.27"
+      ]
+    },
+    {
       "from": "pkg:cargo/toml_datetime@0.6.11",
       "to": [
         "pkg:cargo/serde@1.0.219"
@@ -20475,15 +20484,6 @@
         "pkg:cargo/toml_datetime@0.6.11",
         "pkg:cargo/toml_write@0.1.2",
         "pkg:cargo/winnow@0.7.11"
-      ]
-    },
-    {
-      "from": "pkg:cargo/toml@0.8.23",
-      "to": [
-        "pkg:cargo/serde@1.0.219",
-        "pkg:cargo/serde_spanned@0.6.9",
-        "pkg:cargo/toml_datetime@0.6.11",
-        "pkg:cargo/toml_edit@0.22.27"
       ]
     },
     {
@@ -21074,27 +21074,6 @@
       ]
     },
     {
-      "from": "pkg:cargo/zbus_macros@5.7.1",
-      "to": [
-        "pkg:cargo/proc-macro-crate@3.3.0",
-        "pkg:cargo/proc-macro2@1.0.95",
-        "pkg:cargo/quote@1.0.40",
-        "pkg:cargo/syn@2.0.102",
-        "pkg:cargo/zbus_names@4.2.0",
-        "pkg:cargo/zvariant@5.5.3",
-        "pkg:cargo/zvariant_utils@3.2.0"
-      ]
-    },
-    {
-      "from": "pkg:cargo/zbus_names@4.2.0",
-      "to": [
-        "pkg:cargo/serde@1.0.219",
-        "pkg:cargo/static_assertions@1.1.0",
-        "pkg:cargo/winnow@0.7.11",
-        "pkg:cargo/zvariant@5.5.3"
-      ]
-    },
-    {
       "from": "pkg:cargo/zbus@5.7.1",
       "to": [
         "pkg:cargo/async-broadcast@0.7.2",
@@ -21122,6 +21101,27 @@
         "pkg:cargo/winnow@0.7.11",
         "pkg:cargo/zbus_macros@5.7.1",
         "pkg:cargo/zbus_names@4.2.0",
+        "pkg:cargo/zvariant@5.5.3"
+      ]
+    },
+    {
+      "from": "pkg:cargo/zbus_macros@5.7.1",
+      "to": [
+        "pkg:cargo/proc-macro-crate@3.3.0",
+        "pkg:cargo/proc-macro2@1.0.95",
+        "pkg:cargo/quote@1.0.40",
+        "pkg:cargo/syn@2.0.102",
+        "pkg:cargo/zbus_names@4.2.0",
+        "pkg:cargo/zvariant@5.5.3",
+        "pkg:cargo/zvariant_utils@3.2.0"
+      ]
+    },
+    {
+      "from": "pkg:cargo/zbus_names@4.2.0",
+      "to": [
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/static_assertions@1.1.0",
+        "pkg:cargo/winnow@0.7.11",
         "pkg:cargo/zvariant@5.5.3"
       ]
     },
@@ -21197,6 +21197,18 @@
       ]
     },
     {
+      "from": "pkg:cargo/zvariant@5.5.3",
+      "to": [
+        "pkg:cargo/endi@1.1.0",
+        "pkg:cargo/enumflags2@0.7.12",
+        "pkg:cargo/serde@1.0.219",
+        "pkg:cargo/url@2.5.4",
+        "pkg:cargo/winnow@0.7.11",
+        "pkg:cargo/zvariant_derive@5.5.3",
+        "pkg:cargo/zvariant_utils@3.2.0"
+      ]
+    },
+    {
       "from": "pkg:cargo/zvariant_derive@5.5.3",
       "to": [
         "pkg:cargo/proc-macro-crate@3.3.0",
@@ -21215,18 +21227,6 @@
         "pkg:cargo/static_assertions@1.1.0",
         "pkg:cargo/syn@2.0.102",
         "pkg:cargo/winnow@0.7.11"
-      ]
-    },
-    {
-      "from": "pkg:cargo/zvariant@5.5.3",
-      "to": [
-        "pkg:cargo/endi@1.1.0",
-        "pkg:cargo/enumflags2@0.7.12",
-        "pkg:cargo/serde@1.0.219",
-        "pkg:cargo/url@2.5.4",
-        "pkg:cargo/winnow@0.7.11",
-        "pkg:cargo/zvariant_derive@5.5.3",
-        "pkg:cargo/zvariant_utils@3.2.0"
       ]
     },
     {
@@ -21756,24 +21756,6 @@
       ]
     },
     {
-      "from": "pkg:npm/%40img/sharp-linux-arm@0.33.5",
-      "to": [
-        "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.0"
-      ]
-    },
-    {
-      "from": "pkg:npm/%40img/sharp-linux-arm@0.34.1",
-      "to": [
-        "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.0"
-      ]
-    },
-    {
-      "from": "pkg:npm/%40img/sharp-linux-arm@0.34.3",
-      "to": [
-        "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.0"
-      ]
-    },
-    {
       "from": "pkg:npm/%40img/sharp-linux-arm64@0.33.5",
       "to": [
         "pkg:npm/%40img/sharp-libvips-linux-arm64@1.2.0"
@@ -21789,6 +21771,24 @@
       "from": "pkg:npm/%40img/sharp-linux-arm64@0.34.3",
       "to": [
         "pkg:npm/%40img/sharp-libvips-linux-arm64@1.2.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/%40img/sharp-linux-arm@0.33.5",
+      "to": [
+        "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/%40img/sharp-linux-arm@0.34.1",
+      "to": [
+        "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/%40img/sharp-linux-arm@0.34.3",
+      "to": [
+        "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.0"
       ]
     },
     {
@@ -22706,21 +22706,21 @@
       ]
     },
     {
-      "from": "pkg:npm/%40opentelemetry/instrumentation-mysql@0.49.0",
-      "to": [
-        "pkg:npm/%40opentelemetry/api@1.9.0",
-        "pkg:npm/%40opentelemetry/instrumentation@0.57.2",
-        "pkg:npm/%40opentelemetry/semantic-conventions@1.36.0",
-        "pkg:npm/%40types/mysql@2.15.27"
-      ]
-    },
-    {
       "from": "pkg:npm/%40opentelemetry/instrumentation-mysql2@0.50.0",
       "to": [
         "pkg:npm/%40opentelemetry/api@1.9.0",
         "pkg:npm/%40opentelemetry/instrumentation@0.57.2",
         "pkg:npm/%40opentelemetry/semantic-conventions@1.36.0",
         "pkg:npm/%40opentelemetry/sql-common@0.41.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/%40opentelemetry/instrumentation-mysql@0.49.0",
+      "to": [
+        "pkg:npm/%40opentelemetry/api@1.9.0",
+        "pkg:npm/%40opentelemetry/instrumentation@0.57.2",
+        "pkg:npm/%40opentelemetry/semantic-conventions@1.36.0",
+        "pkg:npm/%40types/mysql@2.15.27"
       ]
     },
     {
@@ -29766,19 +29766,19 @@
       ]
     },
     {
+      "from": "pkg:npm/rc9@2.1.2",
+      "to": [
+        "pkg:npm/defu@6.1.4",
+        "pkg:npm/destr@2.0.5"
+      ]
+    },
+    {
       "from": "pkg:npm/rc@1.2.8",
       "to": [
         "pkg:npm/deep-extend@0.6.0",
         "pkg:npm/ini@1.3.8",
         "pkg:npm/minimist@1.2.8",
         "pkg:npm/strip-json-comments@2.0.1"
-      ]
-    },
-    {
-      "from": "pkg:npm/rc9@2.1.2",
-      "to": [
-        "pkg:npm/defu@6.1.4",
-        "pkg:npm/destr@2.0.5"
       ]
     },
     {
@@ -30883,18 +30883,6 @@
       ]
     },
     {
-      "from": "pkg:npm/string_decoder@1.1.1",
-      "to": [
-        "pkg:npm/safe-buffer@5.1.2"
-      ]
-    },
-    {
-      "from": "pkg:npm/string_decoder@1.3.0",
-      "to": [
-        "pkg:npm/safe-buffer@5.1.2"
-      ]
-    },
-    {
       "from": "pkg:npm/string-width@4.2.3",
       "to": [
         "pkg:npm/emoji-regex@8.0.0",
@@ -30945,6 +30933,18 @@
         "pkg:npm/call-bind@1.0.8",
         "pkg:npm/define-properties@1.2.1",
         "pkg:npm/es-object-atoms@1.1.1"
+      ]
+    },
+    {
+      "from": "pkg:npm/string_decoder@1.1.1",
+      "to": [
+        "pkg:npm/safe-buffer@5.1.2"
+      ]
+    },
+    {
+      "from": "pkg:npm/string_decoder@1.3.0",
+      "to": [
+        "pkg:npm/safe-buffer@5.1.2"
       ]
     },
     {

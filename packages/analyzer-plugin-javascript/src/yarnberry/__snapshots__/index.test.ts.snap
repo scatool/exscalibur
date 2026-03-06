@@ -131,15 +131,15 @@ exports[`basic 1`] = `
     },
     {
       "evidence": [
-        "yarn.lock#69",
-      ],
-      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.3",
-    },
-    {
-      "evidence": [
         "yarn.lock#62",
       ],
       "purl": "pkg:npm/%40img/sharp-libvips-linux-arm64@1.2.3",
+    },
+    {
+      "evidence": [
+        "yarn.lock#69",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.3",
     },
     {
       "evidence": [
@@ -173,15 +173,15 @@ exports[`basic 1`] = `
     },
     {
       "evidence": [
-        "yarn.lock#123",
-      ],
-      "purl": "pkg:npm/%40img/sharp-linux-arm@0.34.4",
-    },
-    {
-      "evidence": [
         "yarn.lock#111",
       ],
       "purl": "pkg:npm/%40img/sharp-linux-arm64@0.34.4",
+    },
+    {
+      "evidence": [
+        "yarn.lock#123",
+      ],
+      "purl": "pkg:npm/%40img/sharp-linux-arm@0.34.4",
     },
     {
       "evidence": [
@@ -414,15 +414,15 @@ exports[`basic 1`] = `
       ],
     },
     {
-      "from": "pkg:npm/%40img/sharp-linux-arm@0.34.4",
-      "to": [
-        "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.3",
-      ],
-    },
-    {
       "from": "pkg:npm/%40img/sharp-linux-arm64@0.34.4",
       "to": [
         "pkg:npm/%40img/sharp-libvips-linux-arm64@1.2.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/%40img/sharp-linux-arm@0.34.4",
+      "to": [
+        "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.3",
       ],
     },
     {
@@ -1712,15 +1712,15 @@ exports[`workspace 1`] = `
     },
     {
       "evidence": [
-        "yarn.lock#31",
-      ],
-      "purl": "pkg:npm/%40esbuild/android-arm@0.25.11",
-    },
-    {
-      "evidence": [
         "yarn.lock#24",
       ],
       "purl": "pkg:npm/%40esbuild/android-arm64@0.25.11",
+    },
+    {
+      "evidence": [
+        "yarn.lock#31",
+      ],
+      "purl": "pkg:npm/%40esbuild/android-arm@0.25.11",
     },
     {
       "evidence": [
@@ -1754,15 +1754,15 @@ exports[`workspace 1`] = `
     },
     {
       "evidence": [
-        "yarn.lock#80",
-      ],
-      "purl": "pkg:npm/%40esbuild/linux-arm@0.25.11",
-    },
-    {
-      "evidence": [
         "yarn.lock#73",
       ],
       "purl": "pkg:npm/%40esbuild/linux-arm64@0.25.11",
+    },
+    {
+      "evidence": [
+        "yarn.lock#80",
+      ],
+      "purl": "pkg:npm/%40esbuild/linux-arm@0.25.11",
     },
     {
       "evidence": [
@@ -1892,15 +1892,15 @@ exports[`workspace 1`] = `
     },
     {
       "evidence": [
-        "yarn.lock#251",
-      ],
-      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.3",
-    },
-    {
-      "evidence": [
         "yarn.lock#244",
       ],
       "purl": "pkg:npm/%40img/sharp-libvips-linux-arm64@1.2.3",
+    },
+    {
+      "evidence": [
+        "yarn.lock#251",
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.3",
     },
     {
       "evidence": [
@@ -1934,15 +1934,15 @@ exports[`workspace 1`] = `
     },
     {
       "evidence": [
-        "yarn.lock#305",
-      ],
-      "purl": "pkg:npm/%40img/sharp-linux-arm@0.34.4",
-    },
-    {
-      "evidence": [
         "yarn.lock#293",
       ],
       "purl": "pkg:npm/%40img/sharp-linux-arm64@0.34.4",
+    },
+    {
+      "evidence": [
+        "yarn.lock#305",
+      ],
+      "purl": "pkg:npm/%40img/sharp-linux-arm@0.34.4",
     },
     {
       "evidence": [
@@ -2913,15 +2913,15 @@ exports[`workspace 1`] = `
       ],
     },
     {
-      "from": "pkg:npm/%40img/sharp-linux-arm@0.34.4",
-      "to": [
-        "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.3",
-      ],
-    },
-    {
       "from": "pkg:npm/%40img/sharp-linux-arm64@0.34.4",
       "to": [
         "pkg:npm/%40img/sharp-libvips-linux-arm64@1.2.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/%40img/sharp-linux-arm@0.34.4",
+      "to": [
+        "pkg:npm/%40img/sharp-libvips-linux-arm@1.2.3",
       ],
     },
     {
