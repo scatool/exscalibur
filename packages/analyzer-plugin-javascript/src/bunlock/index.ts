@@ -11,7 +11,6 @@ import {
   initializeExtractionMaps,
   scanAndMarkFiles,
 } from '@scatool/analyzer-core/src/index.ts';
-import { parse } from 'jsonc-parser';
 import { dirname, join } from 'node:path';
 import type { PackageJson } from '../types.ts';
 import { createNpmPurl, extractNpmScopes, NPM_DEPENDENCY_SCOPES } from '../npm-utils.ts';
@@ -39,7 +38,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
       const dir = dirname(file);
 
       // Parse the bun.lock file (JSONC format with comments and trailing commas)
-      const lockfile = parse(content);
+      const lockfile = Bun.JSONC.parse(content) as Record<string, unknown>;
       const lines = content.split('\n');
 
       const packageInfoMap = new Map<string, { name: string; version: string }>();
