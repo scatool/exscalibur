@@ -265,7 +265,7 @@ async function extractFromV2Lockfile(
           const purl = createNpmPurl(packageInfo.name, packageInfo.version);
 
           // Extract scopes
-          const scopes = extractScopes(packageInfo, lockfile.packages, workspacePackages);
+          const scopes = extractScopes(packageInfo, lockfile.packages, workspacePackages, packagePath);
 
           subprojects.push({
             purl,
@@ -439,10 +439,8 @@ function buildResolutionCandidates(callerPath: string, depName: string): string[
   while (true) {
     const idx = current.lastIndexOf('/node_modules/');
     if (idx === -1) {
-      // Reached the top level (current is "node_modules/<pkg>")
-      if (current.startsWith('node_modules/')) {
-        candidates.push(`node_modules/${depName}`);
-      }
+      // Reached the top level - always fall back to hoisted node_modules
+      candidates.push(`node_modules/${depName}`);
       break;
     }
     current = current.substring(0, idx);

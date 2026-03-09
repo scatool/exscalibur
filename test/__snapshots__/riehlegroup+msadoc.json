@@ -6745,12 +6745,14 @@
         {
           "scope": "devDependencies",
           "packages": [
+            "pkg:npm/%40commander-js/extra-typings@10.0.3",
             "pkg:npm/%40rollup/plugin-commonjs@24.0.1",
             "pkg:npm/%40rollup/plugin-json@6.0.0",
+            "pkg:npm/%40rollup/plugin-node-resolve@15.0.1",
             "pkg:npm/%40rollup/plugin-typescript@11.0.0",
-            "pkg:npm/chalk@4.1.2",
-            "pkg:npm/commander@4.1.1",
-            "pkg:npm/rollup@2.79.1",
+            "pkg:npm/chalk@5.2.0",
+            "pkg:npm/commander@10.0.0",
+            "pkg:npm/rollup@3.18.0",
             "pkg:npm/xhr2@0.2.1"
           ]
         }
@@ -7929,8 +7931,11 @@
       "from": "pkg:npm/%40jest/console@29.3.1",
       "to": [
         "pkg:npm/%40jest/types@29.3.1",
+        "pkg:npm/%40types/node@18.11.18",
+        "pkg:npm/chalk@4.1.2",
         "pkg:npm/jest-message-util@29.3.1",
-        "pkg:npm/jest-util@29.3.1"
+        "pkg:npm/jest-util@29.3.1",
+        "pkg:npm/slash@3.0.0"
       ]
     },
     {
@@ -7941,6 +7946,12 @@
         "pkg:npm/%40jest/test-result@29.3.1",
         "pkg:npm/%40jest/transform@29.3.1",
         "pkg:npm/%40jest/types@29.3.1",
+        "pkg:npm/%40types/node@18.11.18",
+        "pkg:npm/ansi-escapes@4.3.2",
+        "pkg:npm/chalk@4.1.2",
+        "pkg:npm/ci-info@3.4.0",
+        "pkg:npm/exit@0.1.2",
+        "pkg:npm/graceful-fs@4.2.10",
         "pkg:npm/jest-changed-files@29.2.0",
         "pkg:npm/jest-config@29.3.1",
         "pkg:npm/jest-haste-map@29.3.1",
@@ -7954,7 +7965,10 @@
         "pkg:npm/jest-util@29.3.1",
         "pkg:npm/jest-validate@29.3.1",
         "pkg:npm/jest-watcher@29.3.1",
-        "pkg:npm/pretty-format@29.3.1"
+        "pkg:npm/micromatch@4.0.5",
+        "pkg:npm/pretty-format@29.3.1",
+        "pkg:npm/slash@3.0.0",
+        "pkg:npm/strip-ansi@6.0.1"
       ]
     },
     {
@@ -7962,6 +7976,7 @@
       "to": [
         "pkg:npm/%40jest/fake-timers@29.3.1",
         "pkg:npm/%40jest/types@29.3.1",
+        "pkg:npm/%40types/node@18.11.18",
         "pkg:npm/jest-mock@29.3.1"
       ]
     },
@@ -7988,6 +8003,8 @@
       "from": "pkg:npm/%40jest/fake-timers@29.3.1",
       "to": [
         "pkg:npm/%40jest/types@29.3.1",
+        "pkg:npm/%40sinonjs/fake-timers@9.1.2",
+        "pkg:npm/%40types/node@18.11.18",
         "pkg:npm/jest-message-util@29.3.1",
         "pkg:npm/jest-mock@29.3.1",
         "pkg:npm/jest-util@29.3.1"
@@ -8005,13 +8022,30 @@
     {
       "from": "pkg:npm/%40jest/reporters@29.3.1",
       "to": [
+        "pkg:npm/%40bcoe/v8-coverage@0.2.3",
         "pkg:npm/%40jest/console@29.3.1",
         "pkg:npm/%40jest/test-result@29.3.1",
         "pkg:npm/%40jest/transform@29.3.1",
         "pkg:npm/%40jest/types@29.3.1",
+        "pkg:npm/%40jridgewell/trace-mapping@0.3.17",
+        "pkg:npm/%40types/node@18.11.18",
+        "pkg:npm/chalk@4.1.2",
+        "pkg:npm/collect-v8-coverage@1.0.1",
+        "pkg:npm/exit@0.1.2",
+        "pkg:npm/glob@7.2.3",
+        "pkg:npm/graceful-fs@4.2.10",
+        "pkg:npm/istanbul-lib-coverage@3.2.0",
+        "pkg:npm/istanbul-lib-instrument@5.2.0",
+        "pkg:npm/istanbul-lib-report@3.0.0",
+        "pkg:npm/istanbul-lib-source-maps@4.0.1",
+        "pkg:npm/istanbul-reports@3.1.5",
         "pkg:npm/jest-message-util@29.3.1",
         "pkg:npm/jest-util@29.3.1",
-        "pkg:npm/jest-worker@29.3.1"
+        "pkg:npm/jest-worker@29.3.1",
+        "pkg:npm/slash@3.0.0",
+        "pkg:npm/string-length@4.0.2",
+        "pkg:npm/strip-ansi@6.0.1",
+        "pkg:npm/v8-to-istanbul@9.0.1"
       ]
     },
     {
@@ -8027,27 +8061,49 @@
       ]
     },
     {
+      "from": "pkg:npm/%40jest/source-map@29.2.0",
+      "to": [
+        "pkg:npm/%40jridgewell/trace-mapping@0.3.17",
+        "pkg:npm/callsites@3.1.0",
+        "pkg:npm/graceful-fs@4.2.10"
+      ]
+    },
+    {
       "from": "pkg:npm/%40jest/test-result@29.3.1",
       "to": [
         "pkg:npm/%40jest/console@29.3.1",
-        "pkg:npm/%40jest/types@29.3.1"
+        "pkg:npm/%40jest/types@29.3.1",
+        "pkg:npm/%40types/istanbul-lib-coverage@2.0.4",
+        "pkg:npm/collect-v8-coverage@1.0.1"
       ]
     },
     {
       "from": "pkg:npm/%40jest/test-sequencer@29.3.1",
       "to": [
         "pkg:npm/%40jest/test-result@29.3.1",
-        "pkg:npm/jest-haste-map@29.3.1"
+        "pkg:npm/graceful-fs@4.2.10",
+        "pkg:npm/jest-haste-map@29.3.1",
+        "pkg:npm/slash@3.0.0"
       ]
     },
     {
       "from": "pkg:npm/%40jest/transform@29.3.1",
       "to": [
+        "pkg:npm/%40babel/core@7.21.3",
         "pkg:npm/%40jest/types@29.3.1",
+        "pkg:npm/%40jridgewell/trace-mapping@0.3.17",
+        "pkg:npm/babel-plugin-istanbul@6.1.1",
+        "pkg:npm/chalk@4.1.2",
         "pkg:npm/convert-source-map@2.0.0",
+        "pkg:npm/fast-json-stable-stringify@2.1.0",
+        "pkg:npm/graceful-fs@4.2.10",
         "pkg:npm/jest-haste-map@29.3.1",
         "pkg:npm/jest-regex-util@29.2.0",
-        "pkg:npm/jest-util@29.3.1"
+        "pkg:npm/jest-util@29.3.1",
+        "pkg:npm/micromatch@4.0.5",
+        "pkg:npm/pirates@4.0.5",
+        "pkg:npm/slash@3.0.0",
+        "pkg:npm/write-file-atomic@4.0.2"
       ]
     },
     {
@@ -8075,7 +8131,12 @@
     {
       "from": "pkg:npm/%40jest/types@29.3.1",
       "to": [
-        "pkg:npm/%40jest/schemas@29.0.0"
+        "pkg:npm/%40jest/schemas@29.0.0",
+        "pkg:npm/%40types/istanbul-lib-coverage@2.0.4",
+        "pkg:npm/%40types/istanbul-reports@3.0.1",
+        "pkg:npm/%40types/node@18.11.18",
+        "pkg:npm/%40types/yargs@17.0.12",
+        "pkg:npm/chalk@4.1.2"
       ]
     },
     {
@@ -8601,6 +8662,10 @@
       "to": [
         "pkg:npm/%40rollup/pluginutils@5.0.2",
         "pkg:npm/%40types/resolve@1.20.2",
+        "pkg:npm/deepmerge@4.2.2",
+        "pkg:npm/is-builtin-module@3.2.1",
+        "pkg:npm/is-module@1.0.0",
+        "pkg:npm/resolve@1.22.1",
         "pkg:npm/rollup@3.18.0"
       ]
     },
@@ -9211,8 +9276,14 @@
     {
       "from": "pkg:npm/babel-jest@29.3.1",
       "to": [
+        "pkg:npm/%40babel/core@7.21.3",
         "pkg:npm/%40jest/transform@29.3.1",
-        "pkg:npm/babel-preset-jest@29.2.0"
+        "pkg:npm/%40types/babel__core@7.1.19",
+        "pkg:npm/babel-plugin-istanbul@6.1.1",
+        "pkg:npm/babel-preset-jest@29.2.0",
+        "pkg:npm/chalk@4.1.2",
+        "pkg:npm/graceful-fs@4.2.10",
+        "pkg:npm/slash@3.0.0"
       ]
     },
     {
@@ -9223,6 +9294,15 @@
         "pkg:npm/%40istanbuljs/schema@0.1.3",
         "pkg:npm/istanbul-lib-instrument@5.2.0",
         "pkg:npm/test-exclude@6.0.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/babel-plugin-jest-hoist@29.2.0",
+      "to": [
+        "pkg:npm/%40babel/template@7.20.7",
+        "pkg:npm/%40babel/types@7.21.3",
+        "pkg:npm/%40types/babel__core@7.1.19",
+        "pkg:npm/%40types/babel__traverse@7.18.1"
       ]
     },
     {
@@ -9278,7 +9358,9 @@
     {
       "from": "pkg:npm/babel-preset-jest@29.2.0",
       "to": [
-        "pkg:npm/babel-plugin-jest-hoist@29.2.0"
+        "pkg:npm/%40babel/core@7.21.3",
+        "pkg:npm/babel-plugin-jest-hoist@29.2.0",
+        "pkg:npm/babel-preset-current-node-syntax@1.0.1"
       ]
     },
     {
@@ -9454,6 +9536,14 @@
       ]
     },
     {
+      "from": "pkg:npm/class-validator@0.14.0",
+      "to": [
+        "pkg:npm/%40types/validator@13.7.10",
+        "pkg:npm/libphonenumber-js@1.10.14",
+        "pkg:npm/validator@13.7.0"
+      ]
+    },
+    {
       "from": "pkg:npm/cli-cursor@3.1.0",
       "to": [
         "pkg:npm/restore-cursor@3.1.0"
@@ -9479,6 +9569,14 @@
     },
     {
       "from": "pkg:npm/cliui@7.0.4",
+      "to": [
+        "pkg:npm/string-width@4.2.3",
+        "pkg:npm/strip-ansi@6.0.1",
+        "pkg:npm/wrap-ansi@7.0.0"
+      ]
+    },
+    {
+      "from": "pkg:npm/cliui@8.0.1",
       "to": [
         "pkg:npm/string-width@4.2.3",
         "pkg:npm/strip-ansi@6.0.1",
@@ -10785,19 +10883,34 @@
       ]
     },
     {
+      "from": "pkg:npm/jest-changed-files@29.2.0",
+      "to": [
+        "pkg:npm/execa@5.1.1",
+        "pkg:npm/p-limit@3.1.0"
+      ]
+    },
+    {
       "from": "pkg:npm/jest-circus@29.3.1",
       "to": [
         "pkg:npm/%40jest/environment@29.3.1",
         "pkg:npm/%40jest/expect@29.3.1",
         "pkg:npm/%40jest/test-result@29.3.1",
         "pkg:npm/%40jest/types@29.3.1",
+        "pkg:npm/%40types/node@18.11.18",
+        "pkg:npm/chalk@4.1.2",
+        "pkg:npm/co@4.6.0",
+        "pkg:npm/dedent@0.7.0",
+        "pkg:npm/is-generator-fn@2.1.0",
         "pkg:npm/jest-each@29.3.1",
         "pkg:npm/jest-matcher-utils@29.3.1",
         "pkg:npm/jest-message-util@29.3.1",
         "pkg:npm/jest-runtime@29.3.1",
         "pkg:npm/jest-snapshot@29.3.1",
         "pkg:npm/jest-util@29.3.1",
-        "pkg:npm/pretty-format@29.3.1"
+        "pkg:npm/p-limit@3.1.0",
+        "pkg:npm/pretty-format@29.3.1",
+        "pkg:npm/slash@3.0.0",
+        "pkg:npm/stack-utils@2.0.5"
       ]
     },
     {
@@ -10806,18 +10919,30 @@
         "pkg:npm/%40jest/core@29.3.1",
         "pkg:npm/%40jest/test-result@29.3.1",
         "pkg:npm/%40jest/types@29.3.1",
+        "pkg:npm/chalk@4.1.2",
+        "pkg:npm/exit@0.1.2",
+        "pkg:npm/graceful-fs@4.2.10",
+        "pkg:npm/import-local@3.1.0",
         "pkg:npm/jest-config@29.3.1",
         "pkg:npm/jest-util@29.3.1",
         "pkg:npm/jest-validate@29.3.1",
+        "pkg:npm/prompts@2.4.2",
         "pkg:npm/yargs@17.6.2"
       ]
     },
     {
       "from": "pkg:npm/jest-config@29.3.1",
       "to": [
+        "pkg:npm/%40babel/core@7.21.3",
         "pkg:npm/%40jest/test-sequencer@29.3.1",
         "pkg:npm/%40jest/types@29.3.1",
+        "pkg:npm/%40types/node@18.11.18",
         "pkg:npm/babel-jest@29.3.1",
+        "pkg:npm/chalk@4.1.2",
+        "pkg:npm/ci-info@3.4.0",
+        "pkg:npm/deepmerge@4.2.2",
+        "pkg:npm/glob@7.2.3",
+        "pkg:npm/graceful-fs@4.2.10",
         "pkg:npm/jest-circus@29.3.1",
         "pkg:npm/jest-environment-node@29.3.1",
         "pkg:npm/jest-get-type@29.2.0",
@@ -10826,7 +10951,12 @@
         "pkg:npm/jest-runner@29.3.1",
         "pkg:npm/jest-util@29.3.1",
         "pkg:npm/jest-validate@29.3.1",
-        "pkg:npm/pretty-format@29.3.1"
+        "pkg:npm/micromatch@4.0.5",
+        "pkg:npm/parse-json@5.2.0",
+        "pkg:npm/pretty-format@29.3.1",
+        "pkg:npm/slash@3.0.0",
+        "pkg:npm/strip-json-comments@3.1.1",
+        "pkg:npm/ts-node@10.9.1"
       ]
     },
     {
@@ -10841,15 +10971,23 @@
     {
       "from": "pkg:npm/jest-diff@29.3.1",
       "to": [
+        "pkg:npm/chalk@4.1.2",
         "pkg:npm/diff-sequences@29.3.1",
         "pkg:npm/jest-get-type@29.2.0",
         "pkg:npm/pretty-format@29.3.1"
       ]
     },
     {
+      "from": "pkg:npm/jest-docblock@29.2.0",
+      "to": [
+        "pkg:npm/detect-newline@3.1.0"
+      ]
+    },
+    {
       "from": "pkg:npm/jest-each@29.3.1",
       "to": [
         "pkg:npm/%40jest/types@29.3.1",
+        "pkg:npm/chalk@4.1.2",
         "pkg:npm/jest-get-type@29.2.0",
         "pkg:npm/jest-util@29.3.1",
         "pkg:npm/pretty-format@29.3.1"
@@ -10861,6 +10999,7 @@
         "pkg:npm/%40jest/environment@29.3.1",
         "pkg:npm/%40jest/fake-timers@29.3.1",
         "pkg:npm/%40jest/types@29.3.1",
+        "pkg:npm/%40types/node@18.11.18",
         "pkg:npm/jest-mock@29.3.1",
         "pkg:npm/jest-util@29.3.1"
       ]
@@ -10886,9 +11025,17 @@
       "from": "pkg:npm/jest-haste-map@29.3.1",
       "to": [
         "pkg:npm/%40jest/types@29.3.1",
+        "pkg:npm/%40types/graceful-fs@4.1.5",
+        "pkg:npm/%40types/node@18.11.18",
+        "pkg:npm/anymatch@3.1.2",
+        "pkg:npm/fb-watchman@2.0.2",
+        "pkg:npm/fsevents@2.3.2",
+        "pkg:npm/graceful-fs@4.2.10",
         "pkg:npm/jest-regex-util@29.2.0",
         "pkg:npm/jest-util@29.3.1",
-        "pkg:npm/jest-worker@29.3.1"
+        "pkg:npm/jest-worker@29.3.1",
+        "pkg:npm/micromatch@4.0.5",
+        "pkg:npm/walker@1.0.8"
       ]
     },
     {
@@ -10910,6 +11057,7 @@
     {
       "from": "pkg:npm/jest-matcher-utils@29.3.1",
       "to": [
+        "pkg:npm/chalk@4.1.2",
         "pkg:npm/jest-diff@29.3.1",
         "pkg:npm/jest-get-type@29.2.0",
         "pkg:npm/pretty-format@29.3.1"
@@ -10932,14 +11080,22 @@
     {
       "from": "pkg:npm/jest-message-util@29.3.1",
       "to": [
+        "pkg:npm/%40babel/code-frame@7.18.6",
         "pkg:npm/%40jest/types@29.3.1",
-        "pkg:npm/pretty-format@29.3.1"
+        "pkg:npm/%40types/stack-utils@2.0.1",
+        "pkg:npm/chalk@4.1.2",
+        "pkg:npm/graceful-fs@4.2.10",
+        "pkg:npm/micromatch@4.0.5",
+        "pkg:npm/pretty-format@29.3.1",
+        "pkg:npm/slash@3.0.0",
+        "pkg:npm/stack-utils@2.0.5"
       ]
     },
     {
       "from": "pkg:npm/jest-mock@29.3.1",
       "to": [
         "pkg:npm/%40jest/types@29.3.1",
+        "pkg:npm/%40types/node@18.11.18",
         "pkg:npm/jest-util@29.3.1"
       ]
     },
@@ -10973,9 +11129,15 @@
     {
       "from": "pkg:npm/jest-resolve@29.3.1",
       "to": [
+        "pkg:npm/chalk@4.1.2",
+        "pkg:npm/graceful-fs@4.2.10",
         "pkg:npm/jest-haste-map@29.3.1",
+        "pkg:npm/jest-pnp-resolver@1.2.2",
         "pkg:npm/jest-util@29.3.1",
-        "pkg:npm/jest-validate@29.3.1"
+        "pkg:npm/jest-validate@29.3.1",
+        "pkg:npm/resolve.exports@1.1.0",
+        "pkg:npm/resolve@1.22.1",
+        "pkg:npm/slash@3.0.0"
       ]
     },
     {
@@ -10986,7 +11148,10 @@
         "pkg:npm/%40jest/test-result@29.3.1",
         "pkg:npm/%40jest/transform@29.3.1",
         "pkg:npm/%40jest/types@29.3.1",
+        "pkg:npm/%40types/node@18.11.18",
+        "pkg:npm/chalk@4.1.2",
         "pkg:npm/emittery@0.13.1",
+        "pkg:npm/graceful-fs@4.2.10",
         "pkg:npm/jest-docblock@29.2.0",
         "pkg:npm/jest-environment-node@29.3.1",
         "pkg:npm/jest-haste-map@29.3.1",
@@ -10997,6 +11162,7 @@
         "pkg:npm/jest-util@29.3.1",
         "pkg:npm/jest-watcher@29.3.1",
         "pkg:npm/jest-worker@29.3.1",
+        "pkg:npm/p-limit@3.1.0",
         "pkg:npm/source-map-support@0.5.13"
       ]
     },
@@ -11010,28 +11176,48 @@
         "pkg:npm/%40jest/test-result@29.3.1",
         "pkg:npm/%40jest/transform@29.3.1",
         "pkg:npm/%40jest/types@29.3.1",
+        "pkg:npm/%40types/node@18.11.18",
+        "pkg:npm/chalk@4.1.2",
+        "pkg:npm/cjs-module-lexer@1.2.2",
+        "pkg:npm/collect-v8-coverage@1.0.1",
+        "pkg:npm/glob@7.2.3",
+        "pkg:npm/graceful-fs@4.2.10",
         "pkg:npm/jest-haste-map@29.3.1",
         "pkg:npm/jest-message-util@29.3.1",
         "pkg:npm/jest-mock@29.3.1",
         "pkg:npm/jest-regex-util@29.2.0",
         "pkg:npm/jest-resolve@29.3.1",
         "pkg:npm/jest-snapshot@29.3.1",
-        "pkg:npm/jest-util@29.3.1"
+        "pkg:npm/jest-util@29.3.1",
+        "pkg:npm/slash@3.0.0",
+        "pkg:npm/strip-bom@4.0.0"
       ]
     },
     {
       "from": "pkg:npm/jest-snapshot@29.3.1",
       "to": [
+        "pkg:npm/%40babel/core@7.21.3",
+        "pkg:npm/%40babel/generator@7.21.3",
+        "pkg:npm/%40babel/plugin-syntax-jsx@7.18.6",
+        "pkg:npm/%40babel/plugin-syntax-typescript@7.20.0",
+        "pkg:npm/%40babel/traverse@7.21.3",
+        "pkg:npm/%40babel/types@7.21.3",
         "pkg:npm/%40jest/expect-utils@29.3.1",
         "pkg:npm/%40jest/transform@29.3.1",
         "pkg:npm/%40jest/types@29.3.1",
+        "pkg:npm/%40types/babel__traverse@7.18.1",
+        "pkg:npm/%40types/prettier@2.7.0",
+        "pkg:npm/babel-preset-current-node-syntax@1.0.1",
+        "pkg:npm/chalk@4.1.2",
         "pkg:npm/expect@29.3.1",
+        "pkg:npm/graceful-fs@4.2.10",
         "pkg:npm/jest-diff@29.3.1",
         "pkg:npm/jest-get-type@29.2.0",
         "pkg:npm/jest-haste-map@29.3.1",
         "pkg:npm/jest-matcher-utils@29.3.1",
         "pkg:npm/jest-message-util@29.3.1",
         "pkg:npm/jest-util@29.3.1",
+        "pkg:npm/natural-compare@1.4.0",
         "pkg:npm/pretty-format@29.3.1",
         "pkg:npm/semver@7.3.7"
       ]
@@ -11061,7 +11247,12 @@
     {
       "from": "pkg:npm/jest-util@29.3.1",
       "to": [
-        "pkg:npm/%40jest/types@29.3.1"
+        "pkg:npm/%40jest/types@29.3.1",
+        "pkg:npm/%40types/node@18.11.18",
+        "pkg:npm/chalk@4.1.2",
+        "pkg:npm/ci-info@3.4.0",
+        "pkg:npm/graceful-fs@4.2.10",
+        "pkg:npm/picomatch@2.3.1"
       ]
     },
     {
@@ -11080,7 +11271,9 @@
       "to": [
         "pkg:npm/%40jest/types@29.3.1",
         "pkg:npm/camelcase@6.3.0",
+        "pkg:npm/chalk@4.1.2",
         "pkg:npm/jest-get-type@29.2.0",
+        "pkg:npm/leven@3.1.0",
         "pkg:npm/pretty-format@29.3.1"
       ]
     },
@@ -11089,8 +11282,12 @@
       "to": [
         "pkg:npm/%40jest/test-result@29.3.1",
         "pkg:npm/%40jest/types@29.3.1",
+        "pkg:npm/%40types/node@18.11.18",
+        "pkg:npm/ansi-escapes@4.3.2",
+        "pkg:npm/chalk@4.1.2",
         "pkg:npm/emittery@0.13.1",
-        "pkg:npm/jest-util@29.3.1"
+        "pkg:npm/jest-util@29.3.1",
+        "pkg:npm/string-length@4.0.2"
       ]
     },
     {
@@ -11112,7 +11309,9 @@
     {
       "from": "pkg:npm/jest-worker@29.3.1",
       "to": [
+        "pkg:npm/%40types/node@18.11.18",
         "pkg:npm/jest-util@29.3.1",
+        "pkg:npm/merge-stream@2.0.0",
         "pkg:npm/supports-color@8.1.1"
       ]
     },
@@ -11121,6 +11320,7 @@
       "to": [
         "pkg:npm/%40jest/core@29.3.1",
         "pkg:npm/%40jest/types@29.3.1",
+        "pkg:npm/import-local@3.1.0",
         "pkg:npm/jest-cli@29.3.1"
       ]
     },
@@ -11607,7 +11807,8 @@
       "from": "pkg:npm/pretty-format@29.3.1",
       "to": [
         "pkg:npm/%40jest/schemas@29.0.0",
-        "pkg:npm/ansi-styles@5.2.0"
+        "pkg:npm/ansi-styles@5.2.0",
+        "pkg:npm/react-is@18.2.0"
       ]
     },
     {
@@ -11826,6 +12027,12 @@
       ]
     },
     {
+      "from": "pkg:npm/rollup@3.18.0",
+      "to": [
+        "pkg:npm/fsevents@2.3.2"
+      ]
+    },
+    {
       "from": "pkg:npm/rollup@3.19.1",
       "to": [
         "pkg:npm/fsevents@2.3.2"
@@ -11969,6 +12176,7 @@
     {
       "from": "pkg:npm/source-map-support@0.5.13",
       "to": [
+        "pkg:npm/buffer-from@1.1.2",
         "pkg:npm/source-map@0.6.1"
       ]
     },
@@ -12148,11 +12356,19 @@
     {
       "from": "pkg:npm/ts-jest@29.0.5",
       "to": [
+        "pkg:npm/%40babel/core@7.21.3",
         "pkg:npm/%40jest/types@29.3.1",
         "pkg:npm/babel-jest@29.3.1",
+        "pkg:npm/bs-logger@0.2.6",
+        "pkg:npm/fast-json-stable-stringify@2.1.0",
         "pkg:npm/jest-util@29.3.1",
         "pkg:npm/jest@29.3.1",
-        "pkg:npm/semver@7.3.7"
+        "pkg:npm/json5@2.2.3",
+        "pkg:npm/lodash.memoize@4.1.2",
+        "pkg:npm/make-error@1.3.6",
+        "pkg:npm/semver@7.3.7",
+        "pkg:npm/typescript@4.9.4",
+        "pkg:npm/yargs-parser@21.1.1"
       ]
     },
     {
@@ -12214,6 +12430,8 @@
     {
       "from": "pkg:npm/tsconfig-paths@4.1.2",
       "to": [
+        "pkg:npm/json5@2.2.3",
+        "pkg:npm/minimist@1.2.6",
         "pkg:npm/strip-bom@3.0.0"
       ]
     },
@@ -12475,7 +12693,13 @@
     {
       "from": "pkg:npm/yargs@17.6.2",
       "to": [
-        "pkg:npm/cliui@8.0.1"
+        "pkg:npm/cliui@8.0.1",
+        "pkg:npm/escalade@3.1.1",
+        "pkg:npm/get-caller-file@2.0.5",
+        "pkg:npm/require-directory@2.1.1",
+        "pkg:npm/string-width@4.2.3",
+        "pkg:npm/y18n@5.0.8",
+        "pkg:npm/yargs-parser@21.1.1"
       ]
     }
   ],

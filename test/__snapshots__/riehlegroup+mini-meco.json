@@ -5808,6 +5808,7 @@
           "packages": [
             "pkg:npm/%40types/bcryptjs@2.4.6",
             "pkg:npm/%40types/cors@2.8.17",
+            "pkg:npm/%40types/express@4.17.21",
             "pkg:npm/%40types/jsonwebtoken@9.0.7",
             "pkg:npm/%40types/node@22.10.1",
             "pkg:npm/%40types/nodemailer@6.4.17",
@@ -7442,18 +7443,24 @@
     {
       "from": "pkg:npm/%40types/express-serve-static-core@4.19.6",
       "to": [
+        "pkg:npm/%40types/node@22.10.1",
         "pkg:npm/%40types/node@22.18.10",
         "pkg:npm/%40types/qs@6.14.0",
+        "pkg:npm/%40types/qs@6.9.17",
         "pkg:npm/%40types/range-parser@1.2.7",
+        "pkg:npm/%40types/send@0.17.4",
         "pkg:npm/%40types/send@1.2.0"
       ]
     },
     {
       "from": "pkg:npm/%40types/express@4.17.21",
       "to": [
+        "pkg:npm/%40types/body-parser@1.19.5",
         "pkg:npm/%40types/body-parser@1.19.6",
         "pkg:npm/%40types/express-serve-static-core@4.19.6",
         "pkg:npm/%40types/qs@6.14.0",
+        "pkg:npm/%40types/qs@6.9.17",
+        "pkg:npm/%40types/serve-static@1.15.7",
         "pkg:npm/%40types/serve-static@1.15.9"
       ]
     },

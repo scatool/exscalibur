@@ -3669,3 +3669,75 @@ exports[`workspace 1`] = `
   ],
 }
 `;
+
+exports[`workspace-nested-deps 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "package-lock.json#16",
+      ],
+      "purl": "pkg:npm/debug@2.6.9",
+    },
+    {
+      "evidence": [
+        "package-lock.json#42",
+      ],
+      "purl": "pkg:npm/debug@4.4.0",
+    },
+    {
+      "evidence": [
+        "package-lock.json#25",
+      ],
+      "purl": "pkg:npm/ms@2.0.0",
+    },
+    {
+      "evidence": [
+        "package-lock.json#51",
+      ],
+      "purl": "pkg:npm/ms@2.1.3",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:npm/debug@2.6.9",
+      "to": [
+        "pkg:npm/ms@2.0.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/debug@4.4.0",
+      "to": [
+        "pkg:npm/ms@2.1.3",
+      ],
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "packages/app/package.json",
+      "purl": "pkg:npm/app@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/debug@4.4.0",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+    {
+      "definitionFile": "package.json",
+      "purl": "pkg:npm/workspace-nested-deps@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/debug@2.6.9",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
