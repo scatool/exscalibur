@@ -2,19 +2,12 @@
 name = "flask-app"
 version = "2.0.0"
 description = "A Flask application"
-dependencies = [
-    "flask>=2.3.3",
-]
+dependencies = ["flask>=2.3.3"]
 requires-python = ">=3.11"
 
 [tool.pdm.dev-dependencies]
-dev = [
-    "pytest>=7.4.2",
-    "black>=23.9.1",
-]
-test = [
-    "pytest-cov>=4.1.0",
-]
+dev = ["pytest>=7.4.2", "black>=23.9.1"]
+test = ["pytest-cov>=4.1.0"]
 
 [build-system]
 requires = ["pdm-backend"]
