@@ -4416,11 +4416,11 @@
         "pkg:npm/%40babel/template@7.22.5",
         "pkg:npm/%40babel/traverse@7.22.5",
         "pkg:npm/%40babel/types@7.22.5",
-        "pkg:npm/convert-source-map@2.0.0",
+        "pkg:npm/convert-source-map@1.9.0",
         "pkg:npm/debug@4.3.4",
         "pkg:npm/gensync@1.0.0-beta.2",
         "pkg:npm/json5@2.2.3",
-        "pkg:npm/semver@7.5.2"
+        "pkg:npm/semver@6.3.0"
       ]
     },
     {
@@ -4440,7 +4440,7 @@
         "pkg:npm/%40babel/helper-validator-option@7.22.5",
         "pkg:npm/browserslist@4.21.9",
         "pkg:npm/lru-cache@5.1.1",
-        "pkg:npm/semver@7.5.2"
+        "pkg:npm/semver@6.3.0"
       ]
     },
     {
@@ -4499,7 +4499,7 @@
       "from": "pkg:npm/%40babel/highlight@7.22.5",
       "to": [
         "pkg:npm/%40babel/helper-validator-identifier@7.22.5",
-        "pkg:npm/chalk@4.1.2",
+        "pkg:npm/chalk@2.4.2",
         "pkg:npm/js-tokens@4.0.0"
       ]
     },
@@ -4621,7 +4621,7 @@
         "pkg:npm/%40babel/parser@7.22.5",
         "pkg:npm/%40babel/types@7.22.5",
         "pkg:npm/debug@4.3.4",
-        "pkg:npm/globals@13.20.0"
+        "pkg:npm/globals@11.12.0"
       ]
     },
     {
@@ -4761,7 +4761,7 @@
     {
       "from": "pkg:npm/%40cspotcode/source-map-support@0.8.1",
       "to": [
-        "pkg:npm/%40jridgewell/trace-mapping@0.3.18"
+        "pkg:npm/%40jridgewell/trace-mapping@0.3.9"
       ]
     },
     {
@@ -4774,7 +4774,7 @@
     {
       "from": "pkg:npm/%40eslint/eslintrc@2.1.0",
       "to": [
-        "pkg:npm/ajv@8.12.0",
+        "pkg:npm/ajv@6.12.6",
         "pkg:npm/debug@4.3.4",
         "pkg:npm/espree@9.6.0",
         "pkg:npm/globals@13.20.0",
@@ -4797,9 +4797,9 @@
       "from": "pkg:npm/%40istanbuljs/load-nyc-config@1.1.0",
       "to": [
         "pkg:npm/camelcase@5.3.1",
-        "pkg:npm/find-up@5.0.0",
+        "pkg:npm/find-up@4.1.0",
         "pkg:npm/get-package-type@0.1.0",
-        "pkg:npm/js-yaml@4.1.0",
+        "pkg:npm/js-yaml@3.14.1",
         "pkg:npm/resolve-from@5.0.0"
       ]
     },
@@ -4902,7 +4902,7 @@
         "pkg:npm/chalk@4.1.2",
         "pkg:npm/collect-v8-coverage@1.0.1",
         "pkg:npm/exit@0.1.2",
-        "pkg:npm/glob@8.1.0",
+        "pkg:npm/glob@7.2.3",
         "pkg:npm/graceful-fs@4.2.11",
         "pkg:npm/istanbul-lib-coverage@3.2.0",
         "pkg:npm/istanbul-lib-instrument@5.2.1",
@@ -4993,7 +4993,7 @@
       "from": "pkg:npm/%40jridgewell/trace-mapping@0.3.18",
       "to": [
         "pkg:npm/%40jridgewell/resolve-uri@3.1.0",
-        "pkg:npm/%40jridgewell/sourcemap-codec@1.4.15"
+        "pkg:npm/%40jridgewell/sourcemap-codec@1.4.14"
       ]
     },
     {
@@ -5185,7 +5185,7 @@
       "to": [
         "pkg:npm/fast-deep-equal@3.1.3",
         "pkg:npm/fast-json-stable-stringify@2.1.0",
-        "pkg:npm/json-schema-traverse@1.0.0",
+        "pkg:npm/json-schema-traverse@0.4.1",
         "pkg:npm/uri-js@4.4.1"
       ]
     },
@@ -5207,13 +5207,13 @@
     {
       "from": "pkg:npm/ansi-escapes@4.3.2",
       "to": [
-        "pkg:npm/type-fest@0.20.2"
+        "pkg:npm/type-fest@0.21.3"
       ]
     },
     {
       "from": "pkg:npm/ansi-styles@3.2.1",
       "to": [
-        "pkg:npm/color-convert@2.0.1"
+        "pkg:npm/color-convert@1.9.3"
       ]
     },
     {
@@ -5399,9 +5399,9 @@
     {
       "from": "pkg:npm/chalk@2.4.2",
       "to": [
-        "pkg:npm/ansi-styles@4.3.0",
-        "pkg:npm/escape-string-regexp@4.0.0",
-        "pkg:npm/supports-color@7.2.0"
+        "pkg:npm/ansi-styles@3.2.1",
+        "pkg:npm/escape-string-regexp@1.0.5",
+        "pkg:npm/supports-color@5.5.0"
       ]
     },
     {
@@ -5444,8 +5444,8 @@
     {
       "from": "pkg:npm/cli-truncate@2.1.0",
       "to": [
-        "pkg:npm/slice-ansi@5.0.0",
-        "pkg:npm/string-width@5.1.2"
+        "pkg:npm/slice-ansi@3.0.0",
+        "pkg:npm/string-width@4.2.3"
       ]
     },
     {
@@ -5458,7 +5458,7 @@
     {
       "from": "pkg:npm/cliui@8.0.1",
       "to": [
-        "pkg:npm/string-width@5.1.2",
+        "pkg:npm/string-width@4.2.3",
         "pkg:npm/strip-ansi@6.0.1",
         "pkg:npm/wrap-ansi@7.0.0"
       ]
@@ -5466,7 +5466,7 @@
     {
       "from": "pkg:npm/color-convert@1.9.3",
       "to": [
-        "pkg:npm/color-name@1.1.4"
+        "pkg:npm/color-name@1.1.3"
       ]
     },
     {
@@ -5485,7 +5485,7 @@
     {
       "from": "pkg:npm/color@3.2.1",
       "to": [
-        "pkg:npm/color-convert@2.0.1",
+        "pkg:npm/color-convert@1.9.3",
         "pkg:npm/color-string@1.9.0"
       ]
     },
@@ -5562,7 +5562,7 @@
     {
       "from": "pkg:npm/cssstyle@2.3.0",
       "to": [
-        "pkg:npm/cssom@0.5.0"
+        "pkg:npm/cssom@0.3.8"
       ]
     },
     {
@@ -5596,7 +5596,7 @@
       "from": "pkg:npm/decamelize-keys@1.1.1",
       "to": [
         "pkg:npm/decamelize@1.2.0",
-        "pkg:npm/map-obj@4.3.0"
+        "pkg:npm/map-obj@1.0.1"
       ]
     },
     {
@@ -5629,8 +5629,8 @@
     {
       "from": "pkg:npm/dom-serializer@0.2.2",
       "to": [
-        "pkg:npm/domelementtype@1.3.1",
-        "pkg:npm/entities@1.1.2"
+        "pkg:npm/domelementtype@2.2.0",
+        "pkg:npm/entities@2.2.0"
       ]
     },
     {
@@ -5818,7 +5818,7 @@
     {
       "from": "pkg:npm/eslint-import-resolver-node@0.3.7",
       "to": [
-        "pkg:npm/debug@4.3.4",
+        "pkg:npm/debug@3.2.7",
         "pkg:npm/is-core-module@2.12.1",
         "pkg:npm/resolve@1.22.2"
       ]
@@ -5826,7 +5826,7 @@
     {
       "from": "pkg:npm/eslint-module-utils@2.8.0",
       "to": [
-        "pkg:npm/debug@4.3.4"
+        "pkg:npm/debug@3.2.7"
       ]
     },
     {
@@ -5843,8 +5843,8 @@
         "pkg:npm/array-includes@3.1.6",
         "pkg:npm/array.prototype.flat@1.3.1",
         "pkg:npm/array.prototype.flatmap@1.3.1",
-        "pkg:npm/debug@4.3.4",
-        "pkg:npm/doctrine@3.0.0",
+        "pkg:npm/debug@3.2.7",
+        "pkg:npm/doctrine@2.1.0",
         "pkg:npm/eslint-import-resolver-node@0.3.7",
         "pkg:npm/eslint-module-utils@2.8.0",
         "pkg:npm/eslint@8.44.0",
@@ -5854,7 +5854,7 @@
         "pkg:npm/minimatch@3.1.2",
         "pkg:npm/object.values@1.1.6",
         "pkg:npm/resolve@1.22.2",
-        "pkg:npm/semver@7.5.2",
+        "pkg:npm/semver@6.3.0",
         "pkg:npm/tsconfig-paths@3.14.2"
       ]
     },
@@ -5869,7 +5869,7 @@
         "pkg:npm/is-core-module@2.12.1",
         "pkg:npm/minimatch@3.1.2",
         "pkg:npm/resolve@1.22.2",
-        "pkg:npm/semver@7.5.2"
+        "pkg:npm/semver@7.5.3"
       ]
     },
     {
@@ -5895,7 +5895,7 @@
         "pkg:npm/%40humanwhocodes/config-array@0.11.10",
         "pkg:npm/%40humanwhocodes/module-importer@1.0.1",
         "pkg:npm/%40nodelib/fs.walk@1.2.8",
-        "pkg:npm/ajv@8.12.0",
+        "pkg:npm/ajv@6.12.6",
         "pkg:npm/chalk@4.1.2",
         "pkg:npm/cross-spawn@7.0.3",
         "pkg:npm/debug@4.3.4",
@@ -5975,13 +5975,13 @@
       "to": [
         "pkg:npm/cross-spawn@7.0.3",
         "pkg:npm/get-stream@6.0.1",
-        "pkg:npm/human-signals@2.1.0",
-        "pkg:npm/is-stream@2.0.1",
+        "pkg:npm/human-signals@4.3.1",
+        "pkg:npm/is-stream@3.0.0",
         "pkg:npm/merge-stream@2.0.0",
-        "pkg:npm/npm-run-path@4.0.1",
-        "pkg:npm/onetime@5.1.2",
+        "pkg:npm/npm-run-path@5.1.0",
+        "pkg:npm/onetime@6.0.0",
         "pkg:npm/signal-exit@3.0.7",
-        "pkg:npm/strip-final-newline@2.0.0"
+        "pkg:npm/strip-final-newline@3.0.0"
       ]
     },
     {
@@ -5997,7 +5997,7 @@
     {
       "from": "pkg:npm/ext@1.6.0",
       "to": [
-        "pkg:npm/type@1.2.0"
+        "pkg:npm/type@2.6.0"
       ]
     },
     {
@@ -6027,7 +6027,7 @@
     {
       "from": "pkg:npm/find-up@4.1.0",
       "to": [
-        "pkg:npm/locate-path@6.0.0",
+        "pkg:npm/locate-path@5.0.0",
         "pkg:npm/path-exists@4.0.0"
       ]
     },
@@ -6125,7 +6125,7 @@
         "pkg:npm/fs.realpath@1.0.0",
         "pkg:npm/inflight@1.0.6",
         "pkg:npm/inherits@2.0.4",
-        "pkg:npm/minimatch@3.1.2",
+        "pkg:npm/minimatch@5.1.6",
         "pkg:npm/once@1.4.0"
       ]
     },
@@ -6174,7 +6174,7 @@
     {
       "from": "pkg:npm/hosted-git-info@4.1.0",
       "to": [
-        "pkg:npm/lru-cache@5.1.1"
+        "pkg:npm/lru-cache@6.0.0"
       ]
     },
     {
@@ -6219,7 +6219,7 @@
       "from": "pkg:npm/import-fresh@3.3.0",
       "to": [
         "pkg:npm/parent-module@1.0.1",
-        "pkg:npm/resolve-from@5.0.0"
+        "pkg:npm/resolve-from@4.0.0"
       ]
     },
     {
@@ -6361,7 +6361,7 @@
         "pkg:npm/%40babel/parser@7.22.5",
         "pkg:npm/%40istanbuljs/schema@0.1.3",
         "pkg:npm/istanbul-lib-coverage@3.2.0",
-        "pkg:npm/semver@7.5.2"
+        "pkg:npm/semver@6.3.0"
       ]
     },
     {
@@ -6447,7 +6447,7 @@
         "pkg:npm/chalk@4.1.2",
         "pkg:npm/ci-info@3.8.0",
         "pkg:npm/deepmerge@4.3.1",
-        "pkg:npm/glob@8.1.0",
+        "pkg:npm/glob@7.2.3",
         "pkg:npm/graceful-fs@4.2.11",
         "pkg:npm/jest-circus@29.5.0",
         "pkg:npm/jest-environment-node@29.5.0",
@@ -6636,7 +6636,7 @@
         "pkg:npm/chalk@4.1.2",
         "pkg:npm/cjs-module-lexer@1.2.3",
         "pkg:npm/collect-v8-coverage@1.0.1",
-        "pkg:npm/glob@8.1.0",
+        "pkg:npm/glob@7.2.3",
         "pkg:npm/graceful-fs@4.2.11",
         "pkg:npm/jest-haste-map@29.5.0",
         "pkg:npm/jest-message-util@29.5.0",
@@ -6692,7 +6692,7 @@
       "from": "pkg:npm/jest-validate@29.5.0",
       "to": [
         "pkg:npm/%40jest/types@29.5.0",
-        "pkg:npm/camelcase@5.3.1",
+        "pkg:npm/camelcase@6.3.0",
         "pkg:npm/chalk@4.1.2",
         "pkg:npm/jest-get-type@29.4.3",
         "pkg:npm/leven@3.1.0",
@@ -6718,7 +6718,7 @@
         "pkg:npm/%40types/node@20.3.3",
         "pkg:npm/jest-util@29.5.0",
         "pkg:npm/merge-stream@2.0.0",
-        "pkg:npm/supports-color@7.2.0"
+        "pkg:npm/supports-color@8.1.1"
       ]
     },
     {
@@ -6733,7 +6733,7 @@
     {
       "from": "pkg:npm/js-yaml@3.14.1",
       "to": [
-        "pkg:npm/argparse@2.0.1",
+        "pkg:npm/argparse@1.0.10",
         "pkg:npm/esprima@4.0.1"
       ]
     },
@@ -6810,11 +6810,11 @@
     {
       "from": "pkg:npm/lint-staged@13.2.3",
       "to": [
-        "pkg:npm/chalk@4.1.2",
+        "pkg:npm/chalk@5.2.0",
         "pkg:npm/cli-truncate@3.1.0",
         "pkg:npm/commander@10.0.1",
         "pkg:npm/debug@4.3.4",
-        "pkg:npm/execa@5.1.1",
+        "pkg:npm/execa@7.1.1",
         "pkg:npm/lilconfig@2.1.0",
         "pkg:npm/listr2@5.0.8",
         "pkg:npm/micromatch@4.0.5",
@@ -6828,7 +6828,7 @@
     {
       "from": "pkg:npm/listr2@5.0.8",
       "to": [
-        "pkg:npm/cli-truncate@3.1.0",
+        "pkg:npm/cli-truncate@2.1.0",
         "pkg:npm/colorette@2.0.20",
         "pkg:npm/log-update@4.0.0",
         "pkg:npm/p-map@4.0.0",
@@ -6841,7 +6841,7 @@
     {
       "from": "pkg:npm/locate-path@5.0.0",
       "to": [
-        "pkg:npm/p-locate@5.0.0"
+        "pkg:npm/p-locate@4.1.0"
       ]
     },
     {
@@ -6855,8 +6855,8 @@
       "to": [
         "pkg:npm/ansi-escapes@4.3.2",
         "pkg:npm/cli-cursor@3.1.0",
-        "pkg:npm/slice-ansi@5.0.0",
-        "pkg:npm/wrap-ansi@7.0.0"
+        "pkg:npm/slice-ansi@4.0.0",
+        "pkg:npm/wrap-ansi@6.2.0"
       ]
     },
     {
@@ -6874,7 +6874,7 @@
     {
       "from": "pkg:npm/lru-cache@6.0.0",
       "to": [
-        "pkg:npm/yallist@3.1.1"
+        "pkg:npm/yallist@4.0.0"
       ]
     },
     {
@@ -6892,7 +6892,7 @@
     {
       "from": "pkg:npm/make-dir@3.1.0",
       "to": [
-        "pkg:npm/semver@7.5.2"
+        "pkg:npm/semver@6.3.0"
       ]
     },
     {
@@ -6910,7 +6910,7 @@
         "pkg:npm/event-emitter@0.3.5",
         "pkg:npm/is-promise@2.2.2",
         "pkg:npm/lru-queue@0.1.0",
-        "pkg:npm/next-tick@1.0.0",
+        "pkg:npm/next-tick@1.1.0",
         "pkg:npm/timers-ext@0.1.7"
       ]
     },
@@ -6926,7 +6926,7 @@
         "pkg:npm/read-pkg-up@7.0.1",
         "pkg:npm/redent@3.0.0",
         "pkg:npm/trim-newlines@3.0.1",
-        "pkg:npm/type-fest@0.20.2",
+        "pkg:npm/type-fest@0.18.1",
         "pkg:npm/yargs-parser@20.2.9"
       ]
     },
@@ -6952,7 +6952,7 @@
     {
       "from": "pkg:npm/minimatch@5.1.6",
       "to": [
-        "pkg:npm/brace-expansion@1.1.11"
+        "pkg:npm/brace-expansion@2.0.1"
       ]
     },
     {
@@ -6985,9 +6985,9 @@
     {
       "from": "pkg:npm/normalize-package-data@2.5.0",
       "to": [
-        "pkg:npm/hosted-git-info@4.1.0",
+        "pkg:npm/hosted-git-info@2.8.9",
         "pkg:npm/resolve@1.22.2",
-        "pkg:npm/semver@7.5.2",
+        "pkg:npm/semver@5.7.1",
         "pkg:npm/validate-npm-package-license@3.0.4"
       ]
     },
@@ -7009,7 +7009,7 @@
     {
       "from": "pkg:npm/npm-run-path@5.1.0",
       "to": [
-        "pkg:npm/path-key@3.1.1"
+        "pkg:npm/path-key@4.0.0"
       ]
     },
     {
@@ -7044,7 +7044,7 @@
     {
       "from": "pkg:npm/onetime@6.0.0",
       "to": [
-        "pkg:npm/mimic-fn@2.1.0"
+        "pkg:npm/mimic-fn@4.0.0"
       ]
     },
     {
@@ -7073,7 +7073,7 @@
     {
       "from": "pkg:npm/p-locate@4.1.0",
       "to": [
-        "pkg:npm/p-limit@3.1.0"
+        "pkg:npm/p-limit@2.3.0"
       ]
     },
     {
@@ -7126,7 +7126,7 @@
     {
       "from": "pkg:npm/pkg-dir@4.2.0",
       "to": [
-        "pkg:npm/find-up@5.0.0"
+        "pkg:npm/find-up@4.1.0"
       ]
     },
     {
@@ -7141,7 +7141,7 @@
       "from": "pkg:npm/pretty-format@29.5.0",
       "to": [
         "pkg:npm/%40jest/schemas@29.4.3",
-        "pkg:npm/ansi-styles@4.3.0",
+        "pkg:npm/ansi-styles@5.2.0",
         "pkg:npm/react-is@18.2.0"
       ]
     },
@@ -7161,18 +7161,18 @@
     {
       "from": "pkg:npm/read-pkg-up@7.0.1",
       "to": [
-        "pkg:npm/find-up@5.0.0",
+        "pkg:npm/find-up@4.1.0",
         "pkg:npm/read-pkg@5.2.0",
-        "pkg:npm/type-fest@0.20.2"
+        "pkg:npm/type-fest@0.8.1"
       ]
     },
     {
       "from": "pkg:npm/read-pkg@5.2.0",
       "to": [
         "pkg:npm/%40types/normalize-package-data@2.4.1",
-        "pkg:npm/normalize-package-data@3.0.3",
+        "pkg:npm/normalize-package-data@2.5.0",
         "pkg:npm/parse-json@5.2.0",
-        "pkg:npm/type-fest@0.20.2"
+        "pkg:npm/type-fest@0.6.0"
       ]
     },
     {
@@ -7236,7 +7236,7 @@
     {
       "from": "pkg:npm/rimraf@3.0.2",
       "to": [
-        "pkg:npm/glob@8.1.0"
+        "pkg:npm/glob@7.2.3"
       ]
     },
     {
@@ -7281,13 +7281,13 @@
     {
       "from": "pkg:npm/semver@7.5.2",
       "to": [
-        "pkg:npm/lru-cache@5.1.1"
+        "pkg:npm/lru-cache@6.0.0"
       ]
     },
     {
       "from": "pkg:npm/semver@7.5.3",
       "to": [
-        "pkg:npm/lru-cache@5.1.1"
+        "pkg:npm/lru-cache@6.0.0"
       ]
     },
     {
@@ -7321,7 +7321,7 @@
       "to": [
         "pkg:npm/ansi-styles@4.3.0",
         "pkg:npm/astral-regex@2.0.0",
-        "pkg:npm/is-fullwidth-code-point@4.0.0"
+        "pkg:npm/is-fullwidth-code-point@3.0.0"
       ]
     },
     {
@@ -7329,13 +7329,13 @@
       "to": [
         "pkg:npm/ansi-styles@4.3.0",
         "pkg:npm/astral-regex@2.0.0",
-        "pkg:npm/is-fullwidth-code-point@4.0.0"
+        "pkg:npm/is-fullwidth-code-point@3.0.0"
       ]
     },
     {
       "from": "pkg:npm/slice-ansi@5.0.0",
       "to": [
-        "pkg:npm/ansi-styles@4.3.0",
+        "pkg:npm/ansi-styles@6.2.1",
         "pkg:npm/is-fullwidth-code-point@4.0.0"
       ]
     },
@@ -7376,7 +7376,7 @@
     {
       "from": "pkg:npm/stack-utils@2.0.6",
       "to": [
-        "pkg:npm/escape-string-regexp@4.0.0"
+        "pkg:npm/escape-string-regexp@2.0.0"
       ]
     },
     {
@@ -7390,9 +7390,7 @@
       "from": "pkg:npm/string-width@4.2.3",
       "to": [
         "pkg:npm/emoji-regex@8.0.0",
-        "pkg:npm/emoji-regex@9.2.2",
         "pkg:npm/is-fullwidth-code-point@3.0.0",
-        "pkg:npm/is-fullwidth-code-point@4.0.0",
         "pkg:npm/strip-ansi@6.0.1"
       ]
     },
@@ -7401,7 +7399,7 @@
       "to": [
         "pkg:npm/eastasianwidth@0.2.0",
         "pkg:npm/emoji-regex@9.2.2",
-        "pkg:npm/strip-ansi@6.0.1"
+        "pkg:npm/strip-ansi@7.1.0"
       ]
     },
     {
@@ -7437,14 +7435,13 @@
     {
       "from": "pkg:npm/strip-ansi@6.0.1",
       "to": [
-        "pkg:npm/ansi-regex@2.1.1",
         "pkg:npm/ansi-regex@5.0.1"
       ]
     },
     {
       "from": "pkg:npm/strip-ansi@7.1.0",
       "to": [
-        "pkg:npm/ansi-regex@5.0.1"
+        "pkg:npm/ansi-regex@6.0.1"
       ]
     },
     {
@@ -7456,7 +7453,7 @@
     {
       "from": "pkg:npm/supports-color@5.5.0",
       "to": [
-        "pkg:npm/has-flag@4.0.0"
+        "pkg:npm/has-flag@3.0.0"
       ]
     },
     {
@@ -7476,15 +7473,15 @@
       "to": [
         "pkg:npm/%40jridgewell/source-map@0.3.4",
         "pkg:npm/acorn@8.9.0",
-        "pkg:npm/commander@10.0.1",
-        "pkg:npm/source-map-support@0.5.13"
+        "pkg:npm/commander@2.20.3",
+        "pkg:npm/source-map-support@0.5.21"
       ]
     },
     {
       "from": "pkg:npm/test-exclude@6.0.0",
       "to": [
         "pkg:npm/%40istanbuljs/schema@0.1.3",
-        "pkg:npm/glob@8.1.0",
+        "pkg:npm/glob@7.2.3",
         "pkg:npm/minimatch@3.1.2"
       ]
     },
@@ -7512,7 +7509,7 @@
       "to": [
         "pkg:npm/psl@1.9.0",
         "pkg:npm/punycode@2.3.0",
-        "pkg:npm/universalify@2.0.0",
+        "pkg:npm/universalify@0.2.0",
         "pkg:npm/url-parse@1.5.10"
       ]
     },
@@ -7546,9 +7543,9 @@
       "from": "pkg:npm/tsconfig-paths@3.14.2",
       "to": [
         "pkg:npm/%40types/json5@0.0.29",
-        "pkg:npm/json5@2.2.3",
+        "pkg:npm/json5@1.0.2",
         "pkg:npm/minimist@1.2.8",
-        "pkg:npm/strip-bom@4.0.0"
+        "pkg:npm/strip-bom@3.0.0"
       ]
     },
     {
@@ -7600,7 +7597,7 @@
       "to": [
         "pkg:npm/%40jridgewell/trace-mapping@0.3.18",
         "pkg:npm/%40types/istanbul-lib-coverage@2.0.4",
-        "pkg:npm/convert-source-map@2.0.0"
+        "pkg:npm/convert-source-map@1.9.0"
       ]
     },
     {
@@ -7677,7 +7674,7 @@
       "from": "pkg:npm/wrap-ansi@6.2.0",
       "to": [
         "pkg:npm/ansi-styles@4.3.0",
-        "pkg:npm/string-width@5.1.2",
+        "pkg:npm/string-width@4.2.3",
         "pkg:npm/strip-ansi@6.0.1"
       ]
     },
@@ -7685,7 +7682,7 @@
       "from": "pkg:npm/wrap-ansi@7.0.0",
       "to": [
         "pkg:npm/ansi-styles@4.3.0",
-        "pkg:npm/string-width@5.1.2",
+        "pkg:npm/string-width@4.2.3",
         "pkg:npm/strip-ansi@6.0.1"
       ]
     },
@@ -7703,9 +7700,9 @@
         "pkg:npm/escalade@3.1.1",
         "pkg:npm/get-caller-file@2.0.5",
         "pkg:npm/require-directory@2.1.1",
-        "pkg:npm/string-width@5.1.2",
+        "pkg:npm/string-width@4.2.3",
         "pkg:npm/y18n@5.0.8",
-        "pkg:npm/yargs-parser@20.2.9"
+        "pkg:npm/yargs-parser@21.1.1"
       ]
     }
   ],

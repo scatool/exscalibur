@@ -2494,7 +2494,7 @@
       "to": [
         "pkg:npm/%40eslint/object-schema@2.1.6",
         "pkg:npm/debug@4.3.7",
-        "pkg:npm/minimatch@5.1.6"
+        "pkg:npm/minimatch@3.1.2"
       ]
     },
     {
@@ -2519,14 +2519,14 @@
         "pkg:npm/ignore@5.3.2",
         "pkg:npm/import-fresh@3.3.0",
         "pkg:npm/js-yaml@4.1.0",
-        "pkg:npm/minimatch@5.1.6",
+        "pkg:npm/minimatch@3.1.2",
         "pkg:npm/strip-json-comments@3.1.1"
       ]
     },
     {
       "from": "pkg:npm/%40eslint/plugin-kit@0.2.5",
       "to": [
-        "pkg:npm/%40eslint/core@0.11.0",
+        "pkg:npm/%40eslint/core@0.10.0",
         "pkg:npm/levn@0.4.1"
       ]
     },
@@ -2534,15 +2534,18 @@
       "from": "pkg:npm/%40humanfs/node@0.16.6",
       "to": [
         "pkg:npm/%40humanfs/core@0.19.1",
-        "pkg:npm/%40humanwhocodes/retry@0.4.1"
+        "pkg:npm/%40humanwhocodes/retry@0.3.1"
       ]
     },
     {
       "from": "pkg:npm/%40isaacs/cliui@8.0.2",
       "to": [
         "pkg:npm/string-width@4.2.3",
+        "pkg:npm/string-width@5.1.2",
         "pkg:npm/strip-ansi@6.0.1",
-        "pkg:npm/wrap-ansi@7.0.0"
+        "pkg:npm/strip-ansi@7.1.0",
+        "pkg:npm/wrap-ansi@7.0.0",
+        "pkg:npm/wrap-ansi@8.1.0"
       ]
     },
     {
@@ -2562,7 +2565,7 @@
     {
       "from": "pkg:npm/%40sinonjs/commons@3.0.1",
       "to": [
-        "pkg:npm/type-detect@4.1.0"
+        "pkg:npm/type-detect@4.0.8"
       ]
     },
     {
@@ -2640,7 +2643,7 @@
         "pkg:npm/debug@4.3.7",
         "pkg:npm/fast-glob@3.3.3",
         "pkg:npm/is-glob@4.0.3",
-        "pkg:npm/minimatch@5.1.6",
+        "pkg:npm/minimatch@9.0.5",
         "pkg:npm/semver@7.6.3",
         "pkg:npm/ts-api-utils@2.0.1",
         "pkg:npm/typescript@5.7.3"
@@ -2661,7 +2664,7 @@
       "from": "pkg:npm/%40typescript-eslint/visitor-keys@8.23.0",
       "to": [
         "pkg:npm/%40typescript-eslint/types@8.23.0",
-        "pkg:npm/eslint-visitor-keys@3.4.3"
+        "pkg:npm/eslint-visitor-keys@4.2.0"
       ]
     },
     {
@@ -2802,7 +2805,7 @@
         "pkg:npm/camelcase@7.0.1",
         "pkg:npm/map-obj@4.3.0",
         "pkg:npm/quick-lru@6.1.2",
-        "pkg:npm/type-fest@3.13.1"
+        "pkg:npm/type-fest@2.19.0"
       ]
     },
     {
@@ -2827,7 +2830,7 @@
       "from": "pkg:npm/chalk@4.1.2",
       "to": [
         "pkg:npm/ansi-styles@4.3.0",
-        "pkg:npm/supports-color@8.1.1"
+        "pkg:npm/supports-color@7.2.0"
       ]
     },
     {
@@ -2913,7 +2916,7 @@
     {
       "from": "pkg:npm/debug@2.6.9",
       "to": [
-        "pkg:npm/ms@2.1.3"
+        "pkg:npm/ms@2.0.0"
       ]
     },
     {
@@ -2931,8 +2934,8 @@
     {
       "from": "pkg:npm/decamelize-keys@1.1.1",
       "to": [
-        "pkg:npm/decamelize@6.0.0",
-        "pkg:npm/map-obj@4.3.0"
+        "pkg:npm/decamelize@1.2.0",
+        "pkg:npm/map-obj@1.0.1"
       ]
     },
     {
@@ -3069,7 +3072,7 @@
     {
       "from": "pkg:npm/eslint-import-resolver-node@0.3.9",
       "to": [
-        "pkg:npm/debug@4.3.7",
+        "pkg:npm/debug@3.2.7",
         "pkg:npm/is-core-module@2.15.1",
         "pkg:npm/resolve@1.22.8"
       ]
@@ -3077,7 +3080,7 @@
     {
       "from": "pkg:npm/eslint-module-utils@2.12.0",
       "to": [
-        "pkg:npm/debug@4.3.7"
+        "pkg:npm/debug@3.2.7"
       ]
     },
     {
@@ -3090,7 +3093,7 @@
     {
       "from": "pkg:npm/eslint-plugin-eslint-comments@3.2.0",
       "to": [
-        "pkg:npm/escape-string-regexp@4.0.0",
+        "pkg:npm/escape-string-regexp@1.0.5",
         "pkg:npm/eslint@9.20.0",
         "pkg:npm/ignore@5.3.2"
       ]
@@ -3126,7 +3129,7 @@
         "pkg:npm/eslint-plugin-prettier@5.2.1",
         "pkg:npm/eslint-rule-documentation@1.0.23",
         "pkg:npm/eslint@9.20.0",
-        "pkg:npm/globals@14.0.0",
+        "pkg:npm/globals@15.14.0",
         "pkg:npm/jsx-ast-utils@3.3.5",
         "pkg:npm/prettier@3.3.3",
         "pkg:npm/svg-element-attributes@1.3.1",
@@ -3147,7 +3150,7 @@
         "pkg:npm/array.prototype.findlastindex@1.2.5",
         "pkg:npm/array.prototype.flat@1.3.2",
         "pkg:npm/array.prototype.flatmap@1.3.2",
-        "pkg:npm/debug@4.3.7",
+        "pkg:npm/debug@3.2.7",
         "pkg:npm/doctrine@2.1.0",
         "pkg:npm/eslint-import-resolver-node@0.3.9",
         "pkg:npm/eslint-module-utils@2.12.0",
@@ -3155,11 +3158,11 @@
         "pkg:npm/hasown@2.0.2",
         "pkg:npm/is-core-module@2.15.1",
         "pkg:npm/is-glob@4.0.3",
-        "pkg:npm/minimatch@5.1.6",
+        "pkg:npm/minimatch@3.1.2",
         "pkg:npm/object.fromentries@2.0.8",
         "pkg:npm/object.groupby@1.0.3",
         "pkg:npm/object.values@1.2.0",
-        "pkg:npm/semver@7.6.3",
+        "pkg:npm/semver@6.3.1",
         "pkg:npm/string.prototype.trimend@1.0.8",
         "pkg:npm/tsconfig-paths@3.15.0"
       ]
@@ -3174,12 +3177,12 @@
         "pkg:npm/axe-core@4.10.2",
         "pkg:npm/axobject-query@4.1.0",
         "pkg:npm/damerau-levenshtein@1.0.8",
-        "pkg:npm/emoji-regex@8.0.0",
+        "pkg:npm/emoji-regex@9.2.2",
         "pkg:npm/eslint@9.20.0",
         "pkg:npm/hasown@2.0.2",
         "pkg:npm/jsx-ast-utils@3.3.5",
         "pkg:npm/language-tags@1.0.9",
-        "pkg:npm/minimatch@5.1.6",
+        "pkg:npm/minimatch@3.1.2",
         "pkg:npm/object.fromentries@2.0.8",
         "pkg:npm/safe-regex-test@1.0.3",
         "pkg:npm/string.prototype.includes@2.0.1"
@@ -3223,20 +3226,20 @@
         "pkg:npm/debug@4.3.7",
         "pkg:npm/escape-string-regexp@4.0.0",
         "pkg:npm/eslint-scope@8.2.0",
-        "pkg:npm/eslint-visitor-keys@3.4.3",
+        "pkg:npm/eslint-visitor-keys@4.2.0",
         "pkg:npm/espree@10.3.0",
         "pkg:npm/esquery@1.6.0",
         "pkg:npm/esutils@2.0.3",
         "pkg:npm/fast-deep-equal@3.1.3",
         "pkg:npm/file-entry-cache@8.0.0",
         "pkg:npm/find-up@5.0.0",
-        "pkg:npm/glob-parent@5.1.2",
+        "pkg:npm/glob-parent@6.0.2",
         "pkg:npm/ignore@5.3.2",
         "pkg:npm/imurmurhash@0.1.4",
         "pkg:npm/is-glob@4.0.3",
         "pkg:npm/json-stable-stringify-without-jsonify@1.0.1",
         "pkg:npm/lodash.merge@4.6.2",
-        "pkg:npm/minimatch@5.1.6",
+        "pkg:npm/minimatch@3.1.2",
         "pkg:npm/natural-compare@1.4.0",
         "pkg:npm/optionator@0.9.4"
       ]
@@ -3246,7 +3249,7 @@
       "to": [
         "pkg:npm/acorn-jsx@5.3.2",
         "pkg:npm/acorn@8.14.0",
-        "pkg:npm/eslint-visitor-keys@3.4.3"
+        "pkg:npm/eslint-visitor-keys@4.2.0"
       ]
     },
     {
@@ -3292,7 +3295,7 @@
     {
       "from": "pkg:npm/find-up@4.1.0",
       "to": [
-        "pkg:npm/locate-path@6.0.0",
+        "pkg:npm/locate-path@5.0.0",
         "pkg:npm/path-exists@4.0.0"
       ]
     },
@@ -3306,8 +3309,8 @@
     {
       "from": "pkg:npm/find-up@6.3.0",
       "to": [
-        "pkg:npm/locate-path@6.0.0",
-        "pkg:npm/path-exists@4.0.0"
+        "pkg:npm/locate-path@7.2.0",
+        "pkg:npm/path-exists@5.0.0"
       ]
     },
     {
@@ -3374,7 +3377,7 @@
       "to": [
         "pkg:npm/foreground-child@3.3.0",
         "pkg:npm/jackspeak@3.4.3",
-        "pkg:npm/minimatch@5.1.6",
+        "pkg:npm/minimatch@9.0.5",
         "pkg:npm/minipass@7.1.2",
         "pkg:npm/package-json-from-dist@1.0.1",
         "pkg:npm/path-scurry@1.11.1"
@@ -3414,7 +3417,7 @@
     {
       "from": "pkg:npm/hosted-git-info@4.1.0",
       "to": [
-        "pkg:npm/lru-cache@7.18.3"
+        "pkg:npm/lru-cache@6.0.0"
       ]
     },
     {
@@ -3427,7 +3430,7 @@
       "from": "pkg:npm/import-fresh@3.3.0",
       "to": [
         "pkg:npm/parent-module@1.0.1",
-        "pkg:npm/resolve-from@5.0.0"
+        "pkg:npm/resolve-from@4.0.0"
       ]
     },
     {
@@ -3594,14 +3597,14 @@
     {
       "from": "pkg:npm/lighthouse-logger@1.4.2",
       "to": [
-        "pkg:npm/debug@4.3.7",
+        "pkg:npm/debug@2.6.9",
         "pkg:npm/marky@1.2.5"
       ]
     },
     {
       "from": "pkg:npm/locate-path@5.0.0",
       "to": [
-        "pkg:npm/p-locate@5.0.0"
+        "pkg:npm/p-locate@4.1.0"
       ]
     },
     {
@@ -3613,7 +3616,7 @@
     {
       "from": "pkg:npm/locate-path@7.2.0",
       "to": [
-        "pkg:npm/p-locate@5.0.0"
+        "pkg:npm/p-locate@6.0.0"
       ]
     },
     {
@@ -3662,7 +3665,7 @@
     {
       "from": "pkg:npm/minimatch@3.1.2",
       "to": [
-        "pkg:npm/brace-expansion@2.0.1"
+        "pkg:npm/brace-expansion@1.1.11"
       ]
     },
     {
@@ -3688,7 +3691,7 @@
     {
       "from": "pkg:npm/mocha-chrome@3.0.0",
       "to": [
-        "pkg:npm/chalk@4.1.2",
+        "pkg:npm/chalk@5.3.0",
         "pkg:npm/chrome-launcher@0.15.2",
         "pkg:npm/chrome-remote-interface@0.32.2",
         "pkg:npm/chrome-unmirror@0.1.0",
@@ -3760,7 +3763,7 @@
     {
       "from": "pkg:npm/normalize-package-data@3.0.3",
       "to": [
-        "pkg:npm/hosted-git-info@5.2.1",
+        "pkg:npm/hosted-git-info@4.1.0",
         "pkg:npm/is-core-module@2.15.1",
         "pkg:npm/semver@7.6.3",
         "pkg:npm/validate-npm-package-license@3.0.4"
@@ -3835,13 +3838,13 @@
     {
       "from": "pkg:npm/p-limit@4.0.0",
       "to": [
-        "pkg:npm/yocto-queue@0.1.0"
+        "pkg:npm/yocto-queue@1.1.1"
       ]
     },
     {
       "from": "pkg:npm/p-locate@4.1.0",
       "to": [
-        "pkg:npm/p-limit@3.1.0"
+        "pkg:npm/p-limit@2.3.0"
       ]
     },
     {
@@ -3853,7 +3856,7 @@
     {
       "from": "pkg:npm/p-locate@6.0.0",
       "to": [
-        "pkg:npm/p-limit@3.1.0"
+        "pkg:npm/p-limit@4.0.0"
       ]
     },
     {
@@ -3874,14 +3877,14 @@
     {
       "from": "pkg:npm/path-scurry@1.11.1",
       "to": [
-        "pkg:npm/lru-cache@7.18.3",
+        "pkg:npm/lru-cache@10.4.3",
         "pkg:npm/minipass@7.1.2"
       ]
     },
     {
       "from": "pkg:npm/pkg-dir@4.2.0",
       "to": [
-        "pkg:npm/find-up@5.0.0"
+        "pkg:npm/find-up@4.1.0"
       ]
     },
     {
@@ -3899,18 +3902,18 @@
     {
       "from": "pkg:npm/read-pkg-up@9.1.0",
       "to": [
-        "pkg:npm/find-up@5.0.0",
+        "pkg:npm/find-up@6.3.0",
         "pkg:npm/read-pkg@7.1.0",
-        "pkg:npm/type-fest@3.13.1"
+        "pkg:npm/type-fest@2.19.0"
       ]
     },
     {
       "from": "pkg:npm/read-pkg@7.1.0",
       "to": [
         "pkg:npm/%40types/normalize-package-data@2.4.4",
-        "pkg:npm/normalize-package-data@4.0.1",
+        "pkg:npm/normalize-package-data@3.0.3",
         "pkg:npm/parse-json@5.2.0",
-        "pkg:npm/type-fest@3.13.1"
+        "pkg:npm/type-fest@2.19.0"
       ]
     },
     {
@@ -4019,9 +4022,9 @@
         "pkg:npm/%40sinonjs/commons@3.0.1",
         "pkg:npm/%40sinonjs/fake-timers@13.0.5",
         "pkg:npm/%40sinonjs/samsam@8.0.2",
-        "pkg:npm/diff@5.2.0",
+        "pkg:npm/diff@7.0.0",
         "pkg:npm/nise@6.1.1",
-        "pkg:npm/supports-color@8.1.1"
+        "pkg:npm/supports-color@7.2.0"
       ]
     },
     {
@@ -4050,8 +4053,8 @@
       "from": "pkg:npm/string-width@5.1.2",
       "to": [
         "pkg:npm/eastasianwidth@0.2.0",
-        "pkg:npm/emoji-regex@8.0.0",
-        "pkg:npm/strip-ansi@6.0.1"
+        "pkg:npm/emoji-regex@9.2.2",
+        "pkg:npm/strip-ansi@7.1.0"
       ]
     },
     {
@@ -4096,7 +4099,7 @@
     {
       "from": "pkg:npm/strip-ansi@7.1.0",
       "to": [
-        "pkg:npm/ansi-regex@5.0.1"
+        "pkg:npm/ansi-regex@6.1.0"
       ]
     },
     {
@@ -4268,18 +4271,18 @@
     {
       "from": "pkg:npm/wrap-ansi@8.1.0",
       "to": [
-        "pkg:npm/ansi-styles@4.3.0",
-        "pkg:npm/string-width@4.2.3",
-        "pkg:npm/strip-ansi@6.0.1"
+        "pkg:npm/ansi-styles@6.2.1",
+        "pkg:npm/string-width@5.1.2",
+        "pkg:npm/strip-ansi@7.1.0"
       ]
     },
     {
       "from": "pkg:npm/yargs-unparser@2.0.0",
       "to": [
-        "pkg:npm/camelcase@7.0.1",
-        "pkg:npm/decamelize@6.0.0",
+        "pkg:npm/camelcase@6.3.0",
+        "pkg:npm/decamelize@4.0.0",
         "pkg:npm/flat@5.0.2",
-        "pkg:npm/is-plain-obj@1.1.0"
+        "pkg:npm/is-plain-obj@2.1.0"
       ]
     },
     {
