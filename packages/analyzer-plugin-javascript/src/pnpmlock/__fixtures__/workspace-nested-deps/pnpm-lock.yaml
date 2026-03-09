@@ -1,0 +1,47 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+  .:
+    dependencies:
+      debug:
+        specifier: ^2.6.0
+        version: 2.6.9
+  packages/app:
+    dependencies:
+      debug:
+        specifier: ^4.1.0
+        version: 4.4.0
+
+packages:
+  debug@2.6.9:
+    resolution:
+      { integrity: sha512-fake1== }
+
+  debug@4.4.0:
+    resolution:
+      { integrity: sha512-fake3== }
+
+  ms@2.0.0:
+    resolution:
+      { integrity: sha512-fake5== }
+
+  ms@2.1.3:
+    resolution:
+      { integrity: sha512-fake4== }
+
+snapshots:
+  debug@2.6.9:
+    dependencies:
+      ms: 2.0.0
+
+  debug@4.4.0:
+    dependencies:
+      ms: 2.1.3
+
+  ms@2.0.0: {}
+
+  ms@2.1.3: {}
