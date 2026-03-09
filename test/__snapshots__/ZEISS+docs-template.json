@@ -4848,7 +4848,7 @@
         "pkg:npm/ignore@5.3.0",
         "pkg:npm/import-fresh@3.3.0",
         "pkg:npm/js-yaml@4.1.0",
-        "pkg:npm/minimatch@9.0.3",
+        "pkg:npm/minimatch@3.1.2",
         "pkg:npm/strip-json-comments@3.1.1"
       ]
     },
@@ -4905,7 +4905,7 @@
       "to": [
         "pkg:npm/%40humanwhocodes/object-schema@2.0.2",
         "pkg:npm/debug@4.3.7",
-        "pkg:npm/minimatch@9.0.3"
+        "pkg:npm/minimatch@3.1.2"
       ]
     },
     {
@@ -4926,6 +4926,7 @@
         "pkg:npm/string-width@4.2.3",
         "pkg:npm/string-width@5.1.2",
         "pkg:npm/strip-ansi@6.0.1",
+        "pkg:npm/strip-ansi@7.1.0",
         "pkg:npm/wrap-ansi@7.0.0",
         "pkg:npm/wrap-ansi@8.1.0"
       ]
@@ -4954,7 +4955,7 @@
         "pkg:npm/%40types/mdx@2.0.13",
         "pkg:npm/collapse-white-space@2.1.0",
         "pkg:npm/devlop@1.1.0",
-        "pkg:npm/estree-util-is-identifier-name@2.1.0",
+        "pkg:npm/estree-util-is-identifier-name@3.0.0",
         "pkg:npm/estree-util-scope@1.0.0",
         "pkg:npm/estree-walker@3.0.3",
         "pkg:npm/hast-util-to-jsx-runtime@2.3.2",
@@ -5338,8 +5339,8 @@
     {
       "from": "pkg:npm/%40typescript-eslint/scope-manager@5.62.0",
       "to": [
-        "pkg:npm/%40typescript-eslint/types@6.19.0",
-        "pkg:npm/%40typescript-eslint/visitor-keys@6.19.0"
+        "pkg:npm/%40typescript-eslint/types@5.62.0",
+        "pkg:npm/%40typescript-eslint/visitor-keys@5.62.0"
       ]
     },
     {
@@ -5362,8 +5363,8 @@
     {
       "from": "pkg:npm/%40typescript-eslint/typescript-estree@5.62.0",
       "to": [
-        "pkg:npm/%40typescript-eslint/types@6.19.0",
-        "pkg:npm/%40typescript-eslint/visitor-keys@6.19.0",
+        "pkg:npm/%40typescript-eslint/types@5.62.0",
+        "pkg:npm/%40typescript-eslint/visitor-keys@5.62.0",
         "pkg:npm/debug@4.3.7",
         "pkg:npm/globby@11.1.0",
         "pkg:npm/is-glob@4.0.3",
@@ -5390,10 +5391,10 @@
         "pkg:npm/%40eslint-community/eslint-utils@4.4.0",
         "pkg:npm/%40types/json-schema@7.0.15",
         "pkg:npm/%40types/semver@7.5.6",
-        "pkg:npm/%40typescript-eslint/scope-manager@6.19.0",
-        "pkg:npm/%40typescript-eslint/types@6.19.0",
-        "pkg:npm/%40typescript-eslint/typescript-estree@6.19.0",
-        "pkg:npm/eslint-scope@7.2.2",
+        "pkg:npm/%40typescript-eslint/scope-manager@5.62.0",
+        "pkg:npm/%40typescript-eslint/types@5.62.0",
+        "pkg:npm/%40typescript-eslint/typescript-estree@5.62.0",
+        "pkg:npm/eslint-scope@5.1.1",
         "pkg:npm/eslint@8.56.0",
         "pkg:npm/semver@7.5.4"
       ]
@@ -5414,7 +5415,7 @@
     {
       "from": "pkg:npm/%40typescript-eslint/visitor-keys@5.62.0",
       "to": [
-        "pkg:npm/%40typescript-eslint/types@6.19.0",
+        "pkg:npm/%40typescript-eslint/types@5.62.0",
         "pkg:npm/eslint-visitor-keys@3.4.3"
       ]
     },
@@ -5643,7 +5644,7 @@
         "pkg:npm/anymatch@3.1.3",
         "pkg:npm/braces@3.0.3",
         "pkg:npm/fsevents@2.3.3",
-        "pkg:npm/glob-parent@6.0.2",
+        "pkg:npm/glob-parent@5.1.2",
         "pkg:npm/is-binary-path@2.1.0",
         "pkg:npm/is-glob@4.0.3",
         "pkg:npm/normalize-path@3.0.0",
@@ -5673,7 +5674,7 @@
     {
       "from": "pkg:npm/cose-base@2.2.0",
       "to": [
-        "pkg:npm/layout-base@1.0.2"
+        "pkg:npm/layout-base@2.0.1"
       ]
     },
     {
@@ -5694,14 +5695,14 @@
     {
       "from": "pkg:npm/cytoscape-fcose@2.2.0",
       "to": [
-        "pkg:npm/cose-base@1.0.3",
+        "pkg:npm/cose-base@2.2.0",
         "pkg:npm/cytoscape@3.30.4"
       ]
     },
     {
       "from": "pkg:npm/d3-array@2.12.1",
       "to": [
-        "pkg:npm/internmap@2.0.3"
+        "pkg:npm/internmap@1.0.1"
       ]
     },
     {
@@ -5748,7 +5749,7 @@
     {
       "from": "pkg:npm/d3-dsv@3.0.1",
       "to": [
-        "pkg:npm/commander@8.3.0",
+        "pkg:npm/commander@7.2.0",
         "pkg:npm/iconv-lite@0.6.3",
         "pkg:npm/rw@1.3.3"
       ]
@@ -5782,8 +5783,8 @@
     {
       "from": "pkg:npm/d3-sankey@0.12.3",
       "to": [
-        "pkg:npm/d3-array@3.2.4",
-        "pkg:npm/d3-shape@3.2.0"
+        "pkg:npm/d3-array@2.12.1",
+        "pkg:npm/d3-shape@1.3.7"
       ]
     },
     {
@@ -5806,7 +5807,7 @@
     {
       "from": "pkg:npm/d3-shape@1.3.7",
       "to": [
-        "pkg:npm/d3-path@3.1.0"
+        "pkg:npm/d3-path@1.0.9"
       ]
     },
     {
@@ -6095,7 +6096,7 @@
     {
       "from": "pkg:npm/eslint-import-resolver-node@0.3.9",
       "to": [
-        "pkg:npm/debug@4.3.7",
+        "pkg:npm/debug@3.2.7",
         "pkg:npm/is-core-module@2.13.1",
         "pkg:npm/resolve@1.22.8"
       ]
@@ -6117,7 +6118,7 @@
     {
       "from": "pkg:npm/eslint-module-utils@2.8.0",
       "to": [
-        "pkg:npm/debug@4.3.7"
+        "pkg:npm/debug@3.2.7"
       ]
     },
     {
@@ -6127,19 +6128,19 @@
         "pkg:npm/array.prototype.findlastindex@1.2.3",
         "pkg:npm/array.prototype.flat@1.3.2",
         "pkg:npm/array.prototype.flatmap@1.3.2",
-        "pkg:npm/debug@4.3.7",
-        "pkg:npm/doctrine@3.0.0",
+        "pkg:npm/debug@3.2.7",
+        "pkg:npm/doctrine@2.1.0",
         "pkg:npm/eslint-import-resolver-node@0.3.9",
         "pkg:npm/eslint-module-utils@2.8.0",
         "pkg:npm/eslint@8.56.0",
         "pkg:npm/hasown@2.0.0",
         "pkg:npm/is-core-module@2.13.1",
         "pkg:npm/is-glob@4.0.3",
-        "pkg:npm/minimatch@9.0.3",
+        "pkg:npm/minimatch@3.1.2",
         "pkg:npm/object.fromentries@2.0.7",
         "pkg:npm/object.groupby@1.0.1",
         "pkg:npm/object.values@1.1.7",
-        "pkg:npm/semver@7.5.4",
+        "pkg:npm/semver@6.3.1",
         "pkg:npm/tsconfig-paths@3.15.0"
       ]
     },
@@ -6147,7 +6148,7 @@
       "from": "pkg:npm/eslint-plugin-jest@27.6.3",
       "to": [
         "pkg:npm/%40typescript-eslint/eslint-plugin@6.19.0",
-        "pkg:npm/%40typescript-eslint/utils@6.19.0",
+        "pkg:npm/%40typescript-eslint/utils@5.62.0",
         "pkg:npm/eslint@8.56.0"
       ]
     },
@@ -6168,7 +6169,7 @@
         "pkg:npm/hasown@2.0.0",
         "pkg:npm/jsx-ast-utils@3.3.5",
         "pkg:npm/language-tags@1.0.9",
-        "pkg:npm/minimatch@9.0.3",
+        "pkg:npm/minimatch@3.1.2",
         "pkg:npm/object.entries@1.1.7",
         "pkg:npm/object.fromentries@2.0.7"
       ]
@@ -6195,19 +6196,19 @@
         "pkg:npm/array-includes@3.1.7",
         "pkg:npm/array.prototype.flatmap@1.3.2",
         "pkg:npm/array.prototype.tosorted@1.1.2",
-        "pkg:npm/doctrine@3.0.0",
+        "pkg:npm/doctrine@2.1.0",
         "pkg:npm/es-iterator-helpers@1.0.15",
         "pkg:npm/eslint@8.56.0",
         "pkg:npm/estraverse@5.3.0",
         "pkg:npm/jsx-ast-utils@3.3.5",
-        "pkg:npm/minimatch@9.0.3",
+        "pkg:npm/minimatch@3.1.2",
         "pkg:npm/object.entries@1.1.7",
         "pkg:npm/object.fromentries@2.0.7",
         "pkg:npm/object.hasown@1.1.3",
         "pkg:npm/object.values@1.1.7",
         "pkg:npm/prop-types@15.8.1",
-        "pkg:npm/resolve@1.22.8",
-        "pkg:npm/semver@7.5.4",
+        "pkg:npm/resolve@2.0.0-next.5",
+        "pkg:npm/semver@6.3.1",
         "pkg:npm/string.prototype.matchall@4.0.10"
       ]
     },
@@ -6215,7 +6216,7 @@
       "from": "pkg:npm/eslint-scope@5.1.1",
       "to": [
         "pkg:npm/esrecurse@4.3.0",
-        "pkg:npm/estraverse@5.3.0"
+        "pkg:npm/estraverse@4.3.0"
       ]
     },
     {
@@ -6261,7 +6262,7 @@
         "pkg:npm/json-stable-stringify-without-jsonify@1.0.1",
         "pkg:npm/levn@0.4.1",
         "pkg:npm/lodash.merge@4.6.2",
-        "pkg:npm/minimatch@9.0.3",
+        "pkg:npm/minimatch@3.1.2",
         "pkg:npm/natural-compare@1.4.0",
         "pkg:npm/optionator@0.9.3",
         "pkg:npm/strip-ansi@6.0.1",
@@ -6299,7 +6300,7 @@
       "to": [
         "pkg:npm/%40types/estree-jsx@1.0.5",
         "pkg:npm/devlop@1.1.0",
-        "pkg:npm/estree-util-is-identifier-name@2.1.0",
+        "pkg:npm/estree-util-is-identifier-name@3.0.0",
         "pkg:npm/estree-walker@3.0.3"
       ]
     },
@@ -6334,7 +6335,7 @@
       "from": "pkg:npm/estree-util-visit@2.0.0",
       "to": [
         "pkg:npm/%40types/estree-jsx@1.0.5",
-        "pkg:npm/%40types/unist@2.0.10"
+        "pkg:npm/%40types/unist@3.0.3"
       ]
     },
     {
@@ -6368,7 +6369,7 @@
       "to": [
         "pkg:npm/%40nodelib/fs.stat@2.0.5",
         "pkg:npm/%40nodelib/fs.walk@1.2.8",
-        "pkg:npm/glob-parent@6.0.2",
+        "pkg:npm/glob-parent@5.1.2",
         "pkg:npm/merge2@1.4.1",
         "pkg:npm/micromatch@4.0.5"
       ]
@@ -6484,7 +6485,7 @@
         "pkg:npm/fs.realpath@1.0.0",
         "pkg:npm/inflight@1.0.6",
         "pkg:npm/inherits@2.0.4",
-        "pkg:npm/minimatch@9.0.3",
+        "pkg:npm/minimatch@3.1.2",
         "pkg:npm/once@1.4.0",
         "pkg:npm/path-is-absolute@1.0.1"
       ]
@@ -6521,7 +6522,7 @@
     {
       "from": "pkg:npm/gray-matter@4.0.3",
       "to": [
-        "pkg:npm/js-yaml@4.1.0",
+        "pkg:npm/js-yaml@3.14.1",
         "pkg:npm/kind-of@6.0.3",
         "pkg:npm/section-matter@1.0.0",
         "pkg:npm/strip-bom-string@1.0.0"
@@ -6577,7 +6578,7 @@
       "from": "pkg:npm/hast-util-from-parse5@8.0.1",
       "to": [
         "pkg:npm/%40types/hast@3.0.4",
-        "pkg:npm/%40types/unist@2.0.10",
+        "pkg:npm/%40types/unist@3.0.2",
         "pkg:npm/devlop@1.1.0",
         "pkg:npm/hastscript@8.0.0",
         "pkg:npm/property-information@6.4.0",
@@ -6602,7 +6603,7 @@
       "from": "pkg:npm/hast-util-raw@9.0.1",
       "to": [
         "pkg:npm/%40types/hast@3.0.4",
-        "pkg:npm/%40types/unist@2.0.10",
+        "pkg:npm/%40types/unist@3.0.2",
         "pkg:npm/%40ungap/structured-clone@1.2.0",
         "pkg:npm/hast-util-from-parse5@8.0.1",
         "pkg:npm/hast-util-to-parse5@8.0.0",
@@ -6625,7 +6626,7 @@
         "pkg:npm/comma-separated-tokens@2.0.3",
         "pkg:npm/devlop@1.1.0",
         "pkg:npm/estree-util-attach-comments@3.0.0",
-        "pkg:npm/estree-util-is-identifier-name@2.1.0",
+        "pkg:npm/estree-util-is-identifier-name@3.0.0",
         "pkg:npm/hast-util-whitespace@3.0.0",
         "pkg:npm/mdast-util-mdx-expression@2.0.1",
         "pkg:npm/mdast-util-mdx-jsx@3.1.3",
@@ -6641,7 +6642,7 @@
       "from": "pkg:npm/hast-util-to-html@9.0.3",
       "to": [
         "pkg:npm/%40types/hast@3.0.4",
-        "pkg:npm/%40types/unist@2.0.10",
+        "pkg:npm/%40types/unist@3.0.3",
         "pkg:npm/ccount@2.0.1",
         "pkg:npm/comma-separated-tokens@2.0.3",
         "pkg:npm/hast-util-whitespace@3.0.0",
@@ -6658,17 +6659,17 @@
       "to": [
         "pkg:npm/%40types/estree@1.0.6",
         "pkg:npm/%40types/hast@3.0.4",
-        "pkg:npm/%40types/unist@2.0.10",
+        "pkg:npm/%40types/unist@3.0.3",
         "pkg:npm/comma-separated-tokens@2.0.3",
         "pkg:npm/devlop@1.1.0",
-        "pkg:npm/estree-util-is-identifier-name@2.1.0",
+        "pkg:npm/estree-util-is-identifier-name@3.0.0",
         "pkg:npm/hast-util-whitespace@3.0.0",
         "pkg:npm/mdast-util-mdx-expression@2.0.1",
         "pkg:npm/mdast-util-mdx-jsx@3.1.3",
         "pkg:npm/mdast-util-mdxjs-esm@2.0.1",
         "pkg:npm/property-information@6.4.0",
         "pkg:npm/space-separated-tokens@2.0.2",
-        "pkg:npm/style-to-object@0.4.4",
+        "pkg:npm/style-to-object@1.0.8",
         "pkg:npm/unist-util-position@5.0.0",
         "pkg:npm/vfile-message@4.0.2"
       ]
@@ -6695,7 +6696,7 @@
       "from": "pkg:npm/hast-util-to-text@4.0.0",
       "to": [
         "pkg:npm/%40types/hast@3.0.4",
-        "pkg:npm/%40types/unist@2.0.10",
+        "pkg:npm/%40types/unist@3.0.2",
         "pkg:npm/hast-util-is-element@3.0.0",
         "pkg:npm/unist-util-find-after@5.0.0"
       ]
@@ -6902,7 +6903,7 @@
     {
       "from": "pkg:npm/js-yaml@3.14.1",
       "to": [
-        "pkg:npm/argparse@2.0.1",
+        "pkg:npm/argparse@1.0.10",
         "pkg:npm/esprima@4.0.1"
       ]
     },
@@ -7000,8 +7001,8 @@
       "from": "pkg:npm/mdast-util-find-and-replace@3.0.1",
       "to": [
         "pkg:npm/%40types/mdast@4.0.4",
-        "pkg:npm/escape-string-regexp@4.0.0",
-        "pkg:npm/unist-util-is@5.2.1",
+        "pkg:npm/escape-string-regexp@5.0.0",
+        "pkg:npm/unist-util-is@6.0.0",
         "pkg:npm/unist-util-visit-parents@6.0.1"
       ]
     },
@@ -7009,7 +7010,7 @@
       "from": "pkg:npm/mdast-util-from-markdown@2.0.2",
       "to": [
         "pkg:npm/%40types/mdast@4.0.4",
-        "pkg:npm/%40types/unist@2.0.10",
+        "pkg:npm/%40types/unist@3.0.3",
         "pkg:npm/decode-named-character-reference@1.0.2",
         "pkg:npm/devlop@1.1.0",
         "pkg:npm/mdast-util-to-string@4.0.0",
@@ -7027,7 +7028,7 @@
       "to": [
         "pkg:npm/%40types/mdast@4.0.4",
         "pkg:npm/devlop@1.1.0",
-        "pkg:npm/escape-string-regexp@4.0.0",
+        "pkg:npm/escape-string-regexp@5.0.0",
         "pkg:npm/mdast-util-from-markdown@2.0.2",
         "pkg:npm/mdast-util-to-markdown@2.1.2",
         "pkg:npm/micromark-extension-frontmatter@2.0.0"
@@ -7121,7 +7122,7 @@
         "pkg:npm/%40types/estree-jsx@1.0.5",
         "pkg:npm/%40types/hast@3.0.4",
         "pkg:npm/%40types/mdast@4.0.4",
-        "pkg:npm/%40types/unist@2.0.10",
+        "pkg:npm/%40types/unist@3.0.3",
         "pkg:npm/ccount@2.0.1",
         "pkg:npm/devlop@1.1.0",
         "pkg:npm/mdast-util-from-markdown@2.0.2",
@@ -7157,7 +7158,7 @@
       "from": "pkg:npm/mdast-util-phrasing@4.1.0",
       "to": [
         "pkg:npm/%40types/mdast@4.0.4",
-        "pkg:npm/unist-util-is@5.2.1"
+        "pkg:npm/unist-util-is@6.0.0"
       ]
     },
     {
@@ -7178,7 +7179,7 @@
       "from": "pkg:npm/mdast-util-to-markdown@2.1.2",
       "to": [
         "pkg:npm/%40types/mdast@4.0.4",
-        "pkg:npm/%40types/unist@2.0.10",
+        "pkg:npm/%40types/unist@3.0.3",
         "pkg:npm/longest-streak@3.1.0",
         "pkg:npm/mdast-util-phrasing@4.1.0",
         "pkg:npm/mdast-util-to-string@4.0.0",
@@ -7352,7 +7353,7 @@
         "pkg:npm/%40types/acorn@4.0.6",
         "pkg:npm/%40types/estree@1.0.6",
         "pkg:npm/devlop@1.1.0",
-        "pkg:npm/estree-util-is-identifier-name@2.1.0",
+        "pkg:npm/estree-util-is-identifier-name@3.0.0",
         "pkg:npm/micromark-factory-mdx-expression@2.0.2",
         "pkg:npm/micromark-factory-space@2.0.1",
         "pkg:npm/micromark-util-character@2.1.1",
@@ -7499,7 +7500,7 @@
       "to": [
         "pkg:npm/%40types/acorn@4.0.6",
         "pkg:npm/%40types/estree@1.0.6",
-        "pkg:npm/%40types/unist@2.0.10",
+        "pkg:npm/%40types/unist@3.0.3",
         "pkg:npm/devlop@1.1.0",
         "pkg:npm/estree-util-visit@2.0.0",
         "pkg:npm/micromark-util-symbol@2.0.1",
@@ -7568,7 +7569,7 @@
     {
       "from": "pkg:npm/minimatch@3.1.2",
       "to": [
-        "pkg:npm/brace-expansion@2.0.1"
+        "pkg:npm/brace-expansion@1.1.11"
       ]
     },
     {
@@ -7629,7 +7630,7 @@
       "to": [
         "pkg:npm/%40headlessui/react@2.2.0",
         "pkg:npm/clsx@2.1.0",
-        "pkg:npm/escape-string-regexp@4.0.0",
+        "pkg:npm/escape-string-regexp@5.0.0",
         "pkg:npm/flexsearch@0.7.43",
         "pkg:npm/next-themes@0.4.3",
         "pkg:npm/next@14.2.22",
@@ -7654,7 +7655,7 @@
         "pkg:npm/better-react-mathjax@2.0.3",
         "pkg:npm/clsx@2.1.0",
         "pkg:npm/estree-util-to-js@2.0.0",
-        "pkg:npm/estree-util-value-to-estree@1.3.0",
+        "pkg:npm/estree-util-value-to-estree@3.2.1",
         "pkg:npm/github-slugger@2.0.0",
         "pkg:npm/graceful-fs@4.2.11",
         "pkg:npm/gray-matter@4.0.3",
@@ -7665,7 +7666,7 @@
         "pkg:npm/mdast-util-to-hast@13.2.0",
         "pkg:npm/negotiator@1.0.0",
         "pkg:npm/next@14.2.22",
-        "pkg:npm/p-limit@3.1.0",
+        "pkg:npm/p-limit@6.1.0",
         "pkg:npm/react-dom@18.2.0",
         "pkg:npm/react@18.2.0",
         "pkg:npm/rehype-katex@7.0.0",
@@ -7677,7 +7678,7 @@
         "pkg:npm/remark-reading-time@2.0.1",
         "pkg:npm/remark-smartypants@3.0.2",
         "pkg:npm/shiki@1.24.0",
-        "pkg:npm/slash@3.0.0",
+        "pkg:npm/slash@5.1.0",
         "pkg:npm/title@4.0.1",
         "pkg:npm/unist-util-remove@4.0.0",
         "pkg:npm/unist-util-visit@5.0.0",
@@ -7695,7 +7696,7 @@
     {
       "from": "pkg:npm/npm-run-path@5.3.0",
       "to": [
-        "pkg:npm/path-key@3.1.1"
+        "pkg:npm/path-key@4.0.0"
       ]
     },
     {
@@ -7787,7 +7788,7 @@
     {
       "from": "pkg:npm/p-limit@6.1.0",
       "to": [
-        "pkg:npm/yocto-queue@0.1.0"
+        "pkg:npm/yocto-queue@1.1.1"
       ]
     },
     {
@@ -7819,7 +7820,7 @@
       "from": "pkg:npm/parse-latin@7.0.0",
       "to": [
         "pkg:npm/%40types/nlcst@2.0.3",
-        "pkg:npm/%40types/unist@2.0.10",
+        "pkg:npm/%40types/unist@3.0.3",
         "pkg:npm/nlcst-to-string@4.0.0",
         "pkg:npm/unist-util-modify-children@4.0.0",
         "pkg:npm/unist-util-visit-children@3.0.0",
@@ -7835,7 +7836,7 @@
     {
       "from": "pkg:npm/path-scurry@1.10.1",
       "to": [
-        "pkg:npm/lru-cache@6.0.0",
+        "pkg:npm/lru-cache@10.1.0",
         "pkg:npm/minipass@7.0.4"
       ]
     },
@@ -7873,7 +7874,7 @@
     {
       "from": "pkg:npm/postcss-load-config@4.0.2",
       "to": [
-        "pkg:npm/lilconfig@2.1.0",
+        "pkg:npm/lilconfig@3.0.0",
         "pkg:npm/postcss@8.4.31",
         "pkg:npm/yaml@2.3.4"
       ]
@@ -8106,7 +8107,7 @@
         "pkg:npm/estree-util-is-identifier-name@2.1.0",
         "pkg:npm/estree-util-value-to-estree@1.3.0",
         "pkg:npm/reading-time@1.5.0",
-        "pkg:npm/unist-util-visit@5.0.0"
+        "pkg:npm/unist-util-visit@3.1.0"
       ]
     },
     {
@@ -8294,7 +8295,7 @@
     {
       "from": "pkg:npm/speech-rule-engine@4.0.7",
       "to": [
-        "pkg:npm/commander@8.3.0",
+        "pkg:npm/commander@9.2.0",
         "pkg:npm/wicked-good-xpath@1.3.0",
         "pkg:npm/xmldom-sre@0.1.31"
       ]
@@ -8302,7 +8303,7 @@
     {
       "from": "pkg:npm/string-width@4.2.3",
       "to": [
-        "pkg:npm/emoji-regex@9.2.2",
+        "pkg:npm/emoji-regex@8.0.0",
         "pkg:npm/is-fullwidth-code-point@3.0.0",
         "pkg:npm/strip-ansi@6.0.1"
       ]
@@ -8312,7 +8313,7 @@
       "to": [
         "pkg:npm/eastasianwidth@0.2.0",
         "pkg:npm/emoji-regex@9.2.2",
-        "pkg:npm/strip-ansi@6.0.1"
+        "pkg:npm/strip-ansi@7.1.0"
       ]
     },
     {
@@ -8369,7 +8370,7 @@
     {
       "from": "pkg:npm/strip-ansi@7.1.0",
       "to": [
-        "pkg:npm/ansi-regex@5.0.1"
+        "pkg:npm/ansi-regex@6.0.1"
       ]
     },
     {
@@ -8381,7 +8382,7 @@
     {
       "from": "pkg:npm/style-to-object@1.0.8",
       "to": [
-        "pkg:npm/inline-style-parser@0.1.1"
+        "pkg:npm/inline-style-parser@0.2.4"
       ]
     },
     {
@@ -8395,8 +8396,8 @@
       "from": "pkg:npm/sucrase@3.35.0",
       "to": [
         "pkg:npm/%40jridgewell/gen-mapping@0.3.3",
-        "pkg:npm/commander@8.3.0",
-        "pkg:npm/glob@7.1.7",
+        "pkg:npm/commander@4.1.1",
+        "pkg:npm/glob@10.3.10",
         "pkg:npm/lines-and-columns@1.2.4",
         "pkg:npm/mz@2.7.0",
         "pkg:npm/pirates@4.0.6",
@@ -8459,7 +8460,7 @@
       "from": "pkg:npm/title@4.0.1",
       "to": [
         "pkg:npm/arg@5.0.2",
-        "pkg:npm/chalk@4.1.2",
+        "pkg:npm/chalk@5.3.0",
         "pkg:npm/clipboardy@4.0.0"
       ]
     },
@@ -8487,7 +8488,7 @@
     {
       "from": "pkg:npm/tsutils@3.21.0",
       "to": [
-        "pkg:npm/tslib@2.6.2",
+        "pkg:npm/tslib@1.14.1",
         "pkg:npm/typescript@5.3.3"
       ]
     },
@@ -8552,11 +8553,11 @@
     {
       "from": "pkg:npm/unified@11.0.5",
       "to": [
-        "pkg:npm/%40types/unist@2.0.10",
+        "pkg:npm/%40types/unist@3.0.3",
         "pkg:npm/bail@2.0.2",
         "pkg:npm/devlop@1.1.0",
         "pkg:npm/extend@3.0.2",
-        "pkg:npm/is-plain-obj@3.0.0",
+        "pkg:npm/is-plain-obj@4.1.0",
         "pkg:npm/trough@2.2.0",
         "pkg:npm/vfile@6.0.3"
       ]
@@ -8564,8 +8565,8 @@
     {
       "from": "pkg:npm/unist-util-find-after@5.0.0",
       "to": [
-        "pkg:npm/%40types/unist@2.0.10",
-        "pkg:npm/unist-util-is@5.2.1"
+        "pkg:npm/%40types/unist@3.0.2",
+        "pkg:npm/unist-util-is@6.0.0"
       ]
     },
     {
@@ -8577,53 +8578,54 @@
     {
       "from": "pkg:npm/unist-util-is@6.0.0",
       "to": [
-        "pkg:npm/%40types/unist@2.0.10"
+        "pkg:npm/%40types/unist@3.0.2",
+        "pkg:npm/%40types/unist@3.0.3"
       ]
     },
     {
       "from": "pkg:npm/unist-util-modify-children@4.0.0",
       "to": [
-        "pkg:npm/%40types/unist@2.0.10",
+        "pkg:npm/%40types/unist@3.0.3",
         "pkg:npm/array-iterate@2.0.1"
       ]
     },
     {
       "from": "pkg:npm/unist-util-position-from-estree@2.0.0",
       "to": [
-        "pkg:npm/%40types/unist@2.0.10"
+        "pkg:npm/%40types/unist@3.0.3"
       ]
     },
     {
       "from": "pkg:npm/unist-util-position@5.0.0",
       "to": [
-        "pkg:npm/%40types/unist@2.0.10"
+        "pkg:npm/%40types/unist@3.0.3"
       ]
     },
     {
       "from": "pkg:npm/unist-util-remove-position@5.0.0",
       "to": [
-        "pkg:npm/%40types/unist@2.0.10",
+        "pkg:npm/%40types/unist@3.0.2",
         "pkg:npm/unist-util-visit@5.0.0"
       ]
     },
     {
       "from": "pkg:npm/unist-util-remove@4.0.0",
       "to": [
-        "pkg:npm/%40types/unist@2.0.10",
-        "pkg:npm/unist-util-is@5.2.1",
+        "pkg:npm/%40types/unist@3.0.2",
+        "pkg:npm/unist-util-is@6.0.0",
         "pkg:npm/unist-util-visit-parents@6.0.1"
       ]
     },
     {
       "from": "pkg:npm/unist-util-stringify-position@4.0.0",
       "to": [
-        "pkg:npm/%40types/unist@2.0.10"
+        "pkg:npm/%40types/unist@3.0.3"
       ]
     },
     {
       "from": "pkg:npm/unist-util-visit-children@3.0.0",
       "to": [
-        "pkg:npm/%40types/unist@2.0.10"
+        "pkg:npm/%40types/unist@3.0.3"
       ]
     },
     {
@@ -8636,8 +8638,8 @@
     {
       "from": "pkg:npm/unist-util-visit-parents@6.0.1",
       "to": [
-        "pkg:npm/%40types/unist@2.0.10",
-        "pkg:npm/unist-util-is@5.2.1"
+        "pkg:npm/%40types/unist@3.0.2",
+        "pkg:npm/unist-util-is@6.0.0"
       ]
     },
     {
@@ -8645,14 +8647,14 @@
       "to": [
         "pkg:npm/%40types/unist@2.0.10",
         "pkg:npm/unist-util-is@5.2.1",
-        "pkg:npm/unist-util-visit-parents@6.0.1"
+        "pkg:npm/unist-util-visit-parents@4.1.1"
       ]
     },
     {
       "from": "pkg:npm/unist-util-visit@5.0.0",
       "to": [
-        "pkg:npm/%40types/unist@2.0.10",
-        "pkg:npm/unist-util-is@5.2.1",
+        "pkg:npm/%40types/unist@3.0.2",
+        "pkg:npm/unist-util-is@6.0.0",
         "pkg:npm/unist-util-visit-parents@6.0.1"
       ]
     },
@@ -8673,21 +8675,21 @@
     {
       "from": "pkg:npm/vfile-location@5.0.2",
       "to": [
-        "pkg:npm/%40types/unist@2.0.10",
+        "pkg:npm/%40types/unist@3.0.2",
         "pkg:npm/vfile@6.0.3"
       ]
     },
     {
       "from": "pkg:npm/vfile-message@4.0.2",
       "to": [
-        "pkg:npm/%40types/unist@2.0.10",
+        "pkg:npm/%40types/unist@3.0.2",
         "pkg:npm/unist-util-stringify-position@4.0.0"
       ]
     },
     {
       "from": "pkg:npm/vfile@6.0.3",
       "to": [
-        "pkg:npm/%40types/unist@2.0.10",
+        "pkg:npm/%40types/unist@3.0.3",
         "pkg:npm/vfile-message@4.0.2"
       ]
     },
@@ -8760,16 +8762,16 @@
       "from": "pkg:npm/wrap-ansi@7.0.0",
       "to": [
         "pkg:npm/ansi-styles@4.3.0",
-        "pkg:npm/string-width@5.1.2",
+        "pkg:npm/string-width@4.2.3",
         "pkg:npm/strip-ansi@6.0.1"
       ]
     },
     {
       "from": "pkg:npm/wrap-ansi@8.1.0",
       "to": [
-        "pkg:npm/ansi-styles@4.3.0",
+        "pkg:npm/ansi-styles@6.2.1",
         "pkg:npm/string-width@5.1.2",
-        "pkg:npm/strip-ansi@6.0.1"
+        "pkg:npm/strip-ansi@7.1.0"
       ]
     },
     {

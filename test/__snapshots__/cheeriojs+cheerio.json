@@ -10351,7 +10351,7 @@
         "pkg:npm/%40csstools/css-color-parser@3.1.0",
         "pkg:npm/%40csstools/css-parser-algorithms@3.0.5",
         "pkg:npm/%40csstools/css-tokenizer@3.0.4",
-        "pkg:npm/lru-cache@10.4.3"
+        "pkg:npm/lru-cache@11.2.2"
       ]
     },
     {
@@ -10361,7 +10361,7 @@
         "pkg:npm/bidi-js@1.0.3",
         "pkg:npm/css-tree@3.1.0",
         "pkg:npm/is-potential-custom-element-name@1.0.1",
-        "pkg:npm/lru-cache@10.4.3"
+        "pkg:npm/lru-cache@11.2.2"
       ]
     },
     {
@@ -10389,7 +10389,7 @@
         "pkg:npm/debug@4.4.1",
         "pkg:npm/gensync@1.0.0-beta.2",
         "pkg:npm/json5@2.2.3",
-        "pkg:npm/semver@7.7.2"
+        "pkg:npm/semver@6.3.1"
       ]
     },
     {
@@ -10415,7 +10415,7 @@
         "pkg:npm/%40babel/helper-validator-option@7.27.1",
         "pkg:npm/browserslist@4.26.2",
         "pkg:npm/lru-cache@5.1.1",
-        "pkg:npm/semver@7.7.2"
+        "pkg:npm/semver@6.3.1"
       ]
     },
     {
@@ -10428,7 +10428,7 @@
         "pkg:npm/%40babel/helper-replace-supers@7.27.1",
         "pkg:npm/%40babel/helper-skip-transparent-expression-wrappers@7.27.1",
         "pkg:npm/%40babel/traverse@7.27.4",
-        "pkg:npm/semver@7.7.2"
+        "pkg:npm/semver@6.3.1"
       ]
     },
     {
@@ -10437,7 +10437,7 @@
         "pkg:npm/%40babel/core@7.27.4",
         "pkg:npm/%40babel/helper-annotate-as-pure@7.27.3",
         "pkg:npm/regexpu-core@6.2.0",
-        "pkg:npm/semver@7.7.2"
+        "pkg:npm/semver@6.3.1"
       ]
     },
     {
@@ -10981,9 +10981,9 @@
         "pkg:npm/%40babel/helper-module-imports@7.27.1",
         "pkg:npm/%40babel/helper-plugin-utils@7.27.1",
         "pkg:npm/babel-plugin-polyfill-corejs2@0.4.14",
-        "pkg:npm/babel-plugin-polyfill-corejs3@0.11.1",
+        "pkg:npm/babel-plugin-polyfill-corejs3@0.13.0",
         "pkg:npm/babel-plugin-polyfill-regenerator@0.6.5",
-        "pkg:npm/semver@7.7.2"
+        "pkg:npm/semver@6.3.1"
       ]
     },
     {
@@ -11136,7 +11136,7 @@
         "pkg:npm/babel-plugin-polyfill-corejs3@0.11.1",
         "pkg:npm/babel-plugin-polyfill-regenerator@0.6.5",
         "pkg:npm/core-js-compat@3.45.1",
-        "pkg:npm/semver@7.7.2"
+        "pkg:npm/semver@6.3.1"
       ]
     },
     {
@@ -11271,7 +11271,7 @@
       "from": "pkg:npm/%40csstools/postcss-cascade-layers@5.0.2",
       "to": [
         "pkg:npm/%40csstools/selector-specificity@5.0.0",
-        "pkg:npm/postcss-selector-parser@6.1.2",
+        "pkg:npm/postcss-selector-parser@7.1.0",
         "pkg:npm/postcss@8.5.4"
       ]
     },
@@ -11407,7 +11407,7 @@
       "from": "pkg:npm/%40csstools/postcss-is-pseudo-class@5.0.3",
       "to": [
         "pkg:npm/%40csstools/selector-specificity@5.0.0",
-        "pkg:npm/postcss-selector-parser@6.1.2",
+        "pkg:npm/postcss-selector-parser@7.1.0",
         "pkg:npm/postcss@8.5.4"
       ]
     },
@@ -11529,7 +11529,7 @@
     {
       "from": "pkg:npm/%40csstools/postcss-scope-pseudo-class@4.0.1",
       "to": [
-        "pkg:npm/postcss-selector-parser@6.1.2",
+        "pkg:npm/postcss-selector-parser@7.1.0",
         "pkg:npm/postcss@8.5.4"
       ]
     },
@@ -11577,13 +11577,13 @@
     {
       "from": "pkg:npm/%40csstools/selector-resolve-nested@3.1.0",
       "to": [
-        "pkg:npm/postcss-selector-parser@6.1.2"
+        "pkg:npm/postcss-selector-parser@7.1.0"
       ]
     },
     {
       "from": "pkg:npm/%40csstools/selector-specificity@5.0.0",
       "to": [
-        "pkg:npm/postcss-selector-parser@6.1.2"
+        "pkg:npm/postcss-selector-parser@7.1.0"
       ]
     },
     {
@@ -11621,8 +11621,8 @@
         "pkg:npm/%40babel/runtime-corejs3@7.28.4",
         "pkg:npm/%40babel/runtime@7.27.6",
         "pkg:npm/%40babel/traverse@7.27.4",
-        "pkg:npm/%40docusaurus/logger@3.9.1",
-        "pkg:npm/%40docusaurus/utils@3.9.1",
+        "pkg:npm/%40docusaurus/logger@3.9.2",
+        "pkg:npm/%40docusaurus/utils@3.9.2",
         "pkg:npm/babel-plugin-dynamic-import-node@2.3.3",
         "pkg:npm/fs-extra@11.3.0",
         "pkg:npm/tslib@2.8.1"
@@ -11635,9 +11635,9 @@
         "pkg:npm/%40docusaurus/babel@3.9.2",
         "pkg:npm/%40docusaurus/cssnano-preset@3.9.2",
         "pkg:npm/%40docusaurus/faster@3.9.2",
-        "pkg:npm/%40docusaurus/logger@3.9.1",
-        "pkg:npm/%40docusaurus/types@3.9.1",
-        "pkg:npm/%40docusaurus/utils@3.9.1",
+        "pkg:npm/%40docusaurus/logger@3.9.2",
+        "pkg:npm/%40docusaurus/types@3.9.2",
+        "pkg:npm/%40docusaurus/utils@3.9.2",
         "pkg:npm/babel-loader@9.2.1",
         "pkg:npm/clean-css@5.3.3",
         "pkg:npm/copy-webpack-plugin@11.0.0",
@@ -11663,12 +11663,12 @@
       "to": [
         "pkg:npm/%40docusaurus/babel@3.9.2",
         "pkg:npm/%40docusaurus/bundler@3.9.2",
-        "pkg:npm/%40docusaurus/logger@3.9.1",
-        "pkg:npm/%40docusaurus/mdx-loader@3.9.1",
+        "pkg:npm/%40docusaurus/logger@3.9.2",
+        "pkg:npm/%40docusaurus/mdx-loader@3.9.2",
         "pkg:npm/%40docusaurus/react-loadable@6.0.0",
-        "pkg:npm/%40docusaurus/utils-common@3.9.1",
-        "pkg:npm/%40docusaurus/utils-validation@3.9.1",
-        "pkg:npm/%40docusaurus/utils@3.9.1",
+        "pkg:npm/%40docusaurus/utils-common@3.9.2",
+        "pkg:npm/%40docusaurus/utils-validation@3.9.2",
+        "pkg:npm/%40docusaurus/utils@3.9.2",
         "pkg:npm/%40mdx-js/react@3.1.1",
         "pkg:npm/%40slorber/react-helmet-async@1.3.0",
         "pkg:npm/boxen@6.2.1",
@@ -11720,7 +11720,7 @@
     {
       "from": "pkg:npm/%40docusaurus/faster@3.9.2",
       "to": [
-        "pkg:npm/%40docusaurus/types@3.9.1",
+        "pkg:npm/%40docusaurus/types@3.9.2",
         "pkg:npm/%40rspack/core@1.5.7",
         "pkg:npm/%40swc/core@1.11.31",
         "pkg:npm/%40swc/html@1.13.19",
@@ -11779,9 +11779,9 @@
     {
       "from": "pkg:npm/%40docusaurus/mdx-loader@3.9.2",
       "to": [
-        "pkg:npm/%40docusaurus/logger@3.9.1",
-        "pkg:npm/%40docusaurus/utils-validation@3.9.1",
-        "pkg:npm/%40docusaurus/utils@3.9.1",
+        "pkg:npm/%40docusaurus/logger@3.9.2",
+        "pkg:npm/%40docusaurus/utils-validation@3.9.2",
+        "pkg:npm/%40docusaurus/utils@3.9.2",
         "pkg:npm/%40mdx-js/mdx@3.1.0",
         "pkg:npm/%40slorber/remark-comment@1.0.0",
         "pkg:npm/escape-html@1.0.3",
@@ -11811,7 +11811,7 @@
       "from": "pkg:npm/%40docusaurus/module-type-aliases@3.9.2",
       "to": [
         "pkg:npm/%40docusaurus/react-loadable@6.0.0",
-        "pkg:npm/%40docusaurus/types@3.9.1",
+        "pkg:npm/%40docusaurus/types@3.9.2",
         "pkg:npm/%40slorber/react-helmet-async@1.3.0",
         "pkg:npm/%40types/history@4.7.11",
         "pkg:npm/%40types/react-router-config@5.0.11",
@@ -11825,10 +11825,10 @@
       "from": "pkg:npm/%40docusaurus/plugin-client-redirects@3.9.2",
       "to": [
         "pkg:npm/%40docusaurus/core@3.9.2",
-        "pkg:npm/%40docusaurus/logger@3.9.1",
-        "pkg:npm/%40docusaurus/utils-common@3.9.1",
-        "pkg:npm/%40docusaurus/utils-validation@3.9.1",
-        "pkg:npm/%40docusaurus/utils@3.9.1",
+        "pkg:npm/%40docusaurus/logger@3.9.2",
+        "pkg:npm/%40docusaurus/utils-common@3.9.2",
+        "pkg:npm/%40docusaurus/utils-validation@3.9.2",
+        "pkg:npm/%40docusaurus/utils@3.9.2",
         "pkg:npm/eta@2.2.0",
         "pkg:npm/fs-extra@11.3.0",
         "pkg:npm/lodash@4.17.21",
@@ -11841,14 +11841,14 @@
       "from": "pkg:npm/%40docusaurus/plugin-content-blog@3.9.2",
       "to": [
         "pkg:npm/%40docusaurus/core@3.9.2",
-        "pkg:npm/%40docusaurus/logger@3.9.1",
-        "pkg:npm/%40docusaurus/mdx-loader@3.9.1",
+        "pkg:npm/%40docusaurus/logger@3.9.2",
+        "pkg:npm/%40docusaurus/mdx-loader@3.9.2",
         "pkg:npm/%40docusaurus/plugin-content-docs@3.9.2",
         "pkg:npm/%40docusaurus/theme-common@3.9.2",
-        "pkg:npm/%40docusaurus/types@3.9.1",
-        "pkg:npm/%40docusaurus/utils-common@3.9.1",
-        "pkg:npm/%40docusaurus/utils-validation@3.9.1",
-        "pkg:npm/%40docusaurus/utils@3.9.1",
+        "pkg:npm/%40docusaurus/types@3.9.2",
+        "pkg:npm/%40docusaurus/utils-common@3.9.2",
+        "pkg:npm/%40docusaurus/utils-validation@3.9.2",
+        "pkg:npm/%40docusaurus/utils@3.9.2",
         "pkg:npm/cheerio@1.0.0-rc.12",
         "pkg:npm/feed@4.2.2",
         "pkg:npm/fs-extra@11.3.0",
@@ -11867,14 +11867,14 @@
       "from": "pkg:npm/%40docusaurus/plugin-content-docs@3.9.2",
       "to": [
         "pkg:npm/%40docusaurus/core@3.9.2",
-        "pkg:npm/%40docusaurus/logger@3.9.1",
-        "pkg:npm/%40docusaurus/mdx-loader@3.9.1",
+        "pkg:npm/%40docusaurus/logger@3.9.2",
+        "pkg:npm/%40docusaurus/mdx-loader@3.9.2",
         "pkg:npm/%40docusaurus/module-type-aliases@3.9.2",
         "pkg:npm/%40docusaurus/theme-common@3.9.2",
-        "pkg:npm/%40docusaurus/types@3.9.1",
-        "pkg:npm/%40docusaurus/utils-common@3.9.1",
-        "pkg:npm/%40docusaurus/utils-validation@3.9.1",
-        "pkg:npm/%40docusaurus/utils@3.9.1",
+        "pkg:npm/%40docusaurus/types@3.9.2",
+        "pkg:npm/%40docusaurus/utils-common@3.9.2",
+        "pkg:npm/%40docusaurus/utils-validation@3.9.2",
+        "pkg:npm/%40docusaurus/utils@3.9.2",
         "pkg:npm/%40types/react-router-config@5.0.11",
         "pkg:npm/combine-promises@1.2.0",
         "pkg:npm/fs-extra@11.3.0",
@@ -11892,10 +11892,10 @@
       "from": "pkg:npm/%40docusaurus/plugin-content-pages@3.9.2",
       "to": [
         "pkg:npm/%40docusaurus/core@3.9.2",
-        "pkg:npm/%40docusaurus/mdx-loader@3.9.1",
-        "pkg:npm/%40docusaurus/types@3.9.1",
-        "pkg:npm/%40docusaurus/utils-validation@3.9.1",
-        "pkg:npm/%40docusaurus/utils@3.9.1",
+        "pkg:npm/%40docusaurus/mdx-loader@3.9.2",
+        "pkg:npm/%40docusaurus/types@3.9.2",
+        "pkg:npm/%40docusaurus/utils-validation@3.9.2",
+        "pkg:npm/%40docusaurus/utils@3.9.2",
         "pkg:npm/fs-extra@11.3.0",
         "pkg:npm/react-dom@19.2.0",
         "pkg:npm/react@19.2.0",
@@ -11907,9 +11907,9 @@
       "from": "pkg:npm/%40docusaurus/plugin-css-cascade-layers@3.9.2",
       "to": [
         "pkg:npm/%40docusaurus/core@3.9.2",
-        "pkg:npm/%40docusaurus/types@3.9.1",
-        "pkg:npm/%40docusaurus/utils-validation@3.9.1",
-        "pkg:npm/%40docusaurus/utils@3.9.1",
+        "pkg:npm/%40docusaurus/types@3.9.2",
+        "pkg:npm/%40docusaurus/utils-validation@3.9.2",
+        "pkg:npm/%40docusaurus/utils@3.9.2",
         "pkg:npm/tslib@2.8.1"
       ]
     },
@@ -11917,8 +11917,8 @@
       "from": "pkg:npm/%40docusaurus/plugin-debug@3.9.2",
       "to": [
         "pkg:npm/%40docusaurus/core@3.9.2",
-        "pkg:npm/%40docusaurus/types@3.9.1",
-        "pkg:npm/%40docusaurus/utils@3.9.1",
+        "pkg:npm/%40docusaurus/types@3.9.2",
+        "pkg:npm/%40docusaurus/utils@3.9.2",
         "pkg:npm/fs-extra@11.3.0",
         "pkg:npm/react-dom@19.2.0",
         "pkg:npm/react-json-view-lite@2.5.0",
@@ -11930,8 +11930,8 @@
       "from": "pkg:npm/%40docusaurus/plugin-google-analytics@3.9.2",
       "to": [
         "pkg:npm/%40docusaurus/core@3.9.2",
-        "pkg:npm/%40docusaurus/types@3.9.1",
-        "pkg:npm/%40docusaurus/utils-validation@3.9.1",
+        "pkg:npm/%40docusaurus/types@3.9.2",
+        "pkg:npm/%40docusaurus/utils-validation@3.9.2",
         "pkg:npm/react-dom@19.2.0",
         "pkg:npm/react@19.2.0",
         "pkg:npm/tslib@2.8.1"
@@ -11941,8 +11941,8 @@
       "from": "pkg:npm/%40docusaurus/plugin-google-gtag@3.9.2",
       "to": [
         "pkg:npm/%40docusaurus/core@3.9.2",
-        "pkg:npm/%40docusaurus/types@3.9.1",
-        "pkg:npm/%40docusaurus/utils-validation@3.9.1",
+        "pkg:npm/%40docusaurus/types@3.9.2",
+        "pkg:npm/%40docusaurus/utils-validation@3.9.2",
         "pkg:npm/%40types/gtag.js@0.0.12",
         "pkg:npm/react-dom@19.2.0",
         "pkg:npm/react@19.2.0",
@@ -11953,8 +11953,8 @@
       "from": "pkg:npm/%40docusaurus/plugin-google-tag-manager@3.9.2",
       "to": [
         "pkg:npm/%40docusaurus/core@3.9.2",
-        "pkg:npm/%40docusaurus/types@3.9.1",
-        "pkg:npm/%40docusaurus/utils-validation@3.9.1",
+        "pkg:npm/%40docusaurus/types@3.9.2",
+        "pkg:npm/%40docusaurus/utils-validation@3.9.2",
         "pkg:npm/react-dom@19.2.0",
         "pkg:npm/react@19.2.0",
         "pkg:npm/tslib@2.8.1"
@@ -11964,11 +11964,11 @@
       "from": "pkg:npm/%40docusaurus/plugin-sitemap@3.9.2",
       "to": [
         "pkg:npm/%40docusaurus/core@3.9.2",
-        "pkg:npm/%40docusaurus/logger@3.9.1",
-        "pkg:npm/%40docusaurus/types@3.9.1",
-        "pkg:npm/%40docusaurus/utils-common@3.9.1",
-        "pkg:npm/%40docusaurus/utils-validation@3.9.1",
-        "pkg:npm/%40docusaurus/utils@3.9.1",
+        "pkg:npm/%40docusaurus/logger@3.9.2",
+        "pkg:npm/%40docusaurus/types@3.9.2",
+        "pkg:npm/%40docusaurus/utils-common@3.9.2",
+        "pkg:npm/%40docusaurus/utils-validation@3.9.2",
+        "pkg:npm/%40docusaurus/utils@3.9.2",
         "pkg:npm/fs-extra@11.3.0",
         "pkg:npm/react-dom@19.2.0",
         "pkg:npm/react@19.2.0",
@@ -11980,9 +11980,9 @@
       "from": "pkg:npm/%40docusaurus/plugin-svgr@3.9.2",
       "to": [
         "pkg:npm/%40docusaurus/core@3.9.2",
-        "pkg:npm/%40docusaurus/types@3.9.1",
-        "pkg:npm/%40docusaurus/utils-validation@3.9.1",
-        "pkg:npm/%40docusaurus/utils@3.9.1",
+        "pkg:npm/%40docusaurus/types@3.9.2",
+        "pkg:npm/%40docusaurus/utils-validation@3.9.2",
+        "pkg:npm/%40docusaurus/utils@3.9.2",
         "pkg:npm/%40svgr/core@8.1.0",
         "pkg:npm/%40svgr/webpack@8.1.0",
         "pkg:npm/react-dom@19.2.0",
@@ -12008,7 +12008,7 @@
         "pkg:npm/%40docusaurus/theme-classic@3.9.2",
         "pkg:npm/%40docusaurus/theme-common@3.9.2",
         "pkg:npm/%40docusaurus/theme-search-algolia@3.9.2",
-        "pkg:npm/%40docusaurus/types@3.9.1",
+        "pkg:npm/%40docusaurus/types@3.9.2",
         "pkg:npm/react-dom@19.2.0",
         "pkg:npm/react@19.2.0"
       ]
@@ -12034,18 +12034,18 @@
       "from": "pkg:npm/%40docusaurus/theme-classic@3.9.2",
       "to": [
         "pkg:npm/%40docusaurus/core@3.9.2",
-        "pkg:npm/%40docusaurus/logger@3.9.1",
-        "pkg:npm/%40docusaurus/mdx-loader@3.9.1",
+        "pkg:npm/%40docusaurus/logger@3.9.2",
+        "pkg:npm/%40docusaurus/mdx-loader@3.9.2",
         "pkg:npm/%40docusaurus/module-type-aliases@3.9.2",
         "pkg:npm/%40docusaurus/plugin-content-blog@3.9.2",
         "pkg:npm/%40docusaurus/plugin-content-docs@3.9.2",
         "pkg:npm/%40docusaurus/plugin-content-pages@3.9.2",
         "pkg:npm/%40docusaurus/theme-common@3.9.2",
         "pkg:npm/%40docusaurus/theme-translations@3.9.2",
-        "pkg:npm/%40docusaurus/types@3.9.1",
-        "pkg:npm/%40docusaurus/utils-common@3.9.1",
-        "pkg:npm/%40docusaurus/utils-validation@3.9.1",
-        "pkg:npm/%40docusaurus/utils@3.9.1",
+        "pkg:npm/%40docusaurus/types@3.9.2",
+        "pkg:npm/%40docusaurus/utils-common@3.9.2",
+        "pkg:npm/%40docusaurus/utils-validation@3.9.2",
+        "pkg:npm/%40docusaurus/utils@3.9.2",
         "pkg:npm/%40mdx-js/react@3.1.1",
         "pkg:npm/clsx@2.1.1",
         "pkg:npm/infima@0.2.0-alpha.45",
@@ -12065,11 +12065,11 @@
     {
       "from": "pkg:npm/%40docusaurus/theme-common@3.9.2",
       "to": [
-        "pkg:npm/%40docusaurus/mdx-loader@3.9.1",
+        "pkg:npm/%40docusaurus/mdx-loader@3.9.2",
         "pkg:npm/%40docusaurus/module-type-aliases@3.9.2",
         "pkg:npm/%40docusaurus/plugin-content-docs@3.9.2",
-        "pkg:npm/%40docusaurus/utils-common@3.9.1",
-        "pkg:npm/%40docusaurus/utils@3.9.1",
+        "pkg:npm/%40docusaurus/utils-common@3.9.2",
+        "pkg:npm/%40docusaurus/utils@3.9.2",
         "pkg:npm/%40types/history@4.7.11",
         "pkg:npm/%40types/react-router-config@5.0.11",
         "pkg:npm/%40types/react@19.1.6",
@@ -12088,7 +12088,7 @@
         "pkg:npm/%40docusaurus/core@3.9.2",
         "pkg:npm/%40docusaurus/theme-common@3.9.2",
         "pkg:npm/%40docusaurus/theme-translations@3.9.2",
-        "pkg:npm/%40docusaurus/utils-validation@3.9.1",
+        "pkg:npm/%40docusaurus/utils-validation@3.9.2",
         "pkg:npm/%40philpl/buble@0.19.7",
         "pkg:npm/clsx@2.1.1",
         "pkg:npm/fs-extra@11.3.0",
@@ -12103,12 +12103,12 @@
       "to": [
         "pkg:npm/%40docsearch/react@4.2.0",
         "pkg:npm/%40docusaurus/core@3.9.2",
-        "pkg:npm/%40docusaurus/logger@3.9.1",
+        "pkg:npm/%40docusaurus/logger@3.9.2",
         "pkg:npm/%40docusaurus/plugin-content-docs@3.9.2",
         "pkg:npm/%40docusaurus/theme-common@3.9.2",
         "pkg:npm/%40docusaurus/theme-translations@3.9.2",
-        "pkg:npm/%40docusaurus/utils-validation@3.9.1",
-        "pkg:npm/%40docusaurus/utils@3.9.1",
+        "pkg:npm/%40docusaurus/utils-validation@3.9.2",
+        "pkg:npm/%40docusaurus/utils@3.9.2",
         "pkg:npm/algoliasearch-helper@3.26.0",
         "pkg:npm/algoliasearch@5.40.1",
         "pkg:npm/clsx@2.1.1",
@@ -12141,7 +12141,7 @@
         "pkg:npm/react-dom@19.2.0",
         "pkg:npm/react@19.2.0",
         "pkg:npm/utility-types@3.11.0",
-        "pkg:npm/webpack-merge@6.0.1",
+        "pkg:npm/webpack-merge@5.10.0",
         "pkg:npm/webpack@5.99.9"
       ]
     },
@@ -12158,7 +12158,7 @@
         "pkg:npm/react-dom@19.2.0",
         "pkg:npm/react@19.2.0",
         "pkg:npm/utility-types@3.11.0",
-        "pkg:npm/webpack-merge@6.0.1",
+        "pkg:npm/webpack-merge@5.10.0",
         "pkg:npm/webpack@5.99.9"
       ]
     },
@@ -12172,7 +12172,7 @@
     {
       "from": "pkg:npm/%40docusaurus/utils-common@3.9.2",
       "to": [
-        "pkg:npm/%40docusaurus/types@3.9.1",
+        "pkg:npm/%40docusaurus/types@3.9.2",
         "pkg:npm/tslib@2.8.1"
       ]
     },
@@ -12192,9 +12192,9 @@
     {
       "from": "pkg:npm/%40docusaurus/utils-validation@3.9.2",
       "to": [
-        "pkg:npm/%40docusaurus/logger@3.9.1",
-        "pkg:npm/%40docusaurus/utils-common@3.9.1",
-        "pkg:npm/%40docusaurus/utils@3.9.1",
+        "pkg:npm/%40docusaurus/logger@3.9.2",
+        "pkg:npm/%40docusaurus/utils-common@3.9.2",
+        "pkg:npm/%40docusaurus/utils@3.9.2",
         "pkg:npm/fs-extra@11.3.0",
         "pkg:npm/joi@17.13.3",
         "pkg:npm/js-yaml@4.1.0",
@@ -12231,9 +12231,9 @@
     {
       "from": "pkg:npm/%40docusaurus/utils@3.9.2",
       "to": [
-        "pkg:npm/%40docusaurus/logger@3.9.1",
-        "pkg:npm/%40docusaurus/types@3.9.1",
-        "pkg:npm/%40docusaurus/utils-common@3.9.1",
+        "pkg:npm/%40docusaurus/logger@3.9.2",
+        "pkg:npm/%40docusaurus/types@3.9.2",
+        "pkg:npm/%40docusaurus/utils-common@3.9.2",
         "pkg:npm/escape-string-regexp@4.0.0",
         "pkg:npm/execa@5.1.1",
         "pkg:npm/file-loader@6.2.0",
@@ -12276,7 +12276,7 @@
     {
       "from": "pkg:npm/%40es-joy/jsdoccomment@0.76.0",
       "to": [
-        "pkg:npm/%40types/estree@1.0.7",
+        "pkg:npm/%40types/estree@1.0.8",
         "pkg:npm/%40typescript-eslint/types@8.46.2",
         "pkg:npm/comment-parser@1.4.1",
         "pkg:npm/esquery@1.6.0",
@@ -12302,7 +12302,7 @@
       "to": [
         "pkg:npm/%40eslint/object-schema@2.1.7",
         "pkg:npm/debug@4.4.3",
-        "pkg:npm/minimatch@9.0.5"
+        "pkg:npm/minimatch@3.1.2"
       ]
     },
     {
@@ -12329,18 +12329,18 @@
         "pkg:npm/ajv@6.12.6",
         "pkg:npm/debug@4.4.3",
         "pkg:npm/espree@10.4.0",
-        "pkg:npm/globals@16.4.0",
+        "pkg:npm/globals@14.0.0",
         "pkg:npm/ignore@5.3.2",
         "pkg:npm/import-fresh@3.3.1",
         "pkg:npm/js-yaml@4.1.0",
-        "pkg:npm/minimatch@9.0.5",
+        "pkg:npm/minimatch@3.1.2",
         "pkg:npm/strip-json-comments@3.1.1"
       ]
     },
     {
       "from": "pkg:npm/%40eslint/plugin-kit@0.2.8",
       "to": [
-        "pkg:npm/%40eslint/core@0.16.0",
+        "pkg:npm/%40eslint/core@0.13.0",
         "pkg:npm/levn@0.4.1"
       ]
     },
@@ -12371,7 +12371,7 @@
       "from": "pkg:npm/%40humanfs/node@0.16.6",
       "to": [
         "pkg:npm/%40humanfs/core@0.19.1",
-        "pkg:npm/%40humanwhocodes/retry@0.4.3"
+        "pkg:npm/%40humanwhocodes/retry@0.3.1"
       ]
     },
     {
@@ -12393,12 +12393,10 @@
       "to": [
         "pkg:npm/string-width@4.2.3",
         "pkg:npm/string-width@5.1.2",
-        "pkg:npm/string-width@8.1.0",
         "pkg:npm/strip-ansi@6.0.1",
         "pkg:npm/strip-ansi@7.1.0",
         "pkg:npm/wrap-ansi@7.0.0",
-        "pkg:npm/wrap-ansi@8.1.0",
-        "pkg:npm/wrap-ansi@9.0.2"
+        "pkg:npm/wrap-ansi@8.1.0"
       ]
     },
     {
@@ -12625,17 +12623,17 @@
         "pkg:npm/acorn-dynamic-import@4.0.0",
         "pkg:npm/acorn-jsx@5.3.2",
         "pkg:npm/acorn@6.4.2",
-        "pkg:npm/chalk@4.1.2",
+        "pkg:npm/chalk@2.4.2",
         "pkg:npm/magic-string@0.25.9",
         "pkg:npm/minimist@1.2.8",
         "pkg:npm/os-homedir@1.0.2",
-        "pkg:npm/regexpu-core@6.2.0"
+        "pkg:npm/regexpu-core@4.8.0"
       ]
     },
     {
       "from": "pkg:npm/%40pnpm/network.ca-file@1.0.2",
       "to": [
-        "pkg:npm/graceful-fs@4.2.11"
+        "pkg:npm/graceful-fs@4.2.10"
       ]
     },
     {
@@ -13100,7 +13098,7 @@
         "pkg:npm/%40typescript-eslint/visitor-keys@8.46.2",
         "pkg:npm/eslint@9.38.0",
         "pkg:npm/graphemer@1.4.0",
-        "pkg:npm/ignore@5.3.2",
+        "pkg:npm/ignore@7.0.5",
         "pkg:npm/natural-compare@1.4.0",
         "pkg:npm/ts-api-utils@2.1.0",
         "pkg:npm/typescript@5.9.3"
@@ -13183,7 +13181,7 @@
       "from": "pkg:npm/%40typescript-eslint/visitor-keys@8.46.2",
       "to": [
         "pkg:npm/%40typescript-eslint/types@8.46.2",
-        "pkg:npm/eslint-visitor-keys@3.4.3"
+        "pkg:npm/eslint-visitor-keys@4.2.1"
       ]
     },
     {
@@ -13359,8 +13357,8 @@
     {
       "from": "pkg:npm/accepts@1.3.8",
       "to": [
-        "pkg:npm/mime-types@2.1.18",
-        "pkg:npm/negotiator@0.6.4"
+        "pkg:npm/mime-types@2.1.35",
+        "pkg:npm/negotiator@0.6.3"
       ]
     },
     {
@@ -13385,7 +13383,7 @@
     {
       "from": "pkg:npm/acorn-walk@8.3.4",
       "to": [
-        "pkg:npm/acorn@6.4.2"
+        "pkg:npm/acorn@8.15.0"
       ]
     },
     {
@@ -13414,7 +13412,7 @@
     {
       "from": "pkg:npm/ajv-keywords@3.5.2",
       "to": [
-        "pkg:npm/ajv@8.17.1"
+        "pkg:npm/ajv@6.12.6"
       ]
     },
     {
@@ -13430,7 +13428,6 @@
         "pkg:npm/fast-deep-equal@3.1.3",
         "pkg:npm/fast-json-stable-stringify@2.1.0",
         "pkg:npm/json-schema-traverse@0.4.1",
-        "pkg:npm/json-schema-traverse@1.0.0",
         "pkg:npm/uri-js@4.4.1"
       ]
     },
@@ -13472,13 +13469,13 @@
     {
       "from": "pkg:npm/ansi-align@3.0.1",
       "to": [
-        "pkg:npm/string-width@5.1.2"
+        "pkg:npm/string-width@4.2.3"
       ]
     },
     {
       "from": "pkg:npm/ansi-escapes@4.3.2",
       "to": [
-        "pkg:npm/type-fest@2.19.0"
+        "pkg:npm/type-fest@0.21.3"
       ]
     },
     {
@@ -13490,7 +13487,7 @@
     {
       "from": "pkg:npm/ansi-styles@3.2.1",
       "to": [
-        "pkg:npm/color-convert@2.0.1"
+        "pkg:npm/color-convert@1.9.3"
       ]
     },
     {
@@ -13553,7 +13550,7 @@
         "pkg:npm/%40babel/compat-data@7.28.4",
         "pkg:npm/%40babel/core@7.27.4",
         "pkg:npm/%40babel/helper-define-polyfill-provider@0.6.5",
-        "pkg:npm/semver@7.7.2"
+        "pkg:npm/semver@6.3.1"
       ]
     },
     {
@@ -13588,9 +13585,9 @@
     {
       "from": "pkg:npm/body-parser@1.20.3",
       "to": [
-        "pkg:npm/bytes@3.0.0",
+        "pkg:npm/bytes@3.1.2",
         "pkg:npm/content-type@1.0.5",
-        "pkg:npm/debug@4.4.1",
+        "pkg:npm/debug@2.6.9",
         "pkg:npm/depd@2.0.0",
         "pkg:npm/destroy@1.2.0",
         "pkg:npm/http-errors@2.0.0",
@@ -13626,8 +13623,8 @@
       "from": "pkg:npm/boxen@7.1.1",
       "to": [
         "pkg:npm/ansi-align@3.0.1",
-        "pkg:npm/camelcase@6.3.0",
-        "pkg:npm/chalk@4.1.2",
+        "pkg:npm/camelcase@7.0.1",
+        "pkg:npm/chalk@5.4.1",
         "pkg:npm/cli-boxes@3.0.0",
         "pkg:npm/string-width@5.1.2",
         "pkg:npm/type-fest@2.19.0",
@@ -13743,9 +13740,9 @@
     {
       "from": "pkg:npm/chalk@2.4.2",
       "to": [
-        "pkg:npm/ansi-styles@4.3.0",
-        "pkg:npm/escape-string-regexp@4.0.0",
-        "pkg:npm/supports-color@7.2.0"
+        "pkg:npm/ansi-styles@3.2.1",
+        "pkg:npm/escape-string-regexp@1.0.5",
+        "pkg:npm/supports-color@5.5.0"
       ]
     },
     {
@@ -13800,13 +13797,13 @@
     {
       "from": "pkg:npm/clean-css@5.3.3",
       "to": [
-        "pkg:npm/source-map@0.7.4"
+        "pkg:npm/source-map@0.6.1"
       ]
     },
     {
       "from": "pkg:npm/clean-regexp@1.0.0",
       "to": [
-        "pkg:npm/escape-string-regexp@4.0.0"
+        "pkg:npm/escape-string-regexp@1.0.5"
       ]
     },
     {
@@ -13819,7 +13816,7 @@
       "from": "pkg:npm/cli-table3@0.6.5",
       "to": [
         "pkg:npm/%40colors/colors@1.5.0",
-        "pkg:npm/string-width@5.1.2"
+        "pkg:npm/string-width@4.2.3"
       ]
     },
     {
@@ -13840,7 +13837,7 @@
     {
       "from": "pkg:npm/color-convert@1.9.3",
       "to": [
-        "pkg:npm/color-name@1.1.4"
+        "pkg:npm/color-name@1.1.3"
       ]
     },
     {
@@ -13852,15 +13849,15 @@
     {
       "from": "pkg:npm/compressible@2.0.18",
       "to": [
-        "pkg:npm/mime-db@1.33.0"
+        "pkg:npm/mime-db@1.54.0"
       ]
     },
     {
       "from": "pkg:npm/compression@1.8.1",
       "to": [
-        "pkg:npm/bytes@3.0.0",
+        "pkg:npm/bytes@3.1.2",
         "pkg:npm/compressible@2.0.18",
-        "pkg:npm/debug@4.4.1",
+        "pkg:npm/debug@2.6.9",
         "pkg:npm/negotiator@0.6.4",
         "pkg:npm/on-headers@1.1.0",
         "pkg:npm/safe-buffer@5.2.1",
@@ -13870,7 +13867,7 @@
     {
       "from": "pkg:npm/config-chain@1.1.13",
       "to": [
-        "pkg:npm/ini@2.0.0",
+        "pkg:npm/ini@1.3.8",
         "pkg:npm/proto-list@1.2.4"
       ]
     },
@@ -13894,8 +13891,8 @@
       "from": "pkg:npm/copy-webpack-plugin@11.0.0",
       "to": [
         "pkg:npm/fast-glob@3.3.3",
-        "pkg:npm/glob-parent@5.1.2",
-        "pkg:npm/globby@11.1.0",
+        "pkg:npm/glob-parent@6.0.2",
+        "pkg:npm/globby@13.2.2",
         "pkg:npm/normalize-path@3.0.0",
         "pkg:npm/schema-utils@4.3.2",
         "pkg:npm/serialize-javascript@6.0.2",
@@ -13935,13 +13932,13 @@
     {
       "from": "pkg:npm/crypto-random-string@4.0.0",
       "to": [
-        "pkg:npm/type-fest@2.19.0"
+        "pkg:npm/type-fest@1.4.0"
       ]
     },
     {
       "from": "pkg:npm/css-blank-pseudo@7.0.1",
       "to": [
-        "pkg:npm/postcss-selector-parser@6.1.2",
+        "pkg:npm/postcss-selector-parser@7.1.0",
         "pkg:npm/postcss@8.5.4"
       ]
     },
@@ -13955,7 +13952,7 @@
       "from": "pkg:npm/css-has-pseudo@7.0.3",
       "to": [
         "pkg:npm/%40csstools/selector-specificity@5.0.0",
-        "pkg:npm/postcss-selector-parser@6.1.2",
+        "pkg:npm/postcss-selector-parser@7.1.0",
         "pkg:npm/postcss-value-parser@4.2.0",
         "pkg:npm/postcss@8.5.4"
       ]
@@ -13998,8 +13995,8 @@
       "to": [
         "pkg:npm/boolbase@1.0.0",
         "pkg:npm/css-what@6.1.0",
-        "pkg:npm/domhandler@5.0.3",
-        "pkg:npm/domutils@3.2.2",
+        "pkg:npm/domhandler@4.3.1",
+        "pkg:npm/domutils@2.8.0",
         "pkg:npm/nth-check@2.1.1"
       ]
     },
@@ -14016,7 +14013,7 @@
     {
       "from": "pkg:npm/css-tree@2.2.1",
       "to": [
-        "pkg:npm/mdn-data@2.0.30",
+        "pkg:npm/mdn-data@2.0.28",
         "pkg:npm/source-map-js@1.2.1"
       ]
     },
@@ -14100,7 +14097,7 @@
     {
       "from": "pkg:npm/csso@5.0.5",
       "to": [
-        "pkg:npm/css-tree@2.3.1"
+        "pkg:npm/css-tree@2.2.1"
       ]
     },
     {
@@ -14121,7 +14118,7 @@
     {
       "from": "pkg:npm/debug@2.6.9",
       "to": [
-        "pkg:npm/ms@2.1.3"
+        "pkg:npm/ms@2.0.0"
       ]
     },
     {
@@ -14145,7 +14142,7 @@
     {
       "from": "pkg:npm/decompress-response@6.0.0",
       "to": [
-        "pkg:npm/mimic-response@4.0.0"
+        "pkg:npm/mimic-response@3.1.0"
       ]
     },
     {
@@ -14213,8 +14210,8 @@
       "from": "pkg:npm/dom-serializer@1.4.1",
       "to": [
         "pkg:npm/domelementtype@2.3.0",
-        "pkg:npm/domhandler@5.0.3",
-        "pkg:npm/entities@4.5.0"
+        "pkg:npm/domhandler@4.3.1",
+        "pkg:npm/entities@2.2.0"
       ]
     },
     {
@@ -14240,9 +14237,9 @@
     {
       "from": "pkg:npm/domutils@2.8.0",
       "to": [
-        "pkg:npm/dom-serializer@2.0.0",
+        "pkg:npm/dom-serializer@1.4.1",
         "pkg:npm/domelementtype@2.3.0",
-        "pkg:npm/domhandler@5.0.3"
+        "pkg:npm/domhandler@4.3.1"
       ]
     },
     {
@@ -14263,7 +14260,7 @@
     {
       "from": "pkg:npm/dot-prop@6.0.1",
       "to": [
-        "pkg:npm/is-obj@1.0.1"
+        "pkg:npm/is-obj@2.0.0"
       ]
     },
     {
@@ -14313,7 +14310,7 @@
       "from": "pkg:npm/esast-util-from-js@2.0.1",
       "to": [
         "pkg:npm/%40types/estree-jsx@1.0.5",
-        "pkg:npm/acorn@6.4.2",
+        "pkg:npm/acorn@8.15.0",
         "pkg:npm/esast-util-from-estree@2.0.0",
         "pkg:npm/vfile-message@4.0.2"
       ]
@@ -14398,7 +14395,7 @@
         "pkg:npm/eslint-plugin-es-x@7.8.0",
         "pkg:npm/eslint@9.38.0",
         "pkg:npm/get-tsconfig@4.10.1",
-        "pkg:npm/globals@16.4.0",
+        "pkg:npm/globals@15.15.0",
         "pkg:npm/globrex@0.1.2",
         "pkg:npm/ignore@5.3.2",
         "pkg:npm/semver@7.7.3",
@@ -14410,7 +14407,7 @@
       "to": [
         "pkg:npm/%40babel/helper-validator-identifier@7.27.1",
         "pkg:npm/%40eslint-community/eslint-utils@4.8.0",
-        "pkg:npm/%40eslint/plugin-kit@0.4.0",
+        "pkg:npm/%40eslint/plugin-kit@0.2.8",
         "pkg:npm/ci-info@4.2.0",
         "pkg:npm/clean-regexp@1.0.0",
         "pkg:npm/core-js-compat@3.42.0",
@@ -14463,7 +14460,7 @@
         "pkg:npm/debug@4.4.3",
         "pkg:npm/escape-string-regexp@4.0.0",
         "pkg:npm/eslint-scope@8.4.0",
-        "pkg:npm/eslint-visitor-keys@3.4.3",
+        "pkg:npm/eslint-visitor-keys@4.2.1",
         "pkg:npm/espree@10.4.0",
         "pkg:npm/esquery@1.6.0",
         "pkg:npm/esutils@2.0.3",
@@ -14476,7 +14473,7 @@
         "pkg:npm/is-glob@4.0.3",
         "pkg:npm/json-stable-stringify-without-jsonify@1.0.1",
         "pkg:npm/lodash.merge@4.6.2",
-        "pkg:npm/minimatch@9.0.5",
+        "pkg:npm/minimatch@3.1.2",
         "pkg:npm/natural-compare@1.4.0",
         "pkg:npm/optionator@0.9.4"
       ]
@@ -14486,7 +14483,7 @@
       "to": [
         "pkg:npm/acorn-jsx@5.3.2",
         "pkg:npm/acorn@8.15.0",
-        "pkg:npm/eslint-visitor-keys@3.4.3"
+        "pkg:npm/eslint-visitor-keys@4.2.1"
       ]
     },
     {
@@ -14498,7 +14495,6 @@
     {
       "from": "pkg:npm/esrecurse@4.3.0",
       "to": [
-        "pkg:npm/estraverse@4.3.0",
         "pkg:npm/estraverse@5.3.0"
       ]
     },
@@ -14579,11 +14575,11 @@
         "pkg:npm/accepts@1.3.8",
         "pkg:npm/array-flatten@1.1.1",
         "pkg:npm/body-parser@1.20.3",
-        "pkg:npm/content-disposition@0.5.2",
+        "pkg:npm/content-disposition@0.5.4",
         "pkg:npm/content-type@1.0.5",
         "pkg:npm/cookie-signature@1.0.6",
         "pkg:npm/cookie@0.7.1",
-        "pkg:npm/debug@4.4.1",
+        "pkg:npm/debug@2.6.9",
         "pkg:npm/depd@2.0.0",
         "pkg:npm/encodeurl@2.0.0",
         "pkg:npm/escape-html@1.0.3",
@@ -14595,10 +14591,10 @@
         "pkg:npm/methods@1.1.2",
         "pkg:npm/on-finished@2.4.1",
         "pkg:npm/parseurl@1.3.3",
-        "pkg:npm/path-to-regexp@1.9.0",
+        "pkg:npm/path-to-regexp@0.1.12",
         "pkg:npm/proxy-addr@2.0.7",
         "pkg:npm/qs@6.13.0",
-        "pkg:npm/range-parser@1.2.0",
+        "pkg:npm/range-parser@1.2.1",
         "pkg:npm/safe-buffer@5.2.1",
         "pkg:npm/send@0.19.0",
         "pkg:npm/serve-static@1.16.2",
@@ -14621,7 +14617,6 @@
         "pkg:npm/%40nodelib/fs.stat@2.0.5",
         "pkg:npm/%40nodelib/fs.walk@1.2.8",
         "pkg:npm/glob-parent@5.1.2",
-        "pkg:npm/glob-parent@6.0.2",
         "pkg:npm/merge2@1.4.1",
         "pkg:npm/micromatch@4.0.8"
       ]
@@ -14647,7 +14642,7 @@
     {
       "from": "pkg:npm/fdir@6.5.0",
       "to": [
-        "pkg:npm/picomatch@2.3.1"
+        "pkg:npm/picomatch@4.0.3"
       ]
     },
     {
@@ -14659,7 +14654,7 @@
     {
       "from": "pkg:npm/figures@3.2.0",
       "to": [
-        "pkg:npm/escape-string-regexp@4.0.0"
+        "pkg:npm/escape-string-regexp@1.0.5"
       ]
     },
     {
@@ -14672,7 +14667,7 @@
       "from": "pkg:npm/file-loader@6.2.0",
       "to": [
         "pkg:npm/loader-utils@2.0.4",
-        "pkg:npm/schema-utils@4.3.2",
+        "pkg:npm/schema-utils@3.3.0",
         "pkg:npm/webpack@5.99.9"
       ]
     },
@@ -14685,7 +14680,7 @@
     {
       "from": "pkg:npm/finalhandler@1.3.1",
       "to": [
-        "pkg:npm/debug@4.4.1",
+        "pkg:npm/debug@2.6.9",
         "pkg:npm/encodeurl@2.0.0",
         "pkg:npm/escape-html@1.0.3",
         "pkg:npm/on-finished@2.4.1",
@@ -14726,7 +14721,6 @@
       "from": "pkg:npm/foreground-child@3.3.1",
       "to": [
         "pkg:npm/cross-spawn@7.0.6",
-        "pkg:npm/signal-exit@3.0.7",
         "pkg:npm/signal-exit@4.1.0"
       ]
     },
@@ -14789,7 +14783,6 @@
       "to": [
         "pkg:npm/foreground-child@3.3.1",
         "pkg:npm/jackspeak@3.4.3",
-        "pkg:npm/minimatch@3.1.2",
         "pkg:npm/minimatch@9.0.5",
         "pkg:npm/minipass@7.1.2",
         "pkg:npm/package-json-from-dist@1.0.1",
@@ -14800,11 +14793,11 @@
       "from": "pkg:npm/glob@11.0.2",
       "to": [
         "pkg:npm/foreground-child@3.3.1",
-        "pkg:npm/jackspeak@3.4.3",
-        "pkg:npm/minimatch@9.0.5",
+        "pkg:npm/jackspeak@4.1.1",
+        "pkg:npm/minimatch@10.0.1",
         "pkg:npm/minipass@7.1.2",
         "pkg:npm/package-json-from-dist@1.0.1",
-        "pkg:npm/path-scurry@1.11.1"
+        "pkg:npm/path-scurry@2.0.0"
       ]
     },
     {
@@ -14842,13 +14835,13 @@
         "pkg:npm/fast-glob@3.3.3",
         "pkg:npm/ignore@5.3.2",
         "pkg:npm/merge2@1.4.1",
-        "pkg:npm/slash@3.0.0"
+        "pkg:npm/slash@4.0.0"
       ]
     },
     {
       "from": "pkg:npm/got@12.6.1",
       "to": [
-        "pkg:npm/%40sindresorhus/is@4.6.0",
+        "pkg:npm/%40sindresorhus/is@5.6.0",
         "pkg:npm/%40szmarczak/http-timer@5.0.1",
         "pkg:npm/cacheable-lookup@7.0.0",
         "pkg:npm/cacheable-request@10.2.14",
@@ -14864,7 +14857,7 @@
     {
       "from": "pkg:npm/gray-matter@4.0.3",
       "to": [
-        "pkg:npm/js-yaml@4.1.0",
+        "pkg:npm/js-yaml@3.14.1",
         "pkg:npm/kind-of@6.0.3",
         "pkg:npm/section-matter@1.0.0",
         "pkg:npm/strip-bom-string@1.0.0"
@@ -14972,7 +14965,7 @@
         "pkg:npm/%40types/hast@3.0.4",
         "pkg:npm/comma-separated-tokens@2.0.3",
         "pkg:npm/devlop@1.1.0",
-        "pkg:npm/property-information@7.1.0",
+        "pkg:npm/property-information@6.5.0",
         "pkg:npm/space-separated-tokens@2.0.2",
         "pkg:npm/web-namespaces@2.0.1",
         "pkg:npm/zwitch@2.0.4"
@@ -15016,7 +15009,7 @@
       "to": [
         "pkg:npm/inherits@2.0.4",
         "pkg:npm/obuf@1.1.2",
-        "pkg:npm/readable-stream@3.6.2",
+        "pkg:npm/readable-stream@2.3.8",
         "pkg:npm/wbuf@1.7.3"
       ]
     },
@@ -15031,7 +15024,7 @@
       "to": [
         "pkg:npm/camel-case@4.1.2",
         "pkg:npm/clean-css@5.3.3",
-        "pkg:npm/commander@5.1.0",
+        "pkg:npm/commander@8.3.0",
         "pkg:npm/he@1.2.0",
         "pkg:npm/param-case@3.0.4",
         "pkg:npm/relateurl@0.2.7",
@@ -15043,7 +15036,7 @@
       "to": [
         "pkg:npm/camel-case@4.1.2",
         "pkg:npm/clean-css@5.3.3",
-        "pkg:npm/commander@5.1.0",
+        "pkg:npm/commander@10.0.1",
         "pkg:npm/entities@4.5.0",
         "pkg:npm/param-case@3.0.4",
         "pkg:npm/relateurl@0.2.7",
@@ -15055,7 +15048,7 @@
       "to": [
         "pkg:npm/%40rspack/core@1.5.7",
         "pkg:npm/%40types/html-minifier-terser@6.1.0",
-        "pkg:npm/html-minifier-terser@7.2.0",
+        "pkg:npm/html-minifier-terser@6.1.0",
         "pkg:npm/lodash@4.17.21",
         "pkg:npm/pretty-error@4.0.0",
         "pkg:npm/tapable@2.2.2",
@@ -15068,16 +15061,16 @@
         "pkg:npm/domelementtype@2.3.0",
         "pkg:npm/domhandler@5.0.3",
         "pkg:npm/domutils@3.2.2",
-        "pkg:npm/entities@4.5.0"
+        "pkg:npm/entities@6.0.0"
       ]
     },
     {
       "from": "pkg:npm/htmlparser2@6.1.0",
       "to": [
         "pkg:npm/domelementtype@2.3.0",
-        "pkg:npm/domhandler@5.0.3",
-        "pkg:npm/domutils@3.2.2",
-        "pkg:npm/entities@4.5.0"
+        "pkg:npm/domhandler@4.3.1",
+        "pkg:npm/domutils@2.8.0",
+        "pkg:npm/entities@2.2.0"
       ]
     },
     {
@@ -15092,10 +15085,10 @@
     {
       "from": "pkg:npm/http-errors@1.6.3",
       "to": [
-        "pkg:npm/depd@2.0.0",
-        "pkg:npm/inherits@2.0.4",
-        "pkg:npm/setprototypeof@1.2.0",
-        "pkg:npm/statuses@2.0.1"
+        "pkg:npm/depd@1.1.2",
+        "pkg:npm/inherits@2.0.3",
+        "pkg:npm/setprototypeof@1.1.0",
+        "pkg:npm/statuses@1.5.0"
       ]
     },
     {
@@ -15122,7 +15115,7 @@
         "pkg:npm/%40types/http-proxy@1.17.16",
         "pkg:npm/http-proxy@1.18.1",
         "pkg:npm/is-glob@4.0.3",
-        "pkg:npm/is-plain-obj@4.1.0",
+        "pkg:npm/is-plain-obj@3.0.0",
         "pkg:npm/micromatch@4.0.8"
       ]
     },
@@ -15232,7 +15225,7 @@
     {
       "from": "pkg:npm/is-inside-container@1.0.0",
       "to": [
-        "pkg:npm/is-docker@2.2.1"
+        "pkg:npm/is-docker@3.0.0"
       ]
     },
     {
@@ -15312,7 +15305,7 @@
       "to": [
         "pkg:npm/%40types/node@17.0.45",
         "pkg:npm/merge-stream@2.0.0",
-        "pkg:npm/supports-color@7.2.0"
+        "pkg:npm/supports-color@8.1.1"
       ]
     },
     {
@@ -15321,7 +15314,7 @@
         "pkg:npm/%40types/node@17.0.45",
         "pkg:npm/jest-util@29.7.0",
         "pkg:npm/merge-stream@2.0.0",
-        "pkg:npm/supports-color@7.2.0"
+        "pkg:npm/supports-color@8.1.1"
       ]
     },
     {
@@ -15337,7 +15330,7 @@
     {
       "from": "pkg:npm/js-yaml@3.14.1",
       "to": [
-        "pkg:npm/argparse@2.0.1",
+        "pkg:npm/argparse@1.0.10",
         "pkg:npm/esprima@4.0.1"
       ]
     },
@@ -15358,7 +15351,7 @@
         "pkg:npm/http-proxy-agent@7.0.2",
         "pkg:npm/https-proxy-agent@7.0.6",
         "pkg:npm/is-potential-custom-element-name@1.0.1",
-        "pkg:npm/parse5@7.3.0",
+        "pkg:npm/parse5@8.0.0",
         "pkg:npm/rrweb-cssom@0.8.0",
         "pkg:npm/saxes@6.0.0",
         "pkg:npm/symbol-tree@3.2.4",
@@ -15567,7 +15560,7 @@
       "from": "pkg:npm/mdast-util-find-and-replace@3.0.2",
       "to": [
         "pkg:npm/%40types/mdast@4.0.4",
-        "pkg:npm/escape-string-regexp@4.0.0",
+        "pkg:npm/escape-string-regexp@5.0.0",
         "pkg:npm/unist-util-is@6.0.0",
         "pkg:npm/unist-util-visit-parents@6.0.1"
       ]
@@ -15583,7 +15576,6 @@
         "pkg:npm/micromark-util-decode-numeric-character-reference@2.0.2",
         "pkg:npm/micromark-util-decode-string@2.0.1",
         "pkg:npm/micromark-util-normalize-identifier@2.0.1",
-        "pkg:npm/micromark-util-symbol@1.1.0",
         "pkg:npm/micromark-util-symbol@2.0.1",
         "pkg:npm/micromark-util-types@2.0.2",
         "pkg:npm/micromark@4.0.2",
@@ -15595,7 +15587,7 @@
       "to": [
         "pkg:npm/%40types/mdast@4.0.4",
         "pkg:npm/devlop@1.1.0",
-        "pkg:npm/escape-string-regexp@4.0.0",
+        "pkg:npm/escape-string-regexp@5.0.0",
         "pkg:npm/mdast-util-from-markdown@2.0.2",
         "pkg:npm/mdast-util-to-markdown@2.1.2",
         "pkg:npm/micromark-extension-frontmatter@2.0.0"
@@ -15608,7 +15600,7 @@
         "pkg:npm/ccount@2.0.1",
         "pkg:npm/devlop@1.1.0",
         "pkg:npm/mdast-util-find-and-replace@3.0.2",
-        "pkg:npm/micromark-util-character@1.2.0"
+        "pkg:npm/micromark-util-character@2.1.1"
       ]
     },
     {
@@ -15768,11 +15760,9 @@
         "pkg:npm/devlop@1.1.0",
         "pkg:npm/micromark-factory-destination@2.0.1",
         "pkg:npm/micromark-factory-label@2.0.1",
-        "pkg:npm/micromark-factory-space@1.1.0",
         "pkg:npm/micromark-factory-space@2.0.1",
         "pkg:npm/micromark-factory-title@2.0.1",
         "pkg:npm/micromark-factory-whitespace@2.0.1",
-        "pkg:npm/micromark-util-character@1.2.0",
         "pkg:npm/micromark-util-character@2.1.1",
         "pkg:npm/micromark-util-chunked@2.0.1",
         "pkg:npm/micromark-util-classify-character@2.0.1",
@@ -15780,7 +15770,6 @@
         "pkg:npm/micromark-util-normalize-identifier@2.0.1",
         "pkg:npm/micromark-util-resolve-all@2.0.1",
         "pkg:npm/micromark-util-subtokenize@2.1.0",
-        "pkg:npm/micromark-util-symbol@1.1.0",
         "pkg:npm/micromark-util-symbol@2.0.1",
         "pkg:npm/micromark-util-types@2.0.2"
       ]
@@ -15789,10 +15778,10 @@
       "from": "pkg:npm/micromark-extension-directive@3.0.2",
       "to": [
         "pkg:npm/devlop@1.1.0",
-        "pkg:npm/micromark-factory-space@1.1.0",
+        "pkg:npm/micromark-factory-space@2.0.1",
         "pkg:npm/micromark-factory-whitespace@2.0.1",
-        "pkg:npm/micromark-util-character@1.2.0",
-        "pkg:npm/micromark-util-symbol@1.1.0",
+        "pkg:npm/micromark-util-character@2.1.1",
+        "pkg:npm/micromark-util-symbol@2.0.1",
         "pkg:npm/micromark-util-types@2.0.2",
         "pkg:npm/parse-entities@4.0.2"
       ]
@@ -15801,17 +15790,17 @@
       "from": "pkg:npm/micromark-extension-frontmatter@2.0.0",
       "to": [
         "pkg:npm/fault@2.0.1",
-        "pkg:npm/micromark-util-character@1.2.0",
-        "pkg:npm/micromark-util-symbol@1.1.0",
+        "pkg:npm/micromark-util-character@2.1.1",
+        "pkg:npm/micromark-util-symbol@2.0.1",
         "pkg:npm/micromark-util-types@2.0.2"
       ]
     },
     {
       "from": "pkg:npm/micromark-extension-gfm-autolink-literal@2.1.0",
       "to": [
-        "pkg:npm/micromark-util-character@1.2.0",
+        "pkg:npm/micromark-util-character@2.1.1",
         "pkg:npm/micromark-util-sanitize-uri@2.0.1",
-        "pkg:npm/micromark-util-symbol@1.1.0",
+        "pkg:npm/micromark-util-symbol@2.0.1",
         "pkg:npm/micromark-util-types@2.0.2"
       ]
     },
@@ -15820,11 +15809,11 @@
       "to": [
         "pkg:npm/devlop@1.1.0",
         "pkg:npm/micromark-core-commonmark@2.0.3",
-        "pkg:npm/micromark-factory-space@1.1.0",
-        "pkg:npm/micromark-util-character@1.2.0",
+        "pkg:npm/micromark-factory-space@2.0.1",
+        "pkg:npm/micromark-util-character@2.1.1",
         "pkg:npm/micromark-util-normalize-identifier@2.0.1",
         "pkg:npm/micromark-util-sanitize-uri@2.0.1",
-        "pkg:npm/micromark-util-symbol@1.1.0",
+        "pkg:npm/micromark-util-symbol@2.0.1",
         "pkg:npm/micromark-util-types@2.0.2"
       ]
     },
@@ -15835,7 +15824,7 @@
         "pkg:npm/micromark-util-chunked@2.0.1",
         "pkg:npm/micromark-util-classify-character@2.0.1",
         "pkg:npm/micromark-util-resolve-all@2.0.1",
-        "pkg:npm/micromark-util-symbol@1.1.0",
+        "pkg:npm/micromark-util-symbol@2.0.1",
         "pkg:npm/micromark-util-types@2.0.2"
       ]
     },
@@ -15843,9 +15832,9 @@
       "from": "pkg:npm/micromark-extension-gfm-table@2.1.1",
       "to": [
         "pkg:npm/devlop@1.1.0",
-        "pkg:npm/micromark-factory-space@1.1.0",
-        "pkg:npm/micromark-util-character@1.2.0",
-        "pkg:npm/micromark-util-symbol@1.1.0",
+        "pkg:npm/micromark-factory-space@2.0.1",
+        "pkg:npm/micromark-util-character@2.1.1",
+        "pkg:npm/micromark-util-symbol@2.0.1",
         "pkg:npm/micromark-util-types@2.0.2"
       ]
     },
@@ -15859,9 +15848,9 @@
       "from": "pkg:npm/micromark-extension-gfm-task-list-item@2.1.0",
       "to": [
         "pkg:npm/devlop@1.1.0",
-        "pkg:npm/micromark-factory-space@1.1.0",
-        "pkg:npm/micromark-util-character@1.2.0",
-        "pkg:npm/micromark-util-symbol@1.1.0",
+        "pkg:npm/micromark-factory-space@2.0.1",
+        "pkg:npm/micromark-util-character@2.1.1",
+        "pkg:npm/micromark-util-symbol@2.0.1",
         "pkg:npm/micromark-util-types@2.0.2"
       ]
     },
@@ -15884,10 +15873,10 @@
         "pkg:npm/%40types/estree@1.0.8",
         "pkg:npm/devlop@1.1.0",
         "pkg:npm/micromark-factory-mdx-expression@2.0.3",
-        "pkg:npm/micromark-factory-space@1.1.0",
-        "pkg:npm/micromark-util-character@1.2.0",
+        "pkg:npm/micromark-factory-space@2.0.1",
+        "pkg:npm/micromark-util-character@2.1.1",
         "pkg:npm/micromark-util-events-to-acorn@2.0.3",
-        "pkg:npm/micromark-util-symbol@1.1.0",
+        "pkg:npm/micromark-util-symbol@2.0.1",
         "pkg:npm/micromark-util-types@2.0.2"
       ]
     },
@@ -15898,10 +15887,10 @@
         "pkg:npm/devlop@1.1.0",
         "pkg:npm/estree-util-is-identifier-name@3.0.0",
         "pkg:npm/micromark-factory-mdx-expression@2.0.3",
-        "pkg:npm/micromark-factory-space@1.1.0",
-        "pkg:npm/micromark-util-character@1.2.0",
+        "pkg:npm/micromark-factory-space@2.0.1",
+        "pkg:npm/micromark-util-character@2.1.1",
         "pkg:npm/micromark-util-events-to-acorn@2.0.3",
-        "pkg:npm/micromark-util-symbol@1.1.0",
+        "pkg:npm/micromark-util-symbol@2.0.1",
         "pkg:npm/micromark-util-types@2.0.2",
         "pkg:npm/vfile-message@4.0.2"
       ]
@@ -15918,9 +15907,9 @@
         "pkg:npm/%40types/estree@1.0.8",
         "pkg:npm/devlop@1.1.0",
         "pkg:npm/micromark-core-commonmark@2.0.3",
-        "pkg:npm/micromark-util-character@1.2.0",
+        "pkg:npm/micromark-util-character@2.1.1",
         "pkg:npm/micromark-util-events-to-acorn@2.0.3",
-        "pkg:npm/micromark-util-symbol@1.1.0",
+        "pkg:npm/micromark-util-symbol@2.0.1",
         "pkg:npm/micromark-util-types@2.0.2",
         "pkg:npm/unist-util-position-from-estree@2.0.0",
         "pkg:npm/vfile-message@4.0.2"
@@ -15930,7 +15919,7 @@
       "from": "pkg:npm/micromark-extension-mdxjs@3.0.0",
       "to": [
         "pkg:npm/acorn-jsx@5.3.2",
-        "pkg:npm/acorn@6.4.2",
+        "pkg:npm/acorn@8.15.0",
         "pkg:npm/micromark-extension-mdx-expression@3.0.1",
         "pkg:npm/micromark-extension-mdx-jsx@3.0.2",
         "pkg:npm/micromark-extension-mdx-md@2.0.0",
@@ -15942,9 +15931,7 @@
     {
       "from": "pkg:npm/micromark-factory-destination@2.0.1",
       "to": [
-        "pkg:npm/micromark-util-character@1.2.0",
         "pkg:npm/micromark-util-character@2.1.1",
-        "pkg:npm/micromark-util-symbol@1.1.0",
         "pkg:npm/micromark-util-symbol@2.0.1",
         "pkg:npm/micromark-util-types@2.0.2"
       ]
@@ -15953,9 +15940,7 @@
       "from": "pkg:npm/micromark-factory-label@2.0.1",
       "to": [
         "pkg:npm/devlop@1.1.0",
-        "pkg:npm/micromark-util-character@1.2.0",
         "pkg:npm/micromark-util-character@2.1.1",
-        "pkg:npm/micromark-util-symbol@1.1.0",
         "pkg:npm/micromark-util-symbol@2.0.1",
         "pkg:npm/micromark-util-types@2.0.2"
       ]
@@ -15965,10 +15950,10 @@
       "to": [
         "pkg:npm/%40types/estree@1.0.8",
         "pkg:npm/devlop@1.1.0",
-        "pkg:npm/micromark-factory-space@1.1.0",
-        "pkg:npm/micromark-util-character@1.2.0",
+        "pkg:npm/micromark-factory-space@2.0.1",
+        "pkg:npm/micromark-util-character@2.1.1",
         "pkg:npm/micromark-util-events-to-acorn@2.0.3",
-        "pkg:npm/micromark-util-symbol@1.1.0",
+        "pkg:npm/micromark-util-symbol@2.0.1",
         "pkg:npm/micromark-util-types@2.0.2",
         "pkg:npm/unist-util-position-from-estree@2.0.0",
         "pkg:npm/vfile-message@4.0.2"
@@ -15978,13 +15963,12 @@
       "from": "pkg:npm/micromark-factory-space@1.1.0",
       "to": [
         "pkg:npm/micromark-util-character@1.2.0",
-        "pkg:npm/micromark-util-types@2.0.2"
+        "pkg:npm/micromark-util-types@1.1.0"
       ]
     },
     {
       "from": "pkg:npm/micromark-factory-space@2.0.1",
       "to": [
-        "pkg:npm/micromark-util-character@1.2.0",
         "pkg:npm/micromark-util-character@2.1.1",
         "pkg:npm/micromark-util-types@2.0.2"
       ]
@@ -15992,11 +15976,8 @@
     {
       "from": "pkg:npm/micromark-factory-title@2.0.1",
       "to": [
-        "pkg:npm/micromark-factory-space@1.1.0",
         "pkg:npm/micromark-factory-space@2.0.1",
-        "pkg:npm/micromark-util-character@1.2.0",
         "pkg:npm/micromark-util-character@2.1.1",
-        "pkg:npm/micromark-util-symbol@1.1.0",
         "pkg:npm/micromark-util-symbol@2.0.1",
         "pkg:npm/micromark-util-types@2.0.2"
       ]
@@ -16004,11 +15985,8 @@
     {
       "from": "pkg:npm/micromark-factory-whitespace@2.0.1",
       "to": [
-        "pkg:npm/micromark-factory-space@1.1.0",
         "pkg:npm/micromark-factory-space@2.0.1",
-        "pkg:npm/micromark-util-character@1.2.0",
         "pkg:npm/micromark-util-character@2.1.1",
-        "pkg:npm/micromark-util-symbol@1.1.0",
         "pkg:npm/micromark-util-symbol@2.0.1",
         "pkg:npm/micromark-util-types@2.0.2"
       ]
@@ -16017,13 +15995,12 @@
       "from": "pkg:npm/micromark-util-character@1.2.0",
       "to": [
         "pkg:npm/micromark-util-symbol@1.1.0",
-        "pkg:npm/micromark-util-types@2.0.2"
+        "pkg:npm/micromark-util-types@1.1.0"
       ]
     },
     {
       "from": "pkg:npm/micromark-util-character@2.1.1",
       "to": [
-        "pkg:npm/micromark-util-symbol@1.1.0",
         "pkg:npm/micromark-util-symbol@2.0.1",
         "pkg:npm/micromark-util-types@2.0.2"
       ]
@@ -16031,16 +16008,13 @@
     {
       "from": "pkg:npm/micromark-util-chunked@2.0.1",
       "to": [
-        "pkg:npm/micromark-util-symbol@1.1.0",
         "pkg:npm/micromark-util-symbol@2.0.1"
       ]
     },
     {
       "from": "pkg:npm/micromark-util-classify-character@2.0.1",
       "to": [
-        "pkg:npm/micromark-util-character@1.2.0",
         "pkg:npm/micromark-util-character@2.1.1",
-        "pkg:npm/micromark-util-symbol@1.1.0",
         "pkg:npm/micromark-util-symbol@2.0.1",
         "pkg:npm/micromark-util-types@2.0.2"
       ]
@@ -16055,7 +16029,6 @@
     {
       "from": "pkg:npm/micromark-util-decode-numeric-character-reference@2.0.2",
       "to": [
-        "pkg:npm/micromark-util-symbol@1.1.0",
         "pkg:npm/micromark-util-symbol@2.0.1"
       ]
     },
@@ -16063,10 +16036,8 @@
       "from": "pkg:npm/micromark-util-decode-string@2.0.1",
       "to": [
         "pkg:npm/decode-named-character-reference@1.1.0",
-        "pkg:npm/micromark-util-character@1.2.0",
         "pkg:npm/micromark-util-character@2.1.1",
         "pkg:npm/micromark-util-decode-numeric-character-reference@2.0.2",
-        "pkg:npm/micromark-util-symbol@1.1.0",
         "pkg:npm/micromark-util-symbol@2.0.1"
       ]
     },
@@ -16077,7 +16048,7 @@
         "pkg:npm/%40types/unist@3.0.3",
         "pkg:npm/devlop@1.1.0",
         "pkg:npm/estree-util-visit@2.0.0",
-        "pkg:npm/micromark-util-symbol@1.1.0",
+        "pkg:npm/micromark-util-symbol@2.0.1",
         "pkg:npm/micromark-util-types@2.0.2",
         "pkg:npm/vfile-message@4.0.2"
       ]
@@ -16085,7 +16056,6 @@
     {
       "from": "pkg:npm/micromark-util-normalize-identifier@2.0.1",
       "to": [
-        "pkg:npm/micromark-util-symbol@1.1.0",
         "pkg:npm/micromark-util-symbol@2.0.1"
       ]
     },
@@ -16098,10 +16068,8 @@
     {
       "from": "pkg:npm/micromark-util-sanitize-uri@2.0.1",
       "to": [
-        "pkg:npm/micromark-util-character@1.2.0",
         "pkg:npm/micromark-util-character@2.1.1",
         "pkg:npm/micromark-util-encode@2.0.1",
-        "pkg:npm/micromark-util-symbol@1.1.0",
         "pkg:npm/micromark-util-symbol@2.0.1"
       ]
     },
@@ -16110,7 +16078,6 @@
       "to": [
         "pkg:npm/devlop@1.1.0",
         "pkg:npm/micromark-util-chunked@2.0.1",
-        "pkg:npm/micromark-util-symbol@1.1.0",
         "pkg:npm/micromark-util-symbol@2.0.1",
         "pkg:npm/micromark-util-types@2.0.2"
       ]
@@ -16124,9 +16091,7 @@
         "pkg:npm/decode-named-character-reference@1.1.0",
         "pkg:npm/devlop@1.1.0",
         "pkg:npm/micromark-core-commonmark@2.0.3",
-        "pkg:npm/micromark-factory-space@1.1.0",
         "pkg:npm/micromark-factory-space@2.0.1",
-        "pkg:npm/micromark-util-character@1.2.0",
         "pkg:npm/micromark-util-character@2.1.1",
         "pkg:npm/micromark-util-chunked@2.0.1",
         "pkg:npm/micromark-util-combine-extensions@2.0.1",
@@ -16136,7 +16101,6 @@
         "pkg:npm/micromark-util-resolve-all@2.0.1",
         "pkg:npm/micromark-util-sanitize-uri@2.0.1",
         "pkg:npm/micromark-util-subtokenize@2.1.0",
-        "pkg:npm/micromark-util-symbol@1.1.0",
         "pkg:npm/micromark-util-symbol@2.0.1",
         "pkg:npm/micromark-util-types@2.0.2"
       ]
@@ -16157,13 +16121,13 @@
     {
       "from": "pkg:npm/mime-types@2.1.35",
       "to": [
-        "pkg:npm/mime-db@1.33.0"
+        "pkg:npm/mime-db@1.52.0"
       ]
     },
     {
       "from": "pkg:npm/mime-types@3.0.1",
       "to": [
-        "pkg:npm/mime-db@1.33.0"
+        "pkg:npm/mime-db@1.54.0"
       ]
     },
     {
@@ -16189,14 +16153,12 @@
     {
       "from": "pkg:npm/minimatch@3.1.2",
       "to": [
-        "pkg:npm/brace-expansion@1.1.12",
-        "pkg:npm/brace-expansion@2.0.2"
+        "pkg:npm/brace-expansion@1.1.12"
       ]
     },
     {
       "from": "pkg:npm/minimatch@9.0.5",
       "to": [
-        "pkg:npm/brace-expansion@1.1.12",
         "pkg:npm/brace-expansion@2.0.2"
       ]
     },
@@ -16259,7 +16221,7 @@
       "from": "pkg:npm/null-loader@4.0.1",
       "to": [
         "pkg:npm/loader-utils@2.0.4",
-        "pkg:npm/schema-utils@4.3.2",
+        "pkg:npm/schema-utils@3.3.0",
         "pkg:npm/webpack@5.99.9"
       ]
     },
@@ -16302,7 +16264,7 @@
       "from": "pkg:npm/open@10.2.0",
       "to": [
         "pkg:npm/default-browser@5.2.1",
-        "pkg:npm/define-lazy-prop@2.0.0",
+        "pkg:npm/define-lazy-prop@3.0.0",
         "pkg:npm/is-inside-container@1.0.0",
         "pkg:npm/wsl-utils@0.1.0"
       ]
@@ -16402,7 +16364,7 @@
     {
       "from": "pkg:npm/parse-entities@4.0.2",
       "to": [
-        "pkg:npm/%40types/unist@3.0.3",
+        "pkg:npm/%40types/unist@2.0.11",
         "pkg:npm/character-entities-legacy@3.0.0",
         "pkg:npm/character-reference-invalid@2.0.1",
         "pkg:npm/decode-named-character-reference@1.1.0",
@@ -16442,13 +16404,13 @@
     {
       "from": "pkg:npm/parse5@7.3.0",
       "to": [
-        "pkg:npm/entities@4.5.0"
+        "pkg:npm/entities@6.0.0"
       ]
     },
     {
       "from": "pkg:npm/parse5@8.0.0",
       "to": [
-        "pkg:npm/entities@4.5.0"
+        "pkg:npm/entities@6.0.1"
       ]
     },
     {
@@ -16462,14 +16424,13 @@
       "from": "pkg:npm/path-scurry@1.11.1",
       "to": [
         "pkg:npm/lru-cache@10.4.3",
-        "pkg:npm/lru-cache@5.1.1",
         "pkg:npm/minipass@7.1.2"
       ]
     },
     {
       "from": "pkg:npm/path-scurry@2.0.0",
       "to": [
-        "pkg:npm/lru-cache@10.4.3",
+        "pkg:npm/lru-cache@11.1.0",
         "pkg:npm/minipass@7.1.2"
       ]
     },
@@ -16488,7 +16449,7 @@
     {
       "from": "pkg:npm/postcss-attribute-case-insensitive@7.0.1",
       "to": [
-        "pkg:npm/postcss-selector-parser@6.1.2",
+        "pkg:npm/postcss-selector-parser@7.1.0",
         "pkg:npm/postcss@8.5.4"
       ]
     },
@@ -16579,14 +16540,14 @@
         "pkg:npm/%40csstools/cascade-layer-name-parser@2.0.5",
         "pkg:npm/%40csstools/css-parser-algorithms@3.0.5",
         "pkg:npm/%40csstools/css-tokenizer@3.0.4",
-        "pkg:npm/postcss-selector-parser@6.1.2",
+        "pkg:npm/postcss-selector-parser@7.1.0",
         "pkg:npm/postcss@8.5.4"
       ]
     },
     {
       "from": "pkg:npm/postcss-dir-pseudo-class@9.0.1",
       "to": [
-        "pkg:npm/postcss-selector-parser@6.1.2",
+        "pkg:npm/postcss-selector-parser@7.1.0",
         "pkg:npm/postcss@8.5.4"
       ]
     },
@@ -16633,14 +16594,14 @@
     {
       "from": "pkg:npm/postcss-focus-visible@10.0.1",
       "to": [
-        "pkg:npm/postcss-selector-parser@6.1.2",
+        "pkg:npm/postcss-selector-parser@7.1.0",
         "pkg:npm/postcss@8.5.4"
       ]
     },
     {
       "from": "pkg:npm/postcss-focus-within@9.0.1",
       "to": [
-        "pkg:npm/postcss-selector-parser@6.1.2",
+        "pkg:npm/postcss-selector-parser@7.1.0",
         "pkg:npm/postcss@8.5.4"
       ]
     },
@@ -16760,7 +16721,7 @@
       "from": "pkg:npm/postcss-modules-local-by-default@4.2.0",
       "to": [
         "pkg:npm/icss-utils@5.1.0",
-        "pkg:npm/postcss-selector-parser@6.1.2",
+        "pkg:npm/postcss-selector-parser@7.1.0",
         "pkg:npm/postcss-value-parser@4.2.0",
         "pkg:npm/postcss@8.5.4"
       ]
@@ -16768,7 +16729,7 @@
     {
       "from": "pkg:npm/postcss-modules-scope@3.2.1",
       "to": [
-        "pkg:npm/postcss-selector-parser@6.1.2",
+        "pkg:npm/postcss-selector-parser@7.1.0",
         "pkg:npm/postcss@8.5.4"
       ]
     },
@@ -16784,7 +16745,7 @@
       "to": [
         "pkg:npm/%40csstools/selector-resolve-nested@3.1.0",
         "pkg:npm/%40csstools/selector-specificity@5.0.0",
-        "pkg:npm/postcss-selector-parser@6.1.2",
+        "pkg:npm/postcss-selector-parser@7.1.0",
         "pkg:npm/postcss@8.5.4"
       ]
     },
@@ -16961,7 +16922,7 @@
     {
       "from": "pkg:npm/postcss-pseudo-class-any-link@10.0.1",
       "to": [
-        "pkg:npm/postcss-selector-parser@6.1.2",
+        "pkg:npm/postcss-selector-parser@7.1.0",
         "pkg:npm/postcss@8.5.4"
       ]
     },
@@ -16996,7 +16957,7 @@
     {
       "from": "pkg:npm/postcss-selector-not@8.0.1",
       "to": [
-        "pkg:npm/postcss-selector-parser@6.1.2",
+        "pkg:npm/postcss-selector-parser@7.1.0",
         "pkg:npm/postcss@8.5.4"
       ]
     },
@@ -17101,7 +17062,7 @@
       "from": "pkg:npm/proxy-addr@2.0.7",
       "to": [
         "pkg:npm/forwarded@0.2.0",
-        "pkg:npm/ipaddr.js@2.2.0"
+        "pkg:npm/ipaddr.js@1.9.1"
       ]
     },
     {
@@ -17125,7 +17086,7 @@
     {
       "from": "pkg:npm/raw-body@2.5.2",
       "to": [
-        "pkg:npm/bytes@3.0.0",
+        "pkg:npm/bytes@3.1.2",
         "pkg:npm/http-errors@2.0.0",
         "pkg:npm/iconv-lite@0.4.24",
         "pkg:npm/unpipe@1.0.0"
@@ -17135,9 +17096,9 @@
       "from": "pkg:npm/rc@1.2.8",
       "to": [
         "pkg:npm/deep-extend@0.6.0",
-        "pkg:npm/ini@2.0.0",
+        "pkg:npm/ini@1.3.8",
         "pkg:npm/minimist@1.2.8",
-        "pkg:npm/strip-json-comments@3.1.1"
+        "pkg:npm/strip-json-comments@2.0.1"
       ]
     },
     {
@@ -17212,10 +17173,10 @@
       "to": [
         "pkg:npm/core-util-is@1.0.3",
         "pkg:npm/inherits@2.0.4",
-        "pkg:npm/isarray@0.0.1",
+        "pkg:npm/isarray@1.0.0",
         "pkg:npm/process-nextick-args@2.0.1",
-        "pkg:npm/safe-buffer@5.2.1",
-        "pkg:npm/string_decoder@1.3.0",
+        "pkg:npm/safe-buffer@5.1.2",
+        "pkg:npm/string_decoder@1.1.1",
         "pkg:npm/util-deprecate@1.0.2"
       ]
     },
@@ -17290,10 +17251,10 @@
     {
       "from": "pkg:npm/regexpu-core@4.8.0",
       "to": [
-        "pkg:npm/regenerate-unicode-properties@10.2.0",
+        "pkg:npm/regenerate-unicode-properties@9.0.0",
         "pkg:npm/regenerate@1.4.2",
-        "pkg:npm/regjsgen@0.8.0",
-        "pkg:npm/regjsparser@0.12.0",
+        "pkg:npm/regjsgen@0.5.2",
+        "pkg:npm/regjsparser@0.7.0",
         "pkg:npm/unicode-match-property-ecmascript@2.0.0",
         "pkg:npm/unicode-match-property-value-ecmascript@2.2.0"
       ]
@@ -17324,14 +17285,13 @@
     {
       "from": "pkg:npm/regjsparser@0.12.0",
       "to": [
-        "pkg:npm/jsesc@3.0.2",
-        "pkg:npm/jsesc@3.1.0"
+        "pkg:npm/jsesc@3.0.2"
       ]
     },
     {
       "from": "pkg:npm/regjsparser@0.7.0",
       "to": [
-        "pkg:npm/jsesc@3.0.2"
+        "pkg:npm/jsesc@0.5.0"
       ]
     },
     {
@@ -17426,9 +17386,9 @@
     {
       "from": "pkg:npm/renderkid@3.0.0",
       "to": [
-        "pkg:npm/css-select@5.1.0",
+        "pkg:npm/css-select@4.3.0",
         "pkg:npm/dom-converter@0.2.0",
-        "pkg:npm/htmlparser2@8.0.2",
+        "pkg:npm/htmlparser2@6.1.0",
         "pkg:npm/lodash@4.17.21",
         "pkg:npm/strip-ansi@6.0.1"
       ]
@@ -17436,7 +17396,7 @@
     {
       "from": "pkg:npm/resolve-import@2.0.0",
       "to": [
-        "pkg:npm/glob@10.4.5",
+        "pkg:npm/glob@11.0.2",
         "pkg:npm/walk-up-path@4.0.0"
       ]
     },
@@ -17464,7 +17424,7 @@
     {
       "from": "pkg:npm/rimraf@6.0.1",
       "to": [
-        "pkg:npm/glob@10.4.5",
+        "pkg:npm/glob@11.0.2",
         "pkg:npm/package-json-from-dist@1.0.1"
       ]
     },
@@ -17520,8 +17480,8 @@
       "from": "pkg:npm/schema-utils@3.3.0",
       "to": [
         "pkg:npm/%40types/json-schema@7.0.15",
-        "pkg:npm/ajv-keywords@5.1.0",
-        "pkg:npm/ajv@8.17.1"
+        "pkg:npm/ajv-keywords@3.5.2",
+        "pkg:npm/ajv@6.12.6"
       ]
     },
     {
@@ -17556,10 +17516,10 @@
     {
       "from": "pkg:npm/send@0.19.0",
       "to": [
-        "pkg:npm/debug@4.4.1",
+        "pkg:npm/debug@2.6.9",
         "pkg:npm/depd@2.0.0",
         "pkg:npm/destroy@1.2.0",
-        "pkg:npm/encodeurl@2.0.0",
+        "pkg:npm/encodeurl@1.0.2",
         "pkg:npm/escape-html@1.0.3",
         "pkg:npm/etag@1.8.1",
         "pkg:npm/fresh@0.5.2",
@@ -17567,7 +17527,7 @@
         "pkg:npm/mime@1.6.0",
         "pkg:npm/ms@2.1.3",
         "pkg:npm/on-finished@2.4.1",
-        "pkg:npm/range-parser@1.2.0",
+        "pkg:npm/range-parser@1.2.1",
         "pkg:npm/statuses@2.0.1"
       ]
     },
@@ -17585,7 +17545,7 @@
         "pkg:npm/mime-types@2.1.18",
         "pkg:npm/minimatch@3.1.2",
         "pkg:npm/path-is-inside@1.0.2",
-        "pkg:npm/path-to-regexp@1.9.0",
+        "pkg:npm/path-to-regexp@3.3.0",
         "pkg:npm/range-parser@1.2.0"
       ]
     },
@@ -17594,9 +17554,9 @@
       "to": [
         "pkg:npm/accepts@1.3.8",
         "pkg:npm/batch@0.6.1",
-        "pkg:npm/debug@4.4.1",
+        "pkg:npm/debug@2.6.9",
         "pkg:npm/escape-html@1.0.3",
-        "pkg:npm/http-errors@2.0.0",
+        "pkg:npm/http-errors@1.6.3",
         "pkg:npm/mime-types@2.1.18",
         "pkg:npm/parseurl@1.3.3"
       ]
@@ -17703,7 +17663,7 @@
     {
       "from": "pkg:npm/slice-ansi@7.1.2",
       "to": [
-        "pkg:npm/ansi-styles@4.3.0",
+        "pkg:npm/ansi-styles@6.2.3",
         "pkg:npm/is-fullwidth-code-point@5.1.0"
       ]
     },
@@ -17726,7 +17686,7 @@
       "from": "pkg:npm/source-map-support@0.5.21",
       "to": [
         "pkg:npm/buffer-from@1.1.2",
-        "pkg:npm/source-map@0.7.4"
+        "pkg:npm/source-map@0.6.1"
       ]
     },
     {
@@ -17760,21 +17720,16 @@
     {
       "from": "pkg:npm/string-width@4.2.3",
       "to": [
-        "pkg:npm/emoji-regex@10.6.0",
-        "pkg:npm/emoji-regex@9.2.2",
+        "pkg:npm/emoji-regex@8.0.0",
         "pkg:npm/is-fullwidth-code-point@3.0.0",
-        "pkg:npm/is-fullwidth-code-point@5.1.0",
-        "pkg:npm/strip-ansi@6.0.1",
-        "pkg:npm/strip-ansi@7.1.0"
+        "pkg:npm/strip-ansi@6.0.1"
       ]
     },
     {
       "from": "pkg:npm/string-width@5.1.2",
       "to": [
         "pkg:npm/eastasianwidth@0.2.0",
-        "pkg:npm/emoji-regex@10.6.0",
         "pkg:npm/emoji-regex@9.2.2",
-        "pkg:npm/strip-ansi@6.0.1",
         "pkg:npm/strip-ansi@7.1.0"
       ]
     },
@@ -17796,7 +17751,7 @@
     {
       "from": "pkg:npm/string_decoder@1.1.1",
       "to": [
-        "pkg:npm/safe-buffer@5.2.1"
+        "pkg:npm/safe-buffer@5.1.2"
       ]
     },
     {
@@ -17823,14 +17778,12 @@
     {
       "from": "pkg:npm/strip-ansi@6.0.1",
       "to": [
-        "pkg:npm/ansi-regex@5.0.1",
-        "pkg:npm/ansi-regex@6.1.0"
+        "pkg:npm/ansi-regex@5.0.1"
       ]
     },
     {
       "from": "pkg:npm/strip-ansi@7.1.0",
       "to": [
-        "pkg:npm/ansi-regex@5.0.1",
         "pkg:npm/ansi-regex@6.1.0"
       ]
     },
@@ -17870,8 +17823,8 @@
       "from": "pkg:npm/sucrase@3.35.0",
       "to": [
         "pkg:npm/%40jridgewell/gen-mapping@0.3.8",
-        "pkg:npm/commander@5.1.0",
-        "pkg:npm/glob@7.2.3",
+        "pkg:npm/commander@4.1.1",
+        "pkg:npm/glob@10.4.5",
         "pkg:npm/lines-and-columns@1.2.4",
         "pkg:npm/mz@2.7.0",
         "pkg:npm/pirates@4.0.7",
@@ -17881,7 +17834,7 @@
     {
       "from": "pkg:npm/supports-color@5.5.0",
       "to": [
-        "pkg:npm/has-flag@4.0.0"
+        "pkg:npm/has-flag@3.0.0"
       ]
     },
     {
@@ -17900,7 +17853,7 @@
       "from": "pkg:npm/svgo@3.3.2",
       "to": [
         "pkg:npm/%40trysound/sax@0.2.0",
-        "pkg:npm/commander@5.1.0",
+        "pkg:npm/commander@7.2.0",
         "pkg:npm/css-select@5.1.0",
         "pkg:npm/css-tree@2.3.1",
         "pkg:npm/css-what@6.1.0",
@@ -17927,9 +17880,9 @@
     {
       "from": "pkg:npm/sync-content@2.0.1",
       "to": [
-        "pkg:npm/glob@10.4.5",
+        "pkg:npm/glob@11.0.2",
         "pkg:npm/mkdirp@3.0.1",
-        "pkg:npm/path-scurry@1.11.1",
+        "pkg:npm/path-scurry@2.0.0",
         "pkg:npm/rimraf@6.0.1",
         "pkg:npm/tshy@3.0.3"
       ]
@@ -17942,14 +17895,14 @@
         "pkg:npm/minipass@7.1.2",
         "pkg:npm/minizlib@3.0.2",
         "pkg:npm/mkdirp@3.0.1",
-        "pkg:npm/yallist@3.1.1"
+        "pkg:npm/yallist@5.0.0"
       ]
     },
     {
       "from": "pkg:npm/terser-webpack-plugin@5.3.14",
       "to": [
         "pkg:npm/%40jridgewell/trace-mapping@0.3.25",
-        "pkg:npm/jest-worker@29.7.0",
+        "pkg:npm/jest-worker@27.5.1",
         "pkg:npm/schema-utils@4.3.2",
         "pkg:npm/serialize-javascript@6.0.2",
         "pkg:npm/terser@5.41.0",
@@ -17960,8 +17913,8 @@
       "from": "pkg:npm/terser@5.41.0",
       "to": [
         "pkg:npm/%40jridgewell/source-map@0.3.6",
-        "pkg:npm/acorn@6.4.2",
-        "pkg:npm/commander@5.1.0",
+        "pkg:npm/acorn@8.15.0",
+        "pkg:npm/commander@2.20.3",
         "pkg:npm/source-map-support@0.5.21"
       ]
     },
@@ -17995,7 +17948,7 @@
       "from": "pkg:npm/tinyglobby@0.2.15",
       "to": [
         "pkg:npm/fdir@6.5.0",
-        "pkg:npm/picomatch@2.3.1"
+        "pkg:npm/picomatch@4.0.3"
       ]
     },
     {
@@ -18044,17 +17997,17 @@
     {
       "from": "pkg:npm/ts-declaration-location@1.0.7",
       "to": [
-        "pkg:npm/picomatch@2.3.1",
+        "pkg:npm/picomatch@4.0.2",
         "pkg:npm/typescript@5.9.3"
       ]
     },
     {
       "from": "pkg:npm/tshy@3.0.3",
       "to": [
-        "pkg:npm/chalk@4.1.2",
+        "pkg:npm/chalk@5.6.2",
         "pkg:npm/chokidar@4.0.3",
         "pkg:npm/foreground-child@3.3.1",
-        "pkg:npm/minimatch@9.0.5",
+        "pkg:npm/minimatch@10.0.3",
         "pkg:npm/mkdirp@3.0.1",
         "pkg:npm/polite-json@5.0.0",
         "pkg:npm/resolve-import@2.0.0",
@@ -18082,7 +18035,7 @@
       "from": "pkg:npm/type-is@1.6.18",
       "to": [
         "pkg:npm/media-typer@0.3.0",
-        "pkg:npm/mime-types@2.1.18"
+        "pkg:npm/mime-types@2.1.35"
       ]
     },
     {
@@ -18115,7 +18068,7 @@
         "pkg:npm/%40gerrit0/mini-shiki@3.12.1",
         "pkg:npm/lunr@2.3.9",
         "pkg:npm/markdown-it@14.1.0",
-        "pkg:npm/minimatch@3.1.2",
+        "pkg:npm/minimatch@9.0.5",
         "pkg:npm/typescript@5.9.3",
         "pkg:npm/yaml@2.8.1"
       ]
@@ -18207,8 +18160,8 @@
     {
       "from": "pkg:npm/update-notifier@6.0.2",
       "to": [
-        "pkg:npm/boxen@6.2.1",
-        "pkg:npm/chalk@4.1.2",
+        "pkg:npm/boxen@7.1.1",
+        "pkg:npm/chalk@5.4.1",
         "pkg:npm/configstore@6.0.0",
         "pkg:npm/has-yarn@3.0.0",
         "pkg:npm/import-lazy@4.0.0",
@@ -18234,8 +18187,8 @@
       "to": [
         "pkg:npm/file-loader@6.2.0",
         "pkg:npm/loader-utils@2.0.4",
-        "pkg:npm/mime-types@2.1.18",
-        "pkg:npm/schema-utils@4.3.2",
+        "pkg:npm/mime-types@2.1.35",
+        "pkg:npm/schema-utils@3.3.0",
         "pkg:npm/webpack@5.99.9"
       ]
     },
@@ -18289,7 +18242,7 @@
         "pkg:npm/esbuild@0.25.5",
         "pkg:npm/fdir@6.5.0",
         "pkg:npm/fsevents@2.3.3",
-        "pkg:npm/picomatch@2.3.1",
+        "pkg:npm/picomatch@4.0.3",
         "pkg:npm/postcss@8.5.6",
         "pkg:npm/rollup@4.43.0",
         "pkg:npm/tinyglobby@0.2.15",
@@ -18316,9 +18269,9 @@
         "pkg:npm/jsdom@27.0.1",
         "pkg:npm/magic-string@0.30.17",
         "pkg:npm/pathe@2.0.3",
-        "pkg:npm/picomatch@2.3.1",
+        "pkg:npm/picomatch@4.0.2",
         "pkg:npm/std-env@3.9.0",
-        "pkg:npm/tinybench@4.1.0",
+        "pkg:npm/tinybench@2.9.0",
         "pkg:npm/tinyexec@0.3.2",
         "pkg:npm/tinyglobby@0.2.15",
         "pkg:npm/tinypool@1.1.1",
@@ -18352,8 +18305,8 @@
       "to": [
         "pkg:npm/%40discoveryjs/json-ext@0.5.7",
         "pkg:npm/acorn-walk@8.3.4",
-        "pkg:npm/acorn@6.4.2",
-        "pkg:npm/commander@5.1.0",
+        "pkg:npm/acorn@8.15.0",
+        "pkg:npm/commander@7.2.0",
         "pkg:npm/debounce@1.2.1",
         "pkg:npm/escape-string-regexp@4.0.0",
         "pkg:npm/gzip-size@6.0.0",
@@ -18369,9 +18322,9 @@
       "to": [
         "pkg:npm/colorette@2.0.20",
         "pkg:npm/memfs@4.46.1",
-        "pkg:npm/mime-types@2.1.18",
+        "pkg:npm/mime-types@3.0.1",
         "pkg:npm/on-finished@2.4.1",
-        "pkg:npm/range-parser@1.2.0",
+        "pkg:npm/range-parser@1.2.1",
         "pkg:npm/schema-utils@4.3.2",
         "pkg:npm/webpack@5.99.9"
       ]
@@ -18398,7 +18351,7 @@
         "pkg:npm/http-proxy-middleware@2.0.9",
         "pkg:npm/ipaddr.js@2.2.0",
         "pkg:npm/launch-editor@2.11.1",
-        "pkg:npm/open@8.4.2",
+        "pkg:npm/open@10.2.0",
         "pkg:npm/p-retry@6.2.1",
         "pkg:npm/schema-utils@4.3.2",
         "pkg:npm/selfsigned@2.4.1",
@@ -18407,7 +18360,7 @@
         "pkg:npm/spdy@4.0.2",
         "pkg:npm/webpack-dev-middleware@7.4.5",
         "pkg:npm/webpack@5.99.9",
-        "pkg:npm/ws@7.5.10"
+        "pkg:npm/ws@8.18.3"
       ]
     },
     {
@@ -18435,7 +18388,7 @@
         "pkg:npm/%40webassemblyjs/ast@1.14.1",
         "pkg:npm/%40webassemblyjs/wasm-edit@1.14.1",
         "pkg:npm/%40webassemblyjs/wasm-parser@1.14.1",
-        "pkg:npm/acorn@6.4.2",
+        "pkg:npm/acorn@8.15.0",
         "pkg:npm/browserslist@4.26.2",
         "pkg:npm/chrome-trace-event@1.0.4",
         "pkg:npm/enhanced-resolve@5.18.1",
@@ -18446,7 +18399,7 @@
         "pkg:npm/graceful-fs@4.2.11",
         "pkg:npm/json-parse-even-better-errors@2.3.1",
         "pkg:npm/loader-runner@4.3.0",
-        "pkg:npm/mime-types@2.1.18",
+        "pkg:npm/mime-types@2.1.35",
         "pkg:npm/neo-async@2.6.2",
         "pkg:npm/schema-utils@4.3.2",
         "pkg:npm/tapable@2.2.2",
@@ -18462,11 +18415,11 @@
         "pkg:npm/chalk@4.1.2",
         "pkg:npm/consola@3.4.2",
         "pkg:npm/figures@3.2.0",
-        "pkg:npm/markdown-table@3.0.4",
+        "pkg:npm/markdown-table@2.0.0",
         "pkg:npm/pretty-time@1.1.0",
         "pkg:npm/std-env@3.9.0",
         "pkg:npm/webpack@5.99.9",
-        "pkg:npm/wrap-ansi@8.1.0"
+        "pkg:npm/wrap-ansi@7.0.0"
       ]
     },
     {
@@ -18520,27 +18473,23 @@
       "from": "pkg:npm/wrap-ansi@7.0.0",
       "to": [
         "pkg:npm/ansi-styles@4.3.0",
-        "pkg:npm/string-width@5.1.2",
-        "pkg:npm/string-width@8.1.0",
-        "pkg:npm/strip-ansi@6.0.1",
-        "pkg:npm/strip-ansi@7.1.0"
+        "pkg:npm/string-width@4.2.3",
+        "pkg:npm/strip-ansi@6.0.1"
       ]
     },
     {
       "from": "pkg:npm/wrap-ansi@8.1.0",
       "to": [
-        "pkg:npm/ansi-styles@4.3.0",
+        "pkg:npm/ansi-styles@6.2.1",
         "pkg:npm/string-width@5.1.2",
-        "pkg:npm/string-width@8.1.0",
-        "pkg:npm/strip-ansi@6.0.1",
         "pkg:npm/strip-ansi@7.1.0"
       ]
     },
     {
       "from": "pkg:npm/wrap-ansi@9.0.2",
       "to": [
-        "pkg:npm/ansi-styles@4.3.0",
-        "pkg:npm/string-width@8.1.0",
+        "pkg:npm/ansi-styles@6.2.3",
+        "pkg:npm/string-width@7.2.0",
         "pkg:npm/strip-ansi@7.1.0"
       ]
     },
@@ -18556,7 +18505,7 @@
     {
       "from": "pkg:npm/wsl-utils@0.1.0",
       "to": [
-        "pkg:npm/is-wsl@2.2.0"
+        "pkg:npm/is-wsl@3.1.0"
       ]
     },
     {

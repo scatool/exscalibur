@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "name": "workspace-nested-deps",
+  "version": "1.0.0",
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "debug": "^2.6.0"
+  }
+}

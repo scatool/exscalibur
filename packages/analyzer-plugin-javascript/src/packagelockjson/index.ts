@@ -205,33 +205,6 @@ async function extractFromV2Lockfile(
     return { packages: [], subprojects: [], relationships: [], issues: [] };
   }
 
-  // Build maps for package resolution
-  // Map from package name to resolved versions (for resolving dependency references)
-  const packageVersionMap = new Map<string, Map<string, string>>(); // name -> versionRange -> resolvedVersion
-
-  // First pass: collect all packages and build version resolution map
-  for (const [packagePath, packageEntry] of Object.entries(lockfile.packages)) {
-    if (!packageEntry.version) continue;
-
-    // Skip root and workspace packages for the version map (they're not regular dependencies)
-    if (packagePath === '' || isWorkspacePath(packagePath)) continue;
-
-    const packageName = extractPackageName(packagePath);
-    if (!packageName) continue;
-
-    // Store this package version
-    if (!packageVersionMap.has(packageName)) {
-      packageVersionMap.set(packageName, new Map());
-    }
-
-    // We'll use this to resolve dependencies later
-    // For now, just map the exact version to itself
-    const versionMap = packageVersionMap.get(packageName);
-    if (versionMap) {
-      versionMap.set(packageEntry.version, packageEntry.version);
-    }
-  }
-
   // Process workspace packages to build a map of workspace names
   const workspacePackages = new Map<string, { version: string; path: string }>();
 
@@ -266,7 +239,7 @@ async function extractFromV2Lockfile(
         const rootPurl = createNpmPurl(packageInfo.name, packageInfo.version);
 
         // Extract scopes for the root package
-        const rootScopes = extractScopes(packageInfo, lockfile.packages, packageVersionMap, workspacePackages);
+        const rootScopes = extractScopes(packageInfo, lockfile.packages, workspacePackages);
 
         subprojects.push({
           purl: rootPurl,
@@ -292,7 +265,7 @@ async function extractFromV2Lockfile(
           const purl = createNpmPurl(packageInfo.name, packageInfo.version);
 
           // Extract scopes
-          const scopes = extractScopes(packageInfo, lockfile.packages, packageVersionMap, workspacePackages);
+          const scopes = extractScopes(packageInfo, lockfile.packages, workspacePackages, packagePath);
 
           subprojects.push({
             purl,
@@ -338,9 +311,9 @@ async function extractFromV2Lockfile(
     // Extract relationships from this package's dependencies
     processDependencies(
       packageEntry,
+      packagePath,
       purl,
       lockfile.packages,
-      packageVersionMap,
       workspacePackages,
       packageMap,
       relationshipsMap,
@@ -362,14 +335,14 @@ async function extractFromV2Lockfile(
 function extractScopes(
   packageInfo: PackageJson,
   allPackages: Record<string, PackageLockPackage>,
-  packageVersionMap: Map<string, Map<string, string>>,
   workspacePackages: Map<string, { version: string; path: string }>,
+  callerPath: string = '',
 ): DependencyScope[] {
-  return extractNpmScopes(packageInfo as Record<string, unknown>, (depName, versionRange) => {
+  return extractNpmScopes(packageInfo as Record<string, unknown>, (depName) => {
     const workspaceInfo = workspacePackages.get(depName);
     if (workspaceInfo) return createNpmPurl(depName, workspaceInfo.version);
 
-    const resolved = resolvePackageInfo(depName, versionRange, allPackages, packageVersionMap);
+    const resolved = resolvePackageInfo(depName, allPackages, callerPath);
     return resolved ? createNpmPurl(resolved.name, resolved.version) : null;
   });
 }
@@ -379,9 +352,9 @@ function extractScopes(
  */
 function processDependencies(
   packageEntry: PackageLockPackage,
+  packagePath: string,
   purl: string,
   allPackages: Record<string, PackageLockPackage>,
-  packageVersionMap: Map<string, Map<string, string>>,
   workspacePackages: Map<string, { version: string; path: string }>,
   packageMap: Map<string, { purl: string; evidence: Set<string> }>,
   relationshipsMap: Map<string, Set<string>>,
@@ -401,7 +374,7 @@ function processDependencies(
       }
 
       // Resolve the actual package info (handles aliases)
-      const packageInfo = resolvePackageInfo(depName, versionRange, allPackages, packageVersionMap);
+      const packageInfo = resolvePackageInfo(depName, allPackages, packagePath);
 
       if (packageInfo) {
         // Use the actual package name (not the alias)
@@ -418,73 +391,61 @@ function processDependencies(
 }
 
 /**
- * Resolve a dependency's package info (name and version) from the lockfile
- * This handles aliases where the dependency name differs from the actual package name
+ * Resolve a dependency's package info (name and version) from the lockfile.
+ * Follows npm's node_modules resolution algorithm: walk up from the caller's
+ * path, checking nested node_modules at each level before falling back to
+ * the top-level.
  */
 function resolvePackageInfo(
   depName: string,
-  versionRange: string,
   allPackages: Record<string, PackageLockPackage>,
-  packageVersionMap: Map<string, Map<string, string>>,
+  callerPath: string,
 ): { name: string; version: string } | null {
-  // Try to find a package entry that matches this dependency
-  // First, check direct node_modules
-  const directPath = `node_modules/${depName}`;
-  const directPackage = allPackages[directPath];
-  if (directPackage?.version) {
-    // Use the actual package name from the entry (handles aliases)
-    const actualName = directPackage.name || depName;
-    return { name: actualName, version: directPackage.version };
-  }
+  const candidates = buildResolutionCandidates(callerPath, depName);
 
-  // For scoped packages or nested dependencies, we need to search more carefully
-  // Look through all packages to find one with matching name
-  const versionMap = packageVersionMap.get(depName);
-  if (versionMap) {
-    // Try exact version match first
-    if (versionMap.has(versionRange)) {
-      const version = versionMap.get(versionRange)!;
-      // Need to find the actual package entry to get the real name
-      for (const [path, pkg] of Object.entries(allPackages)) {
-        if (path === '' || isWorkspacePath(path)) continue;
-        const pkgName = extractPackageName(path);
-        if (pkgName === depName && pkg.version === version) {
-          const actualName = pkg.name || depName;
-          return { name: actualName, version };
-        }
-      }
-      return { name: depName, version };
-    }
-
-    // If there's only one version, use it
-    if (versionMap.size === 1) {
-      const versions = Array.from(versionMap.values());
-      if (versions[0]) {
-        const version = versions[0];
-        // Find the actual package entry
-        for (const [path, pkg] of Object.entries(allPackages)) {
-          if (path === '' || isWorkspacePath(path)) continue;
-          const pkgName = extractPackageName(path);
-          if (pkgName === depName && pkg.version === version) {
-            const actualName = pkg.name || depName;
-            return { name: actualName, version };
-          }
-        }
-        return { name: depName, version };
-      }
-    }
-  }
-
-  // Fallback: search all packages for this name
-  for (const [path, pkg] of Object.entries(allPackages)) {
-    if (path === '' || isWorkspacePath(path)) continue;
-
-    const pkgName = extractPackageName(path);
-    if (pkgName === depName && pkg.version) {
+  for (const candidate of candidates) {
+    const pkg = allPackages[candidate];
+    if (pkg?.version) {
       const actualName = pkg.name || depName;
       return { name: actualName, version: pkg.version };
     }
   }
 
   return null;
+}
+
+/**
+ * Build the list of candidate paths to check for a dependency, following
+ * npm's resolution order (nearest node_modules first, then walking up).
+ *
+ * For callerPath "node_modules/a/node_modules/b" and depName "x":
+ *   1. node_modules/a/node_modules/b/node_modules/x
+ *   2. node_modules/a/node_modules/x
+ *   3. node_modules/x
+ */
+function buildResolutionCandidates(callerPath: string, depName: string): string[] {
+  const candidates: string[] = [];
+
+  if (callerPath === '') {
+    candidates.push(`node_modules/${depName}`);
+    return candidates;
+  }
+
+  // First candidate: nested directly under the caller
+  candidates.push(`${callerPath}/node_modules/${depName}`);
+
+  // Walk up by stripping the last /node_modules/<pkg> segment each time
+  let current = callerPath;
+  while (true) {
+    const idx = current.lastIndexOf('/node_modules/');
+    if (idx === -1) {
+      // Reached the top level - always fall back to hoisted node_modules
+      candidates.push(`node_modules/${depName}`);
+      break;
+    }
+    current = current.substring(0, idx);
+    candidates.push(`${current}/node_modules/${depName}`);
+  }
+
+  return candidates;
 }

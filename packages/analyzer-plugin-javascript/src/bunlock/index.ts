@@ -42,11 +42,9 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
       const lockfile = parse(content);
       const lines = content.split('\n');
 
-      // Build a resolution map: package name → resolved version
-      // This allows us to resolve version ranges to actual versions
-      const resolutionMap = new Map<string, string>();
+      const packageInfoMap = new Map<string, { name: string; version: string }>();
       if (lockfile.packages && typeof lockfile.packages === 'object') {
-        for (const packageInfo of Object.values(lockfile.packages)) {
+        for (const [packageKey, packageInfo] of Object.entries(lockfile.packages)) {
           if (!Array.isArray(packageInfo) || packageInfo.length === 0) continue;
 
           const packageIdentifier = packageInfo[PKG_IDENTIFIER_INDEX];
@@ -59,8 +57,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
           const name = packageIdentifier.substring(0, lastAtIndex);
           const version = packageIdentifier.substring(lastAtIndex + 1);
 
-          // Store the resolved version for this package name
-          resolutionMap.set(name, version);
+          packageInfoMap.set(packageKey, { name, version });
         }
       }
 
@@ -125,7 +122,12 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
 
           if (packageInfo?.version) {
             const purl = createNpmPurl(workspaceName, packageInfo.version);
-            const scopes = extractScopes(workspace as Record<string, unknown>, resolutionMap, workspacePackages);
+            const scopes = extractScopes(
+              workspace as Record<string, unknown>,
+              packageInfoMap,
+              workspacePackages,
+              workspaceName,
+            );
 
             subprojects.push({
               purl,
@@ -137,7 +139,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
       } else if (rootPackageInfo?.name && rootPackageInfo.version) {
         // Fallback to reading package.json directly if no workspaces in lockfile
         const purl = createNpmPurl(rootPackageInfo.name, rootPackageInfo.version);
-        const scopes = extractScopes(rootPackageInfo, resolutionMap, workspacePackages);
+        const scopes = extractScopes(rootPackageInfo, packageInfoMap, workspacePackages, '');
 
         subprojects.push({
           purl,
@@ -193,10 +195,10 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
                     continue;
                   }
 
-                  // Look up the resolved version from the resolutionMap
-                  const resolvedVersion = resolutionMap.get(depName);
-                  if (resolvedVersion) {
-                    const depPurl = createNpmPurl(depName, resolvedVersion);
+                  // Resolve the dependency using bun's key hierarchy
+                  const resolved = resolvePackageInfo(depName, packageInfoMap, packageKey);
+                  if (resolved) {
+                    const depPurl = createNpmPurl(resolved.name, resolved.version);
                     addRelationship(relationshipsMap, purl, depPurl);
                     ensurePackageExists(packageMap, depPurl);
                   }
@@ -238,17 +240,55 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
 
 function extractScopes(
   packageInfo: Record<string, unknown>,
-  resolutionMap: Map<string, string>,
+  packageInfoMap: Map<string, { name: string; version: string }>,
   workspacePackages: Map<string, string>,
+  callerKey: string,
 ): DependencyScope[] {
   return extractNpmScopes(packageInfo, (depName, versionRange) => {
     if (versionRange.startsWith('workspace:')) {
       const workspaceVersion = workspacePackages.get(depName);
       return workspaceVersion ? createNpmPurl(depName, workspaceVersion) : null;
     }
-    const resolvedVersion = resolutionMap.get(depName);
-    return resolvedVersion ? createNpmPurl(depName, resolvedVersion) : null;
+    const resolved = resolvePackageInfo(depName, packageInfoMap, callerKey);
+    return resolved ? createNpmPurl(resolved.name, resolved.version) : null;
   });
+}
+
+/**
+ * Resolve a dependency's package info using bun's key hierarchy.
+ * Bun uses slash-separated keys for nested versions:
+ *   "express/debug" means debug nested under express.
+ *
+ * For callerKey "express" and depName "ms":
+ *   1. Check "express/ms"
+ *   2. Check "ms" (top-level)
+ *
+ * For callerKey "express/debug" and depName "ms":
+ *   1. Check "express/debug/ms"
+ *   2. Check "express/ms"
+ *   3. Check "ms" (top-level)
+ */
+function resolvePackageInfo(
+  depName: string,
+  packageInfoMap: Map<string, { name: string; version: string }>,
+  callerKey: string,
+): { name: string; version: string } | null {
+  if (callerKey === '') {
+    return packageInfoMap.get(depName) ?? null;
+  }
+
+  // Check nested under caller first
+  const nested = packageInfoMap.get(`${callerKey}/${depName}`);
+  if (nested) return nested;
+
+  // Walk up by stripping the last slash segment
+  const lastSlash = callerKey.lastIndexOf('/');
+  if (lastSlash !== -1) {
+    return resolvePackageInfo(depName, packageInfoMap, callerKey.substring(0, lastSlash));
+  }
+
+  // Fall back to top-level
+  return packageInfoMap.get(depName) ?? null;
 }
 
 /**
