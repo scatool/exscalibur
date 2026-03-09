@@ -7,8 +7,7 @@ import {
   addRelationship,
   ensurePackageExists,
   addPackageEvidence,
-  convertPackageMapToArray,
-  convertRelationshipsMapToArray,
+  buildResult,
   initializeExtractionMaps,
 } from '@scatool/analyzer-core/src/index.ts';
 import { Glob } from 'bun';
@@ -162,9 +161,7 @@ async function extractFile(file: string, options: MavenOptions): Promise<Analyze
   }
 
   return {
-    packages: convertPackageMapToArray(packageMap),
-    subprojects,
-    relationships: convertRelationshipsMapToArray(relationshipsMap),
+    ...buildResult(packageMap, relationshipsMap, subprojects),
     issues,
   };
 }

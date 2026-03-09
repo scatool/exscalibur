@@ -4,8 +4,7 @@ import {
   filesExtractor,
   scanAndMarkFiles,
   ensurePackageExists,
-  convertPackageMapToArray,
-  convertRelationshipsMapToArray,
+  buildResult,
   initializeExtractionMaps,
 } from '@scatool/analyzer-core/src/index.ts';
 import { createPypiPurl } from '../python-utils.ts';
@@ -55,15 +54,7 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
     // They only list packages without project metadata
     // Therefore, we don't create subprojects for requirements.txt files
 
-    const packageArray = convertPackageMapToArray(packageMap);
-    const relationships = convertRelationshipsMapToArray(relationshipsMap);
-
-    return {
-      packages: packageArray,
-      subprojects: [],
-      relationships,
-      issues: [],
-    };
+    return buildResult(packageMap, relationshipsMap, []);
   },
 });
 

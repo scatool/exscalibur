@@ -6,8 +6,7 @@ import {
   type Subproject,
   addRelationship,
   ensurePackageExists,
-  convertPackageMapToArray,
-  convertRelationshipsMapToArray,
+  buildResult,
   initializeExtractionMaps,
   scanAndMarkFiles,
 } from '@scatool/analyzer-core/src/index.ts';
@@ -22,8 +21,7 @@ import {
   type PnpmLockfileV9,
   stripPeerDepSuffix,
 } from './lockfile.ts';
-import type { PackageJson } from '../types.ts';
-import { createNpmPurl, NPM_DEPENDENCY_SCOPES } from '../npm-utils.ts';
+import { createNpmPurl, NPM_DEPENDENCY_SCOPES, readPackageJson } from '../npm-utils.ts';
 import type { JavaScriptOptions } from '../options.ts';
 
 export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScriptOptions>({
@@ -41,151 +39,110 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     const { packageMap, relationshipsMap } = initializeExtractionMaps();
     const subprojects: Subproject[] = [];
 
-    try {
-      const lockfileContent = await Bun.file(file).text();
-      const lockfile = parsePnpmLockfile(lockfileContent);
+    const lockfileContent = await Bun.file(file).text();
+    const lockfile = parsePnpmLockfile(lockfileContent);
 
-      // Build a map of workspace package names to their versions
-      // We need to do this before extracting scopes so we can identify workspace dependencies
-      const workspacePackages = new Map<string, string>();
-      if (lockfile.importers) {
-        for (const [importerPath] of Object.entries(lockfile.importers)) {
-          const importerDir = importerPath === '.' ? dir : join(dir, importerPath);
-          const packageJsonPath = join(importerDir, 'package.json');
-
-          try {
-            const packageJsonContent = await Bun.file(packageJsonPath).text();
-            const packageInfo = JSON.parse(packageJsonContent) as PackageJson;
-            if (packageInfo.name && packageInfo.version) {
-              workspacePackages.set(packageInfo.name, packageInfo.version);
-            }
-          } catch {
-            // Skip invalid package.json files
-            continue;
-          }
+    // Build a map of workspace package names to their versions
+    // We need to do this before extracting scopes so we can identify workspace dependencies
+    const workspacePackages = new Map<string, string>();
+    if (lockfile.importers) {
+      for (const [importerPath] of Object.entries(lockfile.importers)) {
+        const importerDir = importerPath === '.' ? dir : join(dir, importerPath);
+        const packageJsonPath = join(importerDir, 'package.json');
+        const packageInfo = await readPackageJson(packageJsonPath);
+        if (packageInfo?.name && packageInfo.version) {
+          workspacePackages.set(packageInfo.name, packageInfo.version);
         }
       }
+    }
 
-      // Process importers (workspace packages) to create subprojects
-      if (lockfile.importers) {
-        for (const [importerPath, importer] of Object.entries(lockfile.importers)) {
-          // Determine the package.json path for this importer
-          const importerDir = importerPath === '.' ? dir : join(dir, importerPath);
-          const packageJsonPath = join(importerDir, 'package.json');
+    // Process importers (workspace packages) to create subprojects
+    if (lockfile.importers) {
+      for (const [importerPath, importer] of Object.entries(lockfile.importers)) {
+        // Determine the package.json path for this importer
+        const importerDir = importerPath === '.' ? dir : join(dir, importerPath);
+        const packageJsonPath = join(importerDir, 'package.json');
 
-          // Read package.json to get name and version
-          let packageInfo: PackageJson | null = null;
-          try {
-            const packageJsonContent = await Bun.file(packageJsonPath).text();
-            packageInfo = JSON.parse(packageJsonContent) as PackageJson;
-          } catch {
-            // Skip if package.json doesn't exist or is invalid
-            continue;
-          }
+        // Read package.json to get name and version
+        const packageInfo = await readPackageJson(packageJsonPath);
+        if (packageInfo?.name && packageInfo.version) {
+          // Create PURL for this subproject
+          const purl = createNpmPurl(packageInfo.name, packageInfo.version);
 
-          if (packageInfo && packageInfo.name && packageInfo.version) {
-            // Create PURL for this subproject
-            const purl = createNpmPurl(packageInfo.name, packageInfo.version);
+          // Extract scopes - map each dependency type to resolved versions
+          const scopes: DependencyScope[] = [];
 
-            // Extract scopes - map each dependency type to resolved versions
-            const scopes: DependencyScope[] = [];
+          for (const scopeName of NPM_DEPENDENCY_SCOPES) {
+            const depsInScope: string[] = [];
+            const importerDeps = importer[scopeName];
 
-            for (const scopeName of NPM_DEPENDENCY_SCOPES) {
-              const depsInScope: string[] = [];
-              const importerDeps = importer[scopeName];
+            if (importerDeps && typeof importerDeps === 'object') {
+              for (const [depName, depRef] of Object.entries(importerDeps)) {
+                if (depRef && typeof depRef === 'object' && 'version' in depRef) {
+                  let version = depRef.version;
 
-              if (importerDeps && typeof importerDeps === 'object') {
-                for (const [depName, depRef] of Object.entries(importerDeps)) {
-                  if (depRef && typeof depRef === 'object' && 'version' in depRef) {
-                    let version = depRef.version;
-
-                    // Check if this is a workspace package (starts with "link:")
-                    if (typeof version === 'string' && version.startsWith('link:')) {
-                      // Check if this is a known workspace package
-                      const workspaceVersion = workspacePackages.get(depName);
-                      if (workspaceVersion) {
-                        // Include workspace package with its actual version
-                        const depPurl = createNpmPurl(depName, workspaceVersion);
-                        depsInScope.push(depPurl);
-                      }
-                      // Skip if not a known workspace package
-                      continue;
+                  // Check if this is a workspace package (starts with "link:")
+                  if (typeof version === 'string' && version.startsWith('link:')) {
+                    // Check if this is a known workspace package
+                    const workspaceVersion = workspacePackages.get(depName);
+                    if (workspaceVersion) {
+                      // Include workspace package with its actual version
+                      const depPurl = createNpmPurl(depName, workspaceVersion);
+                      depsInScope.push(depPurl);
                     }
+                    // Skip if not a known workspace package
+                    continue;
+                  }
 
-                    // Regular external dependency
-                    if (typeof version === 'string') {
-                      const resolved = resolveAlias(depName, version);
+                  // Regular external dependency
+                  if (typeof version === 'string') {
+                    const resolved = resolveAlias(depName, version);
 
-                      // For git/tarball dependencies, look up the actual version from packages section
-                      const packageKey = `${resolved.name}@${resolved.version}`;
-                      if (isGitPackageKey(packageKey)) {
-                        const resolvedVersion = getPackageVersion(lockfile, packageKey);
-                        const depPurl = createNpmPurl(resolved.name, resolvedVersion ?? resolved.version);
-                        depsInScope.push(depPurl);
-                      } else {
-                        const depPurl = createNpmPurl(resolved.name, resolved.version);
-                        depsInScope.push(depPurl);
-                      }
+                    // For git/tarball dependencies, look up the actual version from packages section
+                    const packageKey = `${resolved.name}@${resolved.version}`;
+                    if (isGitPackageKey(packageKey)) {
+                      const resolvedVersion = getPackageVersion(lockfile, packageKey);
+                      const depPurl = createNpmPurl(resolved.name, resolvedVersion ?? resolved.version);
+                      depsInScope.push(depPurl);
+                    } else {
+                      const depPurl = createNpmPurl(resolved.name, resolved.version);
+                      depsInScope.push(depPurl);
                     }
                   }
                 }
               }
-
-              if (depsInScope.length > 0) {
-                scopes.push({
-                  scope: scopeName,
-                  packages: depsInScope,
-                });
-              }
             }
 
-            subprojects.push({
-              purl,
-              definitionFile: packageJsonPath,
-              scopes,
-            });
+            if (depsInScope.length > 0) {
+              scopes.push({
+                scope: scopeName,
+                packages: depsInScope,
+              });
+            }
           }
+
+          subprojects.push({
+            purl,
+            definitionFile: packageJsonPath,
+            scopes,
+          });
         }
       }
-
-      // Determine lockfile version and process accordingly
-      const lockfileVersionNum =
-        typeof lockfile.lockfileVersion === 'string' ? parseFloat(lockfile.lockfileVersion) : lockfile.lockfileVersion;
-
-      if (lockfileVersionNum >= 9) {
-        // V9+ lockfile: packages have metadata, snapshots have relationships
-        processV9Lockfile(lockfile as PnpmLockfileV9, lockfileContent, file, packageMap, relationshipsMap);
-      } else {
-        // V6 and earlier: packages have both metadata and relationships
-        processV6Lockfile(lockfile as PnpmLockfileV6, lockfileContent, file, packageMap, relationshipsMap);
-      }
-
-      // Add relationships from subprojects to their dependencies
-    } catch (error) {
-      return {
-        packages: [],
-        subprojects: [],
-        relationships: [],
-        issues: [
-          {
-            message: `Failed to parse pnpm-lock.yaml: ${error instanceof Error ? error.message : String(error)}`,
-            severity: 'ERROR',
-            file,
-          },
-        ],
-      };
     }
 
-    // Convert maps to arrays
-    const packages = convertPackageMapToArray(packageMap);
-    const relationships = convertRelationshipsMapToArray(relationshipsMap);
+    // Determine lockfile version and process accordingly
+    const lockfileVersionNum =
+      typeof lockfile.lockfileVersion === 'string' ? parseFloat(lockfile.lockfileVersion) : lockfile.lockfileVersion;
 
-    return {
-      packages,
-      subprojects,
-      relationships,
-      issues: [],
-    };
+    if (lockfileVersionNum >= 9) {
+      // V9+ lockfile: packages have metadata, snapshots have relationships
+      processV9Lockfile(lockfile as PnpmLockfileV9, lockfileContent, file, packageMap, relationshipsMap);
+    } else {
+      // V6 and earlier: packages have both metadata and relationships
+      processV6Lockfile(lockfile as PnpmLockfileV6, lockfileContent, file, packageMap, relationshipsMap);
+    }
+
+    return buildResult(packageMap, relationshipsMap, subprojects);
   },
 });
 
@@ -318,26 +275,10 @@ function resolveAlias(depName: string, version: string): { name: string; version
  * semantic version rather than the git URL or tarball path used as the package key.
  */
 function getPackageVersion(lockfile: PnpmLockfile, packageKey: string): string | null {
-  const lockfileVersionNum =
-    typeof lockfile.lockfileVersion === 'string' ? parseFloat(lockfile.lockfileVersion) : lockfile.lockfileVersion;
-
-  if (lockfileVersionNum >= 9) {
-    // V9+ lockfile: check packages section for metadata
-    const v9Lockfile = lockfile as PnpmLockfileV9;
-    if (v9Lockfile.packages) {
-      const packageMetadata = v9Lockfile.packages[packageKey];
-      if (packageMetadata && packageMetadata.version) {
-        return packageMetadata.version;
-      }
-    }
-  } else {
-    // V6 and earlier: check packages section
-    const v6Lockfile = lockfile as PnpmLockfileV6;
-    if (v6Lockfile.packages) {
-      const packageEntry = v6Lockfile.packages[packageKey];
-      if (packageEntry && packageEntry.version) {
-        return packageEntry.version;
-      }
+  if (lockfile.packages) {
+    const packageEntry = lockfile.packages[packageKey];
+    if (packageEntry && packageEntry.version) {
+      return packageEntry.version;
     }
   }
 

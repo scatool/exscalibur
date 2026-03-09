@@ -6,14 +6,13 @@ import {
   filesExtractor,
   addRelationship,
   ensurePackageExists,
-  convertPackageMapToArray,
-  convertRelationshipsMapToArray,
   initializeExtractionMaps,
+  buildResult,
   scanAndMarkFiles,
 } from '@scatool/analyzer-core/src/index.ts';
 import { dirname, join } from 'node:path';
 import type { PackageJson } from '../types.ts';
-import { createNpmPurl, extractNpmScopes, NPM_DEPENDENCY_SCOPES } from '../npm-utils.ts';
+import { createNpmPurl, extractNpmScopes, NPM_DEPENDENCY_SCOPES, readPackageJson } from '../npm-utils.ts';
 import type { JavaScriptOptions } from '../options.ts';
 
 // Lockfile package entry indices
@@ -33,207 +32,162 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     const { packageMap, relationshipsMap } = initializeExtractionMaps();
     const subprojects: Subproject[] = [];
 
-    try {
-      const content = await Bun.file(file).text();
-      const dir = dirname(file);
+    const content = await Bun.file(file).text();
+    const dir = dirname(file);
 
-      // Parse the bun.lock file (JSONC format with comments and trailing commas)
-      const lockfile = Bun.JSONC.parse(content) as Record<string, unknown>;
-      const lines = content.split('\n');
+    // Parse the bun.lock file (JSONC format with comments and trailing commas)
+    const lockfile = Bun.JSONC.parse(content) as Record<string, unknown>;
+    const lines = content.split('\n');
 
-      const packageInfoMap = new Map<string, { name: string; version: string }>();
-      if (lockfile.packages && typeof lockfile.packages === 'object') {
-        for (const [packageKey, packageInfo] of Object.entries(lockfile.packages)) {
-          if (!Array.isArray(packageInfo) || packageInfo.length === 0) continue;
+    const packageInfoMap = new Map<string, { name: string; version: string }>();
+    if (lockfile.packages && typeof lockfile.packages === 'object') {
+      for (const [packageKey, packageInfo] of Object.entries(lockfile.packages)) {
+        if (!Array.isArray(packageInfo) || packageInfo.length === 0) continue;
 
-          const packageIdentifier = packageInfo[PKG_IDENTIFIER_INDEX];
-          if (typeof packageIdentifier !== 'string') continue;
+        const packageIdentifier = packageInfo[PKG_IDENTIFIER_INDEX];
+        if (typeof packageIdentifier !== 'string') continue;
 
-          // Parse name@version format
-          const lastAtIndex = packageIdentifier.lastIndexOf('@');
-          if (lastAtIndex <= 0) continue;
+        // Parse name@version format
+        const lastAtIndex = packageIdentifier.lastIndexOf('@');
+        if (lastAtIndex <= 0) continue;
 
-          const name = packageIdentifier.substring(0, lastAtIndex);
-          const version = packageIdentifier.substring(lastAtIndex + 1);
+        const name = packageIdentifier.substring(0, lastAtIndex);
+        const version = packageIdentifier.substring(lastAtIndex + 1);
 
-          packageInfoMap.set(packageKey, { name, version });
+        packageInfoMap.set(packageKey, { name, version });
+      }
+    }
+
+    // Read package.json to get the root package info
+    const packageJsonPath = join(dir, 'package.json');
+    const rootPackageInfo = await readPackageJson(packageJsonPath);
+
+    // Build a map of workspace package names to their versions
+    const workspacePackages = new Map<string, string>();
+    if (lockfile.workspaces && typeof lockfile.workspaces === 'object') {
+      for (const [workspacePath, workspace] of Object.entries(lockfile.workspaces)) {
+        if (!workspace || typeof workspace !== 'object') continue;
+
+        const workspaceName = 'name' in workspace ? workspace.name : undefined;
+        if (!workspaceName || typeof workspaceName !== 'string') continue;
+
+        // Determine the package.json path for this workspace
+        const workspaceDir = workspacePath === '' ? dir : join(dir, workspacePath);
+        const workspacePackageJsonPath = join(workspaceDir, 'package.json');
+
+        const packageInfo = await readPackageJson(workspacePackageJsonPath);
+        if (packageInfo?.version) {
+          workspacePackages.set(workspaceName, packageInfo.version);
         }
       }
+    }
 
-      // Read package.json to get the root package info
-      const packageJsonPath = join(dir, 'package.json');
-      let rootPackageInfo: PackageJson | null = null;
-      try {
-        const packageJsonContent = await Bun.file(packageJsonPath).text();
-        rootPackageInfo = JSON.parse(packageJsonContent) as PackageJson;
-      } catch {
-        // package.json might not exist, continue anyway
-      }
+    // Process workspaces if they exist in the lockfile
+    if (lockfile.workspaces && typeof lockfile.workspaces === 'object') {
+      for (const [workspacePath, workspace] of Object.entries(lockfile.workspaces)) {
+        if (!workspace || typeof workspace !== 'object') continue;
 
-      // Build a map of workspace package names to their versions
-      const workspacePackages = new Map<string, string>();
-      if (lockfile.workspaces && typeof lockfile.workspaces === 'object') {
-        for (const [workspacePath, workspace] of Object.entries(lockfile.workspaces)) {
-          if (!workspace || typeof workspace !== 'object') continue;
+        // Get workspace name from the lockfile
+        const workspaceName = 'name' in workspace ? workspace.name : undefined;
+        if (!workspaceName || typeof workspaceName !== 'string') continue;
 
-          const workspaceName = 'name' in workspace ? workspace.name : undefined;
-          if (!workspaceName || typeof workspaceName !== 'string') continue;
+        // Determine the package.json path for this workspace
+        const workspaceDir = workspacePath === '' ? dir : join(dir, workspacePath);
+        const workspacePackageJsonPath = join(workspaceDir, 'package.json');
 
-          // Determine the package.json path for this workspace
-          const workspaceDir = workspacePath === '' ? dir : join(dir, workspacePath);
-          const workspacePackageJsonPath = join(workspaceDir, 'package.json');
+        const packageInfo = await readPackageJson(workspacePackageJsonPath);
+        if (!packageInfo) continue;
 
-          try {
-            const packageJsonContent = await Bun.file(workspacePackageJsonPath).text();
-            const packageInfo = JSON.parse(packageJsonContent) as PackageJson;
-            if (packageInfo.version) {
-              workspacePackages.set(workspaceName, packageInfo.version);
-            }
-          } catch {
-            // Skip invalid package.json files
-            continue;
-          }
+        if (packageInfo.version) {
+          const purl = createNpmPurl(workspaceName, packageInfo.version);
+          const scopes = extractScopes(
+            workspace as Record<string, unknown>,
+            packageInfoMap,
+            workspacePackages,
+            workspaceName,
+          );
+
+          subprojects.push({
+            purl,
+            definitionFile: workspacePackageJsonPath,
+            scopes,
+          });
         }
       }
+    } else if (rootPackageInfo?.name && rootPackageInfo.version) {
+      // Fallback to reading package.json directly if no workspaces in lockfile
+      const purl = createNpmPurl(rootPackageInfo.name, rootPackageInfo.version);
+      const scopes = extractScopes(rootPackageInfo, packageInfoMap, workspacePackages, '');
 
-      // Process workspaces if they exist in the lockfile
-      if (lockfile.workspaces && typeof lockfile.workspaces === 'object') {
-        for (const [workspacePath, workspace] of Object.entries(lockfile.workspaces)) {
-          if (!workspace || typeof workspace !== 'object') continue;
+      subprojects.push({
+        purl,
+        definitionFile: packageJsonPath,
+        scopes,
+      });
+    }
 
-          // Get workspace name from the lockfile
-          const workspaceName = 'name' in workspace ? workspace.name : undefined;
-          if (!workspaceName || typeof workspaceName !== 'string') continue;
+    // Process packages section to extract packages and relationships
+    if (lockfile.packages && typeof lockfile.packages === 'object') {
+      for (const [packageKey, packageInfo] of Object.entries(lockfile.packages)) {
+        if (!Array.isArray(packageInfo) || packageInfo.length === 0) continue;
 
-          // Determine the package.json path for this workspace
-          const workspaceDir = workspacePath === '' ? dir : join(dir, workspacePath);
-          const workspacePackageJsonPath = join(workspaceDir, 'package.json');
+        // First element is the package identifier (name@version)
+        const packageIdentifier = packageInfo[PKG_IDENTIFIER_INDEX];
+        if (typeof packageIdentifier !== 'string') continue;
 
-          // Read package.json to get version
-          let packageInfo: PackageJson | null = null;
-          try {
-            const packageJsonContent = await Bun.file(workspacePackageJsonPath).text();
-            packageInfo = JSON.parse(packageJsonContent) as PackageJson;
-          } catch {
-            // Skip if package.json doesn't exist or is invalid
-            continue;
-          }
+        // Parse name@version format
+        const lastAtIndex = packageIdentifier.lastIndexOf('@');
+        if (lastAtIndex <= 0) continue;
 
-          if (packageInfo?.version) {
-            const purl = createNpmPurl(workspaceName, packageInfo.version);
-            const scopes = extractScopes(
-              workspace as Record<string, unknown>,
-              packageInfoMap,
-              workspacePackages,
-              workspaceName,
-            );
+        const name = packageIdentifier.substring(0, lastAtIndex);
+        const version = packageIdentifier.substring(lastAtIndex + 1);
+        const purl = createNpmPurl(name, version);
 
-            subprojects.push({
-              purl,
-              definitionFile: workspacePackageJsonPath,
-              scopes,
-            });
-          }
+        // Add package to map
+        ensurePackageExists(packageMap, purl);
+
+        // Add evidence (file path and line number)
+        const lineNumber = findLineNumber(lines, packageKey);
+        if (lineNumber !== undefined) {
+          packageMap.get(purl)!.evidence.add(`${file}#${lineNumber}`);
         }
-      } else if (rootPackageInfo?.name && rootPackageInfo.version) {
-        // Fallback to reading package.json directly if no workspaces in lockfile
-        const purl = createNpmPurl(rootPackageInfo.name, rootPackageInfo.version);
-        const scopes = extractScopes(rootPackageInfo, packageInfoMap, workspacePackages, '');
 
-        subprojects.push({
-          purl,
-          definitionFile: packageJsonPath,
-          scopes,
-        });
-      }
+        // Third element contains dependency information
+        const metadata = packageInfo[PKG_METADATA_INDEX];
+        if (metadata && typeof metadata === 'object') {
+          // Process all dependency types
+          for (const depType of NPM_DEPENDENCY_SCOPES) {
+            const deps = metadata[depType];
+            if (deps && typeof deps === 'object') {
+              for (const [depName, depVersionRange] of Object.entries(deps)) {
+                if (typeof depVersionRange !== 'string') continue;
 
-      // Process packages section to extract packages and relationships
-      if (lockfile.packages && typeof lockfile.packages === 'object') {
-        for (const [packageKey, packageInfo] of Object.entries(lockfile.packages)) {
-          if (!Array.isArray(packageInfo) || packageInfo.length === 0) continue;
-
-          // First element is the package identifier (name@version)
-          const packageIdentifier = packageInfo[PKG_IDENTIFIER_INDEX];
-          if (typeof packageIdentifier !== 'string') continue;
-
-          // Parse name@version format
-          const lastAtIndex = packageIdentifier.lastIndexOf('@');
-          if (lastAtIndex <= 0) continue;
-
-          const name = packageIdentifier.substring(0, lastAtIndex);
-          const version = packageIdentifier.substring(lastAtIndex + 1);
-          const purl = createNpmPurl(name, version);
-
-          // Add package to map
-          ensurePackageExists(packageMap, purl);
-
-          // Add evidence (file path and line number)
-          const lineNumber = findLineNumber(lines, packageKey);
-          if (lineNumber !== undefined) {
-            packageMap.get(purl)!.evidence.add(`${file}#${lineNumber}`);
-          }
-
-          // Third element contains dependency information
-          const metadata = packageInfo[PKG_METADATA_INDEX];
-          if (metadata && typeof metadata === 'object') {
-            // Process all dependency types
-            for (const depType of NPM_DEPENDENCY_SCOPES) {
-              const deps = metadata[depType];
-              if (deps && typeof deps === 'object') {
-                for (const [depName, depVersionRange] of Object.entries(deps)) {
-                  if (typeof depVersionRange !== 'string') continue;
-
-                  // Check if this is a workspace package
-                  if (depVersionRange.startsWith('workspace:')) {
-                    const workspaceVersion = workspacePackages.get(depName);
-                    if (workspaceVersion) {
-                      const depPurl = createNpmPurl(depName, workspaceVersion);
-                      addRelationship(relationshipsMap, purl, depPurl);
-                      ensurePackageExists(packageMap, depPurl);
-                    }
-                    continue;
-                  }
-
-                  // Resolve the dependency using bun's key hierarchy
-                  const resolved = resolvePackageInfo(depName, packageInfoMap, packageKey);
-                  if (resolved) {
-                    const depPurl = createNpmPurl(resolved.name, resolved.version);
+                // Check if this is a workspace package
+                if (depVersionRange.startsWith('workspace:')) {
+                  const workspaceVersion = workspacePackages.get(depName);
+                  if (workspaceVersion) {
+                    const depPurl = createNpmPurl(depName, workspaceVersion);
                     addRelationship(relationshipsMap, purl, depPurl);
                     ensurePackageExists(packageMap, depPurl);
                   }
+                  continue;
+                }
+
+                // Resolve the dependency using bun's key hierarchy
+                const resolved = resolvePackageInfo(depName, packageInfoMap, packageKey);
+                if (resolved) {
+                  const depPurl = createNpmPurl(resolved.name, resolved.version);
+                  addRelationship(relationshipsMap, purl, depPurl);
+                  ensurePackageExists(packageMap, depPurl);
                 }
               }
             }
           }
         }
       }
-
-      // Add relationships from subprojects to their dependencies
-    } catch (error) {
-      return {
-        packages: [],
-        subprojects: [],
-        relationships: [],
-        issues: [
-          {
-            message: `Failed to parse bun.lock: ${error instanceof Error ? error.message : String(error)}`,
-            severity: 'ERROR',
-            file,
-          },
-        ],
-      };
     }
 
-    // Convert maps to arrays
-    const packages = convertPackageMapToArray(packageMap);
-    const relationships = convertRelationshipsMapToArray(relationshipsMap);
-
-    return {
-      packages,
-      subprojects,
-      relationships,
-      issues: [],
-    };
+    return buildResult(packageMap, relationshipsMap, subprojects);
   },
 });
 

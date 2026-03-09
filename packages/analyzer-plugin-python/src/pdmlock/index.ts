@@ -6,8 +6,7 @@ import {
   filesExtractor,
   addRelationship,
   ensurePackageExists,
-  convertPackageMapToArray,
-  convertRelationshipsMapToArray,
+  buildResult,
   initializeExtractionMaps,
   scanAndMarkFiles,
 } from '@scatool/analyzer-core/src/index.ts';
@@ -216,15 +215,7 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
       });
     }
 
-    const packages = convertPackageMapToArray(packageMap);
-    const relationships = convertRelationshipsMapToArray(relationshipsMap);
-
-    return {
-      packages,
-      subprojects,
-      relationships,
-      issues: [],
-    };
+    return buildResult(packageMap, relationshipsMap, subprojects);
   },
 });
 

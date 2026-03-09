@@ -125,7 +125,7 @@
   "relationships": [],
   "issues": [
     {
-      "message": "Failed to parse package.json: JSON Parse error: Expected '}'",
+      "message": "Failed to extract file: JSON Parse error: Expected '}'",
       "severity": "ERROR",
       "file": "tests/fixtures/config-file/broken-package-json/package.json"
     }

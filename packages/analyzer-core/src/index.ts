@@ -20,6 +20,8 @@ export {
   convertRelationshipsMapToArray,
   aggregateSubprojectRelationships,
   initializeExtractionMaps,
+  buildResult,
+  errorResult,
 } from './map-utils.ts';
 export type { PackageMapEntry } from './map-utils.ts';
 
@@ -64,8 +66,23 @@ export const filesExtractor = <Options = unknown>(config: FilesExtractor<Options
       const results: AnalyzerResult[] = [];
       for (const file of markedFiles) {
         if (config.extractFile) {
-          const result = await config.extractFile(file, options);
-          results.push(result);
+          try {
+            const result = await config.extractFile(file, options);
+            results.push(result);
+          } catch (error) {
+            results.push({
+              packages: [],
+              subprojects: [],
+              relationships: [],
+              issues: [
+                {
+                  message: `Failed to extract file: ${error instanceof Error ? error.message : String(error)}`,
+                  severity: 'ERROR',
+                  file,
+                },
+              ],
+            });
+          }
         }
       }
 

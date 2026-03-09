@@ -6,8 +6,7 @@ import {
   filesExtractor,
   scanAndMarkFiles,
   ensurePackageExists,
-  convertPackageMapToArray,
-  convertRelationshipsMapToArray,
+  buildResult,
   initializeExtractionMaps,
 } from '@scatool/analyzer-core/src/index.ts';
 import { dirname, join } from 'node:path';
@@ -45,23 +44,7 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
     const dir = dirname(file);
     const lines = content.split('\n');
 
-    let lockfile: PipfileLock;
-    try {
-      lockfile = JSON.parse(content) as PipfileLock;
-    } catch (error) {
-      return {
-        packages: [],
-        subprojects: [],
-        relationships: [],
-        issues: [
-          {
-            message: `Failed to parse Pipfile.lock: ${error instanceof Error ? error.message : String(error)}`,
-            severity: 'ERROR',
-            file,
-          },
-        ],
-      };
-    }
+    const lockfile = JSON.parse(content) as PipfileLock;
 
     const { packageMap, relationshipsMap } = initializeExtractionMaps();
     const subprojects: Subproject[] = [];
@@ -174,15 +157,7 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
       });
     }
 
-    const packages = convertPackageMapToArray(packageMap);
-    const relationships = convertRelationshipsMapToArray(relationshipsMap);
-
-    return {
-      packages,
-      subprojects,
-      relationships,
-      issues: [],
-    };
+    return buildResult(packageMap, relationshipsMap, subprojects);
   },
 });
 

@@ -66,24 +66,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     // Process individual package.json file
     const content = await Bun.file(file).text();
 
-    let packageJson: Record<string, unknown>;
-    try {
-      packageJson = JSON.parse(content) as Record<string, unknown>;
-    } catch (error) {
-      // Return empty result with an error issue if JSON is malformed
-      return {
-        packages: [],
-        subprojects: [],
-        relationships: [],
-        issues: [
-          {
-            message: `Failed to parse package.json: ${error instanceof Error ? error.message : String(error)}`,
-            severity: 'ERROR',
-            file,
-          },
-        ],
-      };
-    }
+    const packageJson = JSON.parse(content) as Record<string, unknown>;
 
     const lines = content.split('\n');
     const packages = [];

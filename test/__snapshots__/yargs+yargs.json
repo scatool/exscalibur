@@ -173,7 +173,7 @@
   "relationships": [],
   "issues": [
     {
-      "message": "Failed to parse package.json: JSON Parse error: Single quotes (') are not allowed in JSON",
+      "message": "Failed to extract file: JSON Parse error: Single quotes (') are not allowed in JSON",
       "severity": "ERROR",
       "file": "test/fixtures/broken-json/package.json"
     }

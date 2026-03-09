@@ -6,8 +6,7 @@ import {
   type Subproject,
   addRelationship,
   ensurePackageExists,
-  convertPackageMapToArray,
-  convertRelationshipsMapToArray,
+  buildResult,
   initializeExtractionMaps,
 } from '@scatool/analyzer-core/src/index.ts';
 import { Glob } from 'bun';
@@ -20,7 +19,7 @@ import {
   type YarnBerryLockfile,
 } from './lockfile.ts';
 import type { PackageJson } from '../types.ts';
-import { createNpmPurl, extractNpmScopes, NPM_DEPENDENCY_SCOPES } from '../npm-utils.ts';
+import { createNpmPurl, extractNpmScopes, NPM_DEPENDENCY_SCOPES, readPackageJson } from '../npm-utils.ts';
 import type { JavaScriptOptions } from '../options.ts';
 
 export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScriptOptions>({
@@ -71,80 +70,87 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     const { packageMap, relationshipsMap } = initializeExtractionMaps();
     const subprojects: Subproject[] = [];
 
-    try {
-      const lockfileContent = await Bun.file(file).text();
-      const lockfile = parseYarnBerryLockfile(lockfileContent);
+    const lockfileContent = await Bun.file(file).text();
+    const lockfile = parseYarnBerryLockfile(lockfileContent);
 
-      // Find all workspace packages by looking for linkType: soft
-      const workspacePackages = new Map<string, { version: string; path: string }>();
-      const workspacePatterns = new Map<string, string>(); // Map package name to workspace path
+    // Find all workspace packages by looking for linkType: soft
+    const workspacePackages = new Map<string, { version: string; path: string }>();
+    const workspacePatterns = new Map<string, string>(); // Map package name to workspace path
 
-      for (const [pattern, pkg] of lockfile.packages.entries()) {
-        // Check if this is a workspace package (linkType: soft)
-        if (pkg.linkType === 'soft') {
-          const parsed = parsePackagePattern(pattern);
-          if (parsed && parsed.type === 'workspace') {
-            // This is the workspace: pattern - store the path
-            workspacePatterns.set(parsed.name, parsed.versionOrPath);
-          }
+    for (const [pattern, pkg] of lockfile.packages.entries()) {
+      // Check if this is a workspace package (linkType: soft)
+      if (pkg.linkType === 'soft') {
+        const parsed = parsePackagePattern(pattern);
+        if (parsed && parsed.type === 'workspace') {
+          // This is the workspace: pattern - store the path
+          workspacePatterns.set(parsed.name, parsed.versionOrPath);
         }
       }
+    }
 
-      // Now read package.json files for all workspace packages
-      for (const [name, path] of workspacePatterns.entries()) {
-        const workspaceDir = path === '.' ? dir : join(dir, path);
-        const packageJsonPath = join(workspaceDir, 'package.json');
-
-        try {
-          const packageJsonContent = await Bun.file(packageJsonPath).text();
-          const packageInfo = JSON.parse(packageJsonContent) as PackageJson;
-          if (packageInfo.version) {
-            workspacePackages.set(name, {
-              version: packageInfo.version,
-              path,
-            });
-          }
-        } catch {
-          // Skip if package.json doesn't exist or is invalid
-          continue;
-        }
+    // Now read package.json files for all workspace packages
+    for (const [name, path] of workspacePatterns.entries()) {
+      const workspaceDir = path === '.' ? dir : join(dir, path);
+      const packageJsonPath = join(workspaceDir, 'package.json');
+      const packageInfo = await readPackageJson(packageJsonPath);
+      if (packageInfo?.version) {
+        workspacePackages.set(name, {
+          version: packageInfo.version,
+          path,
+        });
       }
+    }
 
-      // Process workspace packages to create subprojects
-      for (const [name, info] of workspacePackages.entries()) {
-        // Find the workspace package entry in the lockfile
-        const workspacePattern = `${name}@workspace:${info.path}`;
-        const pkg = lockfile.packages.get(workspacePattern);
-        if (!pkg) continue;
+    // Process workspace packages to create subprojects
+    for (const [name, info] of workspacePackages.entries()) {
+      // Find the workspace package entry in the lockfile
+      const workspacePattern = `${name}@workspace:${info.path}`;
+      const pkg = lockfile.packages.get(workspacePattern);
+      if (!pkg) continue;
 
-        const workspaceDir = info.path === '.' ? dir : join(dir, info.path);
-        const packageJsonPath = join(workspaceDir, 'package.json');
+      const workspaceDir = info.path === '.' ? dir : join(dir, info.path);
+      const packageJsonPath = join(workspaceDir, 'package.json');
 
-        // Create PURL for this subproject
-        const purl = createNpmPurl(name, info.version);
+      // Create PURL for this subproject
+      const purl = createNpmPurl(name, info.version);
 
-        // Extract scopes - read from package.json to preserve original dependency types
-        // (Yarn Berry lockfile normalizes all deps to just "dependencies")
-        const scopes: DependencyScope[] = [];
+      // Extract scopes - read from package.json to preserve original dependency types
+      // (Yarn Berry lockfile normalizes all deps to just "dependencies")
+      const scopes: DependencyScope[] = [];
 
-        // Read package.json to get the original dependency scopes
-        let packageInfo: PackageJson | null = null;
-        try {
-          const packageJsonContent = await Bun.file(packageJsonPath).text();
-          packageInfo = JSON.parse(packageJsonContent) as PackageJson;
-        } catch {
-          // If we can't read package.json, skip this subproject
-          continue;
-        }
+      // Read package.json to get the original dependency scopes
+      const packageInfo = await readPackageJson(packageJsonPath);
+      if (!packageInfo) continue;
 
-        const extractedScopes = extractNpmScopes(packageInfo as Record<string, unknown>, (depName, versionRange) => {
-          const workspaceVersion = workspacePackages.get(depName);
-          if (workspaceVersion) return createNpmPurl(depName, workspaceVersion.version);
+      const extractedScopes = extractNpmScopes(packageInfo as Record<string, unknown>, (depName, versionRange) => {
+        const workspaceVersion = workspacePackages.get(depName);
+        if (workspaceVersion) return createNpmPurl(depName, workspaceVersion.version);
+        const { actualName, actualRange } = parseAliasedDependency(depName, versionRange);
+        const resolvedVersion = resolvePackageVersion(lockfile, actualName, actualRange);
+        return resolvedVersion ? createNpmPurl(actualName, resolvedVersion) : null;
+      });
+      scopes.push(...extractedScopes);
+
+      subprojects.push({
+        purl,
+        definitionFile: packageJsonPath,
+        scopes,
+      });
+    }
+
+    // If no workspace packages found, check if this is a single-package project
+    if (subprojects.length === 0) {
+      const packageJsonPath = join(dir, 'package.json');
+      const packageInfo = await readPackageJson(packageJsonPath);
+
+      if (packageInfo?.name && packageInfo.version) {
+        const purl = createNpmPurl(packageInfo.name, packageInfo.version);
+
+        const scopes = extractNpmScopes(packageInfo as Record<string, unknown>, (depName, versionRange) => {
           const { actualName, actualRange } = parseAliasedDependency(depName, versionRange);
           const resolvedVersion = resolvePackageVersion(lockfile, actualName, actualRange);
           return resolvedVersion ? createNpmPurl(actualName, resolvedVersion) : null;
         });
-        scopes.push(...extractedScopes);
 
         subprojects.push({
           purl,
@@ -152,106 +158,52 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
           scopes,
         });
       }
-
-      // If no workspace packages found, check if this is a single-package project
-      if (subprojects.length === 0) {
-        const packageJsonPath = join(dir, 'package.json');
-
-        try {
-          const packageJsonContent = await Bun.file(packageJsonPath).text();
-          const packageInfo = JSON.parse(packageJsonContent) as PackageJson;
-
-          if (packageInfo.name && packageInfo.version) {
-            const purl = createNpmPurl(packageInfo.name, packageInfo.version);
-
-            const scopes = extractNpmScopes(packageInfo as Record<string, unknown>, (depName, versionRange) => {
-              const { actualName, actualRange } = parseAliasedDependency(depName, versionRange);
-              const resolvedVersion = resolvePackageVersion(lockfile, actualName, actualRange);
-              return resolvedVersion ? createNpmPurl(actualName, resolvedVersion) : null;
-            });
-
-            subprojects.push({
-              purl,
-              definitionFile: packageJsonPath,
-              scopes,
-            });
-          }
-        } catch {
-          // Skip if package.json doesn't exist or is invalid
-        }
-      }
-
-      // Process all packages to extract packages and relationships
-      for (const [pattern, pkg] of lockfile.packages.entries()) {
-        const parsed = parsePackagePattern(pattern);
-        if (!parsed) continue;
-
-        // Skip packages that shouldn't be included in the graph
-        // - workspace packages (they're subprojects, not external dependencies)
-        // - patch/link/portal protocols (internal Yarn protocols)
-        // - workspace version marker (0.0.0-use.local)
-        if (
-          parsed.type === 'workspace' ||
-          parsed.type === 'patch' ||
-          parsed.type === 'link' ||
-          parsed.type === 'portal' ||
-          pkg.version === '0.0.0-use.local'
-        ) {
-          continue;
-        }
-
-        // For npm aliases, use the real package name, not the alias
-        const { name } = parsed;
-        const version = pkg.version;
-
-        // Skip if no version
-        if (!version) continue;
-
-        const purl = createNpmPurl(name, version);
-
-        // Add package with evidence
-        if (!packageMap.has(purl)) {
-          packageMap.set(purl, { purl, evidence: new Set() });
-        }
-
-        // Use the original combined pattern for evidence tracking
-        // (handles cases where multiple patterns are comma-separated in the lockfile)
-        const patternToFind = pkg.originalPattern || pattern;
-        const lineNumber = findLineNumber(lockfileContent, patternToFind);
-        if (lineNumber) {
-          packageMap.get(purl)!.evidence.add(`${file}#${lineNumber}`);
-        }
-
-        // Extract relationships from dependencies
-        processDependencies(pkg, purl, lockfile, packageMap, relationshipsMap);
-      }
-
-      // Add relationships from subprojects to their dependencies
-    } catch (error) {
-      return {
-        packages: [],
-        subprojects: [],
-        relationships: [],
-        issues: [
-          {
-            message: `Failed to parse yarn.lock: ${error instanceof Error ? error.message : String(error)}`,
-            severity: 'ERROR',
-            file,
-          },
-        ],
-      };
     }
 
-    // Convert maps to arrays
-    const packages = convertPackageMapToArray(packageMap);
-    const relationships = convertRelationshipsMapToArray(relationshipsMap);
+    // Process all packages to extract packages and relationships
+    for (const [pattern, pkg] of lockfile.packages.entries()) {
+      const parsed = parsePackagePattern(pattern);
+      if (!parsed) continue;
 
-    return {
-      packages,
-      subprojects,
-      relationships,
-      issues: [],
-    };
+      // Skip packages that shouldn't be included in the graph
+      // - workspace packages (they're subprojects, not external dependencies)
+      // - patch/link/portal protocols (internal Yarn protocols)
+      // - workspace version marker (0.0.0-use.local)
+      if (
+        parsed.type === 'workspace' ||
+        parsed.type === 'patch' ||
+        parsed.type === 'link' ||
+        parsed.type === 'portal' ||
+        pkg.version === '0.0.0-use.local'
+      ) {
+        continue;
+      }
+
+      // For npm aliases, use the real package name, not the alias
+      const { name } = parsed;
+      const version = pkg.version;
+
+      // Skip if no version
+      if (!version) continue;
+
+      const purl = createNpmPurl(name, version);
+
+      // Add package with evidence
+      ensurePackageExists(packageMap, purl);
+
+      // Use the original combined pattern for evidence tracking
+      // (handles cases where multiple patterns are comma-separated in the lockfile)
+      const patternToFind = pkg.originalPattern || pattern;
+      const lineNumber = findLineNumber(lockfileContent, patternToFind);
+      if (lineNumber) {
+        packageMap.get(purl)!.evidence.add(`${file}#${lineNumber}`);
+      }
+
+      // Extract relationships from dependencies
+      processDependencies(pkg, purl, lockfile, packageMap, relationshipsMap);
+    }
+
+    return buildResult(packageMap, relationshipsMap, subprojects);
   },
 });
 

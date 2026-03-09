@@ -1,24 +1,6 @@
 import type { AnalyzerResult } from '@scatool/analyzer-core';
 
-/**
- * Validates an AnalyzerResult for common errors.
- * Throws an error if validation fails.
- *
- * @param result - The AnalyzerResult to validate
- * @throws Error if validation fails
- *
- * Validation checks:
- * - Subproject purls must not appear in packages array
- * - Subproject purls must not appear in relationships
- * - Package purls must be unique (no duplicates)
- * - Subproject purls must be unique (no duplicates)
- * - Relationship 'to' arrays must contain unique purls (no duplicates)
- *
- * @example
- * const result = await extractor.extract(fixturePath);
- * validateResult(result);
- * expect(result).toMatchSnapshot();
- */
+/** Validates an AnalyzerResult for common errors. Throws on failure. */
 export function validateResult(result: AnalyzerResult): void {
   const subprojectPurls = new Set(result.subprojects.map((sp) => sp.purl));
 

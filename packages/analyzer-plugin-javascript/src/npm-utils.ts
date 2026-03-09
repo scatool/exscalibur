@@ -1,5 +1,6 @@
 import { PackageURL } from 'packageurl-js';
 import type { DependencyScope } from '@scatool/analyzer-core/src/index.ts';
+import type { PackageJson } from './types.ts';
 
 export const NPM_DEPENDENCY_SCOPES = [
   'dependencies',
@@ -21,6 +22,15 @@ export function createNpmPurl(name: string, version: string): string {
   }
 
   return new PackageURL('npm', namespace, packageName, version, null, null).toString();
+}
+
+export async function readPackageJson(path: string): Promise<PackageJson | null> {
+  try {
+    const content = await Bun.file(path).text();
+    return JSON.parse(content) as PackageJson;
+  } catch {
+    return null;
+  }
 }
 
 /** Iterates NPM_DEPENDENCY_SCOPES, resolving each dep via the callback (returns PURL or null to skip). */

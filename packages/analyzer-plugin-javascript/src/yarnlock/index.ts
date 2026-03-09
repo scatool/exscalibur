@@ -6,15 +6,14 @@ import {
   type Subproject,
   addRelationship,
   ensurePackageExists,
-  convertPackageMapToArray,
-  convertRelationshipsMapToArray,
+  buildResult,
   initializeExtractionMaps,
 } from '@scatool/analyzer-core/src/index.ts';
 import { Glob } from 'bun';
 import { dirname, join } from 'node:path';
 import { findLineNumber, parsePackagePattern, parseYarnLockfile, resolvePackageVersion } from './lockfile.ts';
 import type { PackageJson } from '../types.ts';
-import { createNpmPurl, extractNpmScopes, NPM_DEPENDENCY_SCOPES } from '../npm-utils.ts';
+import { createNpmPurl, extractNpmScopes, NPM_DEPENDENCY_SCOPES, readPackageJson } from '../npm-utils.ts';
 import type { JavaScriptOptions } from '../options.ts';
 
 export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScriptOptions>({
@@ -62,168 +61,123 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     const { packageMap, relationshipsMap } = initializeExtractionMaps();
     const subprojects: Subproject[] = [];
 
-    try {
-      const lockfileContent = await Bun.file(file).text();
-      const lockfile = parseYarnLockfile(lockfileContent);
+    const lockfileContent = await Bun.file(file).text();
+    const lockfile = parseYarnLockfile(lockfileContent);
 
-      // Read root package.json to determine workspace setup
-      const packageJsonPath = join(dir, 'package.json');
-      let rootPackageInfo: PackageJson | null = null;
-      try {
-        const packageJsonContent = await Bun.file(packageJsonPath).text();
-        rootPackageInfo = JSON.parse(packageJsonContent) as PackageJson;
-      } catch {
-        // package.json might not exist, continue anyway
-      }
+    // Read root package.json to determine workspace setup
+    const packageJsonPath = join(dir, 'package.json');
+    const rootPackageInfo = await readPackageJson(packageJsonPath);
 
-      // Collect workspace package.json files if this is a workspace root
-      const workspacePackageJsonPaths: string[] = [];
-      const isWorkspaceRoot = rootPackageInfo?.workspaces && Array.isArray(rootPackageInfo.workspaces);
+    // Collect workspace package.json files if this is a workspace root
+    const workspacePackageJsonPaths: string[] = [];
+    const isWorkspaceRoot = rootPackageInfo?.workspaces && Array.isArray(rootPackageInfo.workspaces);
 
-      if (isWorkspaceRoot && rootPackageInfo) {
-        const workspacePatterns = rootPackageInfo.workspaces as string[];
-        for (const pattern of workspacePatterns) {
-          const pkgJsonPattern = `${pattern}/package.json`;
-          const pkgJsonGlob = new Glob(pkgJsonPattern);
-          for await (const pkgPath of pkgJsonGlob.scan({ cwd: dir, absolute: true })) {
-            if (!pkgPath.includes('/node_modules/')) {
-              workspacePackageJsonPaths.push(pkgPath);
-            }
+    if (isWorkspaceRoot && rootPackageInfo) {
+      const workspacePatterns = rootPackageInfo.workspaces as string[];
+      for (const pattern of workspacePatterns) {
+        const pkgJsonPattern = `${pattern}/package.json`;
+        const pkgJsonGlob = new Glob(pkgJsonPattern);
+        for await (const pkgPath of pkgJsonGlob.scan({ cwd: dir, absolute: true })) {
+          if (!pkgPath.includes('/node_modules/')) {
+            workspacePackageJsonPaths.push(pkgPath);
           }
         }
       }
-
-      // Build a map of workspace package names to their versions
-      // We need to do this before extracting scopes so we can identify workspace dependencies
-      const workspacePackages = new Map<string, string>();
-      if (rootPackageInfo?.name && rootPackageInfo?.version) {
-        workspacePackages.set(rootPackageInfo.name, rootPackageInfo.version);
-      }
-      // Add all workspace packages from their package.json files
-      if (isWorkspaceRoot && workspacePackageJsonPaths.length > 0) {
-        for (const pkgJsonPath of workspacePackageJsonPaths) {
-          try {
-            const pkgContent = await Bun.file(pkgJsonPath).text();
-            const pkgInfo = JSON.parse(pkgContent) as PackageJson;
-            if (pkgInfo.name && pkgInfo.version) {
-              workspacePackages.set(pkgInfo.name, pkgInfo.version);
-            }
-          } catch {
-            // Skip invalid package.json files
-            continue;
-          }
-        }
-      }
-
-      const extractScopesFromPackageJson = (packageInfo: PackageJson): DependencyScope[] => {
-        return extractNpmScopes(packageInfo as Record<string, unknown>, (depName, versionRange) => {
-          if (versionRange.startsWith('workspace:') || versionRange.startsWith('link:')) {
-            return null;
-          }
-          const workspaceVersion = workspacePackages.get(depName);
-          if (workspaceVersion) {
-            return createNpmPurl(depName, workspaceVersion);
-          }
-          const resolvedVersion = resolvePackageVersion(lockfile, depName, versionRange);
-          return resolvedVersion ? createNpmPurl(depName, resolvedVersion) : null;
-        });
-      };
-
-      // Create subproject for root package if it has name and version
-      if (rootPackageInfo?.name && rootPackageInfo?.version) {
-        const rootPurl = createNpmPurl(rootPackageInfo.name, rootPackageInfo.version);
-        const rootScopes = extractScopesFromPackageJson(rootPackageInfo);
-
-        subprojects.push({
-          purl: rootPurl,
-          definitionFile: packageJsonPath,
-          scopes: rootScopes,
-        });
-      }
-
-      // Create subprojects for workspace packages
-      if (isWorkspaceRoot && workspacePackageJsonPaths.length > 0) {
-        for (const pkgJsonPath of workspacePackageJsonPaths) {
-          try {
-            const pkgContent = await Bun.file(pkgJsonPath).text();
-            const pkgInfo = JSON.parse(pkgContent) as PackageJson;
-
-            if (pkgInfo.name && pkgInfo.version) {
-              const purl = createNpmPurl(pkgInfo.name, pkgInfo.version);
-              const scopes = extractScopesFromPackageJson(pkgInfo);
-
-              subprojects.push({
-                purl,
-                definitionFile: pkgJsonPath,
-                scopes,
-              });
-            }
-          } catch {
-            // Skip invalid package.json files
-            continue;
-          }
-        }
-      }
-
-      // Process all packages in the lockfile
-      const processedPackages = new Set<string>(); // Track unique package@version to avoid duplicates
-
-      for (const [pattern, packageEntry] of lockfile.packages.entries()) {
-        const parsed = parsePackagePattern(pattern);
-        if (!parsed) continue;
-
-        const { name } = parsed;
-        const version = packageEntry.version;
-
-        if (!version) continue;
-
-        // Create a unique key for this package
-        const packageKey = `${name}@${version}`;
-        if (processedPackages.has(packageKey)) {
-          continue; // Already processed this exact package
-        }
-        processedPackages.add(packageKey);
-
-        const purl = createNpmPurl(name, version);
-
-        // Add package with evidence
-        ensurePackageExists(packageMap, purl);
-
-        const lineNumber = findLineNumber(lockfileContent, lockfile, name, version);
-        if (lineNumber) {
-          packageMap.get(purl)!.evidence.add(`${file}#${lineNumber}`);
-        }
-
-        // Extract relationships from dependencies
-        processDependencies(packageEntry, purl, lockfile, packageMap, relationshipsMap);
-      }
-
-      // Add relationships from subprojects to their dependencies
-    } catch (error) {
-      return {
-        packages: [],
-        subprojects: [],
-        relationships: [],
-        issues: [
-          {
-            message: `Failed to parse yarn.lock: ${error instanceof Error ? error.message : String(error)}`,
-            severity: 'ERROR',
-            file,
-          },
-        ],
-      };
     }
 
-    // Convert maps to arrays
-    const packages = convertPackageMapToArray(packageMap);
-    const relationships = convertRelationshipsMapToArray(relationshipsMap);
+    // Build a map of workspace package names to their versions
+    // We need to do this before extracting scopes so we can identify workspace dependencies
+    const workspacePackages = new Map<string, string>();
+    if (rootPackageInfo?.name && rootPackageInfo?.version) {
+      workspacePackages.set(rootPackageInfo.name, rootPackageInfo.version);
+    }
+    // Add all workspace packages from their package.json files
+    if (isWorkspaceRoot && workspacePackageJsonPaths.length > 0) {
+      for (const pkgJsonPath of workspacePackageJsonPaths) {
+        const pkgInfo = await readPackageJson(pkgJsonPath);
+        if (pkgInfo?.name && pkgInfo.version) {
+          workspacePackages.set(pkgInfo.name, pkgInfo.version);
+        }
+      }
+    }
 
-    return {
-      packages,
-      subprojects,
-      relationships,
-      issues: [],
+    const extractScopesFromPackageJson = (packageInfo: PackageJson): DependencyScope[] => {
+      return extractNpmScopes(packageInfo as Record<string, unknown>, (depName, versionRange) => {
+        if (versionRange.startsWith('workspace:') || versionRange.startsWith('link:')) {
+          return null;
+        }
+        const workspaceVersion = workspacePackages.get(depName);
+        if (workspaceVersion) {
+          return createNpmPurl(depName, workspaceVersion);
+        }
+        const resolvedVersion = resolvePackageVersion(lockfile, depName, versionRange);
+        return resolvedVersion ? createNpmPurl(depName, resolvedVersion) : null;
+      });
     };
+
+    // Create subproject for root package if it has name and version
+    if (rootPackageInfo?.name && rootPackageInfo?.version) {
+      const rootPurl = createNpmPurl(rootPackageInfo.name, rootPackageInfo.version);
+      const rootScopes = extractScopesFromPackageJson(rootPackageInfo);
+
+      subprojects.push({
+        purl: rootPurl,
+        definitionFile: packageJsonPath,
+        scopes: rootScopes,
+      });
+    }
+
+    // Create subprojects for workspace packages
+    if (isWorkspaceRoot && workspacePackageJsonPaths.length > 0) {
+      for (const pkgJsonPath of workspacePackageJsonPaths) {
+        const pkgInfo = await readPackageJson(pkgJsonPath);
+        if (pkgInfo?.name && pkgInfo.version) {
+          const purl = createNpmPurl(pkgInfo.name, pkgInfo.version);
+          const scopes = extractScopesFromPackageJson(pkgInfo);
+
+          subprojects.push({
+            purl,
+            definitionFile: pkgJsonPath,
+            scopes,
+          });
+        }
+      }
+    }
+
+    // Process all packages in the lockfile
+    const processedPackages = new Set<string>(); // Track unique package@version to avoid duplicates
+
+    for (const [pattern, packageEntry] of lockfile.packages.entries()) {
+      const parsed = parsePackagePattern(pattern);
+      if (!parsed) continue;
+
+      const { name } = parsed;
+      const version = packageEntry.version;
+
+      if (!version) continue;
+
+      // Create a unique key for this package
+      const packageKey = `${name}@${version}`;
+      if (processedPackages.has(packageKey)) {
+        continue; // Already processed this exact package
+      }
+      processedPackages.add(packageKey);
+
+      const purl = createNpmPurl(name, version);
+
+      // Add package with evidence
+      ensurePackageExists(packageMap, purl);
+
+      const lineNumber = findLineNumber(lockfileContent, lockfile, name, version);
+      if (lineNumber) {
+        packageMap.get(purl)!.evidence.add(`${file}#${lineNumber}`);
+      }
+
+      // Extract relationships from dependencies
+      processDependencies(packageEntry, purl, lockfile, packageMap, relationshipsMap);
+    }
+
+    return buildResult(packageMap, relationshipsMap, subprojects);
   },
 });
 

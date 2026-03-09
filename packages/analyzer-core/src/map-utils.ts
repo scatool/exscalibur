@@ -1,4 +1,4 @@
-import type { Package, Relationship, Subproject } from './types.ts';
+import type { AnalyzerResult, Package, Relationship, Subproject } from './types.ts';
 
 export type PackageMapEntry = {
   purl: string;
@@ -69,5 +69,33 @@ export function initializeExtractionMaps(): {
   return {
     packageMap: new Map<string, PackageMapEntry>(),
     relationshipsMap: new Map<string, Set<string>>(),
+  };
+}
+
+export function buildResult(
+  packageMap: Map<string, PackageMapEntry>,
+  relationshipsMap: Map<string, Set<string>>,
+  subprojects: Subproject[],
+): AnalyzerResult {
+  return {
+    packages: convertPackageMapToArray(packageMap),
+    subprojects,
+    relationships: convertRelationshipsMapToArray(relationshipsMap),
+    issues: [],
+  };
+}
+
+export function errorResult(file: string, lockfileName: string, error: unknown): AnalyzerResult {
+  return {
+    packages: [],
+    subprojects: [],
+    relationships: [],
+    issues: [
+      {
+        message: `Failed to parse ${lockfileName}: ${error instanceof Error ? error.message : String(error)}`,
+        severity: 'ERROR',
+        file,
+      },
+    ],
   };
 }

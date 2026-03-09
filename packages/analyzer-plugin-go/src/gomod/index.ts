@@ -1,8 +1,7 @@
 import {
   addRelationship,
   type AnalyzerResult,
-  convertPackageMapToArray,
-  convertRelationshipsMapToArray,
+  buildResult,
   type DependencyScope,
   ensurePackageExists,
   type Extractor,
@@ -184,16 +183,10 @@ export const extractor: Extractor = filesExtractor({
       scopes,
     });
 
-    // Convert maps to arrays
-    const allPackages = convertPackageMapToArray(packageMap);
-    const packages = allPackages.filter((pkg) => !subprojectPurls.has(pkg.purl));
-    const relationships = convertRelationshipsMapToArray(relationshipsMap);
-
+    const result = buildResult(packageMap, relationshipsMap, subprojects);
     return {
-      packages,
-      subprojects,
-      relationships,
-      issues: [],
+      ...result,
+      packages: result.packages.filter((pkg) => !subprojectPurls.has(pkg.purl)),
     };
   },
 });

@@ -7,8 +7,7 @@ import {
   addRelationship,
   ensurePackageExists,
   addPackageEvidence,
-  convertPackageMapToArray,
-  convertRelationshipsMapToArray,
+  buildResult,
   initializeExtractionMaps,
   scanAndMarkFiles,
 } from '@scatool/analyzer-core/src/index.ts';
@@ -357,13 +356,8 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
       });
     }
 
-    const packages = convertPackageMapToArray(packageMap);
-    const relationships = convertRelationshipsMapToArray(relationshipsMap);
-
     return {
-      packages,
-      subprojects,
-      relationships,
+      ...buildResult(packageMap, relationshipsMap, subprojects),
       issues,
     };
   },

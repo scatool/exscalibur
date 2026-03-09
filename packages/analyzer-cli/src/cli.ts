@@ -17,10 +17,8 @@ import { extractor as githubActionsExtractor } from '@scatool/analyzer-plugin-gi
 import type { AnalyzerResult, Extractor } from '@scatool/analyzer-core/src/index.ts';
 import { resolve } from 'path';
 
-// Parse command line arguments
 const args = process.argv.slice(2);
 
-// Parse flags
 const enabledExtractors = new Set<string>();
 const disabledExtractors = new Set<string>();
 const positionalArgs: string[] = [];
@@ -28,7 +26,6 @@ const positionalArgs: string[] = [];
 for (let i = 0; i < args.length; i++) {
   const arg = args[i];
   if (arg === '--enable' || arg === '-e') {
-    // Next argument is the extractor name(s) - can be comma-separated
     i++;
     if (i < args.length) {
       const names = args[i]
@@ -40,7 +37,6 @@ for (let i = 0; i < args.length; i++) {
       }
     }
   } else if (arg === '--disable' || arg === '-d') {
-    // Next argument is the extractor name(s) - can be comma-separated
     i++;
     if (i < args.length) {
       const names = args[i]
@@ -85,7 +81,6 @@ if (positionalArgs.length < 2) {
 const codebasePath = resolve(positionalArgs[0]);
 const outputPath = resolve(positionalArgs[1]);
 
-// All available extractors
 const allExtractors: Extractor[] = [
   bunlockExtractor,
   packageJsonExtractor,
@@ -100,19 +95,15 @@ const allExtractors: Extractor[] = [
   uvExtractor,
 ];
 
-// Filter extractors based on enable/disable flags
 function filterExtractors(extractors: Extractor[]): Extractor[] {
-  // If --enable is used, only run the enabled extractors
   if (enabledExtractors.size > 0) {
     return extractors.filter((e) => enabledExtractors.has(e.name));
   }
 
-  // If --disable is used, run all except the disabled extractors
   if (disabledExtractors.size > 0) {
     return extractors.filter((e) => !disabledExtractors.has(e.name));
   }
 
-  // Otherwise, run all extractors
   return extractors;
 }
 
@@ -125,7 +116,6 @@ async function runAnalysis(): Promise<void> {
   console.error(`Active extractors: ${extractors.map((e) => e.name).join(', ')}`);
   console.error('');
 
-  // Run all extractors
   const results: AnalyzerResult[] = [];
 
   for (const extractor of extractors) {
@@ -144,25 +134,18 @@ async function runAnalysis(): Promise<void> {
   console.error('');
   console.error('Merging results...');
 
-  // Merge all results
   const mergedResult = mergeResults(results);
 
   console.error(`Total packages: ${mergedResult.packages.length}`);
-  if (mergedResult.subprojects) {
-    console.error(`Total subprojects: ${mergedResult.subprojects.length}`);
-  }
-  if (mergedResult.relationships) {
-    console.error(`Total relationships: ${mergedResult.relationships.length}`);
-  }
+  console.error(`Total subprojects: ${mergedResult.subprojects.length}`);
+  console.error(`Total relationships: ${mergedResult.relationships.length}`);
 
-  // Write output
   console.error('');
   console.error(`Writing output to ${outputPath}...`);
   await Bun.write(outputPath, JSON.stringify(mergedResult, null, 2));
   console.error('Done!');
 }
 
-// Run the analysis
 try {
   await runAnalysis();
 } catch (error) {

@@ -294,6 +294,17 @@ export function parsePackagePattern(pattern: string): {
     };
   }
 
+  // Check for tarball packages (registry tarballs) - must be checked before git
+  // since the git regex would also match tarball URLs
+  const tarballMatch = pattern.match(/^(.+)@(https?:\/\/.+\.tgz.*)$/);
+  if (tarballMatch && tarballMatch[1] && tarballMatch[2]) {
+    return {
+      name: tarballMatch[1],
+      type: 'tarball',
+      versionOrPath: tarballMatch[2],
+    };
+  }
+
   // Check for git packages (https://)
   const gitMatch = pattern.match(/^(.+)@(https?:\/\/.+)$/);
   if (gitMatch && gitMatch[1] && gitMatch[2]) {
@@ -301,16 +312,6 @@ export function parsePackagePattern(pattern: string): {
       name: gitMatch[1],
       type: 'git',
       versionOrPath: gitMatch[2],
-    };
-  }
-
-  // Check for tarball packages (registry tarballs)
-  const tarballMatch = pattern.match(/^(.+)@(https?:\/\/.+\.tgz.*)$/);
-  if (tarballMatch && tarballMatch[1] && tarballMatch[2]) {
-    return {
-      name: tarballMatch[1],
-      type: 'tarball',
-      versionOrPath: tarballMatch[2],
     };
   }
 

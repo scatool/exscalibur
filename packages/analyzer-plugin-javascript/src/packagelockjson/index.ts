@@ -7,8 +7,7 @@ import {
   scanAndMarkFiles,
   addRelationship,
   ensurePackageExists,
-  convertPackageMapToArray,
-  convertRelationshipsMapToArray,
+  buildResult,
   initializeExtractionMaps,
 } from '@scatool/analyzer-core/src/index.ts';
 import { dirname, join } from 'node:path';
@@ -22,7 +21,7 @@ import {
   type PackageLockPackage,
 } from './lockfile.ts';
 import type { PackageJson } from '../types.ts';
-import { createNpmPurl, extractNpmScopes, NPM_DEPENDENCY_SCOPES } from '../npm-utils.ts';
+import { createNpmPurl, extractNpmScopes, NPM_DEPENDENCY_SCOPES, readPackageJson } from '../npm-utils.ts';
 import type { JavaScriptOptions } from '../options.ts';
 
 export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScriptOptions>({
@@ -37,38 +36,23 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
   extractFile: async (file: string): Promise<AnalyzerResult> => {
     const dir = dirname(file);
 
-    try {
-      const lockfileContent = await Bun.file(file).text();
-      const lockfile = parsePackageLock(lockfileContent);
+    const lockfileContent = await Bun.file(file).text();
+    const lockfile = parsePackageLock(lockfileContent);
 
-      // Route to appropriate extraction logic based on lockfile version
-      if (lockfile.lockfileVersion === 1) {
-        return extractFromV1Lockfile(lockfile, lockfileContent, file, dir);
-      } else if (lockfile.lockfileVersion >= 2 && lockfile.packages) {
-        return extractFromV2Lockfile(lockfile, lockfileContent, file, dir);
-      } else {
-        return {
-          packages: [],
-          subprojects: [],
-          relationships: [],
-          issues: [
-            {
-              message: `Unsupported lockfileVersion ${lockfile.lockfileVersion}`,
-              severity: 'WARNING',
-              file,
-            },
-          ],
-        };
-      }
-    } catch (error) {
+    // Route to appropriate extraction logic based on lockfile version
+    if (lockfile.lockfileVersion === 1) {
+      return extractFromV1Lockfile(lockfile, lockfileContent, file, dir);
+    } else if (lockfile.lockfileVersion >= 2 && lockfile.packages) {
+      return extractFromV2Lockfile(lockfile, lockfileContent, file, dir);
+    } else {
       return {
         packages: [],
         subprojects: [],
         relationships: [],
         issues: [
           {
-            message: `Failed to parse package-lock.json: ${error instanceof Error ? error.message : String(error)}`,
-            severity: 'ERROR',
+            message: `Unsupported lockfileVersion ${lockfile.lockfileVersion}`,
+            severity: 'WARNING',
             file,
           },
         ],
@@ -100,9 +84,7 @@ async function extractFromV1Lockfile(
       const purl = createNpmPurl(packageName, version);
 
       // Add package with evidence
-      if (!packageMap.has(purl)) {
-        packageMap.set(purl, { purl, evidence: new Set() });
-      }
+      ensurePackageExists(packageMap, purl);
 
       // Find line number for evidence
       const lineNumber = findLineNumberV1(lockfileContent, packageName, version);
@@ -147,36 +129,19 @@ async function extractFromV1Lockfile(
 
   // Extract root package as subproject
   const packageJsonPath = join(dir, 'package.json');
-  try {
-    const packageJsonContent = await Bun.file(packageJsonPath).text();
-    const packageInfo = JSON.parse(packageJsonContent) as PackageJson;
+  const packageInfo = await readPackageJson(packageJsonPath);
+  if (packageInfo?.name && packageInfo.version) {
+    const rootPurl = createNpmPurl(packageInfo.name, packageInfo.version);
+    const rootScopes = extractScopesV1(packageInfo, lockfile.dependencies);
 
-    if (packageInfo.name && packageInfo.version) {
-      const rootPurl = createNpmPurl(packageInfo.name, packageInfo.version);
-
-      // Extract scopes for the root package
-      const rootScopes = extractScopesV1(packageInfo, lockfile.dependencies);
-
-      subprojects.push({
-        purl: rootPurl,
-        definitionFile: packageJsonPath,
-        scopes: rootScopes,
-      });
-    }
-  } catch {
-    // Skip if package.json doesn't exist
+    subprojects.push({
+      purl: rootPurl,
+      definitionFile: packageJsonPath,
+      scopes: rootScopes,
+    });
   }
 
-  // Convert maps to arrays
-  const packages = convertPackageMapToArray(packageMap);
-  const relationships = convertRelationshipsMapToArray(relationshipsMap);
-
-  return {
-    packages,
-    subprojects,
-    relationships,
-    issues: [],
-  };
+  return buildResult(packageMap, relationshipsMap, subprojects);
 }
 
 function extractScopesV1(
@@ -210,19 +175,13 @@ async function extractFromV2Lockfile(
 
   for (const [packagePath] of Object.entries(lockfile.packages)) {
     if (isWorkspacePath(packagePath)) {
-      // Read package.json for this workspace
       const packageJsonPath = join(dir, packagePath, 'package.json');
-      try {
-        const packageJsonContent = await Bun.file(packageJsonPath).text();
-        const packageInfo = JSON.parse(packageJsonContent) as PackageJson;
-        if (packageInfo.name && packageInfo.version) {
-          workspacePackages.set(packageInfo.name, {
-            version: packageInfo.version,
-            path: packagePath,
-          });
-        }
-      } catch {
-        // Skip invalid workspace packages
+      const packageInfo = await readPackageJson(packageJsonPath);
+      if (packageInfo?.name && packageInfo.version) {
+        workspacePackages.set(packageInfo.name, {
+          version: packageInfo.version,
+          path: packagePath,
+        });
       }
     }
   }
@@ -231,24 +190,16 @@ async function extractFromV2Lockfile(
   const rootPackage = lockfile.packages[''];
   if (rootPackage) {
     const packageJsonPath = join(dir, 'package.json');
-    try {
-      const packageJsonContent = await Bun.file(packageJsonPath).text();
-      const packageInfo = JSON.parse(packageJsonContent) as PackageJson;
+    const rootPackageInfo = await readPackageJson(packageJsonPath);
+    if (rootPackageInfo?.name && rootPackageInfo.version) {
+      const rootPurl = createNpmPurl(rootPackageInfo.name, rootPackageInfo.version);
+      const rootScopes = extractScopes(rootPackageInfo, lockfile.packages, workspacePackages);
 
-      if (packageInfo.name && packageInfo.version) {
-        const rootPurl = createNpmPurl(packageInfo.name, packageInfo.version);
-
-        // Extract scopes for the root package
-        const rootScopes = extractScopes(packageInfo, lockfile.packages, workspacePackages);
-
-        subprojects.push({
-          purl: rootPurl,
-          definitionFile: packageJsonPath,
-          scopes: rootScopes,
-        });
-      }
-    } catch {
-      // Skip if package.json doesn't exist
+      subprojects.push({
+        purl: rootPurl,
+        definitionFile: packageJsonPath,
+        scopes: rootScopes,
+      });
     }
   }
 
@@ -256,25 +207,16 @@ async function extractFromV2Lockfile(
   for (const [packagePath] of Object.entries(lockfile.packages)) {
     if (isWorkspacePath(packagePath)) {
       const packageJsonPath = join(dir, packagePath, 'package.json');
+      const packageInfo = await readPackageJson(packageJsonPath);
+      if (packageInfo?.name && packageInfo.version) {
+        const purl = createNpmPurl(packageInfo.name, packageInfo.version);
+        const scopes = extractScopes(packageInfo, lockfile.packages, workspacePackages, packagePath);
 
-      try {
-        const packageJsonContent = await Bun.file(packageJsonPath).text();
-        const packageInfo = JSON.parse(packageJsonContent) as PackageJson;
-
-        if (packageInfo.name && packageInfo.version) {
-          const purl = createNpmPurl(packageInfo.name, packageInfo.version);
-
-          // Extract scopes
-          const scopes = extractScopes(packageInfo, lockfile.packages, workspacePackages, packagePath);
-
-          subprojects.push({
-            purl,
-            definitionFile: packageJsonPath,
-            scopes,
-          });
-        }
-      } catch {
-        // Skip invalid package.json
+        subprojects.push({
+          purl,
+          definitionFile: packageJsonPath,
+          scopes,
+        });
       }
     }
   }
@@ -298,9 +240,7 @@ async function extractFromV2Lockfile(
     const purl = createNpmPurl(actualName, version);
 
     // Add package with evidence
-    if (!packageMap.has(purl)) {
-      packageMap.set(purl, { purl, evidence: new Set() });
-    }
+    ensurePackageExists(packageMap, purl);
 
     // Find line number for evidence
     const lineNumber = findLineNumber(lockfileContent, packagePath, version);
@@ -320,16 +260,7 @@ async function extractFromV2Lockfile(
     );
   }
 
-  // Convert maps to arrays
-  const packages = convertPackageMapToArray(packageMap);
-  const relationships = convertRelationshipsMapToArray(relationshipsMap);
-
-  return {
-    packages,
-    subprojects,
-    relationships,
-    issues: [],
-  };
+  return buildResult(packageMap, relationshipsMap, subprojects);
 }
 
 function extractScopes(

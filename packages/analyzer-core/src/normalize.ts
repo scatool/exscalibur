@@ -8,7 +8,7 @@ export function normalizeResult(result: AnalyzerResult): AnalyzerResult {
   const sortedPackages = result.packages
     .map((pkg) => ({
       purl: pkg.purl,
-      evidence: [...pkg.evidence].sort(),
+      evidence: [...pkg.evidence].sort((a, b) => (a < b ? -1 : a > b ? 1 : 0)),
     }))
     .sort((a, b) => (a.purl < b.purl ? -1 : a.purl > b.purl ? 1 : 0));
 
@@ -19,7 +19,7 @@ export function normalizeResult(result: AnalyzerResult): AnalyzerResult {
       scopes: sub.scopes
         .map((scope) => ({
           scope: scope.scope,
-          packages: [...scope.packages].sort(),
+          packages: [...scope.packages].sort((a, b) => (a < b ? -1 : a > b ? 1 : 0)),
         }))
         .sort((a, b) => (a.scope < b.scope ? -1 : a.scope > b.scope ? 1 : 0)),
     }))
@@ -31,7 +31,7 @@ export function normalizeResult(result: AnalyzerResult): AnalyzerResult {
   const sortedRelationships = result.relationships
     .map((rel) => ({
       from: rel.from,
-      to: [...rel.to].sort(),
+      to: [...rel.to].sort((a, b) => (a < b ? -1 : a > b ? 1 : 0)),
     }))
     .sort((a, b) => (a.from < b.from ? -1 : a.from > b.from ? 1 : 0));
 
