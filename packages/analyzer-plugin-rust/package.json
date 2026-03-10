@@ -1,9 +1,17 @@
 {
   "name": "@scatool/analyzer-plugin-rust",
-  "private": true,
-  "version": "0.0.1",
+  "version": "0.0.3",
   "type": "module",
   "module": "src/index.ts",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "tag": "alpha",
+    "access": "restricted"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scatool/excalibur.git"
+  },
   "scripts": {
     "test": "bun test",
     "typecheck": "bunx tsc --strict --noEmit"
