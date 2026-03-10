@@ -2,6 +2,7 @@
 
 import {
   bunlockExtractor,
+  denoLockExtractor,
   packageJsonExtractor,
   packageLockJsonExtractor,
   pnpmLockExtractor,
@@ -14,6 +15,16 @@ import { gomodExtractor } from '@scatool/analyzer-plugin-go/src/index.ts';
 import { extractor as uvExtractor } from '@scatool/analyzer-plugin-uv/src/index.ts';
 import { mergeResults } from '@scatool/analyzer-core/src/index.ts';
 import { extractor as githubActionsExtractor } from '@scatool/analyzer-plugin-github-actions/src/index.ts';
+import {
+  pipfileLockExtractor,
+  poetryLockExtractor,
+  pdmLockExtractor,
+  requirementsTxtExtractor,
+} from '@scatool/analyzer-plugin-python/src/index.ts';
+import { cargoLockExtractor } from '@scatool/analyzer-plugin-rust/src/index.ts';
+import { mavenExtractor } from '@scatool/analyzer-plugin-maven/src/index.ts';
+import { extractor as cyclonedxExtractor } from '@scatool/analyzer-plugin-cdx/src/index.ts';
+import { ortExtractor } from '@scatool/analyzer-plugin-ort/src/index.ts';
 import type { AnalyzerResult, Extractor } from '@scatool/analyzer-core/src/index.ts';
 import { resolve } from 'path';
 
@@ -75,6 +86,15 @@ if (positionalArgs.length < 2) {
   console.error('  gradle            Extract from Gradle projects (build.gradle)');
   console.error('  gomod             Extract from Go modules (go.mod)');
   console.error('  uv                Extract from uv projects (uv.lock)');
+  console.error('  denolock          Extract from deno.lock files');
+  console.error('  pipfilelock       Extract from Pipfile.lock files');
+  console.error('  poetrylock        Extract from poetry.lock files');
+  console.error('  pdmlock           Extract from pdm.lock files');
+  console.error('  requirementstxt   Extract from requirements.txt files');
+  console.error('  cargolock         Extract from Cargo.lock files');
+  console.error('  maven             Extract from Maven pom.xml files');
+  console.error('  cyclonedx         Extract from CycloneDX BOM files');
+  console.error('  ort               Extract from ORT result files');
   process.exit(1);
 }
 
@@ -83,6 +103,7 @@ const outputPath = resolve(positionalArgs[1]);
 
 const allExtractors: Extractor[] = [
   bunlockExtractor,
+  denoLockExtractor,
   packageJsonExtractor,
   packageLockJsonExtractor,
   pnpmLockExtractor,
@@ -93,6 +114,14 @@ const allExtractors: Extractor[] = [
   gradleExtractor,
   gomodExtractor,
   uvExtractor,
+  pipfileLockExtractor,
+  poetryLockExtractor,
+  pdmLockExtractor,
+  requirementsTxtExtractor,
+  cargoLockExtractor,
+  mavenExtractor,
+  cyclonedxExtractor,
+  ortExtractor,
 ];
 
 function filterExtractors(extractors: Extractor[]): Extractor[] {
