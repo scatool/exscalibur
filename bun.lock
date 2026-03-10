@@ -24,11 +24,16 @@
       },
       "dependencies": {
         "@scatool/analyzer-core": "workspace:*",
+        "@scatool/analyzer-plugin-cdx": "workspace:*",
         "@scatool/analyzer-plugin-containers": "workspace:*",
         "@scatool/analyzer-plugin-github-actions": "workspace:*",
         "@scatool/analyzer-plugin-go": "workspace:*",
         "@scatool/analyzer-plugin-gradle": "workspace:*",
         "@scatool/analyzer-plugin-javascript": "workspace:*",
+        "@scatool/analyzer-plugin-maven": "workspace:*",
+        "@scatool/analyzer-plugin-ort": "workspace:*",
+        "@scatool/analyzer-plugin-python": "workspace:*",
+        "@scatool/analyzer-plugin-rust": "workspace:*",
         "@scatool/analyzer-plugin-uv": "workspace:*",
       },
       "devDependencies": {
