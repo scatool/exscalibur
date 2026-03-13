@@ -1,27 +1,28 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
-
 ## Project Overview
 
-Excalibur extracts dependency graphs from software projects. It parses lockfiles, package manifests, and other dependency definition files to produce a normalized graph of:
+Excalibur extracts dependency graphs from software projects. It parses lockfiles, package manifests, and other dependency definition files to produce a normalized graph of packages, subprojects, and relationships. Output uses [Package URLs (PURLs)](https://github.com/package-url/purl-spec) as identifiers.
 
-- **Packages**: Dependencies with Package URLs (PURLs) and evidence (file paths + line numbers)
-- **Subprojects**: Individual projects in a monorepo with their dependency scopes
-- **Relationships**: Dependency edges between packages
+This is a Bun monorepo managed with Turbo. All packages live under `packages/`.
 
 ## Commands
 
-### Unit Tests
+Run all commands from the project root unless noted otherwise.
 
-- **Run all unit tests**: `bun run test` (from root, uses Turbo to run tests across all packages)
-- **Run tests for a specific package**: `cd packages/<package-name> && bun test`
-- **Run a single test file**: `bun test <path-to-test-file>`
-- **Update snapshots**: `bun test <path-to-test-file> --update-snapshots`
+| Task                      | Command                                            | Notes                          |
+| ------------------------- | -------------------------------------------------- | ------------------------------ |
+| Install dependencies      | `bun install`                                      |                                |
+| Run all unit tests        | `bun run test`                                     | Uses Turbo across all packages |
+| Run tests for one package | `cd packages/<name> && bun test`                   |                                |
+| Run a single test file    | `bun test <path>`                                  |                                |
+| Update snapshots          | `bun test <path> --update-snapshots`               |                                |
+| Type check                | `bun run typecheck`                                | Uses Turbo                     |
+| Type check one package    | `cd packages/<name> && bunx tsc --strict --noEmit` |                                |
+| Lint                      | `bun run lint`                                     | ESLint                         |
+| Format                    | `bun run format`                                   | oxfmt                          |
 
-Note: Do not run `bun test` from root, it will run tests in the downloaded fixtures.
-
-The Gradle plugin tests require Java 21 or lower (Gradle 8.5 doesn't support newer Java versions). Use `mise` to activate the correct version: the project `mise.toml` pins `java = "temurin-21"`.
+**Do not** run bare `bun test` from root — it will match test files inside downloaded fixture repositories.
 
 ### Integration Tests
 
@@ -29,104 +30,91 @@ Integration tests in `test/` run all extractors against real open-source reposit
 
 **Setup:**
 
-1. Download test repositories: `bun test/scripts/download-repositories.ts`
-2. Copy `test/system.example.json` to `test/system.json` and set Java paths for your system (needed for Gradle-based repos). Both files are gitignored.
+1. Download repositories: `bun test/scripts/download-repositories.ts`
+2. Copy `test/system.example.json` to `test/system.json` and set Java/Maven paths for your system.
 
-**Run:** `cd test && bun test ./integration.test.ts` — always use the exact relative path. Never run bare `bun test` or `bun test integration.test.ts` (without `./`) in the `test/` directory, as bun treats the argument as a pattern and will also pick up `.test.ts` files inside the downloaded repositories that match the suffix (e.g. `transaction-matching.integration.test.ts`), causing unexpected behavior.
+**Run:** `cd test && bun test ./integration.test.ts`
+
+Always use the `./` prefix — without it, bun treats the argument as a pattern and picks up unrelated `.test.ts` files from downloaded repositories.
 
 **Update snapshots:** `cd test && UPDATE_SNAPSHOTS=1 bun test ./integration.test.ts`
 
-**Important:**
+**Pitfalls:**
 
-- The `test/repositories/` directory is gitignored. Do not run tools like `bunx taze` from the project root — they will modify `package.json` files inside the downloaded repos and break snapshot comparisons.
-- If snapshots are stale after a re-download, re-run with `UPDATE_SNAPSHOTS=1`.
-- Some downloaded repos contain their own `.test.ts` files that bun may pick up. These show as errors but are not real failures.
+- `test/repositories/` is gitignored. Do not run tools like `bunx taze` from the project root — they will modify `package.json` files inside downloaded repos and break snapshots.
+- Some downloaded repos contain their own `.test.ts` files that bun may match. These errors are not real failures.
 
-### Type Checking
+### Tool Versions
 
-- **Type check all packages**: `bun run typecheck` (from root, uses Turbo)
-- **Type check a specific package**: `cd packages/<package-name> && bunx tsc --strict --noEmit`
+The project uses `mise` to manage tool versions (see `mise.toml`):
 
-### Linting and Formatting
-
-- **Lint**: `bun run lint` (ESLint)
-- **Format**: `bun run format` (Prettier)
-
-### Package Management
-
-- **Install dependencies**: `bun install`
-- Uses Bun as the package manager (version 1.3.1)
+- **Bun** 1.3.9 (package.json declares 1.3.10)
+- **Java** temurin-21 — required for Gradle plugin tests (Gradle 8.5 doesn't support newer JDKs)
+- **Maven** 3 — required for Maven plugin tests
 
 ## Architecture
 
 ### Core Types (`@scatool/analyzer-core`)
 
-The core package defines the fundamental data structures:
+```
+AnalyzerResult
+├── packages: Package[]        # { purl, evidence: string[] }
+├── subprojects: Subproject[]  # { purl, definitionFile, scopes: DependencyScope[] }
+├── relationships: Relationship[]  # { from, to: string[] }
+└── issues: Issue[]            # { message, severity, file? }
+```
 
-- **`AnalyzerResult`**: Container for packages, subprojects, and relationships
-- **`Package`**: A dependency with a PURL and evidence array (file paths with line numbers)
-- **`Subproject`**: A project/workspace with dependency scopes (e.g., dependencies, devDependencies)
-- **`Relationship`**: Directed edges from one package to others
-- **`Extractor`**: Interface with `name`, `version`, and `extract(codebase)` method
-- **`FilesExtractor`**: Higher-level interface that marks files then extracts them individually
+Key interfaces:
+
+- **`Extractor<Options>`** — `{ name, version: 1, extract(codebase, options?) }`. The primary interface all extractors implement.
+- **`FilesExtractor<Options>`** — `{ name, version: 1, markFiles(codebase, options), extractFile?(file, options) }`. Higher-level interface used with the `filesExtractor()` helper.
 
 ### Extractor Pattern
 
-All extractors follow a consistent pattern using `filesExtractor()` helper:
+Most extractors use the `filesExtractor()` helper, which handles file discovery, per-file error handling, result merging, and path normalization:
 
 ```typescript
 export const extractor: Extractor = filesExtractor({
   name: 'extractor-name',
   version: 1,
-  markFiles: async function (codebase: string) {
-    // Glob for relevant files and call this.markFile(path)
+  markFiles: async function (codebase, options) {
+    // Use scanAndMarkFiles() or call this.markFile(path) directly
   },
-  extractFile: async (file: string): Promise<AnalyzerResult> {
-    // Parse file and return AnalyzerResult
+  extractFile: async (file, options) => {
+    // Parse file and return an AnalyzerResult
   },
 });
 ```
 
-**Key responsibilities**:
+The core also exports `scanAndMarkFiles(context, codebase, globPattern, ignorePatterns)` as a convenience for the common glob-and-filter pattern.
 
-1. **`markFiles`**: Use Bun's `Glob` to find relevant files, excluding `node_modules`
-2. **`extractFile`**: Parse individual files and return structured results
-3. **Evidence tracking**: Record file path and line number for each package reference
-4. **PURL creation**: Use `PackageURL` from `packageurl-js` to create normalized identifiers
-5. **Relationship mapping**: Track dependencies between packages
+### Utility Functions
 
-### Result Normalization
+- **`normalizeResult()`** — sorts all arrays for deterministic output
+- **`mergeResults()`** — combines multiple `AnalyzerResult` objects, deduplicating packages and merging relationships
+- **Map utilities** — `initializeExtractionMaps()`, `ensurePackageExists()`, `addPackageEvidence()`, `addRelationship()`, `buildResult()`, `errorResult()` for building results imperatively
 
-The core provides `normalizeResult()` and `mergeResults()` utilities:
+### Plugins
 
-- **`normalizeResult()`**: Sorts packages, subprojects, relationships, and evidence arrays for deterministic output
-- **`mergeResults()`**: Combines multiple `AnalyzerResult` objects, deduplicating packages and merging relationships
+| Package                          | Extractors                                                                                                                                                  |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `analyzer-plugin-javascript`     | `bunlockExtractor`, `denoLockExtractor`, `packageJsonExtractor`, `packageLockJsonExtractor`, `pnpmLockExtractor`, `yarnBerryExtractor`, `yarnLockExtractor` |
+| `analyzer-plugin-python`         | `pipfileLockExtractor`, `poetryLockExtractor`, `pdmLockExtractor`, `requirementsTxtExtractor`                                                               |
+| `analyzer-plugin-uv`             | UV lockfile extractor                                                                                                                                       |
+| `analyzer-plugin-go`             | `gomodExtractor`                                                                                                                                            |
+| `analyzer-plugin-rust`           | `cargoLockExtractor`                                                                                                                                        |
+| `analyzer-plugin-gradle`         | `gradleExtractor` (experimental, requires Java 21)                                                                                                          |
+| `analyzer-plugin-maven`          | `mavenExtractor` (experimental)                                                                                                                             |
+| `analyzer-plugin-containers`     | `dockerfileExtractor`                                                                                                                                       |
+| `analyzer-plugin-github-actions` | GitHub Actions workflow extractor                                                                                                                           |
+| `analyzer-plugin-cdx`            | CycloneDX SBOM parser                                                                                                                                       |
+| `analyzer-plugin-ort`            | ORT analyzer result converter                                                                                                                               |
 
-The `filesExtractor()` helper automatically calls `mergeResults()` on all file results.
+Supporting packages: `analyzer-cli` (CLI entry point), `analyzer-test-utils` (shared test helpers).
 
-### Plugin Structure
+### Testing
 
-Each plugin package exports one or more extractors:
+Tests use Bun's test runner with snapshot testing. Each extractor package has:
 
-- **`@scatool/analyzer-plugin-javascript`**: npm ecosystem support
-  - `bunlockExtractor`: Parses `bun.lock` (JSONC format)
-  - `packageLockJsonExtractor`: Parses `package-lock.json` (with npm ls fallback)
-  - `pnpmLockExtractor`: Parses `pnpm-lock.yaml` (supports v6 and v9+ formats)
-  - `yarnLockExtractor`: Parses `yarn.lock` (with yarn list fallback)
-  - `packageJsonExtractor`: Fallback parser for bare `package.json` files
-
-- **`@scatool/analyzer-plugin-containers`**: Docker/OCI images
-  - `dockerfileExtractor`: Extracts base images from Dockerfiles
-
-- **`@scatool/analyzer-plugin-github-actions`**: GitHub Actions workflows
-  - Extracts action references from `.github/workflows/*.{yml,yaml}`
-
-- **`@scatool/analyzer-plugin-gradle`**: Gradle projects (in development)
-
-### Testing Approach
-
-Tests use Bun's test runner with snapshot testing:
-
-- Fixtures in `__fixtures__/` subdirectories contain real-world examples
-- Tests typically extract from fixtures and compare against snapshots
-- Each extractor has comprehensive test coverage for different scenarios (basic, monorepo, workspace, git deps, tarball deps, etc.)
+- `__fixtures__/` — real-world example files
+- `__snapshots__/` — expected output snapshots
