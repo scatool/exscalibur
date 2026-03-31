@@ -69,8 +69,6 @@ type SpdxDocument = {
   '@context'?: unknown;
 };
 
-// --- JSON-LD accessors ---
-
 function getType(el: { type?: string; '@type'?: string }): string | undefined {
   return el.type ?? el['@type'];
 }
@@ -97,8 +95,6 @@ function typeIncludes(typeValue: string | undefined, name: string): boolean {
   );
 }
 
-// --- Extraction ---
-
 type ScopedDep = {
   fromPurl: string;
   toPurl: string;
@@ -117,13 +113,13 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
     const docType = getType(doc);
     const isDocumentRoot = docType && typeIncludes(docType, 'SpdxDocument');
 
-    // If the top-level has no type but has @graph, look for SpdxDocument in graph
+    // If top-level has no type but has @graph, search for SpdxDocument
     let specVersion: string | undefined;
 
     if (isDocumentRoot) {
       specVersion = resolveSpecVersion(doc, elements);
     } else if (elements.length > 0) {
-      // Look for SpdxDocument in graph elements
+      // Search SpdxDocument in graph elements
       const docElement = elements.find((el) => typeIncludes(getType(el), 'SpdxDocument'));
       if (docElement) {
         specVersion = resolveSpecVersion(docElement as SpdxDocument, elements);
@@ -164,7 +160,7 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
       };
     }
 
-    // Step 1: Build spdxId → PURL map from Package elements
+    // Step 1: Build spdxId: PURL map from Package elements
     const packages: Array<{ purl: string; evidence: string[] }> = [];
     const spdxIdToPurl = new Map<string, string>();
 
@@ -237,11 +233,9 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
       }
     }
 
-    // Step 3 will determine subproject PURLs, so defer relationship array building
-
     // Step 3: Build subprojects from rootElement references
     const rootElementIds = getRootElements(doc);
-    // Also check for SpdxDocument in graph that may have rootElement
+    // Check for SpdxDocument in graph that may have rootElement
     if (rootElementIds.length === 0) {
       for (const el of elements) {
         if (typeIncludes(getType(el), 'SpdxDocument')) {
@@ -373,12 +367,12 @@ function resolveSpecVersion(docOrElement: SpdxDocument | SpdxElement, elements: 
   if (!creationInfo) return undefined;
 
   if (typeof creationInfo === 'string') {
-    // It's a blank node reference — look it up in elements
+    // Blank node reference: look up in elements
     const infoElement = elements.find((el) => getId(el) === creationInfo);
     if (infoElement?.creationInfo && typeof infoElement.creationInfo !== 'string') {
       return infoElement.creationInfo.specVersion;
     }
-    // The blank node itself might have specVersion directly on the element
+    // Blank node itself could havespecVersion directly on the element
     const blankNode = elements.find((el) => getId(el) === creationInfo) as unknown as SpdxCreationInfo | undefined;
     return blankNode?.specVersion;
   }
