@@ -29,7 +29,8 @@
     "@scatool/analyzer-plugin-python": "workspace:*",
     "@scatool/analyzer-plugin-rust": "workspace:*",
     "@scatool/analyzer-plugin-uv": "workspace:*",
-    "@scatool/analyzer-plugin-cdx": "workspace:*"
+    "@scatool/analyzer-plugin-cdx": "workspace:*",
+    "@scatool/analyzer-plugin-spdx": "workspace:*"
   },
   "devDependencies": {
     "@types/bun": "^1.3.9"

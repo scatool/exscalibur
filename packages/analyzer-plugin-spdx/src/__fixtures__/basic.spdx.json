@@ -1,0 +1,35 @@
+{
+  "type": "SpdxDocument",
+  "spdxId": "https://example.com/spdx/basic",
+  "creationInfo": {
+    "specVersion": "3.0.1",
+    "created": "2024-01-01T00:00:00Z"
+  },
+  "rootElement": [],
+  "element": [
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.com/spdx/basic/Package/express",
+      "name": "express",
+      "packageVersion": "4.18.2",
+      "packageUrl": "pkg:npm/express@4.18.2",
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.com/spdx/basic/Package/react",
+      "name": "react",
+      "packageVersion": "18.2.0",
+      "packageUrl": "pkg:npm/react@18.2.0",
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.com/spdx/basic/Package/jackson-databind",
+      "name": "jackson-databind",
+      "packageVersion": "2.15.0",
+      "packageUrl": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.15.0",
+      "creationInfo": "_:creationInfo"
+    }
+  ]
+}

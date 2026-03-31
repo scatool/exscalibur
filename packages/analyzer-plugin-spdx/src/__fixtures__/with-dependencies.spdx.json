@@ -1,0 +1,63 @@
+{
+  "type": "SpdxDocument",
+  "spdxId": "https://example.com/spdx/deps",
+  "creationInfo": {
+    "specVersion": "3.0.1",
+    "created": "2024-01-01T00:00:00Z"
+  },
+  "rootElement": ["https://example.com/spdx/deps/Package/my-project"],
+  "element": [
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.com/spdx/deps/Package/my-project",
+      "name": "my-project",
+      "packageVersion": "1.0.0",
+      "packageUrl": "pkg:npm/my-project@1.0.0",
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.com/spdx/deps/Package/express",
+      "name": "express",
+      "packageVersion": "4.18.2",
+      "packageUrl": "pkg:npm/express@4.18.2",
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.com/spdx/deps/Package/body-parser",
+      "name": "body-parser",
+      "packageVersion": "1.20.2",
+      "packageUrl": "pkg:npm/body-parser@1.20.2",
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.com/spdx/deps/Package/accepts",
+      "name": "accepts",
+      "packageVersion": "1.3.8",
+      "packageUrl": "pkg:npm/accepts@1.3.8",
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "https://example.com/spdx/deps/Relationship/my-project-depends",
+      "relationshipType": "dependsOn",
+      "from": "https://example.com/spdx/deps/Package/my-project",
+      "to": [
+        "https://example.com/spdx/deps/Package/express",
+        "https://example.com/spdx/deps/Package/body-parser",
+        "https://example.com/spdx/deps/Package/accepts"
+      ],
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "https://example.com/spdx/deps/Relationship/express-depends",
+      "relationshipType": "dependsOn",
+      "from": "https://example.com/spdx/deps/Package/express",
+      "to": ["https://example.com/spdx/deps/Package/body-parser", "https://example.com/spdx/deps/Package/accepts"],
+      "creationInfo": "_:creationInfo"
+    }
+  ]
+}

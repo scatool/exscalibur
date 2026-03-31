@@ -1,0 +1,272 @@
+// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
+
+exports[`basic.spdx.json 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "basic.spdx.json",
+      ],
+      "purl": "pkg:npm/express@4.18.2",
+    },
+    {
+      "evidence": [
+        "basic.spdx.json",
+      ],
+      "purl": "pkg:npm/react@18.2.0",
+    },
+    {
+      "evidence": [
+        "basic.spdx.json",
+      ],
+      "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.15.0",
+    },
+  ],
+  "relationships": [],
+  "subprojects": [],
+}
+`;
+
+exports[`expanded-jsonld.spdx.jsonld 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "expanded-jsonld.spdx.jsonld",
+      ],
+      "purl": "pkg:npm/express@4.18.2",
+    },
+  ],
+  "relationships": [],
+  "subprojects": [
+    {
+      "definitionFile": "expanded-jsonld.spdx.jsonld",
+      "purl": "pkg:npm/my-app@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/express@4.18.2",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
+
+exports[`missing-purls.spdx.json 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "missing-purls.spdx.json",
+      ],
+      "purl": "pkg:npm/express@4.18.2",
+    },
+    {
+      "evidence": [
+        "missing-purls.spdx.json",
+      ],
+      "purl": "pkg:npm/lodash@4.17.21",
+    },
+  ],
+  "relationships": [],
+  "subprojects": [],
+}
+`;
+
+exports[`scatool-demo.spdx.json 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "scatool-demo.spdx.json",
+      ],
+      "purl": "pkg:npm/form-data@4.0.0",
+    },
+    {
+      "evidence": [
+        "scatool-demo.spdx.json",
+      ],
+      "purl": "pkg:npm/follow-redirects@1.15.2",
+    },
+    {
+      "evidence": [
+        "scatool-demo.spdx.json",
+      ],
+      "purl": "pkg:npm/axios@1.3.5",
+    },
+    {
+      "evidence": [
+        "scatool-demo.spdx.json",
+      ],
+      "purl": "pkg:npm/mime-db@1.52.0",
+    },
+    {
+      "evidence": [
+        "scatool-demo.spdx.json",
+      ],
+      "purl": "pkg:npm/proxy-from-env@1.1.0",
+    },
+    {
+      "evidence": [
+        "scatool-demo.spdx.json",
+      ],
+      "purl": "pkg:npm/asynckit@0.4.0",
+    },
+    {
+      "evidence": [
+        "scatool-demo.spdx.json",
+      ],
+      "purl": "pkg:npm/delayed-stream@1.0.0",
+    },
+    {
+      "evidence": [
+        "scatool-demo.spdx.json",
+      ],
+      "purl": "pkg:npm/mime-types@2.1.35",
+    },
+    {
+      "evidence": [
+        "scatool-demo.spdx.json",
+      ],
+      "purl": "pkg:npm/combined-stream@1.0.8",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:npm/axios@1.3.5",
+      "to": [
+        "pkg:npm/follow-redirects@1.15.2",
+        "pkg:npm/proxy-from-env@1.1.0",
+        "pkg:npm/form-data@4.0.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/form-data@4.0.0",
+      "to": [
+        "pkg:npm/mime-types@2.1.35",
+        "pkg:npm/combined-stream@1.0.8",
+        "pkg:npm/asynckit@0.4.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/mime-types@2.1.35",
+      "to": [
+        "pkg:npm/mime-db@1.52.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/combined-stream@1.0.8",
+      "to": [
+        "pkg:npm/delayed-stream@1.0.0",
+      ],
+    },
+  ],
+  "subprojects": [],
+}
+`;
+
+exports[`with-dependencies.spdx.json 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "with-dependencies.spdx.json",
+      ],
+      "purl": "pkg:npm/express@4.18.2",
+    },
+    {
+      "evidence": [
+        "with-dependencies.spdx.json",
+      ],
+      "purl": "pkg:npm/body-parser@1.20.2",
+    },
+    {
+      "evidence": [
+        "with-dependencies.spdx.json",
+      ],
+      "purl": "pkg:npm/accepts@1.3.8",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:npm/express@4.18.2",
+      "to": [
+        "pkg:npm/body-parser@1.20.2",
+        "pkg:npm/accepts@1.3.8",
+      ],
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "with-dependencies.spdx.json",
+      "purl": "pkg:npm/my-project@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/express@4.18.2",
+            "pkg:npm/body-parser@1.20.2",
+            "pkg:npm/accepts@1.3.8",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
+
+exports[`with-scoped-dependencies.spdx.json 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "with-scoped-dependencies.spdx.json",
+      ],
+      "purl": "pkg:npm/express@4.18.2",
+    },
+    {
+      "evidence": [
+        "with-scoped-dependencies.spdx.json",
+      ],
+      "purl": "pkg:npm/jest@29.7.0",
+    },
+    {
+      "evidence": [
+        "with-scoped-dependencies.spdx.json",
+      ],
+      "purl": "pkg:npm/lodash@4.17.21",
+    },
+  ],
+  "relationships": [],
+  "subprojects": [
+    {
+      "definitionFile": "with-scoped-dependencies.spdx.json",
+      "purl": "pkg:npm/my-app@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/express@4.18.2",
+            "pkg:npm/lodash@4.17.21",
+          ],
+          "scope": "runtime",
+        },
+        {
+          "packages": [
+            "pkg:npm/jest@29.7.0",
+          ],
+          "scope": "test",
+        },
+      ],
+    },
+  ],
+}
+`;
