@@ -30,6 +30,14 @@
       "packageVersion": "2.15.0",
       "packageUrl": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.15.0",
       "creationInfo": "_:creationInfo"
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "https://example.com/spdx/basic/Relationship/express-depends-react",
+      "relationshipType": "dependsOn",
+      "from": "https://example.com/spdx/basic/Package/express",
+      "to": ["https://example.com/spdx/basic/Package/react"],
+      "creationInfo": "_:creationInfo"
     }
   ]
 }

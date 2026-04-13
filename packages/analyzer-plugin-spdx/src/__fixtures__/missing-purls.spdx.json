@@ -41,6 +41,18 @@
       "name": "invalid",
       "packageUrl": "not-a-valid-purl",
       "creationInfo": "_:creationInfo"
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "https://example.com/spdx/missing-purls/Relationship/express-depends-lodash",
+      "relationshipType": "dependsOn",
+      "from": "https://example.com/spdx/missing-purls/Package/express",
+      "to": [
+        "https://example.com/spdx/missing-purls/Package/ext-id-purl",
+        "https://example.com/spdx/missing-purls/Package/no-purl",
+        "https://example.com/spdx/missing-purls/Package/invalid-purl"
+      ],
+      "creationInfo": "_:creationInfo"
     }
   ]
 }

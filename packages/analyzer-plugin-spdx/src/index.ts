@@ -21,8 +21,6 @@ export const extractor: Extractor = filesExtractor({
   },
 });
 
-// --- Types ---
-
 type SpdxCreationInfo = {
   specVersion?: string;
 };
@@ -33,36 +31,29 @@ type SpdxExternalIdentifier = {
 };
 
 type SpdxElement = {
-  // Compacted form
   type?: string;
   spdxId?: string;
-  // Expanded form
   '@type'?: string;
   '@id'?: string;
-  // Package fields
   name?: string;
   packageUrl?: string;
   software_packageUrl?: string;
   packageVersion?: string;
   externalIdentifier?: SpdxExternalIdentifier[];
-  // Relationship fields
   relationshipType?: string;
   from?: string;
   to?: string[];
-  // LifecycleScopedRelationship fields
   scope?: string;
-  // CreationInfo (inline or blank node reference)
+  rootElement?: string[];
   creationInfo?: string | SpdxCreationInfo;
 };
 
 type SpdxDocument = {
-  // Compacted form
   type?: string;
   spdxId?: string;
   creationInfo?: string | SpdxCreationInfo;
   element?: SpdxElement[];
   rootElement?: string[];
-  // Expanded form
   '@type'?: string;
   '@id'?: string;
   '@graph'?: SpdxElement[];
@@ -105,21 +96,14 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
   try {
     const doc: SpdxDocument = JSON.parse(content);
 
-    // For expanded JSON-LD with @graph, the document root may be in the graph
-    // or the top-level object itself may be the document
     const elements = getElements(doc);
-
-    // Validate: check if this is an SPDX document
     const docType = getType(doc);
     const isDocumentRoot = docType && typeIncludes(docType, 'SpdxDocument');
-
-    // If top-level has no type but has @graph, search for SpdxDocument
     let specVersion: string | undefined;
 
     if (isDocumentRoot) {
       specVersion = resolveSpecVersion(doc, elements);
     } else if (elements.length > 0) {
-      // Search SpdxDocument in graph elements
       const docElement = elements.find((el) => typeIncludes(getType(el), 'SpdxDocument'));
       if (docElement) {
         specVersion = resolveSpecVersion(docElement as SpdxDocument, elements);
@@ -160,11 +144,16 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
       };
     }
 
-    // Step 1: Build spdxId: PURL map from Package elements
     const packages: Array<{ purl: string; evidence: string[] }> = [];
     const spdxIdToPurl = new Map<string, string>();
+    const spdxIdToElement = new Map<string, SpdxElement>();
 
     for (const el of elements) {
+      const elId = getId(el);
+      if (elId) {
+        spdxIdToElement.set(elId, el);
+      }
+
       const elType = getType(el);
       if (!typeIncludes(elType, 'Package')) continue;
 
@@ -179,7 +168,6 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
         continue;
       }
 
-      const elId = getId(el);
       if (elId) {
         spdxIdToPurl.set(elId, validatedPurl);
       }
@@ -192,10 +180,7 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
       packages.push({ purl: validatedPurl, evidence });
     }
 
-    // Step 2: Build relationships from Relationship and LifecycleScopedRelationship elements
     const scopedDeps: ScopedDep[] = [];
-
-    // Accumulate all dependsOn relationships by fromPurl for merging
     const relationshipMap = new Map<string, Set<string>>();
 
     for (const el of elements) {
@@ -218,7 +203,6 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
         const toPurl = spdxIdToPurl.get(toId);
         if (!toPurl) continue;
 
-        // Add to relationship map
         const existing = relationshipMap.get(fromPurl);
         if (existing) {
           existing.add(toPurl);
@@ -226,26 +210,25 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
           relationshipMap.set(fromPurl, new Set([toPurl]));
         }
 
-        // Track scoped deps for subproject building
         if (isLifecycleScoped && el.scope) {
           scopedDeps.push({ fromPurl, toPurl, scope: el.scope });
         }
       }
     }
 
-    // Step 3: Build subprojects from rootElement references
-    const rootElementIds = getRootElements(doc);
-    // Check for SpdxDocument in graph that may have rootElement
+    const rootElementIds = [...getRootElements(doc)];
     if (rootElementIds.length === 0) {
       for (const el of elements) {
         if (typeIncludes(getType(el), 'SpdxDocument')) {
           const docEl = el as unknown as SpdxDocument;
-          const roots = getRootElements(docEl);
-          rootElementIds.push(...roots);
+          rootElementIds.push(...getRootElements(docEl));
           break;
         }
       }
     }
+
+    // Follow through Bom/Sbom/Bundle elements to resolve their rootElement entries
+    resolveNonPackageRoots(rootElementIds, spdxIdToPurl, spdxIdToElement);
 
     const subprojects: Subproject[] = [];
 
@@ -253,10 +236,8 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
       const rootPurl = spdxIdToPurl.get(rootId);
       if (!rootPurl) continue;
 
-      // Group scoped deps by scope for this root
       const scopeMap = new Map<string, string[]>();
 
-      // Collect scoped deps where from matches this root
       for (const dep of scopedDeps) {
         if (dep.fromPurl !== rootPurl) continue;
         const existing = scopeMap.get(dep.scope);
@@ -267,7 +248,6 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
         }
       }
 
-      // Collect unscoped dependsOn for this root into "dependencies" scope
       const allScopedToPurls = new Set(scopedDeps.filter((d) => d.fromPurl === rootPurl).map((d) => d.toPurl));
       const unscopedDeps = relationshipMap.get(rootPurl);
       if (unscopedDeps) {
@@ -299,7 +279,6 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
       });
     }
 
-    // Exclude subproject PURLs from packages and relationships
     const subprojectPurls = new Set(subprojects.map((sp) => sp.purl));
 
     const filteredPackages = packages.filter((pkg) => !subprojectPurls.has(pkg.purl));
@@ -337,8 +316,46 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
   }
 }
 
+/**
+ * When rootElementIds contains non-Package entries (e.g. Bom/Sbom/Bundle),
+ * follow through their rootElement to find the actual packages.
+ * Package rootElements are kept as-is (direct dependencies).
+ * Non-Package rootElements with their own rootElement are followed recursively.
+ */
+function resolveNonPackageRoots(
+  rootElementIds: string[],
+  spdxIdToPurl: Map<string, string>,
+  spdxIdToElement: Map<string, SpdxElement>,
+): void {
+  const resolved: string[] = [];
+  const visited = new Set<string>();
+
+  function resolve(ids: string[]) {
+    for (const id of ids) {
+      if (visited.has(id)) continue;
+      visited.add(id);
+
+      if (spdxIdToPurl.has(id)) {
+        // It's a Package — keep it as a root element
+        resolved.push(id);
+        continue;
+      }
+
+      // Non-Package element — follow through its rootElement if it has one
+      const el = spdxIdToElement.get(id);
+      if (el?.rootElement && el.rootElement.length > 0) {
+        resolve(el.rootElement);
+      }
+    }
+  }
+
+  resolve(rootElementIds);
+
+  rootElementIds.length = 0;
+  rootElementIds.push(...resolved);
+}
+
 function extractPurl(el: SpdxElement): string | undefined {
-  // Check direct packageUrl field first (compacted or expanded form)
   if (el.packageUrl) {
     return el.packageUrl;
   }
@@ -346,7 +363,6 @@ function extractPurl(el: SpdxElement): string | undefined {
     return el.software_packageUrl;
   }
 
-  // Fall back to externalIdentifier array
   if (el.externalIdentifier) {
     for (const extId of el.externalIdentifier) {
       if (
@@ -367,14 +383,12 @@ function resolveSpecVersion(docOrElement: SpdxDocument | SpdxElement, elements: 
   if (!creationInfo) return undefined;
 
   if (typeof creationInfo === 'string') {
-    // Blank node reference: look up in elements
     const infoElement = elements.find((el) => getId(el) === creationInfo);
     if (infoElement?.creationInfo && typeof infoElement.creationInfo !== 'string') {
       return infoElement.creationInfo.specVersion;
     }
-    // Blank node itself could havespecVersion directly on the element
-    const blankNode = elements.find((el) => getId(el) === creationInfo) as unknown as SpdxCreationInfo | undefined;
-    return blankNode?.specVersion;
+    // Blank node may have specVersion directly as a property
+    return (infoElement as unknown as SpdxCreationInfo | undefined)?.specVersion;
   }
 
   return creationInfo.specVersion;

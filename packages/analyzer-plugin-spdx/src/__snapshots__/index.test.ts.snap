@@ -23,8 +23,58 @@ exports[`basic.spdx.json 1`] = `
       "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.15.0",
     },
   ],
-  "relationships": [],
+  "relationships": [
+    {
+      "from": "pkg:npm/express@4.18.2",
+      "to": [
+        "pkg:npm/react@18.2.0",
+      ],
+    },
+  ],
   "subprojects": [],
+}
+`;
+
+exports[`bom-with-root.spdx.json 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "bom-with-root.spdx.json",
+      ],
+      "purl": "pkg:npm/lodash@4.17.21",
+    },
+    {
+      "evidence": [
+        "bom-with-root.spdx.json",
+      ],
+      "purl": "pkg:npm/express@4.18.2",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:npm/express@4.18.2",
+      "to": [
+        "pkg:npm/lodash@4.17.21",
+      ],
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "bom-with-root.spdx.json",
+      "purl": "pkg:npm/my-app@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/lodash@4.17.21",
+            "pkg:npm/express@4.18.2",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+  ],
 }
 `;
 
@@ -74,7 +124,14 @@ exports[`missing-purls.spdx.json 1`] = `
       "purl": "pkg:npm/lodash@4.17.21",
     },
   ],
-  "relationships": [],
+  "relationships": [
+    {
+      "from": "pkg:npm/express@4.18.2",
+      "to": [
+        "pkg:npm/lodash@4.17.21",
+      ],
+    },
+  ],
   "subprojects": [],
 }
 `;
@@ -245,8 +302,33 @@ exports[`with-scoped-dependencies.spdx.json 1`] = `
       ],
       "purl": "pkg:npm/lodash@4.17.21",
     },
+    {
+      "evidence": [
+        "with-scoped-dependencies.spdx.json",
+      ],
+      "purl": "pkg:npm/typescript@5.3.3",
+    },
+    {
+      "evidence": [
+        "with-scoped-dependencies.spdx.json",
+      ],
+      "purl": "pkg:npm/prettier@3.1.0",
+    },
   ],
-  "relationships": [],
+  "relationships": [
+    {
+      "from": "pkg:npm/express@4.18.2",
+      "to": [
+        "pkg:npm/lodash@4.17.21",
+      ],
+    },
+    {
+      "from": "pkg:npm/jest@29.7.0",
+      "to": [
+        "pkg:npm/typescript@5.3.3",
+      ],
+    },
+  ],
   "subprojects": [
     {
       "definitionFile": "with-scoped-dependencies.spdx.json",
@@ -264,6 +346,18 @@ exports[`with-scoped-dependencies.spdx.json 1`] = `
             "pkg:npm/jest@29.7.0",
           ],
           "scope": "test",
+        },
+        {
+          "packages": [
+            "pkg:npm/typescript@5.3.3",
+          ],
+          "scope": "dev",
+        },
+        {
+          "packages": [
+            "pkg:npm/prettier@3.1.0",
+          ],
+          "scope": "build",
         },
       ],
     },

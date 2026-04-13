@@ -1,0 +1,68 @@
+{
+  "@context": "https://spdx.org/rdf/3.0.1/spdx-context.jsonld",
+  "@graph": [
+    {
+      "spdxId": "_:creationInfo",
+      "type": "CreationInfo",
+      "specVersion": "3.0.1",
+      "created": "2024-01-01T00:00:00Z"
+    },
+    {
+      "spdxId": "https://example.com/doc",
+      "type": "SpdxDocument",
+      "rootElement": ["https://example.com/bom"],
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "spdxId": "https://example.com/bom",
+      "type": "software_Sbom",
+      "rootElement": ["https://example.com/Package/my-app"],
+      "element": [
+        "https://example.com/Package/my-app",
+        "https://example.com/Package/lodash",
+        "https://example.com/Package/express"
+      ],
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "spdxId": "https://example.com/Package/my-app",
+      "type": "software_Package",
+      "name": "my-app",
+      "packageVersion": "1.0.0",
+      "packageUrl": "pkg:npm/my-app@1.0.0",
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "spdxId": "https://example.com/Package/lodash",
+      "type": "software_Package",
+      "name": "lodash",
+      "packageVersion": "4.17.21",
+      "packageUrl": "pkg:npm/lodash@4.17.21",
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "spdxId": "https://example.com/Package/express",
+      "type": "software_Package",
+      "name": "express",
+      "packageVersion": "4.18.2",
+      "packageUrl": "pkg:npm/express@4.18.2",
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "spdxId": "https://example.com/Relationship/my-app-depends-lodash",
+      "type": "Relationship",
+      "relationshipType": "dependsOn",
+      "from": "https://example.com/Package/my-app",
+      "to": ["https://example.com/Package/lodash", "https://example.com/Package/express"],
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "spdxId": "https://example.com/Relationship/express-depends-lodash",
+      "type": "Relationship",
+      "relationshipType": "dependsOn",
+      "from": "https://example.com/Package/express",
+      "to": ["https://example.com/Package/lodash"],
+      "creationInfo": "_:creationInfo"
+    }
+  ]
+}
