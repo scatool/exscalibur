@@ -34,6 +34,12 @@ jobs:
       - name: Setup uv
         uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
 
+      - name: Install Conan
+        run: |
+          python3 -m pip install --user "conan>=2,<3"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          conan --version
+
       - name: Cache test repositories
         id: cache-repos
         uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5

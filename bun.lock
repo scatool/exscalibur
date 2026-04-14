@@ -26,6 +26,7 @@
         "@scatool/analyzer-core": "workspace:*",
         "@scatool/analyzer-plugin-cdx": "workspace:*",
         "@scatool/analyzer-plugin-containers": "workspace:*",
+        "@scatool/analyzer-plugin-cpp": "workspace:*",
         "@scatool/analyzer-plugin-github-actions": "workspace:*",
         "@scatool/analyzer-plugin-go": "workspace:*",
         "@scatool/analyzer-plugin-gradle": "workspace:*",
@@ -77,6 +78,22 @@
       "dependencies": {
         "@scatool/analyzer-core": "workspace:*",
         "packageurl-js": "^2.0.1",
+      },
+      "devDependencies": {
+        "@scatool/analyzer-test-utils": "workspace:*",
+        "@types/bun": "^1.3.9",
+      },
+      "peerDependencies": {
+        "typescript": "^5",
+      },
+    },
+    "packages/analyzer-plugin-cpp": {
+      "name": "@scatool/analyzer-plugin-cpp",
+      "version": "0.0.5",
+      "dependencies": {
+        "@scatool/analyzer-core": "workspace:*",
+        "packageurl-js": "^2.0.1",
+        "zod": "^4.3.6",
       },
       "devDependencies": {
         "@scatool/analyzer-test-utils": "workspace:*",
@@ -347,6 +364,8 @@
     "@scatool/analyzer-plugin-cdx": ["@scatool/analyzer-plugin-cdx@workspace:packages/analyzer-plugin-cdx"],
 
     "@scatool/analyzer-plugin-containers": ["@scatool/analyzer-plugin-containers@workspace:packages/analyzer-plugin-containers"],
+
+    "@scatool/analyzer-plugin-cpp": ["@scatool/analyzer-plugin-cpp@workspace:packages/analyzer-plugin-cpp"],
 
     "@scatool/analyzer-plugin-github-actions": ["@scatool/analyzer-plugin-github-actions@workspace:packages/analyzer-plugin-github-actions"],
 

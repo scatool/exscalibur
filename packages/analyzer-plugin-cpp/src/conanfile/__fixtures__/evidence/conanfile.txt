@@ -1,0 +1,11 @@
+# comment to confuse the line number extractor: openssl/3.0.8
+
+[requires]
+zlib/1.2.13 # other comment to confuse the line number extractor: openssl/3.0.8
+openssl/3.0.8
+
+[generators]
+CMakeDeps
+CMakeToolchain
+
+

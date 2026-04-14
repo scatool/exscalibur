@@ -1,4 +1,4 @@
-import type { AnalyzerResult, Package, Relationship, Subproject } from './types.ts';
+import type { AnalyzerResult, Issue, Package, Relationship, Subproject } from './types.ts';
 
 export type PackageMapEntry = {
   purl: string;
@@ -76,12 +76,13 @@ export function buildResult(
   packageMap: Map<string, PackageMapEntry>,
   relationshipsMap: Map<string, Set<string>>,
   subprojects: Subproject[],
+  issues?: Issue[],
 ): AnalyzerResult {
   return {
     packages: convertPackageMapToArray(packageMap),
     subprojects,
     relationships: convertRelationshipsMapToArray(relationshipsMap),
-    issues: [],
+    issues: issues || [],
   };
 }
 
