@@ -1,5 +1,6 @@
 #!/usr/bin/env bun
 
+import { Command } from 'commander';
 import {
   bunlockExtractor,
   denoLockExtractor,
@@ -28,117 +29,121 @@ import { ortExtractor } from '@scatool/analyzer-plugin-ort/src/index.ts';
 import type { AnalyzerResult, Extractor } from '@scatool/analyzer-core/src/index.ts';
 import { resolve } from 'path';
 
-const args = process.argv.slice(2);
+const program = new Command();
 
-const enabledExtractors = new Set<string>();
-const disabledExtractors = new Set<string>();
-const positionalArgs: string[] = [];
-
-for (let i = 0; i < args.length; i++) {
-  const arg = args[i];
-  if (arg === '--enable' || arg === '-e') {
-    i++;
-    if (i < args.length) {
-      const names = args[i]
+program
+  .name('analyzer')
+  .description('Extract dependency graphs from software projects')
+  .argument('<codebase-path>', 'Path to the codebase to analyze')
+  .argument('<output-path>', 'Path to write the JSON output file')
+  .option(
+    '-e, --enable <names>',
+    'Enable specific extractor(s) (comma-separated or multiple flags)',
+    (value: string, previous: string[] | undefined) => {
+      const names = value
         .split(',')
         .map((n) => n.trim())
         .filter((n) => n.length > 0);
-      for (const name of names) {
-        enabledExtractors.add(name);
-      }
-    }
-  } else if (arg === '--disable' || arg === '-d') {
-    i++;
-    if (i < args.length) {
-      const names = args[i]
+      return previous ? [...previous, ...names] : names;
+    },
+    [] as string[],
+  )
+  .option(
+    '-d, --disable <names>',
+    'Disable specific extractor(s) (comma-separated or multiple flags)',
+    (value: string, previous: string[] | undefined) => {
+      const names = value
         .split(',')
         .map((n) => n.trim())
         .filter((n) => n.length > 0);
-      for (const name of names) {
-        disabledExtractors.add(name);
-      }
+      return previous ? [...previous, ...names] : names;
+    },
+    [] as string[],
+  )
+  .addHelpText(
+    'after',
+    `
+Available extractors:
+  bunlock           Extract from bun.lock files
+  packagejson       Extract from package.json files
+  packagelockjson   Extract from package-lock.json files
+  pnpmlock          Extract from pnpm-lock.yaml files
+  yarnberry         Extract from yarn.lock files (Yarn Berry/Modern)
+  yarnlock          Extract from yarn.lock files (Yarn v1/Classic)
+  dockerfile        Extract from Dockerfile files
+  github-actions    Extract from GitHub Actions workflow files
+  gradle            Extract from Gradle projects (build.gradle)
+  gomod             Extract from Go modules (go.mod)
+  uv                Extract from uv projects (uv.lock)
+  denolock          Extract from deno.lock files
+  pipfilelock       Extract from Pipfile.lock files
+  poetrylock        Extract from poetry.lock files
+  pdmlock           Extract from pdm.lock files
+  requirementstxt   Extract from requirements.txt files
+  cargolock         Extract from Cargo.lock files
+  maven             Extract from Maven pom.xml files
+  cyclonedx         Extract from CycloneDX BOM files
+  ort               Extract from ORT result files
+`,
+  )
+  .action(async (codebasePath, outputPath, options) => {
+    try {
+      const enabledExtractors: Set<string> = new Set(options.enable);
+      const disabledExtractors: Set<string> = new Set(options.disable);
+
+      const codebasePathResolved = resolve(codebasePath);
+      const outputPathResolved = resolve(outputPath);
+
+      const allExtractors: Extractor[] = [
+        bunlockExtractor,
+        denoLockExtractor,
+        packageJsonExtractor,
+        packageLockJsonExtractor,
+        pnpmLockExtractor,
+        yarnBerryExtractor,
+        yarnLockExtractor,
+        dockerfileExtractor,
+        githubActionsExtractor,
+        gradleExtractor,
+        gomodExtractor,
+        uvExtractor,
+        pipfileLockExtractor,
+        poetryLockExtractor,
+        pdmLockExtractor,
+        requirementsTxtExtractor,
+        cargoLockExtractor,
+        mavenExtractor,
+        cyclonedxExtractor,
+        ortExtractor,
+      ];
+
+      const extractors = filterExtractors(enabledExtractors, disabledExtractors, allExtractors);
+      await runAnalysis(codebasePathResolved, outputPathResolved, extractors);
+    } catch (error) {
+      console.error('Fatal error:', error instanceof Error ? error.message : String(error));
+      process.exit(1);
     }
-  } else if (!arg.startsWith('-')) {
-    positionalArgs.push(arg);
-  }
-}
+  });
 
-if (positionalArgs.length < 2) {
-  console.error('Usage: analyzer [options] <codebase-path> <output-path>');
-  console.error('');
-  console.error('Arguments:');
-  console.error('  codebase-path  Path to the codebase to analyze');
-  console.error('  output-path    Path to write the JSON output file');
-  console.error('');
-  console.error('Options:');
-  console.error('  --enable, -e <name>   Enable specific extractor(s) (comma-separated or multiple flags)');
-  console.error('  --disable, -d <name>  Disable specific extractor(s) (comma-separated or multiple flags)');
-  console.error('');
-  console.error('Available extractors:');
-  console.error('  bunlock           Extract from bun.lock files');
-  console.error('  packagejson       Extract from package.json files');
-  console.error('  packagelockjson   Extract from package-lock.json files');
-  console.error('  pnpmlock          Extract from pnpm-lock.yaml files');
-  console.error('  yarnberry         Extract from yarn.lock files (Yarn Berry/Modern)');
-  console.error('  yarnlock          Extract from yarn.lock files (Yarn v1/Classic)');
-  console.error('  dockerfile        Extract from Dockerfile files');
-  console.error('  github-actions    Extract from GitHub Actions workflow files');
-  console.error('  gradle            Extract from Gradle projects (build.gradle)');
-  console.error('  gomod             Extract from Go modules (go.mod)');
-  console.error('  uv                Extract from uv projects (uv.lock)');
-  console.error('  denolock          Extract from deno.lock files');
-  console.error('  pipfilelock       Extract from Pipfile.lock files');
-  console.error('  poetrylock        Extract from poetry.lock files');
-  console.error('  pdmlock           Extract from pdm.lock files');
-  console.error('  requirementstxt   Extract from requirements.txt files');
-  console.error('  cargolock         Extract from Cargo.lock files');
-  console.error('  maven             Extract from Maven pom.xml files');
-  console.error('  cyclonedx         Extract from CycloneDX BOM files');
-  console.error('  ort               Extract from ORT result files');
-  process.exit(1);
-}
+program.parse(process.argv);
 
-const codebasePath = resolve(positionalArgs[0]);
-const outputPath = resolve(positionalArgs[1]);
-
-const allExtractors: Extractor[] = [
-  bunlockExtractor,
-  denoLockExtractor,
-  packageJsonExtractor,
-  packageLockJsonExtractor,
-  pnpmLockExtractor,
-  yarnBerryExtractor,
-  yarnLockExtractor,
-  dockerfileExtractor,
-  githubActionsExtractor,
-  gradleExtractor,
-  gomodExtractor,
-  uvExtractor,
-  pipfileLockExtractor,
-  poetryLockExtractor,
-  pdmLockExtractor,
-  requirementsTxtExtractor,
-  cargoLockExtractor,
-  mavenExtractor,
-  cyclonedxExtractor,
-  ortExtractor,
-];
-
-function filterExtractors(extractors: Extractor[]): Extractor[] {
+function filterExtractors(
+  enabledExtractors: Set<string>,
+  disabledExtractors: Set<string>,
+  extractors: Extractor[],
+): Extractor[] {
   if (enabledExtractors.size > 0) {
-    return extractors.filter((e) => enabledExtractors.has(e.name));
+    extractors = extractors.filter((e) => enabledExtractors.has(e.name));
   }
 
   if (disabledExtractors.size > 0) {
-    return extractors.filter((e) => !disabledExtractors.has(e.name));
+    extractors = extractors.filter((e) => !disabledExtractors.has(e.name));
   }
 
   return extractors;
 }
 
-const extractors = filterExtractors(allExtractors);
-
-async function runAnalysis(): Promise<void> {
+async function runAnalysis(codebasePath: string, outputPath: string, extractors: Extractor[]): Promise<void> {
   console.error('Running analysis...');
   console.error(`Codebase: ${codebasePath}`);
   console.error(`Output: ${outputPath}`);
@@ -173,11 +178,4 @@ async function runAnalysis(): Promise<void> {
   console.error(`Writing output to ${outputPath}...`);
   await Bun.write(outputPath, JSON.stringify(mergedResult, null, 2));
   console.error('Done!');
-}
-
-try {
-  await runAnalysis();
-} catch (error) {
-  console.error('Fatal error:', error instanceof Error ? error.message : String(error));
-  process.exit(1);
 }
