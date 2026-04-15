@@ -1,0 +1,100 @@
+{
+  "type": "SpdxDocument",
+  "spdxId": "https://example.com/spdx/opt-prov",
+  "creationInfo": {
+    "specVersion": "3.0.1",
+    "created": "2024-01-01T00:00:00Z"
+  },
+  "rootElement": ["https://example.com/spdx/opt-prov/Package/my-app"],
+  "element": [
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.com/spdx/opt-prov/Package/my-app",
+      "name": "my-app",
+      "packageVersion": "1.0.0",
+      "packageUrl": "pkg:npm/my-app@1.0.0",
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.com/spdx/opt-prov/Package/express",
+      "name": "express",
+      "packageVersion": "4.18.2",
+      "packageUrl": "pkg:npm/express@4.18.2",
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.com/spdx/opt-prov/Package/body-parser",
+      "name": "body-parser",
+      "packageVersion": "1.20.2",
+      "packageUrl": "pkg:npm/body-parser@1.20.2",
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.com/spdx/opt-prov/Package/lodash",
+      "name": "lodash",
+      "packageVersion": "4.17.21",
+      "packageUrl": "pkg:npm/lodash@4.17.21",
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.com/spdx/opt-prov/Package/servlet-api",
+      "name": "servlet-api",
+      "packageVersion": "4.0.1",
+      "packageUrl": "pkg:maven/javax.servlet/javax.servlet-api@4.0.1",
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.com/spdx/opt-prov/Package/colors",
+      "name": "colors",
+      "packageVersion": "1.4.0",
+      "packageUrl": "pkg:npm/colors@1.4.0",
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "https://example.com/spdx/opt-prov/Relationship/depends-express",
+      "relationshipType": "dependsOn",
+      "from": "https://example.com/spdx/opt-prov/Package/my-app",
+      "to": ["https://example.com/spdx/opt-prov/Package/express"],
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "https://example.com/spdx/opt-prov/Relationship/express-depends-body-parser",
+      "relationshipType": "dependsOn",
+      "from": "https://example.com/spdx/opt-prov/Package/express",
+      "to": ["https://example.com/spdx/opt-prov/Package/body-parser"],
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "https://example.com/spdx/opt-prov/Relationship/optional-lodash",
+      "relationshipType": "hasOptionalDependency",
+      "from": "https://example.com/spdx/opt-prov/Package/my-app",
+      "to": ["https://example.com/spdx/opt-prov/Package/lodash"],
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "https://example.com/spdx/opt-prov/Relationship/provided-servlet",
+      "relationshipType": "hasProvidedDependency",
+      "from": "https://example.com/spdx/opt-prov/Package/my-app",
+      "to": ["https://example.com/spdx/opt-prov/Package/servlet-api"],
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "type": "LifecycleScopedRelationship",
+      "spdxId": "https://example.com/spdx/opt-prov/Relationship/optional-scoped-colors",
+      "relationshipType": "hasOptionalDependency",
+      "scope": "runtime",
+      "from": "https://example.com/spdx/opt-prov/Package/my-app",
+      "to": ["https://example.com/spdx/opt-prov/Package/colors"],
+      "creationInfo": "_:creationInfo"
+    }
+  ]
+}

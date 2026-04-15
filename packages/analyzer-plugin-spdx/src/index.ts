@@ -144,6 +144,7 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
       };
     }
 
+    // Duplicates are not deduplicated here — downstream consumers (normalizeResult / mergeResults) handle it.
     const packages: Array<{ purl: string; evidence: string[] }> = [];
     const spdxIdToPurl = new Map<string, string>();
     const spdxIdToElement = new Map<string, SpdxElement>();
@@ -183,13 +184,12 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
     const scopedDeps: ScopedDep[] = [];
     const relationshipMap = new Map<string, Set<string>>();
 
+    const dependencyRelationshipTypes = new Set(['dependsOn', 'hasOptionalDependency', 'hasProvidedDependency']);
+
     for (const el of elements) {
       const elType = getType(el);
-      const isRelationship = typeIncludes(elType, 'Relationship');
-      const isLifecycleScoped = typeIncludes(elType, 'LifecycleScopedRelationship');
-
-      if (!isRelationship && !isLifecycleScoped) continue;
-      if (el.relationshipType !== 'dependsOn') continue;
+      if (!typeIncludes(elType, 'Relationship') && !typeIncludes(elType, 'LifecycleScopedRelationship')) continue;
+      if (!el.relationshipType || !dependencyRelationshipTypes.has(el.relationshipType)) continue;
 
       const fromId = el.from;
       if (!fromId) continue;
@@ -198,6 +198,17 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
 
       const toIds = el.to;
       if (!toIds || toIds.length === 0) continue;
+
+      // Only LifecycleScopedRelationship carries a scope; plain Relationship does not.
+      // Fall back to relationship type name for hasOptionalDependency / hasProvidedDependency.
+      let effectiveScope: string | undefined;
+      if (el.scope) {
+        effectiveScope = el.scope;
+      } else if (el.relationshipType === 'hasOptionalDependency') {
+        effectiveScope = 'optional';
+      } else if (el.relationshipType === 'hasProvidedDependency') {
+        effectiveScope = 'provided';
+      }
 
       for (const toId of toIds) {
         const toPurl = spdxIdToPurl.get(toId);
@@ -210,8 +221,8 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
           relationshipMap.set(fromPurl, new Set([toPurl]));
         }
 
-        if (isLifecycleScoped && el.scope) {
-          scopedDeps.push({ fromPurl, toPurl, scope: el.scope });
+        if (effectiveScope) {
+          scopedDeps.push({ fromPurl, toPurl, scope: effectiveScope });
         }
       }
     }
@@ -387,8 +398,11 @@ function resolveSpecVersion(docOrElement: SpdxDocument | SpdxElement, elements: 
     if (infoElement?.creationInfo && typeof infoElement.creationInfo !== 'string') {
       return infoElement.creationInfo.specVersion;
     }
-    // Blank node may have specVersion directly as a property
-    return (infoElement as unknown as SpdxCreationInfo | undefined)?.specVersion;
+    // CreationInfo elements in SPDX 3.0 have specVersion as a direct property
+    if (infoElement && typeIncludes(getType(infoElement), 'CreationInfo')) {
+      return (infoElement as Record<string, unknown>).specVersion as string | undefined;
+    }
+    return undefined;
   }
 
   return creationInfo.specVersion;

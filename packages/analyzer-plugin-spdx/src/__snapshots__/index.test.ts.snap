@@ -280,6 +280,84 @@ exports[`with-dependencies.spdx.json 1`] = `
 }
 `;
 
+exports[`with-optional-provided.spdx.json 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "with-optional-provided.spdx.json",
+      ],
+      "purl": "pkg:npm/express@4.18.2",
+    },
+    {
+      "evidence": [
+        "with-optional-provided.spdx.json",
+      ],
+      "purl": "pkg:npm/body-parser@1.20.2",
+    },
+    {
+      "evidence": [
+        "with-optional-provided.spdx.json",
+      ],
+      "purl": "pkg:npm/lodash@4.17.21",
+    },
+    {
+      "evidence": [
+        "with-optional-provided.spdx.json",
+      ],
+      "purl": "pkg:maven/javax.servlet/javax.servlet-api@4.0.1",
+    },
+    {
+      "evidence": [
+        "with-optional-provided.spdx.json",
+      ],
+      "purl": "pkg:npm/colors@1.4.0",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:npm/express@4.18.2",
+      "to": [
+        "pkg:npm/body-parser@1.20.2",
+      ],
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "with-optional-provided.spdx.json",
+      "purl": "pkg:npm/my-app@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/lodash@4.17.21",
+          ],
+          "scope": "optional",
+        },
+        {
+          "packages": [
+            "pkg:maven/javax.servlet/javax.servlet-api@4.0.1",
+          ],
+          "scope": "provided",
+        },
+        {
+          "packages": [
+            "pkg:npm/colors@1.4.0",
+          ],
+          "scope": "runtime",
+        },
+        {
+          "packages": [
+            "pkg:npm/express@4.18.2",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
+
 exports[`with-scoped-dependencies.spdx.json 1`] = `
 {
   "issues": [],
