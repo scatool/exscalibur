@@ -30,10 +30,10 @@ import type { AnalyzerResult, Extractor } from '@scatool/analyzer-core/src/index
 import { resolve } from 'path';
 import { z } from 'zod';
 
-type ExtractorOptions = Record<string, Record<string, unknown>>;
+type ExtractorOptions = Record<any, any>;
 
-function parseExtractorOptions(extractors: Extractor[], optionStrings: string[]): ExtractorOptions {
-  const result: ExtractorOptions = {};
+function parseExtractorOptions(optionStrings: string[], existingOptions: ExtractorOptions): ExtractorOptions {
+  const result: ExtractorOptions = { ...existingOptions };
 
   for (const optionString of optionStrings) {
     const keyValueParts = optionString.split('=');
@@ -57,10 +57,24 @@ function parseExtractorOptions(extractors: Extractor[], optionStrings: string[])
       if (!currObj[keyPart]) {
         currObj[keyPart] = {};
       }
+      if (typeof currObj[keyPart] !== 'object' || Array.isArray(currObj[keyPart])) {
+        console.error(
+          `Warning: Overwriting non-object value at "${keyPart}" to create nested extractor option for "${keyName}". ` +
+            `Previous value: ${JSON.stringify(currObj[keyPart])}, new value: {}`,
+        );
+        currObj[keyPart] = {};
+      }
       currObj = currObj[keyPart];
     }
 
     // stage 2: set the value to the corresponding object
+    if (currObj[keyParts[keyParts.length - 1]] !== undefined) {
+      console.error(
+        `Warning: Overwriting existing value for extractor option "${keyName}". Previous value: ${JSON.stringify(
+          currObj[keyParts[keyParts.length - 1]],
+        )}, new value: ${JSON.stringify(parsedOptionValue)}`,
+      );
+    }
     currObj[keyParts[keyParts.length - 1]] = parsedOptionValue;
   }
 
@@ -122,6 +136,26 @@ program
     },
     [] as string[],
   )
+  .option<ExtractorOptions>(
+    '--extractor-options-json <json>',
+    'Pass options to extractors as a JSON string (format: {"extractor": {"option": value}}. ' +
+      'Example: --extractor-options-json \'{"packagejson":{"ignore":["**/node_modules/**", "**/additional_dir/**"]}}\'',
+    (value: string) => {
+      try {
+        const res = JSON.parse(value);
+        if (typeof res !== 'object' || Array.isArray(res) || res === null) {
+          console.error(`Invalid value given for --extractor-options-json: '${value}' has to be an object`);
+          process.exit(1);
+        }
+        return res as ExtractorOptions;
+      } catch (e) {
+        console.error(
+          'Failed to parse JSON for --extractor-options-json: ' + (e instanceof Error ? e.message : String(e)),
+        );
+        process.exit(1);
+      }
+    },
+  )
   .addHelpText(
     'after',
     `
@@ -152,6 +186,7 @@ Examples:
   analyzer --enable packagejson,bunlock /repo /output.json
   analyzer --disable gradle,maven /repo /output.json
   analyzer --extractor-options 'packagejson.ignore=["**/node_modules/**", "**/additional_dir/**"]' /repo /output.json
+  analyzer --extractor-options-json '{"packagejson":{"ignore":["**/node_modules/**", "**/additional_dir/**"]}}' /repo /output.json
 `,
   )
   .action(async (codebasePath, outputPath, options) => {
@@ -188,26 +223,27 @@ Examples:
       const extractors = filterExtractors(enabledExtractors, disabledExtractors, allExtractors);
 
       // Parse and validate extractor options
-      let parsedOptions: ExtractorOptions = {};
+      let parsedOptions: ExtractorOptions = options.extractorOptionsJson || {};
       let validatedOptions: ExtractorOptions = {};
 
       if ((options.extractorOptions as string[]).length > 0) {
-        try {
-          parsedOptions = parseExtractorOptions(extractors, options.extractorOptions as string[]);
-          validatedOptions = validateOptions(extractors, parsedOptions);
-        } catch (error) {
-          if (error instanceof z.ZodError) {
-            console.error('Error validating extractor options!');
-            console.error(`Parsed cli options: ${JSON.stringify(parsedOptions, null, 2)}\n`);
-            console.error(z.prettifyError(error));
-          } else {
-            console.error(
-              'Error parsing & validating extractor options:',
-              error instanceof Error ? error.message : String(error),
-            );
-          }
-          process.exit(1);
+        parsedOptions = parseExtractorOptions(options.extractorOptions as string[], parsedOptions);
+      }
+
+      try {
+        validatedOptions = validateOptions(extractors, parsedOptions);
+      } catch (error) {
+        if (error instanceof z.ZodError) {
+          console.error('Error validating extractor options!');
+          console.error(`Parsed cli options: ${JSON.stringify(parsedOptions, null, 2)}\n`);
+          console.error(z.prettifyError(error));
+        } else {
+          console.error(
+            'Error parsing & validating extractor options:',
+            error instanceof Error ? error.message : String(error),
+          );
         }
+        process.exit(1);
       }
 
       await runAnalysis(codebasePathResolved, outputPathResolved, extractors, validatedOptions);
