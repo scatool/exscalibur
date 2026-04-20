@@ -41,7 +41,7 @@ export type Extractor<Options = unknown> = {
   version: 1;
   extract: (codebase: string, options?: Partial<Options>) => Promise<AnalyzerResult>;
   options?: () => Promise<Options>;
-  optionsSchema?: z.ZodType;
+  optionsSchema?: z.ZodType<Options>;
 };
 
 export type MarkFileContext = {
@@ -54,5 +54,5 @@ export type FilesExtractor<Options = unknown> = {
   markFiles: (this: MarkFileContext, codebase: string, options: Options) => Promise<void>;
   extractFile?: (file: string, options: Options) => Promise<AnalyzerResult>;
   options?: () => Promise<Options>;
-  optionsSchema?: z.ZodType;
+  optionsSchema?: z.ZodType<Options>;
 };
