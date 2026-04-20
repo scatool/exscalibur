@@ -28,6 +28,67 @@ import { extractor as cyclonedxExtractor } from '@scatool/analyzer-plugin-cdx/sr
 import { ortExtractor } from '@scatool/analyzer-plugin-ort/src/index.ts';
 import type { AnalyzerResult, Extractor } from '@scatool/analyzer-core/src/index.ts';
 import { resolve } from 'path';
+import { z } from 'zod';
+
+type ExtractorOptions = Record<string, Record<string, unknown>>;
+
+function parseExtractorOptions(extractors: Extractor[], optionStrings: string[]): ExtractorOptions {
+  const result: ExtractorOptions = {};
+
+  // lets accept options in the format: --extractor-options extractor.option=value[,extractor.option2=value2,...]
+  optionStrings = optionStrings.flatMap((s) =>
+    s
+      .split(',')
+      .map((part) => part.trim())
+      .filter((part) => part.length > 0),
+  );
+
+  for (const optionString of optionStrings) {
+    const keyValueParts = optionString.split('=');
+    if (keyValueParts.length !== 2) {
+      throw new Error(`Invalid extractor option format: "${optionString}". Expected format: extractor.option=value`);
+    }
+
+    const [keyName, optionValue] = keyValueParts;
+    const keyParts = keyName.split('.');
+
+    let parsedOptionValue;
+    try {
+      parsedOptionValue = JSON.parse(optionValue);
+    } catch (e) {
+      throw new Error(`Option value for ${keyName} could not be parsed as JSON value: ${optionValue}`);
+    }
+
+    // stage 1: create all non existing objects (follow the path)
+    let currObj: Record<any, any> = result;
+    for (const keyPart of keyParts.slice(0, -1)) {
+      if (!currObj[keyPart]) {
+        currObj[keyPart] = {};
+      }
+      currObj = currObj[keyPart];
+    }
+
+    // stage 2: set the value to the corresponding object
+    currObj[keyParts[keyParts.length - 1]] = parsedOptionValue;
+  }
+
+  return result;
+}
+
+function validateOptions(extractors: Extractor[], parsedOptions: ExtractorOptions): ExtractorOptions {
+  // Instead of validating each extractor options separately, we construct a combined schema for all extractors
+  // and validate the entire options object at once -> better error messages
+  let tmpSchemas: Record<string, z.ZodType> = {};
+
+  for (const extractor of extractors) {
+    if (extractor.optionsSchema) {
+      tmpSchemas[extractor.name] = extractor.optionsSchema.optional();
+    }
+  }
+
+  let topLevelSchema = z.strictObject(tmpSchemas);
+  return topLevelSchema.parse(parsedOptions) as ExtractorOptions;
+}
 
 const program = new Command();
 
@@ -60,6 +121,14 @@ program
     },
     [] as string[],
   )
+  .option(
+    '--extractor-options <options>',
+    'Pass options to extractors (format: extractor.option=[JSON value], can be repeated. Example: --extractor-options \'packagejson.ignore=["node_modules"]\')',
+    (value: string, previous: string[] | undefined) => {
+      return previous ? [...previous, value] : [value];
+    },
+    [] as string[],
+  )
   .addHelpText(
     'after',
     `
@@ -84,6 +153,12 @@ Available extractors:
   maven             Extract from Maven pom.xml files
   cyclonedx         Extract from CycloneDX BOM files
   ort               Extract from ORT result files
+
+Examples:
+  analyzer /repo /output.json
+  analyzer --enable packagejson,bunlock /repo /output.json
+  analyzer --disable gradle,maven /repo /output.json
+  analyzer --extractor-options packagejson.ignore=node_modules --extractor-options packagejson.ignore=vendor /repo /output.json
 `,
   )
   .action(async (codebasePath, outputPath, options) => {
@@ -118,7 +193,31 @@ Available extractors:
       ];
 
       const extractors = filterExtractors(enabledExtractors, disabledExtractors, allExtractors);
-      await runAnalysis(codebasePathResolved, outputPathResolved, extractors);
+
+      // Parse and validate extractor options
+      let parsedOptions: ExtractorOptions = {};
+      let validatedOptions: ExtractorOptions = {};
+
+      if ((options.extractorOptions as string[]).length > 0) {
+        try {
+          parsedOptions = parseExtractorOptions(extractors, options.extractorOptions as string[]);
+          validatedOptions = validateOptions(extractors, parsedOptions);
+        } catch (error) {
+          if (error instanceof z.ZodError) {
+            console.error('Error validating extractor options!');
+            console.error(`Parsed cli options: ${JSON.stringify(parsedOptions, null, 2)}\n`);
+            console.error(z.prettifyError(error));
+          } else {
+            console.error(
+              'Error parsing & validating extractor options:',
+              error instanceof Error ? error.message : String(error),
+            );
+          }
+          process.exit(1);
+        }
+      }
+
+      await runAnalysis(codebasePathResolved, outputPathResolved, extractors, validatedOptions);
     } catch (error) {
       console.error('Fatal error:', error instanceof Error ? error.message : String(error));
       process.exit(1);
@@ -143,7 +242,12 @@ function filterExtractors(
   return extractors;
 }
 
-async function runAnalysis(codebasePath: string, outputPath: string, extractors: Extractor[]): Promise<void> {
+async function runAnalysis(
+  codebasePath: string,
+  outputPath: string,
+  extractors: Extractor[],
+  options: ExtractorOptions,
+): Promise<void> {
   console.error('Running analysis...');
   console.error(`Codebase: ${codebasePath}`);
   console.error(`Output: ${outputPath}`);
@@ -155,7 +259,8 @@ async function runAnalysis(codebasePath: string, outputPath: string, extractors:
   for (const extractor of extractors) {
     try {
       console.error(`Running ${extractor.name} extractor (version ${extractor.version})...`);
-      const result = await extractor.extract(codebasePath);
+      const extractorOptions = options[extractor.name];
+      const result = await extractor.extract(codebasePath, extractorOptions);
       results.push(result);
       console.error(`  Found ${result.packages.length} packages`);
       console.error(`  Found ${result.subprojects.length} subprojects`);

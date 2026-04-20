@@ -14,6 +14,7 @@ import { dirname, join } from 'node:path';
 import type { PackageJson } from '../types.ts';
 import { createNpmPurl, extractNpmScopes, NPM_DEPENDENCY_SCOPES, readPackageJson } from '../npm-utils.ts';
 import type { JavaScriptOptions } from '../options.ts';
+import { optionSchema } from '../options.ts';
 
 // Lockfile package entry indices
 const PKG_IDENTIFIER_INDEX = 0;
@@ -25,6 +26,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
   options: async () => ({
     ignore: ['**/node_modules/**'],
   }),
+  optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: JavaScriptOptions) {
     await scanAndMarkFiles(this, codebase, '**/bun.lock', options.ignore ?? []);
   },

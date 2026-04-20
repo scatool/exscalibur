@@ -14,12 +14,8 @@ import { Glob } from 'bun';
 import { PackageURL } from 'packageurl-js';
 import { dirname, join } from 'node:path';
 import { existsSync } from 'node:fs';
-
-export interface MavenOptions {
-  ignore?: string[];
-  javaHome?: string;
-  mavenPath?: string;
-}
+import type { MavenOptions } from './options.ts';
+import { optionSchema } from './options.ts';
 
 interface DependencyNode {
   groupId: string;
@@ -172,6 +168,7 @@ export const extractor: Extractor<MavenOptions> = {
   options: async () => ({
     ignore: ['**/target/**', '**/.mvn/**'],
   }),
+  optionsSchema: optionSchema,
   extract: async (codebase: string, runtimeOptions?: Partial<MavenOptions>) => {
     const defaultOptions = await extractor.options!();
     const options = { ...defaultOptions, ...runtimeOptions } as MavenOptions;

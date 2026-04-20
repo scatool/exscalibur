@@ -89,6 +89,7 @@ export const filesExtractor = <Options = unknown>(config: FilesExtractor<Options
       return makePathsRelative(mergeResults(results), codebase);
     },
     ...(config.options !== undefined && { options: config.options }),
+    ...(config.optionsSchema !== undefined && { optionsSchema: config.optionsSchema }),
   };
 };
 

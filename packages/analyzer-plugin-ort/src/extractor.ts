@@ -1,21 +1,16 @@
 import { type AnalyzerResult, filesExtractor, scanAndMarkFiles } from '@scatool/analyzer-core/src/index.ts';
 import { type OrtAnalyzerResult } from './model.ts';
 import { convertOrtResult } from './converter.ts';
+import type { OrtOptions } from './options.ts';
+import { optionSchema } from './options.ts';
 
-interface OrtExtractorOptions {
-  /**
-   * If true, use the definition_file_path from ORT projects as evidence (e.g., package.json, build.gradle).
-   * If false (default), use the analyzer-result.json file as evidence.
-   */
-  useDefinitionFilePaths: boolean;
-}
-
-export const extractor = filesExtractor<OrtExtractorOptions>({
+export const extractor = filesExtractor<OrtOptions>({
   name: 'ort',
   version: 1,
   options: async () => ({
     useDefinitionFilePaths: false,
   }),
+  optionsSchema: optionSchema,
   markFiles: async function (codebase) {
     await scanAndMarkFiles(this, codebase, '**/analyzer-result.json', []);
   },
@@ -25,7 +20,7 @@ export const extractor = filesExtractor<OrtExtractorOptions>({
 
       return convertOrtResult(result, {
         evidenceFile: file,
-        useDefinitionFilePaths: options.useDefinitionFilePaths,
+        useDefinitionFilePaths: options?.useDefinitionFilePaths ?? false,
       });
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
