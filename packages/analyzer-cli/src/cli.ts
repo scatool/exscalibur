@@ -35,14 +35,6 @@ type ExtractorOptions = Record<string, Record<string, unknown>>;
 function parseExtractorOptions(extractors: Extractor[], optionStrings: string[]): ExtractorOptions {
   const result: ExtractorOptions = {};
 
-  // lets accept options in the format: --extractor-options extractor.option=value[,extractor.option2=value2,...]
-  optionStrings = optionStrings.flatMap((s) =>
-    s
-      .split(',')
-      .map((part) => part.trim())
-      .filter((part) => part.length > 0),
-  );
-
   for (const optionString of optionStrings) {
     const keyValueParts = optionString.split('=');
     if (keyValueParts.length !== 2) {
@@ -123,7 +115,8 @@ program
   )
   .option(
     '--extractor-options <options>',
-    'Pass options to extractors (format: extractor.option=[JSON value], can be repeated. Example: --extractor-options \'packagejson.ignore=["node_modules"]\')',
+    'Pass options to extractors (format: extractor.option=[JSON value], can be repeated. ' +
+      'Example: --extractor-options \'packagejson.ignore=["**/node_modules/**", "**/additional_dir/**"]\')',
     (value: string, previous: string[] | undefined) => {
       return previous ? [...previous, value] : [value];
     },
@@ -158,7 +151,7 @@ Examples:
   analyzer /repo /output.json
   analyzer --enable packagejson,bunlock /repo /output.json
   analyzer --disable gradle,maven /repo /output.json
-  analyzer --extractor-options packagejson.ignore=node_modules --extractor-options packagejson.ignore=vendor /repo /output.json
+  analyzer --extractor-options 'packagejson.ignore=["**/node_modules/**", "**/additional_dir/**"]' /repo /output.json
 `,
   )
   .action(async (codebasePath, outputPath, options) => {
