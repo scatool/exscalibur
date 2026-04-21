@@ -23,6 +23,7 @@ import {
 import type { PackageJson } from '../types.ts';
 import { createNpmPurl, extractNpmScopes, NPM_DEPENDENCY_SCOPES, readPackageJson } from '../npm-utils.ts';
 import type { JavaScriptOptions } from '../options.ts';
+import { optionSchema } from '../options.ts';
 
 export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScriptOptions>({
   name: 'packagelockjson',
@@ -30,6 +31,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
   options: async () => ({
     ignore: ['**/node_modules/**'],
   }),
+  optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: JavaScriptOptions) {
     await scanAndMarkFiles(this, codebase, '**/{package-lock.json,npm-shrinkwrap.json}', options.ignore ?? []);
   },

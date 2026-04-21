@@ -4,6 +4,7 @@ import { dirname } from 'node:path';
 import { existsSync } from 'node:fs';
 import { createNpmPurl } from '../npm-utils.ts';
 import type { JavaScriptOptions } from '../options.ts';
+import { optionSchema } from '../options.ts';
 
 function hasLockfileInDirectory(dir: string, codebase: string): boolean {
   const lockfiles = [
@@ -42,6 +43,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
   options: async () => ({
     ignore: ['**/node_modules/**'],
   }),
+  optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: JavaScriptOptions) {
     const ignorePatterns = options.ignore ?? [];
     const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));

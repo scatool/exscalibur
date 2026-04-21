@@ -14,6 +14,7 @@ import { dirname, join } from 'node:path';
 import { parse as parseToml } from 'smol-toml';
 import { createPypiPurl, findTomlPackageLineNumber, normalizePythonName } from '../python-utils.ts';
 import type { PythonOptions } from '../options.ts';
+import { optionSchema } from '../options.ts';
 
 interface PoetryLock {
   package?: PackageEntry[];
@@ -65,6 +66,7 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
   options: async () => ({
     ignore: ['**/.venv/**', '**/venv/**', '**/__pycache__/**'],
   }),
+  optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: PythonOptions) {
     await scanAndMarkFiles(this, codebase, '**/poetry.lock', options.ignore ?? []);
   },

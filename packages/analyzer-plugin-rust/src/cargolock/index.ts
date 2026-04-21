@@ -22,6 +22,7 @@ import {
 } from './lockfile.ts';
 import { createCargoPurl } from '../cargo-utils.ts';
 import type { RustOptions } from '../options.ts';
+import { optionSchema } from '../options.ts';
 
 export const extractor: Extractor<RustOptions> = filesExtractor<RustOptions>({
   name: 'cargolock',
@@ -29,6 +30,7 @@ export const extractor: Extractor<RustOptions> = filesExtractor<RustOptions>({
   options: async () => ({
     ignore: ['**/target/**'],
   }),
+  optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: RustOptions) {
     await scanAndMarkFiles(this, codebase, '**/Cargo.lock', options.ignore ?? []);
   },

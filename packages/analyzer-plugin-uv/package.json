@@ -18,7 +18,8 @@
   },
   "dependencies": {
     "@scatool/analyzer-core": "workspace:*",
-    "@scatool/analyzer-plugin-cdx": "workspace:*"
+    "@scatool/analyzer-plugin-cdx": "workspace:*",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@scatool/analyzer-test-utils": "workspace:*",

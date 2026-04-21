@@ -9,6 +9,7 @@ import {
 } from '@scatool/analyzer-core/src/index.ts';
 import { createPypiPurl } from '../python-utils.ts';
 import type { PythonOptions } from '../options.ts';
+import { optionSchema } from '../options.ts';
 
 export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>({
   name: 'requirementstxt',
@@ -16,6 +17,7 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
   options: async () => ({
     ignore: ['**/.venv/**', '**/venv/**', '**/__pycache__/**'],
   }),
+  optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: PythonOptions) {
     await scanAndMarkFiles(this, codebase, '**/requirements*.txt', options.ignore ?? []);
   },

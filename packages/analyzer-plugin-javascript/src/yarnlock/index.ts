@@ -15,6 +15,7 @@ import { findLineNumber, parsePackagePattern, parseYarnLockfile, resolvePackageV
 import type { PackageJson } from '../types.ts';
 import { createNpmPurl, extractNpmScopes, NPM_DEPENDENCY_SCOPES, readPackageJson } from '../npm-utils.ts';
 import type { JavaScriptOptions } from '../options.ts';
+import { optionSchema } from '../options.ts';
 
 export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScriptOptions>({
   name: 'yarnlock',
@@ -22,6 +23,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
   options: async () => ({
     ignore: ['**/node_modules/**'],
   }),
+  optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: JavaScriptOptions) {
     const ignorePatterns = options.ignore ?? [];
     const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));

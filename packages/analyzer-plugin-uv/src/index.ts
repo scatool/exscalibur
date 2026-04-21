@@ -6,21 +6,8 @@ import {
 } from '@scatool/analyzer-core/src/index.ts';
 import { extractCycloneDX } from '@scatool/analyzer-plugin-cdx/src/index.ts';
 import { dirname } from 'node:path';
-
-export interface UvOptions {
-  /**
-   * Array of glob patterns to ignore when scanning for uv.lock files.
-   * Files matching any of these patterns will be excluded from extraction.
-   * @default ['**\/node_modules\/**', '**\/.venv\/**']
-   */
-  ignore?: string[];
-
-  /**
-   * Path to the uv binary.
-   * @default 'uv'
-   */
-  uvPath?: string;
-}
+import type { UvOptions } from './options.ts';
+import { optionSchema } from './options.ts';
 
 export const extractor: Extractor<UvOptions> = filesExtractor<UvOptions>({
   name: 'uv',
@@ -29,6 +16,7 @@ export const extractor: Extractor<UvOptions> = filesExtractor<UvOptions>({
     ignore: ['**/node_modules/**', '**/.venv/**'],
     uvPath: 'uv',
   }),
+  optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: UvOptions) {
     await scanAndMarkFiles(this, codebase, '**/uv.lock', options.ignore ?? []);
   },

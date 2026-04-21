@@ -23,6 +23,7 @@ import {
 } from './lockfile.ts';
 import { createNpmPurl, NPM_DEPENDENCY_SCOPES, readPackageJson } from '../npm-utils.ts';
 import type { JavaScriptOptions } from '../options.ts';
+import { optionSchema } from '../options.ts';
 
 export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScriptOptions>({
   name: 'pnpmlock',
@@ -30,6 +31,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
   options: async () => ({
     ignore: ['**/node_modules/**'],
   }),
+  optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: JavaScriptOptions) {
     await scanAndMarkFiles(this, codebase, '**/pnpm-lock.yaml', options.ignore ?? []);
   },
