@@ -90,7 +90,9 @@ export function parsePackageLock(content: string): PackageLock {
   try {
     return JSON.parse(content) as PackageLock;
   } catch (error) {
-    throw new Error(`Failed to parse package-lock.json: ${error instanceof Error ? error.message : String(error)}`);
+    throw new Error(`Failed to parse package-lock.json: ${error instanceof Error ? error.message : String(error)}`, {
+      cause: error,
+    });
   }
 }
 

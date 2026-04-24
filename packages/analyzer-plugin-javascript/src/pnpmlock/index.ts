@@ -81,7 +81,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
             if (importerDeps && typeof importerDeps === 'object') {
               for (const [depName, depRef] of Object.entries(importerDeps)) {
                 if (depRef && typeof depRef === 'object' && 'version' in depRef) {
-                  let version = depRef.version;
+                  const version = depRef.version;
 
                   // Check if this is a workspace package (starts with "link:")
                   if (typeof version === 'string' && version.startsWith('link:')) {
@@ -188,7 +188,8 @@ function processV9Lockfile(
       const parsed = parsePackageKey(packageKey);
       if (!parsed) continue;
 
-      let { name, version } = parsed;
+      const { name } = parsed;
+      let { version } = parsed;
 
       // For git packages, use the version field from the package entry instead of the git URL
       if (packageEntry.version && isGitPackageKey(packageKey)) {
@@ -235,7 +236,8 @@ function processV6Lockfile(
     const parsed = parsePackageKey(packageKey);
     if (!parsed) continue;
 
-    let { name, version } = parsed;
+    const { name } = parsed;
+    let { version } = parsed;
 
     // For git packages, use the version field from the package entry instead of the git URL
     if (packageEntry.version && isGitPackageKey(packageKey)) {

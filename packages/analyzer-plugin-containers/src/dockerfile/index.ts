@@ -100,9 +100,9 @@ export function parseContainerImage(imageRef: string): string | null {
   // - version: tag or sha256 (optional, prefer sha256)
   // - qualifiers: repository_url for non-Docker Hub registries
 
-  let registry = '';
+  let registry: string;
   let namespace = '';
-  let name = '';
+  let name: string;
   let version = '';
 
   // Split by @ for digest

@@ -18,7 +18,6 @@ import {
   resolvePackageVersion,
   type YarnBerryLockfile,
 } from './lockfile.ts';
-import type { PackageJson } from '../types.ts';
 import { createNpmPurl, extractNpmScopes, NPM_DEPENDENCY_SCOPES, readPackageJson } from '../npm-utils.ts';
 import type { JavaScriptOptions } from '../options.ts';
 import { optionSchema } from '../options.ts';

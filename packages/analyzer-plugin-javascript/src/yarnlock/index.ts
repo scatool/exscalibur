@@ -13,7 +13,7 @@ import { Glob } from 'bun';
 import { dirname, join } from 'node:path';
 import { findLineNumber, parsePackagePattern, parseYarnLockfile, resolvePackageVersion } from './lockfile.ts';
 import type { PackageJson } from '../types.ts';
-import { createNpmPurl, extractNpmScopes, NPM_DEPENDENCY_SCOPES, readPackageJson } from '../npm-utils.ts';
+import { createNpmPurl, extractNpmScopes, readPackageJson } from '../npm-utils.ts';
 import type { JavaScriptOptions } from '../options.ts';
 import { optionSchema } from '../options.ts';
 
