@@ -31,7 +31,9 @@ export function parseDenoLockfile(content: string): DenoLockfile {
   try {
     return JSON.parse(content) as DenoLockfile;
   } catch (error) {
-    throw new Error(`Failed to parse Deno lockfile: ${error instanceof Error ? error.message : String(error)}`);
+    throw new Error(`Failed to parse Deno lockfile: ${error instanceof Error ? error.message : String(error)}`, {
+      cause: error,
+    });
   }
 }
 

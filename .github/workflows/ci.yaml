@@ -42,6 +42,9 @@ jobs:
       - name: Format Check
         run: bun run format:check
 
+      - name: Lint
+        run: bun run lint
+
       - name: Check Types
         run: bun run typecheck
 

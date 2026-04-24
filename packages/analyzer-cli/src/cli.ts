@@ -30,7 +30,7 @@ import type { AnalyzerResult, Extractor } from '@scatool/analyzer-core/src/index
 import { resolve } from 'path';
 import { z } from 'zod';
 
-type ExtractorOptions = Record<any, any>;
+type ExtractorOptions = Record<string, unknown>;
 
 function parseExtractorOptions(optionStrings: string[], existingOptions: ExtractorOptions): ExtractorOptions {
   const result: ExtractorOptions = { ...existingOptions };
@@ -48,11 +48,11 @@ function parseExtractorOptions(optionStrings: string[], existingOptions: Extract
     try {
       parsedOptionValue = JSON.parse(optionValue);
     } catch (e) {
-      throw new Error(`Option value for ${keyName} could not be parsed as JSON value: ${optionValue}`);
+      throw new Error(`Option value for ${keyName} could not be parsed as JSON value: ${optionValue}`, { cause: e });
     }
 
     // stage 1: create all non existing objects (follow the path)
-    let currObj: Record<any, any> = result;
+    let currObj: Record<string, unknown> = result;
     for (const keyPart of keyParts.slice(0, -1)) {
       if (!currObj[keyPart]) {
         currObj[keyPart] = {};
@@ -64,7 +64,7 @@ function parseExtractorOptions(optionStrings: string[], existingOptions: Extract
         );
         currObj[keyPart] = {};
       }
-      currObj = currObj[keyPart];
+      currObj = currObj[keyPart] as Record<string, unknown>;
     }
 
     // stage 2: set the value to the corresponding object
@@ -84,7 +84,7 @@ function parseExtractorOptions(optionStrings: string[], existingOptions: Extract
 function validateOptions(extractors: Extractor[], parsedOptions: ExtractorOptions): ExtractorOptions {
   // Instead of validating each extractor options separately, we construct a combined schema for all extractors
   // and validate the entire options object at once -> better error messages
-  let tmpSchemas: Record<string, z.ZodType> = {};
+  const tmpSchemas: Record<string, z.ZodType> = {};
 
   for (const extractor of extractors) {
     if (extractor.optionsSchema) {
@@ -92,7 +92,7 @@ function validateOptions(extractors: Extractor[], parsedOptions: ExtractorOption
     }
   }
 
-  let topLevelSchema = z.strictObject(tmpSchemas);
+  const topLevelSchema = z.strictObject(tmpSchemas);
   return topLevelSchema.parse(parsedOptions) as ExtractorOptions;
 }
 
@@ -288,7 +288,7 @@ async function runAnalysis(
   for (const extractor of extractors) {
     try {
       console.error(`Running ${extractor.name} extractor (version ${extractor.version})...`);
-      const extractorOptions = options[extractor.name];
+      const extractorOptions = options[extractor.name] as Partial<unknown> | undefined;
       const result = await extractor.extract(codebasePath, extractorOptions);
       results.push(result);
       console.error(`  Found ${result.packages.length} packages`);
