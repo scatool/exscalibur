@@ -7,5 +7,5 @@ const fixturesDir = join(import.meta.dir, '__fixtures__');
 await createFileContentTests({
   extractFn: extractSpdx,
   fixturesDir,
-  pattern: '*.spdx.{json,jsonld}',
+  pattern: '*.spdx.{json,jsonld,yaml,yml}',
 });

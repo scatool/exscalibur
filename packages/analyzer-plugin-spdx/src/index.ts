@@ -17,7 +17,7 @@ export const extractor: Extractor<SpdxOptions> = filesExtractor<SpdxOptions>({
   }),
   optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: SpdxOptions) {
-    await scanAndMarkFiles(this, codebase, '**/*.spdx.{json,jsonld}', options.ignore ?? []);
+    await scanAndMarkFiles(this, codebase, '**/*.spdx.{json,jsonld,yaml,yml}', options.ignore ?? []);
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
     const content = await Bun.file(file).text();
@@ -97,7 +97,7 @@ type ScopedDep = {
 
 export function extractSpdx(content: string, filePath?: string): AnalyzerResult {
   try {
-    const doc: SpdxDocument = JSON.parse(content);
+    const doc = Bun.YAML.parse(content) as SpdxDocument;
 
     const elements = getElements(doc);
     const docType = getType(doc);

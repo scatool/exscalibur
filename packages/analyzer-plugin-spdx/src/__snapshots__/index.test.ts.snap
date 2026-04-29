@@ -478,3 +478,32 @@ exports[`orthogonal-scope-and-type.spdx.json 1`] = `
   ],
 }
 `;
+
+exports[`yaml-format.spdx.yaml 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "yaml-format.spdx.yaml",
+      ],
+      "purl": "pkg:npm/lodash@4.17.21",
+    },
+  ],
+  "relationships": [],
+  "subprojects": [
+    {
+      "definitionFile": "yaml-format.spdx.yaml",
+      "purl": "pkg:npm/my-app@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/lodash@4.17.21",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
