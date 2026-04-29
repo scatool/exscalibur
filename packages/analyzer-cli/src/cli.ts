@@ -25,6 +25,7 @@ import {
 import { cargoLockExtractor } from '@scatool/analyzer-plugin-rust/src/index.ts';
 import { mavenExtractor } from '@scatool/analyzer-plugin-maven/src/index.ts';
 import { extractor as cyclonedxExtractor } from '@scatool/analyzer-plugin-cdx/src/index.ts';
+import { extractor as spdxExtractor } from '@scatool/analyzer-plugin-spdx/src/index.ts';
 import { ortExtractor } from '@scatool/analyzer-plugin-ort/src/index.ts';
 import type { AnalyzerResult, Extractor } from '@scatool/analyzer-core/src/index.ts';
 import { resolve } from 'path';
@@ -179,6 +180,7 @@ Available extractors:
   cargolock         Extract from Cargo.lock files
   maven             Extract from Maven pom.xml files
   cyclonedx         Extract from CycloneDX BOM files
+  spdx              Extract from SPDX 3.0.x JSON-LD files
   ort               Extract from ORT result files
 
 Examples:
@@ -217,6 +219,7 @@ Examples:
         cargoLockExtractor,
         mavenExtractor,
         cyclonedxExtractor,
+        spdxExtractor,
         ortExtractor,
       ];
 

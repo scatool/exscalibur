@@ -1,0 +1,53 @@
+{
+  "type": "SpdxDocument",
+  "spdxId": "https://example.com/spdx/ortho",
+  "creationInfo": {
+    "specVersion": "3.0.1",
+    "created": "2024-01-01T00:00:00Z"
+  },
+  "rootElement": ["https://example.com/spdx/ortho/Package/my-app"],
+  "element": [
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.com/spdx/ortho/Package/my-app",
+      "name": "my-app",
+      "packageVersion": "1.0.0",
+      "packageUrl": "pkg:npm/my-app@1.0.0",
+      "creationInfo": "_:ci"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.com/spdx/ortho/Package/fsevents",
+      "name": "fsevents",
+      "packageVersion": "2.3.3",
+      "packageUrl": "pkg:npm/fsevents@2.3.3",
+      "creationInfo": "_:ci"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.com/spdx/ortho/Package/react",
+      "name": "react",
+      "packageVersion": "18.2.0",
+      "packageUrl": "pkg:npm/react@18.2.0",
+      "creationInfo": "_:ci"
+    },
+    {
+      "type": "LifecycleScopedRelationship",
+      "spdxId": "https://example.com/spdx/ortho/Rel/runtime-optional-fsevents",
+      "relationshipType": "hasOptionalDependency",
+      "scope": "runtime",
+      "from": "https://example.com/spdx/ortho/Package/my-app",
+      "to": ["https://example.com/spdx/ortho/Package/fsevents"],
+      "creationInfo": "_:ci"
+    },
+    {
+      "type": "LifecycleScopedRelationship",
+      "spdxId": "https://example.com/spdx/ortho/Rel/runtime-provided-react",
+      "relationshipType": "hasProvidedDependency",
+      "scope": "runtime",
+      "from": "https://example.com/spdx/ortho/Package/my-app",
+      "to": ["https://example.com/spdx/ortho/Package/react"],
+      "creationInfo": "_:ci"
+    }
+  ]
+}

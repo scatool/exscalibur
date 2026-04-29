@@ -1,0 +1,58 @@
+{
+  "type": "SpdxDocument",
+  "spdxId": "https://example.com/spdx/missing-purls",
+  "creationInfo": {
+    "specVersion": "3.0.1",
+    "created": "2024-01-01T00:00:00Z"
+  },
+  "rootElement": [],
+  "element": [
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.com/spdx/missing-purls/Package/express",
+      "name": "express",
+      "packageVersion": "4.18.2",
+      "packageUrl": "pkg:npm/express@4.18.2",
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.com/spdx/missing-purls/Package/no-purl",
+      "name": "some-internal-lib",
+      "packageVersion": "0.1.0",
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.com/spdx/missing-purls/Package/ext-id-purl",
+      "name": "lodash",
+      "packageVersion": "4.17.21",
+      "externalIdentifier": [
+        {
+          "externalIdentifierType": "packageUrl",
+          "identifier": "pkg:npm/lodash@4.17.21"
+        }
+      ],
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.com/spdx/missing-purls/Package/invalid-purl",
+      "name": "invalid",
+      "packageUrl": "not-a-valid-purl",
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "https://example.com/spdx/missing-purls/Relationship/express-depends-lodash",
+      "relationshipType": "dependsOn",
+      "from": "https://example.com/spdx/missing-purls/Package/express",
+      "to": [
+        "https://example.com/spdx/missing-purls/Package/ext-id-purl",
+        "https://example.com/spdx/missing-purls/Package/no-purl",
+        "https://example.com/spdx/missing-purls/Package/invalid-purl"
+      ],
+      "creationInfo": "_:creationInfo"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+type: SpdxDocument
+spdxId: https://example.com/spdx/yaml
+creationInfo:
+  specVersion: 3.0.1
+  created: 2024-01-01T00:00:00Z
+rootElement:
+  - https://example.com/spdx/yaml/Package/my-app
+element:
+  - type: software_Package
+    spdxId: https://example.com/spdx/yaml/Package/my-app
+    name: my-app
+    packageVersion: 1.0.0
+    packageUrl: pkg:npm/my-app@1.0.0
+    creationInfo: _:creationInfo
+  - type: software_Package
+    spdxId: https://example.com/spdx/yaml/Package/lodash
+    name: lodash
+    packageVersion: 4.17.21
+    packageUrl: pkg:npm/lodash@4.17.21
+    creationInfo: _:creationInfo
+  - type: Relationship
+    spdxId: https://example.com/spdx/yaml/Relationship/my-app-depends
+    relationshipType: dependsOn
+    from: https://example.com/spdx/yaml/Package/my-app
+    to:
+      - https://example.com/spdx/yaml/Package/lodash
+    creationInfo: _:creationInfo

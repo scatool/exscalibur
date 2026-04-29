@@ -1,0 +1,40 @@
+{
+  "@context": "https://spdx.org/rdf/3.0.1/spdx-context.jsonld",
+  "@type": "SpdxDocument",
+  "@id": "https://example.com/spdx/expanded",
+  "creationInfo": {
+    "specVersion": "3.0.1",
+    "created": "2024-01-01T00:00:00Z"
+  },
+  "rootElement": [
+    "https://example.com/spdx/expanded/Package/my-app"
+  ],
+  "@graph": [
+    {
+      "@type": "software_Package",
+      "@id": "https://example.com/spdx/expanded/Package/my-app",
+      "name": "my-app",
+      "packageVersion": "1.0.0",
+      "packageUrl": "pkg:npm/my-app@1.0.0",
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "@type": "software_Package",
+      "@id": "https://example.com/spdx/expanded/Package/express",
+      "name": "express",
+      "packageVersion": "4.18.2",
+      "packageUrl": "pkg:npm/express@4.18.2",
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "@type": "Relationship",
+      "@id": "https://example.com/spdx/expanded/Relationship/my-app-depends-express",
+      "relationshipType": "dependsOn",
+      "from": "https://example.com/spdx/expanded/Package/my-app",
+      "to": [
+        "https://example.com/spdx/expanded/Package/express"
+      ],
+      "creationInfo": "_:creationInfo"
+    }
+  ]
+}

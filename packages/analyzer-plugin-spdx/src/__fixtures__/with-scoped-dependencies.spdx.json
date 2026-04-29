@@ -1,0 +1,120 @@
+{
+  "type": "SpdxDocument",
+  "spdxId": "https://example.com/spdx/scoped",
+  "creationInfo": {
+    "specVersion": "3.0.1",
+    "created": "2024-01-01T00:00:00Z"
+  },
+  "rootElement": ["https://example.com/spdx/scoped/Package/my-app"],
+  "element": [
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.com/spdx/scoped/Package/my-app",
+      "name": "my-app",
+      "packageVersion": "1.0.0",
+      "packageUrl": "pkg:npm/my-app@1.0.0",
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.com/spdx/scoped/Package/express",
+      "name": "express",
+      "packageVersion": "4.18.2",
+      "packageUrl": "pkg:npm/express@4.18.2",
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.com/spdx/scoped/Package/jest",
+      "name": "jest",
+      "packageVersion": "29.7.0",
+      "packageUrl": "pkg:npm/jest@29.7.0",
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.com/spdx/scoped/Package/lodash",
+      "name": "lodash",
+      "packageVersion": "4.17.21",
+      "packageUrl": "pkg:npm/lodash@4.17.21",
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.com/spdx/scoped/Package/typescript",
+      "name": "typescript",
+      "packageVersion": "5.3.3",
+      "packageUrl": "pkg:npm/typescript@5.3.3",
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.com/spdx/scoped/Package/prettier",
+      "name": "prettier",
+      "packageVersion": "3.1.0",
+      "packageUrl": "pkg:npm/prettier@3.1.0",
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "type": "LifecycleScopedRelationship",
+      "spdxId": "https://example.com/spdx/scoped/Relationship/my-app-depends-express",
+      "relationshipType": "dependsOn",
+      "scope": "runtime",
+      "from": "https://example.com/spdx/scoped/Package/my-app",
+      "to": ["https://example.com/spdx/scoped/Package/express"],
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "type": "LifecycleScopedRelationship",
+      "spdxId": "https://example.com/spdx/scoped/Relationship/my-app-depends-lodash",
+      "relationshipType": "dependsOn",
+      "scope": "runtime",
+      "from": "https://example.com/spdx/scoped/Package/my-app",
+      "to": ["https://example.com/spdx/scoped/Package/lodash"],
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "type": "LifecycleScopedRelationship",
+      "spdxId": "https://example.com/spdx/scoped/Relationship/my-app-depends-jest",
+      "relationshipType": "dependsOn",
+      "scope": "test",
+      "from": "https://example.com/spdx/scoped/Package/my-app",
+      "to": ["https://example.com/spdx/scoped/Package/jest"],
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "type": "LifecycleScopedRelationship",
+      "spdxId": "https://example.com/spdx/scoped/Relationship/my-app-depends-typescript",
+      "relationshipType": "dependsOn",
+      "scope": "dev",
+      "from": "https://example.com/spdx/scoped/Package/my-app",
+      "to": ["https://example.com/spdx/scoped/Package/typescript"],
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "type": "LifecycleScopedRelationship",
+      "spdxId": "https://example.com/spdx/scoped/Relationship/my-app-depends-prettier",
+      "relationshipType": "dependsOn",
+      "scope": "build",
+      "from": "https://example.com/spdx/scoped/Package/my-app",
+      "to": ["https://example.com/spdx/scoped/Package/prettier"],
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "https://example.com/spdx/scoped/Relationship/express-depends-lodash",
+      "relationshipType": "dependsOn",
+      "from": "https://example.com/spdx/scoped/Package/express",
+      "to": ["https://example.com/spdx/scoped/Package/lodash"],
+      "creationInfo": "_:creationInfo"
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "https://example.com/spdx/scoped/Relationship/jest-depends-typescript",
+      "relationshipType": "dependsOn",
+      "from": "https://example.com/spdx/scoped/Package/jest",
+      "to": ["https://example.com/spdx/scoped/Package/typescript"],
+      "creationInfo": "_:creationInfo"
+    }
+  ]
+}
