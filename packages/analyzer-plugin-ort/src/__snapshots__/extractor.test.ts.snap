@@ -699,3 +699,74 @@ exports[`npm/workspace 1`] = `
   ],
 }
 `;
+
+exports[`npm/wrapped-result-file 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "analyzer-result.json",
+      ],
+      "purl": "pkg:npm/lodash@4.17.21",
+    },
+  ],
+  "relationships": [],
+  "subprojects": [
+    {
+      "definitionFile": "analyzer-result.json",
+      "purl": "pkg:npm/wrapped-fixture@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/lodash@4.17.21",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
+
+exports[`yaml/dependency-graph 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "analyzer-result.yml",
+      ],
+      "purl": "pkg:maven/junit/junit@4.12",
+    },
+    {
+      "evidence": [
+        "analyzer-result.yml",
+      ],
+      "purl": "pkg:maven/org.hamcrest/hamcrest-core@1.3",
+    },
+    {
+      "evidence": [
+        "analyzer-result.yml",
+      ],
+      "purl": "pkg:maven/org.mockito/mockito-all@1.10.19",
+    },
+  ],
+  "relationships": [],
+  "subprojects": [
+    {
+      "definitionFile": "analyzer-result.yml",
+      "purl": "pkg:maven/com.vdurmont/semver4j@3.1.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:maven/junit/junit@4.12",
+            "pkg:maven/org.mockito/mockito-all@1.10.19",
+          ],
+          "scope": "test",
+        },
+      ],
+    },
+  ],
+}
+`;

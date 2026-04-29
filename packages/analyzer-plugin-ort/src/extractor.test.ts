@@ -7,7 +7,7 @@ const fixturesDir = join(import.meta.dir, '__fixtures__');
 await createExtractorTests({
   extractor,
   fixturesDir,
-  pattern: '*/*/analyzer-result.json',
+  pattern: '*/*/analyzer-result.{json,yml,yaml}',
   useFiles: true,
   extractDirectory: true,
 });

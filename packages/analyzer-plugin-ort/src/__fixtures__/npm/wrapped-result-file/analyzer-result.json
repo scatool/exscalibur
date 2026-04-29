@@ -1,0 +1,60 @@
+{
+  "repository": {
+    "vcs": {
+      "type": "Git",
+      "url": "https://github.com/lukasnehrke/excalibur.git",
+      "revision": "9e3843a07cf7f5d85aece7c6d829f4c684f9ef88",
+      "path": ""
+    },
+    "config": {}
+  },
+  "analyzer": {
+    "start_time": "2026-04-29T00:00:00Z",
+    "end_time": "2026-04-29T00:00:01Z",
+    "environment": {
+      "ort_version": "test",
+      "java_version": "21",
+      "os": "Linux",
+      "processors": 1,
+      "max_memory": 1073741824,
+      "variables": {},
+      "tool_versions": {}
+    },
+    "config": {
+      "allow_dynamic_versions": false
+    },
+    "result": {
+      "projects": [
+        {
+          "id": "NPM::wrapped-fixture:1.0.0",
+          "definition_file_path": "package.json",
+          "scope_names": ["dependencies"]
+        }
+      ],
+      "packages": [
+        {
+          "id": "NPM::lodash:4.17.21",
+          "purl": "pkg:npm/lodash@4.17.21"
+        }
+      ],
+      "dependency_graphs": {
+        "NPM": {
+          "packages": ["NPM::lodash:4.17.21"],
+          "scopes": {
+            ":wrapped-fixture:1.0.0:dependencies": [
+              {
+                "root": 0
+              }
+            ]
+          },
+          "nodes": [
+            {
+              "pkg": 0
+            }
+          ],
+          "edges": []
+        }
+      }
+    }
+  }
+}
