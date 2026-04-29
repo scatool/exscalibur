@@ -50,19 +50,18 @@ type SpdxElement = {
   scope?: string;
   rootElement?: string[];
   creationInfo?: string | SpdxCreationInfo;
+  specVersion?: string;
 };
 
-type SpdxDocument = {
-  type?: string;
-  spdxId?: string;
-  creationInfo?: string | SpdxCreationInfo;
+type SpdxDocument = SpdxElement & {
   element?: SpdxElement[];
-  rootElement?: string[];
-  '@type'?: string;
-  '@id'?: string;
   '@graph'?: SpdxElement[];
   '@context'?: unknown;
 };
+
+const DEPENDENCY_RELATIONSHIP_TYPES = new Set(['dependsOn', 'hasOptionalDependency', 'hasProvidedDependency']);
+
+const DEFAULT_SCOPE = 'dependencies';
 
 function getType(el: { type?: string; '@type'?: string }): string | undefined {
   return el.type ?? el['@type'];
@@ -76,7 +75,7 @@ function getElements(doc: SpdxDocument): SpdxElement[] {
   return doc.element ?? doc['@graph'] ?? [];
 }
 
-function getRootElements(doc: SpdxDocument): string[] {
+function getRootElements(doc: SpdxDocument | SpdxElement): string[] {
   return doc.rootElement ?? [];
 }
 
@@ -102,7 +101,7 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
 
     const elements = getElements(doc);
     const docType = getType(doc);
-    const isDocumentRoot = docType && typeIncludes(docType, 'SpdxDocument');
+    const isDocumentRoot = typeIncludes(docType, 'SpdxDocument');
     let specVersion: string | undefined;
 
     if (isDocumentRoot) {
@@ -110,7 +109,7 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
     } else if (elements.length > 0) {
       const docElement = elements.find((el) => typeIncludes(getType(el), 'SpdxDocument'));
       if (docElement) {
-        specVersion = resolveSpecVersion(docElement as SpdxDocument, elements);
+        specVersion = resolveSpecVersion(docElement, elements);
       }
     }
 
@@ -185,15 +184,13 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
       packages.push({ purl: validatedPurl, evidence });
     }
 
-    const scopedDeps: ScopedDep[] = [];
+    const scopedDepsByFrom = new Map<string, ScopedDep[]>();
     const relationshipMap = new Map<string, Set<string>>();
-
-    const dependencyRelationshipTypes = new Set(['dependsOn', 'hasOptionalDependency', 'hasProvidedDependency']);
 
     for (const el of elements) {
       const elType = getType(el);
       if (!typeIncludes(elType, 'Relationship') && !typeIncludes(elType, 'LifecycleScopedRelationship')) continue;
-      if (!el.relationshipType || !dependencyRelationshipTypes.has(el.relationshipType)) continue;
+      if (!el.relationshipType || !DEPENDENCY_RELATIONSHIP_TYPES.has(el.relationshipType)) continue;
 
       const fromId = el.from;
       if (!fromId) continue;
@@ -203,8 +200,14 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
       const toIds = el.to;
       if (!toIds || toIds.length === 0) continue;
 
-      // Only LifecycleScopedRelationship carries a scope; plain Relationship does not.
-      // Fall back to relationship type name for hasOptionalDependency / hasProvidedDependency.
+      // SPDX 3.0 splits dependency metadata across two orthogonal axes:
+      //   - relationshipType ∈ {dependsOn, hasOptionalDependency, hasProvidedDependency}  (kind)
+      //   - scope ∈ LifecycleScopeType {design, development, build, test, runtime, ...}  (phase)
+      // Our DependencyScope model only carries one label, so when both are present (e.g. a
+      // runtime-only optional dep) we keep the lifecycle scope and drop the kind qualifier.
+      // For a pure hasOptional/hasProvided relationship without a lifecycle scope, we fall
+      // back to the kind name. Round-trips from npm's optionalDependencies/peerDependencies
+      // are therefore lossy when re-serialized through SPDX with a lifecycle scope.
       let effectiveScope: string | undefined;
       if (el.scope) {
         effectiveScope = el.scope;
@@ -226,24 +229,27 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
         }
 
         if (effectiveScope) {
-          scopedDeps.push({ fromPurl, toPurl, scope: effectiveScope });
+          const dep: ScopedDep = { fromPurl, toPurl, scope: effectiveScope };
+          const list = scopedDepsByFrom.get(fromPurl);
+          if (list) {
+            list.push(dep);
+          } else {
+            scopedDepsByFrom.set(fromPurl, [dep]);
+          }
         }
       }
     }
 
-    const rootElementIds = [...getRootElements(doc)];
+    let rootElementIds = [...getRootElements(doc)];
     if (rootElementIds.length === 0) {
-      for (const el of elements) {
-        if (typeIncludes(getType(el), 'SpdxDocument')) {
-          const docEl = el as unknown as SpdxDocument;
-          rootElementIds.push(...getRootElements(docEl));
-          break;
-        }
+      const docElement = elements.find((el) => typeIncludes(getType(el), 'SpdxDocument'));
+      if (docElement) {
+        rootElementIds.push(...getRootElements(docElement));
       }
     }
 
     // Follow through Bom/Sbom/Bundle elements to resolve their rootElement entries
-    resolveNonPackageRoots(rootElementIds, spdxIdToPurl, spdxIdToElement);
+    rootElementIds = resolveNonPackageRoots(rootElementIds, spdxIdToPurl, spdxIdToElement);
 
     const subprojects: Subproject[] = [];
 
@@ -252,32 +258,35 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
       if (!rootPurl) continue;
 
       const scopeMap = new Map<string, string[]>();
+      const scopedToPurls = new Set<string>();
 
-      for (const dep of scopedDeps) {
-        if (dep.fromPurl !== rootPurl) continue;
-        const existing = scopeMap.get(dep.scope);
-        if (existing) {
-          existing.push(dep.toPurl);
-        } else {
-          scopeMap.set(dep.scope, [dep.toPurl]);
+      const rootScopedDeps = scopedDepsByFrom.get(rootPurl);
+      if (rootScopedDeps) {
+        for (const dep of rootScopedDeps) {
+          scopedToPurls.add(dep.toPurl);
+          const existing = scopeMap.get(dep.scope);
+          if (existing) {
+            existing.push(dep.toPurl);
+          } else {
+            scopeMap.set(dep.scope, [dep.toPurl]);
+          }
         }
       }
 
-      const allScopedToPurls = new Set(scopedDeps.filter((d) => d.fromPurl === rootPurl).map((d) => d.toPurl));
       const unscopedDeps = relationshipMap.get(rootPurl);
       if (unscopedDeps) {
         const unscopedPurls: string[] = [];
         for (const toPurl of unscopedDeps) {
-          if (!allScopedToPurls.has(toPurl)) {
+          if (!scopedToPurls.has(toPurl)) {
             unscopedPurls.push(toPurl);
           }
         }
         if (unscopedPurls.length > 0) {
-          const existing = scopeMap.get('dependencies');
+          const existing = scopeMap.get(DEFAULT_SCOPE);
           if (existing) {
             existing.push(...unscopedPurls);
           } else {
-            scopeMap.set('dependencies', unscopedPurls);
+            scopeMap.set(DEFAULT_SCOPE, unscopedPurls);
           }
         }
       }
@@ -334,14 +343,12 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
 /**
  * When rootElementIds contains non-Package entries (e.g. Bom/Sbom/Bundle),
  * follow through their rootElement to find the actual packages.
- * Package rootElements are kept as-is (direct dependencies).
- * Non-Package rootElements with their own rootElement are followed recursively.
  */
 function resolveNonPackageRoots(
   rootElementIds: string[],
   spdxIdToPurl: Map<string, string>,
   spdxIdToElement: Map<string, SpdxElement>,
-): void {
+): string[] {
   const resolved: string[] = [];
   const visited = new Set<string>();
 
@@ -351,12 +358,10 @@ function resolveNonPackageRoots(
       visited.add(id);
 
       if (spdxIdToPurl.has(id)) {
-        // It's a Package — keep it as a root element
         resolved.push(id);
         continue;
       }
 
-      // Non-Package element — follow through its rootElement if it has one
       const el = spdxIdToElement.get(id);
       if (el?.rootElement && el.rootElement.length > 0) {
         resolve(el.rootElement);
@@ -365,9 +370,7 @@ function resolveNonPackageRoots(
   }
 
   resolve(rootElementIds);
-
-  rootElementIds.length = 0;
-  rootElementIds.push(...resolved);
+  return resolved;
 }
 
 function extractPurl(el: SpdxElement): string | undefined {
@@ -399,12 +402,12 @@ function resolveSpecVersion(docOrElement: SpdxDocument | SpdxElement, elements: 
 
   if (typeof creationInfo === 'string') {
     const infoElement = elements.find((el) => getId(el) === creationInfo);
-    if (infoElement?.creationInfo && typeof infoElement.creationInfo !== 'string') {
+    if (!infoElement) return undefined;
+    if (infoElement.creationInfo && typeof infoElement.creationInfo !== 'string') {
       return infoElement.creationInfo.specVersion;
     }
-    // CreationInfo elements in SPDX 3.0 have specVersion as a direct property
-    if (infoElement && typeIncludes(getType(infoElement), 'CreationInfo')) {
-      return (infoElement as Record<string, unknown>).specVersion as string | undefined;
+    if (typeIncludes(getType(infoElement), 'CreationInfo')) {
+      return infoElement.specVersion;
     }
     return undefined;
   }

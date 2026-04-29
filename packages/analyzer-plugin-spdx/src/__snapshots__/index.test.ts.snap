@@ -442,3 +442,39 @@ exports[`with-scoped-dependencies.spdx.json 1`] = `
   ],
 }
 `;
+
+exports[`orthogonal-scope-and-type.spdx.json 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "orthogonal-scope-and-type.spdx.json",
+      ],
+      "purl": "pkg:npm/fsevents@2.3.3",
+    },
+    {
+      "evidence": [
+        "orthogonal-scope-and-type.spdx.json",
+      ],
+      "purl": "pkg:npm/react@18.2.0",
+    },
+  ],
+  "relationships": [],
+  "subprojects": [
+    {
+      "definitionFile": "orthogonal-scope-and-type.spdx.json",
+      "purl": "pkg:npm/my-app@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/fsevents@2.3.3",
+            "pkg:npm/react@18.2.0",
+          ],
+          "scope": "runtime",
+        },
+      ],
+    },
+  ],
+}
+`;
