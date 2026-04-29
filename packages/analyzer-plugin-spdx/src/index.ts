@@ -7,13 +7,17 @@ import {
   scanAndMarkFiles,
 } from '@scatool/analyzer-core/src/index.ts';
 import { PackageURL } from 'packageurl-js';
+import { optionSchema, type SpdxOptions } from './options.ts';
 
-export const extractor: Extractor = filesExtractor({
+export const extractor: Extractor<SpdxOptions> = filesExtractor<SpdxOptions>({
   name: 'spdx',
   version: 1,
-  markFiles: async function (codebase: string) {
-    await scanAndMarkFiles(this, codebase, '**/*.spdx.json', []);
-    await scanAndMarkFiles(this, codebase, '**/*.spdx.jsonld', []);
+  options: async () => ({
+    ignore: [],
+  }),
+  optionsSchema: optionSchema,
+  markFiles: async function (codebase: string, options: SpdxOptions) {
+    await scanAndMarkFiles(this, codebase, '**/*.spdx.{json,jsonld}', options.ignore ?? []);
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
     const content = await Bun.file(file).text();
