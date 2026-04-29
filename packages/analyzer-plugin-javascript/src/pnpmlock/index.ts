@@ -23,6 +23,7 @@ import {
 } from './lockfile.ts';
 import { createNpmPurl, NPM_DEPENDENCY_SCOPES, readPackageJson } from '../npm-utils.ts';
 import type { JavaScriptOptions } from '../options.ts';
+import { optionSchema } from '../options.ts';
 
 export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScriptOptions>({
   name: 'pnpmlock',
@@ -30,6 +31,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
   options: async () => ({
     ignore: ['**/node_modules/**'],
   }),
+  optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: JavaScriptOptions) {
     await scanAndMarkFiles(this, codebase, '**/pnpm-lock.yaml', options.ignore ?? []);
   },
@@ -79,7 +81,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
             if (importerDeps && typeof importerDeps === 'object') {
               for (const [depName, depRef] of Object.entries(importerDeps)) {
                 if (depRef && typeof depRef === 'object' && 'version' in depRef) {
-                  let version = depRef.version;
+                  const version = depRef.version;
 
                   // Check if this is a workspace package (starts with "link:")
                   if (typeof version === 'string' && version.startsWith('link:')) {
@@ -186,7 +188,8 @@ function processV9Lockfile(
       const parsed = parsePackageKey(packageKey);
       if (!parsed) continue;
 
-      let { name, version } = parsed;
+      const { name } = parsed;
+      let { version } = parsed;
 
       // For git packages, use the version field from the package entry instead of the git URL
       if (packageEntry.version && isGitPackageKey(packageKey)) {
@@ -233,7 +236,8 @@ function processV6Lockfile(
     const parsed = parsePackageKey(packageKey);
     if (!parsed) continue;
 
-    let { name, version } = parsed;
+    const { name } = parsed;
+    let { version } = parsed;
 
     // For git packages, use the version field from the package entry instead of the git URL
     if (packageEntry.version && isGitPackageKey(packageKey)) {

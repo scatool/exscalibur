@@ -1,31 +1,37 @@
 import { type AnalyzerResult, filesExtractor, scanAndMarkFiles } from '@scatool/analyzer-core/src/index.ts';
-import { type OrtAnalyzerResult } from './model.ts';
+import { type OrtAnalyzerResult, type OrtResultFile } from './model.ts';
 import { convertOrtResult } from './converter.ts';
+import type { OrtOptions } from './options.ts';
+import { optionSchema } from './options.ts';
 
-interface OrtExtractorOptions {
-  /**
-   * If true, use the definition_file_path from ORT projects as evidence (e.g., package.json, build.gradle).
-   * If false (default), use the analyzer-result.json file as evidence.
-   */
-  useDefinitionFilePaths: boolean;
+// Accept both the full ORT result file (`{ analyzer: { result: ... } }`) that
+// `ort analyze` writes by default, and the bare AnalyzerResult shape.
+function unwrapOrtResult(parsed: unknown): OrtAnalyzerResult {
+  if (parsed && typeof parsed === 'object') {
+    const wrapped = (parsed as OrtResultFile).analyzer?.result;
+    if (wrapped) return wrapped;
+  }
+  return parsed as OrtAnalyzerResult;
 }
 
-export const extractor = filesExtractor<OrtExtractorOptions>({
+export const extractor = filesExtractor<OrtOptions>({
   name: 'ort',
   version: 1,
   options: async () => ({
     useDefinitionFilePaths: false,
   }),
+  optionsSchema: optionSchema,
   markFiles: async function (codebase) {
-    await scanAndMarkFiles(this, codebase, '**/analyzer-result.json', []);
+    await scanAndMarkFiles(this, codebase, '**/analyzer-result.{json,yml,yaml}', []);
   },
   extractFile: async (file, options): Promise<AnalyzerResult> => {
     try {
-      const result = (await Bun.file(file).json()) as OrtAnalyzerResult;
+      const parsed = Bun.YAML.parse(await Bun.file(file).text());
+      const result = unwrapOrtResult(parsed);
 
       return convertOrtResult(result, {
         evidenceFile: file,
-        useDefinitionFilePaths: options.useDefinitionFilePaths,
+        useDefinitionFilePaths: options?.useDefinitionFilePaths ?? false,
       });
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);

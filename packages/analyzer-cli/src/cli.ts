@@ -1,5 +1,6 @@
 #!/usr/bin/env bun
 
+import { Command } from 'commander';
 import {
   bunlockExtractor,
   denoLockExtractor,
@@ -28,120 +29,257 @@ import { extractor as spdxExtractor } from '@scatool/analyzer-plugin-spdx/src/in
 import { ortExtractor } from '@scatool/analyzer-plugin-ort/src/index.ts';
 import type { AnalyzerResult, Extractor } from '@scatool/analyzer-core/src/index.ts';
 import { resolve } from 'path';
+import { z } from 'zod';
 
-const args = process.argv.slice(2);
+type ExtractorOptions = Record<string, unknown>;
 
-const enabledExtractors = new Set<string>();
-const disabledExtractors = new Set<string>();
-const positionalArgs: string[] = [];
+function parseExtractorOptions(optionStrings: string[], existingOptions: ExtractorOptions): ExtractorOptions {
+  const result: ExtractorOptions = { ...existingOptions };
 
-for (let i = 0; i < args.length; i++) {
-  const arg = args[i];
-  if (arg === '--enable' || arg === '-e') {
-    i++;
-    if (i < args.length) {
-      const names = args[i]
-        .split(',')
-        .map((n) => n.trim())
-        .filter((n) => n.length > 0);
-      for (const name of names) {
-        enabledExtractors.add(name);
-      }
+  for (const optionString of optionStrings) {
+    const keyValueParts = optionString.split('=');
+    if (keyValueParts.length !== 2) {
+      throw new Error(`Invalid extractor option format: "${optionString}". Expected format: extractor.option=value`);
     }
-  } else if (arg === '--disable' || arg === '-d') {
-    i++;
-    if (i < args.length) {
-      const names = args[i]
-        .split(',')
-        .map((n) => n.trim())
-        .filter((n) => n.length > 0);
-      for (const name of names) {
-        disabledExtractors.add(name);
-      }
+
+    const [keyName, optionValue] = keyValueParts;
+    const keyParts = keyName.split('.');
+
+    let parsedOptionValue;
+    try {
+      parsedOptionValue = JSON.parse(optionValue);
+    } catch (e) {
+      throw new Error(`Option value for ${keyName} could not be parsed as JSON value: ${optionValue}`, { cause: e });
     }
-  } else if (!arg.startsWith('-')) {
-    positionalArgs.push(arg);
+
+    // stage 1: create all non existing objects (follow the path)
+    let currObj: Record<string, unknown> = result;
+    for (const keyPart of keyParts.slice(0, -1)) {
+      if (!currObj[keyPart]) {
+        currObj[keyPart] = {};
+      }
+      if (typeof currObj[keyPart] !== 'object' || Array.isArray(currObj[keyPart])) {
+        console.error(
+          `Warning: Overwriting non-object value at "${keyPart}" to create nested extractor option for "${keyName}". ` +
+            `Previous value: ${JSON.stringify(currObj[keyPart])}, new value: {}`,
+        );
+        currObj[keyPart] = {};
+      }
+      currObj = currObj[keyPart] as Record<string, unknown>;
+    }
+
+    // stage 2: set the value to the corresponding object
+    if (currObj[keyParts[keyParts.length - 1]] !== undefined) {
+      console.error(
+        `Warning: Overwriting existing value for extractor option "${keyName}". Previous value: ${JSON.stringify(
+          currObj[keyParts[keyParts.length - 1]],
+        )}, new value: ${JSON.stringify(parsedOptionValue)}`,
+      );
+    }
+    currObj[keyParts[keyParts.length - 1]] = parsedOptionValue;
   }
+
+  return result;
 }
 
-if (positionalArgs.length < 2) {
-  console.error('Usage: analyzer [options] <codebase-path> <output-path>');
-  console.error('');
-  console.error('Arguments:');
-  console.error('  codebase-path  Path to the codebase to analyze');
-  console.error('  output-path    Path to write the JSON output file');
-  console.error('');
-  console.error('Options:');
-  console.error('  --enable, -e <name>   Enable specific extractor(s) (comma-separated or multiple flags)');
-  console.error('  --disable, -d <name>  Disable specific extractor(s) (comma-separated or multiple flags)');
-  console.error('');
-  console.error('Available extractors:');
-  console.error('  bunlock           Extract from bun.lock files');
-  console.error('  packagejson       Extract from package.json files');
-  console.error('  packagelockjson   Extract from package-lock.json files');
-  console.error('  pnpmlock          Extract from pnpm-lock.yaml files');
-  console.error('  yarnberry         Extract from yarn.lock files (Yarn Berry/Modern)');
-  console.error('  yarnlock          Extract from yarn.lock files (Yarn v1/Classic)');
-  console.error('  dockerfile        Extract from Dockerfile files');
-  console.error('  github-actions    Extract from GitHub Actions workflow files');
-  console.error('  gradle            Extract from Gradle projects (build.gradle)');
-  console.error('  gomod             Extract from Go modules (go.mod)');
-  console.error('  uv                Extract from uv projects (uv.lock)');
-  console.error('  denolock          Extract from deno.lock files');
-  console.error('  pipfilelock       Extract from Pipfile.lock files');
-  console.error('  poetrylock        Extract from poetry.lock files');
-  console.error('  pdmlock           Extract from pdm.lock files');
-  console.error('  requirementstxt   Extract from requirements.txt files');
-  console.error('  cargolock         Extract from Cargo.lock files');
-  console.error('  maven             Extract from Maven pom.xml files');
-  console.error('  cyclonedx         Extract from CycloneDX BOM files');
-  console.error('  spdx              Extract from SPDX 3.0.x JSON-LD files');
-  console.error('  ort               Extract from ORT result files');
-  process.exit(1);
+function validateOptions(extractors: Extractor[], parsedOptions: ExtractorOptions): ExtractorOptions {
+  // Instead of validating each extractor options separately, we construct a combined schema for all extractors
+  // and validate the entire options object at once -> better error messages
+  const tmpSchemas: Record<string, z.ZodType> = {};
+
+  for (const extractor of extractors) {
+    if (extractor.optionsSchema) {
+      tmpSchemas[extractor.name] = extractor.optionsSchema.optional();
+    }
+  }
+
+  const topLevelSchema = z.strictObject(tmpSchemas);
+  return topLevelSchema.parse(parsedOptions) as ExtractorOptions;
 }
 
-const codebasePath = resolve(positionalArgs[0]);
-const outputPath = resolve(positionalArgs[1]);
+const program = new Command();
 
-const allExtractors: Extractor[] = [
-  bunlockExtractor,
-  denoLockExtractor,
-  packageJsonExtractor,
-  packageLockJsonExtractor,
-  pnpmLockExtractor,
-  yarnBerryExtractor,
-  yarnLockExtractor,
-  dockerfileExtractor,
-  githubActionsExtractor,
-  gradleExtractor,
-  gomodExtractor,
-  uvExtractor,
-  pipfileLockExtractor,
-  poetryLockExtractor,
-  pdmLockExtractor,
-  requirementsTxtExtractor,
-  cargoLockExtractor,
-  mavenExtractor,
-  cyclonedxExtractor,
-  spdxExtractor,
-  ortExtractor,
-];
+program
+  .name('analyzer')
+  .description('Extract dependency graphs from software projects')
+  .argument('<codebase-path>', 'Path to the codebase to analyze')
+  .argument('<output-path>', 'Path to write the JSON output file')
+  .option(
+    '-e, --enable <names>',
+    'Enable specific extractor(s) (comma-separated or multiple flags)',
+    (value: string, previous: string[] | undefined) => {
+      const names = value
+        .split(',')
+        .map((n) => n.trim())
+        .filter((n) => n.length > 0);
+      return previous ? [...previous, ...names] : names;
+    },
+    [] as string[],
+  )
+  .option(
+    '-d, --disable <names>',
+    'Disable specific extractor(s) (comma-separated or multiple flags)',
+    (value: string, previous: string[] | undefined) => {
+      const names = value
+        .split(',')
+        .map((n) => n.trim())
+        .filter((n) => n.length > 0);
+      return previous ? [...previous, ...names] : names;
+    },
+    [] as string[],
+  )
+  .option(
+    '--extractor-options <options>',
+    'Pass options to extractors (format: extractor.option=[JSON value], can be repeated. ' +
+      'Example: --extractor-options \'packagejson.ignore=["**/node_modules/**", "**/additional_dir/**"]\')',
+    (value: string, previous: string[] | undefined) => {
+      return previous ? [...previous, value] : [value];
+    },
+    [] as string[],
+  )
+  .option<ExtractorOptions>(
+    '--extractor-options-json <json>',
+    'Pass options to extractors as a JSON string (format: {"extractor": {"option": value}}. ' +
+      'Example: --extractor-options-json \'{"packagejson":{"ignore":["**/node_modules/**", "**/additional_dir/**"]}}\'',
+    (value: string) => {
+      try {
+        const res = JSON.parse(value);
+        if (typeof res !== 'object' || Array.isArray(res) || res === null) {
+          console.error(`Invalid value given for --extractor-options-json: '${value}' has to be an object`);
+          process.exit(1);
+        }
+        return res as ExtractorOptions;
+      } catch (e) {
+        console.error(
+          'Failed to parse JSON for --extractor-options-json: ' + (e instanceof Error ? e.message : String(e)),
+        );
+        process.exit(1);
+      }
+    },
+  )
+  .addHelpText(
+    'after',
+    `
+Available extractors:
+  bunlock           Extract from bun.lock files
+  packagejson       Extract from package.json files
+  packagelockjson   Extract from package-lock.json files
+  pnpmlock          Extract from pnpm-lock.yaml files
+  yarnberry         Extract from yarn.lock files (Yarn Berry/Modern)
+  yarnlock          Extract from yarn.lock files (Yarn v1/Classic)
+  dockerfile        Extract from Dockerfile files
+  github-actions    Extract from GitHub Actions workflow files
+  gradle            Extract from Gradle projects (build.gradle)
+  gomod             Extract from Go modules (go.mod)
+  uv                Extract from uv projects (uv.lock)
+  denolock          Extract from deno.lock files
+  pipfilelock       Extract from Pipfile.lock files
+  poetrylock        Extract from poetry.lock files
+  pdmlock           Extract from pdm.lock files
+  requirementstxt   Extract from requirements.txt files
+  cargolock         Extract from Cargo.lock files
+  maven             Extract from Maven pom.xml files
+  cyclonedx         Extract from CycloneDX BOM files
+  spdx              Extract from SPDX 3.0.x JSON-LD files
+  ort               Extract from ORT result files
 
-function filterExtractors(extractors: Extractor[]): Extractor[] {
+Examples:
+  analyzer /repo /output.json
+  analyzer --enable packagejson,bunlock /repo /output.json
+  analyzer --disable gradle,maven /repo /output.json
+  analyzer --extractor-options 'packagejson.ignore=["**/node_modules/**", "**/additional_dir/**"]' /repo /output.json
+  analyzer --extractor-options-json '{"packagejson":{"ignore":["**/node_modules/**", "**/additional_dir/**"]}}' /repo /output.json
+`,
+  )
+  .action(async (codebasePath, outputPath, options) => {
+    try {
+      const enabledExtractors: Set<string> = new Set(options.enable);
+      const disabledExtractors: Set<string> = new Set(options.disable);
+
+      const codebasePathResolved = resolve(codebasePath);
+      const outputPathResolved = resolve(outputPath);
+
+      const allExtractors: Extractor[] = [
+        bunlockExtractor,
+        denoLockExtractor,
+        packageJsonExtractor,
+        packageLockJsonExtractor,
+        pnpmLockExtractor,
+        yarnBerryExtractor,
+        yarnLockExtractor,
+        dockerfileExtractor,
+        githubActionsExtractor,
+        gradleExtractor,
+        gomodExtractor,
+        uvExtractor,
+        pipfileLockExtractor,
+        poetryLockExtractor,
+        pdmLockExtractor,
+        requirementsTxtExtractor,
+        cargoLockExtractor,
+        mavenExtractor,
+        cyclonedxExtractor,
+        spdxExtractor,
+        ortExtractor,
+      ];
+
+      const extractors = filterExtractors(enabledExtractors, disabledExtractors, allExtractors);
+
+      // Parse and validate extractor options
+      let parsedOptions: ExtractorOptions = options.extractorOptionsJson || {};
+      let validatedOptions: ExtractorOptions = {};
+
+      if ((options.extractorOptions as string[]).length > 0) {
+        parsedOptions = parseExtractorOptions(options.extractorOptions as string[], parsedOptions);
+      }
+
+      try {
+        validatedOptions = validateOptions(extractors, parsedOptions);
+      } catch (error) {
+        if (error instanceof z.ZodError) {
+          console.error('Error validating extractor options!');
+          console.error(`Parsed cli options: ${JSON.stringify(parsedOptions, null, 2)}\n`);
+          console.error(z.prettifyError(error));
+        } else {
+          console.error(
+            'Error parsing & validating extractor options:',
+            error instanceof Error ? error.message : String(error),
+          );
+        }
+        process.exit(1);
+      }
+
+      await runAnalysis(codebasePathResolved, outputPathResolved, extractors, validatedOptions);
+    } catch (error) {
+      console.error('Fatal error:', error instanceof Error ? error.message : String(error));
+      process.exit(1);
+    }
+  });
+
+program.parse(process.argv);
+
+function filterExtractors(
+  enabledExtractors: Set<string>,
+  disabledExtractors: Set<string>,
+  extractors: Extractor[],
+): Extractor[] {
   if (enabledExtractors.size > 0) {
-    return extractors.filter((e) => enabledExtractors.has(e.name));
+    extractors = extractors.filter((e) => enabledExtractors.has(e.name));
   }
 
   if (disabledExtractors.size > 0) {
-    return extractors.filter((e) => !disabledExtractors.has(e.name));
+    extractors = extractors.filter((e) => !disabledExtractors.has(e.name));
   }
 
   return extractors;
 }
 
-const extractors = filterExtractors(allExtractors);
-
-async function runAnalysis(): Promise<void> {
+async function runAnalysis(
+  codebasePath: string,
+  outputPath: string,
+  extractors: Extractor[],
+  options: ExtractorOptions,
+): Promise<void> {
   console.error('Running analysis...');
   console.error(`Codebase: ${codebasePath}`);
   console.error(`Output: ${outputPath}`);
@@ -153,7 +291,8 @@ async function runAnalysis(): Promise<void> {
   for (const extractor of extractors) {
     try {
       console.error(`Running ${extractor.name} extractor (version ${extractor.version})...`);
-      const result = await extractor.extract(codebasePath);
+      const extractorOptions = options[extractor.name] as Partial<unknown> | undefined;
+      const result = await extractor.extract(codebasePath, extractorOptions);
       results.push(result);
       console.error(`  Found ${result.packages.length} packages`);
       console.error(`  Found ${result.subprojects.length} subprojects`);
@@ -176,11 +315,4 @@ async function runAnalysis(): Promise<void> {
   console.error(`Writing output to ${outputPath}...`);
   await Bun.write(outputPath, JSON.stringify(mergedResult, null, 2));
   console.error('Done!');
-}
-
-try {
-  await runAnalysis();
-} catch (error) {
-  console.error('Fatal error:', error instanceof Error ? error.message : String(error));
-  process.exit(1);
 }

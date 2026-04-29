@@ -1,1 +1,2 @@
-export { extractor as mavenExtractor, type MavenOptions } from './extractor.ts';
+export { extractor as mavenExtractor } from './extractor.ts';
+export type { MavenOptions } from './options.ts';

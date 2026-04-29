@@ -24,22 +24,46 @@ export function convertOrtIdToPurl(id: string): string {
   const name = parts[2] || '';
   const version = parts.slice(3).join(':');
 
-  // Map ORT package types to PURL types
+  // Map ORT identifier types to PURL types.
+  // Keys cover both ORT *project* types (the manager name, e.g. "Cargo", "Bundler")
+  // and *package* types (e.g. "Crate", "Gem"), since ORT emits both.
+  // See ORT's getPurlType() in model/src/main/kotlin/utils/PurlExtensions.kt.
   const typeMap: Record<string, string> = {
-    NPM: 'npm',
-    Maven: 'maven',
-    PyPI: 'pypi',
-    Pub: 'pub',
-    NuGet: 'nuget',
+    Bazel: 'bazel',
+    Bower: 'bower',
+    Bundler: 'gem',
     Cargo: 'cargo',
-    Go: 'golang',
-    GoMod: 'golang',
+    Carthage: 'carthage',
     CocoaPods: 'cocoapods',
     Composer: 'composer',
+    Conan: 'conan',
+    Crate: 'cargo',
     Gem: 'gem',
+    Gleam: 'otp',
+    Go: 'golang',
+    GoMod: 'golang',
     Gradle: 'maven',
-    GradleInspector: 'maven',
+    Hackage: 'hackage',
+    Hex: 'hex',
+    Maven: 'maven',
+    NPM: 'npm',
+    NuGet: 'nuget',
+    OTP: 'otp',
+    otp: 'otp',
+    PIP: 'pypi',
+    PNPM: 'npm',
+    Pipenv: 'pypi',
+    Pod: 'cocoapods',
+    Poetry: 'pypi',
+    Pub: 'pub',
+    PyPI: 'pypi',
     SBT: 'maven',
+    Stack: 'hackage',
+    Swift: 'swift',
+    SwiftPM: 'swift',
+    Tycho: 'maven',
+    Yarn: 'npm',
+    Yarn2: 'npm',
   };
 
   const purlType = typeMap[type] || type.toLowerCase();

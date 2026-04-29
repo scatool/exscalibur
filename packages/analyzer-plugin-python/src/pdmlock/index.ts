@@ -14,6 +14,7 @@ import { dirname, join } from 'node:path';
 import { parse as parseToml } from 'smol-toml';
 import { createPypiPurl, findTomlPackageLineNumber, normalizePythonName } from '../python-utils.ts';
 import type { PythonOptions } from '../options.ts';
+import { optionSchema } from '../options.ts';
 
 interface PdmLock {
   package?: PackageEntry[];
@@ -53,6 +54,7 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
   options: async () => ({
     ignore: ['**/.venv/**', '**/venv/**', '**/__pycache__/**', '**/__pypackages__/**'],
   }),
+  optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: PythonOptions) {
     await scanAndMarkFiles(this, codebase, '**/pdm.lock', options.ignore ?? []);
   },

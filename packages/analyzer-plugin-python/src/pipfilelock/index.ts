@@ -12,6 +12,7 @@ import {
 import { dirname, join } from 'node:path';
 import { createPypiPurl, normalizePythonName } from '../python-utils.ts';
 import type { PythonOptions } from '../options.ts';
+import { optionSchema } from '../options.ts';
 
 interface PipfileLock {
   _meta?: {
@@ -36,6 +37,7 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
   options: async () => ({
     ignore: ['**/.venv/**', '**/venv/**', '**/__pycache__/**'],
   }),
+  optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: PythonOptions) {
     await scanAndMarkFiles(this, codebase, '**/Pipfile.lock', options.ignore ?? []);
   },
@@ -52,7 +54,7 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
     // Try to read Pipfile to get project name and version
     const pipfilePath = join(dir, 'Pipfile');
     let projectName: string | null = null;
-    let projectVersion = '0.0.0';
+    const projectVersion = '0.0.0';
 
     try {
       const pipfileContent = await Bun.file(pipfilePath).text();

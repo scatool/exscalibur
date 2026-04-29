@@ -15,6 +15,7 @@ import { dirname, join } from 'node:path';
 import { type DenoLockfile, findLineNumber, parseDenoLockfile, parseJsrPackage, parseNpmPackage } from './lockfile.ts';
 import { createNpmPurl } from '../npm-utils.ts';
 import type { JavaScriptOptions } from '../options.ts';
+import { optionSchema } from '../options.ts';
 
 export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScriptOptions>({
   name: 'denolock',
@@ -22,6 +23,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
   options: async () => ({
     ignore: ['**/node_modules/**'],
   }),
+  optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: JavaScriptOptions) {
     await scanAndMarkFiles(this, codebase, '**/deno.lock', options.ignore ?? []);
   },

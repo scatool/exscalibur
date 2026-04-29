@@ -14,21 +14,8 @@ import {
 import { PackageURL } from 'packageurl-js';
 import { dirname, join } from 'node:path';
 import { existsSync } from 'node:fs';
-
-export interface GradleOptions {
-  /**
-   * Array of glob patterns to ignore when scanning for build files.
-   * Files matching any of these patterns will be excluded from extraction.
-   * @default ['**\/build\/**', '**\/.gradle\/**']
-   */
-  ignore?: string[];
-
-  /**
-   * Path to the Java home directory.
-   * If not specified, the JAVA_HOME environment variable will be used.
-   */
-  javaHome?: string;
-}
+import type { GradleOptions } from './options.ts';
+import { optionSchema } from './options.ts';
 
 interface DependencyCoordinates {
   group: string;
@@ -67,6 +54,7 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
   options: async () => ({
     ignore: ['**/build/**', '**/.gradle/**'],
   }),
+  optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: GradleOptions) {
     await scanAndMarkFiles(this, codebase, '**/build.gradle{,.kts}', options.ignore ?? []);
   },
