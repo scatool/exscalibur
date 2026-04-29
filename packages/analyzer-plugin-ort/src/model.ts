@@ -47,3 +47,9 @@ export interface OrtAnalyzerResult {
   dependency_graphs?: Record<string, OrtDependencyGraph>;
   issues?: Record<string, OrtIssue[]>;
 }
+
+export interface OrtResultFile {
+  analyzer?: {
+    result?: OrtAnalyzerResult;
+  };
+}
