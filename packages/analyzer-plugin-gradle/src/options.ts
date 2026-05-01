@@ -9,7 +9,7 @@ export const optionSchema = z.strictObject({
    * Files matching any of these patterns will be excluded from extraction.
    * @default ['**\/build/**', '**\/gradle/**']
    */
-  ignore: z.array(z.string()).optional(),
+  ignore: z.array(z.string()).default(['**/build/**', '**/.gradle/**']),
 
   /**
    * Path to the Java home directory.

@@ -20,12 +20,9 @@ import { optionSchema } from '../options.ts';
 export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScriptOptions>({
   name: 'denolock',
   version: 1,
-  options: async () => ({
-    ignore: ['**/node_modules/**'],
-  }),
   optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: JavaScriptOptions) {
-    await scanAndMarkFiles(this, codebase, '**/deno.lock', options.ignore ?? []);
+    await scanAndMarkFiles(this, codebase, '**/deno.lock', options.ignore);
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
     const dir = dirname(file);

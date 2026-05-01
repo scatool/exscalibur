@@ -28,12 +28,9 @@ import { optionSchema } from '../options.ts';
 export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScriptOptions>({
   name: 'pnpmlock',
   version: 1,
-  options: async () => ({
-    ignore: ['**/node_modules/**'],
-  }),
   optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: JavaScriptOptions) {
-    await scanAndMarkFiles(this, codebase, '**/pnpm-lock.yaml', options.ignore ?? []);
+    await scanAndMarkFiles(this, codebase, '**/pnpm-lock.yaml', options.ignore);
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
     const dir = dirname(file);

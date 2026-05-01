@@ -12,17 +12,13 @@ import { optionSchema } from './options.ts';
 export const extractor: Extractor<UvOptions> = filesExtractor<UvOptions>({
   name: 'uv',
   version: 1,
-  options: async () => ({
-    ignore: ['**/node_modules/**', '**/.venv/**'],
-    uvPath: 'uv',
-  }),
   optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: UvOptions) {
-    await scanAndMarkFiles(this, codebase, '**/uv.lock', options.ignore ?? []);
+    await scanAndMarkFiles(this, codebase, '**/uv.lock', options.ignore);
   },
   extractFile: async (file: string, options: UvOptions): Promise<AnalyzerResult> => {
     const dir = dirname(file);
-    const uvPath = options.uvPath ?? 'uv';
+    const uvPath = options.uvPath;
 
     const proc = Bun.spawn([uvPath, 'export', '--format', 'cyclonedx1.5', '--frozen', '--no-emit-project'], {
       cwd: dir,

@@ -17,9 +17,6 @@ function unwrapOrtResult(parsed: unknown): OrtAnalyzerResult {
 export const extractor = filesExtractor<OrtOptions>({
   name: 'ort',
   version: 1,
-  options: async () => ({
-    useDefinitionFilePaths: false,
-  }),
   optionsSchema: optionSchema,
   markFiles: async function (codebase) {
     await scanAndMarkFiles(this, codebase, '**/analyzer-result.{json,yml,yaml}', []);
@@ -31,7 +28,7 @@ export const extractor = filesExtractor<OrtOptions>({
 
       return convertOrtResult(result, {
         evidenceFile: file,
-        useDefinitionFilePaths: options?.useDefinitionFilePaths ?? false,
+        useDefinitionFilePaths: options.useDefinitionFilePaths,
       });
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);

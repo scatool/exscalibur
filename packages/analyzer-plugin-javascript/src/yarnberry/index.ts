@@ -25,12 +25,9 @@ import { optionSchema } from '../options.ts';
 export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScriptOptions>({
   name: 'yarnberry',
   version: 1,
-  options: async () => ({
-    ignore: ['**/node_modules/**'],
-  }),
   optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: JavaScriptOptions) {
-    const ignorePatterns = options.ignore ?? [];
+    const ignorePatterns = options.ignore;
     const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));
 
     const lockfileGlob = new Glob('**/yarn.lock');

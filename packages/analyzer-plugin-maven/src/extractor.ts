@@ -35,7 +35,7 @@ async function extractFile(file: string, options: MavenOptions): Promise<Analyze
   const issues: AnalyzerResult['issues'] = [];
 
   try {
-    const mavenCmd = options.mavenPath ?? 'mvn';
+    const mavenCmd = options.mavenPath;
 
     const isWindows = process.platform === 'win32';
     const mvnWrapper = isWindows ? join(dir, 'mvnw.cmd') : join(dir, 'mvnw');
@@ -165,15 +165,10 @@ async function extractFile(file: string, options: MavenOptions): Promise<Analyze
 export const extractor: Extractor<MavenOptions> = {
   name: 'maven',
   version: 1,
-  options: async () => ({
-    ignore: ['**/target/**', '**/.mvn/**'],
-  }),
   optionsSchema: optionSchema,
   extract: async (codebase: string, runtimeOptions?: Partial<MavenOptions>) => {
-    const defaultOptions = await extractor.options!();
-    const options = { ...defaultOptions, ...runtimeOptions } as MavenOptions;
-
-    const ignorePatterns = options.ignore ?? [];
+    const options = optionSchema.parse(runtimeOptions || {});
+    const ignorePatterns = options.ignore;
     const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));
 
     const files: string[] = [];

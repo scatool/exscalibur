@@ -58,8 +58,15 @@ export const filesExtractor = <Options = unknown>(config: FilesExtractor<Options
         },
       };
 
+      // Merge option values with the following precedence (highest to lowest):
+      // 1. Runtime options provided to the extract function
+      // 2. Defaults from config.options() function
+      // 3. Defaults from config.optionsSchema
       const defaultOptions = config.options ? await config.options() : ({} as Options);
-      const options = { ...defaultOptions, ...runtimeOptions } as Options;
+      let options = { ...defaultOptions, ...runtimeOptions } as Options;
+      if (config.optionsSchema) {
+        options = config.optionsSchema.parse(options);
+      }
 
       await config.markFiles.call(context, codebase, options);
 

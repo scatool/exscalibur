@@ -27,12 +27,9 @@ import { optionSchema } from '../options.ts';
 export const extractor: Extractor<RustOptions> = filesExtractor<RustOptions>({
   name: 'cargolock',
   version: 1,
-  options: async () => ({
-    ignore: ['**/target/**'],
-  }),
   optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: RustOptions) {
-    await scanAndMarkFiles(this, codebase, '**/Cargo.lock', options.ignore ?? []);
+    await scanAndMarkFiles(this, codebase, '**/Cargo.lock', options.ignore);
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
     const dir = dirname(file);

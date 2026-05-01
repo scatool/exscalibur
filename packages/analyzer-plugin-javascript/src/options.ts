@@ -8,7 +8,7 @@ export const optionSchema = z.strictObject({
    * Array of glob patterns to ignore when scanning for lockfiles/package files.
    * Files matching any of these patterns will be excluded from extraction.
    */
-  ignore: z.array(z.string()).optional(),
+  ignore: z.array(z.string()).default(['**/node_modules/**']),
 });
 
 export type JavaScriptOptions = z.infer<typeof optionSchema>;
