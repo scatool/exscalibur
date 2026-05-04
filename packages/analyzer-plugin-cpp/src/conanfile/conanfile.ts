@@ -16,24 +16,17 @@ import type { ConanOptions } from './options.ts';
 import type { ConanFileGraph, Dependency, Node, NodeId } from './types.ts';
 import { resolve } from 'path';
 
-export async function options(): Promise<ConanOptions> {
-  return {
-    ignore: ['**/build/**'],
-    conan_path: 'conan',
-    profile_build: undefined,
-    profile_host: undefined,
-  };
-}
-
 export async function markFiles(this: MarkFileContext, codebase: string, options: ConanOptions) {
-  await scanAndMarkFiles(this, codebase, '**/conanfile.{txt,py}', options.ignore ?? []);
+  for (const pattern of options.conan_files) {
+    await scanAndMarkFiles(this, codebase, pattern, options.ignore);
+  }
 }
 
 export async function extractFile(file: string, options: ConanOptions): Promise<AnalyzerResult> {
   // retrieve absolute path to ensure consistent behavior
-  file = await resolve(file);
+  file = resolve(file);
 
-  const conan_path = options.conan_path ?? 'conan';
+  const conan_path = options.conan_path;
 
   // Retrieve json graph data
   // Will automatically detect and use lockfiles if present
@@ -62,7 +55,7 @@ export async function extractFile(file: string, options: ConanOptions): Promise<
   }
 
   // detect warnings in stderr and include them as issues in the result
-  let issues: Issue[] = [];
+  const issues: Issue[] = [];
   if (stderr.includes('WARN')) {
     issues.push({
       message: `Warnings from running "${cmd.join(' ')}": ${stderr}`,
@@ -96,7 +89,7 @@ export async function extractFile(file: string, options: ConanOptions): Promise<
   }
 
   const conanfileContent = (await Bun.file(file).text()).replaceAll('\r\n', '\n');
-  let result = convertConanFileGraph(graphData, file, conanfileContent);
+  const result = convertConanFileGraph(graphData, file, conanfileContent);
   result.issues.push(...issues);
   return result;
 }

@@ -48,7 +48,7 @@ export type Extractor<Options = unknown> = {
    * The default values returned will win over any defaults specified in the optionsSchema,
    * but will be overridden by any runtime options provided.
    */
-  options?: () => Promise<Options>;
+  options?: () => Promise<Partial<Options>>;
 
   /**
    * Zod schema for validating and providing default options for the extractor.
@@ -75,7 +75,7 @@ export type FilesExtractor<Options = unknown> = {
    * The default values returned will win over any defaults specified in the optionsSchema,
    * but will be overridden by any runtime options provided.
    */
-  options?: () => Promise<Options>;
+  options?: () => Promise<Partial<Options>>;
 
   /**
    * Zod schema for validating and providing default options for the extractor.
