@@ -12,12 +12,9 @@ import { optionSchema, type SpdxOptions } from './options.ts';
 export const extractor: Extractor<SpdxOptions> = filesExtractor<SpdxOptions>({
   name: 'spdx',
   version: 1,
-  options: async () => ({
-    ignore: [],
-  }),
   optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: SpdxOptions) {
-    await scanAndMarkFiles(this, codebase, '**/*.spdx.{json,jsonld,yaml,yml}', options.ignore ?? []);
+    await scanAndMarkFiles(this, codebase, '**/*.spdx.{json,jsonld,yaml,yml}', options.ignore);
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
     const content = await Bun.file(file).text();

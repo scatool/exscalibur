@@ -14,12 +14,9 @@ import { optionSchema } from '../options.ts';
 export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>({
   name: 'requirementstxt',
   version: 1,
-  options: async () => ({
-    ignore: ['**/.venv/**', '**/venv/**', '**/__pycache__/**'],
-  }),
   optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: PythonOptions) {
-    await scanAndMarkFiles(this, codebase, '**/requirements*.txt', options.ignore ?? []);
+    await scanAndMarkFiles(this, codebase, '**/requirements*.txt', options.ignore);
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
     const content = await Bun.file(file).text();

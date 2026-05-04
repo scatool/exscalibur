@@ -40,12 +40,9 @@ function hasLockfileInDirectory(dir: string, codebase: string): boolean {
 export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScriptOptions>({
   name: 'packagejson',
   version: 1,
-  options: async () => ({
-    ignore: ['**/node_modules/**'],
-  }),
   optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: JavaScriptOptions) {
-    const ignorePatterns = options.ignore ?? [];
+    const ignorePatterns = options.ignore;
     const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));
 
     const glob = new Glob('**/package.json');

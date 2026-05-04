@@ -51,12 +51,9 @@ type DependencyGraphOutput = ConfigurationGraph[];
 export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>({
   name: 'gradle',
   version: 1,
-  options: async () => ({
-    ignore: ['**/build/**', '**/.gradle/**'],
-  }),
   optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: GradleOptions) {
-    await scanAndMarkFiles(this, codebase, '**/build.gradle{,.kts}', options.ignore ?? []);
+    await scanAndMarkFiles(this, codebase, '**/build.gradle{,.kts}', options.ignore);
   },
   extractFile: async (file: string, options: GradleOptions): Promise<AnalyzerResult> => {
     const dir = dirname(file);

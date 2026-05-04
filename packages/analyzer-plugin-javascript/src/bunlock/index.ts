@@ -22,12 +22,9 @@ const PKG_METADATA_INDEX = 2;
 export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScriptOptions>({
   name: 'bunlock',
   version: 1,
-  options: async () => ({
-    ignore: ['**/node_modules/**'],
-  }),
   optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: JavaScriptOptions) {
-    await scanAndMarkFiles(this, codebase, '**/bun.lock', options.ignore ?? []);
+    await scanAndMarkFiles(this, codebase, '**/bun.lock', options.ignore);
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
     const { packageMap, relationshipsMap } = initializeExtractionMaps();

@@ -82,7 +82,7 @@ function parseExtractorOptions(optionStrings: string[], existingOptions: Extract
   return result;
 }
 
-function validateOptions(extractors: Extractor[], parsedOptions: ExtractorOptions): ExtractorOptions {
+function validateOptions(extractors: Extractor[], parsedOptions: ExtractorOptions) {
   // Instead of validating each extractor options separately, we construct a combined schema for all extractors
   // and validate the entire options object at once -> better error messages
   const tmpSchemas: Record<string, z.ZodType> = {};
@@ -94,7 +94,7 @@ function validateOptions(extractors: Extractor[], parsedOptions: ExtractorOption
   }
 
   const topLevelSchema = z.strictObject(tmpSchemas);
-  return topLevelSchema.parse(parsedOptions) as ExtractorOptions;
+  topLevelSchema.parse(parsedOptions);
 }
 
 const program = new Command();
@@ -227,14 +227,15 @@ Examples:
 
       // Parse and validate extractor options
       let parsedOptions: ExtractorOptions = options.extractorOptionsJson || {};
-      let validatedOptions: ExtractorOptions = {};
 
       if ((options.extractorOptions as string[]).length > 0) {
         parsedOptions = parseExtractorOptions(options.extractorOptions as string[], parsedOptions);
       }
 
+      // just validate the options here
+      // the default options are merged later by each call to Extractor.extract
       try {
-        validatedOptions = validateOptions(extractors, parsedOptions);
+        validateOptions(extractors, parsedOptions);
       } catch (error) {
         if (error instanceof z.ZodError) {
           console.error('Error validating extractor options!');
@@ -249,7 +250,7 @@ Examples:
         process.exit(1);
       }
 
-      await runAnalysis(codebasePathResolved, outputPathResolved, extractors, validatedOptions);
+      await runAnalysis(codebasePathResolved, outputPathResolved, extractors, parsedOptions);
     } catch (error) {
       console.error('Fatal error:', error instanceof Error ? error.message : String(error));
       process.exit(1);

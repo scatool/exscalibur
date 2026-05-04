@@ -40,7 +40,21 @@ export type Extractor<Options = unknown> = {
   name: string;
   version: 1;
   extract: (codebase: string, options?: Partial<Options>) => Promise<AnalyzerResult>;
+
+  /**
+   * Function to provide dynamic default options for the extractor.
+   * For static defaults, it's recommended to use the optionsSchema with .default() values instead.
+   *
+   * The default values returned will win over any defaults specified in the optionsSchema,
+   * but will be overridden by any runtime options provided.
+   */
   options?: () => Promise<Options>;
+
+  /**
+   * Zod schema for validating and providing default options for the extractor.
+   * If the extractor also provides an options function, the defaults from that function will take
+   * precedence over the schema defaults.
+   */
   optionsSchema?: z.ZodType<Options>;
 };
 
@@ -53,6 +67,20 @@ export type FilesExtractor<Options = unknown> = {
   version: 1;
   markFiles: (this: MarkFileContext, codebase: string, options: Options) => Promise<void>;
   extractFile?: (file: string, options: Options) => Promise<AnalyzerResult>;
+
+  /**
+   * Function to provide dynamic default options for the extractor.
+   * For static defaults, it's recommended to use the optionsSchema with .default() values instead.
+   *
+   * The default values returned will win over any defaults specified in the optionsSchema,
+   * but will be overridden by any runtime options provided.
+   */
   options?: () => Promise<Options>;
+
+  /**
+   * Zod schema for validating and providing default options for the extractor.
+   * If the extractor also provides an options function, the defaults from that function will take
+   * precedence over the schema defaults.
+   */
   optionsSchema?: z.ZodType<Options>;
 };
