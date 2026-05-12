@@ -208,13 +208,23 @@ function extractDependencyScopes(node: Node, nodesById: Record<NodeId, Node>, fi
   }
 
   // Group dependencies by their type
-  const runtimeDeps: string[] = [];
-  const buildDeps: string[] = [];
-  const testDeps: string[] = [];
+  const deps = {
+    runtime: [] as string[],
+    build: [] as string[],
+    test: [] as string[],
+  };
 
-  for (const [depNodeId, dependency] of Object.entries(node.dependencies) as [NodeId, Dependency][]) {
+  for (const [depNodeId, dependency] of Object.entries(node.dependencies)) {
+    if (!dependency.direct) {
+      // only include direct dependencies in scopes
+      // transitive dependencies will be included as packages and relationships but not in scopes
+      continue;
+    }
+
     const depNode = nodesById[depNodeId];
-    if (!depNode) continue;
+    if (!depNode) {
+      continue;
+    }
 
     const depPurl =
       isLocalPackage(depNode) || !depNode.name
@@ -223,40 +233,28 @@ function extractDependencyScopes(node: Node, nodesById: Record<NodeId, Node>, fi
 
     // Categorize by dependency type
     if (dependency.test) {
-      testDeps.push(depPurl);
+      deps.test.push(depPurl);
     } else if (dependency.build) {
-      buildDeps.push(depPurl);
+      deps.build.push(depPurl);
     } else if (dependency.libs || dependency.run) {
       // libs=true means it's a runtime dependency
-      runtimeDeps.push(depPurl);
+      deps.runtime.push(depPurl);
     } else {
       // Default to runtime if no specific type is set
-      runtimeDeps.push(depPurl);
+      deps.runtime.push(depPurl);
     }
   }
 
   // Create scopes
-  if (runtimeDeps.length > 0) {
-    scopes.push({
-      scope: 'runtime',
-      packages: runtimeDeps,
-    });
+  for (const entry of Object.entries(deps)) {
+    const [scopeName, depPurls] = entry;
+    if (depPurls.length > 0) {
+      scopes.push({
+        scope: scopeName,
+        packages: depPurls,
+      });
+    }
   }
-
-  if (buildDeps.length > 0) {
-    scopes.push({
-      scope: 'build',
-      packages: buildDeps,
-    });
-  }
-
-  if (testDeps.length > 0) {
-    scopes.push({
-      scope: 'test',
-      packages: testDeps,
-    });
-  }
-
   return scopes;
 }
 

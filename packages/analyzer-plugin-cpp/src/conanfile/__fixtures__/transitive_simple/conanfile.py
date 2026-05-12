@@ -6,9 +6,7 @@ class TransitiveApp(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
 
     def requirements(self):
-        self.requires("spdlog/1.17.0")
-        self.requires("drogon/1.9.12")
-        self.requires("libsoup/3.6.6")
+        self.requires("openssl/3.0.5")
 
     def build_requirements(self):
         self.tool_requires("cmake/3.27.7")

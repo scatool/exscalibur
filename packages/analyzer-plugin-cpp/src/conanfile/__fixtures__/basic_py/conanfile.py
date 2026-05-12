@@ -6,7 +6,7 @@ class ComplexApp(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
 
     def requirements(self):
-        self.requires("fmt/10.1.1")
+        self.requires("fmt/7.1.3")
         self.requires("zlib/1.3.1")
 
     def build_requirements(self):
