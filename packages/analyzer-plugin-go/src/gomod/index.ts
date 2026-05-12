@@ -10,7 +10,7 @@ import {
   scanAndMarkFiles,
   type Subproject,
 } from '@scatool/analyzer-core/src/index.ts';
-import { dirname } from 'node:path';
+import { dirname } from 'node:path/posix';
 import { createGoPurl } from '../go-utils.ts';
 
 type Dependency = {

@@ -11,7 +11,7 @@ import {
   initializeExtractionMaps,
   scanAndMarkFiles,
 } from '@scatool/analyzer-core/src/index.ts';
-import { dirname, join } from 'node:path';
+import { dirname, join } from 'node:path/posix';
 import {
   findLineNumber,
   isWorkspacePackage,

@@ -1,7 +1,7 @@
 import type { Extractor } from '@scatool/analyzer-core';
 import { Glob } from 'bun';
 import { expect, test } from 'bun:test';
-import { join } from 'node:path';
+import { basename, dirname, join } from 'node:path/posix';
 import { validateResult } from './validate.ts';
 
 export { validateResult } from './validate.ts';
@@ -18,7 +18,7 @@ export { validateResult } from './validate.ts';
  * @example
  * import { extractDockerfile } from './index.ts';
  * import { createFileContentTests } from '@scatool/analyzer-test-utils';
- * import { join } from 'node:path';
+ * import { join } from 'node:path/posix';
  *
  * const fixturesDir = join(import.meta.dir, '__fixtures__');
  *
@@ -72,7 +72,7 @@ export async function scanFixtures(fixturesDir: string, pattern: string): Promis
 
   for await (const file of glob.scan({ cwd: fixturesDir })) {
     // Extract directory name from path (e.g., "basic/bun.lock" -> "basic")
-    const dir = file.split('/')[0];
+    const dir = basename(dirname(file));
     if (dir) {
       fixtures.add(dir);
     }
@@ -99,7 +99,7 @@ export async function scanFixtureFiles(fixturesDir: string, pattern: string): Pr
   const files: string[] = [];
 
   for await (const file of glob.scan({ cwd: fixturesDir })) {
-    files.push(file);
+    files.push(file.replaceAll('\\', '/'));
   }
 
   // Sort files alphabetically for consistent test ordering
@@ -126,7 +126,7 @@ export async function scanFixtureFiles(fixturesDir: string, pattern: string): Pr
  * // In your test file:
  * import { extractor } from './index.ts';
  * import { createExtractorTests } from '@scatool/analyzer-test-utils';
- * import { join } from 'node:path';
+ * import { join } from 'node:path/posix';
  *
  * const fixturesDir = join(import.meta.dir, '__fixtures__');
  *
@@ -161,7 +161,7 @@ export async function createExtractorTests(options: {
 
   // Extract directory paths if needed (e.g., "npm/basic/file.json" -> "npm/basic")
   if (extractDirectory) {
-    fixtures = fixtures.map((file) => file.substring(0, file.lastIndexOf('/')));
+    fixtures = fixtures.map(dirname);
   }
 
   // Create a test for each fixture

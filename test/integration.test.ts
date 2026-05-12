@@ -1,5 +1,5 @@
 import { expect, test } from 'bun:test';
-import { join } from 'node:path';
+import { join } from 'node:path/posix';
 import { file } from 'bun';
 import {
   bunlockExtractor,

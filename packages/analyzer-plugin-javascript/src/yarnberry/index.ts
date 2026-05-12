@@ -10,7 +10,7 @@ import {
   initializeExtractionMaps,
 } from '@scatool/analyzer-core/src/index.ts';
 import { Glob } from 'bun';
-import { dirname, join } from 'node:path';
+import { dirname, join } from 'node:path/posix';
 import {
   findLineNumber,
   parsePackagePattern,
@@ -31,7 +31,8 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));
 
     const lockfileGlob = new Glob('**/yarn.lock');
-    for await (const file of lockfileGlob.scan({ cwd: codebase, absolute: true, onlyFiles: true })) {
+    for await (let file of lockfileGlob.scan({ cwd: codebase, absolute: true, onlyFiles: true })) {
+      file = file.replaceAll('\\', '/');
       const shouldIgnore = ignoreGlobs.some((glob) => glob.match(file));
       if (!shouldIgnore) {
         // Only mark Yarn Berry lockfiles (version 8+)

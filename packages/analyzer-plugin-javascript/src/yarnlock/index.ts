@@ -10,7 +10,7 @@ import {
   initializeExtractionMaps,
 } from '@scatool/analyzer-core/src/index.ts';
 import { Glob } from 'bun';
-import { dirname, join } from 'node:path';
+import { dirname, join } from 'node:path/posix';
 import { findLineNumber, parsePackagePattern, parseYarnLockfile, resolvePackageVersion } from './lockfile.ts';
 import type { PackageJson } from '../types.ts';
 import { createNpmPurl, extractNpmScopes, readPackageJson } from '../npm-utils.ts';
@@ -26,7 +26,8 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));
 
     const lockfileGlob = new Glob('**/yarn.lock');
-    for await (const file of lockfileGlob.scan({ cwd: codebase, absolute: true, onlyFiles: true })) {
+    for await (let file of lockfileGlob.scan({ cwd: codebase, absolute: true, onlyFiles: true })) {
+      file.replaceAll('\\', '/');
       const shouldIgnore = ignoreGlobs.some((glob) => glob.match(file));
       if (!shouldIgnore) {
         // Only mark Yarn Classic (v1) lockfiles
@@ -76,7 +77,8 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
       for (const pattern of workspacePatterns) {
         const pkgJsonPattern = `${pattern}/package.json`;
         const pkgJsonGlob = new Glob(pkgJsonPattern);
-        for await (const pkgPath of pkgJsonGlob.scan({ cwd: dir, absolute: true })) {
+        for await (let pkgPath of pkgJsonGlob.scan({ cwd: dir, absolute: true })) {
+          pkgPath = pkgPath.replaceAll('\\', '/');
           if (!pkgPath.includes('/node_modules/')) {
             workspacePackageJsonPaths.push(pkgPath);
           }

@@ -1,7 +1,7 @@
 #!/usr/bin/env bun
 
 import { file, spawn } from 'bun';
-import { join } from 'node:path';
+import { join } from 'node:path/posix';
 
 const REPOSITORIES_FILE = join(import.meta.dir, '..', 'repositories.json');
 const OUTPUT_DIR = join(import.meta.dir, '..', 'repositories');

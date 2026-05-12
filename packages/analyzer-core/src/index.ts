@@ -28,6 +28,7 @@ export type { PackageMapEntry } from './map-utils.ts';
 import type { AnalyzerResult, Extractor, FilesExtractor, MarkFileContext } from './types.ts';
 import { mergeResults } from './merge.ts';
 import { Glob } from 'bun';
+import { isAbsolute } from 'node:path/posix';
 
 export async function scanAndMarkFiles(
   context: MarkFileContext,
@@ -37,7 +38,8 @@ export async function scanAndMarkFiles(
 ): Promise<void> {
   const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));
   const glob = new Glob(filePattern);
-  for await (const file of glob.scan({ cwd: codebase, absolute: true, onlyFiles: true })) {
+  for await (let file of glob.scan({ cwd: codebase, absolute: true, onlyFiles: true })) {
+    file = file.replaceAll('\\', '/');
     if (!ignoreGlobs.some((g) => g.match(file))) {
       context.markFile(file);
     }
@@ -53,7 +55,7 @@ export const filesExtractor = <Options = unknown>(config: FilesExtractor<Options
 
       const context: MarkFileContext = {
         markFile: (file: string) => {
-          const absolutePath = file.startsWith('/') ? file : `${codebase}/${file}`;
+          const absolutePath = isAbsolute(file) ? file : `${codebase}/${file}`;
           markedFiles.push(absolutePath);
         },
       };
