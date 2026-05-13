@@ -11,7 +11,7 @@ import {
   initializeExtractionMaps,
   scanAndMarkFiles,
 } from '@scatool/analyzer-core/src/index.ts';
-import { dirname, join } from 'node:path';
+import { dirname, join } from 'node:path/posix';
 import {
   findLineNumber,
   isWorkspacePackage,
@@ -37,7 +37,7 @@ export const extractor: Extractor<RustOptions> = filesExtractor<RustOptions>({
     const { packageMap, relationshipsMap } = initializeExtractionMaps();
     const subprojects: Subproject[] = [];
 
-    const lockfileContent = await Bun.file(file).text();
+    const lockfileContent = (await Bun.file(file).text()).replaceAll('\r\n', '\n');
     const lockfile = parseCargoLockfile(lockfileContent);
 
     // Build a map of package names to their packages (for resolving dependencies)

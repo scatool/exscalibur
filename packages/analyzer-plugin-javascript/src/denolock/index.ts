@@ -11,7 +11,7 @@ import {
   type Subproject,
 } from '@scatool/analyzer-core/src/index.ts';
 import { PackageURL } from 'packageurl-js';
-import { dirname, join } from 'node:path';
+import { dirname, join } from 'node:path/posix';
 import { type DenoLockfile, findLineNumber, parseDenoLockfile, parseJsrPackage, parseNpmPackage } from './lockfile.ts';
 import { createNpmPurl } from '../npm-utils.ts';
 import type { JavaScriptOptions } from '../options.ts';
@@ -30,7 +30,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     const { packageMap, relationshipsMap } = initializeExtractionMaps();
     const subprojects: Subproject[] = [];
 
-    const lockfileContent = await Bun.file(file).text();
+    const lockfileContent = (await Bun.file(file).text()).replaceAll('\r\n', '\n');
     const lockfile = parseDenoLockfile(lockfileContent);
 
     // Process workspace subproject if deno.json exists

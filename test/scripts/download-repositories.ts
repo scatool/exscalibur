@@ -1,7 +1,7 @@
 #!/usr/bin/env bun
 
 import { file, spawn } from 'bun';
-import { join } from 'node:path';
+import { join } from 'node:path/posix';
 
 const REPOSITORIES_FILE = join(import.meta.dir, '..', 'repositories.json');
 const OUTPUT_DIR = join(import.meta.dir, '..', 'repositories');
@@ -43,11 +43,7 @@ async function downloadAndExtract(owner: string, repo: string, commit: string, o
   await Bun.write(tempTarball, '');
   const tempFile = file(tempTarball);
   if (await tempFile.exists()) {
-    await spawn({
-      cmd: ['rm', tempTarball],
-      stdout: 'ignore',
-      stderr: 'ignore',
-    }).exited;
+    await Bun.file(tempTarball).delete();
   }
 }
 

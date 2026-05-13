@@ -12,7 +12,7 @@ import {
   scanAndMarkFiles,
 } from '@scatool/analyzer-core/src/index.ts';
 import { PackageURL } from 'packageurl-js';
-import { dirname, join } from 'node:path';
+import { dirname, join } from 'node:path/posix';
 import { existsSync } from 'node:fs';
 import type { GradleOptions } from './options.ts';
 import { optionSchema } from './options.ts';

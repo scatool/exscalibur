@@ -10,7 +10,7 @@ import {
   initializeExtractionMaps,
   scanAndMarkFiles,
 } from '@scatool/analyzer-core/src/index.ts';
-import { dirname, join } from 'node:path';
+import { dirname, join } from 'node:path/posix';
 import {
   findLineNumber,
   isGitPackageKey,
@@ -38,7 +38,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     const { packageMap, relationshipsMap } = initializeExtractionMaps();
     const subprojects: Subproject[] = [];
 
-    const lockfileContent = await Bun.file(file).text();
+    const lockfileContent = (await Bun.file(file).text()).replaceAll('\r\n', '\n');
     const lockfile = parsePnpmLockfile(lockfileContent);
 
     // Build a map of workspace package names to their versions

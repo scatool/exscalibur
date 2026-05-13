@@ -10,7 +10,7 @@ import {
   scanAndMarkFiles,
   type Subproject,
 } from '@scatool/analyzer-core/src/index.ts';
-import { dirname } from 'node:path';
+import { dirname } from 'node:path/posix';
 import { createGoPurl } from '../go-utils.ts';
 
 type Dependency = {
@@ -26,7 +26,7 @@ export const extractor: Extractor = filesExtractor({
     await scanAndMarkFiles(this, codebase, '**/go.mod', ['**/vendor/**', '**/.cache/**']);
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
-    const content = await Bun.file(file).text();
+    const content = (await Bun.file(file).text()).replaceAll('\r\n', '\n');
     const lines = content.split('\n');
     const dir = dirname(file);
 

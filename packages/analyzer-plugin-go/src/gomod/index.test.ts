@@ -1,4 +1,4 @@
-import { join } from 'node:path';
+import { join } from 'node:path/posix';
 import { extractor } from './index.ts';
 import { createExtractorTests } from '@scatool/analyzer-test-utils';
 

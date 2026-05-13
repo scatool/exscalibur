@@ -1,4 +1,4 @@
-import { join } from 'node:path';
+import { join } from 'node:path/posix';
 import { extractCycloneDX } from './index.ts';
 import { createFileContentTests } from '@scatool/analyzer-test-utils';
 

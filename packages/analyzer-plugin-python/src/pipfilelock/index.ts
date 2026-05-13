@@ -9,7 +9,7 @@ import {
   buildResult,
   initializeExtractionMaps,
 } from '@scatool/analyzer-core/src/index.ts';
-import { dirname, join } from 'node:path';
+import { basename, dirname, join } from 'node:path/posix';
 import { createPypiPurl, normalizePythonName } from '../python-utils.ts';
 import type { PythonOptions } from '../options.ts';
 import { optionSchema } from '../options.ts';
@@ -39,7 +39,7 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
     await scanAndMarkFiles(this, codebase, '**/Pipfile.lock', options.ignore);
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
-    const content = await Bun.file(file).text();
+    const content = (await Bun.file(file).text()).replaceAll('\r\n', '\n');
     const dir = dirname(file);
     const lines = content.split('\n');
 
@@ -68,7 +68,7 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
 
     // If no project name found, use directory name
     if (!projectName) {
-      projectName = dirname(file).split('/').pop() || 'unknown';
+      projectName = basename(dir) || 'unknown';
     }
 
     // Build a map of all packages with their resolved versions

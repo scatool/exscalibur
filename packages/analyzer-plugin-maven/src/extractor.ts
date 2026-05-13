@@ -12,7 +12,7 @@ import {
 } from '@scatool/analyzer-core/src/index.ts';
 import { Glob } from 'bun';
 import { PackageURL } from 'packageurl-js';
-import { dirname, join } from 'node:path';
+import { dirname, join } from 'node:path/posix';
 import { existsSync } from 'node:fs';
 import type { MavenOptions } from './options.ts';
 import { optionSchema } from './options.ts';
@@ -39,7 +39,9 @@ async function extractFile(file: string, options: MavenOptions): Promise<Analyze
 
     const isWindows = process.platform === 'win32';
     const mvnWrapper = isWindows ? join(dir, 'mvnw.cmd') : join(dir, 'mvnw');
-    const mvnExecutable = existsSync(mvnWrapper) ? mvnWrapper : mavenCmd;
+    // we need to use "Bun.which" here, as this is required to find the executable
+    // in case of the mise environment combined with explcitly stating the env for Bun.spawn
+    const mvnExecutable = existsSync(mvnWrapper) ? mvnWrapper : Bun.which(mavenCmd) || mavenCmd;
 
     const env = { ...process.env };
     if (options.javaHome) {
@@ -173,7 +175,8 @@ export const extractor: Extractor<MavenOptions> = {
 
     const files: string[] = [];
     const glob = new Glob('**/pom.xml');
-    for await (const file of glob.scan({ cwd: codebase, absolute: true, onlyFiles: true })) {
+    for await (let file of glob.scan({ cwd: codebase, absolute: true, onlyFiles: true })) {
+      file = file.replaceAll('\\', '/');
       if (!ignoreGlobs.some((g) => g.match(file))) {
         files.push(file);
       }

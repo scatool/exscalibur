@@ -293,7 +293,7 @@ async function runAnalysis(
     try {
       console.error(`Running ${extractor.name} extractor (version ${extractor.version})...`);
       const extractorOptions = options[extractor.name] as Partial<unknown> | undefined;
-      const result = await extractor.extract(codebasePath, extractorOptions);
+      const result = await extractor.extract(codebasePath.replaceAll('\\', '/'), extractorOptions);
       results.push(result);
       console.error(`  Found ${result.packages.length} packages`);
       console.error(`  Found ${result.subprojects.length} subprojects`);

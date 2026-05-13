@@ -5,7 +5,7 @@ import {
   scanAndMarkFiles,
 } from '@scatool/analyzer-core/src/index.ts';
 import { extractCycloneDX } from '@scatool/analyzer-plugin-cdx/src/index.ts';
-import { dirname } from 'node:path';
+import { dirname } from 'node:path/posix';
 import type { UvOptions } from './options.ts';
 import { optionSchema } from './options.ts';
 

@@ -10,7 +10,7 @@ import {
   buildResult,
   scanAndMarkFiles,
 } from '@scatool/analyzer-core/src/index.ts';
-import { dirname, join } from 'node:path';
+import { dirname, join } from 'node:path/posix';
 import { createNpmPurl, extractNpmScopes, NPM_DEPENDENCY_SCOPES, readPackageJson } from '../npm-utils.ts';
 import type { JavaScriptOptions } from '../options.ts';
 import { optionSchema } from '../options.ts';
@@ -30,7 +30,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     const { packageMap, relationshipsMap } = initializeExtractionMaps();
     const subprojects: Subproject[] = [];
 
-    const content = await Bun.file(file).text();
+    const content = (await Bun.file(file).text()).replaceAll('\r\n', '\n');
     const dir = dirname(file);
 
     // Parse the bun.lock file (JSONC format with comments and trailing commas)
