@@ -28,7 +28,9 @@ export type { PackageMapEntry } from './map-utils.ts';
 import type { AnalyzerResult, Extractor, FilesExtractor, MarkFileContext } from './types.ts';
 import { mergeResults } from './merge.ts';
 import { Glob } from 'bun';
-import { isAbsolute } from 'node:path/posix';
+import { join } from 'node:path/posix';
+// it's crucial that we do not use posix variant here for windows to work (e.g. for C:/path)
+import { isAbsolute } from 'node:path';
 
 export async function scanAndMarkFiles(
   context: MarkFileContext,
@@ -55,7 +57,7 @@ export const filesExtractor = <Options = unknown>(config: FilesExtractor<Options
 
       const context: MarkFileContext = {
         markFile: (file: string) => {
-          const absolutePath = isAbsolute(file) ? file : `${codebase}/${file}`;
+          const absolutePath = isAbsolute(file) ? file : join(codebase, file);
           markedFiles.push(absolutePath);
         },
       };

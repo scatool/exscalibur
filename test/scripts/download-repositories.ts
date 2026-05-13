@@ -43,11 +43,7 @@ async function downloadAndExtract(owner: string, repo: string, commit: string, o
   await Bun.write(tempTarball, '');
   const tempFile = file(tempTarball);
   if (await tempFile.exists()) {
-    await spawn({
-      cmd: ['rm', tempTarball],
-      stdout: 'ignore',
-      stderr: 'ignore',
-    }).exited;
+    await Bun.file(tempTarball).delete();
   }
 }
 

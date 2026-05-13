@@ -27,7 +27,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
 
     const lockfileGlob = new Glob('**/yarn.lock');
     for await (let file of lockfileGlob.scan({ cwd: codebase, absolute: true, onlyFiles: true })) {
-      file.replaceAll('\\', '/');
+      file = file.replaceAll('\\', '/');
       const shouldIgnore = ignoreGlobs.some((glob) => glob.match(file));
       if (!shouldIgnore) {
         // Only mark Yarn Classic (v1) lockfiles
@@ -61,7 +61,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     const { packageMap, relationshipsMap } = initializeExtractionMaps();
     const subprojects: Subproject[] = [];
 
-    const lockfileContent = await Bun.file(file).text();
+    const lockfileContent = (await Bun.file(file).text()).replaceAll('\r\n', '\n');
     const lockfile = parseYarnLockfile(lockfileContent);
 
     // Read root package.json to determine workspace setup

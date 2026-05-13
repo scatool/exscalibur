@@ -35,7 +35,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
   extractFile: async (file: string): Promise<AnalyzerResult> => {
     const dir = dirname(file);
 
-    const lockfileContent = await Bun.file(file).text();
+    const lockfileContent = (await Bun.file(file).text()).replaceAll('\r\n', '\n');
     const lockfile = parsePackageLock(lockfileContent);
 
     // Route to appropriate extraction logic based on lockfile version

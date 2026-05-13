@@ -5,14 +5,14 @@ import { tmpdir } from 'node:os';
 import { extractor } from './index.ts';
 import { validateResult, scanFixtures } from '@scatool/analyzer-test-utils';
 
-const fixturesDir = join(import.meta.dir, '__fixtures__');
+const fixturesDir = join(import.meta.dir, '__fixtures__').replaceAll('\\', '/');
 const fixtures = await scanFixtures(fixturesDir, '*/yarn.lock');
 
 // Copy fixtures to /tmp to avoid workspace detection issues
 let tmpFixturesDir: string;
 
 beforeAll(() => {
-  tmpFixturesDir = mkdtempSync(join(tmpdir(), 'yarn-test-'));
+  tmpFixturesDir = mkdtempSync(join(tmpdir().replaceAll('\\', '/'), 'yarn-test-'));
   cpSync(fixturesDir, tmpFixturesDir, { recursive: true });
 });
 

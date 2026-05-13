@@ -1,7 +1,7 @@
 import type { Extractor } from '@scatool/analyzer-core';
 import { Glob } from 'bun';
 import { expect, test } from 'bun:test';
-import { basename, dirname, join } from 'node:path/posix';
+import { dirname, join } from 'node:path/posix';
 import { validateResult } from './validate.ts';
 
 export { validateResult } from './validate.ts';
@@ -43,7 +43,7 @@ export async function createFileContentTests(options: {
   for (const file of fixtureFiles) {
     test(file, async () => {
       const filePath = join(fixturesDir, file);
-      const content = await Bun.file(filePath).text();
+      const content = (await Bun.file(filePath).text()).replaceAll('\r\n', '\n');
       const result = await extractFn(content, file);
       validateResult(result);
       expect(result).toMatchSnapshot();
@@ -72,7 +72,7 @@ export async function scanFixtures(fixturesDir: string, pattern: string): Promis
 
   for await (const file of glob.scan({ cwd: fixturesDir })) {
     // Extract directory name from path (e.g., "basic/bun.lock" -> "basic")
-    const dir = basename(dirname(file));
+    const dir = file.replaceAll('\\', '/').split('/')[0];
     if (dir) {
       fixtures.add(dir);
     }
@@ -154,6 +154,7 @@ export async function createExtractorTests(options: {
   extractDirectory?: boolean;
   timeout?: number;
 }): Promise<void> {
+  options.fixturesDir = options.fixturesDir.replaceAll('\\', '/');
   const { extractor, fixturesDir, pattern, useFiles = false, extractDirectory = false, timeout } = options;
 
   // Scan for fixtures

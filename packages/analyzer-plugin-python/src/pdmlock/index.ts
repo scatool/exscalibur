@@ -56,7 +56,7 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
     await scanAndMarkFiles(this, codebase, '**/pdm.lock', options.ignore);
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
-    const content = await Bun.file(file).text();
+    const content = (await Bun.file(file).text()).replaceAll('\r\n', '\n');
     const dir = dirname(file);
     const lines = content.split('\n');
 

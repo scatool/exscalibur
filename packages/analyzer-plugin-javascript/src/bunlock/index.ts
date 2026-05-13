@@ -30,7 +30,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     const { packageMap, relationshipsMap } = initializeExtractionMaps();
     const subprojects: Subproject[] = [];
 
-    const content = await Bun.file(file).text();
+    const content = (await Bun.file(file).text()).replaceAll('\r\n', '\n');
     const dir = dirname(file);
 
     // Parse the bun.lock file (JSONC format with comments and trailing commas)

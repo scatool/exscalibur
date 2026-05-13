@@ -69,7 +69,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     const { packageMap, relationshipsMap } = initializeExtractionMaps();
     const subprojects: Subproject[] = [];
 
-    const lockfileContent = await Bun.file(file).text();
+    const lockfileContent = (await Bun.file(file).text()).replaceAll('\r\n', '\n');
     const lockfile = parseYarnBerryLockfile(lockfileContent);
 
     // Find all workspace packages by looking for linkType: soft

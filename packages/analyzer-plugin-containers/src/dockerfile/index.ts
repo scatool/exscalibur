@@ -17,7 +17,7 @@ export const extractor: Extractor = filesExtractor({
     await scanAndMarkFiles(this, codebase, '**/Dockerfile*', []);
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
-    const content = await Bun.file(file).text();
+    const content = (await Bun.file(file).text()).replaceAll('\r\n', '\n');
     return extractDockerfile(content, file);
   },
 });

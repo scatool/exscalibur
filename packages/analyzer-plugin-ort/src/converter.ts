@@ -5,7 +5,9 @@ import {
   type Relationship,
   type Subproject,
 } from '@scatool/analyzer-core/src/index.ts';
-import { dirname, isAbsolute, resolve } from 'node:path/posix';
+import { dirname } from 'node:path/posix';
+// it's crucial that we do not use posix variant here for windows to work (e.g. for C:/path)
+import { isAbsolute, resolve } from 'node:path';
 import { type OrtAnalyzerResult } from './model.ts';
 import { convertOrtIdToPurl } from './id.ts';
 

@@ -21,7 +21,7 @@ import {
 import type { Extractor } from '@scatool/analyzer-core/src/index.ts';
 import { mergeResults, normalizeResult } from '@scatool/analyzer-core/src/index.ts';
 
-const repositoriesDir = `${import.meta.dir}/repositories`;
+const repositoriesDir = `${import.meta.dir}/repositories`.replaceAll('\\', '/');
 
 // All available extractors
 const allExtractors: Extractor[] = [

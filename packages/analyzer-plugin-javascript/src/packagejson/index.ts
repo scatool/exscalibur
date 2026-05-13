@@ -64,7 +64,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
     // Process individual package.json file
-    const content = await Bun.file(file).text();
+    const content = (await Bun.file(file).text()).replaceAll('\r\n', '\n');
 
     const packageJson = JSON.parse(content) as Record<string, unknown>;
 
