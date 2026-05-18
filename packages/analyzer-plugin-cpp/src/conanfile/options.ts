@@ -15,30 +15,30 @@ export const optionsSchema = z.strictObject({
    * Path to the conan binary.
    * @default 'conan'
    */
-  conan_path: z.string().default('conan'),
+  conanPath: z.string().default('conan'),
 
   /**
    * Conan build profile passed to `conan graph info` as `--profile:build`.
    */
-  profile_build: z.string().optional(),
+  profileBuild: z.string().optional(),
 
   /**
    * Conan host profile passed to `conan graph info` as `--profile:host`.
    */
-  profile_host: z.string().optional(),
+  profileHost: z.string().optional(),
 
   /**
    * Additional arguments to pass to the conan command.
    * This can be used to provide extra flags or options that are not explicitly supported
    * by the other configuration fields.
    */
-  conan_args: z.array(z.string()).optional(),
+  conanArgs: z.array(z.string()).optional(),
 
   /**
    * Glob patterns to identify conanfiles.
    * @default `[**\/conanfile.{txt,py}]`.
    */
-  conan_files: z.array(z.string()).default(['**/conanfile.{txt,py}']),
+  conanFiles: z.array(z.string()).default(['**/conanfile.{txt,py}']),
 });
 
 export type ConanOptions = z.infer<typeof optionsSchema>;

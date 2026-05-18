@@ -17,11 +17,11 @@ Supported package files: `conanfile.txt`, `conanfile.py` and `conan.lock`.
 Supported extractor options:
 
 - `ignore` - glob patterns to ignore files (default: `['**/build/**']`)
-- `conan_path` - path to the conan binary (default: `conan`)
-- `profile_build` - optional value passed as `--profile:build` to `conan graph info`
-- `profile_host` - optional value passed as `--profile:host` to `conan graph info`
+- `conanPath` - path to the conan binary (default: `conan`)
+- `profileBuild` - optional value passed as `--profile:build` to `conan graph info`
+- `profileHost` - optional value passed as `--profile:host` to `conan graph info`
 
-Known Limitations:
+Known limitations:
 
 - Only Conan 2.x is supported.
 - Conan Workspaces are not supported (as they are in preview by the time of writing).

@@ -14,10 +14,10 @@ import {
 import { createConanPurl, createLocalNodeConanPurl } from './utils.ts';
 import type { ConanOptions } from './options.ts';
 import type { ConanFileGraph, Dependency, Node, NodeId } from './types.ts';
-import { resolve } from 'path';
+import { resolve } from 'path/posix';
 
 export async function markFiles(this: MarkFileContext, codebase: string, options: ConanOptions) {
-  for (const pattern of options.conan_files) {
+  for (const pattern of options.conanFiles) {
     await scanAndMarkFiles(this, codebase, pattern, options.ignore);
   }
 }
@@ -26,19 +26,19 @@ export async function extractFile(file: string, options: ConanOptions): Promise<
   // retrieve absolute path to ensure consistent behavior
   file = resolve(file);
 
-  const conan_path = options.conan_path;
+  const conan_path = options.conanPath;
 
   // Retrieve json graph data
   // Will automatically detect and use lockfiles if present
   const cmd = [conan_path, 'graph', 'info', file, '--format', 'json'];
-  if (options.profile_build) {
-    cmd.push('--profile:build', options.profile_build);
+  if (options.profileBuild) {
+    cmd.push('--profile:build', options.profileBuild);
   }
-  if (options.profile_host) {
-    cmd.push('--profile:host', options.profile_host);
+  if (options.profileHost) {
+    cmd.push('--profile:host', options.profileHost);
   }
-  if (options.conan_args) {
-    cmd.push(...options.conan_args);
+  if (options.conanArgs) {
+    cmd.push(...options.conanArgs);
   }
 
   const proc = Bun.spawn(cmd, {

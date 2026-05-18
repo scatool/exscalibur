@@ -32,8 +32,8 @@ const extractorWrapper = filesExtractor<ConanOptions>({
   options: async () => {
     // override profile paths to ensure reproducible test results
     return {
-      profile_build: join(fixturesDir, 'profile'),
-      profile_host: join(fixturesDir, 'profile'),
+      profileBuild: join(fixturesDir, 'profile'),
+      profileHost: join(fixturesDir, 'profile'),
     };
   },
   optionsSchema: optionsSchema,
