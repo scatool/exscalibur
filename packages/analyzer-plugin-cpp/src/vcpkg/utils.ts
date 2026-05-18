@@ -2,11 +2,10 @@ import { PackageURL } from 'packageurl-js';
 
 /**
  * Create a Package URL (PURL) for a Vcpkg package
- * Format: pkg:vcpkg/{name}@{version}[?rrev={rrev}]
+ * Format: pkg:vcpkg/{name}@{version}[?local={isLocal}]
  *
  * @param name - Package name (will be normalized to lowercase)
  * @param version - Package version
- * @param rrev - Recipe revision
  * @param local - Whether this is a local/editable package (adds "local=true" qualifier)
  * @returns PURL string
  */

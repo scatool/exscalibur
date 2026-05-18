@@ -1,0 +1,47 @@
+{
+  "packages": [
+    {
+      "purl": "pkg:vcpkg/fmt@12.1.0",
+      "evidence": ["vcpkg.json#3"]
+    },
+    {
+      "purl": "pkg:vcpkg/vcpkg-cmake-config@2024-05-23",
+      "evidence": []
+    },
+    {
+      "purl": "pkg:vcpkg/vcpkg-cmake@2024-04-23",
+      "evidence": []
+    },
+    {
+      "purl": "pkg:vcpkg/zlib@1.3.2",
+      "evidence": ["vcpkg.json#3"]
+    }
+  ],
+  "subprojects": [
+    {
+      "purl": "pkg:vcpkg/simple@unknown?local=true",
+      "definitionFile": "vcpkg.json",
+      "scopes": [
+        {
+          "scope": "host",
+          "packages": []
+        },
+        {
+          "scope": "target",
+          "packages": ["pkg:vcpkg/fmt@12.1.0", "pkg:vcpkg/zlib@1.3.2"]
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "from": "pkg:vcpkg/fmt@12.1.0",
+      "to": ["pkg:vcpkg/vcpkg-cmake-config@2024-05-23", "pkg:vcpkg/vcpkg-cmake@2024-04-23"]
+    },
+    {
+      "from": "pkg:vcpkg/zlib@1.3.2",
+      "to": ["pkg:vcpkg/vcpkg-cmake-config@2024-05-23", "pkg:vcpkg/vcpkg-cmake@2024-04-23"]
+    }
+  ],
+  "issues": []
+}
