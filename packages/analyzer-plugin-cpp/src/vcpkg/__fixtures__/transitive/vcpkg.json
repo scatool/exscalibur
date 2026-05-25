@@ -1,5 +1,5 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
-  "dependencies": ["boost"],
+  "dependencies": ["boost", "ffmpeg", "curl"],
   "builtin-baseline": "7fec4da984c9e37c1530322aa5192e0b11012668"
 }

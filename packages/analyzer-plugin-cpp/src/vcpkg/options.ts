@@ -47,14 +47,17 @@ export const optionsSchema = z.strictObject({
    * Optional Target platform to filter dependencies for as specified in
    * <https://learn.microsoft.com/en-us/vcpkg/reference/vcpkg-json#platform-expression>
    *
-   * If specified, only dependencies with a matching platform will be included in the results.
+   * If specified, only dependencies with a matching platform will be included in the results.\
    * If not specified, dependencies for all platforms will be included.
    */
   targetPlatform: targetPlatformSchema.optional(),
 
   /**
-   * Whether to include all features and their corresponding dependencies of each port in the results.
+   * Whether to include all features (for the current target platform) and their corresponding dependencies of each port in the results.
    * If false, only the default features of each port will be included.
+   *
+   * This means if `targetPlatform` is specified and `includeAllFeatures` is true, all features that are enabled for the target platform will be included.
+   *
    * @default false
    */
   includeAllFeatures: z.boolean().default(false),

@@ -135,7 +135,7 @@ export interface VcpkgDependencyObject {
    * Identifiers used for port and feature names.
    */
   name: VcpkgIdentifier;
-  features?: VcpkgDependencyFeatureObject[];
+  features?: (VcpkgDependencyFeatureObject | string)[];
   host?: boolean;
   'default-features'?: boolean;
   /**

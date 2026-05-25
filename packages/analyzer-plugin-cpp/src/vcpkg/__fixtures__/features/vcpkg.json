@@ -1,0 +1,16 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
+  "dependencies": ["zlib"],
+  "default-features": ["default-feat"],
+  "features": {
+    "default-feat": {
+      "description": "fmt",
+      "dependencies": ["fmt"]
+    },
+    "non-default-feat": {
+      "description": "7zip",
+      "dependencies": ["7zip"]
+    }
+  },
+  "builtin-baseline": "7fec4da984c9e37c1530322aa5192e0b11012668"
+}

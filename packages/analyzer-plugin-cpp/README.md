@@ -7,6 +7,7 @@ C++ ecosystem analyzer plugin for Excalibur.
 The following package managers are supported:
 
 - Conan: <https://conan.io/>
+- Vcpkg: <https://learn.microsoft.com/en-us/vcpkg/>
 
 ## Package Manager Support
 
@@ -47,5 +48,17 @@ Known limitations:
 
 - Default features in the primary `vcpkg.json` files are not supported. Either all features or all default features are included, when extracting dependencies.
 - Baselines before `68a74950d0400f5a803026d0860f49853984bf11` (Jan 21, 2021) are not supported (see [src/vcpkg/README.md](./src/vcpkg/README.md) for details).
+- Any `vcpkg.json` is not validated (e.g. checked if `version>=` of dependencies are satisfied). Please ensure that the `vcpkg.json` files are valid and consistent with the lockfiles before extraction.
 
 For further implementation considerations, see [src/vcpkg/README.md](./src/vcpkg/README.md).
+
+## Setup Environment
+
+To use the vcpkg extractor you need to install vcpkg.
+Either install [vcpkg manually](https://learn.microsoft.com/en-us/vcpkg/get_started/get-started?pivots=shell-bash) or using the corresponding mise plugin:
+
+```bash
+cd excalibur
+mise plugin install vcpkg https://github.com/markus-gerber/mise-vcpkg
+mise use vcpkg
+```

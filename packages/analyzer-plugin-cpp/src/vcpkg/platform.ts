@@ -8,7 +8,11 @@ import type { VcpkgTargetPlatform } from './options';
  * @param targetPlatform the target platform to evaluate against
  * @return true if the platform expression matches the target platform, false otherwise
  */
-export function matchesPlatform(platformExpression: string, targetPlatform: VcpkgTargetPlatform): boolean {
+export function matchesPlatform(platformExpression: string, targetPlatform?: VcpkgTargetPlatform): boolean {
+  if (targetPlatform === undefined) {
+    return true;
+  }
+
   try {
     const parser = createParser(platformExpression, targetPlatform);
     const result = parser.parseExpression();
