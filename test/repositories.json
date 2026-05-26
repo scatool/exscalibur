@@ -436,18 +436,6 @@
     }
   },
   {
-    "owner": "faasm",
-    "repository": "faasm",
-    "commit": "3127fe5aee8e83a9cf206e18e5bba5603ad62670",
-    "options": {
-      "conanfile": {
-        "profileBuild": "../packages/analyzer-plugin-cpp/src/conanfile/__fixtures__/profile",
-        "profileHost": "../packages/analyzer-plugin-cpp/src/conanfile/__fixtures__/profile",
-        "conanArgs": ["--build", "*"]
-      }
-    }
-  },
-  {
     "owner": "drogonframework",
     "repository": "drogon",
     "commit": "9784c612762b106adf70a713cf68384d909d2141",
