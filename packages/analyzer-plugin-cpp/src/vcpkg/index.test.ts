@@ -260,7 +260,7 @@ for (const fixture of fixtures) {
 }
 
 async function verifyInstallDryRun(dir: string, extractedPackages: { name: string; version: string }[]) {
-  const proc = Bun.spawn([vcpkgPath, 'install', '--dry-run', `--triplet=${triplet}`], {
+  const proc = Bun.spawn([vcpkgPath, 'install', '--dry-run', `--triplet=${triplet}`, `--host-triplet=${triplet}`], {
     stdout: 'pipe',
     stderr: 'pipe',
     cwd: dir,
@@ -298,11 +298,14 @@ async function verifyDependInfo(
   dir: string,
   extractedRelations: { from: string; features: string[] | null; to: string[] }[],
 ) {
-  const proc = Bun.spawn([vcpkgPath, 'depend-info', `--triplet=${triplet}`, '--format=list'], {
-    stdout: 'pipe',
-    stderr: 'pipe',
-    cwd: dir,
-  });
+  const proc = Bun.spawn(
+    [vcpkgPath, 'depend-info', `--triplet=${triplet}`, `--host-triplet=${triplet}`, '--format=list'],
+    {
+      stdout: 'pipe',
+      stderr: 'pipe',
+      cwd: dir,
+    },
+  );
 
   const exitCode = await proc.exited;
   expect(exitCode).toBe(0);

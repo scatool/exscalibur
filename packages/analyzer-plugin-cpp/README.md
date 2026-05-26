@@ -35,7 +35,7 @@ Supported extractor options:
 
 - `ignore` - glob patterns to ignore files (default: `['**/build/**']`)
 - `vcpkgPath` - path to the vcpkg binary (default: `vcpkg`)
-- `targetPlatform` - optional target platform to filter dependencies. When specified, only dependencies matching the platform will be included. Supports:
+- `targetPlatform` - optional target platform to filter dependencies (see [vcpkg documentation](https://learn.microsoft.com/en-us/vcpkg/reference/vcpkg-json#platform-expression)). When specified, only dependencies matching the platform will be included. If not specified, all platforms will be included. Supports:
   - `targetArchitecture` - one of: `x86`, `x64`, `arm`, `arm64`, `arm64ec`, `wasm32`, `mips64`
   - `cmakeSystemName` - one of: `WindowsStore`, `MinGW`, `Linux`, `Darwin`, `iOS`, `FreeBSD`, `OpenBSD`, `Android`, `Emscripten`, `QNX`, `VxWorks`, or empty string
   - `xboxConsoleTarget` - optional string for Xbox console target
@@ -62,3 +62,22 @@ cd excalibur
 mise plugin install vcpkg https://github.com/markus-gerber/mise-vcpkg
 mise use vcpkg
 ```
+
+Additionally, to run the verification tests (`vcpkg install --dry-run should match dependencies extracted for [...]`) you need to have the corresponding C++ toolchain installed:
+
+### Linux
+
+You can use any C++ compiler, e.g. clang using mise:
+
+```bash
+cd excalibur
+mise use clang
+```
+
+### Windows
+
+On Windows, you need to have Visual Studio with the C++ toolchain installed.
+
+### MacOS
+
+\[_Not tested yet, but probably similar to linux_\]
