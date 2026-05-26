@@ -20,6 +20,7 @@ import {
 } from '@scatool/analyzer-plugin-python/src/index.ts';
 import type { Extractor } from '@scatool/analyzer-core/src/index.ts';
 import { mergeResults, normalizeResult } from '@scatool/analyzer-core/src/index.ts';
+import { conanfileExtractor, vcpkgExtractor } from '@scatool/analyzer-plugin-cpp/src/index.ts';
 
 const repositoriesDir = `${import.meta.dir}/repositories`.replaceAll('\\', '/');
 
@@ -38,6 +39,8 @@ const allExtractors: Extractor[] = [
   poetryLockExtractor,
   pdmLockExtractor,
   requirementsTxtExtractor,
+  conanfileExtractor,
+  vcpkgExtractor,
 ];
 
 interface RepositoryConfig {

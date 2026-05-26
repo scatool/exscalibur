@@ -14,7 +14,8 @@
     "@scatool/analyzer-plugin-gradle": "workspace:*",
     "@scatool/analyzer-plugin-python": "workspace:*",
     "@scatool/analyzer-plugin-javascript": "workspace:*",
-    "@scatool/analyzer-plugin-rust": "workspace:*"
+    "@scatool/analyzer-plugin-rust": "workspace:*",
+    "@scatool/analyzer-plugin-cpp": "workspace:*"
   },
   "devDependencies": {
     "@types/bun": "^1.3.9"
