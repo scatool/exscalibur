@@ -7,6 +7,7 @@
     "typecheck": "bunx tsc --strict --noEmit"
   },
   "dependencies": {
+    "zod": "^4.3.6",
     "@scatool/analyzer-core": "workspace:*",
     "@scatool/analyzer-plugin-containers": "workspace:*",
     "@scatool/analyzer-plugin-github-actions": "workspace:*",

@@ -21,6 +21,11 @@ import {
 import type { Extractor } from '@scatool/analyzer-core/src/index.ts';
 import { mergeResults, normalizeResult } from '@scatool/analyzer-core/src/index.ts';
 import { conanfileExtractor, vcpkgExtractor } from '@scatool/analyzer-plugin-cpp/src/index.ts';
+import { z } from 'zod';
+import { chdir } from 'node:process';
+
+// set consistent working directory
+chdir(import.meta.dir);
 
 const repositoriesDir = `${import.meta.dir}/repositories`.replaceAll('\\', '/');
 
@@ -47,12 +52,25 @@ interface RepositoryConfig {
   owner: string;
   repository: string;
   commit: string;
+  options?: Record<string, Partial<unknown>>;
   javaVersion?: number;
 }
 
 // Load repository configuration
 const repositoriesConfigFile = file(join(import.meta.dir, 'repositories.json'));
 const repositoriesConfig: RepositoryConfig[] = await repositoriesConfigFile.json();
+
+const globalOptionSchema = z.strictObject(
+  allExtractors.reduce(
+    (map, extractor) => {
+      if (extractor.optionsSchema) {
+        map[extractor.name] = extractor.optionsSchema.optional();
+      }
+      return map;
+    },
+    {} as Record<string, z.ZodType<unknown>>,
+  ),
+);
 
 // Load system configuration (optional)
 interface SystemConfig {
@@ -78,6 +96,21 @@ for (const config of repositoriesConfig) {
     async () => {
       const repoPath = join(repositoriesDir, repoName);
 
+      if (config.options !== undefined) {
+        // validate only
+        try {
+          globalOptionSchema.parse(config.options);
+        } catch (error) {
+          if (error instanceof z.ZodError) {
+            expect().fail('Error validating extractor options!\n' + z.prettifyError(error));
+          } else {
+            expect().fail(
+              'Error validating extractor options: ' + (error instanceof Error ? error.message : String(error)),
+            );
+          }
+        }
+      }
+
       // Switch Java version if needed
       let originalJavaHome: string | undefined;
       if (config.javaVersion) {
@@ -100,7 +133,9 @@ for (const config of repositoriesConfig) {
       }
 
       try {
-        const results = await Promise.all(allExtractors.map((extractor) => extractor.extract(repoPath)));
+        const results = await Promise.all(
+          allExtractors.map((extractor) => extractor.extract(repoPath, config.options?.[extractor.name])),
+        );
 
         // Merge all results
         const mergedResult = mergeResults(results);
