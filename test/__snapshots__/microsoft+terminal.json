@@ -1,0 +1,83 @@
+{
+  "packages": [
+    {
+      "purl": "pkg:vcpkg/fmt@11.1.4",
+      "evidence": [
+        "vcpkg.json#19",
+        "vcpkg.json#4"
+      ]
+    },
+    {
+      "purl": "pkg:vcpkg/ms-gsl@4.0.0",
+      "evidence": [
+        "vcpkg.json#23",
+        "vcpkg.json#5"
+      ]
+    },
+    {
+      "purl": "pkg:vcpkg/vcpkg-cmake-config@2024-05-23",
+      "evidence": [
+        "dep/vcpkg-overlay-ports/fmt/vcpkg.json#13"
+      ]
+    },
+    {
+      "purl": "pkg:vcpkg/vcpkg-cmake@2024-04-23",
+      "evidence": [
+        "dep/vcpkg-overlay-ports/fmt/vcpkg.json#9"
+      ]
+    }
+  ],
+  "subprojects": [
+    {
+      "purl": "pkg:vcpkg/fmt@11.1.4?local=true",
+      "definitionFile": "dep/vcpkg-overlay-ports/fmt/vcpkg.json",
+      "scopes": [
+        {
+          "scope": "host",
+          "packages": [
+            "pkg:vcpkg/vcpkg-cmake-config@2024-05-23",
+            "pkg:vcpkg/vcpkg-cmake@2024-04-23"
+          ]
+        },
+        {
+          "scope": "target",
+          "packages": []
+        }
+      ]
+    },
+    {
+      "purl": "pkg:vcpkg/microsoft%2Bterminal@unknown?local=true",
+      "definitionFile": "vcpkg.json",
+      "scopes": [
+        {
+          "scope": "host",
+          "packages": []
+        },
+        {
+          "scope": "target",
+          "packages": [
+            "pkg:vcpkg/fmt@11.1.4",
+            "pkg:vcpkg/ms-gsl@4.0.0"
+          ]
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "from": "pkg:vcpkg/fmt@11.1.4",
+      "to": [
+        "pkg:vcpkg/vcpkg-cmake-config@2024-05-23",
+        "pkg:vcpkg/vcpkg-cmake@2024-04-23"
+      ]
+    },
+    {
+      "from": "pkg:vcpkg/ms-gsl@4.0.0",
+      "to": [
+        "pkg:vcpkg/vcpkg-cmake-config@2024-05-23",
+        "pkg:vcpkg/vcpkg-cmake@2024-04-23"
+      ]
+    }
+  ],
+  "issues": []
+}

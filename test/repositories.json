@@ -414,5 +414,49 @@
     "owner": "django",
     "repository": "django",
     "commit": "c3c9f1908e62eea528377e3788e78594a8361189"
+  },
+  {
+    "owner": "Corvusoft",
+    "repository": "restbed",
+    "commit": "e1227a297ce6d4e9f78222456507b29bb8ab77e9"
+  },
+  {
+    "owner": "microsoft",
+    "repository": "terminal",
+    "commit": "b4e69c68620a822407d45bfbba6ee10feebc70a3"
+  },
+  {
+    "owner": "rustdesk",
+    "repository": "rustdesk",
+    "commit": "1abc897c451c8b5bbff3792509a7fef9d12f2ce3",
+    "options": {
+      "gradle": {
+        "ignore": ["**/flutter/**", "**/build/**", "**/.gradle/**"]
+      }
+    }
+  },
+  {
+    "owner": "faasm",
+    "repository": "faasm",
+    "commit": "3127fe5aee8e83a9cf206e18e5bba5603ad62670",
+    "options": {
+      "conanfile": {
+        "profileBuild": "../packages/analyzer-plugin-cpp/src/conanfile/__fixtures__/profile",
+        "profileHost": "../packages/analyzer-plugin-cpp/src/conanfile/__fixtures__/profile",
+        "conanArgs": ["--build", "*"]
+      }
+    }
+  },
+  {
+    "owner": "drogonframework",
+    "repository": "drogon",
+    "commit": "9784c612762b106adf70a713cf68384d909d2141",
+    "options": {
+      "conanfile": {
+        "profileBuild": "../packages/analyzer-plugin-cpp/src/conanfile/__fixtures__/profile",
+        "profileHost": "../packages/analyzer-plugin-cpp/src/conanfile/__fixtures__/profile",
+        "conanArgs": ["--build", "*"]
+      }
+    }
   }
 ]

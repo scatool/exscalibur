@@ -1,0 +1,85 @@
+{
+  "packages": [
+    {
+      "purl": "pkg:vcpkg/asio@1.32.0",
+      "evidence": [
+        "vcpkg.json#6"
+      ]
+    },
+    {
+      "purl": "pkg:vcpkg/catch2@3.13.0",
+      "evidence": [
+        "vcpkg.json#7"
+      ]
+    },
+    {
+      "purl": "pkg:vcpkg/openssl@3.6.1",
+      "evidence": [
+        "vcpkg.json#8"
+      ]
+    },
+    {
+      "purl": "pkg:vcpkg/vcpkg-cmake-config@2024-05-23",
+      "evidence": []
+    },
+    {
+      "purl": "pkg:vcpkg/vcpkg-cmake-get-vars@2025-05-29",
+      "evidence": []
+    },
+    {
+      "purl": "pkg:vcpkg/vcpkg-cmake@2024-04-23",
+      "evidence": []
+    }
+  ],
+  "subprojects": [
+    {
+      "purl": "pkg:vcpkg/restbed@5.0.0?local=true",
+      "definitionFile": "vcpkg.json",
+      "scopes": [
+        {
+          "scope": "host",
+          "packages": []
+        },
+        {
+          "scope": "target",
+          "packages": [
+            "pkg:vcpkg/asio@1.32.0",
+            "pkg:vcpkg/catch2@3.13.0",
+            "pkg:vcpkg/openssl@3.6.1"
+          ]
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "from": "pkg:vcpkg/asio@1.32.0",
+      "to": [
+        "pkg:vcpkg/vcpkg-cmake-config@2024-05-23",
+        "pkg:vcpkg/vcpkg-cmake@2024-04-23"
+      ]
+    },
+    {
+      "from": "pkg:vcpkg/catch2@3.13.0",
+      "to": [
+        "pkg:vcpkg/vcpkg-cmake-config@2024-05-23",
+        "pkg:vcpkg/vcpkg-cmake@2024-04-23"
+      ]
+    },
+    {
+      "from": "pkg:vcpkg/openssl@3.6.1",
+      "to": [
+        "pkg:vcpkg/vcpkg-cmake-config@2024-05-23",
+        "pkg:vcpkg/vcpkg-cmake-get-vars@2025-05-29",
+        "pkg:vcpkg/vcpkg-cmake@2024-04-23"
+      ]
+    },
+    {
+      "from": "pkg:vcpkg/vcpkg-cmake-get-vars@2025-05-29",
+      "to": [
+        "pkg:vcpkg/vcpkg-cmake@2024-04-23"
+      ]
+    }
+  ],
+  "issues": []
+}

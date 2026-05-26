@@ -1,0 +1,68 @@
+{
+  "packages": [
+    {
+      "purl": "pkg:conan/brotli@1.0.9?rrev=1265e1e122a205e65c23e753831c7022",
+      "evidence": [
+        "conanfile.txt#9"
+      ]
+    },
+    {
+      "purl": "pkg:conan/gtest@1.10.0?rrev=1bc89464a3c0d935d7844cc808bce233",
+      "evidence": [
+        "conanfile.txt#4"
+      ]
+    },
+    {
+      "purl": "pkg:conan/hiredis@1.0.0?rrev=3dd4d5484557f37f61630e5a991ce772",
+      "evidence": [
+        "conanfile.txt#8"
+      ]
+    },
+    {
+      "purl": "pkg:conan/jsoncpp@1.9.4?rrev=758827a4d0cb914ad0c03f91e5b4808d",
+      "evidence": [
+        "conanfile.txt#2"
+      ]
+    },
+    {
+      "purl": "pkg:conan/openssl@1.1.1t?rrev=55e398751ff5310a8525645c99c81495",
+      "evidence": [
+        "conanfile.txt#7"
+      ]
+    },
+    {
+      "purl": "pkg:conan/sqlite3@3.40.1?rrev=c5e96fa97eb3c61b44120e2695f528c9",
+      "evidence": [
+        "conanfile.txt#5"
+      ]
+    },
+    {
+      "purl": "pkg:conan/zlib@1.2.11?rrev=bfceb3f8904b735f75c2b0df5713b1e6",
+      "evidence": [
+        "conanfile.txt#3"
+      ]
+    }
+  ],
+  "subprojects": [
+    {
+      "purl": "pkg:conan/drogonframework%2Bdrogon@0.0.0?local=true",
+      "definitionFile": "conanfile.txt",
+      "scopes": [
+        {
+          "scope": "runtime",
+          "packages": [
+            "pkg:conan/brotli@1.0.9?rrev=1265e1e122a205e65c23e753831c7022",
+            "pkg:conan/gtest@1.10.0?rrev=1bc89464a3c0d935d7844cc808bce233",
+            "pkg:conan/hiredis@1.0.0?rrev=3dd4d5484557f37f61630e5a991ce772",
+            "pkg:conan/jsoncpp@1.9.4?rrev=758827a4d0cb914ad0c03f91e5b4808d",
+            "pkg:conan/openssl@1.1.1t?rrev=55e398751ff5310a8525645c99c81495",
+            "pkg:conan/sqlite3@3.40.1?rrev=c5e96fa97eb3c61b44120e2695f528c9",
+            "pkg:conan/zlib@1.2.11?rrev=bfceb3f8904b735f75c2b0df5713b1e6"
+          ]
+        }
+      ]
+    }
+  ],
+  "relationships": [],
+  "issues": []
+}
