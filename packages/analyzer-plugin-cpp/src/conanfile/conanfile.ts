@@ -14,7 +14,7 @@ import {
 import { createConanPurl, createLocalNodeConanPurl } from './utils.ts';
 import type { ConanOptions } from './options.ts';
 import type { ConanFileGraph, Dependency, Node, NodeId } from './types.ts';
-import { resolve } from 'path/posix';
+import { resolve } from 'path';
 
 export async function markFiles(this: MarkFileContext, codebase: string, options: ConanOptions) {
   for (const pattern of options.conanFiles) {
@@ -24,7 +24,9 @@ export async function markFiles(this: MarkFileContext, codebase: string, options
 
 export async function extractFile(file: string, options: ConanOptions): Promise<AnalyzerResult> {
   // retrieve absolute path to ensure consistent behavior
-  file = resolve(file);
+  // note: using non-posix resolve is important here, because else on
+  // Windows the following will happen: resolve('C:\\path') === '/Users/cwd/C:/path'
+  file = resolve(file).replaceAll('\\', '/');
 
   const conan_path = options.conanPath;
 

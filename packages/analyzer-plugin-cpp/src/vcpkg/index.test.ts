@@ -1,4 +1,5 @@
-import { dirname, join, resolve } from 'path/posix';
+import { dirname, join } from 'path/posix';
+import { resolve } from 'path';
 import { createExtractorTests, scanFixtures } from '@scatool/analyzer-test-utils';
 import { extractor as vcpkgExtractor } from './index.ts';
 import { type VcpkgOptions, type VcpkgTargetPlatform, optionsSchema } from './options';
@@ -196,7 +197,10 @@ for (const fixture of fixtures) {
     `vcpkg install --dry-run should match dependencies extracted for ${fixture}`,
     async () => {
       const fixturePath = join(fixturesDir, fixture, 'vcpkg.json');
-      const file = resolve(fixturePath);
+
+      // note: using non-posix resolve is important here, because else on
+      // Windows the following will happen: resolve('C:\\path') === '/Users/cwd/C:/path'
+      const file = resolve(fixturePath).replaceAll('\\', '/');
 
       const vcpkgContent = (await Bun.file(file).text()).replaceAll('\r\n', '\n');
 

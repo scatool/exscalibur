@@ -8,7 +8,8 @@ import {
   type Subproject,
 } from '@scatool/analyzer-core/src/index.ts';
 import type { VcpkgOptions, VcpkgTargetPlatform } from './options.ts';
-import { basename, dirname, resolve } from 'path/posix';
+import { basename, dirname } from 'path/posix';
+import { resolve } from 'path';
 import type { VcpkgDependencyFeatureObject, VcpkgDependencyObject, VcpkgIdentifier, VcpkgPort } from './types.ts';
 import { matchesPlatform } from './platform.ts';
 import { createVcpkgPurl, retrieveVcpkgReferenceLineNumber } from './utils';
@@ -61,7 +62,9 @@ export async function markFiles(this: MarkFileContext, codebase: string, options
 
 export async function extractFile(file: string, options: VcpkgOptions): Promise<AnalyzerResult> {
   // retrieve absolute path to ensure consistent behavior
-  file = resolve(file);
+  // note: using non-posix resolve is important here, because else on
+  // Windows the following will happen: resolve('C:\\path') === '/Users/cwd/C:/path'
+  file = resolve(file).replaceAll('\\', '/');
 
   const vcpkgContent = (await Bun.file(file).text()).replaceAll('\r\n', '\n');
   const { packageMap, relationshipsMap } = initializeExtractionMaps();
