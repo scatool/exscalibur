@@ -27,7 +27,6 @@ import { mavenExtractor } from '@scatool/analyzer-plugin-maven/src/index.ts';
 import { extractor as cyclonedxExtractor } from '@scatool/analyzer-plugin-cdx/src/index.ts';
 import { extractor as spdxExtractor } from '@scatool/analyzer-plugin-spdx/src/index.ts';
 import { ortExtractor } from '@scatool/analyzer-plugin-ort/src/index.ts';
-import { conanfileExtractor, vcpkgExtractor } from '@scatool/analyzer-plugin-cpp/src/index.ts';
 import type { AnalyzerResult, Extractor } from '@scatool/analyzer-core/src/index.ts';
 import { resolve } from 'path';
 import { z } from 'zod';
@@ -183,8 +182,6 @@ Available extractors:
   cyclonedx         Extract from CycloneDX BOM files
   spdx              Extract from SPDX 3.0.x JSON-LD files
   ort               Extract from ORT result files
-  conanfile         Extract from Conan files
-  vcpkg             Extract from vcpkg files
 
 Examples:
   analyzer /repo /output.json
@@ -224,8 +221,6 @@ Examples:
         cyclonedxExtractor,
         spdxExtractor,
         ortExtractor,
-        conanfileExtractor,
-        vcpkgExtractor,
       ];
 
       const extractors = filterExtractors(enabledExtractors, disabledExtractors, allExtractors);

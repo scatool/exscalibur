@@ -43,6 +43,11 @@ for package_dir in "$PACKAGES_DIR"/*; do
       continue
     fi
 
+    if bun -e "const pkg = await Bun.file(process.argv[1]).json(); process.exit(pkg.private === true ? 0 : 1)" "$package_dir/package.json"; then
+      echo -e "${YELLOW}Skipping $package_name (private package)${NC}"
+      continue
+    fi
+
     if [ -n "$DRY_RUN_FLAG" ]; then
       echo -e "${BLUE}[DRY RUN] Publishing $package_name...${NC}"
     else
