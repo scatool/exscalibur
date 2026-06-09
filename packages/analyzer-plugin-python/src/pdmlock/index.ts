@@ -8,19 +8,21 @@ import {
   ensurePackageExists,
   buildResult,
   initializeExtractionMaps,
+  readNormalizedTextFile,
+  readTextFile,
   scanAndMarkFiles,
-} from '@scatool/analyzer-core/src/index.ts';
-import { basename, dirname, join } from 'node:path/posix';
-import { parse as parseToml } from 'smol-toml';
-import { createPypiPurl, findTomlPackageLineNumber, normalizePythonName } from '../python-utils.ts';
-import type { PythonOptions } from '../options.ts';
-import { optionSchema } from '../options.ts';
+} from "@scatool/analyzer-core";
+import { basename, dirname, join } from "node:path/posix";
+import { parse as parseToml } from "smol-toml";
+import { createPypiPurl, findTomlPackageLineNumber, normalizePythonName } from "../python-utils.ts";
+import type { PythonOptions } from "../options.ts";
+import { optionSchema } from "../options.ts";
 
 interface PdmLock {
   package?: PackageEntry[];
   metadata?: {
-    'lock-version'?: string;
-    'content-hash'?: string;
+    "lock-version"?: string;
+    "content-hash"?: string;
     groups?: string[];
   };
 }
@@ -30,7 +32,7 @@ interface PackageEntry {
   version: string;
   requires_python?: string;
   dependencies?: string[];
-  'requires-python'?: string;
+  "requires-python"?: string;
   summary?: string;
   groups?: string[];
 }
@@ -43,35 +45,35 @@ interface PyProjectToml {
   };
   tool?: {
     pdm?: {
-      'dev-dependencies'?: Record<string, string[]>;
+      "dev-dependencies"?: Record<string, string[]>;
     };
   };
 }
 
 export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>({
-  name: 'pdmlock',
+  name: "pdmlock",
   version: 1,
   optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: PythonOptions) {
-    await scanAndMarkFiles(this, codebase, '**/pdm.lock', options.ignore);
+    await scanAndMarkFiles(this, codebase, "**/pdm.lock", options.ignore);
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
-    const content = (await Bun.file(file).text()).replaceAll('\r\n', '\n');
+    const content = await readNormalizedTextFile(file);
     const dir = dirname(file);
-    const lines = content.split('\n');
+    const lines = content.split("\n");
 
     const lockfile = parseToml(content) as PdmLock;
     const { packageMap, relationshipsMap } = initializeExtractionMaps();
     const subprojects: Subproject[] = [];
 
     // Try to read pyproject.toml to get project info
-    const pyprojectPath = join(dir, 'pyproject.toml');
+    const pyprojectPath = join(dir, "pyproject.toml");
     let projectName: string | null = null;
-    let projectVersion = '0.0.0';
+    let projectVersion = "0.0.0";
     let pyprojectToml: PyProjectToml | null = null;
 
     try {
-      const pyprojectContent = await Bun.file(pyprojectPath).text();
+      const pyprojectContent = await readTextFile(pyprojectPath);
       pyprojectToml = parseToml(pyprojectContent) as PyProjectToml;
 
       if (pyprojectToml.project?.name) {
@@ -86,7 +88,7 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
 
     // Fallback to directory name if no project name found
     if (!projectName) {
-      projectName = basename(dir) || 'unknown';
+      projectName = basename(dir) || "unknown";
     }
 
     // Build a map of all packages with their resolved versions
@@ -149,15 +151,15 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
 
       if (packages.length > 0) {
         scopes.push({
-          scope: 'dependencies',
+          scope: "dependencies",
           packages,
         });
       }
     }
 
     // Dev dependencies from pyproject.toml
-    if (pyprojectToml?.tool?.pdm?.['dev-dependencies']) {
-      for (const [groupName, deps] of Object.entries(pyprojectToml.tool.pdm['dev-dependencies'])) {
+    if (pyprojectToml?.tool?.pdm?.["dev-dependencies"]) {
+      for (const [groupName, deps] of Object.entries(pyprojectToml.tool.pdm["dev-dependencies"])) {
         const packages: string[] = [];
         for (const depSpec of deps) {
           const depName = parseDependencyName(depSpec);
@@ -172,7 +174,7 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
 
         if (packages.length > 0) {
           scopes.push({
-            scope: groupName === 'dev' ? 'dev-dependencies' : `group.${groupName}`,
+            scope: groupName === "dev" ? "dev-dependencies" : `group.${groupName}`,
             packages,
           });
         }
@@ -185,7 +187,7 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
 
       for (const pkg of lockfile.package) {
         const purl = createPypiPurl(pkg.name, pkg.version);
-        const groups = pkg.groups || ['default'];
+        const groups = pkg.groups || ["default"];
 
         for (const group of groups) {
           if (!groupedPackages.has(group)) {
@@ -198,7 +200,7 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
       for (const [groupName, packages] of groupedPackages) {
         if (packages.length > 0) {
           scopes.push({
-            scope: groupName === 'default' ? 'dependencies' : `group.${groupName}`,
+            scope: groupName === "default" ? "dependencies" : `group.${groupName}`,
             packages,
           });
         }

@@ -1,13 +1,19 @@
-import { type AnalyzerResult, filesExtractor, scanAndMarkFiles } from '@scatool/analyzer-core/src/index.ts';
-import { type OrtAnalyzerResult, type OrtResultFile } from './model.ts';
-import { convertOrtResult } from './converter.ts';
-import type { OrtOptions } from './options.ts';
-import { optionSchema } from './options.ts';
+import {
+  type AnalyzerResult,
+  filesExtractor,
+  readTextFile,
+  scanAndMarkFiles,
+} from "@scatool/analyzer-core";
+import { parse as parseYaml } from "yaml";
+import { type OrtAnalyzerResult, type OrtResultFile } from "./model.ts";
+import { convertOrtResult } from "./converter.ts";
+import type { OrtOptions } from "./options.ts";
+import { optionSchema } from "./options.ts";
 
 // Accept both the full ORT result file (`{ analyzer: { result: ... } }`) that
 // `ort analyze` writes by default, and the bare AnalyzerResult shape.
 function unwrapOrtResult(parsed: unknown): OrtAnalyzerResult {
-  if (parsed && typeof parsed === 'object') {
+  if (parsed && typeof parsed === "object") {
     const wrapped = (parsed as OrtResultFile).analyzer?.result;
     if (wrapped) return wrapped;
   }
@@ -15,15 +21,15 @@ function unwrapOrtResult(parsed: unknown): OrtAnalyzerResult {
 }
 
 export const extractor = filesExtractor<OrtOptions>({
-  name: 'ort',
+  name: "ort",
   version: 1,
   optionsSchema: optionSchema,
   markFiles: async function (codebase) {
-    await scanAndMarkFiles(this, codebase, '**/analyzer-result.{json,yml,yaml}', []);
+    await scanAndMarkFiles(this, codebase, "**/analyzer-result.{json,yml,yaml}", []);
   },
   extractFile: async (file, options): Promise<AnalyzerResult> => {
     try {
-      const parsed = Bun.YAML.parse(await Bun.file(file).text());
+      const parsed = parseYaml(await readTextFile(file));
       const result = unwrapOrtResult(parsed);
 
       return convertOrtResult(result, {
@@ -39,7 +45,7 @@ export const extractor = filesExtractor<OrtOptions>({
         relationships: [],
         issues: [
           {
-            severity: 'ERROR',
+            severity: "ERROR",
             message,
             file,
           },

@@ -8,45 +8,52 @@ import {
   ensurePackageExists,
   initializeExtractionMaps,
   buildResult,
+  readNormalizedTextFile,
   scanAndMarkFiles,
-} from '@scatool/analyzer-core/src/index.ts';
-import { dirname, join } from 'node:path/posix';
-import { createNpmPurl, extractNpmScopes, NPM_DEPENDENCY_SCOPES, readPackageJson } from '../npm-utils.ts';
-import type { JavaScriptOptions } from '../options.ts';
-import { optionSchema } from '../options.ts';
+} from "@scatool/analyzer-core";
+import { parse as parseJsonc } from "jsonc-parser";
+import { dirname, join } from "node:path/posix";
+import {
+  createNpmPurl,
+  extractNpmScopes,
+  NPM_DEPENDENCY_SCOPES,
+  readPackageJson,
+} from "../npm-utils.ts";
+import type { JavaScriptOptions } from "../options.ts";
+import { optionSchema } from "../options.ts";
 
 // Lockfile package entry indices
 const PKG_IDENTIFIER_INDEX = 0;
 const PKG_METADATA_INDEX = 2;
 
 export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScriptOptions>({
-  name: 'bunlock',
+  name: "bunlock",
   version: 1,
   optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: JavaScriptOptions) {
-    await scanAndMarkFiles(this, codebase, '**/bun.lock', options.ignore);
+    await scanAndMarkFiles(this, codebase, "**/bun.lock", options.ignore);
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
     const { packageMap, relationshipsMap } = initializeExtractionMaps();
     const subprojects: Subproject[] = [];
 
-    const content = (await Bun.file(file).text()).replaceAll('\r\n', '\n');
+    const content = await readNormalizedTextFile(file);
     const dir = dirname(file);
 
     // Parse the bun.lock file (JSONC format with comments and trailing commas)
-    const lockfile = Bun.JSONC.parse(content) as Record<string, unknown>;
-    const lines = content.split('\n');
+    const lockfile = parseJsonc(content) as Record<string, unknown>;
+    const lines = content.split("\n");
 
     const packageInfoMap = new Map<string, { name: string; version: string }>();
-    if (lockfile.packages && typeof lockfile.packages === 'object') {
+    if (lockfile.packages && typeof lockfile.packages === "object") {
       for (const [packageKey, packageInfo] of Object.entries(lockfile.packages)) {
         if (!Array.isArray(packageInfo) || packageInfo.length === 0) continue;
 
         const packageIdentifier = packageInfo[PKG_IDENTIFIER_INDEX];
-        if (typeof packageIdentifier !== 'string') continue;
+        if (typeof packageIdentifier !== "string") continue;
 
         // Parse name@version format
-        const lastAtIndex = packageIdentifier.lastIndexOf('@');
+        const lastAtIndex = packageIdentifier.lastIndexOf("@");
         if (lastAtIndex <= 0) continue;
 
         const name = packageIdentifier.substring(0, lastAtIndex);
@@ -57,21 +64,21 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     }
 
     // Read package.json to get the root package info
-    const packageJsonPath = join(dir, 'package.json');
+    const packageJsonPath = join(dir, "package.json");
     const rootPackageInfo = await readPackageJson(packageJsonPath);
 
     // Build a map of workspace package names to their versions
     const workspacePackages = new Map<string, string>();
-    if (lockfile.workspaces && typeof lockfile.workspaces === 'object') {
+    if (lockfile.workspaces && typeof lockfile.workspaces === "object") {
       for (const [workspacePath, workspace] of Object.entries(lockfile.workspaces)) {
-        if (!workspace || typeof workspace !== 'object') continue;
+        if (!workspace || typeof workspace !== "object") continue;
 
-        const workspaceName = 'name' in workspace ? workspace.name : undefined;
-        if (!workspaceName || typeof workspaceName !== 'string') continue;
+        const workspaceName = "name" in workspace ? workspace.name : undefined;
+        if (!workspaceName || typeof workspaceName !== "string") continue;
 
         // Determine the package.json path for this workspace
-        const workspaceDir = workspacePath === '' ? dir : join(dir, workspacePath);
-        const workspacePackageJsonPath = join(workspaceDir, 'package.json');
+        const workspaceDir = workspacePath === "" ? dir : join(dir, workspacePath);
+        const workspacePackageJsonPath = join(workspaceDir, "package.json");
 
         const packageInfo = await readPackageJson(workspacePackageJsonPath);
         if (packageInfo?.version) {
@@ -81,17 +88,17 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     }
 
     // Process workspaces if they exist in the lockfile
-    if (lockfile.workspaces && typeof lockfile.workspaces === 'object') {
+    if (lockfile.workspaces && typeof lockfile.workspaces === "object") {
       for (const [workspacePath, workspace] of Object.entries(lockfile.workspaces)) {
-        if (!workspace || typeof workspace !== 'object') continue;
+        if (!workspace || typeof workspace !== "object") continue;
 
         // Get workspace name from the lockfile
-        const workspaceName = 'name' in workspace ? workspace.name : undefined;
-        if (!workspaceName || typeof workspaceName !== 'string') continue;
+        const workspaceName = "name" in workspace ? workspace.name : undefined;
+        if (!workspaceName || typeof workspaceName !== "string") continue;
 
         // Determine the package.json path for this workspace
-        const workspaceDir = workspacePath === '' ? dir : join(dir, workspacePath);
-        const workspacePackageJsonPath = join(workspaceDir, 'package.json');
+        const workspaceDir = workspacePath === "" ? dir : join(dir, workspacePath);
+        const workspacePackageJsonPath = join(workspaceDir, "package.json");
 
         const packageInfo = await readPackageJson(workspacePackageJsonPath);
         if (!packageInfo) continue;
@@ -115,7 +122,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     } else if (rootPackageInfo?.name && rootPackageInfo.version) {
       // Fallback to reading package.json directly if no workspaces in lockfile
       const purl = createNpmPurl(rootPackageInfo.name, rootPackageInfo.version);
-      const scopes = extractScopes(rootPackageInfo, packageInfoMap, workspacePackages, '');
+      const scopes = extractScopes(rootPackageInfo, packageInfoMap, workspacePackages, "");
 
       subprojects.push({
         purl,
@@ -125,16 +132,16 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     }
 
     // Process packages section to extract packages and relationships
-    if (lockfile.packages && typeof lockfile.packages === 'object') {
+    if (lockfile.packages && typeof lockfile.packages === "object") {
       for (const [packageKey, packageInfo] of Object.entries(lockfile.packages)) {
         if (!Array.isArray(packageInfo) || packageInfo.length === 0) continue;
 
         // First element is the package identifier (name@version)
         const packageIdentifier = packageInfo[PKG_IDENTIFIER_INDEX];
-        if (typeof packageIdentifier !== 'string') continue;
+        if (typeof packageIdentifier !== "string") continue;
 
         // Parse name@version format
-        const lastAtIndex = packageIdentifier.lastIndexOf('@');
+        const lastAtIndex = packageIdentifier.lastIndexOf("@");
         if (lastAtIndex <= 0) continue;
 
         const name = packageIdentifier.substring(0, lastAtIndex);
@@ -152,16 +159,16 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
 
         // Third element contains dependency information
         const metadata = packageInfo[PKG_METADATA_INDEX];
-        if (metadata && typeof metadata === 'object') {
+        if (metadata && typeof metadata === "object") {
           // Process all dependency types
           for (const depType of NPM_DEPENDENCY_SCOPES) {
             const deps = metadata[depType];
-            if (deps && typeof deps === 'object') {
+            if (deps && typeof deps === "object") {
               for (const [depName, depVersionRange] of Object.entries(deps)) {
-                if (typeof depVersionRange !== 'string') continue;
+                if (typeof depVersionRange !== "string") continue;
 
                 // Check if this is a workspace package
-                if (depVersionRange.startsWith('workspace:')) {
+                if (depVersionRange.startsWith("workspace:")) {
                   const workspaceVersion = workspacePackages.get(depName);
                   if (workspaceVersion) {
                     const depPurl = createNpmPurl(depName, workspaceVersion);
@@ -196,7 +203,7 @@ function extractScopes(
   callerKey: string,
 ): DependencyScope[] {
   return extractNpmScopes(packageInfo, (depName, versionRange) => {
-    if (versionRange.startsWith('workspace:')) {
+    if (versionRange.startsWith("workspace:")) {
       const workspaceVersion = workspacePackages.get(depName);
       return workspaceVersion ? createNpmPurl(depName, workspaceVersion) : null;
     }
@@ -224,7 +231,7 @@ function resolvePackageInfo(
   packageInfoMap: Map<string, { name: string; version: string }>,
   callerKey: string,
 ): { name: string; version: string } | null {
-  if (callerKey === '') {
+  if (callerKey === "") {
     return packageInfoMap.get(depName) ?? null;
   }
 
@@ -233,7 +240,7 @@ function resolvePackageInfo(
   if (nested) return nested;
 
   // Walk up by stripping the last slash segment
-  const lastSlash = callerKey.lastIndexOf('/');
+  const lastSlash = callerKey.lastIndexOf("/");
   if (lastSlash !== -1) {
     return resolvePackageInfo(depName, packageInfoMap, callerKey.substring(0, lastSlash));
   }

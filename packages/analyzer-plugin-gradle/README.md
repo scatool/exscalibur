@@ -14,7 +14,7 @@ This plugin uses the [GitHub Dependency Graph Gradle Plugin](https://github.com/
 ## Usage
 
 ```typescript
-import { gradleExtractor } from '@scatool/analyzer-plugin-gradle';
+import { gradleExtractor } from "@scatool/analyzer-plugin-gradle";
 
-const result = await gradleExtractor.extract('/path/to/codebase');
+const result = await gradleExtractor.extract("/path/to/codebase");
 ```

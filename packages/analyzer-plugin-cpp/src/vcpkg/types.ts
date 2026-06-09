@@ -12,7 +12,7 @@ export type VcpkgPort = {
   /**
    * Text used to identify an arbitrary version
    */
-  'version-string'?: string;
+  "version-string"?: string;
   /**
    * A relaxed version string (1.2.3.4...)
    */
@@ -20,15 +20,15 @@ export type VcpkgPort = {
   /**
    * A date version string (e.g. 2020-01-20)
    */
-  'version-date'?: string;
+  "version-date"?: string;
   /**
    * A semantic version string. See https://semver.org/
    */
-  'version-semver'?: string;
+  "version-semver"?: string;
   /**
    * A non-negative integer indicating the port revision. If this field doesn't exist, it's assumed to be `0`.
    */
-  'port-version'?: number;
+  "port-version"?: number;
   /**
    * An array of strings which contain the maintainers of a package
    */
@@ -56,7 +56,7 @@ export type VcpkgPort = {
   /**
    * A vcpkg repository commit for version control.
    */
-  'builtin-baseline'?: string;
+  "builtin-baseline"?: string;
   /**
    * Dependencies that are always required.
    */
@@ -72,7 +72,7 @@ export type VcpkgPort = {
   /**
    * Features enabled by default with the package.
    */
-  'default-features'?: (VcpkgIdentifier | VcpkgDependencyFeatureObject)[];
+  "default-features"?: (VcpkgIdentifier | VcpkgDependencyFeatureObject)[];
 
   /**
    * A specification of a set of platforms. See https://learn.microsoft.com/vcpkg/reference/vcpkg-json#platform-expression.
@@ -87,7 +87,7 @@ export type VcpkgPort = {
   /**
    * Either configuration or vcpkg-configuration can be used. Setting both is not supported.
    */
-  'vcpkg-configuration'?: VcpkgConfiguration;
+  "vcpkg-configuration"?: VcpkgConfiguration;
 };
 
 export type VcpkgIdentifier = string;
@@ -100,7 +100,7 @@ export type VcpkgOverride = {
   /**
    * Deprecated in favor of 'version' in overrides. Text used to identify an arbitrary version
    */
-  'version-string'?: string;
+  "version-string"?: string;
   /**
    * Text used to identify the overridden version.
    */
@@ -108,18 +108,21 @@ export type VcpkgOverride = {
   /**
    * Deprecated in favor of 'version' in overrides. A date version string (e.g. 2020-01-20).
    */
-  'version-date'?: string;
+  "version-date"?: string;
   /**
    * Deprecated in favor of 'version' in overrides. A semantic version string. See https://semver.org/
    */
-  'version-semver'?: string;
+  "version-semver"?: string;
   /**
    * A non-negative integer indicating the port revision. If this field doesn't exist, it's assumed to be `0`.
    */
-  'port-version'?: number;
+  "port-version"?: number;
 };
 
-export type VcpkgDefaultRegistry = VcpkgBuiltinRegistry | VcpkgGitRegistry | VcpkgFilesystemRegistry;
+export type VcpkgDefaultRegistry =
+  | VcpkgBuiltinRegistry
+  | VcpkgGitRegistry
+  | VcpkgFilesystemRegistry;
 
 export type VcpkgRegistryItem =
   | VcpkgArtifactRegistry
@@ -137,7 +140,7 @@ export interface VcpkgDependencyObject {
   name: VcpkgIdentifier;
   features?: (VcpkgDependencyFeatureObject | string)[];
   host?: boolean;
-  'default-features'?: boolean;
+  "default-features"?: boolean;
   /**
    * A specification of a set of platforms. See https://learn.microsoft.com/vcpkg/reference/vcpkg-json#platform-expression.
    */
@@ -145,7 +148,7 @@ export interface VcpkgDependencyObject {
   /**
    * Minimum required version
    */
-  'version>='?: string;
+  "version>="?: string;
 }
 /**
  * Expanded form of a dependency feature with platform expression.
@@ -188,7 +191,7 @@ export interface VcpkgFeature {
  * Embedded vcpkg.configuration.json file.
  */
 export interface VcpkgConfiguration {
-  'default-registry'?: VcpkgDefaultRegistry;
+  "default-registry"?: VcpkgDefaultRegistry;
   registries?: VcpkgRegistryItem[];
   /**
    * An error message to print if this entry is evaluated.
@@ -205,16 +208,16 @@ export interface VcpkgConfiguration {
   /**
    * An array of port overlay paths.
    */
-  'overlay-ports'?: string[];
+  "overlay-ports"?: string[];
   /**
    * An array of triplet overlay paths.
    */
-  'overlay-triplets'?: string[];
+  "overlay-triplets"?: string[];
   requires?: VcpkgArtifactReferences;
 }
 
 export interface VcpkgBuiltinRegistry {
-  kind: 'builtin';
+  kind: "builtin";
   /**
    * The SHA that will be checked out to find default versions for ports from this registry.
    */
@@ -225,7 +228,7 @@ export interface VcpkgBuiltinRegistry {
  * A port registry backed by a git repo.
  */
 export interface VcpkgGitRegistry {
-  kind: 'git';
+  kind: "git";
   /**
    * The URI or SSH entry to clone from. (as if by `git clone`)
    */
@@ -244,7 +247,7 @@ export interface VcpkgGitRegistry {
  * A port registry backed by a filesystem layout.
  */
 export interface VcpkgFilesystemRegistry {
-  kind: 'filesystem';
+  kind: "filesystem";
   /**
    * The location on the filesystem where the registry is rooted.
    */
@@ -259,7 +262,7 @@ export interface VcpkgFilesystemRegistry {
  * An artifact registry backed by a git repository.
  */
 export interface VcpkgArtifactRegistry {
-  kind: 'artifact';
+  kind: "artifact";
   name: VcpkgIdentifier;
   /**
    * A URI to the location of the artifact registry; typically a git URI.

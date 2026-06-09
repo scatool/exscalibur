@@ -1,4 +1,4 @@
-import { z } from 'zod';
+import { z } from "zod";
 
 /**
  * Options for the Conan extractor.
@@ -9,13 +9,13 @@ export const optionsSchema = z.strictObject({
    * Files matching any of these patterns will be excluded from extraction.
    * @default ['**\/build\/**']
    */
-  ignore: z.array(z.string()).default(['**/build/**']),
+  ignore: z.array(z.string()).default(["**/build/**"]),
 
   /**
    * Path to the conan binary.
    * @default 'conan'
    */
-  conanPath: z.string().default('conan'),
+  conanPath: z.string().default("conan"),
 
   /**
    * Conan build profile passed to `conan graph info` as `--profile:build`.
@@ -38,7 +38,7 @@ export const optionsSchema = z.strictObject({
    * Glob patterns to identify conanfiles.
    * @default `[**\/conanfile.{txt,py}]`.
    */
-  conanFiles: z.array(z.string()).default(['**/conanfile.{txt,py}']),
+  conanFiles: z.array(z.string()).default(["**/conanfile.{txt,py}"]),
 });
 
 export type ConanOptions = z.infer<typeof optionsSchema>;

@@ -2,39 +2,41 @@ import {
   type AnalyzerResult,
   type Extractor,
   filesExtractor,
+  readNormalizedTextFile,
   scanAndMarkFiles,
-} from '@scatool/analyzer-core/src/index.ts';
-import { PackageURL } from 'packageurl-js';
-import { parseContainerImage } from '@scatool/analyzer-plugin-containers/src/dockerfile/index.ts';
+} from "@scatool/analyzer-core";
+import { parse as parseYaml } from "yaml";
+import { PackageURL } from "packageurl-js";
+import { parseContainerImage } from "@scatool/analyzer-plugin-containers";
 
 export const extractor: Extractor = filesExtractor({
-  name: 'github-actions',
+  name: "github-actions",
   version: 1,
   markFiles: async function (codebase: string) {
-    await scanAndMarkFiles(this, codebase, '.github/workflows/**/*.{yml,yaml}', []);
+    await scanAndMarkFiles(this, codebase, ".github/workflows/**/*.{yml,yaml}", []);
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
-    const content = (await Bun.file(file).text()).replaceAll('\r\n', '\n');
+    const content = await readNormalizedTextFile(file);
     return extractWorkflow(content, file);
   },
 });
 
 export function extractWorkflow(content: string, filePath?: string): AnalyzerResult {
-  const workflow = Bun.YAML.parse(content);
+  const workflow = parseYaml(content);
   const packages: Array<{ purl: string; lineNumber?: number }> = [];
 
   // Extract actions from jobs
-  if (workflow && typeof workflow === 'object' && 'jobs' in workflow) {
+  if (workflow && typeof workflow === "object" && "jobs" in workflow) {
     const jobs = workflow.jobs;
-    if (jobs && typeof jobs === 'object') {
+    if (jobs && typeof jobs === "object") {
       for (const job of Object.values(jobs)) {
-        if (job && typeof job === 'object' && 'steps' in job) {
+        if (job && typeof job === "object" && "steps" in job) {
           const steps = job.steps;
           if (Array.isArray(steps)) {
             for (const step of steps) {
-              if (step && typeof step === 'object' && 'uses' in step) {
+              if (step && typeof step === "object" && "uses" in step) {
                 const uses = step.uses;
-                if (typeof uses === 'string') {
+                if (typeof uses === "string") {
                   // Parse action reference (e.g., "actions/checkout@v4")
                   const actionPurl = parseActionReference(uses);
                   if (actionPurl) {
@@ -64,7 +66,7 @@ export function extractWorkflow(content: string, filePath?: string): AnalyzerRes
 
 // Find the line number where a "uses:" statement appears
 function findLineNumber(content: string, usesValue: string): number | undefined {
-  const lines = content.split('\n');
+  const lines = content.split("\n");
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
     // Match "uses: <value>" or "uses: '<value>'" or 'uses: "<value>"'
@@ -82,14 +84,14 @@ function findLineNumber(content: string, usesValue: string): number | undefined 
 
 function parseActionReference(uses: string): string | null {
   // Check for docker:// scheme actions
-  if (uses.startsWith('docker://')) {
-    const imageRef = uses.substring('docker://'.length);
+  if (uses.startsWith("docker://")) {
+    const imageRef = uses.substring("docker://".length);
     return parseContainerImage(imageRef);
   }
 
   // GitHub Actions reference format: owner/repo@ref or owner/repo/path@ref
   // Split by @
-  const atIndex = uses.lastIndexOf('@');
+  const atIndex = uses.lastIndexOf("@");
   if (atIndex === -1) {
     return null; // No version/ref specified
   }
@@ -98,15 +100,15 @@ function parseActionReference(uses: string): string | null {
   const ref = uses.substring(atIndex + 1);
 
   // Parse owner/repo or owner/repo/path
-  const parts = actionPath.split('/');
+  const parts = actionPath.split("/");
   if (parts.length < 2) {
     return null; // Invalid format
   }
 
   const namespace = parts[0];
-  const name = parts[1] ?? '';
-  const subpath = parts.length > 2 ? parts.slice(2).join('/') : null;
+  const name = parts[1] ?? "";
+  const subpath = parts.length > 2 ? parts.slice(2).join("/") : null;
 
-  const purl = new PackageURL('github', namespace, name, ref, null, subpath);
+  const purl = new PackageURL("github", namespace, name, ref, null, subpath);
   return purl.toString();
 }

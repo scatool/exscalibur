@@ -1,19 +1,24 @@
-import { type Extractor, filesExtractor, type AnalyzerResult } from '@scatool/analyzer-core/src/index.ts';
-import { Glob } from 'bun';
-import { dirname, join } from 'node:path/posix';
-import { existsSync } from 'node:fs';
-import { createNpmPurl } from '../npm-utils.ts';
-import type { JavaScriptOptions } from '../options.ts';
-import { optionSchema } from '../options.ts';
+import {
+  type Extractor,
+  filesExtractor,
+  type AnalyzerResult,
+  readNormalizedTextFile,
+  scanFiles,
+} from "@scatool/analyzer-core";
+import { dirname, join } from "node:path/posix";
+import { existsSync } from "node:fs";
+import { createNpmPurl } from "../npm-utils.ts";
+import type { JavaScriptOptions } from "../options.ts";
+import { optionSchema } from "../options.ts";
 
 function hasLockfileInDirectory(dir: string, codebase: string): boolean {
   const lockfiles = [
-    'package-lock.json',
-    'npm-shrinkwrap.json',
-    'yarn.lock',
-    'pnpm-lock.yaml',
-    'bun.lock',
-    'bun.lockb',
+    "package-lock.json",
+    "npm-shrinkwrap.json",
+    "yarn.lock",
+    "pnpm-lock.yaml",
+    "bun.lock",
+    "bun.lockb",
   ];
 
   // Check current directory and all parent directories up to the codebase root
@@ -38,21 +43,11 @@ function hasLockfileInDirectory(dir: string, codebase: string): boolean {
 }
 
 export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScriptOptions>({
-  name: 'packagejson',
+  name: "packagejson",
   version: 1,
   optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: JavaScriptOptions) {
-    const ignorePatterns = options.ignore;
-    const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));
-
-    const glob = new Glob('**/package.json');
-    for await (let file of glob.scan({ cwd: codebase, absolute: true, onlyFiles: true })) {
-      file = file.replaceAll('\\', '/');
-      const shouldIgnore = ignoreGlobs.some((glob) => glob.match(file));
-      if (shouldIgnore) {
-        continue;
-      }
-
+    for (const file of await scanFiles(codebase, "**/package.json", options.ignore)) {
       // Skip if a lockfile exists in the same directory or any parent directory
       const dir = dirname(file);
       if (hasLockfileInDirectory(dir, codebase)) {
@@ -64,11 +59,11 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
     // Process individual package.json file
-    const content = (await Bun.file(file).text()).replaceAll('\r\n', '\n');
+    const content = await readNormalizedTextFile(file);
 
     const packageJson = JSON.parse(content) as Record<string, unknown>;
 
-    const lines = content.split('\n');
+    const lines = content.split("\n");
     const packages = [];
 
     // Extract dependencies (no version resolution, just what's declared)
@@ -80,21 +75,21 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     ];
 
     for (const deps of depSections) {
-      if (deps && typeof deps === 'object') {
+      if (deps && typeof deps === "object") {
         for (const [name, versionRange] of Object.entries(deps)) {
-          if (typeof versionRange === 'string') {
+          if (typeof versionRange === "string") {
             // Remove workspace: prefix if present
-            let cleanVersion = versionRange.replace(/^workspace:/, '');
+            let cleanVersion = versionRange.replace(/^workspace:/, "");
 
             // Strip version range prefixes (^, ~, >=, <=, >, <, =)
-            cleanVersion = cleanVersion.replace(/^[\^~>=<]+/, '');
+            cleanVersion = cleanVersion.replace(/^[\^~>=<]+/, "");
 
             // Handle version ranges like "1.0.0 - 2.0.0" or ">=1.0.0 <2.0.0"
             // Take the first version in the range
-            if (cleanVersion.includes(' ')) {
+            if (cleanVersion.includes(" ")) {
               const firstPart = cleanVersion.split(/\s+/)[0];
               if (firstPart) {
-                cleanVersion = firstPart.replace(/^[\^~>=<]+/, '');
+                cleanVersion = firstPart.replace(/^[\^~>=<]+/, "");
               }
             }
 

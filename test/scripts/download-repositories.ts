@@ -1,11 +1,12 @@
-#!/usr/bin/env bun
+#!/usr/bin/env node
 
-import { file, spawn } from 'bun';
-import { stat } from 'node:fs/promises';
-import { join } from 'node:path/posix';
+import { spawn } from "node:child_process";
+import { existsSync } from "node:fs";
+import { mkdir, readFile, rm, stat, writeFile } from "node:fs/promises";
+import { join } from "node:path/posix";
 
-const REPOSITORIES_FILE = join(import.meta.dir, '..', 'repositories.json');
-const OUTPUT_DIR = join(import.meta.dir, '..', 'repositories');
+const REPOSITORIES_FILE = join(import.meta.dirname, "..", "repositories.json");
+const OUTPUT_DIR = join(import.meta.dirname, "..", "repositories");
 
 interface RepositoryConfig {
   owner: string;
@@ -30,38 +31,44 @@ async function downloadAndExtract(
   }
 
   // Create a temporary file for the tarball
-  await Bun.write(downloadPath, response);
+  await writeFile(downloadPath, Buffer.from(await response.arrayBuffer()));
 
   // Extract using tar - extract to outputPath with strip-components
-  const proc = spawn({
-    cmd: ['tar', '-xzf', downloadPath, '-C', outputPath, '--strip-components=1'],
-    stdout: 'ignore',
-    stderr: 'pipe',
+  await new Promise<void>((resolve, reject) => {
+    const proc = spawn("tar", ["-xzf", downloadPath, "-C", outputPath, "--strip-components=1"], {
+      stdio: ["ignore", "ignore", "pipe"],
+    });
+
+    let stderr = "";
+    proc.stderr.setEncoding("utf8");
+    proc.stderr.on("data", (chunk: string) => {
+      stderr += chunk;
+    });
+    proc.on("error", reject);
+    proc.on("close", (exitCode) => {
+      if (exitCode === 0) {
+        resolve();
+      } else {
+        reject(new Error(`Extraction failed: ${stderr}`));
+      }
+    });
   });
 
-  const exitCode = await proc.exited;
-  if (exitCode !== 0) {
-    const stderr = await new Response(proc.stderr).text();
-    throw new Error(`Extraction failed: ${stderr}`);
-  }
-
   // Clean up tarball
-  await Bun.write(downloadPath, '');
-  const tempFile = file(downloadPath);
-  if (await tempFile.exists()) {
-    await Bun.file(downloadPath).delete();
+  if (existsSync(downloadPath)) {
+    await rm(downloadPath);
   }
 }
 
 async function main() {
-  console.log('Reading repositories list...');
-  const repositoriesFile = file(REPOSITORIES_FILE);
-  const repositories: RepositoryConfig[] = await repositoriesFile.json();
+  console.log("Reading repositories list...");
+  const repositories: RepositoryConfig[] = JSON.parse(await readFile(REPOSITORIES_FILE, "utf8"));
 
   console.log(`Found ${repositories.length} repositories to download\n`);
 
   // Create output directory
-  await Bun.write(join(OUTPUT_DIR, '.gitkeep'), '');
+  await mkdir(OUTPUT_DIR, { recursive: true });
+  await writeFile(join(OUTPUT_DIR, ".gitkeep"), "");
 
   let successful = 0;
   let failed = 0;
@@ -78,38 +85,40 @@ async function main() {
     // If the directory does already exist, but so does the tarball file
     // we know, we need to redownload, as apparently the previous download was not successful
     const repoPathStat = await stat(repoPath).catch(() => null);
-    const alreadyExists = repoPathStat !== null && repoPathStat.isDirectory() && !(await file(tarballPath).exists());
+    const alreadyExists =
+      repoPathStat !== null && repoPathStat.isDirectory() && !existsSync(tarballPath);
     if (alreadyExists) {
-      console.log(`  ⏭️  Already exists, skipping`);
+      console.log(`  Already exists, skipping`);
       successful++;
       continue;
     }
 
     try {
       // Signal to start with the download
-      await Bun.write(tarballPath, '');
+      await writeFile(tarballPath, "");
 
       // Create directory for this repo
-      await Bun.write(join(repoPath, '.gitkeep'), '');
+      await mkdir(repoPath, { recursive: true });
+      await writeFile(join(repoPath, ".gitkeep"), "");
 
       // Download and extract
       await downloadAndExtract(owner, repo, commit, repoPath, tarballPath);
 
-      console.log(`  ✅ Downloaded`);
+      console.log(`  Downloaded`);
       successful++;
     } catch (error) {
-      console.error(`  ❌ Failed: ${error instanceof Error ? error.message : String(error)}`);
+      console.error(`  Failed: ${error instanceof Error ? error.message : String(error)}`);
       failed++;
     }
   }
 
-  console.log(`\n📊 Summary:`);
-  console.log(`   ✅ Successful: ${successful}`);
-  console.log(`   ❌ Failed: ${failed}`);
-  console.log(`   📁 Output: ${OUTPUT_DIR}`);
+  console.log(`\nSummary:`);
+  console.log(`   Successful: ${successful}`);
+  console.log(`   Failed: ${failed}`);
+  console.log(`   Output: ${OUTPUT_DIR}`);
 }
 
 main().catch((error) => {
-  console.error('Fatal error:', error);
+  console.error("Fatal error:", error);
   process.exit(1);
 });

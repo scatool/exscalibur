@@ -1,51 +1,51 @@
-import { describe, expect, test } from 'bun:test';
-import { createPypiPurl, normalizePythonName, findTomlPackageLineNumber } from './python-utils.ts';
+import { describe, expect, test } from "vitest";
+import { createPypiPurl, normalizePythonName, findTomlPackageLineNumber } from "./python-utils.ts";
 
-describe('createPypiPurl', () => {
-  test('creates PURL for simple package', () => {
-    expect(createPypiPurl('requests', '2.31.0')).toBe('pkg:pypi/requests@2.31.0');
+describe("createPypiPurl", () => {
+  test("creates PURL for simple package", () => {
+    expect(createPypiPurl("requests", "2.31.0")).toBe("pkg:pypi/requests@2.31.0");
   });
 
-  test('normalizes underscores to hyphens', () => {
-    expect(createPypiPurl('my_package', '1.0.0')).toBe('pkg:pypi/my-package@1.0.0');
+  test("normalizes underscores to hyphens", () => {
+    expect(createPypiPurl("my_package", "1.0.0")).toBe("pkg:pypi/my-package@1.0.0");
   });
 
-  test('normalizes to lowercase', () => {
-    expect(createPypiPurl('Flask', '3.0.0')).toBe('pkg:pypi/flask@3.0.0');
+  test("normalizes to lowercase", () => {
+    expect(createPypiPurl("Flask", "3.0.0")).toBe("pkg:pypi/flask@3.0.0");
   });
 
-  test('normalizes mixed case and underscores', () => {
-    expect(createPypiPurl('My_Package', '1.0.0')).toBe('pkg:pypi/my-package@1.0.0');
-  });
-});
-
-describe('normalizePythonName', () => {
-  test('lowercases name', () => {
-    expect(normalizePythonName('Flask')).toBe('flask');
-  });
-
-  test('replaces underscores with hyphens', () => {
-    expect(normalizePythonName('my_package')).toBe('my-package');
-  });
-
-  test('handles already normalized name', () => {
-    expect(normalizePythonName('requests')).toBe('requests');
+  test("normalizes mixed case and underscores", () => {
+    expect(createPypiPurl("My_Package", "1.0.0")).toBe("pkg:pypi/my-package@1.0.0");
   });
 });
 
-describe('findTomlPackageLineNumber', () => {
-  test('finds package by name', () => {
-    const lines = ['[[package]]', 'name = "requests"', 'version = "2.31.0"'];
-    expect(findTomlPackageLineNumber(lines, 'requests')).toBe(2);
+describe("normalizePythonName", () => {
+  test("lowercases name", () => {
+    expect(normalizePythonName("Flask")).toBe("flask");
   });
 
-  test('finds package with underscore normalization', () => {
-    const lines = ['[[package]]', 'name = "my-package"', 'version = "1.0.0"'];
-    expect(findTomlPackageLineNumber(lines, 'my_package')).toBe(2);
+  test("replaces underscores with hyphens", () => {
+    expect(normalizePythonName("my_package")).toBe("my-package");
   });
 
-  test('returns undefined for missing package', () => {
-    const lines = ['[[package]]', 'name = "requests"', 'version = "2.31.0"'];
-    expect(findTomlPackageLineNumber(lines, 'flask')).toBeUndefined();
+  test("handles already normalized name", () => {
+    expect(normalizePythonName("requests")).toBe("requests");
+  });
+});
+
+describe("findTomlPackageLineNumber", () => {
+  test("finds package by name", () => {
+    const lines = ["[[package]]", 'name = "requests"', 'version = "2.31.0"'];
+    expect(findTomlPackageLineNumber(lines, "requests")).toBe(2);
+  });
+
+  test("finds package with underscore normalization", () => {
+    const lines = ["[[package]]", 'name = "my-package"', 'version = "1.0.0"'];
+    expect(findTomlPackageLineNumber(lines, "my_package")).toBe(2);
+  });
+
+  test("returns undefined for missing package", () => {
+    const lines = ["[[package]]", 'name = "requests"', 'version = "2.31.0"'];
+    expect(findTomlPackageLineNumber(lines, "flask")).toBeUndefined();
   });
 });

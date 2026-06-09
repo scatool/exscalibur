@@ -14,7 +14,7 @@ This plugin uses Maven's `dependency:tree` command to extract comprehensive depe
 ## Usage
 
 ```typescript
-import { mavenExtractor } from '@scatool/analyzer-plugin-maven';
+import { mavenExtractor } from "@scatool/analyzer-plugin-maven";
 
-const result = await mavenExtractor.extract('/path/to/codebase');
+const result = await mavenExtractor.extract("/path/to/codebase");
 ```

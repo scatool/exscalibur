@@ -37,7 +37,7 @@ export interface OrtIssue {
   timestamp: string;
   source: string;
   message: string;
-  severity: 'HINT' | 'WARNING' | 'ERROR';
+  severity: "HINT" | "WARNING" | "ERROR";
   affectedPath?: string;
 }
 

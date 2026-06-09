@@ -8,9 +8,10 @@ import {
   ensurePackageExists,
   buildResult,
   initializeExtractionMaps,
+  readNormalizedTextFile,
   scanAndMarkFiles,
-} from '@scatool/analyzer-core/src/index.ts';
-import { dirname, join } from 'node:path/posix';
+} from "@scatool/analyzer-core";
+import { dirname, join } from "node:path/posix";
 import {
   findLineNumber,
   isGitPackageKey,
@@ -20,17 +21,17 @@ import {
   type PnpmLockfileV6,
   type PnpmLockfileV9,
   stripPeerDepSuffix,
-} from './lockfile.ts';
-import { createNpmPurl, NPM_DEPENDENCY_SCOPES, readPackageJson } from '../npm-utils.ts';
-import type { JavaScriptOptions } from '../options.ts';
-import { optionSchema } from '../options.ts';
+} from "./lockfile.ts";
+import { createNpmPurl, NPM_DEPENDENCY_SCOPES, readPackageJson } from "../npm-utils.ts";
+import type { JavaScriptOptions } from "../options.ts";
+import { optionSchema } from "../options.ts";
 
 export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScriptOptions>({
-  name: 'pnpmlock',
+  name: "pnpmlock",
   version: 1,
   optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: JavaScriptOptions) {
-    await scanAndMarkFiles(this, codebase, '**/pnpm-lock.yaml', options.ignore);
+    await scanAndMarkFiles(this, codebase, "**/pnpm-lock.yaml", options.ignore);
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
     const dir = dirname(file);
@@ -38,7 +39,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     const { packageMap, relationshipsMap } = initializeExtractionMaps();
     const subprojects: Subproject[] = [];
 
-    const lockfileContent = (await Bun.file(file).text()).replaceAll('\r\n', '\n');
+    const lockfileContent = await readNormalizedTextFile(file);
     const lockfile = parsePnpmLockfile(lockfileContent);
 
     // Build a map of workspace package names to their versions
@@ -46,8 +47,8 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     const workspacePackages = new Map<string, string>();
     if (lockfile.importers) {
       for (const [importerPath] of Object.entries(lockfile.importers)) {
-        const importerDir = importerPath === '.' ? dir : join(dir, importerPath);
-        const packageJsonPath = join(importerDir, 'package.json');
+        const importerDir = importerPath === "." ? dir : join(dir, importerPath);
+        const packageJsonPath = join(importerDir, "package.json");
         const packageInfo = await readPackageJson(packageJsonPath);
         if (packageInfo?.name && packageInfo.version) {
           workspacePackages.set(packageInfo.name, packageInfo.version);
@@ -59,8 +60,8 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     if (lockfile.importers) {
       for (const [importerPath, importer] of Object.entries(lockfile.importers)) {
         // Determine the package.json path for this importer
-        const importerDir = importerPath === '.' ? dir : join(dir, importerPath);
-        const packageJsonPath = join(importerDir, 'package.json');
+        const importerDir = importerPath === "." ? dir : join(dir, importerPath);
+        const packageJsonPath = join(importerDir, "package.json");
 
         // Read package.json to get name and version
         const packageInfo = await readPackageJson(packageJsonPath);
@@ -75,13 +76,13 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
             const depsInScope: string[] = [];
             const importerDeps = importer[scopeName];
 
-            if (importerDeps && typeof importerDeps === 'object') {
+            if (importerDeps && typeof importerDeps === "object") {
               for (const [depName, depRef] of Object.entries(importerDeps)) {
-                if (depRef && typeof depRef === 'object' && 'version' in depRef) {
+                if (depRef && typeof depRef === "object" && "version" in depRef) {
                   const version = depRef.version;
 
                   // Check if this is a workspace package (starts with "link:")
-                  if (typeof version === 'string' && version.startsWith('link:')) {
+                  if (typeof version === "string" && version.startsWith("link:")) {
                     // Check if this is a known workspace package
                     const workspaceVersion = workspacePackages.get(depName);
                     if (workspaceVersion) {
@@ -94,14 +95,17 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
                   }
 
                   // Regular external dependency
-                  if (typeof version === 'string') {
+                  if (typeof version === "string") {
                     const resolved = resolveAlias(depName, version);
 
                     // For git/tarball dependencies, look up the actual version from packages section
                     const packageKey = `${resolved.name}@${resolved.version}`;
                     if (isGitPackageKey(packageKey)) {
                       const resolvedVersion = getPackageVersion(lockfile, packageKey);
-                      const depPurl = createNpmPurl(resolved.name, resolvedVersion ?? resolved.version);
+                      const depPurl = createNpmPurl(
+                        resolved.name,
+                        resolvedVersion ?? resolved.version,
+                      );
                       depsInScope.push(depPurl);
                     } else {
                       const depPurl = createNpmPurl(resolved.name, resolved.version);
@@ -131,14 +135,28 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
 
     // Determine lockfile version and process accordingly
     const lockfileVersionNum =
-      typeof lockfile.lockfileVersion === 'string' ? parseFloat(lockfile.lockfileVersion) : lockfile.lockfileVersion;
+      typeof lockfile.lockfileVersion === "string"
+        ? parseFloat(lockfile.lockfileVersion)
+        : lockfile.lockfileVersion;
 
     if (lockfileVersionNum >= 9) {
       // V9+ lockfile: packages have metadata, snapshots have relationships
-      processV9Lockfile(lockfile as PnpmLockfileV9, lockfileContent, file, packageMap, relationshipsMap);
+      processV9Lockfile(
+        lockfile as PnpmLockfileV9,
+        lockfileContent,
+        file,
+        packageMap,
+        relationshipsMap,
+      );
     } else {
       // V6 and earlier: packages have both metadata and relationships
-      processV6Lockfile(lockfile as PnpmLockfileV6, lockfileContent, file, packageMap, relationshipsMap);
+      processV6Lockfile(
+        lockfile as PnpmLockfileV6,
+        lockfileContent,
+        file,
+        packageMap,
+        relationshipsMap,
+      );
     }
 
     return buildResult(packageMap, relationshipsMap, subprojects);
@@ -155,12 +173,12 @@ function processDependencies(
   packageMap: Map<string, { purl: string; evidence: Set<string> }>,
   relationshipsMap: Map<string, Set<string>>,
 ): void {
-  const depTypes = ['dependencies', 'devDependencies', 'optionalDependencies'] as const;
+  const depTypes = ["dependencies", "devDependencies", "optionalDependencies"] as const;
   for (const depType of depTypes) {
     const depsInScope = deps[depType];
-    if (depsInScope && typeof depsInScope === 'object') {
+    if (depsInScope && typeof depsInScope === "object") {
       for (const [depName, depVersion] of Object.entries(depsInScope)) {
-        if (typeof depVersion === 'string') {
+        if (typeof depVersion === "string") {
           const resolved = resolveAlias(depName, depVersion);
           const depPurl = createNpmPurl(resolved.name, resolved.version);
 
@@ -259,7 +277,7 @@ function processV6Lockfile(
 /** Resolves aliased versions like "string-width@4.2.3" and strips peer dep suffixes. */
 function resolveAlias(depName: string, version: string): { name: string; version: string } {
   const versionWithoutPeerDeps = stripPeerDepSuffix(version);
-  const lastAtIndex = versionWithoutPeerDeps.lastIndexOf('@');
+  const lastAtIndex = versionWithoutPeerDeps.lastIndexOf("@");
 
   if (lastAtIndex > 0) {
     const beforeAt = versionWithoutPeerDeps.substring(0, lastAtIndex);

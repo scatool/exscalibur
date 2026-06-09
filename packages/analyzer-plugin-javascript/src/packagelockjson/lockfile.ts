@@ -90,9 +90,12 @@ export function parsePackageLock(content: string): PackageLock {
   try {
     return JSON.parse(content) as PackageLock;
   } catch (error) {
-    throw new Error(`Failed to parse package-lock.json: ${error instanceof Error ? error.message : String(error)}`, {
-      cause: error,
-    });
+    throw new Error(
+      `Failed to parse package-lock.json: ${error instanceof Error ? error.message : String(error)}`,
+      {
+        cause: error,
+      },
+    );
   }
 }
 
@@ -105,7 +108,7 @@ export function parsePackageLock(content: string): PackageLock {
  */
 export function extractPackageName(path: string): string | null {
   // Remove trailing slash if present
-  const cleanPath = path.endsWith('/') ? path.slice(0, -1) : path;
+  const cleanPath = path.endsWith("/") ? path.slice(0, -1) : path;
 
   // Split by /node_modules/ OR node_modules/ (at start) to get the last package
   // Handle both "node_modules/foo" and "node_modules/a/node_modules/b"
@@ -118,15 +121,15 @@ export function extractPackageName(path: string): string | null {
 
   // Handle scoped packages (@scope/name)
   // For scoped packages, we need exactly @scope/name, nothing after
-  if (lastPart.startsWith('@')) {
-    const scopeParts = lastPart.split('/');
+  if (lastPart.startsWith("@")) {
+    const scopeParts = lastPart.split("/");
     if (scopeParts.length >= 2 && scopeParts[0] && scopeParts[1]) {
       return `${scopeParts[0]}/${scopeParts[1]}`;
     }
   }
 
   // For non-scoped packages, return just the package name (first segment)
-  return lastPart.split('/')[0] || lastPart;
+  return lastPart.split("/")[0] || lastPart;
 }
 
 /**
@@ -138,7 +141,7 @@ export function extractPackageName(path: string): string | null {
  *   "" -> false (root package)
  */
 export function isWorkspacePath(path: string): boolean {
-  return path !== '' && !path.includes('node_modules');
+  return path !== "" && !path.includes("node_modules");
 }
 
 /**
@@ -149,18 +152,22 @@ export function isWorkspacePath(path: string): boolean {
  * @param version - The package version to find
  * @returns Line number (1-indexed) where the version is defined, or undefined
  */
-export function findLineNumber(content: string, packagePath: string, version: string): number | undefined {
-  const lines = content.split('\n');
+export function findLineNumber(
+  content: string,
+  packagePath: string,
+  version: string,
+): number | undefined {
+  const lines = content.split("\n");
 
   // Search for the package path entry
   for (let i = 0; i < lines.length; i++) {
-    const line = lines[i] || '';
+    const line = lines[i] || "";
 
     // Look for the package path as a JSON key
     if (line.includes(`"${packagePath}"`)) {
       // Found the package, now look for the version in the next few lines
       for (let j = i; j < Math.min(i + 20, lines.length); j++) {
-        const versionLine = lines[j] || '';
+        const versionLine = lines[j] || "";
         if (versionLine.includes(`"version"`) && versionLine.includes(`"${version}"`)) {
           return j + 1; // Return 1-indexed line number
         }
@@ -180,18 +187,22 @@ export function findLineNumber(content: string, packagePath: string, version: st
  * @param version - The package version to find
  * @returns Line number (1-indexed) where the version is defined, or undefined
  */
-export function findLineNumberV1(content: string, packageName: string, version: string): number | undefined {
-  const lines = content.split('\n');
+export function findLineNumberV1(
+  content: string,
+  packageName: string,
+  version: string,
+): number | undefined {
+  const lines = content.split("\n");
 
   // Search for the package name as a key
   for (let i = 0; i < lines.length; i++) {
-    const line = lines[i] || '';
+    const line = lines[i] || "";
 
     // Look for the package name as a JSON key
-    if (line.includes(`"${packageName}"`) && line.includes(':')) {
+    if (line.includes(`"${packageName}"`) && line.includes(":")) {
       // Found the package, now look for the version in the next few lines
       for (let j = i; j < Math.min(i + 20, lines.length); j++) {
-        const versionLine = lines[j] || '';
+        const versionLine = lines[j] || "";
         if (versionLine.includes(`"version"`) && versionLine.includes(`"${version}"`)) {
           return j + 1; // Return 1-indexed line number
         }

@@ -56,7 +56,10 @@
       "spdxId": "https://example.com/spdx/deps/Relationship/express-depends",
       "relationshipType": "dependsOn",
       "from": "https://example.com/spdx/deps/Package/express",
-      "to": ["https://example.com/spdx/deps/Package/body-parser", "https://example.com/spdx/deps/Package/accepts"],
+      "to": [
+        "https://example.com/spdx/deps/Package/body-parser",
+        "https://example.com/spdx/deps/Package/accepts"
+      ],
       "creationInfo": "_:creationInfo"
     }
   ]

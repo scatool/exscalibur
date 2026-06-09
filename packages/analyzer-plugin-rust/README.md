@@ -14,9 +14,9 @@ No external tools (Cargo, Rust) are required - the plugin parses lockfiles direc
 ## Usage
 
 ```typescript
-import { cargoLockExtractor } from '@scatool/analyzer-plugin-rust';
+import { cargoLockExtractor } from "@scatool/analyzer-plugin-rust";
 
-const result = await cargoLockExtractor.extract('/path/to/codebase');
+const result = await cargoLockExtractor.extract("/path/to/codebase");
 ```
 
 ## Limitations

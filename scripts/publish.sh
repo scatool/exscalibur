@@ -43,7 +43,7 @@ for package_dir in "$PACKAGES_DIR"/*; do
       continue
     fi
 
-    if bun -e "const pkg = await Bun.file(process.argv[1]).json(); process.exit(pkg.private === true ? 0 : 1)" "$package_dir/package.json"; then
+    if node -e "const fs = require('node:fs'); const pkg = JSON.parse(fs.readFileSync(process.argv[1], 'utf8')); process.exit(pkg.private === true ? 0 : 1)" "$package_dir/package.json"; then
       echo -e "${YELLOW}Skipping $package_name (private package)${NC}"
       continue
     fi
@@ -57,7 +57,7 @@ for package_dir in "$PACKAGES_DIR"/*; do
     # Change to package directory and publish
     cd "$package_dir"
 
-    if bun publish --access restricted $DRY_RUN_FLAG; then
+    if npm publish --access restricted $DRY_RUN_FLAG; then
       if [ -n "$DRY_RUN_FLAG" ]; then
         echo -e "${BLUE}✓ [DRY RUN] Would publish $package_name${NC}"
       else

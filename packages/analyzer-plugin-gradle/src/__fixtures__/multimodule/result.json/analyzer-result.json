@@ -103,7 +103,12 @@
             "path": "packages/analyzer-plugin-gradle/src/__fixtures__/multimodule/app"
           },
           "homepage_url": "",
-          "scope_names": ["compileClasspath", "runtimeClasspath", "testCompileClasspath", "testRuntimeClasspath"]
+          "scope_names": [
+            "compileClasspath",
+            "runtimeClasspath",
+            "testCompileClasspath",
+            "testRuntimeClasspath"
+          ]
         },
         {
           "id": "Gradle:multimodule-example:lib:",
@@ -123,7 +128,12 @@
             "path": "packages/analyzer-plugin-gradle/src/__fixtures__/multimodule/lib"
           },
           "homepage_url": "",
-          "scope_names": ["compileClasspath", "runtimeClasspath", "testCompileClasspath", "testRuntimeClasspath"]
+          "scope_names": [
+            "compileClasspath",
+            "runtimeClasspath",
+            "testCompileClasspath",
+            "testRuntimeClasspath"
+          ]
         }
       ],
       "packages": [

@@ -4,12 +4,12 @@ import {
   type Package,
   type Relationship,
   type Subproject,
-} from '@scatool/analyzer-core/src/index.ts';
-import { dirname } from 'node:path/posix';
+} from "@scatool/analyzer-core";
+import { dirname } from "node:path/posix";
 // it's crucial that we do not use posix variant here for windows to work (e.g. for C:/path)
-import { isAbsolute, resolve } from 'node:path';
-import { type OrtAnalyzerResult } from './model.ts';
-import { convertOrtIdToPurl } from './id.ts';
+import { isAbsolute, resolve } from "node:path";
+import { type OrtAnalyzerResult } from "./model.ts";
+import { convertOrtIdToPurl } from "./id.ts";
 
 export interface ConvertOrtResultOptions {
   /**
@@ -26,14 +26,17 @@ export interface ConvertOrtResultOptions {
   useDefinitionFilePaths: boolean;
 }
 
-export function convertOrtResult(result: OrtAnalyzerResult, options: ConvertOrtResultOptions): AnalyzerResult {
+export function convertOrtResult(
+  result: OrtAnalyzerResult,
+  options: ConvertOrtResultOptions,
+): AnalyzerResult {
   const { evidenceFile, useDefinitionFilePaths } = options;
 
   const packageMap = new Map<string, { purl: string; evidence: Set<string> }>();
   const packageIdToPurl = new Map<string, string>();
   const relationshipsMap = new Map<string, Set<string>>();
   const subprojects: Subproject[] = [];
-  const issues: AnalyzerResult['issues'] = [];
+  const issues: AnalyzerResult["issues"] = [];
 
   // Collect project IDs to filter them out from dependency graphs
   const projectIds = new Set<string>();
@@ -79,7 +82,7 @@ export function convertOrtResult(result: OrtAnalyzerResult, options: ConvertOrtR
 
         // Process scopes in this dependency graph
         for (const [scopeKey, scopeRoots] of Object.entries(depGraph.scopes)) {
-          const scopeName = scopeKey.split(':').pop() || scopeKey;
+          const scopeName = scopeKey.split(":").pop() || scopeKey;
           if (!project.scope_names?.includes(scopeName)) {
             continue;
           }
@@ -99,10 +102,12 @@ export function convertOrtResult(result: OrtAnalyzerResult, options: ConvertOrtR
         }
       }
 
-      const scopes: DependencyScope[] = Array.from(scopesMap.entries()).map(([scopeName, packages]) => ({
-        scope: scopeName,
-        packages: Array.from(packages),
-      }));
+      const scopes: DependencyScope[] = Array.from(scopesMap.entries()).map(
+        ([scopeName, packages]) => ({
+          scope: scopeName,
+          packages: Array.from(packages),
+        }),
+      );
 
       if (scopes.length > 0) {
         subprojects.push({
@@ -157,7 +162,7 @@ export function convertOrtResult(result: OrtAnalyzerResult, options: ConvertOrtR
       for (const ortIssue of ortIssues) {
         issues.push({
           message: ortIssue.message,
-          severity: ortIssue.severity || 'HINT',
+          severity: ortIssue.severity || "HINT",
           file: ortIssue.affectedPath,
         });
       }
@@ -169,10 +174,12 @@ export function convertOrtResult(result: OrtAnalyzerResult, options: ConvertOrtR
     evidence: Array.from(evidence),
   }));
 
-  const relationships: Relationship[] = Array.from(relationshipsMap.entries()).map(([from, toSet]) => ({
-    from,
-    to: Array.from(toSet),
-  }));
+  const relationships: Relationship[] = Array.from(relationshipsMap.entries()).map(
+    ([from, toSet]) => ({
+      from,
+      to: Array.from(toSet),
+    }),
+  );
 
   return {
     packages,

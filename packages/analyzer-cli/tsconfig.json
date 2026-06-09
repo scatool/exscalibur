@@ -1,20 +1,19 @@
 {
   "compilerOptions": {
-    "lib": ["ESNext"],
     "target": "ESNext",
-    "module": "ESNext",
+    "lib": ["ESNext"],
     "moduleDetection": "force",
-    "jsx": "react-jsx",
-    "allowJs": true,
+    "module": "preserve",
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
-    "noEmit": true,
+    "resolveJsonModule": true,
+    "types": ["node"],
     "strict": true,
-    "skipLibCheck": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "noPropertyAccessFromIndexSignature": false
-  }
+    "noEmit": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "skipLibCheck": true
+  },
+  "include": ["src", "vite.config.ts"]
 }

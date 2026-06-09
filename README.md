@@ -4,40 +4,41 @@ Excalibur extracts dependency graphs from software projects.
 
 ## Development
 
-Excalibur is a [Bun](https://bun.sh) monorepo managed with [Turbo](https://turbo.build).
+Excalibur is a [pnpm](https://pnpm.io/) workspace using [Vite+](https://viteplus.dev/) for install and task orchestration.
 Each extractor lives in its own package under `packages/`.
+Published packages, the CLI, and repository tests run on Node.js.
 
 ### Getting Started
 
 Install dependencies from the repository root:
 
 ```sh
-bun install
+vp install
 ```
 
 Before pushing changes, make sure the codebase still passes all checks:
 
 ```sh
-bun run format:check
-bun run typecheck
-bun run lint
+vp run -w ready
 ```
+
+`ready` runs `vp fmt`, `vp lint`, recursive package tests, and recursive package builds in that order.
 
 ### Unit Tests
 
-Unit tests run with Bun's test runner and mostly rely on snapshot testing.
+Unit tests run with Vitest and mostly rely on snapshot testing.
 Each extractor package keeps its fixtures in `__fixtures__/` and expected output in `__snapshots__/`.
 
 Run the full suite from the repository root:
 
 ```sh
-bun run test
+vp run -r test
 ```
 
-> **Note:** Always use `bun run test` (which goes through Turbo) rather than a bare `bun test`.
-> The latter will pick up `.test.ts` files inside downloaded fixture repositories and fail.
+> **Note:** `vp run -r test` runs each package test script recursively through the workspace.
 
-To work on a single package, `cd` into it and run `bun test` directly.
+To work on a single package, `cd` into it and run `vp test run` directly.
+To run a single test file, use `vp test run <path>`.
 
 ### Integration Tests
 
@@ -63,21 +64,21 @@ All remaining commands are run from the repository root.
 First, download the fixture repositories (only needed once):
 
 ```sh
-bun test/scripts/download-repositories.ts
+vp exec tsx test/scripts/download-repositories.ts
 ```
 
 Then run the integration tests:
 
 ```sh
-bun test ./test/integration.test.ts
+vp test run ./test/integration.test.ts
 ```
 
-The `./` prefix is important — without it, Bun treats the argument as a glob and picks up unrelated test files from inside the downloaded repositories.
+The explicit file path is important because downloaded repositories can contain unrelated test files.
 
 To refresh the snapshots after intentional changes:
 
 ```sh
-UPDATE_SNAPSHOTS=1 bun test ./test/integration.test.ts
+UPDATE_SNAPSHOTS=1 vp test run ./test/integration.test.ts
 ```
 
 ## Related Tools

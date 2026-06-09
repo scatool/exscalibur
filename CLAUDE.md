@@ -4,25 +4,28 @@
 
 Excalibur extracts dependency graphs from software projects. It parses lockfiles, package manifests, and other dependency definition files to produce a normalized graph of packages, subprojects, and relationships. Output uses [Package URLs (PURLs)](https://github.com/package-url/purl-spec) as identifiers.
 
-This is a Bun monorepo managed with Turbo. All packages live under `packages/`.
+This is a pnpm workspace using Vite+ for install and task orchestration. All packages live under `packages/`.
+Published packages, the CLI, and repository tests target Node.js.
 
 ## Commands
 
 Run all commands from the project root unless noted otherwise.
 
-| Task                      | Command                                            | Notes                          |
-| ------------------------- | -------------------------------------------------- | ------------------------------ |
-| Install dependencies      | `bun install`                                      |                                |
-| Run all unit tests        | `bun run test`                                     | Uses Turbo across all packages |
-| Run tests for one package | `cd packages/<name> && bun test`                   |                                |
-| Run a single test file    | `bun test <path>`                                  |                                |
-| Update snapshots          | `bun test <path> --update-snapshots`               |                                |
-| Type check                | `bun run typecheck`                                | Uses Turbo                     |
-| Type check one package    | `cd packages/<name> && bunx tsc --strict --noEmit` |                                |
-| Lint                      | `bun run lint`                                     | ESLint                         |
-| Format                    | `bun run format`                                   | oxfmt                          |
+| Task                      | Command                              | Notes                           |
+| ------------------------- | ------------------------------------ | ------------------------------- |
+| Install dependencies      | `vp install`                         |                                 |
+| Run all checks            | `vp run -w ready`                    | Format, lint, test, build       |
+| Run all unit tests        | `vp run -r test`                     | Runs package tests recursively  |
+| Run tests for one package | `cd packages/<name> && vp test run`  |                                 |
+| Run a single test file    | `vp test run <path>`                 |                                 |
+| Update snapshots          | `vp test run <path> -u`              |                                 |
+| Type check                | `vp run -r check`                    | Runs package checks recursively |
+| Type check one package    | `cd packages/<name> && vp run check` |                                 |
+| Build                     | `vp run -r build`                    | Emits Node-compatible `dist/`   |
+| Lint                      | `vp lint`                            | Oxlint                          |
+| Format                    | `vp fmt`                             | oxfmt                           |
 
-**Do not** run bare `bun test` from root — it will match test files inside downloaded fixture repositories.
+Root `ready`, `test`, `check`, and `build` use Vite+ workspace task orchestration.
 
 ### Integration Tests
 
@@ -30,25 +33,25 @@ Integration tests in `test/` run all extractors against real open-source reposit
 
 **Setup:**
 
-1. Download repositories: `bun test/scripts/download-repositories.ts`
+1. Download repositories: `vp exec tsx test/scripts/download-repositories.ts`
 2. Copy `test/system.example.json` to `test/system.json` and set Java/Maven paths for your system.
 
-**Run:** `cd test && bun test ./integration.test.ts`
+**Run:** `vp test run ./test/integration.test.ts`
 
-Always use the `./` prefix — without it, bun treats the argument as a pattern and picks up unrelated `.test.ts` files from downloaded repositories.
+Use the explicit file path because downloaded repositories can contain unrelated test files.
 
-**Update snapshots:** `cd test && UPDATE_SNAPSHOTS=1 bun test ./integration.test.ts`
+**Update snapshots:** `UPDATE_SNAPSHOTS=1 vp test run ./test/integration.test.ts`
 
 **Pitfalls:**
 
-- `test/repositories/` is gitignored. Do not run tools like `bunx taze` from the project root — they will modify `package.json` files inside downloaded repos and break snapshots.
-- Some downloaded repos contain their own `.test.ts` files that bun may match. These errors are not real failures.
+- `test/repositories/` is gitignored. Do not run dependency-update tools from the project root — they may modify `package.json` files inside downloaded repos and break snapshots.
+- Some downloaded repos contain their own test files; avoid broad test globs from the repository root.
 
 ### Tool Versions
 
 The project uses `mise` to manage tool versions (see `mise.toml`):
 
-- **Bun** 1.3.9 (package.json declares 1.3.10)
+- **pnpm** 10.24.0
 - **Java** temurin-21 — required for Gradle plugin tests (Gradle 8.5 doesn't support newer JDKs)
 - **Maven** 3 — required for Maven plugin tests
 
@@ -75,7 +78,7 @@ Most extractors use the `filesExtractor()` helper, which handles file discovery,
 
 ```typescript
 export const extractor: Extractor = filesExtractor({
-  name: 'extractor-name',
+  name: "extractor-name",
   version: 1,
   markFiles: async function (codebase, options) {
     // Use scanAndMarkFiles() or call this.markFile(path) directly
@@ -115,7 +118,7 @@ Supporting packages: `analyzer-cli` (CLI entry point), `analyzer-test-utils` (sh
 
 ### Testing
 
-Tests use Bun's test runner with snapshot testing. Each extractor package has:
+Tests use Vitest with snapshot testing. Each extractor package has:
 
 - `__fixtures__/` — real-world example files
 - `__snapshots__/` — expected output snapshots

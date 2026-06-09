@@ -1,24 +1,24 @@
-import { z } from 'zod';
+import { z } from "zod";
 
 export const targetPlatformSchema = z.strictObject({
-  targetArchitecture: z.enum(['x86', 'x64', 'arm', 'arm64', 'arm64ec', 'wasm32', 'mips64']),
+  targetArchitecture: z.enum(["x86", "x64", "arm", "arm64", "arm64ec", "wasm32", "mips64"]),
   cmakeSystemName: z.enum([
-    '',
-    'WindowsStore',
-    'MinGW',
-    'Linux',
-    'Darwin',
-    'iOS',
-    'FreeBSD',
-    'OpenBSD',
-    'Android',
-    'Emscripten',
-    'QNX',
-    'VxWorks',
+    "",
+    "WindowsStore",
+    "MinGW",
+    "Linux",
+    "Darwin",
+    "iOS",
+    "FreeBSD",
+    "OpenBSD",
+    "Android",
+    "Emscripten",
+    "QNX",
+    "VxWorks",
   ]),
   xboxConsoleTarget: z.string().optional(),
-  libraryLinkage: z.enum(['dynamic', 'static']).optional(),
-  crtLinkage: z.enum(['dynamic', 'static']).optional(),
+  libraryLinkage: z.enum(["dynamic", "static"]).optional(),
+  crtLinkage: z.enum(["dynamic", "static"]).optional(),
   /**
    * little hack, set to true for for TARGET_TRIPLET == HOST_TRIPLET
    * @default true
@@ -35,13 +35,13 @@ export const optionsSchema = z.strictObject({
    * Files matching any of these patterns will be excluded from extraction.
    * @default ['**\/build\/**']
    */
-  ignore: z.array(z.string()).default(['**/build/**']),
+  ignore: z.array(z.string()).default(["**/build/**"]),
 
   /**
    * Path to the vcpkg binary.
    * @default 'vcpkg'
    */
-  vcpkgPath: z.string().default('vcpkg'),
+  vcpkgPath: z.string().default("vcpkg"),
 
   /**
    * Optional Target platform to filter dependencies for as specified in

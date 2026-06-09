@@ -9,9 +9,9 @@ export type {
   Extractor,
   MarkFileContext,
   FilesExtractor,
-} from './types.ts';
-export { normalizeResult } from './normalize.ts';
-export { mergeResults } from './merge.ts';
+} from "./types.ts";
+export { normalizeResult } from "./normalize.ts";
+export { mergeResults } from "./merge.ts";
 export {
   addRelationship,
   ensurePackageExists,
@@ -22,15 +22,23 @@ export {
   initializeExtractionMaps,
   buildResult,
   errorResult,
-} from './map-utils.ts';
-export type { PackageMapEntry } from './map-utils.ts';
+} from "./map-utils.ts";
+export type { PackageMapEntry } from "./map-utils.ts";
+export {
+  findExecutable,
+  readNormalizedTextFile,
+  readTextFile,
+  runCommand,
+  scanFiles,
+  writeTextFile,
+} from "./runtime.ts";
 
-import type { AnalyzerResult, Extractor, FilesExtractor, MarkFileContext } from './types.ts';
-import { mergeResults } from './merge.ts';
-import { Glob } from 'bun';
-import { join } from 'node:path/posix';
+import type { AnalyzerResult, Extractor, FilesExtractor, MarkFileContext } from "./types.ts";
+import { mergeResults } from "./merge.ts";
+import { scanFiles } from "./runtime.ts";
+import { join } from "node:path/posix";
 // it's crucial that we do not use posix variant here for windows to work (e.g. for C:/path)
-import { isAbsolute } from 'node:path';
+import { isAbsolute } from "node:path";
 
 export async function scanAndMarkFiles(
   context: MarkFileContext,
@@ -38,17 +46,14 @@ export async function scanAndMarkFiles(
   filePattern: string,
   ignorePatterns: string[],
 ): Promise<void> {
-  const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));
-  const glob = new Glob(filePattern);
-  for await (let file of glob.scan({ cwd: codebase, absolute: true, onlyFiles: true })) {
-    file = file.replaceAll('\\', '/');
-    if (!ignoreGlobs.some((g) => g.match(file))) {
-      context.markFile(file);
-    }
+  for (const file of await scanFiles(codebase, filePattern, ignorePatterns)) {
+    context.markFile(file);
   }
 }
 
-export const filesExtractor = <Options = unknown>(config: FilesExtractor<Options>): Extractor<Options> => {
+export const filesExtractor = <Options = unknown>(
+  config: FilesExtractor<Options>,
+): Extractor<Options> => {
   return {
     name: config.name,
     version: config.version,
@@ -88,7 +93,7 @@ export const filesExtractor = <Options = unknown>(config: FilesExtractor<Options
               issues: [
                 {
                   message: `Failed to extract file: ${error instanceof Error ? error.message : String(error)}`,
-                  severity: 'ERROR',
+                  severity: "ERROR",
                   file,
                 },
               ],
@@ -105,25 +110,27 @@ export const filesExtractor = <Options = unknown>(config: FilesExtractor<Options
 };
 
 function makePathsRelative(result: AnalyzerResult, codebase: string): AnalyzerResult {
-  const normalizedCodebase = codebase.endsWith('/') ? codebase.slice(0, -1) : codebase;
+  const normalizedCodebase = codebase.endsWith("/") ? codebase.slice(0, -1) : codebase;
 
   // Convert evidence paths from absolute to relative
   for (const pkg of result.packages) {
     pkg.evidence = pkg.evidence.map((e) =>
-      e.startsWith(normalizedCodebase + '/') ? e.substring(normalizedCodebase.length + 1) : e,
+      e.startsWith(normalizedCodebase + "/") ? e.substring(normalizedCodebase.length + 1) : e,
     );
   }
 
   // Convert subproject definitionFile from absolute to relative
   for (const subproject of result.subprojects) {
-    if (subproject.definitionFile.startsWith(normalizedCodebase + '/')) {
-      subproject.definitionFile = subproject.definitionFile.substring(normalizedCodebase.length + 1);
+    if (subproject.definitionFile.startsWith(normalizedCodebase + "/")) {
+      subproject.definitionFile = subproject.definitionFile.substring(
+        normalizedCodebase.length + 1,
+      );
     }
   }
 
   // Convert issue.file from absolute to relative
   for (const issue of result.issues) {
-    if (issue.file && issue.file.startsWith(normalizedCodebase + '/')) {
+    if (issue.file && issue.file.startsWith(normalizedCodebase + "/")) {
       issue.file = issue.file.substring(normalizedCodebase.length + 1);
     }
   }

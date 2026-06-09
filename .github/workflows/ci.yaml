@@ -22,22 +22,16 @@ jobs:
         with:
           path: excalibur
 
-      - name: Setup turbo cache
-        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+      - uses: voidzero-dev/setup-vp@2dec1e33f4ab2c6d5bce1b0c4607961bb1a3f7a1 # v1.12.0
         with:
-          path: .turbo
-          key: ${{ runner.os }}-turbo-${{ github.sha }}
-          restore-keys: |
-            ${{ runner.os }}-turbo-
-
-      - name: Setup bun
-        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+          node-version: "22"
+          cache: true
 
       - name: Setup Java
         uses: actions/setup-java@be666c2fcd27ec809703dec50e508c2fdc7f6654 # v5.2.0
         with:
-          distribution: 'temurin'
-          java-version: '17'
+          distribution: "temurin"
+          java-version: "17"
 
       - name: Setup uv
         uses: astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39 # v8.2.0
@@ -51,10 +45,10 @@ jobs:
       - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
         with:
           # fetch the whole vcpkg repository
-          repository: 'microsoft/vcpkg'
-          ref: '2026.04.27'
+          repository: "microsoft/vcpkg"
+          ref: "2026.04.27"
           fetch-depth: 0
-          path: 'vcpkg'
+          path: "vcpkg"
 
       - name: Bootstrap vcpkg tool
         working-directory: ./vcpkg
@@ -64,16 +58,7 @@ jobs:
           echo "$GITHUB_WORKSPACE/vcpkg" >> "$GITHUB_PATH"
 
       - name: Install dependencies
-        run: bun install
+        run: vp install
 
-      - name: Format Check
-        run: bun run format:check
-
-      - name: Lint
-        run: bun run lint
-
-      - name: Check Types
-        run: bun run typecheck
-
-      - name: Test
-        run: bun run test
+      - name: Ready
+        run: vp run -w ready

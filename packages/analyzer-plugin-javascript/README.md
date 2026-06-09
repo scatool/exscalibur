@@ -11,7 +11,7 @@ None.
 ## Usage
 
 ```typescript
-import { packageLockJsonExtractor } from '@scatool/analyzer-plugin-javascript';
+import { packageLockJsonExtractor } from "@scatool/analyzer-plugin-javascript";
 
-const result = await packageLockJsonExtractor.extract('/path/to/codebase');
+const result = await packageLockJsonExtractor.extract("/path/to/codebase");
 ```

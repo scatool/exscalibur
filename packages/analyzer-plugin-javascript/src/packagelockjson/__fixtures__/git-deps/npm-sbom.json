@@ -3266,7 +3266,13 @@
     },
     {
       "ref": "http-errors@2.0.0",
-      "dependsOn": ["depd@2.0.0", "inherits@2.0.4", "setprototypeof@1.2.0", "statuses@2.0.1", "toidentifier@1.0.1"]
+      "dependsOn": [
+        "depd@2.0.0",
+        "inherits@2.0.4",
+        "setprototypeof@1.2.0",
+        "statuses@2.0.1",
+        "toidentifier@1.0.1"
+      ]
     },
     {
       "ref": "statuses@2.0.1",
@@ -3431,7 +3437,13 @@
     },
     {
       "ref": "router@2.2.0",
-      "dependsOn": ["debug@4.4.3", "depd@2.0.0", "is-promise@4.0.0", "parseurl@1.3.3", "path-to-regexp@8.3.0"]
+      "dependsOn": [
+        "debug@4.4.3",
+        "depd@2.0.0",
+        "is-promise@4.0.0",
+        "parseurl@1.3.3",
+        "path-to-regexp@8.3.0"
+      ]
     },
     {
       "ref": "safe-buffer@5.2.1",
@@ -3481,7 +3493,12 @@
     },
     {
       "ref": "side-channel-map@1.0.1",
-      "dependsOn": ["call-bound@1.0.4", "es-errors@1.3.0", "get-intrinsic@1.3.0", "object-inspect@1.13.4"]
+      "dependsOn": [
+        "call-bound@1.0.4",
+        "es-errors@1.3.0",
+        "get-intrinsic@1.3.0",
+        "object-inspect@1.13.4"
+      ]
     },
     {
       "ref": "side-channel-weakmap@1.0.2",

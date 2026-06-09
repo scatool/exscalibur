@@ -1,4 +1,4 @@
-import { z } from 'zod';
+import { z } from "zod";
 
 export const optionSchema = z.strictObject({
   /**
@@ -7,7 +7,7 @@ export const optionSchema = z.strictObject({
    *
    * @example ignore: [**\/target/**]
    */
-  ignore: z.array(z.string()).default(['**/target/**']),
+  ignore: z.array(z.string()).default(["**/target/**"]),
 });
 
 export type RustOptions = z.infer<typeof optionSchema>;

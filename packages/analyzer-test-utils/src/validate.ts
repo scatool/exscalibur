@@ -1,4 +1,4 @@
-import type { AnalyzerResult } from '@scatool/analyzer-core';
+import type { AnalyzerResult } from "@scatool/analyzer-core";
 
 /** Validates an AnalyzerResult for common errors. Throws on failure. */
 export function validateResult(result: AnalyzerResult): void {
@@ -7,7 +7,7 @@ export function validateResult(result: AnalyzerResult): void {
   // Check for subproject purls in packages
   const subprojectsInPackages = result.packages.filter((pkg) => subprojectPurls.has(pkg.purl));
   if (subprojectsInPackages.length > 0) {
-    const purls = subprojectsInPackages.map((p) => p.purl).join(', ');
+    const purls = subprojectsInPackages.map((p) => p.purl).join(", ");
     throw new Error(`Subproject purls found in packages array: ${purls}`);
   }
 
@@ -25,15 +25,17 @@ export function validateResult(result: AnalyzerResult): void {
   }
 
   if (subprojectsInRelationships.length > 0) {
-    const purls = [...new Set(subprojectsInRelationships)].join(', ');
+    const purls = [...new Set(subprojectsInRelationships)].join(", ");
     throw new Error(`Subproject purls found in relationships: ${purls}`);
   }
 
   // Check for duplicate package purls
   const packagePurls = result.packages.map((pkg) => pkg.purl);
-  const duplicatePackages = packagePurls.filter((purl, index) => packagePurls.indexOf(purl) !== index);
+  const duplicatePackages = packagePurls.filter(
+    (purl, index) => packagePurls.indexOf(purl) !== index,
+  );
   if (duplicatePackages.length > 0) {
-    const purls = [...new Set(duplicatePackages)].join(', ');
+    const purls = [...new Set(duplicatePackages)].join(", ");
     throw new Error(`Duplicate package purls found: ${purls}`);
   }
 
@@ -43,7 +45,7 @@ export function validateResult(result: AnalyzerResult): void {
     .filter((purl, index, arr) => arr.indexOf(purl) !== index);
 
   if (duplicateSubprojects.length > 0) {
-    const purls = [...new Set(duplicateSubprojects)].join(', ');
+    const purls = [...new Set(duplicateSubprojects)].join(", ");
     throw new Error(`Duplicate subproject purls found: ${purls}`);
   }
 
@@ -51,7 +53,7 @@ export function validateResult(result: AnalyzerResult): void {
   for (const rel of result.relationships) {
     const duplicatesInTo = rel.to.filter((purl, index) => rel.to.indexOf(purl) !== index);
     if (duplicatesInTo.length > 0) {
-      const purls = [...new Set(duplicatesInTo)].join(', ');
+      const purls = [...new Set(duplicatesInTo)].join(", ");
       throw new Error(`Duplicate purls in relationship 'to' array for '${rel.from}': ${purls}`);
     }
   }

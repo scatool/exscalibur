@@ -1,6 +1,7 @@
-import { expect, test } from 'bun:test';
-import { join } from 'node:path/posix';
-import { file } from 'bun';
+import { expect, test } from "vitest";
+import { join } from "node:path/posix";
+import { existsSync } from "node:fs";
+import { readFile, writeFile } from "node:fs/promises";
 import {
   bunlockExtractor,
   packageJsonExtractor,
@@ -8,26 +9,26 @@ import {
   pnpmLockExtractor,
   yarnBerryExtractor,
   yarnLockExtractor,
-} from '@scatool/analyzer-plugin-javascript/src/index.ts';
-import { gomodExtractor } from '@scatool/analyzer-plugin-go/src/index.ts';
-import { gradleExtractor } from '@scatool/analyzer-plugin-gradle/src/index.ts';
-import { cargoLockExtractor } from '@scatool/analyzer-plugin-rust/src/index.ts';
+} from "@scatool/analyzer-plugin-javascript";
+import { gomodExtractor } from "@scatool/analyzer-plugin-go";
+import { gradleExtractor } from "@scatool/analyzer-plugin-gradle";
+import { cargoLockExtractor } from "@scatool/analyzer-plugin-rust";
 import {
   pipfileLockExtractor,
   poetryLockExtractor,
   pdmLockExtractor,
   requirementsTxtExtractor,
-} from '@scatool/analyzer-plugin-python/src/index.ts';
-import type { Extractor } from '@scatool/analyzer-core/src/index.ts';
-import { mergeResults, normalizeResult } from '@scatool/analyzer-core/src/index.ts';
-import { conanfileExtractor, vcpkgExtractor } from '@scatool/analyzer-plugin-cpp/src/index.ts';
-import { z } from 'zod';
-import { chdir } from 'node:process';
+} from "@scatool/analyzer-plugin-python";
+import type { Extractor } from "@scatool/analyzer-core";
+import { mergeResults, normalizeResult, runCommand } from "@scatool/analyzer-core";
+import { conanfileExtractor, vcpkgExtractor } from "@scatool/analyzer-plugin-cpp";
+import { z } from "zod";
+import { chdir } from "node:process";
 
 // set consistent working directory
-chdir(import.meta.dir);
+chdir(import.meta.dirname);
 
-const repositoriesDir = `${import.meta.dir}/repositories`.replaceAll('\\', '/');
+const repositoriesDir = `${import.meta.dirname}/repositories`.replaceAll("\\", "/");
 
 // All available extractors
 const allExtractors: Extractor[] = [
@@ -57,8 +58,9 @@ interface RepositoryConfig {
 }
 
 // Load repository configuration
-const repositoriesConfigFile = file(join(import.meta.dir, 'repositories.json'));
-const repositoriesConfig: RepositoryConfig[] = await repositoriesConfigFile.json();
+const repositoriesConfig: RepositoryConfig[] = JSON.parse(
+  await readFile(join(import.meta.dirname, "repositories.json"), "utf8"),
+);
 
 const globalOptionSchema = z.strictObject(
   allExtractors.reduce(
@@ -78,13 +80,13 @@ interface SystemConfig {
     [version: string]: string | null;
   };
 }
-const systemConfigFile = file(join(import.meta.dir, 'system.json'));
+const systemConfigPath = join(import.meta.dirname, "system.json");
 let systemConfig: SystemConfig = {};
-if (await systemConfigFile.exists()) {
+if (existsSync(systemConfigPath)) {
   try {
-    systemConfig = await systemConfigFile.json();
+    systemConfig = JSON.parse(await readFile(systemConfigPath, "utf8"));
   } catch (error) {
-    console.warn('Failed to load system.json:', error);
+    console.warn("Failed to load system.json:", error);
   }
 }
 
@@ -102,10 +104,14 @@ for (const config of repositoriesConfig) {
           globalOptionSchema.parse(config.options);
         } catch (error) {
           if (error instanceof z.ZodError) {
-            expect().fail('Error validating extractor options!\n' + z.prettifyError(error));
+            throw new Error("Error validating extractor options!\n" + z.prettifyError(error), {
+              cause: error,
+            });
           } else {
-            expect().fail(
-              'Error validating extractor options: ' + (error instanceof Error ? error.message : String(error)),
+            throw new Error(
+              "Error validating extractor options: " +
+                (error instanceof Error ? error.message : String(error)),
+              { cause: error },
             );
           }
         }
@@ -118,7 +124,7 @@ for (const config of repositoriesConfig) {
 
         const configuredPath = systemConfig.java?.[config.javaVersion.toString()];
         if (configuredPath) {
-          const { exitCode } = Bun.spawnSync(['test', '-d', configuredPath]);
+          const { exitCode } = await runCommand(["test", "-d", configuredPath]);
           if (exitCode === 0) {
             process.env.JAVA_HOME = configuredPath;
             process.env.PATH = `${configuredPath}/bin:${process.env.PATH}`;
@@ -128,13 +134,17 @@ for (const config of repositoriesConfig) {
             );
           }
         } else {
-          throw new Error(`Java ${config.javaVersion} is required but not configured in test/system.json`);
+          throw new Error(
+            `Java ${config.javaVersion} is required but not configured in test/system.json`,
+          );
         }
       }
 
       try {
         const results = await Promise.all(
-          allExtractors.map((extractor) => extractor.extract(repoPath, config.options?.[extractor.name])),
+          allExtractors.map((extractor) =>
+            extractor.extract(repoPath, config.options?.[extractor.name]),
+          ),
         );
 
         // Merge all results
@@ -142,16 +152,21 @@ for (const config of repositoriesConfig) {
 
         // Normalize paths in evidence and definitionFile for consistent snapshots
         for (const pkg of mergedResult.packages) {
-          pkg.evidence = pkg.evidence.map((e: string) => e.replace(repositoriesDir, '<repositories>'));
+          pkg.evidence = pkg.evidence.map((e: string) =>
+            e.replace(repositoriesDir, "<repositories>"),
+          );
         }
 
         for (const subproject of mergedResult.subprojects) {
-          subproject.definitionFile = subproject.definitionFile.replace(repositoriesDir, '<repositories>');
+          subproject.definitionFile = subproject.definitionFile.replace(
+            repositoriesDir,
+            "<repositories>",
+          );
         }
 
         for (const issue of mergedResult.issues) {
           if (issue.file) {
-            issue.file = issue.file.replace(repositoriesDir, '<repositories>');
+            issue.file = issue.file.replace(repositoriesDir, "<repositories>");
           }
         }
 
@@ -159,24 +174,23 @@ for (const config of repositoriesConfig) {
         const normalizedResult = normalizeResult(mergedResult);
 
         // Write snapshot to individual JSON file
-        const snapshotPath = join(import.meta.dir, '__snapshots__', `${repoName}.json`);
-        const snapshotFile = file(snapshotPath);
+        const snapshotPath = join(import.meta.dirname, "__snapshots__", `${repoName}.json`);
 
-        const updateSnapshots = process.env.UPDATE_SNAPSHOTS === '1';
-        const snapshotExists = await snapshotFile.exists();
+        const updateSnapshots = process.env.UPDATE_SNAPSHOTS === "1";
+        const snapshotExists = existsSync(snapshotPath);
 
         if (updateSnapshots) {
           // Update snapshot
-          await Bun.write(snapshotPath, JSON.stringify(normalizedResult, null, 2) + '\n');
+          await writeFile(snapshotPath, JSON.stringify(normalizedResult, null, 2) + "\n");
           return; // No need to compare if we just updated it
         } else if (!snapshotExists) {
           // Create snapshot
-          await Bun.write(snapshotPath, JSON.stringify(normalizedResult, null, 2) + '\n');
+          await writeFile(snapshotPath, JSON.stringify(normalizedResult, null, 2) + "\n");
           return; // No need to compare if we just created it
         }
 
         // Read and compare with snapshot
-        const snapshotContent = await snapshotFile.text();
+        const snapshotContent = await readFile(snapshotPath, "utf8");
         const snapshot = JSON.parse(snapshotContent);
 
         expect(normalizedResult).toEqual(snapshot);
@@ -191,6 +205,6 @@ for (const config of repositoriesConfig) {
         }
       }
     },
-    { timeout: 300000 }, // 5 minutes
+    300000, // 5 minutes
   );
 }

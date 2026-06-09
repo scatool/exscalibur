@@ -4,20 +4,22 @@ import {
   type Subproject,
   type DependencyScope,
   filesExtractor,
+  readTextFile,
   scanAndMarkFiles,
-} from '@scatool/analyzer-core/src/index.ts';
-import { PackageURL } from 'packageurl-js';
-import { optionSchema, type SpdxOptions } from './options.ts';
+} from "@scatool/analyzer-core";
+import { PackageURL } from "packageurl-js";
+import { parse as parseYaml } from "yaml";
+import { optionSchema, type SpdxOptions } from "./options.ts";
 
 export const extractor: Extractor<SpdxOptions> = filesExtractor<SpdxOptions>({
-  name: 'spdx',
+  name: "spdx",
   version: 1,
   optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: SpdxOptions) {
-    await scanAndMarkFiles(this, codebase, '**/*.spdx.{json,jsonld,yaml,yml}', options.ignore);
+    await scanAndMarkFiles(this, codebase, "**/*.spdx.{json,jsonld,yaml,yml}", options.ignore);
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
-    const content = await Bun.file(file).text();
+    const content = await readTextFile(file);
     return extractSpdx(content, file);
   },
 });
@@ -34,8 +36,8 @@ type SpdxExternalIdentifier = {
 type SpdxElement = {
   type?: string;
   spdxId?: string;
-  '@type'?: string;
-  '@id'?: string;
+  "@type"?: string;
+  "@id"?: string;
   name?: string;
   packageUrl?: string;
   software_packageUrl?: string;
@@ -52,24 +54,28 @@ type SpdxElement = {
 
 type SpdxDocument = SpdxElement & {
   element?: SpdxElement[];
-  '@graph'?: SpdxElement[];
-  '@context'?: unknown;
+  "@graph"?: SpdxElement[];
+  "@context"?: unknown;
 };
 
-const DEPENDENCY_RELATIONSHIP_TYPES = new Set(['dependsOn', 'hasOptionalDependency', 'hasProvidedDependency']);
+const DEPENDENCY_RELATIONSHIP_TYPES = new Set([
+  "dependsOn",
+  "hasOptionalDependency",
+  "hasProvidedDependency",
+]);
 
-const DEFAULT_SCOPE = 'dependencies';
+const DEFAULT_SCOPE = "dependencies";
 
-function getType(el: { type?: string; '@type'?: string }): string | undefined {
-  return el.type ?? el['@type'];
+function getType(el: { type?: string; "@type"?: string }): string | undefined {
+  return el.type ?? el["@type"];
 }
 
-function getId(el: { spdxId?: string; '@id'?: string }): string | undefined {
-  return el.spdxId ?? el['@id'];
+function getId(el: { spdxId?: string; "@id"?: string }): string | undefined {
+  return el.spdxId ?? el["@id"];
 }
 
 function getElements(doc: SpdxDocument): SpdxElement[] {
-  return doc.element ?? doc['@graph'] ?? [];
+  return doc.element ?? doc["@graph"] ?? [];
 }
 
 function getRootElements(doc: SpdxDocument | SpdxElement): string[] {
@@ -94,17 +100,17 @@ type ScopedDep = {
 
 export function extractSpdx(content: string, filePath?: string): AnalyzerResult {
   try {
-    const doc = Bun.YAML.parse(content) as SpdxDocument;
+    const doc = parseYaml(content) as SpdxDocument;
 
     const elements = getElements(doc);
     const docType = getType(doc);
-    const isDocumentRoot = typeIncludes(docType, 'SpdxDocument');
+    const isDocumentRoot = typeIncludes(docType, "SpdxDocument");
     let specVersion: string | undefined;
 
     if (isDocumentRoot) {
       specVersion = resolveSpecVersion(doc, elements);
     } else if (elements.length > 0) {
-      const docElement = elements.find((el) => typeIncludes(getType(el), 'SpdxDocument'));
+      const docElement = elements.find((el) => typeIncludes(getType(el), "SpdxDocument"));
       if (docElement) {
         specVersion = resolveSpecVersion(docElement, elements);
       }
@@ -119,7 +125,7 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
           ? [
               {
                 message: `Not an SPDX 3.0.x document (could not determine specVersion)`,
-                severity: 'WARNING',
+                severity: "WARNING",
                 file: filePath,
               },
             ]
@@ -127,7 +133,7 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
       };
     }
 
-    if (!specVersion.startsWith('3.0')) {
+    if (!specVersion.startsWith("3.0")) {
       return {
         packages: [],
         subprojects: [],
@@ -136,7 +142,7 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
           ? [
               {
                 message: `Unsupported SPDX version: ${specVersion} (expected 3.0.x)`,
-                severity: 'WARNING',
+                severity: "WARNING",
                 file: filePath,
               },
             ]
@@ -156,7 +162,7 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
       }
 
       const elType = getType(el);
-      if (!typeIncludes(elType, 'Package')) continue;
+      if (!typeIncludes(elType, "Package")) continue;
 
       const purl = extractPurl(el);
       if (!purl) continue;
@@ -186,7 +192,11 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
 
     for (const el of elements) {
       const elType = getType(el);
-      if (!typeIncludes(elType, 'Relationship') && !typeIncludes(elType, 'LifecycleScopedRelationship')) continue;
+      if (
+        !typeIncludes(elType, "Relationship") &&
+        !typeIncludes(elType, "LifecycleScopedRelationship")
+      )
+        continue;
       if (!el.relationshipType || !DEPENDENCY_RELATIONSHIP_TYPES.has(el.relationshipType)) continue;
 
       const fromId = el.from;
@@ -208,10 +218,10 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
       let effectiveScope: string | undefined;
       if (el.scope) {
         effectiveScope = el.scope;
-      } else if (el.relationshipType === 'hasOptionalDependency') {
-        effectiveScope = 'optional';
-      } else if (el.relationshipType === 'hasProvidedDependency') {
-        effectiveScope = 'provided';
+      } else if (el.relationshipType === "hasOptionalDependency") {
+        effectiveScope = "optional";
+      } else if (el.relationshipType === "hasProvidedDependency") {
+        effectiveScope = "provided";
       }
 
       for (const toId of toIds) {
@@ -239,7 +249,7 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
 
     let rootElementIds = [...getRootElements(doc)];
     if (rootElementIds.length === 0) {
-      const docElement = elements.find((el) => typeIncludes(getType(el), 'SpdxDocument'));
+      const docElement = elements.find((el) => typeIncludes(getType(el), "SpdxDocument"));
       if (docElement) {
         rootElementIds.push(...getRootElements(docElement));
       }
@@ -295,7 +305,7 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
 
       subprojects.push({
         purl: rootPurl,
-        definitionFile: filePath ?? '',
+        definitionFile: filePath ?? "",
         scopes,
       });
     }
@@ -328,7 +338,7 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
         ? [
             {
               message: `Failed to parse SPDX document: ${error instanceof Error ? error.message : String(error)}`,
-              severity: 'ERROR',
+              severity: "ERROR",
               file: filePath,
             },
           ]
@@ -382,7 +392,7 @@ function extractPurl(el: SpdxElement): string | undefined {
     for (const extId of el.externalIdentifier) {
       if (
         extId.externalIdentifierType &&
-        typeIncludes(extId.externalIdentifierType, 'packageUrl') &&
+        typeIncludes(extId.externalIdentifierType, "packageUrl") &&
         extId.identifier
       ) {
         return extId.identifier;
@@ -393,17 +403,20 @@ function extractPurl(el: SpdxElement): string | undefined {
   return undefined;
 }
 
-function resolveSpecVersion(docOrElement: SpdxDocument | SpdxElement, elements: SpdxElement[]): string | undefined {
+function resolveSpecVersion(
+  docOrElement: SpdxDocument | SpdxElement,
+  elements: SpdxElement[],
+): string | undefined {
   const creationInfo = docOrElement.creationInfo;
   if (!creationInfo) return undefined;
 
-  if (typeof creationInfo === 'string') {
+  if (typeof creationInfo === "string") {
     const infoElement = elements.find((el) => getId(el) === creationInfo);
     if (!infoElement) return undefined;
-    if (infoElement.creationInfo && typeof infoElement.creationInfo !== 'string') {
+    if (infoElement.creationInfo && typeof infoElement.creationInfo !== "string") {
       return infoElement.creationInfo.specVersion;
     }
-    if (typeIncludes(getType(infoElement), 'CreationInfo')) {
+    if (typeIncludes(getType(infoElement), "CreationInfo")) {
       return infoElement.specVersion;
     }
     return undefined;

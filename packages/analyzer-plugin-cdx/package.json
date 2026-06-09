@@ -1,28 +1,40 @@
 {
   "name": "@scatool/analyzer-plugin-cdx",
   "version": "0.0.5",
-  "type": "module",
-  "module": "src/index.ts",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com",
-    "tag": "alpha",
-    "access": "restricted"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/scatool/excalibur.git"
   },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "types": "dist/index.d.mts",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com",
+    "tag": "alpha"
+  },
   "scripts": {
-    "test": "bun test",
-    "typecheck": "bunx tsc --strict --noEmit"
+    "test": "vp test run",
+    "typecheck": "vp run check",
+    "build": "vp pack",
+    "dev": "vp pack --watch",
+    "prepublishOnly": "vp run build",
+    "check": "vp exec tsc --strict --noEmit"
   },
   "dependencies": {
     "@scatool/analyzer-core": "workspace:*",
-    "packageurl-js": "^2.0.1"
+    "packageurl-js": "catalog:"
   },
   "devDependencies": {
     "@scatool/analyzer-test-utils": "workspace:*",
-    "@types/bun": "^1.3.9"
+    "@types/node": "catalog:",
+    "vite-plus": "catalog:"
   },
   "peerDependencies": {
     "typescript": "^5"

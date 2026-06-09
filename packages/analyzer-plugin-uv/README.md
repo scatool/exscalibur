@@ -14,7 +14,7 @@ This plugin runs `uv export --format cyclonedx1.5` to produce a CycloneDX SBOM, 
 ## Usage
 
 ```typescript
-import { extractor as uvExtractor } from '@scatool/analyzer-plugin-uv';
+import { extractor as uvExtractor } from "@scatool/analyzer-plugin-uv";
 
-const result = await uvExtractor.extract('/path/to/codebase');
+const result = await uvExtractor.extract("/path/to/codebase");
 ```

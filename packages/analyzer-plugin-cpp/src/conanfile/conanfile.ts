@@ -8,13 +8,15 @@ import {
   initializeExtractionMaps,
   type Issue,
   type MarkFileContext,
+  readNormalizedTextFile,
+  runCommand,
   scanAndMarkFiles,
   type Subproject,
-} from '@scatool/analyzer-core/src/index.ts';
-import { createConanPurl, createLocalNodeConanPurl } from './utils.ts';
-import type { ConanOptions } from './options.ts';
-import type { ConanFileGraph, Dependency, Node, NodeId } from './types.ts';
-import { resolve } from 'path';
+} from "@scatool/analyzer-core";
+import { createConanPurl, createLocalNodeConanPurl } from "./utils.ts";
+import type { ConanOptions } from "./options.ts";
+import type { ConanFileGraph, Dependency, Node, NodeId } from "./types.ts";
+import { resolve } from "path";
 
 export async function markFiles(this: MarkFileContext, codebase: string, options: ConanOptions) {
   for (const pattern of options.conanFiles) {
@@ -26,42 +28,39 @@ export async function extractFile(file: string, options: ConanOptions): Promise<
   // retrieve absolute path to ensure consistent behavior
   // note: using non-posix resolve is important here, because else on
   // Windows the following will happen: resolve('C:\\path') === '/Users/cwd/C:/path'
-  file = resolve(file).replaceAll('\\', '/');
+  file = resolve(file).replaceAll("\\", "/");
 
   const conan_path = options.conanPath;
 
   // Retrieve json graph data
   // Will automatically detect and use lockfiles if present
-  const cmd = [conan_path, 'graph', 'info', file, '--format', 'json'];
+  const cmd = [conan_path, "graph", "info", file, "--format", "json"];
   if (options.profileBuild) {
-    cmd.push('--profile:build', options.profileBuild);
+    cmd.push("--profile:build", options.profileBuild);
   }
   if (options.profileHost) {
-    cmd.push('--profile:host', options.profileHost);
+    cmd.push("--profile:host", options.profileHost);
   }
   if (options.conanArgs) {
     cmd.push(...options.conanArgs);
   }
 
-  const proc = Bun.spawn(cmd, {
-    stdout: 'pipe',
-    stderr: 'pipe',
-  });
-
-  const stdout = await new Response(proc.stdout).text();
-  const stderr = await new Response(proc.stderr).text();
-  const exitCode = await proc.exited;
+  const { stdout, stderr, exitCode } = await runCommand(cmd);
 
   if (exitCode !== 0) {
-    return errorResult(file, file, `"${cmd.join(' ')}" failed with exit code ${exitCode}: ${stderr}`);
+    return errorResult(
+      file,
+      file,
+      `"${cmd.join(" ")}" failed with exit code ${exitCode}: ${stderr}`,
+    );
   }
 
   // detect warnings in stderr and include them as issues in the result
   const issues: Issue[] = [];
-  if (stderr.includes('WARN')) {
+  if (stderr.includes("WARN")) {
     issues.push({
-      message: `Warnings from running "${cmd.join(' ')}": ${stderr}`,
-      severity: 'WARNING',
+      message: `Warnings from running "${cmd.join(" ")}": ${stderr}`,
+      severity: "WARNING",
       file,
     });
   }
@@ -73,30 +72,38 @@ export async function extractFile(file: string, options: ConanOptions): Promise<
     return errorResult(
       file,
       file,
-      `Failed to parse JSON output from "${cmd.join(' ')}": ` +
+      `Failed to parse JSON output from "${cmd.join(" ")}": ` +
         (error instanceof Error ? error.message : String(error)),
     );
   }
 
   if (!graphData || !graphData.graph) {
-    return errorResult(file, file, `Invalid graph data from "${cmd.join(' ')}": missing "graph" property`);
+    return errorResult(
+      file,
+      file,
+      `Invalid graph data from "${cmd.join(" ")}": missing "graph" property`,
+    );
   }
 
   if (graphData.graph.error !== undefined && graphData.graph.error !== null) {
     return errorResult(
       file,
       file,
-      `Error in graph data from "${cmd.join(' ')}": ` + JSON.stringify(graphData.graph.error),
+      `Error in graph data from "${cmd.join(" ")}": ` + JSON.stringify(graphData.graph.error),
     );
   }
 
-  const conanfileContent = (await Bun.file(file).text()).replaceAll('\r\n', '\n');
+  const conanfileContent = await readNormalizedTextFile(file);
   const result = convertConanFileGraph(graphData, file, conanfileContent);
   result.issues.push(...issues);
   return result;
 }
 
-function convertConanFileGraph(graphData: ConanFileGraph, file: string, conanfileContent: string): AnalyzerResult {
+function convertConanFileGraph(
+  graphData: ConanFileGraph,
+  file: string,
+  conanfileContent: string,
+): AnalyzerResult {
   const { packageMap, relationshipsMap } = initializeExtractionMaps();
   const subprojects: Subproject[] = [];
   const issues: Issue[] = [];
@@ -154,7 +161,7 @@ function convertConanFileGraph(graphData: ConanFileGraph, file: string, conanfil
             if (!depNode.name || !depNode.version) {
               issues.push({
                 message: `Dependency node ${depNodeId} is missing name or version, skipping relationship from ${purl}.`,
-                severity: 'WARNING',
+                severity: "WARNING",
                 file,
               });
               continue;
@@ -170,14 +177,14 @@ function convertConanFileGraph(graphData: ConanFileGraph, file: string, conanfil
       } else {
         issues.push({
           message: `Node ${nodeId} is neither a local, root nor a resolvable package.`,
-          severity: 'WARNING',
+          severity: "WARNING",
           file,
         });
       }
     } catch (error) {
       issues.push({
         message: `Error processing node ${nodeId}: ${error instanceof Error ? error.message : String(error)}`,
-        severity: 'ERROR',
+        severity: "ERROR",
         file,
       });
     }
@@ -192,17 +199,21 @@ function convertConanFileGraph(graphData: ConanFileGraph, file: string, conanfil
 function isLocalPackage(node: Node): boolean {
   return (
     node.name === null ||
-    node.recipe === 'Editable' ||
-    node.recipe === 'Consumer' ||
-    node.recipe === 'Cli' ||
-    node.recipe === 'Platform'
+    node.recipe === "Editable" ||
+    node.recipe === "Consumer" ||
+    node.recipe === "Cli" ||
+    node.recipe === "Platform"
   );
 }
 
 /**
  * Extract dependency scopes from a node's dependencies
  */
-function extractDependencyScopes(node: Node, nodesById: Record<NodeId, Node>, file: string): DependencyScope[] {
+function extractDependencyScopes(
+  node: Node,
+  nodesById: Record<NodeId, Node>,
+  file: string,
+): DependencyScope[] {
   const scopes: DependencyScope[] = [];
 
   if (!node.dependencies) {
@@ -231,7 +242,7 @@ function extractDependencyScopes(node: Node, nodesById: Record<NodeId, Node>, fi
     const depPurl =
       isLocalPackage(depNode) || !depNode.name
         ? createLocalNodeConanPurl(depNode, file)
-        : createConanPurl(depNode.name, depNode.version || '0.0.0', depNode.rrev);
+        : createConanPurl(depNode.name, depNode.version || "0.0.0", depNode.rrev);
 
     // Categorize by dependency type
     if (dependency.test) {
@@ -262,16 +273,16 @@ function extractDependencyScopes(node: Node, nodesById: Record<NodeId, Node>, fi
 
 function findConanReferenceLineNumber(content: string, name: string, version: string): number[] {
   const target = `${name}/${version}`;
-  const lines = content.split('\n');
+  const lines = content.split("\n");
   const filteredLines = lines
     .map((line, index) => {
       // remove whitespace and comments
-      if (line.includes('#')) {
-        const parts = line.split('#');
+      if (line.includes("#")) {
+        const parts = line.split("#");
         if (parts[0]) {
           line = parts[0].trim();
         } else {
-          line = '';
+          line = "";
         }
       }
       line = line.trim();
