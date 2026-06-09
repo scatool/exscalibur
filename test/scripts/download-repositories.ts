@@ -1,6 +1,7 @@
 #!/usr/bin/env bun
 
 import { file, spawn } from 'bun';
+import { stat } from 'node:fs/promises';
 import { join } from 'node:path/posix';
 
 const REPOSITORIES_FILE = join(import.meta.dir, '..', 'repositories.json');
@@ -13,7 +14,13 @@ interface RepositoryConfig {
   javaVersion?: number;
 }
 
-async function downloadAndExtract(owner: string, repo: string, commit: string, outputPath: string): Promise<void> {
+async function downloadAndExtract(
+  owner: string,
+  repo: string,
+  commit: string,
+  outputPath: string,
+  downloadPath: string,
+): Promise<void> {
   // Download archive from GitHub
   const url = `https://github.com/${owner}/${repo}/archive/${commit}.tar.gz`;
   const response = await fetch(url);
@@ -23,12 +30,11 @@ async function downloadAndExtract(owner: string, repo: string, commit: string, o
   }
 
   // Create a temporary file for the tarball
-  const tempTarball = join(outputPath, '..', `${owner}+${repo}.tar.gz`);
-  await Bun.write(tempTarball, response);
+  await Bun.write(downloadPath, response);
 
   // Extract using tar - extract to outputPath with strip-components
   const proc = spawn({
-    cmd: ['tar', '-xzf', tempTarball, '-C', outputPath, '--strip-components=1'],
+    cmd: ['tar', '-xzf', downloadPath, '-C', outputPath, '--strip-components=1'],
     stdout: 'ignore',
     stderr: 'pipe',
   });
@@ -40,10 +46,10 @@ async function downloadAndExtract(owner: string, repo: string, commit: string, o
   }
 
   // Clean up tarball
-  await Bun.write(tempTarball, '');
-  const tempFile = file(tempTarball);
+  await Bun.write(downloadPath, '');
+  const tempFile = file(downloadPath);
   if (await tempFile.exists()) {
-    await Bun.file(tempTarball).delete();
+    await Bun.file(downloadPath).delete();
   }
 }
 
@@ -65,18 +71,14 @@ async function main() {
     const { owner, repository: repo, commit } = config;
     const repoName = `${owner}+${repo}`;
     const repoPath = join(OUTPUT_DIR, repoName);
+    const tarballPath = join(OUTPUT_DIR, `${owner}+${repo}.tar.gz`);
 
     console.log(`[${i + 1}/${repositories.length}] ${repoName}`);
 
-    // Skip if already exists (check for common manifest files)
-    const manifestFiles = ['package.json', 'pyproject.toml', 'Cargo.toml', 'go.mod', 'pom.xml', 'build.gradle'];
-    let alreadyExists = false;
-    for (const manifest of manifestFiles) {
-      if (await file(join(repoPath, manifest)).exists()) {
-        alreadyExists = true;
-        break;
-      }
-    }
+    // If the directory does already exist, but so does the tarball file
+    // we know, we need to redownload, as apparently the previous download was not successful
+    const repoPathStat = await stat(repoPath).catch(() => null);
+    const alreadyExists = repoPathStat !== null && repoPathStat.isDirectory() && !(await file(tarballPath).exists());
     if (alreadyExists) {
       console.log(`  ⏭️  Already exists, skipping`);
       successful++;
@@ -84,11 +86,14 @@ async function main() {
     }
 
     try {
+      // Signal to start with the download
+      await Bun.write(tarballPath, '');
+
       // Create directory for this repo
       await Bun.write(join(repoPath, '.gitkeep'), '');
 
       // Download and extract
-      await downloadAndExtract(owner, repo, commit, repoPath);
+      await downloadAndExtract(owner, repo, commit, repoPath, tarballPath);
 
       console.log(`  ✅ Downloaded`);
       successful++;

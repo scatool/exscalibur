@@ -146,13 +146,15 @@ export async function scanFixtureFiles(fixturesDir: string, pattern: string): Pr
  *   extractDirectory: true,
  * });
  */
-export async function createExtractorTests(options: {
-  extractor: Extractor;
+export async function createExtractorTests<Options>(options: {
+  extractor: Extractor<Options>;
   fixturesDir: string;
   pattern: string;
   useFiles?: boolean;
   extractDirectory?: boolean;
   timeout?: number;
+  namePrefix?: string;
+  options?: Partial<Options>;
 }): Promise<void> {
   options.fixturesDir = options.fixturesDir.replaceAll('\\', '/');
   const { extractor, fixturesDir, pattern, useFiles = false, extractDirectory = false, timeout } = options;
@@ -168,10 +170,10 @@ export async function createExtractorTests(options: {
   // Create a test for each fixture
   for (const fixture of fixtures) {
     test(
-      fixture,
+      options.namePrefix ? `${options.namePrefix} ${fixture}` : fixture,
       async () => {
         const fixturePath = join(fixturesDir, fixture);
-        const result = await extractor.extract(fixturePath);
+        const result = await extractor.extract(fixturePath, options.options);
         validateResult(result);
         expect(result).toMatchSnapshot();
       },

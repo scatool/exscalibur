@@ -1,0 +1,5 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
+  "dependencies": ["fmt", "boost-container", "curl"],
+  "builtin-baseline": "68a74950d0400f5a803026d0860f49853984bf11"
+}

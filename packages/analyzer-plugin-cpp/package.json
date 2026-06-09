@@ -1,0 +1,32 @@
+{
+  "private": true,
+  "name": "@scatool/analyzer-plugin-cpp",
+  "version": "0.0.5",
+  "type": "module",
+  "module": "src/index.ts",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "tag": "alpha",
+    "access": "restricted"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scatool/excalibur.git"
+  },
+  "scripts": {
+    "test": "bun test",
+    "typecheck": "bunx tsc --strict --noEmit"
+  },
+  "dependencies": {
+    "@scatool/analyzer-core": "workspace:*",
+    "packageurl-js": "^2.0.1",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@scatool/analyzer-test-utils": "workspace:*",
+    "@types/bun": "^1.3.9"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
