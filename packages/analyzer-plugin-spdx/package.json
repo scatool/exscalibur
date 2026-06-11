@@ -1,9 +1,15 @@
 {
   "name": "@scatool/analyzer-plugin-spdx",
   "version": "0.0.5",
+  "homepage": "https://github.com/scatool/exscalibur",
+  "bugs": {
+    "url": "https://github.com/scatool/exscalibur/issues"
+  },
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/scatool/excalibur.git"
+    "url": "https://github.com/scatool/exscalibur.git",
+    "directory": "packages/analyzer-plugin-spdx"
   },
   "files": [
     "dist"
@@ -15,8 +21,8 @@
     "./package.json": "./package.json"
   },
   "publishConfig": {
-    "access": "restricted",
-    "registry": "https://npm.pkg.github.com",
+    "access": "public",
+    "registry": "https://registry.npmjs.org",
     "tag": "alpha"
   },
   "scripts": {

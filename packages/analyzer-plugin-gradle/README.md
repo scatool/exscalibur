@@ -2,7 +2,7 @@
 
 **Note**: This plugin is experimental.
 
-Gradle ecosystem analyzer plugin for Excalibur.
+Gradle ecosystem analyzer plugin for Exscalibur.
 
 This plugin uses the [GitHub Dependency Graph Gradle Plugin](https://github.com/gradle/github-dependency-graph-gradle-plugin) to extract comprehensive dependency information from Gradle projects.
 

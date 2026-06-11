@@ -8,7 +8,7 @@ export default defineConfig({
     },
     exports: {
       bin: {
-        excalibur: "src/cli.ts",
+        exscalibur: "src/cli.ts",
       },
     },
   },

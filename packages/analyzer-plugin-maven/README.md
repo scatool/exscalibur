@@ -2,7 +2,7 @@
 
 **Note**: This plugin is experimental.
 
-Maven ecosystem analyzer plugin for Excalibur.
+Maven ecosystem analyzer plugin for Exscalibur.
 
 This plugin uses Maven's `dependency:tree` command to extract comprehensive dependency information from Maven projects, including both direct and transitive dependencies.
 
