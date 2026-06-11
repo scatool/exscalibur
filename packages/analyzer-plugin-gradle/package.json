@@ -22,7 +22,7 @@
   "scripts": {
     "test": "vp test run",
     "typecheck": "vp run check",
-    "build": "vp pack && vp exec node ../../scripts/copy-gradle-assets.mjs",
+    "build": "vp pack && node scripts/copy-assets.mjs",
     "dev": "vp pack --watch",
     "prepublishOnly": "vp run build",
     "check": "vp exec tsc --strict --noEmit"
