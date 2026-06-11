@@ -16,14 +16,10 @@
     "prepare": "vp config"
   },
   "devDependencies": {
-    "@eslint/js": "^10.0.1",
     "@types/node": "catalog:",
-    "eslint": "^10.0.2",
-    "globals": "^17.3.0",
     "oxfmt": "^0.53.0",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.56.1",
     "vite-plus": "catalog:",
     "vitest": "^4.0.15"
   },
