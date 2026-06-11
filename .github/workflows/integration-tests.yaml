@@ -58,6 +58,9 @@ jobs:
       - name: Install dependencies
         run: vp install
 
+      - name: Build packages
+        run: vp run -r build
+
       - name: Create system.json for Java paths
         run: |
           cat > test/system.json << EOF
