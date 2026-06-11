@@ -25,13 +25,7 @@ export function normalizeResult(result: AnalyzerResult): AnalyzerResult {
     }))
     .sort((a, b) => {
       if (a.purl !== b.purl) return a.purl < b.purl ? -1 : 1;
-      if (a.definitionFile !== b.definitionFile) {
-        return a.definitionFile < b.definitionFile ? -1 : 1;
-      }
-
-      const aScopes = JSON.stringify(a.scopes);
-      const bScopes = JSON.stringify(b.scopes);
-      return aScopes > bScopes ? -1 : aScopes < bScopes ? 1 : 0;
+      return a.definitionFile < b.definitionFile ? -1 : a.definitionFile > b.definitionFile ? 1 : 0;
     });
 
   const sortedRelationships = result.relationships

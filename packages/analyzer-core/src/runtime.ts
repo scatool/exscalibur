@@ -29,7 +29,16 @@ export async function scanFiles(
     ignore: ignorePatterns,
   });
 
-  return files.map((file) => file.replaceAll("\\", "/")).sort();
+  return files
+    .map((file) => file.replaceAll("\\", "/"))
+    .sort((a, b) => {
+      const depthDiff = pathDepth(a) - pathDepth(b);
+      return depthDiff !== 0 ? depthDiff : a < b ? -1 : a > b ? 1 : 0;
+    });
+}
+
+function pathDepth(path: string): number {
+  return path.split("/").length;
 }
 
 export interface RunCommandOptions {
