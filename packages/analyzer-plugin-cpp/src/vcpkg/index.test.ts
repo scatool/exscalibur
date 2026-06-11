@@ -226,7 +226,7 @@ for (const fixture of fixtures) {
       }),
     );
 
-    expect(missingPorts).toEqual([]);
+    expect(missingPorts.size).toBe(0);
 
     const tempDir = await mkdtemp(join(tmpdir().replaceAll("\\", "/"), `vcpkg-test-${fixture}-`));
     await copyFile(fixturePath, join(tempDir, "vcpkg.json"));
