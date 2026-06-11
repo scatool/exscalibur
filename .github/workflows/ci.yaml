@@ -54,7 +54,7 @@ jobs:
         working-directory: ./vcpkg
         run: |
           ./bootstrap-vcpkg.sh -disableMetrics
-          echo "VCPKG_ROOT=$(pwd)/vcpkg" >> "$GITHUB_ENV"
+          echo "VCPKG_ROOT=$(pwd)" >> "$GITHUB_ENV"
           echo "$GITHUB_WORKSPACE/vcpkg" >> "$GITHUB_PATH"
 
       - name: Install dependencies

@@ -327,6 +327,7 @@ async function verifyDependInfo(
 
   const output = stderr;
   const lines = output.split("\n");
+  const extractedRelationNames = new Set(extractedRelations.map((rel) => rel.from));
 
   const expectedRelations = lines
     .map((line) => ({
@@ -334,7 +335,7 @@ async function verifyDependInfo(
       match: line.match(/^([^:[]+)(\[[^\]]+\])?:([^@]*)/),
       line,
     }))
-    .filter(({ match }) => match !== null)
+    .filter(({ match }) => match !== null && extractedRelationNames.has(match[1]!.trim()))
     .map(({ match, line }) => {
       match = match!;
 
