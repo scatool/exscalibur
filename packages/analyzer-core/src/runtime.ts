@@ -9,7 +9,7 @@ export async function readTextFile(file: string): Promise<string> {
 }
 
 export async function readNormalizedTextFile(file: string): Promise<string> {
-  return (await readTextFile(file)).replaceAll("\r\n", "\n");
+  return (await readTextFile(file)).replace(/^\uFEFF/, "").replaceAll("\r\n", "\n");
 }
 
 export async function writeTextFile(file: string, content: string): Promise<void> {
@@ -95,6 +95,7 @@ export function findExecutable(command: string): string | undefined {
 
   const extensions =
     process.platform === "win32" ? (process.env.PATHEXT ?? ".EXE;.CMD;.BAT;.COM").split(";") : [""];
+
   for (const directory of path.split(delimiter)) {
     for (const extension of extensions) {
       const candidate = `${directory}${sep}${command}${extension}`;
