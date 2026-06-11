@@ -55,7 +55,7 @@ export function parseYarnBerryLockfile(content: string): YarnBerryLockfile {
   // we'll parse it manually to avoid adding dependencies
 
   const packages = new Map<string, YarnBerryLockPackage>();
-  const lines = content.split('\n');
+  const lines = content.split("\n");
 
   let i = 0;
   let version: number | undefined;
@@ -65,15 +65,15 @@ export function parseYarnBerryLockfile(content: string): YarnBerryLockfile {
   while (i < lines.length) {
     const line = lines[i];
 
-    if (line && line.trim() === '__metadata:') {
+    if (line && line.trim() === "__metadata:") {
       i++;
       // Parse metadata fields
       while (i < lines.length && lines[i]?.match(/^\s{2}[a-zA-Z]/)) {
         const metaLine = lines[i]?.trim();
-        if (metaLine?.startsWith('version:')) {
-          version = parseInt(metaLine.split(':')[1]?.trim() || '0', 10);
-        } else if (metaLine?.startsWith('cacheKey:')) {
-          cacheKey = metaLine.split(':')[1]?.trim();
+        if (metaLine?.startsWith("version:")) {
+          version = parseInt(metaLine.split(":")[1]?.trim() || "0", 10);
+        } else if (metaLine?.startsWith("cacheKey:")) {
+          cacheKey = metaLine.split(":")[1]?.trim();
         }
         i++;
       }
@@ -121,7 +121,7 @@ function parsePackageEntry(
   nextIndex: number;
 } {
   const packageEntry: YarnBerryLockPackage = {
-    version: '',
+    version: "",
   };
 
   // Parse the header line to extract package patterns
@@ -137,13 +137,13 @@ function parsePackageEntry(
   let cleanHeader = headerLine.trim();
   if (cleanHeader.startsWith('"') && cleanHeader.endsWith('":')) {
     cleanHeader = cleanHeader.slice(1, -2); // Remove leading " and trailing ":
-  } else if (cleanHeader.endsWith(':')) {
+  } else if (cleanHeader.endsWith(":")) {
     cleanHeader = cleanHeader.slice(0, -1); // Remove trailing :
   }
 
   // Split by comma to get multiple patterns
   const patterns = cleanHeader
-    .split(', ')
+    .split(", ")
     .map((p) => p.trim())
     .filter((p) => p);
 
@@ -151,14 +151,14 @@ function parsePackageEntry(
   packageEntry.originalPattern = cleanHeader;
 
   let i = startIndex + 1;
-  let currentDepsType: 'dependencies' | 'optionalDependencies' | 'peerDependencies' | null = null;
+  let currentDepsType: "dependencies" | "optionalDependencies" | "peerDependencies" | null = null;
 
   // Parse indented properties
   while (i < lines.length) {
     const line = lines[i];
 
     // Empty line - continue
-    if (!line || line.trim() === '') {
+    if (!line || line.trim() === "") {
       i++;
       continue;
     }
@@ -175,24 +175,28 @@ function parsePackageEntry(
     if (indentLevel === 2) {
       currentDepsType = null;
 
-      if (trimmed.startsWith('version:')) {
-        packageEntry.version = trimmed.replace('version:', '').trim();
-      } else if (trimmed.startsWith('resolution:')) {
-        packageEntry.resolution = trimmed.replace('resolution:', '').trim().replace(/^"/, '').replace(/"$/, '');
-      } else if (trimmed.startsWith('checksum:')) {
-        packageEntry.checksum = trimmed.replace('checksum:', '').trim();
-      } else if (trimmed.startsWith('linkType:')) {
-        packageEntry.linkType = trimmed.replace('linkType:', '').trim();
-      } else if (trimmed.startsWith('languageName:')) {
-        packageEntry.languageName = trimmed.replace('languageName:', '').trim();
-      } else if (trimmed === 'dependencies:') {
-        currentDepsType = 'dependencies';
+      if (trimmed.startsWith("version:")) {
+        packageEntry.version = trimmed.replace("version:", "").trim();
+      } else if (trimmed.startsWith("resolution:")) {
+        packageEntry.resolution = trimmed
+          .replace("resolution:", "")
+          .trim()
+          .replace(/^"/, "")
+          .replace(/"$/, "");
+      } else if (trimmed.startsWith("checksum:")) {
+        packageEntry.checksum = trimmed.replace("checksum:", "").trim();
+      } else if (trimmed.startsWith("linkType:")) {
+        packageEntry.linkType = trimmed.replace("linkType:", "").trim();
+      } else if (trimmed.startsWith("languageName:")) {
+        packageEntry.languageName = trimmed.replace("languageName:", "").trim();
+      } else if (trimmed === "dependencies:") {
+        currentDepsType = "dependencies";
         packageEntry.dependencies = {};
-      } else if (trimmed === 'optionalDependencies:') {
-        currentDepsType = 'optionalDependencies';
+      } else if (trimmed === "optionalDependencies:") {
+        currentDepsType = "optionalDependencies";
         packageEntry.optionalDependencies = {};
-      } else if (trimmed === 'peerDependencies:') {
-        currentDepsType = 'peerDependencies';
+      } else if (trimmed === "peerDependencies:") {
+        currentDepsType = "peerDependencies";
         packageEntry.peerDependencies = {};
       }
     }
@@ -204,7 +208,10 @@ function parsePackageEntry(
       if (match && match[1] && match[2]) {
         let depName = match[1].trim();
         // Remove quotes from dependency name if present
-        if ((depName.startsWith('"') && depName.endsWith('"')) || (depName.startsWith("'") && depName.endsWith("'"))) {
+        if (
+          (depName.startsWith('"') && depName.endsWith('"')) ||
+          (depName.startsWith("'") && depName.endsWith("'"))
+        ) {
           depName = depName.slice(1, -1);
         }
         const depVersion = match[2].trim();
@@ -230,7 +237,7 @@ function parsePackageEntry(
  */
 export function parsePackagePattern(pattern: string): {
   name: string;
-  type: 'npm' | 'workspace' | 'git' | 'tarball' | 'npm-alias' | 'patch' | 'link' | 'portal';
+  type: "npm" | "workspace" | "git" | "tarball" | "npm-alias" | "patch" | "link" | "portal";
   versionOrPath: string;
   alias?: string;
 } | null {
@@ -239,7 +246,7 @@ export function parsePackagePattern(pattern: string): {
   if (patchMatch && patchMatch[1] && patchMatch[2]) {
     return {
       name: patchMatch[1],
-      type: 'patch',
+      type: "patch",
       versionOrPath: patchMatch[2],
     };
   }
@@ -248,7 +255,7 @@ export function parsePackagePattern(pattern: string): {
   if (linkMatch && linkMatch[1] && linkMatch[2]) {
     return {
       name: linkMatch[1],
-      type: 'link',
+      type: "link",
       versionOrPath: linkMatch[2],
     };
   }
@@ -257,7 +264,7 @@ export function parsePackagePattern(pattern: string): {
   if (portalMatch && portalMatch[1] && portalMatch[2]) {
     return {
       name: portalMatch[1],
-      type: 'portal',
+      type: "portal",
       versionOrPath: portalMatch[2],
     };
   }
@@ -267,7 +274,7 @@ export function parsePackagePattern(pattern: string): {
   if (workspaceMatch && workspaceMatch[1] && workspaceMatch[2]) {
     return {
       name: workspaceMatch[1],
-      type: 'workspace',
+      type: "workspace",
       versionOrPath: workspaceMatch[2],
     };
   }
@@ -278,7 +285,7 @@ export function parsePackagePattern(pattern: string): {
   if (npmAliasMatch && npmAliasMatch[1] && npmAliasMatch[2] && npmAliasMatch[3]) {
     return {
       name: npmAliasMatch[2], // The actual package name (e.g., "react")
-      type: 'npm-alias',
+      type: "npm-alias",
       versionOrPath: npmAliasMatch[3], // The version (e.g., "^16.0.0")
       alias: npmAliasMatch[1], // The alias (e.g., "react-16")
     };
@@ -289,7 +296,7 @@ export function parsePackagePattern(pattern: string): {
   if (npmMatch && npmMatch[1] && npmMatch[2]) {
     return {
       name: npmMatch[1],
-      type: 'npm',
+      type: "npm",
       versionOrPath: npmMatch[2],
     };
   }
@@ -300,7 +307,7 @@ export function parsePackagePattern(pattern: string): {
   if (tarballMatch && tarballMatch[1] && tarballMatch[2]) {
     return {
       name: tarballMatch[1],
-      type: 'tarball',
+      type: "tarball",
       versionOrPath: tarballMatch[2],
     };
   }
@@ -310,7 +317,7 @@ export function parsePackagePattern(pattern: string): {
   if (gitMatch && gitMatch[1] && gitMatch[2]) {
     return {
       name: gitMatch[1],
-      type: 'git',
+      type: "git",
       versionOrPath: gitMatch[2],
     };
   }
@@ -322,7 +329,7 @@ export function parsePackagePattern(pattern: string): {
  * Find the line number where a package is defined in the lockfile
  */
 export function findLineNumber(content: string, packageKey: string): number | undefined {
-  const lines = content.split('\n');
+  const lines = content.split("\n");
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
@@ -351,31 +358,31 @@ export function resolvePackageVersion(
 ): string | null {
   // Normalize version range - strip npm: prefix if present
   let normalizedRange = versionRange;
-  if (normalizedRange.startsWith('npm:')) {
+  if (normalizedRange.startsWith("npm:")) {
     normalizedRange = normalizedRange.substring(4);
   }
 
   // 1. Try npm: protocol with normalized range (most common)
   let pattern = `${packageName}@npm:${normalizedRange}`;
   let pkg = lockfile.packages.get(pattern);
-  if (pkg && pkg.version !== '0.0.0-use.local') return pkg.version;
+  if (pkg && pkg.version !== "0.0.0-use.local") return pkg.version;
 
   // 2. Try without protocol (for git/tarball dependencies like "owner/repo#commit")
   pattern = `${packageName}@${normalizedRange}`;
   pkg = lockfile.packages.get(pattern);
-  if (pkg && pkg.version !== '0.0.0-use.local') return pkg.version;
+  if (pkg && pkg.version !== "0.0.0-use.local") return pkg.version;
 
   // 3. Try with original range if different from normalized
   if (versionRange !== normalizedRange) {
     pattern = `${packageName}@${versionRange}`;
     pkg = lockfile.packages.get(pattern);
-    if (pkg && pkg.version !== '0.0.0-use.local') return pkg.version;
+    if (pkg && pkg.version !== "0.0.0-use.local") return pkg.version;
   }
 
   // 4. Search all lockfile entries for this package name and find any match
   // This handles cases where the exact range doesn't match but the package exists
   for (const [entryPattern, entryPkg] of lockfile.packages.entries()) {
-    if (entryPkg.version === '0.0.0-use.local') continue;
+    if (entryPkg.version === "0.0.0-use.local") continue;
 
     const parsed = parsePackagePattern(entryPattern);
     if (parsed && parsed.name === packageName) {

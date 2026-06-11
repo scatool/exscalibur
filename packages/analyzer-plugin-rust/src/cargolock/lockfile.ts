@@ -1,3 +1,5 @@
+import { parse as parseToml } from "smol-toml";
+
 export type CargoLockPackage = {
   name: string;
   version: string;
@@ -22,17 +24,17 @@ type CargoToml = {
 };
 
 /**
- * Parse a Cargo.lock file (TOML format) using Bun's native TOML parser
+ * Parse a Cargo.lock file (TOML format).
  */
 export function parseCargoLockfile(content: string): CargoLockfile {
-  return Bun.TOML.parse(content) as CargoLockfile;
+  return parseToml(content) as CargoLockfile;
 }
 
 /**
- * Parse a Cargo.toml file (TOML format) using Bun's native TOML parser
+ * Parse a Cargo.toml file (TOML format).
  */
 export function parseCargoToml(content: string): CargoToml {
-  return Bun.TOML.parse(content) as CargoToml;
+  return parseToml(content) as CargoToml;
 }
 
 /**
@@ -55,7 +57,7 @@ export function parseDependency(dep: string): { name: string; version?: string; 
     };
   }
 
-  const parts = dep.split(' ');
+  const parts = dep.split(" ");
   if (parts.length === 1) {
     return { name: parts[0]! };
   } else if (parts.length === 2) {
@@ -71,7 +73,7 @@ export function parseDependency(dep: string): { name: string; version?: string; 
  * Looks for the [[package]] header followed by name = "package-name"
  */
 export function findLineNumber(content: string, packageName: string): number | undefined {
-  const lines = content.split('\n');
+  const lines = content.split("\n");
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];

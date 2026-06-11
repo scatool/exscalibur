@@ -1,11 +1,15 @@
-import type { AnalyzerResult, Issue, Package, Relationship, Subproject } from './types.ts';
+import type { AnalyzerResult, Issue, Package, Relationship, Subproject } from "./types.ts";
 
 export type PackageMapEntry = {
   purl: string;
   evidence: Set<string>;
 };
 
-export function addRelationship(relationshipsMap: Map<string, Set<string>>, from: string, to: string): void {
+export function addRelationship(
+  relationshipsMap: Map<string, Set<string>>,
+  from: string,
+  to: string,
+): void {
   const existing = relationshipsMap.get(from);
   if (existing) {
     existing.add(to);
@@ -20,7 +24,11 @@ export function ensurePackageExists(packageMap: Map<string, PackageMapEntry>, pu
   }
 }
 
-export function addPackageEvidence(packageMap: Map<string, PackageMapEntry>, purl: string, evidence: string): void {
+export function addPackageEvidence(
+  packageMap: Map<string, PackageMapEntry>,
+  purl: string,
+  evidence: string,
+): void {
   ensurePackageExists(packageMap, purl);
   packageMap.get(purl)!.evidence.add(evidence);
 }
@@ -32,7 +40,9 @@ export function convertPackageMapToArray(packageMap: Map<string, PackageMapEntry
   }));
 }
 
-export function convertRelationshipsMapToArray(relationshipsMap: Map<string, Set<string>>): Relationship[] {
+export function convertRelationshipsMapToArray(
+  relationshipsMap: Map<string, Set<string>>,
+): Relationship[] {
   return Array.from(relationshipsMap.entries()).map(([from, toSet]) => ({
     from,
     to: Array.from(toSet),
@@ -94,7 +104,7 @@ export function errorResult(file: string, lockfileName: string, error: unknown):
     issues: [
       {
         message: `Failed to parse ${lockfileName}: ${error instanceof Error ? error.message : String(error)}`,
-        severity: 'ERROR',
+        severity: "ERROR",
         file,
       },
     ],

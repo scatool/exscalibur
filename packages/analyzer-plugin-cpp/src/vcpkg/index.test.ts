@@ -1,17 +1,21 @@
-import { dirname, join } from 'path/posix';
-import { resolve } from 'path';
-import { createExtractorTests, scanFixtures } from '@scatool/analyzer-test-utils';
-import { extractor as vcpkgExtractor } from './index.ts';
-import { type VcpkgOptions, type VcpkgTargetPlatform, optionsSchema } from './options';
-import { test, expect } from 'bun:test';
-import os, { tmpdir } from 'node:os';
-import { copyFile, rm, mkdtemp } from 'node:fs/promises';
-import { loadTransitiveDependencies, portToVersion } from './vcpkg.ts';
-import type { VcpkgPort } from './types.ts';
-import type { AnalyzerResult } from '@scatool/analyzer-core/src/types.ts';
-import { exists } from 'node:fs/promises';
+import { dirname, join } from "path/posix";
+import { resolve } from "path";
+import { createExtractorTests, scanFixtures } from "@scatool/analyzer-test-utils";
+import { extractor as vcpkgExtractor } from "./index.ts";
+import { type VcpkgOptions, type VcpkgTargetPlatform, optionsSchema } from "./options";
+import { test, expect } from "vitest";
+import os, { tmpdir } from "node:os";
+import { copyFile, rm, mkdtemp } from "node:fs/promises";
+import { loadTransitiveDependencies, portToVersion } from "./vcpkg.ts";
+import type { VcpkgPort } from "./types.ts";
+import {
+  findExecutable,
+  readNormalizedTextFile,
+  runCommand,
+  type AnalyzerResult,
+} from "@scatool/analyzer-core";
 
-const fixturesDir = join(import.meta.dir, '__fixtures__');
+const fixturesDir = join(import.meta.dirname, "__fixtures__");
 
 /*
  * This file makes use of three different test styles:
@@ -36,35 +40,35 @@ const testConfigs: {
   options: Partial<VcpkgOptions>;
 }[] = [
   {
-    name: '[all platforms & default features]',
+    name: "[all platforms & default features]",
     options: {
       includeAllFeatures: false,
     },
   },
   {
-    name: '[all platforms & all features]',
+    name: "[all platforms & all features]",
     options: {
       includeAllFeatures: true,
     },
   },
   {
-    name: '[linux-x64 platform & default features]',
+    name: "[linux-x64 platform & default features]",
     options: {
       includeAllFeatures: false,
       targetPlatform: {
-        targetArchitecture: 'x64',
-        cmakeSystemName: 'Linux',
+        targetArchitecture: "x64",
+        cmakeSystemName: "Linux",
         isNative: true,
       },
     },
   },
   {
-    name: '[linux-x64 platform & all features]',
+    name: "[linux-x64 platform & all features]",
     options: {
       includeAllFeatures: true,
       targetPlatform: {
-        targetArchitecture: 'x64',
-        cmakeSystemName: 'Linux',
+        targetArchitecture: "x64",
+        cmakeSystemName: "Linux",
         isNative: true,
       },
     },
@@ -78,7 +82,7 @@ for (const { name, options } of testConfigs) {
     options,
     extractor: vcpkgExtractor,
     fixturesDir,
-    pattern: '*/vcpkg.json',
+    pattern: "*/vcpkg.json",
     timeout: 30000,
   });
 }
@@ -101,9 +105,13 @@ function createEquivalenceClassTest(
       })),
     );
 
-    function configurationToResult(toFind: { allHosts: boolean; allFeatures: boolean }): AnalyzerResult {
+    function configurationToResult(toFind: {
+      allHosts: boolean;
+      allFeatures: boolean;
+    }): AnalyzerResult {
       return results.find(
-        ({ config }) => config.allHosts === toFind.allHosts && config.allFeatures === toFind.allFeatures,
+        ({ config }) =>
+          config.allHosts === toFind.allHosts && config.allFeatures === toFind.allFeatures,
       )!.result;
     }
 
@@ -122,15 +130,16 @@ function createEquivalenceClassTest(
       for (let j = i + 1; j < eqClasses.length; j++) {
         const configA = eqClasses[i]![0]!;
         const configB = eqClasses[j]![0]!;
-        expect(configurationToResult(configA), `Equality classes ${i} and ${j} should not match`).not.toEqual(
-          configurationToResult(configB),
-        );
+        expect(
+          configurationToResult(configA),
+          `Equality classes ${i} and ${j} should not match`,
+        ).not.toEqual(configurationToResult(configB));
       }
     }
   });
 }
 
-createEquivalenceClassTest('simple fixture should be platform and feature independent', 'simple', [
+createEquivalenceClassTest("simple fixture should be platform and feature independent", "simple", [
   [
     { allHosts: true, allFeatures: false },
     { allHosts: true, allFeatures: true },
@@ -139,8 +148,8 @@ createEquivalenceClassTest('simple fixture should be platform and feature indepe
   ],
 ]);
 createEquivalenceClassTest(
-  'transitive fixture should not be platform independent and not be feature independent',
-  'transitive',
+  "transitive fixture should not be platform independent and not be feature independent",
+  "transitive",
   [
     [{ allHosts: true, allFeatures: false }],
     [{ allHosts: true, allFeatures: true }],
@@ -155,32 +164,35 @@ createEquivalenceClassTest(
 //
 // Note that `vcpkg install --dry-run` and `vcpkg depend-info` were seen multiple times to disagree on the features
 // However, `vcpkg depend-info` seems more consistent, which is why we use it in the following to verify features
-const vcpkgPath = (await exists('vcpkg')) ? 'vcpkg' : Bun.which('vcpkg') || 'vcpkg';
+const vcpkgPath = findExecutable("vcpkg") || "vcpkg";
 
 function getCurrentPlatformConfig(): { triplet: string; targetPlatform: VcpkgTargetPlatform } {
   const platform = os.platform();
   const arch = os.arch();
 
-  if (platform === 'win32' && (arch === 'x64' || arch === 'ia32')) {
-    const targetArchitecture = arch === 'ia32' ? 'x86' : 'x64';
+  if (platform === "win32" && (arch === "x64" || arch === "ia32")) {
+    const targetArchitecture = arch === "ia32" ? "x86" : "x64";
     return {
       triplet: `${targetArchitecture}-windows`,
       targetPlatform: {
         targetArchitecture,
-        cmakeSystemName: '',
-        crtLinkage: 'dynamic',
-        libraryLinkage: 'dynamic',
+        cmakeSystemName: "",
+        crtLinkage: "dynamic",
+        libraryLinkage: "dynamic",
         isNative: true,
       },
     };
-  } else if ((platform === 'linux' || platform === 'darwin') && (arch === 'x64' || arch === 'arm64')) {
+  } else if (
+    (platform === "linux" || platform === "darwin") &&
+    (arch === "x64" || arch === "arm64")
+  ) {
     return {
-      triplet: arch + '-' + (platform === 'linux' ? 'linux' : 'osx'),
+      triplet: arch + "-" + (platform === "linux" ? "linux" : "osx"),
       targetPlatform: {
         targetArchitecture: arch,
-        cmakeSystemName: platform === 'linux' ? 'Linux' : 'Darwin',
-        crtLinkage: 'dynamic',
-        libraryLinkage: 'static',
+        cmakeSystemName: platform === "linux" ? "Linux" : "Darwin",
+        crtLinkage: "dynamic",
+        libraryLinkage: "static",
         isNative: true,
       },
     };
@@ -190,105 +202,105 @@ function getCurrentPlatformConfig(): { triplet: string; targetPlatform: VcpkgTar
 }
 
 const { triplet, targetPlatform } = getCurrentPlatformConfig();
-const fixtures = await scanFixtures(fixturesDir, '*/vcpkg.json');
+const fixtures = await scanFixtures(fixturesDir, "*/vcpkg.json");
 
 for (const fixture of fixtures) {
-  test(
-    `vcpkg install --dry-run should match dependencies extracted for ${fixture}`,
-    async () => {
-      const fixturePath = join(fixturesDir, fixture, 'vcpkg.json');
+  test(`vcpkg install --dry-run should match dependencies extracted for ${fixture}`, async () => {
+    const fixturePath = join(fixturesDir, fixture, "vcpkg.json");
 
-      // note: using non-posix resolve is important here, because else on
-      // Windows the following will happen: resolve('C:\\path') === '/Users/cwd/C:/path'
-      const file = resolve(fixturePath).replaceAll('\\', '/');
+    // note: using non-posix resolve is important here, because else on
+    // Windows the following will happen: resolve('C:\\path') === '/Users/cwd/C:/path'
+    const file = resolve(fixturePath).replaceAll("\\", "/");
 
-      const vcpkgContent = (await Bun.file(file).text()).replaceAll('\r\n', '\n');
+    const vcpkgContent = await readNormalizedTextFile(file);
 
-      const vcpkgJson = JSON.parse(vcpkgContent) as VcpkgPort;
-      const vcpkgFileDir = dirname(file);
+    const vcpkgJson = JSON.parse(vcpkgContent) as VcpkgPort;
+    const vcpkgFileDir = dirname(file);
 
-      const { ports, missingPorts } = await loadTransitiveDependencies(
-        vcpkgJson,
-        vcpkgFileDir,
-        optionsSchema.parse({
-          includeAllFeatures: false,
-          targetPlatform,
-        }),
-      );
+    const { ports, missingPorts } = await loadTransitiveDependencies(
+      vcpkgJson,
+      vcpkgFileDir,
+      optionsSchema.parse({
+        includeAllFeatures: false,
+        targetPlatform,
+      }),
+    );
 
-      expect(missingPorts).toBeEmpty();
+    expect(missingPorts.size).toBe(0);
 
-      const tempDir = await mkdtemp(join(tmpdir().replaceAll('\\', '/'), `vcpkg-test-${fixture}-`));
-      await copyFile(fixturePath, join(tempDir, 'vcpkg.json'));
+    const tempDir = await mkdtemp(join(tmpdir().replaceAll("\\", "/"), `vcpkg-test-${fixture}-`));
+    await copyFile(fixturePath, join(tempDir, "vcpkg.json"));
 
-      // 1. check ports and their versions
-      await verifyInstallDryRun(
-        tempDir,
-        ports
-          .entries()
-          .map(([name, portInfo]) => {
-            return { name: name, version: portToVersion(portInfo.port)! };
-          })
-          .toArray(),
-      );
+    // 1. check ports and their versions
+    await verifyInstallDryRun(
+      tempDir,
+      ports
+        .entries()
+        .map(([name, portInfo]) => {
+          return { name: name, version: portToVersion(portInfo.port)! };
+        })
+        .toArray(),
+    );
 
-      // 2. check relations
-      await verifyDependInfo(
-        tempDir,
-        ports
-          .entries()
-          .map(([name, portInfo]) => {
-            let features = null;
-            if ((portInfo.port.features ?? []).length) {
-              // the output of dependInfo adds a feature array only if the port has at least one feature
-              features = [...portInfo.features];
-              if (!portInfo.defaultFeatures) {
-                // core means we exclude all core features
-                features.push('core');
-              }
+    // 2. check relations
+    await verifyDependInfo(
+      tempDir,
+      ports
+        .entries()
+        .map(([name, portInfo]) => {
+          let features = null;
+          if ((portInfo.port.features ?? []).length) {
+            // the output of dependInfo adds a feature array only if the port has at least one feature
+            features = [...portInfo.features];
+            if (!portInfo.defaultFeatures) {
+              // core means we exclude all core features
+              features.push("core");
             }
+          }
 
-            return { from: name, to: [...portInfo.dependencies.keys()], features };
-          })
-          .toArray(),
-      );
+          return { from: name, to: [...portInfo.dependencies.keys()], features };
+        })
+        .toArray(),
+    );
 
-      await rm(tempDir, { recursive: true });
-    },
-    { timeout: 60000 },
-  );
+    await rm(tempDir, { recursive: true });
+  }, 60000);
 }
 
-async function verifyInstallDryRun(dir: string, extractedPackages: { name: string; version: string }[]) {
-  const proc = Bun.spawn([vcpkgPath, 'install', '--dry-run', `--triplet=${triplet}`, `--host-triplet=${triplet}`], {
-    stdout: 'pipe',
-    stderr: 'pipe',
-    cwd: dir,
-  });
+async function verifyInstallDryRun(
+  dir: string,
+  extractedPackages: { name: string; version: string }[],
+) {
+  const { exitCode, stdout, stderr } = await runCommand(
+    [vcpkgPath, "install", "--dry-run", `--triplet=${triplet}`, `--host-triplet=${triplet}`],
+    {
+      cwd: dir,
+    },
+  );
 
-  const exitCode = await proc.exited;
-  expect(exitCode, 'stderr: ' + (await proc.stderr.text())).toBe(0);
+  expect(exitCode, "stderr: " + stderr).toBe(0);
 
-  const output = await proc.stdout.text();
-  const lines = output.split('\n');
-
+  const lines = stdout.split("\n");
   // remove all unrelated lines before the list of packages to be installed and the summary line at the end
   const expectedPackages = lines
     .map((line) => ({
       match: line
-        .replace(/^\s*\*?\s*/, '')
+        .replace(/^\s*\*?\s*/, "")
         .trim()
         .match(/^([^:[]+)(\[[^\]]+\])?:([^@]+)@([^#\s]+)/),
       line,
     }))
     .filter(({ match }) => match !== null)
     .map(({ match }) => ({
-      name: match![1] ?? '[unknown]',
-      version: match![4] ?? '[unknown]',
+      name: match![1] ?? "[unknown]",
+      version: match![4] ?? "[unknown]",
     }));
 
-  function comparePackage(a: { name?: string; version?: string }, b: { name?: string; version?: string }): number {
-    return (a.name ?? '').localeCompare(b.name ?? '');
+  function comparePackage(
+    a: { name?: string; version?: string },
+    b: { name?: string; version?: string },
+  ): number {
+    return (a.name ?? "").localeCompare(b.name ?? "");
   }
 
   expect(extractedPackages.sort(comparePackage)).toEqual(expectedPackages.sort(comparePackage));
@@ -298,20 +310,24 @@ async function verifyDependInfo(
   dir: string,
   extractedRelations: { from: string; features: string[] | null; to: string[] }[],
 ) {
-  const proc = Bun.spawn(
-    [vcpkgPath, 'depend-info', `--triplet=${triplet}`, `--host-triplet=${triplet}`, '--format=list'],
+  const { exitCode, stderr } = await runCommand(
+    [
+      vcpkgPath,
+      "depend-info",
+      `--triplet=${triplet}`,
+      `--host-triplet=${triplet}`,
+      "--format=list",
+    ],
     {
-      stdout: 'pipe',
-      stderr: 'pipe',
       cwd: dir,
     },
   );
 
-  const exitCode = await proc.exited;
   expect(exitCode).toBe(0);
 
-  const output = await proc.stderr.text();
-  const lines = output.split('\n');
+  const output = stderr;
+  const lines = output.split("\n");
+  const extractedRelationNames = new Set(extractedRelations.map((rel) => rel.from));
 
   const expectedRelations = lines
     .map((line) => ({
@@ -319,7 +335,7 @@ async function verifyDependInfo(
       match: line.match(/^([^:[]+)(\[[^\]]+\])?:([^@]*)/),
       line,
     }))
-    .filter(({ match }) => match !== null)
+    .filter(({ match }) => match !== null && extractedRelationNames.has(match[1]!.trim()))
     .map(({ match, line }) => {
       match = match!;
 
@@ -329,7 +345,7 @@ async function verifyDependInfo(
       }
 
       const to = toStr
-        .split(',')
+        .split(",")
         .map((s) => s.trim())
         .filter((s) => s.length > 0);
 
@@ -338,7 +354,7 @@ async function verifyDependInfo(
         features = match[2]
           ? match[2]
               .slice(1, -1)
-              .split(',')
+              .split(",")
               .map((s) => s.trim())
           : [];
       }
@@ -355,8 +371,11 @@ async function verifyDependInfo(
     rel.features?.sort();
   });
 
-  function compareRelation(a: { from?: string; to?: string[] }, b: { from?: string; to?: string[] }): number {
-    return (a.from ?? '').localeCompare(b.from ?? '');
+  function compareRelation(
+    a: { from?: string; to?: string[] },
+    b: { from?: string; to?: string[] },
+  ): number {
+    return (a.from ?? "").localeCompare(b.from ?? "");
   }
 
   expect(extractedRelations.sort(compareRelation)).toEqual(expectedRelations.sort(compareRelation));

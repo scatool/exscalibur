@@ -11,7 +11,7 @@ Go ecosystem analyzer plugin for Excalibur.
 ## Usage
 
 ```typescript
-import { gomodExtractor } from '@scatool/analyzer-plugin-go';
+import { gomodExtractor } from "@scatool/analyzer-plugin-go";
 
-const result = await gomodExtractor.extract('/path/to/codebase');
+const result = await gomodExtractor.extract("/path/to/codebase");
 ```

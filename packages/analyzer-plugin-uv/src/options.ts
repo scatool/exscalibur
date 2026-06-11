@@ -1,4 +1,4 @@
-import { z } from 'zod';
+import { z } from "zod";
 
 /**
  * Options for UV extractor.
@@ -9,13 +9,13 @@ export const optionSchema = z.strictObject({
    * Files matching any of these patterns will be excluded from extraction.
    * @default ['**\/node_modules\/**', '**\/.venv\/**']
    */
-  ignore: z.array(z.string()).default(['**/node_modules/**', '**/.venv/**']),
+  ignore: z.array(z.string()).default(["**/node_modules/**", "**/.venv/**"]),
 
   /**
    * Path to the uv binary.
    * Defaults to: uv
    */
-  uvPath: z.string().default('uv'),
+  uvPath: z.string().default("uv"),
 });
 
 export type UvOptions = z.infer<typeof optionSchema>;

@@ -8,50 +8,37 @@ import {
   ensurePackageExists,
   buildResult,
   initializeExtractionMaps,
-} from '@scatool/analyzer-core/src/index.ts';
-import { Glob } from 'bun';
-import { dirname, join } from 'node:path/posix';
-import { findLineNumber, parsePackagePattern, parseYarnLockfile, resolvePackageVersion } from './lockfile.ts';
-import type { PackageJson } from '../types.ts';
-import { createNpmPurl, extractNpmScopes, readPackageJson } from '../npm-utils.ts';
-import type { JavaScriptOptions } from '../options.ts';
-import { optionSchema } from '../options.ts';
+  readNormalizedTextFile,
+  readTextFile,
+  scanFiles,
+} from "@scatool/analyzer-core";
+import { dirname, join } from "node:path/posix";
+import {
+  findLineNumber,
+  parsePackagePattern,
+  parseYarnLockfile,
+  resolvePackageVersion,
+} from "./lockfile.ts";
+import type { PackageJson } from "../types.ts";
+import { createNpmPurl, extractNpmScopes, readPackageJson } from "../npm-utils.ts";
+import type { JavaScriptOptions } from "../options.ts";
+import { optionSchema } from "../options.ts";
 
 export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScriptOptions>({
-  name: 'yarnlock',
+  name: "yarnlock",
   version: 1,
   optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: JavaScriptOptions) {
-    const ignorePatterns = options.ignore;
-    const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));
-
-    const lockfileGlob = new Glob('**/yarn.lock');
-    for await (let file of lockfileGlob.scan({ cwd: codebase, absolute: true, onlyFiles: true })) {
-      file = file.replaceAll('\\', '/');
-      const shouldIgnore = ignoreGlobs.some((glob) => glob.match(file));
-      if (!shouldIgnore) {
-        // Only mark Yarn Classic (v1) lockfiles
-        // Yarn Berry lockfiles have "__metadata:" section with version 8+
-        try {
-          const fileHandle = Bun.file(file);
-          const stream = fileHandle.stream();
-          const reader = stream.getReader();
-
-          // Read first ~500 bytes to check for Yarn Berry marker
-          const { value } = await reader.read();
-          let buffer = '';
-          if (value) {
-            buffer = new TextDecoder().decode(value.slice(0, 500));
-          }
-          reader.releaseLock();
-
-          // Skip Yarn Berry lockfiles (they have __metadata: section)
-          if (!buffer.includes('__metadata:')) {
-            this.markFile(file);
-          }
-        } catch {
-          // Skip files we can't read
+    for (const file of await scanFiles(codebase, "**/yarn.lock", options.ignore)) {
+      // Only mark Yarn Classic (v1) lockfiles
+      // Yarn Berry lockfiles have "__metadata:" section with version 8+
+      try {
+        const buffer = (await readTextFile(file)).slice(0, 500);
+        if (!buffer.includes("__metadata:")) {
+          this.markFile(file);
         }
+      } catch {
+        // Skip files we can't read
       }
     }
   },
@@ -61,25 +48,24 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     const { packageMap, relationshipsMap } = initializeExtractionMaps();
     const subprojects: Subproject[] = [];
 
-    const lockfileContent = (await Bun.file(file).text()).replaceAll('\r\n', '\n');
+    const lockfileContent = await readNormalizedTextFile(file);
     const lockfile = parseYarnLockfile(lockfileContent);
 
     // Read root package.json to determine workspace setup
-    const packageJsonPath = join(dir, 'package.json');
+    const packageJsonPath = join(dir, "package.json");
     const rootPackageInfo = await readPackageJson(packageJsonPath);
 
     // Collect workspace package.json files if this is a workspace root
     const workspacePackageJsonPaths: string[] = [];
-    const isWorkspaceRoot = rootPackageInfo?.workspaces && Array.isArray(rootPackageInfo.workspaces);
+    const isWorkspaceRoot =
+      rootPackageInfo?.workspaces && Array.isArray(rootPackageInfo.workspaces);
 
     if (isWorkspaceRoot && rootPackageInfo) {
       const workspacePatterns = rootPackageInfo.workspaces as string[];
       for (const pattern of workspacePatterns) {
         const pkgJsonPattern = `${pattern}/package.json`;
-        const pkgJsonGlob = new Glob(pkgJsonPattern);
-        for await (let pkgPath of pkgJsonGlob.scan({ cwd: dir, absolute: true })) {
-          pkgPath = pkgPath.replaceAll('\\', '/');
-          if (!pkgPath.includes('/node_modules/')) {
+        for (const pkgPath of await scanFiles(dir, pkgJsonPattern)) {
+          if (!pkgPath.includes("/node_modules/")) {
             workspacePackageJsonPaths.push(pkgPath);
           }
         }
@@ -104,7 +90,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
 
     const extractScopesFromPackageJson = (packageInfo: PackageJson): DependencyScope[] => {
       return extractNpmScopes(packageInfo as Record<string, unknown>, (depName, versionRange) => {
-        if (versionRange.startsWith('workspace:') || versionRange.startsWith('link:')) {
+        if (versionRange.startsWith("workspace:") || versionRange.startsWith("link:")) {
           return null;
         }
         const workspaceVersion = workspacePackages.get(depName);
@@ -186,7 +172,10 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
  * Process dependencies from a package entry and add relationships
  */
 function processDependencies(
-  packageEntry: { dependencies?: Record<string, string>; optionalDependencies?: Record<string, string> },
+  packageEntry: {
+    dependencies?: Record<string, string>;
+    optionalDependencies?: Record<string, string>;
+  },
   purl: string,
   lockfile: ReturnType<typeof parseYarnLockfile>,
   packageMap: Map<string, { purl: string; evidence: Set<string> }>,

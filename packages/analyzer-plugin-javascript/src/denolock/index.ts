@@ -7,22 +7,30 @@ import {
   type Extractor,
   filesExtractor,
   initializeExtractionMaps,
+  readNormalizedTextFile,
+  readTextFile,
   scanAndMarkFiles,
   type Subproject,
-} from '@scatool/analyzer-core/src/index.ts';
-import { PackageURL } from 'packageurl-js';
-import { dirname, join } from 'node:path/posix';
-import { type DenoLockfile, findLineNumber, parseDenoLockfile, parseJsrPackage, parseNpmPackage } from './lockfile.ts';
-import { createNpmPurl } from '../npm-utils.ts';
-import type { JavaScriptOptions } from '../options.ts';
-import { optionSchema } from '../options.ts';
+} from "@scatool/analyzer-core";
+import { PackageURL } from "packageurl-js";
+import { dirname, join } from "node:path/posix";
+import {
+  type DenoLockfile,
+  findLineNumber,
+  parseDenoLockfile,
+  parseJsrPackage,
+  parseNpmPackage,
+} from "./lockfile.ts";
+import { createNpmPurl } from "../npm-utils.ts";
+import type { JavaScriptOptions } from "../options.ts";
+import { optionSchema } from "../options.ts";
 
 export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScriptOptions>({
-  name: 'denolock',
+  name: "denolock",
   version: 1,
   optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: JavaScriptOptions) {
-    await scanAndMarkFiles(this, codebase, '**/deno.lock', options.ignore);
+    await scanAndMarkFiles(this, codebase, "**/deno.lock", options.ignore);
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
     const dir = dirname(file);
@@ -30,20 +38,20 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     const { packageMap, relationshipsMap } = initializeExtractionMaps();
     const subprojects: Subproject[] = [];
 
-    const lockfileContent = (await Bun.file(file).text()).replaceAll('\r\n', '\n');
+    const lockfileContent = await readNormalizedTextFile(file);
     const lockfile = parseDenoLockfile(lockfileContent);
 
     // Process workspace subproject if deno.json exists
-    const denoJsonPath = join(dir, 'deno.json');
-    const denoJsoncPath = join(dir, 'deno.jsonc');
+    const denoJsonPath = join(dir, "deno.json");
+    const denoJsoncPath = join(dir, "deno.jsonc");
 
     let denoConfigPath: string | null = null;
     try {
-      await Bun.file(denoJsonPath).text();
+      await readTextFile(denoJsonPath);
       denoConfigPath = denoJsonPath;
     } catch {
       try {
-        await Bun.file(denoJsoncPath).text();
+        await readTextFile(denoJsoncPath);
         denoConfigPath = denoJsoncPath;
       } catch {
         // No deno config file found
@@ -53,34 +61,34 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     // If we have a deno config, try to extract subproject info
     if (denoConfigPath) {
       try {
-        const denoConfigContent = await Bun.file(denoConfigPath).text();
+        const denoConfigContent = await readTextFile(denoConfigPath);
         const denoConfig = JSON.parse(denoConfigContent);
 
         // Extract name and version from deno.json if available
-        const name = denoConfig.name || 'deno-project';
-        const version = denoConfig.version || '0.0.0';
+        const name = denoConfig.name || "deno-project";
+        const version = denoConfig.version || "0.0.0";
 
         // Create PURL for the subproject (use generic type for Deno projects)
-        const purl = createPurl('generic', name, version);
+        const purl = createPurl("generic", name, version);
 
         // Extract dependency scopes
         const scopes: DependencyScope[] = [];
 
         // Process imports as dependencies
-        if (denoConfig.imports && typeof denoConfig.imports === 'object') {
+        if (denoConfig.imports && typeof denoConfig.imports === "object") {
           const dependencies: string[] = [];
 
           for (const [, specifier] of Object.entries(denoConfig.imports)) {
-            if (typeof specifier === 'string') {
+            if (typeof specifier === "string") {
               // Resolve specifier to actual package
               let depPurl: string | null = null;
 
-              if (specifier.startsWith('jsr:')) {
+              if (specifier.startsWith("jsr:")) {
                 const resolved = resolveJsrSpecifier(lockfile, specifier);
                 if (resolved) {
                   depPurl = createJsrPurl(resolved.scope, resolved.name, resolved.version);
                 }
-              } else if (specifier.startsWith('npm:')) {
+              } else if (specifier.startsWith("npm:")) {
                 const resolved = resolveNpmSpecifier(lockfile, specifier);
                 if (resolved) {
                   depPurl = createNpmPurl(resolved.name, resolved.version);
@@ -95,7 +103,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
 
           if (dependencies.length > 0) {
             scopes.push({
-              scope: 'dependencies',
+              scope: "dependencies",
               packages: dependencies,
             });
           }
@@ -131,10 +139,14 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
         // Process dependencies
         if (packageEntry.dependencies && Array.isArray(packageEntry.dependencies)) {
           for (const dep of packageEntry.dependencies) {
-            if (typeof dep === 'string') {
+            if (typeof dep === "string") {
               const depResolved = resolveJsrSpecifier(lockfile, dep);
               if (depResolved) {
-                const depPurl = createJsrPurl(depResolved.scope, depResolved.name, depResolved.version);
+                const depPurl = createJsrPurl(
+                  depResolved.scope,
+                  depResolved.name,
+                  depResolved.version,
+                );
                 addRelationship(relationshipsMap, purl, depPurl);
                 ensurePackageExists(packageMap, depPurl);
               }
@@ -162,9 +174,9 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
         }
 
         // Process dependencies
-        if (packageEntry.dependencies && typeof packageEntry.dependencies === 'object') {
+        if (packageEntry.dependencies && typeof packageEntry.dependencies === "object") {
           for (const [, depVersion] of Object.entries(packageEntry.dependencies)) {
-            if (typeof depVersion === 'string') {
+            if (typeof depVersion === "string") {
               const depParsed = parseNpmPackage(depVersion);
               if (depParsed) {
                 const depPurl = createNpmPurl(depParsed.name, depParsed.version);
@@ -203,7 +215,10 @@ function resolveJsrSpecifier(
 /**
  * Resolve an npm specifier to actual package info using the lockfile
  */
-function resolveNpmSpecifier(lockfile: DenoLockfile, specifier: string): { name: string; version: string } | null {
+function resolveNpmSpecifier(
+  lockfile: DenoLockfile,
+  specifier: string,
+): { name: string; version: string } | null {
   // First try to resolve from specifiers map
   if (lockfile.packages?.specifiers) {
     const resolved = lockfile.packages.specifiers[specifier];
@@ -223,7 +238,12 @@ function resolveNpmSpecifier(lockfile: DenoLockfile, specifier: string): { name:
  * @param version - The package version
  * @param namespace - Optional namespace for the package
  */
-function createPurl(type: string, name: string, version: string, namespace: string | null = null): string {
+function createPurl(
+  type: string,
+  name: string,
+  version: string,
+  namespace: string | null = null,
+): string {
   return new PackageURL(type, namespace, name, version, null, null).toString();
 }
 
@@ -232,6 +252,6 @@ function createPurl(type: string, name: string, version: string, namespace: stri
  */
 function createJsrPurl(scope: string, name: string, version: string): string {
   // JSR uses @scope/name format, so we use the scope as namespace (without @)
-  const namespace = scope.startsWith('@') ? scope.slice(1) : scope;
-  return createPurl('jsr', name, version, namespace);
+  const namespace = scope.startsWith("@") ? scope.slice(1) : scope;
+  return createPurl("jsr", name, version, namespace);
 }

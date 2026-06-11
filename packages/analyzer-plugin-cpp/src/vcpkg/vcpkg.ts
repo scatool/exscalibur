@@ -2,19 +2,26 @@ import {
   type AnalyzerResult,
   buildResult,
   errorResult,
+  findExecutable,
   initializeExtractionMaps,
   type MarkFileContext,
+  readNormalizedTextFile,
   scanAndMarkFiles,
   type Subproject,
-} from '@scatool/analyzer-core/src/index.ts';
-import type { VcpkgOptions, VcpkgTargetPlatform } from './options.ts';
-import { basename, dirname } from 'path/posix';
-import { resolve } from 'path';
-import type { VcpkgDependencyFeatureObject, VcpkgDependencyObject, VcpkgIdentifier, VcpkgPort } from './types.ts';
-import { matchesPlatform } from './platform.ts';
-import { createVcpkgPurl, retrieveVcpkgReferenceLineNumber } from './utils';
-import { retrievePortInfo } from './portInfo.ts';
-import { exists } from 'fs/promises';
+} from "@scatool/analyzer-core";
+import type { VcpkgOptions, VcpkgTargetPlatform } from "./options.ts";
+import { basename, dirname } from "path/posix";
+import { resolve } from "path";
+import type {
+  VcpkgDependencyFeatureObject,
+  VcpkgDependencyObject,
+  VcpkgIdentifier,
+  VcpkgPort,
+} from "./types.ts";
+import { matchesPlatform } from "./platform.ts";
+import { createVcpkgPurl, retrieveVcpkgReferenceLineNumber } from "./utils.ts";
+import { retrievePortInfo } from "./portInfo.ts";
+import { existsSync } from "node:fs";
 
 export type VcpkgPortInstance = {
   port: VcpkgPort;
@@ -57,16 +64,16 @@ type VcpkgPendingPort = {
 };
 
 export async function markFiles(this: MarkFileContext, codebase: string, options: VcpkgOptions) {
-  await scanAndMarkFiles(this, codebase, '**/vcpkg.json', options.ignore);
+  await scanAndMarkFiles(this, codebase, "**/vcpkg.json", options.ignore);
 }
 
 export async function extractFile(file: string, options: VcpkgOptions): Promise<AnalyzerResult> {
   // retrieve absolute path to ensure consistent behavior
   // note: using non-posix resolve is important here, because else on
   // Windows the following will happen: resolve('C:\\path') === '/Users/cwd/C:/path'
-  file = resolve(file).replaceAll('\\', '/');
+  file = resolve(file).replaceAll("\\", "/");
 
-  const vcpkgContent = (await Bun.file(file).text()).replaceAll('\r\n', '\n');
+  const vcpkgContent = await readNormalizedTextFile(file);
   const { packageMap, relationshipsMap } = initializeExtractionMaps();
 
   try {
@@ -74,10 +81,14 @@ export async function extractFile(file: string, options: VcpkgOptions): Promise<
     const vcpkgFileDir = dirname(file);
 
     // 1. Fetch dependencies
-    const { ports, rootPort, missingPorts } = await loadTransitiveDependencies(vcpkgJson, vcpkgFileDir, options);
+    const { ports, rootPort, missingPorts } = await loadTransitiveDependencies(
+      vcpkgJson,
+      vcpkgFileDir,
+      options,
+    );
     if (missingPorts.size > 0) {
       throw new Error(
-        `Failed to retrieve information for the following ports: ${[...missingPorts].join(', ')}. ` +
+        `Failed to retrieve information for the following ports: ${[...missingPorts].join(", ")}. ` +
           `Did you set up the vcpkg registry correctly by cloning a recent version of the whole vcpkg repository (no --depth when cloning)?`,
       );
     }
@@ -131,7 +142,11 @@ export async function extractFile(file: string, options: VcpkgOptions): Promise<
 /**
  * Extracts a subproject with its host and target dependencies
  */
-function extractSubproject(rootPort: VcpkgPortInstance, ports: VcpkgPortMap, vcpkgFilePath: string): Subproject {
+function extractSubproject(
+  rootPort: VcpkgPortInstance,
+  ports: VcpkgPortMap,
+  vcpkgFilePath: string,
+): Subproject {
   const firstLevelDeps = rootPort.dependencies
     .entries()
     .map(([depName, dep]) => ({ depInfo: ports.get(depName)!, host: dep.host }));
@@ -157,17 +172,17 @@ function extractSubproject(rootPort: VcpkgPortInstance, ports: VcpkgPortMap, vcp
     purl: createVcpkgPurl(
       // name is not required for non-library ports, so fall back to directory name
       rootPort.port.name ?? basename(dirname(vcpkgFilePath)),
-      portToVersion(rootPort.port) ?? 'unknown',
+      portToVersion(rootPort.port) ?? "unknown",
       true,
     ),
     definitionFile: vcpkgFilePath,
     scopes: [
       {
-        scope: 'target',
+        scope: "target",
         packages: targetDeps,
       },
       {
-        scope: 'host',
+        scope: "host",
         packages: hostDeps,
       },
     ],
@@ -180,7 +195,7 @@ function filterByPlatform(
   dependency: VcpkgIdentifier | VcpkgDependencyObject | VcpkgDependencyFeatureObject,
   targetPlatform?: VcpkgTargetPlatform,
 ): boolean {
-  if (typeof dependency === 'string') {
+  if (typeof dependency === "string") {
     // if dependency is a string, it applies to all platforms
     return true;
   }
@@ -205,14 +220,17 @@ function collectFeatureDependencies(
 
   if (port.port.features === undefined) {
     throw new Error(
-      `Port "${port.port.name}" does not have any features, but requested features are: ${Array.from(features).join(', ')}`,
+      `Port "${port.port.name}" does not have any features, but requested features are: ${Array.from(features).join(", ")}`,
     );
   }
 
   return Object.entries(port.port.features)
     .filter(([featureName]) => features.has(featureName))
     .flatMap(([, featureDef]) => {
-      if (featureDef.supports !== undefined && !matchesPlatform(featureDef.supports, targetPlatform)) {
+      if (
+        featureDef.supports !== undefined &&
+        !matchesPlatform(featureDef.supports, targetPlatform)
+      ) {
         // feature does not apply to the target platform, skip
         return [];
       }
@@ -221,41 +239,53 @@ function collectFeatureDependencies(
         featureDef.dependencies
           ?.filter((dep) => filterByPlatform(dep, targetPlatform))
           .map((dep) => {
-            const depName = typeof dep === 'string' ? dep : dep.name;
+            const depName = typeof dep === "string" ? dep : dep.name;
             const defaultFeatures =
-              typeof dep === 'string' || dep['default-features'] === undefined || dep['default-features'] === true;
-            const isHostDependency = typeof dep !== 'string' && dep.host === true;
+              typeof dep === "string" ||
+              dep["default-features"] === undefined ||
+              dep["default-features"] === true;
+            const isHostDependency = typeof dep !== "string" && dep.host === true;
             const depFeatures = new Set<string>();
 
-            if (typeof dep !== 'string' && dep.features) {
+            if (typeof dep !== "string" && dep.features) {
               // collect all features of this dependency that apply to the target platform
               for (const feat of dep.features) {
-                const featName = typeof feat === 'string' ? feat : feat.name;
+                const featName = typeof feat === "string" ? feat : feat.name;
                 if (filterByPlatform(feat, targetPlatform)) {
                   depFeatures.add(featName);
                 }
               }
             }
 
-            return { name: depName, features: depFeatures, defaultFeatures, isHostDependency } as VcpkgPendingPort;
+            return {
+              name: depName,
+              features: depFeatures,
+              defaultFeatures,
+              isHostDependency,
+            } as VcpkgPendingPort;
           }) ?? [];
 
       return featureDeps;
     });
 }
 
-function collectNonFeatureDependencies(port: VcpkgPortInstance, options: VcpkgOptions): VcpkgPendingPort[] {
+function collectNonFeatureDependencies(
+  port: VcpkgPortInstance,
+  options: VcpkgOptions,
+): VcpkgPendingPort[] {
   return (
     port.port.dependencies
       ?.filter((dep) => filterByPlatform(dep, options.targetPlatform))
       .map((dep) => {
-        const depName = typeof dep === 'string' ? dep : dep.name;
+        const depName = typeof dep === "string" ? dep : dep.name;
         const defaultFeatures =
-          typeof dep === 'string' || dep['default-features'] === undefined || dep['default-features'] === true;
-        const isHostDependency = typeof dep !== 'string' && dep.host === true;
+          typeof dep === "string" ||
+          dep["default-features"] === undefined ||
+          dep["default-features"] === true;
+        const isHostDependency = typeof dep !== "string" && dep.host === true;
         const features = new Set();
 
-        if (typeof dep !== 'string' && dep.features) {
+        if (typeof dep !== "string" && dep.features) {
           for (const feature of dep.features) {
             if (options.includeAllFeatures || filterByPlatform(feature, options.targetPlatform)) {
               // include feature
@@ -269,7 +299,9 @@ function collectNonFeatureDependencies(port: VcpkgPortInstance, options: VcpkgOp
   );
 }
 
-function createChangedPendingPortFilter(ports: VcpkgPortMap): (pending: VcpkgPendingPort) => boolean {
+function createChangedPendingPortFilter(
+  ports: VcpkgPortMap,
+): (pending: VcpkgPendingPort) => boolean {
   return (pending: VcpkgPendingPort) => {
     const portInfo = ports.get(pending.name);
 
@@ -324,9 +356,9 @@ export async function loadTransitiveDependencies(
   vcpkgFileDir: string,
   options: VcpkgOptions,
 ): Promise<{ rootPort: VcpkgPortInstance; ports: VcpkgPortMap; missingPorts: Set<string> }> {
-  const vcpkgPath = (await exists(options.vcpkgPath))
+  const vcpkgPath = existsSync(options.vcpkgPath)
     ? options.vcpkgPath
-    : Bun.which(options.vcpkgPath) || options.vcpkgPath;
+    : findExecutable(options.vcpkgPath) || options.vcpkgPath;
 
   const missingPorts = new Set<string>();
 
@@ -335,7 +367,7 @@ export async function loadTransitiveDependencies(
 
   // the root port is already loaded, this is necessary to avoid trying to fetch the root port via the vcpkg CLI
   // defaultFeatures is set to false here, as we still need to fetch the default features for this port
-  ports.set('[root]', {
+  ports.set("[root]", {
     port: rootPort,
     features: new Set<string>(),
     dependencies: new Map(),
@@ -351,7 +383,12 @@ export async function loadTransitiveDependencies(
   const pendingPorts: VcpkgPendingPort[] = [
     // request to fetch the default features and the dependencies (including feature-based dependencies) of the root port
     // also set `postFetchDependencies` to simulate that the root port was just fetched
-    { name: '[root]', features: new Set<string>(), defaultFeatures: true, postFetchDependencies: true },
+    {
+      name: "[root]",
+      features: new Set<string>(),
+      defaultFeatures: true,
+      postFetchDependencies: true,
+    },
   ];
 
   // create a filter to remove any unnecessary pending requests, this works because 'ports' is passed by reference
@@ -362,7 +399,9 @@ export async function loadTransitiveDependencies(
     const nextPendingPorts: VcpkgPendingPort[] = [];
 
     // 1. fetch not loaded ports
-    const portsToFetch = pendingPorts.filter((pending) => !ports.has(pending.name) && !missingPorts.has(pending.name));
+    const portsToFetch = pendingPorts.filter(
+      (pending) => !ports.has(pending.name) && !missingPorts.has(pending.name),
+    );
     if (portsToFetch.length > 0) {
       const portNamesToFetch = portsToFetch.map((pending) => pending.name);
       const fetchedPorts = await retrievePortInfo(portNamesToFetch, vcpkgFileDir, vcpkgPath);
@@ -402,7 +441,11 @@ export async function loadTransitiveDependencies(
           // if flag is set, we need to request all features for this port to be enabled
           // still we might need to filter the features by platform, as not all features might be active for the target platform
           const featuresToActivate = Object.entries(portInfo.port.features ?? {})
-            .filter(([, feat]) => feat.supports === undefined || matchesPlatform(feat.supports, options.targetPlatform))
+            .filter(
+              ([, feat]) =>
+                feat.supports === undefined ||
+                matchesPlatform(feat.supports, options.targetPlatform),
+            )
             .map(([featName]) => featName);
           featuresToActivate.forEach((feat) => pending.features.add(feat));
         }
@@ -413,18 +456,20 @@ export async function loadTransitiveDependencies(
       .filter((pending) => !missingPorts.has(pending.name))
       .forEach((pending) => {
         const portInfo = ports.get(pending.name)!;
-        const featuresToActivate: string[] = [...pending.features].filter((feature) => !portInfo.features.has(feature));
+        const featuresToActivate: string[] = [...pending.features].filter(
+          (feature) => !portInfo.features.has(feature),
+        );
 
         if (pending.defaultFeatures && !portInfo.defaultFeatures) {
           // default features should be enabled for this port, but are currently not, enable them
           portInfo.defaultFeatures = true;
           const defaultFeatures =
-            portInfo.port['default-features']
+            portInfo.port["default-features"]
               ?.filter((feat) => {
                 return options.includeAllFeatures || filterByPlatform(feat, options.targetPlatform);
               })
               .map((feat) => {
-                return typeof feat === 'string' ? feat : feat.name;
+                return typeof feat === "string" ? feat : feat.name;
               }) ?? [];
 
           featuresToActivate.push(...defaultFeatures);
@@ -446,13 +491,13 @@ export async function loadTransitiveDependencies(
     pendingPorts.splice(0, pendingPorts.length, ...nextPendingPorts);
   }
 
-  const rootPortRes = ports.get('[root]')!;
-  ports.delete('[root]');
+  const rootPortRes = ports.get("[root]")!;
+  ports.delete("[root]");
   return { rootPort: rootPortRes, ports, missingPorts };
 }
 
 export function portToVersion(port: VcpkgPort): string | undefined {
-  return port.version ?? port['version-date'] ?? port['version-semver'] ?? port['version-string'];
+  return port.version ?? port["version-date"] ?? port["version-semver"] ?? port["version-string"];
 }
 
 function portInstanceToPurl(portInfo: VcpkgPortInstance): string {

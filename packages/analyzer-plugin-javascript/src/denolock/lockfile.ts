@@ -31,9 +31,12 @@ export function parseDenoLockfile(content: string): DenoLockfile {
   try {
     return JSON.parse(content) as DenoLockfile;
   } catch (error) {
-    throw new Error(`Failed to parse Deno lockfile: ${error instanceof Error ? error.message : String(error)}`, {
-      cause: error,
-    });
+    throw new Error(
+      `Failed to parse Deno lockfile: ${error instanceof Error ? error.message : String(error)}`,
+      {
+        cause: error,
+      },
+    );
   }
 }
 
@@ -48,7 +51,7 @@ export function parseJsrPackage(identifier: string): {
   version: string;
 } | null {
   // Remove jsr: prefix if present
-  const cleanId = identifier.startsWith('jsr:') ? identifier.slice(4) : identifier;
+  const cleanId = identifier.startsWith("jsr:") ? identifier.slice(4) : identifier;
 
   // Match @scope/name@version
   const match = cleanId.match(/^(@[^/]+)\/([^@]+)@(.+)$/);
@@ -73,10 +76,10 @@ export function parseNpmPackage(identifier: string): {
   version: string;
 } | null {
   // Remove npm: prefix if present
-  const cleanId = identifier.startsWith('npm:') ? identifier.slice(4) : identifier;
+  const cleanId = identifier.startsWith("npm:") ? identifier.slice(4) : identifier;
 
   // Match name@version or @scope/name@version
-  const atIndex = cleanId.lastIndexOf('@');
+  const atIndex = cleanId.lastIndexOf("@");
   if (atIndex === -1 || atIndex === 0) {
     return null;
   }
@@ -95,7 +98,7 @@ export function parseNpmPackage(identifier: string): {
  * Find the line number of a string in content
  */
 export function findLineNumber(content: string, searchString: string): number | undefined {
-  const lines = content.split('\n');
+  const lines = content.split("\n");
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
     if (line && line.includes(searchString)) {

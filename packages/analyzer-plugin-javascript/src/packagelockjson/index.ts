@@ -9,8 +9,9 @@ import {
   ensurePackageExists,
   buildResult,
   initializeExtractionMaps,
-} from '@scatool/analyzer-core/src/index.ts';
-import { dirname, join } from 'node:path/posix';
+  readNormalizedTextFile,
+} from "@scatool/analyzer-core";
+import { dirname, join } from "node:path/posix";
 import {
   extractPackageName,
   findLineNumber,
@@ -19,23 +20,33 @@ import {
   parsePackageLock,
   type LockfileV1Dependency,
   type PackageLockPackage,
-} from './lockfile.ts';
-import type { PackageJson } from '../types.ts';
-import { createNpmPurl, extractNpmScopes, NPM_DEPENDENCY_SCOPES, readPackageJson } from '../npm-utils.ts';
-import type { JavaScriptOptions } from '../options.ts';
-import { optionSchema } from '../options.ts';
+} from "./lockfile.ts";
+import type { PackageJson } from "../types.ts";
+import {
+  createNpmPurl,
+  extractNpmScopes,
+  NPM_DEPENDENCY_SCOPES,
+  readPackageJson,
+} from "../npm-utils.ts";
+import type { JavaScriptOptions } from "../options.ts";
+import { optionSchema } from "../options.ts";
 
 export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScriptOptions>({
-  name: 'packagelockjson',
+  name: "packagelockjson",
   version: 1,
   optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: JavaScriptOptions) {
-    await scanAndMarkFiles(this, codebase, '**/{package-lock.json,npm-shrinkwrap.json}', options.ignore);
+    await scanAndMarkFiles(
+      this,
+      codebase,
+      "**/{package-lock.json,npm-shrinkwrap.json}",
+      options.ignore,
+    );
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
     const dir = dirname(file);
 
-    const lockfileContent = (await Bun.file(file).text()).replaceAll('\r\n', '\n');
+    const lockfileContent = await readNormalizedTextFile(file);
     const lockfile = parsePackageLock(lockfileContent);
 
     // Route to appropriate extraction logic based on lockfile version
@@ -51,7 +62,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
         issues: [
           {
             message: `Unsupported lockfileVersion ${lockfile.lockfileVersion}`,
-            severity: 'WARNING',
+            severity: "WARNING",
             file,
           },
         ],
@@ -77,7 +88,10 @@ async function extractFromV1Lockfile(
   }
 
   // Traverse the dependency tree and collect all packages
-  const traverseDependencies = (deps: Record<string, LockfileV1Dependency>, parentPath: string[] = []): void => {
+  const traverseDependencies = (
+    deps: Record<string, LockfileV1Dependency>,
+    parentPath: string[] = [],
+  ): void => {
     for (const [packageName, depEntry] of Object.entries(deps)) {
       const version = depEntry.version;
       const purl = createNpmPurl(packageName, version);
@@ -127,7 +141,7 @@ async function extractFromV1Lockfile(
   traverseDependencies(lockfile.dependencies);
 
   // Extract root package as subproject
-  const packageJsonPath = join(dir, 'package.json');
+  const packageJsonPath = join(dir, "package.json");
   const packageInfo = await readPackageJson(packageJsonPath);
   if (packageInfo?.name && packageInfo.version) {
     const rootPurl = createNpmPurl(packageInfo.name, packageInfo.version);
@@ -174,7 +188,7 @@ async function extractFromV2Lockfile(
 
   for (const [packagePath] of Object.entries(lockfile.packages)) {
     if (isWorkspacePath(packagePath)) {
-      const packageJsonPath = join(dir, packagePath, 'package.json');
+      const packageJsonPath = join(dir, packagePath, "package.json");
       const packageInfo = await readPackageJson(packageJsonPath);
       if (packageInfo?.name && packageInfo.version) {
         workspacePackages.set(packageInfo.name, {
@@ -186,9 +200,9 @@ async function extractFromV2Lockfile(
   }
 
   // Extract root package as subproject if it has name and version
-  const rootPackage = lockfile.packages[''];
+  const rootPackage = lockfile.packages[""];
   if (rootPackage) {
-    const packageJsonPath = join(dir, 'package.json');
+    const packageJsonPath = join(dir, "package.json");
     const rootPackageInfo = await readPackageJson(packageJsonPath);
     if (rootPackageInfo?.name && rootPackageInfo.version) {
       const rootPurl = createNpmPurl(rootPackageInfo.name, rootPackageInfo.version);
@@ -205,11 +219,16 @@ async function extractFromV2Lockfile(
   // Extract workspace packages as subprojects
   for (const [packagePath] of Object.entries(lockfile.packages)) {
     if (isWorkspacePath(packagePath)) {
-      const packageJsonPath = join(dir, packagePath, 'package.json');
+      const packageJsonPath = join(dir, packagePath, "package.json");
       const packageInfo = await readPackageJson(packageJsonPath);
       if (packageInfo?.name && packageInfo.version) {
         const purl = createNpmPurl(packageInfo.name, packageInfo.version);
-        const scopes = extractScopes(packageInfo, lockfile.packages, workspacePackages, packagePath);
+        const scopes = extractScopes(
+          packageInfo,
+          lockfile.packages,
+          workspacePackages,
+          packagePath,
+        );
 
         subprojects.push({
           purl,
@@ -223,7 +242,7 @@ async function extractFromV2Lockfile(
   // Process all packages (excluding root and workspaces) for packages and relationships
   for (const [packagePath, packageEntry] of Object.entries(lockfile.packages)) {
     // Skip root package
-    if (packagePath === '') continue;
+    if (packagePath === "") continue;
 
     // Skip workspace packages (they're subprojects, not regular packages)
     if (isWorkspacePath(packagePath)) continue;
@@ -266,7 +285,7 @@ function extractScopes(
   packageInfo: PackageJson,
   allPackages: Record<string, PackageLockPackage>,
   workspacePackages: Map<string, { version: string; path: string }>,
-  callerPath: string = '',
+  callerPath: string = "",
 ): DependencyScope[] {
   return extractNpmScopes(packageInfo as Record<string, unknown>, (depName) => {
     const workspaceInfo = workspacePackages.get(depName);
@@ -291,10 +310,10 @@ function processDependencies(
 ): void {
   for (const depType of NPM_DEPENDENCY_SCOPES) {
     const depsInScope = packageEntry[depType];
-    if (!depsInScope || typeof depsInScope !== 'object') continue;
+    if (!depsInScope || typeof depsInScope !== "object") continue;
 
     for (const [depName, versionRange] of Object.entries(depsInScope)) {
-      if (typeof versionRange !== 'string') continue;
+      if (typeof versionRange !== "string") continue;
 
       // Check if this is a workspace package
       const workspaceInfo = workspacePackages.get(depName);
@@ -356,7 +375,7 @@ function resolvePackageInfo(
 function buildResolutionCandidates(callerPath: string, depName: string): string[] {
   const candidates: string[] = [];
 
-  if (callerPath === '') {
+  if (callerPath === "") {
     candidates.push(`node_modules/${depName}`);
     return candidates;
   }
@@ -367,7 +386,7 @@ function buildResolutionCandidates(callerPath: string, depName: string): string[
   // Walk up by stripping the last /node_modules/<pkg> segment each time
   let current = callerPath;
   while (true) {
-    const idx = current.lastIndexOf('/node_modules/');
+    const idx = current.lastIndexOf("/node_modules/");
     if (idx === -1) {
       // Reached the top level - always fall back to hoisted node_modules
       candidates.push(`node_modules/${depName}`);

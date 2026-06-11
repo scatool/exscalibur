@@ -9,13 +9,19 @@ import {
   addPackageEvidence,
   buildResult,
   initializeExtractionMaps,
+  readTextFile,
+  runCommand,
   scanAndMarkFiles,
-} from '@scatool/analyzer-core/src/index.ts';
-import { PackageURL } from 'packageurl-js';
-import { dirname, join } from 'node:path/posix';
-import { existsSync } from 'node:fs';
-import type { GradleOptions } from './options.ts';
-import { optionSchema } from './options.ts';
+} from "@scatool/analyzer-core";
+import { PackageURL } from "packageurl-js";
+import { dirname, join } from "node:path/posix";
+import { dirname as pathDirname } from "node:path";
+import { fileURLToPath } from "node:url";
+import { existsSync } from "node:fs";
+import type { GradleOptions } from "./options.ts";
+import { optionSchema } from "./options.ts";
+
+const moduleDir = pathDirname(fileURLToPath(import.meta.url)).replaceAll("\\", "/");
 
 interface DependencyCoordinates {
   group: string;
@@ -49,26 +55,26 @@ interface ConfigurationGraph {
 type DependencyGraphOutput = ConfigurationGraph[];
 
 export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>({
-  name: 'gradle',
+  name: "gradle",
   version: 1,
   optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: GradleOptions) {
-    await scanAndMarkFiles(this, codebase, '**/build.gradle{,.kts}', options.ignore);
+    await scanAndMarkFiles(this, codebase, "**/build.gradle{,.kts}", options.ignore);
   },
   extractFile: async (file: string, options: GradleOptions): Promise<AnalyzerResult> => {
     const dir = dirname(file);
     const { packageMap, relationshipsMap } = initializeExtractionMaps();
     const subprojects: Subproject[] = [];
-    const issues: AnalyzerResult['issues'] = [];
+    const issues: AnalyzerResult["issues"] = [];
 
     try {
       // Determine the correct gradlew command for the platform
-      const isWindows = process.platform === 'win32';
-      const gradleWrapper = isWindows ? join(dir, 'gradlew.bat') : join(dir, 'gradlew');
+      const isWindows = process.platform === "win32";
+      const gradleWrapper = isWindows ? join(dir, "gradlew.bat") : join(dir, "gradlew");
       if (!existsSync(gradleWrapper)) {
         issues.push({
-          message: 'Gradle wrapper (gradlew) not found',
-          severity: 'ERROR',
+          message: "Gradle wrapper (gradlew) not found",
+          severity: "ERROR",
           file,
         });
 
@@ -80,23 +86,22 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
         };
       }
 
-      const projectInfoScriptPath = join(import.meta.dir, 'project-info.gradle');
-      const projectInfoCommand = [gradleWrapper, '-I', projectInfoScriptPath, '-q'];
+      const projectInfoScriptPath = join(moduleDir, "project-info.gradle");
+      const projectInfoCommand = [gradleWrapper, "-I", projectInfoScriptPath, "-q"];
 
       const env = { ...process.env };
       if (options.javaHome) {
         env.JAVA_HOME = options.javaHome;
       }
 
-      const projectInfoProc = Bun.spawn(projectInfoCommand, {
-        cwd: dir,
-        stdout: 'pipe',
-        stderr: 'inherit',
-        env,
-      });
-
-      const projectInfoOutput = await new Response(projectInfoProc.stdout).text();
-      const projectInfoExitCode = await projectInfoProc.exited;
+      const { stdout: projectInfoOutput, exitCode: projectInfoExitCode } = await runCommand(
+        projectInfoCommand,
+        {
+          cwd: dir,
+          stderr: "inherit",
+          env,
+        },
+      );
 
       // Parse project info (with fallback if it fails)
       interface ProjectInfo {
@@ -108,8 +113,8 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
       const projectInfoMap = new Map<string, ProjectInfo>();
       if (projectInfoExitCode === 0) {
         try {
-          const startMarker = '===PROJECT_INFO_START===';
-          const endMarker = '===PROJECT_INFO_END===';
+          const startMarker = "===PROJECT_INFO_START===";
+          const endMarker = "===PROJECT_INFO_END===";
 
           // Find all project info blocks (there can be multiple for multi-build projects like buildSrc)
           let searchPos = 0;
@@ -120,7 +125,9 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
             const endIndex = projectInfoOutput.indexOf(endMarker, startIndex);
             if (endIndex === -1) break;
 
-            const jsonStr = projectInfoOutput.substring(startIndex + startMarker.length, endIndex).trim();
+            const jsonStr = projectInfoOutput
+              .substring(startIndex + startMarker.length, endIndex)
+              .trim();
             const projectInfoData = JSON.parse(jsonStr) as Record<string, ProjectInfo>;
 
             for (const [path, info] of Object.entries(projectInfoData)) {
@@ -132,40 +139,38 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
         } catch (error) {
           issues.push({
             message: `Failed to parse project info: ${error instanceof Error ? error.message : String(error)}`,
-            severity: 'WARNING',
+            severity: "WARNING",
             file,
           });
         }
       } else {
         issues.push({
-          message: 'Failed to extract project metadata, using fallback values',
-          severity: 'WARNING',
+          message: "Failed to extract project metadata, using fallback values",
+          severity: "WARNING",
           file,
         });
       }
 
       const gradleCommand = [
         gradleWrapper,
-        '-I',
-        join(import.meta.dir, 'init.gradle'),
-        '--dependency-verification=off',
-        '--no-configuration-cache',
-        '--no-configure-on-demand',
-        ':ForceDependencyResolutionPlugin_resolveAllDependencies',
+        "-I",
+        join(moduleDir, "init.gradle"),
+        "--dependency-verification=off",
+        "--no-configuration-cache",
+        "--no-configure-on-demand",
+        ":ForceDependencyResolutionPlugin_resolveAllDependencies",
       ];
 
-      const proc = Bun.spawn(gradleCommand, {
+      const { exitCode } = await runCommand(gradleCommand, {
         cwd: dir,
-        stdout: 'inherit',
-        stderr: 'inherit',
+        stdout: "inherit",
+        stderr: "inherit",
         env,
       });
-
-      const exitCode = await proc.exited;
       if (exitCode !== 0) {
         issues.push({
           message: `Gradle dependency extraction failed with exit code ${exitCode}`,
-          severity: 'ERROR',
+          severity: "ERROR",
           file,
         });
 
@@ -178,13 +183,13 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
       }
 
       // Read the generated dependency graph file
-      const reportsDir = join(dir, 'build', 'reports', 'dependency-graph-snapshots');
-      const graphFile = join(reportsDir, 'dependency-graph.json');
+      const reportsDir = join(dir, "build", "reports", "dependency-graph-snapshots");
+      const graphFile = join(reportsDir, "dependency-graph.json");
 
       if (!existsSync(graphFile)) {
         issues.push({
-          message: 'dependency-graph.json not found',
-          severity: 'ERROR',
+          message: "dependency-graph.json not found",
+          severity: "ERROR",
           file,
         });
 
@@ -197,7 +202,7 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
       }
 
       // Parse the dependency graph
-      const graphContent = await Bun.file(graphFile).text();
+      const graphContent = await readTextFile(graphFile);
       const dependencyGraph: DependencyGraphOutput = JSON.parse(graphContent);
 
       // Note: We no longer use the dependency-resolution.json file
@@ -235,20 +240,21 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
             });
           } else {
             const originId = config.rootOrigin.id;
-            const projectName = originId.replace(/^(project|build)\s+/, '').replace(':', '') || 'root';
+            const projectName =
+              originId.replace(/^(project|build)\s+/, "").replace(":", "") || "root";
 
             projectMap.set(projectPath, {
               name: projectName,
-              group: '',
-              version: '',
+              group: "",
+              version: "",
               scopes: new Map(),
               directDeps: new Set(),
             });
 
-            if (!issues.some((i) => i.message.includes('using fallback values for project'))) {
+            if (!issues.some((i) => i.message.includes("using fallback values for project"))) {
               issues.push({
                 message: `Could not determine project metadata for '${projectPath}', using fallback values`,
-                severity: 'HINT',
+                severity: "HINT",
                 file,
               });
             }
@@ -268,9 +274,17 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
         // Process all dependencies in this configuration
         for (const dep of config.allDependencies) {
           // Normalize version: omit "unspecified" for internal projects
-          const version = dep.isProject && dep.coordinates.version === 'unspecified' ? '' : dep.coordinates.version;
+          const version =
+            dep.isProject && dep.coordinates.version === "unspecified"
+              ? ""
+              : dep.coordinates.version;
 
-          const depPurl = createMavenPurl(dep.coordinates.group, dep.coordinates.module, version, dep.repositoryUrl);
+          const depPurl = createMavenPurl(
+            dep.coordinates.group,
+            dep.coordinates.module,
+            version,
+            dep.repositoryUrl,
+          );
 
           // Only add external packages to package map (not internal projects)
           if (!dep.isProject) {
@@ -323,7 +337,7 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
         if (scopes.length > 0) {
           // Create a PURL for the project
           // Omit version if it's "unspecified" (Gradle's default when not set in build.gradle)
-          const projectVersion = project.version === 'unspecified' ? '' : project.version;
+          const projectVersion = project.version === "unspecified" ? "" : project.version;
           const projectPurl = createMavenPurl(project.group, project.name, projectVersion);
 
           subprojects.push({
@@ -336,7 +350,7 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
     } catch (error) {
       issues.push({
         message: `Failed to extract dependencies: ${error instanceof Error ? error.message : String(error)}`,
-        severity: 'ERROR',
+        severity: "ERROR",
         file,
       });
     }
@@ -348,15 +362,19 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
   },
 });
 
-const MAVEN_CENTRAL_URLS = ['https://repo.maven.apache.org/maven2', 'https://repo1.maven.org/maven2'] as const;
+const MAVEN_CENTRAL_URLS = [
+  "https://repo.maven.apache.org/maven2",
+  "https://repo1.maven.org/maven2",
+] as const;
 
 function createMavenPurl(group: string, name: string, version: string, repoUrl?: string): string {
   const namespace = group || null;
 
   const isMavenCentral =
-    MAVEN_CENTRAL_URLS.includes(repoUrl as (typeof MAVEN_CENTRAL_URLS)[number]) || repoUrl?.startsWith('file:'); // Local Maven cache (file: URLs are machine-specific)
+    MAVEN_CENTRAL_URLS.includes(repoUrl as (typeof MAVEN_CENTRAL_URLS)[number]) ||
+    repoUrl?.startsWith("file:"); // Local Maven cache (file: URLs are machine-specific)
 
   const qualifiers = !isMavenCentral && repoUrl ? { repository_url: repoUrl } : null;
 
-  return new PackageURL('maven', namespace, name, version, qualifiers, null).toString();
+  return new PackageURL("maven", namespace, name, version, qualifiers, null).toString();
 }

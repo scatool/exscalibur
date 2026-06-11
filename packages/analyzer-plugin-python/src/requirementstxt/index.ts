@@ -6,21 +6,22 @@ import {
   ensurePackageExists,
   buildResult,
   initializeExtractionMaps,
-} from '@scatool/analyzer-core/src/index.ts';
-import { createPypiPurl } from '../python-utils.ts';
-import type { PythonOptions } from '../options.ts';
-import { optionSchema } from '../options.ts';
+  readNormalizedTextFile,
+} from "@scatool/analyzer-core";
+import { createPypiPurl } from "../python-utils.ts";
+import type { PythonOptions } from "../options.ts";
+import { optionSchema } from "../options.ts";
 
 export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>({
-  name: 'requirementstxt',
+  name: "requirementstxt",
   version: 1,
   optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: PythonOptions) {
-    await scanAndMarkFiles(this, codebase, '**/requirements*.txt', options.ignore);
+    await scanAndMarkFiles(this, codebase, "**/requirements*.txt", options.ignore);
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
-    const content = (await Bun.file(file).text()).replaceAll('\r\n', '\n');
-    const lines = content.split('\n');
+    const content = await readNormalizedTextFile(file);
+    const lines = content.split("\n");
 
     const { packageMap, relationshipsMap } = initializeExtractionMaps();
 
@@ -32,10 +33,10 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
       const trimmed = line.trim();
 
       // Skip comments and empty lines
-      if (trimmed.startsWith('#') || trimmed === '') continue;
+      if (trimmed.startsWith("#") || trimmed === "") continue;
 
       // Skip options like -e, -r, --index-url, etc.
-      if (trimmed.startsWith('-')) continue;
+      if (trimmed.startsWith("-")) continue;
 
       // Parse dependency specification
       const dep = parseDependency(trimmed);
@@ -75,7 +76,7 @@ function parseDependency(line: string): ParsedDependency | null {
   if (!line) return null;
 
   // Remove inline comments
-  const commentIndex = line.indexOf('#');
+  const commentIndex = line.indexOf("#");
   if (commentIndex !== -1) {
     line = line.substring(0, commentIndex).trim();
   }
@@ -84,10 +85,10 @@ function parseDependency(line: string): ParsedDependency | null {
 
   // Skip URLs and VCS references
   if (
-    line.includes('git+') ||
-    line.includes('hg+') ||
-    line.includes('svn+') ||
-    line.includes('bzr+') ||
+    line.includes("git+") ||
+    line.includes("hg+") ||
+    line.includes("svn+") ||
+    line.includes("bzr+") ||
     /^https?:\/\//.test(line)
   ) {
     return null;
@@ -122,5 +123,5 @@ function parseDependency(line: string): ParsedDependency | null {
   }
 
   // No version specified
-  return { name, version: '0.0.0' };
+  return { name, version: "0.0.0" };
 }

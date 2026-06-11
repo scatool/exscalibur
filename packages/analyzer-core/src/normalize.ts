@@ -1,4 +1,4 @@
-import type { AnalyzerResult, IssueSeverity } from './types.ts';
+import type { AnalyzerResult, IssueSeverity } from "./types.ts";
 
 /**
  * Normalize and sort an AnalyzerResult for deterministic output.

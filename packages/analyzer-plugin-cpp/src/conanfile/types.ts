@@ -14,29 +14,29 @@ export interface Graph {
 }
 
 export type Recipe =
-  | 'Downloaded'
-  | 'Cache'
-  | 'Updated'
-  | 'Cache (Updated date)'
-  | 'Newer'
-  | 'Not in remote'
-  | 'Update available'
-  | 'Editable'
-  | 'Consumer'
-  | 'Cli'
-  | 'Platform';
+  | "Downloaded"
+  | "Cache"
+  | "Updated"
+  | "Cache (Updated date)"
+  | "Newer"
+  | "Not in remote"
+  | "Update available"
+  | "Editable"
+  | "Consumer"
+  | "Cli"
+  | "Platform";
 export type Binary =
-  | 'Cache'
-  | 'Download'
-  | 'Update'
-  | 'Build'
-  | 'Missing'
-  | 'Skip'
-  | 'Editable'
-  | 'EditableBuild'
-  | 'Invalid'
-  | 'Platform';
-export type Context = 'host' | 'build';
+  | "Cache"
+  | "Download"
+  | "Update"
+  | "Build"
+  | "Missing"
+  | "Skip"
+  | "Editable"
+  | "EditableBuild"
+  | "Invalid"
+  | "Platform";
+export type Context = "host" | "build";
 
 export interface Node {
   ref: string;

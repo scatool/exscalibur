@@ -8,58 +8,46 @@ import {
   ensurePackageExists,
   buildResult,
   initializeExtractionMaps,
-} from '@scatool/analyzer-core/src/index.ts';
-import { Glob } from 'bun';
-import { dirname, join } from 'node:path/posix';
+  readNormalizedTextFile,
+  readTextFile,
+  scanFiles,
+} from "@scatool/analyzer-core";
+import { dirname, join } from "node:path/posix";
 import {
   findLineNumber,
   parsePackagePattern,
   parseYarnBerryLockfile,
   resolvePackageVersion,
   type YarnBerryLockfile,
-} from './lockfile.ts';
-import { createNpmPurl, extractNpmScopes, NPM_DEPENDENCY_SCOPES, readPackageJson } from '../npm-utils.ts';
-import type { JavaScriptOptions } from '../options.ts';
-import { optionSchema } from '../options.ts';
+} from "./lockfile.ts";
+import {
+  createNpmPurl,
+  extractNpmScopes,
+  NPM_DEPENDENCY_SCOPES,
+  readPackageJson,
+} from "../npm-utils.ts";
+import type { JavaScriptOptions } from "../options.ts";
+import { optionSchema } from "../options.ts";
 
 export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScriptOptions>({
-  name: 'yarnberry',
+  name: "yarnberry",
   version: 1,
   optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: JavaScriptOptions) {
-    const ignorePatterns = options.ignore;
-    const ignoreGlobs = ignorePatterns.map((pattern) => new Glob(pattern));
+    for (const file of await scanFiles(codebase, "**/yarn.lock", options.ignore)) {
+      // Only mark Yarn Berry lockfiles (version 8+)
+      // Check the first few lines for __metadata: section
+      try {
+        const buffer = (await readTextFile(file)).slice(0, 500);
 
-    const lockfileGlob = new Glob('**/yarn.lock');
-    for await (let file of lockfileGlob.scan({ cwd: codebase, absolute: true, onlyFiles: true })) {
-      file = file.replaceAll('\\', '/');
-      const shouldIgnore = ignoreGlobs.some((glob) => glob.match(file));
-      if (!shouldIgnore) {
-        // Only mark Yarn Berry lockfiles (version 8+)
-        // Check the first few lines for __metadata: section
-        try {
-          const fileHandle = Bun.file(file);
-          const stream = fileHandle.stream();
-          const reader = stream.getReader();
-
-          let buffer = '';
-
-          // Read first ~500 bytes (should cover metadata section)
-          const { value } = await reader.read();
-          if (value) {
-            buffer = new TextDecoder().decode(value.slice(0, 500));
-          }
-          reader.releaseLock();
-
-          // Check for Yarn Berry markers
-          // Yarn Berry uses lockfile version 6+ (v2, v3, v4 all use different formats)
-          // We support v6 (Yarn v3/v4) and v8+ (Yarn v4+)
-          if (buffer.includes('__metadata:') && /version:\s+[6-9]\d*/.test(buffer)) {
-            this.markFile(file);
-          }
-        } catch {
-          // Skip files we can't read
+        // Check for Yarn Berry markers
+        // Yarn Berry uses lockfile version 6+ (v2, v3, v4 all use different formats)
+        // We support v6 (Yarn v3/v4) and v8+ (Yarn v4+)
+        if (buffer.includes("__metadata:") && /version:\s+[6-9]\d*/.test(buffer)) {
+          this.markFile(file);
         }
+      } catch {
+        // Skip files we can't read
       }
     }
   },
@@ -69,7 +57,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     const { packageMap, relationshipsMap } = initializeExtractionMaps();
     const subprojects: Subproject[] = [];
 
-    const lockfileContent = (await Bun.file(file).text()).replaceAll('\r\n', '\n');
+    const lockfileContent = await readNormalizedTextFile(file);
     const lockfile = parseYarnBerryLockfile(lockfileContent);
 
     // Find all workspace packages by looking for linkType: soft
@@ -78,9 +66,9 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
 
     for (const [pattern, pkg] of lockfile.packages.entries()) {
       // Check if this is a workspace package (linkType: soft)
-      if (pkg.linkType === 'soft') {
+      if (pkg.linkType === "soft") {
         const parsed = parsePackagePattern(pattern);
-        if (parsed && parsed.type === 'workspace') {
+        if (parsed && parsed.type === "workspace") {
           // This is the workspace: pattern - store the path
           workspacePatterns.set(parsed.name, parsed.versionOrPath);
         }
@@ -89,8 +77,8 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
 
     // Now read package.json files for all workspace packages
     for (const [name, path] of workspacePatterns.entries()) {
-      const workspaceDir = path === '.' ? dir : join(dir, path);
-      const packageJsonPath = join(workspaceDir, 'package.json');
+      const workspaceDir = path === "." ? dir : join(dir, path);
+      const packageJsonPath = join(workspaceDir, "package.json");
       const packageInfo = await readPackageJson(packageJsonPath);
       if (packageInfo?.version) {
         workspacePackages.set(name, {
@@ -107,8 +95,8 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
       const pkg = lockfile.packages.get(workspacePattern);
       if (!pkg) continue;
 
-      const workspaceDir = info.path === '.' ? dir : join(dir, info.path);
-      const packageJsonPath = join(workspaceDir, 'package.json');
+      const workspaceDir = info.path === "." ? dir : join(dir, info.path);
+      const packageJsonPath = join(workspaceDir, "package.json");
 
       // Create PURL for this subproject
       const purl = createNpmPurl(name, info.version);
@@ -121,13 +109,16 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
       const packageInfo = await readPackageJson(packageJsonPath);
       if (!packageInfo) continue;
 
-      const extractedScopes = extractNpmScopes(packageInfo as Record<string, unknown>, (depName, versionRange) => {
-        const workspaceVersion = workspacePackages.get(depName);
-        if (workspaceVersion) return createNpmPurl(depName, workspaceVersion.version);
-        const { actualName, actualRange } = parseAliasedDependency(depName, versionRange);
-        const resolvedVersion = resolvePackageVersion(lockfile, actualName, actualRange);
-        return resolvedVersion ? createNpmPurl(actualName, resolvedVersion) : null;
-      });
+      const extractedScopes = extractNpmScopes(
+        packageInfo as Record<string, unknown>,
+        (depName, versionRange) => {
+          const workspaceVersion = workspacePackages.get(depName);
+          if (workspaceVersion) return createNpmPurl(depName, workspaceVersion.version);
+          const { actualName, actualRange } = parseAliasedDependency(depName, versionRange);
+          const resolvedVersion = resolvePackageVersion(lockfile, actualName, actualRange);
+          return resolvedVersion ? createNpmPurl(actualName, resolvedVersion) : null;
+        },
+      );
       scopes.push(...extractedScopes);
 
       subprojects.push({
@@ -139,17 +130,20 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
 
     // If no workspace packages found, check if this is a single-package project
     if (subprojects.length === 0) {
-      const packageJsonPath = join(dir, 'package.json');
+      const packageJsonPath = join(dir, "package.json");
       const packageInfo = await readPackageJson(packageJsonPath);
 
       if (packageInfo?.name && packageInfo.version) {
         const purl = createNpmPurl(packageInfo.name, packageInfo.version);
 
-        const scopes = extractNpmScopes(packageInfo as Record<string, unknown>, (depName, versionRange) => {
-          const { actualName, actualRange } = parseAliasedDependency(depName, versionRange);
-          const resolvedVersion = resolvePackageVersion(lockfile, actualName, actualRange);
-          return resolvedVersion ? createNpmPurl(actualName, resolvedVersion) : null;
-        });
+        const scopes = extractNpmScopes(
+          packageInfo as Record<string, unknown>,
+          (depName, versionRange) => {
+            const { actualName, actualRange } = parseAliasedDependency(depName, versionRange);
+            const resolvedVersion = resolvePackageVersion(lockfile, actualName, actualRange);
+            return resolvedVersion ? createNpmPurl(actualName, resolvedVersion) : null;
+          },
+        );
 
         subprojects.push({
           purl,
@@ -169,11 +163,11 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
       // - patch/link/portal protocols (internal Yarn protocols)
       // - workspace version marker (0.0.0-use.local)
       if (
-        parsed.type === 'workspace' ||
-        parsed.type === 'patch' ||
-        parsed.type === 'link' ||
-        parsed.type === 'portal' ||
-        pkg.version === '0.0.0-use.local'
+        parsed.type === "workspace" ||
+        parsed.type === "patch" ||
+        parsed.type === "link" ||
+        parsed.type === "portal" ||
+        pkg.version === "0.0.0-use.local"
       ) {
         continue;
       }
@@ -213,7 +207,10 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
  * - parseAliasedDependency("react-old", "npm:react@^16.0.0") => { actualName: "react", actualRange: "^16.0.0" }
  * - parseAliasedDependency("lodash", "^4.17.21") => { actualName: "lodash", actualRange: "^4.17.21" }
  */
-function parseAliasedDependency(depName: string, versionRange: string): { actualName: string; actualRange: string } {
+function parseAliasedDependency(
+  depName: string,
+  versionRange: string,
+): { actualName: string; actualRange: string } {
   // Check for npm alias format: "npm:packageName@version"
   const aliasMatch = versionRange.match(/^npm:(.+?)@(.+)$/);
   if (aliasMatch && aliasMatch[1] && aliasMatch[2]) {
@@ -247,12 +244,12 @@ function processDependencies(
 ): void {
   for (const depType of NPM_DEPENDENCY_SCOPES) {
     const depsInScope = deps[depType];
-    if (depsInScope && typeof depsInScope === 'object') {
+    if (depsInScope && typeof depsInScope === "object") {
       for (const [depName, depRef] of Object.entries(depsInScope)) {
-        if (typeof depRef === 'string') {
+        if (typeof depRef === "string") {
           // Extract the version range from npm: prefix
           let versionRange = depRef;
-          if (versionRange.startsWith('npm:')) {
+          if (versionRange.startsWith("npm:")) {
             versionRange = versionRange.substring(4);
           }
 

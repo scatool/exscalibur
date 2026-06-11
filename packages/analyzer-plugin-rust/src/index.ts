@@ -1,1 +1,1 @@
-export { extractor as cargoLockExtractor } from './cargolock/index.ts';
+export { extractor as cargoLockExtractor } from "./cargolock/index.ts";

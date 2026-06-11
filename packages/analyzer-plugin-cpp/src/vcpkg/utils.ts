@@ -1,4 +1,4 @@
-import { PackageURL } from 'packageurl-js';
+import { PackageURL } from "packageurl-js";
 
 /**
  * Create a Package URL (PURL) for a Vcpkg package
@@ -14,10 +14,10 @@ export function createVcpkgPurl(name: string, version: string, local?: boolean):
 
   const qualifiers: Record<string, string> = {};
   if (local) {
-    qualifiers.local = 'true';
+    qualifiers.local = "true";
   }
 
-  return new PackageURL('vcpkg', null, normalizedName, version, qualifiers, null).toString();
+  return new PackageURL("vcpkg", null, normalizedName, version, qualifiers, null).toString();
 }
 
 /**
@@ -37,7 +37,7 @@ export function normalizeVcpkgName(name: string): string {
 export function retrieveVcpkgReferenceLineNumber(name: string, content: string): number[] {
   // for now, just search for the package name in quotes, e.g. "zlib"
   const target = `"${name}"`;
-  const lines = content.split('\n');
+  const lines = content.split("\n");
   return lines
     .map((line, index) => {
       // map lines to their index for later retrieval

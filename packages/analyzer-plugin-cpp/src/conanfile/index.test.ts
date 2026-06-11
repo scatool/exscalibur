@@ -1,9 +1,9 @@
-import { join } from 'node:path';
-import { createExtractorTests } from '@scatool/analyzer-test-utils';
-import { filesExtractor } from '@scatool/analyzer-core';
-import { type ConanOptions, optionsSchema } from './options.ts';
-import { extractFile, markFiles } from './conanfile.ts';
-import { PackageURL } from 'packageurl-js';
+import { join } from "node:path";
+import { createExtractorTests } from "@scatool/analyzer-test-utils";
+import { filesExtractor } from "@scatool/analyzer-core";
+import { type ConanOptions, optionsSchema } from "./options.ts";
+import { extractFile, markFiles } from "./conanfile.ts";
+import { PackageURL } from "packageurl-js";
 
 /*
  * NOTE: There are several challenges with providing a reproducible testsuite for conan
@@ -24,16 +24,16 @@ import { PackageURL } from 'packageurl-js';
  */
 const disableRRefs: boolean = false;
 
-const fixturesDir = join(import.meta.dir, '__fixtures__');
+const fixturesDir = join(import.meta.dirname, "__fixtures__");
 
 const extractorWrapper = filesExtractor<ConanOptions>({
-  name: 'conanfile-test-wrapper',
+  name: "conanfile-test-wrapper",
   version: 1,
   options: async () => {
     // override profile paths to ensure reproducible test results
     return {
-      profileBuild: join(fixturesDir, 'profile'),
-      profileHost: join(fixturesDir, 'profile'),
+      profileBuild: join(fixturesDir, "profile"),
+      profileHost: join(fixturesDir, "profile"),
     };
   },
   optionsSchema: optionsSchema,
@@ -42,13 +42,13 @@ const extractorWrapper = filesExtractor<ConanOptions>({
     const res = await extractFile(file, options);
 
     // remove warnings, as they are not stable and not relevant for the tests
-    res.issues = res.issues?.filter((issue) => issue.severity !== 'WARNING');
+    res.issues = res.issues?.filter((issue) => issue.severity !== "WARNING");
 
     if (disableRRefs) {
       const removeRRefFromPurl = (purlStr: string) => {
         const purl = PackageURL.fromString(purlStr);
         if (purl.qualifiers && purl.qualifiers.rrev) {
-          purl.qualifiers['rrev'] = '00000000000000000000000000000000';
+          purl.qualifiers["rrev"] = "00000000000000000000000000000000";
         }
         console.log(`Original purl: ${purlStr}, modified purl: ${purl.toString()}`);
         return purl.toString();
@@ -78,6 +78,6 @@ const extractorWrapper = filesExtractor<ConanOptions>({
 await createExtractorTests({
   extractor: extractorWrapper,
   fixturesDir,
-  pattern: '*/conanfile.{txt,py}',
+  pattern: "*/conanfile.{txt,py}",
   timeout: 30000, // transitive example can take a while to analyze
 });

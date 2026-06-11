@@ -1,4 +1,4 @@
-import { z } from 'zod';
+import type { z } from "zod";
 
 export type Package = {
   purl: string;
@@ -21,7 +21,7 @@ export type Relationship = {
   to: string[];
 };
 
-export type IssueSeverity = 'HINT' | 'WARNING' | 'ERROR';
+export type IssueSeverity = "HINT" | "WARNING" | "ERROR";
 
 export type Issue = {
   message: string;

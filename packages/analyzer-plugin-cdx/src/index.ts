@@ -2,24 +2,25 @@ import {
   type AnalyzerResult,
   type Extractor,
   filesExtractor,
+  readNormalizedTextFile,
   scanAndMarkFiles,
-} from '@scatool/analyzer-core/src/index.ts';
-import { PackageURL } from 'packageurl-js';
+} from "@scatool/analyzer-core";
+import { PackageURL } from "packageurl-js";
 
 export const extractor: Extractor = filesExtractor({
-  name: 'cyclonedx',
+  name: "cyclonedx",
   version: 1,
   markFiles: async function (codebase: string) {
-    await scanAndMarkFiles(this, codebase, '**/*.cdx.json', []);
+    await scanAndMarkFiles(this, codebase, "**/*.cdx.json", []);
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
-    const content = (await Bun.file(file).text()).replaceAll('\r\n', '\n');
+    const content = await readNormalizedTextFile(file);
     return extractCycloneDX(content, file);
   },
 });
 
 type CycloneDXComponent = {
-  'bom-ref'?: string;
+  "bom-ref"?: string;
   type?: string;
   name?: string;
   purl?: string;
@@ -50,7 +51,7 @@ export function extractCycloneDX(content: string, filePath?: string): AnalyzerRe
     const bom: CycloneDXBom = JSON.parse(content);
 
     // Verify it's a CycloneDX BOM
-    if (bom.bomFormat !== 'CycloneDX') {
+    if (bom.bomFormat !== "CycloneDX") {
       return {
         packages: [],
         subprojects: [],
@@ -58,8 +59,8 @@ export function extractCycloneDX(content: string, filePath?: string): AnalyzerRe
         issues: filePath
           ? [
               {
-                message: `Not a CycloneDX BOM (bomFormat: ${bom.bomFormat ?? 'missing'})`,
-                severity: 'WARNING',
+                message: `Not a CycloneDX BOM (bomFormat: ${bom.bomFormat ?? "missing"})`,
+                severity: "WARNING",
                 file: filePath,
               },
             ]
@@ -118,8 +119,8 @@ export function extractCycloneDX(content: string, filePath?: string): AnalyzerRe
         });
 
         // Map bom-ref to purl for dependency resolution
-        if (component['bom-ref']) {
-          bomRefToPurl.set(component['bom-ref'], validatedPurl);
+        if (component["bom-ref"]) {
+          bomRefToPurl.set(component["bom-ref"], validatedPurl);
         }
 
         // Process nested components
@@ -175,7 +176,7 @@ export function extractCycloneDX(content: string, filePath?: string): AnalyzerRe
         ? [
             {
               message: `Failed to parse CycloneDX BOM: ${error instanceof Error ? error.message : String(error)}`,
-              severity: 'ERROR',
+              severity: "ERROR",
               file: filePath,
             },
           ]

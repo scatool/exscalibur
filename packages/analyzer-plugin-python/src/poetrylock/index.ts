@@ -8,20 +8,22 @@ import {
   ensurePackageExists,
   buildResult,
   initializeExtractionMaps,
+  readNormalizedTextFile,
+  readTextFile,
   scanAndMarkFiles,
-} from '@scatool/analyzer-core/src/index.ts';
-import { basename, dirname, join } from 'node:path/posix';
-import { parse as parseToml } from 'smol-toml';
-import { createPypiPurl, findTomlPackageLineNumber, normalizePythonName } from '../python-utils.ts';
-import type { PythonOptions } from '../options.ts';
-import { optionSchema } from '../options.ts';
+} from "@scatool/analyzer-core";
+import { basename, dirname, join } from "node:path/posix";
+import { parse as parseToml } from "smol-toml";
+import { createPypiPurl, findTomlPackageLineNumber, normalizePythonName } from "../python-utils.ts";
+import type { PythonOptions } from "../options.ts";
+import { optionSchema } from "../options.ts";
 
 interface PoetryLock {
   package?: PackageEntry[];
   metadata?: {
-    'lock-version'?: string;
-    'python-versions'?: string;
-    'content-hash'?: string;
+    "lock-version"?: string;
+    "python-versions"?: string;
+    "content-hash"?: string;
   };
 }
 
@@ -31,7 +33,7 @@ interface PackageEntry {
   description?: string;
   category?: string;
   optional?: boolean;
-  'python-versions'?: string;
+  "python-versions"?: string;
   dependencies?: Record<string, string | DependencySpec>;
   extras?: Record<string, string[]>;
   source?: {
@@ -54,36 +56,36 @@ interface PyProjectToml {
       name?: string;
       version?: string;
       dependencies?: Record<string, string | DependencySpec>;
-      'dev-dependencies'?: Record<string, string | DependencySpec>;
+      "dev-dependencies"?: Record<string, string | DependencySpec>;
       group?: Record<string, { dependencies?: Record<string, string | DependencySpec> }>;
     };
   };
 }
 
 export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>({
-  name: 'poetrylock',
+  name: "poetrylock",
   version: 1,
   optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: PythonOptions) {
-    await scanAndMarkFiles(this, codebase, '**/poetry.lock', options.ignore);
+    await scanAndMarkFiles(this, codebase, "**/poetry.lock", options.ignore);
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
-    const content = (await Bun.file(file).text()).replaceAll('\r\n', '\n');
+    const content = await readNormalizedTextFile(file);
     const dir = dirname(file);
-    const lines = content.split('\n');
+    const lines = content.split("\n");
 
     const lockfile = parseToml(content) as PoetryLock;
     const { packageMap, relationshipsMap } = initializeExtractionMaps();
     const subprojects: Subproject[] = [];
 
     // Try to read pyproject.toml to get project info
-    const pyprojectPath = join(dir, 'pyproject.toml');
+    const pyprojectPath = join(dir, "pyproject.toml");
     let projectName: string | null = null;
-    let projectVersion = '0.0.0';
+    let projectVersion = "0.0.0";
     let pyprojectToml: PyProjectToml | null = null;
 
     try {
-      const pyprojectContent = await Bun.file(pyprojectPath).text();
+      const pyprojectContent = await readTextFile(pyprojectPath);
       pyprojectToml = parseToml(pyprojectContent) as PyProjectToml;
 
       if (pyprojectToml.tool?.poetry?.name) {
@@ -98,7 +100,7 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
 
     // Fallback to directory name if no project name found
     if (!projectName) {
-      projectName = basename(dir) || 'unknown';
+      projectName = basename(dir) || "unknown";
     }
 
     // Build a map of all packages with their resolved versions
@@ -110,7 +112,7 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
       for (const pkg of lockfile.package) {
         const normalizedName = normalizePythonName(pkg.name);
         packageVersionMap.set(normalizedName, pkg.version);
-        packageCategoryMap.set(normalizedName, pkg.category || 'main');
+        packageCategoryMap.set(normalizedName, pkg.category || "main");
 
         const purl = createPypiPurl(pkg.name, pkg.version);
         ensurePackageExists(packageMap, purl);
@@ -125,7 +127,7 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
         if (pkg.dependencies) {
           for (const depName of Object.keys(pkg.dependencies)) {
             // Skip python itself
-            if (depName.toLowerCase() === 'python') continue;
+            if (depName.toLowerCase() === "python") continue;
 
             const normalizedDepName = normalizePythonName(depName);
             const depVersion = packageVersionMap.get(normalizedDepName);
@@ -146,7 +148,7 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
       const packages: string[] = [];
       for (const name of Object.keys(pyprojectToml.tool.poetry.dependencies)) {
         // Skip python itself
-        if (name.toLowerCase() === 'python') continue;
+        if (name.toLowerCase() === "python") continue;
 
         const normalizedName = normalizePythonName(name);
         const version = packageVersionMap.get(normalizedName);
@@ -157,16 +159,16 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
 
       if (packages.length > 0) {
         scopes.push({
-          scope: 'dependencies',
+          scope: "dependencies",
           packages,
         });
       }
     }
 
     // Handle dev-dependencies (legacy format)
-    if (pyprojectToml?.tool?.poetry?.['dev-dependencies']) {
+    if (pyprojectToml?.tool?.poetry?.["dev-dependencies"]) {
       const packages: string[] = [];
-      for (const name of Object.keys(pyprojectToml.tool.poetry['dev-dependencies'])) {
+      for (const name of Object.keys(pyprojectToml.tool.poetry["dev-dependencies"])) {
         const normalizedName = normalizePythonName(name);
         const version = packageVersionMap.get(normalizedName);
         if (version) {
@@ -176,7 +178,7 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
 
       if (packages.length > 0) {
         scopes.push({
-          scope: 'dev-dependencies',
+          scope: "dev-dependencies",
           packages,
         });
       }
@@ -212,9 +214,9 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
 
       for (const pkg of lockfile.package) {
         const purl = createPypiPurl(pkg.name, pkg.version);
-        const category = pkg.category || 'main';
+        const category = pkg.category || "main";
 
-        if (category === 'dev') {
+        if (category === "dev") {
           devPackages.push(purl);
         } else {
           mainPackages.push(purl);
@@ -222,10 +224,10 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
       }
 
       if (mainPackages.length > 0) {
-        scopes.push({ scope: 'dependencies', packages: mainPackages });
+        scopes.push({ scope: "dependencies", packages: mainPackages });
       }
       if (devPackages.length > 0) {
-        scopes.push({ scope: 'dev-dependencies', packages: devPackages });
+        scopes.push({ scope: "dev-dependencies", packages: devPackages });
       }
     }
 

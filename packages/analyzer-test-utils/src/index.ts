@@ -1,10 +1,11 @@
-import type { Extractor } from '@scatool/analyzer-core';
-import { Glob } from 'bun';
-import { expect, test } from 'bun:test';
-import { dirname, join } from 'node:path/posix';
-import { validateResult } from './validate.ts';
+import { readNormalizedTextFile, scanFiles, type Extractor } from "@scatool/analyzer-core";
+import { expect, test } from "vitest";
+import { posix } from "node:path";
+import { validateResult } from "./validate.ts";
 
-export { validateResult } from './validate.ts';
+export { validateResult } from "./validate.ts";
+
+const { dirname, join } = posix;
 
 /**
  * Creates standardized tests for file content extraction functions.
@@ -20,7 +21,7 @@ export { validateResult } from './validate.ts';
  * import { createFileContentTests } from '@scatool/analyzer-test-utils';
  * import { join } from 'node:path/posix';
  *
- * const fixturesDir = join(import.meta.dir, '__fixtures__');
+ * const fixturesDir = join(import.meta.dirname, '__fixtures__');
  *
  * await createFileContentTests({
  *   extractFn: extractDockerfile,
@@ -32,7 +33,9 @@ export async function createFileContentTests(options: {
   extractFn: (
     content: string,
     filename: string,
-  ) => import('@scatool/analyzer-core').AnalyzerResult | Promise<import('@scatool/analyzer-core').AnalyzerResult>;
+  ) =>
+    | import("@scatool/analyzer-core").AnalyzerResult
+    | Promise<import("@scatool/analyzer-core").AnalyzerResult>;
   fixturesDir: string;
   pattern: string;
 }): Promise<void> {
@@ -43,7 +46,7 @@ export async function createFileContentTests(options: {
   for (const file of fixtureFiles) {
     test(file, async () => {
       const filePath = join(fixturesDir, file);
-      const content = (await Bun.file(filePath).text()).replaceAll('\r\n', '\n');
+      const content = await readNormalizedTextFile(filePath);
       const result = await extractFn(content, file);
       validateResult(result);
       expect(result).toMatchSnapshot();
@@ -67,12 +70,12 @@ export async function createFileContentTests(options: {
  * // Returns: ['basic', 'lockfile-v1', 'monorepo']
  */
 export async function scanFixtures(fixturesDir: string, pattern: string): Promise<string[]> {
-  const glob = new Glob(pattern);
   const fixtures = new Set<string>();
 
-  for await (const file of glob.scan({ cwd: fixturesDir })) {
+  for (const absoluteFile of await scanFiles(fixturesDir, pattern)) {
     // Extract directory name from path (e.g., "basic/bun.lock" -> "basic")
-    const dir = file.replaceAll('\\', '/').split('/')[0];
+    const file = absoluteFile.slice(fixturesDir.length + 1);
+    const dir = file.split("/")[0];
     if (dir) {
       fixtures.add(dir);
     }
@@ -95,12 +98,9 @@ export async function scanFixtures(fixturesDir: string, pattern: string): Promis
  * // Returns: ['Dockerfile.alpine', 'Dockerfile.multi-stage']
  */
 export async function scanFixtureFiles(fixturesDir: string, pattern: string): Promise<string[]> {
-  const glob = new Glob(pattern);
-  const files: string[] = [];
-
-  for await (const file of glob.scan({ cwd: fixturesDir })) {
-    files.push(file.replaceAll('\\', '/'));
-  }
+  const files = (await scanFiles(fixturesDir, pattern)).map((file) =>
+    file.slice(fixturesDir.length + 1),
+  );
 
   // Sort files alphabetically for consistent test ordering
   return files.sort((a, b) => a.localeCompare(b));
@@ -128,7 +128,7 @@ export async function scanFixtureFiles(fixturesDir: string, pattern: string): Pr
  * import { createExtractorTests } from '@scatool/analyzer-test-utils';
  * import { join } from 'node:path/posix';
  *
- * const fixturesDir = join(import.meta.dir, '__fixtures__');
+ * const fixturesDir = join(import.meta.dirname, '__fixtures__');
  *
  * createExtractorTests({
  *   extractor,
@@ -156,11 +156,20 @@ export async function createExtractorTests<Options>(options: {
   namePrefix?: string;
   options?: Partial<Options>;
 }): Promise<void> {
-  options.fixturesDir = options.fixturesDir.replaceAll('\\', '/');
-  const { extractor, fixturesDir, pattern, useFiles = false, extractDirectory = false, timeout } = options;
+  options.fixturesDir = options.fixturesDir.replaceAll("\\", "/");
+  const {
+    extractor,
+    fixturesDir,
+    pattern,
+    useFiles = false,
+    extractDirectory = false,
+    timeout,
+  } = options;
 
   // Scan for fixtures
-  let fixtures = useFiles ? await scanFixtureFiles(fixturesDir, pattern) : await scanFixtures(fixturesDir, pattern);
+  let fixtures = useFiles
+    ? await scanFixtureFiles(fixturesDir, pattern)
+    : await scanFixtures(fixturesDir, pattern);
 
   // Extract directory paths if needed (e.g., "npm/basic/file.json" -> "npm/basic")
   if (extractDirectory) {
@@ -177,7 +186,7 @@ export async function createExtractorTests<Options>(options: {
         validateResult(result);
         expect(result).toMatchSnapshot();
       },
-      timeout ? { timeout } : undefined,
+      timeout,
     );
   }
 }

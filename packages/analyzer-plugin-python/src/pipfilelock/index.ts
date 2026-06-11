@@ -8,11 +8,13 @@ import {
   ensurePackageExists,
   buildResult,
   initializeExtractionMaps,
-} from '@scatool/analyzer-core/src/index.ts';
-import { basename, dirname, join } from 'node:path/posix';
-import { createPypiPurl, normalizePythonName } from '../python-utils.ts';
-import type { PythonOptions } from '../options.ts';
-import { optionSchema } from '../options.ts';
+  readNormalizedTextFile,
+  readTextFile,
+} from "@scatool/analyzer-core";
+import { basename, dirname, join } from "node:path/posix";
+import { createPypiPurl, normalizePythonName } from "../python-utils.ts";
+import type { PythonOptions } from "../options.ts";
+import { optionSchema } from "../options.ts";
 
 interface PipfileLock {
   _meta?: {
@@ -32,16 +34,16 @@ interface PackageEntry {
 }
 
 export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>({
-  name: 'pipfilelock',
+  name: "pipfilelock",
   version: 1,
   optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: PythonOptions) {
-    await scanAndMarkFiles(this, codebase, '**/Pipfile.lock', options.ignore);
+    await scanAndMarkFiles(this, codebase, "**/Pipfile.lock", options.ignore);
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
-    const content = (await Bun.file(file).text()).replaceAll('\r\n', '\n');
+    const content = await readNormalizedTextFile(file);
     const dir = dirname(file);
-    const lines = content.split('\n');
+    const lines = content.split("\n");
 
     const lockfile = JSON.parse(content) as PipfileLock;
 
@@ -49,12 +51,12 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
     const subprojects: Subproject[] = [];
 
     // Try to read Pipfile to get project name and version
-    const pipfilePath = join(dir, 'Pipfile');
+    const pipfilePath = join(dir, "Pipfile");
     let projectName: string | null = null;
-    const projectVersion = '0.0.0';
+    const projectVersion = "0.0.0";
 
     try {
-      const pipfileContent = await Bun.file(pipfilePath).text();
+      const pipfileContent = await readTextFile(pipfilePath);
       // Try to extract project name from Pipfile (if it exists)
       // Pipfile doesn't have a standard way to specify project name,
       // so we'll use the directory name as fallback
@@ -68,7 +70,7 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
 
     // If no project name found, use directory name
     if (!projectName) {
-      projectName = basename(dir) || 'unknown';
+      projectName = basename(dir) || "unknown";
     }
 
     // Build a map of all packages with their resolved versions
@@ -81,7 +83,7 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
         if (!entry.version) continue;
         const normalizedName = normalizePythonName(name);
         // Remove leading == from version
-        const version = entry.version.startsWith('==') ? entry.version.substring(2) : entry.version;
+        const version = entry.version.startsWith("==") ? entry.version.substring(2) : entry.version;
         packageVersionMap.set(normalizedName, version);
 
         const purl = createPypiPurl(name, version);
@@ -101,7 +103,7 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
         // Skip editable/path/git dependencies without a version
         if (!entry.version) continue;
         const normalizedName = normalizePythonName(name);
-        const version = entry.version.startsWith('==') ? entry.version.substring(2) : entry.version;
+        const version = entry.version.startsWith("==") ? entry.version.substring(2) : entry.version;
         packageVersionMap.set(normalizedName, version);
 
         const purl = createPypiPurl(name, version);
@@ -126,7 +128,7 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
         });
       if (packages.length > 0) {
         scopes.push({
-          scope: 'dependencies',
+          scope: "dependencies",
           packages,
         });
       }
@@ -141,7 +143,7 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
         });
       if (packages.length > 0) {
         scopes.push({
-          scope: 'dev-dependencies',
+          scope: "dev-dependencies",
           packages,
         });
       }

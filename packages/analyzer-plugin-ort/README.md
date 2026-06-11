@@ -11,7 +11,7 @@ None.
 ## Usage
 
 ```typescript
-import { ortExtractor } from '@scatool/analyzer-plugin-ort';
+import { ortExtractor } from "@scatool/analyzer-plugin-ort";
 
-const result = await ortExtractor.extract('/path/to/codebase');
+const result = await ortExtractor.extract("/path/to/codebase");
 ```

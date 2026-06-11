@@ -9,9 +9,11 @@ import {
   addPackageEvidence,
   buildResult,
   initializeExtractionMaps,
+  readNormalizedTextFile,
+  readTextFile,
   scanAndMarkFiles,
-} from '@scatool/analyzer-core/src/index.ts';
-import { dirname, join } from 'node:path/posix';
+} from "@scatool/analyzer-core";
+import { dirname, join } from "node:path/posix";
 import {
   findLineNumber,
   isWorkspacePackage,
@@ -19,17 +21,17 @@ import {
   parseCargoToml,
   parseDependency,
   type CargoLockPackage,
-} from './lockfile.ts';
-import { createCargoPurl } from '../cargo-utils.ts';
-import type { RustOptions } from '../options.ts';
-import { optionSchema } from '../options.ts';
+} from "./lockfile.ts";
+import { createCargoPurl } from "../cargo-utils.ts";
+import type { RustOptions } from "../options.ts";
+import { optionSchema } from "../options.ts";
 
 export const extractor: Extractor<RustOptions> = filesExtractor<RustOptions>({
-  name: 'cargolock',
+  name: "cargolock",
   version: 1,
   optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: RustOptions) {
-    await scanAndMarkFiles(this, codebase, '**/Cargo.lock', options.ignore);
+    await scanAndMarkFiles(this, codebase, "**/Cargo.lock", options.ignore);
   },
   extractFile: async (file: string): Promise<AnalyzerResult> => {
     const dir = dirname(file);
@@ -37,7 +39,7 @@ export const extractor: Extractor<RustOptions> = filesExtractor<RustOptions>({
     const { packageMap, relationshipsMap } = initializeExtractionMaps();
     const subprojects: Subproject[] = [];
 
-    const lockfileContent = (await Bun.file(file).text()).replaceAll('\r\n', '\n');
+    const lockfileContent = await readNormalizedTextFile(file);
     const lockfile = parseCargoLockfile(lockfileContent);
 
     // Build a map of package names to their packages (for resolving dependencies)
@@ -53,13 +55,13 @@ export const extractor: Extractor<RustOptions> = filesExtractor<RustOptions>({
     }
 
     // Determine workspace members by checking Cargo.toml
-    const cargoTomlPath = join(dir, 'Cargo.toml');
+    const cargoTomlPath = join(dir, "Cargo.toml");
     let workspaceMembers: string[] = [];
     let rootPackageName: string | undefined;
     let rootPackageVersion: string | undefined;
 
     try {
-      const cargoTomlContent = await Bun.file(cargoTomlPath).text();
+      const cargoTomlContent = await readTextFile(cargoTomlPath);
       const cargoToml = parseCargoToml(cargoTomlContent);
 
       if (cargoToml.workspace?.members) {
@@ -86,18 +88,23 @@ export const extractor: Extractor<RustOptions> = filesExtractor<RustOptions>({
     if (workspaceMembers.length > 0) {
       for (const member of workspaceMembers) {
         const memberDir = join(dir, member);
-        const memberCargoTomlPath = join(memberDir, 'Cargo.toml');
+        const memberCargoTomlPath = join(memberDir, "Cargo.toml");
 
         try {
-          const memberCargoTomlContent = await Bun.file(memberCargoTomlPath).text();
+          const memberCargoTomlContent = await readTextFile(memberCargoTomlPath);
           const memberCargoToml = parseCargoToml(memberCargoTomlContent);
 
           if (memberCargoToml.package?.name && memberCargoToml.package?.version) {
-            const purl = createCargoPurl(memberCargoToml.package.name, memberCargoToml.package.version);
+            const purl = createCargoPurl(
+              memberCargoToml.package.name,
+              memberCargoToml.package.version,
+            );
 
             // Find this package in the lockfile to get its dependencies
             const pkg = (lockfile.package || []).find(
-              (p) => p.name === memberCargoToml.package!.name && p.version === memberCargoToml.package!.version,
+              (p) =>
+                p.name === memberCargoToml.package!.name &&
+                p.version === memberCargoToml.package!.version,
             );
 
             const scopes = extractScopes(pkg, packagesByName);
@@ -118,7 +125,9 @@ export const extractor: Extractor<RustOptions> = filesExtractor<RustOptions>({
       const purl = createCargoPurl(rootPackageName, rootPackageVersion);
 
       // Find this package in the lockfile to get its dependencies
-      const pkg = (lockfile.package || []).find((p) => p.name === rootPackageName && p.version === rootPackageVersion);
+      const pkg = (lockfile.package || []).find(
+        (p) => p.name === rootPackageName && p.version === rootPackageVersion,
+      );
 
       const scopes = extractScopes(pkg, packagesByName);
 
@@ -238,7 +247,7 @@ function extractScopes(
 
   return [
     {
-      scope: 'dependencies',
+      scope: "dependencies",
       packages: [...scopePackages],
     },
   ];

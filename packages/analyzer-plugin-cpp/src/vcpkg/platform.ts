@@ -1,4 +1,4 @@
-import type { VcpkgTargetPlatform } from './options';
+import type { VcpkgTargetPlatform } from "./options.ts";
 
 /**
  * Parses and evaluates a platform expression against a given target platform as specified in
@@ -8,7 +8,10 @@ import type { VcpkgTargetPlatform } from './options';
  * @param targetPlatform the target platform to evaluate against
  * @return true if the platform expression matches the target platform, false otherwise
  */
-export function matchesPlatform(platformExpression: string, targetPlatform?: VcpkgTargetPlatform): boolean {
+export function matchesPlatform(
+  platformExpression: string,
+  targetPlatform?: VcpkgTargetPlatform,
+): boolean {
   if (targetPlatform === undefined) {
     return true;
   }
@@ -46,12 +49,12 @@ function createParser(expression: string, targetPlatform: VcpkgTargetPlatform) {
     let value = parseAnd();
     while (true) {
       skipWhitespace();
-      if (matchChar('|') || matchChar(',')) {
+      if (matchChar("|") || matchChar(",")) {
         const rhs = parseAnd();
         value = value || rhs;
         continue;
       }
-      if (peekIdentifier() === 'or') {
+      if (peekIdentifier() === "or") {
         throw error("Reserved keyword 'or' is not a valid operator");
       }
       break;
@@ -63,12 +66,12 @@ function createParser(expression: string, targetPlatform: VcpkgTargetPlatform) {
     let value = parseUnary();
     while (true) {
       skipWhitespace();
-      if (matchChar('&')) {
+      if (matchChar("&")) {
         const rhs = parseUnary();
         value = value && rhs;
         continue;
       }
-      if (matchKeyword('and')) {
+      if (matchKeyword("and")) {
         const rhs = parseUnary();
         value = value && rhs;
         continue;
@@ -80,7 +83,7 @@ function createParser(expression: string, targetPlatform: VcpkgTargetPlatform) {
 
   function parseUnary(): boolean {
     skipWhitespace();
-    if (matchChar('!') || matchKeyword('not')) {
+    if (matchChar("!") || matchKeyword("not")) {
       return !parseUnary();
     }
     return parsePrimary();
@@ -88,25 +91,25 @@ function createParser(expression: string, targetPlatform: VcpkgTargetPlatform) {
 
   function parsePrimary(): boolean {
     skipWhitespace();
-    if (matchChar('(')) {
+    if (matchChar("(")) {
       const value = parseExpression();
       skipWhitespace();
-      if (!matchChar(')')) {
-        throw error('Expected )');
+      if (!matchChar(")")) {
+        throw error("Expected )");
       }
       return value;
     }
 
     if (isAtEnd()) {
-      throw error('Unexpected end of expression');
+      throw error("Unexpected end of expression");
     }
 
-    if (isIdentifierChar(expression[index] || '')) {
+    if (isIdentifierChar(expression[index] || "")) {
       const identifier = consumeIdentifier();
-      if (identifier === 'or') {
+      if (identifier === "or") {
         throw error("Reserved keyword 'or' is not a valid operator");
       }
-      if (identifier === 'and' || identifier === 'not') {
+      if (identifier === "and" || identifier === "not") {
         throw error(`Unexpected keyword '${identifier}'`);
       }
       return evaluateIdentifier(identifier, targetPlatform);
@@ -135,11 +138,11 @@ function createParser(expression: string, targetPlatform: VcpkgTargetPlatform) {
 
   function peekIdentifier(): string | null {
     skipWhitespace();
-    if (isAtEnd() || !isIdentifierChar(expression[index] || '')) {
+    if (isAtEnd() || !isIdentifierChar(expression[index] || "")) {
       return null;
     }
     let cursor = index;
-    while (cursor < expression.length && isIdentifierChar(expression[cursor] || '')) {
+    while (cursor < expression.length && isIdentifierChar(expression[cursor] || "")) {
       cursor += 1;
     }
     return expression.slice(index, cursor).toLowerCase();
@@ -147,11 +150,11 @@ function createParser(expression: string, targetPlatform: VcpkgTargetPlatform) {
 
   function consumeIdentifier(): string {
     skipWhitespace();
-    if (isAtEnd() || !isIdentifierChar(expression[index] || '')) {
-      throw error('Expected identifier');
+    if (isAtEnd() || !isIdentifierChar(expression[index] || "")) {
+      throw error("Expected identifier");
     }
     const start = index;
-    while (index < expression.length && isIdentifierChar(expression[index] || '')) {
+    while (index < expression.length && isIdentifierChar(expression[index] || "")) {
       index += 1;
     }
     return expression.slice(start, index).toLowerCase();
@@ -160,7 +163,7 @@ function createParser(expression: string, targetPlatform: VcpkgTargetPlatform) {
   function skipWhitespace(): void {
     while (index < expression.length) {
       const char = expression[index];
-      if (char === ' ' || char === '\t' || char === '\n' || char === '\r') {
+      if (char === " " || char === "\t" || char === "\n" || char === "\r") {
         index += 1;
       } else {
         break;
@@ -194,48 +197,50 @@ function evaluateIdentifier(identifier: string, targetPlatform: VcpkgTargetPlatf
   const cmakeSystemName = targetPlatform.cmakeSystemName;
 
   switch (identifier) {
-    case 'x64':
-    case 'x86':
-    case 'arm64':
-    case 'arm64ec':
-    case 'wasm32':
-    case 'mips64':
+    case "x64":
+    case "x86":
+    case "arm64":
+    case "arm64ec":
+    case "wasm32":
+    case "mips64":
       return architecture === identifier;
-    case 'arm':
-      return architecture === 'arm' || architecture === 'arm64';
-    case 'arm32':
-      return architecture === 'arm';
-    case 'windows':
-      return cmakeSystemName === '' || cmakeSystemName === 'WindowsStore' || cmakeSystemName === 'MinGW';
-    case 'mingw':
-      return cmakeSystemName === 'MinGW';
-    case 'uwp':
-      return cmakeSystemName === 'WindowsStore';
-    case 'xbox':
-      return cmakeSystemName === '' && Boolean(targetPlatform.xboxConsoleTarget);
-    case 'linux':
-      return cmakeSystemName === 'Linux';
-    case 'osx':
-      return cmakeSystemName === 'Darwin';
-    case 'ios':
-      return cmakeSystemName === 'iOS';
-    case 'freebsd':
-      return cmakeSystemName === 'FreeBSD';
-    case 'openbsd':
-      return cmakeSystemName === 'OpenBSD';
-    case 'android':
-      return cmakeSystemName === 'Android';
-    case 'emscripten':
-      return cmakeSystemName === 'Emscripten';
-    case 'qnx':
-      return cmakeSystemName === 'QNX';
-    case 'vxworks':
-      return cmakeSystemName === 'VxWorks';
-    case 'static':
-      return targetPlatform.libraryLinkage === 'static';
-    case 'staticcrt':
-      return targetPlatform.crtLinkage === 'static';
-    case 'native':
+    case "arm":
+      return architecture === "arm" || architecture === "arm64";
+    case "arm32":
+      return architecture === "arm";
+    case "windows":
+      return (
+        cmakeSystemName === "" || cmakeSystemName === "WindowsStore" || cmakeSystemName === "MinGW"
+      );
+    case "mingw":
+      return cmakeSystemName === "MinGW";
+    case "uwp":
+      return cmakeSystemName === "WindowsStore";
+    case "xbox":
+      return cmakeSystemName === "" && Boolean(targetPlatform.xboxConsoleTarget);
+    case "linux":
+      return cmakeSystemName === "Linux";
+    case "osx":
+      return cmakeSystemName === "Darwin";
+    case "ios":
+      return cmakeSystemName === "iOS";
+    case "freebsd":
+      return cmakeSystemName === "FreeBSD";
+    case "openbsd":
+      return cmakeSystemName === "OpenBSD";
+    case "android":
+      return cmakeSystemName === "Android";
+    case "emscripten":
+      return cmakeSystemName === "Emscripten";
+    case "qnx":
+      return cmakeSystemName === "QNX";
+    case "vxworks":
+      return cmakeSystemName === "VxWorks";
+    case "static":
+      return targetPlatform.libraryLinkage === "static";
+    case "staticcrt":
+      return targetPlatform.crtLinkage === "static";
+    case "native":
       return targetPlatform.isNative === true;
     default:
       return false;

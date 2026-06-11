@@ -47,7 +47,7 @@ interface YarnLockfile {
  */
 export function parseYarnLockfile(content: string): YarnLockfile {
   const packages = new Map<string, YarnLockPackage>();
-  const lines = content.split('\n');
+  const lines = content.split("\n");
 
   let i = 0;
   while (i < lines.length) {
@@ -89,7 +89,7 @@ function parsePackageEntry(
   nextIndex: number;
 } {
   const packageEntry: YarnLockPackage = {
-    version: '',
+    version: "",
   };
 
   // Parse the header line(s) to extract package patterns
@@ -104,9 +104,9 @@ function parsePackageEntry(
     // If this line starts with non-whitespace and contains @, it's part of the header
     if (line.match(/^[^#\s].*@/)) {
       // Remove trailing colon and split by comma
-      const cleanLine = line.replace(/:$/, '').trim();
+      const cleanLine = line.replace(/:$/, "").trim();
       const parts = cleanLine
-        .split(',')
+        .split(",")
         .map((p) => {
           // Remove quotes if present
           let cleaned = p.trim();
@@ -127,13 +127,13 @@ function parsePackageEntry(
   }
 
   // Now parse the indented properties
-  let currentDepsType: 'dependencies' | 'optionalDependencies' | null = null;
+  let currentDepsType: "dependencies" | "optionalDependencies" | null = null;
 
   while (i < lines.length) {
     const line = lines[i];
 
     // Empty line - continue
-    if (!line || line.trim() === '') {
+    if (!line || line.trim() === "") {
       i++;
       continue;
     }
@@ -150,17 +150,17 @@ function parsePackageEntry(
     if (indentLevel === 2) {
       currentDepsType = null;
 
-      if (trimmed.startsWith('version ')) {
-        packageEntry.version = trimmed.match(/version "(.+)"/)?.[1] || '';
-      } else if (trimmed.startsWith('resolved ')) {
-        packageEntry.resolved = trimmed.match(/resolved "(.+)"/)?.[1] || '';
-      } else if (trimmed.startsWith('integrity ')) {
-        packageEntry.integrity = trimmed.match(/integrity (.+)/)?.[1] || '';
-      } else if (trimmed === 'dependencies:') {
-        currentDepsType = 'dependencies';
+      if (trimmed.startsWith("version ")) {
+        packageEntry.version = trimmed.match(/version "(.+)"/)?.[1] || "";
+      } else if (trimmed.startsWith("resolved ")) {
+        packageEntry.resolved = trimmed.match(/resolved "(.+)"/)?.[1] || "";
+      } else if (trimmed.startsWith("integrity ")) {
+        packageEntry.integrity = trimmed.match(/integrity (.+)/)?.[1] || "";
+      } else if (trimmed === "dependencies:") {
+        currentDepsType = "dependencies";
         packageEntry.dependencies = {};
-      } else if (trimmed === 'optionalDependencies:') {
-        currentDepsType = 'optionalDependencies';
+      } else if (trimmed === "optionalDependencies:") {
+        currentDepsType = "optionalDependencies";
         packageEntry.optionalDependencies = {};
       }
     }
@@ -187,10 +187,12 @@ function parsePackageEntry(
  *   "@babel/core@^7.0.0" -> { name: "@babel/core", versionRange: "^7.0.0" }
  *   "lodash@4.17.21" -> { name: "lodash", versionRange: "4.17.21" }
  */
-export function parsePackagePattern(pattern: string): { name: string; versionRange: string } | null {
+export function parsePackagePattern(
+  pattern: string,
+): { name: string; versionRange: string } | null {
   // Find the last @ (version separator)
   // For scoped packages (@babel/core@^7.0.0), this skips the scope @
-  const lastAtIndex = pattern.lastIndexOf('@');
+  const lastAtIndex = pattern.lastIndexOf("@");
   if (lastAtIndex > 0) {
     const name = pattern.substring(0, lastAtIndex);
     const versionRange = pattern.substring(lastAtIndex + 1);
@@ -210,7 +212,7 @@ export function findLineNumber(
   packageName: string,
   resolvedVersion: string,
 ): number | undefined {
-  const lines = content.split('\n');
+  const lines = content.split("\n");
 
   // Find all patterns that resolve to this package
   const matchingPatterns: string[] = [];

@@ -1,32 +1,32 @@
-import { PackageURL } from 'packageurl-js';
-import type { DependencyScope } from '@scatool/analyzer-core/src/index.ts';
-import type { PackageJson } from './types.ts';
+import { PackageURL } from "packageurl-js";
+import { readTextFile, type DependencyScope } from "@scatool/analyzer-core";
+import type { PackageJson } from "./types.ts";
 
 export const NPM_DEPENDENCY_SCOPES = [
-  'dependencies',
-  'devDependencies',
-  'optionalDependencies',
-  'peerDependencies',
+  "dependencies",
+  "devDependencies",
+  "optionalDependencies",
+  "peerDependencies",
 ] as const;
 
 export function createNpmPurl(name: string, version: string): string {
   let namespace: string | null = null;
   let packageName = name;
 
-  if (name.startsWith('@')) {
-    const parts = name.split('/');
+  if (name.startsWith("@")) {
+    const parts = name.split("/");
     if (parts.length === 2 && parts[0] && parts[1]) {
       namespace = parts[0];
       packageName = parts[1];
     }
   }
 
-  return new PackageURL('npm', namespace, packageName, version, null, null).toString();
+  return new PackageURL("npm", namespace, packageName, version, null, null).toString();
 }
 
 export async function readPackageJson(path: string): Promise<PackageJson | null> {
   try {
-    const content = await Bun.file(path).text();
+    const content = await readTextFile(path);
     return JSON.parse(content) as PackageJson;
   } catch {
     return null;
@@ -42,11 +42,11 @@ export function extractNpmScopes(
 
   for (const scopeName of NPM_DEPENDENCY_SCOPES) {
     const deps = packageInfo[scopeName];
-    if (!deps || typeof deps !== 'object') continue;
+    if (!deps || typeof deps !== "object") continue;
 
     const scopePackages: string[] = [];
     for (const [depName, versionRange] of Object.entries(deps)) {
-      if (typeof versionRange !== 'string') continue;
+      if (typeof versionRange !== "string") continue;
       const purl = resolveDep(depName, versionRange);
       if (purl) scopePackages.push(purl);
     }

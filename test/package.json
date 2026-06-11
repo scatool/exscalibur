@@ -1,24 +1,26 @@
 {
   "name": "@scatool/analyzer-test",
-  "private": true,
   "version": "0.0.1",
+  "private": true,
   "type": "module",
   "scripts": {
-    "typecheck": "bunx tsc --strict --noEmit"
+    "typecheck": "vp run check",
+    "check": "vp exec tsc --strict --noEmit"
   },
   "dependencies": {
-    "zod": "^4.3.6",
     "@scatool/analyzer-core": "workspace:*",
     "@scatool/analyzer-plugin-containers": "workspace:*",
+    "@scatool/analyzer-plugin-cpp": "workspace:*",
     "@scatool/analyzer-plugin-github-actions": "workspace:*",
     "@scatool/analyzer-plugin-go": "workspace:*",
     "@scatool/analyzer-plugin-gradle": "workspace:*",
-    "@scatool/analyzer-plugin-python": "workspace:*",
     "@scatool/analyzer-plugin-javascript": "workspace:*",
+    "@scatool/analyzer-plugin-python": "workspace:*",
     "@scatool/analyzer-plugin-rust": "workspace:*",
-    "@scatool/analyzer-plugin-cpp": "workspace:*"
+    "zod": "catalog:"
   },
   "devDependencies": {
-    "@types/bun": "^1.3.9"
+    "@types/node": "catalog:",
+    "vite-plus": "catalog:"
   }
 }

@@ -1,3 +1,5 @@
+import { parse as parseYaml } from "yaml";
+
 /**
  * Base lockfile structure shared by all versions
  */
@@ -80,7 +82,7 @@ export interface PnpmSnapshotEntry {
 }
 
 export function parsePnpmLockfile(content: string): PnpmLockfile {
-  return Bun.YAML.parse(content) as PnpmLockfile;
+  return parseYaml(content) as PnpmLockfile;
 }
 
 /**
@@ -92,13 +94,13 @@ export function parsePnpmLockfile(content: string): PnpmLockfile {
  */
 export function parsePackageKey(key: string): { name: string; version: string } | null {
   // Remove peer dependency suffix if present: name@version(peer-deps) -> name@version
-  const parenIndex = key.indexOf('(');
+  const parenIndex = key.indexOf("(");
   const searchString = parenIndex > 0 ? key.substring(0, parenIndex) : key;
 
   // Find the last @ (version separator)
   // For scoped packages (@babel/core@7.23.9), this skips the scope @
   // For regular packages (lodash@4.17.21), this finds the only @
-  const lastAtIndex = searchString.lastIndexOf('@');
+  const lastAtIndex = searchString.lastIndexOf("@");
   if (lastAtIndex > 0) {
     const name = searchString.substring(0, lastAtIndex);
     const version = searchString.substring(lastAtIndex + 1);
@@ -113,7 +115,7 @@ export function parsePackageKey(key: string): { name: string; version: string } 
  * E.g., "19.2.0(react@19.2.0)" -> "19.2.0"
  */
 export function stripPeerDepSuffix(version: string): string {
-  const parenIndex = version.indexOf('(');
+  const parenIndex = version.indexOf("(");
   return parenIndex > 0 ? version.substring(0, parenIndex) : version;
 }
 
@@ -127,11 +129,11 @@ export function stripPeerDepSuffix(version: string): string {
  */
 export function isGitPackageKey(packageKey: string): boolean {
   return (
-    packageKey.includes('@git+') ||
-    packageKey.includes('@github:') ||
-    packageKey.includes('@gitlab:') ||
-    packageKey.includes('@https://') ||
-    packageKey.includes('@http://')
+    packageKey.includes("@git+") ||
+    packageKey.includes("@github:") ||
+    packageKey.includes("@gitlab:") ||
+    packageKey.includes("@https://") ||
+    packageKey.includes("@http://")
   );
 }
 
@@ -139,7 +141,7 @@ export function isGitPackageKey(packageKey: string): boolean {
  * Find the line number where a package key appears in the lockfile
  */
 export function findLineNumber(content: string, packageKey: string): number | undefined {
-  const lines = content.split('\n');
+  const lines = content.split("\n");
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
     // Look for the package key at the start of a line (with optional indentation)
