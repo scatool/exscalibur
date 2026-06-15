@@ -82,14 +82,76 @@ jobs:
 
           root="$GITHUB_WORKSPACE"
 
-          for pkg in packages/*/package.json; do
-            dir=$(dirname "$pkg")
-            private=$(node -p "require('./$pkg').private || false")
-            if [ "$private" = "true" ]; then
-              echo "Skipping private package $dir"
+          node <<'NODE' > /tmp/packages-to-publish.txt
+          const fs = require("node:fs");
+          const path = require("node:path");
+
+          const packages = new Map();
+
+          for (const dir of fs.readdirSync("packages").sort()) {
+            const packageJsonPath = path.join("packages", dir, "package.json");
+            if (!fs.existsSync(packageJsonPath)) continue;
+
+            const manifest = JSON.parse(fs.readFileSync(packageJsonPath, "utf8"));
+            if (manifest.private) {
+              console.log(`# skip private ${packageJsonPath}`);
+              continue;
+            }
+
+            packages.set(manifest.name, {
+              path: packageJsonPath,
+              manifest,
+            });
+          }
+
+          const visited = new Set();
+          const visiting = new Set();
+          const ordered = [];
+
+          function visit(name) {
+            if (visited.has(name)) return;
+            if (visiting.has(name)) {
+              throw new Error(`Cycle detected while ordering packages at ${name}`);
+            }
+
+            const pkg = packages.get(name);
+            if (!pkg) return;
+
+            visiting.add(name);
+
+            const dependencyNames = Object.keys({
+              ...pkg.manifest.dependencies,
+              ...pkg.manifest.peerDependencies,
+              ...pkg.manifest.optionalDependencies,
+            });
+
+            for (const dependencyName of dependencyNames) {
+              if (packages.has(dependencyName)) {
+                visit(dependencyName);
+              }
+            }
+
+            visiting.delete(name);
+            visited.add(name);
+            ordered.push(pkg.path);
+          }
+
+          for (const name of [...packages.keys()].sort()) {
+            visit(name);
+          }
+
+          for (const packageJsonPath of ordered) {
+            console.log(packageJsonPath);
+          }
+          NODE
+
+          while IFS= read -r pkg; do
+            if [[ "$pkg" == \#* ]]; then
+              echo "${pkg#\# }"
               continue
             fi
 
+            dir=$(dirname "$pkg")
             name=$(node -p "require('./$pkg').name")
             version=$(node -p "require('./$pkg').version")
 
@@ -100,7 +162,7 @@ jobs:
             elif echo "$version" | grep -q "rc"; then
               tag=rc
             else
-              tag=latest
+              tag=$(node -p "require('./$pkg').publishConfig?.tag || 'latest'")
             fi
 
             echo "Publishing $name@$version with tag $tag"
@@ -110,4 +172,4 @@ jobs:
             tarball=$(ls -t ./*.tgz | head -n 1)
             npx -y npm@11.13.0 publish "$tarball" --provenance --access public --tag "$tag"
             cd "$root"
-          done
+          done < /tmp/packages-to-publish.txt
