@@ -1,0 +1,113 @@
+name: Publish
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions: read-all
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+
+      - uses: voidzero-dev/setup-vp@2dec1e33f4ab2c6d5bce1b0c4607961bb1a3f7a1 # v1.12.0
+        with:
+          node-version: "22"
+          cache: true
+
+      - name: Setup Java
+        uses: actions/setup-java@be666c2fcd27ec809703dec50e508c2fdc7f6654 # v5.2.0
+        with:
+          distribution: "temurin"
+          java-version: "17"
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39 # v8.2.0
+
+      - name: Install Conan
+        run: |
+          python3 -m pip install --user "conan>=2,<3"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          conan --version
+
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          repository: "microsoft/vcpkg"
+          ref: "2026.04.27"
+          fetch-depth: 0
+          path: "vcpkg"
+
+      - name: Bootstrap vcpkg tool
+        working-directory: ./vcpkg
+        run: |
+          ./bootstrap-vcpkg.sh -disableMetrics
+          echo "VCPKG_ROOT=$(pwd)" >> "$GITHUB_ENV"
+          echo "$GITHUB_WORKSPACE/vcpkg" >> "$GITHUB_PATH"
+
+      - name: Install dependencies
+        run: vp install
+
+      - name: Ready
+        run: vp run -w ready
+
+  publish:
+    needs: ci
+    runs-on: ubuntu-latest
+    environment: npm
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+
+      - uses: voidzero-dev/setup-vp@2dec1e33f4ab2c6d5bce1b0c4607961bb1a3f7a1 # v1.12.0
+        with:
+          node-version: "22"
+          cache: true
+
+      - name: Install dependencies
+        run: vp install
+
+      - name: Build packages
+        run: vp run -r build
+
+      - name: Publish packages
+        run: |
+          set -euo pipefail
+
+          root="$GITHUB_WORKSPACE"
+
+          for pkg in packages/*/package.json; do
+            dir=$(dirname "$pkg")
+            private=$(node -p "require('./$pkg').private || false")
+            if [ "$private" = "true" ]; then
+              echo "Skipping private package $dir"
+              continue
+            fi
+
+            name=$(node -p "require('./$pkg').name")
+            version=$(node -p "require('./$pkg').version")
+
+            if echo "$version" | grep -q "alpha"; then
+              tag=alpha
+            elif echo "$version" | grep -q "beta"; then
+              tag=beta
+            elif echo "$version" | grep -q "rc"; then
+              tag=rc
+            else
+              tag=latest
+            fi
+
+            echo "Publishing $name@$version with tag $tag"
+            cd "$dir"
+            rm -f ./*.tgz
+            vp pm pack -- --pack-destination .
+            tarball=$(ls -t ./*.tgz | head -n 1)
+            npx -y npm@11.13.0 publish "$tarball" --provenance --access public --tag "$tag"
+            cd "$root"
+          done
