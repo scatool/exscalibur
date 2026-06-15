@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "lib": ["ESNext"],
+    "target": "ES2023",
+    "lib": ["ES2023", "ESNext.Collection", "ESNext.Iterator"],
     "moduleDetection": "force",
     "module": "preserve",
     "moduleResolution": "bundler",

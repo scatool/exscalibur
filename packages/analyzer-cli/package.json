@@ -8,7 +8,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/scatool/exscalibur.git",
+    "url": "git+https://github.com/scatool/exscalibur.git",
     "directory": "packages/analyzer-cli"
   },
   "bin": {
@@ -55,5 +55,8 @@
   "devDependencies": {
     "@types/node": "catalog:",
     "vite-plus": "catalog:"
+  },
+  "engines": {
+    "node": ">=22"
   }
 }

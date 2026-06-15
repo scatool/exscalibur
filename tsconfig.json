@@ -7,6 +7,8 @@
     "esModuleInterop": true,
     "strict": true,
     "skipLibCheck": true,
-    "types": ["node"]
+    "types": ["node"],
+    "target": "ES2023",
+    "lib": ["ES2023", "ESNext.Collection", "ESNext.Iterator"]
   }
 }
