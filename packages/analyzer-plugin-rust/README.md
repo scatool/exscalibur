@@ -2,7 +2,7 @@
 
 **Note**: This plugin is experimental.
 
-Rust (Cargo) dependency analyzer plugin for Excalibur.
+Rust (Cargo) dependency analyzer plugin for Exscalibur.
 
 ## Requirements
 

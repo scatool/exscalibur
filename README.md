@@ -1,10 +1,22 @@
-# Excalibur
+# Exscalibur
 
-Excalibur extracts dependency graphs from software projects.
+Exscalibur extracts dependency graphs from software projects.
+
+> **Status:** Exscalibur is under active development. Breaking changes may be introduced in any minor release.
+
+## Related Tools
+
+- [OSS Review Toolkit](https://github.com/oss-review-toolkit/ort) (Apache-2.0)
+- [OSV-SCALIBR](https://github.com/google/osv-scalibr) (Apache-2.0)
+- [Syft](https://github.com/anchore/syft) (Apache-2.0)
+- [cdxgen](https://github.com/CycloneDX/cdxgen) (Apache-2.0)
+- [BlackDuck Detect](https://github.com/blackducksoftware/detect) (Apache-2.0)
+- [FOSSA CLI](https://github.com/fossas/fossa-cli) (CPAL-1.0)
+- ...and many more
 
 ## Development
 
-Excalibur is a [pnpm](https://pnpm.io/) workspace using [Vite+](https://viteplus.dev/) for install and task orchestration.
+Exscalibur is a [pnpm](https://pnpm.io/) workspace using [Vite+](https://viteplus.dev/) for install and task orchestration.
 Each extractor lives in its own package under `packages/`.
 Published packages, the CLI, and repository tests run on Node.js.
 
@@ -80,13 +92,3 @@ To refresh the snapshots after intentional changes:
 ```sh
 UPDATE_SNAPSHOTS=1 vp test run ./test/integration.test.ts
 ```
-
-## Related Tools
-
-- [OSS Review Toolkit](https://github.com/oss-review-toolkit/ort) (Apache-2.0)
-- [OSV-SCALIBR](https://github.com/google/osv-scalibr) (Apache-2.0)
-- [Syft](https://github.com/anchore/syft) (Apache-2.0)
-- [cdxgen](https://github.com/CycloneDX/cdxgen) (Apache-2.0)
-- [BlackDuck Detect](https://github.com/blackducksoftware/detect) (Apache-2.0)
-- [FOSSA CLI](https://github.com/fossas/fossa-cli) (CPAL-1.0)
-- ...and many more

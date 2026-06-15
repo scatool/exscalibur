@@ -2,7 +2,7 @@
 
 **Note**: This plugin is experimental.
 
-Python (uv) ecosystem analyzer plugin for Excalibur.
+Python (uv) ecosystem analyzer plugin for Exscalibur.
 
 This plugin runs `uv export --format cyclonedx1.5` to produce a CycloneDX SBOM, then extracts packages and relationships from the resulting JSON.
 

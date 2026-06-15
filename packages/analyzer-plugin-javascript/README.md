@@ -2,7 +2,7 @@
 
 **Note**: This plugin is experimental.
 
-JavaScript/TypeScript ecosystem analyzer plugin for Excalibur.
+JavaScript/TypeScript ecosystem analyzer plugin for Exscalibur.
 
 ## Requirements
 

@@ -1,9 +1,15 @@
 {
   "name": "@scatool/analyzer-test-utils",
-  "version": "0.0.5",
+  "version": "0.1.0-alpha.0",
+  "homepage": "https://github.com/scatool/exscalibur",
+  "bugs": {
+    "url": "https://github.com/scatool/exscalibur/issues"
+  },
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/scatool/excalibur.git"
+    "url": "git+https://github.com/scatool/exscalibur.git",
+    "directory": "packages/analyzer-test-utils"
   },
   "files": [
     "dist"
@@ -15,8 +21,8 @@
     "./package.json": "./package.json"
   },
   "publishConfig": {
-    "access": "restricted",
-    "registry": "https://npm.pkg.github.com",
+    "access": "public",
+    "registry": "https://registry.npmjs.org",
     "tag": "alpha"
   },
   "scripts": {
@@ -38,5 +44,8 @@
   "peerDependencies": {
     "typescript": "^5",
     "vitest": "^4"
+  },
+  "engines": {
+    "node": ">=22"
   }
 }

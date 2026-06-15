@@ -2,7 +2,7 @@
 
 **Note**: This plugin is experimental.
 
-Go ecosystem analyzer plugin for Excalibur.
+Go ecosystem analyzer plugin for Exscalibur.
 
 ## Requirements
 

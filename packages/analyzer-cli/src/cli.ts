@@ -108,7 +108,7 @@ function validateOptions(extractors: Extractor[], parsedOptions: ExtractorOption
 const program = new Command();
 
 program
-  .name("excalibur")
+  .name("exscalibur")
   .description("Extract dependency graphs from software projects")
   .argument("<codebase-path>", "Path to the codebase to analyze")
   .argument("<output-path>", "Path to write the JSON output file")
@@ -195,11 +195,11 @@ Available extractors:
   ort               Extract from ORT result files
 
 Examples:
-  excalibur /repo /output.json
-  excalibur --enable packagejson,bunlock /repo /output.json
-  excalibur --disable gradle,maven /repo /output.json
-  excalibur --extractor-options 'packagejson.ignore=["**/node_modules/**", "**/additional_dir/**"]' /repo /output.json
-  excalibur --extractor-options-json '{"packagejson":{"ignore":["**/node_modules/**", "**/additional_dir/**"]}}' /repo /output.json
+  exscalibur /repo /output.json
+  exscalibur --enable packagejson,bunlock /repo /output.json
+  exscalibur --disable gradle,maven /repo /output.json
+  exscalibur --extractor-options 'packagejson.ignore=["**/node_modules/**", "**/additional_dir/**"]' /repo /output.json
+  exscalibur --extractor-options-json '{"packagejson":{"ignore":["**/node_modules/**", "**/additional_dir/**"]}}' /repo /output.json
 `,
   )
   .action(async (codebasePath, outputPath, options) => {

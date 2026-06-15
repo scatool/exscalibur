@@ -2,7 +2,7 @@
 
 **Note**: This plugin is experimental.
 
-C++ ecosystem analyzer plugin for Excalibur.
+C++ ecosystem analyzer plugin for Exscalibur.
 
 The following package managers are supported:
 
@@ -58,7 +58,7 @@ To use the vcpkg extractor you need to install vcpkg.
 Either install [vcpkg manually](https://learn.microsoft.com/en-us/vcpkg/get_started/get-started?pivots=shell-bash) or using the corresponding mise plugin:
 
 ```bash
-cd excalibur
+cd exscalibur
 mise plugin install vcpkg https://github.com/markus-gerber/mise-vcpkg
 mise use vcpkg
 ```
@@ -70,7 +70,7 @@ Additionally, to run the verification tests (`vcpkg install --dry-run should mat
 You can use any C++ compiler, e.g. clang using mise:
 
 ```bash
-cd excalibur
+cd exscalibur
 mise use clang
 ```
 
