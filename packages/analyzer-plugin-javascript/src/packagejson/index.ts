@@ -4,6 +4,7 @@ import {
   type AnalyzerResult,
   readNormalizedTextFile,
   scanFiles,
+  mergeIgnorePatterns,
 } from "@scatool/analyzer-core";
 import { dirname, join } from "node:path/posix";
 import { existsSync } from "node:fs";
@@ -47,7 +48,11 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
   version: 1,
   optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: JavaScriptOptions) {
-    for (const file of await scanFiles(codebase, "**/package.json", options.ignore)) {
+    for (const file of await scanFiles(
+      codebase,
+      "**/package.json",
+      mergeIgnorePatterns(this, options.ignore),
+    )) {
       // Skip if a lockfile exists in the same directory or any parent directory
       const dir = dirname(file);
       if (hasLockfileInDirectory(dir, codebase)) {

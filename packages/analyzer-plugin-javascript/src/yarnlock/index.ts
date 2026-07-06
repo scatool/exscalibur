@@ -11,6 +11,7 @@ import {
   readNormalizedTextFile,
   readTextFile,
   scanFiles,
+  mergeIgnorePatterns,
 } from "@scatool/analyzer-core";
 import { dirname, join } from "node:path/posix";
 import {
@@ -29,7 +30,11 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
   version: 1,
   optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: JavaScriptOptions) {
-    for (const file of await scanFiles(codebase, "**/yarn.lock", options.ignore)) {
+    for (const file of await scanFiles(
+      codebase,
+      "**/yarn.lock",
+      mergeIgnorePatterns(this, options.ignore),
+    )) {
       // Only mark Yarn Classic (v1) lockfiles
       // Yarn Berry lockfiles have "__metadata:" section with version 8+
       try {

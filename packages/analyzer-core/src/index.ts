@@ -6,6 +6,7 @@ export type {
   IssueSeverity,
   Issue,
   AnalyzerResult,
+  ExtractionRuntimeOptions,
   Extractor,
   MarkFileContext,
   FilesExtractor,
@@ -33,7 +34,13 @@ export {
   writeTextFile,
 } from "./runtime.ts";
 
-import type { AnalyzerResult, Extractor, FilesExtractor, MarkFileContext } from "./types.ts";
+import type {
+  AnalyzerResult,
+  ExtractionRuntimeOptions,
+  Extractor,
+  FilesExtractor,
+  MarkFileContext,
+} from "./types.ts";
 import { mergeResults } from "./merge.ts";
 import { scanFiles } from "./runtime.ts";
 import { join } from "node:path/posix";
@@ -46,9 +53,20 @@ export async function scanAndMarkFiles(
   filePattern: string,
   ignorePatterns: string[],
 ): Promise<void> {
-  for (const file of await scanFiles(codebase, filePattern, ignorePatterns)) {
+  for (const file of await scanFiles(
+    codebase,
+    filePattern,
+    mergeIgnorePatterns(context, ignorePatterns),
+  )) {
     context.markFile(file);
   }
+}
+
+export function mergeIgnorePatterns(
+  context: MarkFileContext,
+  ignorePatterns: string[] = [],
+): string[] {
+  return [...(context.globalIgnorePatterns ?? []), ...ignorePatterns];
 }
 
 export const filesExtractor = <Options = unknown>(
@@ -57,10 +75,15 @@ export const filesExtractor = <Options = unknown>(
   return {
     name: config.name,
     version: config.version,
-    extract: async (codebase: string, runtimeOptions?: Partial<Options>) => {
+    extract: async (
+      codebase: string,
+      runtimeOptions?: Partial<Options>,
+      extractionRuntimeOptions: ExtractionRuntimeOptions = {},
+    ) => {
       const markedFiles: string[] = [];
 
       const context: MarkFileContext = {
+        globalIgnorePatterns: extractionRuntimeOptions.ignore ?? [],
         markFile: (file: string) => {
           const absolutePath = isAbsolute(file) ? file : join(codebase, file);
           markedFiles.push(absolutePath);

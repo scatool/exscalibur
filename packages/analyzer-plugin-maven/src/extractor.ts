@@ -13,6 +13,7 @@ import {
   readTextFile,
   runCommand,
   scanFiles,
+  type ExtractionRuntimeOptions,
 } from "@scatool/analyzer-core";
 import { PackageURL } from "packageurl-js";
 import { dirname, join } from "node:path/posix";
@@ -187,9 +188,16 @@ export const extractor: Extractor<MavenOptions> = {
   name: "maven",
   version: 1,
   optionsSchema: optionSchema,
-  extract: async (codebase: string, runtimeOptions?: Partial<MavenOptions>) => {
+  extract: async (
+    codebase: string,
+    runtimeOptions?: Partial<MavenOptions>,
+    extractionRuntimeOptions: ExtractionRuntimeOptions = {},
+  ) => {
     const options = optionSchema.parse(runtimeOptions || {});
-    const files = await scanFiles(codebase, "**/pom.xml", options.ignore);
+    const files = await scanFiles(codebase, "**/pom.xml", [
+      ...(extractionRuntimeOptions.ignore ?? []),
+      ...options.ignore,
+    ]);
 
     const results: AnalyzerResult[] = [];
     for (const file of files) {

@@ -12,6 +12,7 @@ import {
   readTextFile,
   runCommand,
   scanFiles,
+  mergeIgnorePatterns,
 } from "@scatool/analyzer-core";
 import { PackageURL } from "packageurl-js";
 import { dirname, join } from "node:path/posix";
@@ -59,7 +60,11 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
   version: 1,
   optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: GradleOptions) {
-    for (const file of await scanFiles(codebase, "**/build.gradle{,.kts}", options.ignore)) {
+    for (const file of await scanFiles(
+      codebase,
+      "**/build.gradle{,.kts}",
+      mergeIgnorePatterns(this, options.ignore),
+    )) {
       if (hasGradleWrapper(dirname(file))) {
         this.markFile(file);
       }
