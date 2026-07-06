@@ -1231,7 +1231,159 @@
       ]
     }
   ],
-  "subprojects": [],
+  "subprojects": [
+    {
+      "purl": "pkg:generic/evorto%2Bwahlzeit",
+      "definitionFile": "build.gradle",
+      "scopes": [
+        {
+          "scope": "classpath",
+          "packages": [
+            "pkg:maven/org.gretty/gretty@3.0.8?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2"
+          ]
+        },
+        {
+          "scope": "compileClasspath",
+          "packages": [
+            "pkg:maven/com.sun.mail/javax.mail@1.6.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+            "pkg:maven/javax.servlet/javax.servlet-api@4.0.1?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+            "pkg:maven/javax.websocket/javax.websocket-api@1.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+            "pkg:maven/log4j/log4j@1.2.17?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+            "pkg:maven/org.postgresql/postgresql@9.3-1104-jdbc41?repository_url=https%3A%2F%2Fjcenter.bintray.com"
+          ]
+        },
+        {
+          "scope": "grettyProductRuntime",
+          "packages": [
+            "pkg:maven/com.sun.mail/javax.mail@1.6.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+            "pkg:maven/javax.servlet/javax.servlet-api@4.0.1?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+            "pkg:maven/javax.websocket/javax.websocket-api@1.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+            "pkg:maven/log4j/log4j@1.2.17?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+            "pkg:maven/org.postgresql/postgresql@9.3-1104-jdbc41?repository_url=https%3A%2F%2Fjcenter.bintray.com"
+          ]
+        },
+        {
+          "scope": "grettyProvidedCompile",
+          "packages": [
+            "pkg:maven/javax.servlet/javax.servlet-api@3.1.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+            "pkg:maven/javax.websocket/javax.websocket-api@1.0?repository_url=https%3A%2F%2Fjcenter.bintray.com"
+          ]
+        },
+        {
+          "scope": "grettyRunnerJetty7",
+          "packages": [
+            "pkg:maven/org.gretty/gretty-runner-jetty7@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com"
+          ]
+        },
+        {
+          "scope": "grettyRunnerJetty8",
+          "packages": [
+            "pkg:maven/org.gretty/gretty-runner-jetty8@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com"
+          ]
+        },
+        {
+          "scope": "grettyRunnerJetty9",
+          "packages": [
+            "pkg:maven/org.gretty/gretty-runner-jetty9@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com"
+          ]
+        },
+        {
+          "scope": "grettyRunnerJetty93",
+          "packages": [
+            "pkg:maven/org.gretty/gretty-runner-jetty93@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com"
+          ]
+        },
+        {
+          "scope": "grettyRunnerJetty94",
+          "packages": [
+            "pkg:maven/org.gretty/gretty-runner-jetty94@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com"
+          ]
+        },
+        {
+          "scope": "grettyRunnerTomcat85",
+          "packages": [
+            "pkg:maven/org.gretty/gretty-runner-tomcat85@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com"
+          ]
+        },
+        {
+          "scope": "grettyRunnerTomcat9",
+          "packages": [
+            "pkg:maven/org.gretty/gretty-runner-tomcat9@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com"
+          ]
+        },
+        {
+          "scope": "grettySpringLoaded",
+          "packages": [
+            "pkg:maven/org.springframework/springloaded@1.2.8.RELEASE?repository_url=https%3A%2F%2Fjcenter.bintray.com"
+          ]
+        },
+        {
+          "scope": "grettyStarter",
+          "packages": [
+            "pkg:maven/org.codehaus.groovy/groovy-cli-commons@2.5.12?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+            "pkg:maven/org.codehaus.groovy/groovy-json@2.5.12?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+            "pkg:maven/org.gretty/gretty-starter@3.0.8?repository_url=https%3A%2F%2Fjcenter.bintray.com"
+          ]
+        },
+        {
+          "scope": "providedCompile",
+          "packages": [
+            "pkg:maven/javax.servlet/javax.servlet-api@4.0.1?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+            "pkg:maven/javax.websocket/javax.websocket-api@1.0?repository_url=https%3A%2F%2Fjcenter.bintray.com"
+          ]
+        },
+        {
+          "scope": "providedRuntime",
+          "packages": [
+            "pkg:maven/javax.servlet/javax.servlet-api@4.0.1?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+            "pkg:maven/javax.websocket/javax.websocket-api@1.0?repository_url=https%3A%2F%2Fjcenter.bintray.com"
+          ]
+        },
+        {
+          "scope": "runtimeClasspath",
+          "packages": [
+            "pkg:maven/com.sun.mail/javax.mail@1.6.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+            "pkg:maven/javax.servlet/javax.servlet-api@4.0.1?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+            "pkg:maven/javax.websocket/javax.websocket-api@1.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+            "pkg:maven/log4j/log4j@1.2.17?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+            "pkg:maven/org.postgresql/postgresql@9.3-1104-jdbc41?repository_url=https%3A%2F%2Fjcenter.bintray.com"
+          ]
+        },
+        {
+          "scope": "springBoot",
+          "packages": [
+            "pkg:maven/com.sun.mail/javax.mail@1.6.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+            "pkg:maven/javax.servlet/javax.servlet-api@4.0.1?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+            "pkg:maven/javax.websocket/javax.websocket-api@1.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+            "pkg:maven/log4j/log4j@1.2.17?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+            "pkg:maven/org.postgresql/postgresql@9.3-1104-jdbc41?repository_url=https%3A%2F%2Fjcenter.bintray.com"
+          ]
+        },
+        {
+          "scope": "testCompileClasspath",
+          "packages": [
+            "pkg:maven/com.sun.mail/javax.mail@1.6.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+            "pkg:maven/javax.servlet/javax.servlet-api@4.0.1?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+            "pkg:maven/javax.websocket/javax.websocket-api@1.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+            "pkg:maven/junit/junit@4.12?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+            "pkg:maven/log4j/log4j@1.2.17?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+            "pkg:maven/org.postgresql/postgresql@9.3-1104-jdbc41?repository_url=https%3A%2F%2Fjcenter.bintray.com"
+          ]
+        },
+        {
+          "scope": "testRuntimeClasspath",
+          "packages": [
+            "pkg:maven/com.sun.mail/javax.mail@1.6.2?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+            "pkg:maven/javax.servlet/javax.servlet-api@4.0.1?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+            "pkg:maven/javax.websocket/javax.websocket-api@1.0?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+            "pkg:maven/junit/junit@4.12?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+            "pkg:maven/log4j/log4j@1.2.17?repository_url=https%3A%2F%2Fjcenter.bintray.com",
+            "pkg:maven/org.postgresql/postgresql@9.3-1104-jdbc41?repository_url=https%3A%2F%2Fjcenter.bintray.com"
+          ]
+        }
+      ]
+    }
+  ],
   "relationships": [
     {
       "from": "pkg:maven/ch.qos.logback/logback-classic@1.2.10?repository_url=https%3A%2F%2Fjcenter.bintray.com",
@@ -2240,8 +2392,8 @@
   ],
   "issues": [
     {
-      "message": "Failed to extract dependencies: Invalid purl: maven requires a \"namespace\" component",
-      "severity": "ERROR",
+      "message": "Gradle project ':' does not declare a group, using a generic PURL instead of a Maven PURL",
+      "severity": "WARNING",
       "file": "build.gradle"
     }
   ]
