@@ -19,7 +19,12 @@ def main() -> int:
     failures: list[str] = []
 
     for path in sorted(FIXTURES_DIR.glob("*/pyproject.toml")):
-        data = tomllib.loads(path.read_text())
+        try:
+            data = tomllib.loads(path.read_text())
+        except tomllib.TOMLDecodeError as error:
+            failures.append(f"{path}: invalid TOML: {error}")
+            continue
+
         validate_pep508_dependencies(path, data, failures)
         validate_poetry_dependency_keys(path, data, failures)
 
