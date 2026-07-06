@@ -1,15 +1,15 @@
 packages:
-  - "packages/*"
-  - "test"
+  - packages/*
+  - test
+
+catalog:
+  "@types/node": ^22.20.0
+  packageurl-js: ^2.0.1
+  smol-toml: ^1.7.0
+  vite-plus: ^0.2.2
+  vitest: ^4.1.9
+  yaml: ^2.8.4
+  zod: ^4.3.6
 
 onlyBuiltDependencies:
   - esbuild
-
-catalog:
-  "@types/node": "^25.9.3"
-  packageurl-js: "^2.0.1"
-  smol-toml: "^1.7.0"
-  vite-plus: "^0.1.24"
-  vitest: "^4.0.15"
-  yaml: "^2.8.4"
-  zod: "^4.3.6"
