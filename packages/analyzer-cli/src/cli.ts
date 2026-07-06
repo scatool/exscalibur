@@ -20,6 +20,7 @@ import {
   pipfileLockExtractor,
   poetryLockExtractor,
   pdmLockExtractor,
+  pyprojectTomlExtractor,
   requirementsTxtExtractor,
 } from "@scatool/analyzer-plugin-python";
 import { cargoLockExtractor } from "@scatool/analyzer-plugin-rust";
@@ -187,6 +188,7 @@ Available extractors:
   pipfilelock       Extract from Pipfile.lock files
   poetrylock        Extract from poetry.lock files
   pdmlock           Extract from pdm.lock files
+  pyprojecttoml     Extract declared dependencies from pyproject.toml files
   requirementstxt   Extract from requirements.txt files
   cargolock         Extract from Cargo.lock files
   maven             Extract from Maven pom.xml files
@@ -226,6 +228,7 @@ Examples:
         pipfileLockExtractor,
         poetryLockExtractor,
         pdmLockExtractor,
+        pyprojectTomlExtractor,
         requirementsTxtExtractor,
         cargoLockExtractor,
         mavenExtractor,

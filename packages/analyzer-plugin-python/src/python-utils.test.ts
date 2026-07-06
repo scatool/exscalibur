@@ -6,6 +6,10 @@ describe("createPypiPurl", () => {
     expect(createPypiPurl("requests", "2.31.0")).toBe("pkg:pypi/requests@2.31.0");
   });
 
+  test("creates versionless PURL when no resolved version is available", () => {
+    expect(createPypiPurl("requests")).toBe("pkg:pypi/requests");
+  });
+
   test("normalizes underscores to hyphens", () => {
     expect(createPypiPurl("my_package", "1.0.0")).toBe("pkg:pypi/my-package@1.0.0");
   });

@@ -1,6 +1,7 @@
 import {
   type AnalyzerResult,
   type Extractor,
+  type Issue,
   filesExtractor,
   scanAndMarkFiles,
   ensurePackageExists,
@@ -8,7 +9,7 @@ import {
   initializeExtractionMaps,
   readNormalizedTextFile,
 } from "@scatool/analyzer-core";
-import { createPypiPurl } from "../python-utils.ts";
+import { createPypiPurl, parsePythonDependencyName } from "../python-utils.ts";
 import type { PythonOptions } from "../options.ts";
 import { optionSchema } from "../options.ts";
 
@@ -24,6 +25,15 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
     const lines = content.split("\n");
 
     const { packageMap, relationshipsMap } = initializeExtractionMaps();
+    const issues: Issue[] = [];
+    let emittedPackage = false;
+
+    const addDependency = (name: string, lineNumber: number) => {
+      const purl = createPypiPurl(name);
+      ensurePackageExists(packageMap, purl);
+      emittedPackage = true;
+      packageMap.get(purl)!.evidence.add(`${file}#${lineNumber}`);
+    };
 
     // Parse requirements.txt
     for (let i = 0; i < lines.length; i++) {
@@ -35,33 +45,69 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
       // Skip comments and empty lines
       if (trimmed.startsWith("#") || trimmed === "") continue;
 
-      // Skip options like -e, -r, --index-url, etc.
+      if (isRequirementInclude(trimmed)) {
+        issues.push({
+          severity: "WARNING",
+          message:
+            "requirements.txt include directives are not followed; dependencies from the referenced file may be missing.",
+          file: `${file}#${i + 1}`,
+        });
+        continue;
+      }
+
+      if (isEditableRequirement(trimmed)) {
+        const eggName = parseEggName(trimmed);
+        if (eggName) {
+          addDependency(eggName, i + 1);
+        } else {
+          issues.push({
+            severity: "WARNING",
+            message: `Unsupported editable requirements.txt dependency declaration was not emitted: ${trimmed}`,
+            file: `${file}#${i + 1}`,
+          });
+        }
+        continue;
+      }
+
+      // Skip non-package options like --index-url.
       if (trimmed.startsWith("-")) continue;
 
       // Parse dependency specification
       const dep = parseDependency(trimmed);
-      if (!dep) continue;
+      if (!dep) {
+        issues.push({
+          severity: "WARNING",
+          message: `Unsupported requirements.txt dependency declaration was not emitted: ${trimmed}`,
+          file: `${file}#${i + 1}`,
+        });
+        continue;
+      }
 
-      const { name, version } = dep;
-      const purl = createPypiPurl(name, version);
-      ensurePackageExists(packageMap, purl);
-
-      // Add evidence
-      packageMap.get(purl)!.evidence.add(`${file}#${i + 1}`);
+      addDependency(dep, i + 1);
     }
 
     // Note: requirements.txt files don't define subprojects
     // They only list packages without project metadata
     // Therefore, we don't create subprojects for requirements.txt files
 
-    return buildResult(packageMap, relationshipsMap, []);
+    return buildResult(
+      packageMap,
+      relationshipsMap,
+      [],
+      emittedPackage
+        ? [
+            {
+              severity: "WARNING",
+              message:
+                "requirements.txt dependencies are unresolved and emitted as versionless PyPI PURLs. Use a lockfile for resolved versions and transitive relationships.",
+              file,
+            },
+            ...issues,
+          ]
+        : issues,
+    );
   },
 });
-
-interface ParsedDependency {
-  name: string;
-  version: string;
-}
 
 /**
  * Parse a dependency line from requirements.txt
@@ -71,7 +117,7 @@ interface ParsedDependency {
  * - package-name
  * - package-name[extra]==1.2.3
  */
-function parseDependency(line: string): ParsedDependency | null {
+function parseDependency(line: string): string | null {
   line = line.trim();
   if (!line) return null;
 
@@ -83,45 +129,23 @@ function parseDependency(line: string): ParsedDependency | null {
 
   if (!line) return null;
 
-  // Skip URLs and VCS references
-  if (
-    line.includes("git+") ||
-    line.includes("hg+") ||
-    line.includes("svn+") ||
-    line.includes("bzr+") ||
-    /^https?:\/\//.test(line)
-  ) {
+  // Skip unnamed URLs and VCS references.
+  if (/^(?:[a-zA-Z][a-zA-Z0-9+.-]*:\/\/|(?:git|hg|svn|bzr)\+)/.test(line)) {
     return null;
   }
 
-  // Skip lines with @ URL syntax (e.g. "pip @ https://..." or "name @ gopher://...")
-  if (/@\s*https?:\/\//.test(line) || /@\s*\w+:\/\//.test(line)) {
-    return null;
-  }
+  return parsePythonDependencyName(line);
+}
 
-  // Package name must start with a letter or digit (PEP 508)
-  if (!/^[a-zA-Z0-9]/.test(line)) {
-    return null;
-  }
+function isRequirementInclude(line: string): boolean {
+  return /^(-r|--requirement)\b/.test(line);
+}
 
-  // Extract package name: everything up to the first version specifier, extra bracket, or semicolon
-  const nameMatch = line.match(/^([a-zA-Z0-9][-a-zA-Z0-9_.]*)/);
-  if (!nameMatch) return null;
-  const name = nameMatch[1];
+function isEditableRequirement(line: string): boolean {
+  return /^(-e|--editable)\b/.test(line);
+}
 
-  // Parse version specifiers
-  // Try to extract exact version (==)
-  const exactMatch = line.match(/==\s*([0-9][^\s,;]*)/);
-  if (exactMatch) {
-    return { name, version: exactMatch[1] };
-  }
-
-  // Try other operators and extract version
-  const versionMatch = line.match(/[><=!~]+\s*([0-9][^\s,;]*)/);
-  if (versionMatch) {
-    return { name, version: versionMatch[1] };
-  }
-
-  // No version specified
-  return { name, version: "0.0.0" };
+function parseEggName(line: string): string | null {
+  const match = line.match(/[?#&]egg=([^&\s]+)/);
+  return match ? parsePythonDependencyName(decodeURIComponent(match[1])) : null;
 }

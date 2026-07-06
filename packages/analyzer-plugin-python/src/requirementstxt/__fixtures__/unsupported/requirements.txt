@@ -1,0 +1,6 @@
+requests
+named-direct @ git+https://github.com/example/named-direct.git
+https://example.com/packages/unnamed-1.0.0.tar.gz
+-r extra-requirements.txt
+-e git+https://github.com/example/editable.git#egg=editable_pkg
+-e .
