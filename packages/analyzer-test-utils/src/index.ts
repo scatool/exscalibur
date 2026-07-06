@@ -1,11 +1,9 @@
 import { readNormalizedTextFile, scanFiles, type Extractor } from "@scatool/analyzer-core";
 import { expect, test } from "vitest";
-import { posix } from "node:path";
+import { dirname, join } from "node:path/posix";
 import { validateResult } from "./validate.ts";
 
 export { validateResult } from "./validate.ts";
-
-const { dirname, join } = posix;
 
 /**
  * Creates standardized tests for file content extraction functions.
