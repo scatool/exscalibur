@@ -1539,7 +1539,7 @@
       ]
     },
     {
-      "purl": "pkg:pypi/playwright@0.0.0",
+      "purl": "pkg:pypi/playwright",
       "evidence": [
         "python/requirements.txt#1"
       ]
@@ -2828,5 +2828,11 @@
       ]
     }
   ],
-  "issues": []
+  "issues": [
+    {
+      "severity": "WARNING",
+      "message": "requirements.txt dependencies are unresolved and emitted as versionless PyPI PURLs. Use a lockfile for resolved versions and transitive relationships.",
+      "file": "python/requirements.txt"
+    }
+  ]
 }

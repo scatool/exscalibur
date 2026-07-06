@@ -37,37 +37,105 @@
       ]
     },
     {
-      "purl": "pkg:pypi/blacken-docs@0.0.0",
+      "purl": "pkg:pypi/argon2-cffi",
+      "evidence": [
+        "pyproject.toml#41"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/asgiref",
+      "evidence": [
+        "pyproject.toml#10"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/bcrypt",
+      "evidence": [
+        "pyproject.toml#42"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/blacken-docs",
       "evidence": [
         "docs/requirements.txt#4"
       ]
     },
     {
-      "purl": "pkg:pypi/pyenchant@0.0.0",
+      "purl": "pkg:pypi/pyenchant",
       "evidence": [
         "docs/requirements.txt#1"
       ]
     },
     {
-      "purl": "pkg:pypi/sphinx-lint@0.0.0",
-      "evidence": [
-        "docs/requirements.txt#5"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/sphinx@4.5.0",
+      "purl": "pkg:pypi/sphinx",
       "evidence": [
         "docs/requirements.txt#2"
       ]
     },
     {
-      "purl": "pkg:pypi/sphinxcontrib-spelling@0.0.0",
+      "purl": "pkg:pypi/sphinx-lint",
+      "evidence": [
+        "docs/requirements.txt#5"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/sphinxcontrib-spelling",
       "evidence": [
         "docs/requirements.txt#3"
       ]
+    },
+    {
+      "purl": "pkg:pypi/sqlparse",
+      "evidence": [
+        "pyproject.toml#11"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/tzdata",
+      "evidence": [
+        "pyproject.toml#12"
+      ]
     }
   ],
-  "subprojects": [],
+  "subprojects": [
+    {
+      "purl": "pkg:pypi/django",
+      "definitionFile": "pyproject.toml",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:pypi/asgiref",
+            "pkg:pypi/sqlparse",
+            "pkg:pypi/tzdata"
+          ]
+        },
+        {
+          "scope": "optional.argon2",
+          "packages": [
+            "pkg:pypi/argon2-cffi"
+          ]
+        },
+        {
+          "scope": "optional.bcrypt",
+          "packages": [
+            "pkg:pypi/bcrypt"
+          ]
+        }
+      ]
+    }
+  ],
   "relationships": [],
-  "issues": []
+  "issues": [
+    {
+      "severity": "WARNING",
+      "message": "pyproject.toml dependencies are unresolved and emitted as versionless PyPI PURLs because no supported Python lockfile was found. Use a lockfile for resolved versions and transitive relationships.",
+      "file": "pyproject.toml"
+    },
+    {
+      "severity": "WARNING",
+      "message": "requirements.txt dependencies are unresolved and emitted as versionless PyPI PURLs. Use a lockfile for resolved versions and transitive relationships.",
+      "file": "docs/requirements.txt"
+    }
+  ]
 }

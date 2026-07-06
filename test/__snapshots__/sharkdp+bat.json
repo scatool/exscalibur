@@ -1511,115 +1511,139 @@
       ]
     },
     {
-      "purl": "pkg:pypi/alabaster@0.7.6",
+      "purl": "pkg:pypi/alabaster",
       "evidence": [
         "tests/syntax-tests/source/Requirements.txt/requirements.txt#6"
       ]
     },
     {
-      "purl": "pkg:pypi/babel@2.9.1",
+      "purl": "pkg:pypi/babel",
       "evidence": [
         "tests/syntax-tests/source/Requirements.txt/requirements.txt#7"
       ]
     },
     {
-      "purl": "pkg:pypi/docutils@0.12",
+      "purl": "pkg:pypi/click",
+      "evidence": [
+        "tests/syntax-tests/source/Requirements.txt/requirements.txt#40"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/docutils",
       "evidence": [
         "tests/syntax-tests/source/Requirements.txt/requirements.txt#8"
       ]
     },
     {
-      "purl": "pkg:pypi/foobar@2",
+      "purl": "pkg:pypi/foobar",
       "evidence": [
         "tests/syntax-tests/source/Requirements.txt/requirements.txt#28"
       ]
     },
     {
-      "purl": "pkg:pypi/gevent-subprocess@0.1.2",
+      "purl": "pkg:pypi/gevent-subprocess",
       "evidence": [
         "tests/syntax-tests/source/Requirements.txt/requirements.txt#9"
       ]
     },
     {
-      "purl": "pkg:pypi/gitpython@3.0.7",
+      "purl": "pkg:pypi/gitpython",
       "evidence": [
         "tests/syntax-tests/source/Requirements.txt/requirements.txt#10"
       ]
     },
     {
-      "purl": "pkg:pypi/hg-diff@1.2.4",
+      "purl": "pkg:pypi/hg-diff",
       "evidence": [
         "tests/syntax-tests/source/Requirements.txt/requirements.txt#11"
       ]
     },
     {
-      "purl": "pkg:pypi/jinja2@2.8.1",
+      "purl": "pkg:pypi/jinja2",
       "evidence": [
         "tests/syntax-tests/source/Requirements.txt/requirements.txt#12"
       ]
     },
     {
-      "purl": "pkg:pypi/markupsafe@0.23",
+      "purl": "pkg:pypi/markupsafe",
       "evidence": [
         "tests/syntax-tests/source/Requirements.txt/requirements.txt#13"
       ]
     },
     {
-      "purl": "pkg:pypi/name@0.0.0",
+      "purl": "pkg:pypi/myproject",
+      "evidence": [
+        "tests/syntax-tests/source/Requirements.txt/requirements.txt#31",
+        "tests/syntax-tests/source/Requirements.txt/requirements.txt#32",
+        "tests/syntax-tests/source/Requirements.txt/requirements.txt#33",
+        "tests/syntax-tests/source/Requirements.txt/requirements.txt#34",
+        "tests/syntax-tests/source/Requirements.txt/requirements.txt#35",
+        "tests/syntax-tests/source/Requirements.txt/requirements.txt#36",
+        "tests/syntax-tests/source/Requirements.txt/requirements.txt#37"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/name",
       "evidence": [
         "tests/syntax-tests/source/Requirements.txt/requirements.txt#27"
       ]
     },
     {
-      "purl": "pkg:pypi/pygments@2.7.4",
+      "purl": "pkg:pypi/pip",
+      "evidence": [
+        "tests/syntax-tests/source/Requirements.txt/requirements.txt#26"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pygments",
       "evidence": [
         "tests/syntax-tests/source/Requirements.txt/requirements.txt#14"
       ]
     },
     {
-      "purl": "pkg:pypi/pytz@2015.7",
+      "purl": "pkg:pypi/pytz",
       "evidence": [
         "tests/syntax-tests/source/Requirements.txt/requirements.txt#15"
       ]
     },
     {
-      "purl": "pkg:pypi/requests@2.8.*",
+      "purl": "pkg:pypi/requests",
       "evidence": [
         "tests/syntax-tests/source/Requirements.txt/requirements.txt#25"
       ]
     },
     {
-      "purl": "pkg:pypi/six@1.10.0",
+      "purl": "pkg:pypi/six",
       "evidence": [
         "tests/syntax-tests/source/Requirements.txt/requirements.txt#16"
       ]
     },
     {
-      "purl": "pkg:pypi/snowballstemmer@1.2.0",
+      "purl": "pkg:pypi/snowballstemmer",
       "evidence": [
         "tests/syntax-tests/source/Requirements.txt/requirements.txt#17"
       ]
     },
     {
-      "purl": "pkg:pypi/sphinx-rtd-theme@0.1.9",
-      "evidence": [
-        "tests/syntax-tests/source/Requirements.txt/requirements.txt#19"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/sphinx@1.3.3",
+      "purl": "pkg:pypi/sphinx",
       "evidence": [
         "tests/syntax-tests/source/Requirements.txt/requirements.txt#18"
       ]
     },
     {
-      "purl": "pkg:pypi/svn@1.0.1",
+      "purl": "pkg:pypi/sphinx-rtd-theme",
+      "evidence": [
+        "tests/syntax-tests/source/Requirements.txt/requirements.txt#19"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/svn",
       "evidence": [
         "tests/syntax-tests/source/Requirements.txt/requirements.txt#20"
       ]
     },
     {
-      "purl": "pkg:pypi/zope.interface@4.2.0",
+      "purl": "pkg:pypi/zope.interface",
       "evidence": [
         "tests/syntax-tests/source/Requirements.txt/requirements.txt#21"
       ]
@@ -2952,6 +2976,11 @@
       "severity": "ERROR",
       "message": "Failed to parse module name from go.mod",
       "file": "tests/syntax-tests/highlighted/Go/go.mod"
+    },
+    {
+      "severity": "WARNING",
+      "message": "requirements.txt dependencies are unresolved and emitted as versionless PyPI PURLs. Use a lockfile for resolved versions and transitive relationships.",
+      "file": "tests/syntax-tests/source/Requirements.txt/requirements.txt"
     }
   ]
 }

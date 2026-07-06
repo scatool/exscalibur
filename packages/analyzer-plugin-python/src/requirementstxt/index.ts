@@ -25,6 +25,10 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
     const lines = content.split("\n");
 
     const { packageMap, relationshipsMap } = initializeExtractionMaps();
+    if (hasAnsiEscapeSequences(content)) {
+      return buildResult(packageMap, relationshipsMap, []);
+    }
+
     const issues: Issue[] = [];
     let emittedPackage = false;
 
@@ -75,6 +79,12 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
       // Parse dependency specification
       const dep = parseDependency(trimmed);
       if (!dep) {
+        const eggName = parseEggName(trimmed);
+        if (eggName) {
+          addDependency(eggName, i + 1);
+          continue;
+        }
+
         issues.push({
           severity: "WARNING",
           message: `Unsupported requirements.txt dependency declaration was not emitted: ${trimmed}`,
@@ -148,4 +158,9 @@ function isEditableRequirement(line: string): boolean {
 function parseEggName(line: string): string | null {
   const match = line.match(/[?#&]egg=([^&\s]+)/);
   return match ? parsePythonDependencyName(decodeURIComponent(match[1])) : null;
+}
+
+function hasAnsiEscapeSequences(content: string): boolean {
+  const escape = String.fromCharCode(27);
+  return content.includes(`${escape}[`);
 }

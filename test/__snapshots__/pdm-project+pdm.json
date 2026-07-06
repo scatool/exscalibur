@@ -25,6 +25,12 @@
       ]
     },
     {
+      "purl": "pkg:pypi/babel",
+      "evidence": [
+        "tests/fixtures/pyproject.toml#32"
+      ]
+    },
+    {
       "purl": "pkg:pypi/babel@2.17.0",
       "evidence": [
         "pdm.lock#65"
@@ -55,16 +61,27 @@
       ]
     },
     {
+      "purl": "pkg:pypi/cachecontrol",
+      "evidence": [
+        "tests/fixtures/pyproject.toml#28"
+      ]
+    },
+    {
       "purl": "pkg:pypi/cachetools@6.2.3",
       "evidence": [
         "pdm.lock#133"
       ]
     },
     {
+      "purl": "pkg:pypi/certifi",
+      "evidence": [
+        "tests/fixtures/projects/demo-package-has-dep-with-extras/requirements.txt#4"
+      ]
+    },
+    {
       "purl": "pkg:pypi/certifi@2021.10.8",
       "evidence": [
-        "tests/fixtures/projects/demo-package-has-dep-with-extras/pdm.lock#11",
-        "tests/fixtures/projects/demo-package-has-dep-with-extras/requirements.txt#4"
+        "tests/fixtures/projects/demo-package-has-dep-with-extras/pdm.lock#11"
       ]
     },
     {
@@ -86,6 +103,12 @@
       ]
     },
     {
+      "purl": "pkg:pypi/chardet",
+      "evidence": [
+        "tests/fixtures/projects/demo-combined-extras/pyproject.toml#16"
+      ]
+    },
+    {
       "purl": "pkg:pypi/chardet@3.0.4",
       "evidence": [
         "tests/fixtures/projects/demo/pdm.lock#26"
@@ -98,6 +121,12 @@
       ]
     },
     {
+      "purl": "pkg:pypi/charset-normalizer",
+      "evidence": [
+        "tests/fixtures/projects/demo-package-has-dep-with-extras/requirements.txt#5"
+      ]
+    },
+    {
       "purl": "pkg:pypi/charset-normalizer@2.0.12",
       "evidence": [
         "tests/fixtures/projects/demo/pdm.lock#37"
@@ -106,8 +135,7 @@
     {
       "purl": "pkg:pypi/charset-normalizer@2.0.7",
       "evidence": [
-        "tests/fixtures/projects/demo-package-has-dep-with-extras/pdm.lock#21",
-        "tests/fixtures/projects/demo-package-has-dep-with-extras/requirements.txt#5"
+        "tests/fixtures/projects/demo-package-has-dep-with-extras/pdm.lock#21"
       ]
     },
     {
@@ -117,11 +145,29 @@
       ]
     },
     {
+      "purl": "pkg:pypi/child",
+      "evidence": [
+        "tests/fixtures/projects/poetry-with-circular-dep/pyproject.toml#13"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/cleo",
+      "evidence": [
+        "tests/fixtures/pyproject.toml#27"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/click",
+      "evidence": [
+        "tests/fixtures/projects/demo-package/requirements.txt#4",
+        "tests/fixtures/projects/demo-package/requirements_simple.txt#4",
+        "tests/fixtures/projects/test-hatch-static/pyproject.toml#16"
+      ]
+    },
+    {
       "purl": "pkg:pypi/click@7.1.2",
       "evidence": [
-        "tests/fixtures/projects/demo-package/pdm.lock#11",
-        "tests/fixtures/projects/demo-package/requirements.txt#4",
-        "tests/fixtures/projects/demo-package/requirements_simple.txt#4"
+        "tests/fixtures/projects/demo-package/pdm.lock#11"
       ]
     },
     {
@@ -143,6 +189,13 @@
       ]
     },
     {
+      "purl": "pkg:pypi/core",
+      "evidence": [
+        "tests/fixtures/projects/test-monorepo/package_a/pyproject.toml#7",
+        "tests/fixtures/projects/test-monorepo/package_b/pyproject.toml#7"
+      ]
+    },
+    {
       "purl": "pkg:pypi/coverage@7.10.7",
       "evidence": [
         "pdm.lock#396"
@@ -155,6 +208,18 @@
       ]
     },
     {
+      "purl": "pkg:pypi/demo",
+      "evidence": [
+        "tests/fixtures/pyproject.toml#36"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/demo-dir",
+      "evidence": [
+        "tests/fixtures/pyproject.toml#35"
+      ]
+    },
+    {
       "purl": "pkg:pypi/dep-logic@0.5.2",
       "evidence": [
         "pdm.lock#667"
@@ -164,6 +229,12 @@
       "purl": "pkg:pypi/distlib@0.4.0",
       "evidence": [
         "pdm.lock#681"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/django",
+      "evidence": [
+        "tests/fixtures/projects/demo-parent-package/package-b/pyproject.toml#7"
       ]
     },
     {
@@ -191,11 +262,17 @@
       ]
     },
     {
+      "purl": "pkg:pypi/flask",
+      "evidence": [
+        "tests/fixtures/projects/demo-package/requirements.txt#7",
+        "tests/fixtures/projects/demo-package/requirements_simple.txt#5",
+        "tests/fixtures/pyproject.toml#29"
+      ]
+    },
+    {
       "purl": "pkg:pypi/flask@1.1.4",
       "evidence": [
-        "tests/fixtures/projects/demo-package/pdm.lock#22",
-        "tests/fixtures/projects/demo-package/requirements.txt#7",
-        "tests/fixtures/projects/demo-package/requirements_simple.txt#5"
+        "tests/fixtures/projects/demo-package/pdm.lock#22"
       ]
     },
     {
@@ -241,6 +318,13 @@
       ]
     },
     {
+      "purl": "pkg:pypi/idna",
+      "evidence": [
+        "tests/fixtures/projects/demo-combined-extras/pyproject.toml#15",
+        "tests/fixtures/projects/demo-package-has-dep-with-extras/requirements.txt#6"
+      ]
+    },
+    {
       "purl": "pkg:pypi/idna@2.7",
       "evidence": [
         "tests/fixtures/projects/demo/pdm.lock#60"
@@ -255,8 +339,7 @@
     {
       "purl": "pkg:pypi/idna@3.3",
       "evidence": [
-        "tests/fixtures/projects/demo-package-has-dep-with-extras/pdm.lock#33",
-        "tests/fixtures/projects/demo-package-has-dep-with-extras/requirements.txt#6"
+        "tests/fixtures/projects/demo-package-has-dep-with-extras/pdm.lock#33"
       ]
     },
     {
@@ -284,11 +367,16 @@
       ]
     },
     {
-      "purl": "pkg:pypi/itsdangerous@1.1.0",
+      "purl": "pkg:pypi/itsdangerous",
       "evidence": [
-        "tests/fixtures/projects/demo-package/pdm.lock#39",
         "tests/fixtures/projects/demo-package/requirements.txt#10",
         "tests/fixtures/projects/demo-package/requirements_simple.txt#6"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/itsdangerous@1.1.0",
+      "evidence": [
+        "tests/fixtures/projects/demo-package/pdm.lock#39"
       ]
     },
     {
@@ -316,11 +404,16 @@
       ]
     },
     {
-      "purl": "pkg:pypi/jinja2@2.11.3",
+      "purl": "pkg:pypi/jinja2",
       "evidence": [
-        "tests/fixtures/projects/demo-package/pdm.lock#52",
         "tests/fixtures/projects/demo-package/requirements.txt#15",
         "tests/fixtures/projects/demo-package/requirements_simple.txt#7"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/jinja2@2.11.3",
+      "evidence": [
+        "tests/fixtures/projects/demo-package/pdm.lock#52"
       ]
     },
     {
@@ -360,11 +453,16 @@
       ]
     },
     {
-      "purl": "pkg:pypi/markupsafe@1.1.1",
+      "purl": "pkg:pypi/markupsafe",
       "evidence": [
-        "tests/fixtures/projects/demo-package/pdm.lock#66",
         "tests/fixtures/projects/demo-package/requirements.txt#18",
         "tests/fixtures/projects/demo-package/requirements_simple.txt#8"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/markupsafe@1.1.1",
+      "evidence": [
+        "tests/fixtures/projects/demo-package/pdm.lock#66"
       ]
     },
     {
@@ -470,6 +568,24 @@
       ]
     },
     {
+      "purl": "pkg:pypi/mysqlclient",
+      "evidence": [
+        "tests/fixtures/pyproject.toml#31"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/package-a",
+      "evidence": [
+        "tests/fixtures/projects/test-monorepo/pyproject.toml#4"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/package-b",
+      "evidence": [
+        "tests/fixtures/projects/test-monorepo/pyproject.toml#5"
+      ]
+    },
+    {
       "purl": "pkg:pypi/packaging@26.0",
       "evidence": [
         "pdm.lock#1507"
@@ -479,6 +595,12 @@
       "purl": "pkg:pypi/paginate@0.5.7",
       "evidence": [
         "pdm.lock#1518"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/parent",
+      "evidence": [
+        "tests/fixtures/projects/poetry-with-circular-dep/packages/child/pyproject.toml#13"
       ]
     },
     {
@@ -500,6 +622,18 @@
       ]
     },
     {
+      "purl": "pkg:pypi/pep508-package",
+      "evidence": [
+        "tests/fixtures/requirements.txt#8"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pip",
+      "evidence": [
+        "tests/fixtures/requirements.txt#7"
+      ]
+    },
+    {
       "purl": "pkg:pypi/platformdirs@4.4.0",
       "evidence": [
         "pdm.lock#1566"
@@ -509,6 +643,12 @@
       "purl": "pkg:pypi/pluggy@1.6.0",
       "evidence": [
         "pdm.lock#1577"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/psycopg2",
+      "evidence": [
+        "tests/fixtures/pyproject.toml#30"
       ]
     },
     {
@@ -551,6 +691,18 @@
       "purl": "pkg:pypi/pyproject-hooks@1.2.0",
       "evidence": [
         "pdm.lock#1652"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pytest",
+      "evidence": [
+        "tests/fixtures/projects/poetry-demo/pyproject.toml#24"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pytest-cov",
+      "evidence": [
+        "tests/fixtures/projects/poetry-demo/pyproject.toml#25"
       ]
     },
     {
@@ -632,10 +784,18 @@
       ]
     },
     {
+      "purl": "pkg:pypi/requests",
+      "evidence": [
+        "tests/fixtures/projects/demo-package-has-dep-with-extras/requirements.txt#7",
+        "tests/fixtures/projects/poetry-demo/pyproject.toml#23",
+        "tests/fixtures/projects/test-hatch-static/pyproject.toml#16",
+        "tests/fixtures/projects/test-package-type-fixer/pyproject.toml#13"
+      ]
+    },
+    {
       "purl": "pkg:pypi/requests@2.26.0",
       "evidence": [
-        "tests/fixtures/projects/demo-package-has-dep-with-extras/pdm.lock#45",
-        "tests/fixtures/projects/demo-package-has-dep-with-extras/requirements.txt#7"
+        "tests/fixtures/projects/demo-package-has-dep-with-extras/pdm.lock#45"
       ]
     },
     {
@@ -705,6 +865,12 @@
       ]
     },
     {
+      "purl": "pkg:pypi/sphinx",
+      "evidence": [
+        "tests/fixtures/projects/poetry-demo/pyproject.toml#26"
+      ]
+    },
+    {
       "purl": "pkg:pypi/tomli@2.3.0",
       "evidence": [
         "pdm.lock#2012"
@@ -753,6 +919,13 @@
       ]
     },
     {
+      "purl": "pkg:pypi/urllib3",
+      "evidence": [
+        "tests/fixtures/projects/demo-combined-extras/pyproject.toml#10",
+        "tests/fixtures/projects/demo-package-has-dep-with-extras/requirements.txt#8"
+      ]
+    },
+    {
       "purl": "pkg:pypi/urllib3@1.26.20",
       "evidence": [
         "tests/fixtures/projects/demo/pdm.lock#128"
@@ -761,8 +934,7 @@
     {
       "purl": "pkg:pypi/urllib3@1.26.7",
       "evidence": [
-        "tests/fixtures/projects/demo-package-has-dep-with-extras/pdm.lock#77",
-        "tests/fixtures/projects/demo-package-has-dep-with-extras/requirements.txt#8"
+        "tests/fixtures/projects/demo-package-has-dep-with-extras/pdm.lock#77"
       ]
     },
     {
@@ -790,23 +962,23 @@
       ]
     },
     {
-      "purl": "pkg:pypi/webassets@2.0",
+      "purl": "pkg:pypi/webassets",
       "evidence": [
         "tests/fixtures/requirements.txt#3"
       ]
     },
     {
-      "purl": "pkg:pypi/werkzeug@0.16.0",
+      "purl": "pkg:pypi/werkzeug",
       "evidence": [
+        "tests/fixtures/projects/demo-package/requirements.txt#81",
+        "tests/fixtures/projects/demo-package/requirements_simple.txt#9",
         "tests/fixtures/requirements.txt#4"
       ]
     },
     {
       "purl": "pkg:pypi/werkzeug@1.0.1",
       "evidence": [
-        "tests/fixtures/projects/demo-package/pdm.lock#137",
-        "tests/fixtures/projects/demo-package/requirements.txt#81",
-        "tests/fixtures/projects/demo-package/requirements_simple.txt#9"
+        "tests/fixtures/projects/demo-package/pdm.lock#137"
       ]
     },
     {
@@ -816,13 +988,13 @@
       ]
     },
     {
-      "purl": "pkg:pypi/whoosh@2.7.4",
+      "purl": "pkg:pypi/whoosh",
       "evidence": [
         "tests/fixtures/requirements.txt#5"
       ]
     },
     {
-      "purl": "pkg:pypi/wtforms@2.2.1",
+      "purl": "pkg:pypi/wtforms",
       "evidence": [
         "tests/fixtures/requirements.txt#6"
       ]
@@ -835,6 +1007,49 @@
     }
   ],
   "subprojects": [
+    {
+      "purl": "pkg:pypi/child@0.1.0",
+      "definitionFile": "tests/fixtures/projects/poetry-with-circular-dep/packages/child/pyproject.toml",
+      "scopes": [
+        {
+          "scope": "group.dev",
+          "packages": [
+            "pkg:pypi/parent"
+          ]
+        }
+      ]
+    },
+    {
+      "purl": "pkg:pypi/demo-package-extra@0.1.0",
+      "definitionFile": "tests/fixtures/projects/demo-combined-extras/pyproject.toml",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:pypi/urllib3"
+          ]
+        },
+        {
+          "scope": "optional.all",
+          "packages": [
+            "pkg:pypi/chardet",
+            "pkg:pypi/idna"
+          ]
+        },
+        {
+          "scope": "optional.be",
+          "packages": [
+            "pkg:pypi/idna"
+          ]
+        },
+        {
+          "scope": "optional.te",
+          "packages": [
+            "pkg:pypi/chardet"
+          ]
+        }
+      ]
+    },
     {
       "purl": "pkg:pypi/demo-package-has-dep-with-extras@0.0.0",
       "definitionFile": "tests/fixtures/projects/demo-package-has-dep-with-extras/pyproject.toml",
@@ -873,6 +1088,54 @@
       ]
     },
     {
+      "purl": "pkg:pypi/package-a@0.0.1",
+      "definitionFile": "tests/fixtures/projects/test-monorepo/package_a/pyproject.toml",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:pypi/core"
+          ]
+        }
+      ]
+    },
+    {
+      "purl": "pkg:pypi/package-b",
+      "definitionFile": "tests/fixtures/projects/demo-parent-package/package-b/pyproject.toml",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:pypi/django"
+          ]
+        }
+      ]
+    },
+    {
+      "purl": "pkg:pypi/package-b@0.0.1",
+      "definitionFile": "tests/fixtures/projects/test-monorepo/package_b/pyproject.toml",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:pypi/core"
+          ]
+        }
+      ]
+    },
+    {
+      "purl": "pkg:pypi/parent@0.1.0",
+      "definitionFile": "tests/fixtures/projects/poetry-with-circular-dep/pyproject.toml",
+      "scopes": [
+        {
+          "scope": "group.dev",
+          "packages": [
+            "pkg:pypi/child"
+          ]
+        }
+      ]
+    },
+    {
       "purl": "pkg:pypi/pdm@0.0.0",
       "definitionFile": "pyproject.toml",
       "scopes": [
@@ -903,6 +1166,83 @@
             "pkg:pypi/truststore@0.10.4",
             "pkg:pypi/unearth@0.18.1",
             "pkg:pypi/virtualenv@20.35.4"
+          ]
+        }
+      ]
+    },
+    {
+      "purl": "pkg:pypi/poetry-demo@0.1.0",
+      "definitionFile": "tests/fixtures/projects/poetry-demo/pyproject.toml",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:pypi/pytest",
+            "pkg:pypi/pytest-cov",
+            "pkg:pypi/requests",
+            "pkg:pypi/sphinx"
+          ]
+        }
+      ]
+    },
+    {
+      "purl": "pkg:pypi/poetry@1.0.0",
+      "definitionFile": "tests/fixtures/pyproject.toml",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:pypi/babel",
+            "pkg:pypi/cachecontrol",
+            "pkg:pypi/cleo",
+            "pkg:pypi/flask",
+            "pkg:pypi/mysqlclient",
+            "pkg:pypi/psycopg2"
+          ]
+        },
+        {
+          "scope": "dev-dependencies",
+          "packages": [
+            "pkg:pypi/demo",
+            "pkg:pypi/demo-dir"
+          ]
+        }
+      ]
+    },
+    {
+      "purl": "pkg:pypi/test-hatch@0.1.0",
+      "definitionFile": "tests/fixtures/projects/test-hatch-static/pyproject.toml",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:pypi/click",
+            "pkg:pypi/requests"
+          ]
+        }
+      ]
+    },
+    {
+      "purl": "pkg:pypi/test-monorepo",
+      "definitionFile": "tests/fixtures/projects/test-monorepo/pyproject.toml",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:pypi/package-a",
+            "pkg:pypi/package-b"
+          ]
+        }
+      ]
+    },
+    {
+      "purl": "pkg:pypi/test-package-type-fixer@0.0.1",
+      "definitionFile": "tests/fixtures/projects/test-package-type-fixer/pyproject.toml",
+      "scopes": [
+        {
+          "scope": "dev-dependencies",
+          "packages": [
+            "pkg:pypi/requests"
           ]
         }
       ]
@@ -1252,5 +1592,86 @@
       ]
     }
   ],
-  "issues": []
+  "issues": [
+    {
+      "severity": "WARNING",
+      "message": "pyproject.toml dependencies are unresolved and emitted as versionless PyPI PURLs because no supported Python lockfile was found. Use a lockfile for resolved versions and transitive relationships.",
+      "file": "tests/fixtures/projects/demo-combined-extras/pyproject.toml"
+    },
+    {
+      "severity": "WARNING",
+      "message": "pyproject.toml dependencies are unresolved and emitted as versionless PyPI PURLs because no supported Python lockfile was found. Use a lockfile for resolved versions and transitive relationships.",
+      "file": "tests/fixtures/projects/demo-parent-package/package-b/pyproject.toml"
+    },
+    {
+      "severity": "WARNING",
+      "message": "pyproject.toml dependencies are unresolved and emitted as versionless PyPI PURLs because no supported Python lockfile was found. Use a lockfile for resolved versions and transitive relationships.",
+      "file": "tests/fixtures/projects/poetry-demo/pyproject.toml"
+    },
+    {
+      "severity": "WARNING",
+      "message": "pyproject.toml dependencies are unresolved and emitted as versionless PyPI PURLs because no supported Python lockfile was found. Use a lockfile for resolved versions and transitive relationships.",
+      "file": "tests/fixtures/projects/poetry-with-circular-dep/packages/child/pyproject.toml"
+    },
+    {
+      "severity": "WARNING",
+      "message": "pyproject.toml dependencies are unresolved and emitted as versionless PyPI PURLs because no supported Python lockfile was found. Use a lockfile for resolved versions and transitive relationships.",
+      "file": "tests/fixtures/projects/poetry-with-circular-dep/pyproject.toml"
+    },
+    {
+      "severity": "WARNING",
+      "message": "pyproject.toml dependencies are unresolved and emitted as versionless PyPI PURLs because no supported Python lockfile was found. Use a lockfile for resolved versions and transitive relationships.",
+      "file": "tests/fixtures/projects/test-hatch-static/pyproject.toml"
+    },
+    {
+      "severity": "WARNING",
+      "message": "pyproject.toml dependencies are unresolved and emitted as versionless PyPI PURLs because no supported Python lockfile was found. Use a lockfile for resolved versions and transitive relationships.",
+      "file": "tests/fixtures/projects/test-monorepo/package_a/pyproject.toml"
+    },
+    {
+      "severity": "WARNING",
+      "message": "pyproject.toml dependencies are unresolved and emitted as versionless PyPI PURLs because no supported Python lockfile was found. Use a lockfile for resolved versions and transitive relationships.",
+      "file": "tests/fixtures/projects/test-monorepo/package_b/pyproject.toml"
+    },
+    {
+      "severity": "WARNING",
+      "message": "pyproject.toml dependencies are unresolved and emitted as versionless PyPI PURLs because no supported Python lockfile was found. Use a lockfile for resolved versions and transitive relationships.",
+      "file": "tests/fixtures/projects/test-monorepo/pyproject.toml"
+    },
+    {
+      "severity": "WARNING",
+      "message": "pyproject.toml dependencies are unresolved and emitted as versionless PyPI PURLs because no supported Python lockfile was found. Use a lockfile for resolved versions and transitive relationships.",
+      "file": "tests/fixtures/projects/test-package-type-fixer/pyproject.toml"
+    },
+    {
+      "severity": "WARNING",
+      "message": "pyproject.toml dependencies are unresolved and emitted as versionless PyPI PURLs because no supported Python lockfile was found. Use a lockfile for resolved versions and transitive relationships.",
+      "file": "tests/fixtures/pyproject.toml"
+    },
+    {
+      "severity": "WARNING",
+      "message": "requirements.txt dependencies are unresolved and emitted as versionless PyPI PURLs. Use a lockfile for resolved versions and transitive relationships.",
+      "file": "tests/fixtures/projects/demo-package-has-dep-with-extras/requirements.txt"
+    },
+    {
+      "severity": "WARNING",
+      "message": "requirements.txt dependencies are unresolved and emitted as versionless PyPI PURLs. Use a lockfile for resolved versions and transitive relationships.",
+      "file": "tests/fixtures/projects/demo-package/requirements.txt"
+    },
+    {
+      "severity": "WARNING",
+      "message": "requirements.txt dependencies are unresolved and emitted as versionless PyPI PURLs. Use a lockfile for resolved versions and transitive relationships.",
+      "file": "tests/fixtures/projects/demo-package/requirements_simple.txt"
+    },
+    {
+      "severity": "WARNING",
+      "message": "requirements.txt dependencies are unresolved and emitted as versionless PyPI PURLs. Use a lockfile for resolved versions and transitive relationships.",
+      "file": "tests/fixtures/requirements.txt"
+    },
+    {
+      "severity": "WARNING",
+      "message": "requirements.txt include directives are not followed; dependencies from the referenced file may be missing.",
+      "file": "tests/fixtures/requirements-include.txt#1"
+    }
+  ]
 }
