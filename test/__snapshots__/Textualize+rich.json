@@ -1,7 +1,7 @@
 {
   "packages": [
     {
-      "purl": "pkg:pypi/alabaster@1.0.0",
+      "purl": "pkg:pypi/alabaster",
       "evidence": [
         "docs/requirements.txt#1"
       ]
@@ -259,21 +259,21 @@
       ]
     },
     {
-      "purl": "pkg:pypi/sphinx-copybutton@0.5.2",
+      "purl": "pkg:pypi/sphinx",
+      "evidence": [
+        "docs/requirements.txt#2"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/sphinx-copybutton",
       "evidence": [
         "docs/requirements.txt#4"
       ]
     },
     {
-      "purl": "pkg:pypi/sphinx-rtd-theme@3.0.2",
+      "purl": "pkg:pypi/sphinx-rtd-theme",
       "evidence": [
         "docs/requirements.txt#3"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/sphinx@8.2.3",
-      "evidence": [
-        "docs/requirements.txt#2"
       ]
     },
     {
@@ -407,5 +407,11 @@
       ]
     }
   ],
-  "issues": []
+  "issues": [
+    {
+      "severity": "WARNING",
+      "message": "requirements.txt dependencies are unresolved and emitted as versionless PyPI PURLs. Use a lockfile for resolved versions and transitive relationships.",
+      "file": "docs/requirements.txt"
+    }
+  ]
 }

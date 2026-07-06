@@ -1,97 +1,234 @@
 {
   "packages": [
     {
-      "purl": "pkg:pypi/build@1.3.0",
+      "purl": "pkg:pypi/anyio",
+      "evidence": [
+        "pyproject.toml#33"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/brotli",
+      "evidence": [
+        "pyproject.toml#39"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/brotlicffi",
+      "evidence": [
+        "pyproject.toml#41"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/build",
       "evidence": [
         "requirements.txt#17"
       ]
     },
     {
-      "purl": "pkg:pypi/chardet@5.2.0",
+      "purl": "pkg:pypi/certifi",
+      "evidence": [
+        "pyproject.toml#31"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/chardet",
       "evidence": [
         "requirements.txt#9"
       ]
     },
     {
-      "purl": "pkg:pypi/coverage@7.10.6",
+      "purl": "pkg:pypi/click",
+      "evidence": [
+        "pyproject.toml#44"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/coverage",
       "evidence": [
         "requirements.txt#21"
       ]
     },
     {
-      "purl": "pkg:pypi/cryptography@45.0.7",
+      "purl": "pkg:pypi/cryptography",
       "evidence": [
         "requirements.txt#22"
       ]
     },
     {
-      "purl": "pkg:pypi/mkautodoc@0.2.0",
+      "purl": "pkg:pypi/h2",
+      "evidence": [
+        "pyproject.toml#49"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/httpcore",
+      "evidence": [
+        "pyproject.toml#32"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/idna",
+      "evidence": [
+        "pyproject.toml#34"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/mkautodoc",
       "evidence": [
         "requirements.txt#13"
       ]
     },
     {
-      "purl": "pkg:pypi/mkdocs-material@9.6.18",
-      "evidence": [
-        "requirements.txt#14"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/mkdocs@1.6.1",
+      "purl": "pkg:pypi/mkdocs",
       "evidence": [
         "requirements.txt#12"
       ]
     },
     {
-      "purl": "pkg:pypi/mypy@1.17.1",
+      "purl": "pkg:pypi/mkdocs-material",
+      "evidence": [
+        "requirements.txt#14"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/mypy",
       "evidence": [
         "requirements.txt#23"
       ]
     },
     {
-      "purl": "pkg:pypi/pytest@8.4.1",
+      "purl": "pkg:pypi/pygments",
+      "evidence": [
+        "pyproject.toml#45"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pytest",
       "evidence": [
         "requirements.txt#24"
       ]
     },
     {
-      "purl": "pkg:pypi/ruff@0.12.11",
+      "purl": "pkg:pypi/rich",
+      "evidence": [
+        "pyproject.toml#46"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/ruff",
       "evidence": [
         "requirements.txt#25"
       ]
     },
     {
-      "purl": "pkg:pypi/trio-typing@0.10.0",
+      "purl": "pkg:pypi/socksio",
       "evidence": [
-        "requirements.txt#27"
+        "pyproject.toml#52"
       ]
     },
     {
-      "purl": "pkg:pypi/trio@0.31.0",
+      "purl": "pkg:pypi/trio",
       "evidence": [
         "requirements.txt#26"
       ]
     },
     {
-      "purl": "pkg:pypi/trustme@1.2.1",
+      "purl": "pkg:pypi/trio-typing",
+      "evidence": [
+        "requirements.txt#27"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/trustme",
       "evidence": [
         "requirements.txt#28"
       ]
     },
     {
-      "purl": "pkg:pypi/twine@6.1.0",
+      "purl": "pkg:pypi/twine",
       "evidence": [
         "requirements.txt#18"
       ]
     },
     {
-      "purl": "pkg:pypi/uvicorn@0.35.0",
+      "purl": "pkg:pypi/uvicorn",
       "evidence": [
         "requirements.txt#29"
       ]
+    },
+    {
+      "purl": "pkg:pypi/zstandard",
+      "evidence": [
+        "pyproject.toml#55"
+      ]
     }
   ],
-  "subprojects": [],
+  "subprojects": [
+    {
+      "purl": "pkg:pypi/httpx",
+      "definitionFile": "pyproject.toml",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:pypi/anyio",
+            "pkg:pypi/certifi",
+            "pkg:pypi/httpcore",
+            "pkg:pypi/idna"
+          ]
+        },
+        {
+          "scope": "optional.brotli",
+          "packages": [
+            "pkg:pypi/brotli",
+            "pkg:pypi/brotlicffi"
+          ]
+        },
+        {
+          "scope": "optional.cli",
+          "packages": [
+            "pkg:pypi/click",
+            "pkg:pypi/pygments",
+            "pkg:pypi/rich"
+          ]
+        },
+        {
+          "scope": "optional.http2",
+          "packages": [
+            "pkg:pypi/h2"
+          ]
+        },
+        {
+          "scope": "optional.socks",
+          "packages": [
+            "pkg:pypi/socksio"
+          ]
+        },
+        {
+          "scope": "optional.zstd",
+          "packages": [
+            "pkg:pypi/zstandard"
+          ]
+        }
+      ]
+    }
+  ],
   "relationships": [],
-  "issues": []
+  "issues": [
+    {
+      "severity": "WARNING",
+      "message": "Unsupported editable requirements.txt dependency declaration was not emitted: -e .[brotli,cli,http2,socks,zstd]",
+      "file": "requirements.txt#5"
+    },
+    {
+      "severity": "WARNING",
+      "message": "pyproject.toml dependencies are unresolved and emitted as versionless PyPI PURLs because no supported Python lockfile was found. Use a lockfile for resolved versions and transitive relationships.",
+      "file": "pyproject.toml"
+    },
+    {
+      "severity": "WARNING",
+      "message": "requirements.txt dependencies are unresolved and emitted as versionless PyPI PURLs. Use a lockfile for resolved versions and transitive relationships.",
+      "file": "requirements.txt"
+    }
+  ]
 }

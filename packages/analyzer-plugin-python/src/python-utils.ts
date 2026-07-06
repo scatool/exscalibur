@@ -4,12 +4,12 @@ import { PackageURL } from "packageurl-js";
  * Create a Package URL (PURL) for a Python package
  * Format: pkg:pypi/package-name@version
  */
-export function createPypiPurl(name: string, version: string): string {
+export function createPypiPurl(name: string, version?: string | null): string {
   // Normalize the package name (lowercase and replace underscores with hyphens)
   // PyPI treats names case-insensitively and treats - and _ as equivalent
-  const normalizedName = name.toLowerCase().replace(/_/g, "-");
+  const normalizedName = normalizePythonName(name);
 
-  return new PackageURL("pypi", "", normalizedName, version, null, null).toString();
+  return new PackageURL("pypi", null, normalizedName, version || null, null, null).toString();
 }
 
 /**
@@ -17,6 +17,21 @@ export function createPypiPurl(name: string, version: string): string {
  */
 export function normalizePythonName(name: string): string {
   return name.toLowerCase().replace(/_/g, "-");
+}
+
+/**
+ * Parse a package name from a PEP 508-style dependency specification.
+ */
+export function parsePythonDependencyName(spec: string): string | null {
+  const trimmed = spec.trim();
+  if (!trimmed) return null;
+
+  if (/^(?:[a-zA-Z][a-zA-Z0-9+.-]*:\/\/|(?:git|hg|svn|bzr)\+)/.test(trimmed)) {
+    return null;
+  }
+
+  const nameMatch = trimmed.match(/^([a-zA-Z0-9][a-zA-Z0-9._-]*)/);
+  return nameMatch ? nameMatch[1] : null;
 }
 
 /**

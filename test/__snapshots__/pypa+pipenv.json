@@ -61,7 +61,7 @@
       ]
     },
     {
-      "purl": "pkg:pypi/certifi@2024.2.2",
+      "purl": "pkg:pypi/certifi",
       "evidence": [
         "docs/requirements.txt#17"
       ]
@@ -93,15 +93,15 @@
       ]
     },
     {
-      "purl": "pkg:pypi/click@8.0.3",
+      "purl": "pkg:pypi/click",
       "evidence": [
-        "Pipfile.lock#352"
+        "docs/requirements.txt#1"
       ]
     },
     {
-      "purl": "pkg:pypi/click@8.1.7",
+      "purl": "pkg:pypi/click@8.0.3",
       "evidence": [
-        "docs/requirements.txt#1"
+        "Pipfile.lock#352"
       ]
     },
     {
@@ -177,6 +177,12 @@
       ]
     },
     {
+      "purl": "pkg:pypi/idna",
+      "evidence": [
+        "docs/requirements.txt#18"
+      ]
+    },
+    {
       "purl": "pkg:pypi/idna@3.11",
       "evidence": [
         "Pipfile.lock#603",
@@ -184,16 +190,15 @@
       ]
     },
     {
-      "purl": "pkg:pypi/idna@3.6",
+      "purl": "pkg:pypi/imagesize",
       "evidence": [
-        "docs/requirements.txt#18"
+        "docs/requirements.txt#2"
       ]
     },
     {
       "purl": "pkg:pypi/imagesize@1.4.1",
       "evidence": [
-        "Pipfile.lock#611",
-        "docs/requirements.txt#2"
+        "Pipfile.lock#611"
       ]
     },
     {
@@ -246,7 +251,7 @@
       ]
     },
     {
-      "purl": "pkg:pypi/jinja2@3.1.4",
+      "purl": "pkg:pypi/jinja2",
       "evidence": [
         "docs/requirements.txt#3"
       ]
@@ -282,7 +287,7 @@
       ]
     },
     {
-      "purl": "pkg:pypi/markupsafe@2.1.5",
+      "purl": "pkg:pypi/markupsafe",
       "evidence": [
         "docs/requirements.txt#4"
       ]
@@ -330,7 +335,7 @@
       ]
     },
     {
-      "purl": "pkg:pypi/myst-parser@4.0.0",
+      "purl": "pkg:pypi/myst-parser",
       "evidence": [
         "docs/requirements.txt#5"
       ]
@@ -483,7 +488,7 @@
       ]
     },
     {
-      "purl": "pkg:pypi/pytz@2024.1",
+      "purl": "pkg:pypi/pytz",
       "evidence": [
         "docs/requirements.txt#7"
       ]
@@ -507,15 +512,15 @@
       ]
     },
     {
-      "purl": "pkg:pypi/requests-toolbelt@1.0.0",
+      "purl": "pkg:pypi/requests",
       "evidence": [
-        "Pipfile.lock#1164"
+        "docs/requirements.txt#8"
       ]
     },
     {
-      "purl": "pkg:pypi/requests@2.32.0",
+      "purl": "pkg:pypi/requests-toolbelt@1.0.0",
       "evidence": [
-        "docs/requirements.txt#8"
+        "Pipfile.lock#1164"
       ]
     },
     {
@@ -556,7 +561,7 @@
       ]
     },
     {
-      "purl": "pkg:pypi/snowballstemmer@2.2.0",
+      "purl": "pkg:pypi/snowballstemmer",
       "evidence": [
         "docs/requirements.txt#9"
       ]
@@ -574,34 +579,34 @@
       ]
     },
     {
+      "purl": "pkg:pypi/sphinx",
+      "evidence": [
+        "docs/requirements.txt#10",
+        "tests/fixtures/fake-package/docs/requirements.txt#1"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/sphinx-click",
+      "evidence": [
+        "docs/requirements.txt#11"
+      ]
+    },
+    {
       "purl": "pkg:pypi/sphinx-click@4.4.0",
       "evidence": [
         "Pipfile.lock#1238"
       ]
     },
     {
-      "purl": "pkg:pypi/sphinx-click@6.0.0",
-      "evidence": [
-        "docs/requirements.txt#11"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/sphinx-rtd-theme@0.0.0",
+      "purl": "pkg:pypi/sphinx-rtd-theme",
       "evidence": [
         "tests/fixtures/fake-package/docs/requirements.txt#2"
       ]
     },
     {
-      "purl": "pkg:pypi/sphinx@0.0.0",
-      "evidence": [
-        "tests/fixtures/fake-package/docs/requirements.txt#1"
-      ]
-    },
-    {
       "purl": "pkg:pypi/sphinx@8.1.3",
       "evidence": [
-        "Pipfile.lock#1229",
-        "docs/requirements.txt#10"
+        "Pipfile.lock#1229"
       ]
     },
     {
@@ -641,19 +646,19 @@
       ]
     },
     {
+      "purl": "pkg:pypi/sphinxcontrib-spelling",
+      "evidence": [
+        "docs/requirements.txt#12"
+      ]
+    },
+    {
       "purl": "pkg:pypi/sphinxcontrib-spelling@7.7.0",
       "evidence": [
         "Pipfile.lock#1295"
       ]
     },
     {
-      "purl": "pkg:pypi/sphinxcontrib-spelling@8.0.0",
-      "evidence": [
-        "docs/requirements.txt#12"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/sphinxcontrib-websupport@2.0.0",
+      "purl": "pkg:pypi/sphinxcontrib-websupport",
       "evidence": [
         "docs/requirements.txt#13"
       ]
@@ -695,7 +700,7 @@
       ]
     },
     {
-      "purl": "pkg:pypi/urllib3@2.2.1",
+      "purl": "pkg:pypi/urllib3",
       "evidence": [
         "docs/requirements.txt#14"
       ]
@@ -713,15 +718,15 @@
       ]
     },
     {
-      "purl": "pkg:pypi/virtualenv-clone@0.5.7",
+      "purl": "pkg:pypi/virtualenv",
       "evidence": [
-        "docs/requirements.txt#16"
+        "docs/requirements.txt#15"
       ]
     },
     {
-      "purl": "pkg:pypi/virtualenv@20.25.0",
+      "purl": "pkg:pypi/virtualenv-clone",
       "evidence": [
-        "docs/requirements.txt#15"
+        "docs/requirements.txt#16"
       ]
     },
     {
@@ -891,5 +896,21 @@
     }
   ],
   "relationships": [],
-  "issues": []
+  "issues": [
+    {
+      "severity": "WARNING",
+      "message": "Unsupported editable requirements.txt dependency declaration was not emitted: -e .",
+      "file": "docs/requirements.txt#6"
+    },
+    {
+      "severity": "WARNING",
+      "message": "requirements.txt dependencies are unresolved and emitted as versionless PyPI PURLs. Use a lockfile for resolved versions and transitive relationships.",
+      "file": "docs/requirements.txt"
+    },
+    {
+      "severity": "WARNING",
+      "message": "requirements.txt dependencies are unresolved and emitted as versionless PyPI PURLs. Use a lockfile for resolved versions and transitive relationships.",
+      "file": "tests/fixtures/fake-package/docs/requirements.txt"
+    }
+  ]
 }

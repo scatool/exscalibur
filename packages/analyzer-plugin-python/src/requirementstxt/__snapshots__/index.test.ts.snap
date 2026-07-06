@@ -2,25 +2,31 @@
 
 exports[`basic 1`] = `
 {
-  "issues": [],
+  "issues": [
+    {
+      "file": "requirements.txt",
+      "message": "requirements.txt dependencies are unresolved and emitted as versionless PyPI PURLs. Use a lockfile for resolved versions and transitive relationships.",
+      "severity": "WARNING",
+    },
+  ],
   "packages": [
     {
       "evidence": [
         "requirements.txt#3",
       ],
-      "purl": "pkg:pypi/django@0.0.0",
+      "purl": "pkg:pypi/django",
     },
     {
       "evidence": [
         "requirements.txt#2",
       ],
-      "purl": "pkg:pypi/flask@0.0.0",
+      "purl": "pkg:pypi/flask",
     },
     {
       "evidence": [
         "requirements.txt#1",
       ],
-      "purl": "pkg:pypi/requests@0.0.0",
+      "purl": "pkg:pypi/requests",
     },
   ],
   "relationships": [],
@@ -30,37 +36,103 @@ exports[`basic 1`] = `
 
 exports[`dev-deps 1`] = `
 {
-  "issues": [],
+  "issues": [
+    {
+      "file": "requirements-dev.txt",
+      "message": "requirements.txt dependencies are unresolved and emitted as versionless PyPI PURLs. Use a lockfile for resolved versions and transitive relationships.",
+      "severity": "WARNING",
+    },
+    {
+      "file": "requirements.txt",
+      "message": "requirements.txt dependencies are unresolved and emitted as versionless PyPI PURLs. Use a lockfile for resolved versions and transitive relationships.",
+      "severity": "WARNING",
+    },
+  ],
   "packages": [
     {
       "evidence": [
         "requirements-dev.txt#3",
       ],
-      "purl": "pkg:pypi/black@23.9.1",
+      "purl": "pkg:pypi/black",
     },
     {
       "evidence": [
         "requirements.txt#1",
       ],
-      "purl": "pkg:pypi/flask@2.3.3",
-    },
-    {
-      "evidence": [
-        "requirements-dev.txt#2",
-      ],
-      "purl": "pkg:pypi/pytest-cov@4.1.0",
+      "purl": "pkg:pypi/flask",
     },
     {
       "evidence": [
         "requirements-dev.txt#1",
       ],
-      "purl": "pkg:pypi/pytest@7.4.2",
+      "purl": "pkg:pypi/pytest",
+    },
+    {
+      "evidence": [
+        "requirements-dev.txt#2",
+      ],
+      "purl": "pkg:pypi/pytest-cov",
     },
     {
       "evidence": [
         "requirements.txt#2",
       ],
-      "purl": "pkg:pypi/requests@2.31.0",
+      "purl": "pkg:pypi/requests",
+    },
+  ],
+  "relationships": [],
+  "subprojects": [],
+}
+`;
+
+exports[`unsupported 1`] = `
+{
+  "issues": [
+    {
+      "file": "requirements.txt#6",
+      "message": "Unsupported editable requirements.txt dependency declaration was not emitted: -e .",
+      "severity": "WARNING",
+    },
+    {
+      "file": "requirements.txt#3",
+      "message": "Unsupported requirements.txt dependency declaration was not emitted: https://example.com/packages/unnamed-1.0.0.tar.gz",
+      "severity": "WARNING",
+    },
+    {
+      "file": "requirements.txt",
+      "message": "requirements.txt dependencies are unresolved and emitted as versionless PyPI PURLs. Use a lockfile for resolved versions and transitive relationships.",
+      "severity": "WARNING",
+    },
+    {
+      "file": "requirements.txt#4",
+      "message": "requirements.txt include directives are not followed; dependencies from the referenced file may be missing.",
+      "severity": "WARNING",
+    },
+  ],
+  "packages": [
+    {
+      "evidence": [
+        "requirements.txt#5",
+      ],
+      "purl": "pkg:pypi/editable-pkg",
+    },
+    {
+      "evidence": [
+        "requirements.txt#2",
+      ],
+      "purl": "pkg:pypi/named-direct",
+    },
+    {
+      "evidence": [
+        "requirements.txt#1",
+      ],
+      "purl": "pkg:pypi/requests",
+    },
+    {
+      "evidence": [
+        "requirements.txt#7",
+      ],
+      "purl": "pkg:pypi/url-pkg",
     },
   ],
   "relationships": [],
@@ -70,37 +142,43 @@ exports[`dev-deps 1`] = `
 
 exports[`with-versions 1`] = `
 {
-  "issues": [],
+  "issues": [
+    {
+      "file": "requirements.txt",
+      "message": "requirements.txt dependencies are unresolved and emitted as versionless PyPI PURLs. Use a lockfile for resolved versions and transitive relationships.",
+      "severity": "WARNING",
+    },
+  ],
   "packages": [
     {
       "evidence": [
         "requirements.txt#6",
       ],
-      "purl": "pkg:pypi/django@4.2.0",
+      "purl": "pkg:pypi/django",
     },
     {
       "evidence": [
         "requirements.txt#5",
       ],
-      "purl": "pkg:pypi/flask@2.3.3",
+      "purl": "pkg:pypi/flask",
     },
     {
       "evidence": [
         "requirements.txt#12",
       ],
-      "purl": "pkg:pypi/pytest@7.4.0",
+      "purl": "pkg:pypi/pytest",
     },
     {
       "evidence": [
         "requirements.txt#2",
       ],
-      "purl": "pkg:pypi/requests@2.31.0",
+      "purl": "pkg:pypi/requests",
     },
     {
       "evidence": [
         "requirements.txt#9",
       ],
-      "purl": "pkg:pypi/sqlalchemy@2.0.21",
+      "purl": "pkg:pypi/sqlalchemy",
     },
   ],
   "relationships": [],
