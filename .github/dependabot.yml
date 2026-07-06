@@ -12,6 +12,10 @@ updates:
       interval: "daily"
     cooldown:
       default-days: 3
+    ignore:
+      - dependency-name: "@types/node"
+        versions:
+          - ">=23.0.0"
     groups:
       eslint:
         patterns:
