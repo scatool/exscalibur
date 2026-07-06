@@ -11,7 +11,7 @@ import {
   initializeExtractionMaps,
   readTextFile,
   runCommand,
-  scanAndMarkFiles,
+  scanFiles,
 } from "@scatool/analyzer-core";
 import { PackageURL } from "packageurl-js";
 import { dirname, join } from "node:path/posix";
@@ -59,7 +59,11 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
   version: 1,
   optionsSchema: optionSchema,
   markFiles: async function (codebase: string, options: GradleOptions) {
-    await scanAndMarkFiles(this, codebase, "**/build.gradle{,.kts}", options.ignore);
+    for (const file of await scanFiles(codebase, "**/build.gradle{,.kts}", options.ignore)) {
+      if (hasGradleWrapper(dirname(file))) {
+        this.markFile(file);
+      }
+    }
   },
   extractFile: async (file: string, options: GradleOptions): Promise<AnalyzerResult> => {
     const dir = dirname(file);
@@ -108,6 +112,7 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
         name: string;
         group: string;
         version: string;
+        buildFile?: string;
       }
 
       const projectInfoMap = new Map<string, ProjectInfo>();
@@ -130,8 +135,14 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
               .trim();
             const projectInfoData = JSON.parse(jsonStr) as Record<string, ProjectInfo>;
 
-            for (const [path, info] of Object.entries(projectInfoData)) {
-              projectInfoMap.set(path, info);
+            const entries = Object.entries(projectInfoData);
+            const rootInfo = projectInfoData[":"];
+            if (entries.length === 1 && rootInfo?.name === "buildSrc") {
+              projectInfoMap.set(":buildSrc", rootInfo);
+            } else {
+              for (const [path, info] of entries) {
+                projectInfoMap.set(path, info);
+              }
             }
 
             searchPos = endIndex + endMarker.length;
@@ -215,6 +226,7 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
           name: string;
           group: string;
           version: string;
+          definitionFile: string;
           scopes: Map<string, Set<string>>;
           directDeps: Set<string>;
         }
@@ -235,6 +247,7 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
               name: info.name,
               group: info.group,
               version: info.version,
+              definitionFile: info.buildFile ?? file,
               scopes: new Map(),
               directDeps: new Set(),
             });
@@ -247,6 +260,7 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
               name: projectName,
               group: "",
               version: "",
+              definitionFile: file,
               scopes: new Map(),
               directDeps: new Set(),
             });
@@ -273,23 +287,29 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
 
         // Process all dependencies in this configuration
         for (const dep of config.allDependencies) {
+          if (shouldSkipDependency(dep)) {
+            continue;
+          }
+
           // Normalize version: omit "unspecified" for internal projects
           const version =
             dep.isProject && dep.coordinates.version === "unspecified"
               ? ""
               : dep.coordinates.version;
 
-          const depPurl = createMavenPurl(
-            dep.coordinates.group,
-            dep.coordinates.module,
-            version,
-            dep.repositoryUrl,
-          );
+          const depPurl = dep.isProject
+            ? createGradleProjectPurl(dep.coordinates.group, dep.coordinates.module, version)
+            : createMavenPurl(
+                dep.coordinates.group,
+                dep.coordinates.module,
+                version,
+                dep.repositoryUrl,
+              );
 
           // Only add external packages to package map (not internal projects)
           if (!dep.isProject) {
             ensurePackageExists(packageMap, depPurl);
-            addPackageEvidence(packageMap, depPurl, file);
+            addPackageEvidence(packageMap, depPurl, project.definitionFile);
           }
 
           // Add all direct dependencies to scopes (both projects and external packages)
@@ -307,7 +327,11 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
           if (!dep.isProject && dep.dependencies && dep.dependencies.length > 0) {
             for (const transitiveDep of dep.dependencies) {
               const transitiveNode = config.allDependencies.find((d) => d.id === transitiveDep);
-              if (transitiveNode && !transitiveNode.isProject) {
+              if (
+                transitiveNode &&
+                !transitiveNode.isProject &&
+                !shouldSkipDependency(transitiveNode)
+              ) {
                 const transitivePurl = createMavenPurl(
                   transitiveNode.coordinates.group,
                   transitiveNode.coordinates.module,
@@ -322,7 +346,7 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
       }
 
       // Convert project map to subprojects
-      for (const [, project] of projectMap.entries()) {
+      for (const [projectPath, project] of projectMap.entries()) {
         const scopes: DependencyScope[] = [];
 
         for (const [scopeName, packages] of project.scopes.entries()) {
@@ -338,11 +362,19 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
           // Create a PURL for the project
           // Omit version if it's "unspecified" (Gradle's default when not set in build.gradle)
           const projectVersion = project.version === "unspecified" ? "" : project.version;
-          const projectPurl = createMavenPurl(project.group, project.name, projectVersion);
+          const projectPurl = createGradleProjectPurl(project.group, project.name, projectVersion);
+
+          if (!project.group) {
+            issues.push({
+              message: `Gradle project '${projectPath}' does not declare a group, using a generic PURL instead of a Maven PURL`,
+              severity: "WARNING",
+              file: project.definitionFile,
+            });
+          }
 
           subprojects.push({
             purl: projectPurl,
-            definitionFile: file,
+            definitionFile: project.definitionFile,
             scopes,
           });
         }
@@ -366,6 +398,33 @@ const MAVEN_CENTRAL_URLS = [
   "https://repo.maven.apache.org/maven2",
   "https://repo1.maven.org/maven2",
 ] as const;
+
+function hasGradleWrapper(dir: string): boolean {
+  return process.platform === "win32"
+    ? existsSync(join(dir, "gradlew.bat"))
+    : existsSync(join(dir, "gradlew"));
+}
+
+function shouldSkipDependency(dep: DependencyNode): boolean {
+  return isInjectedDependencyGraphPlugin(dep);
+}
+
+function isInjectedDependencyGraphPlugin(dep: DependencyNode): boolean {
+  return (
+    dep.coordinates.group === "org.gradle" &&
+    dep.coordinates.module === "github-dependency-graph-gradle-plugin" &&
+    dep.coordinates.version === "1.4.0" &&
+    dep.repositoryUrl === "https://plugins.gradle.org/m2"
+  );
+}
+
+function createGradleProjectPurl(group: string, name: string, version: string): string {
+  if (group) {
+    return createMavenPurl(group, name, version);
+  }
+
+  return new PackageURL("generic", null, name, version, null, null).toString();
+}
 
 function createMavenPurl(group: string, name: string, version: string, repoUrl?: string): string {
   const namespace = group || null;

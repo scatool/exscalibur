@@ -1,4 +1,4 @@
-// Gradle init script to extract project metadata (group, name, version)
+// Gradle init script to extract project metadata (group, name, version, build file)
 gradle.projectsEvaluated {
     def projectInfo = [:]
 
@@ -6,7 +6,8 @@ gradle.projectsEvaluated {
         projectInfo[project.path] = [
             name: project.name,
             group: project.group.toString(),
-            version: project.version.toString()
+            version: project.version.toString(),
+            buildFile: project.buildFile.absolutePath.replace(File.separatorChar, '/' as char)
         ]
     }
 

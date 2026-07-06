@@ -129,74 +129,76 @@ exports[`multimodule 1`] = `
 {
   "issues": [
     {
-      "file": "app/build.gradle",
-      "message": "Gradle wrapper (gradlew) not found",
-      "severity": "ERROR",
-    },
-    {
-      "file": "lib/build.gradle",
-      "message": "Gradle wrapper (gradlew) not found",
-      "severity": "ERROR",
+      "file": "buildSrc/build.gradle",
+      "message": "Gradle project ':buildSrc' does not declare a group, using a generic PURL instead of a Maven PURL",
+      "severity": "WARNING",
     },
   ],
   "packages": [
     {
       "evidence": [
-        "build.gradle",
+        "app/build.gradle",
       ],
       "purl": "pkg:maven/com.google.code.findbugs/jsr305@3.0.2",
     },
     {
       "evidence": [
-        "build.gradle",
+        "app/build.gradle",
       ],
       "purl": "pkg:maven/com.google.errorprone/error_prone_annotations@2.11.0",
     },
     {
       "evidence": [
-        "build.gradle",
+        "app/build.gradle",
       ],
       "purl": "pkg:maven/com.google.guava/failureaccess@1.0.1",
     },
     {
       "evidence": [
-        "build.gradle",
+        "app/build.gradle",
       ],
       "purl": "pkg:maven/com.google.guava/guava@31.1-jre",
     },
     {
       "evidence": [
-        "build.gradle",
+        "app/build.gradle",
       ],
       "purl": "pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava",
     },
     {
       "evidence": [
-        "build.gradle",
+        "app/build.gradle",
       ],
       "purl": "pkg:maven/com.google.j2objc/j2objc-annotations@1.3",
     },
     {
       "evidence": [
-        "build.gradle",
+        "app/build.gradle",
       ],
       "purl": "pkg:maven/junit/junit@4.13.2",
     },
     {
       "evidence": [
-        "build.gradle",
+        "buildSrc/build.gradle",
+      ],
+      "purl": "pkg:maven/org.apache.commons/commons-lang3@3.14.0",
+    },
+    {
+      "evidence": [
+        "app/build.gradle",
       ],
       "purl": "pkg:maven/org.checkerframework/checker-qual@3.12.0",
     },
     {
       "evidence": [
-        "build.gradle",
+        "app/build.gradle",
       ],
       "purl": "pkg:maven/org.hamcrest/hamcrest-core@1.3",
     },
     {
       "evidence": [
-        "build.gradle",
+        "app/build.gradle",
+        "lib/build.gradle",
       ],
       "purl": "pkg:maven/org.slf4j/slf4j-api@2.0.7",
     },
@@ -222,7 +224,19 @@ exports[`multimodule 1`] = `
   ],
   "subprojects": [
     {
-      "definitionFile": "build.gradle",
+      "definitionFile": "buildSrc/build.gradle",
+      "purl": "pkg:generic/buildSrc",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:maven/org.apache.commons/commons-lang3@3.14.0",
+          ],
+          "scope": "buildScriptClasspath",
+        },
+      ],
+    },
+    {
+      "definitionFile": "app/build.gradle",
       "purl": "pkg:maven/multimodule-example/app",
       "scopes": [
         {
@@ -260,7 +274,7 @@ exports[`multimodule 1`] = `
       ],
     },
     {
-      "definitionFile": "build.gradle",
+      "definitionFile": "lib/build.gradle",
       "purl": "pkg:maven/multimodule-example/lib",
       "scopes": [
         {
