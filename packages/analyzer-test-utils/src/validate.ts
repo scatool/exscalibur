@@ -57,4 +57,11 @@ export function validateResult(result: AnalyzerResult): void {
       throw new Error(`Duplicate purls in relationship 'to' array for '${rel.from}': ${purls}`);
     }
   }
+
+  // Check for issue codes
+  for (const issue of result.issues) {
+    if (!issue.code) {
+      throw new Error(`Issue is missing required code: ${issue.message}`);
+    }
+  }
 }

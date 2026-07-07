@@ -59,6 +59,7 @@ export function extractCycloneDX(content: string, filePath?: string): AnalyzerRe
         issues: filePath
           ? [
               {
+                code: "cyclonedx.not_cyclonedx_bom",
                 message: `Not a CycloneDX BOM (bomFormat: ${bom.bomFormat ?? "missing"})`,
                 severity: "WARNING",
                 file: filePath,
@@ -175,6 +176,7 @@ export function extractCycloneDX(content: string, filePath?: string): AnalyzerRe
       issues: filePath
         ? [
             {
+              code: "cyclonedx.parse_failed",
               message: `Failed to parse CycloneDX BOM: ${error instanceof Error ? error.message : String(error)}`,
               severity: "ERROR",
               file: filePath,

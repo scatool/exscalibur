@@ -129,6 +129,7 @@ exports[`multimodule 1`] = `
 {
   "issues": [
     {
+      "code": "gradle.project_group_missing",
       "file": "buildSrc/build.gradle",
       "message": "Gradle project ':buildSrc' does not declare a group, using a generic PURL instead of a Maven PURL",
       "severity": "WARNING",

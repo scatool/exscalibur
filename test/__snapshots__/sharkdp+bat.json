@@ -2973,11 +2973,13 @@
   ],
   "issues": [
     {
+      "code": "gomod.module_name_parse_failed",
       "severity": "ERROR",
       "message": "Failed to parse module name from go.mod",
       "file": "tests/syntax-tests/highlighted/Go/go.mod"
     },
     {
+      "code": "requirementstxt.unresolved_dependencies",
       "severity": "WARNING",
       "message": "requirements.txt dependencies are unresolved and emitted as versionless PyPI PURLs. Use a lockfile for resolved versions and transitive relationships.",
       "file": "tests/syntax-tests/source/Requirements.txt/requirements.txt"

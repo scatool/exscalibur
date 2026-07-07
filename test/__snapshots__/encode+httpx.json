@@ -216,19 +216,22 @@
   "relationships": [],
   "issues": [
     {
-      "severity": "WARNING",
-      "message": "Unsupported editable requirements.txt dependency declaration was not emitted: -e .[brotli,cli,http2,socks,zstd]",
-      "file": "requirements.txt#5"
-    },
-    {
+      "code": "pyprojecttoml.unresolved_dependencies",
       "severity": "WARNING",
       "message": "pyproject.toml dependencies are unresolved and emitted as versionless PyPI PURLs because no supported Python lockfile was found. Use a lockfile for resolved versions and transitive relationships.",
       "file": "pyproject.toml"
     },
     {
+      "code": "requirementstxt.unresolved_dependencies",
       "severity": "WARNING",
       "message": "requirements.txt dependencies are unresolved and emitted as versionless PyPI PURLs. Use a lockfile for resolved versions and transitive relationships.",
       "file": "requirements.txt"
+    },
+    {
+      "code": "requirementstxt.unsupported_editable_dependency_declaration",
+      "severity": "WARNING",
+      "message": "Unsupported editable requirements.txt dependency declaration was not emitted: -e .[brotli,cli,http2,socks,zstd]",
+      "file": "requirements.txt#5"
     }
   ]
 }

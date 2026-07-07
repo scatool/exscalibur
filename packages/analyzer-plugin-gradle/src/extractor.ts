@@ -77,6 +77,7 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
       const gradleWrapper = isWindows ? join(dir, "gradlew.bat") : join(dir, "gradlew");
       if (!existsSync(gradleWrapper)) {
         issues.push({
+          code: "gradle.wrapper_not_found",
           message: "Gradle wrapper (gradlew) not found",
           severity: "ERROR",
           file,
@@ -149,6 +150,7 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
           }
         } catch (error) {
           issues.push({
+            code: "gradle.project_info_parse_failed",
             message: `Failed to parse project info: ${error instanceof Error ? error.message : String(error)}`,
             severity: "WARNING",
             file,
@@ -156,6 +158,7 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
         }
       } else {
         issues.push({
+          code: "gradle.project_metadata_extraction_failed",
           message: "Failed to extract project metadata, using fallback values",
           severity: "WARNING",
           file,
@@ -180,6 +183,7 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
       });
       if (exitCode !== 0) {
         issues.push({
+          code: "gradle.dependency_extraction_failed",
           message: `Gradle dependency extraction failed with exit code ${exitCode}`,
           severity: "ERROR",
           file,
@@ -199,6 +203,7 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
 
       if (!existsSync(graphFile)) {
         issues.push({
+          code: "gradle.dependency_graph_not_found",
           message: "dependency-graph.json not found",
           severity: "ERROR",
           file,
@@ -267,6 +272,7 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
 
             if (!issues.some((i) => i.message.includes("using fallback values for project"))) {
               issues.push({
+                code: "gradle.project_metadata_unknown",
                 message: `Could not determine project metadata for '${projectPath}', using fallback values`,
                 severity: "HINT",
                 file,
@@ -366,6 +372,7 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
 
           if (!project.group) {
             issues.push({
+              code: "gradle.project_group_missing",
               message: `Gradle project '${projectPath}' does not declare a group, using a generic PURL instead of a Maven PURL`,
               severity: "WARNING",
               file: project.definitionFile,
@@ -381,6 +388,7 @@ export const extractor: Extractor<GradleOptions> = filesExtractor<GradleOptions>
       }
     } catch (error) {
       issues.push({
+        code: "gradle.extraction_failed",
         message: `Failed to extract dependencies: ${error instanceof Error ? error.message : String(error)}`,
         severity: "ERROR",
         file,

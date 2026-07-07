@@ -4,6 +4,7 @@ exports[`basic 1`] = `
 {
   "issues": [
     {
+      "code": "pyprojecttoml.unresolved_dependencies",
       "file": "pyproject.toml",
       "message": "pyproject.toml dependencies are unresolved and emitted as versionless PyPI PURLs because no supported Python lockfile was found. Use a lockfile for resolved versions and transitive relationships.",
       "severity": "WARNING",
@@ -96,6 +97,7 @@ exports[`poetry 1`] = `
 {
   "issues": [
     {
+      "code": "pyprojecttoml.unresolved_dependencies",
       "file": "pyproject.toml",
       "message": "pyproject.toml dependencies are unresolved and emitted as versionless PyPI PURLs because no supported Python lockfile was found. Use a lockfile for resolved versions and transitive relationships.",
       "severity": "WARNING",

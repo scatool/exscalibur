@@ -898,19 +898,22 @@
   "relationships": [],
   "issues": [
     {
-      "severity": "WARNING",
-      "message": "Unsupported editable requirements.txt dependency declaration was not emitted: -e .",
-      "file": "docs/requirements.txt#6"
-    },
-    {
+      "code": "requirementstxt.unresolved_dependencies",
       "severity": "WARNING",
       "message": "requirements.txt dependencies are unresolved and emitted as versionless PyPI PURLs. Use a lockfile for resolved versions and transitive relationships.",
       "file": "docs/requirements.txt"
     },
     {
+      "code": "requirementstxt.unresolved_dependencies",
       "severity": "WARNING",
       "message": "requirements.txt dependencies are unresolved and emitted as versionless PyPI PURLs. Use a lockfile for resolved versions and transitive relationships.",
       "file": "tests/fixtures/fake-package/docs/requirements.txt"
+    },
+    {
+      "code": "requirementstxt.unsupported_editable_dependency_declaration",
+      "severity": "WARNING",
+      "message": "Unsupported editable requirements.txt dependency declaration was not emitted: -e .",
+      "file": "docs/requirements.txt#6"
     }
   ]
 }

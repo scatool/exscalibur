@@ -2392,6 +2392,7 @@
   ],
   "issues": [
     {
+      "code": "gradle.project_group_missing",
       "message": "Gradle project ':' does not declare a group, using a generic PURL instead of a Maven PURL",
       "severity": "WARNING",
       "file": "build.gradle"

@@ -93,6 +93,7 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
         addDependency(scope, depName, spec);
       } else {
         issues.push({
+          code: "pyprojecttoml.unsupported_dependency_declaration",
           severity: "WARNING",
           message: `Unsupported pyproject.toml dependency declaration was not emitted: ${spec}`,
           file: toEvidence(file, findDependencyLineNumber(lines, spec, spec)),
@@ -158,6 +159,7 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
 
     if (scopes.length > 0) {
       issues.push({
+        code: "pyprojecttoml.unresolved_dependencies",
         severity: "WARNING",
         message:
           "pyproject.toml dependencies are unresolved and emitted as versionless PyPI PURLs because no supported Python lockfile was found. Use a lockfile for resolved versions and transitive relationships.",

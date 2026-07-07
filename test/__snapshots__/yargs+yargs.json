@@ -173,6 +173,7 @@
   "relationships": [],
   "issues": [
     {
+      "code": "core.file_extraction_failed",
       "message": "Failed to extract file: Expected property name or '}' in JSON at position 1 (line 1 column 2)",
       "severity": "ERROR",
       "file": "test/fixtures/broken-json/package.json"

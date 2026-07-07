@@ -135,6 +135,7 @@ export async function extractFile(file: string, options: VcpkgOptions): Promise<
       file,
       file,
       `Failed to extract dependencies from ${file}: ${error instanceof Error ? `message: ${error.message}\n\nstack: ${error.stack}` : String(error)}`,
+      "vcpkg.extraction_failed",
     );
   }
 }

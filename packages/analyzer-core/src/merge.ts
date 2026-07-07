@@ -1,4 +1,4 @@
-import type { AnalyzerResult } from "./types.ts";
+import type { AnalyzerResult, Issue } from "./types.ts";
 import { normalizeResult } from "./normalize.ts";
 
 /**
@@ -17,8 +17,7 @@ export function mergeResults(results: AnalyzerResult[]): AnalyzerResult {
     scopes: Array<{ scope: string; packages: string[] }>;
   }> = [];
   const relationshipMap = new Map<string, Set<string>>();
-  const issues: Array<{ message: string; severity: "HINT" | "WARNING" | "ERROR"; file?: string }> =
-    [];
+  const issues: Issue[] = [];
 
   for (const result of results) {
     // Merge packages

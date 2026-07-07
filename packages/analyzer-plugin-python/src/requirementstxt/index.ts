@@ -51,6 +51,7 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
 
       if (isRequirementInclude(trimmed)) {
         issues.push({
+          code: "requirementstxt.include_not_followed",
           severity: "WARNING",
           message:
             "requirements.txt include directives are not followed; dependencies from the referenced file may be missing.",
@@ -65,6 +66,7 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
           addDependency(eggName, i + 1);
         } else {
           issues.push({
+            code: "requirementstxt.unsupported_editable_dependency_declaration",
             severity: "WARNING",
             message: `Unsupported editable requirements.txt dependency declaration was not emitted: ${trimmed}`,
             file: `${file}#${i + 1}`,
@@ -86,6 +88,7 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
         }
 
         issues.push({
+          code: "requirementstxt.unsupported_dependency_declaration",
           severity: "WARNING",
           message: `Unsupported requirements.txt dependency declaration was not emitted: ${trimmed}`,
           file: `${file}#${i + 1}`,
@@ -107,6 +110,7 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
       emittedPackage
         ? [
             {
+              code: "requirementstxt.unresolved_dependencies",
               severity: "WARNING",
               message:
                 "requirements.txt dependencies are unresolved and emitted as versionless PyPI PURLs. Use a lockfile for resolved versions and transitive relationships.",

@@ -124,6 +124,7 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
         issues: filePath
           ? [
               {
+                code: "spdx.not_spdx_document",
                 message: `Not an SPDX 3.0.x document (could not determine specVersion)`,
                 severity: "WARNING",
                 file: filePath,
@@ -141,6 +142,7 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
         issues: filePath
           ? [
               {
+                code: "spdx.unsupported_version",
                 message: `Unsupported SPDX version: ${specVersion} (expected 3.0.x)`,
                 severity: "WARNING",
                 file: filePath,
@@ -337,6 +339,7 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
       issues: filePath
         ? [
             {
+              code: "spdx.parse_failed",
               message: `Failed to parse SPDX document: ${error instanceof Error ? error.message : String(error)}`,
               severity: "ERROR",
               file: filePath,

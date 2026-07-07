@@ -24,6 +24,7 @@ export type Relationship = {
 export type IssueSeverity = "HINT" | "WARNING" | "ERROR";
 
 export type Issue = {
+  code: string;
   message: string;
   severity: IssueSeverity;
   file?: string;

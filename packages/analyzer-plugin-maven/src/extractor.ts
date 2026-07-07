@@ -81,7 +81,12 @@ async function extractFile(file: string, options: MavenOptions): Promise<Analyze
     const versionExitCode = versionProc.exitCode;
 
     if (groupIdExitCode !== 0 || artifactIdExitCode !== 0 || versionExitCode !== 0) {
-      issues.push({ message: "Failed to extract project metadata", severity: "ERROR", file });
+      issues.push({
+        code: "maven.project_metadata_extraction_failed",
+        message: "Failed to extract project metadata",
+        severity: "ERROR",
+        file,
+      });
       return { packages: [], subprojects: [], relationships: [], issues };
     }
 
@@ -101,6 +106,7 @@ async function extractFile(file: string, options: MavenOptions): Promise<Analyze
 
     if (depTreeExitCode !== 0) {
       issues.push({
+        code: "maven.dependency_extraction_failed",
         message: `Maven dependency extraction failed: ${depTreeProc.stderr}`,
         severity: "ERROR",
         file,
@@ -109,7 +115,12 @@ async function extractFile(file: string, options: MavenOptions): Promise<Analyze
     }
 
     if (!existsSync(depTreeFile)) {
-      issues.push({ message: "Dependency tree file not found", severity: "ERROR", file });
+      issues.push({
+        code: "maven.dependency_tree_not_found",
+        message: "Dependency tree file not found",
+        severity: "ERROR",
+        file,
+      });
       return { packages: [], subprojects: [], relationships: [], issues };
     }
 
@@ -171,6 +182,7 @@ async function extractFile(file: string, options: MavenOptions): Promise<Analyze
     }
   } catch (error) {
     issues.push({
+      code: "maven.extraction_failed",
       message: `Failed to extract dependencies: ${error instanceof Error ? error.message : String(error)}`,
       severity: "ERROR",
       file,
