@@ -96,13 +96,19 @@ export function buildResult(
   };
 }
 
-export function errorResult(file: string, lockfileName: string, error: unknown): AnalyzerResult {
+export function errorResult(
+  file: string,
+  lockfileName: string,
+  error: unknown,
+  code: string,
+): AnalyzerResult {
   return {
     packages: [],
     subprojects: [],
     relationships: [],
     issues: [
       {
+        code,
         message: `Failed to parse ${lockfileName}: ${error instanceof Error ? error.message : String(error)}`,
         severity: "ERROR",
         file,

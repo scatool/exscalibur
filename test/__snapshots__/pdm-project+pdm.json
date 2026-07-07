@@ -1594,84 +1594,100 @@
   ],
   "issues": [
     {
+      "code": "pyprojecttoml.unresolved_dependencies",
       "severity": "WARNING",
       "message": "pyproject.toml dependencies are unresolved and emitted as versionless PyPI PURLs because no supported Python lockfile was found. Use a lockfile for resolved versions and transitive relationships.",
       "file": "tests/fixtures/projects/demo-combined-extras/pyproject.toml"
     },
     {
+      "code": "pyprojecttoml.unresolved_dependencies",
       "severity": "WARNING",
       "message": "pyproject.toml dependencies are unresolved and emitted as versionless PyPI PURLs because no supported Python lockfile was found. Use a lockfile for resolved versions and transitive relationships.",
       "file": "tests/fixtures/projects/demo-parent-package/package-b/pyproject.toml"
     },
     {
+      "code": "pyprojecttoml.unresolved_dependencies",
       "severity": "WARNING",
       "message": "pyproject.toml dependencies are unresolved and emitted as versionless PyPI PURLs because no supported Python lockfile was found. Use a lockfile for resolved versions and transitive relationships.",
       "file": "tests/fixtures/projects/poetry-demo/pyproject.toml"
     },
     {
+      "code": "pyprojecttoml.unresolved_dependencies",
       "severity": "WARNING",
       "message": "pyproject.toml dependencies are unresolved and emitted as versionless PyPI PURLs because no supported Python lockfile was found. Use a lockfile for resolved versions and transitive relationships.",
       "file": "tests/fixtures/projects/poetry-with-circular-dep/packages/child/pyproject.toml"
     },
     {
+      "code": "pyprojecttoml.unresolved_dependencies",
       "severity": "WARNING",
       "message": "pyproject.toml dependencies are unresolved and emitted as versionless PyPI PURLs because no supported Python lockfile was found. Use a lockfile for resolved versions and transitive relationships.",
       "file": "tests/fixtures/projects/poetry-with-circular-dep/pyproject.toml"
     },
     {
+      "code": "pyprojecttoml.unresolved_dependencies",
       "severity": "WARNING",
       "message": "pyproject.toml dependencies are unresolved and emitted as versionless PyPI PURLs because no supported Python lockfile was found. Use a lockfile for resolved versions and transitive relationships.",
       "file": "tests/fixtures/projects/test-hatch-static/pyproject.toml"
     },
     {
+      "code": "pyprojecttoml.unresolved_dependencies",
       "severity": "WARNING",
       "message": "pyproject.toml dependencies are unresolved and emitted as versionless PyPI PURLs because no supported Python lockfile was found. Use a lockfile for resolved versions and transitive relationships.",
       "file": "tests/fixtures/projects/test-monorepo/package_a/pyproject.toml"
     },
     {
+      "code": "pyprojecttoml.unresolved_dependencies",
       "severity": "WARNING",
       "message": "pyproject.toml dependencies are unresolved and emitted as versionless PyPI PURLs because no supported Python lockfile was found. Use a lockfile for resolved versions and transitive relationships.",
       "file": "tests/fixtures/projects/test-monorepo/package_b/pyproject.toml"
     },
     {
+      "code": "pyprojecttoml.unresolved_dependencies",
       "severity": "WARNING",
       "message": "pyproject.toml dependencies are unresolved and emitted as versionless PyPI PURLs because no supported Python lockfile was found. Use a lockfile for resolved versions and transitive relationships.",
       "file": "tests/fixtures/projects/test-monorepo/pyproject.toml"
     },
     {
+      "code": "pyprojecttoml.unresolved_dependencies",
       "severity": "WARNING",
       "message": "pyproject.toml dependencies are unresolved and emitted as versionless PyPI PURLs because no supported Python lockfile was found. Use a lockfile for resolved versions and transitive relationships.",
       "file": "tests/fixtures/projects/test-package-type-fixer/pyproject.toml"
     },
     {
+      "code": "pyprojecttoml.unresolved_dependencies",
       "severity": "WARNING",
       "message": "pyproject.toml dependencies are unresolved and emitted as versionless PyPI PURLs because no supported Python lockfile was found. Use a lockfile for resolved versions and transitive relationships.",
       "file": "tests/fixtures/pyproject.toml"
     },
     {
+      "code": "requirementstxt.include_not_followed",
+      "severity": "WARNING",
+      "message": "requirements.txt include directives are not followed; dependencies from the referenced file may be missing.",
+      "file": "tests/fixtures/requirements-include.txt#1"
+    },
+    {
+      "code": "requirementstxt.unresolved_dependencies",
       "severity": "WARNING",
       "message": "requirements.txt dependencies are unresolved and emitted as versionless PyPI PURLs. Use a lockfile for resolved versions and transitive relationships.",
       "file": "tests/fixtures/projects/demo-package-has-dep-with-extras/requirements.txt"
     },
     {
+      "code": "requirementstxt.unresolved_dependencies",
       "severity": "WARNING",
       "message": "requirements.txt dependencies are unresolved and emitted as versionless PyPI PURLs. Use a lockfile for resolved versions and transitive relationships.",
       "file": "tests/fixtures/projects/demo-package/requirements.txt"
     },
     {
+      "code": "requirementstxt.unresolved_dependencies",
       "severity": "WARNING",
       "message": "requirements.txt dependencies are unresolved and emitted as versionless PyPI PURLs. Use a lockfile for resolved versions and transitive relationships.",
       "file": "tests/fixtures/projects/demo-package/requirements_simple.txt"
     },
     {
+      "code": "requirementstxt.unresolved_dependencies",
       "severity": "WARNING",
       "message": "requirements.txt dependencies are unresolved and emitted as versionless PyPI PURLs. Use a lockfile for resolved versions and transitive relationships.",
       "file": "tests/fixtures/requirements.txt"
-    },
-    {
-      "severity": "WARNING",
-      "message": "requirements.txt include directives are not followed; dependencies from the referenced file may be missing.",
-      "file": "tests/fixtures/requirements-include.txt#1"
     }
   ]
 }

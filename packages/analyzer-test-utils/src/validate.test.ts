@@ -167,3 +167,22 @@ test('validateResult throws when relationship "to" array contains duplicates', (
     "Duplicate purls in relationship 'to' array for 'pkg:npm/foo@1.0.0': pkg:npm/bar@2.0.0",
   );
 });
+
+test("validateResult throws when an issue is missing a code", () => {
+  const invalidResult = {
+    packages: [],
+    subprojects: [],
+    relationships: [],
+    issues: [
+      {
+        message: "Failed to parse file",
+        severity: "ERROR",
+        file: "package.json",
+      },
+    ],
+  } as unknown as AnalyzerResult;
+
+  expect(() => validateResult(invalidResult)).toThrow(
+    "Issue is missing required code: Failed to parse file",
+  );
+});

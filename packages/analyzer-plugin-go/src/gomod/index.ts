@@ -41,6 +41,7 @@ export const extractor: Extractor = filesExtractor({
         relationships: [],
         issues: [
           {
+            code: "gomod.module_name_parse_failed",
             severity: "ERROR",
             message: "Failed to parse module name from go.mod",
             file,
@@ -60,6 +61,7 @@ export const extractor: Extractor = filesExtractor({
         relationships: [],
         issues: [
           {
+            code: "gomod.go_list_failed",
             severity: "ERROR",
             message:
               "Failed to run go list -m -json all. Ensure go.sum is valid and dependencies are downloaded.",
@@ -78,6 +80,7 @@ export const extractor: Extractor = filesExtractor({
         relationships: [],
         issues: [
           {
+            code: "gomod.go_mod_graph_failed",
             severity: "ERROR",
             message:
               "Failed to run go mod graph. Ensure go.sum is valid and dependencies are downloaded.",

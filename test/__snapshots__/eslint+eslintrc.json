@@ -125,6 +125,7 @@
   "relationships": [],
   "issues": [
     {
+      "code": "core.file_extraction_failed",
       "message": "Failed to extract file: Expected ',' or '}' after property value in JSON at position 81 (line 7 column 1)",
       "severity": "ERROR",
       "file": "tests/fixtures/config-file/broken-package-json/package.json"

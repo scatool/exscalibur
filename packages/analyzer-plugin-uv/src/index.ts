@@ -33,6 +33,7 @@ export const extractor: Extractor<UvOptions> = filesExtractor<UvOptions>({
         relationships: [],
         issues: [
           {
+            code: "uv.export_failed",
             severity: "ERROR",
             message: `uv export failed with exit code ${exitCode}: ${stderr}`,
             file,

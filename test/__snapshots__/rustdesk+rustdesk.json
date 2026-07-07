@@ -15214,6 +15214,7 @@
   ],
   "issues": [
     {
+      "code": "requirementstxt.unresolved_dependencies",
       "severity": "WARNING",
       "message": "requirements.txt dependencies are unresolved and emitted as versionless PyPI PURLs. Use a lockfile for resolved versions and transitive relationships.",
       "file": "libs/portable/requirements.txt"

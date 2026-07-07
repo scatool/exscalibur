@@ -61,6 +61,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
         relationships: [],
         issues: [
           {
+            code: "packagelockjson.unsupported_lockfile_version",
             message: `Unsupported lockfileVersion ${lockfile.lockfileVersion}`,
             severity: "WARNING",
             file,

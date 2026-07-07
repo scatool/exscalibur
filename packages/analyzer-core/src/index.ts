@@ -115,6 +115,7 @@ export const filesExtractor = <Options = unknown>(
               relationships: [],
               issues: [
                 {
+                  code: "core.file_extraction_failed",
                   message: `Failed to extract file: ${error instanceof Error ? error.message : String(error)}`,
                   severity: "ERROR",
                   file,

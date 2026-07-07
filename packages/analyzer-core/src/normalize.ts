@@ -39,6 +39,7 @@ export function normalizeResult(result: AnalyzerResult): AnalyzerResult {
   const sortedIssues = [...result.issues].sort((a, b) => {
     const severityDiff = severityOrder[a.severity] - severityOrder[b.severity];
     if (severityDiff !== 0) return severityDiff;
+    if (a.code !== b.code) return a.code < b.code ? -1 : 1;
     if (a.message !== b.message) return a.message < b.message ? -1 : 1;
     if (!a.file && !b.file) return 0;
     if (!a.file) return 1;

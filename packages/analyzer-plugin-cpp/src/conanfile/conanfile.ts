@@ -52,6 +52,7 @@ export async function extractFile(file: string, options: ConanOptions): Promise<
       file,
       file,
       `"${cmd.join(" ")}" failed with exit code ${exitCode}: ${stderr}`,
+      "conanfile.command_failed",
     );
   }
 
@@ -59,6 +60,7 @@ export async function extractFile(file: string, options: ConanOptions): Promise<
   const issues: Issue[] = [];
   if (stderr.includes("WARN")) {
     issues.push({
+      code: "conanfile.command_warning",
       message: `Warnings from running "${cmd.join(" ")}": ${stderr}`,
       severity: "WARNING",
       file,
@@ -74,6 +76,7 @@ export async function extractFile(file: string, options: ConanOptions): Promise<
       file,
       `Failed to parse JSON output from "${cmd.join(" ")}": ` +
         (error instanceof Error ? error.message : String(error)),
+      "conanfile.command_output_parse_failed",
     );
   }
 
@@ -82,6 +85,7 @@ export async function extractFile(file: string, options: ConanOptions): Promise<
       file,
       file,
       `Invalid graph data from "${cmd.join(" ")}": missing "graph" property`,
+      "conanfile.invalid_graph_data",
     );
   }
 
@@ -90,6 +94,7 @@ export async function extractFile(file: string, options: ConanOptions): Promise<
       file,
       file,
       `Error in graph data from "${cmd.join(" ")}": ` + JSON.stringify(graphData.graph.error),
+      "conanfile.graph_error",
     );
   }
 
@@ -160,6 +165,7 @@ function convertConanFileGraph(
 
             if (!depNode.name || !depNode.version) {
               issues.push({
+                code: "conanfile.dependency_node_incomplete",
                 message: `Dependency node ${depNodeId} is missing name or version, skipping relationship from ${purl}.`,
                 severity: "WARNING",
                 file,
@@ -176,6 +182,7 @@ function convertConanFileGraph(
         }
       } else {
         issues.push({
+          code: "conanfile.node_unresolvable",
           message: `Node ${nodeId} is neither a local, root nor a resolvable package.`,
           severity: "WARNING",
           file,
@@ -183,6 +190,7 @@ function convertConanFileGraph(
       }
     } catch (error) {
       issues.push({
+        code: "conanfile.node_processing_failed",
         message: `Error processing node ${nodeId}: ${error instanceof Error ? error.message : String(error)}`,
         severity: "ERROR",
         file,

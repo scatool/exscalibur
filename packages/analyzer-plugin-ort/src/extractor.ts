@@ -45,6 +45,7 @@ export const extractor = filesExtractor<OrtOptions>({
         relationships: [],
         issues: [
           {
+            code: "ort.parse_failed",
             severity: "ERROR",
             message,
             file,

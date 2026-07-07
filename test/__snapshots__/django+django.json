@@ -128,11 +128,13 @@
   "relationships": [],
   "issues": [
     {
+      "code": "pyprojecttoml.unresolved_dependencies",
       "severity": "WARNING",
       "message": "pyproject.toml dependencies are unresolved and emitted as versionless PyPI PURLs because no supported Python lockfile was found. Use a lockfile for resolved versions and transitive relationships.",
       "file": "pyproject.toml"
     },
     {
+      "code": "requirementstxt.unresolved_dependencies",
       "severity": "WARNING",
       "message": "requirements.txt dependencies are unresolved and emitted as versionless PyPI PURLs. Use a lockfile for resolved versions and transitive relationships.",
       "file": "docs/requirements.txt"

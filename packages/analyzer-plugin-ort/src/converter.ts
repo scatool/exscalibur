@@ -11,6 +11,8 @@ import { isAbsolute, resolve } from "node:path";
 import { type OrtAnalyzerResult } from "./model.ts";
 import { convertOrtIdToPurl } from "./id.ts";
 
+const ORT_EXTERNAL_ISSUE_CODE = "ort.external_issue";
+
 export interface ConvertOrtResultOptions {
   /**
    * The file path to use as evidence for packages.
@@ -161,6 +163,7 @@ export function convertOrtResult(
     for (const ortIssues of Object.values(result.issues)) {
       for (const ortIssue of ortIssues) {
         issues.push({
+          code: ORT_EXTERNAL_ISSUE_CODE,
           message: ortIssue.message,
           severity: ortIssue.severity || "HINT",
           file: ortIssue.affectedPath,
