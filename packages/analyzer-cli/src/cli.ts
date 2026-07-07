@@ -28,11 +28,20 @@ import { mavenExtractor } from "@scatool/analyzer-plugin-maven";
 import { extractor as cyclonedxExtractor } from "@scatool/analyzer-plugin-cdx";
 import { extractor as spdxExtractor } from "@scatool/analyzer-plugin-spdx";
 import { ortExtractor } from "@scatool/analyzer-plugin-ort";
-import type { AnalyzerResult, Extractor } from "@scatool/analyzer-core";
+import type { AnalyzerResult, ExtractionRuntimeOptions, Extractor } from "@scatool/analyzer-core";
 import { resolve } from "path";
 import { z } from "zod";
 
 type ExtractorOptions = Record<string, unknown>;
+
+function collectCommaSeparatedValues(value: string, previous: string[] | undefined): string[] {
+  const values = value
+    .split(",")
+    .map((entry) => entry.trim())
+    .filter((entry) => entry.length > 0);
+
+  return previous ? [...previous, ...values] : values;
+}
 
 function parseExtractorOptions(
   optionStrings: string[],
@@ -116,25 +125,19 @@ program
   .option(
     "-e, --enable <names>",
     "Enable specific extractor(s) (comma-separated or multiple flags)",
-    (value: string, previous: string[] | undefined) => {
-      const names = value
-        .split(",")
-        .map((n) => n.trim())
-        .filter((n) => n.length > 0);
-      return previous ? [...previous, ...names] : names;
-    },
+    collectCommaSeparatedValues,
     [] as string[],
   )
   .option(
     "-d, --disable <names>",
     "Disable specific extractor(s) (comma-separated or multiple flags)",
-    (value: string, previous: string[] | undefined) => {
-      const names = value
-        .split(",")
-        .map((n) => n.trim())
-        .filter((n) => n.length > 0);
-      return previous ? [...previous, ...names] : names;
-    },
+    collectCommaSeparatedValues,
+    [] as string[],
+  )
+  .option(
+    "--ignore <patterns>",
+    "Glob pattern(s) to ignore for all extractors (comma-separated or multiple flags)",
+    collectCommaSeparatedValues,
     [] as string[],
   )
   .option(
@@ -200,6 +203,7 @@ Examples:
   exscalibur /repo /output.json
   exscalibur --enable packagejson,bunlock /repo /output.json
   exscalibur --disable gradle,maven /repo /output.json
+  exscalibur --ignore "**/node_modules/**,test/repositories/**,**/__fixtures__/**" /repo /output.json
   exscalibur --extractor-options 'packagejson.ignore=["**/node_modules/**", "**/additional_dir/**"]' /repo /output.json
   exscalibur --extractor-options-json '{"packagejson":{"ignore":["**/node_modules/**", "**/additional_dir/**"]}}' /repo /output.json
 `,
@@ -264,7 +268,13 @@ Examples:
         process.exit(1);
       }
 
-      await runAnalysis(codebasePathResolved, outputPathResolved, extractors, parsedOptions);
+      await runAnalysis(
+        codebasePathResolved,
+        outputPathResolved,
+        extractors,
+        parsedOptions,
+        options.ignore,
+      );
     } catch (error) {
       console.error("Fatal error:", error instanceof Error ? error.message : String(error));
       process.exit(1);
@@ -294,11 +304,17 @@ async function runAnalysis(
   outputPath: string,
   extractors: Extractor[],
   options: ExtractorOptions,
+  globalIgnorePatterns: string[],
 ): Promise<void> {
+  const extractionRuntimeOptions: ExtractionRuntimeOptions = { ignore: globalIgnorePatterns };
+
   console.error("Running analysis...");
   console.error(`Codebase: ${codebasePath}`);
   console.error(`Output: ${outputPath}`);
   console.error(`Active extractors: ${extractors.map((e) => e.name).join(", ")}`);
+  if (globalIgnorePatterns.length > 0) {
+    console.error(`Global ignore patterns: ${globalIgnorePatterns.join(", ")}`);
+  }
   console.error("");
 
   const results: AnalyzerResult[] = [];
@@ -307,7 +323,11 @@ async function runAnalysis(
     try {
       console.error(`Running ${extractor.name} extractor (version ${extractor.version})...`);
       const extractorOptions = options[extractor.name] as Partial<unknown> | undefined;
-      const result = await extractor.extract(codebasePath.replaceAll("\\", "/"), extractorOptions);
+      const result = await extractor.extract(
+        codebasePath.replaceAll("\\", "/"),
+        extractorOptions,
+        extractionRuntimeOptions,
+      );
       results.push(result);
       console.error(`  Found ${result.packages.length} packages`);
       console.error(`  Found ${result.subprojects.length} subprojects`);

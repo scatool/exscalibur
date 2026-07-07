@@ -36,10 +36,21 @@ export type AnalyzerResult = {
   issues: Issue[];
 };
 
+export type ExtractionRuntimeOptions = {
+  /**
+   * Glob patterns that apply to extractor entrypoint file discovery for this extraction run.
+   */
+  ignore?: string[];
+};
+
 export type Extractor<Options = unknown> = {
   name: string;
   version: 1;
-  extract: (codebase: string, options?: Partial<Options>) => Promise<AnalyzerResult>;
+  extract: (
+    codebase: string,
+    options?: Partial<Options>,
+    runtimeOptions?: ExtractionRuntimeOptions,
+  ) => Promise<AnalyzerResult>;
 
   /**
    * Function to provide dynamic default options for the extractor.
@@ -60,6 +71,7 @@ export type Extractor<Options = unknown> = {
 
 export type MarkFileContext = {
   markFile: (file: string) => void;
+  globalIgnorePatterns?: string[];
 };
 
 export type FilesExtractor<Options = unknown> = {
