@@ -1,5 +1,5 @@
 {
-  "name": "@scatool/analyzer-plugin-cpp",
+  "name": "@scatool/analyzer-plugin-vcpkg",
   "version": "0.1.0-alpha.0",
   "private": true,
   "homepage": "https://github.com/scatool/exscalibur",
@@ -10,7 +10,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/scatool/exscalibur.git",
-    "directory": "packages/analyzer-plugin-cpp"
+    "directory": "packages/analyzer-plugin-vcpkg"
   },
   "files": [
     "dist"

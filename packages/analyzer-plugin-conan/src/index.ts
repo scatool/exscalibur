@@ -12,3 +12,5 @@ export const extractor: Extractor<ConanOptions> = filesExtractor<ConanOptions>({
   markFiles: markFiles,
   extractFile: extractFile,
 });
+
+export type { ConanOptions } from "./options.ts";

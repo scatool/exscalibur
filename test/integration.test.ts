@@ -22,7 +22,8 @@ import {
 } from "@scatool/analyzer-plugin-python";
 import type { Extractor } from "@scatool/analyzer-core";
 import { mergeResults, normalizeResult, runCommand } from "@scatool/analyzer-core";
-import { conanfileExtractor, vcpkgExtractor } from "@scatool/analyzer-plugin-cpp";
+import { extractor as conanfileExtractor } from "@scatool/analyzer-plugin-conan";
+import { extractor as vcpkgExtractor } from "@scatool/analyzer-plugin-vcpkg";
 import { z } from "zod";
 import { chdir } from "node:process";
 

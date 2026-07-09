@@ -12,3 +12,5 @@ export const extractor: Extractor<VcpkgOptions> = filesExtractor<VcpkgOptions>({
   markFiles: markFiles,
   extractFile: extractFile,
 });
+
+export type { VcpkgOptions } from "./options.ts";
