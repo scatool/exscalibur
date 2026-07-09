@@ -112,7 +112,8 @@ The core also exports `scanAndMarkFiles(context, codebase, globPattern, ignorePa
 | `analyzer-plugin-github-actions` | GitHub Actions workflow extractor                                                                                                                           |
 | `analyzer-plugin-cdx`            | CycloneDX SBOM parser                                                                                                                                       |
 | `analyzer-plugin-ort`            | ORT analyzer result converter                                                                                                                               |
-| `analyzer-plugin-cpp`            | C++ package managers extractors                                                                                                                             |
+| `analyzer-plugin-conan`          | Conan package manager extractor                                                                                                                             |
+| `analyzer-plugin-vcpkg`          | vcpkg package manager extractor                                                                                                                             |
 
 Supporting packages: `analyzer-cli` (CLI entry point), `analyzer-test-utils` (shared test helpers).
 

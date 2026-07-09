@@ -441,8 +441,8 @@
     "commit": "9784c612762b106adf70a713cf68384d909d2141",
     "options": {
       "conanfile": {
-        "profileBuild": "../packages/analyzer-plugin-cpp/src/conanfile/__fixtures__/profile",
-        "profileHost": "../packages/analyzer-plugin-cpp/src/conanfile/__fixtures__/profile",
+        "profileBuild": "../packages/analyzer-plugin-conan/src/__fixtures__/profile",
+        "profileHost": "../packages/analyzer-plugin-conan/src/__fixtures__/profile",
         "conanArgs": ["--build", "*"]
       }
     }

@@ -147,29 +147,7 @@ importers:
         specifier: 'catalog:'
         version: 0.1.24(@types/node@22.20.0)(esbuild@0.28.1)(tsx@4.23.0)(typescript@5.9.3)(vite@8.0.16(@types/node@22.20.0)(esbuild@0.28.1)(tsx@4.23.0)(yaml@2.9.0))(yaml@2.9.0)
 
-  packages/analyzer-plugin-containers:
-    dependencies:
-      '@scatool/analyzer-core':
-        specifier: workspace:*
-        version: link:../analyzer-core
-      packageurl-js:
-        specifier: 'catalog:'
-        version: 2.0.1
-      typescript:
-        specifier: ^5
-        version: 5.9.3
-    devDependencies:
-      '@scatool/analyzer-test-utils':
-        specifier: workspace:*
-        version: link:../analyzer-test-utils
-      '@types/node':
-        specifier: 'catalog:'
-        version: 22.20.0
-      vite-plus:
-        specifier: 'catalog:'
-        version: 0.1.24(@types/node@22.20.0)(esbuild@0.28.1)(tsx@4.23.0)(typescript@5.9.3)(vite@8.0.16(@types/node@22.20.0)(esbuild@0.28.1)(tsx@4.23.0)(yaml@2.9.0))(yaml@2.9.0)
-
-  packages/analyzer-plugin-cpp:
+  packages/analyzer-plugin-conan:
     dependencies:
       '@scatool/analyzer-core':
         specifier: workspace:*
@@ -183,6 +161,28 @@ importers:
       zod:
         specifier: 'catalog:'
         version: 4.4.3
+    devDependencies:
+      '@scatool/analyzer-test-utils':
+        specifier: workspace:*
+        version: link:../analyzer-test-utils
+      '@types/node':
+        specifier: 'catalog:'
+        version: 22.20.0
+      vite-plus:
+        specifier: 'catalog:'
+        version: 0.1.24(@types/node@22.20.0)(esbuild@0.28.1)(tsx@4.23.0)(typescript@5.9.3)(vite@8.0.16(@types/node@22.20.0)(esbuild@0.28.1)(tsx@4.23.0)(yaml@2.9.0))(yaml@2.9.0)
+
+  packages/analyzer-plugin-containers:
+    dependencies:
+      '@scatool/analyzer-core':
+        specifier: workspace:*
+        version: link:../analyzer-core
+      packageurl-js:
+        specifier: 'catalog:'
+        version: 2.0.1
+      typescript:
+        specifier: ^5
+        version: 5.9.3
     devDependencies:
       '@scatool/analyzer-test-utils':
         specifier: workspace:*
@@ -462,6 +462,31 @@ importers:
         specifier: 'catalog:'
         version: 0.1.24(@types/node@22.20.0)(esbuild@0.28.1)(tsx@4.23.0)(typescript@5.9.3)(vite@8.0.16(@types/node@22.20.0)(esbuild@0.28.1)(tsx@4.23.0)(yaml@2.9.0))(yaml@2.9.0)
 
+  packages/analyzer-plugin-vcpkg:
+    dependencies:
+      '@scatool/analyzer-core':
+        specifier: workspace:*
+        version: link:../analyzer-core
+      packageurl-js:
+        specifier: 'catalog:'
+        version: 2.0.1
+      typescript:
+        specifier: ^5
+        version: 5.9.3
+      zod:
+        specifier: 'catalog:'
+        version: 4.4.3
+    devDependencies:
+      '@scatool/analyzer-test-utils':
+        specifier: workspace:*
+        version: link:../analyzer-test-utils
+      '@types/node':
+        specifier: 'catalog:'
+        version: 22.20.0
+      vite-plus:
+        specifier: 'catalog:'
+        version: 0.1.24(@types/node@22.20.0)(esbuild@0.28.1)(tsx@4.23.0)(typescript@5.9.3)(vite@8.0.16(@types/node@22.20.0)(esbuild@0.28.1)(tsx@4.23.0)(yaml@2.9.0))(yaml@2.9.0)
+
   packages/analyzer-test-utils:
     dependencies:
       '@scatool/analyzer-core':
@@ -486,12 +511,12 @@ importers:
       '@scatool/analyzer-core':
         specifier: workspace:*
         version: link:../packages/analyzer-core
+      '@scatool/analyzer-plugin-conan':
+        specifier: workspace:*
+        version: link:../packages/analyzer-plugin-conan
       '@scatool/analyzer-plugin-containers':
         specifier: workspace:*
         version: link:../packages/analyzer-plugin-containers
-      '@scatool/analyzer-plugin-cpp':
-        specifier: workspace:*
-        version: link:../packages/analyzer-plugin-cpp
       '@scatool/analyzer-plugin-github-actions':
         specifier: workspace:*
         version: link:../packages/analyzer-plugin-github-actions
@@ -510,6 +535,9 @@ importers:
       '@scatool/analyzer-plugin-rust':
         specifier: workspace:*
         version: link:../packages/analyzer-plugin-rust
+      '@scatool/analyzer-plugin-vcpkg':
+        specifier: workspace:*
+        version: link:../packages/analyzer-plugin-vcpkg
       zod:
         specifier: 'catalog:'
         version: 4.4.3

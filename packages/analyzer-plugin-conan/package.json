@@ -1,0 +1,53 @@
+{
+  "name": "@scatool/analyzer-plugin-conan",
+  "version": "0.1.0-alpha.0",
+  "private": true,
+  "homepage": "https://github.com/scatool/exscalibur",
+  "bugs": {
+    "url": "https://github.com/scatool/exscalibur/issues"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scatool/exscalibur.git",
+    "directory": "packages/analyzer-plugin-conan"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "types": "dist/index.d.mts",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org",
+    "tag": "alpha"
+  },
+  "scripts": {
+    "test": "vp test run",
+    "typecheck": "vp run check",
+    "build": "vp pack",
+    "dev": "vp pack --watch",
+    "prepublishOnly": "vp run build",
+    "check": "vp exec tsc --strict --noEmit"
+  },
+  "dependencies": {
+    "@scatool/analyzer-core": "workspace:*",
+    "packageurl-js": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@scatool/analyzer-test-utils": "workspace:*",
+    "@types/node": "catalog:",
+    "vite-plus": "catalog:"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

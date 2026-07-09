@@ -9,14 +9,15 @@
   },
   "dependencies": {
     "@scatool/analyzer-core": "workspace:*",
+    "@scatool/analyzer-plugin-conan": "workspace:*",
     "@scatool/analyzer-plugin-containers": "workspace:*",
-    "@scatool/analyzer-plugin-cpp": "workspace:*",
     "@scatool/analyzer-plugin-github-actions": "workspace:*",
     "@scatool/analyzer-plugin-go": "workspace:*",
     "@scatool/analyzer-plugin-gradle": "workspace:*",
     "@scatool/analyzer-plugin-javascript": "workspace:*",
     "@scatool/analyzer-plugin-python": "workspace:*",
     "@scatool/analyzer-plugin-rust": "workspace:*",
+    "@scatool/analyzer-plugin-vcpkg": "workspace:*",
     "zod": "catalog:"
   },
   "devDependencies": {
