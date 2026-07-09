@@ -61,13 +61,3 @@ jobs:
 
       - name: Ready
         run: vp run -w ready
-
-      - name: Upload to SCA Tool
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        run: >
-          vpx @scatool/cli@0.1.0-alpha.0 revisions create-sbom main
-          --codebase .
-          --ignore "**/node_modules/**,test/repositories/**,**/__fixtures__/**"
-        env:
-          SCATOOL_TOKEN: ${{ secrets.SCATOOL_TOKEN }}
-          SCATOOL_PROJECT_ID: ${{ secrets.SCATOOL_PROJECT_ID }}

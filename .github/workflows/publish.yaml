@@ -173,13 +173,3 @@ jobs:
             npx -y npm@11.13.0 publish "$tarball" --provenance --access public --tag "$tag"
             cd "$root"
           done < /tmp/packages-to-publish.txt
-
-      - name: Upload SBOM to SCA Tool
-        if: startsWith(github.ref, 'refs/tags/')
-        run: >
-          vpx @scatool/cli@0.1.0-alpha.0 revisions create-sbom "${{ github.ref_name }}"
-          --codebase .
-          --ignore "**/node_modules/**,test/repositories/**,**/__fixtures__/**"
-        env:
-          SCATOOL_TOKEN: ${{ secrets.SCATOOL_TOKEN }}
-          SCATOOL_PROJECT_ID: ${{ secrets.SCATOOL_PROJECT_ID }}
