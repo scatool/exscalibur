@@ -43,6 +43,20 @@ jobs:
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
           conan --version
 
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          repository: "microsoft/vcpkg"
+          ref: "2026.04.27"
+          fetch-depth: 0
+          path: "vcpkg"
+
+      - name: Bootstrap vcpkg tool
+        working-directory: ./vcpkg
+        run: |
+          ./bootstrap-vcpkg.sh -disableMetrics
+          echo "VCPKG_ROOT=$(pwd)" >> "$GITHUB_ENV"
+          echo "$GITHUB_WORKSPACE/vcpkg" >> "$GITHUB_PATH"
+
       - name: Cache test repositories
         id: cache-repos
         uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
