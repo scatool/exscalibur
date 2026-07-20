@@ -2,6 +2,7 @@ import {
   type AnalyzerResult,
   type DependencyScope,
   type Extractor,
+  type PackageMapEntry,
   type Subproject,
   filesExtractor,
   scanAndMarkFiles,
@@ -99,6 +100,9 @@ async function extractFromV1Lockfile(
 
       // Add package with evidence
       ensurePackageExists(packageMap, purl);
+      const downloadLocation =
+        depEntry.resolved ?? (isPackageLocation(depEntry.version) ? depEntry.version : undefined);
+      setDownloadLocation(packageMap, purl, downloadLocation);
 
       // Find line number for evidence
       const lineNumber = findLineNumberV1(lockfileContent, packageName, version);
@@ -260,6 +264,7 @@ async function extractFromV2Lockfile(
 
     // Add package with evidence
     ensurePackageExists(packageMap, purl);
+    setDownloadLocation(packageMap, purl, packageEntry.resolved);
 
     // Find line number for evidence
     const lineNumber = findLineNumber(lockfileContent, packagePath, version);
@@ -306,7 +311,7 @@ function processDependencies(
   purl: string,
   allPackages: Record<string, PackageLockPackage>,
   workspacePackages: Map<string, { version: string; path: string }>,
-  packageMap: Map<string, { purl: string; evidence: Set<string> }>,
+  packageMap: Map<string, PackageMapEntry>,
   relationshipsMap: Map<string, Set<string>>,
 ): void {
   for (const depType of NPM_DEPENDENCY_SCOPES) {
@@ -338,6 +343,33 @@ function processDependencies(
       }
     }
   }
+}
+
+function setDownloadLocation(
+  packageMap: Map<string, PackageMapEntry>,
+  purl: string,
+  locator?: string,
+): void {
+  if (!locator) return;
+
+  const pkg = packageMap.get(purl);
+  if (!pkg) return;
+  pkg.downloadLocation = locator;
+}
+
+function isPackageLocation(locator: string): boolean {
+  return (
+    locator.startsWith("https://") ||
+    locator.startsWith("http://") ||
+    locator.startsWith("file:") ||
+    locator.startsWith("git+") ||
+    locator.startsWith("git://") ||
+    locator.startsWith("github:") ||
+    locator.startsWith("gitlab:") ||
+    locator.startsWith("bitbucket:") ||
+    /^git@[^:]+:/.test(locator) ||
+    /^(?:https?|ssh):\/\/.*\.git(?:#|$)/.test(locator)
+  );
 }
 
 /**
