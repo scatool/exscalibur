@@ -196,7 +196,7 @@ Available extractors:
   cargolock         Extract from Cargo.lock files
   maven             Extract from Maven pom.xml files
   cyclonedx         Extract from CycloneDX BOM files
-  spdx              Extract from SPDX 3.0.x JSON-LD files
+  spdx              Extract from SPDX 3.x JSON, JSON-LD, and YAML files
   ort               Extract from ORT result files
 
 Examples:
