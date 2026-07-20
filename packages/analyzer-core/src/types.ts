@@ -1,8 +1,17 @@
 import type { z } from "zod";
 
+export type ExternalReferenceType = "vcs" | "sourceArtifact";
+
+export type ExternalReference = {
+  type: ExternalReferenceType;
+  locator: string;
+};
+
 export type Package = {
   purl: string;
   evidence: string[];
+  downloadLocation?: string;
+  externalReferences?: ExternalReference[];
 };
 
 export type DependencyScope = {

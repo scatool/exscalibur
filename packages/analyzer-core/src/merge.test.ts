@@ -33,6 +33,82 @@ test("mergeResults merges packages and deduplicates by purl", () => {
   ]);
 });
 
+test("mergeResults merges, deduplicates, and sorts package external references", () => {
+  const result1: AnalyzerResult = {
+    packages: [
+      {
+        purl: "pkg:npm/foo@1.0.0",
+        evidence: [],
+        externalReferences: [
+          { type: "vcs", locator: "https://github.com/example/foo.git" },
+          { type: "sourceArtifact", locator: "https://example.com/foo-1.0.0.tar.gz" },
+        ],
+      },
+    ],
+    subprojects: [],
+    relationships: [],
+    issues: [],
+  };
+
+  const result2: AnalyzerResult = {
+    packages: [
+      {
+        purl: "pkg:npm/foo@1.0.0",
+        evidence: [],
+        externalReferences: [
+          { type: "vcs", locator: "https://github.com/example/foo.git" },
+          { type: "vcs", locator: "https://git.example.com/foo.git" },
+        ],
+      },
+    ],
+    subprojects: [],
+    relationships: [],
+    issues: [],
+  };
+
+  expect(mergeResults([result1, result2]).packages).toEqual([
+    {
+      purl: "pkg:npm/foo@1.0.0",
+      evidence: [],
+      externalReferences: [
+        { type: "sourceArtifact", locator: "https://example.com/foo-1.0.0.tar.gz" },
+        { type: "vcs", locator: "https://git.example.com/foo.git" },
+        { type: "vcs", locator: "https://github.com/example/foo.git" },
+      ],
+    },
+  ]);
+});
+
+test("mergeResults preserves the first available package download location", () => {
+  const result1: AnalyzerResult = {
+    packages: [{ purl: "pkg:npm/foo@1.0.0", evidence: [] }],
+    subprojects: [],
+    relationships: [],
+    issues: [],
+  };
+
+  const result2: AnalyzerResult = {
+    packages: [
+      {
+        purl: "pkg:npm/foo@1.0.0",
+        evidence: [],
+        downloadLocation: "https://registry.npmjs.org/foo/-/foo-1.0.0.tgz",
+      },
+    ],
+    subprojects: [],
+    relationships: [],
+    issues: [],
+  };
+
+  expect(mergeResults([result1, result2]).packages).toEqual([
+    {
+      purl: "pkg:npm/foo@1.0.0",
+      evidence: [],
+      downloadLocation: "https://registry.npmjs.org/foo/-/foo-1.0.0.tgz",
+    },
+  ]);
+});
+
 test("mergeResults merges subprojects", () => {
   const result1: AnalyzerResult = {
     packages: [],

@@ -13,6 +13,21 @@
       "name": "express",
       "packageVersion": "4.18.2",
       "packageUrl": "pkg:npm/express@4.18.2",
+      "downloadLocation": "https://registry.npmjs.org/express/-/express-4.18.2.tgz",
+      "externalRef": [
+        {
+          "externalRefType": "vcs",
+          "locator": "git+https://github.com/expressjs/express.git@4.18.2"
+        },
+        {
+          "externalRefType": "sourceArtifact",
+          "locator": ["https://github.com/expressjs/express/archive/refs/tags/4.18.2.tar.gz"]
+        },
+        {
+          "externalRefType": "documentation",
+          "locator": "https://expressjs.com/"
+        }
+      ],
       "creationInfo": "_:creationInfo"
     },
     {

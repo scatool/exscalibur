@@ -1,8 +1,17 @@
-import type { AnalyzerResult, Issue, Package, Relationship, Subproject } from "./types.ts";
+import type {
+  AnalyzerResult,
+  ExternalReference,
+  Issue,
+  Package,
+  Relationship,
+  Subproject,
+} from "./types.ts";
 
 export type PackageMapEntry = {
   purl: string;
   evidence: Set<string>;
+  downloadLocation?: string;
+  externalReferences?: ExternalReference[];
 };
 
 export function addRelationship(
@@ -34,10 +43,14 @@ export function addPackageEvidence(
 }
 
 export function convertPackageMapToArray(packageMap: Map<string, PackageMapEntry>): Package[] {
-  return Array.from(packageMap.values()).map(({ purl, evidence }) => ({
-    purl,
-    evidence: Array.from(evidence),
-  }));
+  return Array.from(packageMap.values()).map(
+    ({ purl, evidence, downloadLocation, externalReferences }) => ({
+      purl,
+      evidence: Array.from(evidence),
+      ...(downloadLocation !== undefined && { downloadLocation }),
+      ...(externalReferences !== undefined && { externalReferences: [...externalReferences] }),
+    }),
+  );
 }
 
 export function convertRelationshipsMapToArray(

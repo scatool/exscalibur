@@ -5,8 +5,19 @@ exports[`basic.cdx.json 1`] = `
   "issues": [],
   "packages": [
     {
+      "downloadLocation": "https://registry.npmjs.org/express/-/express-4.18.2.tgz",
       "evidence": [
         "basic.cdx.json",
+      ],
+      "externalReferences": [
+        {
+          "locator": "git+https://github.com/expressjs/express.git@4.18.2",
+          "type": "vcs",
+        },
+        {
+          "locator": "https://github.com/expressjs/express/archive/refs/tags/4.18.2.tar.gz",
+          "type": "sourceArtifact",
+        },
       ],
       "purl": "pkg:npm/express@4.18.2",
     },
