@@ -25,7 +25,7 @@ export const extractor: Extractor<SpdxOptions> = filesExtractor<SpdxOptions>({
 });
 
 type SpdxCreationInfo = {
-  specVersion?: string;
+  specVersion?: unknown;
 };
 
 type SpdxExternalIdentifier = {
@@ -49,7 +49,7 @@ type SpdxElement = {
   scope?: string;
   rootElement?: string[];
   creationInfo?: string | SpdxCreationInfo;
-  specVersion?: string;
+  specVersion?: unknown;
 };
 
 type SpdxDocument = SpdxElement & {
@@ -65,6 +65,11 @@ const DEPENDENCY_RELATIONSHIP_TYPES = new Set([
 ]);
 
 const DEFAULT_SCOPE = "dependencies";
+
+// SPDX specVersion values use Semantic Versioning 2.0.0. Keep the validation
+// local so version detection does not require another runtime dependency.
+const SEMVER_PATTERN =
+  /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[A-Za-z-][0-9A-Za-z-]*)(?:\.(?:0|[1-9]\d*|\d*[A-Za-z-][0-9A-Za-z-]*))*))?(?:\+([0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?$/;
 
 function getType(el: { type?: string; "@type"?: string }): string | undefined {
   return el.type ?? el["@type"];
@@ -105,7 +110,7 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
     const elements = getElements(doc);
     const docType = getType(doc);
     const isDocumentRoot = typeIncludes(docType, "SpdxDocument");
-    let specVersion: string | undefined;
+    let specVersion: unknown;
 
     if (isDocumentRoot) {
       specVersion = resolveSpecVersion(doc, elements);
@@ -116,7 +121,7 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
       }
     }
 
-    if (!specVersion) {
+    if (specVersion === undefined) {
       return {
         packages: [],
         subprojects: [],
@@ -125,7 +130,7 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
           ? [
               {
                 code: "spdx.not_spdx_document",
-                message: `Not an SPDX 3.0.x document (could not determine specVersion)`,
+                message: `Not an SPDX 3.x document (could not determine specVersion)`,
                 severity: "WARNING",
                 file: filePath,
               },
@@ -134,7 +139,28 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
       };
     }
 
-    if (!specVersion.startsWith("3.0")) {
+    const versionMatch =
+      typeof specVersion === "string" ? SEMVER_PATTERN.exec(specVersion) : undefined;
+
+    if (typeof specVersion !== "string" || !versionMatch) {
+      return {
+        packages: [],
+        subprojects: [],
+        relationships: [],
+        issues: filePath
+          ? [
+              {
+                code: "spdx.invalid_version",
+                message: `Invalid SPDX version: ${formatSpecVersion(specVersion)} (expected a valid SemVer in the 3.x range)`,
+                severity: "ERROR",
+                file: filePath,
+              },
+            ]
+          : [],
+      };
+    }
+
+    if (versionMatch[1] !== "3") {
       return {
         packages: [],
         subprojects: [],
@@ -143,8 +169,8 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
           ? [
               {
                 code: "spdx.unsupported_version",
-                message: `Unsupported SPDX version: ${specVersion} (expected 3.0.x)`,
-                severity: "WARNING",
+                message: `Unsupported SPDX version: ${specVersion} (expected 3.x)`,
+                severity: "ERROR",
                 file: filePath,
               },
             ]
@@ -383,6 +409,19 @@ function resolveNonPackageRoots(
   return resolved;
 }
 
+function formatSpecVersion(specVersion: unknown): string {
+  if (specVersion === null) return "null";
+  if (typeof specVersion === "string") return specVersion;
+  if (
+    typeof specVersion === "number" ||
+    typeof specVersion === "boolean" ||
+    typeof specVersion === "bigint"
+  ) {
+    return specVersion.toString();
+  }
+  return `<${typeof specVersion}>`;
+}
+
 function extractPurl(el: SpdxElement): string | undefined {
   if (el.packageUrl) {
     return el.packageUrl;
@@ -409,7 +448,7 @@ function extractPurl(el: SpdxElement): string | undefined {
 function resolveSpecVersion(
   docOrElement: SpdxDocument | SpdxElement,
   elements: SpdxElement[],
-): string | undefined {
+): unknown {
   const creationInfo = docOrElement.creationInfo;
   if (!creationInfo) return undefined;
 
