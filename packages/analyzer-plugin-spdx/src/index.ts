@@ -1,6 +1,8 @@
 import {
   type AnalyzerResult,
+  type ExternalReference,
   type Extractor,
+  type Package,
   type Subproject,
   type DependencyScope,
   filesExtractor,
@@ -33,6 +35,13 @@ type SpdxExternalIdentifier = {
   identifier?: string;
 };
 
+type SpdxExternalRef = {
+  externalRefType?: string;
+  core_externalRefType?: string;
+  locator?: string | string[];
+  core_locator?: string | string[];
+};
+
 type SpdxElement = {
   type?: string;
   spdxId?: string;
@@ -41,8 +50,16 @@ type SpdxElement = {
   name?: string;
   packageUrl?: string;
   software_packageUrl?: string;
+  downloadLocation?: string;
+  software_downloadLocation?: string;
   packageVersion?: string;
   externalIdentifier?: SpdxExternalIdentifier[];
+  externalRef?: Array<string | SpdxExternalRef>;
+  core_externalRef?: Array<string | SpdxExternalRef>;
+  externalRefType?: string;
+  core_externalRefType?: string;
+  locator?: string | string[];
+  core_locator?: string | string[];
   relationshipType?: string;
   from?: string;
   to?: string[];
@@ -153,7 +170,7 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
     }
 
     // Duplicates are not deduplicated here — downstream consumers (normalizeResult / mergeResults) handle it.
-    const packages: Array<{ purl: string; evidence: string[] }> = [];
+    const packages: Package[] = [];
     const spdxIdToPurl = new Map<string, string>();
     const spdxIdToElement = new Map<string, SpdxElement>();
 
@@ -162,7 +179,10 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
       if (elId) {
         spdxIdToElement.set(elId, el);
       }
+    }
 
+    for (const el of elements) {
+      const elId = getId(el);
       const elType = getType(el);
       if (!typeIncludes(elType, "Package")) continue;
 
@@ -186,7 +206,15 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
         evidence.push(filePath);
       }
 
-      packages.push({ purl: validatedPurl, evidence });
+      const downloadLocation = el.downloadLocation ?? el.software_downloadLocation;
+      const externalReferences = extractExternalReferences(el, spdxIdToElement);
+
+      packages.push({
+        purl: validatedPurl,
+        evidence,
+        ...(downloadLocation !== undefined && { downloadLocation }),
+        ...(externalReferences.length > 0 && { externalReferences }),
+      });
     }
 
     const scopedDepsByFrom = new Map<string, ScopedDep[]>();
@@ -348,6 +376,40 @@ export function extractSpdx(content: string, filePath?: string): AnalyzerResult 
         : [],
     };
   }
+}
+
+function extractExternalReferences(
+  el: SpdxElement,
+  spdxIdToElement: Map<string, SpdxElement>,
+): ExternalReference[] {
+  const result: ExternalReference[] = [];
+  const seen = new Set<string>();
+
+  for (const refOrId of el.externalRef ?? el.core_externalRef ?? []) {
+    const ref = typeof refOrId === "string" ? spdxIdToElement.get(refOrId) : refOrId;
+    if (!ref) continue;
+
+    const externalRefType = ref.externalRefType ?? ref.core_externalRefType;
+    let type: ExternalReference["type"] | undefined;
+    if (typeIncludes(externalRefType, "vcs")) {
+      type = "vcs";
+    } else if (typeIncludes(externalRefType, "sourceArtifact")) {
+      type = "sourceArtifact";
+    }
+    if (!type) continue;
+
+    const locatorValue = ref.locator ?? ref.core_locator;
+    const locators = Array.isArray(locatorValue) ? locatorValue : [locatorValue];
+    for (const locator of locators) {
+      if (typeof locator !== "string") continue;
+      const key = `${type}\0${locator}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      result.push({ type, locator });
+    }
+  }
+
+  return result;
 }
 
 /**

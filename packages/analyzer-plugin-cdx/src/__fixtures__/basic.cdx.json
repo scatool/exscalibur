@@ -8,7 +8,25 @@
       "type": "library",
       "name": "express",
       "version": "4.18.2",
-      "purl": "pkg:npm/express@4.18.2"
+      "purl": "pkg:npm/express@4.18.2",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://expressjs.com/"
+        },
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/express/-/express-4.18.2.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/expressjs/express.git@4.18.2"
+        },
+        {
+          "type": "source-distribution",
+          "url": "https://github.com/expressjs/express/archive/refs/tags/4.18.2.tar.gz"
+        }
+      ]
     },
     {
       "bom-ref": "pkg:npm/react@18.2.0",

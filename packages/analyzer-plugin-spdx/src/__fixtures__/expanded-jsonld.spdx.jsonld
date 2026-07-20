@@ -24,7 +24,14 @@
       "name": "express",
       "packageVersion": "4.18.2",
       "packageUrl": "pkg:npm/express@4.18.2",
+      "externalRef": ["_:express-vcs"],
       "creationInfo": "_:creationInfo"
+    },
+    {
+      "@type": "ExternalRef",
+      "@id": "_:express-vcs",
+      "externalRefType": "vcs",
+      "locator": ["git+https://github.com/expressjs/express.git@4.18.2"]
     },
     {
       "@type": "Relationship",

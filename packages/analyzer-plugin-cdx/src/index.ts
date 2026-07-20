@@ -1,6 +1,8 @@
 import {
   type AnalyzerResult,
+  type ExternalReference,
   type Extractor,
+  type Package,
   filesExtractor,
   readNormalizedTextFile,
   scanAndMarkFiles,
@@ -25,6 +27,10 @@ type CycloneDXComponent = {
   name?: string;
   purl?: string;
   version?: string;
+  externalReferences?: Array<{
+    type?: string;
+    url?: string | object;
+  }>;
   components?: CycloneDXComponent[];
   evidence?: {
     occurrences?: Array<{
@@ -69,7 +75,7 @@ export function extractCycloneDX(content: string, filePath?: string): AnalyzerRe
       };
     }
 
-    const packages: Array<{ purl: string; evidence: string[] }> = [];
+    const packages: Package[] = [];
     const relationships: Array<{ from: string; to: string[] }> = [];
     const bomRefToPurl = new Map<string, string>();
 
@@ -114,9 +120,26 @@ export function extractCycloneDX(content: string, filePath?: string): AnalyzerRe
           }
         }
 
+        const distributionReference = component.externalReferences?.find(
+          (reference) => reference.type === "distribution" && typeof reference.url === "string",
+        );
+        const downloadLocation =
+          typeof distributionReference?.url === "string" ? distributionReference.url : undefined;
+        const externalReferences: ExternalReference[] = [];
+        for (const reference of component.externalReferences ?? []) {
+          if (typeof reference.url !== "string") continue;
+          if (reference.type === "vcs") {
+            externalReferences.push({ type: "vcs", locator: reference.url });
+          } else if (reference.type === "source-distribution") {
+            externalReferences.push({ type: "sourceArtifact", locator: reference.url });
+          }
+        }
+
         packages.push({
           purl: validatedPurl,
           evidence,
+          ...(downloadLocation !== undefined && { downloadLocation }),
+          ...(externalReferences.length > 0 && { externalReferences }),
         });
 
         // Map bom-ref to purl for dependency resolution
