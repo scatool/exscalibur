@@ -1,16 +1,16 @@
-import type { AnalyzerResult, Issue } from "./types.ts";
+import type { AnalyzerResult, ExternalReference, Issue, Package } from "./types.ts";
 import { normalizeResult } from "./normalize.ts";
 
 /**
  * Merge multiple AnalyzerResult objects into a single result
- * - Deduplicates packages by purl, merging evidence arrays
+ * - Deduplicates packages by purl, merging evidence and external reference arrays
  * - Concatenates all subprojects
  * - Merges relationships with the same 'from' value
  * - Concatenates all issues
  * - Normalizes and sorts the final result
  */
 export function mergeResults(results: AnalyzerResult[]): AnalyzerResult {
-  const packageMap = new Map<string, { purl: string; evidence: string[] }>();
+  const packageMap = new Map<string, Package>();
   const subprojects: Array<{
     purl: string;
     definitionFile: string;
@@ -24,13 +24,20 @@ export function mergeResults(results: AnalyzerResult[]): AnalyzerResult {
     for (const pkg of result.packages) {
       const existing = packageMap.get(pkg.purl);
       if (existing) {
-        // Merge evidence arrays
+        // Merge evidence and external reference arrays
         existing.evidence.push(...pkg.evidence);
+        existing.externalReferences = mergeExternalReferences(
+          existing.externalReferences,
+          pkg.externalReferences,
+        );
       } else {
         // Create new entry
         packageMap.set(pkg.purl, {
           purl: pkg.purl,
           evidence: [...pkg.evidence],
+          ...(pkg.externalReferences !== undefined && {
+            externalReferences: mergeExternalReferences(undefined, pkg.externalReferences),
+          }),
         });
       }
     }
@@ -63,4 +70,17 @@ export function mergeResults(results: AnalyzerResult[]): AnalyzerResult {
     })),
     issues,
   });
+}
+
+function mergeExternalReferences(
+  first?: ExternalReference[],
+  second?: ExternalReference[],
+): ExternalReference[] | undefined {
+  if (first === undefined && second === undefined) return undefined;
+
+  const references = new Map<string, ExternalReference>();
+  for (const reference of [...(first ?? []), ...(second ?? [])]) {
+    references.set(JSON.stringify([reference.type, reference.locator]), { ...reference });
+  }
+  return Array.from(references.values());
 }

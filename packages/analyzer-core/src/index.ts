@@ -1,5 +1,7 @@
 export type {
   Package,
+  ExternalReference,
+  ExternalReferenceType,
   DependencyScope,
   Subproject,
   Relationship,
