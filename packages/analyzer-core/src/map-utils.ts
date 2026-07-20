@@ -10,6 +10,7 @@ import type {
 export type PackageMapEntry = {
   purl: string;
   evidence: Set<string>;
+  downloadLocation?: string;
   externalReferences?: ExternalReference[];
 };
 
@@ -42,11 +43,14 @@ export function addPackageEvidence(
 }
 
 export function convertPackageMapToArray(packageMap: Map<string, PackageMapEntry>): Package[] {
-  return Array.from(packageMap.values()).map(({ purl, evidence, externalReferences }) => ({
-    purl,
-    evidence: Array.from(evidence),
-    ...(externalReferences !== undefined && { externalReferences: [...externalReferences] }),
-  }));
+  return Array.from(packageMap.values()).map(
+    ({ purl, evidence, downloadLocation, externalReferences }) => ({
+      purl,
+      evidence: Array.from(evidence),
+      ...(downloadLocation !== undefined && { downloadLocation }),
+      ...(externalReferences !== undefined && { externalReferences: [...externalReferences] }),
+    }),
+  );
 }
 
 export function convertRelationshipsMapToArray(

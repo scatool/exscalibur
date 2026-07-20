@@ -79,6 +79,36 @@ test("mergeResults merges, deduplicates, and sorts package external references",
   ]);
 });
 
+test("mergeResults preserves the first available package download location", () => {
+  const result1: AnalyzerResult = {
+    packages: [{ purl: "pkg:npm/foo@1.0.0", evidence: [] }],
+    subprojects: [],
+    relationships: [],
+    issues: [],
+  };
+
+  const result2: AnalyzerResult = {
+    packages: [
+      {
+        purl: "pkg:npm/foo@1.0.0",
+        evidence: [],
+        downloadLocation: "https://registry.npmjs.org/foo/-/foo-1.0.0.tgz",
+      },
+    ],
+    subprojects: [],
+    relationships: [],
+    issues: [],
+  };
+
+  expect(mergeResults([result1, result2]).packages).toEqual([
+    {
+      purl: "pkg:npm/foo@1.0.0",
+      evidence: [],
+      downloadLocation: "https://registry.npmjs.org/foo/-/foo-1.0.0.tgz",
+    },
+  ]);
+});
+
 test("mergeResults merges subprojects", () => {
   const result1: AnalyzerResult = {
     packages: [],

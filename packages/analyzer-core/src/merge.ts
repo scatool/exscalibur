@@ -3,7 +3,7 @@ import { normalizeResult } from "./normalize.ts";
 
 /**
  * Merge multiple AnalyzerResult objects into a single result
- * - Deduplicates packages by purl, merging evidence and external reference arrays
+ * - Deduplicates packages by purl, merging package metadata
  * - Concatenates all subprojects
  * - Merges relationships with the same 'from' value
  * - Concatenates all issues
@@ -24,8 +24,9 @@ export function mergeResults(results: AnalyzerResult[]): AnalyzerResult {
     for (const pkg of result.packages) {
       const existing = packageMap.get(pkg.purl);
       if (existing) {
-        // Merge evidence and external reference arrays
+        // Merge package metadata
         existing.evidence.push(...pkg.evidence);
+        existing.downloadLocation ??= pkg.downloadLocation;
         existing.externalReferences = mergeExternalReferences(
           existing.externalReferences,
           pkg.externalReferences,
@@ -35,6 +36,7 @@ export function mergeResults(results: AnalyzerResult[]): AnalyzerResult {
         packageMap.set(pkg.purl, {
           purl: pkg.purl,
           evidence: [...pkg.evidence],
+          ...(pkg.downloadLocation !== undefined && { downloadLocation: pkg.downloadLocation }),
           ...(pkg.externalReferences !== undefined && {
             externalReferences: mergeExternalReferences(undefined, pkg.externalReferences),
           }),

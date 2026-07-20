@@ -9,6 +9,7 @@ export function normalizeResult(result: AnalyzerResult): AnalyzerResult {
     .map((pkg) => ({
       purl: pkg.purl,
       evidence: [...pkg.evidence].sort((a, b) => (a < b ? -1 : a > b ? 1 : 0)),
+      ...(pkg.downloadLocation !== undefined && { downloadLocation: pkg.downloadLocation }),
       ...(pkg.externalReferences !== undefined && {
         externalReferences: [...pkg.externalReferences].sort((a, b) => {
           if (a.type !== b.type) return a.type < b.type ? -1 : 1;

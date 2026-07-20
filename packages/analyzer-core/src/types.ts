@@ -10,6 +10,7 @@ export type ExternalReference = {
 export type Package = {
   purl: string;
   evidence: string[];
+  downloadLocation?: string;
   externalReferences?: ExternalReference[];
 };
 
