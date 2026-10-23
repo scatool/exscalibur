@@ -1,0 +1,45 @@
+{
+  "tool": "cargo 1.90.0 (840b83a10 2025-07-30)",
+  "native_output": "Unmodified native metadata output is stored as .json.txt to preserve its bytes during formatting. Absolute paths identify the temporary source workspace; tests do not read those paths.",
+  "commands": [
+    "cargo metadata --offline --locked --format-version 1",
+    "cargo metadata --offline --locked --format-version 1 --filter-platform x86_64-unknown-linux-gnu"
+  ],
+  "tool_archives": [
+    {
+      "component": "cargo",
+      "sha256": "9853db03d68578a30972e2755c89c66aec035fec641cf8f3a7117c81eec2578d",
+      "bytes": 10679724,
+      "url": "https://static.rust-lang.org/dist/cargo-1.90.0-x86_64-unknown-linux-gnu.tar.xz"
+    },
+    {
+      "component": "rustc",
+      "sha256": "48c2a42de9e92fcae8c24568f5fe40d5734696a6f80e83cc6d46eef1a78f13c9",
+      "bytes": 82519204,
+      "url": "https://static.rust-lang.org/dist/rustc-1.90.0-x86_64-unknown-linux-gnu.tar.xz"
+    }
+  ],
+  "sha256": {
+    "Cargo.toml": "2c3dab3265852ad9887bed5f1e81bf533932b78a1d4ee1129273800b603f4424",
+    "app/Cargo.toml": "31f4276e07a0f9a369e8fa5563ac5e44c7c506a979041eb6fce5b5390a1d64cc",
+    "ui/Cargo.toml": "74221ee7bac198cdddf35baa9aaa77761b7c09f1d4aa8e8742647b5158ab36eb",
+    "shared/Cargo.toml": "f96ff197902e87bf9ec5438478ed91b1f9211a72181387ac6dddb1eca43a2777",
+    "external/Cargo.toml": "f3b76727c1a4e28ca5b7596d2fbdcd2533334cdf517a3ce471e611345fdf8f13",
+    "proc-tool/Cargo.toml": "42061d5d224139b677375399a0abe3f920c5e9c65fa67a3a01d767a5063af3f8",
+    "test-tool/Cargo.toml": "b6e3e30f625dec427e240cbbd38bb3ae279129d45bb51e7e5d6ff3842a04a4bf",
+    "windows-only/Cargo.toml": "bb138dfe3fafff5aeb780b6bbb995648e4d9be8bbdb231d4aa0e0ae0a99cd012",
+    "optional-lib/Cargo.toml": "c37119c0d24e1c34d374af63de0f4fecb48a35a9a15f20ccd3a323b9f0e93912",
+    "app/src/lib.rs": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ui/src/lib.rs": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "shared/src/lib.rs": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "external/src/lib.rs": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "proc-tool/src/lib.rs": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-tool/src/lib.rs": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "windows-only/src/lib.rs": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "optional-lib/src/lib.rs": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "Cargo.lock": "7f16bf12d30e31c1adddb7634e78d7034d7896fbf1ab21ea83180fb16b23182a",
+    "cargo-metadata.json.txt": "5229c053d701bd5db262df23a6fc1ed207cb84e630db138ba5da0c777343089d",
+    "cargo-metadata-linux.json.txt": "5cfa6a216528b0947ea91f93ba4c8eb0d4ec13e7e96541b196e329e806da2709"
+  },
+  "source_preparation": "Controlled Cargo workspace authored for the native experiment; Cargo manifests are formatted with the repository formatter before the recorded native invocations."
+}

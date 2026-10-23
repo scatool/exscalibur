@@ -13,6 +13,9 @@ import { PackageURL } from "packageurl-js";
 import { parse as parseYaml } from "yaml";
 import { optionSchema, type SpdxOptions } from "./options.ts";
 
+export { extractSpdxV2 } from "./converter-v2.ts";
+export { extractorV2 as spdxExtractorV2 } from "./extractor-v2.ts";
+
 export const extractor: Extractor<SpdxOptions> = filesExtractor<SpdxOptions>({
   name: "spdx",
   version: 1,

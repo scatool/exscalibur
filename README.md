@@ -16,6 +16,10 @@ Exscalibur extracts dependency graphs from software projects.
 
 ## Development
 
+The [analyzer result v2 contract](packages/analyzer-core/src/result-v2/README.md)
+describes the opt-in model for context-preserving dependency graphs, its reviewed
+alternatives and current migration status. The CLI still emits the existing format.
+
 Exscalibur is a [pnpm](https://pnpm.io/) workspace using [Vite+](https://viteplus.dev/) for install and task orchestration.
 Each extractor lives in its own package under `packages/`.
 Published packages, the CLI, and repository tests run on Node.js.

@@ -15,6 +15,7 @@ export type {
 } from "./types.ts";
 export { normalizeResult } from "./normalize.ts";
 export { mergeResults } from "./merge.ts";
+export * from "./result-v2/index.ts";
 export {
   addRelationship,
   ensurePackageExists,

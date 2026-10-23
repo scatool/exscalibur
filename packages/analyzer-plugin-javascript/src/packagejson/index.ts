@@ -12,7 +12,7 @@ import { createNpmPurl } from "../npm-utils.ts";
 import type { JavaScriptOptions } from "../options.ts";
 import { optionSchema } from "../options.ts";
 
-function hasLockfileInDirectory(dir: string, codebase: string): boolean {
+export function hasLockfileInDirectory(dir: string, codebase: string): boolean {
   const lockfiles = [
     "package-lock.json",
     "npm-shrinkwrap.json",

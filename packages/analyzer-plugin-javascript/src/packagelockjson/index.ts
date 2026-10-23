@@ -31,6 +31,7 @@ import {
 } from "../npm-utils.ts";
 import type { JavaScriptOptions } from "../options.ts";
 import { optionSchema } from "../options.ts";
+import { npmResolutionCandidates } from "../npm-resolution.ts";
 
 export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScriptOptions>({
   name: "packagelockjson",
@@ -383,7 +384,7 @@ function resolvePackageInfo(
   allPackages: Record<string, PackageLockPackage>,
   callerPath: string,
 ): { name: string; version: string } | null {
-  const candidates = buildResolutionCandidates(callerPath, depName);
+  const candidates = npmResolutionCandidates(callerPath, depName);
 
   for (const candidate of candidates) {
     const pkg = allPackages[candidate];
@@ -394,40 +395,4 @@ function resolvePackageInfo(
   }
 
   return null;
-}
-
-/**
- * Build the list of candidate paths to check for a dependency, following
- * npm's resolution order (nearest node_modules first, then walking up).
- *
- * For callerPath "node_modules/a/node_modules/b" and depName "x":
- *   1. node_modules/a/node_modules/b/node_modules/x
- *   2. node_modules/a/node_modules/x
- *   3. node_modules/x
- */
-function buildResolutionCandidates(callerPath: string, depName: string): string[] {
-  const candidates: string[] = [];
-
-  if (callerPath === "") {
-    candidates.push(`node_modules/${depName}`);
-    return candidates;
-  }
-
-  // First candidate: nested directly under the caller
-  candidates.push(`${callerPath}/node_modules/${depName}`);
-
-  // Walk up by stripping the last /node_modules/<pkg> segment each time
-  let current = callerPath;
-  while (true) {
-    const idx = current.lastIndexOf("/node_modules/");
-    if (idx === -1) {
-      // Reached the top level - always fall back to hoisted node_modules
-      candidates.push(`node_modules/${depName}`);
-      break;
-    }
-    current = current.substring(0, idx);
-    candidates.push(`${current}/node_modules/${depName}`);
-  }
-
-  return candidates;
 }

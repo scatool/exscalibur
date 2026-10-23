@@ -129,11 +129,11 @@ export function convertOrtResult(
       }
 
       for (const edge of depGraph.edges) {
-        const fromNode = depGraph.nodes[edge.from];
+        const fromNode = depGraph.nodes?.[edge.from];
         if (fromNode?.pkg === undefined) continue;
         const fromPackageId = depGraph.packages[fromNode.pkg];
 
-        const toNode = depGraph.nodes[edge.to];
+        const toNode = depGraph.nodes?.[edge.to];
         if (toNode?.pkg === undefined) continue;
         const toPackageId = depGraph.packages[toNode.pkg];
 
