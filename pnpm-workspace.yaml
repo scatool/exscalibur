@@ -6,10 +6,21 @@ catalog:
   "@types/node": ^22.20.0
   packageurl-js: ^2.0.1
   smol-toml: ^1.7.0
-  vite-plus: ^1.3.0
-  vitest: ^4.1.9
+  vite-plus: 1.3.0
+  vitest: 5.0.5
   yaml: ^2.8.4
   zod: ^4.3.6
+  vite: npm:@voidzero-dev/vite-plus-core@1.3.0
 
 onlyBuiltDependencies:
   - esbuild
+overrides:
+  vite@*: "catalog:"
+  vitest@*: "catalog:"
+peerDependencyRules:
+  allowAny:
+    - vite
+    - vitest
+  allowedVersions:
+    vite: "*"
+    vitest: "*"

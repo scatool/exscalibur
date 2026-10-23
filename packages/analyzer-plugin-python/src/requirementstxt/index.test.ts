@@ -2,7 +2,7 @@ import { join } from "node:path/posix";
 import { mkdtemp, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join as joinPath } from "node:path";
-import { expect, test } from "vitest";
+import { expect, test } from "vite-plus/test";
 import { extractor } from "./index.ts";
 import { createExtractorTests } from "@scatool/analyzer-test-utils";
 

@@ -43,7 +43,8 @@
   "devDependencies": {
     "@scatool/analyzer-test-utils": "workspace:*",
     "@types/node": "catalog:",
-    "vite-plus": "catalog:"
+    "vite-plus": "catalog:",
+    "vitest": "catalog:"
   },
   "peerDependencies": {
     "typescript": "^5.9.3"

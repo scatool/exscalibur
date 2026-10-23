@@ -1,4 +1,4 @@
-import { test, expect, beforeAll, afterAll } from "vitest";
+import { test, expect, beforeAll, afterAll } from "vite-plus/test";
 import { join } from "node:path/posix";
 import { mkdtempSync, rmSync, cpSync } from "node:fs";
 import { tmpdir } from "node:os";

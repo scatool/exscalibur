@@ -3,7 +3,7 @@ import { resolve } from "path";
 import { createExtractorTests, scanFixtures } from "@scatool/analyzer-test-utils";
 import { extractor as vcpkgExtractor } from "./index.ts";
 import { type VcpkgOptions, type VcpkgTargetPlatform, optionsSchema } from "./options";
-import { test, expect } from "vitest";
+import { test, expect } from "vite-plus/test";
 import os, { tmpdir } from "node:os";
 import { copyFile, rm, mkdtemp } from "node:fs/promises";
 import { loadTransitiveDependencies, portToVersion } from "./vcpkg.ts";

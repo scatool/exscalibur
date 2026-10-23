@@ -38,12 +38,11 @@
   },
   "devDependencies": {
     "@types/node": "catalog:",
-    "vite-plus": "catalog:",
-    "vitest": "catalog:"
+    "vite-plus": "catalog:"
   },
   "peerDependencies": {
     "typescript": "^5",
-    "vitest": "^4"
+    "vitest": "^4 || ^5"
   },
   "engines": {
     "node": ">=22"
