@@ -1,4 +1,4 @@
-import { expect, test } from "vitest";
+import { expect, test } from "vite-plus/test";
 import { join } from "node:path/posix";
 import { existsSync } from "node:fs";
 import { readFile, writeFile } from "node:fs/promises";

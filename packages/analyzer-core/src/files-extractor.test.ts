@@ -1,7 +1,7 @@
 import { mkdtemp, mkdir, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { basename, join } from "node:path";
-import { expect, test } from "vitest";
+import { expect, test } from "vite-plus/test";
 import { filesExtractor, scanAndMarkFiles } from "./index.ts";
 
 test("scanAndMarkFiles works with legacy mark file contexts", async () => {

@@ -1,7 +1,7 @@
 import { join } from "node:path/posix";
 import { extractSpdx } from "./index.ts";
 import { createFileContentTests } from "@scatool/analyzer-test-utils";
-import { describe, expect, test } from "vitest";
+import { describe, expect, test } from "vite-plus/test";
 
 const fixturesDir = join(import.meta.dirname, "__fixtures__");
 

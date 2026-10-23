@@ -1,4 +1,4 @@
-import { describe, expect, test } from "vitest";
+import { describe, expect, test } from "vite-plus/test";
 import type { VcpkgTargetPlatform } from "./options.ts";
 import { matchesPlatform } from "./platform.ts";
 
