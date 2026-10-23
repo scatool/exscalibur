@@ -1,3 +1,5 @@
+import { realpath } from "node:fs/promises";
+import { isAbsolute, relative as filesystemRelative, resolve, sep } from "node:path";
 import { dirname, join, normalize, relative } from "node:path/posix";
 import {
   filesExtractorV2,
@@ -45,6 +47,10 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
     const records = version === 1 ? legacyRecords(document) : object(document.packages);
     if (version !== 1 && document.packages === undefined)
       throw new Error("npm lockfile is missing its packages table");
+    for (const [location, record] of Object.entries(records)) {
+      if (record.link !== undefined && typeof record.link !== "boolean")
+        throw new Error(`Invalid npm link flag at '${location}'`);
+    }
     // Legacy local entries without artifact metadata do not establish a source-local
     // project context. A placement lookup alone cannot establish a local source binding.
     const legacyLocalLocations = new Set(
@@ -64,13 +70,59 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
     const targets = new Map<string, string>();
     const lockDirectory = dirname(file);
     const relativeDirectory = dirname(context.relativeFile);
+    const codebaseDirectory = await realpath(context.codebasePath);
+    const contained = (root: string, path: string): boolean => {
+      const pathWithinRoot = filesystemRelative(root, path);
+      return (
+        !isAbsolute(pathWithinRoot) &&
+        pathWithinRoot !== ".." &&
+        !pathWithinRoot.startsWith(`..${sep}`)
+      );
+    };
+    const loadManifest = async (manifestFile: string, fallback: NpmRecord) => {
+      let safe = contained(resolve(context.codebasePath), resolve(manifestFile));
+      if (safe) {
+        try {
+          safe = contained(codebaseDirectory, await realpath(manifestFile));
+        } catch (error) {
+          if (
+            !(
+              error !== null &&
+              typeof error === "object" &&
+              "code" in error &&
+              error.code === "ENOENT"
+            )
+          ) {
+            builder.result.issues.push({
+              code: "npm.manifest_unreadable",
+              severity: "WARNING",
+              file: context.relativeFile,
+              message: "Could not resolve a local manifest path; using lockfile metadata",
+            });
+          }
+          // Do not read content through a path whose containment could not be checked.
+          return { manifest: fallback, available: false };
+        }
+      }
+      if (!safe) {
+        builder.result.issues.push({
+          code: "npm.manifest_outside_codebase",
+          severity: "WARNING",
+          file: context.relativeFile,
+          message:
+            "A local manifest path leaves the scanned codebase; only recorded lock metadata is used",
+        });
+        return { manifest: fallback, available: false };
+      }
+      return loadNpmManifest(manifestFile, fallback, builder);
+    };
 
     // Build every native location before resolving any declaration. Input ordering must not
     // determine whether a later package or workspace can be referenced.
     for (const [location, metadata] of Object.entries(records)) {
       if (location !== "" && location.split("/").includes("node_modules")) continue;
       const manifestFile = join(lockDirectory, location, "package.json");
-      const loaded = await loadNpmManifest(manifestFile, metadata, builder);
+      const loaded = await loadManifest(manifestFile, metadata);
       const definitionFile = loaded.available
         ? join(relativeDirectory, location, "package.json")
         : `${context.relativeFile}#packages/${encodeURIComponent(location)}`;
@@ -109,7 +161,7 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
         ...(typeof document.name === "string" && { name: document.name }),
         ...(typeof document.version === "string" && { version: document.version }),
       };
-      const loaded = await loadNpmManifest(join(lockDirectory, "package.json"), fallback, builder);
+      const loaded = await loadManifest(join(lockDirectory, "package.json"), fallback);
       const definition = loaded.available
         ? join(relativeDirectory, "package.json")
         : context.relativeFile;
@@ -138,12 +190,24 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
         if (visited.has(candidate)) throw new Error(`Cyclic npm workspace links at '${candidate}'`);
         visited.add(candidate);
         const destination = records[candidate]?.resolved;
-        if (typeof destination !== "string") return undefined;
+        if (typeof destination !== "string" || destination.length === 0)
+          throw new Error(`Invalid npm link destination at '${candidate}'`);
         candidate = normalize(destination.replace(/^file:/, ""));
         if (candidate === ".") candidate = "";
       }
       return targets.get(candidate);
     };
+    // Lock records are evidence even when no root currently references them.
+    for (const [location, record] of Object.entries(records)) {
+      if (record.link !== true || follow(location) !== undefined) continue;
+      builder.rootCompleteness = "unknown";
+      builder.result.issues.push({
+        code: "npm.link_target_missing",
+        severity: "WARNING",
+        file: context.relativeFile,
+        message: `The target of npm link '${location}' is not recorded; project enumeration remains unknown`,
+      });
+    }
     const resolveDependency = (caller: string, name: string): string | undefined => {
       for (const candidate of npmResolutionCandidates(caller, name)) {
         if (!Object.hasOwn(records, candidate)) continue;

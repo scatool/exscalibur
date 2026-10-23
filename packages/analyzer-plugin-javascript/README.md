@@ -54,6 +54,13 @@ installation or claim an installed tree. Separate placements retain separate vie
 including when they have the same PURL. In lockfile versions 2 and 3, workspace consumers follow production
 dependencies without importing the workspace's development roots.
 
+Local manifest reads stay inside the scanned codebase, including resolved symlink
+targets. Outside paths retain only their recorded lock metadata with a warning.
+Every link is checked even when unreachable from current roots: malformed flags,
+destinations and cycles produce an extraction error; missing target records retain
+available evidence with unknown project enumeration. Truncated or structurally
+invalid lockfiles retain a failed observation rather than a successful empty graph.
+
 Peer targets found through placement lookup are explicitly `unknown` candidates,
 not verified peer bindings. A candidate can have an incompatible version or be a
 child placement that npm rejects as a peer. Missing optional peers are excluded
