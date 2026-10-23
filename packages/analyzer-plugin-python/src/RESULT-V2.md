@@ -1,6 +1,7 @@
 # Native Python result observations
 
-The five existing Python extractors expose matching `*ExtractorV2` entry points.
+The five existing Python extractors return result format 2 through their default
+entry points. Matching `*ExtractorV2` names remain aliases to the same implementation.
 Requirements and pyproject inputs report declarations, including original specifiers,
 requested extras, native predicates and source references. A pinned requirement is
 still a declaration, not evidence that a resolver selected or installed it. Dynamic
@@ -28,6 +29,7 @@ path/VCS entries remain declarations. All native records and lock metadata are
 retained rather than reduced to PURL adjacency.
 
 UV retains its existing native frozen CycloneDX export path through the V2 importer.
-The export records UV provenance without claiming installation or reconstructing
-project roots omitted by `--no-emit-project`. Export errors retain an error issue
+The export records UV provenance without claiming installation. A native SBOM
+metadata subject remains an imported analyzed subject, even when
+`--no-emit-project` omits it from the exported component list. Export errors retain an error issue
 and an unknown-coverage observation.

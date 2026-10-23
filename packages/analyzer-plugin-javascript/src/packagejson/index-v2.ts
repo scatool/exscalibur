@@ -7,7 +7,7 @@ import {
 } from "@scatool/analyzer-core";
 import { NpmGraphV2, addManifestObservation, type NpmRecord } from "../npm-v2.ts";
 import { optionSchema, type JavaScriptOptions } from "../options.ts";
-import { hasLockfileInDirectory } from "./index.ts";
+import { hasLockfileInDirectory } from "./discovery.ts";
 
 /** Manifest declarations have no invented resolved components or versions. */
 export const extractorV2 = filesExtractorV2<JavaScriptOptions>({

@@ -1,12 +1,59 @@
-import { join } from "node:path/posix";
+import { join } from "node:path";
+import { expect, test } from "vite-plus/test";
+import { queryDependenciesV2, runCommand, validateResultV2 } from "@scatool/analyzer-core";
 import { extractor } from "./extractor.ts";
-import { createExtractorTests } from "@scatool/analyzer-test-utils";
 
-const fixturesDir = join(import.meta.dirname, "__fixtures__");
-
-await createExtractorTests({
-  extractor,
-  fixturesDir,
-  pattern: "*/pom.xml",
-  timeout: 120000,
-});
+// Native Maven execution remains required. These expectations come from the fixture POMs.
+const fixtures = {
+  basic: { "pom.xml": { test: ["pkg:maven/org.junit.jupiter/junit-jupiter-api@6.0.1"] } },
+  multimodule: {
+    "pom.xml": {},
+    "module-a/pom.xml": { compile: ["pkg:maven/com.google.guava/guava@33.0.0-jre"] },
+    "module-b/pom.xml": {
+      compile: [
+        "pkg:maven/com.example/module-a@1.0.0",
+        "pkg:maven/org.apache.commons/commons-lang3@3.14.0",
+      ],
+    },
+  },
+};
+for (const [fixture, projects] of Object.entries(fixtures)) {
+  test(`native Maven extraction: ${fixture}`, async () => {
+    const directory = join(import.meta.dirname, "__fixtures__", fixture);
+    // Extraction is per POM. Install the fixture reactor so module-b resolves module-a
+    // without relying on artifacts left behind by earlier runs.
+    if (fixture === "multimodule") {
+      const preparation = await runCommand(["mvn", "--batch-mode", "-DskipTests", "install"], {
+        cwd: directory,
+      });
+      expect(preparation.exitCode, preparation.stderr).toBe(0);
+    }
+    const result = await extractor.extract(directory, {}, { codebaseId: `fixture:${fixture}` });
+    validateResultV2(result);
+    expect(result.issues.filter((issue) => issue.severity === "ERROR")).toEqual([]);
+    expect(result.subprojects.map((project) => project.definitionFile).sort()).toEqual(
+      Object.keys(projects).sort(),
+    );
+    for (const [file, scopes] of Object.entries(projects)) {
+      const graph = result.graphs.find((graph) => graph.source.files.includes(file))!;
+      for (const [scope, expected] of Object.entries(scopes)) {
+        const root = graph.roots.find((root) => root.scope === scope)!;
+        const direct = graph.edges
+          .filter((edge) => edge.from === root.node)
+          .map((edge) =>
+            edge.status === "resolved"
+              ? graph.nodes.find((node) => node.id === edge.to)!.purl
+              : "unresolved",
+          );
+        expect(direct.sort()).toEqual([...expected].sort());
+        expect(queryDependenciesV2(result, { graph: graph.id, root: root.id }).completeness).toBe(
+          "complete",
+        );
+      }
+      const aggregate = graph.roots.find((root) => root.scope === "maven:dependency-tree")!;
+      expect(
+        queryDependenciesV2(result, { graph: graph.id, root: aggregate.id }).declarations,
+      ).toEqual([]);
+    }
+  }, 120000);
+}

@@ -40,7 +40,11 @@ graph IDs, and graph-local node/root IDs; and all graph-local references. Each r
 must refer to a view of its exact project. A view without a project must reference
 a catalog package. The TypeScript reference implementation is `parseResultV2`.
 
-Unknown fields are preserved as additive JSON data. They must not redefine identity,
+The removed V1 fields `relationships`, project `scopes`, and package `downloadLocation`
+are rejected, as is the unscoped `synthesizedPurl` field. There is no legacy reader or
+PURL-union compatibility conversion. Use contextual graphs and artifact descriptors.
+
+Other unknown fields are preserved as additive JSON data. They must not redefine identity,
 selection, applicability or reachability. Use namespaced keys within `attributes`
 for ecosystem metadata. A new mandatory semantic interpretation requires a new
 format version; readers must reject unsupported `formatVersion` values. A new

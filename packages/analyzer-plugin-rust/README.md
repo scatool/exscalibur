@@ -7,9 +7,10 @@ Rust (Cargo) dependency analyzer plugin for Exscalibur.
 ## Requirements
 
 - `Cargo.lock` file must be present in the project
-- `Cargo.toml` file is used to identify workspace members and subprojects
+- Exported `cargo-metadata.json` is needed to import workspace membership and scopes
 
-No external tools (Cargo, Rust) are required - the plugin parses lockfiles directly.
+No external tools (Cargo, Rust) are required during extraction: the plugin parses
+lockfiles or previously exported metadata. Generating metadata requires Cargo.
 
 ## Usage
 
@@ -21,14 +22,15 @@ const result = await cargoLockExtractor.extract("/path/to/codebase");
 
 ## Native result v2
 
-The opt-in APIs keep source identity and native graph references separate. Every
-component and project has a PURL. The existing `cargoLockExtractor` and CLI remain
-on result v1 while migration continues.
+All extractors return `formatVersion: 2`, keeping source identity and native graph
+references separate. Every component and project has a PURL. `cargoLockExtractor`,
+`cargoMetadataExtractor` and the CLI use this format; the `V2` extractor names remain
+aliases for the same implementations.
 
 ```typescript
-import { cargoLockExtractorV2, convertCargoMetadataV2 } from "@scatool/analyzer-plugin-rust";
+import { cargoLockExtractor, convertCargoMetadataV2 } from "@scatool/analyzer-plugin-rust";
 
-const inventory = await cargoLockExtractorV2.extract("/path/to/codebase");
+const inventory = await cargoLockExtractor.extract("/path/to/codebase");
 const result = convertCargoMetadataV2(nativeMetadata, {
   codebase: "https://github.com/example/project@exact-revision",
   evidenceFile: "cargo-metadata.json",
@@ -39,7 +41,7 @@ const result = convertCargoMetadataV2(nativeMetadata, {
 ```
 
 Generate metadata with `cargo metadata --format-version 1` and record the actual
-feature/platform flags with its inputs. `cargoMetadataExtractorV2` imports files
+feature/platform flags with its inputs. `cargoMetadataExtractor` imports files
 named `cargo-metadata.json`; it does not execute Cargo. Import options include
 `definitionFilePrefix`, `context` and `toolVersion`.
 
@@ -72,21 +74,7 @@ sources use the source-distinguishing `cargo_source` qualifier, an Excalibur con
 Local packages use synthesized generic PURLs scoped by their known manifest identity
 or, when unknown, their lock observation. Checksums are artifact observations.
 
-Fixtures and snapshots are regression evidence. Validation also uses native Cargo
-output, independent raw-record comparisons and exact upstream input hashes. See the
+Fixture tests compare native lock records and dependency references with graph
+records and edges. Validation also uses captured Cargo metadata, independent
+raw-record comparisons and exact upstream input hashes. See the
 [result v2 contract](../analyzer-core/src/result-v2/README.md).
-
-## Legacy v1 limitations
-
-1. **Dependency types**: Cargo.lock does not distinguish between dependency types (dependencies, dev-dependencies, build-dependencies). All dependencies are reported in a single "dependencies" scope for each subproject.
-
-2. **Features**: Cargo feature flags are not tracked. The extractor reports all packages in the lockfile regardless of which features are enabled.
-
-3. **Target-specific dependencies**: Platform-specific dependencies (e.g., `[target.'cfg(windows)'.dependencies]`) are included without conditional information. The extractor reports all packages that appear in the lockfile.
-
-4. **Git and path dependencies**:
-   - Git dependencies are resolved by version if available in the lockfile
-   - Source-less path dependencies are treated as workspace packages, although external paths need not be members
-   - The source URL or path is not preserved in the PURL
-
-5. **Patch and replace directives**: Cargo's `[patch]` and `[replace]` sections are not explicitly tracked. The extractor uses the resolved versions from the lockfile.

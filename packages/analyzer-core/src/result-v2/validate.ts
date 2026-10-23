@@ -108,12 +108,14 @@ const edge = object({
 
 export const analyzerResultV2Schema = object({
   formatVersion: z.literal(2),
+  relationships: z.never().optional(),
   codebase: text,
   packages: z.array(
     object({
       purl,
       evidence: strings,
       synthesizedPurl: z.never().optional(),
+      downloadLocation: z.never().optional(),
       identityObservations: z.array(identityObservation).optional(),
       artifacts: z.array(artifact).optional(),
       externalReferences: z
@@ -125,6 +127,7 @@ export const analyzerResultV2Schema = object({
   subprojects: z.array(
     object({
       ...projectReference.shape,
+      scopes: z.never().optional(),
       evidence: strings.optional(),
       synthesizedPurl: z.never().optional(),
       identityObservations: z.array(identityObservation).optional(),

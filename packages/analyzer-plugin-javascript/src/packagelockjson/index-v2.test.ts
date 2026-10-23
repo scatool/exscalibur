@@ -10,7 +10,6 @@ import {
 } from "@scatool/analyzer-core";
 import { scanFixtures } from "@scatool/analyzer-test-utils";
 import { extractorV2 } from "./index-v2.ts";
-import { extractor as legacyExtractor } from "./index.ts";
 
 type RecordValue = Record<string, unknown>;
 async function input(
@@ -59,7 +58,7 @@ function reached(
   };
 }
 
-test("ancestor workspace node_modules resolves in both v2 and the corrected legacy extractor", async () => {
+test("ancestor workspace node_modules resolves through the correct native ancestor", async () => {
   const manifest = {
     name: "app",
     version: "1.0.0",
@@ -88,14 +87,6 @@ test("ancestor workspace node_modules resolves in both v2 and the corrected lega
           "devDependencies",
         ).purls,
       ).toEqual(["pkg:npm/%40vitejs/plugin-react@6.1.1"]);
-      const legacy = await legacyExtractor.extract(directory);
-      expect(
-        legacy.subprojects.find((project) => project.definitionFile.endsWith("react/package.json"))!
-          .scopes,
-      ).toContainEqual({
-        scope: "devDependencies",
-        packages: ["pkg:npm/%40vitejs/plugin-react@6.1.1"],
-      });
     },
   );
 });

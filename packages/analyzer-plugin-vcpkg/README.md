@@ -6,16 +6,19 @@ vcpkg analyzer plugin for Exscalibur.
 
 Supported package files: `vcpkg.json`.
 
+The default extractor returns format 2. See [result semantics](./RESULT_V2.md) for
+registry-candidate bindings and conservative host/target/feature handling.
+
 Supported extractor options:
 
 - `ignore` - glob patterns to ignore files (default: `['**/build/**']`)
 - `vcpkgPath` - path to the vcpkg binary (default: `vcpkg`)
-- `targetPlatform` - optional target platform to filter dependencies (see [vcpkg documentation](https://learn.microsoft.com/en-us/vcpkg/reference/vcpkg-json#platform-expression)). When specified, only dependencies matching the platform will be included. If not specified, all platforms will be included.
-- `includeAllFeatures` - include all features and their dependencies (default: `false`; if false, only default features are included)
+- `targetPlatform` - optional target platform recorded in graph context for environment queries. Native platform alternatives remain in the graph.
+- `includeAllFeatures` - records the requested feature policy in graph context (default: `false`). All source feature declarations remain available; this is not a resolver-selected enabled-feature set.
 
 Known limitations:
 
-- Default features in the primary `vcpkg.json` files are not supported. Either all features or all default features are included when extracting dependencies.
+- Native feature activation and effective version resolution are not established by registry metadata. Default features, overrides and baseline are preserved on the manifest view.
 - Baselines before `68a74950d0400f5a803026d0860f49853984bf11` (Jan 21, 2021) are not supported. See [src/README.md](./src/README.md) for details.
 - `vcpkg.json` files are not validated, including whether `version>=` constraints are satisfied.
 
@@ -29,4 +32,4 @@ mise plugin install vcpkg https://github.com/markus-gerber/mise-vcpkg
 mise use vcpkg
 ```
 
-To run the verification tests (`vcpkg install --dry-run should match dependencies extracted for [...]`) you also need the corresponding C++ toolchain installed.
+To run the verification tests (`native selected dependencies are represented by registry candidates: [...]`) you also need the corresponding C++ toolchain installed.

@@ -611,5 +611,54 @@
       "graphs": [],
       "issues": []
     }
+  },
+  {
+    "name": "removed relationships",
+    "valid": false,
+    "result": {
+      "formatVersion": 2,
+      "codebase": "example:wire",
+      "packages": [],
+      "subprojects": [],
+      "graphs": [],
+      "issues": [],
+      "relationships": []
+    }
+  },
+  {
+    "name": "removed project scopes",
+    "valid": false,
+    "result": {
+      "formatVersion": 2,
+      "codebase": "example:wire",
+      "packages": [],
+      "subprojects": [
+        {
+          "purl": "pkg:npm/app",
+          "definitionFile": "package.json",
+          "scopes": []
+        }
+      ],
+      "graphs": [],
+      "issues": []
+    }
+  },
+  {
+    "name": "removed package download location",
+    "valid": false,
+    "result": {
+      "formatVersion": 2,
+      "codebase": "example:wire",
+      "packages": [
+        {
+          "purl": "pkg:npm/foo",
+          "evidence": [],
+          "downloadLocation": "https://example.com/archive"
+        }
+      ],
+      "subprojects": [],
+      "graphs": [],
+      "issues": []
+    }
   }
 ]

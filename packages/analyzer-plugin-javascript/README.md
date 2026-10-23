@@ -18,28 +18,28 @@ const result = await packageLockJsonExtractor.extract("/path/to/codebase");
 
 ## Native result v2
 
-The opt-in APIs preserve native dependency contexts for packages with equal PURLs.
-Every package and project still has a PURL, including versionless identities when
-the input does not establish an exact package version. Default exports and the CLI
-continue to produce result v1 while the remaining ecosystems migrate.
+All extractors return `formatVersion: 2`, preserving native dependency contexts for
+packages with equal PURLs. Every package and project has a PURL, including versionless
+identities when the input does not establish an exact package version. The default
+exports and CLI use this format; exports ending in `V2` are aliases for the same APIs.
 
 ```typescript
-import { yarnBerryExtractorV2 } from "@scatool/analyzer-plugin-javascript";
+import { yarnBerryExtractor } from "@scatool/analyzer-plugin-javascript";
 
-const result = await yarnBerryExtractorV2.extract("/path/to/codebase", undefined, {
+const result = await yarnBerryExtractor.extract("/path/to/codebase", undefined, {
   codebaseId: "https://github.com/example/project@exact-revision",
 });
 ```
 
-| Export                       | Native input                          |
-| ---------------------------- | ------------------------------------- |
-| `packageLockJsonExtractorV2` | npm lock versions 1, 2 and 3          |
-| `pnpmLockExtractorV2`        | pnpm lock versions 5, 6 and 9         |
-| `packageJsonExtractorV2`     | Current manifest declarations         |
-| `yarnLockExtractorV2`        | Yarn Classic lockfiles                |
-| `yarnBerryExtractorV2`       | Modern Yarn lock versions 4 through 9 |
-| `bunlockExtractorV2`         | Text Bun lock versions 0 through 3    |
-| `denoLockExtractorV2`        | Deno lock versions 3, 4 and 5         |
+| Export                     | Native input                          |
+| -------------------------- | ------------------------------------- |
+| `packageLockJsonExtractor` | npm lock versions 1, 2 and 3          |
+| `pnpmLockExtractor`        | pnpm lock versions 5, 6 and 9         |
+| `packageJsonExtractor`     | Current manifest declarations         |
+| `yarnLockExtractor`        | Yarn Classic lockfiles                |
+| `yarnBerryExtractor`       | Modern Yarn lock versions 4 through 9 |
+| `bunlockExtractor`         | Text Bun lock versions 0 through 3    |
+| `denoLockExtractor`        | Deno lock versions 3, 4 and 5         |
 
 Keep graph identities when querying dependencies. Catalog PURLs alone cannot
 distinguish different peer contexts, workspace consumers or native package paths.
@@ -62,6 +62,6 @@ JSR dependency coverage remains unknown because lockfiles record retention infor
 external import maps are retained as references without claiming complete declarations.
 
 See the [result v2 contract](../analyzer-core/src/result-v2/README.md) for selection,
-conditions, completeness and migration semantics. Fixtures and snapshots serve as
-regression checks; correctness also requires evidence from raw inputs and native
-package-manager behavior.
+conditions and completeness. Fixture tests compare native records and requests
+with the resulting graph, alongside focused tests for contextual reachability.
+Correctness also requires evidence from native package-manager behavior.

@@ -1,7 +1,9 @@
 # Analyzer result v2
 
-This replaces the PURL-keyed relationship model. The CLI uses native V2 extractors;
-library defaults and legacy test infrastructure remain on V1 pending the final API cutover.
+This is the sole result model used by library defaults and the CLI. The public
+`AnalyzerResult`, `Extractor`, `filesExtractor`, `mergeResults` and `normalizeResult`
+names refer directly to the contextual model; explicit V2 aliases name the same API.
+No legacy result implementation or compatibility projection remains.
 `AnalyzerResultV2` has an independent `formatVersion: 2`; `Extractor.version` describes
 the extractor interface, not the serialized result format.
 
@@ -197,7 +199,7 @@ cannot be represented faithfully still requires an explicit format revision.
 
 ## Migration and acceptance
 
-Native opt-in adapters currently exist for ORT, npm package locks, pnpm locks,
+Native adapters exist for ORT, npm package locks, pnpm locks,
 manifest-only npm projects, Yarn Classic/modern, text Bun locks, Deno locks, Cargo
 lock records and Cargo metadata package-resolution/declaration imports,
 CycloneDX and SPDX 3 compact JSON/JSON-LD/YAML.
@@ -236,8 +238,9 @@ The CLI writes format 2 and retains extractor failures as unknown-coverage obser
 Native V2 adapters also exist for Go modules, Maven trees, Gradle configuration snapshots,
 Python requirements/pyproject/Pipfile/Poetry/PDM, UV exports, Dockerfiles, GitHub Actions,
 Conan and vcpkg. These preserve the capabilities of the existing extractors; no new
-ecosystems or package managers are introduced. Library default aliases and legacy
-fixtures/integration infrastructure still require the final V1 removal. Do not project
+ecosystems or package managers are introduced. The integration harness requires reviewed format 2 baselines. Legacy integration
+baselines are retained only as migration references and fail that acceptance gate
+until independently reviewed against their pinned source inputs. Do not project
 a legacy PURL union into V2 and present it as a precise native graph.
 
 Go observations distinguish selected build-list membership from original module requests;
@@ -281,5 +284,5 @@ The Cargo regression capture includes native tool provenance and unchanged metad
 output alongside its source inputs. These checks supplement the contract tests; they
 do not make fixtures or snapshots authoritative for untested behavior.
 
-Library default cutover, removal of legacy implementations/tests and cross-ecosystem
+Source-backed migration of the retained integration baselines and cross-ecosystem
 native integration checks must finish before freezing the contract.

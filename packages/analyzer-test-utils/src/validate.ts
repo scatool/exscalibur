@@ -1,67 +1,19 @@
-import type { AnalyzerResult } from "@scatool/analyzer-core";
+import { validateResult as validateCoreResult, type AnalyzerResult } from "@scatool/analyzer-core";
 
-/** Validates an AnalyzerResult for common errors. Throws on failure. */
-export function validateResult(result: AnalyzerResult): void {
-  const subprojectPurls = new Set(result.subprojects.map((sp) => sp.purl));
+/** Use the authoritative contract; PURL equality does not imply equal project or view identity. */
+export const validateResult = validateCoreResult;
 
-  // Check for subproject purls in packages
-  const subprojectsInPackages = result.packages.filter((pkg) => subprojectPurls.has(pkg.purl));
-  if (subprojectsInPackages.length > 0) {
-    const purls = subprojectsInPackages.map((p) => p.purl).join(", ");
-    throw new Error(`Subproject purls found in packages array: ${purls}`);
-  }
-
-  // Check for subproject purls in relationships
-  const subprojectsInRelationships: string[] = [];
-  for (const rel of result.relationships) {
-    if (subprojectPurls.has(rel.from)) {
-      subprojectsInRelationships.push(rel.from);
-    }
-    for (const to of rel.to) {
-      if (subprojectPurls.has(to)) {
-        subprojectsInRelationships.push(to);
-      }
-    }
-  }
-
-  if (subprojectsInRelationships.length > 0) {
-    const purls = [...new Set(subprojectsInRelationships)].join(", ");
-    throw new Error(`Subproject purls found in relationships: ${purls}`);
-  }
-
-  // Check for duplicate package purls
-  const packagePurls = result.packages.map((pkg) => pkg.purl);
-  const duplicatePackages = packagePurls.filter(
-    (purl, index) => packagePurls.indexOf(purl) !== index,
+/** Failed extraction is valid format data, but is not a successful fixture regression. */
+export function assertSuccessfulResult(
+  result: AnalyzerResult,
+  allowedIssueCodes: readonly string[] = [],
+): void {
+  validateResult(result);
+  const unexpected = result.issues.filter(
+    (issue) => issue.severity === "ERROR" && !allowedIssueCodes.includes(issue.code),
   );
-  if (duplicatePackages.length > 0) {
-    const purls = [...new Set(duplicatePackages)].join(", ");
-    throw new Error(`Duplicate package purls found: ${purls}`);
-  }
-
-  // Check for duplicate subproject purls
-  const duplicateSubprojects = result.subprojects
-    .map((sp) => sp.purl)
-    .filter((purl, index, arr) => arr.indexOf(purl) !== index);
-
-  if (duplicateSubprojects.length > 0) {
-    const purls = [...new Set(duplicateSubprojects)].join(", ");
-    throw new Error(`Duplicate subproject purls found: ${purls}`);
-  }
-
-  // Check for duplicate purls in relationship 'to' arrays
-  for (const rel of result.relationships) {
-    const duplicatesInTo = rel.to.filter((purl, index) => rel.to.indexOf(purl) !== index);
-    if (duplicatesInTo.length > 0) {
-      const purls = [...new Set(duplicatesInTo)].join(", ");
-      throw new Error(`Duplicate purls in relationship 'to' array for '${rel.from}': ${purls}`);
-    }
-  }
-
-  // Check for issue codes
-  for (const issue of result.issues) {
-    if (!issue.code) {
-      throw new Error(`Issue is missing required code: ${issue.message}`);
-    }
-  }
+  if (unexpected.length > 0)
+    throw new Error(
+      `Unexpected extraction errors: ${unexpected.map((issue) => `${issue.code}: ${issue.message}`).join("; ")}`,
+    );
 }

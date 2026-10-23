@@ -1,17 +1,2 @@
-import { type Extractor, filesExtractor } from "@scatool/analyzer-core";
-import { optionsSchema, type VcpkgOptions } from "./options.ts";
-
-// split into separate file to modularize: allow tests to reuse same functions without sharing them
-// with the public plugin interface
-import { extractFile, markFiles } from "./vcpkg.ts";
-
-export const extractor: Extractor<VcpkgOptions> = filesExtractor<VcpkgOptions>({
-  name: "vcpkg",
-  version: 1,
-  optionsSchema: optionsSchema,
-  markFiles: markFiles,
-  extractFile: extractFile,
-});
-
+export { extractorV2 as extractor, extractorV2, convertVcpkgPortsV2 } from "./index-v2.ts";
 export type { VcpkgOptions } from "./options.ts";
-export { extractorV2, convertVcpkgPortsV2 } from "./index-v2.ts";
