@@ -146,8 +146,14 @@ export const extractor = filesExtractorV2<MavenOptions>({
           env: { ...process.env, ...(options.javaHome && { JAVA_HOME: options.javaHome }) },
         },
       );
-      if (command.exitCode !== 0)
-        throw new Error(`Maven dependency extraction failed: ${command.stderr}`);
+      if (command.exitCode !== 0) {
+        const diagnostics = [command.stderr.trim(), command.stdout.trim()]
+          .filter(Boolean)
+          .join("\n");
+        throw new Error(
+          `Maven dependency extraction failed (exit ${command.exitCode})${diagnostics ? `: ${diagnostics}` : ""}`,
+        );
+      }
       return convertMavenTreeV2(
         JSON.parse(await readTextFile(output)),
         context.relativeFile,

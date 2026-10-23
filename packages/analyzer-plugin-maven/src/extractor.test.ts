@@ -26,7 +26,10 @@ for (const [fixture, projects] of Object.entries(fixtures)) {
       const preparation = await runCommand(["mvn", "--batch-mode", "-DskipTests", "install"], {
         cwd: directory,
       });
-      expect(preparation.exitCode, preparation.stderr).toBe(0);
+      expect(
+        preparation.exitCode,
+        [preparation.stderr, preparation.stdout].filter(Boolean).join("\n"),
+      ).toBe(0);
     }
     const result = await extractor.extract(directory, {}, { codebaseId: `fixture:${fixture}` });
     validateResultV2(result);
