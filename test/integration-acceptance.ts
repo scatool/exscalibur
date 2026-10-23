@@ -7,7 +7,19 @@ const hash = z.string().regex(/^[a-f0-9]{64}$/);
 const pin = z.string().regex(/^[a-f0-9]{40}$/);
 const nonempty = z.string().min(1);
 const evidenceSchema = z.object({
-  kind: z.enum(["package-json-declarations", "npm-shrinkwrap-v1"]),
+  kind: z.enum([
+    "package-json-declarations",
+    "package-json-workspace-declarations",
+    "npm-shrinkwrap-v1",
+    "cargo-lock-records",
+    "python-native-inputs",
+    "javascript-native-inputs",
+    "native-go-mixed",
+    "native-vcpkg-metadata",
+    "package-json-fixtures",
+    "npm-package-lock",
+    "yarn-classic-raw",
+  ]),
   source: z.object({
     commit: pin,
     tree: pin,
@@ -30,10 +42,23 @@ const caseSchema = z.looseObject({
   }),
   baseline: z.looseObject({ path: nonempty, sha256: hash, acceptedSha256: hash.optional() }),
   reviewEvidence: z.union([z.array(z.unknown()).length(0), evidenceSchema]),
+  pendingReason: z
+    .looseObject({
+      status: z.enum(["blocked", "validation-in-progress"]),
+      reason: nonempty.optional(),
+      evidence: nonempty.optional(),
+    })
+    .optional(),
 });
 const ledgerSchema = z.looseObject({
   schemaVersion: z.literal(1),
   configurationSha256: hash,
+  summary: z.looseObject({
+    cases: z.number().int().nonnegative(),
+    accepted: z.number().int().nonnegative(),
+    pendingSourceReview: z.number().int().nonnegative(),
+    legacyReferenceBaselines: z.number().int().nonnegative(),
+  }),
   cases: z.array(caseSchema),
 });
 export type AcceptanceCase = z.infer<typeof caseSchema>;
@@ -58,6 +83,15 @@ export function validateAcceptanceLedger(
   const ledger = ledgerSchema.parse(input);
   if (sha256(configurationText) !== ledger.configurationSha256)
     throw new Error("Integration configuration hash changed; review the acceptance ledger");
+  const acceptedCount = ledger.cases.filter((entry) => entry.status === "accepted").length;
+  const pendingCount = ledger.cases.length - acceptedCount;
+  if (
+    ledger.summary.cases !== ledger.cases.length ||
+    ledger.summary.accepted !== acceptedCount ||
+    ledger.summary.pendingSourceReview !== pendingCount ||
+    ledger.summary.legacyReferenceBaselines !== pendingCount
+  )
+    throw new Error("Integration acceptance summary must match case states");
   const ids = new Set<string>();
   for (const entry of ledger.cases) {
     if (ids.has(entry.id)) throw new Error(`Duplicate integration acceptance case: ${entry.id}`);
@@ -85,6 +119,8 @@ export function validateAcceptanceLedger(
     if (entry.baseline.path !== `test/__snapshots__/${entry.id}.json`)
       throw new Error(`Integration acceptance baseline path mismatch: ${entry.id}`);
     if (entry.status === "accepted") {
+      if (entry.pendingReason)
+        throw new Error(`Accepted case retains a pending reason: ${entry.id}`);
       if (!entry.baseline.acceptedSha256 || Array.isArray(entry.reviewEvidence))
         throw new Error(`Accepted case lacks review evidence: ${entry.id}`);
       if (entry.reviewEvidence.source.commit !== config.commit)
@@ -99,7 +135,7 @@ export function validateAcceptanceLedger(
 export function requireAcceptedCase(entry: AcceptanceCase): void {
   if (entry.status !== "accepted")
     throw new Error(
-      `Tracked pending-source-review: ${entry.id}@${entry.commit}. See test/integration-migration.json; pinned source and semantic review are required before accepting a format 2 baseline.`,
+      `Tracked pending-source-review: ${entry.id}@${entry.commit}. See test/integration-migration.json; pinned source and semantic review are required before accepting a format 2 baseline.${entry.pendingReason ? ` ${entry.pendingReason.reason ?? entry.pendingReason.evidence ?? entry.pendingReason.status}` : ""}`,
     );
 }
 

@@ -6,12 +6,14 @@ historical baseline hashes, local input checkpoints, configured tool requirement
 and separately inferred native-tool use. It is an acceptance inventory, not a new
 expected result and not proof that a repository was successfully extracted.
 
-The inventory contains **87 cases: 3 accepted and 84 pending source review**. Reviewed cases carry an accepted format 2 hash
+The inventory contains **87 cases: 85 accepted and 2 pending source review**. Reviewed cases carry an accepted format 2 hash
 and source evidence; all other cases remain explicitly pending. The original inventory
 contained 87 legacy baselines, of which eleven contained historical issues;
 those issues must be investigated rather than copied into new expected output.
 A local directory or nonempty extraction result does not establish source provenance.
-The input checkpoint can change as repositories are restored; acceptance requires
+A `receipt-recorded` checkpoint means the pinned archive was acquired; it does not
+claim current tree integrity or semantic review. The input checkpoint can change
+as repositories are restored; acceptance requires
 review evidence recorded independently of that checkpoint.
 
 ## Requirements and evidence
@@ -73,16 +75,18 @@ There is no semantic translation from a legacy baseline to an accepted V2 baseli
 Legacy JSON remains reference material until its case has a reviewed replacement.
 No baseline is accepted merely because the old catalog and a new catalog overlap.
 
-## Candidate review subsets
+## Review coverage
 
-Start with small parser-first cases after their pinned inputs become available:
-`es-shims/ArrayBuffer.prototype.slice` (24 historical packages),
-`codemirror/basic-setup` (8), and `scatool/demo-repository` (9). These historical counts
-only help bound inspection effort and are not expected V2 package counts.
-`BurntSushi/ripgrep` is a useful Cargo lock-only follow-up (70 historical packages),
-while `Textualize/rich` and `encode/httpx` exercise Python declarations and historical
-unresolved-input diagnostics. Multi-language and native-tool cases should follow
-once their actual prerequisites are available.
+Accepted cases include manifest-only repositories, npm/Yarn/pnpm/Bun observations,
+Cargo lock records, Python declarations and lock membership, and native Go and
+vcpkg metadata. Each case's review document states the inspected inputs, excluded
+or unavailable scope, preserved issues and executed assertions. Acceptance does
+not imply successful installation or complete effective runtime resolution.
+
+Two cases remain blocked: `evorto/wahlzeit` requires its configured Java 11 and
+Gradle 6.6.1 wrapper; `drogonframework/drogon` requires access to its configured
+Conan registry. Their exact observed blockers are recorded in the ledger, and the
+harness keeps them pending rather than accepting environment-failure baselines.
 
 Existing local package fixtures provide narrower, immediately inspectable checks:
 JavaScript manifest/lock fixtures, Python requirements/pyproject/Pipfile/Poetry/PDM
@@ -105,9 +109,17 @@ writes baselines. Merely adding `formatVersion: 2` to legacy data cannot pass co
 validation or the independent source assertions.
 
 Run `vp test run test/integration-acceptance.test.ts` with restored accepted sources
-for reproducible manifest declaration and query checks. Run
+for reproducible manifest declaration and query checks, including exact manifest-to-graph
+coverage for reviewed workspaces. Run
 `vp test run test/demo-acceptance.test.ts` for the reviewed shrinkwrap topology
-and conservative root-correlation checks. Missing or changed source
+and conservative root-correlation checks. `vp test run test/cargo-acceptance.test.ts`
+compares reviewed Cargo lock records and source/version bindings; it does not run
+Cargo or infer effective workspace features. `test/python-acceptance.test.ts`
+compares native Python records, declarations and conservative group queries.
+`test/javascript-fixtures-acceptance.test.ts` and `test/zeiss-acceptance.test.ts` cover reviewed
+manifest fixtures, npm placements and Yarn descriptor observations, including
+expected malformed-input errors and manifest drift. Each is run with
+`vp test run <test-file>`; missing pinned inputs fail explicitly. Missing or changed source
 files fail explicitly. Run selected end-to-end cases with
 `vp test run test/integration.test.ts -t '<case>'`. Review notes are in `acceptance/`.
 A source receipt records acquisition; by itself it does not prove cached files
@@ -122,3 +134,34 @@ configured distribution host (`services.gradle.org` for Gradle 8.5 fixtures).
 Native Conan resolution needs its configured registry; vcpkg requires the pinned
 checkout and normal bootstrap. Preserve network/tool errors and unknown coverage;
 do not substitute empty successful output when prerequisites are unavailable.
+
+Summary counts are validated against case states on every run; historical baseline
+counts are not expected package or graph counts for the new format.
+
+For `pypa/pipenv`, reviewed input is the superproject archive. Eight gitlink commits
+are recorded in its hashed acceptance document, and `.gitmodules` is included in
+source hashes. Submodule contents were not acquired or analyzed; acceptance must
+not be interpreted as recursive source coverage.
+
+Mixed JavaScript repositories also have dedicated assertions in
+`test/javascript-workspaces-acceptance.test.ts`, `test/javascript-lockfiles-acceptance.test.ts` and
+`test/mixed-workspaces-acceptance.test.ts`. These compare source records and graph-local
+bindings, artifacts, applicability predicates and workspace declarations. Calcom's
+binary Bun input remains an explicit unsupported-input ERROR with an unknown
+observation; accepting that baseline validates preservation of the limitation,
+not successful binary-lock extraction. Xtuc's review is limited to the superproject
+archive; its omitted `testsuite` gitlink is recorded in the hashed review document.
+
+`test/go-acceptance.test.ts` compares captured selected-module output with the
+native Go graph, including replacements, original requests and owner adjacency.
+The reviewed Go cases used Go 1.26.3 with checksum verification enabled. Tool cache
+locations are execution details and are not serialized as stable package facts.
+Bat's acceptance covers its superproject archive: 91 gitlink SHAs are recorded in
+the hashed review document, and nested submodule inputs are not claimed as analyzed.
+Its ANSI-highlighted malformed Go and requirements fixtures retain their errors.
+
+`test/vcpkg-acceptance.test.ts` compares captured native package metadata against
+manifest requests, host/target contexts and conservative candidate selection. The
+reviewed runs used the repository's pinned registry checkout and verified native
+tool. Native metadata observations are not installed dependency closures; version
+override mismatches remain uncertain, and configured exclusions stay explicit.

@@ -20,11 +20,18 @@ test("acceptance ledger covers exact configured pins, options and Java requireme
 test("ledger rejects missing, duplicate, repinned and reconfigured entries", () => {
   for (const mutate of [
     (value: typeof ledger) => value.cases.pop(),
+    (value: typeof ledger) => value.summary.accepted++,
+    (value: typeof ledger) =>
+      (value.cases.find((entry: { status: string }) => entry.status === "accepted").pendingReason =
+        { status: "blocked", reason: "Stale blocker" }),
     (value: typeof ledger) => value.cases.push(value.cases[0]),
     (value: typeof ledger) => (value.cases[0].commit = "0".repeat(40)),
     (value: typeof ledger) => (value.cases[0].configuration.extractorOptions = { changed: true }),
     (value: typeof ledger) => (value.cases[0].configuration.javaVersion = 99),
-    (value: typeof ledger) => (value.cases[0].status = "accepted"),
+    (value: typeof ledger) =>
+      (value.cases.find(
+        (entry: { status: string }) => entry.status === "pending-source-review",
+      ).status = "accepted"),
   ]) {
     const value = structuredClone(ledger);
     mutate(value);
@@ -42,7 +49,7 @@ test("pending cases report their tracked pin without reading or changing baselin
 for (const entry of validateAcceptanceLedger(config, ledger).filter(
   (e) => e.status === "accepted",
 )) {
-  test(`${entry.id}: reviewed baseline hashes and native manifest semantics`, () => {
+  test(`${entry.id}: reviewed baseline hashes and source semantics`, () => {
     if (Array.isArray(entry.reviewEvidence)) throw new Error("Missing evidence");
     const evidence = entry.reviewEvidence;
     const baseline = read(entry.baseline.path);
@@ -63,7 +70,9 @@ for (const entry of validateAcceptanceLedger(config, ledger).filter(
       ),
     ).toThrow("codebase mismatch");
     for (const file of evidence.source.files)
-      expect(sha256(read(`test/repositories/${entry.id}/${file.path}`))).toBe(file.sha256);
+      expect(sha256(readFileSync(join(root, `test/repositories/${entry.id}/${file.path}`)))).toBe(
+        file.sha256,
+      );
     const disguisedLegacy = JSON.stringify({ ...result, relationships: [] });
     expect(() =>
       validateAcceptedBaseline(
@@ -72,62 +81,89 @@ for (const entry of validateAcceptanceLedger(config, ledger).filter(
         review,
       ),
     ).toThrow();
-    if (evidence.kind !== "package-json-declarations") return;
-    const manifest = JSON.parse(read(`test/repositories/${entry.id}/package.json`));
+    if (
+      evidence.kind !== "package-json-declarations" &&
+      evidence.kind !== "package-json-workspace-declarations"
+    )
+      return;
+    const manifests = evidence.source.files.filter(
+      (file) => file.path === "package.json" || file.path.endsWith("/package.json"),
+    );
+    expect(new Set(manifests.map((file) => file.path)).size).toBe(manifests.length);
+    if (evidence.kind === "package-json-declarations")
+      expect(manifests.map((file) => file.path)).toEqual(["package.json"]);
+    else expect(manifests.length).toBeGreaterThan(1);
     expect(result.packages).toEqual([]);
     expect(result.issues).toEqual([]);
-    expect(result.subprojects).toHaveLength(1);
-    const project = {
-      purl: `pkg:npm/${manifest.name}@${manifest.version}`,
-      definitionFile: "package.json",
-    };
-    expect(result.subprojects[0]).toMatchObject(project);
-    expect(result.graphs).toHaveLength(1);
-    const graph = result.graphs[0]!;
-    expect(graph.source).toEqual({ extractor: "packagejson", files: ["package.json"] });
-    expect(graph.interpretation).toBe("declared");
-    expect(graph.rootCompleteness).toBe("complete");
-    const scopes = ["dependencies", "devDependencies", "optionalDependencies", "peerDependencies"];
-    expect(graph.roots.map((r) => r.scope).sort()).toEqual(scopes.sort());
-    expect(graph.nodes).toHaveLength(5);
-    const rooted = new Set(graph.roots.map((r) => r.node));
+    expect(result.subprojects).toHaveLength(manifests.length);
+    expect(result.graphs).toHaveLength(manifests.length);
     expect(
-      graph.nodes.filter((n) => !rooted.has(n.id)).map((n) => n.dependencyCompleteness),
-    ).toEqual(["unknown"]);
-    expect(graph.edges.every((e) => rooted.has(e.from))).toBe(true);
-    for (const scope of graph.roots) {
-      expect(scope.project).toEqual(project);
-      expect(graph.nodes.find((n) => n.id === scope.node)).toMatchObject({
-        project,
-        dependencyCompleteness: "complete",
-      });
-      const expected = Object.entries(manifest[scope.scope] ?? {}).sort(([a], [b]) =>
-        a.localeCompare(b),
-      );
-      const edges = graph.edges.filter((e) => e.from === scope.node);
+      result.graphs
+        .map((graph) => graph.source.files)
+        .flat()
+        .sort(),
+    ).toEqual(manifests.map((file) => file.path).sort());
+    for (const file of manifests) {
+      const manifest = JSON.parse(read(`test/repositories/${entry.id}/${file.path}`));
+      const project = {
+        purl: `pkg:npm/${manifest.name.replace(/^@/, "%40")}${manifest.version ? `@${manifest.version}` : ""}`,
+        definitionFile: file.path,
+      };
+      expect(result.subprojects.filter((p) => p.definitionFile === file.path)).toHaveLength(1);
+      expect(result.subprojects.find((p) => p.definitionFile === file.path)).toMatchObject(project);
+      const graph = result.graphs.find(
+        (graph) => graph.source.files.length === 1 && graph.source.files[0] === file.path,
+      )!;
+      expect(graph.source).toEqual({ extractor: "packagejson", files: [file.path] });
+      expect(graph.interpretation).toBe("declared");
+      expect(graph.rootCompleteness).toBe("complete");
+      const scopes = [
+        "dependencies",
+        "devDependencies",
+        "optionalDependencies",
+        "peerDependencies",
+      ];
+      expect(graph.roots.map((r) => r.scope).sort()).toEqual(scopes.sort());
+      expect(graph.nodes).toHaveLength(5);
+      const rooted = new Set(graph.roots.map((r) => r.node));
       expect(
-        edges
-          .map((e) => [e.requested?.name, e.requested?.specifier])
-          .sort(([a], [b]) => String(a).localeCompare(String(b))),
-      ).toEqual(expected);
-      for (const edge of edges) {
-        expect(edge).toMatchObject({
-          status: "declared",
-          relation: "depends-on",
-          kind: scope.scope,
-          selection: "selected",
-          optional: false,
-          evidence: ["package.json"],
+        graph.nodes.filter((n) => !rooted.has(n.id)).map((n) => n.dependencyCompleteness),
+      ).toEqual(["unknown"]);
+      expect(graph.edges.every((e) => rooted.has(e.from))).toBe(true);
+      for (const scope of graph.roots) {
+        expect(scope.project).toEqual(project);
+        expect(graph.nodes.find((n) => n.id === scope.node)).toMatchObject({
+          project,
+          dependencyCompleteness: "complete",
         });
-        expect(edge).not.toHaveProperty("to");
-        expect(edge).not.toHaveProperty("condition");
+        const expected = Object.entries(manifest[scope.scope] ?? {}).sort(([a], [b]) =>
+          a.localeCompare(b),
+        );
+        const edges = graph.edges.filter((e) => e.from === scope.node);
+        expect(
+          edges
+            .map((e) => [e.requested?.name, e.requested?.specifier])
+            .sort(([a], [b]) => String(a).localeCompare(String(b))),
+        ).toEqual(expected);
+        for (const edge of edges) {
+          expect(edge).toMatchObject({
+            status: "declared",
+            relation: "depends-on",
+            kind: scope.scope,
+            selection: "selected",
+            optional: false,
+            evidence: [file.path],
+          });
+          expect(edge).not.toHaveProperty("to");
+          expect(edge).not.toHaveProperty("condition");
+        }
+        const closure = queryDependencies(result, { graph: graph.id, root: scope.id });
+        expect(closure.definite).toEqual([]);
+        expect(closure.conditional).toEqual([]);
+        expect(closure.declarations).toHaveLength(expected.length);
+        expect(closure.declarations.every((d) => d.applicability === "definite")).toBe(true);
+        expect(closure.completeness).toBe(expected.length ? "unknown" : "complete");
       }
-      const closure = queryDependencies(result, { graph: graph.id, root: scope.id });
-      expect(closure.definite).toEqual([]);
-      expect(closure.conditional).toEqual([]);
-      expect(closure.declarations).toHaveLength(expected.length);
-      expect(closure.declarations.every((d) => d.applicability === "definite")).toBe(true);
-      expect(closure.completeness).toBe(expected.length ? "unknown" : "complete");
     }
   });
 }
