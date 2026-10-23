@@ -1,14 +1,22 @@
-/** Node's ancestor lookup, including intermediate workspace directories and scoped packages. */
-export function npmResolutionCandidates(callerPath: string, name: string): string[] {
+import { basename, dirname, join, relative, resolve } from "node:path";
+
+/** Enumerate real lexical ancestors, returning lockfile-relative placement keys. No filesystem reads. */
+export function npmResolutionCandidates(
+  callerPath: string,
+  name: string,
+  lockDirectory: string,
+): string[] {
   const candidates: string[] = [];
-  let directory = callerPath;
+  let directory = resolve(lockDirectory, callerPath);
   while (true) {
-    if (directory.slice(directory.lastIndexOf("/") + 1) !== "node_modules") {
-      candidates.push(`${directory ? `${directory}/` : ""}node_modules/${name}`);
+    if (basename(directory) !== "node_modules") {
+      candidates.push(
+        relative(lockDirectory, join(directory, "node_modules", name)).replaceAll("\\", "/"),
+      );
     }
-    if (directory === "") break;
-    const separator = directory.lastIndexOf("/");
-    directory = separator === -1 ? "" : directory.slice(0, separator);
+    const parent = dirname(directory);
+    if (parent === directory) break;
+    directory = parent;
   }
   return candidates;
 }

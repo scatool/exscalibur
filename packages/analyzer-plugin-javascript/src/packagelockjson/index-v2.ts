@@ -209,7 +209,7 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
       });
     }
     const resolveDependency = (caller: string, name: string): string | undefined => {
-      for (const candidate of npmResolutionCandidates(caller, name)) {
+      for (const candidate of npmResolutionCandidates(caller, name, lockDirectory)) {
         if (!Object.hasOwn(records, candidate)) continue;
         return follow(candidate); // An existing unresolved nearer location must not fall through.
       }
@@ -222,6 +222,9 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
       consumer: boolean,
       onlyScope?: string,
     ) => {
+      // Native virtual loading does not establish bindings for sources outside the lock root.
+      // Retain recorded lexical candidates without asserting a selected installation context.
+      const externalSource = !contained(resolve(lockDirectory), resolve(lockDirectory, caller));
       for (const declaration of dependencyScopes(record)) {
         if (onlyScope !== undefined && declaration.scope !== onlyScope) continue;
         const target = resolveDependency(caller, declaration.name);
@@ -235,6 +238,7 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
           excluded || (peer && optionalMissing)
             ? "excluded"
             : peer ||
+                externalSource ||
                 optionalMissing ||
                 legacyLocalLocations.has(caller) ||
                 ((version === 1 || !Object.hasOwn(records, caller)) && workspace.has(caller))

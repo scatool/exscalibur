@@ -56,6 +56,14 @@ dependencies without importing the workspace's development roots.
 
 Local manifest reads stay inside the scanned codebase, including resolved symlink
 targets. Outside paths retain only their recorded lock metadata with a warning.
+Their dependency candidates follow the source location's actual lexical ancestors,
+not the scanned project's sibling `node_modules`; recorded external placements
+remain usable without external filesystem reads.
+Bindings from sources outside the lock root remain unknown lookup candidates:
+native virtual loading does not establish those external contexts, even when a
+lexically eligible target record is present. They do not produce a complete closure.
+The [external-source oracle](./src/packagelockjson/external-source-oracle.mjs)
+reproduces this boundary using source-authored locks and pinned offline Arborist.
 Every link is checked even when unreachable from current roots: malformed flags,
 destinations and cycles produce an extraction error; missing target records retain
 available evidence with unknown project enumeration. Truncated or structurally
