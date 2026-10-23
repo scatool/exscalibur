@@ -112,3 +112,4 @@ function parseActionReference(uses: string): string | null {
   const purl = new PackageURL("github", namespace, name, ref, null, subpath);
   return purl.toString();
 }
+export { extractorV2, extractWorkflowV2 } from "./index-v2.ts";
