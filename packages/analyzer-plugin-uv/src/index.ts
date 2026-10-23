@@ -45,3 +45,5 @@ export const extractor: Extractor<UvOptions> = filesExtractor<UvOptions>({
     return extractCycloneDX(stdout);
   },
 });
+
+export { extractorV2 } from "./index-v2.ts";
