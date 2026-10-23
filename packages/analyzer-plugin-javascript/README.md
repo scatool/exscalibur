@@ -47,6 +47,40 @@ Current declarations and locked observations remain separate when they disagree.
 All recorded platform alternatives remain available; the machine running extraction
 does not establish where the software will be deployed.
 
+### npm lock observations
+
+The npm extractor reads lockfile placements and declarations; it does not run npm
+installation or claim an installed tree. Separate placements retain separate views,
+including when they have the same PURL. Workspace consumers follow production
+dependencies without importing the workspace's development roots.
+
+Peer targets found through placement lookup are explicitly `unknown` candidates,
+not verified peer bindings. A candidate can have an incompatible version or be a
+child placement that npm rejects as a peer. Missing optional peers are excluded
+from the recorded observation; missing ordinary optional dependencies remain
+uncertain declarations. An optional dependency overrides the same-name ordinary
+declaration, which remains recorded as excluded. Optional dependencies have their
+own roots; a consumer selecting production scope policy should consider both
+`dependencies` and `optionalDependencies`.
+
+All locked platform alternatives remain in inventory. `os`, `cpu` and `libc` become
+native conditions, without evaluating this machine's platform. npm omit settings,
+failed optional installation and platform-specific installation can therefore
+produce an installed tree different from the recorded lock graph.
+
+Current `overrides` are retained as manifest metadata, not evaluated. A lockfile
+does not necessarily record the override policy that produced it, so unchanged
+declarations alone cannot establish compatibility with current overrides. Native
+resolution is required to establish the effective overridden tree. Manifest/lock
+drift detection compares dependency declarations, peer metadata and platform fields;
+it is not a substitute for npm's lock validation.
+
+Pinned, offline native comparisons cover [peer placement and validation](./src/packagelockjson/__fixtures__/npm-peer-oracle/README.md)
+and [optional dependencies, platforms and overrides](./src/packagelockjson/npm-optional-oracle.md).
+These are development oracles; normal extraction does not invoke npm or Arborist.
+
+### Other native observations
+
 Yarn's raw graph retains merged workspace declarations. A second graph correlates
 current manifest scopes with locked requests. Both expose a `raw-descriptor-map`
 projection; they do not run Yarn's compatibility patches, overrides or plugin transforms
