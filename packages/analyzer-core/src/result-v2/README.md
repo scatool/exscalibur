@@ -1,7 +1,7 @@
 # Analyzer result v2
 
-This is the opt-in replacement for the PURL-keyed relationship model. The existing
-`AnalyzerResult`, default extractors and CLI still use v1 while native adapters migrate.
+This replaces the PURL-keyed relationship model. The CLI uses native V2 extractors;
+library defaults and legacy test infrastructure remain on V1 pending the final API cutover.
 `AnalyzerResultV2` has an independent `formatVersion: 2`; `Extractor.version` describes
 the extractor interface, not the serialized result format.
 
@@ -232,8 +232,21 @@ completeness claims stay conservatively unknown. `NoneElement` records known abs
 of a relationship kind; `NoAssertionElement` records unknown coverage and never becomes
 a fabricated component or dependency request.
 
-The old CLI has not switched formats. Do not project a
-legacy PURL union into v2 and present it as a precise native graph.
+The CLI writes format 2 and retains extractor failures as unknown-coverage observations.
+Native V2 adapters also exist for Go modules, Maven trees, Gradle configuration snapshots,
+Python requirements/pyproject/Pipfile/Poetry/PDM, UV exports, Dockerfiles, GitHub Actions,
+Conan and vcpkg. These preserve the capabilities of the existing extractors; no new
+ecosystems or package managers are introduced. Library default aliases and legacy
+fixtures/integration infrastructure still require the final V1 removal. Do not project
+a legacy PURL union into V2 and present it as a precise native graph.
+
+Go observations distinguish selected build-list membership from original module requests;
+module graph pruning leaves selected adjacency unknown. Maven retains native dependency-tree
+occurrences so exclusions and mediation do not collapse equal-coordinate contexts; scope
+roots describe tree groups, not inferred runtime classpaths. Gradle retains configuration-local
+component snapshots with unknown variant and unresolved-dependency coverage. These snapshots
+do not establish effective variant graph equivalence. Converter fixtures test these modeled
+cases; they do not replace end-to-end native resolver acceptance.
 
 Contract tests cover repeated PURLs, exact project ownership, peer contexts, consumed
 projects, exclusions, cycles, path predicates, environment domains, constraints,
@@ -268,5 +281,5 @@ The Cargo regression capture includes native tool provenance and unchanged metad
 output alongside its source inputs. These checks supplement the contract tests; they
 do not make fixtures or snapshots authoritative for untested behavior.
 
-Remaining adapters, CLI/default cutover, migration policy and cross-ecosystem native
-integration checks must finish before making v2 the default or freezing the contract.
+Library default cutover, removal of legacy implementations/tests and cross-ecosystem
+native integration checks must finish before freezing the contract.

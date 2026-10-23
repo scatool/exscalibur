@@ -1,6 +1,6 @@
 import { dirname, join, normalize, relative } from "node:path/posix";
 import { isDeepStrictEqual } from "node:util";
-import { parse as parseClassicLock } from "@yarnpkg/lockfile";
+import { createRequire } from "node:module";
 import { satisfies, valid, validRange } from "semver";
 import { parse as parseYaml } from "yaml";
 import {
@@ -23,6 +23,11 @@ import {
   type NpmProject,
   type NpmRecord,
 } from "./npm-v2.ts";
+
+// Load the CommonJS parser consistently in Node and transformed test modules.
+const { parse: parseClassicLock } = createRequire(import.meta.url)(
+  "@yarnpkg/lockfile",
+) as typeof import("@yarnpkg/lockfile");
 import type { JavaScriptOptions } from "./options.ts";
 
 type Entry = {

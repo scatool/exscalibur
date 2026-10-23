@@ -22,10 +22,11 @@ test("workflow declarations preserve job-local predicates and unresolved action 
   expect(result.packages).toEqual([]);
   const graph = result.graphs[0]!;
   const build = queryDependenciesV2(result, { graph: graph.id, root: "job:build" });
-  expect(build.declarations.map((item) => item.dependency.requested.specifier).sort()).toEqual([
-    "actions/checkout@v4",
-    "docker://alpine:3",
-  ]);
+  expect(
+    build.declarations
+      .map((item) => item.dependency.requested.specifier)
+      .sort((a, b) => String(a).localeCompare(String(b))),
+  ).toEqual(["actions/checkout@v4", "docker://alpine:3"]);
   expect(build.declarations.every((item) => item.applicability === "conditional")).toBe(true);
   expect(build.completeness).toBe("unknown");
   expect(
