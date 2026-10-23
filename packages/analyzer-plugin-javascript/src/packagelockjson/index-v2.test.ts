@@ -451,6 +451,37 @@ test("legacy aliases use actual coordinates and nonregistry locators are not fab
   );
 });
 
+test("legacy Bitbucket git locators remain provenance, not package versions", async () => {
+  const locator = "bitbucket:team/pkg#deadbeef";
+  await input(
+    {
+      "package.json": { name: "app", version: "1.0.0", dependencies: { pkg: locator } },
+      "package-lock.json": {
+        name: "app",
+        version: "1.0.0",
+        lockfileVersion: 1,
+        dependencies: { pkg: { version: locator, resolved: locator } },
+      },
+    },
+    async (directory) => {
+      const result = await extract(directory);
+      validateResultV2(result);
+      expect(reached(result).purls).toEqual(["pkg:npm/pkg"]);
+      const view = reached(result).graph.nodes.find((node) => node.purl === "pkg:npm/pkg")!;
+      expect(view.attributes?.["npm:metadata"]).toMatchObject({
+        version: locator,
+        resolved: locator,
+      });
+      expect(view.artifacts?.[0]?.location).toBe(locator);
+      expect(
+        reached(result).graph.edges.find((edge) => edge.from === reached(result).root.node)
+          ?.requested,
+      ).toMatchObject({ name: "pkg", specifier: locator });
+      expect(result.issues).toEqual([]);
+    },
+  );
+});
+
 test("linked workspace platform restrictions condition the whole downstream path", async () => {
   const root = { name: "app", version: "1.0.0", dependencies: { ui: "workspace:*" } };
   const ui = { name: "ui", version: "1.0.0", os: ["linux"], dependencies: { foo: "1.0.0" } };

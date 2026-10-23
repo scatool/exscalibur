@@ -361,5 +361,5 @@ function platformFields(metadata: NpmRecord): JsonObject {
 }
 
 function isLocator(value: string): boolean {
-  return /^(?:file:|link:|https?:|git\+|git:|github:|gitlab:)/.test(value);
+  return /^(?:file:|link:|https?:|git\+|git:|github:|gitlab:|bitbucket:)/.test(value);
 }
