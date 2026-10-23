@@ -1,0 +1,3631 @@
+{
+  "schemaVersion": 1,
+  "configurationSource": "test/repositories.json",
+  "configurationSha256": "08934070d877afb8c6d5a4a191653c22f64bb385877d91464800ed67951d0ba2",
+  "statusPolicy": {
+    "pending-source-review": "No accepted format 2 baseline. Historical output is inventory evidence only.",
+    "accepted": "Requires inspected pinned native inputs, tool provenance where executed, source-backed semantic assertions, reviewed format 2 baseline hash and recorded passing checks in reviewEvidence."
+  },
+  "inferencePolicy": "Historical input paths identify possible extractor/tool use, not current source availability, complete discovery, successful execution, or semantic correctness. Empty inferred tool lists do not prove a repository is parser-only. Yarn Classic versus Berry requires pinned source inspection. Configuration options are recorded separately and do not prove that matching inputs exist.",
+  "commonToolRequirements": [
+    {
+      "tool": "node",
+      "version": "22",
+      "source": ".node-version"
+    },
+    {
+      "tool": "pnpm",
+      "version": "10.24.0",
+      "source": "mise.toml"
+    },
+    {
+      "tool": "vite-plus",
+      "version": "1.3.0",
+      "source": "pnpm-workspace.yaml"
+    }
+  ],
+  "harnessExtractors": [
+    "bunlock",
+    "packagejson",
+    "packagelockjson",
+    "pnpmlock",
+    "yarnberry",
+    "yarnlock",
+    "gomod",
+    "gradle",
+    "cargolock",
+    "pipfilelock",
+    "poetrylock",
+    "pdmlock",
+    "pyprojecttoml",
+    "requirementstxt",
+    "conanfile",
+    "vcpkg"
+  ],
+  "summary": {
+    "cases": 87,
+    "accepted": 3,
+    "pendingSourceReview": 84,
+    "legacyReferenceBaselines": 84,
+    "inputCheckpoints": {
+      "incomplete-download": 13,
+      "source-reviewed": 3,
+      "missing": 71
+    },
+    "casesWithHistoricalNativeToolEvidence": 8,
+    "casesWithoutHistoricalNativeToolEvidence": 79,
+    "casesWithHistoricalIssues": 11
+  },
+  "cases": [
+    {
+      "id": "algolia+algoliasearch-client-javascript",
+      "repository": "algolia/algoliasearch-client-javascript",
+      "commit": "32012722f64452e961ce1e2fecb24620e168b7a3",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/algolia+algoliasearch-client-javascript.json",
+        "status": "legacy-reference-only",
+        "sha256": "3ee61585997ed44e49a2c1a5ea52e631aae6aef36df69cc8c25a3c1f854e3eac",
+        "packageCount": 919,
+        "projectCount": 19,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/algolia+algoliasearch-client-javascript",
+        "status": "incomplete-download",
+        "archiveMarkerPresent": true,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 19,
+          "examplePaths": [
+            "packages/abtesting/package.json",
+            "packages/advanced-personalization/package.json",
+            "packages/algoliasearch/package.json"
+          ]
+        },
+        {
+          "kind": "yarn-lock-version-unverified",
+          "distinctPathCount": 1,
+          "examplePaths": ["yarn.lock"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "babel+babel",
+      "repository": "babel/babel",
+      "commit": "4cc3d8888f3e3ac30d38ccfa4557baa7a4a52714",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/babel+babel.json",
+        "status": "legacy-reference-only",
+        "sha256": "b016e36c6dd813fe52520b4e0a25edccf4a1d57ca0b55b25a92f0fcc3fb585b6",
+        "packageCount": 1571,
+        "projectCount": 167,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/babel+babel",
+        "status": "incomplete-download",
+        "archiveMarkerPresent": true,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 167,
+          "examplePaths": [
+            "benchmark/package.json",
+            "codemods/babel-plugin-codemod-object-assign-to-object-spread/package.json",
+            "codemods/babel-plugin-codemod-optional-catch-binding/package.json"
+          ]
+        },
+        {
+          "kind": "yarn-lock-version-unverified",
+          "distinctPathCount": 1,
+          "examplePaths": ["yarn.lock"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "BurntSushi+ripgrep",
+      "repository": "BurntSushi/ripgrep",
+      "commit": "0a88cccd5188074de96f54a4b6b44a63971ac157",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/BurntSushi+ripgrep.json",
+        "status": "legacy-reference-only",
+        "sha256": "f5669321204e2b315fb3c85ccd8b5f22e44e1a2e2ca98246821bc38e0704b742",
+        "packageCount": 70,
+        "projectCount": 10,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/BurntSushi+ripgrep",
+        "status": "incomplete-download",
+        "archiveMarkerPresent": true,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "cargo",
+          "distinctPathCount": 12,
+          "examplePaths": ["Cargo.lock", "crates/cli/Cargo.toml", "crates/globset/Cargo.toml"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "calcom+cal.com",
+      "repository": "calcom/cal.com",
+      "commit": "71515ad17c88220358249b0ccdf084a193f53f1c",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/calcom+cal.com.json",
+        "status": "legacy-reference-only",
+        "sha256": "bfbfc58724502444e57f40b1e3797aee9898de6a28601bf08fdcf02f11d240a9",
+        "packageCount": 4425,
+        "projectCount": 136,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/calcom+cal.com",
+        "status": "incomplete-download",
+        "archiveMarkerPresent": true,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 136,
+          "examplePaths": [
+            "apps/api/package.json",
+            "apps/api/v1/package.json",
+            "apps/api/v2/package.json"
+          ]
+        },
+        {
+          "kind": "yarn-lock-version-unverified",
+          "distinctPathCount": 1,
+          "examplePaths": ["yarn.lock"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "cheeriojs+cheerio",
+      "repository": "cheeriojs/cheerio",
+      "commit": "14b76e8e9834f27c43022d05cdaeeae621e2e916",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/cheeriojs+cheerio.json",
+        "status": "legacy-reference-only",
+        "sha256": "55c61e9a5aa5c042868473380f716538a8459620b42d0d7fb0e04389dfa2a436",
+        "packageCount": 1606,
+        "projectCount": 2,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/cheeriojs+cheerio",
+        "status": "incomplete-download",
+        "archiveMarkerPresent": true,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 2,
+          "examplePaths": ["package.json", "website/package.json"]
+        },
+        {
+          "kind": "npm-lock",
+          "distinctPathCount": 2,
+          "examplePaths": ["package-lock.json", "website/package-lock.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "codemirror+basic-setup",
+      "repository": "codemirror/basic-setup",
+      "commit": "76462c05acb10fe77e0f04edd7fcddfeb9987abd",
+      "status": "accepted",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/codemirror+basic-setup.json",
+        "status": "reviewed-format-2",
+        "sha256": "1c63e8d709c40b3dcbd6119a24b9248031a98db6c48929f90c61418ecf7fcd1f",
+        "packageCount": 8,
+        "projectCount": 0,
+        "issueCodes": [],
+        "acceptedSha256": "4cb8325d33c7e81562aeba9ad5b6452d346236260642f9284cfd111ea0960331"
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/codemirror+basic-setup",
+        "status": "source-reviewed",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 8
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": {
+        "kind": "package-json-declarations",
+        "source": {
+          "commit": "76462c05acb10fe77e0f04edd7fcddfeb9987abd",
+          "tree": "023306729652ff5e5deebba7aa925c923bd4d0be",
+          "archiveSha256": "9a933161ac4067b4e0df5bafabfd03055c37070591b8dea83dcc9d460a47017b",
+          "files": [
+            {
+              "path": "package.json",
+              "sha256": "1e777e57d420a78c1872334497910718e4a2bb9f9f0af4dccb716972216173eb"
+            }
+          ]
+        },
+        "tools": [
+          {
+            "name": "node",
+            "version": "22.23.4"
+          },
+          {
+            "name": "pnpm",
+            "version": "10.24.0"
+          },
+          {
+            "name": "vite-plus",
+            "version": "1.3.0"
+          }
+        ],
+        "assertions": [
+          "All configured extractors executed; only packagejson produced one declared graph, no issues or resolved catalog entries.",
+          "All native manifest names and specifiers match declaration edges in four exact scope roots.",
+          "Nonempty closures retain unknown resolution; empty optional/peer scopes complete; consumer view unknown.",
+          "Independent source-semantic review and reproducible integration-acceptance.test.ts assertions."
+        ],
+        "review": {
+          "path": "test/acceptance/codemirror-basic-setup.md",
+          "sha256": "980abd5f8fe5a550b622ad111478d4ae0693df7d4dc7a824af55edf9d0fc358a"
+        }
+      }
+    },
+    {
+      "id": "conventional-changelog+commitlint",
+      "repository": "conventional-changelog/commitlint",
+      "commit": "803c05b6d722676ed499585ed713d185d1670462",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/conventional-changelog+commitlint.json",
+        "status": "legacy-reference-only",
+        "sha256": "d67b25bb8ea2a839ffd858b11a6847eefbce5a5c19d55339e2b741832ccc70dd",
+        "packageCount": 1140,
+        "projectCount": 39,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/conventional-changelog+commitlint",
+        "status": "incomplete-download",
+        "archiveMarkerPresent": true,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 39,
+          "examplePaths": [
+            "@alias/commitlint-config-angular/package.json",
+            "@alias/commitlint-config-lerna-scopes/package.json",
+            "@alias/commitlint-config-nx-scopes/package.json"
+          ]
+        },
+        {
+          "kind": "yarn-lock-version-unverified",
+          "distinctPathCount": 1,
+          "examplePaths": ["yarn.lock"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "emotion-js+emotion",
+      "repository": "emotion-js/emotion",
+      "commit": "14a61e4c42dcaa685520992d815ec8cf6351b80b",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/emotion-js+emotion.json",
+        "status": "legacy-reference-only",
+        "sha256": "ed982e4ba4d3566f97b5e28668fd05c53be7f51860e39e32322336b0c3033c90",
+        "packageCount": 3084,
+        "projectCount": 32,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/emotion-js+emotion",
+        "status": "incomplete-download",
+        "archiveMarkerPresent": true,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 32,
+          "examplePaths": [
+            "package.json",
+            "packages/babel-plugin-jsx-pragmatic/package.json",
+            "packages/babel-plugin/package.json"
+          ]
+        },
+        {
+          "kind": "yarn-lock-version-unverified",
+          "distinctPathCount": 1,
+          "examplePaths": ["yarn.lock"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "eslint+eslintrc",
+      "repository": "eslint/eslintrc",
+      "commit": "13ccd1d0daca2291f4e63b9475e287bfe1a0deff",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/eslint+eslintrc.json",
+        "status": "legacy-reference-only",
+        "sha256": "4e4ab2b8824e5502a121139a3124eaa0d416a141966cb849816f6a6fe4564744",
+        "packageCount": 20,
+        "projectCount": 0,
+        "issueCodes": ["core.file_extraction_failed"]
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/eslint+eslintrc",
+        "status": "incomplete-download",
+        "archiveMarkerPresent": true,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 2,
+          "examplePaths": [
+            "package.json",
+            "tests/fixtures/config-file/broken-package-json/package.json"
+          ]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "es-shims+ArrayBuffer.prototype.slice",
+      "repository": "es-shims/ArrayBuffer.prototype.slice",
+      "commit": "b781900adb00d1fdf04b562c7ba0536b85dd0537",
+      "status": "accepted",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/es-shims+ArrayBuffer.prototype.slice.json",
+        "status": "reviewed-format-2",
+        "sha256": "4934d20a053ec05bb8ef37dd7863efaa9257c59f01dd7a4be103b8cc71ae4946",
+        "packageCount": 24,
+        "projectCount": 0,
+        "issueCodes": [],
+        "acceptedSha256": "f8e25bad593f48d0f6913e77ed31c7575060f7655a0a2dc1ccf8222af813b927"
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/es-shims+ArrayBuffer.prototype.slice",
+        "status": "source-reviewed",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 16
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": {
+        "kind": "package-json-declarations",
+        "source": {
+          "commit": "b781900adb00d1fdf04b562c7ba0536b85dd0537",
+          "tree": "ed05cc839660c1016dc6defa9e54c8211a3bcf79",
+          "archiveSha256": "510972cc8fa4854325d7f580625630fd85e5dd3d2907700828ce66e9cab50825",
+          "files": [
+            {
+              "path": "package.json",
+              "sha256": "19489eaebd7e2bf6603d8f6bd32462f315249fe1cccd8931043eacdcb02838ed"
+            }
+          ]
+        },
+        "tools": [
+          {
+            "name": "node",
+            "version": "22.23.4"
+          },
+          {
+            "name": "pnpm",
+            "version": "10.24.0"
+          },
+          {
+            "name": "vite-plus",
+            "version": "1.3.0"
+          }
+        ],
+        "assertions": [
+          "All configured extractors executed; only packagejson produced one declared graph, no issues or resolved catalog entries.",
+          "All native manifest names and specifiers match declaration edges in four exact scope roots.",
+          "Nonempty closures retain unknown resolution; empty optional/peer scopes complete; consumer view unknown.",
+          "Independent source-semantic review and reproducible integration-acceptance.test.ts assertions."
+        ],
+        "review": {
+          "path": "test/acceptance/arraybuffer-prototype-slice.md",
+          "sha256": "b47c5ad7e30b8dc1009157d1748d002ec79c629602f2bf735b3e823b2ccbc2e2"
+        }
+      }
+    },
+    {
+      "id": "es-shims+Reflect.getPrototypeOf",
+      "repository": "es-shims/Reflect.getPrototypeOf",
+      "commit": "91a8f0d8b9339eaea50002070e552ee1b88e94f7",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/es-shims+Reflect.getPrototypeOf.json",
+        "status": "legacy-reference-only",
+        "sha256": "76436266a921eca0381d057b7aae910216ed974d2f059e8a4f2e7913d68183d6",
+        "packageCount": 20,
+        "projectCount": 0,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/es-shims+Reflect.getPrototypeOf",
+        "status": "incomplete-download",
+        "archiveMarkerPresent": true,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "expressjs+body-parser",
+      "repository": "expressjs/body-parser",
+      "commit": "b85fe580d3c924d042e73ab5ba416374c2a55f6b",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/expressjs+body-parser.json",
+        "status": "legacy-reference-only",
+        "sha256": "31addf92391cd11c2632623b5fbddb38e178d32dc212b5430b906ae08ac7c48a",
+        "packageCount": 19,
+        "projectCount": 0,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/expressjs+body-parser",
+        "status": "incomplete-download",
+        "archiveMarkerPresent": true,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "expressjs+compression",
+      "repository": "expressjs/compression",
+      "commit": "29499a19595d29432633d54f3a61ee56498dd1b6",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/expressjs+compression.json",
+        "status": "legacy-reference-only",
+        "sha256": "a1ea048fae95ccacab1a0d9f8fff5c6c500ee6c67007cabfc48e1167d821c410",
+        "packageCount": 18,
+        "projectCount": 0,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/expressjs+compression",
+        "status": "incomplete-download",
+        "archiveMarkerPresent": true,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "expressjs+express",
+      "repository": "expressjs/express",
+      "commit": "64e7373d6976dd3ec32a92dbc31ff19700fe152a",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/expressjs+express.json",
+        "status": "legacy-reference-only",
+        "sha256": "3a077a6bd09e196856bb31eada0d811c1aac49d5af376e29b07ba0812b3d63cd",
+        "packageCount": 44,
+        "projectCount": 0,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/expressjs+express",
+        "status": "incomplete-download",
+        "archiveMarkerPresent": true,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "expressjs+serve-index",
+      "repository": "expressjs/serve-index",
+      "commit": "364e273836b64bc9362177d612704086f6dcc0d2",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/expressjs+serve-index.json",
+        "status": "legacy-reference-only",
+        "sha256": "bfa94e77063992850716a9af5eef9562efa80e104c9e0505285de1f039937d66",
+        "packageCount": 13,
+        "projectCount": 0,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/expressjs+serve-index",
+        "status": "incomplete-download",
+        "archiveMarkerPresent": true,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "FormidableLabs+victory",
+      "repository": "FormidableLabs/victory",
+      "commit": "4aafb3d4839110c261a07f8dd10e52ce57716c33",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/FormidableLabs+victory.json",
+        "status": "legacy-reference-only",
+        "sha256": "c0c40da9b12f9524adc33a3579fa9c2770e7d69bd87a25953223eeaf352da1fa",
+        "packageCount": 2648,
+        "projectCount": 33,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/FormidableLabs+victory",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 33,
+          "examplePaths": [
+            "demo/rn/package.json",
+            "package.json",
+            "packages/victory-area/package.json"
+          ]
+        },
+        {
+          "kind": "pnpm-lock",
+          "distinctPathCount": 1,
+          "examplePaths": ["pnpm-lock.yaml"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "inspect-js+typed-array-byte-offset",
+      "repository": "inspect-js/typed-array-byte-offset",
+      "commit": "6ec90e8b52ad0ad68644663fe6970928044feb7d",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/inspect-js+typed-array-byte-offset.json",
+        "status": "legacy-reference-only",
+        "sha256": "8b3a975362f092207830de469861ec896e6c83022121dab16d9d5b8ef5d9fae3",
+        "packageCount": 33,
+        "projectCount": 0,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/inspect-js+typed-array-byte-offset",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "inspect-js+which-builtin-type",
+      "repository": "inspect-js/which-builtin-type",
+      "commit": "fccdad16413f7a2f2eae328f304d0044edb9a11b",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/inspect-js+which-builtin-type.json",
+        "status": "legacy-reference-only",
+        "sha256": "f90bf50b7ddfb8a8e59540e6d30c928a8e3e27f004503df735ef78c6ba029d2f",
+        "packageCount": 47,
+        "projectCount": 0,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/inspect-js+which-builtin-type",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "jaredwray+cacheable",
+      "repository": "jaredwray/cacheable",
+      "commit": "8a62fc2938602cd23d497ac9c9f409b0bb01d690",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/jaredwray+cacheable.json",
+        "status": "legacy-reference-only",
+        "sha256": "fda4cc01d50a63bbf0af79bfa68f14e3b67f7f60b50d1a9e711453137c4166d0",
+        "packageCount": 70,
+        "projectCount": 0,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/jaredwray+cacheable",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 12,
+          "examplePaths": [
+            "package.json",
+            "packages/benchmark/package.json",
+            "packages/cache-manager/package.json"
+          ]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "jvalue+jayvee",
+      "repository": "jvalue/jayvee",
+      "commit": "f2b9423a96f05cdfa0cea0cc94185d3dab028e8a",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/jvalue+jayvee.json",
+        "status": "legacy-reference-only",
+        "sha256": "0a65bd319292f09506ad3025b7f9cb1a82ae24077ccebb258faa69ea347683c1",
+        "packageCount": 2448,
+        "projectCount": 1,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/jvalue+jayvee",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        },
+        {
+          "kind": "npm-lock",
+          "distinctPathCount": 2,
+          "examplePaths": ["libs/extensions/std/exec/package-lock.json", "package-lock.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "keithamus+sort-package-json",
+      "repository": "keithamus/sort-package-json",
+      "commit": "a03895650fb6fe155af6c2c03491de9bc492fdab",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/keithamus+sort-package-json.json",
+        "status": "legacy-reference-only",
+        "sha256": "8fd75f829e441c25313f6f7d19c7ac8a0ebeff11c7a30b5a44f6c1b790bca338",
+        "packageCount": 716,
+        "projectCount": 1,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/keithamus+sort-package-json",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        },
+        {
+          "kind": "npm-lock",
+          "distinctPathCount": 1,
+          "examplePaths": ["package-lock.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "linear+linear",
+      "repository": "linear/linear",
+      "commit": "5a308978229da2aa092177055446669af657c034",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/linear+linear.json",
+        "status": "legacy-reference-only",
+        "sha256": "3dfdeab2012f4a95d64a3e62a33ce443587ed764be87ee16bdc9922c49241505",
+        "packageCount": 1778,
+        "projectCount": 5,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/linear+linear",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 5,
+          "examplePaths": [
+            "packages/codegen-doc/package.json",
+            "packages/codegen-sdk/package.json",
+            "packages/codegen-test/package.json"
+          ]
+        },
+        {
+          "kind": "yarn-lock-version-unverified",
+          "distinctPathCount": 2,
+          "examplePaths": ["examples/nextjs-file-upload/yarn.lock", "yarn.lock"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "lint-staged+lint-staged",
+      "repository": "lint-staged/lint-staged",
+      "commit": "a1ec97295c6163acb2e8fe1adeae9fbe14de16a2",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/lint-staged+lint-staged.json",
+        "status": "legacy-reference-only",
+        "sha256": "8c5eb69ac657434b88ee5de77828dff5ff1ac17ca2696d933627cb2ee8dc924c",
+        "packageCount": 431,
+        "projectCount": 1,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/lint-staged+lint-staged",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        },
+        {
+          "kind": "npm-lock",
+          "distinctPathCount": 1,
+          "examplePaths": ["package-lock.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "ljharb+get-intrinsic",
+      "repository": "ljharb/get-intrinsic",
+      "commit": "75b38548845e37d3792e6580c882c166e8b769cc",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/ljharb+get-intrinsic.json",
+        "status": "legacy-reference-only",
+        "sha256": "b155b0f96a2849a09f727e4b2d537554126744b92f53416a7ec5161b22d74ef6",
+        "packageCount": 31,
+        "projectCount": 0,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/ljharb+get-intrinsic",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "Mail-0+Zero",
+      "repository": "Mail-0/Zero",
+      "commit": "64c5480c341750578da0746f2db9ad84da686334",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/Mail-0+Zero.json",
+        "status": "legacy-reference-only",
+        "sha256": "423c12cd2ca1cd78439efe38e7bcffdcbefb420e0264382be11aece34cf1be53",
+        "packageCount": 1970,
+        "projectCount": 4,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/Mail-0+Zero",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "bun-lock",
+          "distinctPathCount": 1,
+          "examplePaths": ["scripts/bun.lock"]
+        },
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 4,
+          "examplePaths": [
+            "apps/mail/package.json",
+            "package.json",
+            "packages/testing/package.json"
+          ]
+        },
+        {
+          "kind": "pnpm-lock",
+          "distinctPathCount": 1,
+          "examplePaths": ["pnpm-lock.yaml"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "micromark+micromark",
+      "repository": "micromark/micromark",
+      "commit": "774a70c6bae6dd94486d3385dbd9a0f14550b709",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/micromark+micromark.json",
+        "status": "legacy-reference-only",
+        "sha256": "ae67edad4869793068a91c5e30840644ce08f92d5f4b90955735a7a3a2515f02",
+        "packageCount": 49,
+        "projectCount": 0,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/micromark+micromark",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 19,
+          "examplePaths": [
+            "package.json",
+            "packages/micromark-build/package.json",
+            "packages/micromark-core-commonmark/package.json"
+          ]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "micromark+micromark-extension-directive",
+      "repository": "micromark/micromark-extension-directive",
+      "commit": "d19906200feba667b351ce60ee511f6204b662e0",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/micromark+micromark-extension-directive.json",
+        "status": "legacy-reference-only",
+        "sha256": "6d7f6f1f7606007f1b7cc08b769ba4982e2f9d6fbae7f985da09ad2f06789f16",
+        "packageCount": 18,
+        "projectCount": 0,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/micromark+micromark-extension-directive",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "micromark+micromark-extension-gfm",
+      "repository": "micromark/micromark-extension-gfm",
+      "commit": "d64834e03d5b15afc76ec290265d1903013e5327",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/micromark+micromark-extension-gfm.json",
+        "status": "legacy-reference-only",
+        "sha256": "e763f8b7e4e9dd1f41fc21009ad8936fd14de7eb9f12f8a8c8dabb01cca58bd8",
+        "packageCount": 24,
+        "projectCount": 0,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/micromark+micromark-extension-gfm",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "micromark+micromark-extension-gfm-footnote",
+      "repository": "micromark/micromark-extension-gfm-footnote",
+      "commit": "0a62fad40470f2447707020c52d38d1494199ee1",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/micromark+micromark-extension-gfm-footnote.json",
+        "status": "legacy-reference-only",
+        "sha256": "fd68cbf4857244a38af73ac2e7e92d64e7f7d4dfea062f9894b87d2b46cb286f",
+        "packageCount": 19,
+        "projectCount": 0,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/micromark+micromark-extension-gfm-footnote",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "micromark+micromark-extension-mdx-expression",
+      "repository": "micromark/micromark-extension-mdx-expression",
+      "commit": "2891b75ff9e985c6df208a47348e76ced05dbfed",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/micromark+micromark-extension-mdx-expression.json",
+        "status": "legacy-reference-only",
+        "sha256": "fed0b4dcf6d14b610ec5e21fd5216c2296f1dab8a5696946bad6da0fd0ef005a",
+        "packageCount": 24,
+        "projectCount": 0,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/micromark+micromark-extension-mdx-expression",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 4,
+          "examplePaths": [
+            "package.json",
+            "packages/micromark-extension-mdx-expression/package.json",
+            "packages/micromark-factory-mdx-expression/package.json"
+          ]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "micromark+micromark-extension-mdx-jsx",
+      "repository": "micromark/micromark-extension-mdx-jsx",
+      "commit": "ad0a49c716c9b0044b3db48c9e43d405eda183b7",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/micromark+micromark-extension-mdx-jsx.json",
+        "status": "legacy-reference-only",
+        "sha256": "c1317719d6ccecf3821cb7cf0da09c034f4f83647fc302e9a35d1f4d296eba8a",
+        "packageCount": 27,
+        "projectCount": 0,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/micromark+micromark-extension-mdx-jsx",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "micromark+micromark-extension-mdxjs",
+      "repository": "micromark/micromark-extension-mdxjs",
+      "commit": "25cda5802db19d21b3bd4d9e6ea4cc66bd027c78",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/micromark+micromark-extension-mdxjs.json",
+        "status": "legacy-reference-only",
+        "sha256": "5d659af8bb082d8226af4a1d292e64c46a36083459687953590605b3b9c12282",
+        "packageCount": 17,
+        "projectCount": 0,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/micromark+micromark-extension-mdxjs",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "micromark+micromark-extension-mdxjs-esm",
+      "repository": "micromark/micromark-extension-mdxjs-esm",
+      "commit": "3fdf3d3e597c707ac08ca94ba52d99d88f87ddfe",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/micromark+micromark-extension-mdxjs-esm.json",
+        "status": "legacy-reference-only",
+        "sha256": "6970694aef11ee738de807c7f69b59ba8fcfc70374c763915eaf1a631723b04e",
+        "packageCount": 22,
+        "projectCount": 0,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/micromark+micromark-extension-mdxjs-esm",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "midday-ai+midday",
+      "repository": "midday-ai/midday",
+      "commit": "ffd7791ef6d158006e96e5306b23fe7bb127048e",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/midday-ai+midday.json",
+        "status": "legacy-reference-only",
+        "sha256": "593a021ed25da0f85861d6c1ab430030bca604d4aeb7d0556a391b04e12270fb",
+        "packageCount": 2766,
+        "projectCount": 23,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/midday-ai+midday",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "bun-lock",
+          "distinctPathCount": 1,
+          "examplePaths": ["bun.lock"]
+        },
+        {
+          "kind": "cargo",
+          "distinctPathCount": 2,
+          "examplePaths": ["apps/desktop/src-tauri/Cargo.lock", "apps/desktop/src-tauri/Cargo.toml"]
+        },
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 22,
+          "examplePaths": [
+            "apps/dashboard/package.json",
+            "apps/desktop/package.json",
+            "apps/website/package.json"
+          ]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "ory+kratos",
+      "repository": "ory/kratos",
+      "commit": "4a07685e095034683c7bf8bf18dec784ac8e8109",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/ory+kratos.json",
+        "status": "legacy-reference-only",
+        "sha256": "cbc0bdccc7c6b7813f03059bce7aef3ab7e0c0c18c7b1414bcce756c45bdff0f",
+        "packageCount": 1240,
+        "projectCount": 10,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/ory+kratos",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "go-module",
+          "distinctPathCount": 8,
+          "examplePaths": ["go.mod", "internal/client-go/go.mod", "oryx/go.mod"]
+        },
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 2,
+          "examplePaths": ["test/e2e/package.json", "test/e2e/proxy/package.json"]
+        },
+        {
+          "kind": "npm-lock",
+          "distinctPathCount": 4,
+          "examplePaths": [
+            "oryx/package-lock.json",
+            "package-lock.json",
+            "test/e2e/package-lock.json"
+          ]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [
+        {
+          "tool": "go",
+          "version": "1.26.3",
+          "versionSource": "mise.toml",
+          "extractor": "gomod",
+          "basis": "legacy-baseline-input-paths",
+          "evidence": [
+            {
+              "path": "go.mod",
+              "fields": ["packages.evidence", "subprojects.definitionFile"]
+            },
+            {
+              "path": "internal/client-go/go.mod",
+              "fields": ["subprojects.definitionFile"]
+            },
+            {
+              "path": "oryx/go.mod",
+              "fields": ["packages.evidence", "subprojects.definitionFile"]
+            },
+            {
+              "path": "oryx/randx/strength/go.mod",
+              "fields": ["packages.evidence", "subprojects.definitionFile"]
+            },
+            {
+              "path": "test/e2e/hydra-kratos-login-consent/go.mod",
+              "fields": ["packages.evidence", "subprojects.definitionFile"]
+            },
+            {
+              "path": "test/e2e/hydra-login-consent/go.mod",
+              "fields": ["packages.evidence", "subprojects.definitionFile"]
+            },
+            {
+              "path": "test/e2e/mock/httptarget/go.mod",
+              "fields": ["subprojects.definitionFile"]
+            },
+            {
+              "path": "test/e2e/mock/webhook/go.mod",
+              "fields": ["packages.evidence", "subprojects.definitionFile"]
+            }
+          ]
+        }
+      ],
+      "reviewEvidence": []
+    },
+    {
+      "id": "pillarjs+finalhandler",
+      "repository": "pillarjs/finalhandler",
+      "commit": "27c3f307213825f3f401f8b6efc8b1f45acd93bc",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/pillarjs+finalhandler.json",
+        "status": "legacy-reference-only",
+        "sha256": "4b0040026ae7f48598b6c1420498456580dbdd78a86a1b8bcc5cd81cfbacb01b",
+        "packageCount": 16,
+        "projectCount": 0,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/pillarjs+finalhandler",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "pillarjs+send",
+      "repository": "pillarjs/send",
+      "commit": "a7e482178debf1294a9460ec606877761b079780",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/pillarjs+send.json",
+        "status": "legacy-reference-only",
+        "sha256": "c6de0ef65dcb2e1c4a1317cfeb36772dbaa8a65ee68f818a7a4adb505180b316",
+        "packageCount": 22,
+        "projectCount": 0,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/pillarjs+send",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "Redocly+redocly-cli",
+      "repository": "Redocly/redocly-cli",
+      "commit": "2367722a9fb173e55626dccbdac7b6694dd8b199",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/Redocly+redocly-cli.json",
+        "status": "legacy-reference-only",
+        "sha256": "025e0b64162c9b0394efa61f74f7f4af96a00b7b312638b958bf885d91e5c4af",
+        "packageCount": 978,
+        "projectCount": 4,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/Redocly+redocly-cli",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 4,
+          "examplePaths": [
+            "package.json",
+            "packages/cli/package.json",
+            "packages/core/package.json"
+          ]
+        },
+        {
+          "kind": "npm-lock",
+          "distinctPathCount": 1,
+          "examplePaths": ["package-lock.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "resend+react-email",
+      "repository": "resend/react-email",
+      "commit": "e87e6fc4d85f45b6a25df2d7bc1bd520627aaff2",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/resend+react-email.json",
+        "status": "legacy-reference-only",
+        "sha256": "8139a03fe6ddbe3de21ccf493f4008557224362d4774bd45fa97dd21bb9714d8",
+        "packageCount": 1782,
+        "projectCount": 33,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/resend+react-email",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 33,
+          "examplePaths": [
+            "apps/demo/package.json",
+            "apps/docs/package.json",
+            "apps/web/package.json"
+          ]
+        },
+        {
+          "kind": "pnpm-lock",
+          "distinctPathCount": 1,
+          "examplePaths": ["pnpm-lock.yaml"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "riehlegroup+mini-meco",
+      "repository": "riehlegroup/mini-meco",
+      "commit": "9c6c42bc83c4adf50213d1b8e58ba6afe98c1b75",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/riehlegroup+mini-meco.json",
+        "status": "legacy-reference-only",
+        "sha256": "843fd1654fac2e6b8575b44d1be6701915d2030b9d3dbec3f138f27cce53e0bb",
+        "packageCount": 884,
+        "projectCount": 4,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/riehlegroup+mini-meco",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 3,
+          "examplePaths": ["client/package.json", "package.json", "server/package.json"]
+        },
+        {
+          "kind": "npm-lock",
+          "distinctPathCount": 2,
+          "examplePaths": ["package-lock.json", "server/package-lock.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "riehlegroup+msadoc",
+      "repository": "riehlegroup/msadoc",
+      "commit": "7cc6b2f1f5c597d733a8a7bdb77905a16047e06c",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/riehlegroup+msadoc.json",
+        "status": "legacy-reference-only",
+        "sha256": "522e4f7274ecaf5e8e7920c679456c36f499dbda0f96ed70619786a7fe10e81e",
+        "packageCount": 1108,
+        "projectCount": 1,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/riehlegroup+msadoc",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["cli/package.json"]
+        },
+        {
+          "kind": "npm-lock",
+          "distinctPathCount": 1,
+          "examplePaths": ["package-lock.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "scatool+demo-repository",
+      "repository": "scatool/demo-repository",
+      "commit": "6f753a2b9f41332c074d48204fb63de3a471e76d",
+      "status": "accepted",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/scatool+demo-repository.json",
+        "status": "reviewed-format-2",
+        "sha256": "6cbbd1279ffbce255fe622636d214106241b6f51b8c0d5a3b4677e1f7b6e2723",
+        "packageCount": 9,
+        "projectCount": 1,
+        "issueCodes": [],
+        "acceptedSha256": "882c0119e103d64f326b94178f260bae8f92312b906c4e3ae7e4500701e42c89"
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/scatool+demo-repository",
+        "status": "source-reviewed",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 6
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        },
+        {
+          "kind": "npm-lock",
+          "distinctPathCount": 1,
+          "examplePaths": ["npm-shrinkwrap.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": {
+        "kind": "npm-shrinkwrap-v1",
+        "source": {
+          "commit": "6f753a2b9f41332c074d48204fb63de3a471e76d",
+          "tree": "f3599538b188bba6254fa4111092f83863d215a3",
+          "archiveSha256": "402937595f519d6cc799912515a68f4c64f4b13c6232868314c9f834e6688391",
+          "files": [
+            {
+              "path": "package.json",
+              "sha256": "08236514f628afb66d9796bbbfdd245270e986eddad799e9db9871010c506630"
+            },
+            {
+              "path": "npm-shrinkwrap.json",
+              "sha256": "5c47d7b1483bdb66426f0f6255461fc1b4e8d9f9f8ca708bf09d8ecd7a3dc5dd"
+            }
+          ]
+        },
+        "tools": [
+          {
+            "name": "node",
+            "version": "22.23.4"
+          },
+          {
+            "name": "pnpm",
+            "version": "10.24.0"
+          },
+          {
+            "name": "vite-plus",
+            "version": "1.3.0"
+          }
+        ],
+        "assertions": [
+          "All16 configured extractors executed; only packagelockjson emitted a locked graph with9 packages,14 views,4 roots,10 edges and0 issues.",
+          "All9 native record versions, artifacts, integrity strings and8 requires edges agree with source.",
+          "Current manifest axios correlation retains unknown selection;9 conditional query members and partial completeness, other3 empty roots complete.",
+          "Independent semantic review and reproducible test/demo-acceptance.test.ts assertions."
+        ],
+        "review": {
+          "path": "test/acceptance/scatool-demo-repository.md",
+          "sha256": "855512ecf2da77ed5f9e521554bcc22a56623b7a9247b77bb804916209e76eb5"
+        }
+      }
+    },
+    {
+      "id": "sharkdp+bat",
+      "repository": "sharkdp/bat",
+      "commit": "cd06fe46e001483115273e1a03f448720b945948",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/sharkdp+bat.json",
+        "status": "legacy-reference-only",
+        "sha256": "1e25bc2b7e589d788e70a826e88430ae1c2de744e52c2a50a0d1a9cdc6900569",
+        "packageCount": 276,
+        "projectCount": 2,
+        "issueCodes": ["gomod.module_name_parse_failed", "requirementstxt.unresolved_dependencies"]
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/sharkdp+bat",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "cargo",
+          "distinctPathCount": 2,
+          "examplePaths": ["Cargo.lock", "Cargo.toml"]
+        },
+        {
+          "kind": "go-module",
+          "distinctPathCount": 2,
+          "examplePaths": [
+            "tests/syntax-tests/highlighted/Go/go.mod",
+            "tests/syntax-tests/source/Go/go.mod"
+          ]
+        },
+        {
+          "kind": "python-requirements",
+          "distinctPathCount": 1,
+          "examplePaths": ["tests/syntax-tests/source/Requirements.txt/requirements.txt"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [
+        {
+          "tool": "go",
+          "version": "1.26.3",
+          "versionSource": "mise.toml",
+          "extractor": "gomod",
+          "basis": "legacy-baseline-input-paths",
+          "evidence": [
+            {
+              "path": "tests/syntax-tests/highlighted/Go/go.mod",
+              "fields": ["issues.file"]
+            },
+            {
+              "path": "tests/syntax-tests/source/Go/go.mod",
+              "fields": ["packages.evidence", "subprojects.definitionFile"]
+            }
+          ]
+        }
+      ],
+      "reviewEvidence": []
+    },
+    {
+      "id": "sindresorhus+boxen",
+      "repository": "sindresorhus/boxen",
+      "commit": "af0098901175156af7829cbf24259df1dcb8e41d",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/sindresorhus+boxen.json",
+        "status": "legacy-reference-only",
+        "sha256": "2b99b0d539264516922eeb969c2e698ffbc3274e3ebb6623e5973256e2e65975",
+        "packageCount": 13,
+        "projectCount": 0,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/sindresorhus+boxen",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "sindresorhus+execa",
+      "repository": "sindresorhus/execa",
+      "commit": "23ec6f0569b3e42af43294dc807494ebe896e980",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/sindresorhus+execa.json",
+        "status": "legacy-reference-only",
+        "sha256": "fcada39ce691f79374d4095d322a0fe2bbc3b474dd19d2b2f9f1d13d135ead64",
+        "packageCount": 26,
+        "projectCount": 0,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/sindresorhus+execa",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "sindresorhus+got",
+      "repository": "sindresorhus/got",
+      "commit": "f9faa7a40599001636c3ae2a68e875e3419e5084",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/sindresorhus+got.json",
+        "status": "legacy-reference-only",
+        "sha256": "f49d286ddd8b8bb584b6a890267cdab64eb5c59119e288aa8af28ebb035e02b5",
+        "packageCount": 56,
+        "projectCount": 0,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/sindresorhus+got",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "svg+svgo",
+      "repository": "svg/svgo",
+      "commit": "9d9afa35bb1eadd09302ddafdc7a28683bfa67c7",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/svg+svgo.json",
+        "status": "legacy-reference-only",
+        "sha256": "31e64bde72c3396c433e061025d6e0292c75e7758e0aa4a599e591da15b54a0b",
+        "packageCount": 548,
+        "projectCount": 1,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/svg+svgo",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        },
+        {
+          "kind": "yarn-lock-version-unverified",
+          "distinctPathCount": 1,
+          "examplePaths": ["yarn.lock"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "syntax-tree+hast-util-from-parse5",
+      "repository": "syntax-tree/hast-util-from-parse5",
+      "commit": "6fd23c9a4b53a6bce106ebc842de6f1727792954",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/syntax-tree+hast-util-from-parse5.json",
+        "status": "legacy-reference-only",
+        "sha256": "6d3a91a68d282ce762753332dd8d0e64d1c0153384e62673ecce92e7c96b04b1",
+        "packageCount": 20,
+        "projectCount": 0,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/syntax-tree+hast-util-from-parse5",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "syntax-tree+hast-util-raw",
+      "repository": "syntax-tree/hast-util-raw",
+      "commit": "ad15a52350463223504999a6c4c763e1994522d4",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/syntax-tree+hast-util-raw.json",
+        "status": "legacy-reference-only",
+        "sha256": "6ca12276e72138db0114c2400895d164b25418a651bffa5604376b203d6ead2c",
+        "packageCount": 26,
+        "projectCount": 0,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/syntax-tree+hast-util-raw",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "syntax-tree+hast-util-to-estree",
+      "repository": "syntax-tree/hast-util-to-estree",
+      "commit": "e5ccb97e9f42bba90359ea6d0f83a11d74e0dad6",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/syntax-tree+hast-util-to-estree.json",
+        "status": "legacy-reference-only",
+        "sha256": "c9185ffd80fe7094512d318c1296c6865dfd5b1b9d7bb806cb92604bb4712083",
+        "packageCount": 34,
+        "projectCount": 0,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/syntax-tree+hast-util-to-estree",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "syntax-tree+hast-util-to-jsx-runtime",
+      "repository": "syntax-tree/hast-util-to-jsx-runtime",
+      "commit": "b0920cd0837052144ebe94f53d8f792b05619444",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/syntax-tree+hast-util-to-jsx-runtime.json",
+        "status": "legacy-reference-only",
+        "sha256": "10f008adaecd71e71c1acce041326ca6f4051504205c5ee24a4123776baace15",
+        "packageCount": 31,
+        "projectCount": 0,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/syntax-tree+hast-util-to-jsx-runtime",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "syntax-tree+hast-util-to-parse5",
+      "repository": "syntax-tree/hast-util-to-parse5",
+      "commit": "b92b23d91ce311ac5d81c0eaee94865387e6dcc5",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/syntax-tree+hast-util-to-parse5.json",
+        "status": "legacy-reference-only",
+        "sha256": "1f19f0ed1d2e024318d58eedf388f3a7052e18bf4ba11781d19341666aad4ff0",
+        "packageCount": 18,
+        "projectCount": 0,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/syntax-tree+hast-util-to-parse5",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "syntax-tree+mdast-util-directive",
+      "repository": "syntax-tree/mdast-util-directive",
+      "commit": "a683327fafc4e48f81caf8d09d15fef8dd42a627",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/syntax-tree+mdast-util-directive.json",
+        "status": "legacy-reference-only",
+        "sha256": "8e66e8eda9cf464f67ccc97599a3525a812e49481905a52ddb6411009790106f",
+        "packageCount": 19,
+        "projectCount": 0,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/syntax-tree+mdast-util-directive",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "syntax-tree+mdast-util-from-markdown",
+      "repository": "syntax-tree/mdast-util-from-markdown",
+      "commit": "553a0e324554b29cade83f4911c97482d86ee8ff",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/syntax-tree+mdast-util-from-markdown.json",
+        "status": "legacy-reference-only",
+        "sha256": "daf338f570b35d4b1c44cdd6ef0ddc886d1f161b2e9dd5cea44e0d0d3ef2f40b",
+        "packageCount": 28,
+        "projectCount": 0,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/syntax-tree+mdast-util-from-markdown",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "syntax-tree+mdast-util-gfm",
+      "repository": "syntax-tree/mdast-util-gfm",
+      "commit": "6b34bb2868c38c0b2909fa69c78534d5e44dc309",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/syntax-tree+mdast-util-gfm.json",
+        "status": "legacy-reference-only",
+        "sha256": "21a9ef02114c126c9ebbbb467c8e74366cc8c1b7da69394c0d7cff7031093672",
+        "packageCount": 20,
+        "projectCount": 0,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/syntax-tree+mdast-util-gfm",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "syntax-tree+mdast-util-mdx-jsx",
+      "repository": "syntax-tree/mdast-util-mdx-jsx",
+      "commit": "0f3033ce1ce34e3c56bd81fc65e24a1dadb854c3",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/syntax-tree+mdast-util-mdx-jsx.json",
+        "status": "legacy-reference-only",
+        "sha256": "a3d59d92221c38effc94c9903e071704a28e256c869829e4933dead58a8c0333",
+        "packageCount": 24,
+        "projectCount": 0,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/syntax-tree+mdast-util-mdx-jsx",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "syntax-tree+mdast-util-to-hast",
+      "repository": "syntax-tree/mdast-util-to-hast",
+      "commit": "f511a93817b131fb73419bf7d24d73a5b8b0f0c2",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/syntax-tree+mdast-util-to-hast.json",
+        "status": "legacy-reference-only",
+        "sha256": "c04c77974bd089bb807ccae0bdc02baadaf0f5f4f99c226de7d5829e085c4ba9",
+        "packageCount": 23,
+        "projectCount": 0,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/syntax-tree+mdast-util-to-hast",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "syntax-tree+mdast-util-to-markdown",
+      "repository": "syntax-tree/mdast-util-to-markdown",
+      "commit": "ee3b3458a466c3224800ac7fa688b4a160a91ea2",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/syntax-tree+mdast-util-to-markdown.json",
+        "status": "legacy-reference-only",
+        "sha256": "b274862fbdc2525a25f57241c3db2607538984e8249a8bea2e467c1656808150",
+        "packageCount": 19,
+        "projectCount": 0,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/syntax-tree+mdast-util-to-markdown",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "tailwindlabs+tailwindcss",
+      "repository": "tailwindlabs/tailwindcss",
+      "commit": "91694fbfc14290381c92042d08b535ed1a3c8c44",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/tailwindlabs+tailwindcss.json",
+        "status": "legacy-reference-only",
+        "sha256": "3c8dfa5b715536f8b9fe9513414899f9f622f9d994838fac3c0d35216037a681",
+        "packageCount": 977,
+        "projectCount": 28,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/tailwindlabs+tailwindcss",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "cargo",
+          "distinctPathCount": 3,
+          "examplePaths": [
+            "Cargo.lock",
+            "crates/oxide/fuzz/Cargo.lock",
+            "crates/oxide/fuzz/Cargo.toml"
+          ]
+        },
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 26,
+          "examplePaths": [
+            "crates/node/npm/android-arm-eabi/package.json",
+            "crates/node/npm/android-arm64/package.json",
+            "crates/node/npm/darwin-arm64/package.json"
+          ]
+        },
+        {
+          "kind": "pnpm-lock",
+          "distinctPathCount": 2,
+          "examplePaths": ["crates/node/npm/wasm32-wasi/pnpm-lock.yaml", "pnpm-lock.yaml"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "terser+html-minifier-terser",
+      "repository": "terser/html-minifier-terser",
+      "commit": "c4a7ae0bd08b1a438d9ca12a229b4cbe93fc016a",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/terser+html-minifier-terser.json",
+        "status": "legacy-reference-only",
+        "sha256": "051a3d4b7974995868a3be651d273b21910b32cc332b1f2f2d35c9b0acb4b140",
+        "packageCount": 715,
+        "projectCount": 1,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/terser+html-minifier-terser",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        },
+        {
+          "kind": "npm-lock",
+          "distinctPathCount": 2,
+          "examplePaths": ["benchmarks/package-lock.json", "package-lock.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "alacritty+alacritty",
+      "repository": "alacritty/alacritty",
+      "commit": "08134af8533556034272a884e40c0aaf6bf6f930",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/alacritty+alacritty.json",
+        "status": "legacy-reference-only",
+        "sha256": "6cdc3bc5cffc63aaa17dc76b04997ad2d69ef45158e3c4047d9f3a8e4a5a5282",
+        "packageCount": 288,
+        "projectCount": 4,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/alacritty+alacritty",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "cargo",
+          "distinctPathCount": 5,
+          "examplePaths": ["Cargo.lock", "alacritty/Cargo.toml", "alacritty_config/Cargo.toml"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "unifiedjs+unified",
+      "repository": "unifiedjs/unified",
+      "commit": "45d8fa503157d20a656b3fa00e4b010dc0e50748",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/unifiedjs+unified.json",
+        "status": "legacy-reference-only",
+        "sha256": "4f52e6d3ba9bf2851d56133e404e23df78794336544a4b9bc35063a9a0ac1bde",
+        "packageCount": 19,
+        "projectCount": 0,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/unifiedjs+unified",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "vercel+serve-handler",
+      "repository": "vercel/serve-handler",
+      "commit": "329bcba871abed617d4b32cfefd79b5ddc35e497",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/vercel+serve-handler.json",
+        "status": "legacy-reference-only",
+        "sha256": "9dd5307bd81698535e8769cd95209a3ac269e434bfd28a978b25a81022e64602",
+        "packageCount": 444,
+        "projectCount": 1,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/vercel+serve-handler",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        },
+        {
+          "kind": "yarn-lock-version-unverified",
+          "distinctPathCount": 1,
+          "examplePaths": ["yarn.lock"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "webpack-contrib+webpack-bundle-analyzer",
+      "repository": "webpack-contrib/webpack-bundle-analyzer",
+      "commit": "8755634841119cedd3efa315a2224d13b6ef51f5",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/webpack-contrib+webpack-bundle-analyzer.json",
+        "status": "legacy-reference-only",
+        "sha256": "c4b7dc8b33ddbd265c022e912fcc409390180bd959d7228c41813e7f176b81c8",
+        "packageCount": 1392,
+        "projectCount": 1,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/webpack-contrib+webpack-bundle-analyzer",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        },
+        {
+          "kind": "npm-lock",
+          "distinctPathCount": 3,
+          "examplePaths": [
+            "package-lock.json",
+            "test/webpack-versions/4.44.2/package-lock.json",
+            "test/webpack-versions/5.76.0/package-lock.json"
+          ]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "wooorm+parse-entities",
+      "repository": "wooorm/parse-entities",
+      "commit": "f95cbc9d8b383ca94996e7abcacf78a2eee66546",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/wooorm+parse-entities.json",
+        "status": "legacy-reference-only",
+        "sha256": "75e5f334f07406a0880c87ecd2d10d0ec8d0bc19e0e3ed621316508480784245",
+        "packageCount": 15,
+        "projectCount": 0,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/wooorm+parse-entities",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "xtuc+webassemblyjs",
+      "repository": "xtuc/webassemblyjs",
+      "commit": "af8e766c26d36c34c3b84c975d3dea96dcf22197",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/xtuc+webassemblyjs.json",
+        "status": "legacy-reference-only",
+        "sha256": "469b63d492abeac9274f6c0078bae4ec8f547265d5ba2488bf37d82b01e2a540",
+        "packageCount": 1428,
+        "projectCount": 0,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/xtuc+webassemblyjs",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "yarn-lock-version-unverified",
+          "distinctPathCount": 2,
+          "examplePaths": ["website/yarn.lock", "yarn.lock"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "xyflow+xyflow",
+      "repository": "xyflow/xyflow",
+      "commit": "5cfd4a56d157bb23a7e8152f569f3f0841c7e3d1",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/xyflow+xyflow.json",
+        "status": "legacy-reference-only",
+        "sha256": "7203ae397529e05eca81b9964493f5e13e5def5a9b4a9670913e5fb31f926e31",
+        "packageCount": 1500,
+        "projectCount": 12,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/xyflow+xyflow",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 11,
+          "examplePaths": [
+            "examples/astro-xyflow/package.json",
+            "examples/react/package.json",
+            "examples/svelte/package.json"
+          ]
+        },
+        {
+          "kind": "npm-lock",
+          "distinctPathCount": 1,
+          "examplePaths": ["tests/playwright/package-lock.json"]
+        },
+        {
+          "kind": "pnpm-lock",
+          "distinctPathCount": 1,
+          "examplePaths": ["pnpm-lock.yaml"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "yargs+yargs",
+      "repository": "yargs/yargs",
+      "commit": "971e351705f0fbc5566c6ed1dfd707fa65e11c0d",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/yargs+yargs.json",
+        "status": "legacy-reference-only",
+        "sha256": "ef73d0f1d2d4bbc670c9d87d41f5bb7c9e788ed74c809b8672c53d754e5be350",
+        "packageCount": 28,
+        "projectCount": 0,
+        "issueCodes": ["core.file_extraction_failed"]
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/yargs+yargs",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 2,
+          "examplePaths": ["package.json", "test/fixtures/broken-json/package.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "evorto+wahlzeit",
+      "repository": "evorto/wahlzeit",
+      "commit": "7a0ae08deb62b9a9ad5d132cb5ac7d69420c9959",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [
+          {
+            "tool": "java",
+            "version": "11",
+            "basis": "repositories.json javaVersion; harness switches JVM before extraction"
+          }
+        ],
+        "extractorOptions": {},
+        "javaVersion": 11
+      },
+      "baseline": {
+        "path": "test/__snapshots__/evorto+wahlzeit.json",
+        "status": "legacy-reference-only",
+        "sha256": "620f9ea636c27181f9273e53660956f7633a35306b9546785c293136c678f4d1",
+        "packageCount": 205,
+        "projectCount": 1,
+        "issueCodes": ["gradle.project_group_missing"]
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/evorto+wahlzeit",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "gradle-build",
+          "distinctPathCount": 1,
+          "examplePaths": ["build.gradle"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [
+        {
+          "tool": "gradle-wrapper",
+          "version": null,
+          "versionSource": "pinned-repository-wrapper",
+          "extractor": "gradle",
+          "basis": "legacy-baseline-input-paths",
+          "evidence": [
+            {
+              "path": "build.gradle",
+              "fields": ["issues.file", "packages.evidence", "subprojects.definitionFile"]
+            }
+          ]
+        },
+        {
+          "tool": "java",
+          "version": "11",
+          "versionSource": "test/repositories.json:javaVersion",
+          "extractor": "gradle",
+          "basis": "legacy-baseline-input-paths",
+          "evidence": [
+            {
+              "path": "build.gradle",
+              "fields": ["issues.file", "packages.evidence", "subprojects.definitionFile"]
+            }
+          ]
+        }
+      ],
+      "reviewEvidence": []
+    },
+    {
+      "id": "ZEISS+angular-styleguide",
+      "repository": "ZEISS/angular-styleguide",
+      "commit": "5051c157c066e3f529f6a63971cbe64b072685b8",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/ZEISS+angular-styleguide.json",
+        "status": "legacy-reference-only",
+        "sha256": "7e5be36a4c8e879ee72b8c08be69d36766f575ff020c5c22ee6b73d40cdadddd",
+        "packageCount": 1582,
+        "projectCount": 1,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/ZEISS+angular-styleguide",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        },
+        {
+          "kind": "npm-lock",
+          "distinctPathCount": 1,
+          "examplePaths": ["package-lock.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "ZEISS+appinsights-express-middleware",
+      "repository": "ZEISS/appinsights-express-middleware",
+      "commit": "0d503139bd9776e240707bb2f5cd740b873e9bbf",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/ZEISS+appinsights-express-middleware.json",
+        "status": "legacy-reference-only",
+        "sha256": "e7a622cb292cef4591861c169e575a142e3ee52dc68f9e5af96d99348f15b1c0",
+        "packageCount": 657,
+        "projectCount": 1,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/ZEISS+appinsights-express-middleware",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        },
+        {
+          "kind": "npm-lock",
+          "distinctPathCount": 1,
+          "examplePaths": ["package-lock.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "ZEISS+docs-template",
+      "repository": "ZEISS/docs-template",
+      "commit": "5241515eb3e8d133775107f75e82f1b49c5d5948",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/ZEISS+docs-template.json",
+        "status": "legacy-reference-only",
+        "sha256": "e957402beae73749f7805a94727ff04a5de93e4bf4b31dc1724989cf06c8808a",
+        "packageCount": 784,
+        "projectCount": 1,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/ZEISS+docs-template",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        },
+        {
+          "kind": "npm-lock",
+          "distinctPathCount": 1,
+          "examplePaths": ["package-lock.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "ZEISS+htmx-template",
+      "repository": "ZEISS/htmx-template",
+      "commit": "080ce09c15567c6d90302f8047f1776cb70f53df",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/ZEISS+htmx-template.json",
+        "status": "legacy-reference-only",
+        "sha256": "1a0f97ee696d6299cc765cb1e0577e1cb28350b3a02f61e43de2977240e47e34",
+        "packageCount": 643,
+        "projectCount": 2,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/ZEISS+htmx-template",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "go-module",
+          "distinctPathCount": 2,
+          "examplePaths": ["go.mod", "tools/go.mod"]
+        },
+        {
+          "kind": "npm-lock",
+          "distinctPathCount": 1,
+          "examplePaths": ["package-lock.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [
+        {
+          "tool": "go",
+          "version": "1.26.3",
+          "versionSource": "mise.toml",
+          "extractor": "gomod",
+          "basis": "legacy-baseline-input-paths",
+          "evidence": [
+            {
+              "path": "go.mod",
+              "fields": ["packages.evidence", "subprojects.definitionFile"]
+            },
+            {
+              "path": "tools/go.mod",
+              "fields": ["packages.evidence", "subprojects.definitionFile"]
+            }
+          ]
+        }
+      ],
+      "reviewEvidence": []
+    },
+    {
+      "id": "ZEISS+htmx-toasts",
+      "repository": "ZEISS/htmx-toasts",
+      "commit": "35f3277e7facce53fc15672c6eea22dfb5f86438",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/ZEISS+htmx-toasts.json",
+        "status": "legacy-reference-only",
+        "sha256": "56c3f59ec2fa884524033cea4cfebc26fa9e8119dea001d6d2a54a653db31cab",
+        "packageCount": 450,
+        "projectCount": 1,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/ZEISS+htmx-toasts",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        },
+        {
+          "kind": "npm-lock",
+          "distinctPathCount": 1,
+          "examplePaths": ["package-lock.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "ZEISS+htmx-validate",
+      "repository": "ZEISS/htmx-validate",
+      "commit": "006043655b0917b26b50e0422befd9b6091ae357",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/ZEISS+htmx-validate.json",
+        "status": "legacy-reference-only",
+        "sha256": "7a9b66251e8a41def8d10e37cc4a7c111b0e2ee94d23ad1423d33b95b0f4a0fa",
+        "packageCount": 440,
+        "projectCount": 1,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/ZEISS+htmx-validate",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        },
+        {
+          "kind": "npm-lock",
+          "distinctPathCount": 1,
+          "examplePaths": ["package-lock.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "ZEISS+playwright-web-scraping",
+      "repository": "ZEISS/playwright-web-scraping",
+      "commit": "f9094e85365f60c2ab5ea2555f04b9959675d18a",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/ZEISS+playwright-web-scraping.json",
+        "status": "legacy-reference-only",
+        "sha256": "39f39c38e6816c22dc70d04eac9f02138347e9e0700335d365b575c169897692",
+        "packageCount": 257,
+        "projectCount": 1,
+        "issueCodes": ["requirementstxt.unresolved_dependencies"]
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/ZEISS+playwright-web-scraping",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        },
+        {
+          "kind": "npm-lock",
+          "distinctPathCount": 2,
+          "examplePaths": ["node/package-lock.json", "package-lock.json"]
+        },
+        {
+          "kind": "python-requirements",
+          "distinctPathCount": 1,
+          "examplePaths": ["python/requirements.txt"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "ZEISS+precise-ui",
+      "repository": "ZEISS/precise-ui",
+      "commit": "d224258bfd28305c9c6776b3397235e28a939ac6",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/ZEISS+precise-ui.json",
+        "status": "legacy-reference-only",
+        "sha256": "fc5625eecee18c3386ebbee24c9d6deb4c90a93910077222f3590e2890be12b6",
+        "packageCount": 1556,
+        "projectCount": 1,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/ZEISS+precise-ui",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        },
+        {
+          "kind": "npm-lock",
+          "distinctPathCount": 1,
+          "examplePaths": ["package-lock.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "ZEISS+template-htmx-ext",
+      "repository": "ZEISS/template-htmx-ext",
+      "commit": "4932fa74143a14620b30b21667c0ce354c3525cb",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/ZEISS+template-htmx-ext.json",
+        "status": "legacy-reference-only",
+        "sha256": "7786bc29c7257ab8a912d78c4d3ba3ca9f9458ef600754b4fd41673d07de077b",
+        "packageCount": 404,
+        "projectCount": 1,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/ZEISS+template-htmx-ext",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        },
+        {
+          "kind": "npm-lock",
+          "distinctPathCount": 1,
+          "examplePaths": ["package-lock.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "Textualize+rich",
+      "repository": "Textualize/rich",
+      "commit": "1d402e0c59f8765e420a5a4440eb2fca7465d1ae",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/Textualize+rich.json",
+        "status": "legacy-reference-only",
+        "sha256": "47816a13aefbc2b08a1a4caf2dbf88b183f1b28fc21b4c66e8f50fac110540af",
+        "packageCount": 53,
+        "projectCount": 1,
+        "issueCodes": ["requirementstxt.unresolved_dependencies"]
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/Textualize+rich",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "poetry-lock",
+          "distinctPathCount": 1,
+          "examplePaths": ["poetry.lock"]
+        },
+        {
+          "kind": "python-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["pyproject.toml"]
+        },
+        {
+          "kind": "python-requirements",
+          "distinctPathCount": 1,
+          "examplePaths": ["docs/requirements.txt"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "encode+httpx",
+      "repository": "encode/httpx",
+      "commit": "ae1b9f66238f75ced3ced5e4485408435de10768",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/encode+httpx.json",
+        "status": "legacy-reference-only",
+        "sha256": "90f5c147d47f1a185e3bfd89bb5702e870fa129a1b19805a2630daae3c304580",
+        "packageCount": 27,
+        "projectCount": 1,
+        "issueCodes": [
+          "pyprojecttoml.unresolved_dependencies",
+          "requirementstxt.unresolved_dependencies",
+          "requirementstxt.unsupported_editable_dependency_declaration"
+        ]
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/encode+httpx",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "python-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["pyproject.toml"]
+        },
+        {
+          "kind": "python-requirements",
+          "distinctPathCount": 1,
+          "examplePaths": ["requirements.txt"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "pdm-project+pdm",
+      "repository": "pdm-project/pdm",
+      "commit": "777f43cf002c8c42dd1f6f785c1f076e2bf1639c",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/pdm-project+pdm.json",
+        "status": "legacy-reference-only",
+        "sha256": "92c0479f88f6663690cb3d8c25d3c5e5dd8d4aa52e47fc72ac7eca663e214714",
+        "packageCount": 165,
+        "projectCount": 15,
+        "issueCodes": [
+          "pyprojecttoml.unresolved_dependencies",
+          "requirementstxt.include_not_followed",
+          "requirementstxt.unresolved_dependencies"
+        ]
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/pdm-project+pdm",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "pdm-lock",
+          "distinctPathCount": 4,
+          "examplePaths": [
+            "pdm.lock",
+            "tests/fixtures/projects/demo-package-has-dep-with-extras/pdm.lock",
+            "tests/fixtures/projects/demo-package/pdm.lock"
+          ]
+        },
+        {
+          "kind": "python-manifest",
+          "distinctPathCount": 15,
+          "examplePaths": [
+            "pyproject.toml",
+            "tests/fixtures/projects/demo-combined-extras/pyproject.toml",
+            "tests/fixtures/projects/demo-package-has-dep-with-extras/pyproject.toml"
+          ]
+        },
+        {
+          "kind": "python-requirements",
+          "distinctPathCount": 5,
+          "examplePaths": [
+            "tests/fixtures/projects/demo-package-has-dep-with-extras/requirements.txt",
+            "tests/fixtures/projects/demo-package/requirements.txt",
+            "tests/fixtures/projects/demo-package/requirements_simple.txt"
+          ]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "pypa+pipenv",
+      "repository": "pypa/pipenv",
+      "commit": "483baf4c69ce400b1dbb269000a51c07ac2b9d89",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/pypa+pipenv.json",
+        "status": "legacy-reference-only",
+        "sha256": "c3bd58cb2596debcf8198858ada309e29bfa6bc7b0d92d8062ee6d4e6254b188",
+        "packageCount": 123,
+        "projectCount": 2,
+        "issueCodes": [
+          "requirementstxt.unresolved_dependencies",
+          "requirementstxt.unsupported_editable_dependency_declaration"
+        ]
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/pypa+pipenv",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "pipenv",
+          "distinctPathCount": 4,
+          "examplePaths": ["Pipfile", "Pipfile.lock", "examples/Pipfile"]
+        },
+        {
+          "kind": "python-requirements",
+          "distinctPathCount": 2,
+          "examplePaths": [
+            "docs/requirements.txt",
+            "tests/fixtures/fake-package/docs/requirements.txt"
+          ]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "django+django",
+      "repository": "django/django",
+      "commit": "c3c9f1908e62eea528377e3788e78594a8361189",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/django+django.json",
+        "status": "legacy-reference-only",
+        "sha256": "b933be4011ba0b37aef5c899c7517d20fef0364f83124c99dee6d59e6eba85b3",
+        "packageCount": 16,
+        "projectCount": 1,
+        "issueCodes": [
+          "pyprojecttoml.unresolved_dependencies",
+          "requirementstxt.unresolved_dependencies"
+        ]
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/django+django",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "javascript-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["package.json"]
+        },
+        {
+          "kind": "python-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["pyproject.toml"]
+        },
+        {
+          "kind": "python-requirements",
+          "distinctPathCount": 1,
+          "examplePaths": ["docs/requirements.txt"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [],
+      "reviewEvidence": []
+    },
+    {
+      "id": "Corvusoft+restbed",
+      "repository": "Corvusoft/restbed",
+      "commit": "e1227a297ce6d4e9f78222456507b29bb8ab77e9",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/Corvusoft+restbed.json",
+        "status": "legacy-reference-only",
+        "sha256": "8838b87c0788d265bffe2b8417a8a0e873b20ad4ea98d8b6be1f91973b5aef40",
+        "packageCount": 6,
+        "projectCount": 1,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/Corvusoft+restbed",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "vcpkg-manifest",
+          "distinctPathCount": 1,
+          "examplePaths": ["vcpkg.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [
+        {
+          "tool": "vcpkg",
+          "version": "2026.04.27",
+          "versionSource": ".github/workflows/integration-tests.yaml",
+          "extractor": "vcpkg",
+          "basis": "legacy-baseline-input-paths",
+          "evidence": [
+            {
+              "path": "vcpkg.json",
+              "fields": ["packages.evidence", "subprojects.definitionFile"]
+            }
+          ]
+        }
+      ],
+      "reviewEvidence": []
+    },
+    {
+      "id": "microsoft+terminal",
+      "repository": "microsoft/terminal",
+      "commit": "b4e69c68620a822407d45bfbba6ee10feebc70a3",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {}
+      },
+      "baseline": {
+        "path": "test/__snapshots__/microsoft+terminal.json",
+        "status": "legacy-reference-only",
+        "sha256": "4e41f2c1af0a01781886a84504a037b1957a5cce3f46c79501a749a823ba6d79",
+        "packageCount": 4,
+        "projectCount": 2,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/microsoft+terminal",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "vcpkg-manifest",
+          "distinctPathCount": 2,
+          "examplePaths": ["dep/vcpkg-overlay-ports/fmt/vcpkg.json", "vcpkg.json"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [
+        {
+          "tool": "vcpkg",
+          "version": "2026.04.27",
+          "versionSource": ".github/workflows/integration-tests.yaml",
+          "extractor": "vcpkg",
+          "basis": "legacy-baseline-input-paths",
+          "evidence": [
+            {
+              "path": "dep/vcpkg-overlay-ports/fmt/vcpkg.json",
+              "fields": ["packages.evidence", "subprojects.definitionFile"]
+            },
+            {
+              "path": "vcpkg.json",
+              "fields": ["packages.evidence", "subprojects.definitionFile"]
+            }
+          ]
+        }
+      ],
+      "reviewEvidence": []
+    },
+    {
+      "id": "rustdesk+rustdesk",
+      "repository": "rustdesk/rustdesk",
+      "commit": "1abc897c451c8b5bbff3792509a7fef9d12f2ce3",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {
+          "gradle": {
+            "ignore": ["**/flutter/**", "**/build/**", "**/.gradle/**"]
+          }
+        }
+      },
+      "baseline": {
+        "path": "test/__snapshots__/rustdesk+rustdesk.json",
+        "status": "legacy-reference-only",
+        "sha256": "0d8574582ae7332a53542fa5477e05f8632639e8bc832bf66047ce6c3f40c15c",
+        "packageCount": 1169,
+        "projectCount": 16,
+        "issueCodes": ["requirementstxt.unresolved_dependencies"]
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/rustdesk+rustdesk",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "cargo",
+          "distinctPathCount": 10,
+          "examplePaths": ["Cargo.lock", "libs/clipboard/Cargo.toml", "libs/enigo/Cargo.toml"]
+        },
+        {
+          "kind": "python-requirements",
+          "distinctPathCount": 1,
+          "examplePaths": ["libs/portable/requirements.txt"]
+        },
+        {
+          "kind": "vcpkg-manifest",
+          "distinctPathCount": 7,
+          "examplePaths": [
+            "res/vcpkg/aom/vcpkg.json",
+            "res/vcpkg/ffmpeg/vcpkg.json",
+            "res/vcpkg/libvpx/vcpkg.json"
+          ]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [
+        {
+          "tool": "vcpkg",
+          "version": "2026.04.27",
+          "versionSource": ".github/workflows/integration-tests.yaml",
+          "extractor": "vcpkg",
+          "basis": "legacy-baseline-input-paths",
+          "evidence": [
+            {
+              "path": "res/vcpkg/aom/vcpkg.json",
+              "fields": ["packages.evidence", "subprojects.definitionFile"]
+            },
+            {
+              "path": "res/vcpkg/ffmpeg/vcpkg.json",
+              "fields": ["packages.evidence", "subprojects.definitionFile"]
+            },
+            {
+              "path": "res/vcpkg/libvpx/vcpkg.json",
+              "fields": ["packages.evidence", "subprojects.definitionFile"]
+            },
+            {
+              "path": "res/vcpkg/libyuv/vcpkg.json",
+              "fields": ["packages.evidence", "subprojects.definitionFile"]
+            },
+            {
+              "path": "res/vcpkg/mfx-dispatch/vcpkg.json",
+              "fields": ["packages.evidence", "subprojects.definitionFile"]
+            },
+            {
+              "path": "res/vcpkg/opus/vcpkg.json",
+              "fields": ["packages.evidence", "subprojects.definitionFile"]
+            },
+            {
+              "path": "vcpkg.json",
+              "fields": ["packages.evidence", "subprojects.definitionFile"]
+            }
+          ]
+        }
+      ],
+      "reviewEvidence": []
+    },
+    {
+      "id": "drogonframework+drogon",
+      "repository": "drogonframework/drogon",
+      "commit": "9784c612762b106adf70a713cf68384d909d2141",
+      "status": "pending-source-review",
+      "configuration": {
+        "requiredTools": [],
+        "extractorOptions": {
+          "conanfile": {
+            "profileBuild": "../packages/analyzer-plugin-conan/src/__fixtures__/profile",
+            "profileHost": "../packages/analyzer-plugin-conan/src/__fixtures__/profile",
+            "conanArgs": ["--build", "*"]
+          }
+        }
+      },
+      "baseline": {
+        "path": "test/__snapshots__/drogonframework+drogon.json",
+        "status": "legacy-reference-only",
+        "sha256": "b30be179592a09d40143b3693f58f7eec36b080d2088474f9d5286f3523d567e",
+        "packageCount": 7,
+        "projectCount": 1,
+        "issueCodes": []
+      },
+      "inputCheckpoint": {
+        "path": "test/repositories/drogonframework+drogon",
+        "status": "missing",
+        "archiveMarkerPresent": false,
+        "nonMarkerTopLevelEntryCount": 0
+      },
+      "historicalInputs": [
+        {
+          "kind": "conan-recipe",
+          "distinctPathCount": 1,
+          "examplePaths": ["conanfile.txt"]
+        }
+      ],
+      "nativeToolsInferredFromLegacyBaseline": [
+        {
+          "tool": "conan",
+          "version": "2.28.1",
+          "versionSource": "mise.toml",
+          "extractor": "conanfile",
+          "basis": "legacy-baseline-input-paths",
+          "evidence": [
+            {
+              "path": "conanfile.txt",
+              "fields": ["packages.evidence", "subprojects.definitionFile"]
+            }
+          ]
+        }
+      ],
+      "reviewEvidence": []
+    }
+  ]
+}

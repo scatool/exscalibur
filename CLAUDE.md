@@ -41,7 +41,12 @@ Integration tests in `test/` run all extractors against real open-source reposit
 Use the explicit file path because downloaded repositories can contain unrelated test files.
 
 **Baseline migration:** integration baselines must be reviewed against pinned native inputs.
-The harness rejects missing/legacy baselines before invoking extractors and never auto-updates them.
+The harness requires a tracked, source-reviewed case in `test/integration-migration.json`
+before invoking extractors and never auto-updates baselines. See
+`test/INTEGRATION_ACCEPTANCE.md` for review evidence and outstanding prerequisites.
+The downloader supports an explicit `--transport git` and repeatable
+`--case owner+repository`; it never switches transports after a failure. Existing
+source directories without matching provenance receipts are preserved and rejected.
 
 **Pitfalls:**
 
