@@ -135,9 +135,8 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
       }
     }
 
-    const resolve = (name: string, reference: string, owner?: string): string | undefined => {
+    const resolve = (name: string, reference: string, owner: string): string | undefined => {
       if (reference.startsWith("link:")) {
-        if (owner === undefined) return undefined;
         return projects.get(normalize(join(owner, reference.slice(5))))?.project.consumer;
       }
       const direct = reference.startsWith("npm:") ? reference.slice(4) : reference;
@@ -207,7 +206,8 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
         if (scope === "peerDependencies") continue;
         for (const [name, value] of Object.entries(table(snapshot, scope))) {
           const reference = dependencyReference(value);
-          const target = resolve(name, reference.version);
+          // Snapshot links are relative to the lockfile root, unlike importer-relative links.
+          const target = resolve(name, reference.version, ".");
           const peer = Object.hasOwn(peers, name);
           const optional =
             scope === "optionalDependencies" || (peer && table(peerMeta, name).optional === true);

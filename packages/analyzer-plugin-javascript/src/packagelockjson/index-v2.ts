@@ -249,7 +249,7 @@ function manifestDrift(locked: NpmRecord, current: NpmRecord): boolean {
     }
     return value;
   };
-  return [...NPM_DEPENDENCY_SCOPES, "peerDependenciesMeta"].some(
+  return [...NPM_DEPENDENCY_SCOPES, "peerDependenciesMeta", "os", "cpu", "libc"].some(
     (scope) =>
       JSON.stringify(normalize(locked[scope] ?? {})) !==
       JSON.stringify(normalize(current[scope] ?? {})),

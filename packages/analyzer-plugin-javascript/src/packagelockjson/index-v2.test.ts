@@ -538,3 +538,57 @@ test("nearer unresolved links shadow ancestor packages and same-PURL views retai
     },
   );
 });
+
+test.each([
+  ["os", ["linux"], ["darwin"]],
+  ["cpu", ["x64"], ["arm64"]],
+  ["libc", ["glibc"], ["musl"]],
+  ["os", undefined, ["linux"]],
+  ["cpu", ["x64"], undefined],
+] as const)(
+  "workspace %s drift preserves locked applicability separately from current manifest",
+  async (field, lockedValue, currentValue) => {
+    const root = { name: "app", dependencies: { ui: "workspace:*" } };
+    const locked = { name: "ui", version: "1.0.0", ...(lockedValue && { [field]: lockedValue }) };
+    const current = {
+      name: "ui",
+      version: "1.0.0",
+      ...(currentValue && { [field]: currentValue }),
+    };
+    await input(
+      {
+        "package.json": root,
+        "packages/ui/package.json": current,
+        "package-lock.json": {
+          lockfileVersion: 3,
+          packages: {
+            "": root,
+            "packages/ui": locked,
+            "node_modules/ui": { link: true, resolved: "packages/ui" },
+          },
+        },
+      },
+      async (directory) => {
+        const result = await extract(directory);
+        const lockedGraph = reached(result).graph;
+        const lockedView = lockedGraph.nodes.find((node) => node.locator === "packages/ui")!;
+        expect(lockedView.attributes?.["npm:platform"]).toEqual(
+          lockedValue ? { [field]: lockedValue } : undefined,
+        );
+        const binding = lockedGraph.edges.find((edge) => edge.from === reached(result).root.node)!;
+        expect(binding.selection).toBe(lockedValue ? "conditional" : "selected");
+        expect(binding.condition?.expression).toEqual(
+          lockedValue ? { [field]: lockedValue } : undefined,
+        );
+        expect(result.issues.some((issue) => issue.code === "npm.manifest_lock_mismatch")).toBe(
+          true,
+        );
+        const declaredGraph = result.graphs.find((graph) => graph.interpretation === "declared")!;
+        const currentView = declaredGraph.nodes.find((node) => node.locator === "packages/ui")!;
+        expect(currentView.attributes?.["npm:platform"]).toEqual(
+          currentValue ? { [field]: currentValue } : undefined,
+        );
+      },
+    );
+  },
+);

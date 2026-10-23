@@ -428,3 +428,42 @@ test("same-PURL local snapshots preserve different selected artifacts", async ()
     },
   );
 });
+
+test("snapshot links use the lockfile root while importer links use the importer directory", async () => {
+  await input(
+    {
+      lockfileVersion: "9.0",
+      importers: {
+        ".": {},
+        "apps/app": {
+          dependencies: {
+            wrapper: { specifier: "1", version: "1.0.0" },
+            ui: { specifier: "workspace:*", version: "link:../../packages/ui" },
+          },
+        },
+        "packages/ui": {},
+      },
+      packages: { "wrapper@1.0.0": {} },
+      snapshots: { "wrapper@1.0.0": { dependencies: { ui: "link:packages/ui" } } },
+    },
+    {
+      "package.json": { name: "root" },
+      "apps/app/package.json": { name: "app", dependencies: { wrapper: "1", ui: "workspace:*" } },
+      "packages/ui/package.json": { name: "ui", version: "1.0.0" },
+    },
+    async (directory) => {
+      const result = await extract(directory);
+      expect(result.issues).toEqual([]);
+      const graph = reached(result, "apps/app/package.json").graph;
+      const wrapper = graph.nodes.find((node) => node.purl === "pkg:npm/wrapper@1.0.0")!;
+      const snapshotEdge = graph.edges.find((edge) => edge.from === wrapper.id)!;
+      expect(snapshotEdge).toMatchObject({ status: "resolved", selection: "selected" });
+      const importerEdge = graph.edges.find(
+        (edge) =>
+          edge.from === reached(result, "apps/app/package.json").root.node &&
+          edge.requested?.name === "ui",
+      )!;
+      expect(importerEdge).toMatchObject({ status: "resolved", to: snapshotEdge.to });
+    },
+  );
+});
