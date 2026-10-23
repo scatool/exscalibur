@@ -115,7 +115,16 @@ export class NpmGraphV2 {
     this.result.subprojects.push({
       ...reference,
       evidence: [definitionFile],
-      ...(!nativeName && { synthesizedPurl: true }),
+      identityObservations: [
+        {
+          source: {
+            extractor: this.extractor,
+            files: [definitionFile],
+            key: JSON.stringify(locator),
+          },
+          synthesizedPurl: !nativeName,
+        },
+      ],
     });
     const consumer = `workspace:${JSON.stringify(locator)}`;
     const platform = platformFields(manifest);

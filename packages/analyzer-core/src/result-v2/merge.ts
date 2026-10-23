@@ -65,11 +65,26 @@ export function mergeResultsV2(
 }
 
 function mergePackage(left: PackageV2, right: PackageV2): PackageV2 {
-  const { evidence: a, artifacts: artifactsA, externalReferences: refsA, ...factsA } = left;
-  const { evidence: b, artifacts: artifactsB, externalReferences: refsB, ...factsB } = right;
+  const {
+    identityObservations: observationsA,
+    evidence: a,
+    artifacts: artifactsA,
+    externalReferences: refsA,
+    ...factsA
+  } = left;
+  const {
+    identityObservations: observationsB,
+    evidence: b,
+    artifacts: artifactsB,
+    externalReferences: refsB,
+    ...factsB
+  } = right;
   return {
     ...mergeCompatible(factsA, factsB, `package '${left.purl}'`),
     evidence: sortedStrings([...a, ...b]),
+    ...((observationsA !== undefined || observationsB !== undefined) && {
+      identityObservations: uniqueRecords([...(observationsA ?? []), ...(observationsB ?? [])]),
+    }),
     ...((artifactsA !== undefined || artifactsB !== undefined) && {
       artifacts: uniqueRecords([...(artifactsA ?? []), ...(artifactsB ?? [])]),
     }),
@@ -80,9 +95,12 @@ function mergePackage(left: PackageV2, right: PackageV2): PackageV2 {
 }
 
 function mergeProject(left: SubprojectV2, right: SubprojectV2): SubprojectV2 {
-  const { evidence: a, ...factsA } = left;
-  const { evidence: b, ...factsB } = right;
+  const { evidence: a, identityObservations: observationsA, ...factsA } = left;
+  const { evidence: b, identityObservations: observationsB, ...factsB } = right;
   return {
+    ...((observationsA !== undefined || observationsB !== undefined) && {
+      identityObservations: uniqueRecords([...(observationsA ?? []), ...(observationsB ?? [])]),
+    }),
     ...mergeCompatible(factsA, factsB, `project '${projectKey(left)}'`),
     ...((a !== undefined || b !== undefined) && {
       evidence: sortedStrings([...(a ?? []), ...(b ?? [])]),

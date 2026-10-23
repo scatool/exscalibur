@@ -83,7 +83,7 @@ test("missing and invalid PURLs preserve parents, descendants and binary subject
   });
   expect(result.packages).toHaveLength(3);
   expect(result.subprojects[0]).toMatchObject({
-    synthesizedPurl: true,
+    identityObservations: [expect.objectContaining({ synthesizedPurl: true })],
     attributes: { "cyclonedx:subject": true },
   });
   expect(PackageURL.fromString(result.subprojects[0]!.purl).type).toBe("generic");

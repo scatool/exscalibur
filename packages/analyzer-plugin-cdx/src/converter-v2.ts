@@ -111,8 +111,14 @@ export function extractCycloneDXV2(
     const existing = catalog.get(purl) ?? {
       purl,
       evidence: [],
-      ...(synthesized && { synthesizedPurl: true }),
     };
+    existing.identityObservations = [
+      ...(existing.identityObservations ?? []),
+      {
+        source: { extractor: "cyclonedx", files: evidence, key: id },
+        synthesizedPurl: synthesized,
+      },
+    ];
     existing.evidence.push(...entityEvidence);
     if (artifacts.length > 0) existing.artifacts = [...(existing.artifacts ?? []), ...artifacts];
     if (externalReferences.length > 0)
@@ -249,7 +255,9 @@ export function extractCycloneDXV2(
     result.subprojects.push({
       ...project,
       evidence,
-      ...(catalog.get(node.purl)!.synthesizedPurl && { synthesizedPurl: true }),
+      identityObservations: catalog
+        .get(node.purl)!
+        .identityObservations!.filter((item) => item.source.key === node.id),
       attributes: { "cyclonedx:subject": true, "cyclonedx:reference": node.locator ?? subject },
     });
     roots.push({ id: "subject/dependencies", project, scope: "dependencies", node: subject });

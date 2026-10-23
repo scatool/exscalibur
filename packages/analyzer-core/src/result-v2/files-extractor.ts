@@ -133,11 +133,15 @@ function rebasePaths(input: AnalyzerResultV2, codebase: string): AnalyzerResultV
   const evidence = (values: string[] | undefined) => values?.map(rebase);
   for (const pkg of result.packages) {
     pkg.evidence = evidence(pkg.evidence)!;
+    for (const observation of pkg.identityObservations ?? [])
+      observation.source.files = evidence(observation.source.files)!;
     for (const artifact of pkg.artifacts ?? []) artifact.evidence = evidence(artifact.evidence)!;
   }
   for (const project of result.subprojects) {
     project.definitionFile = rebase(project.definitionFile);
     if (project.evidence) project.evidence = evidence(project.evidence);
+    for (const observation of project.identityObservations ?? [])
+      observation.source.files = evidence(observation.source.files)!;
   }
   for (const graph of result.graphs) {
     graph.source.files = graph.source.files.map(rebase);

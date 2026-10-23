@@ -17,12 +17,23 @@ export type Artifact = {
   attributes?: JsonObject;
 };
 
+/** An assertion about how one source assigned coordinates, not an intrinsic identity fact. */
+export type IdentityObservation = {
+  source: {
+    extractor: string;
+    files: string[];
+    /** Native entity or observation key when needed to distinguish assertions from one input. */
+    key?: string;
+  };
+  /** False explicitly reports native coordinates; absence of an observation makes no assertion. */
+  synthesizedPurl: boolean;
+};
+
 /** Catalog identity. Generic and versionless PURLs are valid; a PURL is always required. */
 export type PackageV2 = {
   purl: string;
   evidence: string[];
-  /** True only when a fallback identity was synthesized rather than found in native coordinates. */
-  synthesizedPurl?: boolean;
+  identityObservations?: IdentityObservation[];
   /** Package-level observations, not a claim that every view represents every artifact. */
   artifacts?: Artifact[];
   externalReferences?: ExternalReference[];
@@ -38,7 +49,7 @@ export type ProjectReference = {
 /** A source project or imported analyzed subject; definitionFile names its describing input. */
 export type SubprojectV2 = ProjectReference & {
   evidence?: string[];
-  synthesizedPurl?: boolean;
+  identityObservations?: IdentityObservation[];
   attributes?: JsonObject;
 };
 
@@ -216,8 +227,12 @@ export type DependencyClosure = {
   interpretation: DependencyGraph["interpretation"];
   /** Graph-local node IDs, excluding the starting root. Not a claim of runtime usage. */
   definite: string[];
+  /** Reachable on a path not proven definite; alternative paths are not combined into tautologies. */
   conditional: string[];
   declarations: ReachableDeclaration[];
-  /** Established resolved closure, accounting for unknown selection and unresolved targets. */
+  /**
+   * Completeness for this exact root, independent of root enumeration. Unknown dominates partial,
+   * which dominates complete; unresolved targets and unproven membership can lower completeness.
+   */
   completeness: Completeness;
 };

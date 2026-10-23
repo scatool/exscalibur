@@ -128,8 +128,14 @@ export function extractSpdxV2(
     const pkg = catalog.get(purl) ?? {
       purl,
       evidence,
-      ...(purls.size === 0 && { synthesizedPurl: true }),
     };
+    pkg.identityObservations = [
+      ...(pkg.identityObservations ?? []),
+      {
+        source: { extractor: "spdx", files: evidence, key: id },
+        synthesizedPurl: purls.size === 0,
+      },
+    ];
     if (artifacts.length > 0) pkg.artifacts = [...(pkg.artifacts ?? []), ...artifacts];
     if (externalReferences.length > 0)
       pkg.externalReferences = [...(pkg.externalReferences ?? []), ...externalReferences];
@@ -313,7 +319,9 @@ export function extractSpdxV2(
     result.subprojects.push({
       ...project,
       evidence,
-      ...(catalog.get(subject.purl)!.synthesizedPurl && { synthesizedPurl: true }),
+      identityObservations: catalog
+        .get(subject.purl)!
+        .identityObservations!.filter((item) => item.source.key === subject.id),
       attributes: { "spdx:subject": true, "spdx:reference": subject.locator! },
     });
     for (const scope of nativeScopes.get(id) ?? ["dependencies"]) {

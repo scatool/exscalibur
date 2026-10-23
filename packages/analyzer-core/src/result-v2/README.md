@@ -5,6 +5,10 @@ This is the opt-in replacement for the PURL-keyed relationship model. The existi
 `AnalyzerResultV2` has an independent `formatVersion: 2`; `Extractor.version` describes
 the extractor interface, not the serialized result format.
 
+The [wire contract](./WIRE_FORMAT.md) defines portable encoding, validation and
+conformance. [Identity provenance](./provenance.md) explains source-scoped coordinate
+assertions and their merge behavior.
+
 ## Identity and topology
 
 Every package, project and dependency view has a valid, canonical **PURL**. Generic
@@ -105,6 +109,30 @@ activation or synthesize the transitive effects of newly requested extras. Those
 changes require a native resolved observation or an explicit condition evaluator
 with sufficient source data.
 
+### Conservative query contract
+
+`definite` means at least one traversed path was proven applicable. `conditional`
+means reachable along a path not proven definite; it does not prove that membership
+actually varies between environments. In particular, alternative paths guarded by
+`P` and `not P` are not combined into a tautology. An evaluator interprets each
+path conjunction, not the disjunction of all paths to a view.
+
+Closure completeness is independent of `rootCompleteness`: an incompletely enumerated
+root list can still contain a root whose closure is fully known. For the selected
+root, start at `complete`, then combine reachable adjacency using
+`complete < partial < unknown`. A reachable unresolved target contributes `partial`;
+a declaration without resolution contributes `unknown`. Remaining conditional view
+membership contributes `partial`. False paths, excluded edges and constraints do
+not contribute. This is conservative: unknown adjacency on a possibly applicable
+path still contributes `unknown`.
+
+Predicate sets can create exponentially many traversal states, even in small graphs.
+`maxStates` bounds the number of distinct path states processed (default 100,000).
+It must be a positive safe integer. Exceeding the budget throws without returning a
+closure; callers may explicitly retry with a larger budget. No predicates are dropped
+and no truncated result is presented as complete. This is a state budget, not a time
+or memory guarantee; graph validation and user-supplied evaluators are separate work.
+
 ## Variants, artifacts and extension data
 
 `view.variant` records observed producer/build selection. `enabledFeatures` is the
@@ -150,7 +178,7 @@ IDs and edge selection/status consistency. Normalization sorts set-like arrays a
 preserves arbitrary JSON metadata, including native keys named `constructor` or
 `__proto__`. It does not reconstruct a reduced object that silently drops fields.
 
-## Alternatives reviewed with Astra
+## Design alternatives
 
 | Alternative                                            | Assessment                                                                                   |
 | ------------------------------------------------------ | -------------------------------------------------------------------------------------------- |

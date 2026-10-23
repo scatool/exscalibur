@@ -18,7 +18,10 @@ const extractor = filesExtractorV2({
   extractFile: async (file, _options, context) => {
     const version = (await readFile(file, "utf8")).trim();
     if (version === "broken") throw new Error("Broken test input");
-    const project = { purl: projectPurl, definitionFile: file };
+    const identityObservations = [
+      { source: { extractor: "contract-files", files: [file] }, synthesizedPurl: false },
+    ];
+    const project = { purl: projectPurl, definitionFile: file, identityObservations };
     const dependency = `pkg:npm/react@${version}`;
     const graph: DependencyGraph = {
       id: "native-graph",
@@ -55,7 +58,7 @@ const extractor = filesExtractorV2({
     return {
       ...createEmptyResultV2(context.codebaseId),
       subprojects: [project],
-      packages: [{ purl: dependency, evidence: [`${file}#1`] }],
+      packages: [{ purl: dependency, evidence: [`${file}#1`], identityObservations }],
       graphs: [graph],
     };
   },
@@ -77,6 +80,16 @@ test("file assembly namespaces native graph IDs while retaining graph-local node
   await inputs(async (directory) => {
     const result = await extractor.extract(directory, undefined, { codebaseId: "example:repo" });
     expect(result.codebase).toBe("example:repo");
+    expect(
+      result.packages.flatMap((pkg) =>
+        pkg.identityObservations!.flatMap((item) => item.source.files),
+      ),
+    ).toEqual(["a/input.txt", "b/input.txt"]);
+    expect(
+      result.subprojects.flatMap((project) =>
+        project.identityObservations!.flatMap((item) => item.source.files),
+      ),
+    ).toEqual(["a/input.txt", "b/input.txt"]);
     expect(result.graphs).toHaveLength(2);
     expect(new Set(result.graphs.map((graph) => graph.id)).size).toBe(2);
     expect(result.subprojects.map((project) => project.definitionFile)).toEqual([

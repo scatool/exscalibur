@@ -30,8 +30,14 @@ export function queryDependenciesV2(
     /** Explicit query environment; observed graph/root context is separately available to the evaluator. */
     context?: JsonObject;
     evaluateCondition?: ConditionEvaluator;
+    /** Maximum distinct path states; exceeding it throws rather than returning a truncated closure. */
+    maxStates?: number;
   },
 ): DependencyClosure {
+  const maxStates = options.maxStates ?? 100_000;
+  if (!Number.isSafeInteger(maxStates) || maxStates < 1) {
+    throw new Error("maxStates must be a positive safe integer");
+  }
   const result = parseResultV2(input);
   const graph = result.graphs.find((item) => item.id === options.graph);
   if (!graph) throw new Error(`Unknown dependency graph: ${options.graph}`);
@@ -65,6 +71,11 @@ export function queryDependenciesV2(
     const state = pending.pop()!;
     const stateKey = canonicalJson(state);
     if (visited.has(stateKey)) continue;
+    if (visited.size >= maxStates) {
+      throw new Error(
+        `Dependency query exceeded maxStates (${maxStates}); no closure was returned`,
+      );
+    }
     visited.add(stateKey);
     const truth = evaluate(state.conditions);
     if (truth === "false") continue;

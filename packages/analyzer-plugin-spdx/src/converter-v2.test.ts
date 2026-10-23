@@ -176,7 +176,7 @@ test("explicit identity conflicts fail while a valid alternative PURL takes prec
     },
   ]);
   expect(result.subprojects[0]!.purl).toBe("pkg:npm/app@1");
-  expect(result.subprojects[0]!.synthesizedPurl).toBeUndefined();
+  expect(result.subprojects[0]!.identityObservations?.[0]?.synthesizedPurl).toBe(false);
 });
 
 test("all native SPDX fixture serializations produce valid graphs without dropping PURL-less packages", async () => {

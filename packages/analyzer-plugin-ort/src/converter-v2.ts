@@ -123,18 +123,28 @@ export function convertOrtResultV2(
     result.subprojects.push({
       ...reference,
       evidence,
-      ...(subject.synthesized && { synthesizedPurl: true }),
+      identityObservations: [
+        {
+          source: { extractor: "ort", files: evidence, key: project.id },
+          synthesizedPurl: subject.synthesized,
+        },
+      ],
     });
   }
   for (const pkg of source.packages ?? []) {
     const subject = identity(pkg.id);
-    if (!packages.has(subject.purl)) {
-      packages.set(subject.purl, {
-        purl: subject.purl,
-        evidence,
-        ...(subject.synthesized && { synthesizedPurl: true }),
-      });
-    }
+    packages.set(subject.purl, {
+      ...packages.get(subject.purl),
+      purl: subject.purl,
+      evidence,
+      identityObservations: [
+        ...(packages.get(subject.purl)?.identityObservations ?? []),
+        {
+          source: { extractor: "ort", files: evidence, key: pkg.id },
+          synthesizedPurl: subject.synthesized,
+        },
+      ],
+    });
   }
 
   const globalIssues = (id: string) => source.issues?.[id] ?? [];
@@ -189,11 +199,17 @@ export function convertOrtResultV2(
               : project?.definitionFile || options.evidenceFile,
         });
       }
-      if (!project && !packages.has(subject.purl)) {
+      if (!project) {
         packages.set(subject.purl, {
           purl: subject.purl,
           evidence,
-          ...(subject.synthesized && { synthesizedPurl: true }),
+          identityObservations: [
+            ...(packages.get(subject.purl)?.identityObservations ?? []),
+            {
+              source: { extractor: "ort", files: evidence, key: id },
+              synthesizedPurl: subject.synthesized,
+            },
+          ],
         });
       }
       if (!nodes.has(key)) {

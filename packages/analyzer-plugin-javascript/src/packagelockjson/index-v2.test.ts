@@ -327,7 +327,7 @@ test("unresolved requests and unnamed projects are explicit without fabricated v
     async (directory) => {
       const result = await extract(directory);
       expect(PackageURL.fromString(result.subprojects[0]!.purl).type).toBe("generic");
-      expect(result.subprojects[0]!.synthesizedPurl).toBe(true);
+      expect(result.subprojects[0]!.identityObservations?.[0]?.synthesizedPurl).toBe(true);
       expect(result.packages).toEqual([]);
       expect(reached(result).declarations[0]!.dependency.requested.specifier).toBe("^2");
       expect(reached(result).completeness).toBe("partial");

@@ -1,0 +1,587 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://scatool.github.io/exscalibur/analyzer-result-v2.schema.json",
+  "title": "Analyzer result format 2",
+  "description": "Structural contract. Canonical PURLs, unique identity keys and graph references require semantic validation described in WIRE_FORMAT.md.",
+  "type": "object",
+  "properties": {
+    "formatVersion": {
+      "const": 2
+    },
+    "codebase": {
+      "$ref": "#/$defs/text"
+    },
+    "packages": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/package"
+      }
+    },
+    "subprojects": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/subproject"
+      }
+    },
+    "graphs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/graph"
+      }
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/issue"
+      }
+    }
+  },
+  "required": ["formatVersion", "codebase", "packages", "subprojects", "graphs", "issues"],
+  "additionalProperties": {
+    "$ref": "#/$defs/json"
+  },
+  "$defs": {
+    "text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "purl": {
+      "type": "string",
+      "pattern": "^pkg:",
+      "description": "Must also be a valid canonical Package URL (semantic validation)."
+    },
+    "number": {
+      "type": "number",
+      "minimum": -9007199254740991,
+      "maximum": 9007199254740991,
+      "description": "Finite IEEE 754 binary64. Integers outside the safe range must be strings."
+    },
+    "json": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "boolean"
+        },
+        {
+          "$ref": "#/$defs/number"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/json"
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/json"
+          }
+        }
+      ]
+    },
+    "attributes": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/json"
+      }
+    },
+    "strings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/text"
+      }
+    },
+    "completeness": {
+      "enum": ["complete", "partial", "unknown"]
+    },
+    "projectReference": {
+      "type": "object",
+      "properties": {
+        "purl": {
+          "$ref": "#/$defs/purl"
+        },
+        "definitionFile": {
+          "$ref": "#/$defs/text"
+        }
+      },
+      "required": ["purl", "definitionFile"],
+      "additionalProperties": {
+        "$ref": "#/$defs/json"
+      }
+    },
+    "identityObservation": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "type": "object",
+          "properties": {
+            "extractor": {
+              "$ref": "#/$defs/text"
+            },
+            "files": {
+              "$ref": "#/$defs/strings"
+            },
+            "key": {
+              "$ref": "#/$defs/text"
+            }
+          },
+          "required": ["extractor", "files"],
+          "additionalProperties": {
+            "$ref": "#/$defs/json"
+          }
+        },
+        "synthesizedPurl": {
+          "type": "boolean"
+        }
+      },
+      "required": ["source", "synthesizedPurl"],
+      "additionalProperties": {
+        "$ref": "#/$defs/json"
+      }
+    },
+    "artifact": {
+      "type": "object",
+      "properties": {
+        "purl": {
+          "$ref": "#/$defs/purl"
+        },
+        "location": {
+          "$ref": "#/$defs/text"
+        },
+        "hashes": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/text"
+          },
+          "propertyNames": {
+            "minLength": 1
+          }
+        },
+        "evidence": {
+          "$ref": "#/$defs/strings"
+        },
+        "attributes": {
+          "$ref": "#/$defs/attributes"
+        }
+      },
+      "required": ["evidence"],
+      "additionalProperties": {
+        "$ref": "#/$defs/json"
+      }
+    },
+    "package": {
+      "type": "object",
+      "properties": {
+        "purl": {
+          "$ref": "#/$defs/purl"
+        },
+        "evidence": {
+          "$ref": "#/$defs/strings"
+        },
+        "identityObservations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/identityObservation"
+          }
+        },
+        "artifacts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact"
+          }
+        },
+        "externalReferences": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "enum": ["vcs", "sourceArtifact"]
+              },
+              "locator": {
+                "$ref": "#/$defs/text"
+              }
+            },
+            "required": ["type", "locator"],
+            "additionalProperties": {
+              "$ref": "#/$defs/json"
+            }
+          }
+        },
+        "attributes": {
+          "$ref": "#/$defs/attributes"
+        },
+        "synthesizedPurl": false
+      },
+      "required": ["purl", "evidence"],
+      "additionalProperties": {
+        "$ref": "#/$defs/json"
+      }
+    },
+    "subproject": {
+      "type": "object",
+      "properties": {
+        "purl": {
+          "$ref": "#/$defs/purl"
+        },
+        "definitionFile": {
+          "$ref": "#/$defs/text"
+        },
+        "evidence": {
+          "$ref": "#/$defs/strings"
+        },
+        "identityObservations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/identityObservation"
+          }
+        },
+        "attributes": {
+          "$ref": "#/$defs/attributes"
+        },
+        "synthesizedPurl": false
+      },
+      "required": ["purl", "definitionFile"],
+      "additionalProperties": {
+        "$ref": "#/$defs/json"
+      }
+    },
+    "condition": {
+      "type": "object",
+      "properties": {
+        "language": {
+          "$ref": "#/$defs/text"
+        },
+        "expression": {
+          "$ref": "#/$defs/json"
+        },
+        "environment": {
+          "$ref": "#/$defs/text"
+        }
+      },
+      "required": ["language", "expression"],
+      "additionalProperties": {
+        "$ref": "#/$defs/json"
+      }
+    },
+    "request": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/text"
+        },
+        "name": {
+          "$ref": "#/$defs/text"
+        },
+        "specifier": {
+          "$ref": "#/$defs/text"
+        },
+        "purl": {
+          "$ref": "#/$defs/purl"
+        },
+        "features": {
+          "$ref": "#/$defs/strings"
+        },
+        "condition": {
+          "$ref": "#/$defs/condition"
+        },
+        "attributes": {
+          "$ref": "#/$defs/attributes"
+        }
+      },
+      "required": [],
+      "additionalProperties": {
+        "$ref": "#/$defs/json"
+      },
+      "anyOf": [
+        {
+          "required": ["name"]
+        },
+        {
+          "required": ["specifier"]
+        },
+        {
+          "required": ["purl"]
+        },
+        {
+          "required": ["attributes"],
+          "properties": {
+            "attributes": {
+              "minProperties": 1
+            }
+          }
+        }
+      ]
+    },
+    "edge": {
+      "type": "object",
+      "properties": {
+        "from": {
+          "$ref": "#/$defs/text"
+        },
+        "to": {
+          "$ref": "#/$defs/text"
+        },
+        "status": {
+          "enum": ["resolved", "declared", "unresolved"]
+        },
+        "relation": {
+          "enum": ["depends-on", "constrains"]
+        },
+        "kind": {
+          "$ref": "#/$defs/text"
+        },
+        "optional": {
+          "type": "boolean"
+        },
+        "requested": {
+          "$ref": "#/$defs/request"
+        },
+        "selection": {
+          "enum": ["selected", "conditional", "excluded", "unknown"]
+        },
+        "condition": {
+          "$ref": "#/$defs/condition"
+        },
+        "evidence": {
+          "$ref": "#/$defs/strings"
+        },
+        "attributes": {
+          "$ref": "#/$defs/attributes"
+        }
+      },
+      "required": ["from", "status", "relation", "selection"],
+      "additionalProperties": {
+        "$ref": "#/$defs/json"
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "resolved"
+              }
+            }
+          },
+          "then": {
+            "required": ["to"]
+          },
+          "else": {
+            "required": ["requested"],
+            "not": {
+              "required": ["to"]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "selection": {
+                "const": "conditional"
+              }
+            }
+          },
+          "then": {
+            "required": ["condition"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "selection": {
+                "enum": ["selected", "excluded"]
+              }
+            }
+          },
+          "then": {
+            "not": {
+              "required": ["condition"]
+            }
+          }
+        }
+      ]
+    },
+    "view": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/text"
+        },
+        "purl": {
+          "$ref": "#/$defs/purl"
+        },
+        "project": {
+          "$ref": "#/$defs/projectReference"
+        },
+        "locator": {
+          "type": "string"
+        },
+        "dependencyCompleteness": {
+          "$ref": "#/$defs/completeness"
+        },
+        "variant": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "$ref": "#/$defs/text"
+            },
+            "attributes": {
+              "$ref": "#/$defs/attributes"
+            },
+            "enabledFeatures": {
+              "$ref": "#/$defs/strings"
+            }
+          },
+          "required": [],
+          "additionalProperties": {
+            "$ref": "#/$defs/json"
+          }
+        },
+        "artifacts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact"
+          }
+        },
+        "evidence": {
+          "$ref": "#/$defs/strings"
+        },
+        "attributes": {
+          "$ref": "#/$defs/attributes"
+        }
+      },
+      "required": ["id", "purl", "dependencyCompleteness"],
+      "additionalProperties": {
+        "$ref": "#/$defs/json"
+      }
+    },
+    "root": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/text"
+        },
+        "project": {
+          "$ref": "#/$defs/projectReference"
+        },
+        "scope": {
+          "$ref": "#/$defs/text"
+        },
+        "node": {
+          "$ref": "#/$defs/text"
+        },
+        "context": {
+          "$ref": "#/$defs/attributes"
+        },
+        "evidence": {
+          "$ref": "#/$defs/strings"
+        }
+      },
+      "required": ["id", "project", "scope", "node"],
+      "additionalProperties": {
+        "$ref": "#/$defs/json"
+      }
+    },
+    "graph": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/text"
+        },
+        "source": {
+          "type": "object",
+          "properties": {
+            "extractor": {
+              "$ref": "#/$defs/text"
+            },
+            "files": {
+              "$ref": "#/$defs/strings"
+            },
+            "key": {
+              "$ref": "#/$defs/text"
+            },
+            "tool": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "$ref": "#/$defs/text"
+                },
+                "version": {
+                  "$ref": "#/$defs/text"
+                }
+              },
+              "required": ["name"],
+              "additionalProperties": {
+                "$ref": "#/$defs/json"
+              }
+            }
+          },
+          "required": ["extractor", "files"],
+          "additionalProperties": {
+            "$ref": "#/$defs/json"
+          }
+        },
+        "interpretation": {
+          "enum": ["declared", "locked", "resolved", "installed", "unknown"]
+        },
+        "context": {
+          "$ref": "#/$defs/attributes"
+        },
+        "rootCompleteness": {
+          "$ref": "#/$defs/completeness"
+        },
+        "roots": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/root"
+          }
+        },
+        "nodes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/view"
+          }
+        },
+        "edges": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/edge"
+          }
+        },
+        "attributes": {
+          "$ref": "#/$defs/attributes"
+        }
+      },
+      "required": ["id", "source", "interpretation", "rootCompleteness", "roots", "nodes", "edges"],
+      "additionalProperties": {
+        "$ref": "#/$defs/json"
+      }
+    },
+    "issue": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "$ref": "#/$defs/text"
+        },
+        "message": {
+          "$ref": "#/$defs/text"
+        },
+        "severity": {
+          "enum": ["HINT", "WARNING", "ERROR"]
+        },
+        "file": {
+          "$ref": "#/$defs/text"
+        }
+      },
+      "required": ["code", "message", "severity"],
+      "additionalProperties": {
+        "$ref": "#/$defs/json"
+      }
+    }
+  }
+}

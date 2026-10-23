@@ -1,5 +1,6 @@
 import { PackageURL } from "packageurl-js";
 import { z } from "zod";
+import { isPortableJsonNumber } from "./json.ts";
 import type { AnalyzerResultV2, JsonValue, ProjectReference } from "./types.ts";
 
 const text = z.string().min(1);
@@ -20,6 +21,10 @@ const purl = text.refine((value) => {
 
 // Preserve additive JSON fields instead of silently stripping fields from newer producers.
 const object = <T extends z.ZodRawShape>(shape: T) => z.object(shape).catchall(json);
+const identityObservation = object({
+  source: object({ extractor: text, files: strings, key: text.optional() }),
+  synthesizedPurl: z.boolean(),
+});
 const condition = object({ language: text, expression: json, environment: text.optional() });
 const projectReference = object({ purl, definitionFile: text });
 const artifact = object({
@@ -108,7 +113,8 @@ export const analyzerResultV2Schema = object({
     object({
       purl,
       evidence: strings,
-      synthesizedPurl: z.boolean().optional(),
+      synthesizedPurl: z.never().optional(),
+      identityObservations: z.array(identityObservation).optional(),
       artifacts: z.array(artifact).optional(),
       externalReferences: z
         .array(object({ type: z.enum(["vcs", "sourceArtifact"]), locator: text }))
@@ -120,7 +126,8 @@ export const analyzerResultV2Schema = object({
     object({
       ...projectReference.shape,
       evidence: strings.optional(),
-      synthesizedPurl: z.boolean().optional(),
+      synthesizedPurl: z.never().optional(),
+      identityObservations: z.array(identityObservation).optional(),
       attributes: attributes.optional(),
     }),
   ),
@@ -194,7 +201,7 @@ export function parseResultV2(value: unknown): AnalyzerResultV2 {
 
 function isJson(value: unknown, ancestors = new Set<object>()): value is JsonValue {
   if (value === null || typeof value === "string" || typeof value === "boolean") return true;
-  if (typeof value === "number") return Number.isFinite(value);
+  if (typeof value === "number") return isPortableJsonNumber(value);
   if (typeof value !== "object" || ancestors.has(value)) return false;
   const prototype = Object.getPrototypeOf(value);
   if (!Array.isArray(value) && prototype !== Object.prototype && prototype !== null) return false;

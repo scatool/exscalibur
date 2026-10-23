@@ -554,3 +554,56 @@ test("illegal selection/declaration states are rejected instead of interpreted h
     ).toThrow();
   }
 });
+
+test("alternative unknown predicates do not prove definite membership by disjunction", () => {
+  const result = fixture();
+  replaceEdges(result, [
+    {
+      ...edge("a", "foo-a"),
+      selection: "conditional",
+      condition: { language: "test", expression: "P" },
+    },
+    {
+      ...edge("a", "foo-a"),
+      selection: "conditional",
+      condition: { language: "test", expression: "not P" },
+    },
+  ]);
+  expect(closure(result)).toMatchObject({
+    definite: [],
+    conditional: ["foo-a"],
+    completeness: "partial",
+  });
+  expect(
+    closure(result, "a/dependencies", ({ conditions }) =>
+      conditions.some(({ condition }) => condition.expression === "P") ? "true" : "false",
+    ),
+  ).toMatchObject({ definite: ["foo-a"], conditional: [], completeness: "complete" });
+});
+
+test("root enumeration and exact-root closure completeness are independent", () => {
+  const result = fixture();
+  result.graphs[0]!.rootCompleteness = "unknown";
+  expect(closure(result).completeness).toBe("complete");
+  result.graphs[0]!.nodes.find((node) => node.id === "foo-a")!.dependencyCompleteness = "partial";
+  expect(closure(result).completeness).toBe("partial");
+  result.graphs[0]!.nodes.find((node) => node.id === "react18")!.dependencyCompleteness = "unknown";
+  expect(closure(result).completeness).toBe("unknown");
+});
+
+test("query state budgets fail explicitly without returning a truncated closure", () => {
+  const result = fixture();
+  const options = { graph: result.graphs[0]!.id, root: "a/dependencies" };
+  expect(() => queryDependenciesV2(result, { ...options, maxStates: 2 })).toThrow(
+    "exceeded maxStates",
+  );
+  expect(queryDependenciesV2(result, { ...options, maxStates: 3 })).toEqual(closure(result));
+  // A repeated cycle state does not consume another budget unit.
+  result.graphs[0]!.edges.push(edge("react18", "a"));
+  expect(queryDependenciesV2(result, { ...options, maxStates: 3 })).toEqual(closure(result));
+  for (const maxStates of [0, -1, 1.5, Infinity, NaN, Number.MAX_SAFE_INTEGER + 1]) {
+    expect(() => queryDependenciesV2(result, { ...options, maxStates })).toThrow(
+      "positive safe integer",
+    );
+  }
+});

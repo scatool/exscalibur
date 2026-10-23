@@ -99,8 +99,18 @@ export class CargoObservation {
     const pkg: PackageV2 = existing ?? {
       purl: node.purl,
       evidence: [this.options.evidenceFile],
-      ...(synthesizedPurl && { synthesizedPurl }),
     };
+    pkg.identityObservations = [
+      ...(pkg.identityObservations ?? []),
+      {
+        source: {
+          extractor: this.extractor,
+          files: [this.options.evidenceFile],
+          key: JSON.stringify([this.key, node.id]),
+        },
+        synthesizedPurl: synthesizedPurl === true,
+      },
+    ];
     if (node.artifacts) pkg.artifacts = [...(pkg.artifacts ?? []), ...node.artifacts];
     this.packages.set(node.purl, pkg);
   }
@@ -115,7 +125,11 @@ export class CargoObservation {
     this.result.subprojects.push({
       ...project,
       evidence: [this.options.evidenceFile],
-      ...(this.packages.get(node.purl)!.synthesizedPurl && { synthesizedPurl: true }),
+      identityObservations: this.packages
+        .get(node.purl)!
+        .identityObservations!.filter(
+          (item) => item.source.key === JSON.stringify([this.key, node.id]),
+        ),
       attributes: { "cargo:packageId": node.locator ?? id, "cargo:projectSource": origin },
     });
     return project;

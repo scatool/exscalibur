@@ -58,7 +58,7 @@ test("unnamed source projects have stable generic PURLs and known empty scopes",
     });
     expect(first).toEqual(second);
     expect(first.subprojects[0]).toMatchObject({
-      synthesizedPurl: true,
+      identityObservations: [expect.objectContaining({ synthesizedPurl: true })],
       definitionFile: "package.json",
     });
     expect(first.subprojects[0]!.purl).toMatch(/^pkg:generic\//);

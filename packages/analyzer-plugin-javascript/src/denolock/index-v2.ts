@@ -491,8 +491,14 @@ class DenoObservation {
     const pkg = this.packages.get(purl) ?? {
       purl,
       evidence,
-      ...(synthesizedPurl && { synthesizedPurl: true }),
     };
+    pkg.identityObservations = [
+      ...(pkg.identityObservations ?? []),
+      {
+        source: { extractor: "denolock", files: evidence, key: JSON.stringify([this.key, id]) },
+        synthesizedPurl,
+      },
+    ];
     if (artifact) pkg.artifacts = [...(pkg.artifacts ?? []), artifact];
     this.packages.set(purl, pkg);
     this.nodes.set(id, {
@@ -525,7 +531,12 @@ class DenoObservation {
     this.result.subprojects.push({
       ...project,
       evidence: [definitionFile],
-      ...(!name && { synthesizedPurl: true }),
+      identityObservations: [
+        {
+          source: { extractor: "denolock", files: [definitionFile], key: this.key },
+          synthesizedPurl: !name,
+        },
+      ],
       attributes: {
         "deno:projectKind": kind,
         "deno:configuration": json(

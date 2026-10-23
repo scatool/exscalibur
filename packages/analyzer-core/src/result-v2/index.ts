@@ -11,6 +11,7 @@ export type {
   DependencyRequest,
   DependencyRoot,
   DependencyView,
+  IdentityObservation,
   JsonObject,
   JsonValue,
   PackageV2,
@@ -33,3 +34,5 @@ export type {
   FileExtractionContextV2,
   FilesExtractorV2,
 } from "./files-extractor.ts";
+
+export { default as analyzerResultV2JsonSchema } from "./analyzer-result-v2.schema.json" with { type: "json" };

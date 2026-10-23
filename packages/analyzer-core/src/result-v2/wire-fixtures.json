@@ -1,0 +1,615 @@
+[
+  {
+    "name": "empty result",
+    "valid": true,
+    "result": {
+      "formatVersion": 2,
+      "codebase": "example:wire",
+      "packages": [],
+      "subprojects": [],
+      "graphs": [],
+      "issues": []
+    }
+  },
+  {
+    "name": "portable values and additive fields",
+    "valid": true,
+    "result": {
+      "formatVersion": 2,
+      "codebase": "example:wire",
+      "packages": [],
+      "subprojects": [],
+      "graphs": [],
+      "issues": [],
+      "vendor:data": {
+        "null": null,
+        "empty": [],
+        "zero": 0,
+        "fraction": 0.125,
+        "maximum": 9007199254740991,
+        "minimum": -9007199254740991,
+        "largeInteger": "9007199254740992",
+        "10": 0,
+        "2": 0
+      }
+    }
+  },
+  {
+    "name": "unsupported wire version",
+    "valid": false,
+    "result": {
+      "formatVersion": 3,
+      "codebase": "example:wire",
+      "packages": [],
+      "subprojects": [],
+      "graphs": [],
+      "issues": []
+    }
+  },
+  {
+    "name": "null required collection",
+    "valid": false,
+    "result": {
+      "formatVersion": 2,
+      "codebase": "example:wire",
+      "packages": null,
+      "subprojects": [],
+      "graphs": [],
+      "issues": []
+    }
+  },
+  {
+    "name": "unsafe positive integer",
+    "valid": false,
+    "result": {
+      "formatVersion": 2,
+      "codebase": "example:wire",
+      "packages": [],
+      "subprojects": [],
+      "graphs": [],
+      "issues": [],
+      "vendor:number": 9007199254740992
+    }
+  },
+  {
+    "name": "unsafe negative integer",
+    "valid": false,
+    "result": {
+      "formatVersion": 2,
+      "codebase": "example:wire",
+      "packages": [],
+      "subprojects": [],
+      "graphs": [],
+      "issues": [],
+      "vendor:number": -9007199254740992
+    }
+  },
+  {
+    "name": "null optional field",
+    "valid": false,
+    "result": {
+      "formatVersion": 2,
+      "codebase": "example:wire",
+      "packages": [
+        {
+          "purl": "pkg:npm/a@1",
+          "evidence": [],
+          "artifacts": null
+        }
+      ],
+      "subprojects": [],
+      "graphs": [],
+      "issues": []
+    }
+  },
+  {
+    "name": "source scoped identity assertions",
+    "valid": true,
+    "result": {
+      "formatVersion": 2,
+      "codebase": "example:wire",
+      "packages": [
+        {
+          "purl": "pkg:generic/a",
+          "evidence": [],
+          "identityObservations": [
+            {
+              "source": {
+                "extractor": "one",
+                "files": ["a.json"]
+              },
+              "synthesizedPurl": true
+            },
+            {
+              "source": {
+                "extractor": "two",
+                "files": ["b.json"]
+              },
+              "synthesizedPurl": false
+            }
+          ]
+        }
+      ],
+      "subprojects": [],
+      "graphs": [],
+      "issues": []
+    }
+  },
+  {
+    "name": "missing required collection",
+    "valid": false,
+    "result": {
+      "formatVersion": 2,
+      "codebase": "example:wire",
+      "packages": [],
+      "subprojects": [],
+      "graphs": []
+    }
+  },
+  {
+    "name": "conditional graph with empty feature selection",
+    "valid": true,
+    "result": {
+      "formatVersion": 2,
+      "codebase": "example:wire",
+      "packages": [
+        {
+          "purl": "pkg:generic/lib",
+          "evidence": []
+        }
+      ],
+      "subprojects": [
+        {
+          "purl": "pkg:generic/app",
+          "definitionFile": "app.json"
+        }
+      ],
+      "graphs": [
+        {
+          "id": "observation",
+          "source": {
+            "extractor": "fixture",
+            "files": ["app.json"]
+          },
+          "interpretation": "resolved",
+          "rootCompleteness": "complete",
+          "roots": [
+            {
+              "id": "root",
+              "project": {
+                "purl": "pkg:generic/app",
+                "definitionFile": "app.json"
+              },
+              "scope": "native",
+              "node": "app"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "app",
+              "purl": "pkg:generic/app",
+              "project": {
+                "purl": "pkg:generic/app",
+                "definitionFile": "app.json"
+              },
+              "dependencyCompleteness": "complete"
+            },
+            {
+              "id": "lib",
+              "purl": "pkg:generic/lib",
+              "dependencyCompleteness": "complete",
+              "variant": {
+                "enabledFeatures": []
+              }
+            }
+          ],
+          "edges": [
+            {
+              "from": "app",
+              "to": "lib",
+              "status": "resolved",
+              "relation": "depends-on",
+              "selection": "conditional",
+              "condition": {
+                "language": "fixture",
+                "expression": null
+              }
+            }
+          ]
+        }
+      ],
+      "issues": []
+    }
+  },
+  {
+    "name": "conditional requires condition",
+    "valid": false,
+    "result": {
+      "formatVersion": 2,
+      "codebase": "example:wire",
+      "packages": [
+        {
+          "purl": "pkg:generic/lib",
+          "evidence": []
+        }
+      ],
+      "subprojects": [
+        {
+          "purl": "pkg:generic/app",
+          "definitionFile": "app.json"
+        }
+      ],
+      "graphs": [
+        {
+          "id": "observation",
+          "source": {
+            "extractor": "fixture",
+            "files": ["app.json"]
+          },
+          "interpretation": "resolved",
+          "rootCompleteness": "complete",
+          "roots": [
+            {
+              "id": "root",
+              "project": {
+                "purl": "pkg:generic/app",
+                "definitionFile": "app.json"
+              },
+              "scope": "native",
+              "node": "app"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "app",
+              "purl": "pkg:generic/app",
+              "project": {
+                "purl": "pkg:generic/app",
+                "definitionFile": "app.json"
+              },
+              "dependencyCompleteness": "complete"
+            },
+            {
+              "id": "lib",
+              "purl": "pkg:generic/lib",
+              "dependencyCompleteness": "complete",
+              "variant": {
+                "enabledFeatures": []
+              }
+            }
+          ],
+          "edges": [
+            {
+              "from": "app",
+              "to": "lib",
+              "status": "resolved",
+              "relation": "depends-on",
+              "selection": "conditional"
+            }
+          ]
+        }
+      ],
+      "issues": []
+    }
+  },
+  {
+    "name": "selected forbids binding condition",
+    "valid": false,
+    "result": {
+      "formatVersion": 2,
+      "codebase": "example:wire",
+      "packages": [
+        {
+          "purl": "pkg:generic/lib",
+          "evidence": []
+        }
+      ],
+      "subprojects": [
+        {
+          "purl": "pkg:generic/app",
+          "definitionFile": "app.json"
+        }
+      ],
+      "graphs": [
+        {
+          "id": "observation",
+          "source": {
+            "extractor": "fixture",
+            "files": ["app.json"]
+          },
+          "interpretation": "resolved",
+          "rootCompleteness": "complete",
+          "roots": [
+            {
+              "id": "root",
+              "project": {
+                "purl": "pkg:generic/app",
+                "definitionFile": "app.json"
+              },
+              "scope": "native",
+              "node": "app"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "app",
+              "purl": "pkg:generic/app",
+              "project": {
+                "purl": "pkg:generic/app",
+                "definitionFile": "app.json"
+              },
+              "dependencyCompleteness": "complete"
+            },
+            {
+              "id": "lib",
+              "purl": "pkg:generic/lib",
+              "dependencyCompleteness": "complete",
+              "variant": {
+                "enabledFeatures": []
+              }
+            }
+          ],
+          "edges": [
+            {
+              "from": "app",
+              "to": "lib",
+              "status": "resolved",
+              "relation": "depends-on",
+              "selection": "selected",
+              "condition": {
+                "language": "fixture",
+                "expression": null
+              }
+            }
+          ]
+        }
+      ],
+      "issues": []
+    }
+  },
+  {
+    "name": "resolved requires target",
+    "valid": false,
+    "result": {
+      "formatVersion": 2,
+      "codebase": "example:wire",
+      "packages": [
+        {
+          "purl": "pkg:generic/lib",
+          "evidence": []
+        }
+      ],
+      "subprojects": [
+        {
+          "purl": "pkg:generic/app",
+          "definitionFile": "app.json"
+        }
+      ],
+      "graphs": [
+        {
+          "id": "observation",
+          "source": {
+            "extractor": "fixture",
+            "files": ["app.json"]
+          },
+          "interpretation": "resolved",
+          "rootCompleteness": "complete",
+          "roots": [
+            {
+              "id": "root",
+              "project": {
+                "purl": "pkg:generic/app",
+                "definitionFile": "app.json"
+              },
+              "scope": "native",
+              "node": "app"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "app",
+              "purl": "pkg:generic/app",
+              "project": {
+                "purl": "pkg:generic/app",
+                "definitionFile": "app.json"
+              },
+              "dependencyCompleteness": "complete"
+            },
+            {
+              "id": "lib",
+              "purl": "pkg:generic/lib",
+              "dependencyCompleteness": "complete",
+              "variant": {
+                "enabledFeatures": []
+              }
+            }
+          ],
+          "edges": [
+            {
+              "from": "app",
+              "status": "resolved",
+              "relation": "depends-on",
+              "selection": "conditional",
+              "condition": {
+                "language": "fixture",
+                "expression": null
+              }
+            }
+          ]
+        }
+      ],
+      "issues": []
+    }
+  },
+  {
+    "name": "declaration forbids target",
+    "valid": false,
+    "result": {
+      "formatVersion": 2,
+      "codebase": "example:wire",
+      "packages": [
+        {
+          "purl": "pkg:generic/lib",
+          "evidence": []
+        }
+      ],
+      "subprojects": [
+        {
+          "purl": "pkg:generic/app",
+          "definitionFile": "app.json"
+        }
+      ],
+      "graphs": [
+        {
+          "id": "observation",
+          "source": {
+            "extractor": "fixture",
+            "files": ["app.json"]
+          },
+          "interpretation": "resolved",
+          "rootCompleteness": "complete",
+          "roots": [
+            {
+              "id": "root",
+              "project": {
+                "purl": "pkg:generic/app",
+                "definitionFile": "app.json"
+              },
+              "scope": "native",
+              "node": "app"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "app",
+              "purl": "pkg:generic/app",
+              "project": {
+                "purl": "pkg:generic/app",
+                "definitionFile": "app.json"
+              },
+              "dependencyCompleteness": "complete"
+            },
+            {
+              "id": "lib",
+              "purl": "pkg:generic/lib",
+              "dependencyCompleteness": "complete",
+              "variant": {
+                "enabledFeatures": []
+              }
+            }
+          ],
+          "edges": [
+            {
+              "from": "app",
+              "to": "lib",
+              "status": "declared",
+              "relation": "depends-on",
+              "selection": "conditional",
+              "condition": {
+                "language": "fixture",
+                "expression": null
+              },
+              "requested": {
+                "name": "lib"
+              }
+            }
+          ]
+        }
+      ],
+      "issues": []
+    }
+  },
+  {
+    "name": "null enabled features",
+    "valid": false,
+    "result": {
+      "formatVersion": 2,
+      "codebase": "example:wire",
+      "packages": [
+        {
+          "purl": "pkg:generic/lib",
+          "evidence": []
+        }
+      ],
+      "subprojects": [
+        {
+          "purl": "pkg:generic/app",
+          "definitionFile": "app.json"
+        }
+      ],
+      "graphs": [
+        {
+          "id": "observation",
+          "source": {
+            "extractor": "fixture",
+            "files": ["app.json"]
+          },
+          "interpretation": "resolved",
+          "rootCompleteness": "complete",
+          "roots": [
+            {
+              "id": "root",
+              "project": {
+                "purl": "pkg:generic/app",
+                "definitionFile": "app.json"
+              },
+              "scope": "native",
+              "node": "app"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "app",
+              "purl": "pkg:generic/app",
+              "project": {
+                "purl": "pkg:generic/app",
+                "definitionFile": "app.json"
+              },
+              "dependencyCompleteness": "complete"
+            },
+            {
+              "id": "lib",
+              "purl": "pkg:generic/lib",
+              "dependencyCompleteness": "complete",
+              "variant": {
+                "enabledFeatures": null
+              }
+            }
+          ],
+          "edges": [
+            {
+              "from": "app",
+              "to": "lib",
+              "status": "resolved",
+              "relation": "depends-on",
+              "selection": "conditional",
+              "condition": {
+                "language": "fixture",
+                "expression": null
+              }
+            }
+          ]
+        }
+      ],
+      "issues": []
+    }
+  },
+  {
+    "name": "unscoped identity assertion rejected",
+    "valid": false,
+    "result": {
+      "formatVersion": 2,
+      "codebase": "example:wire",
+      "packages": [
+        {
+          "purl": "pkg:generic/lib",
+          "evidence": [],
+          "synthesizedPurl": true
+        }
+      ],
+      "subprojects": [],
+      "graphs": [],
+      "issues": []
+    }
+  }
+]

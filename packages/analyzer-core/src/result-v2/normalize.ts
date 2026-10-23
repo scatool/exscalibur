@@ -1,7 +1,22 @@
 import { createHash } from "node:crypto";
 import { canonicalJson, compareStrings, sortedStrings, uniqueRecords } from "./json.ts";
 import { parseResultV2 } from "./validate.ts";
-import type { AnalyzerResultV2, Artifact, DependencyGraph, DependencyRequest } from "./types.ts";
+import type {
+  AnalyzerResultV2,
+  Artifact,
+  DependencyGraph,
+  DependencyRequest,
+  IdentityObservation,
+} from "./types.ts";
+
+function normalizeIdentityObservations(observations: IdentityObservation[]): IdentityObservation[] {
+  return uniqueRecords(
+    observations.map((observation) => ({
+      ...observation,
+      source: { ...observation.source, files: sortedStrings(observation.source.files) },
+    })),
+  );
+}
 
 function normalizeArtifacts(artifacts: Artifact[] | undefined): Artifact[] | undefined {
   return (
@@ -74,6 +89,9 @@ export function normalizeResultV2(input: AnalyzerResultV2): AnalyzerResultV2 {
   result.packages = result.packages
     .map((pkg) => ({
       ...pkg,
+      ...(pkg.identityObservations !== undefined && {
+        identityObservations: normalizeIdentityObservations(pkg.identityObservations),
+      }),
       evidence: sortedStrings(pkg.evidence),
       ...(pkg.artifacts !== undefined && { artifacts: normalizeArtifacts(pkg.artifacts) }),
       ...(pkg.externalReferences !== undefined && {
@@ -84,6 +102,9 @@ export function normalizeResultV2(input: AnalyzerResultV2): AnalyzerResultV2 {
   result.subprojects = result.subprojects
     .map((project) => ({
       ...project,
+      ...(project.identityObservations !== undefined && {
+        identityObservations: normalizeIdentityObservations(project.identityObservations),
+      }),
       ...(project.evidence !== undefined && { evidence: sortedStrings(project.evidence) }),
     }))
     .sort(

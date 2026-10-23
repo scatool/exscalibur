@@ -309,7 +309,9 @@ test("generic PURL fallback is explicit and valid, while valid native coordinate
     options,
   );
   expect(result.packages).toHaveLength(2);
-  const generic = result.packages.find((pkg) => pkg.synthesizedPurl)!;
+  const generic = result.packages.find((pkg) =>
+    pkg.identityObservations?.some((item) => item.synthesizedPurl),
+  )!;
   expect(PackageURL.fromString(generic.purl).type).toBe("generic");
   expect(result.packages.some((pkg) => pkg.purl === "pkg:npm/foo@1")).toBe(true);
 });
