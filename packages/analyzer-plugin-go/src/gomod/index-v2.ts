@@ -25,6 +25,27 @@ type Manifest = {
   Require?: { Path: string; Version: string; Indirect?: boolean }[] | null;
 };
 
+// go list also reports host/cache state (Dir, GoMod, sums and lazily loaded
+// metadata). Keep the native selection facts independent of cache hydration.
+function selectionFacts(module: Module): JsonObject {
+  return {
+    Path: module.Path,
+    ...(module.Version !== undefined && { Version: module.Version }),
+    ...(typeof module.Indirect === "boolean" && { Indirect: module.Indirect }),
+    ...(module.Replace && {
+      Replace: {
+        Path: module.Replace.Path,
+        ...(module.Replace.Version !== undefined && { Version: module.Replace.Version }),
+      },
+    }),
+  };
+}
+
+export function portableGoDiagnostic(stderr: string, codebasePath: string): string {
+  const root = codebasePath.replace(/[\\/]$/, "");
+  return stderr.replaceAll(`${root}/`, "").replaceAll(`${root}\\`, "");
+}
+
 /** Decode the concatenated JSON objects emitted by go list without depending on indentation. */
 export function parseGoModules(output: string): Module[] {
   const modules: Module[] = [];
@@ -81,13 +102,13 @@ export function convertGoModulesV2(
       locator: `${module.Path}${module.Version ? `@${module.Version}` : ""}`,
       // go mod graph can be pruned. Missing owner records never prove a known leaf.
       dependencyCompleteness: "unknown",
-      attributes: { "go:module": module as JsonObject },
+      attributes: { "go:module": selectionFacts(module) },
       ...(module.Replace && {
         artifacts: [
           {
             location: module.Replace.Path,
             evidence: [file],
-            attributes: { "go:replacement": module.Replace as JsonObject },
+            attributes: { "go:replacement": selectionFacts(module).Replace! },
           },
         ],
       }),
@@ -172,7 +193,10 @@ export const extractor = filesExtractorV2({
   extractFile: async (file, _options, context) => {
     const command = async (args: string[]) => {
       const output = await runCommand(["go", ...args], { cwd: dirname(file) });
-      if (output.exitCode !== 0) throw new Error(`go ${args.join(" ")} failed: ${output.stderr}`);
+      if (output.exitCode !== 0)
+        throw new Error(
+          `go ${args.join(" ")} failed: ${portableGoDiagnostic(output.stderr, context.codebasePath)}`,
+        );
       return output.stdout;
     };
     const manifest = JSON.parse(await command(["mod", "edit", "-json"]));
