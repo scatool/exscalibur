@@ -6,6 +6,10 @@ Requirements and pyproject inputs report declarations, including original specif
 requested extras, native predicates and source references. A pinned requirement is
 still a declaration, not evidence that a resolver selected or installed it. Dynamic
 metadata and unexpanded requirement/constraint includes preserve unknown coverage.
+Without a supported project metadata table, a pyproject retains an unknown runtime
+dependency scope and unknown root enumeration. Build-system settings and unsupported
+backend metadata do not prove an empty runtime scope. Recognized dependency groups
+still retain their observed declarations independently.
 
 Poetry and PDM locks retain one view per native package record, including repeated
 names and versions. Their `locked-group:*` roots describe recorded group membership;

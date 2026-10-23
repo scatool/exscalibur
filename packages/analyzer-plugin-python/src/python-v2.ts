@@ -263,15 +263,31 @@ export function pyprojectResult(
   for (const [scope, specs] of Object.entries(object(native["dependency-groups"])))
     list(scope === "dev" ? "dev-dependencies" : `group.${scope}`, specs);
   if (out.roots.length === 0) out.root(subject, "dependencies");
+  // A build-system table or an unsupported backend's metadata cannot establish
+  // that runtime dependencies (or additional scopes) are absent.
+  const unsupportedProjectMetadata = native.project === undefined && tool.poetry === undefined;
+  if (unsupportedProjectMetadata) {
+    const root = out.root(subject, "dependencies");
+    out.nodes.find((node) => node.id === root)!.dependencyCompleteness = "unknown";
+    out.issue(
+      "unsupported_project_metadata",
+      "No supported project metadata table establishes runtime dependency coverage",
+    );
+  }
   const dynamic = array(project.dynamic);
   if (dynamic.includes("dependencies") || dynamic.includes("optional-dependencies")) {
     out.issue("dynamic_dependencies", "Dynamic dependency metadata has not been resolved");
     for (const root of out.roots)
       out.nodes.find((node) => node.id === root.node)!.dependencyCompleteness = "unknown";
   }
-  return out.finish(dynamic.includes("optional-dependencies") ? "unknown" : "complete", {
-    "python:manifest": json(native),
-  });
+  return out.finish(
+    unsupportedProjectMetadata || dynamic.includes("optional-dependencies")
+      ? "unknown"
+      : "complete",
+    {
+      "python:manifest": json(native),
+    },
+  );
 }
 
 export function pipfileResult(content: string, context: FileExtractionContextV2): AnalyzerResultV2 {

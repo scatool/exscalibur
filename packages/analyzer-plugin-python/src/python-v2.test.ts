@@ -49,6 +49,42 @@ test("dynamic pyproject declarations and group includes preserve unknown resolut
   expect(result.graphs[0]!.nodes[0]!.dependencyCompleteness).toBe("unknown");
 });
 
+test.each([
+  '[build-system]\nrequires=["setuptools"]\n',
+  '[tool.flit.metadata]\nrequires=["requests"]\n',
+  '[dependency-groups]\ndev=["pytest"]\n',
+])("pyproject without supported project metadata keeps runtime coverage unknown: %s", (input) => {
+  const result = pyprojectResult(input, context);
+  validateResultV2(result);
+  const graph = result.graphs[0]!;
+  expect(graph.rootCompleteness).toBe("unknown");
+  const root = graph.roots.find((entry) => entry.scope === "dependencies")!;
+  expect(graph.nodes.find((node) => node.id === root.node)?.dependencyCompleteness).toBe("unknown");
+  expect(queryDependenciesV2(result, { graph: graph.id, root: root.id }).completeness).toBe(
+    "unknown",
+  );
+  expect(
+    result.issues.some((issue) => issue.code === "pyprojecttoml.unsupported_project_metadata"),
+  ).toBe(true);
+  if (input.includes("dependency-groups")) {
+    const dev = graph.roots.find((entry) => entry.scope === "dev-dependencies")!;
+    expect(graph.nodes.find((node) => node.id === dev.node)?.dependencyCompleteness).toBe(
+      "complete",
+    );
+    expect(graph.edges.filter((edge) => edge.from === dev.node)).toHaveLength(1);
+  }
+});
+
+test("static supported project metadata can establish an empty dependency scope", () => {
+  const result = pyprojectResult('[project]\nname="empty"\ndependencies=[]\n', context);
+  const graph = result.graphs[0]!;
+  expect(graph.rootCompleteness).toBe("complete");
+  expect(
+    queryDependenciesV2(result, { graph: graph.id, root: graph.roots[0]!.id }).completeness,
+  ).toBe("complete");
+  expect(result.issues).toEqual([]);
+});
+
 test("Pipfile scopes retain different versions and missing adjacency", () => {
   const result = pipfileResult(
     JSON.stringify({
