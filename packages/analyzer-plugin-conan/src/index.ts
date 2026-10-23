@@ -14,3 +14,4 @@ export const extractor: Extractor<ConanOptions> = filesExtractor<ConanOptions>({
 });
 
 export type { ConanOptions } from "./options.ts";
+export { extractorV2, convertConanGraphV2 } from "./index-v2.ts";

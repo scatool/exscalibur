@@ -14,3 +14,4 @@ export const extractor: Extractor<VcpkgOptions> = filesExtractor<VcpkgOptions>({
 });
 
 export type { VcpkgOptions } from "./options.ts";
+export { extractorV2, convertVcpkgPortsV2 } from "./index-v2.ts";
