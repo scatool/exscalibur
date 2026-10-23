@@ -1,26 +1,31 @@
-// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`basic 1`] = `
 {
   "issues": [],
   "packages": [
     {
+      "downloadLocation": "https://files.pythonhosted.org/packages/1c/ab/c9f1e32b7b1bf505bf26f0ef697775960db7932abeb7b516de930ba2705f/certifi-2025.1.31.tar.gz",
       "evidence": [],
       "purl": "pkg:pypi/certifi@2025.1.31",
     },
     {
+      "downloadLocation": "https://files.pythonhosted.org/packages/16/b0/572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357e/charset_normalizer-3.4.1.tar.gz",
       "evidence": [],
       "purl": "pkg:pypi/charset-normalizer@3.4.1",
     },
     {
+      "downloadLocation": "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz",
       "evidence": [],
       "purl": "pkg:pypi/idna@3.10",
     },
     {
+      "downloadLocation": "https://files.pythonhosted.org/packages/63/70/2bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913/requests-2.32.3.tar.gz",
       "evidence": [],
       "purl": "pkg:pypi/requests@2.32.3",
     },
     {
+      "downloadLocation": "https://files.pythonhosted.org/packages/aa/63/e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66/urllib3-2.3.0.tar.gz",
       "evidence": [],
       "purl": "pkg:pypi/urllib3@2.3.0",
     },

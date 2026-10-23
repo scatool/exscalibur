@@ -16,8 +16,7 @@ import { PackageURL } from "packageurl-js";
  * 2. In conan, many old versions of recipes are still maintained
  *    (see check boxes/warning symbols in the "versions" tag, e.g. in https://conan.io/center/recipes/openssl).
  *    Therefore, the rrefs for maintained recipes may change at any time (e.g. due to patches).
- *    => Use only unmaintained recipes
- *    => For transitive tests, where also transitive dependencies are still maintained: use conan's lock files
+ *    => Pin recipe revisions in conan's lock files for every fixture, including unmaintained versions
  *
  * If these constraints still seem not to suffice, removing rrefs from the tests is possible as well.
  * To do this, simply set `disableRRefs` to `true` and regenerate the `__snapshots__` directory.
