@@ -1,0 +1,2513 @@
+{
+  "tools": {
+    "node": "v22.23.4",
+    "npm": "11.9.0",
+    "arborist": "9.2.0",
+    "oxfmt": "0.73.0"
+  },
+  "offline": true,
+  "ignoreScripts": true,
+  "registry": "http://127.0.0.1:1/",
+  "aliasSource": {
+    "name": "real-leaf",
+    "version": "1.0.0"
+  },
+  "sourceManifests": {
+    "package.json": {
+      "name": "workspace-oracle",
+      "version": "1.0.0",
+      "private": true,
+      "workspaces": ["apps/*", "packages/*"],
+      "dependencies": {
+        "renamed": "npm:real-leaf@1.0.0",
+        "local-link": "file:local"
+      }
+    },
+    "apps/app/package.json": {
+      "name": "workspace-app",
+      "version": "1.0.0",
+      "dependencies": {
+        "workspace-lib": "*",
+        "renamed": "npm:real-leaf@1.0.0"
+      }
+    },
+    "packages/lib/package.json": {
+      "name": "workspace-lib",
+      "version": "1.0.0"
+    },
+    "local/package.json": {
+      "name": "local-link",
+      "version": "1.0.0",
+      "dependencies": {
+        "renamed": "npm:real-leaf@1.0.0"
+      }
+    }
+  },
+  "cases": [
+    {
+      "id": "v1-current",
+      "lockfileVersion": 1,
+      "mode": "current",
+      "inputSha256": {
+        "package.json": "32db6e427f6d10a0f3d6f19d21ecdda1ccfb25c81fc6ea45e931f07bc62401d5",
+        "apps/app/package.json": "18a537beb53bb7e8f1b95211e7e5137f6566ab9d304e511150ae3fb449d70304",
+        "packages/lib/package.json": "93d2638e7ce735e9c100d6d29cdd1090d080319c925399d7898b9b39cdd4b5cd",
+        "local/package.json": "4a8d8932f01b56429a19331aa4a2cebc1187528fb7f8ff3a68aa3b10a2b74cba",
+        "package-lock.json": "ea79506e3606911745addad097233da76a93eb5e826a27f63401700412fad042"
+      },
+      "installedBeforeMutation": {
+        "nodes": [
+          {
+            "location": "",
+            "name": "project",
+            "packageName": "workspace-oracle",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "apps/app",
+            "name": "app",
+            "packageName": "workspace-app",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "local",
+            "name": "local",
+            "packageName": "local-link",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "node_modules/local-link",
+            "name": "local-link",
+            "packageName": "local-link",
+            "version": "1.0.0",
+            "link": true,
+            "target": "local"
+          },
+          {
+            "location": "node_modules/renamed",
+            "name": "renamed",
+            "packageName": "real-leaf",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "node_modules/workspace-app",
+            "name": "workspace-app",
+            "packageName": "workspace-app",
+            "version": "1.0.0",
+            "link": true,
+            "target": "apps/app"
+          },
+          {
+            "location": "node_modules/workspace-lib",
+            "name": "workspace-lib",
+            "packageName": "workspace-lib",
+            "version": "1.0.0",
+            "link": true,
+            "target": "packages/lib"
+          },
+          {
+            "location": "packages/lib",
+            "name": "lib",
+            "packageName": "workspace-lib",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          }
+        ],
+        "edges": [
+          {
+            "from": "",
+            "name": "local-link",
+            "spec": "file:local",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/local-link",
+            "target": "local"
+          },
+          {
+            "from": "",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          },
+          {
+            "from": "",
+            "name": "workspace-app",
+            "spec": "file:<project>/apps/app",
+            "type": "workspace",
+            "error": null,
+            "to": "node_modules/workspace-app",
+            "target": "apps/app"
+          },
+          {
+            "from": "",
+            "name": "workspace-lib",
+            "spec": "file:<project>/packages/lib",
+            "type": "workspace",
+            "error": null,
+            "to": "node_modules/workspace-lib",
+            "target": "packages/lib"
+          },
+          {
+            "from": "apps/app",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          },
+          {
+            "from": "apps/app",
+            "name": "workspace-lib",
+            "spec": "*",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/workspace-lib",
+            "target": "packages/lib"
+          },
+          {
+            "from": "local",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          }
+        ]
+      },
+      "virtual": {
+        "nodes": [
+          {
+            "location": "",
+            "name": "project",
+            "packageName": "workspace-oracle",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "apps/app",
+            "name": "app",
+            "packageName": "workspace-app",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "local",
+            "name": "local",
+            "packageName": "local-link",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "node_modules/local-link",
+            "name": "local-link",
+            "packageName": "local",
+            "version": "1.0.0",
+            "link": true,
+            "target": "local"
+          },
+          {
+            "location": "node_modules/renamed",
+            "name": "renamed",
+            "packageName": "real-leaf",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "node_modules/workspace-app",
+            "name": "workspace-app",
+            "packageName": "app",
+            "version": "1.0.0",
+            "link": true,
+            "target": "apps/app"
+          },
+          {
+            "location": "node_modules/workspace-lib",
+            "name": "workspace-lib",
+            "packageName": "lib",
+            "version": "1.0.0",
+            "link": true,
+            "target": "packages/lib"
+          },
+          {
+            "location": "packages/lib",
+            "name": "lib",
+            "packageName": "workspace-lib",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          }
+        ],
+        "edges": [
+          {
+            "from": "",
+            "name": "local-link",
+            "spec": "file:local",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/local-link",
+            "target": "local"
+          },
+          {
+            "from": "",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          },
+          {
+            "from": "",
+            "name": "workspace-app",
+            "spec": "file:<project>/apps/app",
+            "type": "workspace",
+            "error": null,
+            "to": "node_modules/workspace-app",
+            "target": "apps/app"
+          },
+          {
+            "from": "",
+            "name": "workspace-lib",
+            "spec": "file:<project>/packages/lib",
+            "type": "workspace",
+            "error": null,
+            "to": "node_modules/workspace-lib",
+            "target": "packages/lib"
+          },
+          {
+            "from": "apps/app",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          },
+          {
+            "from": "apps/app",
+            "name": "workspace-lib",
+            "spec": "*",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/workspace-lib",
+            "target": "packages/lib"
+          },
+          {
+            "from": "local",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "v1-missing",
+      "lockfileVersion": 1,
+      "mode": "missing",
+      "inputSha256": {
+        "package.json": "32db6e427f6d10a0f3d6f19d21ecdda1ccfb25c81fc6ea45e931f07bc62401d5",
+        "packages/lib/package.json": "93d2638e7ce735e9c100d6d29cdd1090d080319c925399d7898b9b39cdd4b5cd",
+        "local/package.json": "4a8d8932f01b56429a19331aa4a2cebc1187528fb7f8ff3a68aa3b10a2b74cba",
+        "package-lock.json": "ea79506e3606911745addad097233da76a93eb5e826a27f63401700412fad042"
+      },
+      "installedBeforeMutation": {
+        "nodes": [
+          {
+            "location": "",
+            "name": "project",
+            "packageName": "workspace-oracle",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "apps/app",
+            "name": "app",
+            "packageName": "workspace-app",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "local",
+            "name": "local",
+            "packageName": "local-link",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "node_modules/local-link",
+            "name": "local-link",
+            "packageName": "local-link",
+            "version": "1.0.0",
+            "link": true,
+            "target": "local"
+          },
+          {
+            "location": "node_modules/renamed",
+            "name": "renamed",
+            "packageName": "real-leaf",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "node_modules/workspace-app",
+            "name": "workspace-app",
+            "packageName": "workspace-app",
+            "version": "1.0.0",
+            "link": true,
+            "target": "apps/app"
+          },
+          {
+            "location": "node_modules/workspace-lib",
+            "name": "workspace-lib",
+            "packageName": "workspace-lib",
+            "version": "1.0.0",
+            "link": true,
+            "target": "packages/lib"
+          },
+          {
+            "location": "packages/lib",
+            "name": "lib",
+            "packageName": "workspace-lib",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          }
+        ],
+        "edges": [
+          {
+            "from": "",
+            "name": "local-link",
+            "spec": "file:local",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/local-link",
+            "target": "local"
+          },
+          {
+            "from": "",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          },
+          {
+            "from": "",
+            "name": "workspace-app",
+            "spec": "file:<project>/apps/app",
+            "type": "workspace",
+            "error": null,
+            "to": "node_modules/workspace-app",
+            "target": "apps/app"
+          },
+          {
+            "from": "",
+            "name": "workspace-lib",
+            "spec": "file:<project>/packages/lib",
+            "type": "workspace",
+            "error": null,
+            "to": "node_modules/workspace-lib",
+            "target": "packages/lib"
+          },
+          {
+            "from": "apps/app",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          },
+          {
+            "from": "apps/app",
+            "name": "workspace-lib",
+            "spec": "*",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/workspace-lib",
+            "target": "packages/lib"
+          },
+          {
+            "from": "local",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          }
+        ]
+      },
+      "virtual": {
+        "nodes": [
+          {
+            "location": "",
+            "name": "project",
+            "packageName": "workspace-oracle",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "apps/app",
+            "name": "app",
+            "packageName": "app",
+            "version": "",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "local",
+            "name": "local",
+            "packageName": "local-link",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "node_modules/local-link",
+            "name": "local-link",
+            "packageName": "local",
+            "version": "1.0.0",
+            "link": true,
+            "target": "local"
+          },
+          {
+            "location": "node_modules/renamed",
+            "name": "renamed",
+            "packageName": "real-leaf",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "node_modules/workspace-app",
+            "name": "workspace-app",
+            "packageName": "app",
+            "version": "",
+            "link": true,
+            "target": "apps/app"
+          },
+          {
+            "location": "node_modules/workspace-lib",
+            "name": "workspace-lib",
+            "packageName": "lib",
+            "version": "1.0.0",
+            "link": true,
+            "target": "packages/lib"
+          },
+          {
+            "location": "packages/lib",
+            "name": "lib",
+            "packageName": "workspace-lib",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          }
+        ],
+        "edges": [
+          {
+            "from": "",
+            "name": "local-link",
+            "spec": "file:local",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/local-link",
+            "target": "local"
+          },
+          {
+            "from": "",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          },
+          {
+            "from": "",
+            "name": "workspace-lib",
+            "spec": "file:<project>/packages/lib",
+            "type": "workspace",
+            "error": null,
+            "to": "node_modules/workspace-lib",
+            "target": "packages/lib"
+          },
+          {
+            "from": "apps/app",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          },
+          {
+            "from": "apps/app",
+            "name": "workspace-lib",
+            "spec": "*",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/workspace-lib",
+            "target": "packages/lib"
+          },
+          {
+            "from": "local",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "v1-stale",
+      "lockfileVersion": 1,
+      "mode": "stale",
+      "inputSha256": {
+        "package.json": "32db6e427f6d10a0f3d6f19d21ecdda1ccfb25c81fc6ea45e931f07bc62401d5",
+        "apps/app/package.json": "3ab01c07dc1b1ced6e018e600c3a065a0d99d89f6d476a499b28873161865fc9",
+        "packages/lib/package.json": "93d2638e7ce735e9c100d6d29cdd1090d080319c925399d7898b9b39cdd4b5cd",
+        "local/package.json": "4a8d8932f01b56429a19331aa4a2cebc1187528fb7f8ff3a68aa3b10a2b74cba",
+        "package-lock.json": "ea79506e3606911745addad097233da76a93eb5e826a27f63401700412fad042"
+      },
+      "installedBeforeMutation": {
+        "nodes": [
+          {
+            "location": "",
+            "name": "project",
+            "packageName": "workspace-oracle",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "apps/app",
+            "name": "app",
+            "packageName": "workspace-app",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "local",
+            "name": "local",
+            "packageName": "local-link",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "node_modules/local-link",
+            "name": "local-link",
+            "packageName": "local-link",
+            "version": "1.0.0",
+            "link": true,
+            "target": "local"
+          },
+          {
+            "location": "node_modules/renamed",
+            "name": "renamed",
+            "packageName": "real-leaf",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "node_modules/workspace-app",
+            "name": "workspace-app",
+            "packageName": "workspace-app",
+            "version": "1.0.0",
+            "link": true,
+            "target": "apps/app"
+          },
+          {
+            "location": "node_modules/workspace-lib",
+            "name": "workspace-lib",
+            "packageName": "workspace-lib",
+            "version": "1.0.0",
+            "link": true,
+            "target": "packages/lib"
+          },
+          {
+            "location": "packages/lib",
+            "name": "lib",
+            "packageName": "workspace-lib",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          }
+        ],
+        "edges": [
+          {
+            "from": "",
+            "name": "local-link",
+            "spec": "file:local",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/local-link",
+            "target": "local"
+          },
+          {
+            "from": "",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          },
+          {
+            "from": "",
+            "name": "workspace-app",
+            "spec": "file:<project>/apps/app",
+            "type": "workspace",
+            "error": null,
+            "to": "node_modules/workspace-app",
+            "target": "apps/app"
+          },
+          {
+            "from": "",
+            "name": "workspace-lib",
+            "spec": "file:<project>/packages/lib",
+            "type": "workspace",
+            "error": null,
+            "to": "node_modules/workspace-lib",
+            "target": "packages/lib"
+          },
+          {
+            "from": "apps/app",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          },
+          {
+            "from": "apps/app",
+            "name": "workspace-lib",
+            "spec": "*",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/workspace-lib",
+            "target": "packages/lib"
+          },
+          {
+            "from": "local",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          }
+        ]
+      },
+      "virtual": {
+        "nodes": [
+          {
+            "location": "",
+            "name": "project",
+            "packageName": "workspace-oracle",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "apps/app",
+            "name": "app",
+            "packageName": "workspace-app",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "local",
+            "name": "local",
+            "packageName": "local-link",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "node_modules/local-link",
+            "name": "local-link",
+            "packageName": "local",
+            "version": "1.0.0",
+            "link": true,
+            "target": "local"
+          },
+          {
+            "location": "node_modules/renamed",
+            "name": "renamed",
+            "packageName": "real-leaf",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "node_modules/workspace-app",
+            "name": "workspace-app",
+            "packageName": "app",
+            "version": "1.0.0",
+            "link": true,
+            "target": "apps/app"
+          },
+          {
+            "location": "node_modules/workspace-lib",
+            "name": "workspace-lib",
+            "packageName": "lib",
+            "version": "1.0.0",
+            "link": true,
+            "target": "packages/lib"
+          },
+          {
+            "location": "packages/lib",
+            "name": "lib",
+            "packageName": "workspace-lib",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          }
+        ],
+        "edges": [
+          {
+            "from": "",
+            "name": "local-link",
+            "spec": "file:local",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/local-link",
+            "target": "local"
+          },
+          {
+            "from": "",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          },
+          {
+            "from": "",
+            "name": "workspace-app",
+            "spec": "file:<project>/apps/app",
+            "type": "workspace",
+            "error": null,
+            "to": "node_modules/workspace-app",
+            "target": "apps/app"
+          },
+          {
+            "from": "",
+            "name": "workspace-lib",
+            "spec": "file:<project>/packages/lib",
+            "type": "workspace",
+            "error": null,
+            "to": "node_modules/workspace-lib",
+            "target": "packages/lib"
+          },
+          {
+            "from": "apps/app",
+            "name": "workspace-lib",
+            "spec": "*",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/workspace-lib",
+            "target": "packages/lib"
+          },
+          {
+            "from": "local",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "v2-current",
+      "lockfileVersion": 2,
+      "mode": "current",
+      "inputSha256": {
+        "package.json": "32db6e427f6d10a0f3d6f19d21ecdda1ccfb25c81fc6ea45e931f07bc62401d5",
+        "apps/app/package.json": "18a537beb53bb7e8f1b95211e7e5137f6566ab9d304e511150ae3fb449d70304",
+        "packages/lib/package.json": "93d2638e7ce735e9c100d6d29cdd1090d080319c925399d7898b9b39cdd4b5cd",
+        "local/package.json": "4a8d8932f01b56429a19331aa4a2cebc1187528fb7f8ff3a68aa3b10a2b74cba",
+        "package-lock.json": "6ae948ebb14c7f1c678d12c13b597dd2dbae3d1302a9d1767984a4a13034b661"
+      },
+      "installedBeforeMutation": {
+        "nodes": [
+          {
+            "location": "",
+            "name": "project",
+            "packageName": "workspace-oracle",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "apps/app",
+            "name": "app",
+            "packageName": "workspace-app",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "local",
+            "name": "local",
+            "packageName": "local-link",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "node_modules/local-link",
+            "name": "local-link",
+            "packageName": "local-link",
+            "version": "1.0.0",
+            "link": true,
+            "target": "local"
+          },
+          {
+            "location": "node_modules/renamed",
+            "name": "renamed",
+            "packageName": "real-leaf",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "node_modules/workspace-app",
+            "name": "workspace-app",
+            "packageName": "workspace-app",
+            "version": "1.0.0",
+            "link": true,
+            "target": "apps/app"
+          },
+          {
+            "location": "node_modules/workspace-lib",
+            "name": "workspace-lib",
+            "packageName": "workspace-lib",
+            "version": "1.0.0",
+            "link": true,
+            "target": "packages/lib"
+          },
+          {
+            "location": "packages/lib",
+            "name": "lib",
+            "packageName": "workspace-lib",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          }
+        ],
+        "edges": [
+          {
+            "from": "",
+            "name": "local-link",
+            "spec": "file:local",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/local-link",
+            "target": "local"
+          },
+          {
+            "from": "",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          },
+          {
+            "from": "",
+            "name": "workspace-app",
+            "spec": "file:<project>/apps/app",
+            "type": "workspace",
+            "error": null,
+            "to": "node_modules/workspace-app",
+            "target": "apps/app"
+          },
+          {
+            "from": "",
+            "name": "workspace-lib",
+            "spec": "file:<project>/packages/lib",
+            "type": "workspace",
+            "error": null,
+            "to": "node_modules/workspace-lib",
+            "target": "packages/lib"
+          },
+          {
+            "from": "apps/app",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          },
+          {
+            "from": "apps/app",
+            "name": "workspace-lib",
+            "spec": "*",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/workspace-lib",
+            "target": "packages/lib"
+          },
+          {
+            "from": "local",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          }
+        ]
+      },
+      "virtual": {
+        "nodes": [
+          {
+            "location": "",
+            "name": "project",
+            "packageName": "workspace-oracle",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "apps/app",
+            "name": "app",
+            "packageName": "workspace-app",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "local",
+            "name": "local",
+            "packageName": "local-link",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "node_modules/local-link",
+            "name": "local-link",
+            "packageName": "local-link",
+            "version": "1.0.0",
+            "link": true,
+            "target": "local"
+          },
+          {
+            "location": "node_modules/renamed",
+            "name": "renamed",
+            "packageName": "real-leaf",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "node_modules/workspace-app",
+            "name": "workspace-app",
+            "packageName": "workspace-app",
+            "version": "1.0.0",
+            "link": true,
+            "target": "apps/app"
+          },
+          {
+            "location": "node_modules/workspace-lib",
+            "name": "workspace-lib",
+            "packageName": "workspace-lib",
+            "version": "1.0.0",
+            "link": true,
+            "target": "packages/lib"
+          },
+          {
+            "location": "packages/lib",
+            "name": "lib",
+            "packageName": "workspace-lib",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          }
+        ],
+        "edges": [
+          {
+            "from": "",
+            "name": "local-link",
+            "spec": "file:local",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/local-link",
+            "target": "local"
+          },
+          {
+            "from": "",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          },
+          {
+            "from": "",
+            "name": "workspace-app",
+            "spec": "file:<project>/apps/app",
+            "type": "workspace",
+            "error": null,
+            "to": "node_modules/workspace-app",
+            "target": "apps/app"
+          },
+          {
+            "from": "",
+            "name": "workspace-lib",
+            "spec": "file:<project>/packages/lib",
+            "type": "workspace",
+            "error": null,
+            "to": "node_modules/workspace-lib",
+            "target": "packages/lib"
+          },
+          {
+            "from": "apps/app",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          },
+          {
+            "from": "apps/app",
+            "name": "workspace-lib",
+            "spec": "*",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/workspace-lib",
+            "target": "packages/lib"
+          },
+          {
+            "from": "local",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "v2-missing",
+      "lockfileVersion": 2,
+      "mode": "missing",
+      "inputSha256": {
+        "package.json": "32db6e427f6d10a0f3d6f19d21ecdda1ccfb25c81fc6ea45e931f07bc62401d5",
+        "packages/lib/package.json": "93d2638e7ce735e9c100d6d29cdd1090d080319c925399d7898b9b39cdd4b5cd",
+        "local/package.json": "4a8d8932f01b56429a19331aa4a2cebc1187528fb7f8ff3a68aa3b10a2b74cba",
+        "package-lock.json": "6ae948ebb14c7f1c678d12c13b597dd2dbae3d1302a9d1767984a4a13034b661"
+      },
+      "installedBeforeMutation": {
+        "nodes": [
+          {
+            "location": "",
+            "name": "project",
+            "packageName": "workspace-oracle",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "apps/app",
+            "name": "app",
+            "packageName": "workspace-app",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "local",
+            "name": "local",
+            "packageName": "local-link",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "node_modules/local-link",
+            "name": "local-link",
+            "packageName": "local-link",
+            "version": "1.0.0",
+            "link": true,
+            "target": "local"
+          },
+          {
+            "location": "node_modules/renamed",
+            "name": "renamed",
+            "packageName": "real-leaf",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "node_modules/workspace-app",
+            "name": "workspace-app",
+            "packageName": "workspace-app",
+            "version": "1.0.0",
+            "link": true,
+            "target": "apps/app"
+          },
+          {
+            "location": "node_modules/workspace-lib",
+            "name": "workspace-lib",
+            "packageName": "workspace-lib",
+            "version": "1.0.0",
+            "link": true,
+            "target": "packages/lib"
+          },
+          {
+            "location": "packages/lib",
+            "name": "lib",
+            "packageName": "workspace-lib",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          }
+        ],
+        "edges": [
+          {
+            "from": "",
+            "name": "local-link",
+            "spec": "file:local",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/local-link",
+            "target": "local"
+          },
+          {
+            "from": "",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          },
+          {
+            "from": "",
+            "name": "workspace-app",
+            "spec": "file:<project>/apps/app",
+            "type": "workspace",
+            "error": null,
+            "to": "node_modules/workspace-app",
+            "target": "apps/app"
+          },
+          {
+            "from": "",
+            "name": "workspace-lib",
+            "spec": "file:<project>/packages/lib",
+            "type": "workspace",
+            "error": null,
+            "to": "node_modules/workspace-lib",
+            "target": "packages/lib"
+          },
+          {
+            "from": "apps/app",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          },
+          {
+            "from": "apps/app",
+            "name": "workspace-lib",
+            "spec": "*",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/workspace-lib",
+            "target": "packages/lib"
+          },
+          {
+            "from": "local",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          }
+        ]
+      },
+      "virtual": {
+        "nodes": [
+          {
+            "location": "",
+            "name": "project",
+            "packageName": "workspace-oracle",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "apps/app",
+            "name": "app",
+            "packageName": "workspace-app",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "local",
+            "name": "local",
+            "packageName": "local-link",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "node_modules/local-link",
+            "name": "local-link",
+            "packageName": "local-link",
+            "version": "1.0.0",
+            "link": true,
+            "target": "local"
+          },
+          {
+            "location": "node_modules/renamed",
+            "name": "renamed",
+            "packageName": "real-leaf",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "node_modules/workspace-app",
+            "name": "workspace-app",
+            "packageName": "workspace-app",
+            "version": "1.0.0",
+            "link": true,
+            "target": "apps/app"
+          },
+          {
+            "location": "node_modules/workspace-lib",
+            "name": "workspace-lib",
+            "packageName": "workspace-lib",
+            "version": "1.0.0",
+            "link": true,
+            "target": "packages/lib"
+          },
+          {
+            "location": "packages/lib",
+            "name": "lib",
+            "packageName": "workspace-lib",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          }
+        ],
+        "edges": [
+          {
+            "from": "",
+            "name": "local-link",
+            "spec": "file:local",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/local-link",
+            "target": "local"
+          },
+          {
+            "from": "",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          },
+          {
+            "from": "",
+            "name": "workspace-lib",
+            "spec": "file:<project>/packages/lib",
+            "type": "workspace",
+            "error": null,
+            "to": "node_modules/workspace-lib",
+            "target": "packages/lib"
+          },
+          {
+            "from": "apps/app",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          },
+          {
+            "from": "apps/app",
+            "name": "workspace-lib",
+            "spec": "*",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/workspace-lib",
+            "target": "packages/lib"
+          },
+          {
+            "from": "local",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "v2-stale",
+      "lockfileVersion": 2,
+      "mode": "stale",
+      "inputSha256": {
+        "package.json": "32db6e427f6d10a0f3d6f19d21ecdda1ccfb25c81fc6ea45e931f07bc62401d5",
+        "apps/app/package.json": "3ab01c07dc1b1ced6e018e600c3a065a0d99d89f6d476a499b28873161865fc9",
+        "packages/lib/package.json": "93d2638e7ce735e9c100d6d29cdd1090d080319c925399d7898b9b39cdd4b5cd",
+        "local/package.json": "4a8d8932f01b56429a19331aa4a2cebc1187528fb7f8ff3a68aa3b10a2b74cba",
+        "package-lock.json": "6ae948ebb14c7f1c678d12c13b597dd2dbae3d1302a9d1767984a4a13034b661"
+      },
+      "installedBeforeMutation": {
+        "nodes": [
+          {
+            "location": "",
+            "name": "project",
+            "packageName": "workspace-oracle",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "apps/app",
+            "name": "app",
+            "packageName": "workspace-app",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "local",
+            "name": "local",
+            "packageName": "local-link",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "node_modules/local-link",
+            "name": "local-link",
+            "packageName": "local-link",
+            "version": "1.0.0",
+            "link": true,
+            "target": "local"
+          },
+          {
+            "location": "node_modules/renamed",
+            "name": "renamed",
+            "packageName": "real-leaf",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "node_modules/workspace-app",
+            "name": "workspace-app",
+            "packageName": "workspace-app",
+            "version": "1.0.0",
+            "link": true,
+            "target": "apps/app"
+          },
+          {
+            "location": "node_modules/workspace-lib",
+            "name": "workspace-lib",
+            "packageName": "workspace-lib",
+            "version": "1.0.0",
+            "link": true,
+            "target": "packages/lib"
+          },
+          {
+            "location": "packages/lib",
+            "name": "lib",
+            "packageName": "workspace-lib",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          }
+        ],
+        "edges": [
+          {
+            "from": "",
+            "name": "local-link",
+            "spec": "file:local",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/local-link",
+            "target": "local"
+          },
+          {
+            "from": "",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          },
+          {
+            "from": "",
+            "name": "workspace-app",
+            "spec": "file:<project>/apps/app",
+            "type": "workspace",
+            "error": null,
+            "to": "node_modules/workspace-app",
+            "target": "apps/app"
+          },
+          {
+            "from": "",
+            "name": "workspace-lib",
+            "spec": "file:<project>/packages/lib",
+            "type": "workspace",
+            "error": null,
+            "to": "node_modules/workspace-lib",
+            "target": "packages/lib"
+          },
+          {
+            "from": "apps/app",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          },
+          {
+            "from": "apps/app",
+            "name": "workspace-lib",
+            "spec": "*",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/workspace-lib",
+            "target": "packages/lib"
+          },
+          {
+            "from": "local",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          }
+        ]
+      },
+      "virtual": {
+        "nodes": [
+          {
+            "location": "",
+            "name": "project",
+            "packageName": "workspace-oracle",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "apps/app",
+            "name": "app",
+            "packageName": "workspace-app",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "local",
+            "name": "local",
+            "packageName": "local-link",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "node_modules/local-link",
+            "name": "local-link",
+            "packageName": "local-link",
+            "version": "1.0.0",
+            "link": true,
+            "target": "local"
+          },
+          {
+            "location": "node_modules/renamed",
+            "name": "renamed",
+            "packageName": "real-leaf",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "node_modules/workspace-app",
+            "name": "workspace-app",
+            "packageName": "workspace-app",
+            "version": "1.0.0",
+            "link": true,
+            "target": "apps/app"
+          },
+          {
+            "location": "node_modules/workspace-lib",
+            "name": "workspace-lib",
+            "packageName": "workspace-lib",
+            "version": "1.0.0",
+            "link": true,
+            "target": "packages/lib"
+          },
+          {
+            "location": "packages/lib",
+            "name": "lib",
+            "packageName": "workspace-lib",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          }
+        ],
+        "edges": [
+          {
+            "from": "",
+            "name": "local-link",
+            "spec": "file:local",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/local-link",
+            "target": "local"
+          },
+          {
+            "from": "",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          },
+          {
+            "from": "",
+            "name": "workspace-app",
+            "spec": "file:<project>/apps/app",
+            "type": "workspace",
+            "error": null,
+            "to": "node_modules/workspace-app",
+            "target": "apps/app"
+          },
+          {
+            "from": "",
+            "name": "workspace-lib",
+            "spec": "file:<project>/packages/lib",
+            "type": "workspace",
+            "error": null,
+            "to": "node_modules/workspace-lib",
+            "target": "packages/lib"
+          },
+          {
+            "from": "apps/app",
+            "name": "workspace-lib",
+            "spec": "*",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/workspace-lib",
+            "target": "packages/lib"
+          },
+          {
+            "from": "local",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "v3-current",
+      "lockfileVersion": 3,
+      "mode": "current",
+      "inputSha256": {
+        "package.json": "32db6e427f6d10a0f3d6f19d21ecdda1ccfb25c81fc6ea45e931f07bc62401d5",
+        "apps/app/package.json": "18a537beb53bb7e8f1b95211e7e5137f6566ab9d304e511150ae3fb449d70304",
+        "packages/lib/package.json": "93d2638e7ce735e9c100d6d29cdd1090d080319c925399d7898b9b39cdd4b5cd",
+        "local/package.json": "4a8d8932f01b56429a19331aa4a2cebc1187528fb7f8ff3a68aa3b10a2b74cba",
+        "package-lock.json": "d770aa01d5daf5eaf04d8774d4641bd5040c6b69e295f78178fb03c460b47fad"
+      },
+      "installedBeforeMutation": {
+        "nodes": [
+          {
+            "location": "",
+            "name": "project",
+            "packageName": "workspace-oracle",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "apps/app",
+            "name": "app",
+            "packageName": "workspace-app",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "local",
+            "name": "local",
+            "packageName": "local-link",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "node_modules/local-link",
+            "name": "local-link",
+            "packageName": "local-link",
+            "version": "1.0.0",
+            "link": true,
+            "target": "local"
+          },
+          {
+            "location": "node_modules/renamed",
+            "name": "renamed",
+            "packageName": "real-leaf",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "node_modules/workspace-app",
+            "name": "workspace-app",
+            "packageName": "workspace-app",
+            "version": "1.0.0",
+            "link": true,
+            "target": "apps/app"
+          },
+          {
+            "location": "node_modules/workspace-lib",
+            "name": "workspace-lib",
+            "packageName": "workspace-lib",
+            "version": "1.0.0",
+            "link": true,
+            "target": "packages/lib"
+          },
+          {
+            "location": "packages/lib",
+            "name": "lib",
+            "packageName": "workspace-lib",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          }
+        ],
+        "edges": [
+          {
+            "from": "",
+            "name": "local-link",
+            "spec": "file:local",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/local-link",
+            "target": "local"
+          },
+          {
+            "from": "",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          },
+          {
+            "from": "",
+            "name": "workspace-app",
+            "spec": "file:<project>/apps/app",
+            "type": "workspace",
+            "error": null,
+            "to": "node_modules/workspace-app",
+            "target": "apps/app"
+          },
+          {
+            "from": "",
+            "name": "workspace-lib",
+            "spec": "file:<project>/packages/lib",
+            "type": "workspace",
+            "error": null,
+            "to": "node_modules/workspace-lib",
+            "target": "packages/lib"
+          },
+          {
+            "from": "apps/app",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          },
+          {
+            "from": "apps/app",
+            "name": "workspace-lib",
+            "spec": "*",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/workspace-lib",
+            "target": "packages/lib"
+          },
+          {
+            "from": "local",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          }
+        ]
+      },
+      "virtual": {
+        "nodes": [
+          {
+            "location": "",
+            "name": "project",
+            "packageName": "workspace-oracle",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "apps/app",
+            "name": "app",
+            "packageName": "workspace-app",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "local",
+            "name": "local",
+            "packageName": "local-link",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "node_modules/local-link",
+            "name": "local-link",
+            "packageName": "local-link",
+            "version": "1.0.0",
+            "link": true,
+            "target": "local"
+          },
+          {
+            "location": "node_modules/renamed",
+            "name": "renamed",
+            "packageName": "real-leaf",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "node_modules/workspace-app",
+            "name": "workspace-app",
+            "packageName": "workspace-app",
+            "version": "1.0.0",
+            "link": true,
+            "target": "apps/app"
+          },
+          {
+            "location": "node_modules/workspace-lib",
+            "name": "workspace-lib",
+            "packageName": "workspace-lib",
+            "version": "1.0.0",
+            "link": true,
+            "target": "packages/lib"
+          },
+          {
+            "location": "packages/lib",
+            "name": "lib",
+            "packageName": "workspace-lib",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          }
+        ],
+        "edges": [
+          {
+            "from": "",
+            "name": "local-link",
+            "spec": "file:local",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/local-link",
+            "target": "local"
+          },
+          {
+            "from": "",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          },
+          {
+            "from": "",
+            "name": "workspace-app",
+            "spec": "file:<project>/apps/app",
+            "type": "workspace",
+            "error": null,
+            "to": "node_modules/workspace-app",
+            "target": "apps/app"
+          },
+          {
+            "from": "",
+            "name": "workspace-lib",
+            "spec": "file:<project>/packages/lib",
+            "type": "workspace",
+            "error": null,
+            "to": "node_modules/workspace-lib",
+            "target": "packages/lib"
+          },
+          {
+            "from": "apps/app",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          },
+          {
+            "from": "apps/app",
+            "name": "workspace-lib",
+            "spec": "*",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/workspace-lib",
+            "target": "packages/lib"
+          },
+          {
+            "from": "local",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "v3-missing",
+      "lockfileVersion": 3,
+      "mode": "missing",
+      "inputSha256": {
+        "package.json": "32db6e427f6d10a0f3d6f19d21ecdda1ccfb25c81fc6ea45e931f07bc62401d5",
+        "packages/lib/package.json": "93d2638e7ce735e9c100d6d29cdd1090d080319c925399d7898b9b39cdd4b5cd",
+        "local/package.json": "4a8d8932f01b56429a19331aa4a2cebc1187528fb7f8ff3a68aa3b10a2b74cba",
+        "package-lock.json": "d770aa01d5daf5eaf04d8774d4641bd5040c6b69e295f78178fb03c460b47fad"
+      },
+      "installedBeforeMutation": {
+        "nodes": [
+          {
+            "location": "",
+            "name": "project",
+            "packageName": "workspace-oracle",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "apps/app",
+            "name": "app",
+            "packageName": "workspace-app",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "local",
+            "name": "local",
+            "packageName": "local-link",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "node_modules/local-link",
+            "name": "local-link",
+            "packageName": "local-link",
+            "version": "1.0.0",
+            "link": true,
+            "target": "local"
+          },
+          {
+            "location": "node_modules/renamed",
+            "name": "renamed",
+            "packageName": "real-leaf",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "node_modules/workspace-app",
+            "name": "workspace-app",
+            "packageName": "workspace-app",
+            "version": "1.0.0",
+            "link": true,
+            "target": "apps/app"
+          },
+          {
+            "location": "node_modules/workspace-lib",
+            "name": "workspace-lib",
+            "packageName": "workspace-lib",
+            "version": "1.0.0",
+            "link": true,
+            "target": "packages/lib"
+          },
+          {
+            "location": "packages/lib",
+            "name": "lib",
+            "packageName": "workspace-lib",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          }
+        ],
+        "edges": [
+          {
+            "from": "",
+            "name": "local-link",
+            "spec": "file:local",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/local-link",
+            "target": "local"
+          },
+          {
+            "from": "",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          },
+          {
+            "from": "",
+            "name": "workspace-app",
+            "spec": "file:<project>/apps/app",
+            "type": "workspace",
+            "error": null,
+            "to": "node_modules/workspace-app",
+            "target": "apps/app"
+          },
+          {
+            "from": "",
+            "name": "workspace-lib",
+            "spec": "file:<project>/packages/lib",
+            "type": "workspace",
+            "error": null,
+            "to": "node_modules/workspace-lib",
+            "target": "packages/lib"
+          },
+          {
+            "from": "apps/app",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          },
+          {
+            "from": "apps/app",
+            "name": "workspace-lib",
+            "spec": "*",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/workspace-lib",
+            "target": "packages/lib"
+          },
+          {
+            "from": "local",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          }
+        ]
+      },
+      "virtual": {
+        "nodes": [
+          {
+            "location": "",
+            "name": "project",
+            "packageName": "workspace-oracle",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "apps/app",
+            "name": "app",
+            "packageName": "workspace-app",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "local",
+            "name": "local",
+            "packageName": "local-link",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "node_modules/local-link",
+            "name": "local-link",
+            "packageName": "local-link",
+            "version": "1.0.0",
+            "link": true,
+            "target": "local"
+          },
+          {
+            "location": "node_modules/renamed",
+            "name": "renamed",
+            "packageName": "real-leaf",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "node_modules/workspace-app",
+            "name": "workspace-app",
+            "packageName": "workspace-app",
+            "version": "1.0.0",
+            "link": true,
+            "target": "apps/app"
+          },
+          {
+            "location": "node_modules/workspace-lib",
+            "name": "workspace-lib",
+            "packageName": "workspace-lib",
+            "version": "1.0.0",
+            "link": true,
+            "target": "packages/lib"
+          },
+          {
+            "location": "packages/lib",
+            "name": "lib",
+            "packageName": "workspace-lib",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          }
+        ],
+        "edges": [
+          {
+            "from": "",
+            "name": "local-link",
+            "spec": "file:local",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/local-link",
+            "target": "local"
+          },
+          {
+            "from": "",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          },
+          {
+            "from": "",
+            "name": "workspace-lib",
+            "spec": "file:<project>/packages/lib",
+            "type": "workspace",
+            "error": null,
+            "to": "node_modules/workspace-lib",
+            "target": "packages/lib"
+          },
+          {
+            "from": "apps/app",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          },
+          {
+            "from": "apps/app",
+            "name": "workspace-lib",
+            "spec": "*",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/workspace-lib",
+            "target": "packages/lib"
+          },
+          {
+            "from": "local",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "v3-stale",
+      "lockfileVersion": 3,
+      "mode": "stale",
+      "inputSha256": {
+        "package.json": "32db6e427f6d10a0f3d6f19d21ecdda1ccfb25c81fc6ea45e931f07bc62401d5",
+        "apps/app/package.json": "3ab01c07dc1b1ced6e018e600c3a065a0d99d89f6d476a499b28873161865fc9",
+        "packages/lib/package.json": "93d2638e7ce735e9c100d6d29cdd1090d080319c925399d7898b9b39cdd4b5cd",
+        "local/package.json": "4a8d8932f01b56429a19331aa4a2cebc1187528fb7f8ff3a68aa3b10a2b74cba",
+        "package-lock.json": "d770aa01d5daf5eaf04d8774d4641bd5040c6b69e295f78178fb03c460b47fad"
+      },
+      "installedBeforeMutation": {
+        "nodes": [
+          {
+            "location": "",
+            "name": "project",
+            "packageName": "workspace-oracle",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "apps/app",
+            "name": "app",
+            "packageName": "workspace-app",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "local",
+            "name": "local",
+            "packageName": "local-link",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "node_modules/local-link",
+            "name": "local-link",
+            "packageName": "local-link",
+            "version": "1.0.0",
+            "link": true,
+            "target": "local"
+          },
+          {
+            "location": "node_modules/renamed",
+            "name": "renamed",
+            "packageName": "real-leaf",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "node_modules/workspace-app",
+            "name": "workspace-app",
+            "packageName": "workspace-app",
+            "version": "1.0.0",
+            "link": true,
+            "target": "apps/app"
+          },
+          {
+            "location": "node_modules/workspace-lib",
+            "name": "workspace-lib",
+            "packageName": "workspace-lib",
+            "version": "1.0.0",
+            "link": true,
+            "target": "packages/lib"
+          },
+          {
+            "location": "packages/lib",
+            "name": "lib",
+            "packageName": "workspace-lib",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          }
+        ],
+        "edges": [
+          {
+            "from": "",
+            "name": "local-link",
+            "spec": "file:local",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/local-link",
+            "target": "local"
+          },
+          {
+            "from": "",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          },
+          {
+            "from": "",
+            "name": "workspace-app",
+            "spec": "file:<project>/apps/app",
+            "type": "workspace",
+            "error": null,
+            "to": "node_modules/workspace-app",
+            "target": "apps/app"
+          },
+          {
+            "from": "",
+            "name": "workspace-lib",
+            "spec": "file:<project>/packages/lib",
+            "type": "workspace",
+            "error": null,
+            "to": "node_modules/workspace-lib",
+            "target": "packages/lib"
+          },
+          {
+            "from": "apps/app",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          },
+          {
+            "from": "apps/app",
+            "name": "workspace-lib",
+            "spec": "*",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/workspace-lib",
+            "target": "packages/lib"
+          },
+          {
+            "from": "local",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          }
+        ]
+      },
+      "virtual": {
+        "nodes": [
+          {
+            "location": "",
+            "name": "project",
+            "packageName": "workspace-oracle",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "apps/app",
+            "name": "app",
+            "packageName": "workspace-app",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "local",
+            "name": "local",
+            "packageName": "local-link",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "node_modules/local-link",
+            "name": "local-link",
+            "packageName": "local-link",
+            "version": "1.0.0",
+            "link": true,
+            "target": "local"
+          },
+          {
+            "location": "node_modules/renamed",
+            "name": "renamed",
+            "packageName": "real-leaf",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          },
+          {
+            "location": "node_modules/workspace-app",
+            "name": "workspace-app",
+            "packageName": "workspace-app",
+            "version": "1.0.0",
+            "link": true,
+            "target": "apps/app"
+          },
+          {
+            "location": "node_modules/workspace-lib",
+            "name": "workspace-lib",
+            "packageName": "workspace-lib",
+            "version": "1.0.0",
+            "link": true,
+            "target": "packages/lib"
+          },
+          {
+            "location": "packages/lib",
+            "name": "lib",
+            "packageName": "workspace-lib",
+            "version": "1.0.0",
+            "link": false,
+            "target": null
+          }
+        ],
+        "edges": [
+          {
+            "from": "",
+            "name": "local-link",
+            "spec": "file:local",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/local-link",
+            "target": "local"
+          },
+          {
+            "from": "",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          },
+          {
+            "from": "",
+            "name": "workspace-app",
+            "spec": "file:<project>/apps/app",
+            "type": "workspace",
+            "error": null,
+            "to": "node_modules/workspace-app",
+            "target": "apps/app"
+          },
+          {
+            "from": "",
+            "name": "workspace-lib",
+            "spec": "file:<project>/packages/lib",
+            "type": "workspace",
+            "error": null,
+            "to": "node_modules/workspace-lib",
+            "target": "packages/lib"
+          },
+          {
+            "from": "apps/app",
+            "name": "workspace-lib",
+            "spec": "*",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/workspace-lib",
+            "target": "packages/lib"
+          },
+          {
+            "from": "local",
+            "name": "renamed",
+            "spec": "npm:real-leaf@1.0.0",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/renamed",
+            "target": null
+          }
+        ]
+      }
+    }
+  ],
+  "seededPackument": {
+    "name": "real-leaf",
+    "dist-tags": {
+      "latest": "1.0.0"
+    },
+    "versions": {
+      "1.0.0": {
+        "name": "real-leaf",
+        "version": "1.0.0",
+        "dist": {
+          "tarball": "http://127.0.0.1:1/real-leaf/-/real-leaf-1.0.0.tgz",
+          "integrity": "sha512-csvjTBTA+W+qqPw9C4coFVxJ4kYTUwz7FESxY25cQdKf0b6iBESH1vq3u1Po1pJ3U41YF8MXFwVbvWpQBmzHYA=="
+        },
+        "_id": "real-leaf@1.0.0",
+        "_resolved": "http://127.0.0.1:1/real-leaf/-/real-leaf-1.0.0.tgz",
+        "_from": "real-leaf@1.0.0",
+        "_integrity": "sha512-csvjTBTA+W+qqPw9C4coFVxJ4kYTUwz7FESxY25cQdKf0b6iBESH1vq3u1Po1pJ3U41YF8MXFwVbvWpQBmzHYA=="
+      }
+    }
+  }
+}

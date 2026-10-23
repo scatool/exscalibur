@@ -327,6 +327,37 @@ test("unresolved requests and unnamed projects are explicit without fabricated v
   );
 });
 
+test.each([2, 3])(
+  "lock v%s preserves recorded root coordinates without a manifest",
+  async (lockfileVersion) => {
+    await input(
+      {
+        "package-lock.json": {
+          name: "recorded-app",
+          version: "1.2.3",
+          lockfileVersion,
+          packages: {
+            "": { dependencies: { child: "1.0.0" } },
+            "node_modules/child": { version: "1.0.0" },
+          },
+        },
+      },
+      async (directory) => {
+        const result = await extract(directory);
+        expect(result.subprojects).toHaveLength(1);
+        expect(result.subprojects[0]).toMatchObject({
+          purl: "pkg:npm/recorded-app@1.2.3",
+          definitionFile: "package-lock.json#packages/",
+        });
+        expect(result.issues).toEqual([]);
+        expect(reached(result, "package-lock.json#packages/").definitePurls).toEqual([
+          "pkg:npm/child@1.0.0",
+        ]);
+      },
+    );
+  },
+);
+
 test("all native npm fixture versions produce valid graphs without PURL-only adjacency", async () => {
   const directory = join(import.meta.dirname, "__fixtures__");
   for (const name of await scanFixtures(directory, "*/{package-lock.json,npm-shrinkwrap.json}")) {
@@ -446,6 +477,32 @@ test("legacy aliases use actual coordinates and nonregistry locators are not fab
         reached(result).graph.nodes.find((node) => node.purl === "pkg:npm/actual@1.2.3")!
           .attributes?.["npm:metadata"],
       ).toMatchObject({ "npm:aliasVersion": "npm:actual@1.2.3" });
+      expect(result.issues).toEqual([]);
+    },
+  );
+});
+
+test("legacy local tarball artifacts do not imply unobserved workspace roots", async () => {
+  await input(
+    {
+      "package.json": { name: "app", workspaces: [], dependencies: { tar: "file:./pkg.tgz" } },
+      "package-lock.json": {
+        lockfileVersion: 1,
+        dependencies: {
+          tar: {
+            version: "file:./pkg.tgz",
+            resolved: "file:./pkg.tgz",
+            integrity: "sha512-content",
+          },
+        },
+      },
+    },
+    async (directory) => {
+      const result = await extract(directory);
+      expect(result.graphs[0]!.rootCompleteness).toBe("complete");
+      expect(
+        result.graphs[0]!.nodes.find((node) => node.purl === "pkg:npm/tar")!.dependencyCompleteness,
+      ).toBe("complete");
       expect(result.issues).toEqual([]);
     },
   );

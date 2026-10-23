@@ -1,0 +1,108 @@
+{
+  "versions": {
+    "node": "22.23.4",
+    "npm": "11.9.0",
+    "arborist": "9.2.0"
+  },
+  "inputSha256": "6eb4cc04788ec2d17f3b7e8be7debefa0284b86bdcf71462de1af5100932f768",
+  "observations": [
+    {
+      "id": "both",
+      "selectedLock": "npm-shrinkwrap.json",
+      "root": {
+        "name": "app",
+        "version": "1.0.0"
+      },
+      "edges": [
+        {
+          "name": "foo",
+          "spec": "2.0.0",
+          "to": "node_modules/foo",
+          "version": "2.0.0",
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "stale",
+      "selectedLock": "package-lock.json",
+      "root": {
+        "name": "app",
+        "version": "1.0.0"
+      },
+      "edges": [
+        {
+          "name": "foo",
+          "spec": "2.0.0",
+          "to": "node_modules/foo",
+          "version": "1.0.0",
+          "error": "INVALID"
+        }
+      ]
+    },
+    {
+      "id": "missing-manifest",
+      "selectedLock": "package-lock.json",
+      "root": {
+        "name": "app",
+        "version": "1.0.0"
+      },
+      "edges": [
+        {
+          "name": "foo",
+          "spec": "1.0.0",
+          "to": "node_modules/foo",
+          "version": "1.0.0",
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "missing-root-name",
+      "selectedLock": "package-lock.json",
+      "root": {
+        "name": "project",
+        "version": null
+      },
+      "edges": [
+        {
+          "name": "foo",
+          "spec": "1.0.0",
+          "to": "node_modules/foo",
+          "version": "1.0.0",
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "missing-root-record",
+      "selectedLock": "package-lock.json",
+      "root": {
+        "name": "project",
+        "version": null
+      },
+      "edges": []
+    },
+    {
+      "id": "malformed-manifest",
+      "selectedLock": "package-lock.json",
+      "root": {
+        "name": "app",
+        "version": "1.0.0"
+      },
+      "edges": [
+        {
+          "name": "foo",
+          "spec": "1.0.0",
+          "to": "node_modules/foo",
+          "version": "1.0.0",
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "invalid-shrinkwrap",
+      "error": "ENOLOCK"
+    }
+  ]
+}

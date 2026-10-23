@@ -45,6 +45,21 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
     const records = version === 1 ? legacyRecords(document) : object(document.packages);
     if (version !== 1 && document.packages === undefined)
       throw new Error("npm lockfile is missing its packages table");
+    // Legacy local entries without artifact metadata do not establish a source-local
+    // project context. A placement lookup alone cannot establish a local source binding.
+    const legacyLocalLocations = new Set(
+      version === 1
+        ? Object.entries(records)
+            .filter(
+              ([, record]) =>
+                typeof record.version === "string" &&
+                /^(?:file:|link:)/.test(record.version) &&
+                record.resolved === undefined &&
+                record.integrity === undefined,
+            )
+            .map(([location]) => location)
+        : [],
+    );
     const workspace = new Map<string, NpmProject>();
     const targets = new Map<string, string>();
     const lockDirectory = dirname(file);
@@ -73,7 +88,7 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
       const project = builder.addProject(
         location,
         definitionFile,
-        drift ? locked : loaded.manifest,
+        drift || !loaded.available ? locked : loaded.manifest,
         loaded.available || version !== 1,
       );
       if (drift) {
@@ -107,7 +122,12 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
       if (!location.split("/").includes("node_modules") || metadata.link === true) continue;
       const name = extractPackageName(location);
       if (!name) throw new Error(`Cannot identify npm package at '${location}'`);
-      const id = builder.addPackage(`package:${JSON.stringify(location)}`, name, metadata);
+      const id = builder.addPackage(
+        `package:${JSON.stringify(location)}`,
+        name,
+        metadata,
+        !legacyLocalLocations.has(location),
+      );
       builder.nodes.get(id)!.locator = location;
       targets.set(location, id);
     }
@@ -152,6 +172,7 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
             ? "excluded"
             : peer ||
                 optionalMissing ||
+                legacyLocalLocations.has(caller) ||
                 ((version === 1 || !Object.hasOwn(records, caller)) && workspace.has(caller))
               ? "unknown"
               : "selected";
@@ -172,6 +193,25 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
         );
       }
     };
+    if (
+      version === 1 &&
+      (legacyLocalLocations.size > 0 ||
+        [...workspace.values()].some((project) => {
+          const declarations = project.manifest.workspaces;
+          return Array.isArray(declarations)
+            ? declarations.length > 0
+            : declarations !== undefined && declarations !== null;
+        }))
+    ) {
+      builder.rootCompleteness = "unknown";
+      builder.result.issues.push({
+        code: "npm.legacy_local_context_unknown",
+        severity: "WARNING",
+        file: context.relativeFile,
+        message:
+          "Lockfile version 1 does not establish workspace/local project roots or source-relative dependency contexts; local lookup candidates remain uncertain",
+      });
+    }
     for (const [location, project] of workspace) {
       declarations(project.consumer, project.manifest, location, true);
       for (const scope of NPM_DEPENDENCY_SCOPES) {

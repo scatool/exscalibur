@@ -51,7 +51,7 @@ does not establish where the software will be deployed.
 
 The npm extractor reads lockfile placements and declarations; it does not run npm
 installation or claim an installed tree. Separate placements retain separate views,
-including when they have the same PURL. Workspace consumers follow production
+including when they have the same PURL. In lockfile versions 2 and 3, workspace consumers follow production
 dependencies without importing the workspace's development roots.
 
 Peer targets found through placement lookup are explicitly `unknown` candidates,
@@ -75,8 +75,20 @@ resolution is required to establish the effective overridden tree. Manifest/lock
 drift detection compares dependency declarations, peer metadata and platform fields;
 it is not a substitute for npm's lock validation.
 
+Version 1 cannot establish workspace/local project roots from incomplete local
+locator records. These observations report unknown root enumeration; local views
+retain raw requests and lookup candidates with unknown adjacency and selection.
+Ordinary archive records with artifact metadata do not imply missing project roots.
+Missing manifests do not discard root coordinates recorded in the lockfile.
+
+When shrinkwrap and package-lock coexist, both files remain independent source
+observations. npm's preference for shrinkwrap does not erase the other file's facts;
+the extractor does not claim both files were selected for an installation.
+
 Pinned, offline native comparisons cover [peer placement and validation](./src/packagelockjson/__fixtures__/npm-peer-oracle/README.md)
-and [optional dependencies, platforms and overrides](./src/packagelockjson/npm-optional-oracle.md).
+and [optional dependencies, platforms and overrides](./src/packagelockjson/npm-optional-oracle.md),
+plus [workspaces, links and aliases across lockfile versions](./src/packagelockjson/npm-workspace-oracle.md)
+and [lock precedence and manifest changes](./src/packagelockjson/__fixtures__/npm-lock-selection-oracle/README.md).
 These are development oracles; normal extraction does not invoke npm or Arborist.
 
 ### Other native observations
