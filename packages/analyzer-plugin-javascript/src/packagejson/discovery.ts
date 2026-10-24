@@ -1,4 +1,4 @@
-import { dirname, join } from "node:path/posix";
+import { dirname, isAbsolute, join, relative, resolve, sep } from "node:path";
 import { existsSync } from "node:fs";
 
 export function hasLockfileInDirectory(dir: string, codebase: string): boolean {
@@ -12,13 +12,19 @@ export function hasLockfileInDirectory(dir: string, codebase: string): boolean {
   ];
 
   // Check current directory and all parent directories up to the codebase root
-  let currentDir = dir;
-  while (currentDir.startsWith(codebase)) {
+  const codebasePath = resolve(codebase);
+  let currentDir = resolve(dir);
+  while (true) {
+    const fromCodebase = relative(codebasePath, currentDir);
+    if (fromCodebase === ".." || fromCodebase.startsWith(`..${sep}`) || isAbsolute(fromCodebase)) {
+      break;
+    }
     for (const lockfile of lockfiles) {
       if (existsSync(join(currentDir, lockfile))) {
         return true;
       }
     }
+    if (fromCodebase === "") break;
 
     // Move to parent directory
     const parentDir = dirname(currentDir);

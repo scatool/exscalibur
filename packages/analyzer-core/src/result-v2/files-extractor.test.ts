@@ -1,6 +1,6 @@
 import { mkdtemp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
-import { join } from "node:path";
+import { join, resolve, sep } from "node:path";
 import { expect, test } from "vite-plus/test";
 import { scanAndMarkFiles } from "../index.ts";
 import { filesExtractorV2 } from "./files-extractor.ts";
@@ -175,3 +175,21 @@ test("empty discovery still returns a validated result in the caller's namespace
     createEmptyResultV2("example:empty"),
   );
 });
+
+test.skipIf(sep !== "/")(
+  "POSIX discovery preserves literal backslashes in directory names",
+  async () => {
+    const codebase = resolve("directory\\with-backslash");
+    let observedRoot: string | undefined;
+    const extractor = filesExtractorV2({
+      name: "posix-discovery",
+      version: 1,
+      markFiles: async (root) => {
+        observedRoot = root;
+      },
+      extractFile: async (_file, _options, context) => createEmptyResultV2(context.codebaseId),
+    });
+    await extractor.extract(codebase);
+    expect(observedRoot).toBe(codebase);
+  },
+);

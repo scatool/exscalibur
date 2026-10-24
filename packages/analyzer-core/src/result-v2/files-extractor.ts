@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { isAbsolute, relative, resolve } from "node:path";
+import { isAbsolute, relative, resolve, sep } from "node:path";
 import type { z } from "zod";
 import type { MarkFileContext } from "../types.ts";
 import { mergeResultsV2, createEmptyResultV2 } from "./merge.ts";
@@ -72,7 +72,8 @@ export function filesExtractorV2<Options = unknown>(
           globalIgnorePatterns: runtime.ignore ?? [],
           markFile: (file) => marked.add(isAbsolute(file) ? file : resolve(codebasePath, file)),
         },
-        codebasePath,
+        // Match scanFiles() paths without treating literal POSIX backslashes as separators.
+        codebasePath.replaceAll(sep, "/"),
         options,
       );
 

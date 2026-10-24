@@ -1,3 +1,4 @@
+import { dirname as filesystemDirname } from "node:path";
 import { dirname } from "node:path/posix";
 import {
   filesExtractorV2,
@@ -20,7 +21,7 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
       "**/package.json",
       mergeIgnorePatterns(this, options.ignore),
     )) {
-      if (!hasLockfileInDirectory(dirname(file), codebase)) this.markFile(file);
+      if (!hasLockfileInDirectory(filesystemDirname(file), codebase)) this.markFile(file);
     }
   },
   extractFile: async (file, _options, context) => {
