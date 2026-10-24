@@ -9,7 +9,7 @@ import {
 import { NPM_DEPENDENCY_SCOPES } from "../npm-utils.ts";
 import {
   NpmGraphV2,
-  addManifestObservation,
+  addCurrentManifestObservation,
   json,
   loadNpmManifest,
   table,
@@ -57,6 +57,7 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
     const snapshots = version >= 9 ? table(raw, "snapshots") : packages;
     const metadataKeys = Object.keys(packages);
     const nodes = new Map<string, string>();
+    const missingMetadata = new Set<string>();
     const metadataFor = (key: string): string | undefined => {
       if (Object.hasOwn(packages, key)) return key;
       if (!key.includes("(")) return undefined;
@@ -93,14 +94,43 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
     for (const [key, snapshot] of Object.entries(snapshots)) {
       const metadata = metadataFor(key);
       if (metadata !== undefined) coveredMetadata.add(metadata);
-      const id = register(key, true, metadata);
+      const id = register(key, metadata !== undefined, metadata);
       builder.nodes.get(id)!.attributes!["pnpm:snapshot"] = json(snapshot);
+      if (metadata === undefined) {
+        missingMetadata.add(id);
+        builder.nodes.get(id)!.attributes!["pnpm:packageMetadataMissing"] = true;
+        builder.result.issues.push({
+          code: "pnpm.package_metadata_missing",
+          severity: "WARNING",
+          file: context.relativeFile,
+          message: `Snapshot '${key}' has no package metadata; peer declarations and platform applicability remain unknown`,
+        });
+      }
     }
     for (const key of metadataKeys) {
       if (!coveredMetadata.has(key)) register(key, false, key);
     }
 
-    const importers = raw.importers === undefined ? { ".": raw } : table(raw, "importers");
+    const missingImporters = version >= 9 && raw.importers == null;
+    const importers =
+      raw.importers === undefined && version < 9 ? { ".": raw } : table(raw, "importers");
+    if (missingImporters) {
+      builder.rootCompleteness = "unknown";
+      builder.result.issues.push({
+        code: "pnpm.importers_missing",
+        severity: "WARNING",
+        file: context.relativeFile,
+        message: "The v9 importer table is missing; native project roots cannot be established",
+      });
+      const loaded = await loadNpmManifest(join(dirname(file), "package.json"), {}, builder);
+      if (loaded.available)
+        addCurrentManifestObservation(
+          manifests,
+          ".",
+          join(dirname(context.relativeFile), "package.json"),
+          loaded.manifest,
+        );
+    }
     const projects = new Map<string, { project: NpmProject; importer: NpmRecord }>();
     for (const [location, value] of Object.entries(importers)) {
       const importer = record(value);
@@ -131,7 +161,7 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
         builder.sourceFiles.add(definitionFile);
         // Importers encode a selected dependency observation, not necessarily every current
         // manifest declaration (notably peer requirements). Keep the source declaration separately.
-        addManifestObservation(manifests, location, definitionFile, loaded.manifest);
+        addCurrentManifestObservation(manifests, location, definitionFile, loaded.manifest);
       }
     }
 
@@ -169,7 +199,8 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
           const optional = scope === "optionalDependencies";
           const selection = overridden
             ? "excluded"
-            : optional && target === undefined
+            : (optional && target === undefined) ||
+                (target !== undefined && missingMetadata.has(target))
               ? "unknown"
               : "selected";
           const options = {
@@ -215,7 +246,8 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
           const selection =
             scope === "devDependencies"
               ? "excluded"
-              : optional && target === undefined
+              : (optional && target === undefined) ||
+                  (target !== undefined && missingMetadata.has(target))
                 ? "unknown"
                 : "selected";
           builder.dependency(

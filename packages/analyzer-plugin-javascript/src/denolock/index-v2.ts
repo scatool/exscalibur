@@ -1,4 +1,6 @@
 import { createHash } from "node:crypto";
+import { realpath } from "node:fs/promises";
+import { isAbsolute, relative as filesystemRelative, resolve, sep } from "node:path";
 import { dirname, join, normalize, relative } from "node:path/posix";
 import { PackageURL } from "packageurl-js";
 import { valid, validRange, satisfies } from "semver";
@@ -265,11 +267,50 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
         ([location, value]) => [normalize(location), record(value)] as const,
       ),
     ]);
+    const codebaseDirectory = await realpath(context.codebasePath);
+    const contained = (root: string, path: string): boolean => {
+      const within = filesystemRelative(root, path);
+      return !isAbsolute(within) && within !== ".." && !within.startsWith(`..${sep}`);
+    };
+    const canReadManifest = async (location: string, name: string): Promise<boolean> => {
+      const path = join(dirname(file), location, name);
+      let safe =
+        location !== ".." &&
+        !location.startsWith("../") &&
+        !location.startsWith("/") &&
+        contained(resolve(context.codebasePath), resolve(path));
+      if (safe) {
+        try {
+          safe = contained(codebaseDirectory, await realpath(path));
+        } catch (error) {
+          if (
+            !(
+              error !== null &&
+              typeof error === "object" &&
+              "code" in error &&
+              error.code === "ENOENT"
+            )
+          )
+            native.issue(
+              "deno.manifest_unreadable",
+              `Could not verify the local manifest '${join(location, name)}'; only recorded lock metadata is used`,
+            );
+          return false;
+        }
+      }
+      if (!safe)
+        native.issue(
+          "deno.manifest_outside_codebase",
+          `Local manifest '${join(location, name)}' leaves its lockfile directory or the scanned codebase; only recorded lock metadata is used`,
+        );
+      return safe;
+    };
     const loadedConfigs = new Map<string, { manifest: NpmRecord; file?: string }>();
     const loadConfig = async (location: string) => {
       if (loadedConfigs.has(location)) return loadedConfigs.get(location)!;
       let loaded: { manifest: NpmRecord; file?: string } = { manifest: {} };
       for (const name of ["deno.json", "deno.jsonc"]) {
+        if (!(await canReadManifest(location, name))) continue;
         const path = join(dirname(file), location, name);
         try {
           const errors: ParseError[] = [];
@@ -299,7 +340,10 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
     };
     const rootConfig = await loadConfig(".");
     try {
-      for (const pattern of strings(rootConfig.manifest.workspace))
+      for (const pattern of strings(rootConfig.manifest.workspace)) {
+        const location = normalize(pattern);
+        if (location === ".." || location.startsWith("../") || location.startsWith("/"))
+          throw new Error(`Deno workspace pattern is outside its lockfile directory: ${pattern}`);
         for (const path of await scanFiles(
           dirname(file),
           `${pattern}/{deno.json,deno.jsonc,package.json}`,
@@ -308,6 +352,7 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
           const location = normalize(relative(dirname(file), dirname(path)));
           if (!members.has(location)) members.set(location, {});
         }
+      }
     } catch (error) {
       declared.rootCompleteness = "partial";
       declared.result.issues.push({
@@ -322,14 +367,10 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
       ...Object.keys(table(workspace, "members")).map((key) => normalize(key)),
     ]);
     for (const [location, member] of members) {
-      if (location === ".." || location.startsWith("../") || location.startsWith("/"))
-        throw new Error(`Deno member is outside its lockfile directory: ${location}`);
       const config = await loadConfig(location);
-      const jsonManifest = await loadNpmManifest(
-        join(dirname(file), location, "package.json"),
-        {},
-        packageJson,
-      );
+      const jsonManifest = (await canReadManifest(location, "package.json"))
+        ? await loadNpmManifest(join(dirname(file), location, "package.json"), {}, packageJson)
+        : { manifest: {}, available: false };
       if (jsonManifest.available) {
         const definition = join(dirname(context.relativeFile), location, "package.json");
         try {

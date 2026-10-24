@@ -11,7 +11,7 @@ import { NPM_DEPENDENCY_SCOPES } from "../npm-utils.ts";
 import { npmResolutionCandidates } from "../npm-resolution.ts";
 import {
   NpmGraphV2,
-  addManifestObservation,
+  addCurrentManifestObservation,
   dependencyScopes,
   loadNpmManifest,
   type NpmProject,
@@ -67,6 +67,7 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
         : [],
     );
     const workspace = new Map<string, NpmProject>();
+    const invalidCurrentProjects = new Set<string>();
     const targets = new Map<string, string>();
     const lockDirectory = dirname(file);
     const relativeDirectory = dirname(context.relativeFile);
@@ -151,7 +152,7 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
           message:
             "The current manifest differs from its lockfile declarations; locked dependencies and current declarations are separate observations",
         });
-        addManifestObservation(liveManifests, location, definitionFile, loaded.manifest);
+        addCurrentManifestObservation(liveManifests, location, definitionFile, loaded.manifest);
       }
       workspace.set(location, project);
       targets.set(location, project.consumer);
@@ -167,6 +168,16 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
         : context.relativeFile;
       if (loaded.available) builder.sourceFiles.add(definition);
       const project = builder.addProject("", definition, loaded.manifest, loaded.available);
+      if (loaded.available) {
+        try {
+          dependencyScopes(loaded.manifest);
+        } catch {
+          addCurrentManifestObservation(liveManifests, "", definition, loaded.manifest);
+          project.known = false;
+          builder.nodes.get(project.consumer)!.dependencyCompleteness = "unknown";
+          invalidCurrentProjects.add(project.consumer);
+        }
+      }
       workspace.set("", project);
       targets.set("", project.consumer);
     }
@@ -281,6 +292,10 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
       });
     }
     for (const [location, project] of workspace) {
+      if (invalidCurrentProjects.has(project.consumer)) {
+        for (const scope of NPM_DEPENDENCY_SCOPES) builder.addRoot(project, scope);
+        continue;
+      }
       declarations(project.consumer, project.manifest, location, true);
       for (const scope of NPM_DEPENDENCY_SCOPES) {
         const entry = builder.addRoot(project, scope);

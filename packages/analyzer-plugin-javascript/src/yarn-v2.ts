@@ -14,7 +14,7 @@ import {
 import { NPM_DEPENDENCY_SCOPES } from "./npm-utils.ts";
 import {
   NpmGraphV2,
-  addManifestObservation,
+  addCurrentManifestObservation,
   dependencyScopes,
   json,
   loadNpmManifest,
@@ -43,6 +43,7 @@ type Manifest = {
   definition: string;
   manifest: NpmRecord;
   available: boolean;
+  declarationsKnown: boolean;
   entry?: Entry;
 };
 
@@ -77,7 +78,13 @@ export async function extractYarnV2(
     const definition = loaded.available
       ? join(dirname(context.relativeFile), location, "package.json")
       : `${context.relativeFile}#workspace=${encodeURIComponent(location)}`;
-    const manifest = { location, definition, ...loaded, ...(entry && { entry }) };
+    const manifest = {
+      location,
+      definition,
+      ...loaded,
+      declarationsKnown: loaded.available,
+      ...(entry && { entry }),
+    };
     manifests.set(location, manifest);
     if (loaded.available) native.sourceFiles.add(definition);
     return manifest;
@@ -110,12 +117,12 @@ export async function extractYarnV2(
   declared.sourceFiles.clear();
   for (const manifest of manifests.values())
     if (manifest.available)
-      addManifestObservation(
+      manifest.declarationsKnown = addCurrentManifestObservation(
         declared,
         manifest.location,
         manifest.definition,
         manifest.manifest,
-        yarnDeclarations(manifest.manifest),
+        () => yarnDeclarations(manifest.manifest),
       );
   const scoped = new NpmGraphV2(context, name);
   scoped.attributes["yarn:observation"] = "current-manifest-scopes";
@@ -128,7 +135,7 @@ export async function extractYarnV2(
   }
   if (!modern || !entries.some((entry) => entry.workspace !== undefined))
     native.rootCompleteness = "unknown";
-  if ([...manifests.values()].some((manifest) => !manifest.available))
+  if ([...manifests.values()].some((manifest) => !manifest.declarationsKnown))
     scoped.rootCompleteness = "partial";
 
   const populate = (builder: NpmGraphV2, correlate: boolean) => {
@@ -143,7 +150,7 @@ export async function extractYarnV2(
           manifest.location,
           manifest.definition,
           manifest.manifest,
-          correlate ? manifest.available : true,
+          correlate ? manifest.declarationsKnown : true,
         );
         builder.nodes.get(project.consumer)!.attributes!["yarn:coordinateSource"] =
           manifest.available ? "current-manifest" : "lock-locator";
@@ -305,6 +312,10 @@ export async function extractYarnV2(
     if (!correlate) return;
     for (const manifest of manifests.values()) {
       const project = projects.get(manifest.location)!;
+      if (manifest.available && !manifest.declarationsKnown) {
+        for (const scope of NPM_DEPENDENCY_SCOPES) builder.addRoot(project, scope);
+        continue;
+      }
       const declarations = yarnDeclarations(manifest.manifest, (name, reference) => {
         const target = binding(name, reference);
         return target === undefined ? undefined : targetVersions.get(target);

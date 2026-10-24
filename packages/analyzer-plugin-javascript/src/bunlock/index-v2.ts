@@ -11,7 +11,7 @@ import {
 import { NPM_DEPENDENCY_SCOPES } from "../npm-utils.ts";
 import {
   NpmGraphV2,
-  addManifestObservation,
+  addCurrentManifestObservation,
   dependencyScopes,
   json,
   loadNpmManifest,
@@ -96,7 +96,16 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
       projects.set(normalize(location), { project, locked, caller: "" });
       if (loaded.available) {
         builder.sourceFiles.add(definition);
-        addManifestObservation(declared, location, definition, loaded.manifest);
+        const declarationsKnown = addCurrentManifestObservation(
+          declared,
+          location,
+          definition,
+          loaded.manifest,
+        );
+        if (!locked && !declarationsKnown) {
+          project.known = false;
+          builder.nodes.get(project.consumer)!.dependencyCompleteness = "unknown";
+        }
         if (
           locked &&
           [...NPM_DEPENDENCY_SCOPES, "peerDependenciesMeta"].some(
@@ -291,6 +300,10 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
       }
     };
     for (const { project, locked, caller } of projects.values()) {
+      if (!locked && !project.known) {
+        for (const scope of NPM_DEPENDENCY_SCOPES) builder.addRoot(project, scope);
+        continue;
+      }
       declarations(project.consumer, project.manifest, caller, true, locked, undefined, true);
       for (const scope of NPM_DEPENDENCY_SCOPES)
         declarations(
@@ -308,7 +321,8 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
       if (alias) {
         const tupleWorkspace =
           document.lockfileVersion === 0 && entry.reference.startsWith("workspace:");
-        if (!entry.infoComplete) builder.nodes.get(alias.view)!.dependencyCompleteness = "unknown";
+        if (!entry.infoComplete || (!tupleWorkspace && !alias.project.known))
+          builder.nodes.get(alias.view)!.dependencyCompleteness = "unknown";
         else
           declarations(
             alias.view,

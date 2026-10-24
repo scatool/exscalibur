@@ -283,6 +283,41 @@ export function addManifestObservation(
   }
 }
 
+/** A malformed auxiliary manifest must not invalidate an independent native lock observation. */
+export function addCurrentManifestObservation(
+  builder: NpmGraphV2,
+  location: string,
+  definitionFile: string,
+  manifest: NpmRecord,
+  readDeclarations: () => NpmDeclaration[] = () => dependencyScopes(manifest),
+): boolean {
+  let declarations: NpmDeclaration[];
+  try {
+    declarations = readDeclarations();
+  } catch (error) {
+    const project = builder.addProject(location, definitionFile, manifest, false);
+    builder.sourceFiles.add(definitionFile);
+    builder.nodes.get(project.consumer)!.attributes!["npm:invalidDeclarations"] = json(
+      Object.fromEntries(
+        [...NPM_DEPENDENCY_SCOPES, "peerDependenciesMeta", "dependenciesMeta"]
+          .filter((key) => Object.hasOwn(manifest, key))
+          .map((key) => [key, manifest[key]]),
+      ),
+    );
+    for (const scope of NPM_DEPENDENCY_SCOPES) builder.addRoot(project, scope);
+    builder.rootCompleteness = "partial";
+    builder.result.issues.push({
+      code: "npm.manifest_declarations_failed",
+      severity: "WARNING",
+      file: definitionFile,
+      message: `Could not read current manifest declarations; native lock evidence is retained: ${error instanceof Error ? error.message : String(error)}`,
+    });
+    return false;
+  }
+  addManifestObservation(builder, location, definitionFile, manifest, declarations);
+  return true;
+}
+
 export function table(record: NpmRecord, name: string): Record<string, unknown> {
   if (!Object.hasOwn(record, name)) return {};
   const value = record[name];
@@ -297,6 +332,7 @@ export function dependencyScopes(record: NpmRecord): NpmDeclaration[] {
   const peerMeta = table(record, "peerDependenciesMeta");
   return NPM_DEPENDENCY_SCOPES.flatMap((scope) =>
     Object.entries(table(record, scope)).flatMap(([name, value]) => {
+      if (name.length === 0) throw new Error(`Expected a nonempty ${scope} dependency name`);
       if (typeof value !== "string")
         throw new Error(`Expected a string ${scope} request for '${name}'`);
       const meta = peerMeta[name];
@@ -325,7 +361,20 @@ export async function loadNpmManifest(
   builder: NpmGraphV2,
 ): Promise<{ manifest: NpmRecord; available: boolean }> {
   try {
-    const value: unknown = JSON.parse((await readFile(file, "utf8")).replace(/^\uFEFF/, ""));
+    const value: unknown = JSON.parse(
+      (await readFile(file, "utf8")).replace(/^\uFEFF/, ""),
+      (_key, value: unknown) => {
+        // Validate before any identity or metadata is copied into the native observation.
+        if (
+          typeof value === "number" &&
+          (!Number.isFinite(value) || (Number.isInteger(value) && !Number.isSafeInteger(value)))
+        )
+          throw new Error(
+            "Manifest contains a nonportable number; current manifest data is omitted",
+          );
+        return value;
+      },
+    );
     if (value === null || typeof value !== "object" || Array.isArray(value))
       throw new Error("Expected a package manifest object");
     return { manifest: value as NpmRecord, available: true };
