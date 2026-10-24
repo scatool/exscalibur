@@ -16,6 +16,7 @@ const evidenceSchema = z.object({
     "javascript-native-inputs",
     "native-go-mixed",
     "native-vcpkg-metadata",
+    "native-conan-graph",
     "package-json-fixtures",
     "npm-package-lock",
     "yarn-classic-raw",

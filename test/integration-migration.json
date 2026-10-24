@@ -44,12 +44,12 @@
   ],
   "summary": {
     "cases": 87,
-    "accepted": 85,
-    "pendingSourceReview": 2,
-    "legacyReferenceBaselines": 2,
+    "accepted": 86,
+    "pendingSourceReview": 1,
+    "legacyReferenceBaselines": 1,
     "inputCheckpoints": {
-      "source-reviewed": 85,
-      "receipt-recorded": 2
+      "source-reviewed": 86,
+      "receipt-recorded": 1
     },
     "casesWithHistoricalNativeToolEvidence": 8,
     "casesWithoutHistoricalNativeToolEvidence": 79,
@@ -8856,9 +8856,9 @@
       "pendingReason": {
         "status": "blocked",
         "requiredTool": "Java 11 with pinned repository Gradle 6.6.1 wrapper",
-        "action": "Provision required JDK and execute the configured native extractor.",
-        "reason": "Configured Java 11 is unavailable. An official Temurin provisioning request for Java 21 at https://api.adoptium.net/v3/binary/latest/21/ga/linux/x64/jdk/hotspot/normal/eclipse returned CONNECT 403 Forbidden; that route was stopped without a Java 11 retry.",
-        "outcome": "No accepted native extraction or format 2 baseline; source archive is acquired."
+        "action": "Approve or provide Java trust for the existing environment proxy, then rerun the unchanged native extraction with TLS verification enabled.",
+        "reason": "Fresh executor has Temurin JDK 11.0.32+101 and 21.0.13+9 via mise. Gradle wrapper downloads through the existing environment proxy fail javax.net.ssl.SSLHandshakeException: PKIX path building failed; unable to find valid certification path to requested target. Trust/security settings were not changed.",
+        "outcome": "No accepted extraction or format 2 baseline; source archive acquired and native attempt preserved as failure."
       }
     },
     {
@@ -10672,7 +10672,7 @@
       "id": "drogonframework+drogon",
       "repository": "drogonframework/drogon",
       "commit": "9784c612762b106adf70a713cf68384d909d2141",
-      "status": "pending-source-review",
+      "status": "accepted",
       "configuration": {
         "requiredTools": [],
         "extractorOptions": {
@@ -10685,21 +10685,22 @@
       },
       "baseline": {
         "path": "test/__snapshots__/drogonframework+drogon.json",
-        "status": "legacy-reference-only",
+        "status": "accepted-format-2",
         "sha256": "b30be179592a09d40143b3693f58f7eec36b080d2088474f9d5286f3523d567e",
         "packageCount": 7,
         "projectCount": 1,
-        "issueCodes": []
+        "issueCodes": [],
+        "acceptedSha256": "3acca6e093fe9f1bb1fd849def1b4cc412395a393ca14231f5da4be4098b60b5"
       },
       "inputCheckpoint": {
         "path": "test/repositories/drogonframework+drogon",
-        "status": "receipt-recorded",
+        "status": "source-reviewed",
         "archiveMarkerPresent": false,
         "nonMarkerTopLevelEntryCount": 31,
         "receiptPath": "test/repositories/.sources/drogonframework+drogon.json",
         "commit": "9784c612762b106adf70a713cf68384d909d2141",
         "tree": "f2262e446fadf4e7b4830be823678366c73ae6a3",
-        "archiveSha256": "1f88e69f8c765d49f8724a24f44daebd8f7975943525e9c7f197804f01dd7306"
+        "archiveSha256": "c6ad8eb7d772ef94a96fb07e69340c2e3c8119f66ff850aa2fdd977ae5c38494"
       },
       "historicalInputs": [
         {
@@ -10723,13 +10724,44 @@
           ]
         }
       ],
-      "reviewEvidence": [],
-      "pendingReason": {
-        "status": "blocked",
-        "requiredTool": "Conan 2.28.1 with configured profiles",
-        "action": "Resolve the pinned project through its configured Conan registry.",
-        "reason": "The configured registry endpoint https://center2.conan.io/v1/ping returned CONNECT 403 Forbidden. The denied operation was not retried.",
-        "outcome": "Conan is installed and source archive acquired; native resolution and source-backed baseline acceptance remain pending."
+      "reviewEvidence": {
+        "kind": "native-conan-graph",
+        "source": {
+          "commit": "9784c612762b106adf70a713cf68384d909d2141",
+          "tree": "f2262e446fadf4e7b4830be823678366c73ae6a3",
+          "archiveSha256": "c6ad8eb7d772ef94a96fb07e69340c2e3c8119f66ff850aa2fdd977ae5c38494",
+          "files": [
+            {
+              "path": "conanfile.txt",
+              "sha256": "99afb2de0ca01646c9fad60cd0057d7553dd7b4a95fbc41a3f4d678b47bff6e2"
+            },
+            {
+              "path": ".gitmodules",
+              "sha256": "ccab9449963fae3c7df263bb9785ecc108c83d24396b6ad71ef87e746ba0f178"
+            }
+          ]
+        },
+        "tools": [
+          {
+            "name": "conan",
+            "version": "2.28.1"
+          },
+          {
+            "name": "node",
+            "version": "22.23.4"
+          }
+        ],
+        "assertions": [
+          "Exact seven ordinary source requirements bind to native selected recipe revisions and package IDs.",
+          "Native host settings/options and all direct dependency traits are preserved; no invented transitive adjacency.",
+          "One consumer subject and runtime/build/test roots; runtime selects seven nodes, build/test are empty.",
+          "Superproject archive only; trantor gitlink omitted. Build selection is not compilation/install evidence.",
+          "All sixteen harness extractors executed; only Conan contributes; core and independent semantic checks pass."
+        ],
+        "review": {
+          "path": "test/acceptance/drogon-conan.md",
+          "sha256": "8135f1dce79af1b5851ad31aee4a73b43fa065d55d528445b43cd2e4db0b5a14"
+        }
       }
     }
   ]
