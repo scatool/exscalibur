@@ -29,6 +29,8 @@ Stable module selection facts exclude host cache paths and cache hydration metad
 
 The ANSI-highlighted Go and requirements fixtures retain explicit core.file_extraction_failed ERROR observations with unknown coverage. The two requirements options remain warnings, while all 28 native declaration lines and marker conditions are retained without fabricated resolution.
 
+The requirements source hash above is unchanged. Its line 25 declares `requests [security,tests] >= 2.8.1, == 2.8.* ; python_version < "2.7"` before an inline comment. Independent local Python `packaging` 25.0 parsing confirms the name `requests`, extras `security` and `tests`, and the unchanged Python-version marker. The corrected baseline adds only these two requested features and updates that observation's content-derived graph ID; it does not assert that extras were resolved or activated. The explicit assertion in `test/go-acceptance.test.ts` covers this whitespace-before-extras case. The preceding accepted format 2 baseline SHA-256 was `832b58f71654caece2f93c7928f469929efba917d43409ffe2ef39f0542cb3f1`; the historical V1 hash remains unchanged in the migration ledger.
+
 Every Cargo lock record, checksum and dependency reference was compared against raw TOML. Cargo roots remain unknown and no workspace/project scope is inferred.
 
 Scope is the pinned superproject only: all 884 superproject file bytes and modes plus all 91 gitlink records were independently verified; submodule contents are absent and not claimed as analyzed.

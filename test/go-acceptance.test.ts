@@ -287,6 +287,17 @@ test("Bat: requirements retain declarations, markers, unsupported options and ma
   expect(graph.roots).toHaveLength(1);
   expect(graph.roots[0]!.project.definitionFile).toBe(file);
   expect(sorted(graph.edges.map((e) => e.requested?.specifier))).toEqual(sorted(requests));
+  // Pinned line 25 uses valid PEP 508 whitespace before the extras list.
+  const extrasDeclaration = 'requests [security,tests] >= 2.8.1, == 2.8.* ; python_version < "2.7"';
+  expect(requests).toContain(extrasDeclaration);
+  expect(graph.edges.find((edge) => edge.requested?.specifier === extrasDeclaration)).toMatchObject(
+    {
+      status: "declared",
+      selection: "conditional",
+      requested: { name: "requests", features: ["security", "tests"] },
+      condition: { language: "pep508", expression: 'python_version < "2.7"' },
+    },
+  );
   for (const edge of graph.edges) {
     expect(edge.status).toBe("declared");
     expect(edge).not.toHaveProperty("to");

@@ -18691,6 +18691,10 @@
               "expression": "python_version < \"2.7\"",
               "language": "pep508"
             },
+            "features": [
+              "security",
+              "tests"
+            ],
             "name": "requests",
             "specifier": "requests [security,tests] >= 2.8.1, == 2.8.* ; python_version < \"2.7\""
           },
@@ -19061,7 +19065,7 @@
           "status": "declared"
         }
       ],
-      "id": "[\"requirementstxt\",\"tests/syntax-tests/source/Requirements.txt/requirements.txt\",\"requirementstxt:8e95962ef2a37eb08613555b3a2a1a1f1389d5e1745b8b497a8f513179e6d535\"]",
+      "id": "[\"requirementstxt\",\"tests/syntax-tests/source/Requirements.txt/requirements.txt\",\"requirementstxt:01dae6013aa8af55d8c4e5c7d9f51442d8e97721dcac40e0c0deb4f53a71ed1f\"]",
       "interpretation": "declared",
       "nodes": [
         {
