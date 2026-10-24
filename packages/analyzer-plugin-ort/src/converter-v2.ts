@@ -173,8 +173,8 @@ export function convertOrtResultV2(
       return `ort:${JSON.stringify([nativeGraph.packages[pkg], fragment])}`;
     };
     const register = (nativeNode: OrtDependencyReference): string => {
-      const pkg = nativeNode.pkg ?? 0;
-      const fragment = nativeNode.fragment ?? 0;
+      const pkg = nativeNode.pkg === undefined ? 0 : nativeNode.pkg;
+      const fragment = nativeNode.fragment === undefined ? 0 : nativeNode.fragment;
       const key = nodeKey(pkg, fragment);
       const id = nativeGraph.packages[pkg]!;
       const subject = identity(id);
@@ -317,11 +317,12 @@ export function convertOrtResultV2(
       roots.push({ id: scopeKey, project: reference, scope, node: entry, evidence });
       seenScopes.add(JSON.stringify([project.id, scope]));
       for (const dependency of dependencies) {
-        const target = nodeKey(dependency.root, dependency.fragment ?? 0);
+        const fragment = dependency.fragment === undefined ? 0 : dependency.fragment;
+        const target = nodeKey(dependency.root, fragment);
         if (!nodes.has(target)) {
           // A scope reference establishes this dependency's identity and presence. Its missing
           // node table record leaves outgoing adjacency unknown, rather than erasing the package.
-          register({ pkg: dependency.root, fragment: dependency.fragment ?? 0 });
+          register({ pkg: dependency.root, fragment });
           nodes.get(target)!.dependencyCompleteness = "unknown";
           nodes.get(target)!.attributes!["ort:missingNode"] = true;
           result.issues.push({

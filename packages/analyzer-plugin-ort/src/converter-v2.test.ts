@@ -344,3 +344,59 @@ test("malformed native dependency edges fail explicitly instead of dropping rela
     ),
   ).toThrow("without an indexed node table");
 });
+
+test("omitted ORT node indices and scope fragments retain native zero defaults", () => {
+  const result = convertOrtResultV2(
+    {
+      projects: [
+        { id: "NPM::app:1", definition_file_path: "package.json", scope_names: ["dependencies"] },
+      ],
+      dependency_graphs: {
+        NPM: {
+          packages: ["NPM::foo:1", "NPM::bar:1"],
+          scopes: { ":app:1:dependencies": [{ root: 0 }] },
+          nodes: [{}, { pkg: 1 }],
+          edges: [{ from: 0, to: 1 }],
+        },
+      },
+    },
+    options,
+  );
+  expect(closure(result, "package.json", "dependencies")).toMatchObject({
+    purls: ["pkg:npm/bar@1", "pkg:npm/foo@1"],
+    completeness: "complete",
+  });
+});
+
+test.each(
+  (
+    ["indexed pkg", "indexed fragment", "legacy pkg", "legacy fragment", "scope fragment"] as const
+  ).flatMap((location) => [null, "0", false].map((value) => ({ location, value }))),
+)("invalid ORT $location value $value cannot alias index zero", ({ location, value }) => {
+  const field = location.endsWith("pkg") ? "pkg" : "fragment";
+  const node = { [field]: value };
+  const native = {
+    projects: [
+      { id: "NPM::app:1", definition_file_path: "package.json", scope_names: ["dependencies"] },
+    ],
+    dependency_graphs: {
+      NPM: {
+        packages: ["NPM::foo:1", "NPM::bar:1"],
+        scopes: {
+          ":app:1:dependencies": [
+            { root: 0, ...(location === "scope fragment" && { fragment: value }) },
+          ],
+        },
+        ...(location.startsWith("legacy")
+          ? { scope_roots: [{ ...node, dependencies: [{ pkg: 1 }] }] }
+          : {
+              nodes: [location === "scope fragment" ? {} : node, { pkg: 1 }],
+              edges: [{ from: 0, to: 1 }],
+            }),
+      },
+    },
+  };
+  expect(() => convertOrtResultV2(native as unknown as OrtAnalyzerResult, options)).toThrow(
+    field === "pkg" ? "invalid package index" : "invalid fragment",
+  );
+});

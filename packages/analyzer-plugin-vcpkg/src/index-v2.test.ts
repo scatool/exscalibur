@@ -4,6 +4,7 @@ import { parseResultV2, queryDependenciesV2 } from "@scatool/analyzer-core";
 import { mkdtemp, writeFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
+import type { VcpkgPort } from "./types.ts";
 
 test("registry candidates retain separate host/target views and native feature/platform declarations", () => {
   const result = convertVcpkgPortsV2(
@@ -83,4 +84,52 @@ test("registry command failure retains unknown coverage instead of a successful 
   } finally {
     await rm(dir, { recursive: true, force: true });
   }
+});
+
+test.each([
+  { name: "app", dependencies: null },
+  { name: "app", features: { tls: { description: "TLS", dependencies: null } } },
+])("invalid vcpkg dependency lists cannot become complete empty graphs: %j", async (manifest) => {
+  expect(() =>
+    convertVcpkgPortsV2(manifest as unknown as VcpkgPort, {}, "vcpkg.json", "test"),
+  ).toThrow(/dependencies.*array/);
+  const dir = await mkdtemp(join(tmpdir(), "vcpkg-invalid-list-"));
+  try {
+    await writeFile(join(dir, "vcpkg.json"), JSON.stringify(manifest));
+    const result = await extractorV2.extract(
+      dir,
+      { vcpkgPath: join(dir, "missing-vcpkg") },
+      { codebaseId: "test" },
+    );
+    expect(parseResultV2(result)).toEqual(result);
+    expect(result.issues).toEqual([
+      expect.objectContaining({
+        severity: "ERROR",
+        message: expect.stringMatching(/dependencies.*array/),
+      }),
+    ]);
+    expect(result.graphs).toEqual([
+      expect.objectContaining({ rootCompleteness: "unknown", roots: [], nodes: [], edges: [] }),
+    ]);
+  } finally {
+    await rm(dir, { recursive: true, force: true });
+  }
+});
+
+test.each([
+  { name: "app" },
+  { name: "app", dependencies: [] },
+  { name: "app", features: { tls: { description: "TLS", dependencies: [] } } },
+])("valid empty vcpkg declarations retain complete roots: %j", (manifest) => {
+  const result = convertVcpkgPortsV2(manifest, {}, "vcpkg.json", "test");
+  expect(parseResultV2(result)).toEqual(result);
+  expect(result.issues).toEqual([]);
+  for (const graph of result.graphs)
+    for (const root of graph.roots)
+      expect(queryDependenciesV2(result, { graph: graph.id, root: root.id })).toMatchObject({
+        definite: [],
+        conditional: [],
+        declarations: [],
+        completeness: "complete",
+      });
 });

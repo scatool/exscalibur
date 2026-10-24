@@ -26,6 +26,8 @@ its own view, preserving path-specific exclusions and mediation without unioning
 adjacency by coordinates. Classifier and non-default artifact type remain in package
 identity. Native scopes and optional flags are retained; the tree does not report the
 original requested version ranges, so these are not invented from selected versions.
+The native tree prunes duplicate and conflict branches; dependency occurrences retain
+unknown outgoing coverage, including records with no reported children.
 
 Each POM is analyzed non-recursively with a separate temporary output file. Reactor
 artifacts needed by sibling modules must be resolvable in the local or configured

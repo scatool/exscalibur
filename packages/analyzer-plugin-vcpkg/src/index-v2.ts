@@ -22,15 +22,22 @@ type Declaration = {
   feature?: string;
   supports?: string;
 };
+function dependencyList(value: unknown, field: string): NonNullable<VcpkgPort["dependencies"]> {
+  if (value === undefined) return [];
+  if (!Array.isArray(value)) throw new Error(`vcpkg ${field} must be an array`);
+  return value;
+}
 function declarations(port: VcpkgPort): Declaration[] {
   return [
-    ...(port.dependencies ?? []).map((dependency) => ({ dependency })),
+    ...dependencyList(port.dependencies, "dependencies").map((dependency) => ({ dependency })),
     ...Object.entries(port.features ?? {}).flatMap(([feature, definition]) =>
-      (definition.dependencies ?? []).map((dependency) => ({
-        dependency,
-        feature,
-        ...(definition.supports && { supports: definition.supports }),
-      })),
+      dependencyList(definition.dependencies, `features.${feature}.dependencies`).map(
+        (dependency) => ({
+          dependency,
+          feature,
+          ...(definition.supports && { supports: definition.supports }),
+        }),
+      ),
     ),
   ];
 }

@@ -49,8 +49,9 @@ for (const [fixture, projects] of Object.entries(fixtures)) {
               : "unresolved",
           );
         expect(direct.sort()).toEqual([...expected].sort());
+        // Native tree pruning does not establish complete transitive adjacency.
         expect(queryDependenciesV2(result, { graph: graph.id, root: root.id }).completeness).toBe(
-          "complete",
+          "unknown",
         );
       }
       const aggregate = graph.roots.find((root) => root.scope === "maven:dependency-tree")!;

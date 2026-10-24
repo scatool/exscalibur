@@ -67,7 +67,9 @@ export function convertMavenTreeV2(
       id,
       purl: identity,
       locator: id,
-      dependencyCompleteness: "complete",
+      // The native tree prunes duplicate/conflict branches. Even a record without
+      // children can have dependencies, so its outgoing coverage is not established.
+      dependencyCompleteness: "unknown",
       attributes: { "maven:node": native as JsonObject },
     });
     for (const [index, child] of (node.children ?? []).entries()) {

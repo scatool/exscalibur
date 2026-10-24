@@ -46,6 +46,36 @@ test("Maven successful empty dependency tree retains a known empty project root"
   ).toMatchObject({ definite: [], completeness: "complete" });
 });
 
+test("Maven duplicate pruning does not establish complete dependency adjacency", () => {
+  // Native dependency:tree 3.11.0 without -Dverbose prunes b -> shared because
+  // a -> shared already occurs. Both shared occurrences declare child in their POM.
+  const result = convertMavenTreeV2(
+    {
+      ...node("app"),
+      children: [
+        {
+          ...node("a"),
+          scope: "compile",
+          children: [{ ...node("shared"), children: [node("child")] }],
+        },
+        { ...node("b"), scope: "test" },
+      ],
+    },
+    "pom.xml",
+    "test:maven-pruning",
+  );
+  validateResultV2(result);
+  const graph = result.graphs[0]!;
+  expect(queryDependenciesV2(result, { graph: graph.id, root: "root:test" })).toMatchObject({
+    definite: ["tree/1"],
+    completeness: "unknown",
+  });
+  expect(
+    graph.nodes.filter((entry) => !entry.project).map((entry) => entry.dependencyCompleteness),
+  ).toEqual(["unknown", "unknown", "unknown", "unknown"]);
+  expect(graph.edges.some((edge) => edge.from === "tree/1")).toBe(false);
+});
+
 test.each([
   { stdout: "[ERROR] Cannot resolve dependency plugin\n", stderr: "" },
   { stdout: "[ERROR] Plugin resolution failed\n", stderr: "Native launcher diagnostic\n" },
