@@ -468,13 +468,15 @@ test("Classic missing exact descriptors never choose the first package with the 
   );
 });
 
-test("native Yarn fixture corpora produce valid graph-local references without dropping patches", async () => {
-  for (const [kind, extractor] of [
-    ["yarnlock", classic],
-    ["yarnberry", berry],
-  ] as const) {
-    const fixtures = join(import.meta.dirname, kind, "__fixtures__");
-    for (const name of await scanFixtures(fixtures, "*/yarn.lock")) {
+// Each corpus member is an independent extraction, with its own timeout and
+// failure label instead of sharing one five-second budget across all fixtures.
+for (const [kind, extractor] of [
+  ["yarnlock", classic],
+  ["yarnberry", berry],
+] as const) {
+  const fixtures = join(import.meta.dirname, kind, "__fixtures__");
+  for (const name of await scanFixtures(fixtures, "*/yarn.lock")) {
+    test(`native Yarn fixture ${kind}/${name} produces valid graph-local references`, async () => {
       const result = await extractor.extract(join(fixtures, name));
       expect(
         result.issues.filter((issue) => issue.code === "core.file_extraction_failed"),
@@ -482,9 +484,9 @@ test("native Yarn fixture corpora produce valid graph-local references without d
       ).toEqual([]);
       validateResultV2(result);
       expect(result.packages.length, `${kind}/${name}`).toBeGreaterThan(0);
-    }
+    });
   }
-});
+}
 
 test("removed lock-only workspace dependencies remain native and make correlated consumption partial", async () => {
   await input(
