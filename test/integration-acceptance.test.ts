@@ -28,10 +28,7 @@ test("ledger rejects missing, duplicate, repinned and reconfigured entries", () 
     (value: typeof ledger) => (value.cases[0].commit = "0".repeat(40)),
     (value: typeof ledger) => (value.cases[0].configuration.extractorOptions = { changed: true }),
     (value: typeof ledger) => (value.cases[0].configuration.javaVersion = 99),
-    (value: typeof ledger) =>
-      (value.cases.find(
-        (entry: { status: string }) => entry.status === "pending-source-review",
-      ).status = "accepted"),
+    (value: typeof ledger) => (value.cases[0].reviewEvidence = []),
   ]) {
     const value = structuredClone(ledger);
     mutate(value);
@@ -39,9 +36,12 @@ test("ledger rejects missing, duplicate, repinned and reconfigured entries", () 
   }
 });
 test("pending cases report their tracked pin without reading or changing baselines", () => {
-  const entry = validateAcceptanceLedger(config, ledger).find(
-    (e) => e.status === "pending-source-review",
-  )!;
+  // Keep exercising the gate after the inventory has no pending cases. Even a
+  // previously reviewed baseline cannot bypass an explicit pending status.
+  const entry = {
+    ...validateAcceptanceLedger(config, ledger)[0]!,
+    status: "pending-source-review" as const,
+  };
   expect(() => requireAcceptedCase(entry)).toThrow(
     `pending-source-review: ${entry.id}@${entry.commit}`,
   );

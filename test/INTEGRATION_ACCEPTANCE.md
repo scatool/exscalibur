@@ -6,7 +6,7 @@ historical baseline hashes, local input checkpoints, configured tool requirement
 and separately inferred native-tool use. It is an acceptance inventory, not a new
 expected result and not proof that a repository was successfully extracted.
 
-The inventory contains **87 cases: 86 accepted and 1 pending source review**. Reviewed cases carry an accepted format 2 hash
+The inventory contains **87 cases: 87 accepted and 0 pending source review**. Reviewed cases carry an accepted format 2 hash
 and source evidence; all other cases remain explicitly pending. The original inventory
 contained 87 legacy baselines, of which eleven contained historical issues;
 those issues must be investigated rather than copied into new expected output.
@@ -83,11 +83,13 @@ vcpkg metadata. Each case's review document states the inspected inputs, exclude
 or unavailable scope, preserved issues and executed assertions. Acceptance does
 not imply successful installation or complete effective runtime resolution.
 
-One case remains blocked: `evorto/wahlzeit` now has its configured Java 11, but
-its Gradle 6.6.1 wrapper fails TLS certificate validation through the environment
-proxy. The exact blocker is recorded in the ledger; its baseline remains pending.
-Drogon is accepted after native Conan 2.28.1 resolution and independent source
-review; see `acceptance/drogon-conan.md` and `conan-acceptance.test.ts`.
+All 87 cases have reviewed format 2 baselines. Wahlzeit uses its pinned Gradle 6.6.1
+wrapper and Java 11; exact repeated native records are collapsed without merging
+conflicting facts. See `acceptance/wahlzeit-gradle.md` and
+`gradle-acceptance.test.ts`. Drogon's native Conan 2.28.1 review is documented in
+`acceptance/drogon-conan.md` and `conan-acceptance.test.ts`.
+Acceptance preserves each extractor's documented coverage limits; it does not
+claim variant-complete Gradle resolution or actual Conan package compilation.
 
 Existing local package fixtures provide narrower, immediately inspectable checks:
 JavaScript manifest/lock fixtures, Python requirements/pyproject/Pipfile/Poetry/PDM

@@ -16,6 +16,7 @@ import { PackageURL } from "packageurl-js";
 import { dirname, join } from "node:path";
 import { existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
+import { isDeepStrictEqual } from "node:util";
 import { optionSchema, type GradleOptions } from "./options.ts";
 
 type ProjectInfo = { name: string; group: string; version: string; buildFile?: string };
@@ -94,15 +95,23 @@ export function convertGradleConfigurationsV2(
       { id: "root", purl: project.purl, project, dependencyCompleteness: "unknown" },
     ];
     const edges: DependencyEdge[] = [];
-    const native = new Map(config.allDependencies.map((node) => [node.id, node]));
-    if (native.size !== config.allDependencies.length)
-      throw new Error("Duplicate Gradle dependency ID in configuration");
+    const native = new Map<string, GradleConfiguration["allDependencies"][number]>();
+    for (const dependency of config.allDependencies) {
+      const previous = native.get(dependency.id);
+      // Native snapshots can repeat the same record (for example providedCompile).
+      // Only exact repeated facts are redundant; conflicting views must not be merged.
+      if (previous && !isDeepStrictEqual(previous, dependency))
+        throw new Error(
+          `Conflicting Gradle dependency ID in configuration: ${dependency.id} (${config.configurationName})`,
+        );
+      native.set(dependency.id, dependency);
+    }
     const injected = (node: GradleConfiguration["allDependencies"][number]) =>
       node.coordinates.group === "org.gradle" &&
       node.coordinates.module === "github-dependency-graph-gradle-plugin" &&
       node.coordinates.version === "1.4.0" &&
       node.repositoryUrl === "https://plugins.gradle.org/m2";
-    for (const dependency of config.allDependencies) {
+    for (const dependency of native.values()) {
       if (injected(dependency)) continue;
       const purl = coordinates(
         dependency.coordinates.group,

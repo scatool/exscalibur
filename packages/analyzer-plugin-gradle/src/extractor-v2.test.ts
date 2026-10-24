@@ -45,6 +45,33 @@ test("An empty Gradle snapshot cannot prove complete scope enumeration", () => {
   expect(result.graphs[0]).toMatchObject({ rootCompleteness: "unknown", roots: [] });
 });
 
+test("Gradle accepts identical repeated native records without duplicating views or edges", () => {
+  const input = config("providedCompile", true);
+  const projects = { ":": { name: "app", group: "org.example", version: "1" } };
+  const expected = convertGradleConfigurationsV2([input], projects, "build.gradle", "test");
+  input.allDependencies.push(structuredClone(input.allDependencies[0]!));
+  const actual = convertGradleConfigurationsV2([input], projects, "build.gradle", "test");
+  validateResultV2(actual);
+  expect(actual).toEqual(expected);
+  expect(actual.graphs[0]!.nodes).toHaveLength(2);
+  expect(actual.graphs[0]!.edges).toHaveLength(2);
+});
+
+test.each([
+  { coordinates: { group: "org.example", module: "different", version: "1" } },
+  { dependencies: ["different"] },
+  { isDirect: false },
+  { isProject: true },
+  { origin: { id: "project :other", path: ":other" } },
+  { repositoryUrl: "https://example.invalid/maven" },
+])("Gradle rejects conflicting facts for a repeated native ID: %j", (change) => {
+  const input = config("runtimeClasspath", false);
+  input.allDependencies.push({ ...structuredClone(input.allDependencies[0]!), ...change });
+  expect(() => convertGradleConfigurationsV2([input], {}, "build.gradle", "test")).toThrow(
+    "Conflicting Gradle dependency ID in configuration: shared",
+  );
+});
+
 test("Synthesized Gradle project identities retain each configuration's source assertion", () => {
   const result = convertGradleConfigurationsV2(
     [config("runtimeClasspath", false), config("testRuntimeClasspath", false)],
