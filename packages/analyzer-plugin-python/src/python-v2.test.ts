@@ -49,6 +49,44 @@ test("dynamic pyproject declarations and group includes preserve unknown resolut
   expect(result.graphs[0]!.nodes[0]!.dependencyCompleteness).toBe("unknown");
 });
 
+test("dynamic runtime dependencies retain their own unknown root beside known optional groups", () => {
+  const result = pyprojectResult(
+    '[project]\nname="app"\ndynamic=["dependencies"]\n[project.optional-dependencies]\ntest=["pytest"]\nempty=[]\n',
+    context,
+  );
+  validateResultV2(result);
+  const graph = result.graphs[0]!;
+  expect(graph.rootCompleteness).toBe("complete");
+  const runtime = graph.roots.find((root) => root.scope === "dependencies");
+  expect(runtime).toBeDefined();
+  expect(queryDependenciesV2(result, { graph: graph.id, root: runtime!.id })).toMatchObject({
+    definite: [],
+    declarations: [],
+    completeness: "unknown",
+  });
+  for (const scope of ["optional.test", "optional.empty"]) {
+    const root = graph.roots.find((entry) => entry.scope === scope)!;
+    expect(graph.nodes.find((node) => node.id === root.node)?.dependencyCompleteness).toBe(
+      "complete",
+    );
+  }
+  expect(graph.edges).toEqual([
+    expect.objectContaining({ requested: { name: "pytest", specifier: "pytest" } }),
+  ]);
+});
+
+test("dynamic optional metadata leaves a static empty runtime scope known", () => {
+  const result = pyprojectResult(
+    '[project]\nname="app"\ndependencies=[]\ndynamic=["optional-dependencies"]\n',
+    context,
+  );
+  const graph = result.graphs[0]!;
+  expect(graph.rootCompleteness).toBe("unknown");
+  expect(
+    queryDependenciesV2(result, { graph: graph.id, root: graph.roots[0]!.id }).completeness,
+  ).toBe("complete");
+});
+
 test.each([
   '[build-system]\nrequires=["setuptools"]\n',
   '[tool.flit.metadata]\nrequires=["requests"]\n',

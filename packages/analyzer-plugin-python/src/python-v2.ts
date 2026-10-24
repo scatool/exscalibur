@@ -277,8 +277,13 @@ export function pyprojectResult(
   const dynamic = array(project.dynamic);
   if (dynamic.includes("dependencies") || dynamic.includes("optional-dependencies")) {
     out.issue("dynamic_dependencies", "Dynamic dependency metadata has not been resolved");
-    for (const root of out.roots)
-      out.nodes.find((node) => node.id === root.node)!.dependencyCompleteness = "unknown";
+    if (dynamic.includes("dependencies")) {
+      const root = out.root(subject, "dependencies");
+      out.nodes.find((node) => node.id === root)!.dependencyCompleteness = "unknown";
+    }
+    if (dynamic.includes("optional-dependencies"))
+      for (const root of out.roots.filter((entry) => entry.scope.startsWith("optional.")))
+        out.nodes.find((node) => node.id === root.node)!.dependencyCompleteness = "unknown";
   }
   return out.finish(
     unsupportedProjectMetadata || dynamic.includes("optional-dependencies")
