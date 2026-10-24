@@ -40,15 +40,57 @@ const text = (value: unknown): string | undefined =>
   typeof value === "string" && value ? value : undefined;
 const normalizedName = (name: string) => name.toLowerCase().replace(/[-_.]+/g, "-");
 
+/** Read PEP 508 lexical boundaries, without solving version or marker expressions.
+ * The grammar permits WS around extras. After @, URL consumes every non-space/tab
+ * character (including semicolons); only a following WS can introduce its marker.
+ * Keep this separate from Poetry/Pipfile's named native version values.
+ */
+function requirementParts(spec: string): {
+  name?: string;
+  features?: string[];
+  marker?: string;
+  directUrl?: boolean;
+} {
+  const identifier = /^[A-Za-z0-9][A-Za-z0-9._-]*\b/;
+  let remaining = spec.replace(/^[ \t]+/, "");
+  const name = remaining.match(identifier)?.[0];
+  if (!name) return {};
+  remaining = remaining.slice(name.length).replace(/^[ \t]+/, "");
+  let features: string[] | undefined;
+  if (remaining.startsWith("[")) {
+    const end = remaining.indexOf("]");
+    if (end === -1) return { name };
+    const extras = remaining.slice(1, end).trim();
+    features = extras ? extras.split(",").map((extra) => extra.trim()) : [];
+    if (features.some((extra) => extra.match(identifier)?.[0] !== extra)) return { name };
+    remaining = remaining.slice(end + 1).replace(/^[ \t]+/, "");
+  }
+  const header = { name, ...(features?.length && { features }) };
+  if (remaining.startsWith("@")) {
+    remaining = remaining.slice(1).replace(/^[ \t]+/, "");
+    const url = remaining.match(/^[^ \t]+/)?.[0];
+    if (!url) return header;
+    const marker = remaining
+      .slice(url.length)
+      .match(/^[ \t]+;[ \t]*(.*)$/s)?.[1]
+      .trim();
+    return { ...header, directUrl: true, ...(marker && { marker }) };
+  }
+  // Bare URLs and requirements-file extensions are not named PEP 508 versions.
+  if (remaining && !/^(?:[<>=!~(;])/.test(remaining)) return header;
+  const semicolon = remaining.indexOf(";");
+  const marker = semicolon === -1 ? undefined : remaining.slice(semicolon + 1).trim();
+  return { ...header, ...(marker && { marker }) };
+}
+
 function request(spec: string, name?: string, details?: unknown): DependencyRequest {
-  const match = spec.match(/^\s*([A-Za-z0-9][A-Za-z0-9._-]*)(?:\[([^\]]*)\])?/);
-  const parsedName = name ?? match?.[1];
-  const marker = spec.includes(";") ? spec.slice(spec.indexOf(";") + 1).trim() : undefined;
+  const parsed = name === undefined ? requirementParts(spec) : {};
+  const parsedName = name ?? parsed.name;
   return {
     ...(parsedName && { name: parsedName }),
     specifier: spec,
-    ...(match?.[2] && { features: match[2].split(",").map((item) => item.trim()) }),
-    ...(marker && { condition: { language: "pep508", expression: marker } }),
+    ...(parsed.features && { features: parsed.features }),
+    ...(parsed.marker && { condition: { language: "pep508", expression: parsed.marker } }),
     ...(details !== undefined && { attributes: { "python:declaration": json(details) } }),
   };
 }
@@ -426,7 +468,11 @@ export function lockResult(
         ? candidates.filter((id) => records[ids.indexOf(id)]!.version === exact)
         : candidates;
       const nativeSourceRequest =
-        fields.git || fields.path || fields.url || fields.source || req.specifier?.includes(" @ ");
+        fields.git ||
+        fields.path ||
+        fields.url ||
+        fields.source ||
+        (kind === "pdmlock" && requirementParts(req.specifier ?? "").directUrl);
       const target = matching.length === 1 && !nativeSourceRequest ? matching[0] : undefined;
       if (target) {
         const targetRecord = records[ids.indexOf(target)]!;
