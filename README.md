@@ -63,9 +63,10 @@ To run a single test file, use `vp test run <path>`.
 
 Integration tests run the configured extractors against repositories pinned to exact
 commit SHAs (`test/repositories.json`) and compare complete format 2 results against
-reviewed baselines. Existing legacy baselines remain migration references; the test
-fails explicitly until each is reviewed against its pinned inputs and replaced.
-The harness never silently creates or updates a baseline.
+reviewed baselines. All 87 configured cases have accepted format 2 baselines;
+[the acceptance inventory](test/INTEGRATION_ACCEPTANCE.md) retains their historical
+baseline hashes and source-review evidence. The harness verifies acceptance and
+never silently creates or updates a baseline.
 
 Some extractors require specific tool versions (for example Java 21 for Gradle, Maven 3, etc.).
 The expected versions are declared in `mise.toml`. The easiest way to get them is:

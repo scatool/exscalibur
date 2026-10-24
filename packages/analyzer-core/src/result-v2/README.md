@@ -265,12 +265,10 @@ correct. Record the exact upstream revision and input hashes, including prepared
 manifest changes, and report unresolved differences rather than updating snapshots
 to conceal them.
 
-The pinned Porsche comparison retains the existing ORT input and prepared manifests.
-The ORT adapter matches every one of its 29 reported native scope closures; 16
-unreported scopes remain unknown. The npm adapter independently matches all 696
-direct declarations across 48 projects, preserves 17 optional peers and all platform
-alternatives, and covers all 439 PURLs in the raw ORT package catalog. ORT and npm
-scope names and resolution contexts are not assumed equivalent.
+Porsche Design System is not one of the retained integration cases. The historical
+Porsche/ORT comparison has no retained, pinned input capture in this repository and
+is not reproducible acceptance evidence. ORT and npm scope names and resolution
+contexts must not be assumed equivalent.
 
 Additional native checks establish narrower, explicit claims:
 
@@ -284,5 +282,7 @@ The Cargo regression capture includes native tool provenance and unchanged metad
 output alongside its source inputs. These checks supplement the contract tests; they
 do not make fixtures or snapshots authoritative for untested behavior.
 
-Source-backed migration of the retained integration baselines and cross-ecosystem
-native integration checks must finish before freezing the contract.
+All 87 retained integration cases have source-reviewed format 2 baselines. The
+[acceptance inventory](../../../../test/INTEGRATION_ACCEPTANCE.md) records their
+provenance and native-tool limitations. Acceptance of those pinned inputs does not
+establish correctness for every repository, tool version or resolution context.
