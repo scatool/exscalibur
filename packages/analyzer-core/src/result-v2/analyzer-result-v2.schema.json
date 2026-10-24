@@ -282,7 +282,7 @@
           "$ref": "#/$defs/text"
         },
         "specifier": {
-          "$ref": "#/$defs/text"
+          "type": "string"
         },
         "purl": {
           "$ref": "#/$defs/purl"
@@ -306,7 +306,12 @@
           "required": ["name"]
         },
         {
-          "required": ["specifier"]
+          "required": ["specifier"],
+          "properties": {
+            "specifier": {
+              "minLength": 1
+            }
+          }
         },
         {
           "required": ["purl"]

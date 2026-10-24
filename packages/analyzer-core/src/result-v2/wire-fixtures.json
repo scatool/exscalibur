@@ -660,5 +660,101 @@
       "graphs": [],
       "issues": []
     }
+  },
+  {
+    "name": "empty original dependency specifier",
+    "valid": true,
+    "result": {
+      "formatVersion": 2,
+      "codebase": "example:wire",
+      "packages": [{ "purl": "pkg:npm/app", "evidence": [] }],
+      "subprojects": [],
+      "graphs": [
+        {
+          "id": "graph",
+          "source": { "extractor": "wire", "files": [] },
+          "interpretation": "declared",
+          "rootCompleteness": "unknown",
+          "roots": [],
+          "nodes": [{ "id": "app", "purl": "pkg:npm/app", "dependencyCompleteness": "complete" }],
+          "edges": [
+            {
+              "from": "app",
+              "status": "declared",
+              "relation": "depends-on",
+              "selection": "selected",
+              "requested": { "name": "foo", "specifier": "" }
+            }
+          ]
+        }
+      ],
+      "issues": []
+    }
+  },
+  {
+    "name": "empty specifier alone does not identify a dependency request",
+    "valid": false,
+    "result": {
+      "formatVersion": 2,
+      "codebase": "example:wire",
+      "packages": [{ "purl": "pkg:npm/app", "evidence": [] }],
+      "subprojects": [],
+      "graphs": [
+        {
+          "id": "graph",
+          "source": { "extractor": "wire", "files": [] },
+          "interpretation": "declared",
+          "rootCompleteness": "unknown",
+          "roots": [],
+          "nodes": [{ "id": "app", "purl": "pkg:npm/app", "dependencyCompleteness": "complete" }],
+          "edges": [
+            {
+              "from": "app",
+              "status": "declared",
+              "relation": "depends-on",
+              "selection": "selected",
+              "requested": { "specifier": "" }
+            }
+          ]
+        }
+      ],
+      "issues": []
+    }
+  },
+  {
+    "name": "prototype-named artifact hash must be a string",
+    "valid": false,
+    "result": {
+      "formatVersion": 2,
+      "codebase": "example:wire",
+      "packages": [
+        {
+          "purl": "pkg:npm/foo",
+          "evidence": [],
+          "artifacts": [{ "evidence": [], "hashes": { "__proto__": { "invalid": "hash" } } }]
+        }
+      ],
+      "subprojects": [],
+      "graphs": [],
+      "issues": []
+    }
+  },
+  {
+    "name": "valid prototype-named artifact hash",
+    "valid": true,
+    "result": {
+      "formatVersion": 2,
+      "codebase": "example:wire",
+      "packages": [
+        {
+          "purl": "pkg:npm/foo",
+          "evidence": [],
+          "artifacts": [{ "evidence": [], "hashes": { "__proto__": "abc", "sha256": "123" } }]
+        }
+      ],
+      "subprojects": [],
+      "graphs": [],
+      "issues": []
+    }
   }
 ]

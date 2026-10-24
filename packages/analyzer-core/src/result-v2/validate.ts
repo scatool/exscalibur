@@ -9,6 +9,18 @@ const attributes = z.custom<Record<string, JsonValue>>(
   (value) => value !== null && typeof value === "object" && !Array.isArray(value) && isJson(value),
   "Expected a JSON object",
 );
+// Record schemas can omit __proto__; inspect the original entries so every hash is validated.
+const hashes = z.custom<Record<string, string>>(
+  (value) =>
+    value !== null &&
+    typeof value === "object" &&
+    !Array.isArray(value) &&
+    isJson(value) &&
+    Object.entries(value).every(
+      ([key, hash]) => key.length > 0 && typeof hash === "string" && hash.length > 0,
+    ),
+  "Expected a JSON object with nonempty string hash names and values",
+);
 const strings = z.array(text);
 const completeness = z.enum(["complete", "partial", "unknown"]);
 const purl = text.refine((value) => {
@@ -30,14 +42,15 @@ const projectReference = object({ purl, definitionFile: text });
 const artifact = object({
   purl: purl.optional(),
   location: text.optional(),
-  hashes: z.record(text, text).optional(),
+  hashes: hashes.optional(),
   evidence: strings,
   attributes: attributes.optional(),
 });
 const request = object({
   id: text.optional(),
   name: text.optional(),
-  specifier: text.optional(),
+  // Some native requests use an empty specifier, such as npm's unconstrained range.
+  specifier: z.string().optional(),
   purl: purl.optional(),
   features: strings.optional(),
   condition: condition.optional(),
@@ -45,7 +58,7 @@ const request = object({
 }).refine(
   (value) =>
     value.name !== undefined ||
-    value.specifier !== undefined ||
+    (value.specifier !== undefined && value.specifier.length > 0) ||
     value.purl !== undefined ||
     Object.keys(value.attributes ?? {}).length > 0,
   "A dependency request must identify what was requested",
