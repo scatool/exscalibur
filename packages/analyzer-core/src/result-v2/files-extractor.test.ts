@@ -193,3 +193,126 @@ test.skipIf(sep !== "/")(
     expect(observedRoot).toBe(codebase);
   },
 );
+
+test.skipIf(sep !== "/")(
+  "POSIX file assembly preserves distinct literal-backslash project and evidence paths",
+  async () => {
+    const paths = ["a/b/input.txt", "a\\b/input.txt"];
+    const observed: string[] = [];
+    const extractor = filesExtractorV2({
+      name: "literal-paths",
+      version: 1,
+      markFiles: async function () {
+        for (const path of paths) this.markFile(path);
+      },
+      extractFile: async (file, _options, context) => {
+        observed.push(context.relativeFile);
+        const identityObservations = [
+          { source: { extractor: "literal-paths", files: [file] }, synthesizedPurl: false },
+        ];
+        const project = {
+          purl: projectPurl,
+          definitionFile: file,
+          evidence: [file],
+          identityObservations,
+        };
+        const artifact = { evidence: [file] };
+        return {
+          ...createEmptyResultV2(context.codebaseId),
+          packages: [
+            {
+              purl: "pkg:npm/dep@1",
+              evidence: [file],
+              identityObservations,
+              artifacts: [artifact],
+            },
+          ],
+          subprojects: [project],
+          graphs: [
+            {
+              id: "same-native-id",
+              source: { extractor: "literal-paths", files: [file] },
+              interpretation: "locked",
+              rootCompleteness: "complete",
+              roots: [
+                { id: "root", project, scope: "dependencies", node: "project", evidence: [file] },
+              ],
+              nodes: [
+                {
+                  id: "project",
+                  purl: projectPurl,
+                  project,
+                  dependencyCompleteness: "complete",
+                  evidence: [file],
+                },
+                {
+                  id: "dep",
+                  purl: "pkg:npm/dep@1",
+                  dependencyCompleteness: "complete",
+                  artifacts: [artifact],
+                },
+              ],
+              edges: [
+                {
+                  from: "project",
+                  to: "dep",
+                  status: "resolved",
+                  selection: "selected",
+                  relation: "depends-on",
+                  evidence: [file],
+                },
+              ],
+            },
+          ],
+          issues: [{ severity: "WARNING", code: "test.path", message: "Path observation", file }],
+        };
+      },
+    });
+    const result = await extractor.extract(resolve("owned\\codebase"), undefined, {
+      codebaseId: "test:paths",
+    });
+    expect(observed).toEqual(paths);
+    expect(result.subprojects.map((p) => p.definitionFile)).toEqual(paths);
+    expect(result.packages[0]!.evidence).toEqual(paths);
+    expect(result.packages[0]!.identityObservations!.map((o) => o.source.files[0])).toEqual(paths);
+    expect(result.packages[0]!.artifacts!.map((a) => a.evidence[0])).toEqual(paths);
+    expect(result.issues.map((issue) => issue.file)).toEqual(paths);
+    expect(result.graphs).toHaveLength(2);
+    expect(new Set(result.graphs.map((graph) => graph.id)).size).toBe(2);
+    for (const graph of result.graphs) {
+      const path = graph.source.files[0]!;
+      expect(paths).toContain(path);
+      expect(JSON.parse(graph.id)).toEqual(["literal-paths", path, "same-native-id"]);
+      expect(graph.roots[0]!.project.definitionFile).toBe(path);
+      expect(graph.roots[0]!.evidence).toEqual([path]);
+      expect(graph.nodes[0]!.artifacts![0]!.evidence).toEqual([path]);
+      expect(graph.nodes[1]!.project!.definitionFile).toBe(path);
+      expect(graph.nodes[1]!.evidence).toEqual([path]);
+      expect(graph.edges[0]!.evidence).toEqual([path]);
+      const project = result.subprojects.find((p) => p.definitionFile === path)!;
+      expect(project.evidence).toEqual([path]);
+      expect(project.identityObservations![0]!.source.files).toEqual([path]);
+    }
+  },
+);
+
+test.skipIf(sep !== "/")(
+  "POSIX failures retain distinct literal-backslash input paths",
+  async () => {
+    const paths = ["a/b/input.txt", "a\\b/input.txt"];
+    const extractor = filesExtractorV2({
+      name: "literal-failures",
+      version: 1,
+      markFiles: async function () {
+        for (const path of paths) this.markFile(path);
+      },
+      extractFile: async () => {
+        throw new Error("Unusable input");
+      },
+    });
+    const result = await extractor.extract(".", undefined, { codebaseId: "test:paths" });
+    expect(result.issues.map((issue) => issue.file)).toEqual(paths);
+    expect(result.graphs).toHaveLength(2);
+    expect(new Set(result.graphs.flatMap((graph) => graph.source.files))).toEqual(new Set(paths));
+  },
+);

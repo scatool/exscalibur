@@ -79,7 +79,7 @@ export function filesExtractorV2<Options = unknown>(
 
       const results: AnalyzerResultV2[] = [];
       for (const file of [...marked].sort()) {
-        const relativeFile = relative(codebasePath, file).replaceAll("\\", "/");
+        const relativeFile = relative(codebasePath, file).replaceAll(sep, "/");
         try {
           const extracted = await config.extractFile(file, options, {
             codebaseId,
@@ -126,9 +126,9 @@ export function filesExtractorV2<Options = unknown>(
 
 function rebasePaths(input: AnalyzerResultV2, codebase: string): AnalyzerResultV2 {
   const result = structuredClone(input);
-  const prefix = `${codebase.replaceAll("\\", "/").replace(/\/$/, "")}/`;
+  const prefix = `${codebase.replaceAll(sep, "/").replace(/\/$/, "")}/`;
   const rebase = (value: string) => {
-    const normalized = value.replaceAll("\\", "/");
+    const normalized = value.replaceAll(sep, "/");
     return normalized.startsWith(prefix) ? normalized.slice(prefix.length) : normalized;
   };
   const evidence = (values: string[] | undefined) => values?.map(rebase);
