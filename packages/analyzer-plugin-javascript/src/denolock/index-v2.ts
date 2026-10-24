@@ -29,6 +29,7 @@ import { createNpmPurl } from "../npm-utils.ts";
 import {
   NpmGraphV2,
   addManifestObservation,
+  assertPortableManifest,
   json,
   loadNpmManifest,
   table,
@@ -318,7 +319,12 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
             parseJsonc(await readNormalizedTextFile(path), errors, { allowTrailingComma: true }),
           );
           if (errors.length > 0) throw new Error("Invalid Deno configuration JSONC");
-          loaded = { manifest, file: join(dirname(context.relativeFile), location, name) };
+          assertPortableManifest(manifest);
+          const definition = join(dirname(context.relativeFile), location, name);
+          const candidate = new DenoObservation(context, "declared", "current-config-declarations");
+          candidate.project(location, "deno", manifest, definition);
+          candidate.finish();
+          loaded = { manifest, file: definition };
           break;
         } catch (error) {
           if (
@@ -421,42 +427,16 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
         }
       }
       if (config.file) {
-        const project = declared.project(location, "deno", config.manifest, config.file);
         try {
-          const scopes = [
-            { scope: "imports", imports: table(config.manifest, "imports") },
-            ...Object.entries(table(config.manifest, "scopes")).map(([scope, imports]) => ({
-              scope: `imports:${scope}`,
-              imports: record(imports),
-              condition: {
-                language: "deno:import-scope/v1",
-                expression: { referrerPrefix: scope },
-              },
-            })),
-          ];
-          for (const scope of scopes) {
-            const root = declared.root(project, scope.scope);
-            if (config.manifest.importMap !== undefined)
-              declared.nodes.get(root)!.dependencyCompleteness = "unknown";
-            for (const [alias, specifier] of Object.entries(scope.imports)) {
-              if (typeof specifier !== "string")
-                throw new Error(`Invalid Deno import mapping for '${alias}'`);
-              declared.edge(root, { name: alias, specifier }, undefined, "imports", {
-                declaration: true,
-                ...("condition" in scope && { condition: scope.condition }),
-              });
-            }
-          }
+          const candidate = new DenoObservation(context, "declared", "current-config-declarations");
+          addConfigDeclarations(candidate, location, config.manifest, config.file);
+          candidate.finish();
+          addConfigDeclarations(declared, location, config.manifest, config.file);
         } catch (error) {
+          const project = declared.project(location, "deno", config.manifest, config.file);
           declared.rootCompleteness = "partial";
-          if (
-            !declared.roots.some((root) => root.project.definitionFile === project.definitionFile)
-          )
-            declared.root(project, "imports");
-          for (const root of declared.roots.filter(
-            (root) => root.project.definitionFile === project.definitionFile,
-          ))
-            declared.nodes.get(root.node)!.dependencyCompleteness = "unknown";
+          const root = declared.root(project, "imports");
+          declared.nodes.get(root)!.dependencyCompleteness = "unknown";
           declared.result.issues.push({
             code: "deno.config_declarations_failed",
             severity: "WARNING",
@@ -677,6 +657,40 @@ class DenoObservation {
     return normalizeResultV2(this.result);
   }
 }
+
+function addConfigDeclarations(
+  observation: DenoObservation,
+  location: string,
+  manifest: NpmRecord,
+  definition: string,
+): void {
+  const project = observation.project(location, "deno", manifest, definition);
+  const scopes = [
+    { scope: "imports", imports: table(manifest, "imports") },
+    ...Object.entries(table(manifest, "scopes")).map(([scope, imports]) => ({
+      scope: `imports:${scope}`,
+      imports: record(imports),
+      condition: {
+        language: "deno:import-scope/v1",
+        expression: { referrerPrefix: scope },
+      },
+    })),
+  ];
+  for (const scope of scopes) {
+    const root = observation.root(project, scope.scope);
+    if (manifest.importMap !== undefined)
+      observation.nodes.get(root)!.dependencyCompleteness = "unknown";
+    for (const [alias, specifier] of Object.entries(scope.imports)) {
+      if (typeof specifier !== "string")
+        throw new Error(`Invalid Deno import mapping for '${alias}'`);
+      observation.edge(root, { name: alias, specifier }, undefined, "imports", {
+        declaration: true,
+        ...("condition" in scope && { condition: scope.condition }),
+      });
+    }
+  }
+}
+
 function packageDescriptor(value: string): { name: string; reference?: string } {
   const at = value.indexOf("@", 1);
   return at === -1 ? { name: value } : { name: value.slice(0, at), reference: value.slice(at + 1) };

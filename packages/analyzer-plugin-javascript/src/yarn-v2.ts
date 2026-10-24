@@ -94,27 +94,40 @@ export async function extractYarnV2(
       if (entry.workspace !== undefined) await load(entry.workspace, entry);
   }
   if (!manifests.has(".")) await load(".");
+  let workspaceDiscoveryFailed = false;
   if (!modern) {
-    const root = manifests.get(".")!.manifest;
-    const workspaces = Array.isArray(root.workspaces)
-      ? root.workspaces
-      : table(root, "workspaces").packages;
-    if (workspaces !== undefined && !Array.isArray(workspaces))
-      throw new Error("Expected Yarn workspace patterns");
-    for (const pattern of workspaces ?? []) {
-      if (typeof pattern !== "string") throw new Error("Expected a string Yarn workspace pattern");
-      for (const manifest of await scanFiles(
-        dirname(file),
-        `${pattern}/package.json`,
-        options.ignore,
-      )) {
-        const location = normalize(relative(dirname(file), dirname(manifest)));
-        if (!manifests.has(location)) await load(location);
+    try {
+      const root = manifests.get(".")!.manifest;
+      const workspaces = Array.isArray(root.workspaces)
+        ? root.workspaces
+        : table(root, "workspaces").packages;
+      if (workspaces !== undefined && !Array.isArray(workspaces))
+        throw new Error("Expected Yarn workspace patterns");
+      for (const pattern of workspaces ?? []) {
+        if (typeof pattern !== "string")
+          throw new Error("Expected a string Yarn workspace pattern");
+        for (const manifest of await scanFiles(
+          dirname(file),
+          `${pattern}/package.json`,
+          options.ignore,
+        )) {
+          const location = normalize(relative(dirname(file), dirname(manifest)));
+          if (!manifests.has(location)) await load(location);
+        }
       }
+    } catch (error) {
+      workspaceDiscoveryFailed = true;
+      native.result.issues.push({
+        code: "yarn.workspace_declarations_failed",
+        severity: "WARNING",
+        file: manifests.get(".")!.definition,
+        message: `Could not discover current workspaces; native lock evidence is retained: ${error instanceof Error ? error.message : String(error)}`,
+      });
     }
   }
   const declared = new NpmGraphV2(context, "packagejson", "declared");
   declared.sourceFiles.clear();
+  if (workspaceDiscoveryFailed) declared.rootCompleteness = "partial";
   for (const manifest of manifests.values())
     if (manifest.available)
       manifest.declarationsKnown = addCurrentManifestObservation(
@@ -135,7 +148,10 @@ export async function extractYarnV2(
   }
   if (!modern || !entries.some((entry) => entry.workspace !== undefined))
     native.rootCompleteness = "unknown";
-  if ([...manifests.values()].some((manifest) => !manifest.declarationsKnown))
+  if (
+    workspaceDiscoveryFailed ||
+    [...manifests.values()].some((manifest) => !manifest.declarationsKnown)
+  )
     scoped.rootCompleteness = "partial";
 
   const populate = (builder: NpmGraphV2, correlate: boolean) => {

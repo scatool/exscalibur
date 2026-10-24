@@ -294,6 +294,9 @@ export function addCurrentManifestObservation(
   let declarations: NpmDeclaration[];
   try {
     declarations = readDeclarations();
+    const candidate = new NpmGraphV2(builder.context, builder.extractor, builder.interpretation);
+    addManifestObservation(candidate, location, definitionFile, manifest, declarations);
+    candidate.finish();
   } catch (error) {
     const project = builder.addProject(location, definitionFile, manifest, false);
     builder.sourceFiles.add(definitionFile);
@@ -361,22 +364,14 @@ export async function loadNpmManifest(
   builder: NpmGraphV2,
 ): Promise<{ manifest: NpmRecord; available: boolean }> {
   try {
-    const value: unknown = JSON.parse(
-      (await readFile(file, "utf8")).replace(/^\uFEFF/, ""),
-      (_key, value: unknown) => {
-        // Validate before any identity or metadata is copied into the native observation.
-        if (
-          typeof value === "number" &&
-          (!Number.isFinite(value) || (Number.isInteger(value) && !Number.isSafeInteger(value)))
-        )
-          throw new Error(
-            "Manifest contains a nonportable number; current manifest data is omitted",
-          );
-        return value;
-      },
-    );
+    const value: unknown = JSON.parse((await readFile(file, "utf8")).replace(/^\uFEFF/, ""));
     if (value === null || typeof value !== "object" || Array.isArray(value))
       throw new Error("Expected a package manifest object");
+    assertPortableManifest(value);
+    // Validate the exact project representation before its identity/metadata can enter a lock graph.
+    const candidate = new NpmGraphV2(builder.context, "packagejson", "declared");
+    candidate.addProject(".", file, value as NpmRecord, true);
+    candidate.finish();
     return { manifest: value as NpmRecord, available: true };
   } catch (error) {
     if (
@@ -391,6 +386,17 @@ export async function loadNpmManifest(
     }
     return { manifest: fallback, available: false };
   }
+}
+
+/** JSONC parsing and JSON.stringify can hide nonfinite numbers; inspect auxiliary input first. */
+export function assertPortableManifest(value: unknown): void {
+  if (
+    typeof value === "number" &&
+    (!Number.isFinite(value) || (Number.isInteger(value) && !Number.isSafeInteger(value)))
+  )
+    throw new Error("Manifest contains a nonportable number; current manifest data is omitted");
+  if (value !== null && typeof value === "object")
+    for (const item of Object.values(value)) assertPortableManifest(item);
 }
 
 export function json(value: unknown): JsonValue {
