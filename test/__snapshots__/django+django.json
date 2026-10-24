@@ -1,143 +1,690 @@
 {
-  "packages": [
+  "codebase": "integration:django/django@c3c9f1908e62eea528377e3788e78594a8361189",
+  "formatVersion": 2,
+  "graphs": [
     {
-      "purl": "pkg:npm/eslint@9.39.1",
-      "evidence": [
-        "package.json#12"
-      ]
+      "attributes": {},
+      "edges": [
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"eslint\"]",
+            "name": "eslint",
+            "specifier": "^9.39.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"grunt-cli\"]",
+            "name": "grunt-cli",
+            "specifier": "^1.5.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"grunt-contrib-qunit\"]",
+            "name": "grunt-contrib-qunit",
+            "specifier": "^10.1.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"grunt\"]",
+            "name": "grunt",
+            "specifier": "^1.6.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"puppeteer\"]",
+            "name": "puppeteer",
+            "specifier": "^24.22.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"qunit\"]",
+            "name": "qunit",
+            "specifier": "^2.24.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        }
+      ],
+      "id": "[\"packagejson\",\"package.json\",\"packagejson:b38c961cac4cd8619991f6f0036d3cf195958c73ba649b864c295f0ca7a3a76d\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/django"
+          },
+          "purl": "pkg:npm/django"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/django"
+          },
+          "purl": "pkg:npm/django"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/django"
+          },
+          "purl": "pkg:npm/django"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/django"
+          },
+          "purl": "pkg:npm/django"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {
+              "engines": {
+                "npm": ">=1.3.0"
+              },
+              "name": "Django",
+              "private": true
+            }
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "workspace:\".\"",
+          "locator": ".",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/django"
+          },
+          "purl": "pkg:npm/django"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"package.json\",\"dependencies\"]",
+          "node": "scope:[\"package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/django"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"package.json\",\"devDependencies\"]",
+          "node": "scope:[\"package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/django"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/django"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/django"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "package.json"
+        ]
+      }
     },
     {
-      "purl": "pkg:npm/grunt-cli@1.5.0",
-      "evidence": [
-        "package.json#15"
-      ]
+      "attributes": {
+        "python:manifest": {
+          "build-system": {
+            "build-backend": "setuptools.build_meta",
+            "requires": [
+              "setuptools>=77.0.3"
+            ]
+          },
+          "project": {
+            "authors": [
+              {
+                "email": "foundation@djangoproject.com",
+                "name": "Django Software Foundation"
+              }
+            ],
+            "classifiers": [
+              "Development Status :: 2 - Pre-Alpha",
+              "Environment :: Web Environment",
+              "Framework :: Django",
+              "Intended Audience :: Developers",
+              "Operating System :: OS Independent",
+              "Programming Language :: Python",
+              "Programming Language :: Python :: 3",
+              "Programming Language :: Python :: 3 :: Only",
+              "Programming Language :: Python :: 3.12",
+              "Programming Language :: Python :: 3.13",
+              "Programming Language :: Python :: 3.14",
+              "Topic :: Internet :: WWW/HTTP",
+              "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+              "Topic :: Internet :: WWW/HTTP :: WSGI",
+              "Topic :: Software Development :: Libraries :: Application Frameworks",
+              "Topic :: Software Development :: Libraries :: Python Modules"
+            ],
+            "dependencies": [
+              "asgiref>=3.9.1",
+              "sqlparse>=0.5.0",
+              "tzdata; sys_platform == 'win32'"
+            ],
+            "description": "A high-level Python web framework that encourages rapid development and clean, pragmatic design.",
+            "dynamic": [
+              "version"
+            ],
+            "license": "BSD-3-Clause",
+            "license-files": [
+              "LICENSE",
+              "LICENSE.python"
+            ],
+            "name": "Django",
+            "optional-dependencies": {
+              "argon2": [
+                "argon2-cffi>=23.1.0"
+              ],
+              "bcrypt": [
+                "bcrypt>=4.1.1"
+              ]
+            },
+            "readme": "README.rst",
+            "requires-python": ">= 3.12",
+            "scripts": {
+              "django-admin": "django.core.management:execute_from_command_line"
+            },
+            "urls": {
+              "Documentation": "https://docs.djangoproject.com/",
+              "Funding": "https://www.djangoproject.com/fundraising/",
+              "Homepage": "https://www.djangoproject.com/",
+              "Release notes": "https://docs.djangoproject.com/en/stable/releases/",
+              "Source": "https://github.com/django/django",
+              "Tracker": "https://code.djangoproject.com/"
+            }
+          },
+          "tool": {
+            "black": {
+              "force-exclude": "tests/test_runner_apps/tagged/tests_syntax_error.py",
+              "target-version": [
+                "py312"
+              ]
+            },
+            "isort": {
+              "default_section": "THIRDPARTY",
+              "known_first_party": "django",
+              "profile": "black"
+            },
+            "setuptools": {
+              "dynamic": {
+                "version": {
+                  "attr": "django.__version__"
+                }
+              },
+              "packages": {
+                "find": {
+                  "include": [
+                    "django*"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "edges": [
+        {
+          "condition": {
+            "expression": "sys_platform == 'win32'",
+            "language": "pep508"
+          },
+          "evidence": [
+            "pyproject.toml"
+          ],
+          "from": "scope:\"dependencies\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "condition": {
+              "expression": "sys_platform == 'win32'",
+              "language": "pep508"
+            },
+            "name": "tzdata",
+            "specifier": "tzdata; sys_platform == 'win32'"
+          },
+          "selection": "conditional",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "pyproject.toml"
+          ],
+          "from": "scope:\"dependencies\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "asgiref",
+            "specifier": "asgiref>=3.9.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "pyproject.toml"
+          ],
+          "from": "scope:\"dependencies\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "sqlparse",
+            "specifier": "sqlparse>=0.5.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "pyproject.toml"
+          ],
+          "from": "scope:\"optional.argon2\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "argon2-cffi",
+            "specifier": "argon2-cffi>=23.1.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "pyproject.toml"
+          ],
+          "from": "scope:\"optional.bcrypt\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "bcrypt",
+            "specifier": "bcrypt>=4.1.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        }
+      ],
+      "id": "[\"pyprojecttoml\",\"pyproject.toml\",\"pyprojecttoml:0efb8132031f397266e82a2794ca0349ee264829c314917a80adcf1fe6b97a6c\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:\"dependencies\"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/django"
+          },
+          "purl": "pkg:pypi/django"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:\"optional.argon2\"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/django"
+          },
+          "purl": "pkg:pypi/django"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:\"optional.bcrypt\"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/django"
+          },
+          "purl": "pkg:pypi/django"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:\"dependencies\"",
+          "node": "scope:\"dependencies\"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/django"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:\"optional.argon2\"",
+          "node": "scope:\"optional.argon2\"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/django"
+          },
+          "scope": "optional.argon2"
+        },
+        {
+          "id": "scope:\"optional.bcrypt\"",
+          "node": "scope:\"optional.bcrypt\"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/django"
+          },
+          "scope": "optional.bcrypt"
+        }
+      ],
+      "source": {
+        "extractor": "pyprojecttoml",
+        "files": [
+          "pyproject.toml"
+        ]
+      }
     },
     {
-      "purl": "pkg:npm/grunt-contrib-qunit@10.1.1",
-      "evidence": [
-        "package.json#16"
-      ]
+      "edges": [
+        {
+          "evidence": [
+            "docs/requirements.txt"
+          ],
+          "from": "scope:\"requirements\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "Sphinx",
+            "specifier": "Sphinx>=4.5.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "docs/requirements.txt"
+          ],
+          "from": "scope:\"requirements\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "blacken-docs",
+            "specifier": "blacken-docs"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "docs/requirements.txt"
+          ],
+          "from": "scope:\"requirements\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "pyenchant",
+            "specifier": "pyenchant"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "docs/requirements.txt"
+          ],
+          "from": "scope:\"requirements\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "sphinx-lint",
+            "specifier": "sphinx-lint"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "docs/requirements.txt"
+          ],
+          "from": "scope:\"requirements\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "sphinxcontrib-spelling",
+            "specifier": "sphinxcontrib-spelling"
+          },
+          "selection": "selected",
+          "status": "declared"
+        }
+      ],
+      "id": "[\"requirementstxt\",\"docs/requirements.txt\",\"requirementstxt:6bdf12a7b37086013a14270337999e5c5400462416b4797d6454ea5692675909\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:\"requirements\"",
+          "project": {
+            "definitionFile": "docs/requirements.txt",
+            "purl": "pkg:generic/python-input/2044e073988ae0bae0d2f244baab99e794edb951c7e27fd6fc77913c898312e3"
+          },
+          "purl": "pkg:generic/python-input/2044e073988ae0bae0d2f244baab99e794edb951c7e27fd6fc77913c898312e3"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:\"requirements\"",
+          "node": "scope:\"requirements\"",
+          "project": {
+            "definitionFile": "docs/requirements.txt",
+            "purl": "pkg:generic/python-input/2044e073988ae0bae0d2f244baab99e794edb951c7e27fd6fc77913c898312e3"
+          },
+          "scope": "requirements"
+        }
+      ],
+      "source": {
+        "extractor": "requirementstxt",
+        "files": [
+          "docs/requirements.txt"
+        ]
+      }
     },
     {
-      "purl": "pkg:npm/grunt@1.6.1",
-      "evidence": [
-        "package.json#14"
-      ]
-    },
-    {
-      "purl": "pkg:npm/puppeteer@24.22.0",
-      "evidence": [
-        "package.json#13"
-      ]
-    },
-    {
-      "purl": "pkg:npm/qunit@2.24.1",
-      "evidence": [
-        "package.json#17"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/argon2-cffi",
-      "evidence": [
-        "pyproject.toml#41"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/asgiref",
-      "evidence": [
-        "pyproject.toml#10"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/bcrypt",
-      "evidence": [
-        "pyproject.toml#42"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/blacken-docs",
-      "evidence": [
-        "docs/requirements.txt#4"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/pyenchant",
-      "evidence": [
-        "docs/requirements.txt#1"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/sphinx",
-      "evidence": [
-        "docs/requirements.txt#2"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/sphinx-lint",
-      "evidence": [
-        "docs/requirements.txt#5"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/sphinxcontrib-spelling",
-      "evidence": [
-        "docs/requirements.txt#3"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/sqlparse",
-      "evidence": [
-        "pyproject.toml#11"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/tzdata",
-      "evidence": [
-        "pyproject.toml#12"
-      ]
+      "edges": [],
+      "id": "[\"requirementstxt\",\"tests/admin_scripts/custom_templates/project_template/additional_dir/requirements.txt\",\"requirementstxt:faa3c505c23cb89a8486e11a428270451c71dc0f52a2261d91fad52250ce74cc\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:\"requirements\"",
+          "project": {
+            "definitionFile": "tests/admin_scripts/custom_templates/project_template/additional_dir/requirements.txt",
+            "purl": "pkg:generic/python-input/e27d3c14418dbe1e5e895fa1e33548f88027fa6796d174d84257cef5d49d2cb9"
+          },
+          "purl": "pkg:generic/python-input/e27d3c14418dbe1e5e895fa1e33548f88027fa6796d174d84257cef5d49d2cb9"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:\"requirements\"",
+          "node": "scope:\"requirements\"",
+          "project": {
+            "definitionFile": "tests/admin_scripts/custom_templates/project_template/additional_dir/requirements.txt",
+            "purl": "pkg:generic/python-input/e27d3c14418dbe1e5e895fa1e33548f88027fa6796d174d84257cef5d49d2cb9"
+          },
+          "scope": "requirements"
+        }
+      ],
+      "source": {
+        "extractor": "requirementstxt",
+        "files": [
+          "tests/admin_scripts/custom_templates/project_template/additional_dir/requirements.txt"
+        ]
+      }
     }
   ],
+  "issues": [],
+  "packages": [],
   "subprojects": [
     {
-      "purl": "pkg:pypi/django",
-      "definitionFile": "pyproject.toml",
-      "scopes": [
+      "definitionFile": "docs/requirements.txt",
+      "evidence": [
+        "docs/requirements.txt"
+      ],
+      "identityObservations": [
         {
-          "scope": "dependencies",
-          "packages": [
-            "pkg:pypi/asgiref",
-            "pkg:pypi/sqlparse",
-            "pkg:pypi/tzdata"
-          ]
-        },
-        {
-          "scope": "optional.argon2",
-          "packages": [
-            "pkg:pypi/argon2-cffi"
-          ]
-        },
-        {
-          "scope": "optional.bcrypt",
-          "packages": [
-            "pkg:pypi/bcrypt"
-          ]
+          "source": {
+            "extractor": "requirementstxt",
+            "files": [
+              "docs/requirements.txt"
+            ]
+          },
+          "synthesizedPurl": true
         }
-      ]
-    }
-  ],
-  "relationships": [],
-  "issues": [
-    {
-      "code": "pyprojecttoml.unresolved_dependencies",
-      "severity": "WARNING",
-      "message": "pyproject.toml dependencies are unresolved and emitted as versionless PyPI PURLs because no supported Python lockfile was found. Use a lockfile for resolved versions and transitive relationships.",
-      "file": "pyproject.toml"
+      ],
+      "purl": "pkg:generic/python-input/2044e073988ae0bae0d2f244baab99e794edb951c7e27fd6fc77913c898312e3"
     },
     {
-      "code": "requirementstxt.unresolved_dependencies",
-      "severity": "WARNING",
-      "message": "requirements.txt dependencies are unresolved and emitted as versionless PyPI PURLs. Use a lockfile for resolved versions and transitive relationships.",
-      "file": "docs/requirements.txt"
+      "definitionFile": "tests/admin_scripts/custom_templates/project_template/additional_dir/requirements.txt",
+      "evidence": [
+        "tests/admin_scripts/custom_templates/project_template/additional_dir/requirements.txt"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "requirementstxt",
+            "files": [
+              "tests/admin_scripts/custom_templates/project_template/additional_dir/requirements.txt"
+            ]
+          },
+          "synthesizedPurl": true
+        }
+      ],
+      "purl": "pkg:generic/python-input/e27d3c14418dbe1e5e895fa1e33548f88027fa6796d174d84257cef5d49d2cb9"
+    },
+    {
+      "definitionFile": "package.json",
+      "evidence": [
+        "package.json"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "packagejson",
+            "files": [
+              "package.json"
+            ],
+            "key": "\".\""
+          },
+          "synthesizedPurl": false
+        }
+      ],
+      "purl": "pkg:npm/django"
+    },
+    {
+      "definitionFile": "pyproject.toml",
+      "evidence": [
+        "pyproject.toml"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "pyprojecttoml",
+            "files": [
+              "pyproject.toml"
+            ]
+          },
+          "synthesizedPurl": false
+        }
+      ],
+      "purl": "pkg:pypi/django"
     }
   ]
 }

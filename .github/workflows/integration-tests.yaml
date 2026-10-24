@@ -32,7 +32,7 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
         with:
-          go-version: ">=1.25"
+          go-version: "1.26.3"
 
       - name: Setup uv
         uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884 # v10.3.0
@@ -41,7 +41,7 @@ jobs:
 
       - name: Install Conan
         run: |
-          python3 -m pip install --user "conan>=2,<3"
+          python3 -m pip install --user "conan==2.28.1"
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
           conan --version
 
@@ -59,21 +59,18 @@ jobs:
           echo "VCPKG_ROOT=$(pwd)" >> "$GITHUB_ENV"
           echo "$GITHUB_WORKSPACE/vcpkg" >> "$GITHUB_PATH"
 
+      - name: Install dependencies
+        run: vp install
+
       - name: Cache test repositories
         id: cache-repos
         uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: test/repositories
-          key: test-repositories-${{ hashFiles('test/repositories.json') }}
-          restore-keys: |
-            test-repositories-
+          key: test-repositories-receipts-v1-${{ hashFiles('test/repositories.json') }}
 
       - name: Download test repositories
-        if: steps.cache-repos.outputs.cache-hit != 'true'
         run: vp exec tsx test/scripts/download-repositories.ts
-
-      - name: Install dependencies
-        run: vp install
 
       - name: Build packages
         run: vp run -r build
@@ -88,6 +85,27 @@ jobs:
             }
           }
           EOF
+
+      - name: Run source acceptance and downloader tests
+        env:
+          GOTOOLCHAIN: local
+        # Explicit paths avoid collecting tests inside downloaded repositories.
+        run: |
+          vp test run \
+            test/integration-acceptance.test.ts \
+            test/cargo-acceptance.test.ts \
+            test/conan-acceptance.test.ts \
+            test/demo-acceptance.test.ts \
+            test/go-acceptance.test.ts \
+            test/gradle-acceptance.test.ts \
+            test/javascript-fixtures-acceptance.test.ts \
+            test/javascript-lockfiles-acceptance.test.ts \
+            test/javascript-workspaces-acceptance.test.ts \
+            test/mixed-workspaces-acceptance.test.ts \
+            test/python-acceptance.test.ts \
+            test/vcpkg-acceptance.test.ts \
+            test/zeiss-acceptance.test.ts \
+            test/scripts/download-repositories.test.ts
 
       - name: Run integration tests
         run: vp test run test/integration.test.ts

@@ -1,0 +1,742 @@
+{
+  "id": "rustdesk+rustdesk",
+  "toolCommit": "56bb2411609227288b70117ead2c47585ba07713",
+  "toolVersion": "2026-04-08-e0612b42ce44e55a0e630f2ee9d3c533a63d8bc1",
+  "views": [
+    {
+      "file": "res/vcpkg/aom/vcpkg.json",
+      "ports": {
+        "vcpkg-cmake": {
+          "name": "vcpkg-cmake",
+          "version-date": "2024-04-23",
+          "documentation": "https://learn.microsoft.com/vcpkg/maintainers/functions/vcpkg_cmake_configure",
+          "license": "MIT"
+        },
+        "vcpkg-cmake-config": {
+          "name": "vcpkg-cmake-config",
+          "version-date": "2024-05-23",
+          "documentation": "https://learn.microsoft.com/vcpkg/maintainers/functions/vcpkg_cmake_config_fixup",
+          "license": "MIT"
+        }
+      },
+      "commands": [
+        {
+          "args": ["x-package-info", "--x-json", "vcpkg-cmake", "vcpkg-cmake-config"],
+          "exitCode": 1,
+          "stdoutSha256": "8c527b25d6d83b1b7396d5562312b47f5b0e6281c7a55067fc59b3b2690cb445",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "file": "res/vcpkg/ffmpeg/vcpkg.json",
+      "ports": {
+        "amd-amf": {
+          "name": "amd-amf",
+          "version": "1.5.0",
+          "description": "AMD Advanced Media Framework headers",
+          "homepage": "https://github.com/GPUOpen-LibrariesAndSDKs/AMF",
+          "license": "MIT",
+          "supports": "!osx"
+        },
+        "ffnvcodec": {
+          "name": "ffnvcodec",
+          "version": "13.0.19.0",
+          "description": "FFmpeg version of Nvidia Codec SDK headers.",
+          "homepage": "https://github.com/FFmpeg/nv-codec-headers",
+          "supports": "linux | (!osx & !uwp & !(arm64 & windows))"
+        },
+        "mfx-dispatch": {
+          "name": "mfx-dispatch",
+          "version": "1.35.1",
+          "port-version": 6,
+          "description": "Open source Intel media sdk dispatcher",
+          "homepage": "https://github.com/lu-zero/mfx_dispatch",
+          "license": "BSD-3-Clause",
+          "supports": "((x86 | x64) & (android | linux)) | (windows & !uwp)",
+          "dependencies": [
+            {
+              "name": "vcpkg-cmake",
+              "host": true,
+              "platform": "windows & !mingw"
+            },
+            {
+              "name": "vcpkg-make",
+              "host": true,
+              "platform": "!windows | mingw"
+            }
+          ]
+        },
+        "vcpkg-cmake-get-vars": {
+          "name": "vcpkg-cmake-get-vars",
+          "version-date": "2025-05-29",
+          "documentation": "https://vcpkg.io/en/docs/README.html",
+          "license": "MIT",
+          "dependencies": [
+            {
+              "name": "vcpkg-cmake",
+              "host": true
+            }
+          ]
+        },
+        "vcpkg-pkgconfig-get-modules": {
+          "name": "vcpkg-pkgconfig-get-modules",
+          "version-date": "2024-04-03",
+          "documentation": "https://learn.microsoft.com/vcpkg/maintainers/functions/vcpkg_pkgconfig_get_modules",
+          "license": "MIT",
+          "supports": "native",
+          "dependencies": ["pkgconf"]
+        },
+        "pkgconf": {
+          "name": "pkgconf",
+          "version": "2.5.1",
+          "port-version": 4,
+          "description": "pkgconf is a program which helps to configure compiler and linker flags for development libraries. It is similar to pkg-config from freedesktop.org.",
+          "homepage": "https://github.com/pkgconf/pkgconf",
+          "license": null,
+          "supports": "!uwp",
+          "dependencies": [
+            {
+              "name": "vcpkg-tool-meson",
+              "host": true
+            }
+          ]
+        },
+        "vcpkg-cmake": {
+          "name": "vcpkg-cmake",
+          "version-date": "2024-04-23",
+          "documentation": "https://learn.microsoft.com/vcpkg/maintainers/functions/vcpkg_cmake_configure",
+          "license": "MIT"
+        },
+        "vcpkg-make": {
+          "name": "vcpkg-make",
+          "version-date": "2026-01-01",
+          "documentation": "https://learn.microsoft.com/vcpkg/maintainers/functions/vcpkg_make_configure",
+          "license": null,
+          "supports": "native",
+          "dependencies": [
+            {
+              "name": "vcpkg-cmake-get-vars",
+              "host": true
+            }
+          ]
+        },
+        "vcpkg-tool-meson": {
+          "name": "vcpkg-tool-meson",
+          "version": "1.9.0",
+          "port-version": 4,
+          "description": "Meson build system",
+          "homepage": "https://github.com/mesonbuild/meson",
+          "license": "Apache-2.0",
+          "supports": "native",
+          "dependencies": ["vcpkg-cmake-get-vars"]
+        }
+      },
+      "commands": [
+        {
+          "args": [
+            "x-package-info",
+            "--x-json",
+            "amd-amf",
+            "ffnvcodec",
+            "mfx-dispatch",
+            "vcpkg-cmake-get-vars",
+            "vcpkg-pkgconfig-get-modules"
+          ],
+          "exitCode": 1,
+          "stdoutSha256": "3f9dd88f8ed994a7667d4ac6c717b25ee9cf97d89546b311321b5dee8e703206",
+          "stderr": ""
+        },
+        {
+          "args": ["x-package-info", "--x-json", "pkgconf", "vcpkg-cmake", "vcpkg-make"],
+          "exitCode": 1,
+          "stdoutSha256": "db73f118d4b1b76bfaa6d268d52d71ce8350e1cdb403ea67d7226c8e35631b84",
+          "stderr": ""
+        },
+        {
+          "args": ["x-package-info", "--x-json", "vcpkg-tool-meson"],
+          "exitCode": 1,
+          "stdoutSha256": "ee8ac30405f61c257bcbaa3baf03d0ba745d0796530949d5e0432c526df4c92f",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "file": "res/vcpkg/libvpx/vcpkg.json",
+      "ports": {
+        "vcpkg-cmake-get-vars": {
+          "name": "vcpkg-cmake-get-vars",
+          "version-date": "2025-05-29",
+          "documentation": "https://vcpkg.io/en/docs/README.html",
+          "license": "MIT",
+          "dependencies": [
+            {
+              "name": "vcpkg-cmake",
+              "host": true
+            }
+          ]
+        },
+        "vcpkg-msbuild": {
+          "name": "vcpkg-msbuild",
+          "version-date": "2023-08-08",
+          "documentation": "https://vcpkg.io/en/docs/README.html",
+          "license": "MIT",
+          "supports": "native & windows",
+          "dependencies": [
+            {
+              "name": "vcpkg-cmake-get-vars",
+              "host": true
+            },
+            {
+              "name": "vcpkg-pkgconfig-get-modules",
+              "host": true
+            }
+          ],
+          "features": {
+            "pkg-config": {
+              "description": "Enable pkg-config lookup for msbuild",
+              "dependencies": ["pkgconf"]
+            }
+          }
+        },
+        "pkgconf": {
+          "name": "pkgconf",
+          "version": "2.5.1",
+          "port-version": 4,
+          "description": "pkgconf is a program which helps to configure compiler and linker flags for development libraries. It is similar to pkg-config from freedesktop.org.",
+          "homepage": "https://github.com/pkgconf/pkgconf",
+          "license": null,
+          "supports": "!uwp",
+          "dependencies": [
+            {
+              "name": "vcpkg-tool-meson",
+              "host": true
+            }
+          ]
+        },
+        "vcpkg-cmake": {
+          "name": "vcpkg-cmake",
+          "version-date": "2024-04-23",
+          "documentation": "https://learn.microsoft.com/vcpkg/maintainers/functions/vcpkg_cmake_configure",
+          "license": "MIT"
+        },
+        "vcpkg-pkgconfig-get-modules": {
+          "name": "vcpkg-pkgconfig-get-modules",
+          "version-date": "2024-04-03",
+          "documentation": "https://learn.microsoft.com/vcpkg/maintainers/functions/vcpkg_pkgconfig_get_modules",
+          "license": "MIT",
+          "supports": "native",
+          "dependencies": ["pkgconf"]
+        },
+        "vcpkg-tool-meson": {
+          "name": "vcpkg-tool-meson",
+          "version": "1.9.0",
+          "port-version": 4,
+          "description": "Meson build system",
+          "homepage": "https://github.com/mesonbuild/meson",
+          "license": "Apache-2.0",
+          "supports": "native",
+          "dependencies": ["vcpkg-cmake-get-vars"]
+        }
+      },
+      "commands": [
+        {
+          "args": ["x-package-info", "--x-json", "vcpkg-cmake-get-vars", "vcpkg-msbuild"],
+          "exitCode": 1,
+          "stdoutSha256": "c20687b964c23a81acb6a560ea282ab1adcb3c36797c89e3b3ff2e0b0ac1b02a",
+          "stderr": ""
+        },
+        {
+          "args": [
+            "x-package-info",
+            "--x-json",
+            "pkgconf",
+            "vcpkg-cmake",
+            "vcpkg-pkgconfig-get-modules"
+          ],
+          "exitCode": 1,
+          "stdoutSha256": "300417c06081d8430669636ba1004dbdbd5c085659adffb0322a89501bc83ea4",
+          "stderr": ""
+        },
+        {
+          "args": ["x-package-info", "--x-json", "vcpkg-tool-meson"],
+          "exitCode": 1,
+          "stdoutSha256": "ee8ac30405f61c257bcbaa3baf03d0ba745d0796530949d5e0432c526df4c92f",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "file": "res/vcpkg/libyuv/vcpkg.json",
+      "ports": {
+        "libjpeg-turbo": {
+          "name": "libjpeg-turbo",
+          "version": "3.1.4.1",
+          "description": "libjpeg-turbo is a JPEG image codec that uses SIMD instructions (MMX, SSE2, NEON, AltiVec) to accelerate baseline JPEG compression and decompression on x86, x86-64, ARM, and PowerPC systems.",
+          "homepage": "https://libjpeg-turbo.org/",
+          "license": "BSD-3-Clause",
+          "dependencies": [
+            {
+              "name": "vcpkg-cmake",
+              "host": true
+            },
+            {
+              "name": "vcpkg-cmake-config",
+              "host": true
+            }
+          ],
+          "features": {
+            "jpeg7": {
+              "description": "Emulate libjpeg v7 API/ABI (this makes libjpeg-turbo backward-incompatible with libjpeg v6b!)"
+            },
+            "jpeg8": {
+              "description": "Emulate libjpeg v8 API/ABI (this makes libjpeg-turbo backward-incompatible with libjpeg v6b!)"
+            },
+            "tools": {
+              "description": "Build executables"
+            }
+          }
+        },
+        "vcpkg-cmake": {
+          "name": "vcpkg-cmake",
+          "version-date": "2024-04-23",
+          "documentation": "https://learn.microsoft.com/vcpkg/maintainers/functions/vcpkg_cmake_configure",
+          "license": "MIT"
+        },
+        "vcpkg-cmake-config": {
+          "name": "vcpkg-cmake-config",
+          "version-date": "2024-05-23",
+          "documentation": "https://learn.microsoft.com/vcpkg/maintainers/functions/vcpkg_cmake_config_fixup",
+          "license": "MIT"
+        },
+        "vcpkg-cmake-get-vars": {
+          "name": "vcpkg-cmake-get-vars",
+          "version-date": "2025-05-29",
+          "documentation": "https://vcpkg.io/en/docs/README.html",
+          "license": "MIT",
+          "dependencies": [
+            {
+              "name": "vcpkg-cmake",
+              "host": true
+            }
+          ]
+        }
+      },
+      "commands": [
+        {
+          "args": [
+            "x-package-info",
+            "--x-json",
+            "libjpeg-turbo",
+            "vcpkg-cmake",
+            "vcpkg-cmake-config",
+            "vcpkg-cmake-get-vars"
+          ],
+          "exitCode": 1,
+          "stdoutSha256": "010a3927f5328b9b01c53d3cc3a967af6cfe5a9a9cd8f60fe1e5acb9503d8321",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "file": "res/vcpkg/mfx-dispatch/vcpkg.json",
+      "ports": {
+        "vcpkg-cmake": {
+          "name": "vcpkg-cmake",
+          "version-date": "2024-04-23",
+          "documentation": "https://learn.microsoft.com/vcpkg/maintainers/functions/vcpkg_cmake_configure",
+          "license": "MIT"
+        }
+      },
+      "commands": [
+        {
+          "args": ["x-package-info", "--x-json", "vcpkg-cmake"],
+          "exitCode": 1,
+          "stdoutSha256": "1fe22258139c00dfdb73b70c2dc49a7b23436cb18e2ab31b2ab966193c8e446e",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "file": "res/vcpkg/opus/vcpkg.json",
+      "ports": {
+        "vcpkg-cmake": {
+          "name": "vcpkg-cmake",
+          "version-date": "2024-04-23",
+          "documentation": "https://learn.microsoft.com/vcpkg/maintainers/functions/vcpkg_cmake_configure",
+          "license": "MIT"
+        },
+        "vcpkg-cmake-config": {
+          "name": "vcpkg-cmake-config",
+          "version-date": "2024-05-23",
+          "documentation": "https://learn.microsoft.com/vcpkg/maintainers/functions/vcpkg_cmake_config_fixup",
+          "license": "MIT"
+        }
+      },
+      "commands": [
+        {
+          "args": ["x-package-info", "--x-json", "vcpkg-cmake", "vcpkg-cmake-config"],
+          "exitCode": 1,
+          "stdoutSha256": "8c527b25d6d83b1b7396d5562312b47f5b0e6281c7a55067fc59b3b2690cb445",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "file": "vcpkg.json",
+      "ports": {
+        "aom": {
+          "name": "aom",
+          "version-semver": "3.12.1",
+          "description": "AV1 codec library",
+          "homepage": "https://aomedia.googlesource.com/aom",
+          "license": "BSD-2-Clause",
+          "dependencies": [
+            {
+              "name": "vcpkg-cmake",
+              "host": true
+            },
+            {
+              "name": "vcpkg-cmake-config",
+              "host": true
+            }
+          ]
+        },
+        "cpu-features": {
+          "name": "cpu-features",
+          "version": "0.10.1",
+          "description": "A cross-platform C library to retrieve CPU features (such as available instructions) at runtime",
+          "homepage": "https://github.com/google/cpu_features",
+          "license": "Apache-2.0",
+          "supports": "!uwp",
+          "dependencies": [
+            {
+              "name": "vcpkg-cmake",
+              "host": true
+            },
+            {
+              "name": "vcpkg-cmake-config",
+              "host": true
+            }
+          ],
+          "features": {
+            "tools": {
+              "description": "list_cpu_features command line tool"
+            }
+          }
+        },
+        "ffmpeg": {
+          "name": "ffmpeg",
+          "version": "7.1",
+          "port-version": 1,
+          "description": [
+            "a library to decode, encode, transcode, mux, demux, stream, filter and play pretty much anything that humans and machines have created.",
+            "FFmpeg is the leading multimedia framework, able to decode, encode, transcode, mux, demux, stream, filter and play pretty much anything that humans and machines have created. It supports the most obscure ancient formats up to the cutting edge. No matter if they were designed by some standards committee, the community or a corporation. It is also highly portable: FFmpeg compiles, runs, and passes our testing infrastructure FATE across Linux, Mac OS X, Microsoft Windows, the BSDs, Solaris, etc. under a wide variety of build environments, machine architectures, and configurations."
+          ],
+          "homepage": "https://ffmpeg.org",
+          "license": null,
+          "dependencies": [
+            {
+              "name": "vcpkg-cmake-get-vars",
+              "host": true
+            },
+            {
+              "name": "vcpkg-pkgconfig-get-modules",
+              "host": true
+            }
+          ],
+          "features": {
+            "amf": {
+              "description": "AMD AMF codec support",
+              "dependencies": ["amd-amf"]
+            },
+            "nvcodec": {
+              "description": "Nvidia video decoding/encoding acceleration",
+              "supports": "linux | (!osx & !uwp & !(arm64 & windows))",
+              "dependencies": ["ffnvcodec"]
+            },
+            "qsv": {
+              "description": "Intel QSV Codec",
+              "dependencies": ["mfx-dispatch"]
+            }
+          }
+        },
+        "libjpeg-turbo": {
+          "name": "libjpeg-turbo",
+          "version": "3.1.1",
+          "description": "libjpeg-turbo is a JPEG image codec that uses SIMD instructions (MMX, SSE2, NEON, AltiVec) to accelerate baseline JPEG compression and decompression on x86, x86-64, ARM, and PowerPC systems.",
+          "homepage": "https://github.com/libjpeg-turbo/libjpeg-turbo",
+          "license": "BSD-3-Clause",
+          "dependencies": [
+            {
+              "name": "vcpkg-cmake",
+              "host": true
+            },
+            {
+              "name": "vcpkg-cmake-config",
+              "host": true
+            }
+          ],
+          "features": {
+            "jpeg7": {
+              "description": "Emulate libjpeg v7 API/ABI (this makes libjpeg-turbo backward-incompatible with libjpeg v6b!)"
+            },
+            "jpeg8": {
+              "description": "Emulate libjpeg v8 API/ABI (this makes libjpeg-turbo backward-incompatible with libjpeg v6b!)"
+            },
+            "tools": {
+              "description": "Build executables"
+            }
+          }
+        },
+        "libvpx": {
+          "name": "libvpx",
+          "version": "1.15.2",
+          "description": "The reference software implementation for the video coding formats VP8 and VP9.",
+          "homepage": "https://github.com/webmproject/libvpx",
+          "license": "BSD-3-Clause",
+          "dependencies": [
+            {
+              "name": "vcpkg-cmake-get-vars",
+              "host": true
+            },
+            {
+              "name": "vcpkg-msbuild",
+              "host": true,
+              "platform": "windows & !mingw"
+            }
+          ],
+          "features": {
+            "highbitdepth": {
+              "description": "use VP9 high bit depth (10/12) profiles"
+            },
+            "realtime": {
+              "description": "enable this option while building for real-time encoding"
+            }
+          }
+        },
+        "libyuv": {
+          "name": "libyuv",
+          "version": "1857",
+          "description": "libyuv is an open source project that includes YUV scaling and conversion functionality",
+          "homepage": "https://chromium.googlesource.com/libyuv/libyuv",
+          "license": null,
+          "dependencies": [
+            "libjpeg-turbo",
+            {
+              "name": "vcpkg-cmake",
+              "host": true
+            },
+            {
+              "name": "vcpkg-cmake-config",
+              "host": true
+            },
+            {
+              "name": "vcpkg-cmake-get-vars",
+              "host": true
+            }
+          ]
+        },
+        "mfx-dispatch": {
+          "name": "mfx-dispatch",
+          "version": "1.35.1",
+          "port-version": 5,
+          "description": "Open source Intel media sdk dispatcher",
+          "homepage": "https://github.com/lu-zero/mfx_dispatch",
+          "license": "BSD-3-Clause",
+          "supports": "((x86 | x64) & (android | linux)) | (windows & !uwp)",
+          "dependencies": [
+            {
+              "name": "vcpkg-cmake",
+              "host": true,
+              "platform": "windows & !mingw"
+            }
+          ]
+        },
+        "oboe": {
+          "name": "oboe",
+          "version": "1.8.0",
+          "description": "Oboe is a C++ library which makes it easy to build high-performance audio apps on Android",
+          "homepage": "https://developer.android.com/games/sdk/oboe",
+          "license": "Apache-2.0",
+          "supports": "android",
+          "dependencies": [
+            {
+              "name": "vcpkg-cmake",
+              "host": true
+            },
+            {
+              "name": "vcpkg-cmake-config",
+              "host": true
+            }
+          ]
+        },
+        "opus": {
+          "name": "opus",
+          "version": "1.5.2",
+          "description": "Totally open, royalty-free, highly versatile audio codec",
+          "homepage": "https://github.com/xiph/opus",
+          "license": "BSD-3-Clause",
+          "dependencies": [
+            {
+              "name": "vcpkg-cmake",
+              "host": true
+            },
+            {
+              "name": "vcpkg-cmake-config",
+              "host": true
+            }
+          ],
+          "features": {
+            "avx2": {
+              "description": "Builds the library with avx2 instruction set"
+            }
+          }
+        },
+        "amd-amf": {
+          "name": "amd-amf",
+          "version": "1.4.36",
+          "port-version": 1,
+          "description": "AMD Advanced Media Framework headers",
+          "homepage": "https://github.com/GPUOpen-LibrariesAndSDKs/AMF",
+          "license": "MIT",
+          "supports": "!osx"
+        },
+        "ffnvcodec": {
+          "name": "ffnvcodec",
+          "version": "12.2.72.0",
+          "port-version": 2,
+          "description": "FFmpeg version of Nvidia Codec SDK headers.",
+          "homepage": "https://github.com/FFmpeg/nv-codec-headers",
+          "supports": "linux | (!osx & !uwp & !(arm64 & windows))"
+        },
+        "vcpkg-cmake": {
+          "name": "vcpkg-cmake",
+          "version-date": "2024-04-23",
+          "documentation": "https://learn.microsoft.com/vcpkg/maintainers/functions/vcpkg_cmake_configure",
+          "license": "MIT"
+        },
+        "vcpkg-cmake-config": {
+          "name": "vcpkg-cmake-config",
+          "version-date": "2024-05-23",
+          "documentation": "https://learn.microsoft.com/vcpkg/maintainers/functions/vcpkg_cmake_config_fixup",
+          "license": "MIT"
+        },
+        "vcpkg-cmake-get-vars": {
+          "name": "vcpkg-cmake-get-vars",
+          "version-date": "2025-05-29",
+          "documentation": "https://vcpkg.io/en/docs/README.html",
+          "license": "MIT",
+          "dependencies": [
+            {
+              "name": "vcpkg-cmake",
+              "host": true
+            }
+          ]
+        },
+        "vcpkg-msbuild": {
+          "name": "vcpkg-msbuild",
+          "version-date": "2023-08-08",
+          "documentation": "https://vcpkg.io/en/docs/README.html",
+          "license": "MIT",
+          "supports": "native & windows",
+          "dependencies": [
+            {
+              "name": "vcpkg-cmake-get-vars",
+              "host": true
+            },
+            {
+              "name": "vcpkg-pkgconfig-get-modules",
+              "host": true
+            }
+          ],
+          "features": {
+            "pkg-config": {
+              "description": "Enable pkg-config lookup for msbuild",
+              "dependencies": ["pkgconf"]
+            }
+          }
+        },
+        "vcpkg-pkgconfig-get-modules": {
+          "name": "vcpkg-pkgconfig-get-modules",
+          "version-date": "2024-04-03",
+          "documentation": "https://learn.microsoft.com/vcpkg/maintainers/functions/vcpkg_pkgconfig_get_modules",
+          "license": "MIT",
+          "supports": "native",
+          "dependencies": ["pkgconf"]
+        },
+        "pkgconf": {
+          "name": "pkgconf",
+          "version": "2.5.1",
+          "description": "pkgconf is a program which helps to configure compiler and linker flags for development libraries. It is similar to pkg-config from freedesktop.org.",
+          "homepage": "https://github.com/pkgconf/pkgconf",
+          "license": null,
+          "supports": "!uwp",
+          "dependencies": [
+            {
+              "name": "vcpkg-tool-meson",
+              "host": true
+            }
+          ]
+        },
+        "vcpkg-tool-meson": {
+          "name": "vcpkg-tool-meson",
+          "version": "1.8.2",
+          "description": "Meson build system",
+          "homepage": "https://github.com/mesonbuild/meson",
+          "license": "Apache-2.0",
+          "supports": "native",
+          "dependencies": ["vcpkg-cmake-get-vars"]
+        }
+      },
+      "commands": [
+        {
+          "args": [
+            "x-package-info",
+            "--x-json",
+            "aom",
+            "cpu-features",
+            "ffmpeg",
+            "libjpeg-turbo",
+            "libvpx",
+            "libyuv",
+            "mfx-dispatch",
+            "oboe",
+            "opus"
+          ],
+          "exitCode": 1,
+          "stdoutSha256": "ee4eef097d118757dc4eeb15ab9956e91d2ebb956a31f358e79f0978e9a41fbb",
+          "stderr": ""
+        },
+        {
+          "args": [
+            "x-package-info",
+            "--x-json",
+            "amd-amf",
+            "ffnvcodec",
+            "vcpkg-cmake",
+            "vcpkg-cmake-config",
+            "vcpkg-cmake-get-vars",
+            "vcpkg-msbuild",
+            "vcpkg-pkgconfig-get-modules"
+          ],
+          "exitCode": 1,
+          "stdoutSha256": "6d6a39b870a172b99438924388e3652907fed11bea1fa40fb8fa937c54abb2dd",
+          "stderr": ""
+        },
+        {
+          "args": ["x-package-info", "--x-json", "pkgconf"],
+          "exitCode": 1,
+          "stdoutSha256": "b1409e9b8e72e759924d7ba826118456ffb69a19241840ea6fcc74ab3c15531b",
+          "stderr": ""
+        },
+        {
+          "args": ["x-package-info", "--x-json", "vcpkg-tool-meson"],
+          "exitCode": 1,
+          "stdoutSha256": "47e818adbc595561c88b8a9097e40eb0b560726067ffe23bd90757c55b306fd8",
+          "stderr": ""
+        }
+      ]
+    }
+  ]
+}

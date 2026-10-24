@@ -1,188 +1,65 @@
 import { test, expect } from "vitest";
-import { validateResult } from "./validate.ts";
-import type { AnalyzerResult } from "@scatool/analyzer-core";
+import { createEmptyResult, type AnalyzerResult } from "@scatool/analyzer-core";
+import { assertSuccessfulResult, validateResult } from "./validate.ts";
 
-test("validateResult passes for valid result", () => {
-  const validResult: AnalyzerResult = {
-    packages: [
-      { purl: "pkg:npm/foo@1.0.0", evidence: ["package.json#1"] },
-      { purl: "pkg:npm/bar@2.0.0", evidence: ["package.json#2"] },
-    ],
-    subprojects: [
-      {
-        purl: "pkg:npm/myapp@1.0.0",
-        definitionFile: "package.json",
-        scopes: [
-          {
-            scope: "dependencies",
-            packages: ["pkg:npm/foo@1.0.0", "pkg:npm/bar@2.0.0"],
-          },
-        ],
-      },
-    ],
-    relationships: [{ from: "pkg:npm/foo@1.0.0", to: ["pkg:npm/bar@2.0.0"] }],
-    issues: [],
-  };
+const empty = () => createEmptyResult("test:fixture");
 
-  expect(() => validateResult(validResult)).not.toThrow();
+test("validation accepts matching catalog/project PURLs with exact project identity", () => {
+  const result = empty();
+  result.packages = [{ purl: "pkg:npm/app", evidence: [] }];
+  result.subprojects = [
+    { purl: "pkg:npm/app", definitionFile: "a/package.json" },
+    { purl: "pkg:npm/app", definitionFile: "b/package.json" },
+  ];
+  expect(() => validateResult(result)).not.toThrow();
+  result.subprojects.push({ ...result.subprojects[0]! });
+  expect(() => validateResult(result)).toThrow("Duplicate project");
 });
 
-test("validateResult throws when subproject purl is in packages", () => {
-  const invalidResult: AnalyzerResult = {
-    packages: [
-      { purl: "pkg:npm/myapp@1.0.0", evidence: ["package.json#1"] }, // subproject purl!
-      { purl: "pkg:npm/foo@1.0.0", evidence: ["package.json#2"] },
-    ],
-    subprojects: [
-      {
-        purl: "pkg:npm/myapp@1.0.0",
-        definitionFile: "package.json",
-        scopes: [
-          {
-            scope: "dependencies",
-            packages: ["pkg:npm/foo@1.0.0"],
-          },
-        ],
-      },
-    ],
-    relationships: [],
-    issues: [],
-  };
-
-  expect(() => validateResult(invalidResult)).toThrow(
-    "Subproject purls found in packages array: pkg:npm/myapp@1.0.0",
-  );
-});
-
-test("validateResult throws when subproject purl is in relationships (from)", () => {
-  const invalidResult: AnalyzerResult = {
-    packages: [{ purl: "pkg:npm/foo@1.0.0", evidence: ["package.json#1"] }],
-    subprojects: [
-      {
-        purl: "pkg:npm/myapp@1.0.0",
-        definitionFile: "package.json",
-        scopes: [
-          {
-            scope: "dependencies",
-            packages: ["pkg:npm/foo@1.0.0"],
-          },
-        ],
-      },
-    ],
-    relationships: [
-      { from: "pkg:npm/myapp@1.0.0", to: ["pkg:npm/foo@1.0.0"] }, // subproject in 'from'!
-    ],
-    issues: [],
-  };
-
-  expect(() => validateResult(invalidResult)).toThrow(
-    "Subproject purls found in relationships: pkg:npm/myapp@1.0.0",
-  );
-});
-
-test("validateResult throws when subproject purl is in relationships (to)", () => {
-  const invalidResult: AnalyzerResult = {
-    packages: [{ purl: "pkg:npm/foo@1.0.0", evidence: ["package.json#1"] }],
-    subprojects: [
-      {
-        purl: "pkg:npm/myapp@1.0.0",
-        definitionFile: "package.json",
-        scopes: [
-          {
-            scope: "dependencies",
-            packages: ["pkg:npm/foo@1.0.0"],
-          },
-        ],
-      },
-    ],
-    relationships: [
-      { from: "pkg:npm/foo@1.0.0", to: ["pkg:npm/myapp@1.0.0"] }, // subproject in 'to'!
-    ],
-    issues: [],
-  };
-
-  expect(() => validateResult(invalidResult)).toThrow(
-    "Subproject purls found in relationships: pkg:npm/myapp@1.0.0",
-  );
-});
-
-test("validateResult throws when package purls are duplicated", () => {
-  const invalidResult: AnalyzerResult = {
-    packages: [
-      { purl: "pkg:npm/foo@1.0.0", evidence: ["package.json#1"] },
-      { purl: "pkg:npm/foo@1.0.0", evidence: ["package.json#2"] }, // duplicate!
-      { purl: "pkg:npm/bar@2.0.0", evidence: ["package.json#3"] },
-    ],
-    subprojects: [],
-    relationships: [],
-    issues: [],
-  };
-
-  expect(() => validateResult(invalidResult)).toThrow(
-    "Duplicate package purls found: pkg:npm/foo@1.0.0",
-  );
-});
-
-test("validateResult throws when subproject purls are duplicated", () => {
-  const invalidResult: AnalyzerResult = {
-    packages: [{ purl: "pkg:npm/foo@1.0.0", evidence: ["package.json#1"] }],
-    subprojects: [
-      {
-        purl: "pkg:npm/myapp@1.0.0",
-        definitionFile: "package.json",
-        scopes: [],
-      },
-      {
-        purl: "pkg:npm/myapp@1.0.0", // duplicate!
-        definitionFile: "apps/frontend/package.json",
-        scopes: [],
-      },
-    ],
-    relationships: [],
-    issues: [],
-  };
-
-  expect(() => validateResult(invalidResult)).toThrow(
-    "Duplicate subproject purls found: pkg:npm/myapp@1.0.0",
-  );
-});
-
-test('validateResult throws when relationship "to" array contains duplicates', () => {
-  const invalidResult: AnalyzerResult = {
-    packages: [
-      { purl: "pkg:npm/foo@1.0.0", evidence: ["package.json#1"] },
-      { purl: "pkg:npm/bar@2.0.0", evidence: ["package.json#2"] },
-    ],
-    subprojects: [],
-    relationships: [
-      {
-        from: "pkg:npm/foo@1.0.0",
-        to: ["pkg:npm/bar@2.0.0", "pkg:npm/bar@2.0.0"], // duplicate in 'to'!
-      },
-    ],
-    issues: [],
-  };
-
-  expect(() => validateResult(invalidResult)).toThrow(
-    "Duplicate purls in relationship 'to' array for 'pkg:npm/foo@1.0.0': pkg:npm/bar@2.0.0",
-  );
-});
-
-test("validateResult throws when an issue is missing a code", () => {
-  const invalidResult = {
-    packages: [],
-    subprojects: [],
-    relationships: [],
-    issues: [
-      {
-        message: "Failed to parse file",
-        severity: "ERROR",
-        file: "package.json",
-      },
-    ],
+test("validation rejects duplicated package identities, malformed issues and dangling views", () => {
+  const result = empty();
+  result.packages = [
+    { purl: "pkg:npm/foo", evidence: [] },
+    { purl: "pkg:npm/foo", evidence: [] },
+  ];
+  expect(() => validateResult(result)).toThrow("Duplicate package");
+  const invalidIssue = {
+    ...empty(),
+    issues: [{ message: "failed", severity: "ERROR" }],
   } as unknown as AnalyzerResult;
+  expect(() => validateResult(invalidIssue)).toThrow();
+  const dangling = empty();
+  dangling.graphs = [
+    {
+      id: "g",
+      source: { extractor: "test", files: [] },
+      interpretation: "unknown",
+      rootCompleteness: "unknown",
+      roots: [],
+      nodes: [{ id: "n", purl: "pkg:npm/absent", dependencyCompleteness: "unknown" }],
+      edges: [],
+    },
+  ];
+  expect(() => validateResult(dangling)).toThrow("unknown package");
+});
 
-  expect(() => validateResult(invalidResult)).toThrow(
-    "Issue is missing required code: Failed to parse file",
-  );
+test("valid failure observations cannot silently pass successful fixture checks", () => {
+  const result = empty();
+  result.issues.push({ code: "fixture.failure", message: "unavailable input", severity: "ERROR" });
+  validateResult(result);
+  expect(() => assertSuccessfulResult(result)).toThrow("fixture.failure");
+  expect(() => assertSuccessfulResult(result, ["fixture.failure"])).not.toThrow();
+  result.issues.push({ code: "unexpected", message: "another failure", severity: "ERROR" });
+  expect(() => assertSuccessfulResult(result, ["fixture.failure"])).toThrow("unexpected");
+});
+
+test("legacy relationship-only results are no longer accepted", () => {
+  expect(() =>
+    validateResult({
+      packages: [],
+      subprojects: [],
+      relationships: [],
+      issues: [],
+    } as unknown as AnalyzerResult),
+  ).toThrow();
 });

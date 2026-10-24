@@ -11,7 +11,7 @@ export interface OrtPackage {
 
 interface OrtRootDependencyIndex {
   root: number;
-  fragment?: string;
+  fragment?: number;
 }
 
 interface OrtDependencyGraphNode {
@@ -26,11 +26,16 @@ interface OrtDependencyGraphEdge {
   to: number;
 }
 
+export interface OrtDependencyReference extends OrtDependencyGraphNode {
+  dependencies?: OrtDependencyReference[];
+}
+
 export interface OrtDependencyGraph {
   packages: string[];
   scopes: Record<string, OrtRootDependencyIndex[]>;
-  nodes: OrtDependencyGraphNode[];
-  edges: OrtDependencyGraphEdge[];
+  nodes?: OrtDependencyGraphNode[];
+  edges?: OrtDependencyGraphEdge[];
+  scope_roots?: OrtDependencyReference[];
 }
 
 export interface OrtIssue {
@@ -51,5 +56,7 @@ export interface OrtAnalyzerResult {
 export interface OrtResultFile {
   analyzer?: {
     result?: OrtAnalyzerResult;
+    environment?: { ort_version?: string; os?: string; tool_versions?: Record<string, string> };
   };
+  repository?: { config?: { excludes?: unknown } };
 }

@@ -1,0 +1,550 @@
+{
+  "tools": {
+    "node": "v22.23.4",
+    "npm": "11.9.0",
+    "arborist": "9.2.0"
+  },
+  "options": {
+    "offline": true,
+    "ignoreScripts": true,
+    "audit": false,
+    "fund": false,
+    "progress": false,
+    "cache": "<temporary>/cache",
+    "registry": "http://127.0.0.1:1",
+    "os": "linux",
+    "cpu": "x64",
+    "libc": "glibc"
+  },
+  "sources": [
+    {
+      "name": "leaf",
+      "version": "1.0.0"
+    },
+    {
+      "name": "leaf",
+      "version": "2.0.0"
+    },
+    {
+      "name": "parent",
+      "version": "1.0.0",
+      "dependencies": {
+        "leaf": "file:../packages/leaf-1.0.0.tgz"
+      }
+    },
+    {
+      "name": "platform-ok",
+      "version": "1.0.0",
+      "os": ["linux"],
+      "cpu": ["x64"],
+      "libc": ["glibc"]
+    },
+    {
+      "name": "platform-os",
+      "version": "1.0.0",
+      "os": ["!linux"]
+    },
+    {
+      "name": "platform-cpu",
+      "version": "1.0.0",
+      "cpu": ["!x64"]
+    },
+    {
+      "name": "platform-libc",
+      "version": "1.0.0",
+      "libc": ["!glibc"]
+    }
+  ],
+  "cases": [
+    {
+      "id": "optional-overrides-required",
+      "omit": [],
+      "lockGeneration": "success",
+      "virtual": {
+        "nodes": [
+          {
+            "location": "node_modules/leaf",
+            "name": "leaf",
+            "version": "2.0.0",
+            "optional": true
+          }
+        ],
+        "edges": [
+          {
+            "from": "",
+            "name": "leaf",
+            "spec": "file:../packages/leaf-2.0.0.tgz",
+            "rawSpec": "file:../packages/leaf-2.0.0.tgz",
+            "type": "optional",
+            "error": null,
+            "to": "node_modules/leaf"
+          }
+        ]
+      },
+      "lockSha256": "85b50571698811ff0700d97711b74ce7c6eaf578798ae9ef6993e0d102170446",
+      "install": "success",
+      "actual": {
+        "nodes": [
+          {
+            "location": "node_modules/leaf",
+            "name": "leaf",
+            "version": "2.0.0",
+            "optional": true
+          }
+        ],
+        "edges": [
+          {
+            "from": "",
+            "name": "leaf",
+            "spec": "file:../packages/leaf-2.0.0.tgz",
+            "rawSpec": "file:../packages/leaf-2.0.0.tgz",
+            "type": "optional",
+            "error": null,
+            "to": "node_modules/leaf"
+          }
+        ]
+      },
+      "installedManifests": [
+        {
+          "location": "node_modules/leaf",
+          "manifest": {
+            "name": "leaf",
+            "version": "2.0.0"
+          }
+        }
+      ],
+      "manifestSha256": "050b918512aba7c652ea32bbebc8dce19d0e6371c0ac68365b20b8dd3cabfe93"
+    },
+    {
+      "id": "optional-missing",
+      "omit": [],
+      "lockGeneration": "success",
+      "virtual": {
+        "nodes": [
+          {
+            "location": "node_modules/missing",
+            "name": "missing",
+            "version": "",
+            "optional": true
+          }
+        ],
+        "edges": [
+          {
+            "from": "",
+            "name": "missing",
+            "spec": "file:../packages/missing-1.0.0.tgz",
+            "rawSpec": "file:../packages/missing-1.0.0.tgz",
+            "type": "optional",
+            "error": "INVALID",
+            "to": "node_modules/missing"
+          }
+        ]
+      },
+      "lockSha256": "c4e8a7b341b5ae4aade95219774ce84faf3532bd3ba760cc100786f682eefb97",
+      "install": "success",
+      "actual": {
+        "nodes": [],
+        "edges": [
+          {
+            "from": "",
+            "name": "missing",
+            "spec": "file:../packages/missing-1.0.0.tgz",
+            "rawSpec": "file:../packages/missing-1.0.0.tgz",
+            "type": "optional",
+            "error": null,
+            "to": null
+          }
+        ]
+      },
+      "installedManifests": [],
+      "manifestSha256": "29d8bf3c44b63374b13f61b8f7f46f344194a2aadc0a346cf0d41be84ff796be"
+    },
+    {
+      "id": "optional-omitted",
+      "omit": ["optional"],
+      "lockGeneration": "success",
+      "virtual": {
+        "nodes": [
+          {
+            "location": "node_modules/leaf",
+            "name": "leaf",
+            "version": "1.0.0",
+            "optional": true
+          }
+        ],
+        "edges": [
+          {
+            "from": "",
+            "name": "leaf",
+            "spec": "file:../packages/leaf-1.0.0.tgz",
+            "rawSpec": "file:../packages/leaf-1.0.0.tgz",
+            "type": "optional",
+            "error": null,
+            "to": "node_modules/leaf"
+          }
+        ]
+      },
+      "lockSha256": "6f87fa90fb059fe4790ea21a95cf308b2136e7dba3803ed623bd08d3cfe9e188",
+      "install": "success",
+      "actual": {
+        "nodes": [],
+        "edges": [
+          {
+            "from": "",
+            "name": "leaf",
+            "spec": "file:../packages/leaf-1.0.0.tgz",
+            "rawSpec": "file:../packages/leaf-1.0.0.tgz",
+            "type": "optional",
+            "error": null,
+            "to": null
+          }
+        ]
+      },
+      "installedManifests": [],
+      "manifestSha256": "b05a73494a3dade27e472d48934d50bbc7f0af89b64e4beb82d90cf525d498a4"
+    },
+    {
+      "id": "optional-platform-ok",
+      "omit": [],
+      "lockGeneration": "success",
+      "virtual": {
+        "nodes": [
+          {
+            "location": "node_modules/platform-ok",
+            "name": "platform-ok",
+            "version": "1.0.0",
+            "optional": true,
+            "os": ["linux"],
+            "cpu": ["x64"]
+          }
+        ],
+        "edges": [
+          {
+            "from": "",
+            "name": "platform-ok",
+            "spec": "file:../packages/platform-ok-1.0.0.tgz",
+            "rawSpec": "file:../packages/platform-ok-1.0.0.tgz",
+            "type": "optional",
+            "error": null,
+            "to": "node_modules/platform-ok"
+          }
+        ]
+      },
+      "lockSha256": "90d84a98460e7aba98df32b6e8cf27b52bfe7868c633e3b39cdcaf40a730873b",
+      "install": "success",
+      "actual": {
+        "nodes": [
+          {
+            "location": "node_modules/platform-ok",
+            "name": "platform-ok",
+            "version": "1.0.0",
+            "optional": true,
+            "os": ["linux"],
+            "cpu": ["x64"]
+          }
+        ],
+        "edges": [
+          {
+            "from": "",
+            "name": "platform-ok",
+            "spec": "file:../packages/platform-ok-1.0.0.tgz",
+            "rawSpec": "file:../packages/platform-ok-1.0.0.tgz",
+            "type": "optional",
+            "error": null,
+            "to": "node_modules/platform-ok"
+          }
+        ]
+      },
+      "installedManifests": [
+        {
+          "location": "node_modules/platform-ok",
+          "manifest": {
+            "name": "platform-ok",
+            "version": "1.0.0",
+            "os": ["linux"],
+            "cpu": ["x64"],
+            "libc": ["glibc"]
+          }
+        }
+      ],
+      "manifestSha256": "685bff77a38dfa8e43040a30543c07aa45a67caf687f4b02ec94e6b8ead5350f"
+    },
+    {
+      "id": "optional-platform-os",
+      "omit": [],
+      "lockGeneration": "success",
+      "virtual": {
+        "nodes": [
+          {
+            "location": "node_modules/platform-os",
+            "name": "platform-os",
+            "version": "1.0.0",
+            "optional": true,
+            "os": ["!linux"]
+          }
+        ],
+        "edges": [
+          {
+            "from": "",
+            "name": "platform-os",
+            "spec": "file:../packages/platform-os-1.0.0.tgz",
+            "rawSpec": "file:../packages/platform-os-1.0.0.tgz",
+            "type": "optional",
+            "error": null,
+            "to": "node_modules/platform-os"
+          }
+        ]
+      },
+      "lockSha256": "2bc0aff9685e7f500f7879e3808befe4cb07b96ed42bdeb00ec15053723a54e4",
+      "install": "success",
+      "actual": {
+        "nodes": [],
+        "edges": [
+          {
+            "from": "",
+            "name": "platform-os",
+            "spec": "file:../packages/platform-os-1.0.0.tgz",
+            "rawSpec": "file:../packages/platform-os-1.0.0.tgz",
+            "type": "optional",
+            "error": null,
+            "to": null
+          }
+        ]
+      },
+      "installedManifests": [],
+      "manifestSha256": "c44cfcb00cb5cbdea5cea2f66c20582b638ad58881e1beda4990b36cb51680f9"
+    },
+    {
+      "id": "optional-platform-cpu",
+      "omit": [],
+      "lockGeneration": "success",
+      "virtual": {
+        "nodes": [
+          {
+            "location": "node_modules/platform-cpu",
+            "name": "platform-cpu",
+            "version": "1.0.0",
+            "optional": true,
+            "cpu": ["!x64"]
+          }
+        ],
+        "edges": [
+          {
+            "from": "",
+            "name": "platform-cpu",
+            "spec": "file:../packages/platform-cpu-1.0.0.tgz",
+            "rawSpec": "file:../packages/platform-cpu-1.0.0.tgz",
+            "type": "optional",
+            "error": null,
+            "to": "node_modules/platform-cpu"
+          }
+        ]
+      },
+      "lockSha256": "abc6175b124fdaf09ec7ea681e0506c34396bb437910c9872cbf1737a78d01a7",
+      "install": "success",
+      "actual": {
+        "nodes": [],
+        "edges": [
+          {
+            "from": "",
+            "name": "platform-cpu",
+            "spec": "file:../packages/platform-cpu-1.0.0.tgz",
+            "rawSpec": "file:../packages/platform-cpu-1.0.0.tgz",
+            "type": "optional",
+            "error": null,
+            "to": null
+          }
+        ]
+      },
+      "installedManifests": [],
+      "manifestSha256": "dd7bb353e7b0eaee4c497de3a90771c3b8f5543008098ea54b7047bf042efcb9"
+    },
+    {
+      "id": "optional-platform-libc",
+      "omit": [],
+      "lockGeneration": "success",
+      "virtual": {
+        "nodes": [
+          {
+            "location": "node_modules/platform-libc",
+            "name": "platform-libc",
+            "version": "1.0.0",
+            "optional": true
+          }
+        ],
+        "edges": [
+          {
+            "from": "",
+            "name": "platform-libc",
+            "spec": "file:../packages/platform-libc-1.0.0.tgz",
+            "rawSpec": "file:../packages/platform-libc-1.0.0.tgz",
+            "type": "optional",
+            "error": null,
+            "to": "node_modules/platform-libc"
+          }
+        ]
+      },
+      "lockSha256": "192d444b602841aa30c35b2f9a42447e426fad17a28f1b80e53aa1dd3ffb404e",
+      "install": "success",
+      "actual": {
+        "nodes": [
+          {
+            "location": "node_modules/platform-libc",
+            "name": "platform-libc",
+            "version": "1.0.0",
+            "optional": true
+          }
+        ],
+        "edges": [
+          {
+            "from": "",
+            "name": "platform-libc",
+            "spec": "file:../packages/platform-libc-1.0.0.tgz",
+            "rawSpec": "file:../packages/platform-libc-1.0.0.tgz",
+            "type": "optional",
+            "error": null,
+            "to": "node_modules/platform-libc"
+          }
+        ]
+      },
+      "installedManifests": [
+        {
+          "location": "node_modules/platform-libc",
+          "manifest": {
+            "name": "platform-libc",
+            "version": "1.0.0",
+            "libc": ["!glibc"]
+          }
+        }
+      ],
+      "manifestSha256": "afe37d028caa8a12ff9f070b179e2495b4ecbd8ebd3d4aa05fe1db53295c5465"
+    },
+    {
+      "id": "required-platform-os",
+      "omit": [],
+      "lockGeneration": {
+        "code": "EBADPLATFORM",
+        "message": "Unsupported platform"
+      },
+      "install": {
+        "code": "EBADPLATFORM",
+        "message": "Unsupported platform"
+      },
+      "actual": {
+        "nodes": [],
+        "edges": [
+          {
+            "from": "",
+            "name": "platform-os",
+            "spec": "file:../packages/platform-os-1.0.0.tgz",
+            "rawSpec": "file:../packages/platform-os-1.0.0.tgz",
+            "type": "prod",
+            "error": "MISSING",
+            "to": null
+          }
+        ]
+      },
+      "installedManifests": [],
+      "manifestSha256": "6f9b5a66fa5bce24eb515ee343ea850aa31a0448fd124f28de82286be00139da"
+    },
+    {
+      "id": "override-only-drift",
+      "omit": [],
+      "lockGeneration": "success",
+      "virtual": {
+        "nodes": [
+          {
+            "location": "node_modules/leaf",
+            "name": "leaf",
+            "version": "1.0.0",
+            "optional": false
+          },
+          {
+            "location": "node_modules/parent",
+            "name": "parent",
+            "version": "1.0.0",
+            "optional": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "",
+            "name": "parent",
+            "spec": "file:../packages/parent-1.0.0.tgz",
+            "rawSpec": "file:../packages/parent-1.0.0.tgz",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/parent"
+          },
+          {
+            "from": "node_modules/parent",
+            "name": "leaf",
+            "spec": "file:../../../packages/leaf-2.0.0.tgz",
+            "rawSpec": "file:../packages/leaf-1.0.0.tgz",
+            "type": "prod",
+            "error": "INVALID",
+            "to": "node_modules/leaf"
+          }
+        ]
+      },
+      "lockSha256": "f27389637ed0a604db49ecf571bad7a6d13215d8f0cbada998e4ec89e66a83c9",
+      "install": "success",
+      "actual": {
+        "nodes": [
+          {
+            "location": "node_modules/parent",
+            "name": "parent",
+            "version": "1.0.0",
+            "optional": false
+          },
+          {
+            "location": "node_modules/parent/node_modules/leaf",
+            "name": "leaf",
+            "version": "2.0.0",
+            "optional": false
+          }
+        ],
+        "edges": [
+          {
+            "from": "",
+            "name": "parent",
+            "spec": "file:../packages/parent-1.0.0.tgz",
+            "rawSpec": "file:../packages/parent-1.0.0.tgz",
+            "type": "prod",
+            "error": null,
+            "to": "node_modules/parent"
+          },
+          {
+            "from": "node_modules/parent",
+            "name": "leaf",
+            "spec": "file:../../../packages/leaf-2.0.0.tgz",
+            "rawSpec": "file:../packages/leaf-1.0.0.tgz",
+            "type": "prod",
+            "error": "INVALID",
+            "to": "node_modules/parent/node_modules/leaf"
+          }
+        ]
+      },
+      "installedManifests": [
+        {
+          "location": "node_modules/parent",
+          "manifest": {
+            "name": "parent",
+            "version": "1.0.0",
+            "dependencies": {
+              "leaf": "file:../packages/leaf-1.0.0.tgz"
+            }
+          }
+        },
+        {
+          "location": "node_modules/parent/node_modules/leaf",
+          "manifest": {
+            "name": "leaf",
+            "version": "2.0.0"
+          }
+        }
+      ],
+      "manifestSha256": "0c96cca547b87d0c64fe2c7ab182d6b3c48c96bb92020b05d37772d2d41ab4cb"
+    }
+  ]
+}

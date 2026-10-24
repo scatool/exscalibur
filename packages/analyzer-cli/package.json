@@ -33,7 +33,8 @@
     "build": "vp pack",
     "dev": "vp pack --watch",
     "prepublishOnly": "vp run build",
-    "check": "vp exec tsc --strict --noEmit"
+    "check": "vp exec tsc --strict --noEmit",
+    "test": "vp test run --passWithNoTests"
   },
   "dependencies": {
     "@scatool/analyzer-core": "workspace:*",

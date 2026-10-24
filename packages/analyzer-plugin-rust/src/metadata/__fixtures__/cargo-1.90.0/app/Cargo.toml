@@ -1,0 +1,26 @@
+[package]
+name = "app"
+version = "1.0.0"
+edition = "2021"
+[dependencies]
+ui = { path = "../ui" }
+external = { path = "../external" }
+renamed-shared = { package = "shared", path = "../shared", default-features = false, features = [
+  "runtime",
+] }
+optional-lib = { path = "../optional-lib", optional = true }
+[features]
+extra = ["dep:optional-lib"]
+[build-dependencies]
+renamed-shared = { package = "shared", path = "../shared", default-features = false, features = [
+  "build",
+] }
+proc-tool = { path = "../proc-tool" }
+[dev-dependencies]
+test-tool = { path = "../test-tool" }
+[target.'cfg(windows)'.dependencies]
+windows-only = { path = "../windows-only" }
+[target.'cfg(windows)'.build-dependencies]
+renamed-shared = { package = "shared", path = "../shared", default-features = false, features = [
+  "windows-build",
+] }

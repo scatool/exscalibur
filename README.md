@@ -16,6 +16,11 @@ Exscalibur extracts dependency graphs from software projects.
 
 ## Development
 
+The [analyzer result v2 contract](packages/analyzer-core/src/result-v2/README.md)
+defines the sole model for contextual dependency graphs. Library defaults and the
+CLI emit `formatVersion: 2`; legacy result objects and PURL-union helpers are removed.
+The extractor interface version remains independent of the result format.
+
 Exscalibur is a [pnpm](https://pnpm.io/) workspace using [Vite+](https://viteplus.dev/) for install and task orchestration.
 Each extractor lives in its own package under `packages/`.
 Published packages, the CLI, and repository tests run on Node.js.
@@ -34,12 +39,14 @@ Before pushing changes, make sure the codebase still passes all checks:
 vp run -w ready
 ```
 
-`ready` runs `vp fmt`, `vp lint`, recursive package tests, and recursive package builds in that order.
+`ready` runs formatting, recursive builds, lint and recursive package tests.
+Run `vp run -r check` separately for all workspace type checks.
 
 ### Unit Tests
 
-Unit tests run with Vitest and mostly rely on snapshot testing.
-Each extractor package keeps its fixtures in `__fixtures__/` and expected output in `__snapshots__/`.
+Unit tests run with Vitest. Fixtures in `__fixtures__/` are checked against explicit
+native record/declaration expectations and the core validator. A valid error result
+is not accepted as successful extraction.
 
 Run the full suite from the repository root:
 
@@ -54,7 +61,12 @@ To run a single test file, use `vp test run <path>`.
 
 ### Integration Tests
 
-Integration tests run every extractor against real open-source repositories pinned to exact commit SHAs (see `test/repositories.json`). They live in `test/` and are also snapshot-based.
+Integration tests run the configured extractors against repositories pinned to exact
+commit SHAs (`test/repositories.json`) and compare complete format 2 results against
+reviewed baselines. All 87 configured cases have accepted format 2 baselines;
+[the acceptance inventory](test/INTEGRATION_ACCEPTANCE.md) retains their historical
+baseline hashes and source-review evidence. The harness verifies acceptance and
+never silently creates or updates a baseline.
 
 Some extractors require specific tool versions (for example Java 21 for Gradle, Maven 3, etc.).
 The expected versions are declared in `mise.toml`. The easiest way to get them is:
@@ -87,8 +99,6 @@ vp test run ./test/integration.test.ts
 
 The explicit file path is important because downloaded repositories can contain unrelated test files.
 
-To refresh the snapshots after intentional changes:
-
-```sh
-UPDATE_SNAPSHOTS=1 vp test run ./test/integration.test.ts
-```
+Baseline changes require inspecting native declarations, selected records, graph contexts,
+coverage and extractor issues against the pinned inputs. Do not bulk-regenerate legacy
+baselines or treat structural validation as native correctness evidence.

@@ -1,127 +1,471 @@
 {
-  "packages": [
+  "codebase": "integration:syntax-tree/mdast-util-gfm@6b34bb2868c38c0b2909fa69c78534d5e44dc309",
+  "formatVersion": 2,
+  "graphs": [
     {
-      "purl": "pkg:npm/%40types/node@22.0.0",
-      "evidence": [
-        "package.json#18"
-      ]
-    },
-    {
-      "purl": "pkg:npm/c8@10.0.0",
-      "evidence": [
-        "package.json#19"
-      ]
-    },
-    {
-      "purl": "pkg:npm/github-slugger@2.0.0",
-      "evidence": [
-        "package.json#20"
-      ]
-    },
-    {
-      "purl": "pkg:npm/hast-util-to-html@9.0.0",
-      "evidence": [
-        "package.json#21"
-      ]
-    },
-    {
-      "purl": "pkg:npm/mdast-util-from-markdown@2.0.0",
-      "evidence": [
-        "package.json#8"
-      ]
-    },
-    {
-      "purl": "pkg:npm/mdast-util-gfm-autolink-literal@2.0.0",
-      "evidence": [
-        "package.json#9"
-      ]
-    },
-    {
-      "purl": "pkg:npm/mdast-util-gfm-footnote@2.0.0",
-      "evidence": [
-        "package.json#10"
-      ]
-    },
-    {
-      "purl": "pkg:npm/mdast-util-gfm-strikethrough@2.0.0",
-      "evidence": [
-        "package.json#11"
-      ]
-    },
-    {
-      "purl": "pkg:npm/mdast-util-gfm-table@2.0.0",
-      "evidence": [
-        "package.json#12"
-      ]
-    },
-    {
-      "purl": "pkg:npm/mdast-util-gfm-task-list-item@2.0.0",
-      "evidence": [
-        "package.json#13"
-      ]
-    },
-    {
-      "purl": "pkg:npm/mdast-util-to-hast@13.0.0",
-      "evidence": [
-        "package.json#22"
-      ]
-    },
-    {
-      "purl": "pkg:npm/mdast-util-to-markdown@2.0.0",
-      "evidence": [
-        "package.json#14"
-      ]
-    },
-    {
-      "purl": "pkg:npm/micromark-extension-gfm@3.0.0",
-      "evidence": [
-        "package.json#23"
-      ]
-    },
-    {
-      "purl": "pkg:npm/prettier@3.0.0",
-      "evidence": [
-        "package.json#24"
-      ]
-    },
-    {
-      "purl": "pkg:npm/remark-cli@12.0.0",
-      "evidence": [
-        "package.json#25"
-      ]
-    },
-    {
-      "purl": "pkg:npm/remark-preset-wooorm@11.0.0",
-      "evidence": [
-        "package.json#26"
-      ]
-    },
-    {
-      "purl": "pkg:npm/type-coverage@2.0.0",
-      "evidence": [
-        "package.json#27"
-      ]
-    },
-    {
-      "purl": "pkg:npm/typescript@5.0.0",
-      "evidence": [
-        "package.json#28"
-      ]
-    },
-    {
-      "purl": "pkg:npm/undici@7.0.0",
-      "evidence": [
-        "package.json#29"
-      ]
-    },
-    {
-      "purl": "pkg:npm/xo@0.60.0",
-      "evidence": [
-        "package.json#30"
-      ]
+      "attributes": {},
+      "edges": [
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"mdast-util-from-markdown\"]",
+            "name": "mdast-util-from-markdown",
+            "specifier": "^2.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"mdast-util-gfm-autolink-literal\"]",
+            "name": "mdast-util-gfm-autolink-literal",
+            "specifier": "^2.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"mdast-util-gfm-footnote\"]",
+            "name": "mdast-util-gfm-footnote",
+            "specifier": "^2.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"mdast-util-gfm-strikethrough\"]",
+            "name": "mdast-util-gfm-strikethrough",
+            "specifier": "^2.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"mdast-util-gfm-table\"]",
+            "name": "mdast-util-gfm-table",
+            "specifier": "^2.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"mdast-util-gfm-task-list-item\"]",
+            "name": "mdast-util-gfm-task-list-item",
+            "specifier": "^2.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"mdast-util-to-markdown\"]",
+            "name": "mdast-util-to-markdown",
+            "specifier": "^2.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@types/node\"]",
+            "name": "@types/node",
+            "specifier": "^22.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"c8\"]",
+            "name": "c8",
+            "specifier": "^10.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"github-slugger\"]",
+            "name": "github-slugger",
+            "specifier": "^2.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"hast-util-to-html\"]",
+            "name": "hast-util-to-html",
+            "specifier": "^9.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"mdast-util-to-hast\"]",
+            "name": "mdast-util-to-hast",
+            "specifier": "^13.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"micromark-extension-gfm\"]",
+            "name": "micromark-extension-gfm",
+            "specifier": "^3.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"prettier\"]",
+            "name": "prettier",
+            "specifier": "^3.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"remark-cli\"]",
+            "name": "remark-cli",
+            "specifier": "^12.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"remark-preset-wooorm\"]",
+            "name": "remark-preset-wooorm",
+            "specifier": "^11.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"type-coverage\"]",
+            "name": "type-coverage",
+            "specifier": "^2.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"typescript\"]",
+            "name": "typescript",
+            "specifier": "^5.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"undici\"]",
+            "name": "undici",
+            "specifier": "^7.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"xo\"]",
+            "name": "xo",
+            "specifier": "^0.60.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        }
+      ],
+      "id": "[\"packagejson\",\"package.json\",\"packagejson:a4795dab47f7f5cc29e05d9fe587ae9a405fc9165f14835e4a16f926060287f2\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/mdast-util-gfm@3.1.0"
+          },
+          "purl": "pkg:npm/mdast-util-gfm@3.1.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/mdast-util-gfm@3.1.0"
+          },
+          "purl": "pkg:npm/mdast-util-gfm@3.1.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/mdast-util-gfm@3.1.0"
+          },
+          "purl": "pkg:npm/mdast-util-gfm@3.1.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/mdast-util-gfm@3.1.0"
+          },
+          "purl": "pkg:npm/mdast-util-gfm@3.1.0"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {
+              "name": "mdast-util-gfm",
+              "type": "module",
+              "version": "3.1.0"
+            }
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "workspace:\".\"",
+          "locator": ".",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/mdast-util-gfm@3.1.0"
+          },
+          "purl": "pkg:npm/mdast-util-gfm@3.1.0"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"package.json\",\"dependencies\"]",
+          "node": "scope:[\"package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/mdast-util-gfm@3.1.0"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"package.json\",\"devDependencies\"]",
+          "node": "scope:[\"package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/mdast-util-gfm@3.1.0"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/mdast-util-gfm@3.1.0"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/mdast-util-gfm@3.1.0"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "package.json"
+        ]
+      }
     }
   ],
-  "subprojects": [],
-  "relationships": [],
-  "issues": []
+  "issues": [],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "package.json",
+      "evidence": [
+        "package.json"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "packagejson",
+            "files": [
+              "package.json"
+            ],
+            "key": "\".\""
+          },
+          "synthesizedPurl": false
+        }
+      ],
+      "purl": "pkg:npm/mdast-util-gfm@3.1.0"
+    }
+  ]
 }
