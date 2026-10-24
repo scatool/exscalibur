@@ -133,3 +133,96 @@ test.each([
         completeness: "complete",
       });
 });
+
+test.each([null, [], false, 0, "truncated"].map((value) => ({ value })))(
+  "vcpkg rejects malformed feature maps and records: %j",
+  ({ value }) => {
+    for (const features of [value, { tls: value }]) {
+      const manifest = { name: "app", features } as unknown as VcpkgPort;
+      expect(() => convertVcpkgPortsV2(manifest, {}, "vcpkg.json", "test")).toThrow(
+        /vcpkg.*features.*object/,
+      );
+      expect(() =>
+        convertVcpkgPortsV2({ dependencies: ["lib"] }, { lib: manifest }, "vcpkg.json", "test"),
+      ).toThrow(/vcpkg.*features.*object/);
+    }
+  },
+);
+
+test.each([undefined, null, 1, {}, [false]].map((description) => ({ description })))(
+  "vcpkg requires a feature description with its native shape: %j",
+  ({ description }) => {
+    const manifest = {
+      name: "app",
+      features: { tls: { ...(description !== undefined && { description }) } },
+    } as unknown as VcpkgPort;
+    expect(() => convertVcpkgPortsV2(manifest, {}, "vcpkg.json", "test")).toThrow(
+      /vcpkg.*description/,
+    );
+  },
+);
+
+test.each([null, [], false, 0, "truncated"].map((value) => ({ value })))(
+  "vcpkg rejects malformed registry port records: %j",
+  ({ value: port }) => {
+    expect(() =>
+      convertVcpkgPortsV2({ dependencies: ["lib"] }, { lib: port } as never, "vcpkg.json", "test"),
+    ).toThrow(/vcpkg.*port.*object/);
+  },
+);
+
+test("vcpkg malformed feature records produce unknown extraction coverage", async () => {
+  const dir = await mkdtemp(join(tmpdir(), "vcpkg-malformed-feature-"));
+  try {
+    await writeFile(
+      join(dir, "vcpkg.json"),
+      JSON.stringify({ name: "app", features: { tls: [] } }),
+    );
+    const result = await extractorV2.extract(
+      dir,
+      { vcpkgPath: join(dir, "missing-vcpkg") },
+      { codebaseId: "test" },
+    );
+    expect(parseResultV2(result)).toEqual(result);
+    expect(result.issues).toEqual([expect.objectContaining({ severity: "ERROR" })]);
+    expect(result.graphs).toEqual([
+      expect.objectContaining({ rootCompleteness: "unknown", roots: [], nodes: [], edges: [] }),
+    ]);
+  } finally {
+    await rm(dir, { recursive: true, force: true });
+  }
+});
+
+test.each([{}, { tls: { description: "" } }, { tls: { description: [] } }])(
+  "valid empty vcpkg feature declarations remain complete: %j",
+  (features) => {
+    const result = convertVcpkgPortsV2(
+      { name: "app", features: features as VcpkgPort["features"] },
+      {},
+      "vcpkg.json",
+      "test",
+    );
+    expect(result.issues).toEqual([]);
+    for (const graph of result.graphs)
+      for (const root of graph.roots)
+        expect(queryDependenciesV2(result, { graph: graph.id, root: root.id }).completeness).toBe(
+          "complete",
+        );
+  },
+);
+
+test.each([null, [], false, 0, "note", { reason: "note" }].map((comment) => ({ comment })))(
+  "vcpkg feature-map comments do not become malformed feature declarations: %j",
+  ({ comment }) => {
+    const manifest = { name: "app", features: { $comment: comment, tls: { description: "TLS" } } };
+    const result = convertVcpkgPortsV2(manifest as unknown as VcpkgPort, {}, "vcpkg.json", "test");
+    expect(parseResultV2(result)).toEqual(result);
+    expect(result.issues).toEqual([]);
+    for (const graph of result.graphs)
+      for (const root of graph.roots)
+        expect(queryDependenciesV2(result, { graph: graph.id, root: root.id }).completeness).toBe(
+          "complete",
+        );
+    expect(result.graphs[0]!.nodes[0]!.attributes?.["vcpkg:manifest"]).toEqual(manifest);
+  },
+);

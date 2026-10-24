@@ -30,6 +30,22 @@ export type MavenTreeNode = {
   children?: MavenTreeNode[];
 };
 
+function validateTreeNode(value: unknown): asserts value is MavenTreeNode {
+  if (value === null || typeof value !== "object" || Array.isArray(value))
+    throw new Error("Maven tree node must be a record");
+  const node = value as Record<string, unknown>;
+  if (
+    [node.groupId, node.artifactId, node.version].some(
+      (part) => typeof part !== "string" || !part.trim(),
+    )
+  )
+    throw new Error("Maven tree has missing or invalid coordinates");
+  if (node.children !== undefined) {
+    if (!Array.isArray(node.children)) throw new Error("Maven children must be an array");
+    for (const child of node.children) validateTreeNode(child);
+  }
+}
+
 function purl(node: MavenTreeNode): string {
   if (!node.groupId || !node.artifactId || !node.version)
     throw new Error("Maven tree has missing coordinates");
@@ -52,6 +68,7 @@ export function convertMavenTreeV2(
   file: string,
   codebase: string,
 ): AnalyzerResultV2 {
+  validateTreeNode(tree);
   const result = createEmptyResultV2(codebase);
   const project = { purl: purl(tree), definitionFile: file };
   result.subprojects.push(project);

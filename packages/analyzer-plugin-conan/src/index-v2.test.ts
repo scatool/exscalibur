@@ -128,3 +128,76 @@ test("empty Conan root maps do not establish complete scope enumeration", () => 
   const result = convertConanGraphV2(input, "conanfile.txt", "test");
   expect(result.graphs[0]!.rootCompleteness).toBe("unknown");
 });
+
+test.each([null, [], false, 0, "truncated"].map((value) => ({ value })))(
+  "malformed Conan dependency maps fail explicitly: %j",
+  ({ value }) => {
+    for (const id of ["0", "1"]) {
+      const input = fixture();
+      input.graph.nodes[id]!.dependencies = value as never;
+      expect(() => convertConanGraphV2(input, "conanfile.txt", "test")).toThrow(
+        /Conan.*dependencies.*object/,
+      );
+    }
+  },
+);
+
+test.each([null, [], false, 0, "truncated"].map((value) => ({ value })))(
+  "malformed Conan node and requirement records fail explicitly: %j",
+  ({ value }) => {
+    const input = fixture();
+    input.graph.nodes["1"] = value as never;
+    expect(() => convertConanGraphV2(input, "conanfile.txt", "test")).toThrow(
+      /Conan.*node.*object/,
+    );
+    const requirement = fixture();
+    requirement.graph.nodes["0"]!.dependencies["1"] = value as never;
+    expect(() => convertConanGraphV2(requirement, "conanfile.txt", "test")).toThrow(
+      /Conan.*dependenc.*object/,
+    );
+  },
+);
+
+test("Conan explicit empty adjacency stays complete while omitted adjacency stays unknown", () => {
+  for (const omitted of [false, true]) {
+    const input = fixture();
+    input.graph.nodes = { "0": input.graph.nodes["0"]! };
+    input.graph.nodes["0"]!.dependencies = {};
+    if (omitted)
+      delete (input.graph.nodes["0"] as Partial<(typeof input.graph.nodes)[string]>).dependencies;
+    const result = convertConanGraphV2(input, "conanfile.txt", "test");
+    const graph = result.graphs[0]!;
+    for (const root of graph.roots)
+      expect(queryDependenciesV2(result, { graph: graph.id, root: root.id })).toMatchObject({
+        definite: [],
+        completeness: omitted ? "unknown" : "complete",
+      });
+  }
+});
+
+test("Conan malformed native output becomes an error with unknown coverage", async () => {
+  const dir = await mkdtemp(join(tmpdir(), "conan-malformed-"));
+  try {
+    const input = fixture();
+    input.graph.nodes["0"]!.dependencies = null as never;
+    await writeFile(join(dir, "conanfile.txt"), "[requires]\n");
+    const executable = join(dir, "fake-conan");
+    await writeFile(
+      executable,
+      `#!${process.execPath}\nprocess.stdout.write(${JSON.stringify(JSON.stringify(input))});\n`,
+      { mode: 0o755 },
+    );
+    const result = await extractorV2.extract(
+      dir,
+      { conanPath: executable },
+      { codebaseId: "test" },
+    );
+    expect(parseResultV2(result)).toEqual(result);
+    expect(result.issues).toEqual([expect.objectContaining({ severity: "ERROR" })]);
+    expect(result.graphs).toEqual([
+      expect.objectContaining({ rootCompleteness: "unknown", roots: [], nodes: [], edges: [] }),
+    ]);
+  } finally {
+    await rm(dir, { recursive: true, force: true });
+  }
+});

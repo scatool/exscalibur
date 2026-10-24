@@ -22,22 +22,43 @@ type Declaration = {
   feature?: string;
   supports?: string;
 };
+function requireRecord(value: unknown, field: string): asserts value is Record<string, unknown> {
+  if (value === null || typeof value !== "object" || Array.isArray(value))
+    throw new Error(`vcpkg ${field} must be an object`);
+}
 function dependencyList(value: unknown, field: string): NonNullable<VcpkgPort["dependencies"]> {
   if (value === undefined) return [];
   if (!Array.isArray(value)) throw new Error(`vcpkg ${field} must be an array`);
   return value;
 }
 function declarations(port: VcpkgPort): Declaration[] {
+  requireRecord(port, "port manifest");
+  if (port.features !== undefined) requireRecord(port.features, "features");
   return [
     ...dependencyList(port.dependencies, "dependencies").map((dependency) => ({ dependency })),
-    ...Object.entries(port.features ?? {}).flatMap(([feature, definition]) =>
-      dependencyList(definition.dependencies, `features.${feature}.dependencies`).map(
-        (dependency) => ({
-          dependency,
-          feature,
-          ...(definition.supports && { supports: definition.supports }),
-        }),
-      ),
+    ...Object.entries(port.features === undefined ? {} : port.features).flatMap(
+      ([feature, definition]) => {
+        // vcpkg permits arbitrary JSON comments under keys beginning with '$'.
+        if (feature.startsWith("$")) return [];
+        requireRecord(definition, `features.${feature}`);
+        if (
+          typeof definition.description !== "string" &&
+          !(
+            Array.isArray(definition.description) &&
+            definition.description.every((line) => typeof line === "string")
+          )
+        )
+          throw new Error(
+            `vcpkg features.${feature}.description must be a string or array of strings`,
+          );
+        return dependencyList(definition.dependencies, `features.${feature}.dependencies`).map(
+          (dependency) => ({
+            dependency,
+            feature,
+            ...(definition.supports && { supports: definition.supports }),
+          }),
+        );
+      },
     ),
   ];
 }
@@ -69,7 +90,8 @@ export const extractorV2 = filesExtractorV2<VcpkgOptions>({
         throw new Error("vcpkg returned no port information map");
       pending = [];
       for (const name of names)
-        if (fetched[name]) {
+        if (Object.hasOwn(fetched, name)) {
+          requireRecord(fetched[name], `port '${name}'`);
           ports[name] = fetched[name];
           pending.push(fetched[name]);
         }
@@ -88,6 +110,8 @@ export function convertVcpkgPortsV2(
 ): AnalyzerResultV2 {
   if (!root || typeof root !== "object" || Array.isArray(root))
     throw new Error("Invalid vcpkg manifest");
+  requireRecord(ports, "port information map");
+  for (const [name, port] of Object.entries(ports)) requireRecord(port, `port '${name}'`);
   const result = createEmptyResultV2(codebase);
   const purl = (name: string, port: VcpkgPort) =>
     new PackageURL(

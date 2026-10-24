@@ -4,6 +4,7 @@ import { join } from "node:path";
 import { expect, test } from "vite-plus/test";
 import { queryDependenciesV2, validateResultV2 } from "@scatool/analyzer-core";
 import { convertMavenTreeV2, extractor } from "./extractor-v2.ts";
+import type { MavenTreeNode } from "./extractor-v2.ts";
 
 const node = (artifactId: string) => ({ groupId: "org.example", artifactId, version: "1" });
 test("Maven tree occurrences retain different exclusions and classified artifact identities", () => {
@@ -74,6 +75,38 @@ test("Maven duplicate pruning does not establish complete dependency adjacency",
     graph.nodes.filter((entry) => !entry.project).map((entry) => entry.dependencyCompleteness),
   ).toEqual(["unknown", "unknown", "unknown", "unknown"]);
   expect(graph.edges.some((edge) => edge.from === "tree/1")).toBe(false);
+});
+
+test.each([null, {}, false, 0, "truncated"])(
+  "Maven rejects malformed present child collections: %j",
+  (children) => {
+    for (const tree of [
+      { ...node("app"), children },
+      { ...node("app"), children: [{ ...node("lib"), children }] },
+    ])
+      expect(() => convertMavenTreeV2(tree as unknown as MavenTreeNode, "pom.xml", "test")).toThrow(
+        /Maven children.*array/,
+      );
+  },
+);
+
+test.each([null, [], false, 0, "truncated", {}].map((value) => ({ value })))(
+  "Maven rejects malformed tree records: %j",
+  ({ value }) => {
+    for (const tree of [value, { ...node("app"), children: [value] }])
+      expect(() => convertMavenTreeV2(tree as MavenTreeNode, "pom.xml", "test")).toThrow(
+        /Maven.*(?:record|coordinates)/,
+      );
+  },
+);
+
+test("Maven explicit empty child arrays preserve a known empty root", () => {
+  const result = convertMavenTreeV2({ ...node("app"), children: [] }, "pom.xml", "test");
+  const graph = result.graphs[0]!;
+  expect(queryDependenciesV2(result, { graph: graph.id, root: graph.roots[0]!.id })).toMatchObject({
+    definite: [],
+    completeness: "complete",
+  });
 });
 
 test.each([

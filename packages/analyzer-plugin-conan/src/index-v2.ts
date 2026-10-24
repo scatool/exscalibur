@@ -17,6 +17,11 @@ import { markFiles } from "./conanfile.ts";
 import { optionsSchema, type ConanOptions } from "./options.ts";
 import type { ConanFileGraph, Node, Dependency } from "./types.ts";
 
+function requireRecord(value: unknown, field: string): asserts value is Record<string, unknown> {
+  if (value === null || typeof value !== "object" || Array.isArray(value))
+    throw new Error(`Conan ${field} must be an object`);
+}
+
 export const extractorV2 = filesExtractorV2<ConanOptions>({
   name: "conanfile",
   version: 1,
@@ -56,6 +61,7 @@ export function convertConanGraphV2(
   const graph = input?.graph;
   if (!graph?.nodes || typeof graph.nodes !== "object" || Array.isArray(graph.nodes))
     throw new Error("Conan output has no node map");
+  if (graph.root !== undefined) requireRecord(graph.root, "root map");
   if (graph.error !== undefined && graph.error !== null)
     throw new Error(`Conan graph error: ${JSON.stringify(graph.error)}`);
   const result = createEmptyResultV2(codebase);
@@ -66,6 +72,12 @@ export function convertConanGraphV2(
   const rootIds = new Set(Object.keys(graph.root ?? {}));
   const projects = new Map<string, ProjectReference>();
   for (const [id, node] of Object.entries(graph.nodes)) {
+    requireRecord(node, `node '${id}'`);
+    if (node.dependencies !== undefined) {
+      requireRecord(node.dependencies, `node '${id}' dependencies`);
+      for (const [target, dependency] of Object.entries(node.dependencies))
+        requireRecord(dependency, `node '${id}' dependency '${target}'`);
+    }
     const local =
       rootIds.has(id) || ["Editable", "Consumer", "Cli", "Platform"].includes(node.recipe);
     if (!node.name && !local) {
@@ -127,7 +139,9 @@ export function convertConanGraphV2(
   }
   const kind = (dep: Dependency) => (dep.test ? "test" : dep.build ? "build" : "runtime");
   const addEdges = (from: string, node: Node, scope?: string) => {
-    for (const [target, dep] of Object.entries(node.dependencies ?? {})) {
+    for (const [target, dep] of Object.entries(
+      node.dependencies === undefined ? {} : node.dependencies,
+    )) {
       // Conan reports transitive requirements too. They are not immediate adjacency.
       if (dep.direct === false || (scope && kind(dep) !== scope)) continue;
       const requested = {
