@@ -223,7 +223,11 @@ export function requirementsResult(
       };
       continue;
     }
-    const egg = spec.match(/[?#&]egg=([^&\s]+)/)?.[1];
+    // An egg fragment supplies a legacy unnamed URL's name, never overrides the
+    // explicit name/extras of a PEP 508 direct reference.
+    const egg = requirementParts(spec).directUrl
+      ? undefined
+      : spec.match(/[?#&]egg=([^&\s]+)/)?.[1];
     const req = request(spec, egg ? decodeURIComponent(egg) : undefined);
     if (/^(?:[a-z]+:\/\/|(?:git|hg|svn|bzr)\+)/i.test(spec)) delete req.name;
     out.declaration(root, req);

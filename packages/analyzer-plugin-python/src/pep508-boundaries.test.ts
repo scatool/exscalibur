@@ -9,6 +9,11 @@ const context = {
 // These token boundaries were independently checked with Python packaging 25.0 Requirement.
 // Markers remain source text, rather than packaging's normalized marker serialization.
 const cases = [
+  [
+    'foo [speed] @ https://example.test/foo.whl#egg=other ; os_name == "posix"',
+    ["speed"],
+    'os_name == "posix"',
+  ],
   ["foo @ https://example.test/foo.whl;param", [], undefined],
   ["foo @ https://example.test/foo.whl?x=1;y=2#fragment;tail", [], undefined],
   [
