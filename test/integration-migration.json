@@ -8805,7 +8805,7 @@
         "packageCount": 205,
         "projectCount": 1,
         "issueCodes": ["gradle.project_group_missing"],
-        "acceptedSha256": "327d4df15d7eb41fcd7a2ecd46dca68625bf48172c8c65965b6be0849b833654"
+        "acceptedSha256": "7517ddd41ba86ad6ebf60463f4e661d3479cfc072c201b2d65a78f4947dde05d"
       },
       "inputCheckpoint": {
         "path": "test/repositories/evorto+wahlzeit",
@@ -8904,11 +8904,12 @@
           "205 catalog identities, 20 separate configuration graphs and 466 graph-local edges match captured native metadata and adjacency.",
           "Eight fully identical record pairs collapse; conflicting same-ID facts still fail without unioning adjacency or widening directness.",
           "Synthesized project identity and unknown variant/root/dependency coverage are preserved.",
-          "All sixteen harness extractors executed; only Gradle contributes; core validation and independent source-backed assertions pass."
+          "All sixteen harness extractors executed; only Gradle contributes; core validation and independent source-backed assertions pass.",
+          "Graph IDs content-address relative project references before file assembly; full observations are invariant under checkout relocation."
         ],
         "review": {
           "path": "test/acceptance/wahlzeit-gradle.md",
-          "sha256": "e95aec8600a7f67abbae1462e5076606697df16683ebe30f37d6fdbc5704de4a"
+          "sha256": "947ae47b75fbaa1fb690b4fb5424c52a44ee1b5bd3114ca6d3af9c3c149f2c65"
         }
       }
     },

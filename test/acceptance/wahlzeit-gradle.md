@@ -62,3 +62,21 @@ configuration membership, identities, direct edges, complete captured adjacency,
 and conservative scoped query results. The historical V1 hash is retained separately
 from the accepted V2 hash. Registry changes must trigger investigation rather than
 automatic baseline updates.
+
+## Checkout-independent graph identities
+
+The first accepted V2 baseline at commit `26881de` had SHA-256
+`327d4df15d7eb41fcd7a2ecd46dca68625bf48172c8c65965b6be0849b833654`. Hosted validation exposed graph IDs computed from absolute
+project build-file paths before the outer wrapper made those paths relative.
+The CI annotation's graph ID was reproduced exactly using its checkout prefix.
+
+The Gradle extraction boundary now makes in-codebase metadata paths relative before
+content-addressing graphs, preserving nested project paths and outside-codebase
+identities. `extractor-paths.test.ts` exercises the actual boundary under two
+checkout roots with a stable codebase namespace and nested modules.
+
+A fresh native extraction after this fix changed only the twenty graph IDs and
+their sorted order. Independently aligning observations by native source key showed
+identical catalogs, project subjects, source metadata, nodes, edges, roots and issues.
+The original native capture is unchanged. The acceptance test now also verifies
+that each namespaced graph ID matches its portable observation content.

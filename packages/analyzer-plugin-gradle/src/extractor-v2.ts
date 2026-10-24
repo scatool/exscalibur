@@ -222,10 +222,21 @@ export const extractor = filesExtractorV2<GradleOptions>({
     if (metadata.exitCode !== 0)
       throw new Error(`Gradle project metadata extraction failed: ${metadata.stderr}`);
     const projects: Record<string, ProjectInfo> = {};
+    const codebasePrefix = `${context.codebasePath.replaceAll("\\", "/").replace(/\/$/, "")}/`;
     for (const match of metadata.stdout.matchAll(
       /===PROJECT_INFO_START===\s*([\s\S]*?)\s*===PROJECT_INFO_END===/g,
     )) {
       const block = JSON.parse(match[1]!) as Record<string, ProjectInfo>;
+      // Graph IDs content-address their project references. Rebase native paths
+      // before creating graphs, not only in the outer files-extractor wrapper.
+      for (const info of Object.values(block)) {
+        if (info.buildFile !== undefined) {
+          const normalized = info.buildFile.replaceAll("\\", "/");
+          info.buildFile = normalized.startsWith(codebasePrefix)
+            ? normalized.slice(codebasePrefix.length)
+            : normalized;
+        }
+      }
       if (Object.keys(block).length === 1 && block[":"]?.name === "buildSrc")
         projects[":buildSrc"] = block[":"];
       else Object.assign(projects, block);

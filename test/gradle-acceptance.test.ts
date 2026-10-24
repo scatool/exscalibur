@@ -3,7 +3,7 @@ import { createHash } from "node:crypto";
 import { lstatSync, readFileSync, readdirSync, readlinkSync } from "node:fs";
 import { join } from "node:path";
 import { test } from "vite-plus/test";
-import { parseResult, queryDependencies } from "@scatool/analyzer-core";
+import { createDependencyGraph, parseResult, queryDependencies } from "@scatool/analyzer-core";
 
 const id = "evorto+wahlzeit";
 const source = join(import.meta.dirname, "repositories", id);
@@ -218,6 +218,12 @@ test("Wahlzeit: configuration-local native identities, exact adjacency and unkno
       config.configurationName,
     ]);
     const graph = result.graphs.find((graph) => graph.source.key === key)!;
+    const { id: graphId, ...observation } = graph;
+    assert.deepEqual(JSON.parse(graphId), [
+      "gradle",
+      "build.gradle",
+      createDependencyGraph(observation).id,
+    ]);
     assert.ok(graph);
     assert.deepEqual(graph.source, { extractor: "gradle", files: ["build.gradle"], key });
     assert.ok(observations.some((observation) => observation.source.key === key));
