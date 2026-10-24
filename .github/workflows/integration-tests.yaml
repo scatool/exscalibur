@@ -86,5 +86,26 @@ jobs:
           }
           EOF
 
+      - name: Run source acceptance and downloader tests
+        env:
+          GOTOOLCHAIN: local
+        # Explicit paths avoid collecting tests inside downloaded repositories.
+        run: |
+          vp test run \
+            test/integration-acceptance.test.ts \
+            test/cargo-acceptance.test.ts \
+            test/conan-acceptance.test.ts \
+            test/demo-acceptance.test.ts \
+            test/go-acceptance.test.ts \
+            test/gradle-acceptance.test.ts \
+            test/javascript-fixtures-acceptance.test.ts \
+            test/javascript-lockfiles-acceptance.test.ts \
+            test/javascript-workspaces-acceptance.test.ts \
+            test/mixed-workspaces-acceptance.test.ts \
+            test/python-acceptance.test.ts \
+            test/vcpkg-acceptance.test.ts \
+            test/zeiss-acceptance.test.ts \
+            test/scripts/download-repositories.test.ts
+
       - name: Run integration tests
         run: vp test run test/integration.test.ts
