@@ -4,6 +4,7 @@ import type { z } from "zod";
 import type { MarkFileContext } from "../types.ts";
 import { mergeResultsV2, createEmptyResultV2 } from "./merge.ts";
 import { createDependencyGraph } from "./normalize.ts";
+import { rebaseObservationPaths } from "./observation-paths.ts";
 import type { AnalyzerResultV2 } from "./types.ts";
 
 export type ExtractionRuntimeOptionsV2 = {
@@ -57,20 +58,23 @@ export function filesExtractorV2<Options = unknown>(
     version: config.version,
     ...(config.options !== undefined && { options: config.options }),
     ...(config.optionsSchema !== undefined && { optionsSchema: config.optionsSchema }),
-    extract: async (codebase, provided, runtime = {}) => {
+    extract: async (codebase, providedOptions, runtime = {}) => {
       const codebasePath = resolve(codebase);
       const codebaseId =
         runtime.codebaseId ?? `local:${createHash("sha256").update(codebasePath).digest("hex")}`;
+
       const defaults = config.options ? await config.options() : {};
-      const mergedOptions = { ...defaults, ...provided };
+      const mergedOptions = { ...defaults, ...providedOptions };
       const options = config.optionsSchema
         ? config.optionsSchema.parse(mergedOptions)
         : (mergedOptions as Options);
-      const marked = new Set<string>();
+
+      const markedFiles = new Set<string>();
       await config.markFiles.call(
         {
           globalIgnorePatterns: runtime.ignore ?? [],
-          markFile: (file) => marked.add(isAbsolute(file) ? file : resolve(codebasePath, file)),
+          markFile: (file) =>
+            markedFiles.add(isAbsolute(file) ? file : resolve(codebasePath, file)),
         },
         // Match scanFiles() paths without treating literal POSIX backslashes as separators.
         codebasePath.replaceAll(sep, "/"),
@@ -78,87 +82,66 @@ export function filesExtractorV2<Options = unknown>(
       );
 
       const results: AnalyzerResultV2[] = [];
-      for (const file of [...marked].sort()) {
+      for (const file of [...markedFiles].sort()) {
         const relativeFile = relative(codebasePath, file).replaceAll(sep, "/");
+
         try {
           const extracted = await config.extractFile(file, options, {
             codebaseId,
             codebasePath,
             relativeFile,
           });
-          if (extracted.codebase !== codebaseId)
+          if (extracted.codebase !== codebaseId) {
             throw new Error("Extractor returned a different codebase namespace");
-          const result = rebasePaths(extracted, codebasePath);
+          }
+
+          const result = rebaseObservationPaths(extracted, codebasePath);
           result.graphs = result.graphs.map((graph) => ({
             ...graph,
             id: JSON.stringify([config.name, relativeFile, graph.id]),
           }));
+
           // Validate each file observation before aggregation so a broken file remains an issue,
           // rather than aborting the valid graphs collected from other files.
           results.push(mergeResultsV2([result]));
         } catch (error) {
-          const result = createEmptyResultV2(codebaseId);
-          const message = `Failed to extract file: ${error instanceof Error ? error.message : String(error)}`;
-          result.issues.push({
-            code: "core.file_extraction_failed",
-            severity: "ERROR",
-            file: relativeFile,
-            message,
-          });
-          result.graphs.push(
-            createDependencyGraph({
-              source: { extractor: config.name, files: [relativeFile], key: "extraction-failed" },
-              interpretation: "unknown",
-              rootCompleteness: "unknown",
-              roots: [],
-              nodes: [],
-              edges: [],
-              attributes: { "core:failure": message },
-            }),
-          );
-          results.push(result);
+          results.push(failedFileObservation(codebaseId, config.name, relativeFile, error));
         }
       }
+
       return mergeResultsV2(results, { codebase: codebaseId });
     },
   };
 }
 
-function rebasePaths(input: AnalyzerResultV2, codebase: string): AnalyzerResultV2 {
-  const result = structuredClone(input);
-  const prefix = `${codebase.replaceAll(sep, "/").replace(/\/$/, "")}/`;
-  const rebase = (value: string) => {
-    const normalized = value.replaceAll(sep, "/");
-    return normalized.startsWith(prefix) ? normalized.slice(prefix.length) : normalized;
-  };
-  const evidence = (values: string[] | undefined) => values?.map(rebase);
-  for (const pkg of result.packages) {
-    pkg.evidence = evidence(pkg.evidence)!;
-    for (const observation of pkg.identityObservations ?? [])
-      observation.source.files = evidence(observation.source.files)!;
-    for (const artifact of pkg.artifacts ?? []) artifact.evidence = evidence(artifact.evidence)!;
-  }
-  for (const project of result.subprojects) {
-    project.definitionFile = rebase(project.definitionFile);
-    if (project.evidence) project.evidence = evidence(project.evidence);
-    for (const observation of project.identityObservations ?? [])
-      observation.source.files = evidence(observation.source.files)!;
-  }
-  for (const graph of result.graphs) {
-    graph.source.files = graph.source.files.map(rebase);
-    for (const node of graph.nodes) {
-      if (node.project) node.project.definitionFile = rebase(node.project.definitionFile);
-      if (node.evidence) node.evidence = evidence(node.evidence);
-      for (const artifact of node.artifacts ?? []) artifact.evidence = evidence(artifact.evidence)!;
-    }
-    for (const root of graph.roots) {
-      root.project.definitionFile = rebase(root.project.definitionFile);
-      if (root.evidence) root.evidence = evidence(root.evidence);
-    }
-    for (const dependency of graph.edges) {
-      if (dependency.evidence) dependency.evidence = evidence(dependency.evidence);
-    }
-  }
-  for (const issue of result.issues) if (issue.file) issue.file = rebase(issue.file);
+function failedFileObservation(
+  codebaseId: string,
+  extractor: string,
+  relativeFile: string,
+  error: unknown,
+): AnalyzerResultV2 {
+  const result = createEmptyResultV2(codebaseId);
+  const message = `Failed to extract file: ${error instanceof Error ? error.message : String(error)}`;
+
+  result.issues.push({
+    code: "core.file_extraction_failed",
+    severity: "ERROR",
+    file: relativeFile,
+    message,
+  });
+
+  // Retain the failed observation: an unreadable file is not evidence of an empty dependency set.
+  result.graphs.push(
+    createDependencyGraph({
+      source: { extractor, files: [relativeFile], key: "extraction-failed" },
+      interpretation: "unknown",
+      rootCompleteness: "unknown",
+      roots: [],
+      nodes: [],
+      edges: [],
+      attributes: { "core:failure": message },
+    }),
+  );
+
   return result;
 }

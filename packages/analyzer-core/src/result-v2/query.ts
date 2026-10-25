@@ -11,7 +11,7 @@ import type {
   ReachableDeclaration,
 } from "./types.ts";
 
-type State = {
+type TraversalState = {
   node: string;
   conditions: PathCondition[];
   unknownSelection: boolean;
@@ -38,30 +38,37 @@ export function queryDependenciesV2(
   if (!Number.isSafeInteger(maxStates) || maxStates < 1) {
     throw new Error("maxStates must be a positive safe integer");
   }
+
   const result = parseResultV2(input);
   const graph = result.graphs.find((item) => item.id === options.graph);
   if (!graph) throw new Error(`Unknown dependency graph: ${options.graph}`);
+
   const root = graph.roots.find((item) => item.id === options.root);
   if (!root) throw new Error(`Unknown dependency root '${options.root}' in graph '${graph.id}'`);
+
   const nodes = new Map(graph.nodes.map((node) => [node.id, node]));
-  const edges = new Map<string, DependencyEdge[]>();
+  const outgoingEdges = new Map<string, DependencyEdge[]>();
   for (const edge of graph.edges) {
-    const outgoing = edges.get(edge.from) ?? [];
+    const outgoing = outgoingEdges.get(edge.from) ?? [];
     outgoing.push(edge);
-    edges.set(edge.from, outgoing);
+    outgoingEdges.set(edge.from, outgoing);
   }
+
   const definite = new Set<string>();
   const conditional = new Set<string>();
   const declarations: ReachableDeclaration[] = [];
   const visited = new Set<string>();
-  const pending: State[] = [{ node: root.node, conditions: [], unknownSelection: false }];
+  const pending: TraversalState[] = [{ node: root.node, conditions: [], unknownSelection: false }];
+
+  // This query concerns an exact root, independently of whether every graph root was enumerated.
   let completeness: Completeness = "complete";
-  const incomplete = (value: Completeness) => {
+  const lowerCompleteness = (value: Completeness) => {
     if (value === "unknown" || (value === "partial" && completeness === "complete")) {
       completeness = value;
     }
   };
-  const evaluate = (conditions: PathCondition[]) =>
+
+  const evaluatePath = (conditions: PathCondition[]) =>
     conditions.length === 0
       ? "true"
       : (options.evaluateCondition?.({ conditions, context: options.context ?? {}, graph, root }) ??
@@ -69,6 +76,8 @@ export function queryDependenciesV2(
 
   while (pending.length > 0) {
     const state = pending.pop()!;
+    // The same view can be reached under different predicates or unknown selections. Visiting
+    // only by node ID would lose those paths; identical complete states also terminate cycles.
     const stateKey = canonicalJson(state);
     if (visited.has(stateKey)) continue;
     if (visited.size >= maxStates) {
@@ -77,24 +86,29 @@ export function queryDependenciesV2(
       );
     }
     visited.add(stateKey);
-    const truth = evaluate(state.conditions);
-    if (truth === "false") continue;
-    const uncertain = state.unknownSelection || truth === "unknown";
+
+    const pathTruth = evaluatePath(state.conditions);
+    if (pathTruth === "false") continue;
+
+    const uncertain = state.unknownSelection || pathTruth === "unknown";
     if (state.node !== root.node) {
       (uncertain ? conditional : definite).add(state.node);
     }
-    const node = nodes.get(state.node)!;
-    incomplete(node.dependencyCompleteness);
 
-    for (const edge of edges.get(state.node) ?? []) {
+    const node = nodes.get(state.node)!;
+    lowerCompleteness(node.dependencyCompleteness);
+
+    for (const edge of outgoingEdges.get(state.node) ?? []) {
       // Constraints affect native selection, but never introduce ordinary dependency reachability.
       if (edge.relation !== "depends-on" || edge.selection === "excluded") continue;
+
       const conditions =
         edge.condition === undefined
           ? state.conditions
           : uniqueRecords([...state.conditions, { owner: edge.from, condition: edge.condition }]);
-      const edgeTruth = evaluate(conditions);
+      const edgeTruth = evaluatePath(conditions);
       if (edgeTruth === "false") continue;
+
       const unknownSelection = state.unknownSelection || edge.selection === "unknown";
       const conditionalEdge = unknownSelection || edgeTruth === "unknown";
       if (edge.status === "resolved") {
@@ -105,15 +119,17 @@ export function queryDependenciesV2(
           applicability: conditionalEdge ? "conditional" : "definite",
           conditions,
         });
-        incomplete(edge.status === "declared" ? "unknown" : "partial");
+        lowerCompleteness(edge.status === "declared" ? "unknown" : "partial");
       }
     }
   }
 
+  // A definite path establishes membership even when another path remains conditional.
   const conditionalNodes = [...conditional]
     .filter((node) => !definite.has(node))
     .sort(compareStrings);
-  if (conditionalNodes.length > 0) incomplete("partial");
+  if (conditionalNodes.length > 0) lowerCompleteness("partial");
+
   return {
     graph: graph.id,
     root: root.id,

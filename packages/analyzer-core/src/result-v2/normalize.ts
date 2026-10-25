@@ -6,6 +6,7 @@ import type {
   Artifact,
   DependencyGraph,
   DependencyRequest,
+  DependencyView,
   IdentityObservation,
 } from "./types.ts";
 
@@ -32,9 +33,27 @@ function normalizeArtifacts(artifacts: Artifact[] | undefined): Artifact[] | und
 
 function normalizeRequest(request: DependencyRequest | undefined): DependencyRequest | undefined {
   if (!request) return request;
+
   return {
     ...request,
     ...(request.features !== undefined && { features: sortedStrings(request.features) }),
+  };
+}
+
+function normalizeView(node: DependencyView): DependencyView {
+  return {
+    ...node,
+    ...(node.evidence !== undefined && { evidence: sortedStrings(node.evidence) }),
+    ...(node.artifacts !== undefined && { artifacts: normalizeArtifacts(node.artifacts) }),
+    ...(node.variant !== undefined && {
+      variant: {
+        ...node.variant,
+        // An absent feature set is unknown, whereas [] explicitly records no enabled features.
+        ...(node.variant.enabledFeatures !== undefined && {
+          enabledFeatures: sortedStrings(node.variant.enabledFeatures),
+        }),
+      },
+    }),
   };
 }
 
@@ -42,27 +61,18 @@ function normalizeRequest(request: DependencyRequest | undefined): DependencyReq
 export function normalizeDependencyGraph(graph: DependencyGraph): DependencyGraph {
   const copy = structuredClone(graph);
   copy.source.files = sortedStrings(copy.source.files);
+
   copy.nodes = copy.nodes
-    .map((node) => ({
-      ...node,
-      ...(node.evidence !== undefined && { evidence: sortedStrings(node.evidence) }),
-      ...(node.artifacts !== undefined && { artifacts: normalizeArtifacts(node.artifacts) }),
-      ...(node.variant !== undefined && {
-        variant: {
-          ...node.variant,
-          ...(node.variant.enabledFeatures !== undefined && {
-            enabledFeatures: sortedStrings(node.variant.enabledFeatures),
-          }),
-        },
-      }),
-    }))
-    .sort((a, b) => compareStrings(a.id, b.id));
+    .map(normalizeView)
+    .sort((left, right) => compareStrings(left.id, right.id));
+
   copy.roots = copy.roots
     .map((root) => ({
       ...root,
       ...(root.evidence !== undefined && { evidence: sortedStrings(root.evidence) }),
     }))
-    .sort((a, b) => compareStrings(a.id, b.id));
+    .sort((left, right) => compareStrings(left.id, right.id));
+
   copy.edges = uniqueRecords(
     copy.edges.map((edge) => ({
       ...edge,
@@ -70,6 +80,7 @@ export function normalizeDependencyGraph(graph: DependencyGraph): DependencyGrap
       ...(edge.requested !== undefined && { requested: normalizeRequest(edge.requested) }),
     })),
   ) as DependencyGraph["edges"];
+
   return JSON.parse(canonicalJson(copy)) as DependencyGraph;
 }
 
@@ -81,11 +92,13 @@ export function normalizeDependencyGraph(graph: DependencyGraph): DependencyGrap
 export function createDependencyGraph(input: Omit<DependencyGraph, "id">): DependencyGraph {
   const { id: _, ...observation } = normalizeDependencyGraph({ ...input, id: "" });
   const digest = createHash("sha256").update(canonicalJson(observation)).digest("hex");
+
   return { id: `${input.source.extractor}:${digest}`, ...observation };
 }
 
 export function normalizeResultV2(input: AnalyzerResultV2): AnalyzerResultV2 {
   const result = parseResultV2(input);
+
   result.packages = result.packages
     .map((pkg) => ({
       ...pkg,
@@ -98,7 +111,8 @@ export function normalizeResultV2(input: AnalyzerResultV2): AnalyzerResultV2 {
         externalReferences: uniqueRecords(pkg.externalReferences),
       }),
     }))
-    .sort((a, b) => compareStrings(a.purl, b.purl));
+    .sort((left, right) => compareStrings(left.purl, right.purl));
+
   result.subprojects = result.subprojects
     .map((project) => ({
       ...project,
@@ -108,18 +122,22 @@ export function normalizeResultV2(input: AnalyzerResultV2): AnalyzerResultV2 {
       ...(project.evidence !== undefined && { evidence: sortedStrings(project.evidence) }),
     }))
     .sort(
-      (a, b) =>
-        compareStrings(a.purl, b.purl) || compareStrings(a.definitionFile, b.definitionFile),
+      (left, right) =>
+        compareStrings(left.purl, right.purl) ||
+        compareStrings(left.definitionFile, right.definitionFile),
     );
+
   result.graphs = result.graphs
     .map(normalizeDependencyGraph)
-    .sort((a, b) => compareStrings(a.id, b.id));
-  const severity = { ERROR: 0, WARNING: 1, HINT: 2 };
+    .sort((left, right) => compareStrings(left.id, right.id));
+
+  const severityOrder = { ERROR: 0, WARNING: 1, HINT: 2 };
   result.issues = uniqueRecords(result.issues).sort(
-    (a, b) =>
-      severity[a.severity] - severity[b.severity] ||
-      compareStrings(canonicalJson(a), canonicalJson(b)),
+    (left, right) =>
+      severityOrder[left.severity] - severityOrder[right.severity] ||
+      compareStrings(canonicalJson(left), canonicalJson(right)),
   );
+
   // Keep additive fields, recursively canonicalize object keys, and return independent JSON data.
   return JSON.parse(canonicalJson(result)) as AnalyzerResultV2;
 }

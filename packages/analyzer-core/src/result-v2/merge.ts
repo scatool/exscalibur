@@ -18,11 +18,12 @@ export function mergeResultsV2(
 ): AnalyzerResultV2 {
   const codebase = options.codebase ?? inputs[0]?.codebase;
   if (!codebase) throw new Error("Merging no results requires an explicit codebase namespace");
-  const packages = new Map<string, PackageV2>();
-  const projects = new Map<string, SubprojectV2>();
-  const graphs = new Map<string, DependencyGraph>();
+
+  const packagesByPurl = new Map<string, PackageV2>();
+  const projectsByIdentity = new Map<string, SubprojectV2>();
+  const graphsById = new Map<string, DependencyGraph>();
   const issues: AnalyzerResultV2["issues"] = [];
-  let additionalFacts: object = {};
+  let mergedMetadata: object = {};
 
   for (const input of inputs) {
     validateResultV2(input);
@@ -31,79 +32,100 @@ export function mergeResultsV2(
         `Cannot merge codebase '${input.codebase}' into '${codebase}' without explicit reconciliation`,
       );
     }
+
     const result = normalizeResultV2(input);
-    const { packages: _, subprojects: __, graphs: ___, issues: ____, ...facts } = result;
-    additionalFacts = mergeCompatible(additionalFacts, facts, "result metadata");
+    const {
+      packages: _packages,
+      subprojects: _subprojects,
+      graphs: _graphs,
+      issues: _issues,
+      ...resultMetadata
+    } = result;
+    mergedMetadata = mergeCompatible(mergedMetadata, resultMetadata, "result metadata");
+
     for (const pkg of result.packages) {
-      const existing = packages.get(pkg.purl);
-      packages.set(pkg.purl, existing ? mergePackage(existing, pkg) : pkg);
+      const existing = packagesByPurl.get(pkg.purl);
+      packagesByPurl.set(pkg.purl, existing ? mergePackage(existing, pkg) : pkg);
     }
+
     for (const project of result.subprojects) {
       const key = projectKey(project);
-      const existing = projects.get(key);
-      projects.set(key, existing ? mergeProject(existing, project) : project);
+      const existing = projectsByIdentity.get(key);
+      projectsByIdentity.set(key, existing ? mergeProject(existing, project) : project);
     }
+
+    // Catalog facts accumulate, but graph adjacency belongs to one independent observation.
     for (const graph of result.graphs) {
-      const existing = graphs.get(graph.id);
+      const existing = graphsById.get(graph.id);
       if (existing && canonicalJson(existing) !== canonicalJson(graph)) {
         throw new Error(`Conflicting dependency graph observation ID: ${graph.id}`);
       }
-      graphs.set(graph.id, graph);
+      graphsById.set(graph.id, graph);
     }
+
     issues.push(...result.issues);
   }
 
   return normalizeResultV2({
-    ...additionalFacts,
+    ...mergedMetadata,
     formatVersion: 2,
     codebase,
-    packages: [...packages.values()],
-    subprojects: [...projects.values()],
-    graphs: [...graphs.values()],
+    packages: [...packagesByPurl.values()],
+    subprojects: [...projectsByIdentity.values()],
+    graphs: [...graphsById.values()],
     issues,
   });
 }
 
 function mergePackage(left: PackageV2, right: PackageV2): PackageV2 {
   const {
-    identityObservations: observationsA,
-    evidence: a,
-    artifacts: artifactsA,
-    externalReferences: refsA,
-    ...factsA
+    identityObservations: leftObservations,
+    evidence: leftEvidence,
+    artifacts: leftArtifacts,
+    externalReferences: leftReferences,
+    ...leftFacts
   } = left;
   const {
-    identityObservations: observationsB,
-    evidence: b,
-    artifacts: artifactsB,
-    externalReferences: refsB,
-    ...factsB
+    identityObservations: rightObservations,
+    evidence: rightEvidence,
+    artifacts: rightArtifacts,
+    externalReferences: rightReferences,
+    ...rightFacts
   } = right;
+
+  // Known observation sets combine. Preserve absence when neither side observed the field.
   return {
-    ...mergeCompatible(factsA, factsB, `package '${left.purl}'`),
-    evidence: sortedStrings([...a, ...b]),
-    ...((observationsA !== undefined || observationsB !== undefined) && {
-      identityObservations: uniqueRecords([...(observationsA ?? []), ...(observationsB ?? [])]),
+    ...mergeCompatible(leftFacts, rightFacts, `package '${left.purl}'`),
+    evidence: sortedStrings([...leftEvidence, ...rightEvidence]),
+    ...((leftObservations !== undefined || rightObservations !== undefined) && {
+      identityObservations: uniqueRecords([
+        ...(leftObservations ?? []),
+        ...(rightObservations ?? []),
+      ]),
     }),
-    ...((artifactsA !== undefined || artifactsB !== undefined) && {
-      artifacts: uniqueRecords([...(artifactsA ?? []), ...(artifactsB ?? [])]),
+    ...((leftArtifacts !== undefined || rightArtifacts !== undefined) && {
+      artifacts: uniqueRecords([...(leftArtifacts ?? []), ...(rightArtifacts ?? [])]),
     }),
-    ...((refsA !== undefined || refsB !== undefined) && {
-      externalReferences: uniqueRecords([...(refsA ?? []), ...(refsB ?? [])]),
+    ...((leftReferences !== undefined || rightReferences !== undefined) && {
+      externalReferences: uniqueRecords([...(leftReferences ?? []), ...(rightReferences ?? [])]),
     }),
   };
 }
 
 function mergeProject(left: SubprojectV2, right: SubprojectV2): SubprojectV2 {
-  const { evidence: a, identityObservations: observationsA, ...factsA } = left;
-  const { evidence: b, identityObservations: observationsB, ...factsB } = right;
+  const { evidence: leftEvidence, identityObservations: leftObservations, ...leftFacts } = left;
+  const { evidence: rightEvidence, identityObservations: rightObservations, ...rightFacts } = right;
+
   return {
-    ...((observationsA !== undefined || observationsB !== undefined) && {
-      identityObservations: uniqueRecords([...(observationsA ?? []), ...(observationsB ?? [])]),
+    ...((leftObservations !== undefined || rightObservations !== undefined) && {
+      identityObservations: uniqueRecords([
+        ...(leftObservations ?? []),
+        ...(rightObservations ?? []),
+      ]),
     }),
-    ...mergeCompatible(factsA, factsB, `project '${projectKey(left)}'`),
-    ...((a !== undefined || b !== undefined) && {
-      evidence: sortedStrings([...(a ?? []), ...(b ?? [])]),
+    ...mergeCompatible(leftFacts, rightFacts, `project '${projectKey(left)}'`),
+    ...((leftEvidence !== undefined || rightEvidence !== undefined) && {
+      evidence: sortedStrings([...(leftEvidence ?? []), ...(rightEvidence ?? [])]),
     }),
   };
 }
@@ -111,6 +133,7 @@ function mergeProject(left: SubprojectV2, right: SubprojectV2): SubprojectV2 {
 /** Unknown/additive scalar or native-array conflicts must not become order-dependent first-wins. */
 function mergeCompatible<T extends object>(left: T, right: T, path: string): T {
   const output: Record<string, unknown> = structuredClone(left) as Record<string, unknown>;
+
   for (const [key, value] of Object.entries(right)) {
     if (!Object.hasOwn(output, key) || output[key] === undefined) {
       setOwn(output, key, structuredClone(value));
@@ -125,9 +148,11 @@ function mergeCompatible<T extends object>(left: T, right: T, path: string): T {
       }
     }
   }
+
   return output as T;
 }
 
+// Defining an own property preserves native JSON keys such as __proto__ as data.
 function setOwn(record: Record<string, unknown>, key: string, value: unknown): void {
   Object.defineProperty(record, key, {
     value,
