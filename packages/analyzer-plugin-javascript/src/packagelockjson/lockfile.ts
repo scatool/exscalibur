@@ -53,8 +53,11 @@ export interface PackageLockPackage {
   peerDependencies?: Record<string, string>;
   /** Optional dependencies with version ranges */
   optionalDependencies?: Record<string, string>;
-  /** Whether this package is bundled */
-  bundled?: boolean;
+  /** Dependencies carried by this package's archive (the alternate spelling is also accepted). */
+  bundleDependencies?: string[] | boolean | Record<string, unknown>;
+  bundledDependencies?: string[] | boolean | Record<string, unknown>;
+  /** Whether this package is carried inside another dependency's archive. */
+  inBundle?: boolean;
   /** Whether this is a dev dependency */
   dev?: boolean;
   /** Whether this is optional */

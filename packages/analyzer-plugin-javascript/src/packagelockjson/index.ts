@@ -102,6 +102,7 @@ export const extractor = filesExtractor<JavaScriptOptions>({
       packagesByLocation,
       viewsByLocation,
       lockDirectory,
+      version,
     );
 
     // Lock records are evidence even when no root currently references them.
@@ -133,7 +134,7 @@ export const extractor = filesExtractor<JavaScriptOptions>({
       for (const declaration of dependencyScopes(record)) {
         if (onlyScope !== undefined && declaration.scope !== onlyScope) continue;
 
-        const target = resolveDependency(caller, declaration.name);
+        const { target, boundary } = resolveDependency(caller, declaration.name, declaration.scope);
         const peer = declaration.scope === "peerDependencies";
         const excluded =
           declaration.excluded || (isDependencyConsumer && declaration.scope === "devDependencies");
@@ -141,6 +142,7 @@ export const extractor = filesExtractor<JavaScriptOptions>({
         // package-lock records declarations and placement, but not a pnpm-style explicit peer
         // binding. Keep the lookup candidate without asserting that peer installation was selected.
         const optionalMissing = declaration.optional && target === undefined;
+        const unreportedBundle = boundary !== undefined && target === undefined;
         let selection: "selected" | "excluded" | "unknown" = "selected";
         if (excluded || (peer && optionalMissing)) {
           selection = "excluded";
@@ -164,7 +166,9 @@ export const extractor = filesExtractor<JavaScriptOptions>({
           {
             selection,
             optional: declaration.optional,
-            ...((peer || excluded || optionalMissing) && { status: "declared" as const }),
+            ...(unreportedBundle && !excluded
+              ? { status: "unresolved" as const }
+              : (peer || excluded || optionalMissing) && { status: "declared" as const }),
             ...(peer && {
               attributes: { "npm:peerBinding": target ? "lookup-candidate" : "not-reported" },
             }),

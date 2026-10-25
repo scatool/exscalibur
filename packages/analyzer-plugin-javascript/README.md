@@ -54,6 +54,16 @@ installation or claim an installed tree. Separate placements retain separate vie
 including when they have the same PURL. In lockfile versions 2 and 3, workspace consumers follow production
 dependencies without importing the workspace's development roots.
 
+Bundled dependencies retain package-local placement boundaries, including nested bundles
+and the legacy `bundled` / current `inBundle` records. `bundleDependencies` takes precedence
+over its `bundledDependencies` alias; arrays and npm's boolean forms are honored.
+When bundle contents are unreported, an outer package is not proof of the actual binding:
+an unreported bundled copy may shadow it. Such requests remain unresolved, making the
+locked closure partial. Recorded local bindings stay resolved; unrelated nonbundled
+dependencies and peers retain their ordinary lookup rules. Root and workspace bundle
+settings describe publishing intent and do not restrict their installation dependencies.
+Extraction does not download archives or read installed dependency manifests to fill gaps.
+
 Local manifest reads stay inside the scanned codebase, including resolved symlink
 targets. Outside paths retain only their recorded lock metadata with a warning.
 Their dependency candidates follow the source location's actual lexical ancestors,
