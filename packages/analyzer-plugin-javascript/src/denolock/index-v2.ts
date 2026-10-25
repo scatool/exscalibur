@@ -1,4 +1,3 @@
-import { createHash } from "node:crypto";
 import { realpath } from "node:fs/promises";
 import { isAbsolute, relative as filesystemRelative, resolve, sep } from "node:path";
 import { dirname, join, normalize, relative } from "node:path/posix";
@@ -6,26 +5,13 @@ import { PackageURL } from "packageurl-js";
 import { valid, validRange, satisfies } from "semver";
 import { parse as parseJsonc, type ParseError } from "jsonc-parser";
 import {
-  createDependencyGraph,
-  createEmptyResultV2,
   filesExtractorV2,
   mergeResultsV2,
-  normalizeResultV2,
   readNormalizedTextFile,
   scanAndMarkFiles,
   scanFiles,
-  type AnalyzerResultV2,
-  type DependencyCondition,
-  type DependencyEdge,
   type DependencyRequest,
-  type DependencyRoot,
-  type DependencyView,
-  type FileExtractionContextV2,
-  type JsonObject,
-  type PackageV2,
-  type ProjectReference,
 } from "@scatool/analyzer-core";
-import { createNpmPurl } from "../npm-utils.ts";
 import {
   NpmGraphV2,
   addManifestObservation,
@@ -36,9 +22,9 @@ import {
   type NpmRecord,
 } from "../npm-v2.ts";
 import { optionSchema, type JavaScriptOptions } from "../options.ts";
+import { DenoObservation, genericPurl, registryPurl, type RegistryKind } from "./observation.ts";
 
-type Kind = "npm" | "jsr";
-type Binding = { alias: string; raw: string; target?: string; request: DependencyRequest };
+type NpmBinding = { alias: string; raw: string; target?: string; request: DependencyRequest };
 
 export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
   name: "denolock",
@@ -57,17 +43,25 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
       )
     )
       throw new Error(`Unsupported Deno lockfile version: ${JSON.stringify(document.version)}`);
+
     const version = Number(document.version);
     const tables = version === 3 ? table(document, "packages") : document;
     const native = new DenoObservation(context, "locked", "native-lock");
     const declared = new DenoObservation(context, "declared", "current-config-declarations");
     const packageJson = new NpmGraphV2(context, "packagejson", "declared");
     packageJson.sourceFiles.clear();
-    const records = new Map<string, NpmRecord>();
+
+    // Register all native packages before resolving references to them.
     const npmByName = new Map<string, string[]>();
-    const register = (kind: Kind, key: string, metadata: NpmRecord, missing = false): string => {
+    const registerPackage = (
+      kind: RegistryKind,
+      key: string,
+      metadata: NpmRecord,
+      missing = false,
+    ): string => {
       const id = `${kind}:${JSON.stringify(key)}`;
       if (native.nodes.has(id)) return id;
+
       const parsed = packageDescriptor(key);
       const baseVersion = parsed.reference?.split("_")[0];
       const identified = baseVersion !== undefined && valid(baseVersion) !== null;
@@ -79,8 +73,8 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
           "deno.invalid_package_id",
           `Native package ID '${key}' has no exact version; retaining it with a generic PURL`,
         );
+
       native.package(id, purl, key, metadata, kind === "npm" && !missing, !identified);
-      records.set(id, metadata);
       if (missing) {
         native.nodes.get(id)!.attributes!["deno:packageMissing"] = true;
         native.issue(
@@ -89,11 +83,14 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
         );
       } else if (kind === "npm")
         npmByName.set(parsed.name, [...(npmByName.get(parsed.name) ?? []), id]);
+
       return id;
     };
+
     for (const kind of ["npm", "jsr"] as const)
       for (const [key, metadata] of Object.entries(table(tables, kind)))
-        register(kind, key, record(metadata));
+        registerPackage(kind, key, record(metadata));
+
     for (const [url, checksum] of Object.entries(table(document, "remote"))) {
       if (typeof checksum !== "string")
         throw new Error(`Expected a Deno remote checksum for '${url}'`);
@@ -107,6 +104,8 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
         true,
       );
     }
+
+    // A registry request resolves through the lockfile specifier table, not a guessed version.
     const specifiers = table(tables, "specifiers");
     const specifierIndex = new Map<string, string[]>();
     for (const key of Object.keys(specifiers)) {
@@ -115,7 +114,10 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
       const name = `${request.kind}:${request.name}`;
       specifierIndex.set(name, [...(specifierIndex.get(name) ?? []), key]);
     }
-    const requirement = (value: string): { request: DependencyRequest; target?: string } => {
+
+    const resolveRegistryRequirement = (
+      value: string,
+    ): { request: DependencyRequest; target?: string } => {
       const parsed = registryRequest(value);
       const request: DependencyRequest = { ...(parsed && { name: parsed.name }), specifier: value };
       if (!parsed) return { request };
@@ -136,9 +138,10 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
       const descriptor = packageDescriptor(full);
       if (descriptor.reference === undefined || valid(descriptor.reference.split("_")[0]!) === null)
         return { request };
-      return { request, target: register(parsed.kind, full, {}, true) };
+      return { request, target: registerPackage(parsed.kind, full, {}, true) };
     };
-    const npmBinding = (value: string, alias?: string, allowMissing = true): Binding => {
+
+    const readNpmBinding = (value: string, alias?: string, allowMissing = true): NpmBinding => {
       const aliasAt = value.indexOf("@npm:");
       const actual = aliasAt > 0 ? value.slice(aliasAt + 5) : value.replace(/^npm:/, "");
       const parsed = packageDescriptor(actual);
@@ -163,7 +166,7 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
         exact && native.nodes.has(existing)
           ? existing
           : exact && allowMissing
-            ? register("npm", actual, {}, true)
+            ? registerPackage("npm", actual, {}, true)
             : undefined;
       return {
         alias: name,
@@ -177,44 +180,47 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
         ...(target !== undefined && { target }),
       };
     };
-    const bindings = (metadata: NpmRecord, scope: string): Binding[] => {
+
+    const readNpmBindings = (metadata: NpmRecord, scope: string): NpmBinding[] => {
       const value = metadata[scope];
       if (value === undefined) return [];
       if (Array.isArray(value))
         return strings(value).map((value) =>
-          npmBinding(value, undefined, scope !== "optionalPeers"),
+          readNpmBinding(value, undefined, scope !== "optionalPeers"),
         );
       return Object.entries(record(value)).map(([alias, value]) => {
         if (typeof value !== "string") throw new Error(`Invalid Deno npm dependency '${alias}'`);
-        return npmBinding(value, alias, scope !== "optionalPeers");
+        return readNpmBinding(value, alias, scope !== "optionalPeers");
       });
     };
+
+    const matchesOptionalPeer = (binding: NpmBinding, peer: NpmBinding): boolean => {
+      if (peer.alias !== binding.alias) return false;
+      if (peer.target !== undefined && peer.target === binding.target) return true;
+      if (peer.request.specifier === undefined || binding.target === undefined) return false;
+
+      // Optional peer records may describe a range instead of repeating the selected package ID.
+      const target = native.nodes.get(binding.target)!;
+      const version = PackageURL.fromString(target.purl).version;
+      return (
+        version !== undefined &&
+        version !== null &&
+        validRange(peer.request.specifier) !== null &&
+        satisfies(version, peer.request.specifier)
+      );
+    };
+
     // Iterate the source table, not placeholders registered while resolving missing references.
     for (const [key, value] of Object.entries(table(tables, "npm"))) {
       const metadata = record(value);
       const from = `npm:${JSON.stringify(key)}`;
-      const dependencies = bindings(metadata, "dependencies");
-      const optionalDependencies = version >= 5 ? bindings(metadata, "optionalDependencies") : [];
-      const optionalPeers = version >= 5 ? bindings(metadata, "optionalPeers") : [];
-      const usedPeers = new Set<Binding>();
+      const dependencies = readNpmBindings(metadata, "dependencies");
+      const optionalDependencies =
+        version >= 5 ? readNpmBindings(metadata, "optionalDependencies") : [];
+      const optionalPeers = version >= 5 ? readNpmBindings(metadata, "optionalPeers") : [];
+      const usedPeers = new Set<NpmBinding>();
       for (const binding of dependencies) {
-        const peer = optionalPeers.find(
-          (peer) =>
-            peer.alias === binding.alias &&
-            ((peer.target !== undefined && peer.target === binding.target) ||
-              (peer.request.specifier !== undefined &&
-                binding.target !== undefined &&
-                (() => {
-                  const target = native.nodes.get(binding.target!)!;
-                  const version = PackageURL.fromString(target.purl).version;
-                  return (
-                    version !== undefined &&
-                    version !== null &&
-                    validRange(peer.request.specifier!) !== null &&
-                    satisfies(version, peer.request.specifier!)
-                  );
-                })())),
-        );
+        const peer = optionalPeers.find((peer) => matchesOptionalPeer(binding, peer));
         if (peer) usedPeers.add(peer);
         if (
           optionalDependencies.some(
@@ -252,7 +258,7 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
     }
     for (const [key, value] of Object.entries(table(tables, "jsr")))
       for (const dependency of strings(record(value).dependencies)) {
-        const resolved = requirement(dependency);
+        const resolved = resolveRegistryRequirement(dependency);
         native.edge(
           `jsr:${JSON.stringify(key)}`,
           resolved.request,
@@ -261,6 +267,8 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
           { attributes: { "deno:requirement": dependency } },
         );
       }
+
+    // Current manifests add declaration observations; they do not replace the native lock graph.
     const workspace = table(document, "workspace");
     const members = new Map<string, NpmRecord>([
       [".", workspace],
@@ -268,21 +276,23 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
         ([location, value]) => [normalize(location), record(value)] as const,
       ),
     ]);
+
     const codebaseDirectory = await realpath(context.codebasePath);
-    const contained = (root: string, path: string): boolean => {
+    const isWithinDirectory = (root: string, path: string): boolean => {
       const within = filesystemRelative(root, path);
       return !isAbsolute(within) && within !== ".." && !within.startsWith(`..${sep}`);
     };
+
     const canReadManifest = async (location: string, name: string): Promise<boolean> => {
       const path = join(dirname(file), location, name);
       let safe =
         location !== ".." &&
         !location.startsWith("../") &&
         !location.startsWith("/") &&
-        contained(resolve(context.codebasePath), resolve(path));
+        isWithinDirectory(resolve(context.codebasePath), resolve(path));
       if (safe) {
         try {
-          safe = contained(codebaseDirectory, await realpath(path));
+          safe = isWithinDirectory(codebaseDirectory, await realpath(path));
         } catch (error) {
           if (
             !(
@@ -306,6 +316,7 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
         );
       return safe;
     };
+
     const loadedConfigs = new Map<string, { manifest: NpmRecord; file?: string }>();
     const loadConfig = async (location: string) => {
       if (loadedConfigs.has(location)) return loadedConfigs.get(location)!;
@@ -344,6 +355,7 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
       loadedConfigs.set(location, loaded);
       return loaded;
     };
+
     const rootConfig = await loadConfig(".");
     try {
       for (const pattern of strings(rootConfig.manifest.workspace)) {
@@ -368,6 +380,7 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
         message: `Could not discover current workspace declarations: ${error instanceof Error ? error.message : String(error)}`,
       });
     }
+
     const nativeLocations = new Set([
       ".",
       ...Object.keys(table(workspace, "members")).map((key) => normalize(key)),
@@ -399,6 +412,7 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
           });
         }
       }
+
       const nativeMember = document.workspace !== undefined && nativeLocations.has(location);
       if (
         nativeMember &&
@@ -411,10 +425,11 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
         const project = native.project(location, "deno", config.manifest, definition);
         const root = native.root(project, "deno:dependencies");
         for (const dependency of strings(member.dependencies)) {
-          const resolved = requirement(dependency);
+          const resolved = resolveRegistryRequirement(dependency);
           native.edge(root, resolved.request, resolved.target, "deno:dependencies");
         }
       }
+
       if (nativeMember && (jsonManifest.available || member.packageJson !== undefined)) {
         const definition = jsonManifest.available
           ? join(dirname(context.relativeFile), location, "package.json")
@@ -422,10 +437,11 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
         const project = native.project(location, "npm", jsonManifest.manifest, definition);
         const root = native.root(project, "packageJson:dependencies");
         for (const dependency of strings(table(member, "packageJson").dependencies)) {
-          const resolved = requirement(dependency);
+          const resolved = resolveRegistryRequirement(dependency);
           native.edge(root, resolved.request, resolved.target, "packageJson:dependencies");
         }
       }
+
       if (config.file) {
         try {
           const candidate = new DenoObservation(context, "declared", "current-config-declarations");
@@ -446,6 +462,7 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
         }
       }
     }
+
     const { npm: _npm, jsr: _jsr, packages: _packages, ...remaining } = document;
     native.attributes["deno:document"] = json(remaining);
     native.attributes["deno:specifiers"] = json(specifiers);
@@ -453,6 +470,7 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
     native.rootCompleteness = document.workspace === undefined ? "unknown" : "complete";
     if (packageJson.result.subprojects.length === 0)
       native.result.issues.push(...packageJson.result.issues);
+
     return mergeResultsV2([
       native.finish(),
       ...(declared.result.subprojects.length > 0 ? [declared.finish()] : []),
@@ -460,203 +478,6 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
     ]);
   },
 });
-
-class DenoObservation {
-  readonly result: AnalyzerResultV2;
-  readonly packages = new Map<string, PackageV2>();
-  readonly nodes = new Map<string, DependencyView>();
-  readonly edges: DependencyEdge[] = [];
-  readonly roots: DependencyRoot[] = [];
-  readonly attributes: JsonObject = {};
-  readonly files: Set<string>;
-  rootCompleteness: "complete" | "partial" | "unknown" = "complete";
-  constructor(
-    readonly context: FileExtractionContextV2,
-    readonly interpretation: "locked" | "declared",
-    readonly key: string,
-  ) {
-    this.result = createEmptyResultV2(context.codebaseId);
-    this.files = new Set(interpretation === "locked" ? [context.relativeFile] : []);
-  }
-  issue(code: string, message: string): void {
-    this.result.issues.push({
-      code,
-      message,
-      severity: "WARNING",
-      file: this.context.relativeFile,
-    });
-  }
-  package(
-    id: string,
-    purl: string,
-    locator: string,
-    metadata: NpmRecord,
-    complete: boolean,
-    synthesizedPurl: boolean,
-  ): void {
-    const evidence = [this.context.relativeFile];
-    const artifact =
-      typeof metadata.integrity === "string" ||
-      typeof metadata.tarball === "string" ||
-      typeof metadata.url === "string"
-        ? {
-            evidence,
-            ...(typeof (metadata.tarball ?? metadata.url) === "string" && {
-              location: (metadata.tarball ?? metadata.url) as string,
-            }),
-            ...(typeof metadata.integrity === "string" && {
-              attributes: { "deno:integrity": metadata.integrity },
-            }),
-          }
-        : undefined;
-    const pkg = this.packages.get(purl) ?? {
-      purl,
-      evidence,
-    };
-    pkg.identityObservations = [
-      ...(pkg.identityObservations ?? []),
-      {
-        source: { extractor: "denolock", files: evidence, key: JSON.stringify([this.key, id]) },
-        synthesizedPurl,
-      },
-    ];
-    if (artifact) pkg.artifacts = [...(pkg.artifacts ?? []), artifact];
-    this.packages.set(purl, pkg);
-    this.nodes.set(id, {
-      id,
-      purl,
-      locator,
-      dependencyCompleteness: complete ? "complete" : "unknown",
-      evidence,
-      ...(artifact && { artifacts: [artifact] }),
-      attributes: { "deno:record": json(metadata) },
-    });
-  }
-  project(
-    location: string,
-    kind: Kind | "deno",
-    config: NpmRecord,
-    definitionFile: string,
-  ): ProjectReference {
-    const version =
-      typeof config.version === "string" && config.version ? config.version : undefined;
-    const name = typeof config.name === "string" && config.name ? config.name : undefined;
-    const purl = name
-      ? kind === "npm"
-        ? createNpmPurl(name, version ?? "")
-        : name.startsWith("@") && name.includes("/")
-          ? registryPurl("jsr", name, version)
-          : new PackageURL("generic", "deno", name, version ?? null, null, null).toString()
-      : genericPurl("deno-project", [this.context.codebaseId, location, kind, definitionFile]);
-    const project = { purl, definitionFile };
-    this.result.subprojects.push({
-      ...project,
-      evidence: [definitionFile],
-      identityObservations: [
-        {
-          source: { extractor: "denolock", files: [definitionFile], key: this.key },
-          synthesizedPurl: !name,
-        },
-      ],
-      attributes: {
-        "deno:projectKind": kind,
-        "deno:configuration": json(
-          Object.fromEntries(
-            ["name", "version", "imports", "scopes", "importMap", "workspace", "links", "patches"]
-              .filter((key) => config[key] !== undefined)
-              .map((key) => [key, config[key]]),
-          ),
-        ),
-      },
-    });
-    if (!definitionFile.startsWith(`${this.context.relativeFile}#`)) this.files.add(definitionFile);
-    return project;
-  }
-  root(project: ProjectReference, scope: string): string {
-    const id = `scope:${JSON.stringify([project.definitionFile, scope])}`;
-    this.nodes.set(id, {
-      id,
-      purl: project.purl,
-      project,
-      dependencyCompleteness: "complete",
-      evidence: [project.definitionFile],
-    });
-    this.roots.push({ id, project, scope, node: id });
-    return id;
-  }
-  edge(
-    from: string,
-    requested: DependencyRequest,
-    target: string | undefined,
-    kind: string,
-    options: {
-      optional?: boolean;
-      attributes?: JsonObject;
-      declaration?: boolean;
-      condition?: DependencyCondition;
-      selection?: "selected" | "unknown";
-    } = {},
-  ): void {
-    const metadata =
-      target === undefined
-        ? {}
-        : ((this.nodes.get(target)?.attributes?.["deno:record"] as NpmRecord | undefined) ?? {});
-    const platform = Object.fromEntries(
-      ["os", "cpu", "libc"]
-        .filter((key) => metadata[key] !== undefined)
-        .map((key) => [key, json(metadata[key])]),
-    );
-    const condition =
-      options.condition ??
-      (Object.keys(platform).length > 0
-        ? { language: "npm:platform/v1", expression: platform }
-        : undefined);
-    const common = {
-      from,
-      relation: "depends-on" as const,
-      kind,
-      requested,
-      evidence: [
-        this.interpretation === "declared"
-          ? (this.nodes.get(from)?.project?.definitionFile ?? this.context.relativeFile)
-          : this.context.relativeFile,
-      ],
-      ...(options.optional !== undefined && { optional: options.optional }),
-      ...(options.attributes && { attributes: options.attributes }),
-      ...(condition
-        ? {
-            selection:
-              options.selection === "unknown" ? ("unknown" as const) : ("conditional" as const),
-            condition,
-          }
-        : { selection: options.selection ?? "selected" }),
-    };
-    if (target !== undefined) this.edges.push({ ...common, status: "resolved", to: target });
-    else {
-      this.edges.push({ ...common, status: options.declaration ? "declared" : "unresolved" });
-      if (!options.declaration)
-        this.issue(
-          "deno.unresolved_dependency",
-          `Could not establish a native binding for '${requested.name ?? requested.specifier ?? "unknown"}' (${kind})`,
-        );
-    }
-  }
-  finish(): AnalyzerResultV2 {
-    this.result.packages = [...this.packages.values()];
-    this.result.graphs.push(
-      createDependencyGraph({
-        source: { extractor: "denolock", files: [...this.files], key: this.key },
-        interpretation: this.interpretation,
-        rootCompleteness: this.rootCompleteness,
-        roots: this.roots,
-        nodes: [...this.nodes.values()],
-        edges: this.edges,
-        attributes: this.attributes,
-      }),
-    );
-    return normalizeResultV2(this.result);
-  }
-}
 
 function addConfigDeclarations(
   observation: DenoObservation,
@@ -695,38 +516,20 @@ function packageDescriptor(value: string): { name: string; reference?: string } 
   const at = value.indexOf("@", 1);
   return at === -1 ? { name: value } : { name: value.slice(0, at), reference: value.slice(at + 1) };
 }
+
 function registryRequest(
   value: string,
-): (ReturnType<typeof packageDescriptor> & { kind: Kind }) | undefined {
+): (ReturnType<typeof packageDescriptor> & { kind: RegistryKind }) | undefined {
   const kind = value.startsWith("npm:") ? "npm" : value.startsWith("jsr:") ? "jsr" : undefined;
   return kind ? { kind, ...packageDescriptor(value.slice(kind.length + 1)) } : undefined;
 }
-function registryPurl(kind: Kind, name: string, version?: string): string {
-  const slash = name.indexOf("/");
-  return new PackageURL(
-    kind,
-    name.startsWith("@") && slash > 0 ? name.slice(0, slash) : null,
-    name.startsWith("@") && slash > 0 ? name.slice(slash + 1) : name,
-    version ?? null,
-    null,
-    null,
-  ).toString();
-}
-function genericPurl(namespace: string, identity: string[]): string {
-  return new PackageURL(
-    "generic",
-    namespace,
-    createHash("sha256").update(JSON.stringify(identity)).digest("hex"),
-    null,
-    null,
-    null,
-  ).toString();
-}
+
 function record(value: unknown): NpmRecord {
   if (value === null || typeof value !== "object" || Array.isArray(value))
     throw new Error("Expected a Deno lock/config record");
   return value as NpmRecord;
 }
+
 function strings(value: unknown): string[] {
   if (value === undefined) return [];
   if (!Array.isArray(value) || !value.every((entry) => typeof entry === "string"))

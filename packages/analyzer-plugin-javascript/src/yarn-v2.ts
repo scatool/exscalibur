@@ -1,8 +1,5 @@
 import { dirname, join, normalize, relative } from "node:path/posix";
-import { isDeepStrictEqual } from "node:util";
-import { createRequire } from "node:module";
 import { satisfies, valid, validRange } from "semver";
-import { parse as parseYaml } from "yaml";
 import {
   mergeResultsV2,
   readNormalizedTextFile,
@@ -23,28 +20,16 @@ import {
   type NpmProject,
   type NpmRecord,
 } from "./npm-v2.ts";
-
-// Load the CommonJS parser consistently in Node and transformed test modules.
-const { parse: parseClassicLock } = createRequire(import.meta.url)(
-  "@yarnpkg/lockfile",
-) as typeof import("@yarnpkg/lockfile");
 import type { JavaScriptOptions } from "./options.ts";
+import { parseYarnLock, parseYarnDescriptor, yarnRecord, type YarnLockEntry } from "./yarn-lock.ts";
 
-type Entry = {
-  key: string;
-  patterns: string[];
-  locator: string;
-  name: string;
-  metadata: NpmRecord;
-  workspace?: string;
-};
-type Manifest = {
+type WorkspaceManifest = {
   location: string;
   definition: string;
   manifest: NpmRecord;
   available: boolean;
   declarationsKnown: boolean;
-  entry?: Entry;
+  entry?: YarnLockEntry;
 };
 
 /** Keep native locked topology and current-manifest scope correlation as separate observations. */
@@ -55,25 +40,27 @@ export async function extractYarnV2(
   modern: boolean,
 ): Promise<AnalyzerResultV2> {
   const content = await readNormalizedTextFile(file);
-  const { entries, metadata } = parseEntries(content, modern);
+  const { entries, metadata } = parseYarnLock(content, modern);
   const name = modern ? "yarnberry" : "yarnlock";
-  const native = new NpmGraphV2(context, name);
-  native.attributes["yarn:observation"] = "native-lock";
-  native.attributes["yarn:metadata"] = json(metadata);
-  native.attributes["yarn:peerBindings"] = "not-recorded-in-lockfile";
-  native.result.issues.push({
+  const nativeLock = new NpmGraphV2(context, name);
+  nativeLock.attributes["yarn:observation"] = "native-lock";
+  nativeLock.attributes["yarn:metadata"] = json(metadata);
+  nativeLock.attributes["yarn:peerBindings"] = "not-recorded-in-lockfile";
+  nativeLock.result.issues.push({
     code: "yarn.raw_lock_projection",
     severity: "HINT",
     file: context.relativeFile,
     message:
       "Yarn graphs preserve raw lock descriptor bindings; effective resolver transformations and virtual peer contexts were not observed",
   });
-  const manifests = new Map<string, Manifest>();
-  const load = async (location: string, entry?: Entry) => {
+
+  // Manifest discovery is separate from lock parsing and may fail without losing native evidence.
+  const manifests = new Map<string, WorkspaceManifest>();
+  const loadWorkspaceManifest = async (location: string, entry?: YarnLockEntry) => {
     const loaded = await loadNpmManifest(
       join(dirname(file), location, "package.json"),
       entry ? { name: entry.name } : {},
-      native,
+      nativeLock,
     );
     const definition = loaded.available
       ? join(dirname(context.relativeFile), location, "package.json")
@@ -86,14 +73,16 @@ export async function extractYarnV2(
       ...(entry && { entry }),
     };
     manifests.set(location, manifest);
-    if (loaded.available) native.sourceFiles.add(definition);
+    if (loaded.available) nativeLock.sourceFiles.add(definition);
     return manifest;
   };
+
   if (modern) {
     for (const entry of entries)
-      if (entry.workspace !== undefined) await load(entry.workspace, entry);
+      if (entry.workspace !== undefined) await loadWorkspaceManifest(entry.workspace, entry);
   }
-  if (!manifests.has(".")) await load(".");
+  if (!manifests.has(".")) await loadWorkspaceManifest(".");
+
   let workspaceDiscoveryFailed = false;
   if (!modern) {
     try {
@@ -112,12 +101,12 @@ export async function extractYarnV2(
           options.ignore,
         )) {
           const location = normalize(relative(dirname(file), dirname(manifest)));
-          if (!manifests.has(location)) await load(location);
+          if (!manifests.has(location)) await loadWorkspaceManifest(location);
         }
       }
     } catch (error) {
       workspaceDiscoveryFailed = true;
-      native.result.issues.push({
+      nativeLock.result.issues.push({
         code: "yarn.workspace_declarations_failed",
         severity: "WARNING",
         file: manifests.get(".")!.definition,
@@ -125,48 +114,53 @@ export async function extractYarnV2(
       });
     }
   }
-  const declared = new NpmGraphV2(context, "packagejson", "declared");
-  declared.sourceFiles.clear();
-  if (workspaceDiscoveryFailed) declared.rootCompleteness = "partial";
+
+  const currentDeclarations = new NpmGraphV2(context, "packagejson", "declared");
+  currentDeclarations.sourceFiles.clear();
+  if (workspaceDiscoveryFailed) currentDeclarations.rootCompleteness = "partial";
   for (const manifest of manifests.values())
     if (manifest.available)
       manifest.declarationsKnown = addCurrentManifestObservation(
-        declared,
+        currentDeclarations,
         manifest.location,
         manifest.definition,
         manifest.manifest,
         () => yarnDeclarations(manifest.manifest),
       );
-  const scoped = new NpmGraphV2(context, name);
-  scoped.attributes["yarn:observation"] = "current-manifest-scopes";
-  scoped.attributes["yarn:scopeSource"] = "current-manifests";
-  scoped.attributes["yarn:peerBindings"] = "not-recorded-in-lockfile";
-  for (const builder of [native, scoped]) {
+
+  const currentManifestScopes = new NpmGraphV2(context, name);
+  currentManifestScopes.attributes["yarn:observation"] = "current-manifest-scopes";
+  currentManifestScopes.attributes["yarn:scopeSource"] = "current-manifests";
+  currentManifestScopes.attributes["yarn:peerBindings"] = "not-recorded-in-lockfile";
+  for (const builder of [nativeLock, currentManifestScopes]) {
     builder.attributes["yarn:projection"] = "raw-descriptor-map";
     builder.attributes["yarn:effectiveResolution"] = "not-observed";
     builder.attributes["yarn:resolverTransformations"] = "not-applied";
   }
   if (!modern || !entries.some((entry) => entry.workspace !== undefined))
-    native.rootCompleteness = "unknown";
+    nativeLock.rootCompleteness = "unknown";
   if (
     workspaceDiscoveryFailed ||
     [...manifests.values()].some((manifest) => !manifest.declarationsKnown)
   )
-    scoped.rootCompleteness = "partial";
+    currentManifestScopes.rootCompleteness = "partial";
 
-  const populate = (builder: NpmGraphV2, correlate: boolean) => {
+  // Each observation gets its own view indexes; equal packages do not merge their contexts.
+  const populateObservation = (builder: NpmGraphV2, correlateCurrentManifests: boolean) => {
+    // Register views and descriptor indexes before looking up any dependency.
     const targets = new Map<string, string>();
-    const descriptors = new Map<string, Entry>();
+    const descriptors = new Map<string, YarnLockEntry>();
     const projects = new Map<string, NpmProject>();
-    const workspaces = new Map<string, Manifest[]>();
+    const workspaces = new Map<string, WorkspaceManifest[]>();
     const targetVersions = new Map<string, string>();
+
     for (const manifest of manifests.values()) {
-      if (correlate || manifest.entry) {
+      if (correlateCurrentManifests || manifest.entry) {
         const project = builder.addProject(
           manifest.location,
           manifest.definition,
           manifest.manifest,
-          correlate ? manifest.declarationsKnown : true,
+          correlateCurrentManifests ? manifest.declarationsKnown : true,
         );
         builder.nodes.get(project.consumer)!.attributes!["yarn:coordinateSource"] =
           manifest.available ? "current-manifest" : "lock-locator";
@@ -179,11 +173,12 @@ export async function extractYarnV2(
       if (typeof workspaceName === "string")
         workspaces.set(workspaceName, [...(workspaces.get(workspaceName) ?? []), manifest]);
     }
+
     for (const entry of entries) {
       for (const pattern of entry.patterns) {
         const aliases = [pattern];
         if (modern && Number(metadata.version) <= 6) {
-          const parsed = descriptor(pattern);
+          const parsed = parseYarnDescriptor(pattern);
           if (implicitNpmReference(parsed.reference))
             aliases.push(`${parsed.name}@npm:${parsed.reference}`);
         }
@@ -221,7 +216,11 @@ export async function extractYarnV2(
       )
         targetVersions.set(id, entry.metadata.version);
     }
-    const lookup = (dependencyName: string, reference: string): Entry | undefined => {
+
+    const lookupLockEntry = (
+      dependencyName: string,
+      reference: string,
+    ): YarnLockEntry | undefined => {
       const candidates = [`${dependencyName}@${reference}`];
       if (modern && implicitNpmReference(reference))
         candidates.push(`${dependencyName}@npm:${reference}`);
@@ -232,10 +231,11 @@ export async function extractYarnV2(
         throw new Error(`Ambiguous Yarn descriptor: ${dependencyName}@${reference}`);
       return found[0];
     };
-    const workspaceCandidate = (
+
+    const findClassicWorkspace = (
       dependencyName: string,
       reference: string,
-    ): Manifest | undefined => {
+    ): WorkspaceManifest | undefined => {
       if (modern) return undefined;
       const candidates = (workspaces.get(dependencyName) ?? []).filter(
         (manifest) =>
@@ -248,24 +248,32 @@ export async function extractYarnV2(
         throw new Error(`Ambiguous Yarn workspace name: ${dependencyName}`);
       return candidates[0];
     };
-    const binding = (dependencyName: string, reference: string): string | undefined => {
-      const workspace = correlate ? workspaceCandidate(dependencyName, reference) : undefined;
+
+    const resolveTarget = (dependencyName: string, reference: string): string | undefined => {
+      const workspace = correlateCurrentManifests
+        ? findClassicWorkspace(dependencyName, reference)
+        : undefined;
       if (workspace) return projects.get(workspace.location)?.consumer;
-      const entry = lookup(dependencyName, reference);
+      const entry = lookupLockEntry(dependencyName, reference);
       return entry ? targets.get(entry.locator) : undefined;
     };
-    const condition = (target: string | undefined): DependencyCondition | undefined => {
+
+    const targetCondition = (target: string | undefined): DependencyCondition | undefined => {
       const node = target ? builder.nodes.get(target) : undefined;
-      const native = node?.attributes?.["yarn:conditions"];
+      const nativeConditions = node?.attributes?.["yarn:conditions"];
       const platform = node?.attributes?.["npm:platform"];
-      return native === undefined
+      return nativeConditions === undefined
         ? undefined
         : {
             language: "yarn:applicability/v1",
-            expression: { conditions: native, ...(platform !== undefined && { platform }) },
+            expression: {
+              conditions: nativeConditions,
+              ...(platform !== undefined && { platform }),
+            },
           };
     };
-    const add = (
+
+    const addDependency = (
       from: string,
       dependencyName: string,
       reference: string,
@@ -279,30 +287,35 @@ export async function extractYarnV2(
         selection,
         optional,
         ...(status && { status }),
-        ...(condition(target) && { condition: condition(target) }),
+        ...(targetCondition(target) && { condition: targetCondition(target) }),
         attributes: { "yarn:descriptor": `${dependencyName}@${reference}` },
       });
-    const nativeDependencies = (entry: Entry, from: string) => {
+
+    const addNativeDependencies = (entry: YarnLockEntry, from: string) => {
       for (const scope of ["dependencies", "optionalDependencies", "peerDependencies"]) {
         for (const [dependencyName, value] of Object.entries(table(entry.metadata, scope))) {
           if (typeof value !== "string")
             throw new Error(`Invalid Yarn ${scope} request for '${dependencyName}'`);
           const peer = scope === "peerDependencies";
-          const target = peer ? undefined : binding(dependencyName, value);
-          const optional =
-            scope === "optionalDependencies"
-              ? true
-              : peer
-                ? optionalFlag(
-                    table(table(entry.metadata, "peerDependenciesMeta"), dependencyName).optional,
-                  ) === true
-                : dependencyOptional(
-                    entry.metadata,
-                    dependencyName,
-                    target === undefined ? undefined : targetVersions.get(target),
-                  );
+          const target = peer ? undefined : resolveTarget(dependencyName, value);
+          let optional: boolean | undefined;
+          if (scope === "optionalDependencies") {
+            optional = true;
+          } else if (peer) {
+            optional =
+              optionalFlag(
+                table(table(entry.metadata, "peerDependenciesMeta"), dependencyName).optional,
+              ) === true;
+          } else {
+            optional = dependencyOptional(
+              entry.metadata,
+              dependencyName,
+              target === undefined ? undefined : targetVersions.get(target),
+            );
+          }
+
           // Lockfiles omit virtual peer instances; an unbound optional peer is not proof of absence.
-          add(
+          addDependency(
             from,
             dependencyName,
             value,
@@ -315,17 +328,22 @@ export async function extractYarnV2(
         }
       }
     };
+
+    // Native records supply topology independently of current manifest scope assignments.
     for (const entry of entries) {
-      if (correlate && entry.workspace !== undefined) continue;
+      if (correlateCurrentManifests && entry.workspace !== undefined) continue;
       const from = targets.get(entry.locator)!;
-      nativeDependencies(entry, from);
+      addNativeDependencies(entry, from);
       if (entry.workspace !== undefined) {
         const project = projects.get(entry.workspace)!;
         const root = builder.addRoot(project, "yarn:dependencies");
-        nativeDependencies(entry, root);
+        addNativeDependencies(entry, root);
       }
     }
-    if (!correlate) return;
+
+    if (!correlateCurrentManifests) return;
+
+    // Correlation can add scope roots, but unmatched requests remain explicitly uncertain.
     for (const manifest of manifests.values()) {
       const project = projects.get(manifest.location)!;
       if (manifest.available && !manifest.declarationsKnown) {
@@ -333,7 +351,7 @@ export async function extractYarnV2(
         continue;
       }
       const declarations = yarnDeclarations(manifest.manifest, (name, reference) => {
-        const target = binding(name, reference);
+        const target = resolveTarget(name, reference);
         return target === undefined ? undefined : targetVersions.get(target);
       });
       const nativeRequests = manifest.entry ? table(manifest.entry.metadata, "dependencies") : {};
@@ -352,18 +370,18 @@ export async function extractYarnV2(
         const root = builder.addRoot(project, scope);
         for (const declaration of declarations.filter((item) => item.scope === scope)) {
           const peer = scope === "peerDependencies";
-          const target = peer ? undefined : binding(declaration.name, declaration.specifier);
+          const target = peer ? undefined : resolveTarget(declaration.name, declaration.specifier);
           const nativeReference = nativeRequests[declaration.name];
           const correlated =
             !peer &&
             typeof nativeReference === "string" &&
-            lookup(declaration.name, nativeReference)?.locator ===
-              lookup(declaration.name, declaration.specifier)?.locator &&
+            lookupLockEntry(declaration.name, nativeReference)?.locator ===
+              lookupLockEntry(declaration.name, declaration.specifier)?.locator &&
             equivalentRequest(declaration.name, nativeReference, declaration.specifier);
           if (modern && !peer && !correlated) drift = true;
           const selection = declaration.excluded ? "excluded" : correlated ? "selected" : "unknown";
           const status = target === undefined || peer ? "declared" : undefined;
-          add(
+          addDependency(
             root,
             declaration.name,
             declaration.specifier,
@@ -373,7 +391,7 @@ export async function extractYarnV2(
             declaration.optional,
             status,
           );
-          add(
+          addDependency(
             project.consumer,
             declaration.name,
             declaration.specifier,
@@ -406,90 +424,29 @@ export async function extractYarnV2(
         builder.nodes.get(project.consumer)!.dependencyCompleteness = "unknown";
     }
   };
-  populate(native, false);
-  populate(scoped, true);
+
+  populateObservation(nativeLock, false);
+  populateObservation(currentManifestScopes, true);
+
   return mergeResultsV2([
-    native.finish(),
-    scoped.finish(),
-    ...(declared.result.subprojects.length > 0 ? [declared.finish()] : []),
+    nativeLock.finish(),
+    currentManifestScopes.finish(),
+    ...(currentDeclarations.result.subprojects.length > 0 ? [currentDeclarations.finish()] : []),
   ]);
 }
 
-function parseEntries(content: string, modern: boolean): { entries: Entry[]; metadata: NpmRecord } {
-  if (modern) {
-    // Yarn's SYML reader uses the failsafe schema: unquoted ranges such as `6` or `true`
-    // are strings, not YAML numbers/booleans. Metadata booleans are interpreted separately.
-    const document = record(parseYaml(content, { schema: "failsafe" }));
-    const metadata = table(document, "__metadata");
-    const version = Number(metadata.version);
-    if (!Number.isInteger(version) || version < 4 || version > 9)
-      throw new Error(
-        `Unsupported Yarn modern lockfile version: ${JSON.stringify(metadata.version)}`,
-      );
-    const locators = new Map<string, Entry>();
-    for (const [key, value] of Object.entries(document)) {
-      if (key === "__metadata") continue;
-      const metadata = record(value);
-      if (typeof metadata.resolution !== "string")
-        throw new Error(`Yarn entry '${key}' is missing its resolution locator`);
-      const parsed = descriptor(metadata.resolution);
-      const workspace = parsed.reference.startsWith("workspace:")
-        ? normalize(parsed.reference.slice(10))
-        : undefined;
-      if (workspace === ".." || workspace?.startsWith("../") || workspace?.startsWith("/"))
-        throw new Error(`Yarn workspace is outside its lockfile directory: ${workspace}`);
-      const patterns = key.split(/ *, */g);
-      const previous = locators.get(metadata.resolution);
-      if (previous) {
-        if (!isDeepStrictEqual(previous.metadata, metadata))
-          throw new Error(`Conflicting Yarn resolution metadata: ${metadata.resolution}`);
-        previous.patterns.push(...patterns);
-      } else
-        locators.set(metadata.resolution, {
-          key,
-          locator: metadata.resolution,
-          name: parsed.name,
-          patterns,
-          metadata,
-          ...(workspace !== undefined && { workspace }),
-        });
-    }
-    return { entries: [...locators.values()], metadata };
-  }
-  const parsed = parseClassicLock(content);
-  if (parsed.type !== "success")
-    throw new Error("Yarn Classic lockfile contains unresolved merge conflicts");
-  const groups = new Map<object, { patterns: string[]; metadata: NpmRecord }>();
-  for (const [pattern, value] of Object.entries(parsed.object)) {
-    const metadata = record(value);
-    const group = groups.get(value) ?? { patterns: [], metadata };
-    group.patterns.push(pattern);
-    groups.set(value, group);
-  }
-  const entries = [...groups.values()].map(({ patterns, metadata }) => {
-    const parsed = descriptor(patterns[0]!);
-    let name = parsed.name;
-    if (parsed.reference.startsWith("npm:")) name = descriptor(parsed.reference.slice(4)).name;
-    const key = [...patterns].sort().join(", ");
-    return { key, patterns, metadata, name, locator: key };
-  });
-  return { entries, metadata: { version: 1, peerDeclarations: "not-recorded" } };
-}
-function descriptor(value: string): { name: string; reference: string } {
-  const at = value.indexOf("@", value.startsWith("@") ? value.indexOf("/") + 1 : 0);
-  if (at < 1) throw new Error(`Invalid Yarn package descriptor: ${value}`);
-  return { name: value.slice(0, at), reference: value.slice(at + 1) };
-}
 function implicitNpmReference(reference: string): boolean {
   // Yarn normalizes semver ranges and tag-shaped references to its npm default protocol.
   // Retain encoded patch descriptors verbatim: no unverified patch rewrite is applied.
   return validRange(reference) !== null || /^(?!v)[a-z0-9._-]+$/i.test(reference);
 }
+
 function equivalentRequest(name: string, a: string, b: string): boolean {
   const normalized = (value: string) =>
     /^[A-Za-z][A-Za-z0-9+.-]*:/.test(value) ? `${name}@${value}` : `${name}@npm:${value}`;
   return normalized(a) === normalized(b);
 }
+
 function yarnDeclarations(
   manifest: NpmRecord,
   version?: (name: string, reference: string) => string | undefined,
@@ -507,6 +464,7 @@ function yarnDeclarations(
       : declaration,
   );
 }
+
 function dependencyOptional(
   metadata: NpmRecord,
   name: string,
@@ -519,7 +477,7 @@ function dependencyOptional(
     if (!key.startsWith(`${name}@`)) continue;
     const selector = valid(key.slice(name.length + 1));
     if (selector === null) throw new Error(`Invalid Yarn dependency metadata version: ${key}`);
-    const setting = optionalFlag(record(value).optional);
+    const setting = optionalFlag(yarnRecord(value).optional);
     if (setting === undefined) continue;
     if (version === undefined) {
       if (setting !== base) optional = undefined;
@@ -527,14 +485,10 @@ function dependencyOptional(
   }
   return optional;
 }
+
 function optionalFlag(value: unknown): boolean | undefined {
   if (value === undefined || typeof value === "boolean") return value;
   if (value === "true") return true;
   if (value === "false") return false;
   throw new Error("Invalid Yarn optional metadata flag");
-}
-function record(value: unknown): NpmRecord {
-  if (value === null || typeof value !== "object" || Array.isArray(value))
-    throw new Error("Expected a Yarn lockfile record");
-  return value as NpmRecord;
 }
