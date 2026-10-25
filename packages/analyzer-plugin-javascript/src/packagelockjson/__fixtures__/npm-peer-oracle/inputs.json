@@ -1,0 +1,246 @@
+[
+  {
+    "id": "hoisted-valid",
+    "packages": {
+      "": {
+        "name": "app",
+        "version": "1.0.0",
+        "dependencies": {
+          "widget": "1.0.0",
+          "react": "18.0.0"
+        }
+      },
+      "node_modules/widget": {
+        "name": "widget",
+        "version": "1.0.0",
+        "peerDependencies": {
+          "react": "^18"
+        }
+      },
+      "node_modules/react": {
+        "name": "react",
+        "version": "18.0.0"
+      }
+    }
+  },
+  {
+    "id": "nested-valid",
+    "packages": {
+      "": {
+        "name": "app",
+        "version": "1.0.0",
+        "dependencies": {
+          "left": "1.0.0",
+          "right": "1.0.0"
+        }
+      },
+      "node_modules/left": {
+        "name": "left",
+        "version": "1.0.0",
+        "dependencies": {
+          "widget": "1.0.0",
+          "react": "18.0.0"
+        }
+      },
+      "node_modules/right": {
+        "name": "right",
+        "version": "1.0.0",
+        "dependencies": {
+          "widget": "1.0.0",
+          "react": "19.0.0"
+        }
+      },
+      "node_modules/left/node_modules/widget": {
+        "name": "widget",
+        "version": "1.0.0",
+        "peerDependencies": {
+          "react": "^18"
+        }
+      },
+      "node_modules/left/node_modules/react": {
+        "name": "react",
+        "version": "18.0.0"
+      },
+      "node_modules/right/node_modules/widget": {
+        "name": "widget",
+        "version": "1.0.0",
+        "peerDependencies": {
+          "react": "^19"
+        }
+      },
+      "node_modules/right/node_modules/react": {
+        "name": "react",
+        "version": "19.0.0"
+      }
+    }
+  },
+  {
+    "id": "hoisted-conflict",
+    "packages": {
+      "": {
+        "name": "app",
+        "version": "1.0.0",
+        "dependencies": {
+          "widget": "1.0.0",
+          "react": "17.0.0"
+        }
+      },
+      "node_modules/widget": {
+        "name": "widget",
+        "version": "1.0.0",
+        "peerDependencies": {
+          "react": "^18"
+        }
+      },
+      "node_modules/react": {
+        "name": "react",
+        "version": "17.0.0"
+      }
+    }
+  },
+  {
+    "id": "optional-present",
+    "packages": {
+      "": {
+        "name": "app",
+        "version": "1.0.0",
+        "dependencies": {
+          "widget": "1.0.0",
+          "react": "18.0.0"
+        }
+      },
+      "node_modules/widget": {
+        "name": "widget",
+        "version": "1.0.0",
+        "peerDependencies": {
+          "react": "^18"
+        },
+        "peerDependenciesMeta": {
+          "react": {
+            "optional": true
+          }
+        }
+      },
+      "node_modules/react": {
+        "name": "react",
+        "version": "18.0.0"
+      }
+    }
+  },
+  {
+    "id": "optional-absent",
+    "packages": {
+      "": {
+        "name": "app",
+        "version": "1.0.0",
+        "dependencies": {
+          "widget": "1.0.0"
+        }
+      },
+      "node_modules/widget": {
+        "name": "widget",
+        "version": "1.0.0",
+        "peerDependencies": {
+          "react": "^18"
+        },
+        "peerDependenciesMeta": {
+          "react": {
+            "optional": true
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "required-absent",
+    "packages": {
+      "": {
+        "name": "app",
+        "version": "1.0.0",
+        "dependencies": {
+          "widget": "1.0.0"
+        }
+      },
+      "node_modules/widget": {
+        "name": "widget",
+        "version": "1.0.0",
+        "peerDependencies": {
+          "react": "^18"
+        }
+      }
+    }
+  },
+  {
+    "id": "child-candidate-invalid",
+    "packages": {
+      "": {
+        "name": "app",
+        "version": "1.0.0",
+        "dependencies": {
+          "widget": "1.0.0",
+          "react": "18.0.0"
+        }
+      },
+      "node_modules/widget": {
+        "name": "widget",
+        "version": "1.0.0",
+        "peerDependencies": {
+          "react": "^18"
+        }
+      },
+      "node_modules/widget/node_modules/react": {
+        "name": "react",
+        "version": "18.0.0"
+      },
+      "node_modules/react": {
+        "name": "react",
+        "version": "18.0.0"
+      }
+    }
+  },
+  {
+    "id": "optional-conflict",
+    "packages": {
+      "": {
+        "name": "app",
+        "version": "1.0.0",
+        "dependencies": {
+          "widget": "1.0.0",
+          "react": "17.0.0"
+        }
+      },
+      "node_modules/widget": {
+        "name": "widget",
+        "version": "1.0.0",
+        "peerDependencies": {
+          "react": "^18"
+        },
+        "peerDependenciesMeta": {
+          "react": {
+            "optional": true
+          }
+        }
+      },
+      "node_modules/react": {
+        "name": "react",
+        "version": "17.0.0"
+      }
+    }
+  },
+  {
+    "id": "root-peer-valid",
+    "packages": {
+      "": {
+        "name": "app",
+        "version": "1.0.0",
+        "peerDependencies": {
+          "react": "^18"
+        }
+      },
+      "node_modules/react": {
+        "name": "react",
+        "version": "18.0.0"
+      }
+    }
+  }
+]

@@ -1,7 +1,1271 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`basic 1`] = `
+exports[`native Gradle extraction: basic 1`] = `
 {
+  "codebase": "fixture:basic",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "attributes": {
+        "gradle:nativeScope": "Unknown",
+        "gradle:projection": "dependency-graph-snapshot",
+        "gradle:rootOrigin": {
+          "id": "project :",
+          "path": ":",
+        },
+        "gradle:variantCoverage": "unknown",
+      },
+      "edges": [
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.code.findbugs:jsr305:3.0.2",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.errorprone:error_prone_annotations:2.11.0",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.guava:failureaccess:1.0.1",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.j2objc:j2objc-annotations:1.3",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:org.checkerframework:checker-qual:3.12.0",
+        },
+        {
+          "from": "node:junit:junit:4.13.2",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:org.hamcrest:hamcrest-core:1.3",
+        },
+        {
+          "from": "root",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.guava:guava:31.1-jre",
+        },
+        {
+          "from": "root",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:junit:junit:4.13.2",
+        },
+        {
+          "from": "root",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:org.slf4j:slf4j-api:2.0.7",
+        },
+      ],
+      "id": "["gradle","build.gradle","gradle:73b4c2b216b2502b4d8ca3d573f67ea574636881cf37450b6dc23142514275a1"]",
+      "interpretation": "resolved",
+      "nodes": [
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.code.findbugs",
+                "module": "jsr305",
+                "version": "3.0.2",
+              },
+              "id": "com.google.code.findbugs:jsr305:3.0.2",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :",
+                "path": ":",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.code.findbugs:jsr305:3.0.2",
+          "locator": "com.google.code.findbugs:jsr305:3.0.2",
+          "purl": "pkg:maven/com.google.code.findbugs/jsr305@3.0.2",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.errorprone",
+                "module": "error_prone_annotations",
+                "version": "2.11.0",
+              },
+              "id": "com.google.errorprone:error_prone_annotations:2.11.0",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :",
+                "path": ":",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.errorprone:error_prone_annotations:2.11.0",
+          "locator": "com.google.errorprone:error_prone_annotations:2.11.0",
+          "purl": "pkg:maven/com.google.errorprone/error_prone_annotations@2.11.0",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.guava",
+                "module": "failureaccess",
+                "version": "1.0.1",
+              },
+              "id": "com.google.guava:failureaccess:1.0.1",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :",
+                "path": ":",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.guava:failureaccess:1.0.1",
+          "locator": "com.google.guava:failureaccess:1.0.1",
+          "purl": "pkg:maven/com.google.guava/failureaccess@1.0.1",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.guava",
+                "module": "guava",
+                "version": "31.1-jre",
+              },
+              "id": "com.google.guava:guava:31.1-jre",
+              "isDirect": true,
+              "isProject": false,
+              "origin": {
+                "id": "project :",
+                "path": ":",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.guava:guava:31.1-jre",
+          "locator": "com.google.guava:guava:31.1-jre",
+          "purl": "pkg:maven/com.google.guava/guava@31.1-jre",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.guava",
+                "module": "listenablefuture",
+                "version": "9999.0-empty-to-avoid-conflict-with-guava",
+              },
+              "id": "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :",
+                "path": ":",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+          "locator": "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+          "purl": "pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.j2objc",
+                "module": "j2objc-annotations",
+                "version": "1.3",
+              },
+              "id": "com.google.j2objc:j2objc-annotations:1.3",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :",
+                "path": ":",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.j2objc:j2objc-annotations:1.3",
+          "locator": "com.google.j2objc:j2objc-annotations:1.3",
+          "purl": "pkg:maven/com.google.j2objc/j2objc-annotations@1.3",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "junit",
+                "module": "junit",
+                "version": "4.13.2",
+              },
+              "id": "junit:junit:4.13.2",
+              "isDirect": true,
+              "isProject": false,
+              "origin": {
+                "id": "project :",
+                "path": ":",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:junit:junit:4.13.2",
+          "locator": "junit:junit:4.13.2",
+          "purl": "pkg:maven/junit/junit@4.13.2",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "org.checkerframework",
+                "module": "checker-qual",
+                "version": "3.12.0",
+              },
+              "id": "org.checkerframework:checker-qual:3.12.0",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :",
+                "path": ":",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:org.checkerframework:checker-qual:3.12.0",
+          "locator": "org.checkerframework:checker-qual:3.12.0",
+          "purl": "pkg:maven/org.checkerframework/checker-qual@3.12.0",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "org.hamcrest",
+                "module": "hamcrest-core",
+                "version": "1.3",
+              },
+              "id": "org.hamcrest:hamcrest-core:1.3",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :",
+                "path": ":",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:org.hamcrest:hamcrest-core:1.3",
+          "locator": "org.hamcrest:hamcrest-core:1.3",
+          "purl": "pkg:maven/org.hamcrest/hamcrest-core@1.3",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "org.slf4j",
+                "module": "slf4j-api",
+                "version": "2.0.7",
+              },
+              "id": "org.slf4j:slf4j-api:2.0.7",
+              "isDirect": true,
+              "isProject": false,
+              "origin": {
+                "id": "project :",
+                "path": ":",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:org.slf4j:slf4j-api:2.0.7",
+          "locator": "org.slf4j:slf4j-api:2.0.7",
+          "purl": "pkg:maven/org.slf4j/slf4j-api@2.0.7",
+        },
+        {
+          "dependencyCompleteness": "unknown",
+          "id": "root",
+          "project": {
+            "definitionFile": "build.gradle",
+            "purl": "pkg:maven/com.example/basic-example@1.0.0",
+          },
+          "purl": "pkg:maven/com.example/basic-example@1.0.0",
+        },
+      ],
+      "rootCompleteness": "unknown",
+      "roots": [
+        {
+          "id": "root",
+          "node": "root",
+          "project": {
+            "definitionFile": "build.gradle",
+            "purl": "pkg:maven/com.example/basic-example@1.0.0",
+          },
+          "scope": "testCompileClasspath",
+        },
+      ],
+      "source": {
+        "extractor": "gradle",
+        "files": [
+          "build.gradle",
+        ],
+        "key": "["project :",":","testCompileClasspath"]",
+      },
+    },
+    {
+      "attributes": {
+        "gradle:nativeScope": "Unknown",
+        "gradle:projection": "dependency-graph-snapshot",
+        "gradle:rootOrigin": {
+          "id": "project :",
+          "path": ":",
+        },
+        "gradle:variantCoverage": "unknown",
+      },
+      "edges": [
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.code.findbugs:jsr305:3.0.2",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.errorprone:error_prone_annotations:2.11.0",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.guava:failureaccess:1.0.1",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.j2objc:j2objc-annotations:1.3",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:org.checkerframework:checker-qual:3.12.0",
+        },
+        {
+          "from": "root",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.guava:guava:31.1-jre",
+        },
+        {
+          "from": "root",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:org.slf4j:slf4j-api:2.0.7",
+        },
+      ],
+      "id": "["gradle","build.gradle","gradle:a2f8353898c7e915d82745acca6772699f482254538e34bae3a82f784fdbae7e"]",
+      "interpretation": "resolved",
+      "nodes": [
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.code.findbugs",
+                "module": "jsr305",
+                "version": "3.0.2",
+              },
+              "id": "com.google.code.findbugs:jsr305:3.0.2",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :",
+                "path": ":",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.code.findbugs:jsr305:3.0.2",
+          "locator": "com.google.code.findbugs:jsr305:3.0.2",
+          "purl": "pkg:maven/com.google.code.findbugs/jsr305@3.0.2",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.errorprone",
+                "module": "error_prone_annotations",
+                "version": "2.11.0",
+              },
+              "id": "com.google.errorprone:error_prone_annotations:2.11.0",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :",
+                "path": ":",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.errorprone:error_prone_annotations:2.11.0",
+          "locator": "com.google.errorprone:error_prone_annotations:2.11.0",
+          "purl": "pkg:maven/com.google.errorprone/error_prone_annotations@2.11.0",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.guava",
+                "module": "failureaccess",
+                "version": "1.0.1",
+              },
+              "id": "com.google.guava:failureaccess:1.0.1",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :",
+                "path": ":",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.guava:failureaccess:1.0.1",
+          "locator": "com.google.guava:failureaccess:1.0.1",
+          "purl": "pkg:maven/com.google.guava/failureaccess@1.0.1",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.guava",
+                "module": "guava",
+                "version": "31.1-jre",
+              },
+              "id": "com.google.guava:guava:31.1-jre",
+              "isDirect": true,
+              "isProject": false,
+              "origin": {
+                "id": "project :",
+                "path": ":",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.guava:guava:31.1-jre",
+          "locator": "com.google.guava:guava:31.1-jre",
+          "purl": "pkg:maven/com.google.guava/guava@31.1-jre",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.guava",
+                "module": "listenablefuture",
+                "version": "9999.0-empty-to-avoid-conflict-with-guava",
+              },
+              "id": "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :",
+                "path": ":",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+          "locator": "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+          "purl": "pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.j2objc",
+                "module": "j2objc-annotations",
+                "version": "1.3",
+              },
+              "id": "com.google.j2objc:j2objc-annotations:1.3",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :",
+                "path": ":",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.j2objc:j2objc-annotations:1.3",
+          "locator": "com.google.j2objc:j2objc-annotations:1.3",
+          "purl": "pkg:maven/com.google.j2objc/j2objc-annotations@1.3",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "org.checkerframework",
+                "module": "checker-qual",
+                "version": "3.12.0",
+              },
+              "id": "org.checkerframework:checker-qual:3.12.0",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :",
+                "path": ":",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:org.checkerframework:checker-qual:3.12.0",
+          "locator": "org.checkerframework:checker-qual:3.12.0",
+          "purl": "pkg:maven/org.checkerframework/checker-qual@3.12.0",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "org.slf4j",
+                "module": "slf4j-api",
+                "version": "2.0.7",
+              },
+              "id": "org.slf4j:slf4j-api:2.0.7",
+              "isDirect": true,
+              "isProject": false,
+              "origin": {
+                "id": "project :",
+                "path": ":",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:org.slf4j:slf4j-api:2.0.7",
+          "locator": "org.slf4j:slf4j-api:2.0.7",
+          "purl": "pkg:maven/org.slf4j/slf4j-api@2.0.7",
+        },
+        {
+          "dependencyCompleteness": "unknown",
+          "id": "root",
+          "project": {
+            "definitionFile": "build.gradle",
+            "purl": "pkg:maven/com.example/basic-example@1.0.0",
+          },
+          "purl": "pkg:maven/com.example/basic-example@1.0.0",
+        },
+      ],
+      "rootCompleteness": "unknown",
+      "roots": [
+        {
+          "id": "root",
+          "node": "root",
+          "project": {
+            "definitionFile": "build.gradle",
+            "purl": "pkg:maven/com.example/basic-example@1.0.0",
+          },
+          "scope": "runtimeClasspath",
+        },
+      ],
+      "source": {
+        "extractor": "gradle",
+        "files": [
+          "build.gradle",
+        ],
+        "key": "["project :",":","runtimeClasspath"]",
+      },
+    },
+    {
+      "attributes": {
+        "gradle:nativeScope": "Unknown",
+        "gradle:projection": "dependency-graph-snapshot",
+        "gradle:rootOrigin": {
+          "id": "project :",
+          "path": ":",
+        },
+        "gradle:variantCoverage": "unknown",
+      },
+      "edges": [
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.code.findbugs:jsr305:3.0.2",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.errorprone:error_prone_annotations:2.11.0",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.guava:failureaccess:1.0.1",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.j2objc:j2objc-annotations:1.3",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:org.checkerframework:checker-qual:3.12.0",
+        },
+        {
+          "from": "node:junit:junit:4.13.2",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:org.hamcrest:hamcrest-core:1.3",
+        },
+        {
+          "from": "root",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.guava:guava:31.1-jre",
+        },
+        {
+          "from": "root",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:junit:junit:4.13.2",
+        },
+        {
+          "from": "root",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:org.slf4j:slf4j-api:2.0.7",
+        },
+      ],
+      "id": "["gradle","build.gradle","gradle:eb922786f2beab7a693b80567fbebc0b33fd0f85e0e97af49482b18ddfb3cf8d"]",
+      "interpretation": "resolved",
+      "nodes": [
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.code.findbugs",
+                "module": "jsr305",
+                "version": "3.0.2",
+              },
+              "id": "com.google.code.findbugs:jsr305:3.0.2",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :",
+                "path": ":",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.code.findbugs:jsr305:3.0.2",
+          "locator": "com.google.code.findbugs:jsr305:3.0.2",
+          "purl": "pkg:maven/com.google.code.findbugs/jsr305@3.0.2",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.errorprone",
+                "module": "error_prone_annotations",
+                "version": "2.11.0",
+              },
+              "id": "com.google.errorprone:error_prone_annotations:2.11.0",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :",
+                "path": ":",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.errorprone:error_prone_annotations:2.11.0",
+          "locator": "com.google.errorprone:error_prone_annotations:2.11.0",
+          "purl": "pkg:maven/com.google.errorprone/error_prone_annotations@2.11.0",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.guava",
+                "module": "failureaccess",
+                "version": "1.0.1",
+              },
+              "id": "com.google.guava:failureaccess:1.0.1",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :",
+                "path": ":",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.guava:failureaccess:1.0.1",
+          "locator": "com.google.guava:failureaccess:1.0.1",
+          "purl": "pkg:maven/com.google.guava/failureaccess@1.0.1",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.guava",
+                "module": "guava",
+                "version": "31.1-jre",
+              },
+              "id": "com.google.guava:guava:31.1-jre",
+              "isDirect": true,
+              "isProject": false,
+              "origin": {
+                "id": "project :",
+                "path": ":",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.guava:guava:31.1-jre",
+          "locator": "com.google.guava:guava:31.1-jre",
+          "purl": "pkg:maven/com.google.guava/guava@31.1-jre",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.guava",
+                "module": "listenablefuture",
+                "version": "9999.0-empty-to-avoid-conflict-with-guava",
+              },
+              "id": "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :",
+                "path": ":",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+          "locator": "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+          "purl": "pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.j2objc",
+                "module": "j2objc-annotations",
+                "version": "1.3",
+              },
+              "id": "com.google.j2objc:j2objc-annotations:1.3",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :",
+                "path": ":",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.j2objc:j2objc-annotations:1.3",
+          "locator": "com.google.j2objc:j2objc-annotations:1.3",
+          "purl": "pkg:maven/com.google.j2objc/j2objc-annotations@1.3",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "junit",
+                "module": "junit",
+                "version": "4.13.2",
+              },
+              "id": "junit:junit:4.13.2",
+              "isDirect": true,
+              "isProject": false,
+              "origin": {
+                "id": "project :",
+                "path": ":",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:junit:junit:4.13.2",
+          "locator": "junit:junit:4.13.2",
+          "purl": "pkg:maven/junit/junit@4.13.2",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "org.checkerframework",
+                "module": "checker-qual",
+                "version": "3.12.0",
+              },
+              "id": "org.checkerframework:checker-qual:3.12.0",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :",
+                "path": ":",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:org.checkerframework:checker-qual:3.12.0",
+          "locator": "org.checkerframework:checker-qual:3.12.0",
+          "purl": "pkg:maven/org.checkerframework/checker-qual@3.12.0",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "org.hamcrest",
+                "module": "hamcrest-core",
+                "version": "1.3",
+              },
+              "id": "org.hamcrest:hamcrest-core:1.3",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :",
+                "path": ":",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:org.hamcrest:hamcrest-core:1.3",
+          "locator": "org.hamcrest:hamcrest-core:1.3",
+          "purl": "pkg:maven/org.hamcrest/hamcrest-core@1.3",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "org.slf4j",
+                "module": "slf4j-api",
+                "version": "2.0.7",
+              },
+              "id": "org.slf4j:slf4j-api:2.0.7",
+              "isDirect": true,
+              "isProject": false,
+              "origin": {
+                "id": "project :",
+                "path": ":",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:org.slf4j:slf4j-api:2.0.7",
+          "locator": "org.slf4j:slf4j-api:2.0.7",
+          "purl": "pkg:maven/org.slf4j/slf4j-api@2.0.7",
+        },
+        {
+          "dependencyCompleteness": "unknown",
+          "id": "root",
+          "project": {
+            "definitionFile": "build.gradle",
+            "purl": "pkg:maven/com.example/basic-example@1.0.0",
+          },
+          "purl": "pkg:maven/com.example/basic-example@1.0.0",
+        },
+      ],
+      "rootCompleteness": "unknown",
+      "roots": [
+        {
+          "id": "root",
+          "node": "root",
+          "project": {
+            "definitionFile": "build.gradle",
+            "purl": "pkg:maven/com.example/basic-example@1.0.0",
+          },
+          "scope": "testRuntimeClasspath",
+        },
+      ],
+      "source": {
+        "extractor": "gradle",
+        "files": [
+          "build.gradle",
+        ],
+        "key": "["project :",":","testRuntimeClasspath"]",
+      },
+    },
+    {
+      "attributes": {
+        "gradle:nativeScope": "Unknown",
+        "gradle:projection": "dependency-graph-snapshot",
+        "gradle:rootOrigin": {
+          "id": "project :",
+          "path": ":",
+        },
+        "gradle:variantCoverage": "unknown",
+      },
+      "edges": [
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.code.findbugs:jsr305:3.0.2",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.errorprone:error_prone_annotations:2.11.0",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.guava:failureaccess:1.0.1",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.j2objc:j2objc-annotations:1.3",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:org.checkerframework:checker-qual:3.12.0",
+        },
+        {
+          "from": "root",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.guava:guava:31.1-jre",
+        },
+        {
+          "from": "root",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:org.slf4j:slf4j-api:2.0.7",
+        },
+      ],
+      "id": "["gradle","build.gradle","gradle:f353bda882778d85711327f22f6efaad1110d762f2c1db2bee43e9267c43e46f"]",
+      "interpretation": "resolved",
+      "nodes": [
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.code.findbugs",
+                "module": "jsr305",
+                "version": "3.0.2",
+              },
+              "id": "com.google.code.findbugs:jsr305:3.0.2",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :",
+                "path": ":",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.code.findbugs:jsr305:3.0.2",
+          "locator": "com.google.code.findbugs:jsr305:3.0.2",
+          "purl": "pkg:maven/com.google.code.findbugs/jsr305@3.0.2",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.errorprone",
+                "module": "error_prone_annotations",
+                "version": "2.11.0",
+              },
+              "id": "com.google.errorprone:error_prone_annotations:2.11.0",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :",
+                "path": ":",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.errorprone:error_prone_annotations:2.11.0",
+          "locator": "com.google.errorprone:error_prone_annotations:2.11.0",
+          "purl": "pkg:maven/com.google.errorprone/error_prone_annotations@2.11.0",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.guava",
+                "module": "failureaccess",
+                "version": "1.0.1",
+              },
+              "id": "com.google.guava:failureaccess:1.0.1",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :",
+                "path": ":",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.guava:failureaccess:1.0.1",
+          "locator": "com.google.guava:failureaccess:1.0.1",
+          "purl": "pkg:maven/com.google.guava/failureaccess@1.0.1",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.guava",
+                "module": "guava",
+                "version": "31.1-jre",
+              },
+              "id": "com.google.guava:guava:31.1-jre",
+              "isDirect": true,
+              "isProject": false,
+              "origin": {
+                "id": "project :",
+                "path": ":",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.guava:guava:31.1-jre",
+          "locator": "com.google.guava:guava:31.1-jre",
+          "purl": "pkg:maven/com.google.guava/guava@31.1-jre",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.guava",
+                "module": "listenablefuture",
+                "version": "9999.0-empty-to-avoid-conflict-with-guava",
+              },
+              "id": "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :",
+                "path": ":",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+          "locator": "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+          "purl": "pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.j2objc",
+                "module": "j2objc-annotations",
+                "version": "1.3",
+              },
+              "id": "com.google.j2objc:j2objc-annotations:1.3",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :",
+                "path": ":",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.j2objc:j2objc-annotations:1.3",
+          "locator": "com.google.j2objc:j2objc-annotations:1.3",
+          "purl": "pkg:maven/com.google.j2objc/j2objc-annotations@1.3",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "org.checkerframework",
+                "module": "checker-qual",
+                "version": "3.12.0",
+              },
+              "id": "org.checkerframework:checker-qual:3.12.0",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :",
+                "path": ":",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:org.checkerframework:checker-qual:3.12.0",
+          "locator": "org.checkerframework:checker-qual:3.12.0",
+          "purl": "pkg:maven/org.checkerframework/checker-qual@3.12.0",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "org.slf4j",
+                "module": "slf4j-api",
+                "version": "2.0.7",
+              },
+              "id": "org.slf4j:slf4j-api:2.0.7",
+              "isDirect": true,
+              "isProject": false,
+              "origin": {
+                "id": "project :",
+                "path": ":",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:org.slf4j:slf4j-api:2.0.7",
+          "locator": "org.slf4j:slf4j-api:2.0.7",
+          "purl": "pkg:maven/org.slf4j/slf4j-api@2.0.7",
+        },
+        {
+          "dependencyCompleteness": "unknown",
+          "id": "root",
+          "project": {
+            "definitionFile": "build.gradle",
+            "purl": "pkg:maven/com.example/basic-example@1.0.0",
+          },
+          "purl": "pkg:maven/com.example/basic-example@1.0.0",
+        },
+      ],
+      "rootCompleteness": "unknown",
+      "roots": [
+        {
+          "id": "root",
+          "node": "root",
+          "project": {
+            "definitionFile": "build.gradle",
+            "purl": "pkg:maven/com.example/basic-example@1.0.0",
+          },
+          "scope": "compileClasspath",
+        },
+      ],
+      "source": {
+        "extractor": "gradle",
+        "files": [
+          "build.gradle",
+        ],
+        "key": "["project :",":","compileClasspath"]",
+      },
+    },
+  ],
   "issues": [],
   "packages": [
     {
@@ -65,244 +1329,1873 @@ exports[`basic 1`] = `
       "purl": "pkg:maven/org.slf4j/slf4j-api@2.0.7",
     },
   ],
-  "relationships": [
-    {
-      "from": "pkg:maven/com.google.guava/guava@31.1-jre",
-      "to": [
-        "pkg:maven/com.google.code.findbugs/jsr305@3.0.2",
-        "pkg:maven/com.google.errorprone/error_prone_annotations@2.11.0",
-        "pkg:maven/com.google.guava/failureaccess@1.0.1",
-        "pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava",
-        "pkg:maven/com.google.j2objc/j2objc-annotations@1.3",
-        "pkg:maven/org.checkerframework/checker-qual@3.12.0",
-      ],
-    },
-    {
-      "from": "pkg:maven/junit/junit@4.13.2",
-      "to": [
-        "pkg:maven/org.hamcrest/hamcrest-core@1.3",
-      ],
-    },
-  ],
   "subprojects": [
     {
       "definitionFile": "build.gradle",
       "purl": "pkg:maven/com.example/basic-example@1.0.0",
-      "scopes": [
-        {
-          "packages": [
-            "pkg:maven/com.google.guava/guava@31.1-jre",
-            "pkg:maven/org.slf4j/slf4j-api@2.0.7",
-          ],
-          "scope": "compileClasspath",
-        },
-        {
-          "packages": [
-            "pkg:maven/com.google.guava/guava@31.1-jre",
-            "pkg:maven/org.slf4j/slf4j-api@2.0.7",
-          ],
-          "scope": "runtimeClasspath",
-        },
-        {
-          "packages": [
-            "pkg:maven/com.google.guava/guava@31.1-jre",
-            "pkg:maven/junit/junit@4.13.2",
-            "pkg:maven/org.slf4j/slf4j-api@2.0.7",
-          ],
-          "scope": "testCompileClasspath",
-        },
-        {
-          "packages": [
-            "pkg:maven/com.google.guava/guava@31.1-jre",
-            "pkg:maven/junit/junit@4.13.2",
-            "pkg:maven/org.slf4j/slf4j-api@2.0.7",
-          ],
-          "scope": "testRuntimeClasspath",
-        },
-      ],
     },
   ],
 }
 `;
 
-exports[`multimodule 1`] = `
+exports[`native Gradle extraction: multimodule 1`] = `
 {
-  "issues": [
+  "codebase": "fixture:multimodule",
+  "formatVersion": 2,
+  "graphs": [
     {
-      "code": "gradle.project_group_missing",
-      "file": "buildSrc/build.gradle",
-      "message": "Gradle project ':buildSrc' does not declare a group, using a generic PURL instead of a Maven PURL",
-      "severity": "WARNING",
+      "attributes": {
+        "gradle:nativeScope": "Unknown",
+        "gradle:projection": "dependency-graph-snapshot",
+        "gradle:rootOrigin": {
+          "id": "project :buildSrc",
+          "path": ":buildSrc",
+        },
+        "gradle:variantCoverage": "unknown",
+      },
+      "edges": [
+        {
+          "from": "root",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:org.apache.commons:commons-lang3:3.14.0",
+        },
+      ],
+      "id": "["gradle","build.gradle","gradle:120bbb70979091ef1fd15a570dfef5e80090ae2ff2d4d6f63e45ff642201ff07"]",
+      "interpretation": "resolved",
+      "nodes": [
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "org.apache.commons",
+                "module": "commons-lang3",
+                "version": "3.14.0",
+              },
+              "id": "org.apache.commons:commons-lang3:3.14.0",
+              "isDirect": true,
+              "isProject": false,
+              "origin": {
+                "id": "project :buildSrc",
+                "path": ":buildSrc",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:org.apache.commons:commons-lang3:3.14.0",
+          "locator": "org.apache.commons:commons-lang3:3.14.0",
+          "purl": "pkg:maven/org.apache.commons/commons-lang3@3.14.0",
+        },
+        {
+          "dependencyCompleteness": "unknown",
+          "id": "root",
+          "project": {
+            "definitionFile": "buildSrc/build.gradle",
+            "purl": "pkg:generic/buildSrc",
+          },
+          "purl": "pkg:generic/buildSrc",
+        },
+      ],
+      "rootCompleteness": "unknown",
+      "roots": [
+        {
+          "id": "root",
+          "node": "root",
+          "project": {
+            "definitionFile": "buildSrc/build.gradle",
+            "purl": "pkg:generic/buildSrc",
+          },
+          "scope": "buildScriptClasspath",
+        },
+      ],
+      "source": {
+        "extractor": "gradle",
+        "files": [
+          "build.gradle",
+        ],
+        "key": "["project :buildSrc",":buildSrc","buildScriptClasspath"]",
+      },
+    },
+    {
+      "attributes": {
+        "gradle:nativeScope": "Unknown",
+        "gradle:projection": "dependency-graph-snapshot",
+        "gradle:rootOrigin": {
+          "id": "project :lib",
+          "path": ":lib",
+        },
+        "gradle:variantCoverage": "unknown",
+      },
+      "edges": [
+        {
+          "from": "root",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:org.slf4j:slf4j-api:2.0.7",
+        },
+      ],
+      "id": "["gradle","build.gradle","gradle:15cc644dd631bf9f83553cf5e547d5dc47174c54b2633542f9a913618889ef8a"]",
+      "interpretation": "resolved",
+      "nodes": [
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "org.slf4j",
+                "module": "slf4j-api",
+                "version": "2.0.7",
+              },
+              "id": "org.slf4j:slf4j-api:2.0.7",
+              "isDirect": true,
+              "isProject": false,
+              "origin": {
+                "id": "project :lib",
+                "path": ":lib",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:org.slf4j:slf4j-api:2.0.7",
+          "locator": "org.slf4j:slf4j-api:2.0.7",
+          "purl": "pkg:maven/org.slf4j/slf4j-api@2.0.7",
+        },
+        {
+          "dependencyCompleteness": "unknown",
+          "id": "root",
+          "project": {
+            "definitionFile": "lib/build.gradle",
+            "purl": "pkg:maven/multimodule-example/lib",
+          },
+          "purl": "pkg:maven/multimodule-example/lib",
+        },
+      ],
+      "rootCompleteness": "unknown",
+      "roots": [
+        {
+          "id": "root",
+          "node": "root",
+          "project": {
+            "definitionFile": "lib/build.gradle",
+            "purl": "pkg:maven/multimodule-example/lib",
+          },
+          "scope": "runtimeClasspath",
+        },
+      ],
+      "source": {
+        "extractor": "gradle",
+        "files": [
+          "build.gradle",
+        ],
+        "key": "["project :lib",":lib","runtimeClasspath"]",
+      },
+    },
+    {
+      "attributes": {
+        "gradle:nativeScope": "Unknown",
+        "gradle:projection": "dependency-graph-snapshot",
+        "gradle:rootOrigin": {
+          "id": "project :app",
+          "path": ":app",
+        },
+        "gradle:variantCoverage": "unknown",
+      },
+      "edges": [
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.code.findbugs:jsr305:3.0.2",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.errorprone:error_prone_annotations:2.11.0",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.guava:failureaccess:1.0.1",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.j2objc:j2objc-annotations:1.3",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:org.checkerframework:checker-qual:3.12.0",
+        },
+        {
+          "from": "node:project :lib",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:org.slf4j:slf4j-api:2.0.7",
+        },
+        {
+          "from": "root",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.guava:guava:31.1-jre",
+        },
+        {
+          "from": "root",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:org.slf4j:slf4j-api:2.0.7",
+        },
+        {
+          "from": "root",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:project :lib",
+        },
+      ],
+      "id": "["gradle","build.gradle","gradle:21012bed54d9cb452e53429b5fa33a9cbfa3e879531bec1aa1d3e1c49c1d8fb8"]",
+      "interpretation": "resolved",
+      "nodes": [
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.code.findbugs",
+                "module": "jsr305",
+                "version": "3.0.2",
+              },
+              "id": "com.google.code.findbugs:jsr305:3.0.2",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :app",
+                "path": ":app",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.code.findbugs:jsr305:3.0.2",
+          "locator": "com.google.code.findbugs:jsr305:3.0.2",
+          "purl": "pkg:maven/com.google.code.findbugs/jsr305@3.0.2",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.errorprone",
+                "module": "error_prone_annotations",
+                "version": "2.11.0",
+              },
+              "id": "com.google.errorprone:error_prone_annotations:2.11.0",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :app",
+                "path": ":app",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.errorprone:error_prone_annotations:2.11.0",
+          "locator": "com.google.errorprone:error_prone_annotations:2.11.0",
+          "purl": "pkg:maven/com.google.errorprone/error_prone_annotations@2.11.0",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.guava",
+                "module": "failureaccess",
+                "version": "1.0.1",
+              },
+              "id": "com.google.guava:failureaccess:1.0.1",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :app",
+                "path": ":app",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.guava:failureaccess:1.0.1",
+          "locator": "com.google.guava:failureaccess:1.0.1",
+          "purl": "pkg:maven/com.google.guava/failureaccess@1.0.1",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.guava",
+                "module": "guava",
+                "version": "31.1-jre",
+              },
+              "id": "com.google.guava:guava:31.1-jre",
+              "isDirect": true,
+              "isProject": false,
+              "origin": {
+                "id": "project :app",
+                "path": ":app",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.guava:guava:31.1-jre",
+          "locator": "com.google.guava:guava:31.1-jre",
+          "purl": "pkg:maven/com.google.guava/guava@31.1-jre",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.guava",
+                "module": "listenablefuture",
+                "version": "9999.0-empty-to-avoid-conflict-with-guava",
+              },
+              "id": "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :app",
+                "path": ":app",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+          "locator": "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+          "purl": "pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.j2objc",
+                "module": "j2objc-annotations",
+                "version": "1.3",
+              },
+              "id": "com.google.j2objc:j2objc-annotations:1.3",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :app",
+                "path": ":app",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.j2objc:j2objc-annotations:1.3",
+          "locator": "com.google.j2objc:j2objc-annotations:1.3",
+          "purl": "pkg:maven/com.google.j2objc/j2objc-annotations@1.3",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "org.checkerframework",
+                "module": "checker-qual",
+                "version": "3.12.0",
+              },
+              "id": "org.checkerframework:checker-qual:3.12.0",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :app",
+                "path": ":app",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:org.checkerframework:checker-qual:3.12.0",
+          "locator": "org.checkerframework:checker-qual:3.12.0",
+          "purl": "pkg:maven/org.checkerframework/checker-qual@3.12.0",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "org.slf4j",
+                "module": "slf4j-api",
+                "version": "2.0.7",
+              },
+              "id": "org.slf4j:slf4j-api:2.0.7",
+              "isDirect": true,
+              "isProject": false,
+              "origin": {
+                "id": "project :lib",
+                "path": ":lib",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:org.slf4j:slf4j-api:2.0.7",
+          "locator": "org.slf4j:slf4j-api:2.0.7",
+          "purl": "pkg:maven/org.slf4j/slf4j-api@2.0.7",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "multimodule-example",
+                "module": "lib",
+                "version": "unspecified",
+              },
+              "id": "project :lib",
+              "isDirect": true,
+              "isProject": true,
+              "origin": {
+                "id": "project :app",
+                "path": ":app",
+              },
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:project :lib",
+          "locator": "project :lib",
+          "purl": "pkg:maven/multimodule-example/lib",
+        },
+        {
+          "dependencyCompleteness": "unknown",
+          "id": "root",
+          "project": {
+            "definitionFile": "app/build.gradle",
+            "purl": "pkg:maven/multimodule-example/app",
+          },
+          "purl": "pkg:maven/multimodule-example/app",
+        },
+      ],
+      "rootCompleteness": "unknown",
+      "roots": [
+        {
+          "id": "root",
+          "node": "root",
+          "project": {
+            "definitionFile": "app/build.gradle",
+            "purl": "pkg:maven/multimodule-example/app",
+          },
+          "scope": "runtimeClasspath",
+        },
+      ],
+      "source": {
+        "extractor": "gradle",
+        "files": [
+          "build.gradle",
+        ],
+        "key": "["project :app",":app","runtimeClasspath"]",
+      },
+    },
+    {
+      "attributes": {
+        "gradle:nativeScope": "Unknown",
+        "gradle:projection": "dependency-graph-snapshot",
+        "gradle:rootOrigin": {
+          "id": "project :lib",
+          "path": ":lib",
+        },
+        "gradle:variantCoverage": "unknown",
+      },
+      "edges": [
+        {
+          "from": "root",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:org.slf4j:slf4j-api:2.0.7",
+        },
+      ],
+      "id": "["gradle","build.gradle","gradle:4f557e5435e3a86395891eff3b2b988d025d319ac513bec4eeeee040c80afe0f"]",
+      "interpretation": "resolved",
+      "nodes": [
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "org.slf4j",
+                "module": "slf4j-api",
+                "version": "2.0.7",
+              },
+              "id": "org.slf4j:slf4j-api:2.0.7",
+              "isDirect": true,
+              "isProject": false,
+              "origin": {
+                "id": "project :lib",
+                "path": ":lib",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:org.slf4j:slf4j-api:2.0.7",
+          "locator": "org.slf4j:slf4j-api:2.0.7",
+          "purl": "pkg:maven/org.slf4j/slf4j-api@2.0.7",
+        },
+        {
+          "dependencyCompleteness": "unknown",
+          "id": "root",
+          "project": {
+            "definitionFile": "lib/build.gradle",
+            "purl": "pkg:maven/multimodule-example/lib",
+          },
+          "purl": "pkg:maven/multimodule-example/lib",
+        },
+      ],
+      "rootCompleteness": "unknown",
+      "roots": [
+        {
+          "id": "root",
+          "node": "root",
+          "project": {
+            "definitionFile": "lib/build.gradle",
+            "purl": "pkg:maven/multimodule-example/lib",
+          },
+          "scope": "testRuntimeClasspath",
+        },
+      ],
+      "source": {
+        "extractor": "gradle",
+        "files": [
+          "build.gradle",
+        ],
+        "key": "["project :lib",":lib","testRuntimeClasspath"]",
+      },
+    },
+    {
+      "attributes": {
+        "gradle:nativeScope": "Unknown",
+        "gradle:projection": "dependency-graph-snapshot",
+        "gradle:rootOrigin": {
+          "id": "build :",
+          "path": ":",
+        },
+        "gradle:variantCoverage": "unknown",
+      },
+      "edges": [],
+      "id": "["gradle","build.gradle","gradle:7ab5f52ae4858169834a7d1c25c2cda066f94b02ec1f4919b6029781b980db22"]",
+      "interpretation": "resolved",
+      "nodes": [
+        {
+          "dependencyCompleteness": "unknown",
+          "id": "root",
+          "project": {
+            "definitionFile": "build.gradle",
+            "purl": "pkg:maven/com.example/multimodule-example@1.0.0",
+          },
+          "purl": "pkg:maven/com.example/multimodule-example@1.0.0",
+        },
+      ],
+      "rootCompleteness": "unknown",
+      "roots": [
+        {
+          "id": "root",
+          "node": "root",
+          "project": {
+            "definitionFile": "build.gradle",
+            "purl": "pkg:maven/com.example/multimodule-example@1.0.0",
+          },
+          "scope": "classpath",
+        },
+      ],
+      "source": {
+        "extractor": "gradle",
+        "files": [
+          "build.gradle",
+        ],
+        "key": "["build :",":","classpath"]",
+      },
+    },
+    {
+      "attributes": {
+        "gradle:nativeScope": "Unknown",
+        "gradle:projection": "dependency-graph-snapshot",
+        "gradle:rootOrigin": {
+          "id": "project :app",
+          "path": ":app",
+        },
+        "gradle:variantCoverage": "unknown",
+      },
+      "edges": [
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.code.findbugs:jsr305:3.0.2",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.errorprone:error_prone_annotations:2.11.0",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.guava:failureaccess:1.0.1",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.j2objc:j2objc-annotations:1.3",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:org.checkerframework:checker-qual:3.12.0",
+        },
+        {
+          "from": "root",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.guava:guava:31.1-jre",
+        },
+        {
+          "from": "root",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:project :lib",
+        },
+      ],
+      "id": "["gradle","build.gradle","gradle:a2f1a00693d5bd2690bede184276db5a69d088bf1eb3e5c87b7d4b9f8cd7c318"]",
+      "interpretation": "resolved",
+      "nodes": [
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.code.findbugs",
+                "module": "jsr305",
+                "version": "3.0.2",
+              },
+              "id": "com.google.code.findbugs:jsr305:3.0.2",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :app",
+                "path": ":app",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.code.findbugs:jsr305:3.0.2",
+          "locator": "com.google.code.findbugs:jsr305:3.0.2",
+          "purl": "pkg:maven/com.google.code.findbugs/jsr305@3.0.2",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.errorprone",
+                "module": "error_prone_annotations",
+                "version": "2.11.0",
+              },
+              "id": "com.google.errorprone:error_prone_annotations:2.11.0",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :app",
+                "path": ":app",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.errorprone:error_prone_annotations:2.11.0",
+          "locator": "com.google.errorprone:error_prone_annotations:2.11.0",
+          "purl": "pkg:maven/com.google.errorprone/error_prone_annotations@2.11.0",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.guava",
+                "module": "failureaccess",
+                "version": "1.0.1",
+              },
+              "id": "com.google.guava:failureaccess:1.0.1",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :app",
+                "path": ":app",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.guava:failureaccess:1.0.1",
+          "locator": "com.google.guava:failureaccess:1.0.1",
+          "purl": "pkg:maven/com.google.guava/failureaccess@1.0.1",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.guava",
+                "module": "guava",
+                "version": "31.1-jre",
+              },
+              "id": "com.google.guava:guava:31.1-jre",
+              "isDirect": true,
+              "isProject": false,
+              "origin": {
+                "id": "project :app",
+                "path": ":app",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.guava:guava:31.1-jre",
+          "locator": "com.google.guava:guava:31.1-jre",
+          "purl": "pkg:maven/com.google.guava/guava@31.1-jre",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.guava",
+                "module": "listenablefuture",
+                "version": "9999.0-empty-to-avoid-conflict-with-guava",
+              },
+              "id": "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :app",
+                "path": ":app",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+          "locator": "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+          "purl": "pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.j2objc",
+                "module": "j2objc-annotations",
+                "version": "1.3",
+              },
+              "id": "com.google.j2objc:j2objc-annotations:1.3",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :app",
+                "path": ":app",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.j2objc:j2objc-annotations:1.3",
+          "locator": "com.google.j2objc:j2objc-annotations:1.3",
+          "purl": "pkg:maven/com.google.j2objc/j2objc-annotations@1.3",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "org.checkerframework",
+                "module": "checker-qual",
+                "version": "3.12.0",
+              },
+              "id": "org.checkerframework:checker-qual:3.12.0",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :app",
+                "path": ":app",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:org.checkerframework:checker-qual:3.12.0",
+          "locator": "org.checkerframework:checker-qual:3.12.0",
+          "purl": "pkg:maven/org.checkerframework/checker-qual@3.12.0",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "multimodule-example",
+                "module": "lib",
+                "version": "unspecified",
+              },
+              "id": "project :lib",
+              "isDirect": true,
+              "isProject": true,
+              "origin": {
+                "id": "project :app",
+                "path": ":app",
+              },
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:project :lib",
+          "locator": "project :lib",
+          "purl": "pkg:maven/multimodule-example/lib",
+        },
+        {
+          "dependencyCompleteness": "unknown",
+          "id": "root",
+          "project": {
+            "definitionFile": "app/build.gradle",
+            "purl": "pkg:maven/multimodule-example/app",
+          },
+          "purl": "pkg:maven/multimodule-example/app",
+        },
+      ],
+      "rootCompleteness": "unknown",
+      "roots": [
+        {
+          "id": "root",
+          "node": "root",
+          "project": {
+            "definitionFile": "app/build.gradle",
+            "purl": "pkg:maven/multimodule-example/app",
+          },
+          "scope": "compileClasspath",
+        },
+      ],
+      "source": {
+        "extractor": "gradle",
+        "files": [
+          "build.gradle",
+        ],
+        "key": "["project :app",":app","compileClasspath"]",
+      },
+    },
+    {
+      "attributes": {
+        "gradle:nativeScope": "Unknown",
+        "gradle:projection": "dependency-graph-snapshot",
+        "gradle:rootOrigin": {
+          "id": "project :lib",
+          "path": ":lib",
+        },
+        "gradle:variantCoverage": "unknown",
+      },
+      "edges": [
+        {
+          "from": "root",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:org.slf4j:slf4j-api:2.0.7",
+        },
+      ],
+      "id": "["gradle","build.gradle","gradle:a4e44fb82ad8f77f2c3aded0c68c504345cb6853d2dfc4fca368d75b55d9b0ee"]",
+      "interpretation": "resolved",
+      "nodes": [
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "org.slf4j",
+                "module": "slf4j-api",
+                "version": "2.0.7",
+              },
+              "id": "org.slf4j:slf4j-api:2.0.7",
+              "isDirect": true,
+              "isProject": false,
+              "origin": {
+                "id": "project :lib",
+                "path": ":lib",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:org.slf4j:slf4j-api:2.0.7",
+          "locator": "org.slf4j:slf4j-api:2.0.7",
+          "purl": "pkg:maven/org.slf4j/slf4j-api@2.0.7",
+        },
+        {
+          "dependencyCompleteness": "unknown",
+          "id": "root",
+          "project": {
+            "definitionFile": "lib/build.gradle",
+            "purl": "pkg:maven/multimodule-example/lib",
+          },
+          "purl": "pkg:maven/multimodule-example/lib",
+        },
+      ],
+      "rootCompleteness": "unknown",
+      "roots": [
+        {
+          "id": "root",
+          "node": "root",
+          "project": {
+            "definitionFile": "lib/build.gradle",
+            "purl": "pkg:maven/multimodule-example/lib",
+          },
+          "scope": "compileClasspath",
+        },
+      ],
+      "source": {
+        "extractor": "gradle",
+        "files": [
+          "build.gradle",
+        ],
+        "key": "["project :lib",":lib","compileClasspath"]",
+      },
+    },
+    {
+      "attributes": {
+        "gradle:nativeScope": "Unknown",
+        "gradle:projection": "dependency-graph-snapshot",
+        "gradle:rootOrigin": {
+          "id": "project :app",
+          "path": ":app",
+        },
+        "gradle:variantCoverage": "unknown",
+      },
+      "edges": [
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.code.findbugs:jsr305:3.0.2",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.errorprone:error_prone_annotations:2.11.0",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.guava:failureaccess:1.0.1",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.j2objc:j2objc-annotations:1.3",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:org.checkerframework:checker-qual:3.12.0",
+        },
+        {
+          "from": "node:junit:junit:4.13.2",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:org.hamcrest:hamcrest-core:1.3",
+        },
+        {
+          "from": "node:project :lib",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:org.slf4j:slf4j-api:2.0.7",
+        },
+        {
+          "from": "root",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.guava:guava:31.1-jre",
+        },
+        {
+          "from": "root",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:junit:junit:4.13.2",
+        },
+        {
+          "from": "root",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:org.slf4j:slf4j-api:2.0.7",
+        },
+        {
+          "from": "root",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:project :lib",
+        },
+      ],
+      "id": "["gradle","build.gradle","gradle:ac1bc26f87a0be9de2177a2cd092a4396ecff841239bd515db5e1cdded65e4f9"]",
+      "interpretation": "resolved",
+      "nodes": [
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.code.findbugs",
+                "module": "jsr305",
+                "version": "3.0.2",
+              },
+              "id": "com.google.code.findbugs:jsr305:3.0.2",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :app",
+                "path": ":app",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.code.findbugs:jsr305:3.0.2",
+          "locator": "com.google.code.findbugs:jsr305:3.0.2",
+          "purl": "pkg:maven/com.google.code.findbugs/jsr305@3.0.2",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.errorprone",
+                "module": "error_prone_annotations",
+                "version": "2.11.0",
+              },
+              "id": "com.google.errorprone:error_prone_annotations:2.11.0",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :app",
+                "path": ":app",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.errorprone:error_prone_annotations:2.11.0",
+          "locator": "com.google.errorprone:error_prone_annotations:2.11.0",
+          "purl": "pkg:maven/com.google.errorprone/error_prone_annotations@2.11.0",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.guava",
+                "module": "failureaccess",
+                "version": "1.0.1",
+              },
+              "id": "com.google.guava:failureaccess:1.0.1",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :app",
+                "path": ":app",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.guava:failureaccess:1.0.1",
+          "locator": "com.google.guava:failureaccess:1.0.1",
+          "purl": "pkg:maven/com.google.guava/failureaccess@1.0.1",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.guava",
+                "module": "guava",
+                "version": "31.1-jre",
+              },
+              "id": "com.google.guava:guava:31.1-jre",
+              "isDirect": true,
+              "isProject": false,
+              "origin": {
+                "id": "project :app",
+                "path": ":app",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.guava:guava:31.1-jre",
+          "locator": "com.google.guava:guava:31.1-jre",
+          "purl": "pkg:maven/com.google.guava/guava@31.1-jre",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.guava",
+                "module": "listenablefuture",
+                "version": "9999.0-empty-to-avoid-conflict-with-guava",
+              },
+              "id": "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :app",
+                "path": ":app",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+          "locator": "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+          "purl": "pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.j2objc",
+                "module": "j2objc-annotations",
+                "version": "1.3",
+              },
+              "id": "com.google.j2objc:j2objc-annotations:1.3",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :app",
+                "path": ":app",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.j2objc:j2objc-annotations:1.3",
+          "locator": "com.google.j2objc:j2objc-annotations:1.3",
+          "purl": "pkg:maven/com.google.j2objc/j2objc-annotations@1.3",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "junit",
+                "module": "junit",
+                "version": "4.13.2",
+              },
+              "id": "junit:junit:4.13.2",
+              "isDirect": true,
+              "isProject": false,
+              "origin": {
+                "id": "project :app",
+                "path": ":app",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:junit:junit:4.13.2",
+          "locator": "junit:junit:4.13.2",
+          "purl": "pkg:maven/junit/junit@4.13.2",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "org.checkerframework",
+                "module": "checker-qual",
+                "version": "3.12.0",
+              },
+              "id": "org.checkerframework:checker-qual:3.12.0",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :app",
+                "path": ":app",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:org.checkerframework:checker-qual:3.12.0",
+          "locator": "org.checkerframework:checker-qual:3.12.0",
+          "purl": "pkg:maven/org.checkerframework/checker-qual@3.12.0",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "org.hamcrest",
+                "module": "hamcrest-core",
+                "version": "1.3",
+              },
+              "id": "org.hamcrest:hamcrest-core:1.3",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :app",
+                "path": ":app",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:org.hamcrest:hamcrest-core:1.3",
+          "locator": "org.hamcrest:hamcrest-core:1.3",
+          "purl": "pkg:maven/org.hamcrest/hamcrest-core@1.3",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "org.slf4j",
+                "module": "slf4j-api",
+                "version": "2.0.7",
+              },
+              "id": "org.slf4j:slf4j-api:2.0.7",
+              "isDirect": true,
+              "isProject": false,
+              "origin": {
+                "id": "project :lib",
+                "path": ":lib",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:org.slf4j:slf4j-api:2.0.7",
+          "locator": "org.slf4j:slf4j-api:2.0.7",
+          "purl": "pkg:maven/org.slf4j/slf4j-api@2.0.7",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "multimodule-example",
+                "module": "lib",
+                "version": "unspecified",
+              },
+              "id": "project :lib",
+              "isDirect": true,
+              "isProject": true,
+              "origin": {
+                "id": "project :app",
+                "path": ":app",
+              },
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:project :lib",
+          "locator": "project :lib",
+          "purl": "pkg:maven/multimodule-example/lib",
+        },
+        {
+          "dependencyCompleteness": "unknown",
+          "id": "root",
+          "project": {
+            "definitionFile": "app/build.gradle",
+            "purl": "pkg:maven/multimodule-example/app",
+          },
+          "purl": "pkg:maven/multimodule-example/app",
+        },
+      ],
+      "rootCompleteness": "unknown",
+      "roots": [
+        {
+          "id": "root",
+          "node": "root",
+          "project": {
+            "definitionFile": "app/build.gradle",
+            "purl": "pkg:maven/multimodule-example/app",
+          },
+          "scope": "testRuntimeClasspath",
+        },
+      ],
+      "source": {
+        "extractor": "gradle",
+        "files": [
+          "build.gradle",
+        ],
+        "key": "["project :app",":app","testRuntimeClasspath"]",
+      },
+    },
+    {
+      "attributes": {
+        "gradle:nativeScope": "Unknown",
+        "gradle:projection": "dependency-graph-snapshot",
+        "gradle:rootOrigin": {
+          "id": "project :lib",
+          "path": ":lib",
+        },
+        "gradle:variantCoverage": "unknown",
+      },
+      "edges": [
+        {
+          "from": "root",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:org.slf4j:slf4j-api:2.0.7",
+        },
+      ],
+      "id": "["gradle","build.gradle","gradle:c75f676c3fe10b7c444044121b9fdf87c38e42136615e2d7fa472545f800dda2"]",
+      "interpretation": "resolved",
+      "nodes": [
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "org.slf4j",
+                "module": "slf4j-api",
+                "version": "2.0.7",
+              },
+              "id": "org.slf4j:slf4j-api:2.0.7",
+              "isDirect": true,
+              "isProject": false,
+              "origin": {
+                "id": "project :lib",
+                "path": ":lib",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:org.slf4j:slf4j-api:2.0.7",
+          "locator": "org.slf4j:slf4j-api:2.0.7",
+          "purl": "pkg:maven/org.slf4j/slf4j-api@2.0.7",
+        },
+        {
+          "dependencyCompleteness": "unknown",
+          "id": "root",
+          "project": {
+            "definitionFile": "lib/build.gradle",
+            "purl": "pkg:maven/multimodule-example/lib",
+          },
+          "purl": "pkg:maven/multimodule-example/lib",
+        },
+      ],
+      "rootCompleteness": "unknown",
+      "roots": [
+        {
+          "id": "root",
+          "node": "root",
+          "project": {
+            "definitionFile": "lib/build.gradle",
+            "purl": "pkg:maven/multimodule-example/lib",
+          },
+          "scope": "testCompileClasspath",
+        },
+      ],
+      "source": {
+        "extractor": "gradle",
+        "files": [
+          "build.gradle",
+        ],
+        "key": "["project :lib",":lib","testCompileClasspath"]",
+      },
+    },
+    {
+      "attributes": {
+        "gradle:nativeScope": "Unknown",
+        "gradle:projection": "dependency-graph-snapshot",
+        "gradle:rootOrigin": {
+          "id": "project :app",
+          "path": ":app",
+        },
+        "gradle:variantCoverage": "unknown",
+      },
+      "edges": [
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.code.findbugs:jsr305:3.0.2",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.errorprone:error_prone_annotations:2.11.0",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.guava:failureaccess:1.0.1",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.j2objc:j2objc-annotations:1.3",
+        },
+        {
+          "from": "node:com.google.guava:guava:31.1-jre",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:org.checkerframework:checker-qual:3.12.0",
+        },
+        {
+          "from": "node:junit:junit:4.13.2",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:org.hamcrest:hamcrest-core:1.3",
+        },
+        {
+          "from": "root",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:com.google.guava:guava:31.1-jre",
+        },
+        {
+          "from": "root",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:junit:junit:4.13.2",
+        },
+        {
+          "from": "root",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "node:project :lib",
+        },
+      ],
+      "id": "["gradle","build.gradle","gradle:dd188d54a153ba308a252365d5447c422f749a846de2bee6fe60e7c049882f1f"]",
+      "interpretation": "resolved",
+      "nodes": [
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.code.findbugs",
+                "module": "jsr305",
+                "version": "3.0.2",
+              },
+              "id": "com.google.code.findbugs:jsr305:3.0.2",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :app",
+                "path": ":app",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.code.findbugs:jsr305:3.0.2",
+          "locator": "com.google.code.findbugs:jsr305:3.0.2",
+          "purl": "pkg:maven/com.google.code.findbugs/jsr305@3.0.2",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.errorprone",
+                "module": "error_prone_annotations",
+                "version": "2.11.0",
+              },
+              "id": "com.google.errorprone:error_prone_annotations:2.11.0",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :app",
+                "path": ":app",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.errorprone:error_prone_annotations:2.11.0",
+          "locator": "com.google.errorprone:error_prone_annotations:2.11.0",
+          "purl": "pkg:maven/com.google.errorprone/error_prone_annotations@2.11.0",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.guava",
+                "module": "failureaccess",
+                "version": "1.0.1",
+              },
+              "id": "com.google.guava:failureaccess:1.0.1",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :app",
+                "path": ":app",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.guava:failureaccess:1.0.1",
+          "locator": "com.google.guava:failureaccess:1.0.1",
+          "purl": "pkg:maven/com.google.guava/failureaccess@1.0.1",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.guava",
+                "module": "guava",
+                "version": "31.1-jre",
+              },
+              "id": "com.google.guava:guava:31.1-jre",
+              "isDirect": true,
+              "isProject": false,
+              "origin": {
+                "id": "project :app",
+                "path": ":app",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.guava:guava:31.1-jre",
+          "locator": "com.google.guava:guava:31.1-jre",
+          "purl": "pkg:maven/com.google.guava/guava@31.1-jre",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.guava",
+                "module": "listenablefuture",
+                "version": "9999.0-empty-to-avoid-conflict-with-guava",
+              },
+              "id": "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :app",
+                "path": ":app",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+          "locator": "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+          "purl": "pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "com.google.j2objc",
+                "module": "j2objc-annotations",
+                "version": "1.3",
+              },
+              "id": "com.google.j2objc:j2objc-annotations:1.3",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :app",
+                "path": ":app",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:com.google.j2objc:j2objc-annotations:1.3",
+          "locator": "com.google.j2objc:j2objc-annotations:1.3",
+          "purl": "pkg:maven/com.google.j2objc/j2objc-annotations@1.3",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "junit",
+                "module": "junit",
+                "version": "4.13.2",
+              },
+              "id": "junit:junit:4.13.2",
+              "isDirect": true,
+              "isProject": false,
+              "origin": {
+                "id": "project :app",
+                "path": ":app",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:junit:junit:4.13.2",
+          "locator": "junit:junit:4.13.2",
+          "purl": "pkg:maven/junit/junit@4.13.2",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "org.checkerframework",
+                "module": "checker-qual",
+                "version": "3.12.0",
+              },
+              "id": "org.checkerframework:checker-qual:3.12.0",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :app",
+                "path": ":app",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:org.checkerframework:checker-qual:3.12.0",
+          "locator": "org.checkerframework:checker-qual:3.12.0",
+          "purl": "pkg:maven/org.checkerframework/checker-qual@3.12.0",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "org.hamcrest",
+                "module": "hamcrest-core",
+                "version": "1.3",
+              },
+              "id": "org.hamcrest:hamcrest-core:1.3",
+              "isDirect": false,
+              "isProject": false,
+              "origin": {
+                "id": "project :app",
+                "path": ":app",
+              },
+              "repositoryUrl": "https://repo.maven.apache.org/maven2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:org.hamcrest:hamcrest-core:1.3",
+          "locator": "org.hamcrest:hamcrest-core:1.3",
+          "purl": "pkg:maven/org.hamcrest/hamcrest-core@1.3",
+        },
+        {
+          "attributes": {
+            "gradle:node": {
+              "coordinates": {
+                "group": "multimodule-example",
+                "module": "lib",
+                "version": "unspecified",
+              },
+              "id": "project :lib",
+              "isDirect": true,
+              "isProject": true,
+              "origin": {
+                "id": "project :app",
+                "path": ":app",
+              },
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "node:project :lib",
+          "locator": "project :lib",
+          "purl": "pkg:maven/multimodule-example/lib",
+        },
+        {
+          "dependencyCompleteness": "unknown",
+          "id": "root",
+          "project": {
+            "definitionFile": "app/build.gradle",
+            "purl": "pkg:maven/multimodule-example/app",
+          },
+          "purl": "pkg:maven/multimodule-example/app",
+        },
+      ],
+      "rootCompleteness": "unknown",
+      "roots": [
+        {
+          "id": "root",
+          "node": "root",
+          "project": {
+            "definitionFile": "app/build.gradle",
+            "purl": "pkg:maven/multimodule-example/app",
+          },
+          "scope": "testCompileClasspath",
+        },
+      ],
+      "source": {
+        "extractor": "gradle",
+        "files": [
+          "build.gradle",
+        ],
+        "key": "["project :app",":app","testCompileClasspath"]",
+      },
     },
   ],
+  "issues": [],
   "packages": [
     {
       "evidence": [
-        "app/build.gradle",
+        "build.gradle",
       ],
       "purl": "pkg:maven/com.google.code.findbugs/jsr305@3.0.2",
     },
     {
       "evidence": [
-        "app/build.gradle",
+        "build.gradle",
       ],
       "purl": "pkg:maven/com.google.errorprone/error_prone_annotations@2.11.0",
     },
     {
       "evidence": [
-        "app/build.gradle",
+        "build.gradle",
       ],
       "purl": "pkg:maven/com.google.guava/failureaccess@1.0.1",
     },
     {
       "evidence": [
-        "app/build.gradle",
+        "build.gradle",
       ],
       "purl": "pkg:maven/com.google.guava/guava@31.1-jre",
     },
     {
       "evidence": [
-        "app/build.gradle",
+        "build.gradle",
       ],
       "purl": "pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava",
     },
     {
       "evidence": [
-        "app/build.gradle",
+        "build.gradle",
       ],
       "purl": "pkg:maven/com.google.j2objc/j2objc-annotations@1.3",
     },
     {
       "evidence": [
-        "app/build.gradle",
+        "build.gradle",
       ],
       "purl": "pkg:maven/junit/junit@4.13.2",
     },
     {
       "evidence": [
-        "buildSrc/build.gradle",
+        "build.gradle",
+      ],
+      "purl": "pkg:maven/multimodule-example/lib",
+    },
+    {
+      "evidence": [
+        "build.gradle",
       ],
       "purl": "pkg:maven/org.apache.commons/commons-lang3@3.14.0",
     },
     {
       "evidence": [
-        "app/build.gradle",
+        "build.gradle",
       ],
       "purl": "pkg:maven/org.checkerframework/checker-qual@3.12.0",
     },
     {
       "evidence": [
-        "app/build.gradle",
+        "build.gradle",
       ],
       "purl": "pkg:maven/org.hamcrest/hamcrest-core@1.3",
     },
     {
       "evidence": [
-        "app/build.gradle",
-        "lib/build.gradle",
+        "build.gradle",
       ],
       "purl": "pkg:maven/org.slf4j/slf4j-api@2.0.7",
-    },
-  ],
-  "relationships": [
-    {
-      "from": "pkg:maven/com.google.guava/guava@31.1-jre",
-      "to": [
-        "pkg:maven/com.google.code.findbugs/jsr305@3.0.2",
-        "pkg:maven/com.google.errorprone/error_prone_annotations@2.11.0",
-        "pkg:maven/com.google.guava/failureaccess@1.0.1",
-        "pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava",
-        "pkg:maven/com.google.j2objc/j2objc-annotations@1.3",
-        "pkg:maven/org.checkerframework/checker-qual@3.12.0",
-      ],
-    },
-    {
-      "from": "pkg:maven/junit/junit@4.13.2",
-      "to": [
-        "pkg:maven/org.hamcrest/hamcrest-core@1.3",
-      ],
     },
   ],
   "subprojects": [
     {
       "definitionFile": "buildSrc/build.gradle",
-      "purl": "pkg:generic/buildSrc",
-      "scopes": [
+      "identityObservations": [
         {
-          "packages": [
-            "pkg:maven/org.apache.commons/commons-lang3@3.14.0",
-          ],
-          "scope": "buildScriptClasspath",
+          "source": {
+            "extractor": "gradle",
+            "files": [
+              "build.gradle",
+            ],
+            "key": "["project :buildSrc",":buildSrc","buildScriptClasspath"]",
+          },
+          "synthesizedPurl": true,
         },
       ],
+      "purl": "pkg:generic/buildSrc",
+    },
+    {
+      "definitionFile": "build.gradle",
+      "purl": "pkg:maven/com.example/multimodule-example@1.0.0",
     },
     {
       "definitionFile": "app/build.gradle",
       "purl": "pkg:maven/multimodule-example/app",
-      "scopes": [
-        {
-          "packages": [
-            "pkg:maven/com.google.guava/guava@31.1-jre",
-            "pkg:maven/multimodule-example/lib",
-          ],
-          "scope": "compileClasspath",
-        },
-        {
-          "packages": [
-            "pkg:maven/com.google.guava/guava@31.1-jre",
-            "pkg:maven/multimodule-example/lib",
-            "pkg:maven/org.slf4j/slf4j-api@2.0.7",
-          ],
-          "scope": "runtimeClasspath",
-        },
-        {
-          "packages": [
-            "pkg:maven/com.google.guava/guava@31.1-jre",
-            "pkg:maven/junit/junit@4.13.2",
-            "pkg:maven/multimodule-example/lib",
-          ],
-          "scope": "testCompileClasspath",
-        },
-        {
-          "packages": [
-            "pkg:maven/com.google.guava/guava@31.1-jre",
-            "pkg:maven/junit/junit@4.13.2",
-            "pkg:maven/multimodule-example/lib",
-            "pkg:maven/org.slf4j/slf4j-api@2.0.7",
-          ],
-          "scope": "testRuntimeClasspath",
-        },
-      ],
     },
     {
       "definitionFile": "lib/build.gradle",
       "purl": "pkg:maven/multimodule-example/lib",
-      "scopes": [
-        {
-          "packages": [
-            "pkg:maven/org.slf4j/slf4j-api@2.0.7",
-          ],
-          "scope": "compileClasspath",
-        },
-        {
-          "packages": [
-            "pkg:maven/org.slf4j/slf4j-api@2.0.7",
-          ],
-          "scope": "runtimeClasspath",
-        },
-        {
-          "packages": [
-            "pkg:maven/org.slf4j/slf4j-api@2.0.7",
-          ],
-          "scope": "testCompileClasspath",
-        },
-        {
-          "packages": [
-            "pkg:maven/org.slf4j/slf4j-api@2.0.7",
-          ],
-          "scope": "testRuntimeClasspath",
-        },
-      ],
     },
   ],
 }

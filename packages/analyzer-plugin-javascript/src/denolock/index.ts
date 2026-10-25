@@ -1,257 +1,200 @@
+import { dirname, join, normalize, relative } from "node:path/posix";
 import {
-  addRelationship,
-  type AnalyzerResult,
-  buildResult,
-  type DependencyScope,
-  ensurePackageExists,
-  type Extractor,
   filesExtractor,
-  initializeExtractionMaps,
+  mergeResults,
   readNormalizedTextFile,
-  readTextFile,
   scanAndMarkFiles,
-  type Subproject,
+  scanFiles,
 } from "@scatool/analyzer-core";
-import { PackageURL } from "packageurl-js";
-import { dirname, join } from "node:path/posix";
-import {
-  type DenoLockfile,
-  findLineNumber,
-  parseDenoLockfile,
-  parseJsrPackage,
-  parseNpmPackage,
-} from "./lockfile.ts";
-import { createNpmPurl } from "../npm-utils.ts";
-import type { JavaScriptOptions } from "../options.ts";
-import { optionSchema } from "../options.ts";
+import { NpmGraph, json, type NpmRecord } from "../npm-graph.ts";
+import { addManifestObservation, loadNpmManifest, table } from "../npm-manifest.ts";
+import { optionSchema, type JavaScriptOptions } from "../options.ts";
+import { DenoObservation } from "./observation.ts";
+import { observeLockedPackages, record, strings } from "./locked-packages.ts";
+import { addConfigDeclarations, createManifestReader } from "./manifests.ts";
 
-export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScriptOptions>({
+export const extractor = filesExtractor<JavaScriptOptions>({
   name: "denolock",
   version: 1,
   optionsSchema: optionSchema,
-  markFiles: async function (codebase: string, options: JavaScriptOptions) {
+  markFiles: async function (codebase, options) {
     await scanAndMarkFiles(this, codebase, "**/deno.lock", options.ignore);
   },
-  extractFile: async (file: string): Promise<AnalyzerResult> => {
-    const dir = dirname(file);
+  extractFile: async (file, options, context) => {
+    const document = record(JSON.parse(await readNormalizedTextFile(file)));
+    if (
+      !["3", "4", "5"].includes(
+        typeof document.version === "number"
+          ? String(document.version)
+          : (document.version as string),
+      )
+    )
+      throw new Error(`Unsupported Deno lockfile version: ${JSON.stringify(document.version)}`);
 
-    const { packageMap, relationshipsMap } = initializeExtractionMaps();
-    const subprojects: Subproject[] = [];
+    const version = Number(document.version);
+    const tables = version === 3 ? table(document, "packages") : document;
 
-    const lockfileContent = await readNormalizedTextFile(file);
-    const lockfile = parseDenoLockfile(lockfileContent);
+    const nativeLock = new DenoObservation(context, "locked", "native-lock");
+    const configDeclarations = new DenoObservation(
+      context,
+      "declared",
+      "current-config-declarations",
+    );
+    const packageDeclarations = new NpmGraph(context, "packagejson", "declared");
+    packageDeclarations.sourceFiles.clear();
 
-    // Process workspace subproject if deno.json exists
-    const denoJsonPath = join(dir, "deno.json");
-    const denoJsoncPath = join(dir, "deno.jsonc");
+    const { specifiers, resolveRegistryRequirement } = observeLockedPackages(nativeLock, {
+      document,
+      tables,
+      version,
+    });
 
-    let denoConfigPath: string | null = null;
+    // Current manifests add declaration observations; they do not replace the native lock graph.
+    const workspace = table(document, "workspace");
+    const members = new Map<string, NpmRecord>([
+      [".", workspace],
+      ...Object.entries(table(workspace, "members")).map(
+        ([location, value]) => [normalize(location), record(value)] as const,
+      ),
+    ]);
+
+    const { canReadManifest, loadConfig } = await createManifestReader(file, context, nativeLock);
+
+    const rootConfig = await loadConfig(".");
     try {
-      await readTextFile(denoJsonPath);
-      denoConfigPath = denoJsonPath;
-    } catch {
-      try {
-        await readTextFile(denoJsoncPath);
-        denoConfigPath = denoJsoncPath;
-      } catch {
-        // No deno config file found
-      }
-    }
+      for (const pattern of strings(rootConfig.manifest.workspace)) {
+        const location = normalize(pattern);
+        if (location === ".." || location.startsWith("../") || location.startsWith("/"))
+          throw new Error(`Deno workspace pattern is outside its lockfile directory: ${pattern}`);
 
-    // If we have a deno config, try to extract subproject info
-    if (denoConfigPath) {
-      try {
-        const denoConfigContent = await readTextFile(denoConfigPath);
-        const denoConfig = JSON.parse(denoConfigContent);
-
-        // Extract name and version from deno.json if available
-        const name = denoConfig.name || "deno-project";
-        const version = denoConfig.version || "0.0.0";
-
-        // Create PURL for the subproject (use generic type for Deno projects)
-        const purl = createPurl("generic", name, version);
-
-        // Extract dependency scopes
-        const scopes: DependencyScope[] = [];
-
-        // Process imports as dependencies
-        if (denoConfig.imports && typeof denoConfig.imports === "object") {
-          const dependencies: string[] = [];
-
-          for (const [, specifier] of Object.entries(denoConfig.imports)) {
-            if (typeof specifier === "string") {
-              // Resolve specifier to actual package
-              let depPurl: string | null = null;
-
-              if (specifier.startsWith("jsr:")) {
-                const resolved = resolveJsrSpecifier(lockfile, specifier);
-                if (resolved) {
-                  depPurl = createJsrPurl(resolved.scope, resolved.name, resolved.version);
-                }
-              } else if (specifier.startsWith("npm:")) {
-                const resolved = resolveNpmSpecifier(lockfile, specifier);
-                if (resolved) {
-                  depPurl = createNpmPurl(resolved.name, resolved.version);
-                }
-              }
-
-              if (depPurl) {
-                dependencies.push(depPurl);
-              }
-            }
-          }
-
-          if (dependencies.length > 0) {
-            scopes.push({
-              scope: "dependencies",
-              packages: dependencies,
-            });
-          }
-        }
-
-        subprojects.push({
-          purl,
-          definitionFile: denoConfigPath,
-          scopes,
-        });
-      } catch {
-        // Failed to parse deno.json
-      }
-    }
-
-    // Process JSR packages
-    if (lockfile.packages?.jsr) {
-      for (const [packageKey, packageEntry] of Object.entries(lockfile.packages.jsr)) {
-        const parsed = parseJsrPackage(packageKey);
-        if (!parsed) continue;
-
-        const { scope, name, version } = parsed;
-        const purl = createJsrPurl(scope, name, version);
-
-        // Add package with evidence
-        ensurePackageExists(packageMap, purl);
-
-        const lineNumber = findLineNumber(lockfileContent, packageKey);
-        if (lineNumber) {
-          packageMap.get(purl)!.evidence.add(`${file}#${lineNumber}`);
-        }
-
-        // Process dependencies
-        if (packageEntry.dependencies && Array.isArray(packageEntry.dependencies)) {
-          for (const dep of packageEntry.dependencies) {
-            if (typeof dep === "string") {
-              const depResolved = resolveJsrSpecifier(lockfile, dep);
-              if (depResolved) {
-                const depPurl = createJsrPurl(
-                  depResolved.scope,
-                  depResolved.name,
-                  depResolved.version,
-                );
-                addRelationship(relationshipsMap, purl, depPurl);
-                ensurePackageExists(packageMap, depPurl);
-              }
-            }
-          }
+        for (const path of await scanFiles(
+          dirname(file),
+          `${pattern}/{deno.json,deno.jsonc,package.json}`,
+          options.ignore,
+        )) {
+          const location = normalize(relative(dirname(file), dirname(path)));
+          if (!members.has(location)) members.set(location, {});
         }
       }
+    } catch (error) {
+      configDeclarations.rootCompleteness = "partial";
+      configDeclarations.result.issues.push({
+        code: "deno.workspace_declarations_failed",
+        severity: "WARNING",
+        file: rootConfig.file ?? context.relativeFile,
+        message: `Could not discover current workspace declarations: ${error instanceof Error ? error.message : String(error)}`,
+      });
     }
 
-    // Process npm packages
-    if (lockfile.packages?.npm) {
-      for (const [packageKey, packageEntry] of Object.entries(lockfile.packages.npm)) {
-        const parsed = parseNpmPackage(packageKey);
-        if (!parsed) continue;
+    const nativeLocations = new Set([
+      ".",
+      ...Object.keys(table(workspace, "members")).map((key) => normalize(key)),
+    ]);
 
-        const { name, version } = parsed;
-        const purl = createNpmPurl(name, version);
-
-        // Add package with evidence
-        ensurePackageExists(packageMap, purl);
-
-        const lineNumber = findLineNumber(lockfileContent, packageKey);
-        if (lineNumber) {
-          packageMap.get(purl)!.evidence.add(`${file}#${lineNumber}`);
+    for (const [location, member] of members) {
+      const config = await loadConfig(location);
+      const jsonManifest = (await canReadManifest(location, "package.json"))
+        ? await loadNpmManifest(
+            join(dirname(file), location, "package.json"),
+            {},
+            packageDeclarations,
+          )
+        : { manifest: {}, available: false };
+      if (jsonManifest.available) {
+        const definition = join(dirname(context.relativeFile), location, "package.json");
+        try {
+          addManifestObservation(packageDeclarations, location, definition, jsonManifest.manifest);
+        } catch (error) {
+          const project = packageDeclarations.addProject(
+            location,
+            definition,
+            jsonManifest.manifest,
+            false,
+          );
+          packageDeclarations.addRoot(project, "dependencies");
+          packageDeclarations.sourceFiles.add(definition);
+          packageDeclarations.rootCompleteness = "unknown";
+          packageDeclarations.result.issues.push({
+            code: "deno.manifest_declarations_failed",
+            severity: "WARNING",
+            file: definition,
+            message: `Could not read current package declarations: ${error instanceof Error ? error.message : String(error)}`,
+          });
         }
+      }
 
-        // Process dependencies
-        if (packageEntry.dependencies && typeof packageEntry.dependencies === "object") {
-          for (const [, depVersion] of Object.entries(packageEntry.dependencies)) {
-            if (typeof depVersion === "string") {
-              const depParsed = parseNpmPackage(depVersion);
-              if (depParsed) {
-                const depPurl = createNpmPurl(depParsed.name, depParsed.version);
-                addRelationship(relationshipsMap, purl, depPurl);
-                ensurePackageExists(packageMap, depPurl);
-              }
-            }
-          }
+      // Newly discovered current workspaces cannot invent roots in the native lock observation.
+      const nativeMember = document.workspace !== undefined && nativeLocations.has(location);
+      if (
+        nativeMember &&
+        (config.file ||
+          member.dependencies !== undefined ||
+          (!jsonManifest.available && member.packageJson === undefined))
+      ) {
+        const definition =
+          config.file ?? `${context.relativeFile}#workspace/${encodeURIComponent(location)}/deno`;
+        const project = nativeLock.project(location, "deno", config.manifest, definition);
+        const root = nativeLock.root(project, "deno:dependencies");
+
+        for (const dependency of strings(member.dependencies)) {
+          const resolved = resolveRegistryRequirement(dependency);
+          nativeLock.edge(root, resolved.request, resolved.target, "deno:dependencies");
+        }
+      }
+
+      if (nativeMember && (jsonManifest.available || member.packageJson !== undefined)) {
+        const definition = jsonManifest.available
+          ? join(dirname(context.relativeFile), location, "package.json")
+          : `${context.relativeFile}#workspace/${encodeURIComponent(location)}/packageJson`;
+        const project = nativeLock.project(location, "npm", jsonManifest.manifest, definition);
+        const root = nativeLock.root(project, "packageJson:dependencies");
+
+        for (const dependency of strings(table(member, "packageJson").dependencies)) {
+          const resolved = resolveRegistryRequirement(dependency);
+          nativeLock.edge(root, resolved.request, resolved.target, "packageJson:dependencies");
+        }
+      }
+
+      if (config.file) {
+        try {
+          // Preflight the complete declaration observation before mutating the shared builder.
+          const candidate = new DenoObservation(context, "declared", "current-config-declarations");
+          addConfigDeclarations(candidate, location, config.manifest, config.file);
+          candidate.finish();
+
+          addConfigDeclarations(configDeclarations, location, config.manifest, config.file);
+        } catch (error) {
+          const project = configDeclarations.project(
+            location,
+            "deno",
+            config.manifest,
+            config.file,
+          );
+          configDeclarations.rootCompleteness = "partial";
+          const root = configDeclarations.root(project, "imports");
+          configDeclarations.nodes.get(root)!.dependencyCompleteness = "unknown";
+          configDeclarations.result.issues.push({
+            code: "deno.config_declarations_failed",
+            severity: "WARNING",
+            file: config.file,
+            message: `Could not read current import declarations: ${error instanceof Error ? error.message : String(error)}`,
+          });
         }
       }
     }
 
-    return buildResult(packageMap, relationshipsMap, subprojects);
+    const { npm: _npm, jsr: _jsr, packages: _packages, ...remaining } = document;
+    nativeLock.attributes["deno:document"] = json(remaining);
+    nativeLock.attributes["deno:specifiers"] = json(specifiers);
+    nativeLock.attributes["deno:jsrDependencyCoverage"] = "observed-lock-retention-graph";
+    nativeLock.rootCompleteness = document.workspace === undefined ? "unknown" : "complete";
+    if (packageDeclarations.result.subprojects.length === 0)
+      nativeLock.result.issues.push(...packageDeclarations.result.issues);
+
+    return mergeResults([
+      nativeLock.finish(),
+      ...(configDeclarations.result.subprojects.length > 0 ? [configDeclarations.finish()] : []),
+      ...(packageDeclarations.result.subprojects.length > 0 ? [packageDeclarations.finish()] : []),
+    ]);
   },
 });
-
-/**
- * Resolve a JSR specifier to actual package info using the lockfile
- */
-function resolveJsrSpecifier(
-  lockfile: DenoLockfile,
-  specifier: string,
-): { scope: string; name: string; version: string } | null {
-  // First try to resolve from specifiers map
-  if (lockfile.packages?.specifiers) {
-    const resolved = lockfile.packages.specifiers[specifier];
-    if (resolved) {
-      return parseJsrPackage(resolved);
-    }
-  }
-
-  // Try to parse the specifier directly
-  return parseJsrPackage(specifier);
-}
-
-/**
- * Resolve an npm specifier to actual package info using the lockfile
- */
-function resolveNpmSpecifier(
-  lockfile: DenoLockfile,
-  specifier: string,
-): { name: string; version: string } | null {
-  // First try to resolve from specifiers map
-  if (lockfile.packages?.specifiers) {
-    const resolved = lockfile.packages.specifiers[specifier];
-    if (resolved) {
-      return parseNpmPackage(resolved);
-    }
-  }
-
-  // Try to parse the specifier directly
-  return parseNpmPackage(specifier);
-}
-
-/**
- * Creates a generic Package URL (PURL) for any package type.
- * @param type - The package type (e.g., "jsr", "generic")
- * @param name - The package name
- * @param version - The package version
- * @param namespace - Optional namespace for the package
- */
-function createPurl(
-  type: string,
-  name: string,
-  version: string,
-  namespace: string | null = null,
-): string {
-  return new PackageURL(type, namespace, name, version, null, null).toString();
-}
-
-/**
- * Create a JSR PURL
- */
-function createJsrPurl(scope: string, name: string, version: string): string {
-  // JSR uses @scope/name format, so we use the scope as namespace (without @)
-  const namespace = scope.startsWith("@") ? scope.slice(1) : scope;
-  return createPurl("jsr", name, version, namespace);
-}

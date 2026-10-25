@@ -1,0 +1,156 @@
+{
+  "id": "microsoft+terminal",
+  "toolCommit": "56bb2411609227288b70117ead2c47585ba07713",
+  "toolVersion": "2026-04-08-e0612b42ce44e55a0e630f2ee9d3c533a63d8bc1",
+  "views": [
+    {
+      "file": "dep/vcpkg-overlay-ports/fmt/vcpkg.json",
+      "ports": {
+        "vcpkg-cmake": {
+          "name": "vcpkg-cmake",
+          "version-date": "2024-04-23",
+          "documentation": "https://learn.microsoft.com/vcpkg/maintainers/functions/vcpkg_cmake_configure",
+          "license": "MIT"
+        },
+        "vcpkg-cmake-config": {
+          "name": "vcpkg-cmake-config",
+          "version-date": "2024-05-23",
+          "documentation": "https://learn.microsoft.com/vcpkg/maintainers/functions/vcpkg_cmake_config_fixup",
+          "license": "MIT"
+        }
+      },
+      "commands": [
+        {
+          "args": ["x-package-info", "--x-json", "vcpkg-cmake", "vcpkg-cmake-config"],
+          "exitCode": 1,
+          "stdoutSha256": "8c527b25d6d83b1b7396d5562312b47f5b0e6281c7a55067fc59b3b2690cb445",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "file": "vcpkg.json",
+      "ports": {
+        "cli11": {
+          "name": "cli11",
+          "version": "2.4.2",
+          "description": "CLI11 is a command line parser for C++11 and beyond that provides a rich feature set with a simple and intuitive interface.",
+          "homepage": "https://github.com/CLIUtils/CLI11",
+          "license": "BSD-3-Clause",
+          "supports": "!uwp",
+          "dependencies": [
+            {
+              "name": "vcpkg-cmake",
+              "host": true
+            },
+            {
+              "name": "vcpkg-cmake-config",
+              "host": true
+            }
+          ]
+        },
+        "cmark": {
+          "name": "cmark",
+          "version-semver": "0.30.3",
+          "description": "CommonMark parsing and rendering library",
+          "homepage": "https://github.com/commonmark/cmark",
+          "dependencies": [
+            {
+              "name": "vcpkg-cmake",
+              "host": true
+            },
+            {
+              "name": "vcpkg-cmake-config",
+              "host": true
+            }
+          ],
+          "features": {
+            "tools": {
+              "description": "Build tools",
+              "supports": "!uwp"
+            }
+          }
+        },
+        "fmt": {
+          "name": "fmt",
+          "version": "11.1.4",
+          "description": "{fmt} is an open-source formatting library providing a fast and safe alternative to C stdio and C++ iostreams.",
+          "homepage": "https://github.com/fmtlib/fmt",
+          "license": "MIT",
+          "dependencies": [
+            {
+              "name": "vcpkg-cmake",
+              "host": true
+            },
+            {
+              "name": "vcpkg-cmake-config",
+              "host": true
+            }
+          ]
+        },
+        "jsoncpp": {
+          "name": "jsoncpp",
+          "version": "1.9.5",
+          "port-version": 4,
+          "description": "JsonCpp is a C++ library that allows manipulating JSON values, including serialization and deserialization to and from strings. It can also preserve existing comment in unserialization/serialization steps, making it a convenient format to store user input files.",
+          "homepage": "https://github.com/open-source-parsers/jsoncpp",
+          "license": "MIT",
+          "dependencies": [
+            {
+              "name": "vcpkg-cmake",
+              "host": true
+            },
+            {
+              "name": "vcpkg-cmake-config",
+              "host": true
+            }
+          ]
+        },
+        "ms-gsl": {
+          "name": "ms-gsl",
+          "version": "4.0.0",
+          "port-version": 1,
+          "description": "Microsoft implementation of the Guidelines Support Library",
+          "homepage": "https://github.com/Microsoft/GSL",
+          "license": "MIT",
+          "dependencies": [
+            {
+              "name": "vcpkg-cmake",
+              "host": true
+            },
+            {
+              "name": "vcpkg-cmake-config",
+              "host": true
+            }
+          ]
+        },
+        "vcpkg-cmake": {
+          "name": "vcpkg-cmake",
+          "version-date": "2024-04-23",
+          "documentation": "https://learn.microsoft.com/vcpkg/maintainers/functions/vcpkg_cmake_configure",
+          "license": "MIT"
+        },
+        "vcpkg-cmake-config": {
+          "name": "vcpkg-cmake-config",
+          "version-date": "2024-05-23",
+          "documentation": "https://learn.microsoft.com/vcpkg/maintainers/functions/vcpkg_cmake_config_fixup",
+          "license": "MIT"
+        }
+      },
+      "commands": [
+        {
+          "args": ["x-package-info", "--x-json", "cli11", "cmark", "fmt", "jsoncpp", "ms-gsl"],
+          "exitCode": 1,
+          "stdoutSha256": "5633da86fe052229ed4e12a7d8183924391f3bb0d0a125a567ac07ef9272f309",
+          "stderr": ""
+        },
+        {
+          "args": ["x-package-info", "--x-json", "vcpkg-cmake", "vcpkg-cmake-config"],
+          "exitCode": 1,
+          "stdoutSha256": "8c527b25d6d83b1b7396d5562312b47f5b0e6281c7a55067fc59b3b2690cb445",
+          "stderr": ""
+        }
+      ]
+    }
+  ]
+}

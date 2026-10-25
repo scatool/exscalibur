@@ -1,112 +1,744 @@
 {
+  "codebase": "integration:scatool/demo-repository@6f753a2b9f41332c074d48204fb63de3a471e76d",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "attributes": {
+        "npm:lockfileVersion": 1,
+        "npm:sourceRoot": ""
+      },
+      "edges": [
+        {
+          "evidence": [
+            "npm-shrinkwrap.json",
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"axios\"]",
+            "name": "axios",
+            "specifier": "^1.3.5"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "package:\"node_modules/axios\""
+        },
+        {
+          "evidence": [
+            "npm-shrinkwrap.json",
+            "package.json"
+          ],
+          "from": "workspace:\"\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"workspace:\\\"\\\"\",\"dependencies\",\"axios\"]",
+            "name": "axios",
+            "specifier": "^1.3.5"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "package:\"node_modules/axios\""
+        },
+        {
+          "evidence": [
+            "npm-shrinkwrap.json"
+          ],
+          "from": "package:\"node_modules/axios\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"package:\\\"node_modules/axios\\\"\",\"dependencies\",\"follow-redirects\"]",
+            "name": "follow-redirects",
+            "specifier": "^1.15.0"
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "package:\"node_modules/follow-redirects\""
+        },
+        {
+          "evidence": [
+            "npm-shrinkwrap.json"
+          ],
+          "from": "package:\"node_modules/axios\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"package:\\\"node_modules/axios\\\"\",\"dependencies\",\"form-data\"]",
+            "name": "form-data",
+            "specifier": "^4.0.0"
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "package:\"node_modules/form-data\""
+        },
+        {
+          "evidence": [
+            "npm-shrinkwrap.json"
+          ],
+          "from": "package:\"node_modules/axios\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"package:\\\"node_modules/axios\\\"\",\"dependencies\",\"proxy-from-env\"]",
+            "name": "proxy-from-env",
+            "specifier": "^1.1.0"
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "package:\"node_modules/proxy-from-env\""
+        },
+        {
+          "evidence": [
+            "npm-shrinkwrap.json"
+          ],
+          "from": "package:\"node_modules/combined-stream\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"package:\\\"node_modules/combined-stream\\\"\",\"dependencies\",\"delayed-stream\"]",
+            "name": "delayed-stream",
+            "specifier": "~1.0.0"
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "package:\"node_modules/delayed-stream\""
+        },
+        {
+          "evidence": [
+            "npm-shrinkwrap.json"
+          ],
+          "from": "package:\"node_modules/form-data\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"package:\\\"node_modules/form-data\\\"\",\"dependencies\",\"asynckit\"]",
+            "name": "asynckit",
+            "specifier": "^0.4.0"
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "package:\"node_modules/asynckit\""
+        },
+        {
+          "evidence": [
+            "npm-shrinkwrap.json"
+          ],
+          "from": "package:\"node_modules/form-data\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"package:\\\"node_modules/form-data\\\"\",\"dependencies\",\"combined-stream\"]",
+            "name": "combined-stream",
+            "specifier": "^1.0.8"
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "package:\"node_modules/combined-stream\""
+        },
+        {
+          "evidence": [
+            "npm-shrinkwrap.json"
+          ],
+          "from": "package:\"node_modules/form-data\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"package:\\\"node_modules/form-data\\\"\",\"dependencies\",\"mime-types\"]",
+            "name": "mime-types",
+            "specifier": "^2.1.12"
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "package:\"node_modules/mime-types\""
+        },
+        {
+          "evidence": [
+            "npm-shrinkwrap.json"
+          ],
+          "from": "package:\"node_modules/mime-types\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"package:\\\"node_modules/mime-types\\\"\",\"dependencies\",\"mime-db\"]",
+            "name": "mime-db",
+            "specifier": "1.52.0"
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "package:\"node_modules/mime-db\""
+        }
+      ],
+      "id": "[\"packagelockjson\",\"npm-shrinkwrap.json\",\"packagelockjson:b9efb26898ecccdd572e52d47c8161512e53e0284136bbabb79ce54c7cfe5d7c\"]",
+      "interpretation": "locked",
+      "nodes": [
+        {
+          "artifacts": [
+            {
+              "attributes": {
+                "npm:integrity": "sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q=="
+              },
+              "evidence": [
+                "npm-shrinkwrap.json"
+              ],
+              "location": "https://registry.npmjs.org/asynckit/-/asynckit-0.4.0.tgz"
+            }
+          ],
+          "attributes": {
+            "npm:metadata": {
+              "dependencies": {},
+              "integrity": "sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==",
+              "resolved": "https://registry.npmjs.org/asynckit/-/asynckit-0.4.0.tgz",
+              "version": "0.4.0"
+            }
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "npm-shrinkwrap.json"
+          ],
+          "id": "package:\"node_modules/asynckit\"",
+          "locator": "node_modules/asynckit",
+          "purl": "pkg:npm/asynckit@0.4.0"
+        },
+        {
+          "artifacts": [
+            {
+              "attributes": {
+                "npm:integrity": "sha512-glL/PvG/E+xCWwV8S6nCHcrfg1exGx7vxyUIivIA1iL7BIh6bePylCfVHwp6k13ao7SATxB6imau2kqY+I67kw=="
+              },
+              "evidence": [
+                "npm-shrinkwrap.json"
+              ],
+              "location": "https://registry.npmjs.org/axios/-/axios-1.3.5.tgz"
+            }
+          ],
+          "attributes": {
+            "npm:metadata": {
+              "dependencies": {
+                "follow-redirects": "^1.15.0",
+                "form-data": "^4.0.0",
+                "proxy-from-env": "^1.1.0"
+              },
+              "integrity": "sha512-glL/PvG/E+xCWwV8S6nCHcrfg1exGx7vxyUIivIA1iL7BIh6bePylCfVHwp6k13ao7SATxB6imau2kqY+I67kw==",
+              "resolved": "https://registry.npmjs.org/axios/-/axios-1.3.5.tgz",
+              "version": "1.3.5"
+            }
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "npm-shrinkwrap.json"
+          ],
+          "id": "package:\"node_modules/axios\"",
+          "locator": "node_modules/axios",
+          "purl": "pkg:npm/axios@1.3.5"
+        },
+        {
+          "artifacts": [
+            {
+              "attributes": {
+                "npm:integrity": "sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg=="
+              },
+              "evidence": [
+                "npm-shrinkwrap.json"
+              ],
+              "location": "https://registry.npmjs.org/combined-stream/-/combined-stream-1.0.8.tgz"
+            }
+          ],
+          "attributes": {
+            "npm:metadata": {
+              "dependencies": {
+                "delayed-stream": "~1.0.0"
+              },
+              "integrity": "sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==",
+              "resolved": "https://registry.npmjs.org/combined-stream/-/combined-stream-1.0.8.tgz",
+              "version": "1.0.8"
+            }
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "npm-shrinkwrap.json"
+          ],
+          "id": "package:\"node_modules/combined-stream\"",
+          "locator": "node_modules/combined-stream",
+          "purl": "pkg:npm/combined-stream@1.0.8"
+        },
+        {
+          "artifacts": [
+            {
+              "attributes": {
+                "npm:integrity": "sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ=="
+              },
+              "evidence": [
+                "npm-shrinkwrap.json"
+              ],
+              "location": "https://registry.npmjs.org/delayed-stream/-/delayed-stream-1.0.0.tgz"
+            }
+          ],
+          "attributes": {
+            "npm:metadata": {
+              "dependencies": {},
+              "integrity": "sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==",
+              "resolved": "https://registry.npmjs.org/delayed-stream/-/delayed-stream-1.0.0.tgz",
+              "version": "1.0.0"
+            }
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "npm-shrinkwrap.json"
+          ],
+          "id": "package:\"node_modules/delayed-stream\"",
+          "locator": "node_modules/delayed-stream",
+          "purl": "pkg:npm/delayed-stream@1.0.0"
+        },
+        {
+          "artifacts": [
+            {
+              "attributes": {
+                "npm:integrity": "sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA=="
+              },
+              "evidence": [
+                "npm-shrinkwrap.json"
+              ],
+              "location": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.15.2.tgz"
+            }
+          ],
+          "attributes": {
+            "npm:metadata": {
+              "dependencies": {},
+              "integrity": "sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==",
+              "resolved": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.15.2.tgz",
+              "version": "1.15.2"
+            }
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "npm-shrinkwrap.json"
+          ],
+          "id": "package:\"node_modules/follow-redirects\"",
+          "locator": "node_modules/follow-redirects",
+          "purl": "pkg:npm/follow-redirects@1.15.2"
+        },
+        {
+          "artifacts": [
+            {
+              "attributes": {
+                "npm:integrity": "sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww=="
+              },
+              "evidence": [
+                "npm-shrinkwrap.json"
+              ],
+              "location": "https://registry.npmjs.org/form-data/-/form-data-4.0.0.tgz"
+            }
+          ],
+          "attributes": {
+            "npm:metadata": {
+              "dependencies": {
+                "asynckit": "^0.4.0",
+                "combined-stream": "^1.0.8",
+                "mime-types": "^2.1.12"
+              },
+              "integrity": "sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==",
+              "resolved": "https://registry.npmjs.org/form-data/-/form-data-4.0.0.tgz",
+              "version": "4.0.0"
+            }
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "npm-shrinkwrap.json"
+          ],
+          "id": "package:\"node_modules/form-data\"",
+          "locator": "node_modules/form-data",
+          "purl": "pkg:npm/form-data@4.0.0"
+        },
+        {
+          "artifacts": [
+            {
+              "attributes": {
+                "npm:integrity": "sha512-sPU4uV7dYlvtWJxwwxHD0PuihVNiE7TyAbQ5SWxDCB9mUYvOgroQOwYQQOKPJ8CIbE+1ETVlOoK1UC2nU3gYvg=="
+              },
+              "evidence": [
+                "npm-shrinkwrap.json"
+              ],
+              "location": "https://registry.npmjs.org/mime-db/-/mime-db-1.52.0.tgz"
+            }
+          ],
+          "attributes": {
+            "npm:metadata": {
+              "dependencies": {},
+              "integrity": "sha512-sPU4uV7dYlvtWJxwwxHD0PuihVNiE7TyAbQ5SWxDCB9mUYvOgroQOwYQQOKPJ8CIbE+1ETVlOoK1UC2nU3gYvg==",
+              "resolved": "https://registry.npmjs.org/mime-db/-/mime-db-1.52.0.tgz",
+              "version": "1.52.0"
+            }
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "npm-shrinkwrap.json"
+          ],
+          "id": "package:\"node_modules/mime-db\"",
+          "locator": "node_modules/mime-db",
+          "purl": "pkg:npm/mime-db@1.52.0"
+        },
+        {
+          "artifacts": [
+            {
+              "attributes": {
+                "npm:integrity": "sha512-ZDY+bPm5zTTF+YpCrAU9nK0UgICYPT0QtT1NZWFv4s++TNkcgVaT0g6+4R2uI4MjQjzysHB1zxuWL50hzaeXiw=="
+              },
+              "evidence": [
+                "npm-shrinkwrap.json"
+              ],
+              "location": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.35.tgz"
+            }
+          ],
+          "attributes": {
+            "npm:metadata": {
+              "dependencies": {
+                "mime-db": "1.52.0"
+              },
+              "integrity": "sha512-ZDY+bPm5zTTF+YpCrAU9nK0UgICYPT0QtT1NZWFv4s++TNkcgVaT0g6+4R2uI4MjQjzysHB1zxuWL50hzaeXiw==",
+              "resolved": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.35.tgz",
+              "version": "2.1.35"
+            }
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "npm-shrinkwrap.json"
+          ],
+          "id": "package:\"node_modules/mime-types\"",
+          "locator": "node_modules/mime-types",
+          "purl": "pkg:npm/mime-types@2.1.35"
+        },
+        {
+          "artifacts": [
+            {
+              "attributes": {
+                "npm:integrity": "sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg=="
+              },
+              "evidence": [
+                "npm-shrinkwrap.json"
+              ],
+              "location": "https://registry.npmjs.org/proxy-from-env/-/proxy-from-env-1.1.0.tgz"
+            }
+          ],
+          "attributes": {
+            "npm:metadata": {
+              "dependencies": {},
+              "integrity": "sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==",
+              "resolved": "https://registry.npmjs.org/proxy-from-env/-/proxy-from-env-1.1.0.tgz",
+              "version": "1.1.0"
+            }
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "npm-shrinkwrap.json"
+          ],
+          "id": "package:\"node_modules/proxy-from-env\"",
+          "locator": "node_modules/proxy-from-env",
+          "purl": "pkg:npm/proxy-from-env@1.1.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/demo-repository@1.0.0"
+          },
+          "purl": "pkg:npm/demo-repository@1.0.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/demo-repository@1.0.0"
+          },
+          "purl": "pkg:npm/demo-repository@1.0.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/demo-repository@1.0.0"
+          },
+          "purl": "pkg:npm/demo-repository@1.0.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/demo-repository@1.0.0"
+          },
+          "purl": "pkg:npm/demo-repository@1.0.0"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {
+              "name": "demo-repository",
+              "version": "1.0.0"
+            }
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "workspace:\"\"",
+          "locator": "",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/demo-repository@1.0.0"
+          },
+          "purl": "pkg:npm/demo-repository@1.0.0"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"package.json\",\"dependencies\"]",
+          "node": "scope:[\"package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/demo-repository@1.0.0"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"package.json\",\"devDependencies\"]",
+          "node": "scope:[\"package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/demo-repository@1.0.0"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/demo-repository@1.0.0"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/demo-repository@1.0.0"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagelockjson",
+        "files": [
+          "npm-shrinkwrap.json",
+          "package.json"
+        ]
+      }
+    }
+  ],
+  "issues": [],
   "packages": [
     {
-      "purl": "pkg:npm/asynckit@0.4.0",
-      "evidence": [
-        "npm-shrinkwrap.json#8"
+      "artifacts": [
+        {
+          "attributes": {
+            "npm:integrity": "sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q=="
+          },
+          "evidence": [
+            "npm-shrinkwrap.json"
+          ],
+          "location": "https://registry.npmjs.org/asynckit/-/asynckit-0.4.0.tgz"
+        }
       ],
-      "downloadLocation": "https://registry.npmjs.org/asynckit/-/asynckit-0.4.0.tgz"
+      "evidence": [
+        "npm-shrinkwrap.json"
+      ],
+      "purl": "pkg:npm/asynckit@0.4.0"
     },
     {
-      "purl": "pkg:npm/axios@1.3.5",
-      "evidence": [
-        "npm-shrinkwrap.json#13"
+      "artifacts": [
+        {
+          "attributes": {
+            "npm:integrity": "sha512-glL/PvG/E+xCWwV8S6nCHcrfg1exGx7vxyUIivIA1iL7BIh6bePylCfVHwp6k13ao7SATxB6imau2kqY+I67kw=="
+          },
+          "evidence": [
+            "npm-shrinkwrap.json"
+          ],
+          "location": "https://registry.npmjs.org/axios/-/axios-1.3.5.tgz"
+        }
       ],
-      "downloadLocation": "https://registry.npmjs.org/axios/-/axios-1.3.5.tgz"
+      "evidence": [
+        "npm-shrinkwrap.json"
+      ],
+      "purl": "pkg:npm/axios@1.3.5"
     },
     {
-      "purl": "pkg:npm/combined-stream@1.0.8",
-      "evidence": [
-        "npm-shrinkwrap.json#23"
+      "artifacts": [
+        {
+          "attributes": {
+            "npm:integrity": "sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg=="
+          },
+          "evidence": [
+            "npm-shrinkwrap.json"
+          ],
+          "location": "https://registry.npmjs.org/combined-stream/-/combined-stream-1.0.8.tgz"
+        }
       ],
-      "downloadLocation": "https://registry.npmjs.org/combined-stream/-/combined-stream-1.0.8.tgz"
+      "evidence": [
+        "npm-shrinkwrap.json"
+      ],
+      "purl": "pkg:npm/combined-stream@1.0.8"
     },
     {
-      "purl": "pkg:npm/delayed-stream@1.0.0",
-      "evidence": [
-        "npm-shrinkwrap.json#31"
+      "artifacts": [
+        {
+          "attributes": {
+            "npm:integrity": "sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ=="
+          },
+          "evidence": [
+            "npm-shrinkwrap.json"
+          ],
+          "location": "https://registry.npmjs.org/delayed-stream/-/delayed-stream-1.0.0.tgz"
+        }
       ],
-      "downloadLocation": "https://registry.npmjs.org/delayed-stream/-/delayed-stream-1.0.0.tgz"
+      "evidence": [
+        "npm-shrinkwrap.json"
+      ],
+      "purl": "pkg:npm/delayed-stream@1.0.0"
     },
     {
-      "purl": "pkg:npm/follow-redirects@1.15.2",
-      "evidence": [
-        "npm-shrinkwrap.json#36"
+      "artifacts": [
+        {
+          "attributes": {
+            "npm:integrity": "sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA=="
+          },
+          "evidence": [
+            "npm-shrinkwrap.json"
+          ],
+          "location": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.15.2.tgz"
+        }
       ],
-      "downloadLocation": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.15.2.tgz"
+      "evidence": [
+        "npm-shrinkwrap.json"
+      ],
+      "purl": "pkg:npm/follow-redirects@1.15.2"
     },
     {
-      "purl": "pkg:npm/form-data@4.0.0",
-      "evidence": [
-        "npm-shrinkwrap.json#41"
+      "artifacts": [
+        {
+          "attributes": {
+            "npm:integrity": "sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww=="
+          },
+          "evidence": [
+            "npm-shrinkwrap.json"
+          ],
+          "location": "https://registry.npmjs.org/form-data/-/form-data-4.0.0.tgz"
+        }
       ],
-      "downloadLocation": "https://registry.npmjs.org/form-data/-/form-data-4.0.0.tgz"
+      "evidence": [
+        "npm-shrinkwrap.json"
+      ],
+      "purl": "pkg:npm/form-data@4.0.0"
     },
     {
-      "purl": "pkg:npm/mime-db@1.52.0",
-      "evidence": [
-        "npm-shrinkwrap.json#51"
+      "artifacts": [
+        {
+          "attributes": {
+            "npm:integrity": "sha512-sPU4uV7dYlvtWJxwwxHD0PuihVNiE7TyAbQ5SWxDCB9mUYvOgroQOwYQQOKPJ8CIbE+1ETVlOoK1UC2nU3gYvg=="
+          },
+          "evidence": [
+            "npm-shrinkwrap.json"
+          ],
+          "location": "https://registry.npmjs.org/mime-db/-/mime-db-1.52.0.tgz"
+        }
       ],
-      "downloadLocation": "https://registry.npmjs.org/mime-db/-/mime-db-1.52.0.tgz"
+      "evidence": [
+        "npm-shrinkwrap.json"
+      ],
+      "purl": "pkg:npm/mime-db@1.52.0"
     },
     {
-      "purl": "pkg:npm/mime-types@2.1.35",
-      "evidence": [
-        "npm-shrinkwrap.json#56"
+      "artifacts": [
+        {
+          "attributes": {
+            "npm:integrity": "sha512-ZDY+bPm5zTTF+YpCrAU9nK0UgICYPT0QtT1NZWFv4s++TNkcgVaT0g6+4R2uI4MjQjzysHB1zxuWL50hzaeXiw=="
+          },
+          "evidence": [
+            "npm-shrinkwrap.json"
+          ],
+          "location": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.35.tgz"
+        }
       ],
-      "downloadLocation": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.35.tgz"
+      "evidence": [
+        "npm-shrinkwrap.json"
+      ],
+      "purl": "pkg:npm/mime-types@2.1.35"
     },
     {
-      "purl": "pkg:npm/proxy-from-env@1.1.0",
-      "evidence": [
-        "npm-shrinkwrap.json#64"
+      "artifacts": [
+        {
+          "attributes": {
+            "npm:integrity": "sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg=="
+          },
+          "evidence": [
+            "npm-shrinkwrap.json"
+          ],
+          "location": "https://registry.npmjs.org/proxy-from-env/-/proxy-from-env-1.1.0.tgz"
+        }
       ],
-      "downloadLocation": "https://registry.npmjs.org/proxy-from-env/-/proxy-from-env-1.1.0.tgz"
+      "evidence": [
+        "npm-shrinkwrap.json"
+      ],
+      "purl": "pkg:npm/proxy-from-env@1.1.0"
     }
   ],
   "subprojects": [
     {
-      "purl": "pkg:npm/demo-repository@1.0.0",
       "definitionFile": "package.json",
-      "scopes": [
+      "evidence": [
+        "package.json"
+      ],
+      "identityObservations": [
         {
-          "scope": "dependencies",
-          "packages": [
-            "pkg:npm/axios@1.3.5"
-          ]
+          "source": {
+            "extractor": "packagelockjson",
+            "files": [
+              "package.json"
+            ],
+            "key": "\"\""
+          },
+          "synthesizedPurl": false
         }
-      ]
+      ],
+      "purl": "pkg:npm/demo-repository@1.0.0"
     }
-  ],
-  "relationships": [
-    {
-      "from": "pkg:npm/axios@1.3.5",
-      "to": [
-        "pkg:npm/follow-redirects@1.15.2",
-        "pkg:npm/form-data@4.0.0",
-        "pkg:npm/proxy-from-env@1.1.0"
-      ]
-    },
-    {
-      "from": "pkg:npm/combined-stream@1.0.8",
-      "to": [
-        "pkg:npm/delayed-stream@1.0.0"
-      ]
-    },
-    {
-      "from": "pkg:npm/form-data@4.0.0",
-      "to": [
-        "pkg:npm/asynckit@0.4.0",
-        "pkg:npm/combined-stream@1.0.8",
-        "pkg:npm/mime-types@2.1.35"
-      ]
-    },
-    {
-      "from": "pkg:npm/mime-types@2.1.35",
-      "to": [
-        "pkg:npm/mime-db@1.52.0"
-      ]
-    }
-  ],
-  "issues": []
+  ]
 }

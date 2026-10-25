@@ -1,0 +1,13 @@
+{
+  "name": "workspace-oracle",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "dependencies": {
+    "local-link": "file:local",
+    "renamed": "npm:real-leaf@1.0.0"
+  }
+}

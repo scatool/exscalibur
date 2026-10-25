@@ -1,497 +1,3966 @@
 {
-  "packages": [
-    {
-      "purl": "pkg:npm/%40biomejs/biome@2.2.0",
-      "evidence": [
-        "packages/benchmark/package.json#59"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40biomejs/biome@2.2.4",
-      "evidence": [
-        "packages/flat-cache/package.json#63",
-        "packages/node-cache/package.json#45"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40biomejs/biome@2.2.5",
-      "evidence": [
-        "package.json#35",
-        "packages/cache-manager/package.json#65",
-        "packages/cacheable-request/package.json#55",
-        "packages/file-entry-cache/package.json#40"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40biomejs/biome@2.2.6",
-      "evidence": [
-        "packages/cacheable/package.json#32"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40biomejs/biome@2.3.0",
-      "evidence": [
-        "packages/utils/package.json#32"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40biomejs/biome@2.3.1",
-      "evidence": [
-        "packages/memory/package.json#32",
-        "packages/net/package.json#32"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40cacheable/memory",
-      "evidence": [
-        "packages/benchmark/package.json#44",
-        "packages/cacheable/package.json#46"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40cacheable/node-cache@1.5.6",
-      "evidence": [
-        "packages/benchmark/package.json#60"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40cacheable/utils",
-      "evidence": [
-        "packages/cache-manager/package.json#61",
-        "packages/cacheable/package.json#47",
-        "packages/memory/package.json#42"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40faker-js/faker@10.0.0",
-      "evidence": [
-        "packages/cache-manager/package.json#66",
-        "packages/flat-cache/package.json#64",
-        "packages/node-cache/package.json#46"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40faker-js/faker@10.1.0",
-      "evidence": [
-        "packages/cacheable/package.json#33",
-        "packages/memory/package.json#33",
-        "packages/net/package.json#33",
-        "packages/utils/package.json#33"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40faker-js/faker@9.8.0",
-      "evidence": [
-        "packages/benchmark/package.json#45"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40keyv/bigmap@1.1.0",
-      "evidence": [
-        "packages/memory/package.json#43"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40keyv/redis@5.1.2",
-      "evidence": [
-        "packages/cache-manager/package.json#67"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40keyv/redis@5.1.3",
-      "evidence": [
-        "packages/cacheable/package.json#34"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40keyv/sqlite@4.0.5",
-      "evidence": [
-        "packages/cacheable-request/package.json#56"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40keyv/valkey@1.0.10",
-      "evidence": [
-        "packages/cacheable/package.json#35"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40monstermann/tinybench-pretty-printer@0.1.0",
-      "evidence": [
-        "packages/benchmark/package.json#46"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40qified/redis@0.5.0",
-      "evidence": [
-        "packages/cacheable/package.json#36"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40types/express@5.0.3",
-      "evidence": [
-        "packages/cacheable-request/package.json#57"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40types/http-cache-semantics@4.0.4",
-      "evidence": [
-        "packages/cacheable-request/package.json#43",
-        "packages/net/package.json#34"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40types/node@24.5.0",
-      "evidence": [
-        "packages/flat-cache/package.json#65"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40types/node@24.7.0",
-      "evidence": [
-        "packages/cache-manager/package.json#68",
-        "packages/cacheable-request/package.json#58",
-        "packages/website/package.json#16"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40types/node@24.7.2",
-      "evidence": [
-        "packages/file-entry-cache/package.json#41"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40types/node@24.8.0",
-      "evidence": [
-        "packages/node-cache/package.json#47"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40types/node@24.8.1",
-      "evidence": [
-        "packages/cacheable/package.json#37"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40types/node@24.9.1",
-      "evidence": [
-        "packages/memory/package.json#34",
-        "packages/net/package.json#35",
-        "packages/utils/package.json#34"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40types/responselike@1.0.3",
-      "evidence": [
-        "packages/cacheable-request/package.json#59"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40vitest/coverage-v8@3.2.4",
-      "evidence": [
-        "package.json#20",
-        "packages/cache-manager/package.json#69",
-        "packages/cacheable-request/package.json#60",
-        "packages/cacheable/package.json#38",
-        "packages/file-entry-cache/package.json#42",
-        "packages/flat-cache/package.json#66",
-        "packages/node-cache/package.json#48"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40vitest/coverage-v8@4.0.3",
-      "evidence": [
-        "packages/memory/package.json#35",
-        "packages/utils/package.json#35"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40vitest/coverage-v8@4.0.4",
-      "evidence": [
-        "packages/net/package.json#36"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40vitest/spy@3.2.4",
-      "evidence": [
-        "packages/cache-manager/package.json#70"
-      ]
-    },
-    {
-      "purl": "pkg:npm/bentocache@1.4.0",
-      "evidence": [
-        "packages/benchmark/package.json#47"
-      ]
-    },
-    {
-      "purl": "pkg:npm/body-parser@2.2.0",
-      "evidence": [
-        "packages/cacheable-request/package.json#61"
-      ]
-    },
-    {
-      "purl": "pkg:npm/cache-manager",
-      "evidence": [
-        "packages/benchmark/package.json#48"
-      ]
-    },
-    {
-      "purl": "pkg:npm/cache-manager-redis-yet@5.1.5",
-      "evidence": [
-        "packages/cache-manager/package.json#71"
-      ]
-    },
-    {
-      "purl": "pkg:npm/cacheable",
-      "evidence": [
-        "packages/benchmark/package.json#29",
-        "packages/cache-manager/package.json#72",
-        "packages/flat-cache/package.json#26",
-        "packages/net/package.json#43",
-        "packages/node-cache/package.json#31"
-      ]
-    },
-    {
-      "purl": "pkg:npm/delay@6.0.0",
-      "evidence": [
-        "packages/cacheable-request/package.json#62"
-      ]
-    },
-    {
-      "purl": "pkg:npm/docula@0.30.0",
-      "evidence": [
-        "packages/website/package.json#17"
-      ]
-    },
-    {
-      "purl": "pkg:npm/express@5.1.0",
-      "evidence": [
-        "packages/cacheable-request/package.json#63"
-      ]
-    },
-    {
-      "purl": "pkg:npm/flat-cache",
-      "evidence": [
-        "packages/file-entry-cache/package.json#50"
-      ]
-    },
-    {
-      "purl": "pkg:npm/flatted@3.3.3",
-      "evidence": [
-        "packages/flat-cache/package.json#74"
-      ]
-    },
-    {
-      "purl": "pkg:npm/get-stream@9.0.1",
-      "evidence": [
-        "packages/cacheable-request/package.json#47"
-      ]
-    },
-    {
-      "purl": "pkg:npm/hookified@1.12.0",
-      "evidence": [
-        "packages/flat-cache/package.json#75",
-        "packages/node-cache/package.json#56"
-      ]
-    },
-    {
-      "purl": "pkg:npm/hookified@1.12.2",
-      "evidence": [
-        "packages/cacheable/package.json#48",
-        "packages/memory/package.json#44",
-        "packages/net/package.json#44"
-      ]
-    },
-    {
-      "purl": "pkg:npm/http-cache-semantics@4.2.0",
-      "evidence": [
-        "packages/cacheable-request/package.json#43",
-        "packages/net/package.json#45"
-      ]
-    },
-    {
-      "purl": "pkg:npm/keyv@5.5.3",
-      "evidence": [
-        "packages/cache-manager/package.json#62",
-        "packages/cacheable-request/package.json#49",
-        "packages/cacheable/package.json#49",
-        "packages/memory/package.json#45",
-        "packages/node-cache/package.json#57",
-        "packages/utils/package.json#47"
-      ]
-    },
-    {
-      "purl": "pkg:npm/lru-cache@11.2.2",
-      "evidence": [
-        "packages/cacheable/package.json#39",
-        "packages/utils/package.json#36"
-      ]
-    },
-    {
-      "purl": "pkg:npm/lru.min@1.1.2",
-      "evidence": [
-        "packages/benchmark/package.json#50"
-      ]
-    },
-    {
-      "purl": "pkg:npm/mimic-response@4.0.0",
-      "evidence": [
-        "packages/cacheable-request/package.json#50"
-      ]
-    },
-    {
-      "purl": "pkg:npm/node-cache@5.1.2",
-      "evidence": [
-        "packages/benchmark/package.json#61"
-      ]
-    },
-    {
-      "purl": "pkg:npm/normalize-url@8.1.0",
-      "evidence": [
-        "packages/cacheable-request/package.json#51"
-      ]
-    },
-    {
-      "purl": "pkg:npm/pify@6.1.0",
-      "evidence": [
-        "packages/cacheable-request/package.json#64"
-      ]
-    },
-    {
-      "purl": "pkg:npm/pino@10.0.0",
-      "evidence": [
-        "packages/file-entry-cache/package.json#43"
-      ]
-    },
-    {
-      "purl": "pkg:npm/qified@0.5.0",
-      "evidence": [
-        "packages/cacheable/package.json#50"
-      ]
-    },
-    {
-      "purl": "pkg:npm/quick-lru@7.0.1",
-      "evidence": [
-        "packages/benchmark/package.json#51"
-      ]
-    },
-    {
-      "purl": "pkg:npm/responselike@3.0.0",
-      "evidence": [
-        "packages/cacheable-request/package.json#52"
-      ]
-    },
-    {
-      "purl": "pkg:npm/rimraf@6.0.1",
-      "evidence": [
-        "packages/cache-manager/package.json#73",
-        "packages/cacheable-request/package.json#65",
-        "packages/cacheable/package.json#40",
-        "packages/file-entry-cache/package.json#44",
-        "packages/flat-cache/package.json#67",
-        "packages/memory/package.json#36",
-        "packages/net/package.json#37",
-        "packages/node-cache/package.json#49",
-        "packages/utils/package.json#37",
-        "packages/website/package.json#18"
-      ]
-    },
-    {
-      "purl": "pkg:npm/sqlite3@5.1.7",
-      "evidence": [
-        "packages/cacheable-request/package.json#66"
-      ]
-    },
-    {
-      "purl": "pkg:npm/tinybench@4.0.1",
-      "evidence": [
-        "packages/benchmark/package.json#52"
-      ]
-    },
-    {
-      "purl": "pkg:npm/tsup@8.5.0",
-      "evidence": [
-        "packages/cache-manager/package.json#74",
-        "packages/cacheable-request/package.json#67",
-        "packages/cacheable/package.json#41",
-        "packages/file-entry-cache/package.json#45",
-        "packages/flat-cache/package.json#68",
-        "packages/memory/package.json#37",
-        "packages/net/package.json#38",
-        "packages/node-cache/package.json#50",
-        "packages/utils/package.json#38"
-      ]
-    },
-    {
-      "purl": "pkg:npm/tsx@4.19.4",
-      "evidence": [
-        "packages/benchmark/package.json#62"
-      ]
-    },
-    {
-      "purl": "pkg:npm/tsx@4.20.6",
-      "evidence": [
-        "packages/website/package.json#19"
-      ]
-    },
-    {
-      "purl": "pkg:npm/typescript@5.9.2",
-      "evidence": [
-        "packages/flat-cache/package.json#69"
-      ]
-    },
-    {
-      "purl": "pkg:npm/typescript@5.9.3",
-      "evidence": [
-        "packages/cache-manager/package.json#75",
-        "packages/cacheable-request/package.json#68",
-        "packages/cacheable/package.json#42",
-        "packages/file-entry-cache/package.json#46",
-        "packages/memory/package.json#38",
-        "packages/net/package.json#39",
-        "packages/node-cache/package.json#51",
-        "packages/utils/package.json#39"
-      ]
-    },
-    {
-      "purl": "pkg:npm/undici@7.16.0",
-      "evidence": [
-        "packages/net/package.json#46"
-      ]
-    },
-    {
-      "purl": "pkg:npm/vitest@3.2.4",
-      "evidence": [
-        "package.json#21",
-        "packages/cache-manager/package.json#76",
-        "packages/cacheable-request/package.json#69",
-        "packages/cacheable/package.json#43",
-        "packages/file-entry-cache/package.json#47",
-        "packages/flat-cache/package.json#70",
-        "packages/node-cache/package.json#52"
-      ]
-    },
-    {
-      "purl": "pkg:npm/vitest@4.0.3",
-      "evidence": [
-        "packages/memory/package.json#39",
-        "packages/utils/package.json#40"
-      ]
-    },
-    {
-      "purl": "pkg:npm/vitest@4.0.4",
-      "evidence": [
-        "packages/net/package.json#40"
-      ]
-    },
-    {
-      "purl": "pkg:npm/wrangler@4.42.0",
-      "evidence": [
-        "package.json#22"
-      ]
+  "codebase": "integration:jaredwray/cacheable@8a62fc2938602cd23d497ac9c9f409b0bb01d690",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "attributes": {},
+      "edges": [
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"@biomejs/biome\"]",
+            "name": "@biomejs/biome",
+            "specifier": "^2.2.5"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@vitest/coverage-v8\"]",
+            "name": "@vitest/coverage-v8",
+            "specifier": "^3.2.4"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"vitest\"]",
+            "name": "vitest",
+            "specifier": "^3.2.4"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"wrangler\"]",
+            "name": "wrangler",
+            "specifier": "^4.42.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        }
+      ],
+      "id": "[\"packagejson\",\"package.json\",\"packagejson:b018b4060ba74c06a9adea85ccc6639aae57d32e1aa813970b03a2849441ae64\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/cacheable-mono-repo@1.0.0"
+          },
+          "purl": "pkg:npm/cacheable-mono-repo@1.0.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/cacheable-mono-repo@1.0.0"
+          },
+          "purl": "pkg:npm/cacheable-mono-repo@1.0.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/cacheable-mono-repo@1.0.0"
+          },
+          "purl": "pkg:npm/cacheable-mono-repo@1.0.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/cacheable-mono-repo@1.0.0"
+          },
+          "purl": "pkg:npm/cacheable-mono-repo@1.0.0"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {
+              "name": "cacheable-mono-repo",
+              "pnpm": {
+                "onlyBuiltDependencies": [
+                  "esbuild",
+                  "protobufjs",
+                  "sharp",
+                  "sqlite3",
+                  "unrs-resolver",
+                  "workerd"
+                ]
+              },
+              "private": true,
+              "version": "1.0.0"
+            }
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "workspace:\".\"",
+          "locator": ".",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/cacheable-mono-repo@1.0.0"
+          },
+          "purl": "pkg:npm/cacheable-mono-repo@1.0.0"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"package.json\",\"dependencies\"]",
+          "node": "scope:[\"package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/cacheable-mono-repo@1.0.0"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"package.json\",\"devDependencies\"]",
+          "node": "scope:[\"package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/cacheable-mono-repo@1.0.0"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/cacheable-mono-repo@1.0.0"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/cacheable-mono-repo@1.0.0"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "package.json"
+        ]
+      }
+    },
+    {
+      "attributes": {},
+      "edges": [
+        {
+          "evidence": [
+            "packages/benchmark/package.json"
+          ],
+          "from": "scope:[\"packages/benchmark/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/benchmark/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"@cacheable/memory\"]",
+            "name": "@cacheable/memory",
+            "specifier": "workspace:^"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/benchmark/package.json"
+          ],
+          "from": "scope:[\"packages/benchmark/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/benchmark/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"@faker-js/faker\"]",
+            "name": "@faker-js/faker",
+            "specifier": "^9.8.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/benchmark/package.json"
+          ],
+          "from": "scope:[\"packages/benchmark/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/benchmark/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"@monstermann/tinybench-pretty-printer\"]",
+            "name": "@monstermann/tinybench-pretty-printer",
+            "specifier": "^0.1.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/benchmark/package.json"
+          ],
+          "from": "scope:[\"packages/benchmark/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/benchmark/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"bentocache\"]",
+            "name": "bentocache",
+            "specifier": "^1.4.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/benchmark/package.json"
+          ],
+          "from": "scope:[\"packages/benchmark/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/benchmark/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"cache-manager\"]",
+            "name": "cache-manager",
+            "specifier": "workspace:^"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/benchmark/package.json"
+          ],
+          "from": "scope:[\"packages/benchmark/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/benchmark/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"cacheable\"]",
+            "name": "cacheable",
+            "specifier": "workspace:^"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/benchmark/package.json"
+          ],
+          "from": "scope:[\"packages/benchmark/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/benchmark/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"lru.min\"]",
+            "name": "lru.min",
+            "specifier": "^1.1.2"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/benchmark/package.json"
+          ],
+          "from": "scope:[\"packages/benchmark/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/benchmark/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"quick-lru\"]",
+            "name": "quick-lru",
+            "specifier": "^7.0.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/benchmark/package.json"
+          ],
+          "from": "scope:[\"packages/benchmark/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/benchmark/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"tinybench\"]",
+            "name": "tinybench",
+            "specifier": "^4.0.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/benchmark/package.json"
+          ],
+          "from": "scope:[\"packages/benchmark/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/benchmark/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@biomejs/biome\"]",
+            "name": "@biomejs/biome",
+            "specifier": "^2.2.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/benchmark/package.json"
+          ],
+          "from": "scope:[\"packages/benchmark/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/benchmark/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@cacheable/node-cache\"]",
+            "name": "@cacheable/node-cache",
+            "specifier": "^1.5.6"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/benchmark/package.json"
+          ],
+          "from": "scope:[\"packages/benchmark/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/benchmark/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"node-cache\"]",
+            "name": "node-cache",
+            "specifier": "^5.1.2"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/benchmark/package.json"
+          ],
+          "from": "scope:[\"packages/benchmark/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/benchmark/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"tsx\"]",
+            "name": "tsx",
+            "specifier": "^4.19.4"
+          },
+          "selection": "selected",
+          "status": "declared"
+        }
+      ],
+      "id": "[\"packagejson\",\"packages/benchmark/package.json\",\"packagejson:137f38dafc07b00f1666901cbcb4c7a8dd755c3d74803f5ac74db3b17afeaf64\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/benchmark/package.json"
+          ],
+          "id": "scope:[\"packages/benchmark/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "packages/benchmark/package.json",
+            "purl": "pkg:npm/%40cacheable/benchmark@1.0.0"
+          },
+          "purl": "pkg:npm/%40cacheable/benchmark@1.0.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/benchmark/package.json"
+          ],
+          "id": "scope:[\"packages/benchmark/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "packages/benchmark/package.json",
+            "purl": "pkg:npm/%40cacheable/benchmark@1.0.0"
+          },
+          "purl": "pkg:npm/%40cacheable/benchmark@1.0.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/benchmark/package.json"
+          ],
+          "id": "scope:[\"packages/benchmark/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "packages/benchmark/package.json",
+            "purl": "pkg:npm/%40cacheable/benchmark@1.0.0"
+          },
+          "purl": "pkg:npm/%40cacheable/benchmark@1.0.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/benchmark/package.json"
+          ],
+          "id": "scope:[\"packages/benchmark/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "packages/benchmark/package.json",
+            "purl": "pkg:npm/%40cacheable/benchmark@1.0.0"
+          },
+          "purl": "pkg:npm/%40cacheable/benchmark@1.0.0"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {
+              "name": "@cacheable/benchmark",
+              "private": false,
+              "type": "module",
+              "version": "1.0.0"
+            }
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "packages/benchmark/package.json"
+          ],
+          "id": "workspace:\"packages/benchmark\"",
+          "locator": "packages/benchmark",
+          "project": {
+            "definitionFile": "packages/benchmark/package.json",
+            "purl": "pkg:npm/%40cacheable/benchmark@1.0.0"
+          },
+          "purl": "pkg:npm/%40cacheable/benchmark@1.0.0"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"packages/benchmark/package.json\",\"dependencies\"]",
+          "node": "scope:[\"packages/benchmark/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "packages/benchmark/package.json",
+            "purl": "pkg:npm/%40cacheable/benchmark@1.0.0"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"packages/benchmark/package.json\",\"devDependencies\"]",
+          "node": "scope:[\"packages/benchmark/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "packages/benchmark/package.json",
+            "purl": "pkg:npm/%40cacheable/benchmark@1.0.0"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"packages/benchmark/package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"packages/benchmark/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "packages/benchmark/package.json",
+            "purl": "pkg:npm/%40cacheable/benchmark@1.0.0"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"packages/benchmark/package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"packages/benchmark/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "packages/benchmark/package.json",
+            "purl": "pkg:npm/%40cacheable/benchmark@1.0.0"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "packages/benchmark/package.json"
+        ]
+      }
+    },
+    {
+      "attributes": {},
+      "edges": [
+        {
+          "evidence": [
+            "packages/cache-manager/package.json"
+          ],
+          "from": "scope:[\"packages/cache-manager/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cache-manager/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"@cacheable/utils\"]",
+            "name": "@cacheable/utils",
+            "specifier": "workspace:^"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cache-manager/package.json"
+          ],
+          "from": "scope:[\"packages/cache-manager/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cache-manager/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"keyv\"]",
+            "name": "keyv",
+            "specifier": "^5.5.3"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cache-manager/package.json"
+          ],
+          "from": "scope:[\"packages/cache-manager/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cache-manager/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@biomejs/biome\"]",
+            "name": "@biomejs/biome",
+            "specifier": "^2.2.5"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cache-manager/package.json"
+          ],
+          "from": "scope:[\"packages/cache-manager/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cache-manager/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@faker-js/faker\"]",
+            "name": "@faker-js/faker",
+            "specifier": "^10.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cache-manager/package.json"
+          ],
+          "from": "scope:[\"packages/cache-manager/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cache-manager/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@keyv/redis\"]",
+            "name": "@keyv/redis",
+            "specifier": "^5.1.2"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cache-manager/package.json"
+          ],
+          "from": "scope:[\"packages/cache-manager/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cache-manager/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@types/node\"]",
+            "name": "@types/node",
+            "specifier": "^24.7.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cache-manager/package.json"
+          ],
+          "from": "scope:[\"packages/cache-manager/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cache-manager/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@vitest/coverage-v8\"]",
+            "name": "@vitest/coverage-v8",
+            "specifier": "^3.2.4"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cache-manager/package.json"
+          ],
+          "from": "scope:[\"packages/cache-manager/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cache-manager/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@vitest/spy\"]",
+            "name": "@vitest/spy",
+            "specifier": "^3.2.4"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cache-manager/package.json"
+          ],
+          "from": "scope:[\"packages/cache-manager/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cache-manager/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"cache-manager-redis-yet\"]",
+            "name": "cache-manager-redis-yet",
+            "specifier": "^5.1.5"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cache-manager/package.json"
+          ],
+          "from": "scope:[\"packages/cache-manager/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cache-manager/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"cacheable\"]",
+            "name": "cacheable",
+            "specifier": "workspace:^"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cache-manager/package.json"
+          ],
+          "from": "scope:[\"packages/cache-manager/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cache-manager/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"rimraf\"]",
+            "name": "rimraf",
+            "specifier": "^6.0.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cache-manager/package.json"
+          ],
+          "from": "scope:[\"packages/cache-manager/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cache-manager/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"tsup\"]",
+            "name": "tsup",
+            "specifier": "^8.5.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cache-manager/package.json"
+          ],
+          "from": "scope:[\"packages/cache-manager/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cache-manager/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"typescript\"]",
+            "name": "typescript",
+            "specifier": "^5.9.3"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cache-manager/package.json"
+          ],
+          "from": "scope:[\"packages/cache-manager/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cache-manager/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"vitest\"]",
+            "name": "vitest",
+            "specifier": "^3.2.4"
+          },
+          "selection": "selected",
+          "status": "declared"
+        }
+      ],
+      "id": "[\"packagejson\",\"packages/cache-manager/package.json\",\"packagejson:6853c58e57b3f9f6ca763da7c0e99a22a3f8a4803b18aeb04242b01518b117ff\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/cache-manager/package.json"
+          ],
+          "id": "scope:[\"packages/cache-manager/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "packages/cache-manager/package.json",
+            "purl": "pkg:npm/cache-manager@7.2.4"
+          },
+          "purl": "pkg:npm/cache-manager@7.2.4"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/cache-manager/package.json"
+          ],
+          "id": "scope:[\"packages/cache-manager/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "packages/cache-manager/package.json",
+            "purl": "pkg:npm/cache-manager@7.2.4"
+          },
+          "purl": "pkg:npm/cache-manager@7.2.4"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/cache-manager/package.json"
+          ],
+          "id": "scope:[\"packages/cache-manager/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "packages/cache-manager/package.json",
+            "purl": "pkg:npm/cache-manager@7.2.4"
+          },
+          "purl": "pkg:npm/cache-manager@7.2.4"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/cache-manager/package.json"
+          ],
+          "id": "scope:[\"packages/cache-manager/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "packages/cache-manager/package.json",
+            "purl": "pkg:npm/cache-manager@7.2.4"
+          },
+          "purl": "pkg:npm/cache-manager@7.2.4"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {
+              "name": "cache-manager",
+              "type": "module",
+              "version": "7.2.4"
+            }
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "packages/cache-manager/package.json"
+          ],
+          "id": "workspace:\"packages/cache-manager\"",
+          "locator": "packages/cache-manager",
+          "project": {
+            "definitionFile": "packages/cache-manager/package.json",
+            "purl": "pkg:npm/cache-manager@7.2.4"
+          },
+          "purl": "pkg:npm/cache-manager@7.2.4"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"packages/cache-manager/package.json\",\"dependencies\"]",
+          "node": "scope:[\"packages/cache-manager/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "packages/cache-manager/package.json",
+            "purl": "pkg:npm/cache-manager@7.2.4"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"packages/cache-manager/package.json\",\"devDependencies\"]",
+          "node": "scope:[\"packages/cache-manager/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "packages/cache-manager/package.json",
+            "purl": "pkg:npm/cache-manager@7.2.4"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"packages/cache-manager/package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"packages/cache-manager/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "packages/cache-manager/package.json",
+            "purl": "pkg:npm/cache-manager@7.2.4"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"packages/cache-manager/package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"packages/cache-manager/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "packages/cache-manager/package.json",
+            "purl": "pkg:npm/cache-manager@7.2.4"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "packages/cache-manager/package.json"
+        ]
+      }
+    },
+    {
+      "attributes": {},
+      "edges": [
+        {
+          "evidence": [
+            "packages/cacheable-request/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable-request/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable-request/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"@types/http-cache-semantics\"]",
+            "name": "@types/http-cache-semantics",
+            "specifier": "^4.0.4"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cacheable-request/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable-request/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable-request/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"get-stream\"]",
+            "name": "get-stream",
+            "specifier": "^9.0.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cacheable-request/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable-request/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable-request/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"http-cache-semantics\"]",
+            "name": "http-cache-semantics",
+            "specifier": "^4.2.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cacheable-request/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable-request/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable-request/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"keyv\"]",
+            "name": "keyv",
+            "specifier": "^5.5.3"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cacheable-request/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable-request/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable-request/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"mimic-response\"]",
+            "name": "mimic-response",
+            "specifier": "^4.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cacheable-request/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable-request/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable-request/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"normalize-url\"]",
+            "name": "normalize-url",
+            "specifier": "^8.1.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cacheable-request/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable-request/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable-request/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"responselike\"]",
+            "name": "responselike",
+            "specifier": "^3.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cacheable-request/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable-request/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable-request/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@biomejs/biome\"]",
+            "name": "@biomejs/biome",
+            "specifier": "^2.2.5"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cacheable-request/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable-request/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable-request/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@keyv/sqlite\"]",
+            "name": "@keyv/sqlite",
+            "specifier": "^4.0.5"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cacheable-request/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable-request/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable-request/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@types/express\"]",
+            "name": "@types/express",
+            "specifier": "^5.0.3"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cacheable-request/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable-request/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable-request/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@types/node\"]",
+            "name": "@types/node",
+            "specifier": "^24.7.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cacheable-request/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable-request/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable-request/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@types/responselike\"]",
+            "name": "@types/responselike",
+            "specifier": "^1.0.3"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cacheable-request/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable-request/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable-request/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@vitest/coverage-v8\"]",
+            "name": "@vitest/coverage-v8",
+            "specifier": "^3.2.4"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cacheable-request/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable-request/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable-request/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"body-parser\"]",
+            "name": "body-parser",
+            "specifier": "^2.2.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cacheable-request/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable-request/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable-request/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"delay\"]",
+            "name": "delay",
+            "specifier": "^6.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cacheable-request/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable-request/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable-request/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"express\"]",
+            "name": "express",
+            "specifier": "^5.1.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cacheable-request/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable-request/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable-request/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"pify\"]",
+            "name": "pify",
+            "specifier": "^6.1.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cacheable-request/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable-request/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable-request/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"rimraf\"]",
+            "name": "rimraf",
+            "specifier": "^6.0.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cacheable-request/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable-request/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable-request/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"sqlite3\"]",
+            "name": "sqlite3",
+            "specifier": "^5.1.7"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cacheable-request/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable-request/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable-request/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"tsup\"]",
+            "name": "tsup",
+            "specifier": "^8.5.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cacheable-request/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable-request/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable-request/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"typescript\"]",
+            "name": "typescript",
+            "specifier": "^5.9.3"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cacheable-request/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable-request/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable-request/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"vitest\"]",
+            "name": "vitest",
+            "specifier": "^3.2.4"
+          },
+          "selection": "selected",
+          "status": "declared"
+        }
+      ],
+      "id": "[\"packagejson\",\"packages/cacheable-request/package.json\",\"packagejson:316a22f21b52c95a35f023745619000161378e00fe72244b9ee3209a4c8fcf4d\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/cacheable-request/package.json"
+          ],
+          "id": "scope:[\"packages/cacheable-request/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "packages/cacheable-request/package.json",
+            "purl": "pkg:npm/cacheable-request@13.0.12"
+          },
+          "purl": "pkg:npm/cacheable-request@13.0.12"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/cacheable-request/package.json"
+          ],
+          "id": "scope:[\"packages/cacheable-request/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "packages/cacheable-request/package.json",
+            "purl": "pkg:npm/cacheable-request@13.0.12"
+          },
+          "purl": "pkg:npm/cacheable-request@13.0.12"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/cacheable-request/package.json"
+          ],
+          "id": "scope:[\"packages/cacheable-request/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "packages/cacheable-request/package.json",
+            "purl": "pkg:npm/cacheable-request@13.0.12"
+          },
+          "purl": "pkg:npm/cacheable-request@13.0.12"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/cacheable-request/package.json"
+          ],
+          "id": "scope:[\"packages/cacheable-request/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "packages/cacheable-request/package.json",
+            "purl": "pkg:npm/cacheable-request@13.0.12"
+          },
+          "purl": "pkg:npm/cacheable-request@13.0.12"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {
+              "engines": {
+                "node": ">=18"
+              },
+              "name": "cacheable-request",
+              "type": "module",
+              "version": "13.0.12"
+            }
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "packages/cacheable-request/package.json"
+          ],
+          "id": "workspace:\"packages/cacheable-request\"",
+          "locator": "packages/cacheable-request",
+          "project": {
+            "definitionFile": "packages/cacheable-request/package.json",
+            "purl": "pkg:npm/cacheable-request@13.0.12"
+          },
+          "purl": "pkg:npm/cacheable-request@13.0.12"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"packages/cacheable-request/package.json\",\"dependencies\"]",
+          "node": "scope:[\"packages/cacheable-request/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "packages/cacheable-request/package.json",
+            "purl": "pkg:npm/cacheable-request@13.0.12"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"packages/cacheable-request/package.json\",\"devDependencies\"]",
+          "node": "scope:[\"packages/cacheable-request/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "packages/cacheable-request/package.json",
+            "purl": "pkg:npm/cacheable-request@13.0.12"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"packages/cacheable-request/package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"packages/cacheable-request/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "packages/cacheable-request/package.json",
+            "purl": "pkg:npm/cacheable-request@13.0.12"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"packages/cacheable-request/package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"packages/cacheable-request/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "packages/cacheable-request/package.json",
+            "purl": "pkg:npm/cacheable-request@13.0.12"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "packages/cacheable-request/package.json"
+        ]
+      }
+    },
+    {
+      "attributes": {},
+      "edges": [
+        {
+          "evidence": [
+            "packages/cacheable/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"@cacheable/memory\"]",
+            "name": "@cacheable/memory",
+            "specifier": "workspace:^"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cacheable/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"@cacheable/utils\"]",
+            "name": "@cacheable/utils",
+            "specifier": "workspace:^"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cacheable/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"hookified\"]",
+            "name": "hookified",
+            "specifier": "^1.12.2"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cacheable/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"keyv\"]",
+            "name": "keyv",
+            "specifier": "^5.5.3"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cacheable/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"qified\"]",
+            "name": "qified",
+            "specifier": "^0.5.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cacheable/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@biomejs/biome\"]",
+            "name": "@biomejs/biome",
+            "specifier": "^2.2.6"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cacheable/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@faker-js/faker\"]",
+            "name": "@faker-js/faker",
+            "specifier": "^10.1.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cacheable/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@keyv/redis\"]",
+            "name": "@keyv/redis",
+            "specifier": "^5.1.3"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cacheable/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@keyv/valkey\"]",
+            "name": "@keyv/valkey",
+            "specifier": "^1.0.10"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cacheable/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@qified/redis\"]",
+            "name": "@qified/redis",
+            "specifier": "^0.5.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cacheable/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@types/node\"]",
+            "name": "@types/node",
+            "specifier": "^24.8.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cacheable/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@vitest/coverage-v8\"]",
+            "name": "@vitest/coverage-v8",
+            "specifier": "^3.2.4"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cacheable/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"lru-cache\"]",
+            "name": "lru-cache",
+            "specifier": "^11.2.2"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cacheable/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"rimraf\"]",
+            "name": "rimraf",
+            "specifier": "^6.0.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cacheable/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"tsup\"]",
+            "name": "tsup",
+            "specifier": "^8.5.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cacheable/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"typescript\"]",
+            "name": "typescript",
+            "specifier": "^5.9.3"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/cacheable/package.json"
+          ],
+          "from": "scope:[\"packages/cacheable/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/cacheable/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"vitest\"]",
+            "name": "vitest",
+            "specifier": "^3.2.4"
+          },
+          "selection": "selected",
+          "status": "declared"
+        }
+      ],
+      "id": "[\"packagejson\",\"packages/cacheable/package.json\",\"packagejson:176c8ac85c4e654e4617d84b402c0d4eaec1a909a358dd4c183a9ffa15cd06dd\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/cacheable/package.json"
+          ],
+          "id": "scope:[\"packages/cacheable/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "packages/cacheable/package.json",
+            "purl": "pkg:npm/cacheable@2.1.1"
+          },
+          "purl": "pkg:npm/cacheable@2.1.1"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/cacheable/package.json"
+          ],
+          "id": "scope:[\"packages/cacheable/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "packages/cacheable/package.json",
+            "purl": "pkg:npm/cacheable@2.1.1"
+          },
+          "purl": "pkg:npm/cacheable@2.1.1"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/cacheable/package.json"
+          ],
+          "id": "scope:[\"packages/cacheable/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "packages/cacheable/package.json",
+            "purl": "pkg:npm/cacheable@2.1.1"
+          },
+          "purl": "pkg:npm/cacheable@2.1.1"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/cacheable/package.json"
+          ],
+          "id": "scope:[\"packages/cacheable/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "packages/cacheable/package.json",
+            "purl": "pkg:npm/cacheable@2.1.1"
+          },
+          "purl": "pkg:npm/cacheable@2.1.1"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {
+              "name": "cacheable",
+              "private": false,
+              "type": "module",
+              "version": "2.1.1"
+            }
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "packages/cacheable/package.json"
+          ],
+          "id": "workspace:\"packages/cacheable\"",
+          "locator": "packages/cacheable",
+          "project": {
+            "definitionFile": "packages/cacheable/package.json",
+            "purl": "pkg:npm/cacheable@2.1.1"
+          },
+          "purl": "pkg:npm/cacheable@2.1.1"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"packages/cacheable/package.json\",\"dependencies\"]",
+          "node": "scope:[\"packages/cacheable/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "packages/cacheable/package.json",
+            "purl": "pkg:npm/cacheable@2.1.1"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"packages/cacheable/package.json\",\"devDependencies\"]",
+          "node": "scope:[\"packages/cacheable/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "packages/cacheable/package.json",
+            "purl": "pkg:npm/cacheable@2.1.1"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"packages/cacheable/package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"packages/cacheable/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "packages/cacheable/package.json",
+            "purl": "pkg:npm/cacheable@2.1.1"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"packages/cacheable/package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"packages/cacheable/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "packages/cacheable/package.json",
+            "purl": "pkg:npm/cacheable@2.1.1"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "packages/cacheable/package.json"
+        ]
+      }
+    },
+    {
+      "attributes": {},
+      "edges": [
+        {
+          "evidence": [
+            "packages/file-entry-cache/package.json"
+          ],
+          "from": "scope:[\"packages/file-entry-cache/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/file-entry-cache/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"flat-cache\"]",
+            "name": "flat-cache",
+            "specifier": "workspace:^"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/file-entry-cache/package.json"
+          ],
+          "from": "scope:[\"packages/file-entry-cache/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/file-entry-cache/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@biomejs/biome\"]",
+            "name": "@biomejs/biome",
+            "specifier": "^2.2.5"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/file-entry-cache/package.json"
+          ],
+          "from": "scope:[\"packages/file-entry-cache/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/file-entry-cache/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@types/node\"]",
+            "name": "@types/node",
+            "specifier": "^24.7.2"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/file-entry-cache/package.json"
+          ],
+          "from": "scope:[\"packages/file-entry-cache/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/file-entry-cache/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@vitest/coverage-v8\"]",
+            "name": "@vitest/coverage-v8",
+            "specifier": "^3.2.4"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/file-entry-cache/package.json"
+          ],
+          "from": "scope:[\"packages/file-entry-cache/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/file-entry-cache/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"pino\"]",
+            "name": "pino",
+            "specifier": "^10.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/file-entry-cache/package.json"
+          ],
+          "from": "scope:[\"packages/file-entry-cache/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/file-entry-cache/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"rimraf\"]",
+            "name": "rimraf",
+            "specifier": "^6.0.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/file-entry-cache/package.json"
+          ],
+          "from": "scope:[\"packages/file-entry-cache/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/file-entry-cache/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"tsup\"]",
+            "name": "tsup",
+            "specifier": "^8.5.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/file-entry-cache/package.json"
+          ],
+          "from": "scope:[\"packages/file-entry-cache/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/file-entry-cache/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"typescript\"]",
+            "name": "typescript",
+            "specifier": "^5.9.3"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/file-entry-cache/package.json"
+          ],
+          "from": "scope:[\"packages/file-entry-cache/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/file-entry-cache/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"vitest\"]",
+            "name": "vitest",
+            "specifier": "^3.2.4"
+          },
+          "selection": "selected",
+          "status": "declared"
+        }
+      ],
+      "id": "[\"packagejson\",\"packages/file-entry-cache/package.json\",\"packagejson:9b8e5ea9a1f991f219f11555695e0f0d0eb492f828027b0482c37c82d126422e\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/file-entry-cache/package.json"
+          ],
+          "id": "scope:[\"packages/file-entry-cache/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "packages/file-entry-cache/package.json",
+            "purl": "pkg:npm/file-entry-cache@11.1.0"
+          },
+          "purl": "pkg:npm/file-entry-cache@11.1.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/file-entry-cache/package.json"
+          ],
+          "id": "scope:[\"packages/file-entry-cache/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "packages/file-entry-cache/package.json",
+            "purl": "pkg:npm/file-entry-cache@11.1.0"
+          },
+          "purl": "pkg:npm/file-entry-cache@11.1.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/file-entry-cache/package.json"
+          ],
+          "id": "scope:[\"packages/file-entry-cache/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "packages/file-entry-cache/package.json",
+            "purl": "pkg:npm/file-entry-cache@11.1.0"
+          },
+          "purl": "pkg:npm/file-entry-cache@11.1.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/file-entry-cache/package.json"
+          ],
+          "id": "scope:[\"packages/file-entry-cache/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "packages/file-entry-cache/package.json",
+            "purl": "pkg:npm/file-entry-cache@11.1.0"
+          },
+          "purl": "pkg:npm/file-entry-cache@11.1.0"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {
+              "name": "file-entry-cache",
+              "private": false,
+              "type": "module",
+              "version": "11.1.0"
+            }
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "packages/file-entry-cache/package.json"
+          ],
+          "id": "workspace:\"packages/file-entry-cache\"",
+          "locator": "packages/file-entry-cache",
+          "project": {
+            "definitionFile": "packages/file-entry-cache/package.json",
+            "purl": "pkg:npm/file-entry-cache@11.1.0"
+          },
+          "purl": "pkg:npm/file-entry-cache@11.1.0"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"packages/file-entry-cache/package.json\",\"dependencies\"]",
+          "node": "scope:[\"packages/file-entry-cache/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "packages/file-entry-cache/package.json",
+            "purl": "pkg:npm/file-entry-cache@11.1.0"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"packages/file-entry-cache/package.json\",\"devDependencies\"]",
+          "node": "scope:[\"packages/file-entry-cache/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "packages/file-entry-cache/package.json",
+            "purl": "pkg:npm/file-entry-cache@11.1.0"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"packages/file-entry-cache/package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"packages/file-entry-cache/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "packages/file-entry-cache/package.json",
+            "purl": "pkg:npm/file-entry-cache@11.1.0"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"packages/file-entry-cache/package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"packages/file-entry-cache/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "packages/file-entry-cache/package.json",
+            "purl": "pkg:npm/file-entry-cache@11.1.0"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "packages/file-entry-cache/package.json"
+        ]
+      }
+    },
+    {
+      "attributes": {},
+      "edges": [
+        {
+          "evidence": [
+            "packages/flat-cache/package.json"
+          ],
+          "from": "scope:[\"packages/flat-cache/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/flat-cache/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"cacheable\"]",
+            "name": "cacheable",
+            "specifier": "workspace:^"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/flat-cache/package.json"
+          ],
+          "from": "scope:[\"packages/flat-cache/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/flat-cache/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"flatted\"]",
+            "name": "flatted",
+            "specifier": "^3.3.3"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/flat-cache/package.json"
+          ],
+          "from": "scope:[\"packages/flat-cache/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/flat-cache/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"hookified\"]",
+            "name": "hookified",
+            "specifier": "^1.12.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/flat-cache/package.json"
+          ],
+          "from": "scope:[\"packages/flat-cache/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/flat-cache/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@biomejs/biome\"]",
+            "name": "@biomejs/biome",
+            "specifier": "^2.2.4"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/flat-cache/package.json"
+          ],
+          "from": "scope:[\"packages/flat-cache/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/flat-cache/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@faker-js/faker\"]",
+            "name": "@faker-js/faker",
+            "specifier": "^10.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/flat-cache/package.json"
+          ],
+          "from": "scope:[\"packages/flat-cache/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/flat-cache/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@types/node\"]",
+            "name": "@types/node",
+            "specifier": "^24.5.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/flat-cache/package.json"
+          ],
+          "from": "scope:[\"packages/flat-cache/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/flat-cache/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@vitest/coverage-v8\"]",
+            "name": "@vitest/coverage-v8",
+            "specifier": "^3.2.4"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/flat-cache/package.json"
+          ],
+          "from": "scope:[\"packages/flat-cache/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/flat-cache/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"rimraf\"]",
+            "name": "rimraf",
+            "specifier": "^6.0.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/flat-cache/package.json"
+          ],
+          "from": "scope:[\"packages/flat-cache/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/flat-cache/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"tsup\"]",
+            "name": "tsup",
+            "specifier": "^8.5.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/flat-cache/package.json"
+          ],
+          "from": "scope:[\"packages/flat-cache/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/flat-cache/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"typescript\"]",
+            "name": "typescript",
+            "specifier": "^5.9.2"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/flat-cache/package.json"
+          ],
+          "from": "scope:[\"packages/flat-cache/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/flat-cache/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"vitest\"]",
+            "name": "vitest",
+            "specifier": "^3.2.4"
+          },
+          "selection": "selected",
+          "status": "declared"
+        }
+      ],
+      "id": "[\"packagejson\",\"packages/flat-cache/package.json\",\"packagejson:116e851cb89d466fb96542d8c6848aa1d1af88011d5b1931b62bbebde83cd7c5\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/flat-cache/package.json"
+          ],
+          "id": "scope:[\"packages/flat-cache/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "packages/flat-cache/package.json",
+            "purl": "pkg:npm/flat-cache@6.1.18"
+          },
+          "purl": "pkg:npm/flat-cache@6.1.18"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/flat-cache/package.json"
+          ],
+          "id": "scope:[\"packages/flat-cache/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "packages/flat-cache/package.json",
+            "purl": "pkg:npm/flat-cache@6.1.18"
+          },
+          "purl": "pkg:npm/flat-cache@6.1.18"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/flat-cache/package.json"
+          ],
+          "id": "scope:[\"packages/flat-cache/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "packages/flat-cache/package.json",
+            "purl": "pkg:npm/flat-cache@6.1.18"
+          },
+          "purl": "pkg:npm/flat-cache@6.1.18"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/flat-cache/package.json"
+          ],
+          "id": "scope:[\"packages/flat-cache/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "packages/flat-cache/package.json",
+            "purl": "pkg:npm/flat-cache@6.1.18"
+          },
+          "purl": "pkg:npm/flat-cache@6.1.18"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {
+              "name": "flat-cache",
+              "private": false,
+              "type": "module",
+              "version": "6.1.18"
+            }
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "packages/flat-cache/package.json"
+          ],
+          "id": "workspace:\"packages/flat-cache\"",
+          "locator": "packages/flat-cache",
+          "project": {
+            "definitionFile": "packages/flat-cache/package.json",
+            "purl": "pkg:npm/flat-cache@6.1.18"
+          },
+          "purl": "pkg:npm/flat-cache@6.1.18"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"packages/flat-cache/package.json\",\"dependencies\"]",
+          "node": "scope:[\"packages/flat-cache/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "packages/flat-cache/package.json",
+            "purl": "pkg:npm/flat-cache@6.1.18"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"packages/flat-cache/package.json\",\"devDependencies\"]",
+          "node": "scope:[\"packages/flat-cache/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "packages/flat-cache/package.json",
+            "purl": "pkg:npm/flat-cache@6.1.18"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"packages/flat-cache/package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"packages/flat-cache/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "packages/flat-cache/package.json",
+            "purl": "pkg:npm/flat-cache@6.1.18"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"packages/flat-cache/package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"packages/flat-cache/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "packages/flat-cache/package.json",
+            "purl": "pkg:npm/flat-cache@6.1.18"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "packages/flat-cache/package.json"
+        ]
+      }
+    },
+    {
+      "attributes": {},
+      "edges": [
+        {
+          "evidence": [
+            "packages/memory/package.json"
+          ],
+          "from": "scope:[\"packages/memory/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/memory/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"@cacheable/utils\"]",
+            "name": "@cacheable/utils",
+            "specifier": "workspace:^"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/memory/package.json"
+          ],
+          "from": "scope:[\"packages/memory/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/memory/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"@keyv/bigmap\"]",
+            "name": "@keyv/bigmap",
+            "specifier": "^1.1.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/memory/package.json"
+          ],
+          "from": "scope:[\"packages/memory/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/memory/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"hookified\"]",
+            "name": "hookified",
+            "specifier": "^1.12.2"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/memory/package.json"
+          ],
+          "from": "scope:[\"packages/memory/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/memory/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"keyv\"]",
+            "name": "keyv",
+            "specifier": "^5.5.3"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/memory/package.json"
+          ],
+          "from": "scope:[\"packages/memory/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/memory/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@biomejs/biome\"]",
+            "name": "@biomejs/biome",
+            "specifier": "^2.3.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/memory/package.json"
+          ],
+          "from": "scope:[\"packages/memory/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/memory/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@faker-js/faker\"]",
+            "name": "@faker-js/faker",
+            "specifier": "^10.1.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/memory/package.json"
+          ],
+          "from": "scope:[\"packages/memory/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/memory/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@types/node\"]",
+            "name": "@types/node",
+            "specifier": "^24.9.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/memory/package.json"
+          ],
+          "from": "scope:[\"packages/memory/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/memory/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@vitest/coverage-v8\"]",
+            "name": "@vitest/coverage-v8",
+            "specifier": "^4.0.3"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/memory/package.json"
+          ],
+          "from": "scope:[\"packages/memory/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/memory/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"rimraf\"]",
+            "name": "rimraf",
+            "specifier": "^6.0.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/memory/package.json"
+          ],
+          "from": "scope:[\"packages/memory/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/memory/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"tsup\"]",
+            "name": "tsup",
+            "specifier": "^8.5.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/memory/package.json"
+          ],
+          "from": "scope:[\"packages/memory/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/memory/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"typescript\"]",
+            "name": "typescript",
+            "specifier": "^5.9.3"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/memory/package.json"
+          ],
+          "from": "scope:[\"packages/memory/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/memory/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"vitest\"]",
+            "name": "vitest",
+            "specifier": "^4.0.3"
+          },
+          "selection": "selected",
+          "status": "declared"
+        }
+      ],
+      "id": "[\"packagejson\",\"packages/memory/package.json\",\"packagejson:5f8ee6bbca77570bcc7c26878927e0d945399b221f919ef2fc970aa0b587fa9a\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/memory/package.json"
+          ],
+          "id": "scope:[\"packages/memory/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "packages/memory/package.json",
+            "purl": "pkg:npm/%40cacheable/memory@2.0.3"
+          },
+          "purl": "pkg:npm/%40cacheable/memory@2.0.3"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/memory/package.json"
+          ],
+          "id": "scope:[\"packages/memory/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "packages/memory/package.json",
+            "purl": "pkg:npm/%40cacheable/memory@2.0.3"
+          },
+          "purl": "pkg:npm/%40cacheable/memory@2.0.3"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/memory/package.json"
+          ],
+          "id": "scope:[\"packages/memory/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "packages/memory/package.json",
+            "purl": "pkg:npm/%40cacheable/memory@2.0.3"
+          },
+          "purl": "pkg:npm/%40cacheable/memory@2.0.3"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/memory/package.json"
+          ],
+          "id": "scope:[\"packages/memory/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "packages/memory/package.json",
+            "purl": "pkg:npm/%40cacheable/memory@2.0.3"
+          },
+          "purl": "pkg:npm/%40cacheable/memory@2.0.3"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {
+              "name": "@cacheable/memory",
+              "private": false,
+              "type": "module",
+              "version": "2.0.3"
+            }
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "packages/memory/package.json"
+          ],
+          "id": "workspace:\"packages/memory\"",
+          "locator": "packages/memory",
+          "project": {
+            "definitionFile": "packages/memory/package.json",
+            "purl": "pkg:npm/%40cacheable/memory@2.0.3"
+          },
+          "purl": "pkg:npm/%40cacheable/memory@2.0.3"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"packages/memory/package.json\",\"dependencies\"]",
+          "node": "scope:[\"packages/memory/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "packages/memory/package.json",
+            "purl": "pkg:npm/%40cacheable/memory@2.0.3"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"packages/memory/package.json\",\"devDependencies\"]",
+          "node": "scope:[\"packages/memory/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "packages/memory/package.json",
+            "purl": "pkg:npm/%40cacheable/memory@2.0.3"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"packages/memory/package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"packages/memory/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "packages/memory/package.json",
+            "purl": "pkg:npm/%40cacheable/memory@2.0.3"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"packages/memory/package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"packages/memory/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "packages/memory/package.json",
+            "purl": "pkg:npm/%40cacheable/memory@2.0.3"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "packages/memory/package.json"
+        ]
+      }
+    },
+    {
+      "attributes": {},
+      "edges": [
+        {
+          "evidence": [
+            "packages/net/package.json"
+          ],
+          "from": "scope:[\"packages/net/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/net/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"cacheable\"]",
+            "name": "cacheable",
+            "specifier": "workspace:^"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/net/package.json"
+          ],
+          "from": "scope:[\"packages/net/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/net/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"hookified\"]",
+            "name": "hookified",
+            "specifier": "^1.12.2"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/net/package.json"
+          ],
+          "from": "scope:[\"packages/net/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/net/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"http-cache-semantics\"]",
+            "name": "http-cache-semantics",
+            "specifier": "^4.2.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/net/package.json"
+          ],
+          "from": "scope:[\"packages/net/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/net/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"undici\"]",
+            "name": "undici",
+            "specifier": "^7.16.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/net/package.json"
+          ],
+          "from": "scope:[\"packages/net/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/net/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@biomejs/biome\"]",
+            "name": "@biomejs/biome",
+            "specifier": "^2.3.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/net/package.json"
+          ],
+          "from": "scope:[\"packages/net/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/net/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@faker-js/faker\"]",
+            "name": "@faker-js/faker",
+            "specifier": "^10.1.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/net/package.json"
+          ],
+          "from": "scope:[\"packages/net/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/net/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@types/http-cache-semantics\"]",
+            "name": "@types/http-cache-semantics",
+            "specifier": "^4.0.4"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/net/package.json"
+          ],
+          "from": "scope:[\"packages/net/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/net/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@types/node\"]",
+            "name": "@types/node",
+            "specifier": "^24.9.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/net/package.json"
+          ],
+          "from": "scope:[\"packages/net/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/net/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@vitest/coverage-v8\"]",
+            "name": "@vitest/coverage-v8",
+            "specifier": "^4.0.4"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/net/package.json"
+          ],
+          "from": "scope:[\"packages/net/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/net/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"rimraf\"]",
+            "name": "rimraf",
+            "specifier": "^6.0.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/net/package.json"
+          ],
+          "from": "scope:[\"packages/net/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/net/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"tsup\"]",
+            "name": "tsup",
+            "specifier": "^8.5.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/net/package.json"
+          ],
+          "from": "scope:[\"packages/net/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/net/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"typescript\"]",
+            "name": "typescript",
+            "specifier": "^5.9.3"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/net/package.json"
+          ],
+          "from": "scope:[\"packages/net/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/net/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"vitest\"]",
+            "name": "vitest",
+            "specifier": "^4.0.4"
+          },
+          "selection": "selected",
+          "status": "declared"
+        }
+      ],
+      "id": "[\"packagejson\",\"packages/net/package.json\",\"packagejson:6e72760b0dcc5dd73250c98b0d72edbe643a20fedb4da641daba1f1ac6394813\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/net/package.json"
+          ],
+          "id": "scope:[\"packages/net/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "packages/net/package.json",
+            "purl": "pkg:npm/%40cacheable/net@2.0.1"
+          },
+          "purl": "pkg:npm/%40cacheable/net@2.0.1"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/net/package.json"
+          ],
+          "id": "scope:[\"packages/net/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "packages/net/package.json",
+            "purl": "pkg:npm/%40cacheable/net@2.0.1"
+          },
+          "purl": "pkg:npm/%40cacheable/net@2.0.1"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/net/package.json"
+          ],
+          "id": "scope:[\"packages/net/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "packages/net/package.json",
+            "purl": "pkg:npm/%40cacheable/net@2.0.1"
+          },
+          "purl": "pkg:npm/%40cacheable/net@2.0.1"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/net/package.json"
+          ],
+          "id": "scope:[\"packages/net/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "packages/net/package.json",
+            "purl": "pkg:npm/%40cacheable/net@2.0.1"
+          },
+          "purl": "pkg:npm/%40cacheable/net@2.0.1"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {
+              "name": "@cacheable/net",
+              "private": false,
+              "type": "module",
+              "version": "2.0.1"
+            }
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "packages/net/package.json"
+          ],
+          "id": "workspace:\"packages/net\"",
+          "locator": "packages/net",
+          "project": {
+            "definitionFile": "packages/net/package.json",
+            "purl": "pkg:npm/%40cacheable/net@2.0.1"
+          },
+          "purl": "pkg:npm/%40cacheable/net@2.0.1"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"packages/net/package.json\",\"dependencies\"]",
+          "node": "scope:[\"packages/net/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "packages/net/package.json",
+            "purl": "pkg:npm/%40cacheable/net@2.0.1"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"packages/net/package.json\",\"devDependencies\"]",
+          "node": "scope:[\"packages/net/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "packages/net/package.json",
+            "purl": "pkg:npm/%40cacheable/net@2.0.1"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"packages/net/package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"packages/net/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "packages/net/package.json",
+            "purl": "pkg:npm/%40cacheable/net@2.0.1"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"packages/net/package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"packages/net/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "packages/net/package.json",
+            "purl": "pkg:npm/%40cacheable/net@2.0.1"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "packages/net/package.json"
+        ]
+      }
+    },
+    {
+      "attributes": {},
+      "edges": [
+        {
+          "evidence": [
+            "packages/node-cache/package.json"
+          ],
+          "from": "scope:[\"packages/node-cache/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/node-cache/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"cacheable\"]",
+            "name": "cacheable",
+            "specifier": "workspace:^"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/node-cache/package.json"
+          ],
+          "from": "scope:[\"packages/node-cache/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/node-cache/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"hookified\"]",
+            "name": "hookified",
+            "specifier": "^1.12.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/node-cache/package.json"
+          ],
+          "from": "scope:[\"packages/node-cache/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/node-cache/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"keyv\"]",
+            "name": "keyv",
+            "specifier": "^5.5.3"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/node-cache/package.json"
+          ],
+          "from": "scope:[\"packages/node-cache/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/node-cache/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@biomejs/biome\"]",
+            "name": "@biomejs/biome",
+            "specifier": "^2.2.4"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/node-cache/package.json"
+          ],
+          "from": "scope:[\"packages/node-cache/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/node-cache/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@faker-js/faker\"]",
+            "name": "@faker-js/faker",
+            "specifier": "^10.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/node-cache/package.json"
+          ],
+          "from": "scope:[\"packages/node-cache/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/node-cache/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@types/node\"]",
+            "name": "@types/node",
+            "specifier": "^24.8.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/node-cache/package.json"
+          ],
+          "from": "scope:[\"packages/node-cache/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/node-cache/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@vitest/coverage-v8\"]",
+            "name": "@vitest/coverage-v8",
+            "specifier": "^3.2.4"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/node-cache/package.json"
+          ],
+          "from": "scope:[\"packages/node-cache/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/node-cache/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"rimraf\"]",
+            "name": "rimraf",
+            "specifier": "^6.0.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/node-cache/package.json"
+          ],
+          "from": "scope:[\"packages/node-cache/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/node-cache/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"tsup\"]",
+            "name": "tsup",
+            "specifier": "^8.5.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/node-cache/package.json"
+          ],
+          "from": "scope:[\"packages/node-cache/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/node-cache/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"typescript\"]",
+            "name": "typescript",
+            "specifier": "^5.9.3"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/node-cache/package.json"
+          ],
+          "from": "scope:[\"packages/node-cache/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/node-cache/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"vitest\"]",
+            "name": "vitest",
+            "specifier": "^3.2.4"
+          },
+          "selection": "selected",
+          "status": "declared"
+        }
+      ],
+      "id": "[\"packagejson\",\"packages/node-cache/package.json\",\"packagejson:31c8a7888dbd08b8028609c7a32009e74f511095325176cb3f335b5a6f01b193\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/node-cache/package.json"
+          ],
+          "id": "scope:[\"packages/node-cache/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "packages/node-cache/package.json",
+            "purl": "pkg:npm/%40cacheable/node-cache@1.7.4"
+          },
+          "purl": "pkg:npm/%40cacheable/node-cache@1.7.4"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/node-cache/package.json"
+          ],
+          "id": "scope:[\"packages/node-cache/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "packages/node-cache/package.json",
+            "purl": "pkg:npm/%40cacheable/node-cache@1.7.4"
+          },
+          "purl": "pkg:npm/%40cacheable/node-cache@1.7.4"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/node-cache/package.json"
+          ],
+          "id": "scope:[\"packages/node-cache/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "packages/node-cache/package.json",
+            "purl": "pkg:npm/%40cacheable/node-cache@1.7.4"
+          },
+          "purl": "pkg:npm/%40cacheable/node-cache@1.7.4"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/node-cache/package.json"
+          ],
+          "id": "scope:[\"packages/node-cache/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "packages/node-cache/package.json",
+            "purl": "pkg:npm/%40cacheable/node-cache@1.7.4"
+          },
+          "purl": "pkg:npm/%40cacheable/node-cache@1.7.4"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {
+              "engines": {
+                "node": ">=18"
+              },
+              "name": "@cacheable/node-cache",
+              "private": false,
+              "type": "module",
+              "version": "1.7.4"
+            }
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "packages/node-cache/package.json"
+          ],
+          "id": "workspace:\"packages/node-cache\"",
+          "locator": "packages/node-cache",
+          "project": {
+            "definitionFile": "packages/node-cache/package.json",
+            "purl": "pkg:npm/%40cacheable/node-cache@1.7.4"
+          },
+          "purl": "pkg:npm/%40cacheable/node-cache@1.7.4"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"packages/node-cache/package.json\",\"dependencies\"]",
+          "node": "scope:[\"packages/node-cache/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "packages/node-cache/package.json",
+            "purl": "pkg:npm/%40cacheable/node-cache@1.7.4"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"packages/node-cache/package.json\",\"devDependencies\"]",
+          "node": "scope:[\"packages/node-cache/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "packages/node-cache/package.json",
+            "purl": "pkg:npm/%40cacheable/node-cache@1.7.4"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"packages/node-cache/package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"packages/node-cache/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "packages/node-cache/package.json",
+            "purl": "pkg:npm/%40cacheable/node-cache@1.7.4"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"packages/node-cache/package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"packages/node-cache/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "packages/node-cache/package.json",
+            "purl": "pkg:npm/%40cacheable/node-cache@1.7.4"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "packages/node-cache/package.json"
+        ]
+      }
+    },
+    {
+      "attributes": {},
+      "edges": [
+        {
+          "evidence": [
+            "packages/utils/package.json"
+          ],
+          "from": "scope:[\"packages/utils/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/utils/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"keyv\"]",
+            "name": "keyv",
+            "specifier": "^5.5.3"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/utils/package.json"
+          ],
+          "from": "scope:[\"packages/utils/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/utils/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@biomejs/biome\"]",
+            "name": "@biomejs/biome",
+            "specifier": "^2.3.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/utils/package.json"
+          ],
+          "from": "scope:[\"packages/utils/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/utils/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@faker-js/faker\"]",
+            "name": "@faker-js/faker",
+            "specifier": "^10.1.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/utils/package.json"
+          ],
+          "from": "scope:[\"packages/utils/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/utils/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@types/node\"]",
+            "name": "@types/node",
+            "specifier": "^24.9.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/utils/package.json"
+          ],
+          "from": "scope:[\"packages/utils/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/utils/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@vitest/coverage-v8\"]",
+            "name": "@vitest/coverage-v8",
+            "specifier": "^4.0.3"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/utils/package.json"
+          ],
+          "from": "scope:[\"packages/utils/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/utils/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"lru-cache\"]",
+            "name": "lru-cache",
+            "specifier": "^11.2.2"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/utils/package.json"
+          ],
+          "from": "scope:[\"packages/utils/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/utils/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"rimraf\"]",
+            "name": "rimraf",
+            "specifier": "^6.0.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/utils/package.json"
+          ],
+          "from": "scope:[\"packages/utils/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/utils/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"tsup\"]",
+            "name": "tsup",
+            "specifier": "^8.5.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/utils/package.json"
+          ],
+          "from": "scope:[\"packages/utils/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/utils/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"typescript\"]",
+            "name": "typescript",
+            "specifier": "^5.9.3"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/utils/package.json"
+          ],
+          "from": "scope:[\"packages/utils/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/utils/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"vitest\"]",
+            "name": "vitest",
+            "specifier": "^4.0.3"
+          },
+          "selection": "selected",
+          "status": "declared"
+        }
+      ],
+      "id": "[\"packagejson\",\"packages/utils/package.json\",\"packagejson:79b501b75d95d05fc7d750f463d0794cc86030e0250f6918f83380c7c946d861\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/utils/package.json"
+          ],
+          "id": "scope:[\"packages/utils/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "packages/utils/package.json",
+            "purl": "pkg:npm/%40cacheable/utils@2.1.0"
+          },
+          "purl": "pkg:npm/%40cacheable/utils@2.1.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/utils/package.json"
+          ],
+          "id": "scope:[\"packages/utils/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "packages/utils/package.json",
+            "purl": "pkg:npm/%40cacheable/utils@2.1.0"
+          },
+          "purl": "pkg:npm/%40cacheable/utils@2.1.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/utils/package.json"
+          ],
+          "id": "scope:[\"packages/utils/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "packages/utils/package.json",
+            "purl": "pkg:npm/%40cacheable/utils@2.1.0"
+          },
+          "purl": "pkg:npm/%40cacheable/utils@2.1.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/utils/package.json"
+          ],
+          "id": "scope:[\"packages/utils/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "packages/utils/package.json",
+            "purl": "pkg:npm/%40cacheable/utils@2.1.0"
+          },
+          "purl": "pkg:npm/%40cacheable/utils@2.1.0"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {
+              "name": "@cacheable/utils",
+              "private": false,
+              "type": "module",
+              "version": "2.1.0"
+            }
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "packages/utils/package.json"
+          ],
+          "id": "workspace:\"packages/utils\"",
+          "locator": "packages/utils",
+          "project": {
+            "definitionFile": "packages/utils/package.json",
+            "purl": "pkg:npm/%40cacheable/utils@2.1.0"
+          },
+          "purl": "pkg:npm/%40cacheable/utils@2.1.0"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"packages/utils/package.json\",\"dependencies\"]",
+          "node": "scope:[\"packages/utils/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "packages/utils/package.json",
+            "purl": "pkg:npm/%40cacheable/utils@2.1.0"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"packages/utils/package.json\",\"devDependencies\"]",
+          "node": "scope:[\"packages/utils/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "packages/utils/package.json",
+            "purl": "pkg:npm/%40cacheable/utils@2.1.0"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"packages/utils/package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"packages/utils/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "packages/utils/package.json",
+            "purl": "pkg:npm/%40cacheable/utils@2.1.0"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"packages/utils/package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"packages/utils/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "packages/utils/package.json",
+            "purl": "pkg:npm/%40cacheable/utils@2.1.0"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "packages/utils/package.json"
+        ]
+      }
+    },
+    {
+      "attributes": {},
+      "edges": [
+        {
+          "evidence": [
+            "packages/website/package.json"
+          ],
+          "from": "scope:[\"packages/website/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/website/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@types/node\"]",
+            "name": "@types/node",
+            "specifier": "^24.7.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/website/package.json"
+          ],
+          "from": "scope:[\"packages/website/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/website/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"docula\"]",
+            "name": "docula",
+            "specifier": "^0.30.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/website/package.json"
+          ],
+          "from": "scope:[\"packages/website/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/website/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"rimraf\"]",
+            "name": "rimraf",
+            "specifier": "^6.0.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "packages/website/package.json"
+          ],
+          "from": "scope:[\"packages/website/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/website/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"tsx\"]",
+            "name": "tsx",
+            "specifier": "^4.20.6"
+          },
+          "selection": "selected",
+          "status": "declared"
+        }
+      ],
+      "id": "[\"packagejson\",\"packages/website/package.json\",\"packagejson:b685d30f0faf2829640d8a0c3e2edd725045c9ec686fd63d94d0e875c9e92415\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/website/package.json"
+          ],
+          "id": "scope:[\"packages/website/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "packages/website/package.json",
+            "purl": "pkg:npm/%40cacheable/website@1.0.0"
+          },
+          "purl": "pkg:npm/%40cacheable/website@1.0.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/website/package.json"
+          ],
+          "id": "scope:[\"packages/website/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "packages/website/package.json",
+            "purl": "pkg:npm/%40cacheable/website@1.0.0"
+          },
+          "purl": "pkg:npm/%40cacheable/website@1.0.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/website/package.json"
+          ],
+          "id": "scope:[\"packages/website/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "packages/website/package.json",
+            "purl": "pkg:npm/%40cacheable/website@1.0.0"
+          },
+          "purl": "pkg:npm/%40cacheable/website@1.0.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "packages/website/package.json"
+          ],
+          "id": "scope:[\"packages/website/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "packages/website/package.json",
+            "purl": "pkg:npm/%40cacheable/website@1.0.0"
+          },
+          "purl": "pkg:npm/%40cacheable/website@1.0.0"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {
+              "name": "@cacheable/website",
+              "private": true,
+              "version": "1.0.0"
+            }
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "packages/website/package.json"
+          ],
+          "id": "workspace:\"packages/website\"",
+          "locator": "packages/website",
+          "project": {
+            "definitionFile": "packages/website/package.json",
+            "purl": "pkg:npm/%40cacheable/website@1.0.0"
+          },
+          "purl": "pkg:npm/%40cacheable/website@1.0.0"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"packages/website/package.json\",\"dependencies\"]",
+          "node": "scope:[\"packages/website/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "packages/website/package.json",
+            "purl": "pkg:npm/%40cacheable/website@1.0.0"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"packages/website/package.json\",\"devDependencies\"]",
+          "node": "scope:[\"packages/website/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "packages/website/package.json",
+            "purl": "pkg:npm/%40cacheable/website@1.0.0"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"packages/website/package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"packages/website/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "packages/website/package.json",
+            "purl": "pkg:npm/%40cacheable/website@1.0.0"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"packages/website/package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"packages/website/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "packages/website/package.json",
+            "purl": "pkg:npm/%40cacheable/website@1.0.0"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "packages/website/package.json"
+        ]
+      }
     }
   ],
-  "subprojects": [],
-  "relationships": [],
-  "issues": []
+  "issues": [],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "packages/benchmark/package.json",
+      "evidence": [
+        "packages/benchmark/package.json"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "packagejson",
+            "files": [
+              "packages/benchmark/package.json"
+            ],
+            "key": "\"packages/benchmark\""
+          },
+          "synthesizedPurl": false
+        }
+      ],
+      "purl": "pkg:npm/%40cacheable/benchmark@1.0.0"
+    },
+    {
+      "definitionFile": "packages/memory/package.json",
+      "evidence": [
+        "packages/memory/package.json"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "packagejson",
+            "files": [
+              "packages/memory/package.json"
+            ],
+            "key": "\"packages/memory\""
+          },
+          "synthesizedPurl": false
+        }
+      ],
+      "purl": "pkg:npm/%40cacheable/memory@2.0.3"
+    },
+    {
+      "definitionFile": "packages/net/package.json",
+      "evidence": [
+        "packages/net/package.json"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "packagejson",
+            "files": [
+              "packages/net/package.json"
+            ],
+            "key": "\"packages/net\""
+          },
+          "synthesizedPurl": false
+        }
+      ],
+      "purl": "pkg:npm/%40cacheable/net@2.0.1"
+    },
+    {
+      "definitionFile": "packages/node-cache/package.json",
+      "evidence": [
+        "packages/node-cache/package.json"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "packagejson",
+            "files": [
+              "packages/node-cache/package.json"
+            ],
+            "key": "\"packages/node-cache\""
+          },
+          "synthesizedPurl": false
+        }
+      ],
+      "purl": "pkg:npm/%40cacheable/node-cache@1.7.4"
+    },
+    {
+      "definitionFile": "packages/utils/package.json",
+      "evidence": [
+        "packages/utils/package.json"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "packagejson",
+            "files": [
+              "packages/utils/package.json"
+            ],
+            "key": "\"packages/utils\""
+          },
+          "synthesizedPurl": false
+        }
+      ],
+      "purl": "pkg:npm/%40cacheable/utils@2.1.0"
+    },
+    {
+      "definitionFile": "packages/website/package.json",
+      "evidence": [
+        "packages/website/package.json"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "packagejson",
+            "files": [
+              "packages/website/package.json"
+            ],
+            "key": "\"packages/website\""
+          },
+          "synthesizedPurl": false
+        }
+      ],
+      "purl": "pkg:npm/%40cacheable/website@1.0.0"
+    },
+    {
+      "definitionFile": "packages/cache-manager/package.json",
+      "evidence": [
+        "packages/cache-manager/package.json"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "packagejson",
+            "files": [
+              "packages/cache-manager/package.json"
+            ],
+            "key": "\"packages/cache-manager\""
+          },
+          "synthesizedPurl": false
+        }
+      ],
+      "purl": "pkg:npm/cache-manager@7.2.4"
+    },
+    {
+      "definitionFile": "package.json",
+      "evidence": [
+        "package.json"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "packagejson",
+            "files": [
+              "package.json"
+            ],
+            "key": "\".\""
+          },
+          "synthesizedPurl": false
+        }
+      ],
+      "purl": "pkg:npm/cacheable-mono-repo@1.0.0"
+    },
+    {
+      "definitionFile": "packages/cacheable-request/package.json",
+      "evidence": [
+        "packages/cacheable-request/package.json"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "packagejson",
+            "files": [
+              "packages/cacheable-request/package.json"
+            ],
+            "key": "\"packages/cacheable-request\""
+          },
+          "synthesizedPurl": false
+        }
+      ],
+      "purl": "pkg:npm/cacheable-request@13.0.12"
+    },
+    {
+      "definitionFile": "packages/cacheable/package.json",
+      "evidence": [
+        "packages/cacheable/package.json"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "packagejson",
+            "files": [
+              "packages/cacheable/package.json"
+            ],
+            "key": "\"packages/cacheable\""
+          },
+          "synthesizedPurl": false
+        }
+      ],
+      "purl": "pkg:npm/cacheable@2.1.1"
+    },
+    {
+      "definitionFile": "packages/file-entry-cache/package.json",
+      "evidence": [
+        "packages/file-entry-cache/package.json"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "packagejson",
+            "files": [
+              "packages/file-entry-cache/package.json"
+            ],
+            "key": "\"packages/file-entry-cache\""
+          },
+          "synthesizedPurl": false
+        }
+      ],
+      "purl": "pkg:npm/file-entry-cache@11.1.0"
+    },
+    {
+      "definitionFile": "packages/flat-cache/package.json",
+      "evidence": [
+        "packages/flat-cache/package.json"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "packagejson",
+            "files": [
+              "packages/flat-cache/package.json"
+            ],
+            "key": "\"packages/flat-cache\""
+          },
+          "synthesizedPurl": false
+        }
+      ],
+      "purl": "pkg:npm/flat-cache@6.1.18"
+    }
+  ]
 }

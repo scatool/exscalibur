@@ -1,192 +1,1064 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Dockerfile.arg-before-from 1`] = `
+exports[`native Dockerfile fixture: Dockerfile.arg-before-from 1`] = `
 {
-  "issues": [],
-  "packages": [
+  "codebase": "fixture",
+  "formatVersion": 2,
+  "graphs": [
     {
-      "evidence": [
-        "Dockerfile.arg-before-from#3",
+      "context": {
+        "dockerfile:argDefaults": [
+          {
+            "line": 2,
+            "name": "BASE_IMAGE",
+            "value": "python:3.11-slim",
+          },
+        ],
+      },
+      "edges": [
+        {
+          "attributes": {
+            "dockerfile:line": 3,
+          },
+          "evidence": [
+            "Dockerfile.arg-before-from#3",
+          ],
+          "from": "source",
+          "kind": "FROM",
+          "relation": "depends-on",
+          "requested": {
+            "name": "\${BASE_IMAGE}",
+            "specifier": "\${BASE_IMAGE}",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
       ],
-      "purl": "pkg:docker/python@3.11-slim",
+      "id": "dockerfile:9e8de69d4331505b98d325b4157de2aec28ea4accb3900e7c326d00d36e0bb97",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "source",
+          "project": {
+            "definitionFile": "Dockerfile.arg-before-from",
+            "purl": "pkg:generic/dockerfile/build",
+          },
+          "purl": "pkg:generic/dockerfile/build",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "from",
+          "node": "source",
+          "project": {
+            "definitionFile": "Dockerfile.arg-before-from",
+            "purl": "pkg:generic/dockerfile/build",
+          },
+          "scope": "from",
+        },
+      ],
+      "source": {
+        "extractor": "dockerfile",
+        "files": [
+          "Dockerfile.arg-before-from",
+        ],
+      },
     },
   ],
-  "relationships": [],
-  "subprojects": [],
-}
-`;
-
-exports[`Dockerfile.basic 1`] = `
-{
-  "issues": [],
-  "packages": [
-    {
-      "evidence": [
-        "Dockerfile.basic#2",
-      ],
-      "purl": "pkg:docker/alpine@3.18",
-    },
-  ],
-  "relationships": [],
-  "subprojects": [],
-}
-`;
-
-exports[`Dockerfile.digest-only 1`] = `
-{
-  "issues": [],
-  "packages": [
-    {
-      "evidence": [
-        "Dockerfile.digest-only#2",
-      ],
-      "purl": "pkg:docker/node@sha256%253Acd39fdfb3bb0a8da539fe0b7bc13cb12b49c05d169895cbf5351c340dfe42357",
-    },
-  ],
-  "relationships": [],
-  "subprojects": [],
-}
-`;
-
-exports[`Dockerfile.ghcr 1`] = `
-{
-  "issues": [],
-  "packages": [
-    {
-      "evidence": [
-        "Dockerfile.ghcr#2",
-      ],
-      "purl": "pkg:docker/actions/runner@2.319.1?repository_url=ghcr.io",
-    },
-  ],
-  "relationships": [],
-  "subprojects": [],
-}
-`;
-
-exports[`Dockerfile.mcr-deep-path 1`] = `
-{
-  "issues": [],
-  "packages": [
-    {
-      "evidence": [
-        "Dockerfile.mcr-deep-path#2",
-      ],
-      "purl": "pkg:docker/dotnet/sdk@8.0?repository_url=mcr.microsoft.com",
-    },
-  ],
-  "relationships": [],
-  "subprojects": [],
-}
-`;
-
-exports[`Dockerfile.multi-arg-registry-namespace 1`] = `
-{
-  "issues": [],
-  "packages": [
-    {
-      "evidence": [
-        "Dockerfile.multi-arg-registry-namespace#6",
-      ],
-      "purl": "pkg:docker/library/alpine@3.19",
-    },
-    {
-      "evidence": [
-        "Dockerfile.multi-arg-registry-namespace#9",
-      ],
-      "purl": "pkg:docker/library/busybox@1.36",
-    },
-  ],
-  "relationships": [],
-  "subprojects": [],
-}
-`;
-
-exports[`Dockerfile.multistage-internal-base 1`] = `
-{
-  "issues": [],
-  "packages": [
-    {
-      "evidence": [
-        "Dockerfile.multistage-internal-base#2",
-      ],
-      "purl": "pkg:docker/alpine@latest",
-    },
-  ],
-  "relationships": [],
-  "subprojects": [],
-}
-`;
-
-exports[`Dockerfile.platform-variant 1`] = `
-{
-  "issues": [],
-  "packages": [
-    {
-      "evidence": [
-        "Dockerfile.platform-variant#4",
-      ],
-      "purl": "pkg:docker/alpine@3.18",
-    },
-  ],
-  "relationships": [],
-  "subprojects": [],
-}
-`;
-
-exports[`Dockerfile.private-registry-port 1`] = `
-{
-  "issues": [],
-  "packages": [
-    {
-      "evidence": [
-        "Dockerfile.private-registry-port#2",
-      ],
-      "purl": "pkg:docker/private/app-base@1.2.3?repository_url=registry.example.com%3A5000",
-    },
-  ],
-  "relationships": [],
-  "subprojects": [],
-}
-`;
-
-exports[`Dockerfile.scratch 1`] = `
-{
   "issues": [],
   "packages": [],
-  "relationships": [],
-  "subprojects": [],
+  "subprojects": [
+    {
+      "definitionFile": "Dockerfile.arg-before-from",
+      "evidence": [
+        "Dockerfile.arg-before-from",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "dockerfile",
+            "files": [
+              "Dockerfile.arg-before-from",
+            ],
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/dockerfile/build",
+    },
+  ],
 }
 `;
 
-exports[`Dockerfile.tag-and-digest 1`] = `
+exports[`native Dockerfile fixture: Dockerfile.basic 1`] = `
 {
-  "issues": [],
-  "packages": [
+  "codebase": "fixture",
+  "formatVersion": 2,
+  "graphs": [
     {
-      "evidence": [
-        "Dockerfile.tag-and-digest#2",
+      "context": {
+        "dockerfile:argDefaults": [],
+      },
+      "edges": [
+        {
+          "attributes": {
+            "dockerfile:line": 2,
+          },
+          "evidence": [
+            "Dockerfile.basic#2",
+          ],
+          "from": "source",
+          "kind": "FROM",
+          "relation": "depends-on",
+          "requested": {
+            "name": "alpine:3.18",
+            "specifier": "alpine:3.18",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
       ],
-      "purl": "pkg:docker/ubuntu@sha256%253A3c282906f58630659f57e5fcae551eeeee54fa8ac4bfa2dc4c4f7deb6bf7e08c",
+      "id": "dockerfile:95f977e4d8eab0e357997d4bb9c55ed61aad9c36c4bd8baf84b0532e484721ef",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "source",
+          "project": {
+            "definitionFile": "Dockerfile.basic",
+            "purl": "pkg:generic/dockerfile/build",
+          },
+          "purl": "pkg:generic/dockerfile/build",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "from",
+          "node": "source",
+          "project": {
+            "definitionFile": "Dockerfile.basic",
+            "purl": "pkg:generic/dockerfile/build",
+          },
+          "scope": "from",
+        },
+      ],
+      "source": {
+        "extractor": "dockerfile",
+        "files": [
+          "Dockerfile.basic",
+        ],
+      },
     },
   ],
-  "relationships": [],
-  "subprojects": [],
+  "issues": [],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "Dockerfile.basic",
+      "evidence": [
+        "Dockerfile.basic",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "dockerfile",
+            "files": [
+              "Dockerfile.basic",
+            ],
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/dockerfile/build",
+    },
+  ],
 }
 `;
 
-exports[`Dockerfile.whitespace-and-comments 1`] = `
+exports[`native Dockerfile fixture: Dockerfile.digest-only 1`] = `
 {
-  "issues": [],
-  "packages": [
+  "codebase": "fixture",
+  "formatVersion": 2,
+  "graphs": [
     {
-      "evidence": [
-        "Dockerfile.whitespace-and-comments#3",
+      "context": {
+        "dockerfile:argDefaults": [],
+      },
+      "edges": [
+        {
+          "attributes": {
+            "dockerfile:line": 2,
+          },
+          "evidence": [
+            "Dockerfile.digest-only#2",
+          ],
+          "from": "source",
+          "kind": "FROM",
+          "relation": "depends-on",
+          "requested": {
+            "name": "node@sha256:cd39fdfb3bb0a8da539fe0b7bc13cb12b49c05d169895cbf5351c340dfe42357",
+            "specifier": "node@sha256:cd39fdfb3bb0a8da539fe0b7bc13cb12b49c05d169895cbf5351c340dfe42357",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
       ],
-      "purl": "pkg:docker/alpine@3.18",
+      "id": "dockerfile:c0ac508095310f161abf8e3f6fc0bc8bf8ebe5eb6636b00b1828c62471243a8a",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "source",
+          "project": {
+            "definitionFile": "Dockerfile.digest-only",
+            "purl": "pkg:generic/dockerfile/build",
+          },
+          "purl": "pkg:generic/dockerfile/build",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "from",
+          "node": "source",
+          "project": {
+            "definitionFile": "Dockerfile.digest-only",
+            "purl": "pkg:generic/dockerfile/build",
+          },
+          "scope": "from",
+        },
+      ],
+      "source": {
+        "extractor": "dockerfile",
+        "files": [
+          "Dockerfile.digest-only",
+        ],
+      },
     },
   ],
-  "relationships": [],
-  "subprojects": [],
+  "issues": [],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "Dockerfile.digest-only",
+      "evidence": [
+        "Dockerfile.digest-only",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "dockerfile",
+            "files": [
+              "Dockerfile.digest-only",
+            ],
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/dockerfile/build",
+    },
+  ],
+}
+`;
+
+exports[`native Dockerfile fixture: Dockerfile.ghcr 1`] = `
+{
+  "codebase": "fixture",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "context": {
+        "dockerfile:argDefaults": [],
+      },
+      "edges": [
+        {
+          "attributes": {
+            "dockerfile:line": 2,
+          },
+          "evidence": [
+            "Dockerfile.ghcr#2",
+          ],
+          "from": "source",
+          "kind": "FROM",
+          "relation": "depends-on",
+          "requested": {
+            "name": "ghcr.io/actions/runner:2.319.1",
+            "specifier": "ghcr.io/actions/runner:2.319.1",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+      ],
+      "id": "dockerfile:cfb719253505f712c3f7a11461f93b3fb81f486b0821b70a330a5e690c429f18",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "source",
+          "project": {
+            "definitionFile": "Dockerfile.ghcr",
+            "purl": "pkg:generic/dockerfile/build",
+          },
+          "purl": "pkg:generic/dockerfile/build",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "from",
+          "node": "source",
+          "project": {
+            "definitionFile": "Dockerfile.ghcr",
+            "purl": "pkg:generic/dockerfile/build",
+          },
+          "scope": "from",
+        },
+      ],
+      "source": {
+        "extractor": "dockerfile",
+        "files": [
+          "Dockerfile.ghcr",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "Dockerfile.ghcr",
+      "evidence": [
+        "Dockerfile.ghcr",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "dockerfile",
+            "files": [
+              "Dockerfile.ghcr",
+            ],
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/dockerfile/build",
+    },
+  ],
+}
+`;
+
+exports[`native Dockerfile fixture: Dockerfile.mcr-deep-path 1`] = `
+{
+  "codebase": "fixture",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "context": {
+        "dockerfile:argDefaults": [],
+      },
+      "edges": [
+        {
+          "attributes": {
+            "dockerfile:line": 2,
+          },
+          "evidence": [
+            "Dockerfile.mcr-deep-path#2",
+          ],
+          "from": "source",
+          "kind": "FROM",
+          "relation": "depends-on",
+          "requested": {
+            "name": "mcr.microsoft.com/dotnet/sdk:8.0",
+            "specifier": "mcr.microsoft.com/dotnet/sdk:8.0",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+      ],
+      "id": "dockerfile:3b4cbcbb58418246a7e23e164cdb81ced90aaaa29742d7ce2e7daa731c351b80",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "source",
+          "project": {
+            "definitionFile": "Dockerfile.mcr-deep-path",
+            "purl": "pkg:generic/dockerfile/build",
+          },
+          "purl": "pkg:generic/dockerfile/build",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "from",
+          "node": "source",
+          "project": {
+            "definitionFile": "Dockerfile.mcr-deep-path",
+            "purl": "pkg:generic/dockerfile/build",
+          },
+          "scope": "from",
+        },
+      ],
+      "source": {
+        "extractor": "dockerfile",
+        "files": [
+          "Dockerfile.mcr-deep-path",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "Dockerfile.mcr-deep-path",
+      "evidence": [
+        "Dockerfile.mcr-deep-path",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "dockerfile",
+            "files": [
+              "Dockerfile.mcr-deep-path",
+            ],
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/dockerfile/build",
+    },
+  ],
+}
+`;
+
+exports[`native Dockerfile fixture: Dockerfile.multi-arg-registry-namespace 1`] = `
+{
+  "codebase": "fixture",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "context": {
+        "dockerfile:argDefaults": [
+          {
+            "line": 2,
+            "name": "REGISTRY",
+            "value": "docker.io",
+          },
+          {
+            "line": 3,
+            "name": "NAMESPACE",
+            "value": "library",
+          },
+          {
+            "line": 4,
+            "name": "IMAGE",
+            "value": "alpine",
+          },
+          {
+            "line": 5,
+            "name": "TAG",
+            "value": "3.19",
+          },
+        ],
+      },
+      "edges": [
+        {
+          "attributes": {
+            "dockerfile:line": 6,
+            "dockerfile:stage": "stage1",
+          },
+          "evidence": [
+            "Dockerfile.multi-arg-registry-namespace#6",
+          ],
+          "from": "source",
+          "kind": "FROM",
+          "relation": "depends-on",
+          "requested": {
+            "name": "\${REGISTRY}/\${NAMESPACE}/\${IMAGE}:\${TAG}",
+            "specifier": "\${REGISTRY}/\${NAMESPACE}/\${IMAGE}:\${TAG}",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+        {
+          "attributes": {
+            "dockerfile:line": 9,
+          },
+          "evidence": [
+            "Dockerfile.multi-arg-registry-namespace#9",
+          ],
+          "from": "source",
+          "kind": "FROM",
+          "relation": "depends-on",
+          "requested": {
+            "name": "\${REGISTRY}/\${NAMESPACE}/busybox:1.36",
+            "specifier": "\${REGISTRY}/\${NAMESPACE}/busybox:1.36",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+      ],
+      "id": "dockerfile:aa30437b3363b196da0f3e5f67b1471ff3f4b6e13fdc03396210212c077eb43a",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "source",
+          "project": {
+            "definitionFile": "Dockerfile.multi-arg-registry-namespace",
+            "purl": "pkg:generic/dockerfile/build",
+          },
+          "purl": "pkg:generic/dockerfile/build",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "from",
+          "node": "source",
+          "project": {
+            "definitionFile": "Dockerfile.multi-arg-registry-namespace",
+            "purl": "pkg:generic/dockerfile/build",
+          },
+          "scope": "from",
+        },
+      ],
+      "source": {
+        "extractor": "dockerfile",
+        "files": [
+          "Dockerfile.multi-arg-registry-namespace",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "Dockerfile.multi-arg-registry-namespace",
+      "evidence": [
+        "Dockerfile.multi-arg-registry-namespace",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "dockerfile",
+            "files": [
+              "Dockerfile.multi-arg-registry-namespace",
+            ],
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/dockerfile/build",
+    },
+  ],
+}
+`;
+
+exports[`native Dockerfile fixture: Dockerfile.multistage-internal-base 1`] = `
+{
+  "codebase": "fixture",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "context": {
+        "dockerfile:argDefaults": [],
+      },
+      "edges": [
+        {
+          "attributes": {
+            "dockerfile:line": 2,
+            "dockerfile:stage": "base",
+          },
+          "evidence": [
+            "Dockerfile.multistage-internal-base#2",
+          ],
+          "from": "source",
+          "kind": "FROM",
+          "relation": "depends-on",
+          "requested": {
+            "name": "alpine",
+            "specifier": "alpine",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+      ],
+      "id": "dockerfile:80e5d13af61f914173032742283edefcf6ccaff4bc649188196a40645304e8d7",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "source",
+          "project": {
+            "definitionFile": "Dockerfile.multistage-internal-base",
+            "purl": "pkg:generic/dockerfile/build",
+          },
+          "purl": "pkg:generic/dockerfile/build",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "from",
+          "node": "source",
+          "project": {
+            "definitionFile": "Dockerfile.multistage-internal-base",
+            "purl": "pkg:generic/dockerfile/build",
+          },
+          "scope": "from",
+        },
+      ],
+      "source": {
+        "extractor": "dockerfile",
+        "files": [
+          "Dockerfile.multistage-internal-base",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "Dockerfile.multistage-internal-base",
+      "evidence": [
+        "Dockerfile.multistage-internal-base",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "dockerfile",
+            "files": [
+              "Dockerfile.multistage-internal-base",
+            ],
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/dockerfile/build",
+    },
+  ],
+}
+`;
+
+exports[`native Dockerfile fixture: Dockerfile.platform-variant 1`] = `
+{
+  "codebase": "fixture",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "context": {
+        "dockerfile:argDefaults": [],
+      },
+      "edges": [
+        {
+          "attributes": {
+            "dockerfile:line": 4,
+            "dockerfile:platform": "$TARGETPLATFORM",
+          },
+          "evidence": [
+            "Dockerfile.platform-variant#4",
+          ],
+          "from": "source",
+          "kind": "FROM",
+          "relation": "depends-on",
+          "requested": {
+            "name": "alpine:3.18",
+            "specifier": "alpine:3.18",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+      ],
+      "id": "dockerfile:08ff1524edfeb4673e639c58fa3b8ddf5ca9a7f5f0aaf9fef489b5bb5abfea22",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "source",
+          "project": {
+            "definitionFile": "Dockerfile.platform-variant",
+            "purl": "pkg:generic/dockerfile/build",
+          },
+          "purl": "pkg:generic/dockerfile/build",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "from",
+          "node": "source",
+          "project": {
+            "definitionFile": "Dockerfile.platform-variant",
+            "purl": "pkg:generic/dockerfile/build",
+          },
+          "scope": "from",
+        },
+      ],
+      "source": {
+        "extractor": "dockerfile",
+        "files": [
+          "Dockerfile.platform-variant",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "Dockerfile.platform-variant",
+      "evidence": [
+        "Dockerfile.platform-variant",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "dockerfile",
+            "files": [
+              "Dockerfile.platform-variant",
+            ],
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/dockerfile/build",
+    },
+  ],
+}
+`;
+
+exports[`native Dockerfile fixture: Dockerfile.private-registry-port 1`] = `
+{
+  "codebase": "fixture",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "context": {
+        "dockerfile:argDefaults": [],
+      },
+      "edges": [
+        {
+          "attributes": {
+            "dockerfile:line": 2,
+          },
+          "evidence": [
+            "Dockerfile.private-registry-port#2",
+          ],
+          "from": "source",
+          "kind": "FROM",
+          "relation": "depends-on",
+          "requested": {
+            "name": "registry.example.com:5000/private/app-base:1.2.3",
+            "specifier": "registry.example.com:5000/private/app-base:1.2.3",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+      ],
+      "id": "dockerfile:6cda163199446852c55be4e35dec97b3a38054e2c08f01933faa1946a7b05ad0",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "source",
+          "project": {
+            "definitionFile": "Dockerfile.private-registry-port",
+            "purl": "pkg:generic/dockerfile/build",
+          },
+          "purl": "pkg:generic/dockerfile/build",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "from",
+          "node": "source",
+          "project": {
+            "definitionFile": "Dockerfile.private-registry-port",
+            "purl": "pkg:generic/dockerfile/build",
+          },
+          "scope": "from",
+        },
+      ],
+      "source": {
+        "extractor": "dockerfile",
+        "files": [
+          "Dockerfile.private-registry-port",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "Dockerfile.private-registry-port",
+      "evidence": [
+        "Dockerfile.private-registry-port",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "dockerfile",
+            "files": [
+              "Dockerfile.private-registry-port",
+            ],
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/dockerfile/build",
+    },
+  ],
+}
+`;
+
+exports[`native Dockerfile fixture: Dockerfile.scratch 1`] = `
+{
+  "codebase": "fixture",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "context": {
+        "dockerfile:argDefaults": [],
+      },
+      "edges": [],
+      "id": "dockerfile:3d31f301e4354a6f6093684c6682ff42b7f36be642247d4bb696d7371076697a",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "source",
+          "project": {
+            "definitionFile": "Dockerfile.scratch",
+            "purl": "pkg:generic/dockerfile/build",
+          },
+          "purl": "pkg:generic/dockerfile/build",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "from",
+          "node": "source",
+          "project": {
+            "definitionFile": "Dockerfile.scratch",
+            "purl": "pkg:generic/dockerfile/build",
+          },
+          "scope": "from",
+        },
+      ],
+      "source": {
+        "extractor": "dockerfile",
+        "files": [
+          "Dockerfile.scratch",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "Dockerfile.scratch",
+      "evidence": [
+        "Dockerfile.scratch",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "dockerfile",
+            "files": [
+              "Dockerfile.scratch",
+            ],
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/dockerfile/build",
+    },
+  ],
+}
+`;
+
+exports[`native Dockerfile fixture: Dockerfile.tag-and-digest 1`] = `
+{
+  "codebase": "fixture",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "context": {
+        "dockerfile:argDefaults": [],
+      },
+      "edges": [
+        {
+          "attributes": {
+            "dockerfile:line": 2,
+            "dockerfile:stage": "pinned",
+          },
+          "evidence": [
+            "Dockerfile.tag-and-digest#2",
+          ],
+          "from": "source",
+          "kind": "FROM",
+          "relation": "depends-on",
+          "requested": {
+            "name": "ubuntu:22.04@sha256:3c282906f58630659f57e5fcae551eeeee54fa8ac4bfa2dc4c4f7deb6bf7e08c",
+            "specifier": "ubuntu:22.04@sha256:3c282906f58630659f57e5fcae551eeeee54fa8ac4bfa2dc4c4f7deb6bf7e08c",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+      ],
+      "id": "dockerfile:715d06504afe181f93ba4a30aa416deea58c1ba6a6dc8747c95b1d09526c732c",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "source",
+          "project": {
+            "definitionFile": "Dockerfile.tag-and-digest",
+            "purl": "pkg:generic/dockerfile/build",
+          },
+          "purl": "pkg:generic/dockerfile/build",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "from",
+          "node": "source",
+          "project": {
+            "definitionFile": "Dockerfile.tag-and-digest",
+            "purl": "pkg:generic/dockerfile/build",
+          },
+          "scope": "from",
+        },
+      ],
+      "source": {
+        "extractor": "dockerfile",
+        "files": [
+          "Dockerfile.tag-and-digest",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "Dockerfile.tag-and-digest",
+      "evidence": [
+        "Dockerfile.tag-and-digest",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "dockerfile",
+            "files": [
+              "Dockerfile.tag-and-digest",
+            ],
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/dockerfile/build",
+    },
+  ],
+}
+`;
+
+exports[`native Dockerfile fixture: Dockerfile.whitespace-and-comments 1`] = `
+{
+  "codebase": "fixture",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "context": {
+        "dockerfile:argDefaults": [],
+      },
+      "edges": [
+        {
+          "attributes": {
+            "dockerfile:line": 3,
+            "dockerfile:stage": "base",
+          },
+          "evidence": [
+            "Dockerfile.whitespace-and-comments#3",
+          ],
+          "from": "source",
+          "kind": "FROM",
+          "relation": "depends-on",
+          "requested": {
+            "name": "alpine:3.18",
+            "specifier": "alpine:3.18",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+      ],
+      "id": "dockerfile:184e21b58d75674172883bcffb5fae3774bf24dd3f6026074a5c8ae1a077a6ec",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "source",
+          "project": {
+            "definitionFile": "Dockerfile.whitespace-and-comments",
+            "purl": "pkg:generic/dockerfile/build",
+          },
+          "purl": "pkg:generic/dockerfile/build",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "from",
+          "node": "source",
+          "project": {
+            "definitionFile": "Dockerfile.whitespace-and-comments",
+            "purl": "pkg:generic/dockerfile/build",
+          },
+          "scope": "from",
+        },
+      ],
+      "source": {
+        "extractor": "dockerfile",
+        "files": [
+          "Dockerfile.whitespace-and-comments",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "Dockerfile.whitespace-and-comments",
+      "evidence": [
+        "Dockerfile.whitespace-and-comments",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "dockerfile",
+            "files": [
+              "Dockerfile.whitespace-and-comments",
+            ],
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/dockerfile/build",
+    },
+  ],
 }
 `;

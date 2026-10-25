@@ -1,0 +1,10 @@
+{
+  "name": "optional-overrides-required",
+  "version": "1.0.0",
+  "dependencies": {
+    "leaf": "file:../packages/leaf-1.0.0.tgz"
+  },
+  "optionalDependencies": {
+    "leaf": "file:../packages/leaf-2.0.0.tgz"
+  }
+}

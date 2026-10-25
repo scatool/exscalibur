@@ -14,7 +14,8 @@ import { dockerfileExtractor } from "@scatool/analyzer-plugin-containers";
 import { gradleExtractor } from "@scatool/analyzer-plugin-gradle";
 import { gomodExtractor } from "@scatool/analyzer-plugin-go";
 import { extractor as uvExtractor } from "@scatool/analyzer-plugin-uv";
-import { mergeResults, writeTextFile } from "@scatool/analyzer-core";
+import { writeTextFile } from "@scatool/analyzer-core";
+import { analyze } from "./analysis.ts";
 import { extractor as githubActionsExtractor } from "@scatool/analyzer-plugin-github-actions";
 import {
   pipfileLockExtractor,
@@ -28,7 +29,7 @@ import { mavenExtractor } from "@scatool/analyzer-plugin-maven";
 import { extractor as cyclonedxExtractor } from "@scatool/analyzer-plugin-cdx";
 import { extractor as spdxExtractor } from "@scatool/analyzer-plugin-spdx";
 import { ortExtractor } from "@scatool/analyzer-plugin-ort";
-import type { AnalyzerResult, ExtractionRuntimeOptions, Extractor } from "@scatool/analyzer-core";
+import type { Extractor } from "@scatool/analyzer-core";
 import { resolve } from "path";
 import { z } from "zod";
 
@@ -306,45 +307,12 @@ async function runAnalysis(
   options: ExtractorOptions,
   globalIgnorePatterns: string[],
 ): Promise<void> {
-  const extractionRuntimeOptions: ExtractionRuntimeOptions = { ignore: globalIgnorePatterns };
-
   console.error("Running analysis...");
-  console.error(`Codebase: ${codebasePath}`);
-  console.error(`Output: ${outputPath}`);
-  console.error(`Active extractors: ${extractors.map((e) => e.name).join(", ")}`);
-  if (globalIgnorePatterns.length > 0) {
-    console.error(`Global ignore patterns: ${globalIgnorePatterns.join(", ")}`);
-  }
-  console.error("");
-
-  const results: AnalyzerResult[] = [];
-
-  for (const extractor of extractors) {
-    try {
-      console.error(`Running ${extractor.name} extractor (version ${extractor.version})...`);
-      const extractorOptions = options[extractor.name] as Partial<unknown> | undefined;
-      const result = await extractor.extract(
-        codebasePath.replaceAll("\\", "/"),
-        extractorOptions,
-        extractionRuntimeOptions,
-      );
-      results.push(result);
-      console.error(`  Found ${result.packages.length} packages`);
-      console.error(`  Found ${result.subprojects.length} subprojects`);
-      console.error(`  Found ${result.relationships.length} relationships`);
-    } catch (error) {
-      console.error(`  Error: ${error instanceof Error ? error.message : String(error)}`);
-    }
-  }
-
-  console.error("");
-  console.error("Merging results...");
-
-  const mergedResult = mergeResults(results);
+  const mergedResult = await analyze(codebasePath, extractors, options, globalIgnorePatterns);
 
   console.error(`Total packages: ${mergedResult.packages.length}`);
   console.error(`Total subprojects: ${mergedResult.subprojects.length}`);
-  console.error(`Total relationships: ${mergedResult.relationships.length}`);
+  console.error(`Total observations: ${mergedResult.graphs.length}`);
 
   console.error("");
   console.error(`Writing output to ${outputPath}...`);

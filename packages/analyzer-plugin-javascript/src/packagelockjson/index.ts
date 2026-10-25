@@ -1,42 +1,24 @@
+import { resolve } from "node:path";
+import { dirname, join, relative } from "node:path/posix";
 import {
-  type AnalyzerResult,
-  type DependencyScope,
-  type Extractor,
-  type PackageMapEntry,
-  type Subproject,
   filesExtractor,
-  scanAndMarkFiles,
-  addRelationship,
-  ensurePackageExists,
-  buildResult,
-  initializeExtractionMaps,
+  mergeResults,
   readNormalizedTextFile,
+  scanAndMarkFiles,
 } from "@scatool/analyzer-core";
-import { dirname, join } from "node:path/posix";
-import {
-  extractPackageName,
-  findLineNumber,
-  findLineNumberV1,
-  isWorkspacePath,
-  parsePackageLock,
-  type LockfileV1Dependency,
-  type PackageLockPackage,
-} from "./lockfile.ts";
-import type { PackageJson } from "../types.ts";
-import {
-  createNpmPurl,
-  extractNpmScopes,
-  NPM_DEPENDENCY_SCOPES,
-  readPackageJson,
-} from "../npm-utils.ts";
-import type { JavaScriptOptions } from "../options.ts";
-import { optionSchema } from "../options.ts";
+import { NPM_DEPENDENCY_SCOPES } from "../npm-utils.ts";
+import { NpmGraph, type NpmRecord } from "../npm-graph.ts";
+import { dependencyScopes } from "../npm-manifest.ts";
+import { optionSchema, type JavaScriptOptions } from "../options.ts";
+import { extractPackageName } from "./lockfile.ts";
+import { createPlacementResolver } from "./placement.ts";
+import { isWithinDirectory, registerLockProjects } from "./projects.ts";
 
-export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScriptOptions>({
+export const extractor = filesExtractor<JavaScriptOptions>({
   name: "packagelockjson",
   version: 1,
   optionsSchema: optionSchema,
-  markFiles: async function (codebase: string, options: JavaScriptOptions) {
+  markFiles: async function (codebase, options) {
     await scanAndMarkFiles(
       this,
       codebase,
@@ -44,390 +26,248 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
       options.ignore,
     );
   },
-  extractFile: async (file: string): Promise<AnalyzerResult> => {
-    const dir = dirname(file);
-
-    const lockfileContent = await readNormalizedTextFile(file);
-    const lockfile = parsePackageLock(lockfileContent);
-
-    // Route to appropriate extraction logic based on lockfile version
-    if (lockfile.lockfileVersion === 1) {
-      return extractFromV1Lockfile(lockfile, lockfileContent, file, dir);
-    } else if (lockfile.lockfileVersion >= 2 && lockfile.packages) {
-      return extractFromV2Lockfile(lockfile, lockfileContent, file, dir);
-    } else {
-      return {
-        packages: [],
-        subprojects: [],
-        relationships: [],
-        issues: [
-          {
-            code: "packagelockjson.unsupported_lockfile_version",
-            message: `Unsupported lockfileVersion ${lockfile.lockfileVersion}`,
-            severity: "WARNING",
-            file,
-          },
-        ],
-      };
+  extractFile: async (file, _options, context) => {
+    const lock: unknown = JSON.parse(await readNormalizedTextFile(file));
+    if (lock === null || typeof lock !== "object" || Array.isArray(lock)) {
+      throw new Error("Expected an npm lockfile object");
     }
-  },
-});
 
-/**
- * Extract packages, subprojects, and relationships from lockfile v1
- */
-async function extractFromV1Lockfile(
-  lockfile: ReturnType<typeof parsePackageLock>,
-  lockfileContent: string,
-  file: string,
-  dir: string,
-): Promise<AnalyzerResult> {
-  const { packageMap, relationshipsMap } = initializeExtractionMaps();
-  const subprojects: Subproject[] = [];
+    const document = lock as NpmRecord;
+    const version = document.lockfileVersion ?? 1;
+    if (version !== 1 && version !== 2 && version !== 3) {
+      throw new Error(`Unsupported npm lockfile version: ${JSON.stringify(version)}`);
+    }
 
-  if (!lockfile.dependencies) {
-    return { packages: [], subprojects: [], relationships: [], issues: [] };
-  }
+    const lockedObservation = new NpmGraph(context, "packagelockjson");
+    const currentManifestObservation = new NpmGraph(context, "packagejson", "declared");
+    currentManifestObservation.sourceFiles.clear();
+    lockedObservation.attributes["npm:lockfileVersion"] = version;
 
-  // Traverse the dependency tree and collect all packages
-  const traverseDependencies = (
-    deps: Record<string, LockfileV1Dependency>,
-    parentPath: string[] = [],
-  ): void => {
-    for (const [packageName, depEntry] of Object.entries(deps)) {
-      const version = depEntry.version;
-      const purl = createNpmPurl(packageName, version);
+    const packagesByLocation =
+      version === 1 ? flattenLegacyPlacements(document) : readPackageRecords(document.packages);
+    if (version !== 1 && document.packages === undefined) {
+      throw new Error("npm lockfile is missing its packages table");
+    }
 
-      // Add package with evidence
-      ensurePackageExists(packageMap, purl);
-      const downloadLocation =
-        depEntry.resolved ?? (isPackageLocation(depEntry.version) ? depEntry.version : undefined);
-      setDownloadLocation(packageMap, purl, downloadLocation);
-
-      // Find line number for evidence
-      const lineNumber = findLineNumberV1(lockfileContent, packageName, version);
-      if (lineNumber) {
-        packageMap.get(purl)!.evidence.add(`${file}#${lineNumber}`);
-      }
-
-      // Extract relationships from this package's dependencies
-      if (depEntry.requires) {
-        for (const [depName] of Object.entries(depEntry.requires)) {
-          // Resolve the version - check if it's in nested dependencies first
-          let resolvedVersion: string | null = null;
-
-          if (depEntry.dependencies && depEntry.dependencies[depName]) {
-            resolvedVersion = depEntry.dependencies[depName].version;
-          } else {
-            // Look in the top-level dependencies
-            if (deps[depName]) {
-              resolvedVersion = deps[depName].version;
-            } else if (lockfile.dependencies && lockfile.dependencies[depName]) {
-              resolvedVersion = lockfile.dependencies[depName].version;
-            }
-          }
-
-          if (resolvedVersion) {
-            const depPurl = createNpmPurl(depName, resolvedVersion);
-            addRelationship(relationshipsMap, purl, depPurl);
-            ensurePackageExists(packageMap, depPurl);
-          }
-        }
-      }
-
-      // Recursively traverse nested dependencies
-      if (depEntry.dependencies) {
-        traverseDependencies(depEntry.dependencies, [...parentPath, packageName]);
+    for (const [location, record] of Object.entries(packagesByLocation)) {
+      if (record.link !== undefined && typeof record.link !== "boolean") {
+        throw new Error(`Invalid npm link flag at '${location}'`);
       }
     }
-  };
 
-  // Traverse all top-level dependencies
-  traverseDependencies(lockfile.dependencies);
+    // Legacy local entries without artifact metadata do not establish a source-local
+    // project context. A placement lookup alone cannot establish a local source binding.
+    const legacyLocalLocations = new Set(
+      version === 1
+        ? Object.entries(packagesByLocation)
+            .filter(
+              ([, record]) =>
+                typeof record.version === "string" &&
+                /^(?:file:|link:)/.test(record.version) &&
+                record.resolved === undefined &&
+                record.integrity === undefined,
+            )
+            .map(([location]) => location)
+        : [],
+    );
 
-  // Extract root package as subproject
-  const packageJsonPath = join(dir, "package.json");
-  const packageInfo = await readPackageJson(packageJsonPath);
-  if (packageInfo?.name && packageInfo.version) {
-    const rootPurl = createNpmPurl(packageInfo.name, packageInfo.version);
-    const rootScopes = extractScopesV1(packageInfo, lockfile.dependencies);
+    // Complete both project and package placement indexes before resolving any links.
+    const lockDirectory = dirname(file);
+    const { projectsByLocation, projectsWithInvalidDeclarations, viewsByLocation } =
+      await registerLockProjects(
+        lockDirectory,
+        context,
+        { document, version, packagesByLocation },
+        lockedObservation,
+        currentManifestObservation,
+      );
 
-    subprojects.push({
-      purl: rootPurl,
-      definitionFile: packageJsonPath,
-      scopes: rootScopes,
-    });
-  }
+    for (const [location, metadata] of Object.entries(packagesByLocation)) {
+      if (!location.split("/").includes("node_modules") || metadata.link === true) continue;
 
-  return buildResult(packageMap, relationshipsMap, subprojects);
-}
+      const name = extractPackageName(location);
+      if (!name) throw new Error(`Cannot identify npm package at '${location}'`);
 
-function extractScopesV1(
-  packageInfo: PackageJson,
-  dependencies: Record<string, LockfileV1Dependency>,
-): DependencyScope[] {
-  return extractNpmScopes(packageInfo as Record<string, unknown>, (depName) => {
-    const depEntry = dependencies[depName];
-    return depEntry?.version ? createNpmPurl(depName, depEntry.version) : null;
-  });
-}
-
-/**
- * Extract packages, subprojects, and relationships from lockfile v2+
- */
-async function extractFromV2Lockfile(
-  lockfile: ReturnType<typeof parsePackageLock>,
-  lockfileContent: string,
-  file: string,
-  dir: string,
-): Promise<AnalyzerResult> {
-  const { packageMap, relationshipsMap } = initializeExtractionMaps();
-  const subprojects: Subproject[] = [];
-
-  if (!lockfile.packages) {
-    return { packages: [], subprojects: [], relationships: [], issues: [] };
-  }
-
-  // Process workspace packages to build a map of workspace names
-  const workspacePackages = new Map<string, { version: string; path: string }>();
-
-  for (const [packagePath] of Object.entries(lockfile.packages)) {
-    if (isWorkspacePath(packagePath)) {
-      const packageJsonPath = join(dir, packagePath, "package.json");
-      const packageInfo = await readPackageJson(packageJsonPath);
-      if (packageInfo?.name && packageInfo.version) {
-        workspacePackages.set(packageInfo.name, {
-          version: packageInfo.version,
-          path: packagePath,
-        });
-      }
+      const id = lockedObservation.addPackage(
+        `package:${JSON.stringify(location)}`,
+        name,
+        metadata,
+        !legacyLocalLocations.has(location),
+      );
+      lockedObservation.nodes.get(id)!.locator = location;
+      viewsByLocation.set(location, id);
     }
-  }
 
-  // Extract root package as subproject if it has name and version
-  const rootPackage = lockfile.packages[""];
-  if (rootPackage) {
-    const packageJsonPath = join(dir, "package.json");
-    const rootPackageInfo = await readPackageJson(packageJsonPath);
-    if (rootPackageInfo?.name && rootPackageInfo.version) {
-      const rootPurl = createNpmPurl(rootPackageInfo.name, rootPackageInfo.version);
-      const rootScopes = extractScopes(rootPackageInfo, lockfile.packages, workspacePackages);
+    const { followWorkspaceLink, resolveDependency } = createPlacementResolver(
+      packagesByLocation,
+      viewsByLocation,
+      lockDirectory,
+      version,
+    );
 
-      subprojects.push({
-        purl: rootPurl,
-        definitionFile: packageJsonPath,
-        scopes: rootScopes,
+    // Lock records are evidence even when no root currently references them.
+    for (const [location, record] of Object.entries(packagesByLocation)) {
+      if (record.link !== true || followWorkspaceLink(location) !== undefined) continue;
+      lockedObservation.rootCompleteness = "unknown";
+      lockedObservation.result.issues.push({
+        code: "npm.link_target_missing",
+        severity: "WARNING",
+        file: context.relativeFile,
+        message: `The target of npm link '${location}' is not recorded; project enumeration remains unknown`,
       });
     }
-  }
 
-  // Extract workspace packages as subprojects
-  for (const [packagePath] of Object.entries(lockfile.packages)) {
-    if (isWorkspacePath(packagePath)) {
-      const packageJsonPath = join(dir, packagePath, "package.json");
-      const packageInfo = await readPackageJson(packageJsonPath);
-      if (packageInfo?.name && packageInfo.version) {
-        const purl = createNpmPurl(packageInfo.name, packageInfo.version);
-        const scopes = extractScopes(
-          packageInfo,
-          lockfile.packages,
-          workspacePackages,
-          packagePath,
+    const addDependencies = (
+      from: string,
+      record: NpmRecord,
+      caller: string,
+      isDependencyConsumer: boolean,
+      onlyScope?: string,
+    ) => {
+      // Native virtual loading does not establish bindings for sources outside the lock root.
+      // Retain recorded lexical candidates without asserting a selected installation context.
+      const externalSource = !isWithinDirectory(
+        resolve(lockDirectory),
+        resolve(lockDirectory, caller),
+      );
+
+      for (const declaration of dependencyScopes(record)) {
+        if (onlyScope !== undefined && declaration.scope !== onlyScope) continue;
+
+        const { target, boundary } = resolveDependency(caller, declaration.name, declaration.scope);
+        const peer = declaration.scope === "peerDependencies";
+        const excluded =
+          declaration.excluded || (isDependencyConsumer && declaration.scope === "devDependencies");
+
+        // package-lock records declarations and placement, but not a pnpm-style explicit peer
+        // binding. Keep the lookup candidate without asserting that peer installation was selected.
+        const optionalMissing = declaration.optional && target === undefined;
+        const unreportedBundle = boundary !== undefined && target === undefined;
+        let selection: "selected" | "excluded" | "unknown" = "selected";
+        if (excluded || (peer && optionalMissing)) {
+          selection = "excluded";
+        } else if (
+          peer ||
+          externalSource ||
+          optionalMissing ||
+          legacyLocalLocations.has(caller) ||
+          ((version === 1 || !Object.hasOwn(packagesByLocation, caller)) &&
+            projectsByLocation.has(caller))
+        ) {
+          selection = "unknown";
+        }
+
+        lockedObservation.dependency(
+          from,
+          declaration.name,
+          declaration.specifier,
+          declaration.scope,
+          target,
+          {
+            selection,
+            optional: declaration.optional,
+            ...(unreportedBundle && !excluded
+              ? { status: "unresolved" as const }
+              : (peer || excluded || optionalMissing) && { status: "declared" as const }),
+            ...(peer && {
+              attributes: { "npm:peerBinding": target ? "lookup-candidate" : "not-reported" },
+            }),
+          },
         );
-
-        subprojects.push({
-          purl,
-          definitionFile: packageJsonPath,
-          scopes,
-        });
       }
-    }
-  }
+    };
 
-  // Process all packages (excluding root and workspaces) for packages and relationships
-  for (const [packagePath, packageEntry] of Object.entries(lockfile.packages)) {
-    // Skip root package
-    if (packagePath === "") continue;
-
-    // Skip workspace packages (they're subprojects, not regular packages)
-    if (isWorkspacePath(packagePath)) continue;
-
-    const packageName = extractPackageName(packagePath);
-    if (!packageName) continue;
-
-    const version = packageEntry.version;
-    if (!version) continue;
-
-    // Use the actual package name from the entry if available (handles aliases)
-    const actualName = packageEntry.name || packageName;
-    const purl = createNpmPurl(actualName, version);
-
-    // Add package with evidence
-    ensurePackageExists(packageMap, purl);
-    setDownloadLocation(packageMap, purl, packageEntry.resolved);
-
-    // Find line number for evidence
-    const lineNumber = findLineNumber(lockfileContent, packagePath, version);
-    if (lineNumber) {
-      packageMap.get(purl)!.evidence.add(`${file}#${lineNumber}`);
+    if (
+      version === 1 &&
+      (legacyLocalLocations.size > 0 ||
+        [...projectsByLocation.values()].some((project) => {
+          const declarations = project.manifest.workspaces;
+          return Array.isArray(declarations)
+            ? declarations.length > 0
+            : declarations !== undefined && declarations !== null;
+        }))
+    ) {
+      lockedObservation.rootCompleteness = "unknown";
+      lockedObservation.result.issues.push({
+        code: "npm.legacy_local_context_unknown",
+        severity: "WARNING",
+        file: context.relativeFile,
+        message:
+          "Lockfile version 1 does not establish workspace/local project roots or source-relative dependency contexts; local lookup candidates remain uncertain",
+      });
     }
 
-    // Extract relationships from this package's dependencies
-    processDependencies(
-      packageEntry,
-      packagePath,
-      purl,
-      lockfile.packages,
-      workspacePackages,
-      packageMap,
-      relationshipsMap,
-    );
-  }
-
-  return buildResult(packageMap, relationshipsMap, subprojects);
-}
-
-function extractScopes(
-  packageInfo: PackageJson,
-  allPackages: Record<string, PackageLockPackage>,
-  workspacePackages: Map<string, { version: string; path: string }>,
-  callerPath: string = "",
-): DependencyScope[] {
-  return extractNpmScopes(packageInfo as Record<string, unknown>, (depName) => {
-    const workspaceInfo = workspacePackages.get(depName);
-    if (workspaceInfo) return createNpmPurl(depName, workspaceInfo.version);
-
-    const resolved = resolvePackageInfo(depName, allPackages, callerPath);
-    return resolved ? createNpmPurl(resolved.name, resolved.version) : null;
-  });
-}
-
-/**
- * Process dependencies from a package entry and add relationships
- */
-function processDependencies(
-  packageEntry: PackageLockPackage,
-  packagePath: string,
-  purl: string,
-  allPackages: Record<string, PackageLockPackage>,
-  workspacePackages: Map<string, { version: string; path: string }>,
-  packageMap: Map<string, PackageMapEntry>,
-  relationshipsMap: Map<string, Set<string>>,
-): void {
-  for (const depType of NPM_DEPENDENCY_SCOPES) {
-    const depsInScope = packageEntry[depType];
-    if (!depsInScope || typeof depsInScope !== "object") continue;
-
-    for (const [depName, versionRange] of Object.entries(depsInScope)) {
-      if (typeof versionRange !== "string") continue;
-
-      // Check if this is a workspace package
-      const workspaceInfo = workspacePackages.get(depName);
-      if (workspaceInfo) {
-        // Don't create relationships to workspace packages
+    // Project roots retain each native scope; dependency-consumer views exclude dev edges.
+    for (const [location, project] of projectsByLocation) {
+      if (projectsWithInvalidDeclarations.has(project.consumer)) {
+        for (const scope of NPM_DEPENDENCY_SCOPES) lockedObservation.addRoot(project, scope);
         continue;
       }
 
-      // Resolve the actual package info (handles aliases)
-      const packageInfo = resolvePackageInfo(depName, allPackages, packagePath);
-
-      if (packageInfo) {
-        // Use the actual package name (not the alias)
-        const depPurl = createNpmPurl(packageInfo.name, packageInfo.version);
-
-        // Add relationship
-        addRelationship(relationshipsMap, purl, depPurl);
-
-        // Ensure package exists
-        ensurePackageExists(packageMap, depPurl);
+      addDependencies(project.consumer, project.manifest, location, true);
+      for (const scope of NPM_DEPENDENCY_SCOPES) {
+        const entry = lockedObservation.addRoot(project, scope);
+        addDependencies(entry, project.manifest, location, false, scope);
       }
     }
+
+    for (const [location, record] of Object.entries(packagesByLocation)) {
+      if (!location.split("/").includes("node_modules") || record.link === true) continue;
+      addDependencies(viewsByLocation.get(location)!, record, location, true);
+    }
+
+    // Keep native lockfile placement and production/development flags on views. No filtering is
+    // based on this machine's OS, CPU, libc, or an assumed deployment environment.
+    lockedObservation.attributes["npm:sourceRoot"] = relative(
+      context.codebasePath.replaceAll("\\", "/"),
+      lockDirectory,
+    );
+
+    return currentManifestObservation.result.subprojects.length > 0
+      ? mergeResults([lockedObservation.finish(), currentManifestObservation.finish()])
+      : lockedObservation.finish();
+  },
+});
+
+function readPackageRecords(value: unknown): Record<string, NpmRecord> {
+  if (value === null || typeof value !== "object" || Array.isArray(value)) {
+    throw new Error("Expected an npm packages/dependencies table");
   }
-}
 
-function setDownloadLocation(
-  packageMap: Map<string, PackageMapEntry>,
-  purl: string,
-  locator?: string,
-): void {
-  if (!locator) return;
-
-  const pkg = packageMap.get(purl);
-  if (!pkg) return;
-  pkg.downloadLocation = locator;
-}
-
-function isPackageLocation(locator: string): boolean {
-  return (
-    locator.startsWith("https://") ||
-    locator.startsWith("http://") ||
-    locator.startsWith("file:") ||
-    locator.startsWith("git+") ||
-    locator.startsWith("git://") ||
-    locator.startsWith("github:") ||
-    locator.startsWith("gitlab:") ||
-    locator.startsWith("bitbucket:") ||
-    /^git@[^:]+:/.test(locator) ||
-    /^(?:https?|ssh):\/\/.*\.git(?:#|$)/.test(locator)
-  );
-}
-
-/**
- * Resolve a dependency's package info (name and version) from the lockfile.
- * Follows npm's node_modules resolution algorithm: walk up from the caller's
- * path, checking nested node_modules at each level before falling back to
- * the top-level.
- */
-function resolvePackageInfo(
-  depName: string,
-  allPackages: Record<string, PackageLockPackage>,
-  callerPath: string,
-): { name: string; version: string } | null {
-  const candidates = buildResolutionCandidates(callerPath, depName);
-
-  for (const candidate of candidates) {
-    const pkg = allPackages[candidate];
-    if (pkg?.version) {
-      const actualName = pkg.name || depName;
-      return { name: actualName, version: pkg.version };
+  for (const [name, record] of Object.entries(value)) {
+    if (record === null || typeof record !== "object" || Array.isArray(record)) {
+      throw new Error(`Invalid npm package record: ${name}`);
     }
   }
 
-  return null;
+  return value as Record<string, NpmRecord>;
 }
 
-/**
- * Build the list of candidate paths to check for a dependency, following
- * npm's resolution order (nearest node_modules first, then walking up).
- *
- * For callerPath "node_modules/a/node_modules/b" and depName "x":
- *   1. node_modules/a/node_modules/b/node_modules/x
- *   2. node_modules/a/node_modules/x
- *   3. node_modules/x
- */
-function buildResolutionCandidates(callerPath: string, depName: string): string[] {
-  const candidates: string[] = [];
-
-  if (callerPath === "") {
-    candidates.push(`node_modules/${depName}`);
-    return candidates;
-  }
-
-  // First candidate: nested directly under the caller
-  candidates.push(`${callerPath}/node_modules/${depName}`);
-
-  // Walk up by stripping the last /node_modules/<pkg> segment each time
-  let current = callerPath;
-  while (true) {
-    const idx = current.lastIndexOf("/node_modules/");
-    if (idx === -1) {
-      // Reached the top level - always fall back to hoisted node_modules
-      candidates.push(`node_modules/${depName}`);
-      break;
+/** Convert the native v1 placement tree to locations, never a PURL union. */
+function flattenLegacyPlacements(document: NpmRecord): Record<string, NpmRecord> {
+  const records: Record<string, NpmRecord> = {};
+  const visit = (dependencies: unknown, parent: string) => {
+    for (const [name, entry] of Object.entries(readPackageRecords(dependencies ?? {}))) {
+      const location = join(parent, "node_modules", name);
+      const { dependencies: nested, requires, ...metadata } = entry;
+      let alias: NpmRecord = {};
+      if (typeof metadata.version === "string" && metadata.version.startsWith("npm:")) {
+        const target = metadata.version.slice(4);
+        const separator = target.indexOf("@", target.startsWith("@") ? target.indexOf("/") + 1 : 0);
+        if (separator <= 0) throw new Error(`Invalid legacy npm alias: ${metadata.version}`);
+        alias = {
+          name: target.slice(0, separator),
+          version: target.slice(separator + 1),
+          "npm:aliasVersion": metadata.version,
+        };
+      }
+      Object.defineProperty(records, location, {
+        value: { ...metadata, ...alias, dependencies: requires ?? {} },
+        enumerable: true,
+      });
+      visit(nested, location);
     }
-    current = current.substring(0, idx);
-    candidates.push(`${current}/node_modules/${depName}`);
-  }
-
-  return candidates;
+  };
+  visit(document.dependencies, "");
+  return records;
 }

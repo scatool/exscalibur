@@ -1,372 +1,207 @@
 import {
-  addRelationship,
-  type AnalyzerResult,
-  buildResult,
-  type DependencyScope,
-  ensurePackageExists,
-  type Extractor,
+  createDependencyGraph,
+  createEmptyResult,
   filesExtractor,
-  initializeExtractionMaps,
-  readNormalizedTextFile,
+  normalizeResult,
   runCommand,
   scanAndMarkFiles,
-  type Subproject,
+  type AnalyzerResult,
+  type DependencyEdge,
+  type DependencyView,
+  type JsonObject,
 } from "@scatool/analyzer-core";
-import { dirname } from "node:path/posix";
+import { dirname } from "node:path";
 import { createGoPurl } from "../go-utils.ts";
 
-type Dependency = {
-  path: string;
-  version: string;
-  indirect: boolean;
+type Module = {
+  Path: string;
+  Version?: string;
+  Main?: boolean;
+  Replace?: { Path: string; Version?: string; [key: string]: unknown };
+  [key: string]: unknown;
+};
+type Manifest = {
+  Module: { Path: string };
+  Require?: { Path: string; Version: string; Indirect?: boolean }[] | null;
 };
 
-export const extractor: Extractor = filesExtractor({
+// go list also reports host/cache state (Dir, GoMod, sums and lazily loaded
+// metadata). Keep the native selection facts independent of cache hydration.
+function selectionFacts(module: Module): JsonObject {
+  return {
+    Path: module.Path,
+    ...(module.Version !== undefined && { Version: module.Version }),
+    ...(typeof module.Indirect === "boolean" && { Indirect: module.Indirect }),
+    ...(module.Replace && {
+      Replace: {
+        Path: module.Replace.Path,
+        ...(module.Replace.Version !== undefined && { Version: module.Replace.Version }),
+      },
+    }),
+  };
+}
+
+export function portableGoDiagnostic(stderr: string, codebasePath: string): string {
+  const root = codebasePath.replace(/[\\/]$/, "");
+  return stderr.replaceAll(`${root}/`, "").replaceAll(`${root}\\`, "");
+}
+
+/** Decode the concatenated JSON objects emitted by go list without depending on indentation. */
+export function parseGoModules(output: string): Module[] {
+  const modules: Module[] = [];
+  let depth = 0;
+  let start = -1;
+  let quoted = false;
+  let escaped = false;
+  for (let index = 0; index < output.length; index++) {
+    const char = output[index];
+    if (quoted) {
+      if (escaped) escaped = false;
+      else if (char === "\\") escaped = true;
+      else if (char === '"') quoted = false;
+    } else if (char === '"') {
+      if (depth === 0) throw new Error("Malformed go list JSON stream");
+      quoted = true;
+    } else if (char === "{") {
+      if (depth++ === 0) start = index;
+    } else if (char === "}") {
+      if (--depth < 0) throw new Error("Malformed go list JSON stream");
+      if (depth === 0) modules.push(JSON.parse(output.slice(start, index + 1)));
+    } else if (depth === 0 && char?.trim()) throw new Error("Malformed go list JSON stream");
+  }
+  if (depth !== 0 || quoted) throw new Error("Truncated go list JSON stream");
+  if (modules.length === 0 || modules.some((module) => !module.Path))
+    throw new Error("go list did not report valid module identities");
+  return modules;
+}
+
+/** Native module selection is not a package import graph or proof of runtime usage. */
+export function convertGoModules(
+  manifest: Manifest,
+  modules: Module[],
+  graphOutput: string,
+  file: string,
+  codebase: string,
+): AnalyzerResult {
+  if (!manifest.Module?.Path) throw new Error("go.mod has no module identity");
+  const result = createEmptyResult(codebase);
+  const project = { purl: createGoPurl(manifest.Module.Path), definitionFile: file };
+  result.subprojects.push(project);
+  const selected = new Map(modules.map((module) => [module.Path, module]));
+  const nodes: DependencyView[] = [];
+  const edges: DependencyEdge[] = [];
+  const purls = new Set<string>();
+  for (const module of modules) {
+    if (module.Path === manifest.Module.Path) continue;
+    const purl = createGoPurl(module.Path, module.Version);
+    if (!purls.has(purl)) result.packages.push({ purl, evidence: [file] });
+    purls.add(purl);
+    nodes.push({
+      id: module.Path,
+      purl,
+      locator: `${module.Path}${module.Version ? `@${module.Version}` : ""}`,
+      // go mod graph can be pruned. Missing owner records never prove a known leaf.
+      dependencyCompleteness: "unknown",
+      attributes: { "go:module": selectionFacts(module) },
+      ...(module.Replace && {
+        artifacts: [
+          {
+            location: module.Replace.Path,
+            evidence: [file],
+            attributes: { "go:replacement": selectionFacts(module).Replace! },
+          },
+        ],
+      }),
+    });
+  }
+  const roots = ["dependencies", "indirectDependencies", "go:build-list"].map((scope) => {
+    const id = `root:${scope}`;
+    nodes.push({ id, purl: project.purl, project, dependencyCompleteness: "complete" });
+    return { id, project, node: id, scope };
+  });
+  for (const module of modules) {
+    if (module.Path !== manifest.Module.Path)
+      edges.push({
+        from: "root:go:build-list",
+        to: module.Path,
+        status: "resolved",
+        relation: "depends-on",
+        selection: "selected",
+      });
+  }
+  const requirement = (from: string, path: string, version: string, indirect?: boolean) => {
+    const target = selected.get(path);
+    const common = {
+      from,
+      relation: "depends-on" as const,
+      selection: "selected" as const,
+      requested: { name: path, specifier: version },
+      ...(indirect !== undefined && { attributes: { "go:indirect": indirect } }),
+    };
+    if (target && path !== manifest.Module.Path)
+      edges.push({ ...common, status: "resolved", to: path });
+    else edges.push({ ...common, status: "unresolved" });
+  };
+  for (const request of manifest.Require ?? [])
+    requirement(
+      `root:${request.Indirect ? "indirectDependencies" : "dependencies"}`,
+      request.Path,
+      request.Version,
+      request.Indirect ?? false,
+    );
+  for (const line of graphOutput.split(/\r?\n/).filter((line) => line.trim())) {
+    const fields = line.trim().split(/\s+/);
+    if (fields.length !== 2) throw new Error("Malformed go mod graph record");
+    const [owner, target] = fields as [string, string];
+    const split = (value: string) => {
+      const index = value.lastIndexOf("@");
+      return index < 0 ? [value, ""] : [value.slice(0, index), value.slice(index + 1)];
+    };
+    const [ownerPath, ownerVersion] = split(owner) as [string, string];
+    const [path, version] = split(target) as [string, string];
+    if (path === "go" || path === "toolchain" || ownerPath === "go" || ownerPath === "toolchain")
+      continue;
+    if (ownerPath === manifest.Module.Path) continue; // Exact direct/indirect declarations above.
+    const ownerModule = selected.get(ownerPath);
+    if (!ownerModule || (ownerModule.Version ?? "") !== ownerVersion) continue;
+    requirement(ownerPath, path, version);
+  }
+  result.graphs.push(
+    createDependencyGraph({
+      source: { extractor: "gomod", files: [file] },
+      interpretation: "resolved",
+      rootCompleteness: "complete",
+      roots,
+      nodes,
+      edges,
+      attributes: {
+        "go:moduleGraph": graphOutput,
+        "go:membership": "module-build-list",
+        "go:manifest": manifest as unknown as JsonObject,
+      },
+    }),
+  );
+  return normalizeResult(result);
+}
+
+export const extractor = filesExtractor({
   name: "gomod",
   version: 1,
-  markFiles: async function (codebase: string) {
+  markFiles: async function (codebase) {
     await scanAndMarkFiles(this, codebase, "**/go.mod", ["**/vendor/**", "**/.cache/**"]);
   },
-  extractFile: async (file: string): Promise<AnalyzerResult> => {
-    const content = await readNormalizedTextFile(file);
-    const lines = content.split("\n");
-    const dir = dirname(file);
-
-    // Parse go.mod to get module name and direct/indirect dependency info
-    const moduleName = parseModuleName(content);
-    if (!moduleName) {
-      return {
-        packages: [],
-        subprojects: [],
-        relationships: [],
-        issues: [
-          {
-            code: "gomod.module_name_parse_failed",
-            severity: "ERROR",
-            message: "Failed to parse module name from go.mod",
-            file,
-          },
-        ],
-      };
-    }
-
-    const directDepsSet = parseDirectDependencies(content);
-
-    // Run `go list -m -json all` to get selected module versions
-    const selectedModules = await runGoListModules(dir);
-    if (!selectedModules) {
-      return {
-        packages: [],
-        subprojects: [],
-        relationships: [],
-        issues: [
-          {
-            code: "gomod.go_list_failed",
-            severity: "ERROR",
-            message:
-              "Failed to run go list -m -json all. Ensure go.sum is valid and dependencies are downloaded.",
-            file,
-          },
-        ],
-      };
-    }
-
-    // Run `go mod graph` to get the complete dependency graph
-    const graphOutput = await runGoModGraph(dir);
-    if (!graphOutput) {
-      return {
-        packages: [],
-        subprojects: [],
-        relationships: [],
-        issues: [
-          {
-            code: "gomod.go_mod_graph_failed",
-            severity: "ERROR",
-            message:
-              "Failed to run go mod graph. Ensure go.sum is valid and dependencies are downloaded.",
-            file,
-          },
-        ],
-      };
-    }
-
-    const { packageMap, relationshipsMap } = initializeExtractionMaps();
-    const subprojects: Subproject[] = [];
-    const subprojectPurls = new Set<string>();
-
-    // Parse the graph output
-    const graphLines = graphOutput.split("\n").filter((line) => line.trim());
-    const allDeps = new Set<string>(); // Track all dependencies by path@version
-
-    for (const line of graphLines) {
-      const parts = line.trim().split(/\s+/);
-      if (parts.length !== 2) continue;
-
-      const [from, to] = parts as [string, string];
-
-      // Parse module@version or just module (for main module)
-      const fromParsed = parseModuleVersion(from);
-      const toParsed = parseModuleVersion(to);
-
-      if (!fromParsed || !toParsed) continue;
-
-      // Normalize to module@version format for selectedModules check
-      const fromNormalized = `${fromParsed.path}@${fromParsed.version ?? "0.0.0-00010101000000-000000000000"}`;
-      const toNormalized = `${toParsed.path}@${toParsed.version ?? "0.0.0-00010101000000-000000000000"}`;
-
-      // Filter: Only include edges where both endpoints are in selectedModules
-      // This removes duplicate versions and keeps only MVS-selected versions
-      if (!selectedModules.has(fromNormalized) || !selectedModules.has(toNormalized)) {
-        continue;
-      }
-
-      // Skip go runtime and toolchain pseudo-modules
-      if (fromParsed.path === "go" || fromParsed.path === "toolchain") continue;
-      if (toParsed.path === "go" || toParsed.path === "toolchain") continue;
-
-      // Create PURLs
-      const fromPurl = createGoPurl(fromParsed.path, fromParsed.version);
-      const toPurl = createGoPurl(toParsed.path, toParsed.version);
-
-      // Track all dependencies
-      if (toParsed.path !== moduleName && toParsed.version) {
-        allDeps.add(`${toParsed.path}@${toParsed.version}`);
-      }
-
-      // Ensure packages exist
-      ensurePackageExists(packageMap, fromPurl);
-      ensurePackageExists(packageMap, toPurl);
-
-      if (fromParsed.path !== moduleName && toParsed.path !== moduleName) {
-        addRelationship(relationshipsMap, fromPurl, toPurl);
-      }
-    }
-
-    // Create PURL for the main module (used in subproject, not in packages)
-    const modulePurl = createGoPurl(moduleName);
-    subprojectPurls.add(modulePurl);
-
-    // Add evidence for dependencies from go.mod
-    const directDeps: string[] = [];
-    const indirectDeps: string[] = [];
-
-    for (const depKey of allDeps) {
-      const [path, version] = depKey.split("@") as [string, string];
-      const depPurl = createGoPurl(path, version);
-
-      // Find line number for evidence
-      const lineNumber = findDependencyLineNumber(lines, path, version);
-      if (lineNumber !== undefined) {
-        packageMap.get(depPurl)!.evidence.add(`${file}#${lineNumber}`);
-      }
-
-      // Categorize as direct or indirect
-      if (directDepsSet.has(path)) {
-        directDeps.push(depPurl);
-      } else {
-        indirectDeps.push(depPurl);
-      }
-    }
-
-    // Create scopes for the subproject
-    const scopes: DependencyScope[] = [];
-    if (directDeps.length > 0) {
-      scopes.push({
-        scope: "dependencies",
-        packages: directDeps,
-      });
-    }
-    if (indirectDeps.length > 0) {
-      scopes.push({
-        scope: "indirectDependencies",
-        packages: indirectDeps,
-      });
-    }
-
-    // Add the module as a subproject
-    subprojects.push({
-      purl: modulePurl,
-      definitionFile: file,
-      scopes,
-    });
-
-    const result = buildResult(packageMap, relationshipsMap, subprojects);
-    return {
-      ...result,
-      packages: result.packages.filter((pkg) => !subprojectPurls.has(pkg.purl)),
+  extractFile: async (file, _options, context) => {
+    const command = async (args: string[]) => {
+      const output = await runCommand(["go", ...args], { cwd: dirname(file) });
+      if (output.exitCode !== 0)
+        throw new Error(
+          `go ${args.join(" ")} failed: ${portableGoDiagnostic(output.stderr, context.codebasePath)}`,
+        );
+      return output.stdout;
     };
+    const manifest = JSON.parse(await command(["mod", "edit", "-json"]));
+    const modules = parseGoModules(await command(["list", "-m", "-json", "all"]));
+    const graph = await command(["mod", "graph"]);
+    return convertGoModules(manifest, modules, graph, context.relativeFile, context.codebaseId);
   },
 });
-
-/**
- * Run `go list -m -json all` to get selected module versions
- */
-async function runGoListModules(dir: string): Promise<Set<string> | null> {
-  try {
-    const { exitCode, stdout: output } = await runCommand(["go", "list", "-m", "-json", "all"], {
-      cwd: dir,
-    });
-    if (exitCode !== 0) {
-      return null;
-    }
-
-    // Parse the JSON output - each line is a separate JSON object
-    const selectedModules = new Set<string>();
-    const lines = output.trim().split("\n");
-    let jsonBuffer = "";
-
-    for (const line of lines) {
-      jsonBuffer += line;
-      if (line.trim() === "}") {
-        try {
-          const module = JSON.parse(jsonBuffer);
-          const path = module.Path;
-          const version = module.Version || "0.0.0-00010101000000-000000000000";
-          selectedModules.add(`${path}@${version}`);
-          jsonBuffer = "";
-        } catch {
-          // Continue buffering if JSON is incomplete
-        }
-      }
-    }
-
-    return selectedModules;
-  } catch {
-    return null;
-  }
-}
-
-/**
- * Run `go mod graph` in the specified directory
- */
-async function runGoModGraph(dir: string): Promise<string | null> {
-  try {
-    const { exitCode, stdout: output } = await runCommand(["go", "mod", "graph"], { cwd: dir });
-    if (exitCode !== 0) {
-      return null;
-    }
-
-    return output;
-  } catch {
-    return null;
-  }
-}
-
-/**
- * Parse module name from go.mod content
- */
-function parseModuleName(content: string): string | null {
-  const lines = content.split("\n");
-  for (const line of lines) {
-    const trimmed = line.trim();
-    if (trimmed.startsWith("module ")) {
-      return trimmed.substring(7).trim();
-    }
-  }
-  return null;
-}
-
-/**
- * Parse direct dependencies (non-indirect) from go.mod
- * Returns a Set of dependency paths
- */
-function parseDirectDependencies(content: string): Set<string> {
-  const directDeps = new Set<string>();
-  const lines = content.split("\n");
-  let inRequireBlock = false;
-
-  for (const line of lines) {
-    const trimmed = line.trim();
-
-    // Skip comments and empty lines
-    if (trimmed.startsWith("//") || trimmed === "") continue;
-
-    // Parse require block or single require
-    if (trimmed.startsWith("require (")) {
-      inRequireBlock = true;
-      continue;
-    }
-
-    if (trimmed.startsWith("require ")) {
-      const dep = parseRequireLine(trimmed.substring(8).trim());
-      if (dep && !dep.indirect) {
-        directDeps.add(dep.path);
-      }
-      continue;
-    }
-
-    if (inRequireBlock) {
-      if (trimmed === ")") {
-        inRequireBlock = false;
-        continue;
-      }
-      const dep = parseRequireLine(trimmed);
-      if (dep && !dep.indirect) {
-        directDeps.add(dep.path);
-      }
-    }
-  }
-
-  return directDeps;
-}
-
-/**
- * Parse a single require line
- */
-function parseRequireLine(line: string): Dependency | null {
-  // Remove inline comments
-  const commentIndex = line.indexOf("//");
-  const isIndirect = commentIndex !== -1 && line.includes("// indirect");
-  const cleanLine = commentIndex !== -1 ? line.substring(0, commentIndex).trim() : line;
-
-  // Parse "path version"
-  const parts = cleanLine.split(/\s+/);
-  if (parts.length >= 2 && parts[0] && parts[1]) {
-    return {
-      path: parts[0],
-      version: parts[1],
-      indirect: isIndirect,
-    };
-  }
-
-  return null;
-}
-
-/**
- * Parse "path@version" or "path" (main module) into components
- */
-function parseModuleVersion(input: string): { path: string; version?: string } | null {
-  const atIndex = input.lastIndexOf("@");
-  if (atIndex === -1) {
-    // Main module without version
-    return {
-      path: input,
-      version: undefined,
-    };
-  }
-
-  const path = input.substring(0, atIndex);
-  const version = input.substring(atIndex + 1);
-
-  if (!path || !version) return null;
-
-  return { path, version };
-}
-
-/**
- * Find the line number where a dependency appears in go.mod
- */
-function findDependencyLineNumber(
-  lines: string[],
-  depPath: string,
-  version: string,
-): number | undefined {
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i]?.trim() || "";
-    // Look for lines that contain the dependency path and version
-    if (line.includes(depPath) && line.includes(version)) {
-      return i + 1; // Line numbers are 1-indexed
-    }
-  }
-  return undefined;
-}

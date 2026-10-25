@@ -1,46 +1,577 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`basic 1`] = `
+exports[`default UV extractor preserves native frozen export packages, artifacts and adjacency 1`] = `
 {
+  "codebase": "example:uv-fixture",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "attributes": {
+        "cyclonedx:document": {
+          "bomFormat": "CycloneDX",
+          "serialNumber": "urn:uuid:00000000-0000-0000-0000-000000000000",
+          "specVersion": "1.5",
+          "version": 1,
+        },
+        "cyclonedx:metadata": {
+          "timestamp": "2000-01-01T00:00:00Z",
+          "tools": [
+            {
+              "name": "uv",
+              "vendor": "Astral Software Inc.",
+              "version": "0.13.1",
+            },
+          ],
+        },
+        "uv:export": {
+          "emitProject": false,
+          "format": "cyclonedx1.5",
+          "frozen": true,
+        },
+      },
+      "edges": [
+        {
+          "evidence": [
+            "uv.lock",
+          ],
+          "from": "bom-ref:"requests-5@2.32.3"",
+          "kind": "dependsOn",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "bom-ref:"certifi-2@2025.1.31"",
+        },
+        {
+          "evidence": [
+            "uv.lock",
+          ],
+          "from": "bom-ref:"requests-5@2.32.3"",
+          "kind": "dependsOn",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "bom-ref:"charset-normalizer-3@3.4.1"",
+        },
+        {
+          "evidence": [
+            "uv.lock",
+          ],
+          "from": "bom-ref:"requests-5@2.32.3"",
+          "kind": "dependsOn",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "bom-ref:"idna-4@3.10"",
+        },
+        {
+          "evidence": [
+            "uv.lock",
+          ],
+          "from": "bom-ref:"requests-5@2.32.3"",
+          "kind": "dependsOn",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "bom-ref:"urllib3-6@2.3.0"",
+        },
+      ],
+      "id": "["uv","uv.lock","uv:0e290be75dd4487f54a1b49499656bc02c453cdaeb51e3fe7058d18edbf7c412"]",
+      "interpretation": "unknown",
+      "nodes": [
+        {
+          "attributes": {
+            "cyclonedx:dependencyRecords": [
+              {
+                "ref": "certifi-2@2025.1.31",
+              },
+            ],
+            "cyclonedx:entity": {
+              "bom-ref": "certifi-2@2025.1.31",
+              "externalReferences": [
+                {
+                  "hashes": [
+                    {
+                      "alg": "SHA-256",
+                      "content": "3d5da6925056f6f18f119200434a4780a94263f10d1c21d032a6f6b2baa20651",
+                    },
+                  ],
+                  "type": "distribution",
+                  "url": "https://files.pythonhosted.org/packages/1c/ab/c9f1e32b7b1bf505bf26f0ef697775960db7932abeb7b516de930ba2705f/certifi-2025.1.31.tar.gz",
+                },
+                {
+                  "hashes": [
+                    {
+                      "alg": "SHA-256",
+                      "content": "ca78db4565a652026a4db2bcdf68f2fb589ea80d0be70e03929ed730746b84fe",
+                    },
+                  ],
+                  "type": "distribution",
+                  "url": "https://files.pythonhosted.org/packages/38/fc/bce832fd4fd99766c04d1ee0eead6b0ec6486fb100ae5e74c1c91292b982/certifi-2025.1.31-py3-none-any.whl",
+                },
+              ],
+              "name": "certifi",
+              "purl": "pkg:pypi/certifi@2025.1.31",
+              "type": "library",
+              "version": "2025.1.31",
+            },
+            "cyclonedx:entityKind": "component",
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "uv.lock",
+          ],
+          "id": "bom-ref:"certifi-2@2025.1.31"",
+          "locator": "certifi-2@2025.1.31",
+          "purl": "pkg:pypi/certifi@2025.1.31",
+        },
+        {
+          "attributes": {
+            "cyclonedx:dependencyRecords": [
+              {
+                "ref": "charset-normalizer-3@3.4.1",
+              },
+            ],
+            "cyclonedx:entity": {
+              "bom-ref": "charset-normalizer-3@3.4.1",
+              "externalReferences": [
+                {
+                  "hashes": [
+                    {
+                      "alg": "SHA-256",
+                      "content": "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3",
+                    },
+                  ],
+                  "type": "distribution",
+                  "url": "https://files.pythonhosted.org/packages/16/b0/572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357e/charset_normalizer-3.4.1.tar.gz",
+                },
+                {
+                  "hashes": [
+                    {
+                      "alg": "SHA-256",
+                      "content": "d98b1668f06378c6dbefec3b92299716b931cd4e6061f3c875a71ced1780ab85",
+                    },
+                  ],
+                  "type": "distribution",
+                  "url": "https://files.pythonhosted.org/packages/0a/69/c034571f4462f9df0a1f2436659e52bc68f39e2f502e9e9e2b5081c4e7a7/charset_normalizer-3.4.1-py3-none-any.whl",
+                },
+              ],
+              "name": "charset-normalizer",
+              "purl": "pkg:pypi/charset-normalizer@3.4.1",
+              "type": "library",
+              "version": "3.4.1",
+            },
+            "cyclonedx:entityKind": "component",
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "uv.lock",
+          ],
+          "id": "bom-ref:"charset-normalizer-3@3.4.1"",
+          "locator": "charset-normalizer-3@3.4.1",
+          "purl": "pkg:pypi/charset-normalizer@3.4.1",
+        },
+        {
+          "attributes": {
+            "cyclonedx:dependencyRecords": [
+              {
+                "ref": "idna-4@3.10",
+              },
+            ],
+            "cyclonedx:entity": {
+              "bom-ref": "idna-4@3.10",
+              "externalReferences": [
+                {
+                  "hashes": [
+                    {
+                      "alg": "SHA-256",
+                      "content": "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9",
+                    },
+                  ],
+                  "type": "distribution",
+                  "url": "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz",
+                },
+                {
+                  "hashes": [
+                    {
+                      "alg": "SHA-256",
+                      "content": "946d195a0d259cbba61165e88e65941f16e9b36ea6ddb97f00452bae8b1287d3",
+                    },
+                  ],
+                  "type": "distribution",
+                  "url": "https://files.pythonhosted.org/packages/76/c6/c88e154df9c4e1a2a66ccf0005a88dfb2650c1dffb6f5ce603dfbd452ce3/idna-3.10-py3-none-any.whl",
+                },
+              ],
+              "name": "idna",
+              "purl": "pkg:pypi/idna@3.10",
+              "type": "library",
+              "version": "3.10",
+            },
+            "cyclonedx:entityKind": "component",
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "uv.lock",
+          ],
+          "id": "bom-ref:"idna-4@3.10"",
+          "locator": "idna-4@3.10",
+          "purl": "pkg:pypi/idna@3.10",
+        },
+        {
+          "attributes": {
+            "cyclonedx:dependencyRecords": [
+              {
+                "dependsOn": [
+                  "certifi-2@2025.1.31",
+                  "charset-normalizer-3@3.4.1",
+                  "idna-4@3.10",
+                  "urllib3-6@2.3.0",
+                ],
+                "ref": "requests-5@2.32.3",
+              },
+            ],
+            "cyclonedx:entity": {
+              "bom-ref": "requests-5@2.32.3",
+              "externalReferences": [
+                {
+                  "hashes": [
+                    {
+                      "alg": "SHA-256",
+                      "content": "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760",
+                    },
+                  ],
+                  "type": "distribution",
+                  "url": "https://files.pythonhosted.org/packages/63/70/2bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913/requests-2.32.3.tar.gz",
+                },
+                {
+                  "hashes": [
+                    {
+                      "alg": "SHA-256",
+                      "content": "70761cfe03c773ceb22aa2f671b4757976145175cdfca038c02654d061d6dcc6",
+                    },
+                  ],
+                  "type": "distribution",
+                  "url": "https://files.pythonhosted.org/packages/f9/9b/335f9764261e915ed497fcdeb11df5dfd6f7bf257d4a6a2a686d80da4d54/requests-2.32.3-py3-none-any.whl",
+                },
+              ],
+              "name": "requests",
+              "purl": "pkg:pypi/requests@2.32.3",
+              "type": "library",
+              "version": "2.32.3",
+            },
+            "cyclonedx:entityKind": "component",
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "uv.lock",
+          ],
+          "id": "bom-ref:"requests-5@2.32.3"",
+          "locator": "requests-5@2.32.3",
+          "purl": "pkg:pypi/requests@2.32.3",
+        },
+        {
+          "attributes": {
+            "cyclonedx:entity": {
+              "bom-ref": "test-project-1@0.1.0",
+              "name": "test-project",
+              "properties": [
+                {
+                  "name": "uv:package:is_project_root",
+                  "value": "true",
+                },
+              ],
+              "type": "library",
+              "version": "0.1.0",
+            },
+            "cyclonedx:entityKind": "component",
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "uv.lock",
+          ],
+          "id": "bom-ref:"test-project-1@0.1.0"",
+          "locator": "test-project-1@0.1.0",
+          "project": {
+            "definitionFile": "uv.lock",
+            "purl": "pkg:generic/excalibur-cyclonedx/component-9115b2b741aaeb158c1b52e11cc4b8c6bf2249cf6478d5a142e326d1741015a0@0.1.0",
+          },
+          "purl": "pkg:generic/excalibur-cyclonedx/component-9115b2b741aaeb158c1b52e11cc4b8c6bf2249cf6478d5a142e326d1741015a0@0.1.0",
+        },
+        {
+          "attributes": {
+            "cyclonedx:dependencyRecords": [
+              {
+                "ref": "urllib3-6@2.3.0",
+              },
+            ],
+            "cyclonedx:entity": {
+              "bom-ref": "urllib3-6@2.3.0",
+              "externalReferences": [
+                {
+                  "hashes": [
+                    {
+                      "alg": "SHA-256",
+                      "content": "f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d",
+                    },
+                  ],
+                  "type": "distribution",
+                  "url": "https://files.pythonhosted.org/packages/aa/63/e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66/urllib3-2.3.0.tar.gz",
+                },
+                {
+                  "hashes": [
+                    {
+                      "alg": "SHA-256",
+                      "content": "1cee9ad369867bfdbbb48b7dd50374c0967a0bb7710050facf0dd6911440e3df",
+                    },
+                  ],
+                  "type": "distribution",
+                  "url": "https://files.pythonhosted.org/packages/c8/19/4ec628951a74043532ca2cf5d97b7b14863931476d117c471e8571b1f8f0/urllib3-2.3.0-py3-none-any.whl",
+                },
+              ],
+              "name": "urllib3",
+              "purl": "pkg:pypi/urllib3@2.3.0",
+              "type": "library",
+              "version": "2.3.0",
+            },
+            "cyclonedx:entityKind": "component",
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "uv.lock",
+          ],
+          "id": "bom-ref:"urllib3-6@2.3.0"",
+          "locator": "urllib3-6@2.3.0",
+          "purl": "pkg:pypi/urllib3@2.3.0",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "subject/dependencies",
+          "node": "bom-ref:"test-project-1@0.1.0"",
+          "project": {
+            "definitionFile": "uv.lock",
+            "purl": "pkg:generic/excalibur-cyclonedx/component-9115b2b741aaeb158c1b52e11cc4b8c6bf2249cf6478d5a142e326d1741015a0@0.1.0",
+          },
+          "scope": "dependencies",
+        },
+      ],
+      "source": {
+        "extractor": "uv",
+        "files": [
+          "uv.lock",
+        ],
+        "key": "urn:uuid:00000000-0000-0000-0000-000000000000",
+        "tool": {
+          "name": "uv",
+        },
+      },
+    },
+  ],
   "issues": [],
   "packages": [
     {
-      "downloadLocation": "https://files.pythonhosted.org/packages/1c/ab/c9f1e32b7b1bf505bf26f0ef697775960db7932abeb7b516de930ba2705f/certifi-2025.1.31.tar.gz",
-      "evidence": [],
+      "evidence": [
+        "uv.lock",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "uv",
+            "files": [
+              "uv.lock",
+            ],
+            "key": "bom-ref:"test-project-1@0.1.0"",
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/excalibur-cyclonedx/component-9115b2b741aaeb158c1b52e11cc4b8c6bf2249cf6478d5a142e326d1741015a0@0.1.0",
+    },
+    {
+      "artifacts": [
+        {
+          "evidence": [
+            "uv.lock",
+          ],
+          "location": "https://files.pythonhosted.org/packages/1c/ab/c9f1e32b7b1bf505bf26f0ef697775960db7932abeb7b516de930ba2705f/certifi-2025.1.31.tar.gz",
+        },
+        {
+          "evidence": [
+            "uv.lock",
+          ],
+          "location": "https://files.pythonhosted.org/packages/38/fc/bce832fd4fd99766c04d1ee0eead6b0ec6486fb100ae5e74c1c91292b982/certifi-2025.1.31-py3-none-any.whl",
+        },
+      ],
+      "evidence": [
+        "uv.lock",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "uv",
+            "files": [
+              "uv.lock",
+            ],
+            "key": "bom-ref:"certifi-2@2025.1.31"",
+          },
+          "synthesizedPurl": false,
+        },
+      ],
       "purl": "pkg:pypi/certifi@2025.1.31",
     },
     {
-      "downloadLocation": "https://files.pythonhosted.org/packages/16/b0/572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357e/charset_normalizer-3.4.1.tar.gz",
-      "evidence": [],
+      "artifacts": [
+        {
+          "evidence": [
+            "uv.lock",
+          ],
+          "location": "https://files.pythonhosted.org/packages/0a/69/c034571f4462f9df0a1f2436659e52bc68f39e2f502e9e9e2b5081c4e7a7/charset_normalizer-3.4.1-py3-none-any.whl",
+        },
+        {
+          "evidence": [
+            "uv.lock",
+          ],
+          "location": "https://files.pythonhosted.org/packages/16/b0/572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357e/charset_normalizer-3.4.1.tar.gz",
+        },
+      ],
+      "evidence": [
+        "uv.lock",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "uv",
+            "files": [
+              "uv.lock",
+            ],
+            "key": "bom-ref:"charset-normalizer-3@3.4.1"",
+          },
+          "synthesizedPurl": false,
+        },
+      ],
       "purl": "pkg:pypi/charset-normalizer@3.4.1",
     },
     {
-      "downloadLocation": "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz",
-      "evidence": [],
+      "artifacts": [
+        {
+          "evidence": [
+            "uv.lock",
+          ],
+          "location": "https://files.pythonhosted.org/packages/76/c6/c88e154df9c4e1a2a66ccf0005a88dfb2650c1dffb6f5ce603dfbd452ce3/idna-3.10-py3-none-any.whl",
+        },
+        {
+          "evidence": [
+            "uv.lock",
+          ],
+          "location": "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz",
+        },
+      ],
+      "evidence": [
+        "uv.lock",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "uv",
+            "files": [
+              "uv.lock",
+            ],
+            "key": "bom-ref:"idna-4@3.10"",
+          },
+          "synthesizedPurl": false,
+        },
+      ],
       "purl": "pkg:pypi/idna@3.10",
     },
     {
-      "downloadLocation": "https://files.pythonhosted.org/packages/63/70/2bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913/requests-2.32.3.tar.gz",
-      "evidence": [],
+      "artifacts": [
+        {
+          "evidence": [
+            "uv.lock",
+          ],
+          "location": "https://files.pythonhosted.org/packages/63/70/2bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913/requests-2.32.3.tar.gz",
+        },
+        {
+          "evidence": [
+            "uv.lock",
+          ],
+          "location": "https://files.pythonhosted.org/packages/f9/9b/335f9764261e915ed497fcdeb11df5dfd6f7bf257d4a6a2a686d80da4d54/requests-2.32.3-py3-none-any.whl",
+        },
+      ],
+      "evidence": [
+        "uv.lock",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "uv",
+            "files": [
+              "uv.lock",
+            ],
+            "key": "bom-ref:"requests-5@2.32.3"",
+          },
+          "synthesizedPurl": false,
+        },
+      ],
       "purl": "pkg:pypi/requests@2.32.3",
     },
     {
-      "downloadLocation": "https://files.pythonhosted.org/packages/aa/63/e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66/urllib3-2.3.0.tar.gz",
-      "evidence": [],
+      "artifacts": [
+        {
+          "evidence": [
+            "uv.lock",
+          ],
+          "location": "https://files.pythonhosted.org/packages/aa/63/e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66/urllib3-2.3.0.tar.gz",
+        },
+        {
+          "evidence": [
+            "uv.lock",
+          ],
+          "location": "https://files.pythonhosted.org/packages/c8/19/4ec628951a74043532ca2cf5d97b7b14863931476d117c471e8571b1f8f0/urllib3-2.3.0-py3-none-any.whl",
+        },
+      ],
+      "evidence": [
+        "uv.lock",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "uv",
+            "files": [
+              "uv.lock",
+            ],
+            "key": "bom-ref:"urllib3-6@2.3.0"",
+          },
+          "synthesizedPurl": false,
+        },
+      ],
       "purl": "pkg:pypi/urllib3@2.3.0",
     },
   ],
-  "relationships": [
+  "subprojects": [
     {
-      "from": "pkg:pypi/requests@2.32.3",
-      "to": [
-        "pkg:pypi/certifi@2025.1.31",
-        "pkg:pypi/charset-normalizer@3.4.1",
-        "pkg:pypi/idna@3.10",
-        "pkg:pypi/urllib3@2.3.0",
+      "attributes": {
+        "cyclonedx:reference": "test-project-1@0.1.0",
+        "cyclonedx:subject": true,
+      },
+      "definitionFile": "uv.lock",
+      "evidence": [
+        "uv.lock",
       ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "uv",
+            "files": [
+              "uv.lock",
+            ],
+            "key": "bom-ref:"test-project-1@0.1.0"",
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/excalibur-cyclonedx/component-9115b2b741aaeb158c1b52e11cc4b8c6bf2249cf6478d5a142e326d1741015a0@0.1.0",
     },
   ],
-  "subprojects": [],
 }
 `;

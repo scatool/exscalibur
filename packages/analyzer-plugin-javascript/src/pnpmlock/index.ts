@@ -1,305 +1,271 @@
+import { dirname, join, normalize } from "node:path/posix";
+import { parse as parseYaml } from "yaml";
 import {
-  type AnalyzerResult,
-  type DependencyScope,
-  type Extractor,
   filesExtractor,
-  type Subproject,
-  addRelationship,
-  ensurePackageExists,
-  buildResult,
-  initializeExtractionMaps,
-  readNormalizedTextFile,
+  mergeResults,
+  readTextFile,
   scanAndMarkFiles,
 } from "@scatool/analyzer-core";
-import { dirname, join } from "node:path/posix";
-import {
-  findLineNumber,
-  isGitPackageKey,
-  parsePackageKey,
-  parsePnpmLockfile,
-  type PnpmLockfile,
-  type PnpmLockfileV6,
-  type PnpmLockfileV9,
-  stripPeerDepSuffix,
-} from "./lockfile.ts";
-import { createNpmPurl, NPM_DEPENDENCY_SCOPES, readPackageJson } from "../npm-utils.ts";
-import type { JavaScriptOptions } from "../options.ts";
-import { optionSchema } from "../options.ts";
+import { NPM_DEPENDENCY_SCOPES } from "../npm-utils.ts";
+import { NpmGraph, json, type NpmProject, type NpmRecord } from "../npm-graph.ts";
+import { addCurrentManifestObservation, loadNpmManifest, table } from "../npm-manifest.ts";
+import { optionSchema, type JavaScriptOptions } from "../options.ts";
+import { PnpmSnapshotIndex, readPnpmRecord, readPnpmDependencyReference } from "./snapshots.ts";
 
-export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScriptOptions>({
+type PnpmProjects = Map<string, { project: NpmProject; importer: NpmRecord }>;
+type ResolveDependency = (name: string, reference: string, owner: string) => string | undefined;
+
+export const extractor = filesExtractor<JavaScriptOptions>({
   name: "pnpmlock",
   version: 1,
   optionsSchema: optionSchema,
-  markFiles: async function (codebase: string, options: JavaScriptOptions) {
+  markFiles: async function (codebase, options) {
     await scanAndMarkFiles(this, codebase, "**/pnpm-lock.yaml", options.ignore);
   },
-  extractFile: async (file: string): Promise<AnalyzerResult> => {
-    const dir = dirname(file);
-
-    const { packageMap, relationshipsMap } = initializeExtractionMaps();
-    const subprojects: Subproject[] = [];
-
-    const lockfileContent = await readNormalizedTextFile(file);
-    const lockfile = parsePnpmLockfile(lockfileContent);
-
-    // Build a map of workspace package names to their versions
-    // We need to do this before extracting scopes so we can identify workspace dependencies
-    const workspacePackages = new Map<string, string>();
-    if (lockfile.importers) {
-      for (const [importerPath] of Object.entries(lockfile.importers)) {
-        const importerDir = importerPath === "." ? dir : join(dir, importerPath);
-        const packageJsonPath = join(importerDir, "package.json");
-        const packageInfo = await readPackageJson(packageJsonPath);
-        if (packageInfo?.name && packageInfo.version) {
-          workspacePackages.set(packageInfo.name, packageInfo.version);
-        }
-      }
-    }
-
-    // Process importers (workspace packages) to create subprojects
-    if (lockfile.importers) {
-      for (const [importerPath, importer] of Object.entries(lockfile.importers)) {
-        // Determine the package.json path for this importer
-        const importerDir = importerPath === "." ? dir : join(dir, importerPath);
-        const packageJsonPath = join(importerDir, "package.json");
-
-        // Read package.json to get name and version
-        const packageInfo = await readPackageJson(packageJsonPath);
-        if (packageInfo?.name && packageInfo.version) {
-          // Create PURL for this subproject
-          const purl = createNpmPurl(packageInfo.name, packageInfo.version);
-
-          // Extract scopes - map each dependency type to resolved versions
-          const scopes: DependencyScope[] = [];
-
-          for (const scopeName of NPM_DEPENDENCY_SCOPES) {
-            const depsInScope: string[] = [];
-            const importerDeps = importer[scopeName];
-
-            if (importerDeps && typeof importerDeps === "object") {
-              for (const [depName, depRef] of Object.entries(importerDeps)) {
-                if (depRef && typeof depRef === "object" && "version" in depRef) {
-                  const version = depRef.version;
-
-                  // Check if this is a workspace package (starts with "link:")
-                  if (typeof version === "string" && version.startsWith("link:")) {
-                    // Check if this is a known workspace package
-                    const workspaceVersion = workspacePackages.get(depName);
-                    if (workspaceVersion) {
-                      // Include workspace package with its actual version
-                      const depPurl = createNpmPurl(depName, workspaceVersion);
-                      depsInScope.push(depPurl);
-                    }
-                    // Skip if not a known workspace package
-                    continue;
-                  }
-
-                  // Regular external dependency
-                  if (typeof version === "string") {
-                    const resolved = resolveAlias(depName, version);
-
-                    // For git/tarball dependencies, look up the actual version from packages section
-                    const packageKey = `${resolved.name}@${resolved.version}`;
-                    if (isGitPackageKey(packageKey)) {
-                      const resolvedVersion = getPackageVersion(lockfile, packageKey);
-                      const depPurl = createNpmPurl(
-                        resolved.name,
-                        resolvedVersion ?? resolved.version,
-                      );
-                      depsInScope.push(depPurl);
-                    } else {
-                      const depPurl = createNpmPurl(resolved.name, resolved.version);
-                      depsInScope.push(depPurl);
-                    }
-                  }
-                }
-              }
-            }
-
-            if (depsInScope.length > 0) {
-              scopes.push({
-                scope: scopeName,
-                packages: depsInScope,
-              });
-            }
-          }
-
-          subprojects.push({
-            purl,
-            definitionFile: packageJsonPath,
-            scopes,
-          });
-        }
-      }
-    }
-
-    // Determine lockfile version and process accordingly
-    const lockfileVersionNum =
-      typeof lockfile.lockfileVersion === "string"
-        ? parseFloat(lockfile.lockfileVersion)
-        : lockfile.lockfileVersion;
-
-    if (lockfileVersionNum >= 9) {
-      // V9+ lockfile: packages have metadata, snapshots have relationships
-      processV9Lockfile(
-        lockfile as PnpmLockfileV9,
-        lockfileContent,
-        file,
-        packageMap,
-        relationshipsMap,
-      );
-    } else {
-      // V6 and earlier: packages have both metadata and relationships
-      processV6Lockfile(
-        lockfile as PnpmLockfileV6,
-        lockfileContent,
-        file,
-        packageMap,
-        relationshipsMap,
+  extractFile: async (file, _options, context) => {
+    const document = readPnpmRecord(parseYaml(await readTextFile(file)));
+    const version =
+      typeof document.lockfileVersion === "number"
+        ? document.lockfileVersion
+        : typeof document.lockfileVersion === "string"
+          ? Number.parseFloat(document.lockfileVersion)
+          : Number.NaN;
+    if (
+      !Number.isFinite(version) ||
+      version < 5 ||
+      (version >= 7 && version < 9) ||
+      version >= 10
+    ) {
+      throw new Error(
+        `Unsupported pnpm lockfile version: ${JSON.stringify(document.lockfileVersion)}`,
       );
     }
 
-    return buildResult(packageMap, relationshipsMap, subprojects);
+    const lockedObservation = new NpmGraph(context, "pnpmlock");
+    const currentDeclarations = new NpmGraph(context, "packagejson", "declared");
+    currentDeclarations.sourceFiles.clear();
+
+    lockedObservation.attributes["pnpm:lockfileVersion"] = json(document.lockfileVersion);
+    for (const key of [
+      "settings",
+      "overrides",
+      "patchedDependencies",
+      "packageExtensionsChecksum",
+    ]) {
+      if (document[key] !== undefined)
+        lockedObservation.attributes[`pnpm:${key}`] = json(document[key]);
+    }
+
+    // Preserve native peer/patch contexts before any importer or package binding can refer to them.
+    const snapshotIndex = new PnpmSnapshotIndex(lockedObservation, document, version);
+
+    const missingImporters = version >= 9 && document.importers == null;
+    const importers =
+      document.importers === undefined && version < 9
+        ? { ".": document }
+        : table(document, "importers");
+    if (missingImporters) {
+      lockedObservation.rootCompleteness = "unknown";
+      lockedObservation.result.issues.push({
+        code: "pnpm.importers_missing",
+        severity: "WARNING",
+        file: context.relativeFile,
+        message: "The v9 importer table is missing; native project roots cannot be established",
+      });
+      const loaded = await loadNpmManifest(
+        join(dirname(file), "package.json"),
+        {},
+        lockedObservation,
+      );
+      if (loaded.available)
+        addCurrentManifestObservation(
+          currentDeclarations,
+          ".",
+          join(dirname(context.relativeFile), "package.json"),
+          loaded.manifest,
+        );
+    }
+
+    // Locked importer requests and current declarations are separate observations.
+    const projects = new Map<string, { project: NpmProject; importer: NpmRecord }>();
+    for (const [location, value] of Object.entries(importers)) {
+      const importer = readPnpmRecord(value);
+      const loaded = await loadNpmManifest(
+        join(dirname(file), location, "package.json"),
+        {},
+        lockedObservation,
+      );
+      const definitionFile = loaded.available
+        ? join(dirname(context.relativeFile), location, "package.json")
+        : `${context.relativeFile}#importers/${encodeURIComponent(location)}`;
+
+      const specs: NpmRecord = {};
+      for (const key of ["name", "version", "private", "os", "cpu", "libc"]) {
+        if (loaded.manifest[key] !== undefined) specs[key] = loaded.manifest[key];
+      }
+
+      for (const scope of NPM_DEPENDENCY_SCOPES) {
+        specs[scope] = Object.fromEntries(
+          Object.entries(table(importer, scope)).map(([name, value]) => {
+            const ref = readPnpmDependencyReference(value);
+            const original = table(importer, "specifiers")[name];
+            return [name, ref.specifier ?? (typeof original === "string" ? original : ref.version)];
+          }),
+        );
+      }
+
+      const project = lockedObservation.addProject(location, definitionFile, specs, true);
+      projects.set(normalize(location), { project, importer });
+
+      if (loaded.available) {
+        lockedObservation.sourceFiles.add(definitionFile);
+        // Importers encode a selected dependency observation, not necessarily every current
+        // manifest declaration (notably peer requirements). Keep the source declaration separately.
+        addCurrentManifestObservation(
+          currentDeclarations,
+          location,
+          definitionFile,
+          loaded.manifest,
+        );
+      }
+    }
+
+    const resolveDependency: ResolveDependency = (name, reference, owner) => {
+      if (reference.startsWith("link:")) {
+        return projects.get(normalize(join(owner, reference.slice(5))))?.project.consumer;
+      }
+
+      return snapshotIndex.resolvePackage(name, reference);
+    };
+
+    addImporterDependencies(lockedObservation, projects, snapshotIndex, resolveDependency);
+    addSnapshotDependencies(lockedObservation, snapshotIndex, resolveDependency);
+
+    return currentDeclarations.result.subprojects.length > 0
+      ? mergeResults([lockedObservation.finish(), currentDeclarations.finish()])
+      : lockedObservation.finish();
   },
 });
 
-function processDependencies(
-  deps: {
-    dependencies?: Record<string, string>;
-    devDependencies?: Record<string, string>;
-    optionalDependencies?: Record<string, string>;
-  },
-  purl: string,
-  packageMap: Map<string, { purl: string; evidence: Set<string> }>,
-  relationshipsMap: Map<string, Set<string>>,
+/** Importer roots retain scopes; consumer views exclude development dependencies. */
+function addImporterDependencies(
+  lockedObservation: NpmGraph,
+  projects: PnpmProjects,
+  snapshotIndex: PnpmSnapshotIndex,
+  resolveDependency: ResolveDependency,
 ): void {
-  const depTypes = ["dependencies", "devDependencies", "optionalDependencies"] as const;
-  for (const depType of depTypes) {
-    const depsInScope = deps[depType];
-    if (depsInScope && typeof depsInScope === "object") {
-      for (const [depName, depVersion] of Object.entries(depsInScope)) {
-        if (typeof depVersion === "string") {
-          const resolved = resolveAlias(depName, depVersion);
-          const depPurl = createNpmPurl(resolved.name, resolved.version);
+  for (const [location, { project, importer }] of projects) {
+    for (const scope of NPM_DEPENDENCY_SCOPES) {
+      const root = lockedObservation.addRoot(project, scope);
+      for (const [name, value] of Object.entries(table(importer, scope))) {
+        const reference = readPnpmDependencyReference(value);
+        const target = resolveDependency(name, reference.version, location);
+        const specifier = table(project.manifest, scope)[name] as string;
 
-          addRelationship(relationshipsMap, purl, depPurl);
-          ensurePackageExists(packageMap, depPurl);
-        }
+        const overridden =
+          scope === "dependencies" && Object.hasOwn(table(importer, "optionalDependencies"), name);
+        const optional = scope === "optionalDependencies";
+        const selection = overridden
+          ? "excluded"
+          : (optional && target === undefined) ||
+              (target !== undefined && snapshotIndex.hasMissingMetadata(target))
+            ? "unknown"
+            : "selected";
+
+        const options = {
+          optional,
+          selection,
+          ...(optional && target === undefined && { status: "declared" as const }),
+          requested: {
+            name,
+            ...((reference.specifier !== undefined ||
+              typeof table(importer, "specifiers")[name] === "string") && { specifier }),
+          },
+          attributes: { "pnpm:dependencyReference": reference.version },
+        } as const;
+
+        lockedObservation.dependency(root, name, specifier, scope, target, options);
+        lockedObservation.dependency(project.consumer, name, specifier, scope, target, {
+          ...options,
+          selection: overridden || scope === "devDependencies" ? "excluded" : options.selection,
+        });
       }
     }
   }
 }
 
-function processV9Lockfile(
-  lockfile: PnpmLockfileV9,
-  lockfileContent: string,
-  file: string,
-  packageMap: Map<string, { purl: string; evidence: Set<string> }>,
-  relationshipsMap: Map<string, Set<string>>,
+/** Native snapshot bindings and unbound peer declarations remain distinct observations. */
+function addSnapshotDependencies(
+  lockedObservation: NpmGraph,
+  snapshotIndex: PnpmSnapshotIndex,
+  resolveDependency: ResolveDependency,
 ): void {
-  // Process packages section for metadata
-  if (lockfile.packages) {
-    for (const [packageKey, packageEntry] of Object.entries(lockfile.packages)) {
-      const parsed = parsePackageKey(packageKey);
-      if (!parsed) continue;
+  for (const [key, value] of Object.entries(snapshotIndex.snapshots)) {
+    const snapshot = readPnpmRecord(value);
+    const from = snapshotIndex.viewIdFor(key)!;
+    const metadata = snapshotIndex.metadataForSnapshot(key);
 
-      const { name } = parsed;
-      let { version } = parsed;
+    const peers = table(metadata, "peerDependencies");
+    const peerMeta = table(metadata, "peerDependenciesMeta");
+    const bound = new Set<string>();
 
-      // For git packages, use the version field from the package entry instead of the git URL
-      if (packageEntry.version && isGitPackageKey(packageKey)) {
-        version = packageEntry.version;
+    for (const scope of NPM_DEPENDENCY_SCOPES) {
+      // In legacy locks the package metadata and snapshot share a record. Its peer ranges
+      // are declarations; actual peer bindings are in dependencies/optionalDependencies.
+      if (scope === "peerDependencies") continue;
+
+      for (const [name, value] of Object.entries(table(snapshot, scope))) {
+        const reference = readPnpmDependencyReference(value);
+        // Snapshot links are relative to the lockfile root, unlike importer-relative links.
+        const target = resolveDependency(name, reference.version, ".");
+        const peer = Object.hasOwn(peers, name);
+        const optional =
+          scope === "optionalDependencies" || (peer && table(peerMeta, name).optional === true);
+        const original = peers[name];
+        const selection =
+          scope === "devDependencies"
+            ? "excluded"
+            : (optional && target === undefined) ||
+                (target !== undefined && snapshotIndex.hasMissingMetadata(target))
+              ? "unknown"
+              : "selected";
+
+        lockedObservation.dependency(
+          from,
+          name,
+          reference.version,
+          peer ? "peerDependencies" : scope,
+          target,
+          {
+            optional,
+            selection,
+            ...(optional && target === undefined && { status: "declared" as const }),
+            requested: {
+              name,
+              ...(peer && typeof original === "string" && { specifier: original }),
+            },
+            attributes: {
+              "pnpm:dependencyReference": reference.version,
+              "pnpm:bindingScope": scope,
+            },
+          },
+        );
+        bound.add(name);
       }
+    }
 
-      const purl = createNpmPurl(name, version);
+    // Unbound peer requirements are declarations, never inferred package edges.
+    for (const [name, specifier] of Object.entries(peers)) {
+      if (bound.has(name)) continue;
+      if (typeof specifier !== "string")
+        throw new Error(`Invalid pnpm peer declaration for '${name}'`);
 
-      // Add package with evidence
-      ensurePackageExists(packageMap, purl);
-
-      const lineNumber = findLineNumber(lockfileContent, packageKey);
-      if (lineNumber) {
-        packageMap.get(purl)!.evidence.add(`${file}#${lineNumber}`);
-      }
+      const optional = table(peerMeta, name).optional === true;
+      lockedObservation.dependency(from, name, specifier, "peerDependencies", undefined, {
+        optional,
+        status: "declared",
+        selection: optional ? "excluded" : "unknown",
+      });
     }
   }
-
-  // Process snapshots section for relationships
-  if (lockfile.snapshots) {
-    for (const [snapshotKey, snapshotEntry] of Object.entries(lockfile.snapshots)) {
-      const parsed = parsePackageKey(snapshotKey);
-      if (!parsed) continue;
-
-      const { name, version } = parsed;
-      const purl = createNpmPurl(name, version);
-
-      // Extract relationships from dependencies
-      processDependencies(snapshotEntry, purl, packageMap, relationshipsMap);
-    }
-  }
-}
-
-function processV6Lockfile(
-  lockfile: PnpmLockfileV6,
-  lockfileContent: string,
-  file: string,
-  packageMap: Map<string, { purl: string; evidence: Set<string> }>,
-  relationshipsMap: Map<string, Set<string>>,
-): void {
-  if (!lockfile.packages) return;
-
-  for (const [packageKey, packageEntry] of Object.entries(lockfile.packages)) {
-    const parsed = parsePackageKey(packageKey);
-    if (!parsed) continue;
-
-    const { name } = parsed;
-    let { version } = parsed;
-
-    // For git packages, use the version field from the package entry instead of the git URL
-    if (packageEntry.version && isGitPackageKey(packageKey)) {
-      version = packageEntry.version;
-    }
-
-    const purl = createNpmPurl(name, version);
-
-    // Add package with evidence
-    ensurePackageExists(packageMap, purl);
-
-    const lineNumber = findLineNumber(lockfileContent, packageKey);
-    if (lineNumber) {
-      packageMap.get(purl)!.evidence.add(`${file}#${lineNumber}`);
-    }
-
-    // Extract relationships from dependencies
-    processDependencies(packageEntry, purl, packageMap, relationshipsMap);
-  }
-}
-
-/** Resolves aliased versions like "string-width@4.2.3" and strips peer dep suffixes. */
-function resolveAlias(depName: string, version: string): { name: string; version: string } {
-  const versionWithoutPeerDeps = stripPeerDepSuffix(version);
-  const lastAtIndex = versionWithoutPeerDeps.lastIndexOf("@");
-
-  if (lastAtIndex > 0) {
-    const beforeAt = versionWithoutPeerDeps.substring(0, lastAtIndex);
-    if (beforeAt && !/^\d/.test(beforeAt)) {
-      return { name: beforeAt, version: versionWithoutPeerDeps.substring(lastAtIndex + 1) };
-    }
-  }
-
-  return { name: depName, version: versionWithoutPeerDeps };
-}
-
-/**
- * For git/tarball packages, the version field in the package metadata contains the real
- * semantic version rather than the git URL or tarball path used as the package key.
- */
-function getPackageVersion(lockfile: PnpmLockfile, packageKey: string): string | null {
-  if (lockfile.packages) {
-    const packageEntry = lockfile.packages[packageKey];
-    if (packageEntry && packageEntry.version) {
-      return packageEntry.version;
-    }
-  }
-
-  return null;
 }

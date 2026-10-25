@@ -1,182 +1,1039 @@
 {
-  "packages": [
+  "codebase": "integration:yargs/yargs@971e351705f0fbc5566c6ed1dfd707fa65e11c0d",
+  "formatVersion": 2,
+  "graphs": [
     {
-      "purl": "pkg:npm/%40babel/eslint-parser@7.26.10",
-      "evidence": [
-        "package.json#46"
-      ]
+      "attributes": {},
+      "edges": [],
+      "id": "[\"packagejson\",\"helpers/package.json\",\"packagejson:08e9e0cd36409687e35380b0930427d2166139d340839a0404999b6299e116d8\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "helpers/package.json"
+          ],
+          "id": "scope:[\"helpers/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "helpers/package.json",
+            "purl": "pkg:generic/excalibur/project-6ac7b202d78b9e0c063ef8387da7984174e3e9f12eaeb68459adacde4b34d415"
+          },
+          "purl": "pkg:generic/excalibur/project-6ac7b202d78b9e0c063ef8387da7984174e3e9f12eaeb68459adacde4b34d415"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "helpers/package.json"
+          ],
+          "id": "scope:[\"helpers/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "helpers/package.json",
+            "purl": "pkg:generic/excalibur/project-6ac7b202d78b9e0c063ef8387da7984174e3e9f12eaeb68459adacde4b34d415"
+          },
+          "purl": "pkg:generic/excalibur/project-6ac7b202d78b9e0c063ef8387da7984174e3e9f12eaeb68459adacde4b34d415"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "helpers/package.json"
+          ],
+          "id": "scope:[\"helpers/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "helpers/package.json",
+            "purl": "pkg:generic/excalibur/project-6ac7b202d78b9e0c063ef8387da7984174e3e9f12eaeb68459adacde4b34d415"
+          },
+          "purl": "pkg:generic/excalibur/project-6ac7b202d78b9e0c063ef8387da7984174e3e9f12eaeb68459adacde4b34d415"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "helpers/package.json"
+          ],
+          "id": "scope:[\"helpers/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "helpers/package.json",
+            "purl": "pkg:generic/excalibur/project-6ac7b202d78b9e0c063ef8387da7984174e3e9f12eaeb68459adacde4b34d415"
+          },
+          "purl": "pkg:generic/excalibur/project-6ac7b202d78b9e0c063ef8387da7984174e3e9f12eaeb68459adacde4b34d415"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {
+              "type": "commonjs"
+            }
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "helpers/package.json"
+          ],
+          "id": "workspace:\"helpers\"",
+          "locator": "helpers",
+          "project": {
+            "definitionFile": "helpers/package.json",
+            "purl": "pkg:generic/excalibur/project-6ac7b202d78b9e0c063ef8387da7984174e3e9f12eaeb68459adacde4b34d415"
+          },
+          "purl": "pkg:generic/excalibur/project-6ac7b202d78b9e0c063ef8387da7984174e3e9f12eaeb68459adacde4b34d415"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"helpers/package.json\",\"dependencies\"]",
+          "node": "scope:[\"helpers/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "helpers/package.json",
+            "purl": "pkg:generic/excalibur/project-6ac7b202d78b9e0c063ef8387da7984174e3e9f12eaeb68459adacde4b34d415"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"helpers/package.json\",\"devDependencies\"]",
+          "node": "scope:[\"helpers/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "helpers/package.json",
+            "purl": "pkg:generic/excalibur/project-6ac7b202d78b9e0c063ef8387da7984174e3e9f12eaeb68459adacde4b34d415"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"helpers/package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"helpers/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "helpers/package.json",
+            "purl": "pkg:generic/excalibur/project-6ac7b202d78b9e0c063ef8387da7984174e3e9f12eaeb68459adacde4b34d415"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"helpers/package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"helpers/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "helpers/package.json",
+            "purl": "pkg:generic/excalibur/project-6ac7b202d78b9e0c063ef8387da7984174e3e9f12eaeb68459adacde4b34d415"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "helpers/package.json"
+        ]
+      }
     },
     {
-      "purl": "pkg:npm/%40babel/preset-typescript@7.26.0",
-      "evidence": [
-        "package.json#47"
-      ]
+      "attributes": {},
+      "edges": [
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"cliui\"]",
+            "name": "cliui",
+            "specifier": "^9.0.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"escalade\"]",
+            "name": "escalade",
+            "specifier": "^3.1.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"get-caller-file\"]",
+            "name": "get-caller-file",
+            "specifier": "^2.0.5"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"string-width\"]",
+            "name": "string-width",
+            "specifier": "^7.2.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"y18n\"]",
+            "name": "y18n",
+            "specifier": "^5.0.5"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"yargs-parser\"]",
+            "name": "yargs-parser",
+            "specifier": "^22.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@babel/eslint-parser\"]",
+            "name": "@babel/eslint-parser",
+            "specifier": "^7.26.10"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@babel/preset-typescript\"]",
+            "name": "@babel/preset-typescript",
+            "specifier": "^7.26.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@types/chai\"]",
+            "name": "@types/chai",
+            "specifier": "^4.2.11"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@types/mocha\"]",
+            "name": "@types/mocha",
+            "specifier": "^9.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@types/node\"]",
+            "name": "@types/node",
+            "specifier": "^20.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@typescript-eslint/eslint-plugin\"]",
+            "name": "@typescript-eslint/eslint-plugin",
+            "specifier": "^8.26.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"browserslist-generator\"]",
+            "name": "browserslist-generator",
+            "specifier": "^2.0.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"c8\"]",
+            "name": "c8",
+            "specifier": "^9.1.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"chai\"]",
+            "name": "chai",
+            "specifier": "^4.2.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"chalk\"]",
+            "name": "chalk",
+            "specifier": "^4.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"cpr\"]",
+            "name": "cpr",
+            "specifier": "^3.0.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"cross-env\"]",
+            "name": "cross-env",
+            "specifier": "^7.0.2"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"cross-spawn\"]",
+            "name": "cross-spawn",
+            "specifier": "^7.0.6"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"eslint-plugin-prettier\"]",
+            "name": "eslint-plugin-prettier",
+            "specifier": "^5.1.2"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"eslint\"]",
+            "name": "eslint",
+            "specifier": "^8.57.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"gts\"]",
+            "name": "gts",
+            "specifier": "^5.2.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"hashish\"]",
+            "name": "hashish",
+            "specifier": "0.0.4"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"mocha\"]",
+            "name": "mocha",
+            "specifier": "^10.8.2"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"rimraf\"]",
+            "name": "rimraf",
+            "specifier": "^3.0.2"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"typescript\"]",
+            "name": "typescript",
+            "specifier": "^5.8.3"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"which\"]",
+            "name": "which",
+            "specifier": "^2.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"yargs-test-extends\"]",
+            "name": "yargs-test-extends",
+            "specifier": "^1.0.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        }
+      ],
+      "id": "[\"packagejson\",\"package.json\",\"packagejson:a9e96132f590ab482c11b9677c22fd721d998720ffea9eca5c541fb252b945d3\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/yargs@18.0.0"
+          },
+          "purl": "pkg:npm/yargs@18.0.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/yargs@18.0.0"
+          },
+          "purl": "pkg:npm/yargs@18.0.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/yargs@18.0.0"
+          },
+          "purl": "pkg:npm/yargs@18.0.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/yargs@18.0.0"
+          },
+          "purl": "pkg:npm/yargs@18.0.0"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {
+              "engines": {
+                "node": "^20.19.0 || ^22.12.0 || >=23"
+              },
+              "name": "yargs",
+              "type": "module",
+              "version": "18.0.0"
+            }
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "workspace:\".\"",
+          "locator": ".",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/yargs@18.0.0"
+          },
+          "purl": "pkg:npm/yargs@18.0.0"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"package.json\",\"dependencies\"]",
+          "node": "scope:[\"package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/yargs@18.0.0"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"package.json\",\"devDependencies\"]",
+          "node": "scope:[\"package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/yargs@18.0.0"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/yargs@18.0.0"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/yargs@18.0.0"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "package.json"
+        ]
+      }
     },
     {
-      "purl": "pkg:npm/%40types/chai@4.2.11",
-      "evidence": [
-        "package.json#48"
-      ]
+      "attributes": {},
+      "edges": [],
+      "id": "[\"packagejson\",\"test/fixtures/extends/packageA/package.json\",\"packagejson:f3fb4ee6fa5fdd65b33dfa7976488e8e43a08e0b62a2d73d07d9ddc8028d93cc\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "test/fixtures/extends/packageA/package.json"
+          ],
+          "id": "scope:[\"test/fixtures/extends/packageA/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "test/fixtures/extends/packageA/package.json",
+            "purl": "pkg:generic/excalibur/project-b0eb7be00367bd1f1d2995cfec362b26da29d4382db0cbc8db2bae8d69c8bcf3"
+          },
+          "purl": "pkg:generic/excalibur/project-b0eb7be00367bd1f1d2995cfec362b26da29d4382db0cbc8db2bae8d69c8bcf3"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "test/fixtures/extends/packageA/package.json"
+          ],
+          "id": "scope:[\"test/fixtures/extends/packageA/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "test/fixtures/extends/packageA/package.json",
+            "purl": "pkg:generic/excalibur/project-b0eb7be00367bd1f1d2995cfec362b26da29d4382db0cbc8db2bae8d69c8bcf3"
+          },
+          "purl": "pkg:generic/excalibur/project-b0eb7be00367bd1f1d2995cfec362b26da29d4382db0cbc8db2bae8d69c8bcf3"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "test/fixtures/extends/packageA/package.json"
+          ],
+          "id": "scope:[\"test/fixtures/extends/packageA/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "test/fixtures/extends/packageA/package.json",
+            "purl": "pkg:generic/excalibur/project-b0eb7be00367bd1f1d2995cfec362b26da29d4382db0cbc8db2bae8d69c8bcf3"
+          },
+          "purl": "pkg:generic/excalibur/project-b0eb7be00367bd1f1d2995cfec362b26da29d4382db0cbc8db2bae8d69c8bcf3"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "test/fixtures/extends/packageA/package.json"
+          ],
+          "id": "scope:[\"test/fixtures/extends/packageA/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "test/fixtures/extends/packageA/package.json",
+            "purl": "pkg:generic/excalibur/project-b0eb7be00367bd1f1d2995cfec362b26da29d4382db0cbc8db2bae8d69c8bcf3"
+          },
+          "purl": "pkg:generic/excalibur/project-b0eb7be00367bd1f1d2995cfec362b26da29d4382db0cbc8db2bae8d69c8bcf3"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {}
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "test/fixtures/extends/packageA/package.json"
+          ],
+          "id": "workspace:\"test/fixtures/extends/packageA\"",
+          "locator": "test/fixtures/extends/packageA",
+          "project": {
+            "definitionFile": "test/fixtures/extends/packageA/package.json",
+            "purl": "pkg:generic/excalibur/project-b0eb7be00367bd1f1d2995cfec362b26da29d4382db0cbc8db2bae8d69c8bcf3"
+          },
+          "purl": "pkg:generic/excalibur/project-b0eb7be00367bd1f1d2995cfec362b26da29d4382db0cbc8db2bae8d69c8bcf3"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"test/fixtures/extends/packageA/package.json\",\"dependencies\"]",
+          "node": "scope:[\"test/fixtures/extends/packageA/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "test/fixtures/extends/packageA/package.json",
+            "purl": "pkg:generic/excalibur/project-b0eb7be00367bd1f1d2995cfec362b26da29d4382db0cbc8db2bae8d69c8bcf3"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"test/fixtures/extends/packageA/package.json\",\"devDependencies\"]",
+          "node": "scope:[\"test/fixtures/extends/packageA/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "test/fixtures/extends/packageA/package.json",
+            "purl": "pkg:generic/excalibur/project-b0eb7be00367bd1f1d2995cfec362b26da29d4382db0cbc8db2bae8d69c8bcf3"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"test/fixtures/extends/packageA/package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"test/fixtures/extends/packageA/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "test/fixtures/extends/packageA/package.json",
+            "purl": "pkg:generic/excalibur/project-b0eb7be00367bd1f1d2995cfec362b26da29d4382db0cbc8db2bae8d69c8bcf3"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"test/fixtures/extends/packageA/package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"test/fixtures/extends/packageA/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "test/fixtures/extends/packageA/package.json",
+            "purl": "pkg:generic/excalibur/project-b0eb7be00367bd1f1d2995cfec362b26da29d4382db0cbc8db2bae8d69c8bcf3"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "test/fixtures/extends/packageA/package.json"
+        ]
+      }
     },
     {
-      "purl": "pkg:npm/%40types/mocha@9.0.0",
-      "evidence": [
-        "package.json#49"
-      ]
+      "attributes": {},
+      "edges": [],
+      "id": "[\"packagejson\",\"test/fixtures/package.json\",\"packagejson:e730bc18469003b3804e9a34c28ea327861355abc54d035ee72178a996f2474a\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "test/fixtures/package.json"
+          ],
+          "id": "scope:[\"test/fixtures/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "test/fixtures/package.json",
+            "purl": "pkg:generic/excalibur/project-0614a85f3ced34d187371a3a74c812039fa373c6b2e9e65bf079b28cb477a2e6@9.9.9"
+          },
+          "purl": "pkg:generic/excalibur/project-0614a85f3ced34d187371a3a74c812039fa373c6b2e9e65bf079b28cb477a2e6@9.9.9"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "test/fixtures/package.json"
+          ],
+          "id": "scope:[\"test/fixtures/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "test/fixtures/package.json",
+            "purl": "pkg:generic/excalibur/project-0614a85f3ced34d187371a3a74c812039fa373c6b2e9e65bf079b28cb477a2e6@9.9.9"
+          },
+          "purl": "pkg:generic/excalibur/project-0614a85f3ced34d187371a3a74c812039fa373c6b2e9e65bf079b28cb477a2e6@9.9.9"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "test/fixtures/package.json"
+          ],
+          "id": "scope:[\"test/fixtures/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "test/fixtures/package.json",
+            "purl": "pkg:generic/excalibur/project-0614a85f3ced34d187371a3a74c812039fa373c6b2e9e65bf079b28cb477a2e6@9.9.9"
+          },
+          "purl": "pkg:generic/excalibur/project-0614a85f3ced34d187371a3a74c812039fa373c6b2e9e65bf079b28cb477a2e6@9.9.9"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "test/fixtures/package.json"
+          ],
+          "id": "scope:[\"test/fixtures/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "test/fixtures/package.json",
+            "purl": "pkg:generic/excalibur/project-0614a85f3ced34d187371a3a74c812039fa373c6b2e9e65bf079b28cb477a2e6@9.9.9"
+          },
+          "purl": "pkg:generic/excalibur/project-0614a85f3ced34d187371a3a74c812039fa373c6b2e9e65bf079b28cb477a2e6@9.9.9"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {
+              "version": "9.9.9"
+            }
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "test/fixtures/package.json"
+          ],
+          "id": "workspace:\"test/fixtures\"",
+          "locator": "test/fixtures",
+          "project": {
+            "definitionFile": "test/fixtures/package.json",
+            "purl": "pkg:generic/excalibur/project-0614a85f3ced34d187371a3a74c812039fa373c6b2e9e65bf079b28cb477a2e6@9.9.9"
+          },
+          "purl": "pkg:generic/excalibur/project-0614a85f3ced34d187371a3a74c812039fa373c6b2e9e65bf079b28cb477a2e6@9.9.9"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"test/fixtures/package.json\",\"dependencies\"]",
+          "node": "scope:[\"test/fixtures/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "test/fixtures/package.json",
+            "purl": "pkg:generic/excalibur/project-0614a85f3ced34d187371a3a74c812039fa373c6b2e9e65bf079b28cb477a2e6@9.9.9"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"test/fixtures/package.json\",\"devDependencies\"]",
+          "node": "scope:[\"test/fixtures/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "test/fixtures/package.json",
+            "purl": "pkg:generic/excalibur/project-0614a85f3ced34d187371a3a74c812039fa373c6b2e9e65bf079b28cb477a2e6@9.9.9"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"test/fixtures/package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"test/fixtures/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "test/fixtures/package.json",
+            "purl": "pkg:generic/excalibur/project-0614a85f3ced34d187371a3a74c812039fa373c6b2e9e65bf079b28cb477a2e6@9.9.9"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"test/fixtures/package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"test/fixtures/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "test/fixtures/package.json",
+            "purl": "pkg:generic/excalibur/project-0614a85f3ced34d187371a3a74c812039fa373c6b2e9e65bf079b28cb477a2e6@9.9.9"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "test/fixtures/package.json"
+        ]
+      }
     },
     {
-      "purl": "pkg:npm/%40types/node@20.0.0",
-      "evidence": [
-        "package.json#50"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40typescript-eslint/eslint-plugin@8.26.1",
-      "evidence": [
-        "package.json#51"
-      ]
-    },
-    {
-      "purl": "pkg:npm/browserslist-generator@2.0.1",
-      "evidence": [
-        "package.json#52"
-      ]
-    },
-    {
-      "purl": "pkg:npm/c8@9.1.0",
-      "evidence": [
-        "package.json#53"
-      ]
-    },
-    {
-      "purl": "pkg:npm/chai@4.2.0",
-      "evidence": [
-        "package.json#54"
-      ]
-    },
-    {
-      "purl": "pkg:npm/chalk@4.0.0",
-      "evidence": [
-        "package.json#55"
-      ]
-    },
-    {
-      "purl": "pkg:npm/cliui@9.0.1",
-      "evidence": [
-        "package.json#38"
-      ]
-    },
-    {
-      "purl": "pkg:npm/cpr@3.0.1",
-      "evidence": [
-        "package.json#56"
-      ]
-    },
-    {
-      "purl": "pkg:npm/cross-env@7.0.2",
-      "evidence": [
-        "package.json#57"
-      ]
-    },
-    {
-      "purl": "pkg:npm/cross-spawn@7.0.6",
-      "evidence": [
-        "package.json#58"
-      ]
-    },
-    {
-      "purl": "pkg:npm/escalade@3.1.1",
-      "evidence": [
-        "package.json#39"
-      ]
-    },
-    {
-      "purl": "pkg:npm/eslint-plugin-prettier@5.1.2",
-      "evidence": [
-        "package.json#60"
-      ]
-    },
-    {
-      "purl": "pkg:npm/eslint@8.57.1",
-      "evidence": [
-        "package.json#59"
-      ]
-    },
-    {
-      "purl": "pkg:npm/get-caller-file@2.0.5",
-      "evidence": [
-        "package.json#40"
-      ]
-    },
-    {
-      "purl": "pkg:npm/gts@5.2.0",
-      "evidence": [
-        "package.json#61"
-      ]
-    },
-    {
-      "purl": "pkg:npm/hashish@0.0.4",
-      "evidence": [
-        "package.json#62"
-      ]
-    },
-    {
-      "purl": "pkg:npm/mocha@10.8.2",
-      "evidence": [
-        "package.json#63"
-      ]
-    },
-    {
-      "purl": "pkg:npm/rimraf@3.0.2",
-      "evidence": [
-        "package.json#64"
-      ]
-    },
-    {
-      "purl": "pkg:npm/string-width@7.2.0",
-      "evidence": [
-        "package.json#41"
-      ]
-    },
-    {
-      "purl": "pkg:npm/typescript@5.8.3",
-      "evidence": [
-        "package.json#65"
-      ]
-    },
-    {
-      "purl": "pkg:npm/which@2.0.0",
-      "evidence": [
-        "package.json#66"
-      ]
-    },
-    {
-      "purl": "pkg:npm/y18n@5.0.5",
-      "evidence": [
-        "package.json#42"
-      ]
-    },
-    {
-      "purl": "pkg:npm/yargs-parser@22.0.0",
-      "evidence": [
-        "package.json#43"
-      ]
-    },
-    {
-      "purl": "pkg:npm/yargs-test-extends@1.0.1",
-      "evidence": [
-        "package.json#67"
-      ]
+      "attributes": {
+        "core:failure": "Failed to extract file: Expected property name or '}' in JSON at position 1 (line 1 column 2)"
+      },
+      "edges": [],
+      "id": "packagejson:e59f666903e91dedb65631f462a5cf4da91233c79e4cc76fe0ff8f825a7ff8e7",
+      "interpretation": "unknown",
+      "nodes": [],
+      "rootCompleteness": "unknown",
+      "roots": [],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "test/fixtures/broken-json/package.json"
+        ],
+        "key": "extraction-failed"
+      }
     }
   ],
-  "subprojects": [],
-  "relationships": [],
   "issues": [
     {
       "code": "core.file_extraction_failed",
+      "file": "test/fixtures/broken-json/package.json",
       "message": "Failed to extract file: Expected property name or '}' in JSON at position 1 (line 1 column 2)",
-      "severity": "ERROR",
-      "file": "test/fixtures/broken-json/package.json"
+      "severity": "ERROR"
+    }
+  ],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "test/fixtures/package.json",
+      "evidence": [
+        "test/fixtures/package.json"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "packagejson",
+            "files": [
+              "test/fixtures/package.json"
+            ],
+            "key": "\"test/fixtures\""
+          },
+          "synthesizedPurl": true
+        }
+      ],
+      "purl": "pkg:generic/excalibur/project-0614a85f3ced34d187371a3a74c812039fa373c6b2e9e65bf079b28cb477a2e6@9.9.9"
+    },
+    {
+      "definitionFile": "helpers/package.json",
+      "evidence": [
+        "helpers/package.json"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "packagejson",
+            "files": [
+              "helpers/package.json"
+            ],
+            "key": "\"helpers\""
+          },
+          "synthesizedPurl": true
+        }
+      ],
+      "purl": "pkg:generic/excalibur/project-6ac7b202d78b9e0c063ef8387da7984174e3e9f12eaeb68459adacde4b34d415"
+    },
+    {
+      "definitionFile": "test/fixtures/extends/packageA/package.json",
+      "evidence": [
+        "test/fixtures/extends/packageA/package.json"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "packagejson",
+            "files": [
+              "test/fixtures/extends/packageA/package.json"
+            ],
+            "key": "\"test/fixtures/extends/packageA\""
+          },
+          "synthesizedPurl": true
+        }
+      ],
+      "purl": "pkg:generic/excalibur/project-b0eb7be00367bd1f1d2995cfec362b26da29d4382db0cbc8db2bae8d69c8bcf3"
+    },
+    {
+      "definitionFile": "package.json",
+      "evidence": [
+        "package.json"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "packagejson",
+            "files": [
+              "package.json"
+            ],
+            "key": "\".\""
+          },
+          "synthesizedPurl": false
+        }
+      ],
+      "purl": "pkg:npm/yargs@18.0.0"
     }
   ]
 }

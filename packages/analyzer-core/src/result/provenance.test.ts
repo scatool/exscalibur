@@ -1,0 +1,76 @@
+import { expect, test } from "vite-plus/test";
+import { createEmptyResult, mergeResults, normalizeResult, parseResult } from "./index.ts";
+import type { IdentityObservation } from "./types.ts";
+
+const purl = "pkg:generic/example@1";
+const assertion = (file: string, synthesizedPurl: boolean): IdentityObservation => ({
+  source: { extractor: "fixture", files: [file], key: "component" },
+  synthesizedPurl,
+});
+function observation(identityObservations?: IdentityObservation[]) {
+  return {
+    ...createEmptyResult("example:repo"),
+    packages: [
+      { purl, evidence: ["input"], ...(identityObservations && { identityObservations }) },
+    ],
+    subprojects: [
+      { purl, definitionFile: "manifest", ...(identityObservations && { identityObservations }) },
+    ],
+  };
+}
+
+test("catalog-only identity assertions preserve source association across conflicting observations", () => {
+  const native = observation([assertion("native.json", false)]);
+  const fallback = observation([assertion("fallback.json", true)]);
+  const unknown = observation();
+  const merged = mergeResults([native, fallback, unknown]);
+  const expected = [assertion("fallback.json", true), assertion("native.json", false)];
+  expect(merged.packages[0]!.identityObservations).toEqual(expected);
+  expect(merged.subprojects[0]!.identityObservations).toEqual(expected);
+  expect(merged.graphs).toEqual([]);
+  expect(mergeResults([unknown, fallback, native])).toEqual(merged);
+  expect(mergeResults([merged, merged])).toEqual(merged);
+  expect(parseResult(JSON.parse(JSON.stringify(merged)))).toEqual(merged);
+});
+
+test("absence is not a native identity assertion and source entity keys remain distinct", () => {
+  const fallback = observation([assertion("input", true)]);
+  const merged = mergeResults([fallback, observation()]);
+  expect(merged.packages[0]!.identityObservations).toEqual([assertion("input", true)]);
+  const other = assertion("input", false);
+  other.source.key = "other-component";
+  expect(
+    mergeResults([fallback, observation([other])]).packages[0]!.identityObservations,
+  ).toHaveLength(2);
+});
+
+test("identity source files are set-valued and repeated assertions deduplicate", () => {
+  const value = assertion("input", true);
+  value.source.files = ["z", "a", "a"];
+  const result = normalizeResult(observation([value, { ...value }]));
+  expect(result.packages[0]!.identityObservations).toEqual([
+    {
+      source: { extractor: "fixture", files: ["a", "z"], key: "component" },
+      synthesizedPurl: true,
+    },
+  ]);
+});
+
+test("unscoped synthesized flags are rejected on catalogs rather than accepted as extensions", () => {
+  for (const field of ["packages", "subprojects"] as const) {
+    const input = observation();
+    Object.assign(input[field][0]!, { synthesizedPurl: true });
+    expect(() => parseResult(input)).toThrow();
+  }
+});
+
+test("disagreeing assertions from the same named source remain explicit without choosing a winner", () => {
+  const first = observation([assertion("input", true)]);
+  const second = observation([assertion("input", false)]);
+  const merged = mergeResults([first, second]);
+  expect(merged.packages[0]!.identityObservations).toEqual([
+    assertion("input", false),
+    assertion("input", true),
+  ]);
+  expect(mergeResults([second, first])).toEqual(merged);
+});

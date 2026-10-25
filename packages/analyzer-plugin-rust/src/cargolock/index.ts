@@ -1,254 +1,208 @@
+import { parse as parseToml } from "smol-toml";
 import {
-  type AnalyzerResult,
-  type DependencyScope,
-  type Extractor,
   filesExtractor,
-  type Subproject,
-  addRelationship,
-  ensurePackageExists,
-  addPackageEvidence,
-  buildResult,
-  initializeExtractionMaps,
   readNormalizedTextFile,
-  readTextFile,
   scanAndMarkFiles,
+  type DependencyRequest,
 } from "@scatool/analyzer-core";
-import { dirname, join } from "node:path/posix";
-import {
-  findLineNumber,
-  isWorkspacePackage,
-  parseCargoLockfile,
-  parseCargoToml,
-  parseDependency,
-  type CargoLockPackage,
-} from "./lockfile.ts";
-import { createCargoPurl } from "../cargo-utils.ts";
-import type { RustOptions } from "../options.ts";
 import { optionSchema } from "../options.ts";
+import {
+  CargoObservation,
+  array,
+  cargoIdentity,
+  json,
+  record,
+  strings,
+  text,
+  type CargoRecord,
+} from "../observation.ts";
 
-export const extractor: Extractor<RustOptions> = filesExtractor<RustOptions>({
+type LockEntry = {
+  id: string;
+  name: string;
+  version: string;
+  source?: string;
+  record: CargoRecord;
+};
+
+export const extractor = filesExtractor({
   name: "cargolock",
   version: 1,
   optionsSchema: optionSchema,
-  markFiles: async function (codebase: string, options: RustOptions) {
+  markFiles: async function (codebase, options) {
     await scanAndMarkFiles(this, codebase, "**/Cargo.lock", options.ignore);
   },
-  extractFile: async (file: string): Promise<AnalyzerResult> => {
-    const dir = dirname(file);
-
-    const { packageMap, relationshipsMap } = initializeExtractionMaps();
-    const subprojects: Subproject[] = [];
-
-    const lockfileContent = await readNormalizedTextFile(file);
-    const lockfile = parseCargoLockfile(lockfileContent);
-
-    // Build a map of package names to their packages (for resolving dependencies)
-    // There can be multiple versions of the same package
-    const packagesByName = new Map<string, CargoLockPackage[]>();
-    for (const pkg of lockfile.package || []) {
-      const existing = packagesByName.get(pkg.name);
-      if (existing) {
-        existing.push(pkg);
-      } else {
-        packagesByName.set(pkg.name, [pkg]);
-      }
-    }
-
-    // Determine workspace members by checking Cargo.toml
-    const cargoTomlPath = join(dir, "Cargo.toml");
-    let workspaceMembers: string[] = [];
-    let rootPackageName: string | undefined;
-    let rootPackageVersion: string | undefined;
-
-    try {
-      const cargoTomlContent = await readTextFile(cargoTomlPath);
-      const cargoToml = parseCargoToml(cargoTomlContent);
-
-      if (cargoToml.workspace?.members) {
-        workspaceMembers = cargoToml.workspace.members;
-      }
-
-      if (cargoToml.package?.name) {
-        rootPackageName = cargoToml.package.name;
-        rootPackageVersion = cargoToml.package.version;
-      }
-    } catch {
-      // Cargo.toml might not exist or be invalid
-    }
-
-    // Build a map of workspace package names to their versions
-    const workspacePackages = new Map<string, string>();
-    for (const pkg of lockfile.package || []) {
-      if (isWorkspacePackage(pkg)) {
-        workspacePackages.set(pkg.name, pkg.version);
-      }
-    }
-
-    // Process workspace members to create subprojects
-    if (workspaceMembers.length > 0) {
-      for (const member of workspaceMembers) {
-        const memberDir = join(dir, member);
-        const memberCargoTomlPath = join(memberDir, "Cargo.toml");
-
-        try {
-          const memberCargoTomlContent = await readTextFile(memberCargoTomlPath);
-          const memberCargoToml = parseCargoToml(memberCargoTomlContent);
-
-          if (memberCargoToml.package?.name && memberCargoToml.package?.version) {
-            const purl = createCargoPurl(
-              memberCargoToml.package.name,
-              memberCargoToml.package.version,
-            );
-
-            // Find this package in the lockfile to get its dependencies
-            const pkg = (lockfile.package || []).find(
-              (p) =>
-                p.name === memberCargoToml.package!.name &&
-                p.version === memberCargoToml.package!.version,
-            );
-
-            const scopes = extractScopes(pkg, packagesByName);
-
-            subprojects.push({
-              purl,
-              definitionFile: memberCargoTomlPath,
-              scopes,
-            });
-          }
-        } catch {
-          // Skip invalid Cargo.toml files
-          continue;
+  extractFile: async (file, _options, context) => {
+    const document = record(parseToml(await readNormalizedTextFile(file)));
+    if (document.version !== undefined && ![1, 2, 3, 4].includes(document.version as number))
+      throw new Error(`Unsupported Cargo lockfile version: ${JSON.stringify(document.version)}`);
+    const builder = new CargoObservation(
+      { codebase: context.codebaseId, evidenceFile: context.relativeFile },
+      "raw-lock-records",
+      "locked",
+      "cargolock",
+    );
+    builder.attributes["cargo:document"] = json(document);
+    builder.attributes["cargo:projection"] = "raw-lock-records";
+    builder.attributes["cargo:effectiveFeatureResolution"] = "not-observed";
+    builder.attributes["cargo:workspaceMembership"] = "not-observed";
+    builder.attributes["cargo:reportedLockVersion"] =
+      document.version === undefined ? null : json(document.version);
+    builder.issue(
+      "cargo.raw_lock_projection",
+      "Cargo.lock has no project scopes, dependency kinds, target predicates or activated features; path packages do not establish workspace membership",
+      "HINT",
+    );
+    const entries = new Map<string, LockEntry>();
+    const metadata = document.metadata === undefined ? {} : record(document.metadata);
+    const register = (value: unknown, unused = false): LockEntry => {
+      const item = record(value),
+        name = text(item.name),
+        version = text(item.version);
+      const source = item.source === undefined ? undefined : text(item.source);
+      const identity = JSON.stringify([name, version, source ?? null]);
+      const id = `${unused ? "unused-patch:" : "package:"}${identity}`;
+      if (!unused && entries.has(identity))
+        throw new Error(`Duplicate native Cargo lock identity: ${identity}`);
+      const coordinates = cargoIdentity(name, version, source, [
+        context.codebaseId,
+        context.relativeFile,
+        identity,
+      ]);
+      const checksumKey = `checksum ${name} ${version}${source === undefined ? "" : ` (${source})`}`;
+      const legacyChecksum = metadata[checksumKey];
+      const checksums = [
+        ...new Set(
+          [item.checksum, legacyChecksum].filter(
+            (value) => value !== undefined && value !== "<none>",
+          ),
+        ),
+      ];
+      if (item.checksum !== undefined && legacyChecksum !== undefined)
+        builder.issue(
+          "cargo.mixed_checksum_formats",
+          `Package '${name} ${version}' has inline and legacy checksum representations; retaining both without selecting one`,
+        );
+      const artifacts = checksums.flatMap((checksum) => {
+        if (typeof checksum !== "string" || !/^[0-9a-f]{64}$/i.test(checksum)) {
+          builder.issue(
+            "cargo.invalid_checksum",
+            `Package '${name} ${version}' has an invalid native SHA-256 checksum; the raw value is preserved`,
+          );
+          return [];
         }
-      }
-    } else if (rootPackageName && rootPackageVersion) {
-      // Single package project (not a workspace)
-      const purl = createCargoPurl(rootPackageName, rootPackageVersion);
-
-      // Find this package in the lockfile to get its dependencies
-      const pkg = (lockfile.package || []).find(
-        (p) => p.name === rootPackageName && p.version === rootPackageVersion,
-      );
-
-      const scopes = extractScopes(pkg, packagesByName);
-
-      subprojects.push({
-        purl,
-        definitionFile: cargoTomlPath,
-        scopes,
+        return [{ hashes: { sha256: checksum.toLowerCase() }, evidence: [context.relativeFile] }];
       });
+      builder.package(
+        {
+          id,
+          purl: coordinates.purl,
+          locator: identity,
+          evidence: [context.relativeFile],
+          dependencyCompleteness: unused ? "unknown" : "complete",
+          ...(artifacts.length > 0 && { artifacts }),
+          attributes: {
+            "cargo:lockPackage": json(item),
+            ...(unused && { "cargo:unusedPatch": true }),
+            ...(legacyChecksum !== undefined && { "cargo:legacyChecksum": json(legacyChecksum) }),
+          },
+        },
+        coordinates.synthesizedPurl,
+      );
+      const entry = { id, name, version, ...(source !== undefined && { source }), record: item };
+      if (!unused) entries.set(identity, entry);
+      return entry;
+    };
+    if (document.root !== undefined) {
+      const root = register(document.root);
+      const project = builder.project(root.id, `${context.relativeFile}#root`, "lock.root");
+      builder.root(project, "cargo:locked-dependencies", root.id);
+      builder.rootCompleteness = "complete";
     }
-
-    // Process all packages in the lockfile
-    for (const pkg of lockfile.package || []) {
-      // Skip workspace packages - they are subprojects, not dependencies
-      if (isWorkspacePackage(pkg)) {
-        continue;
+    for (const value of document.package === undefined ? [] : array(document.package))
+      register(value);
+    if (document.patch !== undefined) {
+      const patches = record(document.patch);
+      for (const value of patches.unused === undefined ? [] : array(patches.unused))
+        register(value, true);
+    }
+    const binding = (reference: string): { target?: string; requested: DependencyRequest } => {
+      const parsed = /^([^\s]+)(?: ([^\s]+)(?: \((.+)\))?)?$/.exec(reference);
+      const requested: DependencyRequest = {
+        ...(parsed && { name: parsed[1]! }),
+        attributes: { "cargo:lockReference": reference },
+      };
+      if (!parsed) {
+        builder.issue(
+          "cargo.invalid_lock_reference",
+          `Malformed Cargo lock reference '${reference}' remains unresolved`,
+        );
+        return { requested };
       }
-
-      const purl = createCargoPurl(pkg.name, pkg.version);
-
-      // Add package to map
-      ensurePackageExists(packageMap, purl);
-
-      // Add evidence (file path and line number)
-      const lineNumber = findLineNumber(lockfileContent, pkg.name);
-      if (lineNumber !== undefined) {
-        addPackageEvidence(packageMap, purl, `${file}#${lineNumber}`);
+      const [, name, version, source] = parsed;
+      const matches = [...entries.values()].filter(
+        (entry) =>
+          entry.name === name &&
+          (version === undefined || entry.version === version) &&
+          (source === undefined || entry.source === source),
+      );
+      if (version === undefined && new Set(matches.map((entry) => entry.version)).size > 1) {
+        builder.issue(
+          "cargo.unresolved_lock_reference",
+          `Cargo lock reference '${reference}' omits an ambiguous version; path preference cannot choose its version`,
+        );
+        return { requested };
       }
-
-      // Process dependencies
-      if (pkg.dependencies) {
-        for (const dep of pkg.dependencies) {
-          const parsed = parseDependency(dep);
-
-          // Find the matching package in the lockfile
-          const depPackages = packagesByName.get(parsed.name);
-          if (depPackages) {
-            const depPkg = findMatchingPackage(depPackages, parsed.version, parsed.source);
-
-            if (depPkg) {
-              const depPurl = createCargoPurl(depPkg.name, depPkg.version);
-              addRelationship(relationshipsMap, purl, depPurl);
-              ensurePackageExists(packageMap, depPurl);
-            }
-          }
-        }
+      // Cargo's decoder interprets source-less references as path IDs first. A unique
+      // remaining non-path source can be abbreviated only if no path candidate exists.
+      const local =
+        source === undefined ? matches.filter((entry) => entry.source === undefined) : [];
+      const candidates = local.length > 0 ? local : matches;
+      if (candidates.length === 1) return { requested, target: candidates[0]!.id };
+      builder.issue(
+        "cargo.unresolved_lock_reference",
+        `Cargo lock reference '${reference}' has ${candidates.length} native candidates; no arbitrary package is selected`,
+      );
+      return { requested };
+    };
+    for (const entry of entries.values()) {
+      for (const reference of entry.record.dependencies === undefined
+        ? []
+        : strings(entry.record.dependencies)) {
+        const resolved = binding(reference);
+        const common = {
+          from: entry.id,
+          relation: "depends-on" as const,
+          kind: "cargo:locked-dependencies",
+          selection: "selected" as const,
+          requested: resolved.requested,
+          evidence: [context.relativeFile],
+        };
+        builder.edges.push(
+          resolved.target === undefined
+            ? { ...common, status: "unresolved" }
+            : { ...common, status: "resolved", to: resolved.target },
+        );
+      }
+      if (entry.record.replace !== undefined) {
+        const reference = text(entry.record.replace),
+          resolved = binding(reference);
+        const common = {
+          from: entry.id,
+          relation: "constrains" as const,
+          kind: "cargo:replace",
+          selection: "selected" as const,
+          requested: resolved.requested,
+          evidence: [context.relativeFile],
+        };
+        builder.edges.push(
+          resolved.target === undefined
+            ? { ...common, status: "unresolved" }
+            : { ...common, status: "resolved", to: resolved.target },
+        );
       }
     }
-
-    return buildResult(packageMap, relationshipsMap, subprojects);
+    // Without legacy [root], inventory membership does not identify entry projects.
+    return builder.finish();
   },
 });
-
-/**
- * Find a matching package from a list of packages with the same name.
- * Uses version and source to disambiguate when there are multiple versions
- * or packages from different sources.
- */
-function findMatchingPackage(
-  packages: CargoLockPackage[],
-  version?: string,
-  source?: string,
-): CargoLockPackage | undefined {
-  // If source is specified, use it for exact matching
-  if (source) {
-    return packages.find((p) => p.version === version && p.source === source);
-  }
-
-  // If version is specified, find by version
-  // When there are multiple packages with the same version but different sources,
-  // prefer the path dependency (no source) over registry dependencies
-  if (version) {
-    const versionMatches = packages.filter((p) => p.version === version);
-    if (versionMatches.length === 1) {
-      return versionMatches[0];
-    }
-    // If multiple matches, prefer path dependency (no source field)
-    return versionMatches.find((p) => !p.source) ?? versionMatches[0];
-  }
-
-  // No version specified, use the first/only package
-  return packages[0];
-}
-
-/**
- * Extract dependency scopes from a package
- * Cargo doesn't distinguish between dependency types in the lockfile,
- * so we use a single "dependencies" scope
- */
-function extractScopes(
-  pkg: CargoLockPackage | undefined,
-  packagesByName: Map<string, CargoLockPackage[]>,
-): DependencyScope[] {
-  if (!pkg || !pkg.dependencies || pkg.dependencies.length === 0) {
-    return [];
-  }
-
-  const scopePackages = new Set<string>();
-
-  for (const dep of pkg.dependencies) {
-    const parsed = parseDependency(dep);
-
-    // Find the matching package in the lockfile
-    const depPackages = packagesByName.get(parsed.name);
-    if (depPackages) {
-      const depPkg = findMatchingPackage(depPackages, parsed.version, parsed.source);
-
-      if (depPkg) {
-        const depPurl = createCargoPurl(depPkg.name, depPkg.version);
-        scopePackages.add(depPurl);
-      }
-    }
-  }
-
-  if (scopePackages.size === 0) {
-    return [];
-  }
-
-  return [
-    {
-      scope: "dependencies",
-      packages: [...scopePackages],
-    },
-  ];
-}
