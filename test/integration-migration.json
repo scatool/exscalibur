@@ -71,7 +71,7 @@
         "packageCount": 919,
         "projectCount": 19,
         "issueCodes": [],
-        "acceptedSha256": "237576d56174accac39f4feba51a8d9d1103297e036812f933fc14cdddcad168"
+        "acceptedSha256": "1a90e92238f2ee566acd50aff5e6bbdfe5d363c3f598c1f089839a4c29abc24e"
       },
       "inputCheckpoint": {
         "path": "test/repositories/algolia+algoliasearch-client-javascript",
@@ -205,11 +205,12 @@
         ],
         "assertions": [
           "Exact source hashes, graph observation inventory, roots, catalog identities, native requests and contextual bindings verified by test/javascript-workspaces-acceptance.test.ts.",
-          "Existing discovery exclusions and exact warning/hint inventory recorded; no V1 oracle."
+          "Existing discovery exclusions and exact warning/hint inventory recorded; no V1 oracle.",
+          "Source-reviewed Yarn certainty correction annotates 72 potentially transformed raw bindings, changes 72 selections to unknown and 72 source-node coverage/evidence records. Root-policy selectors and known builtin compatibility patch descriptors justify each change; raw targets, requests, catalog, projects, roots, optional/platform conditions and issues remain unchanged."
         ],
         "review": {
           "path": "test/acceptance/algolia+algoliasearch-client-javascript.md",
-          "sha256": "9db92e8a3700fa50feccfbd05d6c4910ab81cd724d149dba96d2111c93d46620"
+          "sha256": "d2ec651c1636f57f05a04f2300dee236b03522a229ff81dccd9999cdb9f3a33e"
         }
       }
     },
@@ -229,7 +230,7 @@
         "packageCount": 1571,
         "projectCount": 167,
         "issueCodes": [],
-        "acceptedSha256": "fe2c7a579d9114a441b64806b37b8e15496993cf817ff86b8bcfd36c9eaa0b1c"
+        "acceptedSha256": "543d30894524d4fdc86171d7d84a4bd431d458b6a04f6f06793d31b2ff6e42f3"
       },
       "inputCheckpoint": {
         "path": "test/repositories/babel+babel",
@@ -1175,11 +1176,12 @@
         ],
         "assertions": [
           "Exact source hashes, graph observation inventory, roots, catalog identities, native requests and contextual bindings verified by test/javascript-workspaces-acceptance.test.ts.",
-          "Existing discovery exclusions and exact warning/hint inventory recorded; no V1 oracle."
+          "Existing discovery exclusions and exact warning/hint inventory recorded; no V1 oracle.",
+          "Source-reviewed Yarn certainty correction annotates 95 potentially transformed raw bindings, changes 95 selections to unknown and 90 source-node coverage/evidence records. Root-policy selectors and known builtin compatibility patch descriptors justify each change; raw targets, requests, catalog, projects, roots, optional/platform conditions and issues remain unchanged."
         ],
         "review": {
           "path": "test/acceptance/babel+babel.md",
-          "sha256": "4332844eebb31ce77751ed1d60836d9b3eea6927f3d707e5be2226bbb5d5795e"
+          "sha256": "218f9cd8e118c565f762b435d9b73d13db113ed1a2a8e4f7f7c892613d664f67"
         }
       }
     },
@@ -1319,7 +1321,7 @@
         "packageCount": 4425,
         "projectCount": 136,
         "issueCodes": [],
-        "acceptedSha256": "25618166861fca22d4ced79efa6b40c38534fd6157f9bcc14ac1e25d4bee86ed"
+        "acceptedSha256": "6da89ab32e4c428f1f1c3dd15d0b1ecc1888def3affb70a6a969130678156c9c"
       },
       "inputCheckpoint": {
         "path": "test/repositories/calcom+cal.com",
@@ -1956,11 +1958,12 @@
           "Every native npm/Yarn/pnpm/Bun record and request is compared with source, including target bindings, package identity/artifacts, optional flags, source-derived predicates and selection.",
           "Bun workspace scope and consumer requests preserve native bindings and excluded development/unknown peer applicability; Cargo raw records, checksums and targets retain unknown root coverage without inferred feature selection.",
           "Independent source-semantic review verified archived source trees and executable source assertions; no installation or effective native resolver closure is claimed.",
-          "Unsupported binary bun.lockb retains exact core.file_extraction_failed ERROR and an unknown empty observation; 35 unresolved Yarn requests remain unresolved. Acceptance does not claim complete extraction of the binary lock."
+          "Unsupported binary bun.lockb retains exact core.file_extraction_failed ERROR and an unknown empty observation; 35 unresolved Yarn requests remain unresolved. Acceptance does not claim complete extraction of the binary lock.",
+          "Source-reviewed Yarn certainty correction annotates 374 potentially transformed raw bindings, changes 374 selections to unknown and 311 source-node coverage/evidence records. Root-policy selectors and known builtin compatibility patch descriptors justify each change; raw targets, requests, catalog, projects, roots, optional/platform conditions and issues remain unchanged."
         ],
         "review": {
           "path": "test/acceptance/calcom+cal.com.md",
-          "sha256": "c0b548664dce3526a5ddef94c7c29b79979f03b5711efa9e448446b94cf27e56"
+          "sha256": "c96a793cced97550bb5edf8ab85490887769193b861f248b5999a6e80a8ac46a"
         }
       }
     },
@@ -2631,7 +2634,7 @@
         "packageCount": 3084,
         "projectCount": 32,
         "issueCodes": [],
-        "acceptedSha256": "0d982d9b5198d113343e2d0f93b289219d5927e5b60c8539c31dc1f6a7094c18"
+        "acceptedSha256": "f17fa313b79da611a5d3c25713f9937027da0250bd9e89ab04c0772557996b27"
       },
       "inputCheckpoint": {
         "path": "test/repositories/emotion-js+emotion",
@@ -2849,11 +2852,12 @@
         ],
         "assertions": [
           "Exact source hashes, graph observation inventory, roots, catalog identities, native requests and contextual bindings verified by test/javascript-workspaces-acceptance.test.ts.",
-          "Existing discovery exclusions and exact warning/hint inventory recorded; no V1 oracle."
+          "Existing discovery exclusions and exact warning/hint inventory recorded; no V1 oracle.",
+          "Source-reviewed Yarn certainty correction annotates 150 potentially transformed raw bindings, changes 150 selections to unknown and 106 source-node coverage/evidence records. Root-policy selectors and known builtin compatibility patch descriptors justify each change; raw targets, requests, catalog, projects, roots, optional/platform conditions and issues remain unchanged."
         ],
         "review": {
           "path": "test/acceptance/emotion-js+emotion.md",
-          "sha256": "3815acc578ce597f5942cab1e32ed85de6bef31276629a00af31a42f61910810"
+          "sha256": "14ef37f72d421fc4408a8253aa686b5c68c9c5ef4beb251b73c464d5e6676141"
         }
       }
     },
@@ -4119,7 +4123,7 @@
         "packageCount": 1778,
         "projectCount": 5,
         "issueCodes": [],
-        "acceptedSha256": "82112e4ae41338f8ce12055c02ff98b35f0318fe0f1c0bf3a4591b6b518f6591"
+        "acceptedSha256": "15d0ad7211f2b5c5e0782b0bd46d13ccc6acb370ec3adab6a8d40128fb76b74c"
       },
       "inputCheckpoint": {
         "path": "test/repositories/linear+linear",
@@ -4212,11 +4216,12 @@
           "All 16 configured extractors executed without ERROR.",
           "Every native record/request compared with independent placement or descriptor binding and selection assertions.",
           "Explicit project definitions, scopes, catalog identities, unknown coverage and expected warnings checked.",
-          "Parser acceptance only; no native package-manager execution claimed."
+          "Parser acceptance only; no native package-manager execution claimed.",
+          "Source-reviewed Yarn certainty correction annotates 9 potentially transformed raw bindings, changes 2 selections to unknown and 9 source-node coverage/evidence records. Root-policy selectors and known builtin compatibility patch descriptors justify each change; raw targets, requests, catalog, projects, roots, optional/platform conditions and issues remain unchanged."
         ],
         "review": {
           "path": "test/acceptance/linear-linear.md",
-          "sha256": "7232ff371f67a95edf7687d46a9a5395762b082e1a9dfbcf2d13955b703efc61"
+          "sha256": "5b8c913b9f077d0d5c1d610ab30bda39c07ee49ec9dbf342bdb950dba7e0d911"
         }
       }
     },
@@ -6763,7 +6768,7 @@
         "packageCount": 548,
         "projectCount": 1,
         "issueCodes": [],
-        "acceptedSha256": "7a39d327947a2d1bd2ac70bf49a7407846f5c03dbeef5164d357bc0ce0b4171e"
+        "acceptedSha256": "c7c8c6d7f1fb48841beb74b8cc33c718e63c9a2c4462d06752835565495505c1"
       },
       "inputCheckpoint": {
         "path": "test/repositories/svg+svgo",
@@ -6820,11 +6825,12 @@
           "All 16 configured extractors executed without ERROR.",
           "Every native record/request compared with independent placement or descriptor binding and selection assertions.",
           "Explicit project definitions, scopes, catalog identities, unknown coverage and expected warnings checked.",
-          "Parser acceptance only; no native package-manager execution claimed."
+          "Parser acceptance only; no native package-manager execution claimed.",
+          "Source-reviewed Yarn certainty correction annotates 19 potentially transformed raw bindings, changes 19 selections to unknown and 17 source-node coverage/evidence records. Root-policy selectors and known builtin compatibility patch descriptors justify each change; raw targets, requests, catalog, projects, roots, optional/platform conditions and issues remain unchanged."
         ],
         "review": {
           "path": "test/acceptance/svg-svgo.md",
-          "sha256": "31dae478863d6d7016a8e912bd48e137acb4a21634afd415367e118e0a2c258c"
+          "sha256": "36602903ed5ecd9e9efe1cc509e67fcccb937db50de39657a13a2c45b6c6bad4"
         }
       }
     },

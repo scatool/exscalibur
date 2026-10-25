@@ -37297,6 +37297,1334 @@
       "edges": [
         {
           "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "fsevents@patch:fsevents@npm%3A^1.2.7#optional!builtin<compat/fsevents>"
+              ]
+            },
+            "yarn:descriptor": "fsevents@npm:^1.2.7"
+          },
+          "condition": {
+            "expression": {
+              "conditions": "os=darwin"
+            },
+            "language": "yarn:applicability/v1"
+          },
+          "evidence": [
+            "yarn.lock"
+          ],
+          "from": "resolution:\"chokidar@npm:2.1.8\"",
+          "kind": "dependencies",
+          "optional": true,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"chokidar@npm:2.1.8\\\"\",\"dependencies\",\"fsevents\"]",
+            "name": "fsevents",
+            "specifier": "npm:^1.2.7"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"fsevents@npm:1.2.13\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "fsevents@patch:fsevents@npm%3A^2.3.3#optional!builtin<compat/fsevents>"
+              ]
+            },
+            "yarn:descriptor": "fsevents@npm:^2.3.3"
+          },
+          "condition": {
+            "expression": {
+              "conditions": "os=darwin"
+            },
+            "language": "yarn:applicability/v1"
+          },
+          "evidence": [
+            "yarn.lock"
+          ],
+          "from": "resolution:\"jest-haste-map@npm:30.1.0\"",
+          "kind": "dependencies",
+          "optional": true,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"jest-haste-map@npm:30.1.0\\\"\",\"dependencies\",\"fsevents\"]",
+            "name": "fsevents",
+            "specifier": "npm:^2.3.3"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"fsevents@npm:2.3.3\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "fsevents@patch:fsevents@npm%3A~2.3.2#optional!builtin<compat/fsevents>"
+              ]
+            },
+            "yarn:descriptor": "fsevents@npm:~2.3.2"
+          },
+          "condition": {
+            "expression": {
+              "conditions": "os=darwin"
+            },
+            "language": "yarn:applicability/v1"
+          },
+          "evidence": [
+            "yarn.lock"
+          ],
+          "from": "resolution:\"chokidar@npm:3.6.0\"",
+          "kind": "dependencies",
+          "optional": true,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"chokidar@npm:3.6.0\\\"\",\"dependencies\",\"fsevents\"]",
+            "name": "fsevents",
+            "specifier": "npm:~2.3.2"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"fsevents@npm:2.3.3\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "fsevents@patch:fsevents@npm%3A~2.3.2#optional!builtin<compat/fsevents>"
+              ]
+            },
+            "yarn:descriptor": "fsevents@npm:~2.3.2"
+          },
+          "condition": {
+            "expression": {
+              "conditions": "os=darwin"
+            },
+            "language": "yarn:applicability/v1"
+          },
+          "evidence": [
+            "yarn.lock"
+          ],
+          "from": "resolution:\"rollup@npm:2.79.1\"",
+          "kind": "dependencies",
+          "optional": true,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"rollup@npm:2.79.1\\\"\",\"dependencies\",\"fsevents\"]",
+            "name": "fsevents",
+            "specifier": "npm:~2.3.2"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"fsevents@npm:2.3.3\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "fsevents@patch:fsevents@npm%3A~2.3.2#optional!builtin<compat/fsevents>"
+              ]
+            },
+            "yarn:descriptor": "fsevents@npm:~2.3.2"
+          },
+          "condition": {
+            "expression": {
+              "conditions": "os=darwin"
+            },
+            "language": "yarn:applicability/v1"
+          },
+          "evidence": [
+            "yarn.lock"
+          ],
+          "from": "resolution:\"rollup@npm:4.22.4\"",
+          "kind": "dependencies",
+          "optional": true,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"rollup@npm:4.22.4\\\"\",\"dependencies\",\"fsevents\"]",
+            "name": "fsevents",
+            "specifier": "npm:~2.3.2"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"fsevents@npm:2.3.3\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "fsevents@patch:fsevents@npm%3A~2.3.3#optional!builtin<compat/fsevents>"
+              ]
+            },
+            "yarn:descriptor": "fsevents@npm:~2.3.3"
+          },
+          "condition": {
+            "expression": {
+              "conditions": "os=darwin"
+            },
+            "language": "yarn:applicability/v1"
+          },
+          "evidence": [
+            "yarn.lock"
+          ],
+          "from": "resolution:\"tsx@npm:4.20.3\"",
+          "kind": "dependencies",
+          "optional": true,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"tsx@npm:4.20.3\\\"\",\"dependencies\",\"fsevents\"]",
+            "name": "fsevents",
+            "specifier": "npm:~2.3.3"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"fsevents@npm:2.3.3\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "resolve@patch:resolve@npm%3A2.0.0-next.5#optional!builtin<compat/resolve>"
+              ]
+            },
+            "yarn:descriptor": "resolve@npm:2.0.0-next.5"
+          },
+          "evidence": [
+            "packages/babel-helper-transform-fixture-test-runner/package.json",
+            "yarn.lock"
+          ],
+          "from": "scope:[\"packages/babel-helper-transform-fixture-test-runner/package.json\",\"yarn:dependencies\"]",
+          "kind": "yarn:dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/babel-helper-transform-fixture-test-runner/package.json\\\",\\\"yarn:dependencies\\\"]\",\"yarn:dependencies\",\"resolve\"]",
+            "name": "resolve",
+            "specifier": "npm:2.0.0-next.5"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"resolve@npm:2.0.0-next.5\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "resolve@patch:resolve@npm%3A2.0.0-next.5#optional!builtin<compat/resolve>"
+              ]
+            },
+            "yarn:descriptor": "resolve@npm:2.0.0-next.5"
+          },
+          "evidence": [
+            "packages/babel-helper-transform-fixture-test-runner/package.json",
+            "yarn.lock"
+          ],
+          "from": "workspace:\"packages/babel-helper-transform-fixture-test-runner\"",
+          "kind": "yarn:dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"workspace:\\\"packages/babel-helper-transform-fixture-test-runner\\\"\",\"yarn:dependencies\",\"resolve\"]",
+            "name": "resolve",
+            "specifier": "npm:2.0.0-next.5"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"resolve@npm:2.0.0-next.5\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "resolve@patch:resolve@npm%3A^1.1.4#optional!builtin<compat/resolve>"
+              ]
+            },
+            "yarn:descriptor": "resolve@npm:^1.1.4"
+          },
+          "evidence": [
+            "yarn.lock"
+          ],
+          "from": "resolution:\"browserify@npm:16.5.2\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"browserify@npm:16.5.2\\\"\",\"dependencies\",\"resolve\"]",
+            "name": "resolve",
+            "specifier": "npm:^1.1.4"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"resolve@npm:1.22.10\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "resolve@patch:resolve@npm%3A^1.1.6#optional!builtin<compat/resolve>"
+              ]
+            },
+            "yarn:descriptor": "resolve@npm:^1.1.6"
+          },
+          "evidence": [
+            "yarn.lock"
+          ],
+          "from": "resolution:\"rechoir@npm:0.6.2\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"rechoir@npm:0.6.2\\\"\",\"dependencies\",\"resolve\"]",
+            "name": "resolve",
+            "specifier": "npm:^1.1.6"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"resolve@npm:1.22.10\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "resolve@patch:resolve@npm%3A^1.10.0#optional!builtin<compat/resolve>"
+              ]
+            },
+            "yarn:descriptor": "resolve@npm:^1.10.0"
+          },
+          "evidence": [
+            "yarn.lock"
+          ],
+          "from": "resolution:\"normalize-package-data@npm:2.5.0\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"normalize-package-data@npm:2.5.0\\\"\",\"dependencies\",\"resolve\"]",
+            "name": "resolve",
+            "specifier": "npm:^1.10.0"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"resolve@npm:1.22.10\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "resolve@patch:resolve@npm%3A^1.17.0#optional!builtin<compat/resolve>"
+              ]
+            },
+            "yarn:descriptor": "resolve@npm:^1.17.0"
+          },
+          "evidence": [
+            "yarn.lock"
+          ],
+          "from": "resolution:\"browser-resolve@npm:2.0.0\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"browser-resolve@npm:2.0.0\\\"\",\"dependencies\",\"resolve\"]",
+            "name": "resolve",
+            "specifier": "npm:^1.17.0"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"resolve@npm:1.22.10\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "resolve@patch:resolve@npm%3A^1.20.0#optional!builtin<compat/resolve>"
+              ]
+            },
+            "yarn:descriptor": "resolve@npm:^1.20.0"
+          },
+          "evidence": [
+            "yarn.lock"
+          ],
+          "from": "resolution:\"liftoff@npm:5.0.0\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"liftoff@npm:5.0.0\\\"\",\"dependencies\",\"resolve\"]",
+            "name": "resolve",
+            "specifier": "npm:^1.20.0"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"resolve@npm:1.22.10\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "resolve@patch:resolve@npm%3A^1.20.0#optional!builtin<compat/resolve>"
+              ]
+            },
+            "yarn:descriptor": "resolve@npm:^1.20.0"
+          },
+          "evidence": [
+            "yarn.lock"
+          ],
+          "from": "resolution:\"rechoir@npm:0.8.0\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"rechoir@npm:0.8.0\\\"\",\"dependencies\",\"resolve\"]",
+            "name": "resolve",
+            "specifier": "npm:^1.20.0"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"resolve@npm:1.22.10\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "resolve@patch:resolve@npm%3A^1.22.1#optional!builtin<compat/resolve>"
+              ]
+            },
+            "yarn:descriptor": "resolve@npm:^1.22.1"
+          },
+          "evidence": [
+            "yarn.lock"
+          ],
+          "from": "resolution:\"@rollup/plugin-node-resolve@npm:15.2.3\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"@rollup/plugin-node-resolve@npm:15.2.3\\\"\",\"dependencies\",\"resolve\"]",
+            "name": "resolve",
+            "specifier": "npm:^1.22.1"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"resolve@npm:1.22.10\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "resolve@patch:resolve@npm%3A^1.22.10#optional!builtin<compat/resolve>"
+              ]
+            },
+            "yarn:descriptor": "resolve@npm:^1.22.10"
+          },
+          "evidence": [
+            "yarn.lock"
+          ],
+          "from": "resolution:\"@babel/helper-define-polyfill-provider@npm:0.6.5\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"@babel/helper-define-polyfill-provider@npm:0.6.5\\\"\",\"dependencies\",\"resolve\"]",
+            "name": "resolve",
+            "specifier": "npm:^1.22.10"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"resolve@npm:1.22.10\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "resolve@patch:resolve@npm%3A^1.22.4#optional!builtin<compat/resolve>"
+              ]
+            },
+            "yarn:descriptor": "resolve@npm:^1.22.4"
+          },
+          "evidence": [
+            "yarn.lock"
+          ],
+          "from": "resolution:\"eslint-import-resolver-node@npm:0.3.9\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"eslint-import-resolver-node@npm:0.3.9\\\"\",\"dependencies\",\"resolve\"]",
+            "name": "resolve",
+            "specifier": "npm:^1.22.4"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"resolve@npm:1.22.10\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "resolve@patch:resolve@npm%3A^1.3.2#optional!builtin<compat/resolve>"
+              ]
+            },
+            "yarn:descriptor": "resolve@npm:^1.3.2"
+          },
+          "evidence": [
+            "yarn.lock"
+          ],
+          "from": "resolution:\"@babel/core@npm:7.12.9\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"@babel/core@npm:7.12.9\\\"\",\"dependencies\",\"resolve\"]",
+            "name": "resolve",
+            "specifier": "npm:^1.3.2"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"resolve@npm:1.22.10\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "resolve@patch:resolve@npm%3A^1.4.0#optional!builtin<compat/resolve>"
+              ]
+            },
+            "yarn:descriptor": "resolve@npm:^1.4.0"
+          },
+          "evidence": [
+            "yarn.lock"
+          ],
+          "from": "resolution:\"module-deps@npm:6.2.3\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"module-deps@npm:6.2.3\\\"\",\"dependencies\",\"resolve\"]",
+            "name": "resolve",
+            "specifier": "npm:^1.4.0"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"resolve@npm:1.22.10\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "resolve@patch:resolve@npm%3A^1.9.0#optional!builtin<compat/resolve>"
+              ]
+            },
+            "yarn:descriptor": "resolve@npm:^1.9.0"
+          },
+          "evidence": [
+            "yarn.lock"
+          ],
+          "from": "resolution:\"rechoir@npm:0.7.0\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"rechoir@npm:0.7.0\\\"\",\"dependencies\",\"resolve\"]",
+            "name": "resolve",
+            "specifier": "npm:^1.9.0"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"resolve@npm:1.22.10\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "typescript@patch:typescript@npm%3A5.9.2#optional!builtin<compat/typescript>"
+              ]
+            },
+            "yarn:descriptor": "typescript@npm:5.9.2"
+          },
+          "evidence": [
+            "package.json",
+            "yarn.lock"
+          ],
+          "from": "scope:[\"package.json\",\"yarn:dependencies\"]",
+          "kind": "yarn:dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"yarn:dependencies\\\"]\",\"yarn:dependencies\",\"typescript\"]",
+            "name": "typescript",
+            "specifier": "npm:5.9.2"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"typescript@npm:5.9.2\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "typescript@patch:typescript@npm%3A5.9.2#optional!builtin<compat/typescript>"
+              ]
+            },
+            "yarn:descriptor": "typescript@npm:5.9.2"
+          },
+          "evidence": [
+            "package.json",
+            "yarn.lock"
+          ],
+          "from": "workspace:\".\"",
+          "kind": "yarn:dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"workspace:\\\".\\\"\",\"yarn:dependencies\",\"typescript\"]",
+            "name": "typescript",
+            "specifier": "npm:5.9.2"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"typescript@npm:5.9.2\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "@babel/parser/@babel/types"
+              ]
+            },
+            "yarn:descriptor": "@babel/types@npm:^7.27.3"
+          },
+          "evidence": [
+            "package.json",
+            "yarn.lock"
+          ],
+          "from": "resolution:\"@babel/parser@npm:7.27.5\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"@babel/parser@npm:7.27.5\\\"\",\"dependencies\",\"@babel/types\"]",
+            "name": "@babel/types",
+            "specifier": "npm:^7.27.3"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"@babel/types@npm:7.27.6\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "@babel/parser/@babel/types"
+              ]
+            },
+            "yarn:descriptor": "@babel/types@npm:^8.0.0-beta.0"
+          },
+          "evidence": [
+            "package.json",
+            "yarn.lock"
+          ],
+          "from": "resolution:\"@babel/parser@npm:8.0.0-beta.0\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"@babel/parser@npm:8.0.0-beta.0\\\"\",\"dependencies\",\"@babel/types\"]",
+            "name": "@babel/types",
+            "specifier": "npm:^8.0.0-beta.0"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"@babel/types@npm:8.0.0-beta.0\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "@babel/parser/@babel/types"
+              ]
+            },
+            "yarn:descriptor": "@babel/types@workspace:^"
+          },
+          "evidence": [
+            "package.json",
+            "packages/babel-parser/package.json",
+            "yarn.lock"
+          ],
+          "from": "scope:[\"packages/babel-parser/package.json\",\"yarn:dependencies\"]",
+          "kind": "yarn:dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/babel-parser/package.json\\\",\\\"yarn:dependencies\\\"]\",\"yarn:dependencies\",\"@babel/types\"]",
+            "name": "@babel/types",
+            "specifier": "workspace:^"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "workspace:\"packages/babel-types\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "@babel/parser/@babel/types"
+              ]
+            },
+            "yarn:descriptor": "@babel/types@workspace:^"
+          },
+          "evidence": [
+            "package.json",
+            "packages/babel-parser/package.json",
+            "yarn.lock"
+          ],
+          "from": "workspace:\"packages/babel-parser\"",
+          "kind": "yarn:dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"workspace:\\\"packages/babel-parser\\\"\",\"yarn:dependencies\",\"@babel/types\"]",
+            "name": "@babel/types",
+            "specifier": "workspace:^"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "workspace:\"packages/babel-types\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "@babel/plugin-syntax-unicode-sets-regex/@babel/helper-create-regexp-features-plugin"
+              ]
+            },
+            "yarn:descriptor": "@babel/helper-create-regexp-features-plugin@npm:^7.18.6"
+          },
+          "evidence": [
+            "package.json",
+            "yarn.lock"
+          ],
+          "from": "resolution:\"@babel/plugin-syntax-unicode-sets-regex@npm:7.18.6\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"@babel/plugin-syntax-unicode-sets-regex@npm:7.18.6\\\"\",\"dependencies\",\"@babel/helper-create-regexp-features-plugin\"]",
+            "name": "@babel/helper-create-regexp-features-plugin",
+            "specifier": "npm:^7.18.6"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "@types/babel__core"
+              ]
+            },
+            "yarn:descriptor": "@types/babel__core@npm:^7.20.5"
+          },
+          "evidence": [
+            "package.json",
+            "yarn.lock"
+          ],
+          "from": "resolution:\"babel-jest@npm:30.1.1\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"babel-jest@npm:30.1.1\\\"\",\"dependencies\",\"@types/babel__core\"]",
+            "name": "@types/babel__core",
+            "specifier": "npm:^7.20.5"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "@types/babel__core"
+              ]
+            },
+            "yarn:descriptor": "@types/babel__core@npm:^7.20.5"
+          },
+          "evidence": [
+            "package.json",
+            "yarn.lock"
+          ],
+          "from": "resolution:\"babel-plugin-jest-hoist@npm:30.0.1\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"babel-plugin-jest-hoist@npm:30.0.1\\\"\",\"dependencies\",\"@types/babel__core\"]",
+            "name": "@types/babel__core",
+            "specifier": "npm:^7.20.5"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "babel-plugin-polyfill-corejs2/@babel/compat-data"
+              ]
+            },
+            "yarn:descriptor": "@babel/compat-data@npm:^7.27.7"
+          },
+          "evidence": [
+            "package.json",
+            "yarn.lock"
+          ],
+          "from": "resolution:\"babel-plugin-polyfill-corejs2@npm:0.4.14\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"babel-plugin-polyfill-corejs2@npm:0.4.14\\\"\",\"dependencies\",\"@babel/compat-data\"]",
+            "name": "@babel/compat-data",
+            "specifier": "npm:^7.27.7"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "browserslist"
+              ]
+            },
+            "yarn:descriptor": "browserslist@npm:^4.14.5"
+          },
+          "evidence": [
+            "package.json",
+            "yarn.lock"
+          ],
+          "from": "resolution:\"webpack@npm:5.88.2\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"webpack@npm:5.88.2\\\"\",\"dependencies\",\"browserslist\"]",
+            "name": "browserslist",
+            "specifier": "npm:^4.14.5"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "browserslist"
+              ]
+            },
+            "yarn:descriptor": "browserslist@npm:^4.22.2"
+          },
+          "evidence": [
+            "package.json",
+            "yarn.lock"
+          ],
+          "from": "resolution:\"@babel/helper-compilation-targets@npm:7.23.6\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"@babel/helper-compilation-targets@npm:7.23.6\\\"\",\"dependencies\",\"browserslist\"]",
+            "name": "browserslist",
+            "specifier": "npm:^4.22.2"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "browserslist"
+              ]
+            },
+            "yarn:descriptor": "browserslist@npm:^4.24.0"
+          },
+          "evidence": [
+            "package.json",
+            "packages/babel-helper-compilation-targets/package.json",
+            "yarn.lock"
+          ],
+          "from": "scope:[\"packages/babel-helper-compilation-targets/package.json\",\"yarn:dependencies\"]",
+          "kind": "yarn:dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/babel-helper-compilation-targets/package.json\\\",\\\"yarn:dependencies\\\"]\",\"yarn:dependencies\",\"browserslist\"]",
+            "name": "browserslist",
+            "specifier": "npm:^4.24.0"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "browserslist"
+              ]
+            },
+            "yarn:descriptor": "browserslist@npm:^4.24.0"
+          },
+          "evidence": [
+            "package.json",
+            "packages/babel-helper-compilation-targets/package.json",
+            "yarn.lock"
+          ],
+          "from": "workspace:\"packages/babel-helper-compilation-targets\"",
+          "kind": "yarn:dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"workspace:\\\"packages/babel-helper-compilation-targets\\\"\",\"yarn:dependencies\",\"browserslist\"]",
+            "name": "browserslist",
+            "specifier": "npm:^4.24.0"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "browserslist"
+              ]
+            },
+            "yarn:descriptor": "browserslist@npm:^4.24.0"
+          },
+          "evidence": [
+            "package.json",
+            "yarn.lock"
+          ],
+          "from": "resolution:\"@babel/helper-compilation-targets@npm:7.27.2\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"@babel/helper-compilation-targets@npm:7.27.2\\\"\",\"dependencies\",\"browserslist\"]",
+            "name": "browserslist",
+            "specifier": "npm:^4.24.0"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "browserslist"
+              ]
+            },
+            "yarn:descriptor": "browserslist@npm:^4.24.0"
+          },
+          "evidence": [
+            "package.json",
+            "yarn.lock"
+          ],
+          "from": "resolution:\"@babel/helper-compilation-targets@npm:8.0.0-beta.0\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"@babel/helper-compilation-targets@npm:8.0.0-beta.0\\\"\",\"dependencies\",\"browserslist\"]",
+            "name": "browserslist",
+            "specifier": "npm:^4.24.0"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "browserslist"
+              ]
+            },
+            "yarn:descriptor": "browserslist@npm:^4.25.1"
+          },
+          "evidence": [
+            "package.json",
+            "yarn.lock"
+          ],
+          "from": "resolution:\"core-js-compat@npm:3.45.0\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"core-js-compat@npm:3.45.0\\\"\",\"dependencies\",\"browserslist\"]",
+            "name": "browserslist",
+            "specifier": "npm:^4.25.1"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "caniuse-lite"
+              ]
+            },
+            "yarn:descriptor": "caniuse-lite@npm:^1.0.30001726"
+          },
+          "evidence": [
+            "package.json",
+            "yarn.lock"
+          ],
+          "from": "resolution:\"browserslist@npm:4.25.1\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"browserslist@npm:4.25.1\\\"\",\"dependencies\",\"caniuse-lite\"]",
+            "name": "caniuse-lite",
+            "specifier": "npm:^1.0.30001726"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "core-js-compat"
+              ]
+            },
+            "yarn:descriptor": "core-js-compat@npm:^3.38.1"
+          },
+          "evidence": [
+            "package.json",
+            "yarn.lock"
+          ],
+          "from": "resolution:\"eslint-plugin-unicorn@npm:56.0.0\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"eslint-plugin-unicorn@npm:56.0.0\\\"\",\"dependencies\",\"core-js-compat\"]",
+            "name": "core-js-compat",
+            "specifier": "npm:^3.38.1"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "core-js-compat"
+              ]
+            },
+            "yarn:descriptor": "core-js-compat@npm:^3.40.0"
+          },
+          "evidence": [
+            "package.json",
+            "yarn.lock"
+          ],
+          "from": "resolution:\"@babel/preset-env@npm:8.0.0-beta.0\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"@babel/preset-env@npm:8.0.0-beta.0\\\"\",\"dependencies\",\"core-js-compat\"]",
+            "name": "core-js-compat",
+            "specifier": "npm:^3.40.0"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "core-js-compat"
+              ]
+            },
+            "yarn:descriptor": "core-js-compat@npm:^3.40.0"
+          },
+          "evidence": [
+            "package.json",
+            "yarn.lock"
+          ],
+          "from": "resolution:\"babel-plugin-polyfill-corejs3@npm:0.11.1\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"babel-plugin-polyfill-corejs3@npm:0.11.1\\\"\",\"dependencies\",\"core-js-compat\"]",
+            "name": "core-js-compat",
+            "specifier": "npm:^3.40.0"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "core-js-compat"
+              ]
+            },
+            "yarn:descriptor": "core-js-compat@npm:^3.43.0"
+          },
+          "evidence": [
+            "package.json",
+            "packages/babel-compat-data/package.json",
+            "yarn.lock"
+          ],
+          "from": "scope:[\"packages/babel-compat-data/package.json\",\"yarn:dependencies\"]",
+          "kind": "yarn:dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/babel-compat-data/package.json\\\",\\\"yarn:dependencies\\\"]\",\"yarn:dependencies\",\"core-js-compat\"]",
+            "name": "core-js-compat",
+            "specifier": "npm:^3.43.0"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "core-js-compat"
+              ]
+            },
+            "yarn:descriptor": "core-js-compat@npm:^3.43.0"
+          },
+          "evidence": [
+            "package.json",
+            "packages/babel-compat-data/package.json",
+            "yarn.lock"
+          ],
+          "from": "workspace:\"packages/babel-compat-data\"",
+          "kind": "yarn:dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"workspace:\\\"packages/babel-compat-data\\\"\",\"yarn:dependencies\",\"core-js-compat\"]",
+            "name": "core-js-compat",
+            "specifier": "npm:^3.43.0"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "core-js-compat"
+              ]
+            },
+            "yarn:descriptor": "core-js-compat@npm:^3.43.0"
+          },
+          "evidence": [
+            "package.json",
+            "packages/babel-preset-env/package.json",
+            "yarn.lock"
+          ],
+          "from": "scope:[\"packages/babel-preset-env/package.json\",\"yarn:dependencies\"]",
+          "kind": "yarn:dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/babel-preset-env/package.json\\\",\\\"yarn:dependencies\\\"]\",\"yarn:dependencies\",\"core-js-compat\"]",
+            "name": "core-js-compat",
+            "specifier": "npm:^3.43.0"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "core-js-compat"
+              ]
+            },
+            "yarn:descriptor": "core-js-compat@npm:^3.43.0"
+          },
+          "evidence": [
+            "package.json",
+            "packages/babel-preset-env/package.json",
+            "yarn.lock"
+          ],
+          "from": "workspace:\"packages/babel-preset-env\"",
+          "kind": "yarn:dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"workspace:\\\"packages/babel-preset-env\\\"\",\"yarn:dependencies\",\"core-js-compat\"]",
+            "name": "core-js-compat",
+            "specifier": "npm:^3.43.0"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "core-js-compat"
+              ]
+            },
+            "yarn:descriptor": "core-js-compat@npm:^3.43.0"
+          },
+          "evidence": [
+            "package.json",
+            "yarn.lock"
+          ],
+          "from": "resolution:\"babel-plugin-polyfill-corejs3@npm:0.13.0\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"babel-plugin-polyfill-corejs3@npm:0.13.0\\\"\",\"dependencies\",\"core-js-compat\"]",
+            "name": "core-js-compat",
+            "specifier": "npm:^3.43.0"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "electron-to-chromium"
+              ]
+            },
+            "yarn:descriptor": "electron-to-chromium@npm:^1.5.140"
+          },
+          "evidence": [
+            "package.json",
+            "packages/babel-compat-data/package.json",
+            "yarn.lock"
+          ],
+          "from": "scope:[\"packages/babel-compat-data/package.json\",\"yarn:dependencies\"]",
+          "kind": "yarn:dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/babel-compat-data/package.json\\\",\\\"yarn:dependencies\\\"]\",\"yarn:dependencies\",\"electron-to-chromium\"]",
+            "name": "electron-to-chromium",
+            "specifier": "npm:^1.5.140"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "electron-to-chromium"
+              ]
+            },
+            "yarn:descriptor": "electron-to-chromium@npm:^1.5.140"
+          },
+          "evidence": [
+            "package.json",
+            "packages/babel-compat-data/package.json",
+            "yarn.lock"
+          ],
+          "from": "workspace:\"packages/babel-compat-data\"",
+          "kind": "yarn:dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"workspace:\\\"packages/babel-compat-data\\\"\",\"yarn:dependencies\",\"electron-to-chromium\"]",
+            "name": "electron-to-chromium",
+            "specifier": "npm:^1.5.140"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "electron-to-chromium"
+              ]
+            },
+            "yarn:descriptor": "electron-to-chromium@npm:^1.5.173"
+          },
+          "evidence": [
+            "package.json",
+            "yarn.lock"
+          ],
+          "from": "resolution:\"browserslist@npm:4.25.1\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"browserslist@npm:4.25.1\\\"\",\"dependencies\",\"electron-to-chromium\"]",
+            "name": "electron-to-chromium",
+            "specifier": "npm:^1.5.173"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
             "yarn:descriptor": "$repo-utils@link:../scripts/repo-utils"
           },
           "evidence": [
@@ -38506,25 +39834,6 @@
           "selection": "selected",
           "status": "resolved",
           "to": "resolution:\"@babel/compat-data@npm:7.27.5\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "@babel/compat-data@npm:^7.27.7"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"babel-plugin-polyfill-corejs2@npm:0.4.14\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"babel-plugin-polyfill-corejs2@npm:0.4.14\\\"\",\"dependencies\",\"@babel/compat-data\"]",
-            "name": "@babel/compat-data",
-            "specifier": "npm:^7.27.7"
-          },
-          "selection": "selected",
-          "status": "unresolved"
         },
         {
           "attributes": {
@@ -54524,25 +55833,6 @@
           "selection": "selected",
           "status": "resolved",
           "to": "workspace:\"packages/babel-helper-create-class-features-plugin\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "@babel/helper-create-regexp-features-plugin@npm:^7.18.6"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"@babel/plugin-syntax-unicode-sets-regex@npm:7.18.6\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"@babel/plugin-syntax-unicode-sets-regex@npm:7.18.6\\\"\",\"dependencies\",\"@babel/helper-create-regexp-features-plugin\"]",
-            "name": "@babel/helper-create-regexp-features-plugin",
-            "specifier": "npm:^7.18.6"
-          },
-          "selection": "selected",
-          "status": "unresolved"
         },
         {
           "attributes": {
@@ -86082,26 +87372,6 @@
           "evidence": [
             "yarn.lock"
           ],
-          "from": "resolution:\"@babel/parser@npm:7.27.5\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"@babel/parser@npm:7.27.5\\\"\",\"dependencies\",\"@babel/types\"]",
-            "name": "@babel/types",
-            "specifier": "npm:^7.27.3"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "resolution:\"@babel/types@npm:7.27.6\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "@babel/types@npm:^7.27.3"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
           "from": "resolution:\"@babel/traverse@npm:7.27.4\"",
           "kind": "dependencies",
           "optional": false,
@@ -86368,26 +87638,6 @@
           "relation": "depends-on",
           "requested": {
             "id": "[\"resolution:\\\"@babel/helpers@npm:8.0.0-beta.0\\\"\",\"dependencies\",\"@babel/types\"]",
-            "name": "@babel/types",
-            "specifier": "npm:^8.0.0-beta.0"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "resolution:\"@babel/types@npm:8.0.0-beta.0\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "@babel/types@npm:^8.0.0-beta.0"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"@babel/parser@npm:8.0.0-beta.0\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"@babel/parser@npm:8.0.0-beta.0\\\"\",\"dependencies\",\"@babel/types\"]",
             "name": "@babel/types",
             "specifier": "npm:^8.0.0-beta.0"
           },
@@ -86974,48 +88224,6 @@
           "relation": "depends-on",
           "requested": {
             "id": "[\"workspace:\\\"packages/babel-helpers\\\"\",\"yarn:dependencies\",\"@babel/types\"]",
-            "name": "@babel/types",
-            "specifier": "workspace:^"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "workspace:\"packages/babel-types\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "@babel/types@workspace:^"
-          },
-          "evidence": [
-            "packages/babel-parser/package.json",
-            "yarn.lock"
-          ],
-          "from": "scope:[\"packages/babel-parser/package.json\",\"yarn:dependencies\"]",
-          "kind": "yarn:dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"scope:[\\\"packages/babel-parser/package.json\\\",\\\"yarn:dependencies\\\"]\",\"yarn:dependencies\",\"@babel/types\"]",
-            "name": "@babel/types",
-            "specifier": "workspace:^"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "workspace:\"packages/babel-types\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "@babel/types@workspace:^"
-          },
-          "evidence": [
-            "packages/babel-parser/package.json",
-            "yarn.lock"
-          ],
-          "from": "workspace:\"packages/babel-parser\"",
-          "kind": "yarn:dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"workspace:\\\"packages/babel-parser\\\"\",\"yarn:dependencies\",\"@babel/types\"]",
             "name": "@babel/types",
             "specifier": "workspace:^"
           },
@@ -93945,44 +95153,6 @@
           },
           "selection": "unknown",
           "status": "declared"
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "@types/babel__core@npm:^7.20.5"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"babel-jest@npm:30.1.1\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"babel-jest@npm:30.1.1\\\"\",\"dependencies\",\"@types/babel__core\"]",
-            "name": "@types/babel__core",
-            "specifier": "npm:^7.20.5"
-          },
-          "selection": "selected",
-          "status": "unresolved"
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "@types/babel__core@npm:^7.20.5"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"babel-plugin-jest-hoist@npm:30.0.1\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"babel-plugin-jest-hoist@npm:30.0.1\\\"\",\"dependencies\",\"@types/babel__core\"]",
-            "name": "@types/babel__core",
-            "specifier": "npm:^7.20.5"
-          },
-          "selection": "selected",
-          "status": "unresolved"
         },
         {
           "attributes": {
@@ -103412,141 +104582,6 @@
         },
         {
           "attributes": {
-            "yarn:descriptor": "browserslist@npm:^4.14.5"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"webpack@npm:5.88.2\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"webpack@npm:5.88.2\\\"\",\"dependencies\",\"browserslist\"]",
-            "name": "browserslist",
-            "specifier": "npm:^4.14.5"
-          },
-          "selection": "selected",
-          "status": "unresolved"
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "browserslist@npm:^4.22.2"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"@babel/helper-compilation-targets@npm:7.23.6\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"@babel/helper-compilation-targets@npm:7.23.6\\\"\",\"dependencies\",\"browserslist\"]",
-            "name": "browserslist",
-            "specifier": "npm:^4.22.2"
-          },
-          "selection": "selected",
-          "status": "unresolved"
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "browserslist@npm:^4.24.0"
-          },
-          "evidence": [
-            "packages/babel-helper-compilation-targets/package.json",
-            "yarn.lock"
-          ],
-          "from": "scope:[\"packages/babel-helper-compilation-targets/package.json\",\"yarn:dependencies\"]",
-          "kind": "yarn:dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"scope:[\\\"packages/babel-helper-compilation-targets/package.json\\\",\\\"yarn:dependencies\\\"]\",\"yarn:dependencies\",\"browserslist\"]",
-            "name": "browserslist",
-            "specifier": "npm:^4.24.0"
-          },
-          "selection": "selected",
-          "status": "unresolved"
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "browserslist@npm:^4.24.0"
-          },
-          "evidence": [
-            "packages/babel-helper-compilation-targets/package.json",
-            "yarn.lock"
-          ],
-          "from": "workspace:\"packages/babel-helper-compilation-targets\"",
-          "kind": "yarn:dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"workspace:\\\"packages/babel-helper-compilation-targets\\\"\",\"yarn:dependencies\",\"browserslist\"]",
-            "name": "browserslist",
-            "specifier": "npm:^4.24.0"
-          },
-          "selection": "selected",
-          "status": "unresolved"
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "browserslist@npm:^4.24.0"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"@babel/helper-compilation-targets@npm:7.27.2\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"@babel/helper-compilation-targets@npm:7.27.2\\\"\",\"dependencies\",\"browserslist\"]",
-            "name": "browserslist",
-            "specifier": "npm:^4.24.0"
-          },
-          "selection": "selected",
-          "status": "unresolved"
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "browserslist@npm:^4.24.0"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"@babel/helper-compilation-targets@npm:8.0.0-beta.0\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"@babel/helper-compilation-targets@npm:8.0.0-beta.0\\\"\",\"dependencies\",\"browserslist\"]",
-            "name": "browserslist",
-            "specifier": "npm:^4.24.0"
-          },
-          "selection": "selected",
-          "status": "unresolved"
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "browserslist@npm:^4.25.1"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"core-js-compat@npm:3.45.0\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"core-js-compat@npm:3.45.0\\\"\",\"dependencies\",\"browserslist\"]",
-            "name": "browserslist",
-            "specifier": "npm:^4.25.1"
-          },
-          "selection": "selected",
-          "status": "unresolved"
-        },
-        {
-          "attributes": {
             "yarn:descriptor": "bser@npm:2.1.1"
           },
           "evidence": [
@@ -104825,25 +105860,6 @@
           "selection": "selected",
           "status": "resolved",
           "to": "resolution:\"camelcase@npm:6.3.0\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "caniuse-lite@npm:^1.0.30001726"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"browserslist@npm:4.25.1\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"browserslist@npm:4.25.1\\\"\",\"dependencies\",\"caniuse-lite\"]",
-            "name": "caniuse-lite",
-            "specifier": "npm:^1.0.30001726"
-          },
-          "selection": "selected",
-          "status": "unresolved"
         },
         {
           "attributes": {
@@ -107908,162 +108924,6 @@
           "selection": "selected",
           "status": "resolved",
           "to": "resolution:\"copy-props@npm:4.0.0\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "core-js-compat@npm:^3.38.1"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"eslint-plugin-unicorn@npm:56.0.0\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"eslint-plugin-unicorn@npm:56.0.0\\\"\",\"dependencies\",\"core-js-compat\"]",
-            "name": "core-js-compat",
-            "specifier": "npm:^3.38.1"
-          },
-          "selection": "selected",
-          "status": "unresolved"
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "core-js-compat@npm:^3.40.0"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"@babel/preset-env@npm:8.0.0-beta.0\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"@babel/preset-env@npm:8.0.0-beta.0\\\"\",\"dependencies\",\"core-js-compat\"]",
-            "name": "core-js-compat",
-            "specifier": "npm:^3.40.0"
-          },
-          "selection": "selected",
-          "status": "unresolved"
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "core-js-compat@npm:^3.40.0"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"babel-plugin-polyfill-corejs3@npm:0.11.1\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"babel-plugin-polyfill-corejs3@npm:0.11.1\\\"\",\"dependencies\",\"core-js-compat\"]",
-            "name": "core-js-compat",
-            "specifier": "npm:^3.40.0"
-          },
-          "selection": "selected",
-          "status": "unresolved"
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "core-js-compat@npm:^3.43.0"
-          },
-          "evidence": [
-            "packages/babel-compat-data/package.json",
-            "yarn.lock"
-          ],
-          "from": "scope:[\"packages/babel-compat-data/package.json\",\"yarn:dependencies\"]",
-          "kind": "yarn:dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"scope:[\\\"packages/babel-compat-data/package.json\\\",\\\"yarn:dependencies\\\"]\",\"yarn:dependencies\",\"core-js-compat\"]",
-            "name": "core-js-compat",
-            "specifier": "npm:^3.43.0"
-          },
-          "selection": "selected",
-          "status": "unresolved"
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "core-js-compat@npm:^3.43.0"
-          },
-          "evidence": [
-            "packages/babel-compat-data/package.json",
-            "yarn.lock"
-          ],
-          "from": "workspace:\"packages/babel-compat-data\"",
-          "kind": "yarn:dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"workspace:\\\"packages/babel-compat-data\\\"\",\"yarn:dependencies\",\"core-js-compat\"]",
-            "name": "core-js-compat",
-            "specifier": "npm:^3.43.0"
-          },
-          "selection": "selected",
-          "status": "unresolved"
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "core-js-compat@npm:^3.43.0"
-          },
-          "evidence": [
-            "packages/babel-preset-env/package.json",
-            "yarn.lock"
-          ],
-          "from": "scope:[\"packages/babel-preset-env/package.json\",\"yarn:dependencies\"]",
-          "kind": "yarn:dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"scope:[\\\"packages/babel-preset-env/package.json\\\",\\\"yarn:dependencies\\\"]\",\"yarn:dependencies\",\"core-js-compat\"]",
-            "name": "core-js-compat",
-            "specifier": "npm:^3.43.0"
-          },
-          "selection": "selected",
-          "status": "unresolved"
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "core-js-compat@npm:^3.43.0"
-          },
-          "evidence": [
-            "packages/babel-preset-env/package.json",
-            "yarn.lock"
-          ],
-          "from": "workspace:\"packages/babel-preset-env\"",
-          "kind": "yarn:dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"workspace:\\\"packages/babel-preset-env\\\"\",\"yarn:dependencies\",\"core-js-compat\"]",
-            "name": "core-js-compat",
-            "specifier": "npm:^3.43.0"
-          },
-          "selection": "selected",
-          "status": "unresolved"
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "core-js-compat@npm:^3.43.0"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"babel-plugin-polyfill-corejs3@npm:0.13.0\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"babel-plugin-polyfill-corejs3@npm:0.13.0\\\"\",\"dependencies\",\"core-js-compat\"]",
-            "name": "core-js-compat",
-            "specifier": "npm:^3.43.0"
-          },
-          "selection": "selected",
-          "status": "unresolved"
         },
         {
           "attributes": {
@@ -111268,65 +112128,6 @@
           "selection": "selected",
           "status": "resolved",
           "to": "resolution:\"ecc-jsbn@npm:0.1.2\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "electron-to-chromium@npm:^1.5.140"
-          },
-          "evidence": [
-            "packages/babel-compat-data/package.json",
-            "yarn.lock"
-          ],
-          "from": "scope:[\"packages/babel-compat-data/package.json\",\"yarn:dependencies\"]",
-          "kind": "yarn:dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"scope:[\\\"packages/babel-compat-data/package.json\\\",\\\"yarn:dependencies\\\"]\",\"yarn:dependencies\",\"electron-to-chromium\"]",
-            "name": "electron-to-chromium",
-            "specifier": "npm:^1.5.140"
-          },
-          "selection": "selected",
-          "status": "unresolved"
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "electron-to-chromium@npm:^1.5.140"
-          },
-          "evidence": [
-            "packages/babel-compat-data/package.json",
-            "yarn.lock"
-          ],
-          "from": "workspace:\"packages/babel-compat-data\"",
-          "kind": "yarn:dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"workspace:\\\"packages/babel-compat-data\\\"\",\"yarn:dependencies\",\"electron-to-chromium\"]",
-            "name": "electron-to-chromium",
-            "specifier": "npm:^1.5.140"
-          },
-          "selection": "selected",
-          "status": "unresolved"
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "electron-to-chromium@npm:^1.5.173"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"browserslist@npm:4.25.1\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"browserslist@npm:4.25.1\\\"\",\"dependencies\",\"electron-to-chromium\"]",
-            "name": "electron-to-chromium",
-            "specifier": "npm:^1.5.173"
-          },
-          "selection": "selected",
-          "status": "unresolved"
         },
         {
           "attributes": {
@@ -117757,162 +118558,6 @@
           "selection": "selected",
           "status": "resolved",
           "to": "resolution:\"fs.realpath@npm:1.0.0\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "fsevents@npm:^1.2.7"
-          },
-          "condition": {
-            "expression": {
-              "conditions": "os=darwin"
-            },
-            "language": "yarn:applicability/v1"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"chokidar@npm:2.1.8\"",
-          "kind": "dependencies",
-          "optional": true,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"chokidar@npm:2.1.8\\\"\",\"dependencies\",\"fsevents\"]",
-            "name": "fsevents",
-            "specifier": "npm:^1.2.7"
-          },
-          "selection": "conditional",
-          "status": "resolved",
-          "to": "resolution:\"fsevents@npm:1.2.13\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "fsevents@npm:^2.3.3"
-          },
-          "condition": {
-            "expression": {
-              "conditions": "os=darwin"
-            },
-            "language": "yarn:applicability/v1"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"jest-haste-map@npm:30.1.0\"",
-          "kind": "dependencies",
-          "optional": true,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"jest-haste-map@npm:30.1.0\\\"\",\"dependencies\",\"fsevents\"]",
-            "name": "fsevents",
-            "specifier": "npm:^2.3.3"
-          },
-          "selection": "conditional",
-          "status": "resolved",
-          "to": "resolution:\"fsevents@npm:2.3.3\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "fsevents@npm:~2.3.2"
-          },
-          "condition": {
-            "expression": {
-              "conditions": "os=darwin"
-            },
-            "language": "yarn:applicability/v1"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"chokidar@npm:3.6.0\"",
-          "kind": "dependencies",
-          "optional": true,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"chokidar@npm:3.6.0\\\"\",\"dependencies\",\"fsevents\"]",
-            "name": "fsevents",
-            "specifier": "npm:~2.3.2"
-          },
-          "selection": "conditional",
-          "status": "resolved",
-          "to": "resolution:\"fsevents@npm:2.3.3\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "fsevents@npm:~2.3.2"
-          },
-          "condition": {
-            "expression": {
-              "conditions": "os=darwin"
-            },
-            "language": "yarn:applicability/v1"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"rollup@npm:2.79.1\"",
-          "kind": "dependencies",
-          "optional": true,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"rollup@npm:2.79.1\\\"\",\"dependencies\",\"fsevents\"]",
-            "name": "fsevents",
-            "specifier": "npm:~2.3.2"
-          },
-          "selection": "conditional",
-          "status": "resolved",
-          "to": "resolution:\"fsevents@npm:2.3.3\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "fsevents@npm:~2.3.2"
-          },
-          "condition": {
-            "expression": {
-              "conditions": "os=darwin"
-            },
-            "language": "yarn:applicability/v1"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"rollup@npm:4.22.4\"",
-          "kind": "dependencies",
-          "optional": true,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"rollup@npm:4.22.4\\\"\",\"dependencies\",\"fsevents\"]",
-            "name": "fsevents",
-            "specifier": "npm:~2.3.2"
-          },
-          "selection": "conditional",
-          "status": "resolved",
-          "to": "resolution:\"fsevents@npm:2.3.3\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "fsevents@npm:~2.3.3"
-          },
-          "condition": {
-            "expression": {
-              "conditions": "os=darwin"
-            },
-            "language": "yarn:applicability/v1"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"tsx@npm:4.20.3\"",
-          "kind": "dependencies",
-          "optional": true,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"tsx@npm:4.20.3\\\"\",\"dependencies\",\"fsevents\"]",
-            "name": "fsevents",
-            "specifier": "npm:~2.3.3"
-          },
-          "selection": "conditional",
-          "status": "resolved",
-          "to": "resolution:\"fsevents@npm:2.3.3\""
         },
         {
           "attributes": {
@@ -140192,288 +140837,6 @@
         },
         {
           "attributes": {
-            "yarn:descriptor": "resolve@npm:2.0.0-next.5"
-          },
-          "evidence": [
-            "packages/babel-helper-transform-fixture-test-runner/package.json",
-            "yarn.lock"
-          ],
-          "from": "scope:[\"packages/babel-helper-transform-fixture-test-runner/package.json\",\"yarn:dependencies\"]",
-          "kind": "yarn:dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"scope:[\\\"packages/babel-helper-transform-fixture-test-runner/package.json\\\",\\\"yarn:dependencies\\\"]\",\"yarn:dependencies\",\"resolve\"]",
-            "name": "resolve",
-            "specifier": "npm:2.0.0-next.5"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "resolution:\"resolve@npm:2.0.0-next.5\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "resolve@npm:2.0.0-next.5"
-          },
-          "evidence": [
-            "packages/babel-helper-transform-fixture-test-runner/package.json",
-            "yarn.lock"
-          ],
-          "from": "workspace:\"packages/babel-helper-transform-fixture-test-runner\"",
-          "kind": "yarn:dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"workspace:\\\"packages/babel-helper-transform-fixture-test-runner\\\"\",\"yarn:dependencies\",\"resolve\"]",
-            "name": "resolve",
-            "specifier": "npm:2.0.0-next.5"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "resolution:\"resolve@npm:2.0.0-next.5\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "resolve@npm:^1.1.4"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"browserify@npm:16.5.2\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"browserify@npm:16.5.2\\\"\",\"dependencies\",\"resolve\"]",
-            "name": "resolve",
-            "specifier": "npm:^1.1.4"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "resolution:\"resolve@npm:1.22.10\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "resolve@npm:^1.1.6"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"rechoir@npm:0.6.2\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"rechoir@npm:0.6.2\\\"\",\"dependencies\",\"resolve\"]",
-            "name": "resolve",
-            "specifier": "npm:^1.1.6"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "resolution:\"resolve@npm:1.22.10\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "resolve@npm:^1.10.0"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"normalize-package-data@npm:2.5.0\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"normalize-package-data@npm:2.5.0\\\"\",\"dependencies\",\"resolve\"]",
-            "name": "resolve",
-            "specifier": "npm:^1.10.0"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "resolution:\"resolve@npm:1.22.10\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "resolve@npm:^1.17.0"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"browser-resolve@npm:2.0.0\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"browser-resolve@npm:2.0.0\\\"\",\"dependencies\",\"resolve\"]",
-            "name": "resolve",
-            "specifier": "npm:^1.17.0"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "resolution:\"resolve@npm:1.22.10\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "resolve@npm:^1.20.0"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"liftoff@npm:5.0.0\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"liftoff@npm:5.0.0\\\"\",\"dependencies\",\"resolve\"]",
-            "name": "resolve",
-            "specifier": "npm:^1.20.0"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "resolution:\"resolve@npm:1.22.10\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "resolve@npm:^1.20.0"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"rechoir@npm:0.8.0\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"rechoir@npm:0.8.0\\\"\",\"dependencies\",\"resolve\"]",
-            "name": "resolve",
-            "specifier": "npm:^1.20.0"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "resolution:\"resolve@npm:1.22.10\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "resolve@npm:^1.22.1"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"@rollup/plugin-node-resolve@npm:15.2.3\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"@rollup/plugin-node-resolve@npm:15.2.3\\\"\",\"dependencies\",\"resolve\"]",
-            "name": "resolve",
-            "specifier": "npm:^1.22.1"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "resolution:\"resolve@npm:1.22.10\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "resolve@npm:^1.22.10"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"@babel/helper-define-polyfill-provider@npm:0.6.5\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"@babel/helper-define-polyfill-provider@npm:0.6.5\\\"\",\"dependencies\",\"resolve\"]",
-            "name": "resolve",
-            "specifier": "npm:^1.22.10"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "resolution:\"resolve@npm:1.22.10\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "resolve@npm:^1.22.4"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"eslint-import-resolver-node@npm:0.3.9\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"eslint-import-resolver-node@npm:0.3.9\\\"\",\"dependencies\",\"resolve\"]",
-            "name": "resolve",
-            "specifier": "npm:^1.22.4"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "resolution:\"resolve@npm:1.22.10\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "resolve@npm:^1.3.2"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"@babel/core@npm:7.12.9\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"@babel/core@npm:7.12.9\\\"\",\"dependencies\",\"resolve\"]",
-            "name": "resolve",
-            "specifier": "npm:^1.3.2"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "resolution:\"resolve@npm:1.22.10\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "resolve@npm:^1.4.0"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"module-deps@npm:6.2.3\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"module-deps@npm:6.2.3\\\"\",\"dependencies\",\"resolve\"]",
-            "name": "resolve",
-            "specifier": "npm:^1.4.0"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "resolution:\"resolve@npm:1.22.10\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "resolve@npm:^1.9.0"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"rechoir@npm:0.7.0\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"rechoir@npm:0.7.0\\\"\",\"dependencies\",\"resolve\"]",
-            "name": "resolve",
-            "specifier": "npm:^1.9.0"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "resolution:\"resolve@npm:1.22.10\""
-        },
-        {
-          "attributes": {
             "yarn:descriptor": "restore-cursor@npm:^4.0.0"
           },
           "evidence": [
@@ -149198,48 +149561,6 @@
         },
         {
           "attributes": {
-            "yarn:descriptor": "typescript@npm:5.9.2"
-          },
-          "evidence": [
-            "package.json",
-            "yarn.lock"
-          ],
-          "from": "scope:[\"package.json\",\"yarn:dependencies\"]",
-          "kind": "yarn:dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"scope:[\\\"package.json\\\",\\\"yarn:dependencies\\\"]\",\"yarn:dependencies\",\"typescript\"]",
-            "name": "typescript",
-            "specifier": "npm:5.9.2"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "resolution:\"typescript@npm:5.9.2\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "typescript@npm:5.9.2"
-          },
-          "evidence": [
-            "package.json",
-            "yarn.lock"
-          ],
-          "from": "workspace:\".\"",
-          "kind": "yarn:dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"workspace:\\\".\\\"\",\"yarn:dependencies\",\"typescript\"]",
-            "name": "typescript",
-            "specifier": "npm:5.9.2"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "resolution:\"typescript@npm:5.9.2\""
-        },
-        {
-          "attributes": {
             "yarn:descriptor": "ufo@npm:^1.5.4"
           },
           "evidence": [
@@ -152664,7 +152985,7 @@
           "to": "resolution:\"zod@npm:3.25.67\""
         }
       ],
-      "id": "[\"yarnberry\",\"yarn.lock\",\"yarnberry:4c6bb4651018b19d5597022c60750f530504f7a8f61de6eb938856a0495577f5\"]",
+      "id": "[\"yarnberry\",\"yarn.lock\",\"yarnberry:0bace1ae686fa9cf3d8c5a61793be943664f5efc20c5f0a3cb7e9af6f09994eb\"]",
       "interpretation": "locked",
       "nodes": [
         {
@@ -153260,7 +153581,7 @@
               "version": "7.12.9"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "yarn.lock"
           ],
@@ -153676,8 +153997,9 @@
               "version": "7.23.6"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "yarn.lock"
           ],
           "id": "resolution:\"@babel/helper-compilation-targets@npm:7.23.6\"",
@@ -153720,8 +154042,9 @@
               "version": "7.27.2"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "yarn.lock"
           ],
           "id": "resolution:\"@babel/helper-compilation-targets@npm:7.27.2\"",
@@ -153763,8 +154086,9 @@
               "version": "8.0.0-beta.0"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "yarn.lock"
           ],
           "id": "resolution:\"@babel/helper-compilation-targets@npm:8.0.0-beta.0\"",
@@ -153911,7 +154235,7 @@
               "version": "0.6.5"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "yarn.lock"
           ],
@@ -155049,8 +155373,9 @@
               "version": "7.27.5"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "yarn.lock"
           ],
           "id": "resolution:\"@babel/parser@npm:7.27.5\"",
@@ -155090,8 +155415,9 @@
               "version": "8.0.0-beta.0"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "yarn.lock"
           ],
           "id": "resolution:\"@babel/parser@npm:8.0.0-beta.0\"",
@@ -156557,8 +156883,9 @@
               "version": "7.18.6"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "yarn.lock"
           ],
           "id": "resolution:\"@babel/plugin-syntax-unicode-sets-regex@npm:7.18.6\"",
@@ -158985,8 +159312,9 @@
               "version": "8.0.0-beta.0"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "yarn.lock"
           ],
           "id": "resolution:\"@babel/preset-env@npm:8.0.0-beta.0\"",
@@ -163783,7 +164111,7 @@
               "version": "15.2.3"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "yarn.lock"
           ],
@@ -170994,8 +171322,9 @@
               "version": "30.1.1"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "yarn.lock"
           ],
           "id": "resolution:\"babel-jest@npm:30.1.1\"",
@@ -171076,8 +171405,9 @@
               "version": "30.0.1"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "yarn.lock"
           ],
           "id": "resolution:\"babel-plugin-jest-hoist@npm:30.0.1\"",
@@ -171203,8 +171533,9 @@
               "version": "0.4.14"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "yarn.lock"
           ],
           "id": "resolution:\"babel-plugin-polyfill-corejs2@npm:0.4.14\"",
@@ -171246,8 +171577,9 @@
               "version": "0.11.1"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "yarn.lock"
           ],
           "id": "resolution:\"babel-plugin-polyfill-corejs3@npm:0.11.1\"",
@@ -171289,8 +171621,9 @@
               "version": "0.13.0"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "yarn.lock"
           ],
           "id": "resolution:\"babel-plugin-polyfill-corejs3@npm:0.13.0\"",
@@ -172448,7 +172781,7 @@
               "version": "2.0.0"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "yarn.lock"
           ],
@@ -172865,7 +173198,7 @@
               "version": "16.5.2"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "yarn.lock"
           ],
@@ -172912,8 +173245,9 @@
               "version": "4.25.1"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "yarn.lock"
           ],
           "id": "resolution:\"browserslist@npm:4.25.1\"",
@@ -173947,7 +174281,7 @@
               "version": "2.1.8"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "yarn.lock"
           ],
@@ -174008,7 +174342,7 @@
               "version": "3.6.0"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "yarn.lock"
           ],
@@ -175658,8 +175992,9 @@
               "version": "3.45.0"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "yarn.lock"
           ],
           "id": "resolution:\"core-js-compat@npm:3.45.0\"",
@@ -179476,7 +179811,7 @@
               "version": "0.3.9"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "yarn.lock"
           ],
@@ -179883,8 +180218,9 @@
               "version": "56.0.0"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "yarn.lock"
           ],
           "id": "resolution:\"eslint-plugin-unicorn@npm:56.0.0\"",
@@ -189887,7 +190223,7 @@
               "version": "30.1.0"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "yarn.lock"
           ],
@@ -192347,7 +192683,7 @@
               "version": "5.0.0"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "yarn.lock"
           ],
@@ -194856,7 +195192,7 @@
               "version": "6.2.3"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "yarn.lock"
           ],
@@ -195557,7 +195893,7 @@
               "version": "2.5.0"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "yarn.lock"
           ],
@@ -199949,7 +200285,7 @@
               "version": "0.6.2"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "yarn.lock"
           ],
@@ -199984,7 +200320,7 @@
               "version": "0.7.0"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "yarn.lock"
           ],
@@ -200019,7 +200355,7 @@
               "version": "0.8.0"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "yarn.lock"
           ],
@@ -201725,7 +202061,7 @@
               "version": "2.79.1"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "yarn.lock"
           ],
@@ -201906,7 +202242,7 @@
               "version": "4.22.4"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "yarn.lock"
           ],
@@ -207475,7 +207811,7 @@
               "version": "4.20.3"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "yarn.lock"
           ],
@@ -210945,8 +211281,9 @@
               "version": "5.88.2"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "yarn.lock"
           ],
           "id": "resolution:\"webpack@npm:5.88.2\"",
@@ -212604,7 +212941,7 @@
           "purl": "pkg:npm/%40babel/eslint-tests@7.26.10"
         },
         {
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "package.json"
           ],
@@ -212640,8 +212977,9 @@
           "purl": "pkg:npm/%40babel/code-frame@7.27.1"
         },
         {
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "packages/babel-compat-data/package.json"
           ],
           "id": "scope:[\"packages/babel-compat-data/package.json\",\"yarn:dependencies\"]",
@@ -212712,8 +213050,9 @@
           "purl": "pkg:npm/%40babel/helper-check-duplicate-nodes@7.27.1"
         },
         {
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "packages/babel-helper-compilation-targets/package.json"
           ],
           "id": "scope:[\"packages/babel-helper-compilation-targets/package.json\",\"yarn:dependencies\"]",
@@ -212916,7 +213255,7 @@
           "purl": "pkg:npm/%40babel/helper-string-parser@7.27.1"
         },
         {
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "packages/babel-helper-transform-fixture-test-runner/package.json"
           ],
@@ -212988,8 +213327,9 @@
           "purl": "pkg:npm/%40babel/node@7.28.0"
         },
         {
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "packages/babel-parser/package.json"
           ],
           "id": "scope:[\"packages/babel-parser/package.json\",\"yarn:dependencies\"]",
@@ -214356,8 +214696,9 @@
           "purl": "pkg:npm/%40babel/plugin-transform-unicode-sets-regex@7.27.1"
         },
         {
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "packages/babel-preset-env/package.json"
           ],
           "id": "scope:[\"packages/babel-preset-env/package.json\",\"yarn:dependencies\"]",
@@ -214673,7 +215014,7 @@
               "version": "0.0.0-use.local"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "package.json"
           ],
@@ -215212,8 +215553,9 @@
               "version": "0.0.0-use.local"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "packages/babel-compat-data/package.json"
           ],
           "id": "workspace:\"packages/babel-compat-data\"",
@@ -215488,8 +215830,9 @@
               "version": "0.0.0-use.local"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "packages/babel-helper-compilation-targets/package.json"
           ],
           "id": "workspace:\"packages/babel-helper-compilation-targets\"",
@@ -216190,7 +216533,7 @@
               "version": "0.0.0-use.local"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "packages/babel-helper-transform-fixture-test-runner/package.json"
           ],
@@ -216442,8 +216785,9 @@
               "version": "0.0.0-use.local"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "packages/babel-parser/package.json"
           ],
           "id": "workspace:\"packages/babel-parser\"",
@@ -221419,8 +221763,9 @@
               "version": "0.0.0-use.local"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "packages/babel-preset-env/package.json"
           ],
           "id": "workspace:\"packages/babel-preset-env\"",
@@ -223962,6 +224307,1253 @@
       "edges": [
         {
           "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "fsevents@patch:fsevents@npm%3A^1.2.7#optional!builtin<compat/fsevents>"
+              ]
+            },
+            "yarn:descriptor": "fsevents@npm:^1.2.7"
+          },
+          "condition": {
+            "expression": {
+              "conditions": "os=darwin"
+            },
+            "language": "yarn:applicability/v1"
+          },
+          "evidence": [
+            "yarn.lock"
+          ],
+          "from": "resolution:\"chokidar@npm:2.1.8\"",
+          "kind": "dependencies",
+          "optional": true,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"chokidar@npm:2.1.8\\\"\",\"dependencies\",\"fsevents\"]",
+            "name": "fsevents",
+            "specifier": "npm:^1.2.7"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"fsevents@npm:1.2.13\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "fsevents@patch:fsevents@npm%3A^2.3.3#optional!builtin<compat/fsevents>"
+              ]
+            },
+            "yarn:descriptor": "fsevents@npm:^2.3.3"
+          },
+          "condition": {
+            "expression": {
+              "conditions": "os=darwin"
+            },
+            "language": "yarn:applicability/v1"
+          },
+          "evidence": [
+            "yarn.lock"
+          ],
+          "from": "resolution:\"jest-haste-map@npm:30.1.0\"",
+          "kind": "dependencies",
+          "optional": true,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"jest-haste-map@npm:30.1.0\\\"\",\"dependencies\",\"fsevents\"]",
+            "name": "fsevents",
+            "specifier": "npm:^2.3.3"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"fsevents@npm:2.3.3\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "fsevents@patch:fsevents@npm%3A~2.3.2#optional!builtin<compat/fsevents>"
+              ]
+            },
+            "yarn:descriptor": "fsevents@npm:~2.3.2"
+          },
+          "condition": {
+            "expression": {
+              "conditions": "os=darwin"
+            },
+            "language": "yarn:applicability/v1"
+          },
+          "evidence": [
+            "yarn.lock"
+          ],
+          "from": "resolution:\"chokidar@npm:3.6.0\"",
+          "kind": "dependencies",
+          "optional": true,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"chokidar@npm:3.6.0\\\"\",\"dependencies\",\"fsevents\"]",
+            "name": "fsevents",
+            "specifier": "npm:~2.3.2"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"fsevents@npm:2.3.3\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "fsevents@patch:fsevents@npm%3A~2.3.2#optional!builtin<compat/fsevents>"
+              ]
+            },
+            "yarn:descriptor": "fsevents@npm:~2.3.2"
+          },
+          "condition": {
+            "expression": {
+              "conditions": "os=darwin"
+            },
+            "language": "yarn:applicability/v1"
+          },
+          "evidence": [
+            "yarn.lock"
+          ],
+          "from": "resolution:\"rollup@npm:2.79.1\"",
+          "kind": "dependencies",
+          "optional": true,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"rollup@npm:2.79.1\\\"\",\"dependencies\",\"fsevents\"]",
+            "name": "fsevents",
+            "specifier": "npm:~2.3.2"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"fsevents@npm:2.3.3\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "fsevents@patch:fsevents@npm%3A~2.3.2#optional!builtin<compat/fsevents>"
+              ]
+            },
+            "yarn:descriptor": "fsevents@npm:~2.3.2"
+          },
+          "condition": {
+            "expression": {
+              "conditions": "os=darwin"
+            },
+            "language": "yarn:applicability/v1"
+          },
+          "evidence": [
+            "yarn.lock"
+          ],
+          "from": "resolution:\"rollup@npm:4.22.4\"",
+          "kind": "dependencies",
+          "optional": true,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"rollup@npm:4.22.4\\\"\",\"dependencies\",\"fsevents\"]",
+            "name": "fsevents",
+            "specifier": "npm:~2.3.2"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"fsevents@npm:2.3.3\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "fsevents@patch:fsevents@npm%3A~2.3.3#optional!builtin<compat/fsevents>"
+              ]
+            },
+            "yarn:descriptor": "fsevents@npm:~2.3.3"
+          },
+          "condition": {
+            "expression": {
+              "conditions": "os=darwin"
+            },
+            "language": "yarn:applicability/v1"
+          },
+          "evidence": [
+            "yarn.lock"
+          ],
+          "from": "resolution:\"tsx@npm:4.20.3\"",
+          "kind": "dependencies",
+          "optional": true,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"tsx@npm:4.20.3\\\"\",\"dependencies\",\"fsevents\"]",
+            "name": "fsevents",
+            "specifier": "npm:~2.3.3"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"fsevents@npm:2.3.3\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "resolve@patch:resolve@npm%3A2.0.0-next.5#optional!builtin<compat/resolve>"
+              ]
+            },
+            "yarn:descriptor": "resolve@2.0.0-next.5"
+          },
+          "evidence": [
+            "packages/babel-helper-transform-fixture-test-runner/package.json",
+            "yarn.lock"
+          ],
+          "from": "scope:[\"packages/babel-helper-transform-fixture-test-runner/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/babel-helper-transform-fixture-test-runner/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"resolve\"]",
+            "name": "resolve",
+            "specifier": "2.0.0-next.5"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"resolve@npm:2.0.0-next.5\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "resolve@patch:resolve@npm%3A2.0.0-next.5#optional!builtin<compat/resolve>"
+              ]
+            },
+            "yarn:descriptor": "resolve@2.0.0-next.5"
+          },
+          "evidence": [
+            "packages/babel-helper-transform-fixture-test-runner/package.json",
+            "yarn.lock"
+          ],
+          "from": "workspace:\"packages/babel-helper-transform-fixture-test-runner\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"workspace:\\\"packages/babel-helper-transform-fixture-test-runner\\\"\",\"dependencies\",\"resolve\"]",
+            "name": "resolve",
+            "specifier": "2.0.0-next.5"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"resolve@npm:2.0.0-next.5\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "resolve@patch:resolve@npm%3A^1.1.4#optional!builtin<compat/resolve>"
+              ]
+            },
+            "yarn:descriptor": "resolve@npm:^1.1.4"
+          },
+          "evidence": [
+            "yarn.lock"
+          ],
+          "from": "resolution:\"browserify@npm:16.5.2\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"browserify@npm:16.5.2\\\"\",\"dependencies\",\"resolve\"]",
+            "name": "resolve",
+            "specifier": "npm:^1.1.4"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"resolve@npm:1.22.10\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "resolve@patch:resolve@npm%3A^1.1.6#optional!builtin<compat/resolve>"
+              ]
+            },
+            "yarn:descriptor": "resolve@npm:^1.1.6"
+          },
+          "evidence": [
+            "yarn.lock"
+          ],
+          "from": "resolution:\"rechoir@npm:0.6.2\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"rechoir@npm:0.6.2\\\"\",\"dependencies\",\"resolve\"]",
+            "name": "resolve",
+            "specifier": "npm:^1.1.6"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"resolve@npm:1.22.10\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "resolve@patch:resolve@npm%3A^1.10.0#optional!builtin<compat/resolve>"
+              ]
+            },
+            "yarn:descriptor": "resolve@npm:^1.10.0"
+          },
+          "evidence": [
+            "yarn.lock"
+          ],
+          "from": "resolution:\"normalize-package-data@npm:2.5.0\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"normalize-package-data@npm:2.5.0\\\"\",\"dependencies\",\"resolve\"]",
+            "name": "resolve",
+            "specifier": "npm:^1.10.0"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"resolve@npm:1.22.10\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "resolve@patch:resolve@npm%3A^1.17.0#optional!builtin<compat/resolve>"
+              ]
+            },
+            "yarn:descriptor": "resolve@npm:^1.17.0"
+          },
+          "evidence": [
+            "yarn.lock"
+          ],
+          "from": "resolution:\"browser-resolve@npm:2.0.0\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"browser-resolve@npm:2.0.0\\\"\",\"dependencies\",\"resolve\"]",
+            "name": "resolve",
+            "specifier": "npm:^1.17.0"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"resolve@npm:1.22.10\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "resolve@patch:resolve@npm%3A^1.20.0#optional!builtin<compat/resolve>"
+              ]
+            },
+            "yarn:descriptor": "resolve@npm:^1.20.0"
+          },
+          "evidence": [
+            "yarn.lock"
+          ],
+          "from": "resolution:\"liftoff@npm:5.0.0\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"liftoff@npm:5.0.0\\\"\",\"dependencies\",\"resolve\"]",
+            "name": "resolve",
+            "specifier": "npm:^1.20.0"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"resolve@npm:1.22.10\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "resolve@patch:resolve@npm%3A^1.20.0#optional!builtin<compat/resolve>"
+              ]
+            },
+            "yarn:descriptor": "resolve@npm:^1.20.0"
+          },
+          "evidence": [
+            "yarn.lock"
+          ],
+          "from": "resolution:\"rechoir@npm:0.8.0\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"rechoir@npm:0.8.0\\\"\",\"dependencies\",\"resolve\"]",
+            "name": "resolve",
+            "specifier": "npm:^1.20.0"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"resolve@npm:1.22.10\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "resolve@patch:resolve@npm%3A^1.22.1#optional!builtin<compat/resolve>"
+              ]
+            },
+            "yarn:descriptor": "resolve@npm:^1.22.1"
+          },
+          "evidence": [
+            "yarn.lock"
+          ],
+          "from": "resolution:\"@rollup/plugin-node-resolve@npm:15.2.3\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"@rollup/plugin-node-resolve@npm:15.2.3\\\"\",\"dependencies\",\"resolve\"]",
+            "name": "resolve",
+            "specifier": "npm:^1.22.1"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"resolve@npm:1.22.10\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "resolve@patch:resolve@npm%3A^1.22.10#optional!builtin<compat/resolve>"
+              ]
+            },
+            "yarn:descriptor": "resolve@npm:^1.22.10"
+          },
+          "evidence": [
+            "yarn.lock"
+          ],
+          "from": "resolution:\"@babel/helper-define-polyfill-provider@npm:0.6.5\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"@babel/helper-define-polyfill-provider@npm:0.6.5\\\"\",\"dependencies\",\"resolve\"]",
+            "name": "resolve",
+            "specifier": "npm:^1.22.10"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"resolve@npm:1.22.10\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "resolve@patch:resolve@npm%3A^1.22.4#optional!builtin<compat/resolve>"
+              ]
+            },
+            "yarn:descriptor": "resolve@npm:^1.22.4"
+          },
+          "evidence": [
+            "yarn.lock"
+          ],
+          "from": "resolution:\"eslint-import-resolver-node@npm:0.3.9\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"eslint-import-resolver-node@npm:0.3.9\\\"\",\"dependencies\",\"resolve\"]",
+            "name": "resolve",
+            "specifier": "npm:^1.22.4"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"resolve@npm:1.22.10\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "resolve@patch:resolve@npm%3A^1.3.2#optional!builtin<compat/resolve>"
+              ]
+            },
+            "yarn:descriptor": "resolve@npm:^1.3.2"
+          },
+          "evidence": [
+            "yarn.lock"
+          ],
+          "from": "resolution:\"@babel/core@npm:7.12.9\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"@babel/core@npm:7.12.9\\\"\",\"dependencies\",\"resolve\"]",
+            "name": "resolve",
+            "specifier": "npm:^1.3.2"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"resolve@npm:1.22.10\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "resolve@patch:resolve@npm%3A^1.4.0#optional!builtin<compat/resolve>"
+              ]
+            },
+            "yarn:descriptor": "resolve@npm:^1.4.0"
+          },
+          "evidence": [
+            "yarn.lock"
+          ],
+          "from": "resolution:\"module-deps@npm:6.2.3\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"module-deps@npm:6.2.3\\\"\",\"dependencies\",\"resolve\"]",
+            "name": "resolve",
+            "specifier": "npm:^1.4.0"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"resolve@npm:1.22.10\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "resolve@patch:resolve@npm%3A^1.9.0#optional!builtin<compat/resolve>"
+              ]
+            },
+            "yarn:descriptor": "resolve@npm:^1.9.0"
+          },
+          "evidence": [
+            "yarn.lock"
+          ],
+          "from": "resolution:\"rechoir@npm:0.7.0\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"rechoir@npm:0.7.0\\\"\",\"dependencies\",\"resolve\"]",
+            "name": "resolve",
+            "specifier": "npm:^1.9.0"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"resolve@npm:1.22.10\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "patch-alternative",
+              "selectors": [
+                "typescript@patch:typescript@npm%3A5.9.2#optional!builtin<compat/typescript>"
+              ]
+            },
+            "yarn:descriptor": "typescript@5.9.2"
+          },
+          "evidence": [
+            "package.json",
+            "yarn.lock"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"typescript\"]",
+            "name": "typescript",
+            "specifier": "5.9.2"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"typescript@npm:5.9.2\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "@babel/parser/@babel/types"
+              ]
+            },
+            "yarn:descriptor": "@babel/types@npm:^7.27.3"
+          },
+          "evidence": [
+            "package.json",
+            "yarn.lock"
+          ],
+          "from": "resolution:\"@babel/parser@npm:7.27.5\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"@babel/parser@npm:7.27.5\\\"\",\"dependencies\",\"@babel/types\"]",
+            "name": "@babel/types",
+            "specifier": "npm:^7.27.3"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"@babel/types@npm:7.27.6\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "@babel/parser/@babel/types"
+              ]
+            },
+            "yarn:descriptor": "@babel/types@npm:^8.0.0-beta.0"
+          },
+          "evidence": [
+            "package.json",
+            "yarn.lock"
+          ],
+          "from": "resolution:\"@babel/parser@npm:8.0.0-beta.0\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"@babel/parser@npm:8.0.0-beta.0\\\"\",\"dependencies\",\"@babel/types\"]",
+            "name": "@babel/types",
+            "specifier": "npm:^8.0.0-beta.0"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "resolution:\"@babel/types@npm:8.0.0-beta.0\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "@babel/parser/@babel/types"
+              ]
+            },
+            "yarn:descriptor": "@babel/types@workspace:^"
+          },
+          "evidence": [
+            "package.json",
+            "packages/babel-parser/package.json",
+            "yarn.lock"
+          ],
+          "from": "scope:[\"packages/babel-parser/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/babel-parser/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"@babel/types\"]",
+            "name": "@babel/types",
+            "specifier": "workspace:^"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "workspace:\"packages/babel-types\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "@babel/parser/@babel/types"
+              ]
+            },
+            "yarn:descriptor": "@babel/types@workspace:^"
+          },
+          "evidence": [
+            "package.json",
+            "packages/babel-parser/package.json",
+            "yarn.lock"
+          ],
+          "from": "workspace:\"packages/babel-parser\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"workspace:\\\"packages/babel-parser\\\"\",\"dependencies\",\"@babel/types\"]",
+            "name": "@babel/types",
+            "specifier": "workspace:^"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "workspace:\"packages/babel-types\""
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "@babel/plugin-syntax-unicode-sets-regex/@babel/helper-create-regexp-features-plugin"
+              ]
+            },
+            "yarn:descriptor": "@babel/helper-create-regexp-features-plugin@npm:^7.18.6"
+          },
+          "evidence": [
+            "package.json",
+            "yarn.lock"
+          ],
+          "from": "resolution:\"@babel/plugin-syntax-unicode-sets-regex@npm:7.18.6\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"@babel/plugin-syntax-unicode-sets-regex@npm:7.18.6\\\"\",\"dependencies\",\"@babel/helper-create-regexp-features-plugin\"]",
+            "name": "@babel/helper-create-regexp-features-plugin",
+            "specifier": "npm:^7.18.6"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "@types/babel__core"
+              ]
+            },
+            "yarn:descriptor": "@types/babel__core@npm:^7.20.5"
+          },
+          "evidence": [
+            "package.json",
+            "yarn.lock"
+          ],
+          "from": "resolution:\"babel-jest@npm:30.1.1\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"babel-jest@npm:30.1.1\\\"\",\"dependencies\",\"@types/babel__core\"]",
+            "name": "@types/babel__core",
+            "specifier": "npm:^7.20.5"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "@types/babel__core"
+              ]
+            },
+            "yarn:descriptor": "@types/babel__core@npm:^7.20.5"
+          },
+          "evidence": [
+            "package.json",
+            "yarn.lock"
+          ],
+          "from": "resolution:\"babel-plugin-jest-hoist@npm:30.0.1\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"babel-plugin-jest-hoist@npm:30.0.1\\\"\",\"dependencies\",\"@types/babel__core\"]",
+            "name": "@types/babel__core",
+            "specifier": "npm:^7.20.5"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "babel-plugin-polyfill-corejs2/@babel/compat-data"
+              ]
+            },
+            "yarn:descriptor": "@babel/compat-data@npm:^7.27.7"
+          },
+          "evidence": [
+            "package.json",
+            "yarn.lock"
+          ],
+          "from": "resolution:\"babel-plugin-polyfill-corejs2@npm:0.4.14\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"babel-plugin-polyfill-corejs2@npm:0.4.14\\\"\",\"dependencies\",\"@babel/compat-data\"]",
+            "name": "@babel/compat-data",
+            "specifier": "npm:^7.27.7"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "browserslist"
+              ]
+            },
+            "yarn:descriptor": "browserslist@^4.24.0"
+          },
+          "evidence": [
+            "package.json",
+            "packages/babel-helper-compilation-targets/package.json",
+            "yarn.lock"
+          ],
+          "from": "scope:[\"packages/babel-helper-compilation-targets/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/babel-helper-compilation-targets/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"browserslist\"]",
+            "name": "browserslist",
+            "specifier": "^4.24.0"
+          },
+          "selection": "unknown",
+          "status": "declared"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "browserslist"
+              ]
+            },
+            "yarn:descriptor": "browserslist@^4.24.0"
+          },
+          "evidence": [
+            "package.json",
+            "packages/babel-helper-compilation-targets/package.json",
+            "yarn.lock"
+          ],
+          "from": "workspace:\"packages/babel-helper-compilation-targets\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"workspace:\\\"packages/babel-helper-compilation-targets\\\"\",\"dependencies\",\"browserslist\"]",
+            "name": "browserslist",
+            "specifier": "^4.24.0"
+          },
+          "selection": "unknown",
+          "status": "declared"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "browserslist"
+              ]
+            },
+            "yarn:descriptor": "browserslist@npm:^4.14.5"
+          },
+          "evidence": [
+            "package.json",
+            "yarn.lock"
+          ],
+          "from": "resolution:\"webpack@npm:5.88.2\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"webpack@npm:5.88.2\\\"\",\"dependencies\",\"browserslist\"]",
+            "name": "browserslist",
+            "specifier": "npm:^4.14.5"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "browserslist"
+              ]
+            },
+            "yarn:descriptor": "browserslist@npm:^4.22.2"
+          },
+          "evidence": [
+            "package.json",
+            "yarn.lock"
+          ],
+          "from": "resolution:\"@babel/helper-compilation-targets@npm:7.23.6\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"@babel/helper-compilation-targets@npm:7.23.6\\\"\",\"dependencies\",\"browserslist\"]",
+            "name": "browserslist",
+            "specifier": "npm:^4.22.2"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "browserslist"
+              ]
+            },
+            "yarn:descriptor": "browserslist@npm:^4.24.0"
+          },
+          "evidence": [
+            "package.json",
+            "yarn.lock"
+          ],
+          "from": "resolution:\"@babel/helper-compilation-targets@npm:7.27.2\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"@babel/helper-compilation-targets@npm:7.27.2\\\"\",\"dependencies\",\"browserslist\"]",
+            "name": "browserslist",
+            "specifier": "npm:^4.24.0"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "browserslist"
+              ]
+            },
+            "yarn:descriptor": "browserslist@npm:^4.24.0"
+          },
+          "evidence": [
+            "package.json",
+            "yarn.lock"
+          ],
+          "from": "resolution:\"@babel/helper-compilation-targets@npm:8.0.0-beta.0\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"@babel/helper-compilation-targets@npm:8.0.0-beta.0\\\"\",\"dependencies\",\"browserslist\"]",
+            "name": "browserslist",
+            "specifier": "npm:^4.24.0"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "browserslist"
+              ]
+            },
+            "yarn:descriptor": "browserslist@npm:^4.25.1"
+          },
+          "evidence": [
+            "package.json",
+            "yarn.lock"
+          ],
+          "from": "resolution:\"core-js-compat@npm:3.45.0\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"core-js-compat@npm:3.45.0\\\"\",\"dependencies\",\"browserslist\"]",
+            "name": "browserslist",
+            "specifier": "npm:^4.25.1"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "caniuse-lite"
+              ]
+            },
+            "yarn:descriptor": "caniuse-lite@npm:^1.0.30001726"
+          },
+          "evidence": [
+            "package.json",
+            "yarn.lock"
+          ],
+          "from": "resolution:\"browserslist@npm:4.25.1\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"browserslist@npm:4.25.1\\\"\",\"dependencies\",\"caniuse-lite\"]",
+            "name": "caniuse-lite",
+            "specifier": "npm:^1.0.30001726"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "core-js-compat"
+              ]
+            },
+            "yarn:descriptor": "core-js-compat@^3.43.0"
+          },
+          "evidence": [
+            "package.json",
+            "packages/babel-compat-data/package.json",
+            "yarn.lock"
+          ],
+          "from": "scope:[\"packages/babel-compat-data/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/babel-compat-data/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"core-js-compat\"]",
+            "name": "core-js-compat",
+            "specifier": "^3.43.0"
+          },
+          "selection": "unknown",
+          "status": "declared"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "core-js-compat"
+              ]
+            },
+            "yarn:descriptor": "core-js-compat@^3.43.0"
+          },
+          "evidence": [
+            "package.json",
+            "packages/babel-preset-env/package.json",
+            "yarn.lock"
+          ],
+          "from": "scope:[\"packages/babel-preset-env/package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/babel-preset-env/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"core-js-compat\"]",
+            "name": "core-js-compat",
+            "specifier": "^3.43.0"
+          },
+          "selection": "unknown",
+          "status": "declared"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "core-js-compat"
+              ]
+            },
+            "yarn:descriptor": "core-js-compat@^3.43.0"
+          },
+          "evidence": [
+            "package.json",
+            "packages/babel-preset-env/package.json",
+            "yarn.lock"
+          ],
+          "from": "workspace:\"packages/babel-preset-env\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"workspace:\\\"packages/babel-preset-env\\\"\",\"dependencies\",\"core-js-compat\"]",
+            "name": "core-js-compat",
+            "specifier": "^3.43.0"
+          },
+          "selection": "unknown",
+          "status": "declared"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "core-js-compat"
+              ]
+            },
+            "yarn:descriptor": "core-js-compat@npm:^3.38.1"
+          },
+          "evidence": [
+            "package.json",
+            "yarn.lock"
+          ],
+          "from": "resolution:\"eslint-plugin-unicorn@npm:56.0.0\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"eslint-plugin-unicorn@npm:56.0.0\\\"\",\"dependencies\",\"core-js-compat\"]",
+            "name": "core-js-compat",
+            "specifier": "npm:^3.38.1"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "core-js-compat"
+              ]
+            },
+            "yarn:descriptor": "core-js-compat@npm:^3.40.0"
+          },
+          "evidence": [
+            "package.json",
+            "yarn.lock"
+          ],
+          "from": "resolution:\"@babel/preset-env@npm:8.0.0-beta.0\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"@babel/preset-env@npm:8.0.0-beta.0\\\"\",\"dependencies\",\"core-js-compat\"]",
+            "name": "core-js-compat",
+            "specifier": "npm:^3.40.0"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "core-js-compat"
+              ]
+            },
+            "yarn:descriptor": "core-js-compat@npm:^3.40.0"
+          },
+          "evidence": [
+            "package.json",
+            "yarn.lock"
+          ],
+          "from": "resolution:\"babel-plugin-polyfill-corejs3@npm:0.11.1\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"babel-plugin-polyfill-corejs3@npm:0.11.1\\\"\",\"dependencies\",\"core-js-compat\"]",
+            "name": "core-js-compat",
+            "specifier": "npm:^3.40.0"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "core-js-compat"
+              ]
+            },
+            "yarn:descriptor": "core-js-compat@npm:^3.43.0"
+          },
+          "evidence": [
+            "package.json",
+            "yarn.lock"
+          ],
+          "from": "resolution:\"babel-plugin-polyfill-corejs3@npm:0.13.0\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"babel-plugin-polyfill-corejs3@npm:0.13.0\\\"\",\"dependencies\",\"core-js-compat\"]",
+            "name": "core-js-compat",
+            "specifier": "npm:^3.43.0"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "electron-to-chromium"
+              ]
+            },
+            "yarn:descriptor": "electron-to-chromium@^1.5.140"
+          },
+          "evidence": [
+            "package.json",
+            "packages/babel-compat-data/package.json",
+            "yarn.lock"
+          ],
+          "from": "scope:[\"packages/babel-compat-data/package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"packages/babel-compat-data/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"electron-to-chromium\"]",
+            "name": "electron-to-chromium",
+            "specifier": "^1.5.140"
+          },
+          "selection": "unknown",
+          "status": "declared"
+        },
+        {
+          "attributes": {
+            "yarn:bindingUncertainty": {
+              "reason": "unapplied-resolution",
+              "selectors": [
+                "electron-to-chromium"
+              ]
+            },
+            "yarn:descriptor": "electron-to-chromium@npm:^1.5.173"
+          },
+          "evidence": [
+            "package.json",
+            "yarn.lock"
+          ],
+          "from": "resolution:\"browserslist@npm:4.25.1\"",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"resolution:\\\"browserslist@npm:4.25.1\\\"\",\"dependencies\",\"electron-to-chromium\"]",
+            "name": "electron-to-chromium",
+            "specifier": "npm:^1.5.173"
+          },
+          "selection": "unknown",
+          "status": "unresolved"
+        },
+        {
+          "attributes": {
             "yarn:descriptor": "$repo-utils@link:../scripts/repo-utils"
           },
           "evidence": [
@@ -225171,25 +226763,6 @@
           "selection": "selected",
           "status": "resolved",
           "to": "resolution:\"@babel/compat-data@npm:7.27.5\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "@babel/compat-data@npm:^7.27.7"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"babel-plugin-polyfill-corejs2@npm:0.4.14\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"babel-plugin-polyfill-corejs2@npm:0.4.14\\\"\",\"dependencies\",\"@babel/compat-data\"]",
-            "name": "@babel/compat-data",
-            "specifier": "npm:^7.27.7"
-          },
-          "selection": "selected",
-          "status": "unresolved"
         },
         {
           "attributes": {
@@ -241189,25 +242762,6 @@
           "selection": "selected",
           "status": "resolved",
           "to": "workspace:\"packages/babel-helper-create-class-features-plugin\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "@babel/helper-create-regexp-features-plugin@npm:^7.18.6"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"@babel/plugin-syntax-unicode-sets-regex@npm:7.18.6\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"@babel/plugin-syntax-unicode-sets-regex@npm:7.18.6\\\"\",\"dependencies\",\"@babel/helper-create-regexp-features-plugin\"]",
-            "name": "@babel/helper-create-regexp-features-plugin",
-            "specifier": "npm:^7.18.6"
-          },
-          "selection": "selected",
-          "status": "unresolved"
         },
         {
           "attributes": {
@@ -272789,26 +274343,6 @@
           "evidence": [
             "yarn.lock"
           ],
-          "from": "resolution:\"@babel/parser@npm:7.27.5\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"@babel/parser@npm:7.27.5\\\"\",\"dependencies\",\"@babel/types\"]",
-            "name": "@babel/types",
-            "specifier": "npm:^7.27.3"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "resolution:\"@babel/types@npm:7.27.6\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "@babel/types@npm:^7.27.3"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
           "from": "resolution:\"@babel/traverse@npm:7.27.4\"",
           "kind": "dependencies",
           "optional": false,
@@ -273075,26 +274609,6 @@
           "relation": "depends-on",
           "requested": {
             "id": "[\"resolution:\\\"@babel/helpers@npm:8.0.0-beta.0\\\"\",\"dependencies\",\"@babel/types\"]",
-            "name": "@babel/types",
-            "specifier": "npm:^8.0.0-beta.0"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "resolution:\"@babel/types@npm:8.0.0-beta.0\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "@babel/types@npm:^8.0.0-beta.0"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"@babel/parser@npm:8.0.0-beta.0\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"@babel/parser@npm:8.0.0-beta.0\\\"\",\"dependencies\",\"@babel/types\"]",
             "name": "@babel/types",
             "specifier": "npm:^8.0.0-beta.0"
           },
@@ -273681,48 +275195,6 @@
           "relation": "depends-on",
           "requested": {
             "id": "[\"workspace:\\\"packages/babel-helpers\\\"\",\"dependencies\",\"@babel/types\"]",
-            "name": "@babel/types",
-            "specifier": "workspace:^"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "workspace:\"packages/babel-types\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "@babel/types@workspace:^"
-          },
-          "evidence": [
-            "packages/babel-parser/package.json",
-            "yarn.lock"
-          ],
-          "from": "scope:[\"packages/babel-parser/package.json\",\"dependencies\"]",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"scope:[\\\"packages/babel-parser/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"@babel/types\"]",
-            "name": "@babel/types",
-            "specifier": "workspace:^"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "workspace:\"packages/babel-types\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "@babel/types@workspace:^"
-          },
-          "evidence": [
-            "packages/babel-parser/package.json",
-            "yarn.lock"
-          ],
-          "from": "workspace:\"packages/babel-parser\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"workspace:\\\"packages/babel-parser\\\"\",\"dependencies\",\"@babel/types\"]",
             "name": "@babel/types",
             "specifier": "workspace:^"
           },
@@ -280652,44 +282124,6 @@
           },
           "selection": "unknown",
           "status": "declared"
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "@types/babel__core@npm:^7.20.5"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"babel-jest@npm:30.1.1\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"babel-jest@npm:30.1.1\\\"\",\"dependencies\",\"@types/babel__core\"]",
-            "name": "@types/babel__core",
-            "specifier": "npm:^7.20.5"
-          },
-          "selection": "selected",
-          "status": "unresolved"
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "@types/babel__core@npm:^7.20.5"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"babel-plugin-jest-hoist@npm:30.0.1\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"babel-plugin-jest-hoist@npm:30.0.1\\\"\",\"dependencies\",\"@types/babel__core\"]",
-            "name": "@types/babel__core",
-            "specifier": "npm:^7.20.5"
-          },
-          "selection": "selected",
-          "status": "unresolved"
         },
         {
           "attributes": {
@@ -290159,141 +291593,6 @@
         },
         {
           "attributes": {
-            "yarn:descriptor": "browserslist@^4.24.0"
-          },
-          "evidence": [
-            "packages/babel-helper-compilation-targets/package.json",
-            "yarn.lock"
-          ],
-          "from": "scope:[\"packages/babel-helper-compilation-targets/package.json\",\"dependencies\"]",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"scope:[\\\"packages/babel-helper-compilation-targets/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"browserslist\"]",
-            "name": "browserslist",
-            "specifier": "^4.24.0"
-          },
-          "selection": "selected",
-          "status": "declared"
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "browserslist@^4.24.0"
-          },
-          "evidence": [
-            "packages/babel-helper-compilation-targets/package.json",
-            "yarn.lock"
-          ],
-          "from": "workspace:\"packages/babel-helper-compilation-targets\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"workspace:\\\"packages/babel-helper-compilation-targets\\\"\",\"dependencies\",\"browserslist\"]",
-            "name": "browserslist",
-            "specifier": "^4.24.0"
-          },
-          "selection": "selected",
-          "status": "declared"
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "browserslist@npm:^4.14.5"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"webpack@npm:5.88.2\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"webpack@npm:5.88.2\\\"\",\"dependencies\",\"browserslist\"]",
-            "name": "browserslist",
-            "specifier": "npm:^4.14.5"
-          },
-          "selection": "selected",
-          "status": "unresolved"
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "browserslist@npm:^4.22.2"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"@babel/helper-compilation-targets@npm:7.23.6\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"@babel/helper-compilation-targets@npm:7.23.6\\\"\",\"dependencies\",\"browserslist\"]",
-            "name": "browserslist",
-            "specifier": "npm:^4.22.2"
-          },
-          "selection": "selected",
-          "status": "unresolved"
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "browserslist@npm:^4.24.0"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"@babel/helper-compilation-targets@npm:7.27.2\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"@babel/helper-compilation-targets@npm:7.27.2\\\"\",\"dependencies\",\"browserslist\"]",
-            "name": "browserslist",
-            "specifier": "npm:^4.24.0"
-          },
-          "selection": "selected",
-          "status": "unresolved"
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "browserslist@npm:^4.24.0"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"@babel/helper-compilation-targets@npm:8.0.0-beta.0\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"@babel/helper-compilation-targets@npm:8.0.0-beta.0\\\"\",\"dependencies\",\"browserslist\"]",
-            "name": "browserslist",
-            "specifier": "npm:^4.24.0"
-          },
-          "selection": "selected",
-          "status": "unresolved"
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "browserslist@npm:^4.25.1"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"core-js-compat@npm:3.45.0\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"core-js-compat@npm:3.45.0\\\"\",\"dependencies\",\"browserslist\"]",
-            "name": "browserslist",
-            "specifier": "npm:^4.25.1"
-          },
-          "selection": "selected",
-          "status": "unresolved"
-        },
-        {
-          "attributes": {
             "yarn:descriptor": "bser@npm:2.1.1"
           },
           "evidence": [
@@ -291572,25 +292871,6 @@
           "selection": "selected",
           "status": "resolved",
           "to": "resolution:\"camelcase@npm:6.3.0\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "caniuse-lite@npm:^1.0.30001726"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"browserslist@npm:4.25.1\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"browserslist@npm:4.25.1\\\"\",\"dependencies\",\"caniuse-lite\"]",
-            "name": "caniuse-lite",
-            "specifier": "npm:^1.0.30001726"
-          },
-          "selection": "selected",
-          "status": "unresolved"
         },
         {
           "attributes": {
@@ -294664,26 +295944,6 @@
             "packages/babel-compat-data/package.json",
             "yarn.lock"
           ],
-          "from": "scope:[\"packages/babel-compat-data/package.json\",\"devDependencies\"]",
-          "kind": "devDependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"scope:[\\\"packages/babel-compat-data/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"core-js-compat\"]",
-            "name": "core-js-compat",
-            "specifier": "^3.43.0"
-          },
-          "selection": "selected",
-          "status": "declared"
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "core-js-compat@^3.43.0"
-          },
-          "evidence": [
-            "packages/babel-compat-data/package.json",
-            "yarn.lock"
-          ],
           "from": "workspace:\"packages/babel-compat-data\"",
           "kind": "devDependencies",
           "optional": false,
@@ -294695,122 +295955,6 @@
           },
           "selection": "excluded",
           "status": "declared"
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "core-js-compat@^3.43.0"
-          },
-          "evidence": [
-            "packages/babel-preset-env/package.json",
-            "yarn.lock"
-          ],
-          "from": "scope:[\"packages/babel-preset-env/package.json\",\"dependencies\"]",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"scope:[\\\"packages/babel-preset-env/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"core-js-compat\"]",
-            "name": "core-js-compat",
-            "specifier": "^3.43.0"
-          },
-          "selection": "selected",
-          "status": "declared"
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "core-js-compat@^3.43.0"
-          },
-          "evidence": [
-            "packages/babel-preset-env/package.json",
-            "yarn.lock"
-          ],
-          "from": "workspace:\"packages/babel-preset-env\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"workspace:\\\"packages/babel-preset-env\\\"\",\"dependencies\",\"core-js-compat\"]",
-            "name": "core-js-compat",
-            "specifier": "^3.43.0"
-          },
-          "selection": "selected",
-          "status": "declared"
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "core-js-compat@npm:^3.38.1"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"eslint-plugin-unicorn@npm:56.0.0\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"eslint-plugin-unicorn@npm:56.0.0\\\"\",\"dependencies\",\"core-js-compat\"]",
-            "name": "core-js-compat",
-            "specifier": "npm:^3.38.1"
-          },
-          "selection": "selected",
-          "status": "unresolved"
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "core-js-compat@npm:^3.40.0"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"@babel/preset-env@npm:8.0.0-beta.0\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"@babel/preset-env@npm:8.0.0-beta.0\\\"\",\"dependencies\",\"core-js-compat\"]",
-            "name": "core-js-compat",
-            "specifier": "npm:^3.40.0"
-          },
-          "selection": "selected",
-          "status": "unresolved"
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "core-js-compat@npm:^3.40.0"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"babel-plugin-polyfill-corejs3@npm:0.11.1\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"babel-plugin-polyfill-corejs3@npm:0.11.1\\\"\",\"dependencies\",\"core-js-compat\"]",
-            "name": "core-js-compat",
-            "specifier": "npm:^3.40.0"
-          },
-          "selection": "selected",
-          "status": "unresolved"
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "core-js-compat@npm:^3.43.0"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"babel-plugin-polyfill-corejs3@npm:0.13.0\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"babel-plugin-polyfill-corejs3@npm:0.13.0\\\"\",\"dependencies\",\"core-js-compat\"]",
-            "name": "core-js-compat",
-            "specifier": "npm:^3.43.0"
-          },
-          "selection": "selected",
-          "status": "unresolved"
         },
         {
           "attributes": {
@@ -298024,26 +299168,6 @@
             "packages/babel-compat-data/package.json",
             "yarn.lock"
           ],
-          "from": "scope:[\"packages/babel-compat-data/package.json\",\"devDependencies\"]",
-          "kind": "devDependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"scope:[\\\"packages/babel-compat-data/package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"electron-to-chromium\"]",
-            "name": "electron-to-chromium",
-            "specifier": "^1.5.140"
-          },
-          "selection": "selected",
-          "status": "declared"
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "electron-to-chromium@^1.5.140"
-          },
-          "evidence": [
-            "packages/babel-compat-data/package.json",
-            "yarn.lock"
-          ],
           "from": "workspace:\"packages/babel-compat-data\"",
           "kind": "devDependencies",
           "optional": false,
@@ -298055,25 +299179,6 @@
           },
           "selection": "excluded",
           "status": "declared"
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "electron-to-chromium@npm:^1.5.173"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"browserslist@npm:4.25.1\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"browserslist@npm:4.25.1\\\"\",\"dependencies\",\"electron-to-chromium\"]",
-            "name": "electron-to-chromium",
-            "specifier": "npm:^1.5.173"
-          },
-          "selection": "selected",
-          "status": "unresolved"
         },
         {
           "attributes": {
@@ -304504,162 +305609,6 @@
           "selection": "selected",
           "status": "resolved",
           "to": "resolution:\"fs.realpath@npm:1.0.0\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "fsevents@npm:^1.2.7"
-          },
-          "condition": {
-            "expression": {
-              "conditions": "os=darwin"
-            },
-            "language": "yarn:applicability/v1"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"chokidar@npm:2.1.8\"",
-          "kind": "dependencies",
-          "optional": true,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"chokidar@npm:2.1.8\\\"\",\"dependencies\",\"fsevents\"]",
-            "name": "fsevents",
-            "specifier": "npm:^1.2.7"
-          },
-          "selection": "conditional",
-          "status": "resolved",
-          "to": "resolution:\"fsevents@npm:1.2.13\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "fsevents@npm:^2.3.3"
-          },
-          "condition": {
-            "expression": {
-              "conditions": "os=darwin"
-            },
-            "language": "yarn:applicability/v1"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"jest-haste-map@npm:30.1.0\"",
-          "kind": "dependencies",
-          "optional": true,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"jest-haste-map@npm:30.1.0\\\"\",\"dependencies\",\"fsevents\"]",
-            "name": "fsevents",
-            "specifier": "npm:^2.3.3"
-          },
-          "selection": "conditional",
-          "status": "resolved",
-          "to": "resolution:\"fsevents@npm:2.3.3\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "fsevents@npm:~2.3.2"
-          },
-          "condition": {
-            "expression": {
-              "conditions": "os=darwin"
-            },
-            "language": "yarn:applicability/v1"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"chokidar@npm:3.6.0\"",
-          "kind": "dependencies",
-          "optional": true,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"chokidar@npm:3.6.0\\\"\",\"dependencies\",\"fsevents\"]",
-            "name": "fsevents",
-            "specifier": "npm:~2.3.2"
-          },
-          "selection": "conditional",
-          "status": "resolved",
-          "to": "resolution:\"fsevents@npm:2.3.3\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "fsevents@npm:~2.3.2"
-          },
-          "condition": {
-            "expression": {
-              "conditions": "os=darwin"
-            },
-            "language": "yarn:applicability/v1"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"rollup@npm:2.79.1\"",
-          "kind": "dependencies",
-          "optional": true,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"rollup@npm:2.79.1\\\"\",\"dependencies\",\"fsevents\"]",
-            "name": "fsevents",
-            "specifier": "npm:~2.3.2"
-          },
-          "selection": "conditional",
-          "status": "resolved",
-          "to": "resolution:\"fsevents@npm:2.3.3\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "fsevents@npm:~2.3.2"
-          },
-          "condition": {
-            "expression": {
-              "conditions": "os=darwin"
-            },
-            "language": "yarn:applicability/v1"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"rollup@npm:4.22.4\"",
-          "kind": "dependencies",
-          "optional": true,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"rollup@npm:4.22.4\\\"\",\"dependencies\",\"fsevents\"]",
-            "name": "fsevents",
-            "specifier": "npm:~2.3.2"
-          },
-          "selection": "conditional",
-          "status": "resolved",
-          "to": "resolution:\"fsevents@npm:2.3.3\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "fsevents@npm:~2.3.3"
-          },
-          "condition": {
-            "expression": {
-              "conditions": "os=darwin"
-            },
-            "language": "yarn:applicability/v1"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"tsx@npm:4.20.3\"",
-          "kind": "dependencies",
-          "optional": true,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"tsx@npm:4.20.3\\\"\",\"dependencies\",\"fsevents\"]",
-            "name": "fsevents",
-            "specifier": "npm:~2.3.3"
-          },
-          "selection": "conditional",
-          "status": "resolved",
-          "to": "resolution:\"fsevents@npm:2.3.3\""
         },
         {
           "attributes": {
@@ -326939,288 +327888,6 @@
         },
         {
           "attributes": {
-            "yarn:descriptor": "resolve@2.0.0-next.5"
-          },
-          "evidence": [
-            "packages/babel-helper-transform-fixture-test-runner/package.json",
-            "yarn.lock"
-          ],
-          "from": "scope:[\"packages/babel-helper-transform-fixture-test-runner/package.json\",\"dependencies\"]",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"scope:[\\\"packages/babel-helper-transform-fixture-test-runner/package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"resolve\"]",
-            "name": "resolve",
-            "specifier": "2.0.0-next.5"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "resolution:\"resolve@npm:2.0.0-next.5\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "resolve@2.0.0-next.5"
-          },
-          "evidence": [
-            "packages/babel-helper-transform-fixture-test-runner/package.json",
-            "yarn.lock"
-          ],
-          "from": "workspace:\"packages/babel-helper-transform-fixture-test-runner\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"workspace:\\\"packages/babel-helper-transform-fixture-test-runner\\\"\",\"dependencies\",\"resolve\"]",
-            "name": "resolve",
-            "specifier": "2.0.0-next.5"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "resolution:\"resolve@npm:2.0.0-next.5\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "resolve@npm:^1.1.4"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"browserify@npm:16.5.2\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"browserify@npm:16.5.2\\\"\",\"dependencies\",\"resolve\"]",
-            "name": "resolve",
-            "specifier": "npm:^1.1.4"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "resolution:\"resolve@npm:1.22.10\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "resolve@npm:^1.1.6"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"rechoir@npm:0.6.2\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"rechoir@npm:0.6.2\\\"\",\"dependencies\",\"resolve\"]",
-            "name": "resolve",
-            "specifier": "npm:^1.1.6"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "resolution:\"resolve@npm:1.22.10\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "resolve@npm:^1.10.0"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"normalize-package-data@npm:2.5.0\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"normalize-package-data@npm:2.5.0\\\"\",\"dependencies\",\"resolve\"]",
-            "name": "resolve",
-            "specifier": "npm:^1.10.0"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "resolution:\"resolve@npm:1.22.10\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "resolve@npm:^1.17.0"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"browser-resolve@npm:2.0.0\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"browser-resolve@npm:2.0.0\\\"\",\"dependencies\",\"resolve\"]",
-            "name": "resolve",
-            "specifier": "npm:^1.17.0"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "resolution:\"resolve@npm:1.22.10\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "resolve@npm:^1.20.0"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"liftoff@npm:5.0.0\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"liftoff@npm:5.0.0\\\"\",\"dependencies\",\"resolve\"]",
-            "name": "resolve",
-            "specifier": "npm:^1.20.0"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "resolution:\"resolve@npm:1.22.10\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "resolve@npm:^1.20.0"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"rechoir@npm:0.8.0\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"rechoir@npm:0.8.0\\\"\",\"dependencies\",\"resolve\"]",
-            "name": "resolve",
-            "specifier": "npm:^1.20.0"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "resolution:\"resolve@npm:1.22.10\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "resolve@npm:^1.22.1"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"@rollup/plugin-node-resolve@npm:15.2.3\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"@rollup/plugin-node-resolve@npm:15.2.3\\\"\",\"dependencies\",\"resolve\"]",
-            "name": "resolve",
-            "specifier": "npm:^1.22.1"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "resolution:\"resolve@npm:1.22.10\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "resolve@npm:^1.22.10"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"@babel/helper-define-polyfill-provider@npm:0.6.5\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"@babel/helper-define-polyfill-provider@npm:0.6.5\\\"\",\"dependencies\",\"resolve\"]",
-            "name": "resolve",
-            "specifier": "npm:^1.22.10"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "resolution:\"resolve@npm:1.22.10\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "resolve@npm:^1.22.4"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"eslint-import-resolver-node@npm:0.3.9\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"eslint-import-resolver-node@npm:0.3.9\\\"\",\"dependencies\",\"resolve\"]",
-            "name": "resolve",
-            "specifier": "npm:^1.22.4"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "resolution:\"resolve@npm:1.22.10\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "resolve@npm:^1.3.2"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"@babel/core@npm:7.12.9\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"@babel/core@npm:7.12.9\\\"\",\"dependencies\",\"resolve\"]",
-            "name": "resolve",
-            "specifier": "npm:^1.3.2"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "resolution:\"resolve@npm:1.22.10\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "resolve@npm:^1.4.0"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"module-deps@npm:6.2.3\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"module-deps@npm:6.2.3\\\"\",\"dependencies\",\"resolve\"]",
-            "name": "resolve",
-            "specifier": "npm:^1.4.0"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "resolution:\"resolve@npm:1.22.10\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "resolve@npm:^1.9.0"
-          },
-          "evidence": [
-            "yarn.lock"
-          ],
-          "from": "resolution:\"rechoir@npm:0.7.0\"",
-          "kind": "dependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"resolution:\\\"rechoir@npm:0.7.0\\\"\",\"dependencies\",\"resolve\"]",
-            "name": "resolve",
-            "specifier": "npm:^1.9.0"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "resolution:\"resolve@npm:1.22.10\""
-        },
-        {
-          "attributes": {
             "yarn:descriptor": "restore-cursor@npm:^4.0.0"
           },
           "evidence": [
@@ -335685,27 +336352,6 @@
             "package.json",
             "yarn.lock"
           ],
-          "from": "scope:[\"package.json\",\"devDependencies\"]",
-          "kind": "devDependencies",
-          "optional": false,
-          "relation": "depends-on",
-          "requested": {
-            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"typescript\"]",
-            "name": "typescript",
-            "specifier": "5.9.2"
-          },
-          "selection": "selected",
-          "status": "resolved",
-          "to": "resolution:\"typescript@npm:5.9.2\""
-        },
-        {
-          "attributes": {
-            "yarn:descriptor": "typescript@5.9.2"
-          },
-          "evidence": [
-            "package.json",
-            "yarn.lock"
-          ],
           "from": "workspace:\".\"",
           "kind": "devDependencies",
           "optional": false,
@@ -339411,7 +340057,7 @@
           "to": "resolution:\"zod@npm:3.25.67\""
         }
       ],
-      "id": "[\"yarnberry\",\"yarn.lock\",\"yarnberry:6f472824476995d7665c30763097b258130f13ac424fdd12fa3a5b6bcc808524\"]",
+      "id": "[\"yarnberry\",\"yarn.lock\",\"yarnberry:65cabe8795c4d324eaeee9744659393a5942156d5c4e3ced4307201f6773c1e8\"]",
       "interpretation": "locked",
       "nodes": [
         {
@@ -340007,7 +340653,7 @@
               "version": "7.12.9"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "yarn.lock"
           ],
@@ -340423,8 +341069,9 @@
               "version": "7.23.6"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "yarn.lock"
           ],
           "id": "resolution:\"@babel/helper-compilation-targets@npm:7.23.6\"",
@@ -340467,8 +341114,9 @@
               "version": "7.27.2"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "yarn.lock"
           ],
           "id": "resolution:\"@babel/helper-compilation-targets@npm:7.27.2\"",
@@ -340510,8 +341158,9 @@
               "version": "8.0.0-beta.0"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "yarn.lock"
           ],
           "id": "resolution:\"@babel/helper-compilation-targets@npm:8.0.0-beta.0\"",
@@ -340658,7 +341307,7 @@
               "version": "0.6.5"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "yarn.lock"
           ],
@@ -341796,8 +342445,9 @@
               "version": "7.27.5"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "yarn.lock"
           ],
           "id": "resolution:\"@babel/parser@npm:7.27.5\"",
@@ -341837,8 +342487,9 @@
               "version": "8.0.0-beta.0"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "yarn.lock"
           ],
           "id": "resolution:\"@babel/parser@npm:8.0.0-beta.0\"",
@@ -343304,8 +343955,9 @@
               "version": "7.18.6"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "yarn.lock"
           ],
           "id": "resolution:\"@babel/plugin-syntax-unicode-sets-regex@npm:7.18.6\"",
@@ -345732,8 +346384,9 @@
               "version": "8.0.0-beta.0"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "yarn.lock"
           ],
           "id": "resolution:\"@babel/preset-env@npm:8.0.0-beta.0\"",
@@ -350530,7 +351183,7 @@
               "version": "15.2.3"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "yarn.lock"
           ],
@@ -357741,8 +358394,9 @@
               "version": "30.1.1"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "yarn.lock"
           ],
           "id": "resolution:\"babel-jest@npm:30.1.1\"",
@@ -357823,8 +358477,9 @@
               "version": "30.0.1"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "yarn.lock"
           ],
           "id": "resolution:\"babel-plugin-jest-hoist@npm:30.0.1\"",
@@ -357950,8 +358605,9 @@
               "version": "0.4.14"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "yarn.lock"
           ],
           "id": "resolution:\"babel-plugin-polyfill-corejs2@npm:0.4.14\"",
@@ -357993,8 +358649,9 @@
               "version": "0.11.1"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "yarn.lock"
           ],
           "id": "resolution:\"babel-plugin-polyfill-corejs3@npm:0.11.1\"",
@@ -358036,8 +358693,9 @@
               "version": "0.13.0"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "yarn.lock"
           ],
           "id": "resolution:\"babel-plugin-polyfill-corejs3@npm:0.13.0\"",
@@ -359195,7 +359853,7 @@
               "version": "2.0.0"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "yarn.lock"
           ],
@@ -359612,7 +360270,7 @@
               "version": "16.5.2"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "yarn.lock"
           ],
@@ -359659,8 +360317,9 @@
               "version": "4.25.1"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "yarn.lock"
           ],
           "id": "resolution:\"browserslist@npm:4.25.1\"",
@@ -360694,7 +361353,7 @@
               "version": "2.1.8"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "yarn.lock"
           ],
@@ -360755,7 +361414,7 @@
               "version": "3.6.0"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "yarn.lock"
           ],
@@ -362405,8 +363064,9 @@
               "version": "3.45.0"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "yarn.lock"
           ],
           "id": "resolution:\"core-js-compat@npm:3.45.0\"",
@@ -366223,7 +366883,7 @@
               "version": "0.3.9"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "yarn.lock"
           ],
@@ -366630,8 +367290,9 @@
               "version": "56.0.0"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "yarn.lock"
           ],
           "id": "resolution:\"eslint-plugin-unicorn@npm:56.0.0\"",
@@ -376634,7 +377295,7 @@
               "version": "30.1.0"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "yarn.lock"
           ],
@@ -379094,7 +379755,7 @@
               "version": "5.0.0"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "yarn.lock"
           ],
@@ -381603,7 +382264,7 @@
               "version": "6.2.3"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "yarn.lock"
           ],
@@ -382304,7 +382965,7 @@
               "version": "2.5.0"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "yarn.lock"
           ],
@@ -386696,7 +387357,7 @@
               "version": "0.6.2"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "yarn.lock"
           ],
@@ -386731,7 +387392,7 @@
               "version": "0.7.0"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "yarn.lock"
           ],
@@ -386766,7 +387427,7 @@
               "version": "0.8.0"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "yarn.lock"
           ],
@@ -388472,7 +389133,7 @@
               "version": "2.79.1"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "yarn.lock"
           ],
@@ -388653,7 +389314,7 @@
               "version": "4.22.4"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "yarn.lock"
           ],
@@ -394222,7 +394883,7 @@
               "version": "4.20.3"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "yarn.lock"
           ],
@@ -397692,8 +398353,9 @@
               "version": "5.88.2"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "yarn.lock"
           ],
           "id": "resolution:\"webpack@npm:5.88.2\"",
@@ -399687,7 +400349,7 @@
           "purl": "pkg:npm/babel@7.28.5"
         },
         {
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "package.json"
           ],
@@ -399831,8 +400493,9 @@
           "purl": "pkg:npm/%40babel/compat-data@7.28.5"
         },
         {
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "packages/babel-compat-data/package.json"
           ],
           "id": "scope:[\"packages/babel-compat-data/package.json\",\"devDependencies\"]",
@@ -400107,8 +400770,9 @@
           "purl": "pkg:npm/%40babel/helper-check-duplicate-nodes@7.27.1"
         },
         {
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "packages/babel-helper-compilation-targets/package.json"
           ],
           "id": "scope:[\"packages/babel-helper-compilation-targets/package.json\",\"dependencies\"]",
@@ -400923,7 +401587,7 @@
           "purl": "pkg:npm/%40babel/helper-string-parser@7.27.1"
         },
         {
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "packages/babel-helper-transform-fixture-test-runner/package.json"
           ],
@@ -401211,8 +401875,9 @@
           "purl": "pkg:npm/%40babel/node@7.28.0"
         },
         {
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "packages/babel-parser/package.json"
           ],
           "id": "scope:[\"packages/babel-parser/package.json\",\"dependencies\"]",
@@ -406683,8 +407348,9 @@
           "purl": "pkg:npm/%40babel/plugin-transform-unicode-sets-regex@7.27.1"
         },
         {
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "packages/babel-preset-env/package.json"
           ],
           "id": "scope:[\"packages/babel-preset-env/package.json\",\"dependencies\"]",
@@ -408463,8 +409129,9 @@
               "version": "0.0.0-use.local"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "packages/babel-helper-compilation-targets/package.json"
           ],
           "id": "workspace:\"packages/babel-helper-compilation-targets\"",
@@ -409165,7 +409832,7 @@
               "version": "0.0.0-use.local"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
             "packages/babel-helper-transform-fixture-test-runner/package.json"
           ],
@@ -409417,8 +410084,9 @@
               "version": "0.0.0-use.local"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "packages/babel-parser/package.json"
           ],
           "id": "workspace:\"packages/babel-parser\"",
@@ -414394,8 +415062,9 @@
               "version": "0.0.0-use.local"
             }
           },
-          "dependencyCompleteness": "complete",
+          "dependencyCompleteness": "unknown",
           "evidence": [
+            "package.json",
             "packages/babel-preset-env/package.json"
           ],
           "id": "workspace:\"packages/babel-preset-env\"",

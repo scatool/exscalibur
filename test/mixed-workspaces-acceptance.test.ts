@@ -326,8 +326,6 @@ for (const [id, entry] of Object.entries(evidence))
       }
     }
     for (const graph of result.graphs) {
-      if (["packagelockjson", "pnpmlock", "yarnberry", "yarnlock"].includes(graph.source.extractor))
-        checkNativeFacts(graph, source);
       if (graph.interpretation === "declared") checkDeclarations(graph, source);
       else if (graph.source.extractor === "packagelockjson") checkNpm(graph, source);
       else if (graph.source.extractor === "pnpmlock") checkPnpm(graph, source);
@@ -335,5 +333,7 @@ for (const [id, entry] of Object.entries(evidence))
       else if (graph.source.extractor === "cargolock") cargo(graph, source);
       else if (graph.source.extractor === "bunlock") bun(graph, source);
       else throw new Error("Unreviewed graph");
+      if (["packagelockjson", "pnpmlock", "yarnberry", "yarnlock"].includes(graph.source.extractor))
+        checkNativeFacts(graph, source);
     }
   }, 30_000);

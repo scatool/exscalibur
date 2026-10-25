@@ -4,6 +4,11 @@ import { NPM_DEPENDENCY_SCOPES } from "./npm-utils.ts";
 import { NpmGraph, json, type NpmProject, type NpmRecord } from "./npm-graph.ts";
 import { dependencyScopes, table, type NpmDeclaration } from "./npm-manifest.ts";
 import { parseYarnDescriptor, yarnRecord, type YarnLockEntry } from "./yarn-lock.ts";
+import {
+  YarnBindingCertainty,
+  type YarnIssuer,
+  type YarnRootPolicy,
+} from "./yarn-binding-certainty.ts";
 
 export type WorkspaceManifest = {
   location: string;
@@ -20,6 +25,7 @@ type ProjectionInput = {
   manifests: Map<string, WorkspaceManifest>;
   modern: boolean;
   correlateCurrentManifests: boolean;
+  rootPolicy: YarnRootPolicy | undefined;
 };
 
 /** Each projection owns its indexes: equal packages never pool adjacency across observations. */
@@ -29,11 +35,14 @@ export class YarnObservationProjection {
   private readonly projectByLocation = new Map<string, NpmProject>();
   private readonly workspacesByName = new Map<string, WorkspaceManifest[]>();
   private readonly versionByTarget = new Map<string, string>();
+  private readonly bindingCertainty: YarnBindingCertainty;
 
   constructor(
     private readonly builder: NpmGraph,
     private readonly input: ProjectionInput,
-  ) {}
+  ) {
+    this.bindingCertainty = new YarnBindingCertainty(input.rootPolicy, input.modern, input.entries);
+  }
 
   populate(): void {
     // Resolve references only after every native view and descriptor has been registered.
@@ -205,18 +214,48 @@ export class YarnObservationProjection {
       selection: "selected" | "unknown" | "excluded";
       optional: boolean | undefined;
       status?: "declared";
+      issuer: YarnIssuer;
     },
   ) {
     const { builder } = this;
-    const { target, selection, optional, status } = binding;
+    const { target, selection, optional, status, issuer } = binding;
+    const uncertainty =
+      kind !== "peerDependencies" && selection !== "excluded"
+        ? this.bindingCertainty.uncertainty(issuer, dependencyName, reference)
+        : undefined;
 
-    return builder.dependency(from, dependencyName, reference, kind, target, {
-      selection,
+    if (uncertainty) {
+      // Another definite path may reach the raw candidate. That must not erase
+      // uncertainty about the effective target and its unobserved dependencies.
+      builder.nodes.get(from)!.dependencyCompleteness = "unknown";
+    }
+
+    builder.dependency(from, dependencyName, reference, kind, target, {
+      selection: uncertainty ? "unknown" : selection,
       optional,
       ...(status && { status }),
       ...(this.targetCondition(target) && { condition: this.targetCondition(target) }),
-      attributes: { "yarn:descriptor": `${dependencyName}@${reference}` },
+      attributes: {
+        "yarn:descriptor": `${dependencyName}@${reference}`,
+        ...(uncertainty && { "yarn:bindingUncertainty": uncertainty }),
+      },
     });
+
+    const policyFile = this.input.rootPolicy?.file;
+    if (uncertainty && uncertainty.reason !== "patch-alternative" && policyFile !== undefined) {
+      const edge = builder.edges.at(-1)!;
+      edge.evidence = [...new Set([...(edge.evidence ?? []), policyFile])];
+      const node = builder.nodes.get(from)!;
+      node.evidence = [...new Set([...(node.evidence ?? []), policyFile])];
+    }
+  }
+
+  private issuer(entry?: YarnLockEntry, manifest?: WorkspaceManifest): YarnIssuer {
+    if (this.input.modern && entry) return parseYarnDescriptor(entry.locator);
+    if (entry) return { name: entry.name };
+    if (typeof manifest?.manifest.name === "string")
+      return { name: manifest.manifest.name, reference: `workspace:${manifest.location}` };
+    return {};
   }
 
   private addNativeDependencies(entry: YarnLockEntry, from: string) {
@@ -253,6 +292,7 @@ export class YarnObservationProjection {
           peer ? scope : entry.workspace !== undefined ? "yarn:dependencies" : scope,
           {
             target,
+            issuer: this.issuer(entry),
             selection: peer || (optional && target === undefined) ? "unknown" : "selected",
             optional,
             status: peer || (optional && target === undefined) ? "declared" : undefined,
@@ -331,12 +371,14 @@ export class YarnObservationProjection {
           const status = target === undefined || peer ? "declared" : undefined;
           this.addDependency(root, declaration.name, declaration.specifier, scope, {
             target,
+            issuer: this.issuer(manifest.entry, manifest),
             selection,
             optional: declaration.optional,
             status,
           });
           this.addDependency(project.consumer, declaration.name, declaration.specifier, scope, {
             target,
+            issuer: this.issuer(manifest.entry, manifest),
             selection: declaration.excluded || scope === "devDependencies" ? "excluded" : selection,
             optional: declaration.optional,
             status,
@@ -356,11 +398,13 @@ export class YarnObservationProjection {
       if (modern && drift && manifest.available) {
         // This observation projects only current declarations. Original lock-only bindings live
         // in the native graph; their disagreement prevents a complete correlated closure claim.
-        builder.nodes.get(project.consumer)!.dependencyCompleteness = "partial";
+        if (builder.nodes.get(project.consumer)!.dependencyCompleteness !== "unknown")
+          builder.nodes.get(project.consumer)!.dependencyCompleteness = "partial";
         for (const root of builder.roots.filter(
           (root) => root.project.definitionFile === project.reference.definitionFile,
         ))
-          builder.nodes.get(root.node)!.dependencyCompleteness = "partial";
+          if (builder.nodes.get(root.node)!.dependencyCompleteness !== "unknown")
+            builder.nodes.get(root.node)!.dependencyCompleteness = "partial";
       }
 
       if (!manifest.available)

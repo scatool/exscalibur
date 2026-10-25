@@ -180,7 +180,12 @@ test("raw lock descriptors do not claim Yarn's effective compatibility patch sel
         )!;
         expect(graph.edges.find((edge) => edge.from === root.node)).toMatchObject({
           to: views.find((node) => node.locator === "typescript@npm:5.9.3")!.id,
+          selection: "unknown",
         });
+        const dependencies = queryDependencies(result, { graph: graph.id, root: root.id });
+        expect(dependencies.definite).toEqual([]);
+        expect(dependencies.conditional).toHaveLength(1);
+        expect(dependencies.completeness).toBe("unknown");
       }
     },
   );
@@ -297,9 +302,10 @@ test("missing manifests retain native workspace identity without turning local v
       const graph = result.graphs.find(
         (graph) => graph.attributes?.["yarn:observation"] === "native-lock",
       )!;
-      expect(
-        queryDependencies(result, { graph: graph.id, root: graph.roots[0]!.id }).definite,
-      ).toHaveLength(1);
+      const dependencies = queryDependencies(result, { graph: graph.id, root: graph.roots[0]!.id });
+      expect(dependencies.definite).toEqual([]);
+      expect(dependencies.conditional).toHaveLength(1);
+      expect(dependencies.completeness).toBe("unknown");
     },
   );
 });

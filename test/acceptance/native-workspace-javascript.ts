@@ -2,6 +2,7 @@ import { createRequire } from "node:module";
 import { dirname, join, normalize, relative } from "node:path/posix";
 import { expect } from "vite-plus/test";
 import { type DependencyEdge, type DependencyGraph } from "@scatool/analyzer-core";
+import { checkYarnBindingUncertainty } from "../yarn-binding-acceptance.ts";
 
 // Preserve default JavaScript lexicographic ordering for native scalar tuples.
 function sortText(value: unknown): string {
@@ -105,6 +106,8 @@ export function checkYarn(graph: DependencyGraph, source: (path: string) => stri
           byDescriptor.set(`${descriptor.slice(0, index)}@npm:${reference}`, locator);
       }
     }
+  const uncertainNodes = checkYarnBindingUncertainty(graph, source, byDescriptor.keys());
+
   const scoped = graph.attributes?.["yarn:observation"] === "current-manifest-scopes";
   if (!scoped)
     expect(graph.roots).toHaveLength(
@@ -119,7 +122,9 @@ export function checkYarn(graph: DependencyGraph, source: (path: string) => stri
     expect(entry).toBeDefined();
     expect(node.attributes?.["yarn:record"]).toEqual(entry.metadata);
     if (!node.project || !scoped)
-      expect(node.dependencyCompleteness).toBe(modern ? "complete" : "unknown");
+      expect(node.dependencyCompleteness).toBe(
+        uncertainNodes.has(node.id) ? "unknown" : modern ? "complete" : "unknown",
+      );
     if (!node.project) {
       const descriptor = entry.descriptors[0]!;
       const name = modern
@@ -171,7 +176,8 @@ export function checkYarn(graph: DependencyGraph, source: (path: string) => stri
       if (locator) {
         expect(edge.status).toBe("resolved");
         expect(graph.nodes.find((target) => target.id === edge.to)?.locator).toBe(locator);
-        expect(["selected", "conditional"]).toContain(edge.selection);
+        if (edge.attributes?.["yarn:bindingUncertainty"] === undefined)
+          expect(["selected", "conditional"]).toContain(edge.selection);
       } else if (!modern && edge.status === "resolved") {
         const target = graph.nodes.find((target) => target.id === edge.to)!;
         expect(target.project).toBeDefined();
@@ -215,7 +221,9 @@ export function checkYarn(graph: DependencyGraph, source: (path: string) => stri
       }
       if (drift)
         for (const node of graph.nodes.filter((node) => node.project?.definitionFile === file))
-          expect(node.dependencyCompleteness).toBe("partial");
+          expect(node.dependencyCompleteness).toBe(
+            uncertainNodes.has(node.id) ? "unknown" : "partial",
+          );
     }
   }
   for (const edge of graph.edges.filter((edge) => edge.status === "resolved")) {
@@ -555,7 +563,13 @@ export function checkNativeFacts(graph: DependencyGraph, source: (path: string) 
         nativeReference !== undefined &&
         nativeReference.replace(/^npm:/, "") === edge.requested!.specifier!.replace(/^npm:/, "");
       expect(edge.selection).toBe(
-        excluded ? "excluded" : !correlated ? "unknown" : condition ? "conditional" : "selected",
+        excluded
+          ? "excluded"
+          : edge.attributes?.["yarn:bindingUncertainty"] !== undefined || !correlated
+            ? "unknown"
+            : condition
+              ? "conditional"
+              : "selected",
       );
     } else if (graph.attributes?.["yarn:observation"] === "native-lock") {
       const optional =
@@ -567,7 +581,11 @@ export function checkNativeFacts(graph: DependencyGraph, source: (path: string) 
         );
       expect(edge.optional).toBe(optional);
       expect(edge.selection).toBe(
-        peer || (optional && !edge.to) ? "unknown" : condition ? "conditional" : "selected",
+        peer || (optional && !edge.to) || edge.attributes?.["yarn:bindingUncertainty"] !== undefined
+          ? "unknown"
+          : condition
+            ? "conditional"
+            : "selected",
       );
     }
   }

@@ -9,6 +9,7 @@ import {
 import { NpmGraph, json } from "./npm-graph.ts";
 import { addCurrentManifestObservation, loadNpmManifest, table } from "./npm-manifest.ts";
 import type { JavaScriptOptions } from "./options.ts";
+import type { YarnRootPolicy } from "./yarn-binding-certainty.ts";
 import { parseYarnLock, type YarnLockEntry } from "./yarn-lock.ts";
 import {
   YarnObservationProjection,
@@ -137,7 +138,13 @@ export async function extractYarn(
   )
     currentManifestScopes.rootCompleteness = "partial";
 
-  const projectionInput = { entries, metadata, manifests, modern };
+  const rootPolicy = await readRootPolicy(file, context.relativeFile, manifests.get(".")!);
+  if (rootPolicy) {
+    nativeLock.sourceFiles.add(rootPolicy.file);
+    currentManifestScopes.sourceFiles.add(rootPolicy.file);
+  }
+
+  const projectionInput = { entries, metadata, manifests, modern, rootPolicy };
   new YarnObservationProjection(nativeLock, {
     ...projectionInput,
     correlateCurrentManifests: false,
@@ -152,4 +159,29 @@ export async function extractYarn(
     currentManifestScopes.finish(),
     ...(currentDeclarations.result.subprojects.length > 0 ? [currentDeclarations.finish()] : []),
   ]);
+}
+
+async function readRootPolicy(
+  lockFile: string,
+  relativeLockFile: string,
+  root: WorkspaceManifest,
+): Promise<YarnRootPolicy | undefined> {
+  if (root.available) return { resolutions: root.manifest.resolutions, file: root.definition };
+
+  // Invalid unrelated declarations must not erase an independently readable
+  // resolution policy. Recover only this field; unsafe native metadata is never
+  // admitted to the result. Missing or malformed root JSON stays unknown.
+  try {
+    const native: unknown = JSON.parse(
+      await readNormalizedTextFile(join(dirname(lockFile), "package.json")),
+    );
+    if (native !== null && typeof native === "object" && !Array.isArray(native))
+      return {
+        resolutions: (native as Record<string, unknown>).resolutions,
+        file: join(dirname(relativeLockFile), "package.json"),
+      };
+  } catch {
+    // Manifest loading owns read/parse diagnostics; this observation only limits certainty.
+  }
+  return undefined;
 }

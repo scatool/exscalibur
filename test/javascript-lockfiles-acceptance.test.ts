@@ -10,6 +10,7 @@ import {
   type DependencyGraph,
   type DependencyView,
 } from "@scatool/analyzer-core";
+import { checkYarnBindingUncertainty } from "./yarn-binding-acceptance.ts";
 
 const cases = [
   {
@@ -448,6 +449,11 @@ function assertYarn(graph: DependencyGraph, root: string) {
   const byDescriptor = new Map<string, YarnRecord>();
   for (const entry of records)
     for (const descriptor of entry.descriptors) byDescriptor.set(descriptor, entry);
+  const uncertainNodes = checkYarnBindingUncertainty(
+    graph,
+    (path) => readFileSync(join(root, path), "utf8"),
+    byDescriptor.keys(),
+  );
   const byLocator = new Map(
     graph.nodes.filter((node) => node.locator !== undefined).map((node) => [node.locator!, node]),
   );
@@ -496,7 +502,10 @@ function assertYarn(graph: DependencyGraph, root: string) {
         sort([...entry.descriptors]),
       );
       if (!node.project) {
-        assert.equal(node.dependencyCompleteness, modern ? "complete" : "unknown");
+        assert.equal(
+          node.dependencyCompleteness,
+          uncertainNodes.has(node.id) ? "unknown" : modern ? "complete" : "unknown",
+        );
         const splitDescriptor = (value: string) => {
           const separator = value.indexOf("@", value.startsWith("@") ? value.indexOf("/") + 1 : 0);
           assert.ok(separator > 0);
@@ -508,7 +517,17 @@ function assertYarn(graph: DependencyGraph, root: string) {
           node.purl,
           npmPurl(name!, metadata.version === "0.0.0-use.local" ? undefined : metadata.version),
         );
-        assert.deepEqual(node.evidence, [file]);
+        const expectedEvidence = [file];
+        if (
+          graph.edges.some(
+            (edge) =>
+              edge.from === node.id &&
+              (edge.attributes?.["yarn:bindingUncertainty"] as Native | undefined)?.reason ===
+                "unapplied-resolution",
+          )
+        )
+          expectedEvidence.push(join(dirname(file), "package.json"));
+        assert.deepEqual(sort(node.evidence ?? []), sort(expectedEvidence));
         if (metadata.resolved || metadata.integrity)
           assert.deepEqual(node.artifacts, [
             {
@@ -562,6 +581,7 @@ function assertYarn(graph: DependencyGraph, root: string) {
           ? "unknown"
           : "selected";
       if (excluded) selection = "excluded";
+      if (edge.attributes?.["yarn:bindingUncertainty"] !== undefined) selection = "unknown";
       const nativeTarget = target?.attributes?.["yarn:record"] as Native | undefined;
       const targetPlatform = nativeTarget ? platform(nativeTarget) : {};
       const expectedCondition =

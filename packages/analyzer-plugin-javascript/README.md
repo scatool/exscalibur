@@ -123,6 +123,18 @@ current manifest scopes with locked requests. Both expose a `raw-descriptor-map`
 projection; they do not run Yarn's compatibility patches, overrides or plugin transforms
 and do not claim effective resolver output. Unmatched requests remain uncertain,
 and omitted virtual peer bindings are not reconstructed from same-name inventory.
+
+A root resolution that may match an issuer/request, an unavailable root policy, or
+a matching built-in compatibility patch prevents a raw lookup candidate from being
+reported as definitely selected. The candidate and native records remain available,
+with unknown selection and unknown effective adjacency on the requesting node.
+This also keeps closure coverage unknown when a separate legitimate path reaches
+the same candidate. Unaffected requests retain their certainty. Berry issuer and
+request selectors use normalized identity/reference comparisons; Classic ancestor
+selectors remain conservative because raw lock records do not retain ancestor paths.
+Manual patches of an unrelated request do not downgrade ordinary bindings. These
+guards do not execute Yarn hooks or infer a historical override from current policy.
+
 Bun peers identified only by placement also remain uncertain. Missing or malformed
 native package INFO has unknown adjacency; binary `.lockb` files produce an explicit
 unsupported-input issue and unknown coverage.

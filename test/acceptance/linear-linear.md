@@ -44,3 +44,45 @@ Locked npm placements describe the recorded lock graph, not an installed tree. P
 | `yarn.lock`                                | `dca1a3c296320ff82561facba51b368ecffec77749f1298afa1dc61db93bc007` |
 
 Reviewed baseline `test/__snapshots__/linear+linear.json` has SHA-256 `82112e4ae41338f8ce12055c02ff98b35f0318fe0f1c0bf3a4591b6b518f6591`: 1772 catalog packages, 7 projects and 6 graphs. Acceptance requires the persisted semantic test and independent review in the migration ledger; this document alone does not mark a case accepted.
+
+## Yarn binding certainty correction
+
+The previous raw descriptor projection could label an unproven effective binding
+as selected. Current root resolution policies and known built-in compatibility
+patch descriptors now constrain that certainty. This correction preserves the raw
+targets and requests instead of claiming to execute Yarn's resolver.
+
+Across the two affected observations, 9 edge records gain explicit
+uncertainty evidence (9 root-policy and
+0 compatibility-patch records); 2 selections change to unknown.
+9 source-node coverage/evidence records change. Source-node coverage remains
+unknown even if another selected path reaches the same raw target, because its
+effective outgoing dependency closure has not been established.
+
+The inspected root selectors are:
+
+- `graphql`
+
+Compatibility evidence is limited to same-identity wrapped descriptors with the
+known `optional!builtin<compat/name>` or older `~builtin<compat/name>` forms.
+Unrelated manual patches and alias wrappers do not taint ordinary bindings.
+Native Yarn 4.10.3 preparation independently verifies representative overrides
+and compatibility rewrites; the older Berry hooks were inspected for their
+legacy marker and literal-comparison behavior. Normalized policy matching is
+conservative for older Berry, not proof every policy was applied. Classic Yarn
+ancestor paths are absent from lock records, so target-name policy matches remain
+uncertain rather than inventing an issuer path. No installation or full effective
+resolution is asserted.
+
+The full sixteen-extractor capture preserves catalog, projects, roots, raw
+bindings/requests/native records, optional/platform conditions, issues and source
+hashes. Only targeted uncertainty, supporting evidence, source-node coverage and
+content-derived graph IDs change. Permanent acceptance assertions check each
+reported uncertainty against its native selector or compatibility descriptor,
+alongside the existing raw-fact comparisons and unaffected-selection assertions.
+
+Previous accepted format 2 SHA-256:
+`82112e4ae41338f8ce12055c02ff98b35f0318fe0f1c0bf3a4591b6b518f6591`.
+Corrected baseline SHA-256:
+`15d0ad7211f2b5c5e0782b0bd46d13ccc6acb370ec3adab6a8d40128fb76b74c`.
+The historical format 1 hash and input pins in the acceptance ledger are unchanged.

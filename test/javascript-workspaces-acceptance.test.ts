@@ -3,7 +3,13 @@ import { readFileSync, readdirSync } from "node:fs";
 import { createRequire } from "node:module";
 import { dirname, join, normalize } from "node:path/posix";
 import { expect, test } from "vite-plus/test";
-import { parseResult, type DependencyEdge, type DependencyGraph } from "@scatool/analyzer-core";
+import {
+  parseResult,
+  queryDependencies,
+  type DependencyEdge,
+  type DependencyGraph,
+} from "@scatool/analyzer-core";
+import { checkYarnBindingUncertainty } from "./yarn-binding-acceptance.ts";
 
 const require = createRequire(
   new URL("../packages/analyzer-plugin-javascript/package.json", import.meta.url),
@@ -50,6 +56,112 @@ const edgeTuples = (edges: DependencyEdge[]) =>
     .map((edge) => [edge.kind, edge.requested?.name, edge.requested?.specifier ?? null])
     .sort(compare);
 
+test("Babel: issuer overrides remain uncertain without erasing an independent selected path", () => {
+  const id = "babel+babel";
+  const manifest = JSON.parse(read(`repositories/${id}/package.json`));
+  expect(manifest.resolutions["@babel/parser/@babel/types"]).toBe("workspace:*");
+  expect(manifest.devDependencies["@babel/preset-env"]).toBe("8.0.0-beta.0");
+  expect(manifest.dependencies).toBeUndefined();
+  const result = parseResult(JSON.parse(read(`__snapshots__/${id}.json`)));
+
+  for (const graph of result.graphs.filter(
+    (candidate) => candidate.source.extractor === "yarnberry",
+  )) {
+    for (const locator of ["@babel/parser@npm:7.27.5", "@babel/parser@npm:8.0.0-beta.0"]) {
+      const parser = graph.nodes.find((node) => node.locator === locator)!;
+      const binding = graph.edges.find(
+        (edge) => edge.from === parser.id && edge.requested?.name === "@babel/types",
+      )!;
+      // Native Yarn's issuer-specific rule rewrites both requests to workspace:*.
+      // The retained raw descriptor target is evidence, not a selected effective binding.
+      expect(binding.selection).toBe("unknown");
+      expect(parser.dependencyCompleteness).toBe("unknown");
+    }
+
+    const modules = graph.nodes.find(
+      (node) => node.locator === "@babel/preset-modules@npm:0.1.6-no-external-plugins",
+    )!;
+    const types = graph.nodes.find((node) => node.locator === "@babel/types@npm:7.27.6")!;
+    const independentBinding = graph.edges.find(
+      (edge) => edge.from === modules.id && edge.status === "resolved" && edge.to === types.id,
+    )!;
+    expect(independentBinding.selection).toBe("selected");
+
+    const root = graph.roots.find(
+      (candidate) =>
+        candidate.project.definitionFile === "package.json" &&
+        candidate.scope ===
+          (graph.attributes?.["yarn:observation"] === "native-lock"
+            ? "yarn:dependencies"
+            : "devDependencies"),
+    )!;
+    const closure = queryDependencies(result, { graph: graph.id, root: root.id });
+    expect(closure.definite).toContain(types.id);
+    expect(closure.completeness).toBe("unknown");
+
+    if (graph.attributes?.["yarn:observation"] === "current-manifest-scopes") {
+      const runtime = graph.roots.find(
+        (candidate) =>
+          candidate.project.definitionFile === "package.json" && candidate.scope === "dependencies",
+      )!;
+      expect(queryDependencies(result, { graph: graph.id, root: runtime.id })).toMatchObject({
+        definite: [],
+        conditional: [],
+        completeness: "complete",
+      });
+    }
+  }
+});
+
+test("Algolia: the retained TypeScript compatibility patch prevents false definite raw binding", () => {
+  const id = "algolia+algoliasearch-client-javascript";
+  const manifest = JSON.parse(read(`repositories/${id}/package.json`));
+  expect(manifest.devDependencies.typescript).toBe("5.9.3");
+  const lock = yaml.parse(read(`repositories/${id}/yarn.lock`), { schema: "failsafe" });
+  const patch = "typescript@patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>";
+  const patchedLocator = `${patch}::version=5.9.3&hash=5786d5`;
+  const nativePatch = Object.entries(lock).find(([descriptors]) =>
+    descriptors.split(/,\s*/).includes(patch),
+  )![1];
+  expect(nativePatch.resolution).toBe(patchedLocator);
+
+  // The pinned Yarn 4.10.3 preparePackage hook independently selected this
+  // compatibility descriptor. A raw lock lookup alone cannot select its unpatched twin.
+  const result = parseResult(JSON.parse(read(`__snapshots__/${id}.json`)));
+  const observations = result.graphs.filter((graph) => graph.source.extractor === "yarnberry");
+  expect(observations).toHaveLength(2);
+  for (const graph of observations) {
+    const raw = graph.nodes.find((node) => node.locator === "typescript@npm:5.9.3")!;
+    const patched = graph.nodes.find((node) => node.locator === patchedLocator)!;
+    expect(raw).toBeDefined();
+    expect(patched).toBeDefined();
+    const root = graph.roots.find(
+      (candidate) =>
+        candidate.project.definitionFile === "package.json" &&
+        candidate.scope ===
+          (graph.attributes?.["yarn:observation"] === "native-lock"
+            ? "yarn:dependencies"
+            : "devDependencies"),
+    )!;
+    const binding = graph.edges.find(
+      (edge) => edge.from === root.node && edge.requested?.name === "typescript",
+    )!;
+    expect(binding).toMatchObject({
+      status: "resolved",
+      to: raw.id,
+      selection: "unknown",
+      attributes: {
+        "yarn:bindingUncertainty": { reason: "patch-alternative", selectors: [patch] },
+      },
+    });
+    const closure = queryDependencies(result, { graph: graph.id, root: root.id });
+    expect(closure.definite).not.toContain(raw.id);
+    expect(closure.definite).not.toContain(patched.id);
+    expect(closure.conditional).toContain(raw.id);
+    expect(closure.completeness).toBe("unknown");
+  }
+});
+
 function checkDeclarations(graph: DependencyGraph, source: (path: string) => string) {
   const files = graph.source.files.filter((file) => file.endsWith("package.json"));
   expect(
@@ -76,7 +188,8 @@ const purlName = (value: string) => {
 const descriptorName = (value: string) =>
   value.slice(0, value.indexOf("@", value.startsWith("@") ? value.indexOf("/") + 1 : 0));
 function checkYarn(graph: DependencyGraph, source: (path: string) => string) {
-  const text = source(graph.source.files.find((file) => file.endsWith("yarn.lock"))!);
+  const lockfile = graph.source.files.find((file) => file.endsWith("yarn.lock"))!;
+  const text = source(lockfile);
   const modern = graph.source.extractor === "yarnberry";
   const raw = modern ? yaml.parse(text, { schema: "failsafe" }) : classic.parse(text).object;
   const records = new Map<string, { metadata: RecordValue; descriptors: string[] }>();
@@ -111,6 +224,9 @@ function checkYarn(graph: DependencyGraph, source: (path: string) => string) {
           byDescriptor.set(`${descriptor.slice(0, index)}@npm:${reference}`, locator);
       }
     }
+
+  const uncertainNodes = checkYarnBindingUncertainty(graph, source, byDescriptor.keys());
+
   const scoped = graph.attributes?.["yarn:observation"] === "current-manifest-scopes";
   if (!scoped)
     expect(graph.roots).toHaveLength(
@@ -125,7 +241,9 @@ function checkYarn(graph: DependencyGraph, source: (path: string) => string) {
     expect(entry).toBeDefined();
     expect(node.attributes?.["yarn:record"]).toEqual(entry.metadata);
     if (!node.project || !scoped)
-      expect(node.dependencyCompleteness).toBe(modern ? "complete" : "unknown");
+      expect(node.dependencyCompleteness).toBe(
+        uncertainNodes.has(node.id) ? "unknown" : modern ? "complete" : "unknown",
+      );
     if (!node.project) {
       const descriptor = entry.descriptors[0]!;
       const name = modern
@@ -175,7 +293,8 @@ function checkYarn(graph: DependencyGraph, source: (path: string) => string) {
       if (locator) {
         expect(edge.status).toBe("resolved");
         expect(graph.nodes.find((target) => target.id === edge.to)?.locator).toBe(locator);
-        expect(["selected", "conditional"]).toContain(edge.selection);
+        if (edge.attributes?.["yarn:bindingUncertainty"] === undefined)
+          expect(["selected", "conditional"]).toContain(edge.selection);
       } else if (!modern && edge.status === "resolved") {
         const target = graph.nodes.find((target) => target.id === edge.to)!;
         expect(target.project).toBeDefined();
@@ -219,7 +338,9 @@ function checkYarn(graph: DependencyGraph, source: (path: string) => string) {
       }
       if (drift)
         for (const node of graph.nodes.filter((node) => node.project?.definitionFile === file))
-          expect(node.dependencyCompleteness).toBe("partial");
+          expect(node.dependencyCompleteness).toBe(
+            uncertainNodes.has(node.id) ? "unknown" : "partial",
+          );
     }
   }
   for (const edge of graph.edges.filter((edge) => edge.status === "resolved")) {
@@ -557,7 +678,13 @@ function checkNativeFacts(graph: DependencyGraph, source: (path: string) => stri
         nativeReference !== undefined &&
         nativeReference.replace(/^npm:/, "") === edge.requested!.specifier!.replace(/^npm:/, "");
       expect(edge.selection).toBe(
-        excluded ? "excluded" : !correlated ? "unknown" : condition ? "conditional" : "selected",
+        excluded
+          ? "excluded"
+          : edge.attributes?.["yarn:bindingUncertainty"] !== undefined || !correlated
+            ? "unknown"
+            : condition
+              ? "conditional"
+              : "selected",
       );
     } else if (graph.attributes?.["yarn:observation"] === "native-lock") {
       const optional =
@@ -569,7 +696,11 @@ function checkNativeFacts(graph: DependencyGraph, source: (path: string) => stri
         );
       expect(edge.optional).toBe(optional);
       expect(edge.selection).toBe(
-        peer || (optional && !edge.to) ? "unknown" : condition ? "conditional" : "selected",
+        peer || (optional && !edge.to) || edge.attributes?.["yarn:bindingUncertainty"] !== undefined
+          ? "unknown"
+          : condition
+            ? "conditional"
+            : "selected",
       );
     }
   }
@@ -663,12 +794,12 @@ for (const id of ids) {
           );
       }
       for (const graph of result.graphs) {
-        if (graph.interpretation !== "declared") checkNativeFacts(graph, source);
         if (graph.interpretation === "declared") checkDeclarations(graph, source);
         if (graph.source.extractor === "yarnberry" || graph.source.extractor === "yarnlock")
           checkYarn(graph, source);
         if (graph.source.extractor === "packagelockjson") checkNpm(graph, source);
         if (graph.source.extractor === "pnpmlock") checkPnpm(graph, source);
+        if (graph.interpretation !== "declared") checkNativeFacts(graph, source);
       }
     },
     30_000,
