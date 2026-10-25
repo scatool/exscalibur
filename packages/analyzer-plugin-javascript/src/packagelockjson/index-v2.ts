@@ -34,28 +34,38 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
   },
   extractFile: async (file, _options, context) => {
     const lock: unknown = JSON.parse(await readNormalizedTextFile(file));
-    if (lock === null || typeof lock !== "object" || Array.isArray(lock))
+    if (lock === null || typeof lock !== "object" || Array.isArray(lock)) {
       throw new Error("Expected an npm lockfile object");
+    }
+
     const document = lock as NpmRecord;
     const version = document.lockfileVersion ?? 1;
-    if (version !== 1 && version !== 2 && version !== 3)
+    if (version !== 1 && version !== 2 && version !== 3) {
       throw new Error(`Unsupported npm lockfile version: ${JSON.stringify(version)}`);
-    const builder = new NpmGraphV2(context, "packagelockjson");
-    const liveManifests = new NpmGraphV2(context, "packagejson", "declared");
-    liveManifests.sourceFiles.clear();
-    builder.attributes["npm:lockfileVersion"] = version;
-    const records = version === 1 ? legacyRecords(document) : object(document.packages);
-    if (version !== 1 && document.packages === undefined)
-      throw new Error("npm lockfile is missing its packages table");
-    for (const [location, record] of Object.entries(records)) {
-      if (record.link !== undefined && typeof record.link !== "boolean")
-        throw new Error(`Invalid npm link flag at '${location}'`);
     }
+
+    const lockedObservation = new NpmGraphV2(context, "packagelockjson");
+    const currentManifestObservation = new NpmGraphV2(context, "packagejson", "declared");
+    currentManifestObservation.sourceFiles.clear();
+    lockedObservation.attributes["npm:lockfileVersion"] = version;
+
+    const packagesByLocation =
+      version === 1 ? flattenLegacyPlacements(document) : readPackageRecords(document.packages);
+    if (version !== 1 && document.packages === undefined) {
+      throw new Error("npm lockfile is missing its packages table");
+    }
+
+    for (const [location, record] of Object.entries(packagesByLocation)) {
+      if (record.link !== undefined && typeof record.link !== "boolean") {
+        throw new Error(`Invalid npm link flag at '${location}'`);
+      }
+    }
+
     // Legacy local entries without artifact metadata do not establish a source-local
     // project context. A placement lookup alone cannot establish a local source binding.
     const legacyLocalLocations = new Set(
       version === 1
-        ? Object.entries(records)
+        ? Object.entries(packagesByLocation)
             .filter(
               ([, record]) =>
                 typeof record.version === "string" &&
@@ -66,25 +76,21 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
             .map(([location]) => location)
         : [],
     );
-    const workspace = new Map<string, NpmProject>();
-    const invalidCurrentProjects = new Set<string>();
-    const targets = new Map<string, string>();
+    const projectsByLocation = new Map<string, NpmProject>();
+    const projectsWithInvalidDeclarations = new Set<string>();
+    const viewsByLocation = new Map<string, string>();
+
     const lockDirectory = dirname(file);
     const relativeDirectory = dirname(context.relativeFile);
     const codebaseDirectory = await realpath(context.codebasePath);
-    const contained = (root: string, path: string): boolean => {
-      const pathWithinRoot = filesystemRelative(root, path);
-      return (
-        !isAbsolute(pathWithinRoot) &&
-        pathWithinRoot !== ".." &&
-        !pathWithinRoot.startsWith(`..${sep}`)
-      );
-    };
-    const loadManifest = async (manifestFile: string, fallback: NpmRecord) => {
-      let safe = contained(resolve(context.codebasePath), resolve(manifestFile));
+
+    // A manifest must be contained both lexically and after resolving symlinks.
+    // When either check fails, retain the independent lock record without reading it.
+    const loadContainedManifest = async (manifestFile: string, fallback: NpmRecord) => {
+      let safe = isWithinDirectory(resolve(context.codebasePath), resolve(manifestFile));
       if (safe) {
         try {
-          safe = contained(codebaseDirectory, await realpath(manifestFile));
+          safe = isWithinDirectory(codebaseDirectory, await realpath(manifestFile));
         } catch (error) {
           if (
             !(
@@ -94,19 +100,21 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
               error.code === "ENOENT"
             )
           ) {
-            builder.result.issues.push({
+            lockedObservation.result.issues.push({
               code: "npm.manifest_unreadable",
               severity: "WARNING",
               file: context.relativeFile,
               message: "Could not resolve a local manifest path; using lockfile metadata",
             });
           }
+
           // Do not read content through a path whose containment could not be checked.
           return { manifest: fallback, available: false };
         }
       }
+
       if (!safe) {
-        builder.result.issues.push({
+        lockedObservation.result.issues.push({
           code: "npm.manifest_outside_codebase",
           severity: "WARNING",
           file: context.relativeFile,
@@ -115,19 +123,22 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
         });
         return { manifest: fallback, available: false };
       }
-      return loadNpmManifest(manifestFile, fallback, builder);
+
+      return loadNpmManifest(manifestFile, fallback, lockedObservation);
     };
 
     // Build every native location before resolving any declaration. Input ordering must not
     // determine whether a later package or workspace can be referenced.
-    for (const [location, metadata] of Object.entries(records)) {
+    for (const [location, metadata] of Object.entries(packagesByLocation)) {
       if (location !== "" && location.split("/").includes("node_modules")) continue;
+
       const manifestFile = join(lockDirectory, location, "package.json");
-      const loaded = await loadManifest(manifestFile, metadata);
+      const loaded = await loadContainedManifest(manifestFile, metadata);
       const definitionFile = loaded.available
         ? join(relativeDirectory, location, "package.json")
         : `${context.relativeFile}#packages/${encodeURIComponent(location)}`;
-      if (loaded.available) builder.sourceFiles.add(definitionFile);
+      if (loaded.available) lockedObservation.sourceFiles.add(definitionFile);
+
       const locked = {
         ...metadata,
         ...(location === "" &&
@@ -137,125 +148,167 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
           metadata.version === undefined &&
           typeof document.version === "string" && { version: document.version }),
       };
-      const drift = version !== 1 && loaded.available && manifestDrift(locked, loaded.manifest);
-      const project = builder.addProject(
+      const drift = version !== 1 && loaded.available && hasManifestDrift(locked, loaded.manifest);
+      const project = lockedObservation.addProject(
         location,
         definitionFile,
         drift || !loaded.available ? locked : loaded.manifest,
         loaded.available || version !== 1,
       );
+
       if (drift) {
-        builder.result.issues.push({
+        lockedObservation.result.issues.push({
           code: "npm.manifest_lock_mismatch",
           severity: "WARNING",
           file: definitionFile,
           message:
             "The current manifest differs from its lockfile declarations; locked dependencies and current declarations are separate observations",
         });
-        addCurrentManifestObservation(liveManifests, location, definitionFile, loaded.manifest);
+        addCurrentManifestObservation(
+          currentManifestObservation,
+          location,
+          definitionFile,
+          loaded.manifest,
+        );
       }
-      workspace.set(location, project);
-      targets.set(location, project.consumer);
+
+      projectsByLocation.set(location, project);
+      viewsByLocation.set(location, project.consumer);
     }
-    if (!workspace.has("")) {
+
+    // Older lockfiles can omit the root record. Its current manifest contributes only
+    // what can be validated independently; invalid declarations never erase lock evidence.
+    if (!projectsByLocation.has("")) {
       const fallback = {
         ...(typeof document.name === "string" && { name: document.name }),
         ...(typeof document.version === "string" && { version: document.version }),
       };
-      const loaded = await loadManifest(join(lockDirectory, "package.json"), fallback);
+      const loaded = await loadContainedManifest(join(lockDirectory, "package.json"), fallback);
       const definition = loaded.available
         ? join(relativeDirectory, "package.json")
         : context.relativeFile;
-      if (loaded.available) builder.sourceFiles.add(definition);
-      const project = builder.addProject("", definition, loaded.manifest, loaded.available);
+      if (loaded.available) lockedObservation.sourceFiles.add(definition);
+
+      const project = lockedObservation.addProject(
+        "",
+        definition,
+        loaded.manifest,
+        loaded.available,
+      );
       if (loaded.available) {
         try {
           dependencyScopes(loaded.manifest);
         } catch {
-          addCurrentManifestObservation(liveManifests, "", definition, loaded.manifest);
+          addCurrentManifestObservation(
+            currentManifestObservation,
+            "",
+            definition,
+            loaded.manifest,
+          );
           project.known = false;
-          builder.nodes.get(project.consumer)!.dependencyCompleteness = "unknown";
-          invalidCurrentProjects.add(project.consumer);
+          lockedObservation.nodes.get(project.consumer)!.dependencyCompleteness = "unknown";
+          projectsWithInvalidDeclarations.add(project.consumer);
         }
       }
-      workspace.set("", project);
-      targets.set("", project.consumer);
+
+      projectsByLocation.set("", project);
+      viewsByLocation.set("", project.consumer);
     }
-    for (const [location, metadata] of Object.entries(records)) {
+
+    for (const [location, metadata] of Object.entries(packagesByLocation)) {
       if (!location.split("/").includes("node_modules") || metadata.link === true) continue;
+
       const name = extractPackageName(location);
       if (!name) throw new Error(`Cannot identify npm package at '${location}'`);
-      const id = builder.addPackage(
+
+      const id = lockedObservation.addPackage(
         `package:${JSON.stringify(location)}`,
         name,
         metadata,
         !legacyLocalLocations.has(location),
       );
-      builder.nodes.get(id)!.locator = location;
-      targets.set(location, id);
+      lockedObservation.nodes.get(id)!.locator = location;
+      viewsByLocation.set(location, id);
     }
-    const follow = (location: string): string | undefined => {
+
+    // Resolve links only after all views exist, keeping native placement separate from PURLs.
+    const followWorkspaceLink = (location: string): string | undefined => {
       const visited = new Set<string>();
       let candidate = location;
-      while (records[candidate]?.link === true) {
+      while (packagesByLocation[candidate]?.link === true) {
         if (visited.has(candidate)) throw new Error(`Cyclic npm workspace links at '${candidate}'`);
         visited.add(candidate);
-        const destination = records[candidate]?.resolved;
+        const destination = packagesByLocation[candidate]?.resolved;
         if (typeof destination !== "string" || destination.length === 0)
           throw new Error(`Invalid npm link destination at '${candidate}'`);
         candidate = normalize(destination.replace(/^file:/, ""));
         if (candidate === ".") candidate = "";
       }
-      return targets.get(candidate);
+
+      return viewsByLocation.get(candidate);
     };
+
     // Lock records are evidence even when no root currently references them.
-    for (const [location, record] of Object.entries(records)) {
-      if (record.link !== true || follow(location) !== undefined) continue;
-      builder.rootCompleteness = "unknown";
-      builder.result.issues.push({
+    for (const [location, record] of Object.entries(packagesByLocation)) {
+      if (record.link !== true || followWorkspaceLink(location) !== undefined) continue;
+      lockedObservation.rootCompleteness = "unknown";
+      lockedObservation.result.issues.push({
         code: "npm.link_target_missing",
         severity: "WARNING",
         file: context.relativeFile,
         message: `The target of npm link '${location}' is not recorded; project enumeration remains unknown`,
       });
     }
+
     const resolveDependency = (caller: string, name: string): string | undefined => {
       for (const candidate of npmResolutionCandidates(caller, name, lockDirectory)) {
-        if (!Object.hasOwn(records, candidate)) continue;
-        return follow(candidate); // An existing unresolved nearer location must not fall through.
+        if (!Object.hasOwn(packagesByLocation, candidate)) continue;
+        return followWorkspaceLink(candidate); // An existing unresolved nearer location must not fall through.
       }
+
       return undefined;
     };
-    const declarations = (
+
+    const addDependencies = (
       from: string,
       record: NpmRecord,
       caller: string,
-      consumer: boolean,
+      isDependencyConsumer: boolean,
       onlyScope?: string,
     ) => {
       // Native virtual loading does not establish bindings for sources outside the lock root.
       // Retain recorded lexical candidates without asserting a selected installation context.
-      const externalSource = !contained(resolve(lockDirectory), resolve(lockDirectory, caller));
+      const externalSource = !isWithinDirectory(
+        resolve(lockDirectory),
+        resolve(lockDirectory, caller),
+      );
+
       for (const declaration of dependencyScopes(record)) {
         if (onlyScope !== undefined && declaration.scope !== onlyScope) continue;
+
         const target = resolveDependency(caller, declaration.name);
         const peer = declaration.scope === "peerDependencies";
         const excluded =
-          declaration.excluded || (consumer && declaration.scope === "devDependencies");
+          declaration.excluded || (isDependencyConsumer && declaration.scope === "devDependencies");
+
         // package-lock records declarations and placement, but not a pnpm-style explicit peer
         // binding. Keep the lookup candidate without asserting that peer installation was selected.
         const optionalMissing = declaration.optional && target === undefined;
-        const selection =
-          excluded || (peer && optionalMissing)
-            ? "excluded"
-            : peer ||
-                externalSource ||
-                optionalMissing ||
-                legacyLocalLocations.has(caller) ||
-                ((version === 1 || !Object.hasOwn(records, caller)) && workspace.has(caller))
-              ? "unknown"
-              : "selected";
-        builder.dependency(
+        let selection: "selected" | "excluded" | "unknown" = "selected";
+        if (excluded || (peer && optionalMissing)) {
+          selection = "excluded";
+        } else if (
+          peer ||
+          externalSource ||
+          optionalMissing ||
+          legacyLocalLocations.has(caller) ||
+          ((version === 1 || !Object.hasOwn(packagesByLocation, caller)) &&
+            projectsByLocation.has(caller))
+        ) {
+          selection = "unknown";
+        }
+
+        lockedObservation.dependency(
           from,
           declaration.name,
           declaration.specifier,
@@ -272,18 +325,19 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
         );
       }
     };
+
     if (
       version === 1 &&
       (legacyLocalLocations.size > 0 ||
-        [...workspace.values()].some((project) => {
+        [...projectsByLocation.values()].some((project) => {
           const declarations = project.manifest.workspaces;
           return Array.isArray(declarations)
             ? declarations.length > 0
             : declarations !== undefined && declarations !== null;
         }))
     ) {
-      builder.rootCompleteness = "unknown";
-      builder.result.issues.push({
+      lockedObservation.rootCompleteness = "unknown";
+      lockedObservation.result.issues.push({
         code: "npm.legacy_local_context_unknown",
         severity: "WARNING",
         file: context.relativeFile,
@@ -291,48 +345,65 @@ export const extractorV2 = filesExtractorV2<JavaScriptOptions>({
           "Lockfile version 1 does not establish workspace/local project roots or source-relative dependency contexts; local lookup candidates remain uncertain",
       });
     }
-    for (const [location, project] of workspace) {
-      if (invalidCurrentProjects.has(project.consumer)) {
-        for (const scope of NPM_DEPENDENCY_SCOPES) builder.addRoot(project, scope);
+
+    // Project roots retain each native scope; dependency-consumer views exclude dev edges.
+    for (const [location, project] of projectsByLocation) {
+      if (projectsWithInvalidDeclarations.has(project.consumer)) {
+        for (const scope of NPM_DEPENDENCY_SCOPES) lockedObservation.addRoot(project, scope);
         continue;
       }
-      declarations(project.consumer, project.manifest, location, true);
+
+      addDependencies(project.consumer, project.manifest, location, true);
       for (const scope of NPM_DEPENDENCY_SCOPES) {
-        const entry = builder.addRoot(project, scope);
-        declarations(entry, project.manifest, location, false, scope);
+        const entry = lockedObservation.addRoot(project, scope);
+        addDependencies(entry, project.manifest, location, false, scope);
       }
     }
-    for (const [location, record] of Object.entries(records)) {
+
+    for (const [location, record] of Object.entries(packagesByLocation)) {
       if (!location.split("/").includes("node_modules") || record.link === true) continue;
-      declarations(targets.get(location)!, record, location, true);
+      addDependencies(viewsByLocation.get(location)!, record, location, true);
     }
+
     // Keep native lockfile placement and production/development flags on views. No filtering is
     // based on this machine's OS, CPU, libc, or an assumed deployment environment.
-    builder.attributes["npm:sourceRoot"] = relative(
+    lockedObservation.attributes["npm:sourceRoot"] = relative(
       context.codebasePath.replaceAll("\\", "/"),
       lockDirectory,
     );
-    return liveManifests.result.subprojects.length > 0
-      ? mergeResultsV2([builder.finish(), liveManifests.finish()])
-      : builder.finish();
+
+    return currentManifestObservation.result.subprojects.length > 0
+      ? mergeResultsV2([lockedObservation.finish(), currentManifestObservation.finish()])
+      : lockedObservation.finish();
   },
 });
 
-function object(value: unknown): Record<string, NpmRecord> {
-  if (value === null || typeof value !== "object" || Array.isArray(value))
+function isWithinDirectory(root: string, path: string): boolean {
+  const pathWithinRoot = filesystemRelative(root, path);
+  return (
+    !isAbsolute(pathWithinRoot) && pathWithinRoot !== ".." && !pathWithinRoot.startsWith(`..${sep}`)
+  );
+}
+
+function readPackageRecords(value: unknown): Record<string, NpmRecord> {
+  if (value === null || typeof value !== "object" || Array.isArray(value)) {
     throw new Error("Expected an npm packages/dependencies table");
-  for (const [name, record] of Object.entries(value)) {
-    if (record === null || typeof record !== "object" || Array.isArray(record))
-      throw new Error(`Invalid npm package record: ${name}`);
   }
+
+  for (const [name, record] of Object.entries(value)) {
+    if (record === null || typeof record !== "object" || Array.isArray(record)) {
+      throw new Error(`Invalid npm package record: ${name}`);
+    }
+  }
+
   return value as Record<string, NpmRecord>;
 }
 
 /** Convert the native v1 placement tree to locations, never a PURL union. */
-function legacyRecords(document: NpmRecord): Record<string, NpmRecord> {
+function flattenLegacyPlacements(document: NpmRecord): Record<string, NpmRecord> {
   const records: Record<string, NpmRecord> = {};
   const visit = (dependencies: unknown, parent: string) => {
-    for (const [name, entry] of Object.entries(object(dependencies ?? {}))) {
+    for (const [name, entry] of Object.entries(readPackageRecords(dependencies ?? {}))) {
       const location = join(parent, "node_modules", name);
       const { dependencies: nested, requires, ...metadata } = entry;
       let alias: NpmRecord = {};
@@ -357,7 +428,7 @@ function legacyRecords(document: NpmRecord): Record<string, NpmRecord> {
   return records;
 }
 
-function manifestDrift(locked: NpmRecord, current: NpmRecord): boolean {
+function hasManifestDrift(locked: NpmRecord, current: NpmRecord): boolean {
   for (const key of ["name", "version"]) {
     if (locked[key] !== undefined && locked[key] !== current[key]) return true;
   }
