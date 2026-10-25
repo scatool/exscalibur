@@ -18891,6 +18891,20 @@
           "kind": "dependency",
           "relation": "depends-on",
           "requested": {
+            "name": "click",
+            "specifier": "https://github.com/pallets/click/archive/7.0.zip#egg=click"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "tests/syntax-tests/source/Requirements.txt/requirements.txt"
+          ],
+          "from": "scope:\"requirements\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
             "name": "docutils",
             "specifier": "docutils==0.12"
           },
@@ -19050,22 +19064,9 @@
           },
           "selection": "selected",
           "status": "declared"
-        },
-        {
-          "evidence": [
-            "tests/syntax-tests/source/Requirements.txt/requirements.txt"
-          ],
-          "from": "scope:\"requirements\"",
-          "kind": "dependency",
-          "relation": "depends-on",
-          "requested": {
-            "specifier": "https://github.com/pallets/click/archive/7.0.zip#egg=click"
-          },
-          "selection": "selected",
-          "status": "declared"
         }
       ],
-      "id": "[\"requirementstxt\",\"tests/syntax-tests/source/Requirements.txt/requirements.txt\",\"requirementstxt:01dae6013aa8af55d8c4e5c7d9f51442d8e97721dcac40e0c0deb4f53a71ed1f\"]",
+      "id": "[\"requirementstxt\",\"tests/syntax-tests/source/Requirements.txt/requirements.txt\",\"requirementstxt:643cb0bb86d363c330805ca2c20cc4080694a28c27f27548a0d89d530555db4a\"]",
       "interpretation": "declared",
       "nodes": [
         {

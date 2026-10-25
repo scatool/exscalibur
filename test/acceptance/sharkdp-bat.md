@@ -134,3 +134,23 @@ No submodule was fetched. These exact superproject gitlinks remain outside the a
 | `assets/themes/sublime-monokai-extended`          | `0ca4e75291515c4d47e2d455e598e03e0dc53745` |
 | `assets/themes/sublime-snazzy`                    | `48f43a735037195021fa69d99c1180bf12f38f78` |
 | `assets/themes/zenburn`                           | `4f217457230ff5f31d594b0e20474b69294988d4` |
+
+## Legacy URL declaration identity correction
+
+The pinned `tests/syntax-tests/source/Requirements.txt/requirements.txt` declares `#egg=click`. An offline
+reference check with pip 26.2.1 recognizes `click` as the declared
+package name. The previous adapter retained the URL but deleted its typed name;
+the reviewed correction restores `requested.name` without inventing a version
+or selected package. The query remains unknown.
+
+Fresh extraction with all sixteen configured extractors changes only that name,
+the content-derived graph ID and edge set ordering. Package catalog, projects,
+issues, source hashes and all remaining semantic fields are unchanged.
+`test/python-acceptance.test.ts` permanently checks the native input and restored
+name alongside the existing conservative query behavior.
+
+Previous accepted format 2 SHA-256:
+`1c048f099b44b7cf01fce33a0b1aa728477a7456bb65af41f9946217ddb61753`.
+Corrected baseline SHA-256:
+`0d9da87b90cfc589145858000bf6c0136634aca3edbc3fd493a95e88a233cb3a`.
+The historical format 1 hash in the acceptance ledger is unchanged.

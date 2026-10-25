@@ -20356,6 +20356,20 @@
           "kind": "dependency",
           "relation": "depends-on",
           "requested": {
+            "name": "pep508-package",
+            "specifier": "git+https://github.com/techalchemy/test-project.git@master#egg=pep508-package&subdirectory=parent_folder/pep508-package"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "tests/fixtures/requirements.txt"
+          ],
+          "from": "scope:\"requirements\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
             "name": "pip",
             "specifier": "-e git+https://github.com/pypa/pip.git@main#egg=pip"
           },
@@ -20403,22 +20417,9 @@
           },
           "selection": "selected",
           "status": "declared"
-        },
-        {
-          "evidence": [
-            "tests/fixtures/requirements.txt"
-          ],
-          "from": "scope:\"requirements\"",
-          "kind": "dependency",
-          "relation": "depends-on",
-          "requested": {
-            "specifier": "git+https://github.com/techalchemy/test-project.git@master#egg=pep508-package&subdirectory=parent_folder/pep508-package"
-          },
-          "selection": "selected",
-          "status": "declared"
         }
       ],
-      "id": "[\"requirementstxt\",\"tests/fixtures/requirements.txt\",\"requirementstxt:cd7b1322e9d0d16f5adcd8467ddfbbc52b99bed305a319027013d254feb670c7\"]",
+      "id": "[\"requirementstxt\",\"tests/fixtures/requirements.txt\",\"requirementstxt:133eb11cfdff9210deef234e2b1fb0c02baa8248b3588c19ff3020e166c25bb4\"]",
       "interpretation": "declared",
       "nodes": [
         {

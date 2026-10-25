@@ -2,6 +2,7 @@ import { parse as parseToml } from "smol-toml";
 import type {
   AnalyzerResult,
   DependencyCondition,
+  DependencyRequest,
   FileExtractionContext,
   JsonValue,
 } from "@scatool/analyzer-core";
@@ -15,6 +16,49 @@ import {
   readMetadataTable,
   toNativeJson,
 } from "./native-metadata.ts";
+
+function requirementsRequest(spec: string): DependencyRequest {
+  const value = spec.replace(/^(?:-e\s+|--editable(?:\s+|=))/, "");
+
+  // An explicit PEP 508 name/extras is authoritative, even when the URL also
+  // contains a conflicting legacy egg fragment. Keep the original editable flag.
+  if (parseRequirementParts(value).directUrl)
+    return { ...createDependencyRequest(value), specifier: spec };
+
+  const isLegacyUrl = /^(?:[a-z][a-z0-9+.-]*:\/\/|file:|(?:git|hg|svn|bzr)\+)/i.test(value);
+  if (!isLegacyUrl) return createDependencyRequest(spec);
+
+  // pip requirements-file URLs use "; " as the marker separator. A semicolon
+  // without that following space remains part of the URL, unlike named PEP 508.
+  const markerStart = value.indexOf("; ");
+  const url = (markerStart === -1 ? value : value.slice(0, markerStart)).trim();
+  const marker = markerStart === -1 ? undefined : value.slice(markerStart + 1).trim();
+  const fragmentStart = url.indexOf("#");
+  const fragment = fragmentStart === -1 ? undefined : url.slice(fragmentStart + 1);
+  const egg = fragment?.match(/(?:^|&)egg=([^&]*)/)?.[1];
+
+  // Legacy egg names use Python's project-name grammar, without URI decoding.
+  // Do not treat query/path lookalikes or malformed fragments as package names;
+  // their raw declarations still survive without claiming a resolved identity.
+  let name = egg && /^[a-z0-9](?:[a-z0-9._-]*[a-z0-9])?$/i.test(egg) ? egg : undefined;
+  if (name) {
+    try {
+      // pip takes wheel identity from the filename, ignoring egg. We do not
+      // extract that identity here; keep the request unnamed rather than wrong.
+      const pathname = decodeURIComponent(new URL(url).pathname).replace(/\/+$/, "");
+      if (pathname.endsWith(".whl")) name = undefined;
+    } catch {
+      // An unclassifiable URL cannot prove that its egg name is authoritative.
+      name = undefined;
+    }
+  }
+
+  return {
+    ...(name && { name }),
+    specifier: spec,
+    ...(marker && { condition: { language: "pep508", expression: marker } }),
+  };
+}
 
 export function requirementsResult(
   content: string,
@@ -59,14 +103,7 @@ export function requirementsResult(
       continue;
     }
 
-    // An egg fragment supplies a legacy unnamed URL's name, never overrides the
-    // explicit name/extras of a PEP 508 direct reference.
-    const egg = parseRequirementParts(spec).directUrl
-      ? undefined
-      : spec.match(/[?#&]egg=([^&\s]+)/)?.[1];
-    const request = createDependencyRequest(spec, egg ? decodeURIComponent(egg) : undefined);
-    if (/^(?:[a-z]+:\/\/|(?:git|hg|svn|bzr)\+)/i.test(spec)) delete request.name;
-    observation.addDeclaration(root, request);
+    observation.addDeclaration(root, requirementsRequest(spec));
   }
 
   return observation.finish();

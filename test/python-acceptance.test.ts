@@ -47,6 +47,48 @@ const cases = [
   "django+django",
 ];
 
+// pip's requirements parser recognizes these names in the pinned native inputs.
+// Retaining the URL string alone must not hide loss of its declared package identity.
+for (const fixture of [
+  {
+    id: "pdm-project+pdm",
+    file: "tests/fixtures/requirements.txt",
+    specifier:
+      "git+https://github.com/techalchemy/test-project.git@master#egg=pep508-package&subdirectory=parent_folder/pep508-package",
+    name: "pep508-package",
+  },
+  {
+    id: "sharkdp+bat",
+    file: "tests/syntax-tests/source/Requirements.txt/requirements.txt",
+    specifier: "https://github.com/pallets/click/archive/7.0.zip#egg=click",
+    name: "click",
+  },
+]) {
+  test(`${fixture.id}: legacy URL requirements retain their declared names`, async () => {
+    const source = await read(join(import.meta.dirname, "repositories", fixture.id, fixture.file));
+    assert.ok(source.split(/\r?\n/).includes(fixture.specifier));
+
+    const result = parseResult(
+      JSON.parse(await read(join(import.meta.dirname, "__snapshots__", `${fixture.id}.json`))),
+    );
+    const graph = result.graphs.find(
+      (candidate) =>
+        candidate.source.extractor === "requirementstxt" &&
+        candidate.source.files.includes(fixture.file),
+    )!;
+    const edge = graph.edges.find(
+      (candidate) => candidate.requested?.specifier === fixture.specifier,
+    )!;
+    assert.equal(edge.requested?.name, fixture.name);
+    assert.equal(edge.status, "declared");
+    assert.equal("to" in edge, false);
+    assert.equal(
+      queryDependencies(result, { graph: graph.id, root: graph.roots[0]!.id }).completeness,
+      "unknown",
+    );
+  });
+}
+
 for (const id of cases)
   test(`${id}: all native Python inputs and conservative graph semantics`, async () => {
     const source = join(import.meta.dirname, "repositories", id);

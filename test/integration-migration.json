@@ -6409,7 +6409,7 @@
         "packageCount": 276,
         "projectCount": 2,
         "issueCodes": ["gomod.module_name_parse_failed", "requirementstxt.unresolved_dependencies"],
-        "acceptedSha256": "1c048f099b44b7cf01fce33a0b1aa728477a7456bb65af41f9946217ddb61753"
+        "acceptedSha256": "0d9da87b90cfc589145858000bf6c0136634aca3edbc3fd493a95e88a233cb3a"
       },
       "inputCheckpoint": {
         "path": "test/repositories/sharkdp+bat",
@@ -6523,11 +6523,12 @@
           "Stable module selection facts exclude host cache paths and cache hydration metadata. The same Bat source was compared before and after downloading its selected golang.org/x/tools module: go list gained a local Dir field, which must not change the serialized observation.",
           "The ANSI-highlighted Go and requirements fixtures retain explicit core.file_extraction_failed ERROR observations with unknown coverage. The two requirements options remain warnings, while all 28 native declaration lines and marker conditions are retained without fabricated resolution.",
           "Every Cargo lock record, checksum and dependency reference was compared against raw TOML. Cargo roots remain unknown and no workspace/project scope is inferred.",
-          "Scope is the pinned superproject only: all 884 superproject file bytes and modes plus all 91 gitlink records were independently verified; submodule contents are absent and not claimed as analyzed."
+          "Scope is the pinned superproject only: all 884 superproject file bytes and modes plus all 91 gitlink records were independently verified; submodule contents are absent and not claimed as analyzed.",
+          "Legacy URL requirement at tests/syntax-tests/source/Requirements.txt/requirements.txt retains the native egg name click; offline pip 26.2.1 independently confirms it. Only this requested.name, its content-derived graph identity and edge set ordering changed; catalog, project, issue and remaining graph facts are unchanged."
         ],
         "review": {
           "path": "test/acceptance/sharkdp-bat.md",
-          "sha256": "5326f1f3a73b2a7a1841f631ca0cab6a55e3466d8a12992bd783d74442953463"
+          "sha256": "5e9ee4e5a2355d78c9d391cbf18403a0dd64b86c4b134a1fced9bf9ecead1761"
         }
       }
     },
@@ -9896,7 +9897,7 @@
           "requirementstxt.include_not_followed",
           "requirementstxt.unresolved_dependencies"
         ],
-        "acceptedSha256": "00cc63b19aae99e33d4f4e9befcbd0d5ecb7af9358687694ec74287b3964c1ab"
+        "acceptedSha256": "71f3673dd6f5f86914d979c5bf7a8c7bdf99422eb43a66a86e18b76fc439f72b"
       },
       "inputCheckpoint": {
         "path": "test/repositories/pdm-project+pdm",
@@ -10089,11 +10090,12 @@
           "All sixteen configured extractors executed against the pinned archive; exact matching input inventory is recorded in the review document.",
           "Every native declaration, lock record and group membership is compared with source in test/python-acceptance.test.ts.",
           "Range candidates and source requests retain binding uncertainty; absent dependency metadata retains unknown coverage and explicit warnings.",
-          "Exact expected issue codes/files and conservative query completeness are asserted; no resolver execution or installed closure is inferred."
+          "Exact expected issue codes/files and conservative query completeness are asserted; no resolver execution or installed closure is inferred.",
+          "Legacy URL requirement at tests/fixtures/requirements.txt retains the native egg name pep508-package; offline pip 26.2.1 independently confirms it. Only this requested.name, its content-derived graph identity and edge set ordering changed; catalog, project, issue and remaining graph facts are unchanged."
         ],
         "review": {
           "path": "test/acceptance/pdm-project-pdm.md",
-          "sha256": "e83fb45cabd10ec850121f9a8d4429a3002ed6988ecc8d795dc4c17b0930744e"
+          "sha256": "fa6d52b5a13c78ab7de9cb9d485b73f354bcc8041e120b63d7de063d07f66a77"
         }
       }
     },

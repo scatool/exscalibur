@@ -98,3 +98,23 @@ Baseline: `test/__snapshots__/pdm-project+pdm.json`, SHA-256
 
 This establishes extraction and conservative source-model fidelity, not successful
 native builds, installed dependency resolution or runtime membership.
+
+## Legacy URL declaration identity correction
+
+The pinned `tests/fixtures/requirements.txt` declares `#egg=pep508-package`. An offline
+reference check with pip 26.2.1 recognizes `pep508-package` as the declared
+package name. The previous adapter retained the URL but deleted its typed name;
+the reviewed correction restores `requested.name` without inventing a version
+or selected package. The query remains unknown.
+
+Fresh extraction with all sixteen configured extractors changes only that name,
+the content-derived graph ID and edge set ordering. Package catalog, projects,
+issues, source hashes and all remaining semantic fields are unchanged.
+`test/python-acceptance.test.ts` permanently checks the native input and restored
+name alongside the existing conservative query behavior.
+
+Previous accepted format 2 SHA-256:
+`00cc63b19aae99e33d4f4e9befcbd0d5ecb7af9358687694ec74287b3964c1ab`.
+Corrected baseline SHA-256:
+`71f3673dd6f5f86914d979c5bf7a8c7bdf99422eb43a66a86e18b76fc439f72b`.
+The historical format 1 hash in the acceptance ledger is unchanged.
