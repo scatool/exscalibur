@@ -1,0 +1,4501 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`native Go extraction: basic 1`] = `
+{
+  "codebase": "fixture:basic",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "attributes": {
+        "go:manifest": {
+          "Exclude": null,
+          "Go": "1.21",
+          "Ignore": null,
+          "Module": {
+            "Path": "example.com/myapp",
+          },
+          "Replace": null,
+          "Require": [
+            {
+              "Path": "github.com/gin-gonic/gin",
+              "Version": "v1.9.1",
+            },
+            {
+              "Path": "github.com/spf13/cobra",
+              "Version": "v1.7.0",
+            },
+            {
+              "Path": "golang.org/x/sync",
+              "Version": "v0.3.0",
+            },
+            {
+              "Indirect": true,
+              "Path": "github.com/bytedance/sonic",
+              "Version": "v1.9.1",
+            },
+            {
+              "Indirect": true,
+              "Path": "github.com/chenzhuoyu/base64x",
+              "Version": "v0.0.0-20221115062448-fe3a3abad311",
+            },
+            {
+              "Indirect": true,
+              "Path": "github.com/gabriel-vasile/mimetype",
+              "Version": "v1.4.2",
+            },
+            {
+              "Indirect": true,
+              "Path": "github.com/gin-contrib/sse",
+              "Version": "v0.1.0",
+            },
+            {
+              "Indirect": true,
+              "Path": "github.com/go-playground/locales",
+              "Version": "v0.14.1",
+            },
+            {
+              "Indirect": true,
+              "Path": "github.com/go-playground/universal-translator",
+              "Version": "v0.18.1",
+            },
+            {
+              "Indirect": true,
+              "Path": "github.com/go-playground/validator/v10",
+              "Version": "v10.14.0",
+            },
+            {
+              "Indirect": true,
+              "Path": "github.com/goccy/go-json",
+              "Version": "v0.10.2",
+            },
+            {
+              "Indirect": true,
+              "Path": "github.com/inconshreveable/mousetrap",
+              "Version": "v1.1.0",
+            },
+            {
+              "Indirect": true,
+              "Path": "github.com/json-iterator/go",
+              "Version": "v1.1.12",
+            },
+            {
+              "Indirect": true,
+              "Path": "github.com/klauspost/cpuid/v2",
+              "Version": "v2.2.4",
+            },
+            {
+              "Indirect": true,
+              "Path": "github.com/leodido/go-urn",
+              "Version": "v1.2.4",
+            },
+            {
+              "Indirect": true,
+              "Path": "github.com/mattn/go-isatty",
+              "Version": "v0.0.19",
+            },
+            {
+              "Indirect": true,
+              "Path": "github.com/modern-go/concurrent",
+              "Version": "v0.0.0-20180306012644-bacd9c7ef1dd",
+            },
+            {
+              "Indirect": true,
+              "Path": "github.com/modern-go/reflect2",
+              "Version": "v1.0.2",
+            },
+            {
+              "Indirect": true,
+              "Path": "github.com/pelletier/go-toml/v2",
+              "Version": "v2.0.8",
+            },
+            {
+              "Indirect": true,
+              "Path": "github.com/spf13/pflag",
+              "Version": "v1.0.5",
+            },
+            {
+              "Indirect": true,
+              "Path": "github.com/twitchyliquid64/golang-asm",
+              "Version": "v0.15.1",
+            },
+            {
+              "Indirect": true,
+              "Path": "github.com/ugorji/go/codec",
+              "Version": "v1.2.11",
+            },
+            {
+              "Indirect": true,
+              "Path": "golang.org/x/arch",
+              "Version": "v0.3.0",
+            },
+            {
+              "Indirect": true,
+              "Path": "golang.org/x/crypto",
+              "Version": "v0.9.0",
+            },
+            {
+              "Indirect": true,
+              "Path": "golang.org/x/net",
+              "Version": "v0.10.0",
+            },
+            {
+              "Indirect": true,
+              "Path": "golang.org/x/sys",
+              "Version": "v0.8.0",
+            },
+            {
+              "Indirect": true,
+              "Path": "golang.org/x/text",
+              "Version": "v0.9.0",
+            },
+            {
+              "Indirect": true,
+              "Path": "google.golang.org/protobuf",
+              "Version": "v1.30.0",
+            },
+            {
+              "Indirect": true,
+              "Path": "gopkg.in/yaml.v3",
+              "Version": "v3.0.1",
+            },
+          ],
+          "Retract": null,
+          "Tool": null,
+        },
+        "go:membership": "module-build-list",
+        "go:moduleGraph": "example.com/myapp github.com/bytedance/sonic@v1.9.1
+example.com/myapp github.com/chenzhuoyu/base64x@v0.0.0-20221115062448-fe3a3abad311
+example.com/myapp github.com/gabriel-vasile/mimetype@v1.4.2
+example.com/myapp github.com/gin-contrib/sse@v0.1.0
+example.com/myapp github.com/gin-gonic/gin@v1.9.1
+example.com/myapp github.com/go-playground/locales@v0.14.1
+example.com/myapp github.com/go-playground/universal-translator@v0.18.1
+example.com/myapp github.com/go-playground/validator/v10@v10.14.0
+example.com/myapp github.com/goccy/go-json@v0.10.2
+example.com/myapp github.com/inconshreveable/mousetrap@v1.1.0
+example.com/myapp github.com/json-iterator/go@v1.1.12
+example.com/myapp github.com/klauspost/cpuid/v2@v2.2.4
+example.com/myapp github.com/leodido/go-urn@v1.2.4
+example.com/myapp github.com/mattn/go-isatty@v0.0.19
+example.com/myapp github.com/modern-go/concurrent@v0.0.0-20180306012644-bacd9c7ef1dd
+example.com/myapp github.com/modern-go/reflect2@v1.0.2
+example.com/myapp github.com/pelletier/go-toml/v2@v2.0.8
+example.com/myapp github.com/spf13/cobra@v1.7.0
+example.com/myapp github.com/spf13/pflag@v1.0.5
+example.com/myapp github.com/twitchyliquid64/golang-asm@v0.15.1
+example.com/myapp github.com/ugorji/go/codec@v1.2.11
+example.com/myapp go@1.21
+example.com/myapp golang.org/x/arch@v0.3.0
+example.com/myapp golang.org/x/crypto@v0.9.0
+example.com/myapp golang.org/x/net@v0.10.0
+example.com/myapp golang.org/x/sync@v0.3.0
+example.com/myapp golang.org/x/sys@v0.8.0
+example.com/myapp golang.org/x/text@v0.9.0
+example.com/myapp google.golang.org/protobuf@v1.30.0
+example.com/myapp gopkg.in/yaml.v3@v3.0.1
+github.com/bytedance/sonic@v1.9.1 github.com/chenzhuoyu/base64x@v0.0.0-20221115062448-fe3a3abad311
+github.com/bytedance/sonic@v1.9.1 github.com/davecgh/go-spew@v1.1.1
+github.com/bytedance/sonic@v1.9.1 github.com/klauspost/cpuid/v2@v2.0.9
+github.com/bytedance/sonic@v1.9.1 github.com/stretchr/testify@v1.8.1
+github.com/bytedance/sonic@v1.9.1 github.com/twitchyliquid64/golang-asm@v0.15.1
+github.com/bytedance/sonic@v1.9.1 golang.org/x/arch@v0.0.0-20210923205945-b76863e36670
+github.com/chenzhuoyu/base64x@v0.0.0-20221115062448-fe3a3abad311 github.com/bytedance/sonic@v1.5.0
+github.com/chenzhuoyu/base64x@v0.0.0-20221115062448-fe3a3abad311 github.com/davecgh/go-spew@v1.1.1
+github.com/chenzhuoyu/base64x@v0.0.0-20221115062448-fe3a3abad311 github.com/klauspost/cpuid/v2@v2.0.9
+github.com/chenzhuoyu/base64x@v0.0.0-20221115062448-fe3a3abad311 github.com/stretchr/testify@v1.8.1
+github.com/gabriel-vasile/mimetype@v1.4.2 golang.org/x/net@v0.8.0
+github.com/gin-contrib/sse@v0.1.0 github.com/stretchr/testify@v1.3.0
+github.com/gin-gonic/gin@v1.9.1 github.com/bytedance/sonic@v1.9.1
+github.com/gin-gonic/gin@v1.9.1 github.com/gin-contrib/sse@v0.1.0
+github.com/gin-gonic/gin@v1.9.1 github.com/go-playground/validator/v10@v10.14.0
+github.com/gin-gonic/gin@v1.9.1 github.com/goccy/go-json@v0.10.2
+github.com/gin-gonic/gin@v1.9.1 github.com/json-iterator/go@v1.1.12
+github.com/gin-gonic/gin@v1.9.1 github.com/mattn/go-isatty@v0.0.19
+github.com/gin-gonic/gin@v1.9.1 github.com/pelletier/go-toml/v2@v2.0.8
+github.com/gin-gonic/gin@v1.9.1 github.com/stretchr/testify@v1.8.3
+github.com/gin-gonic/gin@v1.9.1 github.com/ugorji/go/codec@v1.2.11
+github.com/gin-gonic/gin@v1.9.1 golang.org/x/net@v0.10.0
+github.com/gin-gonic/gin@v1.9.1 google.golang.org/protobuf@v1.30.0
+github.com/gin-gonic/gin@v1.9.1 gopkg.in/yaml.v3@v3.0.1
+github.com/gin-gonic/gin@v1.9.1 github.com/chenzhuoyu/base64x@v0.0.0-20221115062448-fe3a3abad311
+github.com/gin-gonic/gin@v1.9.1 github.com/davecgh/go-spew@v1.1.1
+github.com/gin-gonic/gin@v1.9.1 github.com/gabriel-vasile/mimetype@v1.4.2
+github.com/gin-gonic/gin@v1.9.1 github.com/go-playground/locales@v0.14.1
+github.com/gin-gonic/gin@v1.9.1 github.com/go-playground/universal-translator@v0.18.1
+github.com/gin-gonic/gin@v1.9.1 github.com/klauspost/cpuid/v2@v2.2.4
+github.com/gin-gonic/gin@v1.9.1 github.com/leodido/go-urn@v1.2.4
+github.com/gin-gonic/gin@v1.9.1 github.com/modern-go/concurrent@v0.0.0-20180306012644-bacd9c7ef1dd
+github.com/gin-gonic/gin@v1.9.1 github.com/modern-go/reflect2@v1.0.2
+github.com/gin-gonic/gin@v1.9.1 github.com/pmezard/go-difflib@v1.0.0
+github.com/gin-gonic/gin@v1.9.1 github.com/twitchyliquid64/golang-asm@v0.15.1
+github.com/gin-gonic/gin@v1.9.1 golang.org/x/arch@v0.3.0
+github.com/gin-gonic/gin@v1.9.1 golang.org/x/crypto@v0.9.0
+github.com/gin-gonic/gin@v1.9.1 golang.org/x/sys@v0.8.0
+github.com/gin-gonic/gin@v1.9.1 golang.org/x/text@v0.9.0
+github.com/go-playground/locales@v0.14.1 golang.org/x/text@v0.3.8
+github.com/go-playground/universal-translator@v0.18.1 github.com/go-playground/locales@v0.14.1
+github.com/go-playground/validator/v10@v10.14.0 github.com/gabriel-vasile/mimetype@v1.4.2
+github.com/go-playground/validator/v10@v10.14.0 github.com/go-playground/assert/v2@v2.2.0
+github.com/go-playground/validator/v10@v10.14.0 github.com/go-playground/locales@v0.14.1
+github.com/go-playground/validator/v10@v10.14.0 github.com/go-playground/universal-translator@v0.18.1
+github.com/go-playground/validator/v10@v10.14.0 github.com/leodido/go-urn@v1.2.4
+github.com/go-playground/validator/v10@v10.14.0 golang.org/x/crypto@v0.7.0
+github.com/go-playground/validator/v10@v10.14.0 golang.org/x/text@v0.8.0
+github.com/go-playground/validator/v10@v10.14.0 golang.org/x/net@v0.8.0
+github.com/go-playground/validator/v10@v10.14.0 golang.org/x/sys@v0.6.0
+github.com/json-iterator/go@v1.1.12 github.com/davecgh/go-spew@v1.1.1
+github.com/json-iterator/go@v1.1.12 github.com/google/gofuzz@v1.0.0
+github.com/json-iterator/go@v1.1.12 github.com/modern-go/concurrent@v0.0.0-20180228061459-e0a39a4cb421
+github.com/json-iterator/go@v1.1.12 github.com/modern-go/reflect2@v1.0.2
+github.com/json-iterator/go@v1.1.12 github.com/stretchr/testify@v1.3.0
+github.com/klauspost/cpuid/v2@v2.2.4 golang.org/x/sys@v0.0.0-20220704084225-05e143d24a9e
+github.com/leodido/go-urn@v1.2.4 github.com/stretchr/testify@v1.8.2
+github.com/mattn/go-isatty@v0.0.19 golang.org/x/sys@v0.6.0
+github.com/pelletier/go-toml/v2@v2.0.8 github.com/stretchr/testify@v1.8.3
+github.com/spf13/cobra@v1.7.0 github.com/cpuguy83/go-md2man/v2@v2.0.2
+github.com/spf13/cobra@v1.7.0 github.com/inconshreveable/mousetrap@v1.1.0
+github.com/spf13/cobra@v1.7.0 github.com/spf13/pflag@v1.0.5
+github.com/spf13/cobra@v1.7.0 gopkg.in/yaml.v3@v3.0.1
+go@1.21 toolchain@go1.21
+golang.org/x/arch@v0.3.0 rsc.io/pdf@v0.1.1
+golang.org/x/crypto@v0.9.0 golang.org/x/net@v0.10.0
+golang.org/x/crypto@v0.9.0 golang.org/x/sys@v0.8.0
+golang.org/x/crypto@v0.9.0 golang.org/x/term@v0.8.0
+golang.org/x/crypto@v0.9.0 golang.org/x/text@v0.9.0
+golang.org/x/net@v0.10.0 golang.org/x/sys@v0.8.0
+golang.org/x/net@v0.10.0 golang.org/x/term@v0.8.0
+golang.org/x/net@v0.10.0 golang.org/x/text@v0.9.0
+golang.org/x/text@v0.9.0 golang.org/x/tools@v0.6.0
+golang.org/x/text@v0.9.0 golang.org/x/mod@v0.8.0
+golang.org/x/text@v0.9.0 golang.org/x/sys@v0.5.0
+google.golang.org/protobuf@v1.30.0 github.com/golang/protobuf@v1.5.0
+google.golang.org/protobuf@v1.30.0 github.com/google/go-cmp@v0.5.5
+gopkg.in/yaml.v3@v3.0.1 gopkg.in/check.v1@v0.0.0-20161208181325-20d25e280405
+github.com/stretchr/testify@v1.8.1 github.com/davecgh/go-spew@v1.1.1
+github.com/stretchr/testify@v1.8.1 github.com/pmezard/go-difflib@v1.0.0
+github.com/stretchr/testify@v1.8.1 github.com/stretchr/objx@v0.5.0
+github.com/stretchr/testify@v1.8.1 gopkg.in/yaml.v3@v3.0.1
+golang.org/x/arch@v0.0.0-20210923205945-b76863e36670 rsc.io/pdf@v0.1.1
+github.com/bytedance/sonic@v1.5.0 github.com/chenzhuoyu/base64x@v0.0.0-20211019084208-fb5309c8db06
+github.com/bytedance/sonic@v1.5.0 github.com/davecgh/go-spew@v1.1.1
+github.com/bytedance/sonic@v1.5.0 github.com/klauspost/cpuid/v2@v2.0.9
+github.com/bytedance/sonic@v1.5.0 github.com/stretchr/testify@v1.7.0
+github.com/bytedance/sonic@v1.5.0 github.com/twitchyliquid64/golang-asm@v0.15.1
+github.com/bytedance/sonic@v1.5.0 golang.org/x/arch@v0.0.0-20210923205945-b76863e36670
+github.com/stretchr/testify@v1.3.0 github.com/davecgh/go-spew@v1.1.0
+github.com/stretchr/testify@v1.3.0 github.com/pmezard/go-difflib@v1.0.0
+github.com/stretchr/testify@v1.3.0 github.com/stretchr/objx@v0.1.0
+github.com/stretchr/testify@v1.8.3 github.com/davecgh/go-spew@v1.1.1
+github.com/stretchr/testify@v1.8.3 github.com/pmezard/go-difflib@v1.0.0
+github.com/stretchr/testify@v1.8.3 github.com/stretchr/objx@v0.5.0
+github.com/stretchr/testify@v1.8.3 gopkg.in/yaml.v3@v3.0.1
+github.com/stretchr/testify@v1.8.2 github.com/davecgh/go-spew@v1.1.1
+github.com/stretchr/testify@v1.8.2 github.com/pmezard/go-difflib@v1.0.0
+github.com/stretchr/testify@v1.8.2 github.com/stretchr/objx@v0.5.0
+github.com/stretchr/testify@v1.8.2 gopkg.in/yaml.v3@v3.0.1
+github.com/cpuguy83/go-md2man/v2@v2.0.2 github.com/russross/blackfriday/v2@v2.1.0
+github.com/golang/protobuf@v1.5.0 github.com/google/go-cmp@v0.5.5
+github.com/golang/protobuf@v1.5.0 google.golang.org/protobuf@v1.26.0-rc.1
+github.com/google/go-cmp@v0.5.5 golang.org/x/xerrors@v0.0.0-20191204190536-9bdfabe68543
+github.com/stretchr/objx@v0.5.0 github.com/stretchr/testify@v1.8.0
+github.com/chenzhuoyu/base64x@v0.0.0-20211019084208-fb5309c8db06 github.com/klauspost/cpuid/v2@v2.0.9
+github.com/stretchr/testify@v1.7.0 github.com/davecgh/go-spew@v1.1.0
+github.com/stretchr/testify@v1.7.0 github.com/pmezard/go-difflib@v1.0.0
+github.com/stretchr/testify@v1.7.0 github.com/stretchr/objx@v0.1.0
+github.com/stretchr/testify@v1.7.0 gopkg.in/yaml.v3@v3.0.0-20200313102051-9f266ea9e77c
+google.golang.org/protobuf@v1.26.0-rc.1 github.com/google/go-cmp@v0.5.5
+github.com/stretchr/testify@v1.8.0 github.com/davecgh/go-spew@v1.1.1
+github.com/stretchr/testify@v1.8.0 github.com/pmezard/go-difflib@v1.0.0
+github.com/stretchr/testify@v1.8.0 github.com/stretchr/objx@v0.4.0
+github.com/stretchr/testify@v1.8.0 gopkg.in/yaml.v3@v3.0.1
+gopkg.in/yaml.v3@v3.0.0-20200313102051-9f266ea9e77c gopkg.in/check.v1@v0.0.0-20161208181325-20d25e280405
+github.com/stretchr/objx@v0.4.0 github.com/davecgh/go-spew@v1.1.1
+github.com/stretchr/objx@v0.4.0 github.com/stretchr/testify@v1.7.1
+github.com/stretchr/testify@v1.7.1 github.com/davecgh/go-spew@v1.1.0
+github.com/stretchr/testify@v1.7.1 github.com/pmezard/go-difflib@v1.0.0
+github.com/stretchr/testify@v1.7.1 github.com/stretchr/objx@v0.1.0
+github.com/stretchr/testify@v1.7.1 gopkg.in/yaml.v3@v3.0.0-20200313102051-9f266ea9e77c
+",
+      },
+      "edges": [
+        {
+          "attributes": {
+            "go:indirect": false,
+          },
+          "from": "root:dependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/gin-gonic/gin",
+            "specifier": "v1.9.1",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/gin-gonic/gin",
+        },
+        {
+          "attributes": {
+            "go:indirect": false,
+          },
+          "from": "root:dependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/spf13/cobra",
+            "specifier": "v1.7.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/spf13/cobra",
+        },
+        {
+          "attributes": {
+            "go:indirect": false,
+          },
+          "from": "root:dependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/sync",
+            "specifier": "v0.3.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/sync",
+        },
+        {
+          "attributes": {
+            "go:indirect": true,
+          },
+          "from": "root:indirectDependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/bytedance/sonic",
+            "specifier": "v1.9.1",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/bytedance/sonic",
+        },
+        {
+          "attributes": {
+            "go:indirect": true,
+          },
+          "from": "root:indirectDependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/chenzhuoyu/base64x",
+            "specifier": "v0.0.0-20221115062448-fe3a3abad311",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/chenzhuoyu/base64x",
+        },
+        {
+          "attributes": {
+            "go:indirect": true,
+          },
+          "from": "root:indirectDependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/gabriel-vasile/mimetype",
+            "specifier": "v1.4.2",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/gabriel-vasile/mimetype",
+        },
+        {
+          "attributes": {
+            "go:indirect": true,
+          },
+          "from": "root:indirectDependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/gin-contrib/sse",
+            "specifier": "v0.1.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/gin-contrib/sse",
+        },
+        {
+          "attributes": {
+            "go:indirect": true,
+          },
+          "from": "root:indirectDependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/go-playground/locales",
+            "specifier": "v0.14.1",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/go-playground/locales",
+        },
+        {
+          "attributes": {
+            "go:indirect": true,
+          },
+          "from": "root:indirectDependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/go-playground/universal-translator",
+            "specifier": "v0.18.1",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/go-playground/universal-translator",
+        },
+        {
+          "attributes": {
+            "go:indirect": true,
+          },
+          "from": "root:indirectDependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/go-playground/validator/v10",
+            "specifier": "v10.14.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/go-playground/validator/v10",
+        },
+        {
+          "attributes": {
+            "go:indirect": true,
+          },
+          "from": "root:indirectDependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/goccy/go-json",
+            "specifier": "v0.10.2",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/goccy/go-json",
+        },
+        {
+          "attributes": {
+            "go:indirect": true,
+          },
+          "from": "root:indirectDependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/inconshreveable/mousetrap",
+            "specifier": "v1.1.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/inconshreveable/mousetrap",
+        },
+        {
+          "attributes": {
+            "go:indirect": true,
+          },
+          "from": "root:indirectDependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/json-iterator/go",
+            "specifier": "v1.1.12",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/json-iterator/go",
+        },
+        {
+          "attributes": {
+            "go:indirect": true,
+          },
+          "from": "root:indirectDependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/klauspost/cpuid/v2",
+            "specifier": "v2.2.4",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/klauspost/cpuid/v2",
+        },
+        {
+          "attributes": {
+            "go:indirect": true,
+          },
+          "from": "root:indirectDependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/leodido/go-urn",
+            "specifier": "v1.2.4",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/leodido/go-urn",
+        },
+        {
+          "attributes": {
+            "go:indirect": true,
+          },
+          "from": "root:indirectDependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/mattn/go-isatty",
+            "specifier": "v0.0.19",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/mattn/go-isatty",
+        },
+        {
+          "attributes": {
+            "go:indirect": true,
+          },
+          "from": "root:indirectDependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/modern-go/concurrent",
+            "specifier": "v0.0.0-20180306012644-bacd9c7ef1dd",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/modern-go/concurrent",
+        },
+        {
+          "attributes": {
+            "go:indirect": true,
+          },
+          "from": "root:indirectDependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/modern-go/reflect2",
+            "specifier": "v1.0.2",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/modern-go/reflect2",
+        },
+        {
+          "attributes": {
+            "go:indirect": true,
+          },
+          "from": "root:indirectDependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/pelletier/go-toml/v2",
+            "specifier": "v2.0.8",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/pelletier/go-toml/v2",
+        },
+        {
+          "attributes": {
+            "go:indirect": true,
+          },
+          "from": "root:indirectDependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/spf13/pflag",
+            "specifier": "v1.0.5",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/spf13/pflag",
+        },
+        {
+          "attributes": {
+            "go:indirect": true,
+          },
+          "from": "root:indirectDependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/twitchyliquid64/golang-asm",
+            "specifier": "v0.15.1",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/twitchyliquid64/golang-asm",
+        },
+        {
+          "attributes": {
+            "go:indirect": true,
+          },
+          "from": "root:indirectDependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/ugorji/go/codec",
+            "specifier": "v1.2.11",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/ugorji/go/codec",
+        },
+        {
+          "attributes": {
+            "go:indirect": true,
+          },
+          "from": "root:indirectDependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/arch",
+            "specifier": "v0.3.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/arch",
+        },
+        {
+          "attributes": {
+            "go:indirect": true,
+          },
+          "from": "root:indirectDependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/crypto",
+            "specifier": "v0.9.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/crypto",
+        },
+        {
+          "attributes": {
+            "go:indirect": true,
+          },
+          "from": "root:indirectDependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/net",
+            "specifier": "v0.10.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/net",
+        },
+        {
+          "attributes": {
+            "go:indirect": true,
+          },
+          "from": "root:indirectDependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/sys",
+            "specifier": "v0.8.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/sys",
+        },
+        {
+          "attributes": {
+            "go:indirect": true,
+          },
+          "from": "root:indirectDependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/text",
+            "specifier": "v0.9.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/text",
+        },
+        {
+          "attributes": {
+            "go:indirect": true,
+          },
+          "from": "root:indirectDependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "google.golang.org/protobuf",
+            "specifier": "v1.30.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "google.golang.org/protobuf",
+        },
+        {
+          "attributes": {
+            "go:indirect": true,
+          },
+          "from": "root:indirectDependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "gopkg.in/yaml.v3",
+            "specifier": "v3.0.1",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "gopkg.in/yaml.v3",
+        },
+        {
+          "from": "github.com/bytedance/sonic",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/chenzhuoyu/base64x",
+            "specifier": "v0.0.0-20221115062448-fe3a3abad311",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/chenzhuoyu/base64x",
+        },
+        {
+          "from": "github.com/bytedance/sonic",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/davecgh/go-spew",
+            "specifier": "v1.1.1",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/davecgh/go-spew",
+        },
+        {
+          "from": "github.com/bytedance/sonic",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/klauspost/cpuid/v2",
+            "specifier": "v2.0.9",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/klauspost/cpuid/v2",
+        },
+        {
+          "from": "github.com/bytedance/sonic",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/stretchr/testify",
+            "specifier": "v1.8.1",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/stretchr/testify",
+        },
+        {
+          "from": "github.com/bytedance/sonic",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/twitchyliquid64/golang-asm",
+            "specifier": "v0.15.1",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/twitchyliquid64/golang-asm",
+        },
+        {
+          "from": "github.com/bytedance/sonic",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/arch",
+            "specifier": "v0.0.0-20210923205945-b76863e36670",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/arch",
+        },
+        {
+          "from": "github.com/chenzhuoyu/base64x",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/bytedance/sonic",
+            "specifier": "v1.5.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/bytedance/sonic",
+        },
+        {
+          "from": "github.com/chenzhuoyu/base64x",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/davecgh/go-spew",
+            "specifier": "v1.1.1",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/davecgh/go-spew",
+        },
+        {
+          "from": "github.com/chenzhuoyu/base64x",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/klauspost/cpuid/v2",
+            "specifier": "v2.0.9",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/klauspost/cpuid/v2",
+        },
+        {
+          "from": "github.com/chenzhuoyu/base64x",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/stretchr/testify",
+            "specifier": "v1.8.1",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/stretchr/testify",
+        },
+        {
+          "from": "github.com/cpuguy83/go-md2man/v2",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/russross/blackfriday/v2",
+            "specifier": "v2.1.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/russross/blackfriday/v2",
+        },
+        {
+          "from": "github.com/gabriel-vasile/mimetype",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/net",
+            "specifier": "v0.8.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/net",
+        },
+        {
+          "from": "github.com/gin-contrib/sse",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/stretchr/testify",
+            "specifier": "v1.3.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/stretchr/testify",
+        },
+        {
+          "from": "github.com/gin-gonic/gin",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/bytedance/sonic",
+            "specifier": "v1.9.1",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/bytedance/sonic",
+        },
+        {
+          "from": "github.com/gin-gonic/gin",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/chenzhuoyu/base64x",
+            "specifier": "v0.0.0-20221115062448-fe3a3abad311",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/chenzhuoyu/base64x",
+        },
+        {
+          "from": "github.com/gin-gonic/gin",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/davecgh/go-spew",
+            "specifier": "v1.1.1",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/davecgh/go-spew",
+        },
+        {
+          "from": "github.com/gin-gonic/gin",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/gabriel-vasile/mimetype",
+            "specifier": "v1.4.2",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/gabriel-vasile/mimetype",
+        },
+        {
+          "from": "github.com/gin-gonic/gin",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/gin-contrib/sse",
+            "specifier": "v0.1.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/gin-contrib/sse",
+        },
+        {
+          "from": "github.com/gin-gonic/gin",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/go-playground/locales",
+            "specifier": "v0.14.1",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/go-playground/locales",
+        },
+        {
+          "from": "github.com/gin-gonic/gin",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/go-playground/universal-translator",
+            "specifier": "v0.18.1",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/go-playground/universal-translator",
+        },
+        {
+          "from": "github.com/gin-gonic/gin",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/go-playground/validator/v10",
+            "specifier": "v10.14.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/go-playground/validator/v10",
+        },
+        {
+          "from": "github.com/gin-gonic/gin",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/goccy/go-json",
+            "specifier": "v0.10.2",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/goccy/go-json",
+        },
+        {
+          "from": "github.com/gin-gonic/gin",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/json-iterator/go",
+            "specifier": "v1.1.12",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/json-iterator/go",
+        },
+        {
+          "from": "github.com/gin-gonic/gin",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/klauspost/cpuid/v2",
+            "specifier": "v2.2.4",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/klauspost/cpuid/v2",
+        },
+        {
+          "from": "github.com/gin-gonic/gin",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/leodido/go-urn",
+            "specifier": "v1.2.4",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/leodido/go-urn",
+        },
+        {
+          "from": "github.com/gin-gonic/gin",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/mattn/go-isatty",
+            "specifier": "v0.0.19",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/mattn/go-isatty",
+        },
+        {
+          "from": "github.com/gin-gonic/gin",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/modern-go/concurrent",
+            "specifier": "v0.0.0-20180306012644-bacd9c7ef1dd",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/modern-go/concurrent",
+        },
+        {
+          "from": "github.com/gin-gonic/gin",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/modern-go/reflect2",
+            "specifier": "v1.0.2",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/modern-go/reflect2",
+        },
+        {
+          "from": "github.com/gin-gonic/gin",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/pelletier/go-toml/v2",
+            "specifier": "v2.0.8",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/pelletier/go-toml/v2",
+        },
+        {
+          "from": "github.com/gin-gonic/gin",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/pmezard/go-difflib",
+            "specifier": "v1.0.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/pmezard/go-difflib",
+        },
+        {
+          "from": "github.com/gin-gonic/gin",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/stretchr/testify",
+            "specifier": "v1.8.3",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/stretchr/testify",
+        },
+        {
+          "from": "github.com/gin-gonic/gin",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/twitchyliquid64/golang-asm",
+            "specifier": "v0.15.1",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/twitchyliquid64/golang-asm",
+        },
+        {
+          "from": "github.com/gin-gonic/gin",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/ugorji/go/codec",
+            "specifier": "v1.2.11",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/ugorji/go/codec",
+        },
+        {
+          "from": "github.com/gin-gonic/gin",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/arch",
+            "specifier": "v0.3.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/arch",
+        },
+        {
+          "from": "github.com/gin-gonic/gin",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/crypto",
+            "specifier": "v0.9.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/crypto",
+        },
+        {
+          "from": "github.com/gin-gonic/gin",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/net",
+            "specifier": "v0.10.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/net",
+        },
+        {
+          "from": "github.com/gin-gonic/gin",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/sys",
+            "specifier": "v0.8.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/sys",
+        },
+        {
+          "from": "github.com/gin-gonic/gin",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/text",
+            "specifier": "v0.9.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/text",
+        },
+        {
+          "from": "github.com/gin-gonic/gin",
+          "relation": "depends-on",
+          "requested": {
+            "name": "google.golang.org/protobuf",
+            "specifier": "v1.30.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "google.golang.org/protobuf",
+        },
+        {
+          "from": "github.com/gin-gonic/gin",
+          "relation": "depends-on",
+          "requested": {
+            "name": "gopkg.in/yaml.v3",
+            "specifier": "v3.0.1",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "gopkg.in/yaml.v3",
+        },
+        {
+          "from": "github.com/go-playground/locales",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/text",
+            "specifier": "v0.3.8",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/text",
+        },
+        {
+          "from": "github.com/go-playground/universal-translator",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/go-playground/locales",
+            "specifier": "v0.14.1",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/go-playground/locales",
+        },
+        {
+          "from": "github.com/go-playground/validator/v10",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/gabriel-vasile/mimetype",
+            "specifier": "v1.4.2",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/gabriel-vasile/mimetype",
+        },
+        {
+          "from": "github.com/go-playground/validator/v10",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/go-playground/assert/v2",
+            "specifier": "v2.2.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/go-playground/assert/v2",
+        },
+        {
+          "from": "github.com/go-playground/validator/v10",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/go-playground/locales",
+            "specifier": "v0.14.1",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/go-playground/locales",
+        },
+        {
+          "from": "github.com/go-playground/validator/v10",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/go-playground/universal-translator",
+            "specifier": "v0.18.1",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/go-playground/universal-translator",
+        },
+        {
+          "from": "github.com/go-playground/validator/v10",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/leodido/go-urn",
+            "specifier": "v1.2.4",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/leodido/go-urn",
+        },
+        {
+          "from": "github.com/go-playground/validator/v10",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/crypto",
+            "specifier": "v0.7.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/crypto",
+        },
+        {
+          "from": "github.com/go-playground/validator/v10",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/net",
+            "specifier": "v0.8.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/net",
+        },
+        {
+          "from": "github.com/go-playground/validator/v10",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/sys",
+            "specifier": "v0.6.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/sys",
+        },
+        {
+          "from": "github.com/go-playground/validator/v10",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/text",
+            "specifier": "v0.8.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/text",
+        },
+        {
+          "from": "github.com/golang/protobuf",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/google/go-cmp",
+            "specifier": "v0.5.5",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/google/go-cmp",
+        },
+        {
+          "from": "github.com/golang/protobuf",
+          "relation": "depends-on",
+          "requested": {
+            "name": "google.golang.org/protobuf",
+            "specifier": "v1.26.0-rc.1",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "google.golang.org/protobuf",
+        },
+        {
+          "from": "github.com/google/go-cmp",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/xerrors",
+            "specifier": "v0.0.0-20191204190536-9bdfabe68543",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/xerrors",
+        },
+        {
+          "from": "github.com/json-iterator/go",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/davecgh/go-spew",
+            "specifier": "v1.1.1",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/davecgh/go-spew",
+        },
+        {
+          "from": "github.com/json-iterator/go",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/google/gofuzz",
+            "specifier": "v1.0.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/google/gofuzz",
+        },
+        {
+          "from": "github.com/json-iterator/go",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/modern-go/concurrent",
+            "specifier": "v0.0.0-20180228061459-e0a39a4cb421",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/modern-go/concurrent",
+        },
+        {
+          "from": "github.com/json-iterator/go",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/modern-go/reflect2",
+            "specifier": "v1.0.2",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/modern-go/reflect2",
+        },
+        {
+          "from": "github.com/json-iterator/go",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/stretchr/testify",
+            "specifier": "v1.3.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/stretchr/testify",
+        },
+        {
+          "from": "github.com/klauspost/cpuid/v2",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/sys",
+            "specifier": "v0.0.0-20220704084225-05e143d24a9e",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/sys",
+        },
+        {
+          "from": "github.com/leodido/go-urn",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/stretchr/testify",
+            "specifier": "v1.8.2",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/stretchr/testify",
+        },
+        {
+          "from": "github.com/mattn/go-isatty",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/sys",
+            "specifier": "v0.6.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/sys",
+        },
+        {
+          "from": "github.com/pelletier/go-toml/v2",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/stretchr/testify",
+            "specifier": "v1.8.3",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/stretchr/testify",
+        },
+        {
+          "from": "github.com/spf13/cobra",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/cpuguy83/go-md2man/v2",
+            "specifier": "v2.0.2",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/cpuguy83/go-md2man/v2",
+        },
+        {
+          "from": "github.com/spf13/cobra",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/inconshreveable/mousetrap",
+            "specifier": "v1.1.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/inconshreveable/mousetrap",
+        },
+        {
+          "from": "github.com/spf13/cobra",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/spf13/pflag",
+            "specifier": "v1.0.5",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/spf13/pflag",
+        },
+        {
+          "from": "github.com/spf13/cobra",
+          "relation": "depends-on",
+          "requested": {
+            "name": "gopkg.in/yaml.v3",
+            "specifier": "v3.0.1",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "gopkg.in/yaml.v3",
+        },
+        {
+          "from": "github.com/stretchr/objx",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/stretchr/testify",
+            "specifier": "v1.8.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/stretchr/testify",
+        },
+        {
+          "from": "github.com/stretchr/testify",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/davecgh/go-spew",
+            "specifier": "v1.1.1",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/davecgh/go-spew",
+        },
+        {
+          "from": "github.com/stretchr/testify",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/pmezard/go-difflib",
+            "specifier": "v1.0.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/pmezard/go-difflib",
+        },
+        {
+          "from": "github.com/stretchr/testify",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/stretchr/objx",
+            "specifier": "v0.5.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/stretchr/objx",
+        },
+        {
+          "from": "github.com/stretchr/testify",
+          "relation": "depends-on",
+          "requested": {
+            "name": "gopkg.in/yaml.v3",
+            "specifier": "v3.0.1",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "gopkg.in/yaml.v3",
+        },
+        {
+          "from": "golang.org/x/arch",
+          "relation": "depends-on",
+          "requested": {
+            "name": "rsc.io/pdf",
+            "specifier": "v0.1.1",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "rsc.io/pdf",
+        },
+        {
+          "from": "golang.org/x/crypto",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/net",
+            "specifier": "v0.10.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/net",
+        },
+        {
+          "from": "golang.org/x/crypto",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/sys",
+            "specifier": "v0.8.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/sys",
+        },
+        {
+          "from": "golang.org/x/crypto",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/term",
+            "specifier": "v0.8.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/term",
+        },
+        {
+          "from": "golang.org/x/crypto",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/text",
+            "specifier": "v0.9.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/text",
+        },
+        {
+          "from": "golang.org/x/net",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/sys",
+            "specifier": "v0.8.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/sys",
+        },
+        {
+          "from": "golang.org/x/net",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/term",
+            "specifier": "v0.8.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/term",
+        },
+        {
+          "from": "golang.org/x/net",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/text",
+            "specifier": "v0.9.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/text",
+        },
+        {
+          "from": "golang.org/x/text",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/mod",
+            "specifier": "v0.8.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/mod",
+        },
+        {
+          "from": "golang.org/x/text",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/sys",
+            "specifier": "v0.5.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/sys",
+        },
+        {
+          "from": "golang.org/x/text",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/tools",
+            "specifier": "v0.6.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/tools",
+        },
+        {
+          "from": "google.golang.org/protobuf",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/golang/protobuf",
+            "specifier": "v1.5.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/golang/protobuf",
+        },
+        {
+          "from": "google.golang.org/protobuf",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/google/go-cmp",
+            "specifier": "v0.5.5",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/google/go-cmp",
+        },
+        {
+          "from": "gopkg.in/yaml.v3",
+          "relation": "depends-on",
+          "requested": {
+            "name": "gopkg.in/check.v1",
+            "specifier": "v0.0.0-20161208181325-20d25e280405",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "gopkg.in/check.v1",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/bytedance/sonic",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/chenzhuoyu/base64x",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/cpuguy83/go-md2man/v2",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/davecgh/go-spew",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/gabriel-vasile/mimetype",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/gin-contrib/sse",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/gin-gonic/gin",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/go-playground/assert/v2",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/go-playground/locales",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/go-playground/universal-translator",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/go-playground/validator/v10",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/goccy/go-json",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/golang/protobuf",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/google/go-cmp",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/google/gofuzz",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/inconshreveable/mousetrap",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/json-iterator/go",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/klauspost/cpuid/v2",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/leodido/go-urn",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/mattn/go-isatty",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/modern-go/concurrent",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/modern-go/reflect2",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/pelletier/go-toml/v2",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/pmezard/go-difflib",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/russross/blackfriday/v2",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/spf13/cobra",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/spf13/pflag",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/stretchr/objx",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/stretchr/testify",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/twitchyliquid64/golang-asm",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/ugorji/go/codec",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/arch",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/crypto",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/mod",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/net",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/sync",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/sys",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/term",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/text",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/tools",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/xerrors",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "google.golang.org/protobuf",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "gopkg.in/check.v1",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "gopkg.in/yaml.v3",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "rsc.io/pdf",
+        },
+      ],
+      "id": "["gomod","go.mod","gomod:5a89a9344df709f7299d5dba032fe0c2a184541196c4a7728f8e0e377a8ea4f4"]",
+      "interpretation": "resolved",
+      "nodes": [
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "github.com/bytedance/sonic",
+              "Version": "v1.9.1",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/bytedance/sonic",
+          "locator": "github.com/bytedance/sonic@v1.9.1",
+          "purl": "pkg:golang/github.com%2Fbytedance%2Fsonic@v1.9.1",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "github.com/chenzhuoyu/base64x",
+              "Version": "v0.0.0-20221115062448-fe3a3abad311",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/chenzhuoyu/base64x",
+          "locator": "github.com/chenzhuoyu/base64x@v0.0.0-20221115062448-fe3a3abad311",
+          "purl": "pkg:golang/github.com%2Fchenzhuoyu%2Fbase64x@v0.0.0-20221115062448-fe3a3abad311",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "github.com/cpuguy83/go-md2man/v2",
+              "Version": "v2.0.2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/cpuguy83/go-md2man/v2",
+          "locator": "github.com/cpuguy83/go-md2man/v2@v2.0.2",
+          "purl": "pkg:golang/github.com%2Fcpuguy83%2Fgo-md2man%2Fv2@v2.0.2",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "github.com/davecgh/go-spew",
+              "Version": "v1.1.1",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/davecgh/go-spew",
+          "locator": "github.com/davecgh/go-spew@v1.1.1",
+          "purl": "pkg:golang/github.com%2Fdavecgh%2Fgo-spew@v1.1.1",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "github.com/gabriel-vasile/mimetype",
+              "Version": "v1.4.2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/gabriel-vasile/mimetype",
+          "locator": "github.com/gabriel-vasile/mimetype@v1.4.2",
+          "purl": "pkg:golang/github.com%2Fgabriel-vasile%2Fmimetype@v1.4.2",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "github.com/gin-contrib/sse",
+              "Version": "v0.1.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/gin-contrib/sse",
+          "locator": "github.com/gin-contrib/sse@v0.1.0",
+          "purl": "pkg:golang/github.com%2Fgin-contrib%2Fsse@v0.1.0",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Path": "github.com/gin-gonic/gin",
+              "Version": "v1.9.1",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/gin-gonic/gin",
+          "locator": "github.com/gin-gonic/gin@v1.9.1",
+          "purl": "pkg:golang/github.com%2Fgin-gonic%2Fgin@v1.9.1",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "github.com/go-playground/assert/v2",
+              "Version": "v2.2.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/go-playground/assert/v2",
+          "locator": "github.com/go-playground/assert/v2@v2.2.0",
+          "purl": "pkg:golang/github.com%2Fgo-playground%2Fassert%2Fv2@v2.2.0",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "github.com/go-playground/locales",
+              "Version": "v0.14.1",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/go-playground/locales",
+          "locator": "github.com/go-playground/locales@v0.14.1",
+          "purl": "pkg:golang/github.com%2Fgo-playground%2Flocales@v0.14.1",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "github.com/go-playground/universal-translator",
+              "Version": "v0.18.1",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/go-playground/universal-translator",
+          "locator": "github.com/go-playground/universal-translator@v0.18.1",
+          "purl": "pkg:golang/github.com%2Fgo-playground%2Funiversal-translator@v0.18.1",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "github.com/go-playground/validator/v10",
+              "Version": "v10.14.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/go-playground/validator/v10",
+          "locator": "github.com/go-playground/validator/v10@v10.14.0",
+          "purl": "pkg:golang/github.com%2Fgo-playground%2Fvalidator%2Fv10@v10.14.0",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "github.com/goccy/go-json",
+              "Version": "v0.10.2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/goccy/go-json",
+          "locator": "github.com/goccy/go-json@v0.10.2",
+          "purl": "pkg:golang/github.com%2Fgoccy%2Fgo-json@v0.10.2",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "github.com/golang/protobuf",
+              "Version": "v1.5.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/golang/protobuf",
+          "locator": "github.com/golang/protobuf@v1.5.0",
+          "purl": "pkg:golang/github.com%2Fgolang%2Fprotobuf@v1.5.0",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "github.com/google/go-cmp",
+              "Version": "v0.5.5",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/google/go-cmp",
+          "locator": "github.com/google/go-cmp@v0.5.5",
+          "purl": "pkg:golang/github.com%2Fgoogle%2Fgo-cmp@v0.5.5",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "github.com/google/gofuzz",
+              "Version": "v1.0.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/google/gofuzz",
+          "locator": "github.com/google/gofuzz@v1.0.0",
+          "purl": "pkg:golang/github.com%2Fgoogle%2Fgofuzz@v1.0.0",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "github.com/inconshreveable/mousetrap",
+              "Version": "v1.1.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/inconshreveable/mousetrap",
+          "locator": "github.com/inconshreveable/mousetrap@v1.1.0",
+          "purl": "pkg:golang/github.com%2Finconshreveable%2Fmousetrap@v1.1.0",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "github.com/json-iterator/go",
+              "Version": "v1.1.12",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/json-iterator/go",
+          "locator": "github.com/json-iterator/go@v1.1.12",
+          "purl": "pkg:golang/github.com%2Fjson-iterator%2Fgo@v1.1.12",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "github.com/klauspost/cpuid/v2",
+              "Version": "v2.2.4",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/klauspost/cpuid/v2",
+          "locator": "github.com/klauspost/cpuid/v2@v2.2.4",
+          "purl": "pkg:golang/github.com%2Fklauspost%2Fcpuid%2Fv2@v2.2.4",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "github.com/leodido/go-urn",
+              "Version": "v1.2.4",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/leodido/go-urn",
+          "locator": "github.com/leodido/go-urn@v1.2.4",
+          "purl": "pkg:golang/github.com%2Fleodido%2Fgo-urn@v1.2.4",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "github.com/mattn/go-isatty",
+              "Version": "v0.0.19",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/mattn/go-isatty",
+          "locator": "github.com/mattn/go-isatty@v0.0.19",
+          "purl": "pkg:golang/github.com%2Fmattn%2Fgo-isatty@v0.0.19",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "github.com/modern-go/concurrent",
+              "Version": "v0.0.0-20180306012644-bacd9c7ef1dd",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/modern-go/concurrent",
+          "locator": "github.com/modern-go/concurrent@v0.0.0-20180306012644-bacd9c7ef1dd",
+          "purl": "pkg:golang/github.com%2Fmodern-go%2Fconcurrent@v0.0.0-20180306012644-bacd9c7ef1dd",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "github.com/modern-go/reflect2",
+              "Version": "v1.0.2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/modern-go/reflect2",
+          "locator": "github.com/modern-go/reflect2@v1.0.2",
+          "purl": "pkg:golang/github.com%2Fmodern-go%2Freflect2@v1.0.2",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "github.com/pelletier/go-toml/v2",
+              "Version": "v2.0.8",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/pelletier/go-toml/v2",
+          "locator": "github.com/pelletier/go-toml/v2@v2.0.8",
+          "purl": "pkg:golang/github.com%2Fpelletier%2Fgo-toml%2Fv2@v2.0.8",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "github.com/pmezard/go-difflib",
+              "Version": "v1.0.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/pmezard/go-difflib",
+          "locator": "github.com/pmezard/go-difflib@v1.0.0",
+          "purl": "pkg:golang/github.com%2Fpmezard%2Fgo-difflib@v1.0.0",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "github.com/russross/blackfriday/v2",
+              "Version": "v2.1.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/russross/blackfriday/v2",
+          "locator": "github.com/russross/blackfriday/v2@v2.1.0",
+          "purl": "pkg:golang/github.com%2Frussross%2Fblackfriday%2Fv2@v2.1.0",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Path": "github.com/spf13/cobra",
+              "Version": "v1.7.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/spf13/cobra",
+          "locator": "github.com/spf13/cobra@v1.7.0",
+          "purl": "pkg:golang/github.com%2Fspf13%2Fcobra@v1.7.0",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "github.com/spf13/pflag",
+              "Version": "v1.0.5",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/spf13/pflag",
+          "locator": "github.com/spf13/pflag@v1.0.5",
+          "purl": "pkg:golang/github.com%2Fspf13%2Fpflag@v1.0.5",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "github.com/stretchr/objx",
+              "Version": "v0.5.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/stretchr/objx",
+          "locator": "github.com/stretchr/objx@v0.5.0",
+          "purl": "pkg:golang/github.com%2Fstretchr%2Fobjx@v0.5.0",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "github.com/stretchr/testify",
+              "Version": "v1.8.3",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/stretchr/testify",
+          "locator": "github.com/stretchr/testify@v1.8.3",
+          "purl": "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.8.3",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "github.com/twitchyliquid64/golang-asm",
+              "Version": "v0.15.1",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/twitchyliquid64/golang-asm",
+          "locator": "github.com/twitchyliquid64/golang-asm@v0.15.1",
+          "purl": "pkg:golang/github.com%2Ftwitchyliquid64%2Fgolang-asm@v0.15.1",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "github.com/ugorji/go/codec",
+              "Version": "v1.2.11",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/ugorji/go/codec",
+          "locator": "github.com/ugorji/go/codec@v1.2.11",
+          "purl": "pkg:golang/github.com%2Fugorji%2Fgo%2Fcodec@v1.2.11",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "golang.org/x/arch",
+              "Version": "v0.3.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "golang.org/x/arch",
+          "locator": "golang.org/x/arch@v0.3.0",
+          "purl": "pkg:golang/golang.org%2Fx%2Farch@v0.3.0",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "golang.org/x/crypto",
+              "Version": "v0.9.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "golang.org/x/crypto",
+          "locator": "golang.org/x/crypto@v0.9.0",
+          "purl": "pkg:golang/golang.org%2Fx%2Fcrypto@v0.9.0",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "golang.org/x/mod",
+              "Version": "v0.8.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "golang.org/x/mod",
+          "locator": "golang.org/x/mod@v0.8.0",
+          "purl": "pkg:golang/golang.org%2Fx%2Fmod@v0.8.0",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "golang.org/x/net",
+              "Version": "v0.10.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "golang.org/x/net",
+          "locator": "golang.org/x/net@v0.10.0",
+          "purl": "pkg:golang/golang.org%2Fx%2Fnet@v0.10.0",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Path": "golang.org/x/sync",
+              "Version": "v0.3.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "golang.org/x/sync",
+          "locator": "golang.org/x/sync@v0.3.0",
+          "purl": "pkg:golang/golang.org%2Fx%2Fsync@v0.3.0",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "golang.org/x/sys",
+              "Version": "v0.8.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "golang.org/x/sys",
+          "locator": "golang.org/x/sys@v0.8.0",
+          "purl": "pkg:golang/golang.org%2Fx%2Fsys@v0.8.0",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "golang.org/x/term",
+              "Version": "v0.8.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "golang.org/x/term",
+          "locator": "golang.org/x/term@v0.8.0",
+          "purl": "pkg:golang/golang.org%2Fx%2Fterm@v0.8.0",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "golang.org/x/text",
+              "Version": "v0.9.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "golang.org/x/text",
+          "locator": "golang.org/x/text@v0.9.0",
+          "purl": "pkg:golang/golang.org%2Fx%2Ftext@v0.9.0",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "golang.org/x/tools",
+              "Version": "v0.6.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "golang.org/x/tools",
+          "locator": "golang.org/x/tools@v0.6.0",
+          "purl": "pkg:golang/golang.org%2Fx%2Ftools@v0.6.0",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "golang.org/x/xerrors",
+              "Version": "v0.0.0-20191204190536-9bdfabe68543",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "golang.org/x/xerrors",
+          "locator": "golang.org/x/xerrors@v0.0.0-20191204190536-9bdfabe68543",
+          "purl": "pkg:golang/golang.org%2Fx%2Fxerrors@v0.0.0-20191204190536-9bdfabe68543",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "google.golang.org/protobuf",
+              "Version": "v1.30.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "google.golang.org/protobuf",
+          "locator": "google.golang.org/protobuf@v1.30.0",
+          "purl": "pkg:golang/google.golang.org%2Fprotobuf@v1.30.0",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "gopkg.in/check.v1",
+              "Version": "v0.0.0-20161208181325-20d25e280405",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "gopkg.in/check.v1",
+          "locator": "gopkg.in/check.v1@v0.0.0-20161208181325-20d25e280405",
+          "purl": "pkg:golang/gopkg.in%2Fcheck.v1@v0.0.0-20161208181325-20d25e280405",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "gopkg.in/yaml.v3",
+              "Version": "v3.0.1",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "gopkg.in/yaml.v3",
+          "locator": "gopkg.in/yaml.v3@v3.0.1",
+          "purl": "pkg:golang/gopkg.in%2Fyaml.v3@v3.0.1",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "root:dependencies",
+          "project": {
+            "definitionFile": "go.mod",
+            "purl": "pkg:golang/example.com%2Fmyapp",
+          },
+          "purl": "pkg:golang/example.com%2Fmyapp",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "root:go:build-list",
+          "project": {
+            "definitionFile": "go.mod",
+            "purl": "pkg:golang/example.com%2Fmyapp",
+          },
+          "purl": "pkg:golang/example.com%2Fmyapp",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "root:indirectDependencies",
+          "project": {
+            "definitionFile": "go.mod",
+            "purl": "pkg:golang/example.com%2Fmyapp",
+          },
+          "purl": "pkg:golang/example.com%2Fmyapp",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "rsc.io/pdf",
+              "Version": "v0.1.1",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "rsc.io/pdf",
+          "locator": "rsc.io/pdf@v0.1.1",
+          "purl": "pkg:golang/rsc.io%2Fpdf@v0.1.1",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "root:dependencies",
+          "node": "root:dependencies",
+          "project": {
+            "definitionFile": "go.mod",
+            "purl": "pkg:golang/example.com%2Fmyapp",
+          },
+          "scope": "dependencies",
+        },
+        {
+          "id": "root:go:build-list",
+          "node": "root:go:build-list",
+          "project": {
+            "definitionFile": "go.mod",
+            "purl": "pkg:golang/example.com%2Fmyapp",
+          },
+          "scope": "go:build-list",
+        },
+        {
+          "id": "root:indirectDependencies",
+          "node": "root:indirectDependencies",
+          "project": {
+            "definitionFile": "go.mod",
+            "purl": "pkg:golang/example.com%2Fmyapp",
+          },
+          "scope": "indirectDependencies",
+        },
+      ],
+      "source": {
+        "extractor": "gomod",
+        "files": [
+          "go.mod",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/github.com%2Fbytedance%2Fsonic@v1.9.1",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/github.com%2Fchenzhuoyu%2Fbase64x@v0.0.0-20221115062448-fe3a3abad311",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/github.com%2Fcpuguy83%2Fgo-md2man%2Fv2@v2.0.2",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/github.com%2Fdavecgh%2Fgo-spew@v1.1.1",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/github.com%2Fgabriel-vasile%2Fmimetype@v1.4.2",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/github.com%2Fgin-contrib%2Fsse@v0.1.0",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/github.com%2Fgin-gonic%2Fgin@v1.9.1",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/github.com%2Fgo-playground%2Fassert%2Fv2@v2.2.0",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/github.com%2Fgo-playground%2Flocales@v0.14.1",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/github.com%2Fgo-playground%2Funiversal-translator@v0.18.1",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/github.com%2Fgo-playground%2Fvalidator%2Fv10@v10.14.0",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/github.com%2Fgoccy%2Fgo-json@v0.10.2",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/github.com%2Fgolang%2Fprotobuf@v1.5.0",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/github.com%2Fgoogle%2Fgo-cmp@v0.5.5",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/github.com%2Fgoogle%2Fgofuzz@v1.0.0",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/github.com%2Finconshreveable%2Fmousetrap@v1.1.0",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/github.com%2Fjson-iterator%2Fgo@v1.1.12",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/github.com%2Fklauspost%2Fcpuid%2Fv2@v2.2.4",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/github.com%2Fleodido%2Fgo-urn@v1.2.4",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/github.com%2Fmattn%2Fgo-isatty@v0.0.19",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/github.com%2Fmodern-go%2Fconcurrent@v0.0.0-20180306012644-bacd9c7ef1dd",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/github.com%2Fmodern-go%2Freflect2@v1.0.2",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/github.com%2Fpelletier%2Fgo-toml%2Fv2@v2.0.8",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/github.com%2Fpmezard%2Fgo-difflib@v1.0.0",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/github.com%2Frussross%2Fblackfriday%2Fv2@v2.1.0",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/github.com%2Fspf13%2Fcobra@v1.7.0",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/github.com%2Fspf13%2Fpflag@v1.0.5",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/github.com%2Fstretchr%2Fobjx@v0.5.0",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.8.3",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/github.com%2Ftwitchyliquid64%2Fgolang-asm@v0.15.1",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/github.com%2Fugorji%2Fgo%2Fcodec@v1.2.11",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/golang.org%2Fx%2Farch@v0.3.0",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/golang.org%2Fx%2Fcrypto@v0.9.0",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/golang.org%2Fx%2Fmod@v0.8.0",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/golang.org%2Fx%2Fnet@v0.10.0",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/golang.org%2Fx%2Fsync@v0.3.0",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/golang.org%2Fx%2Fsys@v0.8.0",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/golang.org%2Fx%2Fterm@v0.8.0",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/golang.org%2Fx%2Ftext@v0.9.0",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/golang.org%2Fx%2Ftools@v0.6.0",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/golang.org%2Fx%2Fxerrors@v0.0.0-20191204190536-9bdfabe68543",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/google.golang.org%2Fprotobuf@v1.30.0",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/gopkg.in%2Fcheck.v1@v0.0.0-20161208181325-20d25e280405",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/gopkg.in%2Fyaml.v3@v3.0.1",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/rsc.io%2Fpdf@v0.1.1",
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "go.mod",
+      "purl": "pkg:golang/example.com%2Fmyapp",
+    },
+  ],
+}
+`;
+
+exports[`native Go extraction: monorepo 1`] = `
+{
+  "codebase": "fixture:monorepo",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "attributes": {
+        "go:manifest": {
+          "Exclude": null,
+          "Go": "1.21",
+          "Ignore": null,
+          "Module": {
+            "Path": "example.com/monorepo",
+          },
+          "Replace": [
+            {
+              "New": {
+                "Path": "./pkg1",
+              },
+              "Old": {
+                "Path": "example.com/monorepo/pkg1",
+              },
+            },
+            {
+              "New": {
+                "Path": "./pkg2",
+              },
+              "Old": {
+                "Path": "example.com/monorepo/pkg2",
+              },
+            },
+          ],
+          "Require": [
+            {
+              "Path": "example.com/monorepo/pkg1",
+              "Version": "v0.0.0",
+            },
+            {
+              "Path": "example.com/monorepo/pkg2",
+              "Version": "v0.0.0",
+            },
+            {
+              "Path": "github.com/stretchr/testify",
+              "Version": "v1.8.4",
+            },
+            {
+              "Indirect": true,
+              "Path": "github.com/davecgh/go-spew",
+              "Version": "v1.1.1",
+            },
+            {
+              "Indirect": true,
+              "Path": "github.com/pmezard/go-difflib",
+              "Version": "v1.0.0",
+            },
+            {
+              "Indirect": true,
+              "Path": "gopkg.in/yaml.v3",
+              "Version": "v3.0.1",
+            },
+          ],
+          "Retract": null,
+          "Tool": null,
+        },
+        "go:membership": "module-build-list",
+        "go:moduleGraph": "example.com/monorepo example.com/monorepo/pkg1@v0.0.0
+example.com/monorepo example.com/monorepo/pkg2@v0.0.0
+example.com/monorepo github.com/davecgh/go-spew@v1.1.1
+example.com/monorepo github.com/pmezard/go-difflib@v1.0.0
+example.com/monorepo github.com/stretchr/testify@v1.8.4
+example.com/monorepo go@1.21
+example.com/monorepo gopkg.in/yaml.v3@v3.0.1
+example.com/monorepo/pkg1@v0.0.0 github.com/google/uuid@v1.3.0
+example.com/monorepo/pkg1@v0.0.0 go@1.21
+example.com/monorepo/pkg2@v0.0.0 example.com/monorepo/pkg1@v0.0.0
+example.com/monorepo/pkg2@v0.0.0 golang.org/x/text@v0.12.0
+example.com/monorepo/pkg2@v0.0.0 go@1.21
+github.com/stretchr/testify@v1.8.4 github.com/davecgh/go-spew@v1.1.1
+github.com/stretchr/testify@v1.8.4 github.com/pmezard/go-difflib@v1.0.0
+github.com/stretchr/testify@v1.8.4 github.com/stretchr/objx@v0.5.0
+github.com/stretchr/testify@v1.8.4 gopkg.in/yaml.v3@v3.0.1
+go@1.21 toolchain@go1.21
+gopkg.in/yaml.v3@v3.0.1 gopkg.in/check.v1@v0.0.0-20161208181325-20d25e280405
+",
+      },
+      "edges": [
+        {
+          "attributes": {
+            "go:indirect": false,
+          },
+          "from": "root:dependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "example.com/monorepo/pkg1",
+            "specifier": "v0.0.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "example.com/monorepo/pkg1",
+        },
+        {
+          "attributes": {
+            "go:indirect": false,
+          },
+          "from": "root:dependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "example.com/monorepo/pkg2",
+            "specifier": "v0.0.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "example.com/monorepo/pkg2",
+        },
+        {
+          "attributes": {
+            "go:indirect": false,
+          },
+          "from": "root:dependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/stretchr/testify",
+            "specifier": "v1.8.4",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/stretchr/testify",
+        },
+        {
+          "attributes": {
+            "go:indirect": true,
+          },
+          "from": "root:indirectDependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/davecgh/go-spew",
+            "specifier": "v1.1.1",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/davecgh/go-spew",
+        },
+        {
+          "attributes": {
+            "go:indirect": true,
+          },
+          "from": "root:indirectDependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/pmezard/go-difflib",
+            "specifier": "v1.0.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/pmezard/go-difflib",
+        },
+        {
+          "attributes": {
+            "go:indirect": true,
+          },
+          "from": "root:indirectDependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "gopkg.in/yaml.v3",
+            "specifier": "v3.0.1",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "gopkg.in/yaml.v3",
+        },
+        {
+          "from": "example.com/monorepo/pkg1",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/google/uuid",
+            "specifier": "v1.3.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/google/uuid",
+        },
+        {
+          "from": "example.com/monorepo/pkg2",
+          "relation": "depends-on",
+          "requested": {
+            "name": "example.com/monorepo/pkg1",
+            "specifier": "v0.0.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "example.com/monorepo/pkg1",
+        },
+        {
+          "from": "example.com/monorepo/pkg2",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/text",
+            "specifier": "v0.12.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/text",
+        },
+        {
+          "from": "github.com/stretchr/testify",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/davecgh/go-spew",
+            "specifier": "v1.1.1",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/davecgh/go-spew",
+        },
+        {
+          "from": "github.com/stretchr/testify",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/pmezard/go-difflib",
+            "specifier": "v1.0.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/pmezard/go-difflib",
+        },
+        {
+          "from": "github.com/stretchr/testify",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/stretchr/objx",
+            "specifier": "v0.5.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/stretchr/objx",
+        },
+        {
+          "from": "github.com/stretchr/testify",
+          "relation": "depends-on",
+          "requested": {
+            "name": "gopkg.in/yaml.v3",
+            "specifier": "v3.0.1",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "gopkg.in/yaml.v3",
+        },
+        {
+          "from": "gopkg.in/yaml.v3",
+          "relation": "depends-on",
+          "requested": {
+            "name": "gopkg.in/check.v1",
+            "specifier": "v0.0.0-20161208181325-20d25e280405",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "gopkg.in/check.v1",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "example.com/monorepo/pkg1",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "example.com/monorepo/pkg2",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/davecgh/go-spew",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/google/uuid",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/pmezard/go-difflib",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/stretchr/objx",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/stretchr/testify",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/text",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "gopkg.in/check.v1",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "gopkg.in/yaml.v3",
+        },
+      ],
+      "id": "["gomod","go.mod","gomod:57832d2a9c06acdbd24d98eaff315fb7abb8c944b403100faeba52776acbed4d"]",
+      "interpretation": "resolved",
+      "nodes": [
+        {
+          "artifacts": [
+            {
+              "attributes": {
+                "go:replacement": {
+                  "Path": "./pkg1",
+                },
+              },
+              "evidence": [
+                "go.mod",
+              ],
+              "location": "./pkg1",
+            },
+          ],
+          "attributes": {
+            "go:module": {
+              "Path": "example.com/monorepo/pkg1",
+              "Replace": {
+                "Path": "./pkg1",
+              },
+              "Version": "v0.0.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "example.com/monorepo/pkg1",
+          "locator": "example.com/monorepo/pkg1@v0.0.0",
+          "purl": "pkg:golang/example.com%2Fmonorepo%2Fpkg1@v0.0.0",
+        },
+        {
+          "artifacts": [
+            {
+              "attributes": {
+                "go:replacement": {
+                  "Path": "./pkg2",
+                },
+              },
+              "evidence": [
+                "go.mod",
+              ],
+              "location": "./pkg2",
+            },
+          ],
+          "attributes": {
+            "go:module": {
+              "Path": "example.com/monorepo/pkg2",
+              "Replace": {
+                "Path": "./pkg2",
+              },
+              "Version": "v0.0.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "example.com/monorepo/pkg2",
+          "locator": "example.com/monorepo/pkg2@v0.0.0",
+          "purl": "pkg:golang/example.com%2Fmonorepo%2Fpkg2@v0.0.0",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "github.com/davecgh/go-spew",
+              "Version": "v1.1.1",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/davecgh/go-spew",
+          "locator": "github.com/davecgh/go-spew@v1.1.1",
+          "purl": "pkg:golang/github.com%2Fdavecgh%2Fgo-spew@v1.1.1",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "github.com/google/uuid",
+              "Version": "v1.3.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/google/uuid",
+          "locator": "github.com/google/uuid@v1.3.0",
+          "purl": "pkg:golang/github.com%2Fgoogle%2Fuuid@v1.3.0",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "github.com/pmezard/go-difflib",
+              "Version": "v1.0.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/pmezard/go-difflib",
+          "locator": "github.com/pmezard/go-difflib@v1.0.0",
+          "purl": "pkg:golang/github.com%2Fpmezard%2Fgo-difflib@v1.0.0",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "github.com/stretchr/objx",
+              "Version": "v0.5.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/stretchr/objx",
+          "locator": "github.com/stretchr/objx@v0.5.0",
+          "purl": "pkg:golang/github.com%2Fstretchr%2Fobjx@v0.5.0",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Path": "github.com/stretchr/testify",
+              "Version": "v1.8.4",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/stretchr/testify",
+          "locator": "github.com/stretchr/testify@v1.8.4",
+          "purl": "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.8.4",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "golang.org/x/text",
+              "Version": "v0.12.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "golang.org/x/text",
+          "locator": "golang.org/x/text@v0.12.0",
+          "purl": "pkg:golang/golang.org%2Fx%2Ftext@v0.12.0",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "gopkg.in/check.v1",
+              "Version": "v0.0.0-20161208181325-20d25e280405",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "gopkg.in/check.v1",
+          "locator": "gopkg.in/check.v1@v0.0.0-20161208181325-20d25e280405",
+          "purl": "pkg:golang/gopkg.in%2Fcheck.v1@v0.0.0-20161208181325-20d25e280405",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "gopkg.in/yaml.v3",
+              "Version": "v3.0.1",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "gopkg.in/yaml.v3",
+          "locator": "gopkg.in/yaml.v3@v3.0.1",
+          "purl": "pkg:golang/gopkg.in%2Fyaml.v3@v3.0.1",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "root:dependencies",
+          "project": {
+            "definitionFile": "go.mod",
+            "purl": "pkg:golang/example.com%2Fmonorepo",
+          },
+          "purl": "pkg:golang/example.com%2Fmonorepo",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "root:go:build-list",
+          "project": {
+            "definitionFile": "go.mod",
+            "purl": "pkg:golang/example.com%2Fmonorepo",
+          },
+          "purl": "pkg:golang/example.com%2Fmonorepo",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "root:indirectDependencies",
+          "project": {
+            "definitionFile": "go.mod",
+            "purl": "pkg:golang/example.com%2Fmonorepo",
+          },
+          "purl": "pkg:golang/example.com%2Fmonorepo",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "root:dependencies",
+          "node": "root:dependencies",
+          "project": {
+            "definitionFile": "go.mod",
+            "purl": "pkg:golang/example.com%2Fmonorepo",
+          },
+          "scope": "dependencies",
+        },
+        {
+          "id": "root:go:build-list",
+          "node": "root:go:build-list",
+          "project": {
+            "definitionFile": "go.mod",
+            "purl": "pkg:golang/example.com%2Fmonorepo",
+          },
+          "scope": "go:build-list",
+        },
+        {
+          "id": "root:indirectDependencies",
+          "node": "root:indirectDependencies",
+          "project": {
+            "definitionFile": "go.mod",
+            "purl": "pkg:golang/example.com%2Fmonorepo",
+          },
+          "scope": "indirectDependencies",
+        },
+      ],
+      "source": {
+        "extractor": "gomod",
+        "files": [
+          "go.mod",
+        ],
+      },
+    },
+    {
+      "attributes": {
+        "go:manifest": {
+          "Exclude": null,
+          "Go": "1.21",
+          "Ignore": null,
+          "Module": {
+            "Path": "example.com/monorepo/pkg1",
+          },
+          "Replace": null,
+          "Require": [
+            {
+              "Path": "github.com/google/uuid",
+              "Version": "v1.3.0",
+            },
+          ],
+          "Retract": null,
+          "Tool": null,
+        },
+        "go:membership": "module-build-list",
+        "go:moduleGraph": "example.com/monorepo/pkg1 github.com/google/uuid@v1.3.0
+example.com/monorepo/pkg1 go@1.21
+go@1.21 toolchain@go1.21
+",
+      },
+      "edges": [
+        {
+          "attributes": {
+            "go:indirect": false,
+          },
+          "from": "root:dependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/google/uuid",
+            "specifier": "v1.3.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/google/uuid",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/google/uuid",
+        },
+      ],
+      "id": "["gomod","pkg1/go.mod","gomod:6ea3370d8240117aad14ce30da6b5dfe80296ed54731c8dc66be28e7f6bf4cc4"]",
+      "interpretation": "resolved",
+      "nodes": [
+        {
+          "attributes": {
+            "go:module": {
+              "Path": "github.com/google/uuid",
+              "Version": "v1.3.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/google/uuid",
+          "locator": "github.com/google/uuid@v1.3.0",
+          "purl": "pkg:golang/github.com%2Fgoogle%2Fuuid@v1.3.0",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "root:dependencies",
+          "project": {
+            "definitionFile": "pkg1/go.mod",
+            "purl": "pkg:golang/example.com%2Fmonorepo%2Fpkg1",
+          },
+          "purl": "pkg:golang/example.com%2Fmonorepo%2Fpkg1",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "root:go:build-list",
+          "project": {
+            "definitionFile": "pkg1/go.mod",
+            "purl": "pkg:golang/example.com%2Fmonorepo%2Fpkg1",
+          },
+          "purl": "pkg:golang/example.com%2Fmonorepo%2Fpkg1",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "root:indirectDependencies",
+          "project": {
+            "definitionFile": "pkg1/go.mod",
+            "purl": "pkg:golang/example.com%2Fmonorepo%2Fpkg1",
+          },
+          "purl": "pkg:golang/example.com%2Fmonorepo%2Fpkg1",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "root:dependencies",
+          "node": "root:dependencies",
+          "project": {
+            "definitionFile": "pkg1/go.mod",
+            "purl": "pkg:golang/example.com%2Fmonorepo%2Fpkg1",
+          },
+          "scope": "dependencies",
+        },
+        {
+          "id": "root:go:build-list",
+          "node": "root:go:build-list",
+          "project": {
+            "definitionFile": "pkg1/go.mod",
+            "purl": "pkg:golang/example.com%2Fmonorepo%2Fpkg1",
+          },
+          "scope": "go:build-list",
+        },
+        {
+          "id": "root:indirectDependencies",
+          "node": "root:indirectDependencies",
+          "project": {
+            "definitionFile": "pkg1/go.mod",
+            "purl": "pkg:golang/example.com%2Fmonorepo%2Fpkg1",
+          },
+          "scope": "indirectDependencies",
+        },
+      ],
+      "source": {
+        "extractor": "gomod",
+        "files": [
+          "pkg1/go.mod",
+        ],
+      },
+    },
+    {
+      "attributes": {
+        "go:manifest": {
+          "Exclude": null,
+          "Go": "1.21",
+          "Ignore": null,
+          "Module": {
+            "Path": "example.com/monorepo/pkg2",
+          },
+          "Replace": [
+            {
+              "New": {
+                "Path": "../pkg1",
+              },
+              "Old": {
+                "Path": "example.com/monorepo/pkg1",
+              },
+            },
+          ],
+          "Require": [
+            {
+              "Path": "example.com/monorepo/pkg1",
+              "Version": "v0.0.0",
+            },
+            {
+              "Path": "golang.org/x/text",
+              "Version": "v0.12.0",
+            },
+          ],
+          "Retract": null,
+          "Tool": null,
+        },
+        "go:membership": "module-build-list",
+        "go:moduleGraph": "example.com/monorepo/pkg2 example.com/monorepo/pkg1@v0.0.0
+example.com/monorepo/pkg2 go@1.21
+example.com/monorepo/pkg2 golang.org/x/text@v0.12.0
+example.com/monorepo/pkg1@v0.0.0 github.com/google/uuid@v1.3.0
+example.com/monorepo/pkg1@v0.0.0 go@1.21
+go@1.21 toolchain@go1.21
+golang.org/x/text@v0.12.0 golang.org/x/tools@v0.6.0
+golang.org/x/text@v0.12.0 golang.org/x/mod@v0.8.0
+golang.org/x/text@v0.12.0 golang.org/x/sys@v0.5.0
+",
+      },
+      "edges": [
+        {
+          "attributes": {
+            "go:indirect": false,
+          },
+          "from": "root:dependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "example.com/monorepo/pkg1",
+            "specifier": "v0.0.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "example.com/monorepo/pkg1",
+        },
+        {
+          "attributes": {
+            "go:indirect": false,
+          },
+          "from": "root:dependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/text",
+            "specifier": "v0.12.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/text",
+        },
+        {
+          "from": "example.com/monorepo/pkg1",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/google/uuid",
+            "specifier": "v1.3.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/google/uuid",
+        },
+        {
+          "from": "golang.org/x/text",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/mod",
+            "specifier": "v0.8.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/mod",
+        },
+        {
+          "from": "golang.org/x/text",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/sys",
+            "specifier": "v0.5.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/sys",
+        },
+        {
+          "from": "golang.org/x/text",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/tools",
+            "specifier": "v0.6.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/tools",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "example.com/monorepo/pkg1",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/google/uuid",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/mod",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/sys",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/text",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/tools",
+        },
+      ],
+      "id": "["gomod","pkg2/go.mod","gomod:3f54111418de29f11605c6b9aa4234da52aae251b1aeb7c323425fd5c22118fe"]",
+      "interpretation": "resolved",
+      "nodes": [
+        {
+          "artifacts": [
+            {
+              "attributes": {
+                "go:replacement": {
+                  "Path": "../pkg1",
+                },
+              },
+              "evidence": [
+                "pkg2/go.mod",
+              ],
+              "location": "../pkg1",
+            },
+          ],
+          "attributes": {
+            "go:module": {
+              "Path": "example.com/monorepo/pkg1",
+              "Replace": {
+                "Path": "../pkg1",
+              },
+              "Version": "v0.0.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "example.com/monorepo/pkg1",
+          "locator": "example.com/monorepo/pkg1@v0.0.0",
+          "purl": "pkg:golang/example.com%2Fmonorepo%2Fpkg1@v0.0.0",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "github.com/google/uuid",
+              "Version": "v1.3.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/google/uuid",
+          "locator": "github.com/google/uuid@v1.3.0",
+          "purl": "pkg:golang/github.com%2Fgoogle%2Fuuid@v1.3.0",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "golang.org/x/mod",
+              "Version": "v0.8.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "golang.org/x/mod",
+          "locator": "golang.org/x/mod@v0.8.0",
+          "purl": "pkg:golang/golang.org%2Fx%2Fmod@v0.8.0",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "golang.org/x/sys",
+              "Version": "v0.5.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "golang.org/x/sys",
+          "locator": "golang.org/x/sys@v0.5.0",
+          "purl": "pkg:golang/golang.org%2Fx%2Fsys@v0.5.0",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Path": "golang.org/x/text",
+              "Version": "v0.12.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "golang.org/x/text",
+          "locator": "golang.org/x/text@v0.12.0",
+          "purl": "pkg:golang/golang.org%2Fx%2Ftext@v0.12.0",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "golang.org/x/tools",
+              "Version": "v0.6.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "golang.org/x/tools",
+          "locator": "golang.org/x/tools@v0.6.0",
+          "purl": "pkg:golang/golang.org%2Fx%2Ftools@v0.6.0",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "root:dependencies",
+          "project": {
+            "definitionFile": "pkg2/go.mod",
+            "purl": "pkg:golang/example.com%2Fmonorepo%2Fpkg2",
+          },
+          "purl": "pkg:golang/example.com%2Fmonorepo%2Fpkg2",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "root:go:build-list",
+          "project": {
+            "definitionFile": "pkg2/go.mod",
+            "purl": "pkg:golang/example.com%2Fmonorepo%2Fpkg2",
+          },
+          "purl": "pkg:golang/example.com%2Fmonorepo%2Fpkg2",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "root:indirectDependencies",
+          "project": {
+            "definitionFile": "pkg2/go.mod",
+            "purl": "pkg:golang/example.com%2Fmonorepo%2Fpkg2",
+          },
+          "purl": "pkg:golang/example.com%2Fmonorepo%2Fpkg2",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "root:dependencies",
+          "node": "root:dependencies",
+          "project": {
+            "definitionFile": "pkg2/go.mod",
+            "purl": "pkg:golang/example.com%2Fmonorepo%2Fpkg2",
+          },
+          "scope": "dependencies",
+        },
+        {
+          "id": "root:go:build-list",
+          "node": "root:go:build-list",
+          "project": {
+            "definitionFile": "pkg2/go.mod",
+            "purl": "pkg:golang/example.com%2Fmonorepo%2Fpkg2",
+          },
+          "scope": "go:build-list",
+        },
+        {
+          "id": "root:indirectDependencies",
+          "node": "root:indirectDependencies",
+          "project": {
+            "definitionFile": "pkg2/go.mod",
+            "purl": "pkg:golang/example.com%2Fmonorepo%2Fpkg2",
+          },
+          "scope": "indirectDependencies",
+        },
+      ],
+      "source": {
+        "extractor": "gomod",
+        "files": [
+          "pkg2/go.mod",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "go.mod",
+        "pkg2/go.mod",
+      ],
+      "purl": "pkg:golang/example.com%2Fmonorepo%2Fpkg1@v0.0.0",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/example.com%2Fmonorepo%2Fpkg2@v0.0.0",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/github.com%2Fdavecgh%2Fgo-spew@v1.1.1",
+    },
+    {
+      "evidence": [
+        "go.mod",
+        "pkg1/go.mod",
+        "pkg2/go.mod",
+      ],
+      "purl": "pkg:golang/github.com%2Fgoogle%2Fuuid@v1.3.0",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/github.com%2Fpmezard%2Fgo-difflib@v1.0.0",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/github.com%2Fstretchr%2Fobjx@v0.5.0",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/github.com%2Fstretchr%2Ftestify@v1.8.4",
+    },
+    {
+      "evidence": [
+        "pkg2/go.mod",
+      ],
+      "purl": "pkg:golang/golang.org%2Fx%2Fmod@v0.8.0",
+    },
+    {
+      "evidence": [
+        "pkg2/go.mod",
+      ],
+      "purl": "pkg:golang/golang.org%2Fx%2Fsys@v0.5.0",
+    },
+    {
+      "evidence": [
+        "go.mod",
+        "pkg2/go.mod",
+      ],
+      "purl": "pkg:golang/golang.org%2Fx%2Ftext@v0.12.0",
+    },
+    {
+      "evidence": [
+        "pkg2/go.mod",
+      ],
+      "purl": "pkg:golang/golang.org%2Fx%2Ftools@v0.6.0",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/gopkg.in%2Fcheck.v1@v0.0.0-20161208181325-20d25e280405",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/gopkg.in%2Fyaml.v3@v3.0.1",
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "go.mod",
+      "purl": "pkg:golang/example.com%2Fmonorepo",
+    },
+    {
+      "definitionFile": "pkg1/go.mod",
+      "purl": "pkg:golang/example.com%2Fmonorepo%2Fpkg1",
+    },
+    {
+      "definitionFile": "pkg2/go.mod",
+      "purl": "pkg:golang/example.com%2Fmonorepo%2Fpkg2",
+    },
+  ],
+}
+`;
+
+exports[`native Go extraction: replace-directive 1`] = `
+{
+  "codebase": "fixture:replace-directive",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "attributes": {
+        "go:manifest": {
+          "Exclude": null,
+          "Go": "1.21",
+          "Ignore": null,
+          "Module": {
+            "Path": "example.com/app",
+          },
+          "Replace": [
+            {
+              "New": {
+                "Path": "./internal/utils",
+              },
+              "Old": {
+                "Path": "example.com/internal/utils",
+              },
+            },
+          ],
+          "Require": [
+            {
+              "Path": "github.com/google/uuid",
+              "Version": "v1.3.0",
+            },
+            {
+              "Path": "example.com/internal/utils",
+              "Version": "v0.0.0",
+            },
+            {
+              "Indirect": true,
+              "Path": "golang.org/x/text",
+              "Version": "v0.12.0",
+            },
+          ],
+          "Retract": null,
+          "Tool": null,
+        },
+        "go:membership": "module-build-list",
+        "go:moduleGraph": "example.com/app example.com/internal/utils@v0.0.0
+example.com/app github.com/google/uuid@v1.3.0
+example.com/app go@1.21
+example.com/app golang.org/x/text@v0.12.0
+example.com/internal/utils@v0.0.0 go@1.21
+go@1.21 toolchain@go1.21
+golang.org/x/text@v0.12.0 golang.org/x/tools@v0.6.0
+golang.org/x/text@v0.12.0 golang.org/x/mod@v0.8.0
+golang.org/x/text@v0.12.0 golang.org/x/sys@v0.5.0
+",
+      },
+      "edges": [
+        {
+          "attributes": {
+            "go:indirect": false,
+          },
+          "from": "root:dependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "example.com/internal/utils",
+            "specifier": "v0.0.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "example.com/internal/utils",
+        },
+        {
+          "attributes": {
+            "go:indirect": false,
+          },
+          "from": "root:dependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "github.com/google/uuid",
+            "specifier": "v1.3.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/google/uuid",
+        },
+        {
+          "attributes": {
+            "go:indirect": true,
+          },
+          "from": "root:indirectDependencies",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/text",
+            "specifier": "v0.12.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/text",
+        },
+        {
+          "from": "golang.org/x/text",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/mod",
+            "specifier": "v0.8.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/mod",
+        },
+        {
+          "from": "golang.org/x/text",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/sys",
+            "specifier": "v0.5.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/sys",
+        },
+        {
+          "from": "golang.org/x/text",
+          "relation": "depends-on",
+          "requested": {
+            "name": "golang.org/x/tools",
+            "specifier": "v0.6.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/tools",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "example.com/internal/utils",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "github.com/google/uuid",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/mod",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/sys",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/text",
+        },
+        {
+          "from": "root:go:build-list",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "golang.org/x/tools",
+        },
+      ],
+      "id": "["gomod","go.mod","gomod:0653585e976f3e298786c837e0cd8310c7aa06b1a2cee2883fd829544e91433a"]",
+      "interpretation": "resolved",
+      "nodes": [
+        {
+          "artifacts": [
+            {
+              "attributes": {
+                "go:replacement": {
+                  "Path": "./internal/utils",
+                },
+              },
+              "evidence": [
+                "go.mod",
+              ],
+              "location": "./internal/utils",
+            },
+          ],
+          "attributes": {
+            "go:module": {
+              "Path": "example.com/internal/utils",
+              "Replace": {
+                "Path": "./internal/utils",
+              },
+              "Version": "v0.0.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "example.com/internal/utils",
+          "locator": "example.com/internal/utils@v0.0.0",
+          "purl": "pkg:golang/example.com%2Finternal%2Futils@v0.0.0",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Path": "github.com/google/uuid",
+              "Version": "v1.3.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "github.com/google/uuid",
+          "locator": "github.com/google/uuid@v1.3.0",
+          "purl": "pkg:golang/github.com%2Fgoogle%2Fuuid@v1.3.0",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "golang.org/x/mod",
+              "Version": "v0.8.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "golang.org/x/mod",
+          "locator": "golang.org/x/mod@v0.8.0",
+          "purl": "pkg:golang/golang.org%2Fx%2Fmod@v0.8.0",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "golang.org/x/sys",
+              "Version": "v0.5.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "golang.org/x/sys",
+          "locator": "golang.org/x/sys@v0.5.0",
+          "purl": "pkg:golang/golang.org%2Fx%2Fsys@v0.5.0",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "golang.org/x/text",
+              "Version": "v0.12.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "golang.org/x/text",
+          "locator": "golang.org/x/text@v0.12.0",
+          "purl": "pkg:golang/golang.org%2Fx%2Ftext@v0.12.0",
+        },
+        {
+          "attributes": {
+            "go:module": {
+              "Indirect": true,
+              "Path": "golang.org/x/tools",
+              "Version": "v0.6.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "golang.org/x/tools",
+          "locator": "golang.org/x/tools@v0.6.0",
+          "purl": "pkg:golang/golang.org%2Fx%2Ftools@v0.6.0",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "root:dependencies",
+          "project": {
+            "definitionFile": "go.mod",
+            "purl": "pkg:golang/example.com%2Fapp",
+          },
+          "purl": "pkg:golang/example.com%2Fapp",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "root:go:build-list",
+          "project": {
+            "definitionFile": "go.mod",
+            "purl": "pkg:golang/example.com%2Fapp",
+          },
+          "purl": "pkg:golang/example.com%2Fapp",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "root:indirectDependencies",
+          "project": {
+            "definitionFile": "go.mod",
+            "purl": "pkg:golang/example.com%2Fapp",
+          },
+          "purl": "pkg:golang/example.com%2Fapp",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "root:dependencies",
+          "node": "root:dependencies",
+          "project": {
+            "definitionFile": "go.mod",
+            "purl": "pkg:golang/example.com%2Fapp",
+          },
+          "scope": "dependencies",
+        },
+        {
+          "id": "root:go:build-list",
+          "node": "root:go:build-list",
+          "project": {
+            "definitionFile": "go.mod",
+            "purl": "pkg:golang/example.com%2Fapp",
+          },
+          "scope": "go:build-list",
+        },
+        {
+          "id": "root:indirectDependencies",
+          "node": "root:indirectDependencies",
+          "project": {
+            "definitionFile": "go.mod",
+            "purl": "pkg:golang/example.com%2Fapp",
+          },
+          "scope": "indirectDependencies",
+        },
+      ],
+      "source": {
+        "extractor": "gomod",
+        "files": [
+          "go.mod",
+        ],
+      },
+    },
+    {
+      "attributes": {
+        "go:manifest": {
+          "Exclude": null,
+          "Go": "1.21",
+          "Ignore": null,
+          "Module": {
+            "Path": "example.com/internal/utils",
+          },
+          "Replace": null,
+          "Require": null,
+          "Retract": null,
+          "Tool": null,
+        },
+        "go:membership": "module-build-list",
+        "go:moduleGraph": "example.com/internal/utils go@1.21
+go@1.21 toolchain@go1.21
+",
+      },
+      "edges": [],
+      "id": "["gomod","internal/utils/go.mod","gomod:650bedcf5f408b41ba730294be982f0fcfd844333345b147fef7ffc1511fff14"]",
+      "interpretation": "resolved",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "root:dependencies",
+          "project": {
+            "definitionFile": "internal/utils/go.mod",
+            "purl": "pkg:golang/example.com%2Finternal%2Futils",
+          },
+          "purl": "pkg:golang/example.com%2Finternal%2Futils",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "root:go:build-list",
+          "project": {
+            "definitionFile": "internal/utils/go.mod",
+            "purl": "pkg:golang/example.com%2Finternal%2Futils",
+          },
+          "purl": "pkg:golang/example.com%2Finternal%2Futils",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "root:indirectDependencies",
+          "project": {
+            "definitionFile": "internal/utils/go.mod",
+            "purl": "pkg:golang/example.com%2Finternal%2Futils",
+          },
+          "purl": "pkg:golang/example.com%2Finternal%2Futils",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "root:dependencies",
+          "node": "root:dependencies",
+          "project": {
+            "definitionFile": "internal/utils/go.mod",
+            "purl": "pkg:golang/example.com%2Finternal%2Futils",
+          },
+          "scope": "dependencies",
+        },
+        {
+          "id": "root:go:build-list",
+          "node": "root:go:build-list",
+          "project": {
+            "definitionFile": "internal/utils/go.mod",
+            "purl": "pkg:golang/example.com%2Finternal%2Futils",
+          },
+          "scope": "go:build-list",
+        },
+        {
+          "id": "root:indirectDependencies",
+          "node": "root:indirectDependencies",
+          "project": {
+            "definitionFile": "internal/utils/go.mod",
+            "purl": "pkg:golang/example.com%2Finternal%2Futils",
+          },
+          "scope": "indirectDependencies",
+        },
+      ],
+      "source": {
+        "extractor": "gomod",
+        "files": [
+          "internal/utils/go.mod",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/example.com%2Finternal%2Futils@v0.0.0",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/github.com%2Fgoogle%2Fuuid@v1.3.0",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/golang.org%2Fx%2Fmod@v0.8.0",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/golang.org%2Fx%2Fsys@v0.5.0",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/golang.org%2Fx%2Ftext@v0.12.0",
+    },
+    {
+      "evidence": [
+        "go.mod",
+      ],
+      "purl": "pkg:golang/golang.org%2Fx%2Ftools@v0.6.0",
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "go.mod",
+      "purl": "pkg:golang/example.com%2Fapp",
+    },
+    {
+      "definitionFile": "internal/utils/go.mod",
+      "purl": "pkg:golang/example.com%2Finternal%2Futils",
+    },
+  ],
+}
+`;

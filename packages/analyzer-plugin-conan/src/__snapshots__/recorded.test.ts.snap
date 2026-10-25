@@ -1,0 +1,3698 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`recorded Conan graph: basic 1`] = `
+{
+  "codebase": "fixture:basic",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "context": {
+        "conan:profileBuild": "__fixtures__/profile",
+        "conan:profileHost": "__fixtures__/profile",
+      },
+      "edges": [
+        {
+          "evidence": [
+            "conanfile.txt",
+          ],
+          "from": "0",
+          "kind": "runtime",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": false,
+                "direct": true,
+                "force": false,
+                "headers": true,
+                "libs": true,
+                "package_id_mode": null,
+                "ref": "fmt/7.1.3",
+                "require": "fmt/7.1.3",
+                "run": false,
+                "skip": false,
+                "test": false,
+                "transitive_headers": null,
+                "transitive_libs": null,
+                "visible": true,
+              },
+            },
+            "specifier": "fmt/7.1.3",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "2",
+        },
+        {
+          "evidence": [
+            "conanfile.txt",
+          ],
+          "from": "0",
+          "kind": "runtime",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": false,
+                "direct": true,
+                "force": false,
+                "headers": true,
+                "libs": true,
+                "package_id_mode": null,
+                "ref": "zlib/1.2.13",
+                "require": "zlib/1.2.13",
+                "run": false,
+                "skip": false,
+                "test": false,
+                "transitive_headers": null,
+                "transitive_libs": null,
+                "visible": true,
+              },
+            },
+            "specifier": "zlib/1.2.13",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "1",
+        },
+        {
+          "evidence": [
+            "conanfile.txt",
+          ],
+          "from": "scope:["0","runtime"]",
+          "kind": "runtime",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": false,
+                "direct": true,
+                "force": false,
+                "headers": true,
+                "libs": true,
+                "package_id_mode": null,
+                "ref": "fmt/7.1.3",
+                "require": "fmt/7.1.3",
+                "run": false,
+                "skip": false,
+                "test": false,
+                "transitive_headers": null,
+                "transitive_libs": null,
+                "visible": true,
+              },
+            },
+            "specifier": "fmt/7.1.3",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "2",
+        },
+        {
+          "evidence": [
+            "conanfile.txt",
+          ],
+          "from": "scope:["0","runtime"]",
+          "kind": "runtime",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": false,
+                "direct": true,
+                "force": false,
+                "headers": true,
+                "libs": true,
+                "package_id_mode": null,
+                "ref": "zlib/1.2.13",
+                "require": "zlib/1.2.13",
+                "run": false,
+                "skip": false,
+                "test": false,
+                "transitive_headers": null,
+                "transitive_libs": null,
+                "visible": true,
+              },
+            },
+            "specifier": "zlib/1.2.13",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "1",
+        },
+      ],
+      "id": "["conanfile","conanfile.txt","conanfile:e72547b6bb46d13e11a02142d5919b2a4dac5229d85d66e56d76e5a9fa844aaa"]",
+      "interpretation": "resolved",
+      "nodes": [
+        {
+          "attributes": {
+            "conan:binary": null,
+            "conan:context": "host",
+            "conan:options": {},
+            "conan:package_id": null,
+            "conan:prev": null,
+            "conan:ref": "conanfile",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.cppstd": "gnu17",
+              "compiler.libcxx": "libstdc++11",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.txt",
+          ],
+          "id": "0",
+          "locator": "0",
+          "project": {
+            "definitionFile": "conanfile.txt#node=0",
+            "purl": "pkg:conan/project",
+          },
+          "purl": "pkg:conan/project",
+        },
+        {
+          "attributes": {
+            "conan:binary": "Missing",
+            "conan:context": "host",
+            "conan:options": {
+              "fPIC": "True",
+              "shared": "False",
+            },
+            "conan:package_id": "5172837b05c2f087e99d128455aac37041416625",
+            "conan:prev": null,
+            "conan:ref": "zlib/1.2.13#9df41c65e2c2b6ef47633dc32e0b699a",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.txt",
+          ],
+          "id": "1",
+          "locator": "1",
+          "purl": "pkg:conan/zlib@1.2.13?rrev=9df41c65e2c2b6ef47633dc32e0b699a",
+        },
+        {
+          "attributes": {
+            "conan:binary": "Missing",
+            "conan:context": "host",
+            "conan:options": {
+              "fPIC": "True",
+              "header_only": "False",
+              "shared": "False",
+              "with_fmt_alias": "False",
+              "with_os_api": "True",
+            },
+            "conan:package_id": "64947a41c7caa014aadbeaa53f1602ad0d30673d",
+            "conan:prev": null,
+            "conan:ref": "fmt/7.1.3#7a5de0bea11e21212f3931c4318252fc",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.cppstd": "gnu17",
+              "compiler.libcxx": "libstdc++11",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.txt",
+          ],
+          "id": "2",
+          "locator": "2",
+          "purl": "pkg:conan/fmt@7.1.3?rrev=7a5de0bea11e21212f3931c4318252fc",
+        },
+        {
+          "attributes": {
+            "conan:binary": null,
+            "conan:context": "host",
+            "conan:options": {},
+            "conan:package_id": null,
+            "conan:prev": null,
+            "conan:ref": "conanfile",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.cppstd": "gnu17",
+              "compiler.libcxx": "libstdc++11",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.txt",
+          ],
+          "id": "scope:["0","build"]",
+          "locator": "0",
+          "project": {
+            "definitionFile": "conanfile.txt#node=0",
+            "purl": "pkg:conan/project",
+          },
+          "purl": "pkg:conan/project",
+        },
+        {
+          "attributes": {
+            "conan:binary": null,
+            "conan:context": "host",
+            "conan:options": {},
+            "conan:package_id": null,
+            "conan:prev": null,
+            "conan:ref": "conanfile",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.cppstd": "gnu17",
+              "compiler.libcxx": "libstdc++11",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.txt",
+          ],
+          "id": "scope:["0","runtime"]",
+          "locator": "0",
+          "project": {
+            "definitionFile": "conanfile.txt#node=0",
+            "purl": "pkg:conan/project",
+          },
+          "purl": "pkg:conan/project",
+        },
+        {
+          "attributes": {
+            "conan:binary": null,
+            "conan:context": "host",
+            "conan:options": {},
+            "conan:package_id": null,
+            "conan:prev": null,
+            "conan:ref": "conanfile",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.cppstd": "gnu17",
+              "compiler.libcxx": "libstdc++11",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.txt",
+          ],
+          "id": "scope:["0","test"]",
+          "locator": "0",
+          "project": {
+            "definitionFile": "conanfile.txt#node=0",
+            "purl": "pkg:conan/project",
+          },
+          "purl": "pkg:conan/project",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:["0","build"]",
+          "node": "scope:["0","build"]",
+          "project": {
+            "definitionFile": "conanfile.txt#node=0",
+            "purl": "pkg:conan/project",
+          },
+          "scope": "build",
+        },
+        {
+          "id": "scope:["0","runtime"]",
+          "node": "scope:["0","runtime"]",
+          "project": {
+            "definitionFile": "conanfile.txt#node=0",
+            "purl": "pkg:conan/project",
+          },
+          "scope": "runtime",
+        },
+        {
+          "id": "scope:["0","test"]",
+          "node": "scope:["0","test"]",
+          "project": {
+            "definitionFile": "conanfile.txt#node=0",
+            "purl": "pkg:conan/project",
+          },
+          "scope": "test",
+        },
+      ],
+      "source": {
+        "extractor": "conanfile",
+        "files": [
+          "conanfile.txt",
+        ],
+      },
+    },
+  ],
+  "issues": [
+    {
+      "code": "conanfile.command_warning",
+      "file": "conanfile.txt",
+      "message": "Using lockfile: '/workspace/exscalibur/packages/analyzer-plugin-conan/src/__fixtures__/basic/conan.lock'
+
+======== Input profiles ========
+Profile host:
+[settings]
+arch=x86_64
+build_type=Release
+compiler=gcc
+compiler.cppstd=gnu17
+compiler.libcxx=libstdc++11
+compiler.version=15
+os=Linux
+
+Profile build:
+[settings]
+arch=x86_64
+build_type=Release
+compiler=gcc
+compiler.cppstd=gnu17
+compiler.libcxx=libstdc++11
+compiler.version=15
+os=Linux
+
+
+======== Computing dependency graph ========
+Graph root
+    conanfile.txt: /workspace/exscalibur/packages/analyzer-plugin-conan/src/__fixtures__/basic/conanfile.txt
+Requirements
+    fmt/7.1.3#7a5de0bea11e21212f3931c4318252fc - Cache
+    zlib/1.2.13#9df41c65e2c2b6ef47633dc32e0b699a - Cache
+
+======== Computing necessary packages ========
+Connecting to remote 'conancenter' anonymously
+fmt/7.1.3: Main binary package '64947a41c7caa014aadbeaa53f1602ad0d30673d' missing
+fmt/7.1.3: Checking 11 compatible configurations
+fmt/7.1.3: Compatible configurations not found in cache, checking servers
+fmt/7.1.3: '1746764b22461b97152c44a466f8880da78596af': compiler.cppstd=11
+fmt/7.1.3: 'a75c163fca6c43b56555004d4e598ecebf1b61bc': compiler.cppstd=gnu11
+fmt/7.1.3: '4bdc48bcef47853185b2b542b1b07cc40a825d4e': compiler.cppstd=14
+fmt/7.1.3: 'ab5de0a28845cfe70c4220a4404978334a81bbec': compiler.cppstd=gnu14
+fmt/7.1.3: '0364e7f8fc1c021fe93b04ad01169c39bb69a007': compiler.cppstd=17
+fmt/7.1.3: '206c484e1c46c66d8bbeb62b2b76a229b17405be': compiler.cppstd=20
+fmt/7.1.3: '41ff7e43e206751914e2a03f64f9235533be81d7': compiler.cppstd=gnu20
+fmt/7.1.3: 'f679fbaf71726502d3ee047968670c713d088ed0': compiler.cppstd=23
+fmt/7.1.3: '8b2f5bde089ee1b2f7efa90c14e5045983e3bee8': compiler.cppstd=gnu23
+fmt/7.1.3: 'f3e8a9c90ac4f8313361cbf0add1c47531ac9290': compiler.cppstd=26
+fmt/7.1.3: 'c7d145c3e80c4c9ec23f5e5103a7d19e7a803a58': compiler.cppstd=gnu26
+fmt/7.1.3: No compatible configuration found
+
+A new experimental approach for binary compatibility detection is available.
+    Enable it by setting the core.graph:compatibility_mode=optimized conf
+    and get improved performance when querying multiple compatible binaries in remotes.
+
+Requirements
+    fmt/7.1.3#7a5de0bea11e21212f3931c4318252fc:64947a41c7caa014aadbeaa53f1602ad0d30673d - Missing
+    zlib/1.2.13#9df41c65e2c2b6ef47633dc32e0b699a:5172837b05c2f087e99d128455aac37041416625 - Missing
+WARN: There are some error(s) in the graph:
+    - Missing packages: zlib, fmt
+",
+      "severity": "WARNING",
+    },
+  ],
+  "packages": [
+    {
+      "evidence": [
+        "conanfile.txt",
+      ],
+      "purl": "pkg:conan/fmt@7.1.3?rrev=7a5de0bea11e21212f3931c4318252fc",
+    },
+    {
+      "evidence": [
+        "conanfile.txt",
+      ],
+      "purl": "pkg:conan/zlib@1.2.13?rrev=9df41c65e2c2b6ef47633dc32e0b699a",
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "conanfile.txt#node=0",
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "conanfile",
+            "files": [
+              "conanfile.txt",
+            ],
+            "key": "0",
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:conan/project",
+    },
+  ],
+}
+`;
+
+exports[`recorded Conan graph: basic_py 1`] = `
+{
+  "codebase": "fixture:basic_py",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "context": {
+        "conan:profileBuild": "__fixtures__/profile",
+        "conan:profileHost": "__fixtures__/profile",
+      },
+      "edges": [
+        {
+          "evidence": [
+            "conanfile.py",
+          ],
+          "from": "0",
+          "kind": "build",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": true,
+                "direct": true,
+                "force": false,
+                "headers": false,
+                "libs": false,
+                "package_id_mode": null,
+                "ref": "cmake/3.27.7",
+                "require": "cmake/3.27.7",
+                "run": true,
+                "skip": false,
+                "test": false,
+                "transitive_headers": null,
+                "transitive_libs": null,
+                "visible": false,
+              },
+            },
+            "specifier": "cmake/3.27.7",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "3",
+        },
+        {
+          "evidence": [
+            "conanfile.py",
+          ],
+          "from": "0",
+          "kind": "runtime",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": false,
+                "direct": true,
+                "force": false,
+                "headers": true,
+                "libs": true,
+                "package_id_mode": "semver_mode",
+                "ref": "fmt/7.1.3",
+                "require": "fmt/7.1.3",
+                "run": false,
+                "skip": false,
+                "test": false,
+                "transitive_headers": null,
+                "transitive_libs": null,
+                "visible": true,
+              },
+            },
+            "specifier": "fmt/7.1.3",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "1",
+        },
+        {
+          "evidence": [
+            "conanfile.py",
+          ],
+          "from": "0",
+          "kind": "runtime",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": false,
+                "direct": true,
+                "force": false,
+                "headers": true,
+                "libs": true,
+                "package_id_mode": "semver_mode",
+                "ref": "zlib/1.3.1",
+                "require": "zlib/1.3.1",
+                "run": false,
+                "skip": false,
+                "test": false,
+                "transitive_headers": null,
+                "transitive_libs": null,
+                "visible": true,
+              },
+            },
+            "specifier": "zlib/1.3.1",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "2",
+        },
+        {
+          "evidence": [
+            "conanfile.py",
+          ],
+          "from": "scope:["0","build"]",
+          "kind": "build",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": true,
+                "direct": true,
+                "force": false,
+                "headers": false,
+                "libs": false,
+                "package_id_mode": null,
+                "ref": "cmake/3.27.7",
+                "require": "cmake/3.27.7",
+                "run": true,
+                "skip": false,
+                "test": false,
+                "transitive_headers": null,
+                "transitive_libs": null,
+                "visible": false,
+              },
+            },
+            "specifier": "cmake/3.27.7",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "3",
+        },
+        {
+          "evidence": [
+            "conanfile.py",
+          ],
+          "from": "scope:["0","runtime"]",
+          "kind": "runtime",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": false,
+                "direct": true,
+                "force": false,
+                "headers": true,
+                "libs": true,
+                "package_id_mode": "semver_mode",
+                "ref": "fmt/7.1.3",
+                "require": "fmt/7.1.3",
+                "run": false,
+                "skip": false,
+                "test": false,
+                "transitive_headers": null,
+                "transitive_libs": null,
+                "visible": true,
+              },
+            },
+            "specifier": "fmt/7.1.3",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "1",
+        },
+        {
+          "evidence": [
+            "conanfile.py",
+          ],
+          "from": "scope:["0","runtime"]",
+          "kind": "runtime",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": false,
+                "direct": true,
+                "force": false,
+                "headers": true,
+                "libs": true,
+                "package_id_mode": "semver_mode",
+                "ref": "zlib/1.3.1",
+                "require": "zlib/1.3.1",
+                "run": false,
+                "skip": false,
+                "test": false,
+                "transitive_headers": null,
+                "transitive_libs": null,
+                "visible": true,
+              },
+            },
+            "specifier": "zlib/1.3.1",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "2",
+        },
+      ],
+      "id": "["conanfile","conanfile.py","conanfile:ed083b7c4dcfdc251857d897351eaabaeaa475cd3d48182715c94bf4d153f124"]",
+      "interpretation": "resolved",
+      "nodes": [
+        {
+          "attributes": {
+            "conan:binary": null,
+            "conan:context": "host",
+            "conan:options": {},
+            "conan:package_id": "2678b129b629bd119e54c99cd4e55dfce9ba382a",
+            "conan:prev": null,
+            "conan:ref": "myapp/1.0",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.cppstd": "gnu17",
+              "compiler.libcxx": "libstdc++11",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.py",
+          ],
+          "id": "0",
+          "locator": "0",
+          "project": {
+            "definitionFile": "conanfile.py#node=0",
+            "purl": "pkg:conan/myapp@1.0",
+          },
+          "purl": "pkg:conan/myapp@1.0",
+        },
+        {
+          "attributes": {
+            "conan:binary": "Missing",
+            "conan:context": "host",
+            "conan:options": {
+              "fPIC": "True",
+              "header_only": "False",
+              "shared": "False",
+              "with_fmt_alias": "False",
+              "with_os_api": "True",
+            },
+            "conan:package_id": "64947a41c7caa014aadbeaa53f1602ad0d30673d",
+            "conan:prev": null,
+            "conan:ref": "fmt/7.1.3#7a5de0bea11e21212f3931c4318252fc",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.cppstd": "gnu17",
+              "compiler.libcxx": "libstdc++11",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.py",
+          ],
+          "id": "1",
+          "locator": "1",
+          "purl": "pkg:conan/fmt@7.1.3?rrev=7a5de0bea11e21212f3931c4318252fc",
+        },
+        {
+          "attributes": {
+            "conan:binary": "Missing",
+            "conan:context": "host",
+            "conan:options": {
+              "fPIC": "True",
+              "shared": "False",
+            },
+            "conan:package_id": "5172837b05c2f087e99d128455aac37041416625",
+            "conan:prev": null,
+            "conan:ref": "zlib/1.3.1#cac0f6daea041b0ccf42934163defb20",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.py",
+          ],
+          "id": "2",
+          "locator": "2",
+          "purl": "pkg:conan/zlib@1.3.1?rrev=cac0f6daea041b0ccf42934163defb20",
+        },
+        {
+          "attributes": {
+            "conan:binary": "Download",
+            "conan:context": "build",
+            "conan:options": {},
+            "conan:package_id": "63fead0844576fc02943e16909f08fcdddd6f44b",
+            "conan:prev": "9583e30af903650c949bb4ebeaa67180",
+            "conan:ref": "cmake/3.27.7#6e11610a238b9292dffda14c34bb53e6",
+            "conan:settings": {
+              "arch": "x86_64",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.py",
+          ],
+          "id": "3",
+          "locator": "3",
+          "purl": "pkg:conan/cmake@3.27.7?rrev=6e11610a238b9292dffda14c34bb53e6",
+        },
+        {
+          "attributes": {
+            "conan:binary": null,
+            "conan:context": "host",
+            "conan:options": {},
+            "conan:package_id": "2678b129b629bd119e54c99cd4e55dfce9ba382a",
+            "conan:prev": null,
+            "conan:ref": "myapp/1.0",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.cppstd": "gnu17",
+              "compiler.libcxx": "libstdc++11",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.py",
+          ],
+          "id": "scope:["0","build"]",
+          "locator": "0",
+          "project": {
+            "definitionFile": "conanfile.py#node=0",
+            "purl": "pkg:conan/myapp@1.0",
+          },
+          "purl": "pkg:conan/myapp@1.0",
+        },
+        {
+          "attributes": {
+            "conan:binary": null,
+            "conan:context": "host",
+            "conan:options": {},
+            "conan:package_id": "2678b129b629bd119e54c99cd4e55dfce9ba382a",
+            "conan:prev": null,
+            "conan:ref": "myapp/1.0",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.cppstd": "gnu17",
+              "compiler.libcxx": "libstdc++11",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.py",
+          ],
+          "id": "scope:["0","runtime"]",
+          "locator": "0",
+          "project": {
+            "definitionFile": "conanfile.py#node=0",
+            "purl": "pkg:conan/myapp@1.0",
+          },
+          "purl": "pkg:conan/myapp@1.0",
+        },
+        {
+          "attributes": {
+            "conan:binary": null,
+            "conan:context": "host",
+            "conan:options": {},
+            "conan:package_id": "2678b129b629bd119e54c99cd4e55dfce9ba382a",
+            "conan:prev": null,
+            "conan:ref": "myapp/1.0",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.cppstd": "gnu17",
+              "compiler.libcxx": "libstdc++11",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.py",
+          ],
+          "id": "scope:["0","test"]",
+          "locator": "0",
+          "project": {
+            "definitionFile": "conanfile.py#node=0",
+            "purl": "pkg:conan/myapp@1.0",
+          },
+          "purl": "pkg:conan/myapp@1.0",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:["0","build"]",
+          "node": "scope:["0","build"]",
+          "project": {
+            "definitionFile": "conanfile.py#node=0",
+            "purl": "pkg:conan/myapp@1.0",
+          },
+          "scope": "build",
+        },
+        {
+          "id": "scope:["0","runtime"]",
+          "node": "scope:["0","runtime"]",
+          "project": {
+            "definitionFile": "conanfile.py#node=0",
+            "purl": "pkg:conan/myapp@1.0",
+          },
+          "scope": "runtime",
+        },
+        {
+          "id": "scope:["0","test"]",
+          "node": "scope:["0","test"]",
+          "project": {
+            "definitionFile": "conanfile.py#node=0",
+            "purl": "pkg:conan/myapp@1.0",
+          },
+          "scope": "test",
+        },
+      ],
+      "source": {
+        "extractor": "conanfile",
+        "files": [
+          "conanfile.py",
+        ],
+      },
+    },
+  ],
+  "issues": [
+    {
+      "code": "conanfile.command_warning",
+      "file": "conanfile.py",
+      "message": "Using lockfile: '/workspace/exscalibur/packages/analyzer-plugin-conan/src/__fixtures__/basic_py/conan.lock'
+
+======== Input profiles ========
+Profile host:
+[settings]
+arch=x86_64
+build_type=Release
+compiler=gcc
+compiler.cppstd=gnu17
+compiler.libcxx=libstdc++11
+compiler.version=15
+os=Linux
+
+Profile build:
+[settings]
+arch=x86_64
+build_type=Release
+compiler=gcc
+compiler.cppstd=gnu17
+compiler.libcxx=libstdc++11
+compiler.version=15
+os=Linux
+
+
+======== Computing dependency graph ========
+Graph root
+    conanfile.py (myapp/1.0): /workspace/exscalibur/packages/analyzer-plugin-conan/src/__fixtures__/basic_py/conanfile.py
+Requirements
+    fmt/7.1.3#7a5de0bea11e21212f3931c4318252fc - Cache
+    zlib/1.3.1#cac0f6daea041b0ccf42934163defb20 - Cache
+Build requirements
+    cmake/3.27.7#6e11610a238b9292dffda14c34bb53e6 - Cache
+
+======== Computing necessary packages ========
+Connecting to remote 'conancenter' anonymously
+fmt/7.1.3: Main binary package '64947a41c7caa014aadbeaa53f1602ad0d30673d' missing
+fmt/7.1.3: Checking 11 compatible configurations
+fmt/7.1.3: Compatible configurations not found in cache, checking servers
+fmt/7.1.3: '1746764b22461b97152c44a466f8880da78596af': compiler.cppstd=11
+fmt/7.1.3: 'a75c163fca6c43b56555004d4e598ecebf1b61bc': compiler.cppstd=gnu11
+fmt/7.1.3: '4bdc48bcef47853185b2b542b1b07cc40a825d4e': compiler.cppstd=14
+fmt/7.1.3: 'ab5de0a28845cfe70c4220a4404978334a81bbec': compiler.cppstd=gnu14
+fmt/7.1.3: '0364e7f8fc1c021fe93b04ad01169c39bb69a007': compiler.cppstd=17
+fmt/7.1.3: '206c484e1c46c66d8bbeb62b2b76a229b17405be': compiler.cppstd=20
+fmt/7.1.3: '41ff7e43e206751914e2a03f64f9235533be81d7': compiler.cppstd=gnu20
+fmt/7.1.3: 'f679fbaf71726502d3ee047968670c713d088ed0': compiler.cppstd=23
+fmt/7.1.3: '8b2f5bde089ee1b2f7efa90c14e5045983e3bee8': compiler.cppstd=gnu23
+fmt/7.1.3: 'f3e8a9c90ac4f8313361cbf0add1c47531ac9290': compiler.cppstd=26
+fmt/7.1.3: 'c7d145c3e80c4c9ec23f5e5103a7d19e7a803a58': compiler.cppstd=gnu26
+fmt/7.1.3: No compatible configuration found
+
+A new experimental approach for binary compatibility detection is available.
+    Enable it by setting the core.graph:compatibility_mode=optimized conf
+    and get improved performance when querying multiple compatible binaries in remotes.
+
+Requirements
+    fmt/7.1.3#7a5de0bea11e21212f3931c4318252fc:64947a41c7caa014aadbeaa53f1602ad0d30673d - Missing
+    zlib/1.3.1#cac0f6daea041b0ccf42934163defb20:5172837b05c2f087e99d128455aac37041416625 - Missing
+Build requirements
+    cmake/3.27.7#6e11610a238b9292dffda14c34bb53e6:63fead0844576fc02943e16909f08fcdddd6f44b#9583e30af903650c949bb4ebeaa67180 - Download (conancenter)
+WARN: There are some error(s) in the graph:
+    - Missing packages: zlib, fmt
+",
+      "severity": "WARNING",
+    },
+  ],
+  "packages": [
+    {
+      "evidence": [
+        "conanfile.py",
+      ],
+      "purl": "pkg:conan/cmake@3.27.7?rrev=6e11610a238b9292dffda14c34bb53e6",
+    },
+    {
+      "evidence": [
+        "conanfile.py",
+      ],
+      "purl": "pkg:conan/fmt@7.1.3?rrev=7a5de0bea11e21212f3931c4318252fc",
+    },
+    {
+      "evidence": [
+        "conanfile.py",
+      ],
+      "purl": "pkg:conan/zlib@1.3.1?rrev=cac0f6daea041b0ccf42934163defb20",
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "conanfile.py#node=0",
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "conanfile",
+            "files": [
+              "conanfile.py",
+            ],
+            "key": "0",
+          },
+          "synthesizedPurl": false,
+        },
+      ],
+      "purl": "pkg:conan/myapp@1.0",
+    },
+  ],
+}
+`;
+
+exports[`recorded Conan graph: evidence 1`] = `
+{
+  "codebase": "fixture:evidence",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "context": {
+        "conan:profileBuild": "__fixtures__/profile",
+        "conan:profileHost": "__fixtures__/profile",
+      },
+      "edges": [
+        {
+          "evidence": [
+            "conanfile.txt",
+          ],
+          "from": "0",
+          "kind": "runtime",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": false,
+                "direct": true,
+                "force": false,
+                "headers": true,
+                "libs": true,
+                "package_id_mode": null,
+                "ref": "fmt/7.1.3",
+                "require": "fmt/7.1.3",
+                "run": false,
+                "skip": false,
+                "test": false,
+                "transitive_headers": null,
+                "transitive_libs": null,
+                "visible": true,
+              },
+            },
+            "specifier": "fmt/7.1.3",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "2",
+        },
+        {
+          "evidence": [
+            "conanfile.txt",
+          ],
+          "from": "0",
+          "kind": "runtime",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": false,
+                "direct": true,
+                "force": false,
+                "headers": true,
+                "libs": true,
+                "package_id_mode": null,
+                "ref": "zlib/1.2.13",
+                "require": "zlib/1.2.13",
+                "run": false,
+                "skip": false,
+                "test": false,
+                "transitive_headers": null,
+                "transitive_libs": null,
+                "visible": true,
+              },
+            },
+            "specifier": "zlib/1.2.13",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "1",
+        },
+        {
+          "evidence": [
+            "conanfile.txt",
+          ],
+          "from": "scope:["0","runtime"]",
+          "kind": "runtime",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": false,
+                "direct": true,
+                "force": false,
+                "headers": true,
+                "libs": true,
+                "package_id_mode": null,
+                "ref": "fmt/7.1.3",
+                "require": "fmt/7.1.3",
+                "run": false,
+                "skip": false,
+                "test": false,
+                "transitive_headers": null,
+                "transitive_libs": null,
+                "visible": true,
+              },
+            },
+            "specifier": "fmt/7.1.3",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "2",
+        },
+        {
+          "evidence": [
+            "conanfile.txt",
+          ],
+          "from": "scope:["0","runtime"]",
+          "kind": "runtime",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": false,
+                "direct": true,
+                "force": false,
+                "headers": true,
+                "libs": true,
+                "package_id_mode": null,
+                "ref": "zlib/1.2.13",
+                "require": "zlib/1.2.13",
+                "run": false,
+                "skip": false,
+                "test": false,
+                "transitive_headers": null,
+                "transitive_libs": null,
+                "visible": true,
+              },
+            },
+            "specifier": "zlib/1.2.13",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "1",
+        },
+      ],
+      "id": "["conanfile","conanfile.txt","conanfile:e72547b6bb46d13e11a02142d5919b2a4dac5229d85d66e56d76e5a9fa844aaa"]",
+      "interpretation": "resolved",
+      "nodes": [
+        {
+          "attributes": {
+            "conan:binary": null,
+            "conan:context": "host",
+            "conan:options": {},
+            "conan:package_id": null,
+            "conan:prev": null,
+            "conan:ref": "conanfile",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.cppstd": "gnu17",
+              "compiler.libcxx": "libstdc++11",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.txt",
+          ],
+          "id": "0",
+          "locator": "0",
+          "project": {
+            "definitionFile": "conanfile.txt#node=0",
+            "purl": "pkg:conan/project",
+          },
+          "purl": "pkg:conan/project",
+        },
+        {
+          "attributes": {
+            "conan:binary": "Missing",
+            "conan:context": "host",
+            "conan:options": {
+              "fPIC": "True",
+              "shared": "False",
+            },
+            "conan:package_id": "5172837b05c2f087e99d128455aac37041416625",
+            "conan:prev": null,
+            "conan:ref": "zlib/1.2.13#9df41c65e2c2b6ef47633dc32e0b699a",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.txt",
+          ],
+          "id": "1",
+          "locator": "1",
+          "purl": "pkg:conan/zlib@1.2.13?rrev=9df41c65e2c2b6ef47633dc32e0b699a",
+        },
+        {
+          "attributes": {
+            "conan:binary": "Missing",
+            "conan:context": "host",
+            "conan:options": {
+              "fPIC": "True",
+              "header_only": "False",
+              "shared": "False",
+              "with_fmt_alias": "False",
+              "with_os_api": "True",
+            },
+            "conan:package_id": "64947a41c7caa014aadbeaa53f1602ad0d30673d",
+            "conan:prev": null,
+            "conan:ref": "fmt/7.1.3#7a5de0bea11e21212f3931c4318252fc",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.cppstd": "gnu17",
+              "compiler.libcxx": "libstdc++11",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.txt",
+          ],
+          "id": "2",
+          "locator": "2",
+          "purl": "pkg:conan/fmt@7.1.3?rrev=7a5de0bea11e21212f3931c4318252fc",
+        },
+        {
+          "attributes": {
+            "conan:binary": null,
+            "conan:context": "host",
+            "conan:options": {},
+            "conan:package_id": null,
+            "conan:prev": null,
+            "conan:ref": "conanfile",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.cppstd": "gnu17",
+              "compiler.libcxx": "libstdc++11",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.txt",
+          ],
+          "id": "scope:["0","build"]",
+          "locator": "0",
+          "project": {
+            "definitionFile": "conanfile.txt#node=0",
+            "purl": "pkg:conan/project",
+          },
+          "purl": "pkg:conan/project",
+        },
+        {
+          "attributes": {
+            "conan:binary": null,
+            "conan:context": "host",
+            "conan:options": {},
+            "conan:package_id": null,
+            "conan:prev": null,
+            "conan:ref": "conanfile",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.cppstd": "gnu17",
+              "compiler.libcxx": "libstdc++11",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.txt",
+          ],
+          "id": "scope:["0","runtime"]",
+          "locator": "0",
+          "project": {
+            "definitionFile": "conanfile.txt#node=0",
+            "purl": "pkg:conan/project",
+          },
+          "purl": "pkg:conan/project",
+        },
+        {
+          "attributes": {
+            "conan:binary": null,
+            "conan:context": "host",
+            "conan:options": {},
+            "conan:package_id": null,
+            "conan:prev": null,
+            "conan:ref": "conanfile",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.cppstd": "gnu17",
+              "compiler.libcxx": "libstdc++11",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.txt",
+          ],
+          "id": "scope:["0","test"]",
+          "locator": "0",
+          "project": {
+            "definitionFile": "conanfile.txt#node=0",
+            "purl": "pkg:conan/project",
+          },
+          "purl": "pkg:conan/project",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:["0","build"]",
+          "node": "scope:["0","build"]",
+          "project": {
+            "definitionFile": "conanfile.txt#node=0",
+            "purl": "pkg:conan/project",
+          },
+          "scope": "build",
+        },
+        {
+          "id": "scope:["0","runtime"]",
+          "node": "scope:["0","runtime"]",
+          "project": {
+            "definitionFile": "conanfile.txt#node=0",
+            "purl": "pkg:conan/project",
+          },
+          "scope": "runtime",
+        },
+        {
+          "id": "scope:["0","test"]",
+          "node": "scope:["0","test"]",
+          "project": {
+            "definitionFile": "conanfile.txt#node=0",
+            "purl": "pkg:conan/project",
+          },
+          "scope": "test",
+        },
+      ],
+      "source": {
+        "extractor": "conanfile",
+        "files": [
+          "conanfile.txt",
+        ],
+      },
+    },
+  ],
+  "issues": [
+    {
+      "code": "conanfile.command_warning",
+      "file": "conanfile.txt",
+      "message": "Using lockfile: '/workspace/exscalibur/packages/analyzer-plugin-conan/src/__fixtures__/evidence/conan.lock'
+
+======== Input profiles ========
+Profile host:
+[settings]
+arch=x86_64
+build_type=Release
+compiler=gcc
+compiler.cppstd=gnu17
+compiler.libcxx=libstdc++11
+compiler.version=15
+os=Linux
+
+Profile build:
+[settings]
+arch=x86_64
+build_type=Release
+compiler=gcc
+compiler.cppstd=gnu17
+compiler.libcxx=libstdc++11
+compiler.version=15
+os=Linux
+
+
+======== Computing dependency graph ========
+Graph root
+    conanfile.txt: /workspace/exscalibur/packages/analyzer-plugin-conan/src/__fixtures__/evidence/conanfile.txt
+Requirements
+    fmt/7.1.3#7a5de0bea11e21212f3931c4318252fc - Cache
+    zlib/1.2.13#9df41c65e2c2b6ef47633dc32e0b699a - Cache
+
+======== Computing necessary packages ========
+Connecting to remote 'conancenter' anonymously
+fmt/7.1.3: Main binary package '64947a41c7caa014aadbeaa53f1602ad0d30673d' missing
+fmt/7.1.3: Checking 11 compatible configurations
+fmt/7.1.3: Compatible configurations not found in cache, checking servers
+fmt/7.1.3: '1746764b22461b97152c44a466f8880da78596af': compiler.cppstd=11
+fmt/7.1.3: 'a75c163fca6c43b56555004d4e598ecebf1b61bc': compiler.cppstd=gnu11
+fmt/7.1.3: '4bdc48bcef47853185b2b542b1b07cc40a825d4e': compiler.cppstd=14
+fmt/7.1.3: 'ab5de0a28845cfe70c4220a4404978334a81bbec': compiler.cppstd=gnu14
+fmt/7.1.3: '0364e7f8fc1c021fe93b04ad01169c39bb69a007': compiler.cppstd=17
+fmt/7.1.3: '206c484e1c46c66d8bbeb62b2b76a229b17405be': compiler.cppstd=20
+fmt/7.1.3: '41ff7e43e206751914e2a03f64f9235533be81d7': compiler.cppstd=gnu20
+fmt/7.1.3: 'f679fbaf71726502d3ee047968670c713d088ed0': compiler.cppstd=23
+fmt/7.1.3: '8b2f5bde089ee1b2f7efa90c14e5045983e3bee8': compiler.cppstd=gnu23
+fmt/7.1.3: 'f3e8a9c90ac4f8313361cbf0add1c47531ac9290': compiler.cppstd=26
+fmt/7.1.3: 'c7d145c3e80c4c9ec23f5e5103a7d19e7a803a58': compiler.cppstd=gnu26
+fmt/7.1.3: No compatible configuration found
+
+A new experimental approach for binary compatibility detection is available.
+    Enable it by setting the core.graph:compatibility_mode=optimized conf
+    and get improved performance when querying multiple compatible binaries in remotes.
+
+Requirements
+    fmt/7.1.3#7a5de0bea11e21212f3931c4318252fc:64947a41c7caa014aadbeaa53f1602ad0d30673d - Missing
+    zlib/1.2.13#9df41c65e2c2b6ef47633dc32e0b699a:5172837b05c2f087e99d128455aac37041416625 - Missing
+WARN: There are some error(s) in the graph:
+    - Missing packages: zlib, fmt
+",
+      "severity": "WARNING",
+    },
+  ],
+  "packages": [
+    {
+      "evidence": [
+        "conanfile.txt",
+      ],
+      "purl": "pkg:conan/fmt@7.1.3?rrev=7a5de0bea11e21212f3931c4318252fc",
+    },
+    {
+      "evidence": [
+        "conanfile.txt",
+      ],
+      "purl": "pkg:conan/zlib@1.2.13?rrev=9df41c65e2c2b6ef47633dc32e0b699a",
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "conanfile.txt#node=0",
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "conanfile",
+            "files": [
+              "conanfile.txt",
+            ],
+            "key": "0",
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:conan/project",
+    },
+  ],
+}
+`;
+
+exports[`recorded Conan graph: transitive_extended 1`] = `
+{
+  "codebase": "fixture:transitive_extended",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "context": {
+        "conan:profileBuild": "__fixtures__/profile",
+        "conan:profileHost": "__fixtures__/profile",
+      },
+      "edges": [
+        {
+          "evidence": [
+            "conanfile.py",
+          ],
+          "from": "0",
+          "kind": "build",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": true,
+                "direct": true,
+                "force": false,
+                "headers": false,
+                "libs": false,
+                "package_id_mode": null,
+                "ref": "cmake/3.27.7",
+                "require": "cmake/3.27.7",
+                "run": true,
+                "skip": false,
+                "test": false,
+                "transitive_headers": null,
+                "transitive_libs": null,
+                "visible": false,
+              },
+            },
+            "specifier": "cmake/3.27.7",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "14",
+        },
+        {
+          "evidence": [
+            "conanfile.py",
+          ],
+          "from": "0",
+          "kind": "runtime",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": false,
+                "direct": true,
+                "force": false,
+                "headers": true,
+                "libs": true,
+                "package_id_mode": "semver_mode",
+                "ref": "drogon/1.7.5",
+                "require": "drogon/1.7.5",
+                "run": false,
+                "skip": false,
+                "test": false,
+                "transitive_headers": null,
+                "transitive_libs": null,
+                "visible": true,
+              },
+            },
+            "specifier": "drogon/1.7.5",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "3",
+        },
+        {
+          "evidence": [
+            "conanfile.py",
+          ],
+          "from": "0",
+          "kind": "runtime",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": false,
+                "direct": true,
+                "force": false,
+                "headers": true,
+                "libs": true,
+                "package_id_mode": "semver_mode",
+                "ref": "spdlog/1.15.0",
+                "require": "spdlog/1.15.0",
+                "run": false,
+                "skip": false,
+                "test": false,
+                "transitive_headers": null,
+                "transitive_libs": null,
+                "visible": true,
+              },
+            },
+            "specifier": "spdlog/1.15.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "1",
+        },
+        {
+          "evidence": [
+            "conanfile.py",
+          ],
+          "from": "1",
+          "kind": "runtime",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": false,
+                "direct": true,
+                "force": false,
+                "headers": true,
+                "libs": true,
+                "package_id_mode": "minor_mode",
+                "ref": "fmt/11.0.2",
+                "require": "fmt/11.0.2",
+                "run": false,
+                "skip": false,
+                "test": false,
+                "transitive_headers": true,
+                "transitive_libs": true,
+                "visible": true,
+              },
+            },
+            "specifier": "fmt/11.0.2",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "2",
+        },
+        {
+          "evidence": [
+            "conanfile.py",
+          ],
+          "from": "10",
+          "kind": "build",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": true,
+                "direct": true,
+                "force": false,
+                "headers": false,
+                "libs": false,
+                "package_id_mode": null,
+                "ref": "b2/5.4.2",
+                "require": "b2/[>=5.2 <6]",
+                "run": true,
+                "skip": false,
+                "test": false,
+                "transitive_headers": null,
+                "transitive_libs": null,
+                "visible": false,
+              },
+            },
+            "specifier": "b2/[>=5.2 <6]",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "13",
+        },
+        {
+          "evidence": [
+            "conanfile.py",
+          ],
+          "from": "10",
+          "kind": "runtime",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": false,
+                "direct": true,
+                "force": false,
+                "headers": true,
+                "libs": true,
+                "package_id_mode": "minor_mode",
+                "ref": "bzip2/1.0.8",
+                "require": "bzip2/1.0.8",
+                "run": false,
+                "skip": false,
+                "test": false,
+                "transitive_headers": null,
+                "transitive_libs": null,
+                "visible": true,
+              },
+            },
+            "specifier": "bzip2/1.0.8",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "11",
+        },
+        {
+          "evidence": [
+            "conanfile.py",
+          ],
+          "from": "10",
+          "kind": "runtime",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": false,
+                "direct": true,
+                "force": false,
+                "headers": true,
+                "libs": true,
+                "package_id_mode": "minor_mode",
+                "ref": "libbacktrace/cci.20210118",
+                "require": "libbacktrace/cci.20210118",
+                "run": false,
+                "skip": false,
+                "test": false,
+                "transitive_headers": true,
+                "transitive_libs": true,
+                "visible": true,
+              },
+            },
+            "specifier": "libbacktrace/cci.20210118",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "12",
+        },
+        {
+          "evidence": [
+            "conanfile.py",
+          ],
+          "from": "10",
+          "kind": "runtime",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": false,
+                "direct": true,
+                "force": false,
+                "headers": true,
+                "libs": true,
+                "package_id_mode": "minor_mode",
+                "ref": "zlib/1.3.1",
+                "require": "zlib/[>=1.2.11 <2]",
+                "run": false,
+                "skip": false,
+                "test": false,
+                "transitive_headers": null,
+                "transitive_libs": null,
+                "visible": true,
+              },
+            },
+            "specifier": "zlib/[>=1.2.11 <2]",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "6",
+        },
+        {
+          "evidence": [
+            "conanfile.py",
+          ],
+          "from": "3",
+          "kind": "runtime",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": false,
+                "direct": true,
+                "force": false,
+                "headers": true,
+                "libs": true,
+                "package_id_mode": "minor_mode",
+                "ref": "boost/1.83.0",
+                "require": "boost/1.83.0",
+                "run": false,
+                "skip": false,
+                "test": false,
+                "transitive_headers": true,
+                "transitive_libs": null,
+                "visible": true,
+              },
+            },
+            "specifier": "boost/1.83.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "10",
+        },
+        {
+          "evidence": [
+            "conanfile.py",
+          ],
+          "from": "3",
+          "kind": "runtime",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": false,
+                "direct": true,
+                "force": false,
+                "headers": true,
+                "libs": true,
+                "package_id_mode": "minor_mode",
+                "ref": "jsoncpp/1.9.5",
+                "require": "jsoncpp/1.9.5",
+                "run": false,
+                "skip": false,
+                "test": false,
+                "transitive_headers": true,
+                "transitive_libs": true,
+                "visible": true,
+              },
+            },
+            "specifier": "jsoncpp/1.9.5",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "8",
+        },
+        {
+          "evidence": [
+            "conanfile.py",
+          ],
+          "from": "3",
+          "kind": "runtime",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": false,
+                "direct": true,
+                "force": false,
+                "headers": true,
+                "libs": true,
+                "package_id_mode": "minor_mode",
+                "ref": "openssl/3.6.2",
+                "require": "openssl/[>=1.1 <4]",
+                "run": false,
+                "skip": false,
+                "test": false,
+                "transitive_headers": true,
+                "transitive_libs": true,
+                "visible": true,
+              },
+            },
+            "specifier": "openssl/[>=1.1 <4]",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "5",
+        },
+        {
+          "evidence": [
+            "conanfile.py",
+          ],
+          "from": "3",
+          "kind": "runtime",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": false,
+                "direct": true,
+                "force": false,
+                "headers": true,
+                "libs": true,
+                "package_id_mode": "minor_mode",
+                "ref": "trantor/1.5.16",
+                "require": "trantor/1.5.16",
+                "run": false,
+                "skip": false,
+                "test": false,
+                "transitive_headers": true,
+                "transitive_libs": true,
+                "visible": true,
+              },
+            },
+            "specifier": "trantor/1.5.16",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "4",
+        },
+        {
+          "evidence": [
+            "conanfile.py",
+          ],
+          "from": "3",
+          "kind": "runtime",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": false,
+                "direct": true,
+                "force": false,
+                "headers": true,
+                "libs": true,
+                "package_id_mode": "minor_mode",
+                "ref": "util-linux-libuuid/2.39.2",
+                "require": "util-linux-libuuid/2.39.2",
+                "run": false,
+                "skip": false,
+                "test": false,
+                "transitive_headers": null,
+                "transitive_libs": null,
+                "visible": true,
+              },
+            },
+            "specifier": "util-linux-libuuid/2.39.2",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "9",
+        },
+        {
+          "evidence": [
+            "conanfile.py",
+          ],
+          "from": "3",
+          "kind": "runtime",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": false,
+                "direct": true,
+                "force": false,
+                "headers": true,
+                "libs": true,
+                "package_id_mode": "minor_mode",
+                "ref": "zlib/1.3.1",
+                "require": "zlib/1.3.1",
+                "run": false,
+                "skip": false,
+                "test": false,
+                "transitive_headers": true,
+                "transitive_libs": true,
+                "visible": true,
+              },
+            },
+            "specifier": "zlib/1.3.1",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "6",
+        },
+        {
+          "evidence": [
+            "conanfile.py",
+          ],
+          "from": "4",
+          "kind": "runtime",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": false,
+                "direct": true,
+                "force": false,
+                "headers": true,
+                "libs": true,
+                "package_id_mode": "minor_mode",
+                "ref": "c-ares/1.25.0",
+                "require": "c-ares/1.25.0",
+                "run": false,
+                "skip": false,
+                "test": false,
+                "transitive_headers": null,
+                "transitive_libs": null,
+                "visible": true,
+              },
+            },
+            "specifier": "c-ares/1.25.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "7",
+        },
+        {
+          "evidence": [
+            "conanfile.py",
+          ],
+          "from": "4",
+          "kind": "runtime",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": false,
+                "direct": true,
+                "force": false,
+                "headers": true,
+                "libs": true,
+                "package_id_mode": "minor_mode",
+                "ref": "openssl/3.6.2",
+                "require": "openssl/[>=1.1 <4]",
+                "run": false,
+                "skip": false,
+                "test": false,
+                "transitive_headers": null,
+                "transitive_libs": null,
+                "visible": true,
+              },
+            },
+            "specifier": "openssl/[>=1.1 <4]",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "5",
+        },
+        {
+          "evidence": [
+            "conanfile.py",
+          ],
+          "from": "5",
+          "kind": "runtime",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": false,
+                "direct": true,
+                "force": false,
+                "headers": true,
+                "libs": true,
+                "package_id_mode": "minor_mode",
+                "ref": "zlib/1.3.1",
+                "require": "zlib/[>=1.2.11 <2]",
+                "run": false,
+                "skip": false,
+                "test": false,
+                "transitive_headers": null,
+                "transitive_libs": null,
+                "visible": true,
+              },
+            },
+            "specifier": "zlib/[>=1.2.11 <2]",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "6",
+        },
+        {
+          "evidence": [
+            "conanfile.py",
+          ],
+          "from": "scope:["0","build"]",
+          "kind": "build",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": true,
+                "direct": true,
+                "force": false,
+                "headers": false,
+                "libs": false,
+                "package_id_mode": null,
+                "ref": "cmake/3.27.7",
+                "require": "cmake/3.27.7",
+                "run": true,
+                "skip": false,
+                "test": false,
+                "transitive_headers": null,
+                "transitive_libs": null,
+                "visible": false,
+              },
+            },
+            "specifier": "cmake/3.27.7",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "14",
+        },
+        {
+          "evidence": [
+            "conanfile.py",
+          ],
+          "from": "scope:["0","runtime"]",
+          "kind": "runtime",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": false,
+                "direct": true,
+                "force": false,
+                "headers": true,
+                "libs": true,
+                "package_id_mode": "semver_mode",
+                "ref": "drogon/1.7.5",
+                "require": "drogon/1.7.5",
+                "run": false,
+                "skip": false,
+                "test": false,
+                "transitive_headers": null,
+                "transitive_libs": null,
+                "visible": true,
+              },
+            },
+            "specifier": "drogon/1.7.5",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "3",
+        },
+        {
+          "evidence": [
+            "conanfile.py",
+          ],
+          "from": "scope:["0","runtime"]",
+          "kind": "runtime",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": false,
+                "direct": true,
+                "force": false,
+                "headers": true,
+                "libs": true,
+                "package_id_mode": "semver_mode",
+                "ref": "spdlog/1.15.0",
+                "require": "spdlog/1.15.0",
+                "run": false,
+                "skip": false,
+                "test": false,
+                "transitive_headers": null,
+                "transitive_libs": null,
+                "visible": true,
+              },
+            },
+            "specifier": "spdlog/1.15.0",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "1",
+        },
+      ],
+      "id": "["conanfile","conanfile.py","conanfile:a20a32c70b8d8cfc5820bd9f0616dbfa372f45e36a92696202c09cfc9412c76f"]",
+      "interpretation": "resolved",
+      "nodes": [
+        {
+          "attributes": {
+            "conan:binary": null,
+            "conan:context": "host",
+            "conan:options": {},
+            "conan:package_id": "234ea07280860d102e0bbcfcfa55b34d557e0daa",
+            "conan:prev": null,
+            "conan:ref": "transitiveapp/1.0",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.cppstd": "gnu17",
+              "compiler.libcxx": "libstdc++11",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.py",
+          ],
+          "id": "0",
+          "locator": "0",
+          "project": {
+            "definitionFile": "conanfile.py#node=0",
+            "purl": "pkg:conan/transitiveapp@1.0",
+          },
+          "purl": "pkg:conan/transitiveapp@1.0",
+        },
+        {
+          "attributes": {
+            "conan:binary": "Missing",
+            "conan:context": "host",
+            "conan:options": {
+              "fPIC": "True",
+              "header_only": "False",
+              "no_exceptions": "False",
+              "shared": "False",
+              "use_std_fmt": "False",
+            },
+            "conan:package_id": "04c97d54141e96217cc71049cd7e9b0b1eced2d5",
+            "conan:prev": null,
+            "conan:ref": "spdlog/1.15.0#da21f74dd84627fa68601c4e3b9c3f00",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.cppstd": "gnu17",
+              "compiler.libcxx": "libstdc++11",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.py",
+          ],
+          "id": "1",
+          "locator": "1",
+          "purl": "pkg:conan/spdlog@1.15.0?rrev=da21f74dd84627fa68601c4e3b9c3f00",
+        },
+        {
+          "attributes": {
+            "conan:binary": "Missing",
+            "conan:context": "host",
+            "conan:options": {
+              "addr2line_location": "/usr/bin/addr2line",
+              "asio_no_deprecated": "False",
+              "buildid": null,
+              "bzip2": "True",
+              "debug_level": "0",
+              "diagnostic_definitions": "False",
+              "error_code_header_only": "False",
+              "extra_b2_flags": null,
+              "fPIC": "True",
+              "filesystem_no_deprecated": "False",
+              "filesystem_use_std_fs": "False",
+              "filesystem_version": null,
+              "header_only": "False",
+              "i18n_backend": "deprecated",
+              "i18n_backend_iconv": "libc",
+              "i18n_backend_icu": "False",
+              "layout": "system",
+              "lzma": "False",
+              "magic_autolink": "False",
+              "multithreading": "True",
+              "namespace": "boost",
+              "namespace_alias": "False",
+              "numa": "True",
+              "pch": "True",
+              "python_executable": null,
+              "python_version": null,
+              "segmented_stacks": "False",
+              "shared": "False",
+              "system_no_deprecated": "False",
+              "system_use_utf8": "False",
+              "visibility": "hidden",
+              "with_stacktrace_backtrace": "True",
+              "without_atomic": "False",
+              "without_chrono": "False",
+              "without_container": "False",
+              "without_context": "False",
+              "without_contract": "False",
+              "without_coroutine": "False",
+              "without_date_time": "False",
+              "without_exception": "False",
+              "without_fiber": "False",
+              "without_filesystem": "False",
+              "without_graph": "False",
+              "without_graph_parallel": "True",
+              "without_iostreams": "False",
+              "without_json": "False",
+              "without_locale": "False",
+              "without_log": "False",
+              "without_math": "False",
+              "without_mpi": "True",
+              "without_nowide": "False",
+              "without_program_options": "False",
+              "without_python": "True",
+              "without_random": "False",
+              "without_regex": "False",
+              "without_serialization": "False",
+              "without_stacktrace": "False",
+              "without_system": "False",
+              "without_test": "False",
+              "without_thread": "False",
+              "without_timer": "False",
+              "without_type_erasure": "False",
+              "without_url": "False",
+              "without_wave": "False",
+              "zlib": "True",
+              "zstd": "False",
+            },
+            "conan:package_id": "5e128f63ae7bc4cb8a0fe1405b61fcbd98a434f5",
+            "conan:prev": null,
+            "conan:ref": "boost/1.83.0#3989436c24399e15c01ab4bf165703da",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.cppstd": "gnu17",
+              "compiler.libcxx": "libstdc++11",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.py",
+          ],
+          "id": "10",
+          "locator": "10",
+          "purl": "pkg:conan/boost@1.83.0?rrev=3989436c24399e15c01ab4bf165703da",
+        },
+        {
+          "attributes": {
+            "conan:binary": "Missing",
+            "conan:context": "host",
+            "conan:options": {
+              "build_executable": "True",
+              "fPIC": "True",
+              "shared": "False",
+            },
+            "conan:package_id": "e9126ec423b2193a35f8697101a2670deb82c96b",
+            "conan:prev": null,
+            "conan:ref": "bzip2/1.0.8#c470882369c2d95c5c77e970c0c7e321",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.py",
+          ],
+          "id": "11",
+          "locator": "11",
+          "purl": "pkg:conan/bzip2@1.0.8?rrev=c470882369c2d95c5c77e970c0c7e321",
+        },
+        {
+          "attributes": {
+            "conan:binary": "Missing",
+            "conan:context": "host",
+            "conan:options": {
+              "fPIC": "True",
+              "shared": "False",
+            },
+            "conan:package_id": "5172837b05c2f087e99d128455aac37041416625",
+            "conan:prev": null,
+            "conan:ref": "libbacktrace/cci.20210118#a7691bfccd8caaf66309df196790a5a1",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.py",
+          ],
+          "id": "12",
+          "locator": "12",
+          "purl": "pkg:conan/libbacktrace@cci.20210118?rrev=a7691bfccd8caaf66309df196790a5a1",
+        },
+        {
+          "attributes": {
+            "conan:binary": "Skip",
+            "conan:context": "build",
+            "conan:options": {
+              "toolset": "auto",
+              "use_cxx_env": "False",
+            },
+            "conan:package_id": "63fead0844576fc02943e16909f08fcdddd6f44b",
+            "conan:prev": "de3e94a44d659159ab39f33c906790e9",
+            "conan:ref": "b2/5.4.2#ffd6084a119587e70f11cd45d1a386e2",
+            "conan:settings": {
+              "arch": "x86_64",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.py",
+          ],
+          "id": "13",
+          "locator": "13",
+          "purl": "pkg:conan/b2@5.4.2?rrev=ffd6084a119587e70f11cd45d1a386e2",
+        },
+        {
+          "attributes": {
+            "conan:binary": "Download",
+            "conan:context": "build",
+            "conan:options": {},
+            "conan:package_id": "63fead0844576fc02943e16909f08fcdddd6f44b",
+            "conan:prev": "9583e30af903650c949bb4ebeaa67180",
+            "conan:ref": "cmake/3.27.7#6e11610a238b9292dffda14c34bb53e6",
+            "conan:settings": {
+              "arch": "x86_64",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.py",
+          ],
+          "id": "14",
+          "locator": "14",
+          "purl": "pkg:conan/cmake@3.27.7?rrev=6e11610a238b9292dffda14c34bb53e6",
+        },
+        {
+          "attributes": {
+            "conan:binary": "Missing",
+            "conan:context": "host",
+            "conan:options": {
+              "fPIC": "True",
+              "header_only": "False",
+              "shared": "False",
+              "with_fmt_alias": "False",
+              "with_os_api": "True",
+              "with_unicode": "True",
+            },
+            "conan:package_id": "4833ef63bd83f13faceda52fc47debc2a79a5f38",
+            "conan:prev": null,
+            "conan:ref": "fmt/11.0.2#7b5e2770c1ccb3d4af9b4f6762135645",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.cppstd": "gnu17",
+              "compiler.libcxx": "libstdc++11",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.py",
+          ],
+          "id": "2",
+          "locator": "2",
+          "purl": "pkg:conan/fmt@11.0.2?rrev=7b5e2770c1ccb3d4af9b4f6762135645",
+        },
+        {
+          "attributes": {
+            "conan:binary": "Missing",
+            "conan:context": "host",
+            "conan:options": {
+              "fPIC": "True",
+              "shared": "False",
+              "with_boost": "True",
+              "with_brotli": "False",
+              "with_ctl": "False",
+              "with_mysql": "False",
+              "with_orm": "True",
+              "with_postgres": "False",
+              "with_profile": "False",
+              "with_redis": "False",
+              "with_sqlite": "False",
+            },
+            "conan:package_id": "22288b85ac75d2bda2b5a6a38a15c212048bbf9b",
+            "conan:prev": null,
+            "conan:ref": "drogon/1.7.5#3761781790494386ffda8d58401c6420",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.cppstd": "gnu17",
+              "compiler.libcxx": "libstdc++11",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.py",
+          ],
+          "id": "3",
+          "locator": "3",
+          "purl": "pkg:conan/drogon@1.7.5?rrev=3761781790494386ffda8d58401c6420",
+        },
+        {
+          "attributes": {
+            "conan:binary": "Missing",
+            "conan:context": "host",
+            "conan:options": {
+              "fPIC": "True",
+              "shared": "False",
+              "with_c_ares": "True",
+              "with_spdlog": "False",
+            },
+            "conan:package_id": "24b3dddbde87fbfba45bba1bbcc101f9c208b9d4",
+            "conan:prev": null,
+            "conan:ref": "trantor/1.5.16#6062e975c9e26d71b37d07c1e1d12ffc",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.cppstd": "gnu17",
+              "compiler.libcxx": "libstdc++11",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.py",
+          ],
+          "id": "4",
+          "locator": "4",
+          "purl": "pkg:conan/trantor@1.5.16?rrev=6062e975c9e26d71b37d07c1e1d12ffc",
+        },
+        {
+          "attributes": {
+            "conan:binary": "Missing",
+            "conan:context": "host",
+            "conan:options": {
+              "386": "False",
+              "enable_trace": "False",
+              "enable_weak_ssl_ciphers": "False",
+              "fPIC": "True",
+              "no_apps": "False",
+              "no_aria": "False",
+              "no_asm": "False",
+              "no_async": "False",
+              "no_autoload_config": "False",
+              "no_bf": "False",
+              "no_blake2": "False",
+              "no_camellia": "False",
+              "no_cast": "False",
+              "no_chacha": "False",
+              "no_cms": "False",
+              "no_comp": "False",
+              "no_ct": "False",
+              "no_deprecated": "False",
+              "no_des": "False",
+              "no_dgram": "False",
+              "no_dh": "False",
+              "no_dsa": "False",
+              "no_dso": "False",
+              "no_ec": "False",
+              "no_ecdh": "False",
+              "no_ecdsa": "False",
+              "no_engine": "False",
+              "no_filenames": "False",
+              "no_fips": "False",
+              "no_gost": "False",
+              "no_idea": "False",
+              "no_legacy": "False",
+              "no_md2": "True",
+              "no_md4": "False",
+              "no_mdc2": "False",
+              "no_module": "False",
+              "no_ocsp": "False",
+              "no_pinshared": "False",
+              "no_rc2": "False",
+              "no_rc4": "False",
+              "no_rc5": "False",
+              "no_rfc3779": "False",
+              "no_rmd160": "False",
+              "no_seed": "False",
+              "no_sm2": "False",
+              "no_sm3": "False",
+              "no_sm4": "False",
+              "no_sock": "False",
+              "no_srp": "False",
+              "no_srtp": "False",
+              "no_sse2": "False",
+              "no_ssl": "False",
+              "no_ssl3": "False",
+              "no_stdio": "False",
+              "no_threads": "False",
+              "no_tls1": "False",
+              "no_ts": "False",
+              "no_whirlpool": "False",
+              "no_zlib": "False",
+              "openssldir": null,
+              "shared": "False",
+              "tls_security_level": null,
+            },
+            "conan:package_id": "60ffdd79094c4153147472e6e8d874116af63dc7",
+            "conan:prev": null,
+            "conan:ref": "openssl/3.6.2#36f92686a9285adfe2ccd1c1dbf9ea35",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.py",
+          ],
+          "id": "5",
+          "locator": "5",
+          "purl": "pkg:conan/openssl@3.6.2?rrev=36f92686a9285adfe2ccd1c1dbf9ea35",
+        },
+        {
+          "attributes": {
+            "conan:binary": "Missing",
+            "conan:context": "host",
+            "conan:options": {
+              "fPIC": "True",
+              "shared": "False",
+            },
+            "conan:package_id": "5172837b05c2f087e99d128455aac37041416625",
+            "conan:prev": null,
+            "conan:ref": "zlib/1.3.1#cac0f6daea041b0ccf42934163defb20",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.py",
+          ],
+          "id": "6",
+          "locator": "6",
+          "purl": "pkg:conan/zlib@1.3.1?rrev=cac0f6daea041b0ccf42934163defb20",
+        },
+        {
+          "attributes": {
+            "conan:binary": "Missing",
+            "conan:context": "host",
+            "conan:options": {
+              "fPIC": "True",
+              "multithreading": "True",
+              "shared": "False",
+              "tools": "True",
+            },
+            "conan:package_id": "90a4a9e922a3b33658b0300b61e181a9370ec703",
+            "conan:prev": null,
+            "conan:ref": "c-ares/1.25.0#c44402161e02e465a74d2020d683dd7a",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.py",
+          ],
+          "id": "7",
+          "locator": "7",
+          "purl": "pkg:conan/c-ares@1.25.0?rrev=c44402161e02e465a74d2020d683dd7a",
+        },
+        {
+          "attributes": {
+            "conan:binary": "Missing",
+            "conan:context": "host",
+            "conan:options": {
+              "fPIC": "True",
+              "shared": "False",
+            },
+            "conan:package_id": "65f26548cd6813b23b0051b0e790c19e81a7817f",
+            "conan:prev": null,
+            "conan:ref": "jsoncpp/1.9.5#9415a4cf4d2e8965408f3a01a8339b48",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.cppstd": "gnu17",
+              "compiler.libcxx": "libstdc++11",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.py",
+          ],
+          "id": "8",
+          "locator": "8",
+          "purl": "pkg:conan/jsoncpp@1.9.5?rrev=9415a4cf4d2e8965408f3a01a8339b48",
+        },
+        {
+          "attributes": {
+            "conan:binary": "Missing",
+            "conan:context": "host",
+            "conan:options": {
+              "fPIC": "True",
+              "shared": "False",
+              "with_python_bindings": "True",
+            },
+            "conan:package_id": "7a620be67aaf501a57e7388f7b09efcdd85c5669",
+            "conan:prev": null,
+            "conan:ref": "util-linux-libuuid/2.39.2#62d79af1952b4edc2dfaaffd614fe4a3",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.py",
+          ],
+          "id": "9",
+          "locator": "9",
+          "purl": "pkg:conan/util-linux-libuuid@2.39.2?rrev=62d79af1952b4edc2dfaaffd614fe4a3",
+        },
+        {
+          "attributes": {
+            "conan:binary": null,
+            "conan:context": "host",
+            "conan:options": {},
+            "conan:package_id": "234ea07280860d102e0bbcfcfa55b34d557e0daa",
+            "conan:prev": null,
+            "conan:ref": "transitiveapp/1.0",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.cppstd": "gnu17",
+              "compiler.libcxx": "libstdc++11",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.py",
+          ],
+          "id": "scope:["0","build"]",
+          "locator": "0",
+          "project": {
+            "definitionFile": "conanfile.py#node=0",
+            "purl": "pkg:conan/transitiveapp@1.0",
+          },
+          "purl": "pkg:conan/transitiveapp@1.0",
+        },
+        {
+          "attributes": {
+            "conan:binary": null,
+            "conan:context": "host",
+            "conan:options": {},
+            "conan:package_id": "234ea07280860d102e0bbcfcfa55b34d557e0daa",
+            "conan:prev": null,
+            "conan:ref": "transitiveapp/1.0",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.cppstd": "gnu17",
+              "compiler.libcxx": "libstdc++11",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.py",
+          ],
+          "id": "scope:["0","runtime"]",
+          "locator": "0",
+          "project": {
+            "definitionFile": "conanfile.py#node=0",
+            "purl": "pkg:conan/transitiveapp@1.0",
+          },
+          "purl": "pkg:conan/transitiveapp@1.0",
+        },
+        {
+          "attributes": {
+            "conan:binary": null,
+            "conan:context": "host",
+            "conan:options": {},
+            "conan:package_id": "234ea07280860d102e0bbcfcfa55b34d557e0daa",
+            "conan:prev": null,
+            "conan:ref": "transitiveapp/1.0",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.cppstd": "gnu17",
+              "compiler.libcxx": "libstdc++11",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.py",
+          ],
+          "id": "scope:["0","test"]",
+          "locator": "0",
+          "project": {
+            "definitionFile": "conanfile.py#node=0",
+            "purl": "pkg:conan/transitiveapp@1.0",
+          },
+          "purl": "pkg:conan/transitiveapp@1.0",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:["0","build"]",
+          "node": "scope:["0","build"]",
+          "project": {
+            "definitionFile": "conanfile.py#node=0",
+            "purl": "pkg:conan/transitiveapp@1.0",
+          },
+          "scope": "build",
+        },
+        {
+          "id": "scope:["0","runtime"]",
+          "node": "scope:["0","runtime"]",
+          "project": {
+            "definitionFile": "conanfile.py#node=0",
+            "purl": "pkg:conan/transitiveapp@1.0",
+          },
+          "scope": "runtime",
+        },
+        {
+          "id": "scope:["0","test"]",
+          "node": "scope:["0","test"]",
+          "project": {
+            "definitionFile": "conanfile.py#node=0",
+            "purl": "pkg:conan/transitiveapp@1.0",
+          },
+          "scope": "test",
+        },
+      ],
+      "source": {
+        "extractor": "conanfile",
+        "files": [
+          "conanfile.py",
+        ],
+      },
+    },
+  ],
+  "issues": [
+    {
+      "code": "conanfile.command_warning",
+      "file": "conanfile.py",
+      "message": "Using lockfile: '/workspace/exscalibur/packages/analyzer-plugin-conan/src/__fixtures__/transitive_extended/conan.lock'
+
+======== Input profiles ========
+Profile host:
+[settings]
+arch=x86_64
+build_type=Release
+compiler=gcc
+compiler.cppstd=gnu17
+compiler.libcxx=libstdc++11
+compiler.version=15
+os=Linux
+
+Profile build:
+[settings]
+arch=x86_64
+build_type=Release
+compiler=gcc
+compiler.cppstd=gnu17
+compiler.libcxx=libstdc++11
+compiler.version=15
+os=Linux
+
+
+======== Computing dependency graph ========
+Graph root
+    conanfile.py (transitiveapp/1.0): /workspace/exscalibur/packages/analyzer-plugin-conan/src/__fixtures__/transitive_extended/conanfile.py
+Requirements
+    boost/1.83.0#3989436c24399e15c01ab4bf165703da - Cache
+    bzip2/1.0.8#c470882369c2d95c5c77e970c0c7e321 - Cache
+    c-ares/1.25.0#c44402161e02e465a74d2020d683dd7a - Cache
+    drogon/1.7.5#3761781790494386ffda8d58401c6420 - Cache
+    fmt/11.0.2#7b5e2770c1ccb3d4af9b4f6762135645 - Cache
+    jsoncpp/1.9.5#9415a4cf4d2e8965408f3a01a8339b48 - Cache
+    libbacktrace/cci.20210118#a7691bfccd8caaf66309df196790a5a1 - Cache
+    openssl/3.6.2#36f92686a9285adfe2ccd1c1dbf9ea35 - Cache
+    spdlog/1.15.0#da21f74dd84627fa68601c4e3b9c3f00 - Cache
+    trantor/1.5.16#6062e975c9e26d71b37d07c1e1d12ffc - Cache
+    util-linux-libuuid/2.39.2#62d79af1952b4edc2dfaaffd614fe4a3 - Cache
+    zlib/1.3.1#cac0f6daea041b0ccf42934163defb20 - Cache
+Build requirements
+    b2/5.4.2#ffd6084a119587e70f11cd45d1a386e2 - Cache
+    cmake/3.27.7#6e11610a238b9292dffda14c34bb53e6 - Cache
+
+======== Computing necessary packages ========
+Connecting to remote 'conancenter' anonymously
+fmt/11.0.2: Main binary package '4833ef63bd83f13faceda52fc47debc2a79a5f38' missing
+fmt/11.0.2: Checking 11 compatible configurations
+fmt/11.0.2: Compatible configurations not found in cache, checking servers
+fmt/11.0.2: '2f3571214ee36fb851a6d85edbd09c8e0911be52': compiler.cppstd=11
+fmt/11.0.2: '651e0224174315bae5dcbdc75050e8964ec36e95': compiler.cppstd=gnu11
+fmt/11.0.2: 'c8bab2841edcd3870526b43267e7e99b4be1db06': compiler.cppstd=14
+fmt/11.0.2: 'b53e17c4e13f44136a0cdc731b6bd2d233e3e7ae': compiler.cppstd=gnu14
+fmt/11.0.2: 'bbaf9498ac5c5300d89f390b04da76d79ad0fef9': compiler.cppstd=17
+fmt/11.0.2: '8b6a655c93b3941b14106801f9b99b8811576b1d': compiler.cppstd=20
+fmt/11.0.2: 'd9a4f8ea86a76190d4c71f92bf1c4dc3c9c9d74d': compiler.cppstd=gnu20
+fmt/11.0.2: '0cd87dc8ef8ada4e04a078bf4db58d3de2802d35': compiler.cppstd=23
+fmt/11.0.2: '4dc1f9c66382dca1e2249f3cfe2d32c0e3293c03': compiler.cppstd=gnu23
+fmt/11.0.2: 'ad055167a1fc3018ad3e73925df0fa414b372352': compiler.cppstd=26
+fmt/11.0.2: '708371e44878fd7253917d7dc7bc72731a64cafc': compiler.cppstd=gnu26
+fmt/11.0.2: No compatible configuration found
+jsoncpp/1.9.5: Main binary package '65f26548cd6813b23b0051b0e790c19e81a7817f' missing
+jsoncpp/1.9.5: Checking 13 compatible configurations
+jsoncpp/1.9.5: Compatible configurations not found in cache, checking servers
+jsoncpp/1.9.5: '83802d502015da3d87300187ab7a2d69523a5b21': compiler.cppstd=98
+jsoncpp/1.9.5: '7c57833511f7cb135ba5c4bc5a66a3faa43c72ca': compiler.cppstd=gnu98
+jsoncpp/1.9.5: '7be7126721e62eeebc6b091f8e66fe40337a6d64': compiler.cppstd=11
+jsoncpp/1.9.5: '7ef10d8d0fc4d675873fc62e51d9dd4475503bc2': compiler.cppstd=gnu11
+jsoncpp/1.9.5: '27b995f8795aab48da42788276734cd4dc9a388a': compiler.cppstd=14
+jsoncpp/1.9.5: '0c4a5f93dcf63a493b67c5889622a5d9052c51a3': compiler.cppstd=gnu14
+jsoncpp/1.9.5: '4e5ada8904dc28cc167787f4b44a07b72250655d': compiler.cppstd=17
+jsoncpp/1.9.5: '813417aa23475817fe97360a04a1d7d9d77b11c5': compiler.cppstd=20
+jsoncpp/1.9.5: '104b1952bf4b23b60e44f5ba0e21142e065c5c70': compiler.cppstd=gnu20
+jsoncpp/1.9.5: '013363855f1146d52f4d830b454ba45d78e83793': compiler.cppstd=23
+jsoncpp/1.9.5: '081aafdb762533c7574235d2d780198f27eeade6': compiler.cppstd=gnu23
+jsoncpp/1.9.5: '5623c016172a0742bf7aada8bfbad22163771a8c': compiler.cppstd=26
+jsoncpp/1.9.5: '1c5fb77d180402fd0e4b2ace957cc72a8975ae75': compiler.cppstd=gnu26
+jsoncpp/1.9.5: No compatible configuration found
+boost/1.83.0: Main binary package '5e128f63ae7bc4cb8a0fe1405b61fcbd98a434f5' missing
+boost/1.83.0: Checking 11 compatible configurations
+boost/1.83.0: Compatible configurations not found in cache, checking servers
+boost/1.83.0: '26cfe7010e3ade33c93078ef15727fa18f154eba': compiler.cppstd=11
+boost/1.83.0: 'c8f2732e1ee77cb307303f058d030af79f3cf8c3': compiler.cppstd=gnu11
+boost/1.83.0: '8b41665ab72ba2b552f45eea419ae0b2e893402f': compiler.cppstd=14
+boost/1.83.0: 'cfe1e4db362677c054a3f70f843f94495212eff7': compiler.cppstd=gnu14
+boost/1.83.0: 'efd037c0a835228edfd8994f5df095bd33da3a13': compiler.cppstd=17
+boost/1.83.0: '7f3b0b7edb8b37936e374e9ee83cd399de57ae0e': compiler.cppstd=20
+boost/1.83.0: 'a3b946d10d108b9e6eb2cd28597d6e22dbf5279a': compiler.cppstd=gnu20
+boost/1.83.0: '3810e19dc59128173f75c7b04001b58b4dff521f': compiler.cppstd=23
+boost/1.83.0: '8169a4b3d6830069f063e8c6373d8c8625e0bcdd': compiler.cppstd=gnu23
+boost/1.83.0: 'bdb4e179eeac60c1efecddd16097db13925a6791': compiler.cppstd=26
+boost/1.83.0: 'e0d1a73cc6a368a14988b90820aae0966c4fdf59': compiler.cppstd=gnu26
+boost/1.83.0: No compatible configuration found
+spdlog/1.15.0: Main binary package '04c97d54141e96217cc71049cd7e9b0b1eced2d5' missing
+spdlog/1.15.0: Checking 11 compatible configurations
+spdlog/1.15.0: Compatible configurations not found in cache, checking servers
+spdlog/1.15.0: 'dd08e9f899b08e09e7a8071a3a53d00d19365644': compiler.cppstd=11
+spdlog/1.15.0: '403c4af4c548d8cb039b3544b95129b040eea4bd': compiler.cppstd=gnu11
+spdlog/1.15.0: 'dad99e79fa2f16854f41cf48bef1d87fa1d106e3': compiler.cppstd=14
+spdlog/1.15.0: 'a3b9d32778910a4a1a10febe09a13111c439f6d4': compiler.cppstd=gnu14
+spdlog/1.15.0: '204ee6f2e3a0db114e1c1410077d153c2ebba1fb': compiler.cppstd=17
+spdlog/1.15.0: '4a95f3a06d325c139a4252daee1e33255f184b1f': compiler.cppstd=20
+spdlog/1.15.0: '2d50e5175f985a1ed92eed0a1aa2ab124a363b82': compiler.cppstd=gnu20
+spdlog/1.15.0: '2b732498c035a082763059b41254909b12a4cf77': compiler.cppstd=23
+spdlog/1.15.0: '2132f015ac317d03bed51da7fcc449bf9559aa59': compiler.cppstd=gnu23
+spdlog/1.15.0: '1ecc9138f007cf4e0ba0fce74104c032d384eefd': compiler.cppstd=26
+spdlog/1.15.0: '4c3c199fa8c7a0e09de89f50a8815bfdfa081534': compiler.cppstd=gnu26
+spdlog/1.15.0: No compatible configuration found
+trantor/1.5.16: WARN: risk: Transitive dependencies with 'headers=False' effect in 'package_id' is not necessary and suboptimal. Use required_conan_version='>=2.28' to activate it
+trantor/1.5.16: Main binary package '24b3dddbde87fbfba45bba1bbcc101f9c208b9d4' missing
+trantor/1.5.16: Checking 9 compatible configurations
+trantor/1.5.16: Compatible configurations not found in cache, checking servers
+trantor/1.5.16: '89c6a14857c679cccc2074cfb23fde1ded2653fc': compiler.cppstd=14
+trantor/1.5.16: 'b033d5e96d26fde670b38f546c03811e25f536d8': compiler.cppstd=gnu14
+trantor/1.5.16: '51d3f29474f0c80968be6d2cfff89bc380b77bcb': compiler.cppstd=17
+trantor/1.5.16: '221b47883f967dda9b15c2e9ac47815606d2d07b': compiler.cppstd=20
+trantor/1.5.16: '3789fcd6dcc4181f0893df01ea499aaa4c937491': compiler.cppstd=gnu20
+trantor/1.5.16: 'a654b21dc200822d9f3c7147b6ee518664f4aed6': compiler.cppstd=23
+trantor/1.5.16: 'afaedaaa7848aea9704c26e871f8f860f0c681e7': compiler.cppstd=gnu23
+trantor/1.5.16: 'caf604c199b88544729a215c1e0552c00c9bcdad': compiler.cppstd=26
+trantor/1.5.16: 'a7934bcc34fb8da9a8b6f1fd5a18f5fab875ee4d': compiler.cppstd=gnu26
+trantor/1.5.16: No compatible configuration found
+drogon/1.7.5: WARN: risk: Transitive dependencies with 'headers=False' effect in 'package_id' is not necessary and suboptimal. Use required_conan_version='>=2.28' to activate it
+drogon/1.7.5: Main binary package '22288b85ac75d2bda2b5a6a38a15c212048bbf9b' missing
+drogon/1.7.5: Checking 9 compatible configurations
+drogon/1.7.5: Compatible configurations not found in cache, checking servers
+drogon/1.7.5: 'fbc5e32e690a9bb575db3eac6eedd49220cc4c74': compiler.cppstd=14
+drogon/1.7.5: '6dafb25196ed065b0e282e0b082ae3f551500f03': compiler.cppstd=gnu14
+drogon/1.7.5: '48eee19f936e65c2078f4970a148cceca68d70e6': compiler.cppstd=17
+drogon/1.7.5: 'f2b7c592af34412da42264ce34f0eb82e7e50b2b': compiler.cppstd=20
+drogon/1.7.5: '8920eb2b251b7c2a044c6de250e17c189f62e363': compiler.cppstd=gnu20
+drogon/1.7.5: '89d6701bb403d75003c24faf6b2cf1828c41dcd1': compiler.cppstd=23
+drogon/1.7.5: '59c1cd582e01f0594bde11dedd689638ac115328': compiler.cppstd=gnu23
+drogon/1.7.5: '14760a14527368690ce4dbb03236b1cc6cc426ee': compiler.cppstd=26
+drogon/1.7.5: 'cc67968e2f38d777300ec3e5bf7567544ec05e37': compiler.cppstd=gnu26
+drogon/1.7.5: No compatible configuration found
+
+A new experimental approach for binary compatibility detection is available.
+    Enable it by setting the core.graph:compatibility_mode=optimized conf
+    and get improved performance when querying multiple compatible binaries in remotes.
+
+Requirements
+    boost/1.83.0#3989436c24399e15c01ab4bf165703da:5e128f63ae7bc4cb8a0fe1405b61fcbd98a434f5 - Missing
+    bzip2/1.0.8#c470882369c2d95c5c77e970c0c7e321:e9126ec423b2193a35f8697101a2670deb82c96b - Missing
+    c-ares/1.25.0#c44402161e02e465a74d2020d683dd7a:90a4a9e922a3b33658b0300b61e181a9370ec703 - Missing
+    drogon/1.7.5#3761781790494386ffda8d58401c6420:22288b85ac75d2bda2b5a6a38a15c212048bbf9b - Missing
+    fmt/11.0.2#7b5e2770c1ccb3d4af9b4f6762135645:4833ef63bd83f13faceda52fc47debc2a79a5f38 - Missing
+    jsoncpp/1.9.5#9415a4cf4d2e8965408f3a01a8339b48:65f26548cd6813b23b0051b0e790c19e81a7817f - Missing
+    libbacktrace/cci.20210118#a7691bfccd8caaf66309df196790a5a1:5172837b05c2f087e99d128455aac37041416625 - Missing
+    openssl/3.6.2#36f92686a9285adfe2ccd1c1dbf9ea35:60ffdd79094c4153147472e6e8d874116af63dc7 - Missing
+    spdlog/1.15.0#da21f74dd84627fa68601c4e3b9c3f00:04c97d54141e96217cc71049cd7e9b0b1eced2d5 - Missing
+    trantor/1.5.16#6062e975c9e26d71b37d07c1e1d12ffc:24b3dddbde87fbfba45bba1bbcc101f9c208b9d4 - Missing
+    util-linux-libuuid/2.39.2#62d79af1952b4edc2dfaaffd614fe4a3:7a620be67aaf501a57e7388f7b09efcdd85c5669 - Missing
+    zlib/1.3.1#cac0f6daea041b0ccf42934163defb20:5172837b05c2f087e99d128455aac37041416625 - Missing
+Build requirements
+    cmake/3.27.7#6e11610a238b9292dffda14c34bb53e6:63fead0844576fc02943e16909f08fcdddd6f44b#9583e30af903650c949bb4ebeaa67180 - Download (conancenter)
+Skipped binaries
+    b2/5.4.2
+WARN: There are some error(s) in the graph:
+    - Missing packages: zlib, fmt, util-linux-libuuid, drogon, openssl, c-ares, spdlog, jsoncpp, libbacktrace, boost, trantor, bzip2
+",
+      "severity": "WARNING",
+    },
+  ],
+  "packages": [
+    {
+      "evidence": [
+        "conanfile.py",
+      ],
+      "purl": "pkg:conan/b2@5.4.2?rrev=ffd6084a119587e70f11cd45d1a386e2",
+    },
+    {
+      "evidence": [
+        "conanfile.py",
+      ],
+      "purl": "pkg:conan/boost@1.83.0?rrev=3989436c24399e15c01ab4bf165703da",
+    },
+    {
+      "evidence": [
+        "conanfile.py",
+      ],
+      "purl": "pkg:conan/bzip2@1.0.8?rrev=c470882369c2d95c5c77e970c0c7e321",
+    },
+    {
+      "evidence": [
+        "conanfile.py",
+      ],
+      "purl": "pkg:conan/c-ares@1.25.0?rrev=c44402161e02e465a74d2020d683dd7a",
+    },
+    {
+      "evidence": [
+        "conanfile.py",
+      ],
+      "purl": "pkg:conan/cmake@3.27.7?rrev=6e11610a238b9292dffda14c34bb53e6",
+    },
+    {
+      "evidence": [
+        "conanfile.py",
+      ],
+      "purl": "pkg:conan/drogon@1.7.5?rrev=3761781790494386ffda8d58401c6420",
+    },
+    {
+      "evidence": [
+        "conanfile.py",
+      ],
+      "purl": "pkg:conan/fmt@11.0.2?rrev=7b5e2770c1ccb3d4af9b4f6762135645",
+    },
+    {
+      "evidence": [
+        "conanfile.py",
+      ],
+      "purl": "pkg:conan/jsoncpp@1.9.5?rrev=9415a4cf4d2e8965408f3a01a8339b48",
+    },
+    {
+      "evidence": [
+        "conanfile.py",
+      ],
+      "purl": "pkg:conan/libbacktrace@cci.20210118?rrev=a7691bfccd8caaf66309df196790a5a1",
+    },
+    {
+      "evidence": [
+        "conanfile.py",
+      ],
+      "purl": "pkg:conan/openssl@3.6.2?rrev=36f92686a9285adfe2ccd1c1dbf9ea35",
+    },
+    {
+      "evidence": [
+        "conanfile.py",
+      ],
+      "purl": "pkg:conan/spdlog@1.15.0?rrev=da21f74dd84627fa68601c4e3b9c3f00",
+    },
+    {
+      "evidence": [
+        "conanfile.py",
+      ],
+      "purl": "pkg:conan/trantor@1.5.16?rrev=6062e975c9e26d71b37d07c1e1d12ffc",
+    },
+    {
+      "evidence": [
+        "conanfile.py",
+      ],
+      "purl": "pkg:conan/util-linux-libuuid@2.39.2?rrev=62d79af1952b4edc2dfaaffd614fe4a3",
+    },
+    {
+      "evidence": [
+        "conanfile.py",
+      ],
+      "purl": "pkg:conan/zlib@1.3.1?rrev=cac0f6daea041b0ccf42934163defb20",
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "conanfile.py#node=0",
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "conanfile",
+            "files": [
+              "conanfile.py",
+            ],
+            "key": "0",
+          },
+          "synthesizedPurl": false,
+        },
+      ],
+      "purl": "pkg:conan/transitiveapp@1.0",
+    },
+  ],
+}
+`;
+
+exports[`recorded Conan graph: transitive_simple 1`] = `
+{
+  "codebase": "fixture:transitive_simple",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "context": {
+        "conan:profileBuild": "__fixtures__/profile",
+        "conan:profileHost": "__fixtures__/profile",
+      },
+      "edges": [
+        {
+          "evidence": [
+            "conanfile.py",
+          ],
+          "from": "0",
+          "kind": "build",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": true,
+                "direct": true,
+                "force": false,
+                "headers": false,
+                "libs": false,
+                "package_id_mode": null,
+                "ref": "cmake/3.27.7",
+                "require": "cmake/3.27.7",
+                "run": true,
+                "skip": false,
+                "test": false,
+                "transitive_headers": null,
+                "transitive_libs": null,
+                "visible": false,
+              },
+            },
+            "specifier": "cmake/3.27.7",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "3",
+        },
+        {
+          "evidence": [
+            "conanfile.py",
+          ],
+          "from": "0",
+          "kind": "runtime",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": false,
+                "direct": true,
+                "force": false,
+                "headers": true,
+                "libs": true,
+                "package_id_mode": "semver_mode",
+                "ref": "openssl/3.0.5",
+                "require": "openssl/3.0.5",
+                "run": false,
+                "skip": false,
+                "test": false,
+                "transitive_headers": null,
+                "transitive_libs": null,
+                "visible": true,
+              },
+            },
+            "specifier": "openssl/3.0.5",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "1",
+        },
+        {
+          "evidence": [
+            "conanfile.py",
+          ],
+          "from": "1",
+          "kind": "runtime",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": false,
+                "direct": true,
+                "force": false,
+                "headers": true,
+                "libs": true,
+                "package_id_mode": "minor_mode",
+                "ref": "zlib/1.2.13",
+                "require": "zlib/1.2.13",
+                "run": false,
+                "skip": false,
+                "test": false,
+                "transitive_headers": null,
+                "transitive_libs": null,
+                "visible": true,
+              },
+            },
+            "specifier": "zlib/1.2.13",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "2",
+        },
+        {
+          "evidence": [
+            "conanfile.py",
+          ],
+          "from": "scope:["0","build"]",
+          "kind": "build",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": true,
+                "direct": true,
+                "force": false,
+                "headers": false,
+                "libs": false,
+                "package_id_mode": null,
+                "ref": "cmake/3.27.7",
+                "require": "cmake/3.27.7",
+                "run": true,
+                "skip": false,
+                "test": false,
+                "transitive_headers": null,
+                "transitive_libs": null,
+                "visible": false,
+              },
+            },
+            "specifier": "cmake/3.27.7",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "3",
+        },
+        {
+          "evidence": [
+            "conanfile.py",
+          ],
+          "from": "scope:["0","runtime"]",
+          "kind": "runtime",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "conan:requirement": {
+                "build": false,
+                "direct": true,
+                "force": false,
+                "headers": true,
+                "libs": true,
+                "package_id_mode": "semver_mode",
+                "ref": "openssl/3.0.5",
+                "require": "openssl/3.0.5",
+                "run": false,
+                "skip": false,
+                "test": false,
+                "transitive_headers": null,
+                "transitive_libs": null,
+                "visible": true,
+              },
+            },
+            "specifier": "openssl/3.0.5",
+          },
+          "selection": "selected",
+          "status": "resolved",
+          "to": "1",
+        },
+      ],
+      "id": "["conanfile","conanfile.py","conanfile:f0d0215cd3fea09dc94e0addfdb58f0e9ec4c41bac4eb3f1ee5d445cb40fa12a"]",
+      "interpretation": "resolved",
+      "nodes": [
+        {
+          "attributes": {
+            "conan:binary": null,
+            "conan:context": "host",
+            "conan:options": {},
+            "conan:package_id": "9cf55ec0f72cfcdba60a6b8819601bb6f7fee4c9",
+            "conan:prev": null,
+            "conan:ref": "transitiveapp/1.0",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.cppstd": "gnu17",
+              "compiler.libcxx": "libstdc++11",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.py",
+          ],
+          "id": "0",
+          "locator": "0",
+          "project": {
+            "definitionFile": "conanfile.py#node=0",
+            "purl": "pkg:conan/transitiveapp@1.0",
+          },
+          "purl": "pkg:conan/transitiveapp@1.0",
+        },
+        {
+          "attributes": {
+            "conan:binary": "Missing",
+            "conan:context": "host",
+            "conan:options": {
+              "386": "False",
+              "enable_weak_ssl_ciphers": "False",
+              "fPIC": "True",
+              "no_aria": "False",
+              "no_asm": "False",
+              "no_async": "False",
+              "no_bf": "False",
+              "no_blake2": "False",
+              "no_camellia": "False",
+              "no_cast": "False",
+              "no_chacha": "False",
+              "no_cms": "False",
+              "no_comp": "False",
+              "no_ct": "False",
+              "no_deprecated": "False",
+              "no_des": "False",
+              "no_dgram": "False",
+              "no_dh": "False",
+              "no_dsa": "False",
+              "no_dso": "False",
+              "no_ec": "False",
+              "no_ecdh": "False",
+              "no_ecdsa": "False",
+              "no_engine": "False",
+              "no_filenames": "False",
+              "no_fips": "False",
+              "no_gost": "False",
+              "no_idea": "False",
+              "no_legacy": "False",
+              "no_md2": "True",
+              "no_md4": "False",
+              "no_mdc2": "False",
+              "no_module": "False",
+              "no_ocsp": "False",
+              "no_pinshared": "False",
+              "no_rc2": "False",
+              "no_rc4": "False",
+              "no_rc5": "False",
+              "no_rfc3779": "False",
+              "no_rmd160": "False",
+              "no_seed": "False",
+              "no_sm2": "False",
+              "no_sm3": "False",
+              "no_sm4": "False",
+              "no_sock": "False",
+              "no_srp": "False",
+              "no_srtp": "False",
+              "no_sse2": "False",
+              "no_ssl": "False",
+              "no_ssl3": "False",
+              "no_stdio": "False",
+              "no_threads": "False",
+              "no_tls1": "False",
+              "no_ts": "False",
+              "no_whirlpool": "False",
+              "no_zlib": "False",
+              "openssldir": null,
+              "shared": "False",
+            },
+            "conan:package_id": "bbe200f8970dab5a148021af9f3b9d8a860b8445",
+            "conan:prev": null,
+            "conan:ref": "openssl/3.0.5#c80b5695cbbd0359de27edfa08105388",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.py",
+          ],
+          "id": "1",
+          "locator": "1",
+          "purl": "pkg:conan/openssl@3.0.5?rrev=c80b5695cbbd0359de27edfa08105388",
+        },
+        {
+          "attributes": {
+            "conan:binary": "Missing",
+            "conan:context": "host",
+            "conan:options": {
+              "fPIC": "True",
+              "shared": "False",
+            },
+            "conan:package_id": "5172837b05c2f087e99d128455aac37041416625",
+            "conan:prev": null,
+            "conan:ref": "zlib/1.2.13#9df41c65e2c2b6ef47633dc32e0b699a",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.py",
+          ],
+          "id": "2",
+          "locator": "2",
+          "purl": "pkg:conan/zlib@1.2.13?rrev=9df41c65e2c2b6ef47633dc32e0b699a",
+        },
+        {
+          "attributes": {
+            "conan:binary": "Download",
+            "conan:context": "build",
+            "conan:options": {},
+            "conan:package_id": "63fead0844576fc02943e16909f08fcdddd6f44b",
+            "conan:prev": "9583e30af903650c949bb4ebeaa67180",
+            "conan:ref": "cmake/3.27.7#6e11610a238b9292dffda14c34bb53e6",
+            "conan:settings": {
+              "arch": "x86_64",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.py",
+          ],
+          "id": "3",
+          "locator": "3",
+          "purl": "pkg:conan/cmake@3.27.7?rrev=6e11610a238b9292dffda14c34bb53e6",
+        },
+        {
+          "attributes": {
+            "conan:binary": null,
+            "conan:context": "host",
+            "conan:options": {},
+            "conan:package_id": "9cf55ec0f72cfcdba60a6b8819601bb6f7fee4c9",
+            "conan:prev": null,
+            "conan:ref": "transitiveapp/1.0",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.cppstd": "gnu17",
+              "compiler.libcxx": "libstdc++11",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.py",
+          ],
+          "id": "scope:["0","build"]",
+          "locator": "0",
+          "project": {
+            "definitionFile": "conanfile.py#node=0",
+            "purl": "pkg:conan/transitiveapp@1.0",
+          },
+          "purl": "pkg:conan/transitiveapp@1.0",
+        },
+        {
+          "attributes": {
+            "conan:binary": null,
+            "conan:context": "host",
+            "conan:options": {},
+            "conan:package_id": "9cf55ec0f72cfcdba60a6b8819601bb6f7fee4c9",
+            "conan:prev": null,
+            "conan:ref": "transitiveapp/1.0",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.cppstd": "gnu17",
+              "compiler.libcxx": "libstdc++11",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.py",
+          ],
+          "id": "scope:["0","runtime"]",
+          "locator": "0",
+          "project": {
+            "definitionFile": "conanfile.py#node=0",
+            "purl": "pkg:conan/transitiveapp@1.0",
+          },
+          "purl": "pkg:conan/transitiveapp@1.0",
+        },
+        {
+          "attributes": {
+            "conan:binary": null,
+            "conan:context": "host",
+            "conan:options": {},
+            "conan:package_id": "9cf55ec0f72cfcdba60a6b8819601bb6f7fee4c9",
+            "conan:prev": null,
+            "conan:ref": "transitiveapp/1.0",
+            "conan:settings": {
+              "arch": "x86_64",
+              "build_type": "Release",
+              "compiler": "gcc",
+              "compiler.cppstd": "gnu17",
+              "compiler.libcxx": "libstdc++11",
+              "compiler.version": "15",
+              "os": "Linux",
+            },
+            "conan:test": false,
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "conanfile.py",
+          ],
+          "id": "scope:["0","test"]",
+          "locator": "0",
+          "project": {
+            "definitionFile": "conanfile.py#node=0",
+            "purl": "pkg:conan/transitiveapp@1.0",
+          },
+          "purl": "pkg:conan/transitiveapp@1.0",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:["0","build"]",
+          "node": "scope:["0","build"]",
+          "project": {
+            "definitionFile": "conanfile.py#node=0",
+            "purl": "pkg:conan/transitiveapp@1.0",
+          },
+          "scope": "build",
+        },
+        {
+          "id": "scope:["0","runtime"]",
+          "node": "scope:["0","runtime"]",
+          "project": {
+            "definitionFile": "conanfile.py#node=0",
+            "purl": "pkg:conan/transitiveapp@1.0",
+          },
+          "scope": "runtime",
+        },
+        {
+          "id": "scope:["0","test"]",
+          "node": "scope:["0","test"]",
+          "project": {
+            "definitionFile": "conanfile.py#node=0",
+            "purl": "pkg:conan/transitiveapp@1.0",
+          },
+          "scope": "test",
+        },
+      ],
+      "source": {
+        "extractor": "conanfile",
+        "files": [
+          "conanfile.py",
+        ],
+      },
+    },
+  ],
+  "issues": [
+    {
+      "code": "conanfile.command_warning",
+      "file": "conanfile.py",
+      "message": "Using lockfile: '/workspace/exscalibur/packages/analyzer-plugin-conan/src/__fixtures__/transitive_simple/conan.lock'
+
+======== Input profiles ========
+Profile host:
+[settings]
+arch=x86_64
+build_type=Release
+compiler=gcc
+compiler.cppstd=gnu17
+compiler.libcxx=libstdc++11
+compiler.version=15
+os=Linux
+
+Profile build:
+[settings]
+arch=x86_64
+build_type=Release
+compiler=gcc
+compiler.cppstd=gnu17
+compiler.libcxx=libstdc++11
+compiler.version=15
+os=Linux
+
+
+======== Computing dependency graph ========
+Graph root
+    conanfile.py (transitiveapp/1.0): /workspace/exscalibur/packages/analyzer-plugin-conan/src/__fixtures__/transitive_simple/conanfile.py
+Requirements
+    openssl/3.0.5#c80b5695cbbd0359de27edfa08105388 - Cache
+    zlib/1.2.13#9df41c65e2c2b6ef47633dc32e0b699a - Cache
+Build requirements
+    cmake/3.27.7#6e11610a238b9292dffda14c34bb53e6 - Cache
+
+======== Computing necessary packages ========
+Connecting to remote 'conancenter' anonymously
+Requirements
+    openssl/3.0.5#c80b5695cbbd0359de27edfa08105388:bbe200f8970dab5a148021af9f3b9d8a860b8445 - Missing
+    zlib/1.2.13#9df41c65e2c2b6ef47633dc32e0b699a:5172837b05c2f087e99d128455aac37041416625 - Missing
+Build requirements
+    cmake/3.27.7#6e11610a238b9292dffda14c34bb53e6:63fead0844576fc02943e16909f08fcdddd6f44b#9583e30af903650c949bb4ebeaa67180 - Download (conancenter)
+WARN: There are some error(s) in the graph:
+    - Missing packages: zlib, openssl
+",
+      "severity": "WARNING",
+    },
+  ],
+  "packages": [
+    {
+      "evidence": [
+        "conanfile.py",
+      ],
+      "purl": "pkg:conan/cmake@3.27.7?rrev=6e11610a238b9292dffda14c34bb53e6",
+    },
+    {
+      "evidence": [
+        "conanfile.py",
+      ],
+      "purl": "pkg:conan/openssl@3.0.5?rrev=c80b5695cbbd0359de27edfa08105388",
+    },
+    {
+      "evidence": [
+        "conanfile.py",
+      ],
+      "purl": "pkg:conan/zlib@1.2.13?rrev=9df41c65e2c2b6ef47633dc32e0b699a",
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "conanfile.py#node=0",
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "conanfile",
+            "files": [
+              "conanfile.py",
+            ],
+            "key": "0",
+          },
+          "synthesizedPurl": false,
+        },
+      ],
+      "purl": "pkg:conan/transitiveapp@1.0",
+    },
+  ],
+}
+`;

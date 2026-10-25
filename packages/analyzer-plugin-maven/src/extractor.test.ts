@@ -1,6 +1,11 @@
 import { join } from "node:path";
 import { expect, test } from "vite-plus/test";
-import { queryDependencies, runCommand, validateResult } from "@scatool/analyzer-core";
+import {
+  normalizeResult,
+  queryDependencies,
+  runCommand,
+  validateResult,
+} from "@scatool/analyzer-core";
 import { extractor } from "./extractor.ts";
 
 // Native Maven execution remains required. These expectations come from the fixture POMs.
@@ -59,5 +64,7 @@ for (const [fixture, projects] of Object.entries(fixtures)) {
         queryDependencies(result, { graph: graph.id, root: aggregate.id }).declarations,
       ).toEqual([]);
     }
+
+    expect(normalizeResult(result)).toMatchSnapshot();
   }, 120000);
 }

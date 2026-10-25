@@ -1,6 +1,6 @@
 import { join } from "node:path";
 import { expect, test } from "vite-plus/test";
-import { queryDependencies, validateResult } from "@scatool/analyzer-core";
+import { normalizeResult, queryDependencies, validateResult } from "@scatool/analyzer-core";
 import { extractor } from "./index.ts";
 
 // Expectations read from the committed go.mod files, not generated from extractor output.
@@ -56,5 +56,7 @@ for (const [fixture, projects] of Object.entries(fixtures)) {
           ),
       ).toBe(true);
     }
+
+    expect(normalizeResult(result)).toMatchSnapshot();
   }, 120000);
 }

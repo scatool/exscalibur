@@ -1,6 +1,6 @@
 import { join } from "node:path";
 import { expect, test } from "vite-plus/test";
-import { queryDependencies, validateResult } from "@scatool/analyzer-core";
+import { normalizeResult, queryDependencies, validateResult } from "@scatool/analyzer-core";
 import { extractor } from "./extractor.ts";
 
 for (const fixture of ["basic", "multimodule"]) {
@@ -39,5 +39,7 @@ for (const fixture of ["basic", "multimodule"]) {
       expect(
         result.subprojects.some((project) => project.definitionFile === "lib/build.gradle"),
       ).toBe(true);
+
+    expect(normalizeResult(result)).toMatchSnapshot();
   }, 120000);
 }

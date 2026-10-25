@@ -6,7 +6,7 @@ import { test, expect } from "vite-plus/test";
 import os, { tmpdir } from "node:os";
 import { copyFile, rm, mkdtemp, readFile } from "node:fs/promises";
 import type { VcpkgPort } from "./types.ts";
-import { findExecutable, parseResult, runCommand } from "@scatool/analyzer-core";
+import { findExecutable, normalizeResult, parseResult, runCommand } from "@scatool/analyzer-core";
 import { PackageURL } from "packageurl-js";
 
 const fixturesDir = join(import.meta.dirname, "__fixtures__");
@@ -87,6 +87,8 @@ for (const fixture of fixtures) {
       }
       for (const edge of graph.edges) expect(edge.selection).toBe("unknown");
       expect(result.packages.length).toBeGreaterThan(0);
+
+      expect(normalizeResult(result)).toMatchSnapshot();
     }, 60000);
   }
 }

@@ -33,6 +33,14 @@ must name and validate the exact volatile fields, retain their presence, and lea
 facts intact. Do not introduce blanket metadata filtering or mask graph relationships to make a
 snapshot pass. Repeated runs and a relocated checkout should agree after that documented handling.
 
+The UV fixture validates its generated document UUID, source-key linkage, timestamp and graph ID
+before substituting fixed export-identity values in a copy for comparison. All dependency facts
+remain unchanged. Conan's cache state and verbose warnings are materially different between live
+runs, so its five live native tests remain unchanged. Five additional command-replay tests snapshot
+the complete result from recorded native output, retaining binary revisions and warning text. The
+[recording provenance](../analyzer-plugin-conan/src/__recorded__/README.md) describes the source
+hashes, tool version and replay boundary; those snapshots do not assert a fixed live cache state.
+
 Package snapshots are separate from the 87 source-reviewed integration JSON baselines and their
 acceptance ledger. Restoring package snapshots does not authorize updating those baselines or
 modifying the native fixtures.

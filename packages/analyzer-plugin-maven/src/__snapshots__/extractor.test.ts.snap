@@ -1,0 +1,927 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`native Maven extraction: basic 1`] = `
+{
+  "codebase": "fixture:basic",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "attributes": {
+        "maven:projection": "dependency-tree",
+        "maven:requests": "not-reported",
+      },
+      "edges": [
+        {
+          "from": "root:maven:dependency-tree",
+          "kind": "test",
+          "optional": false,
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "tree/0",
+        },
+        {
+          "from": "root:test",
+          "kind": "test",
+          "optional": false,
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "tree/0",
+        },
+        {
+          "from": "tree/0",
+          "kind": "test",
+          "optional": false,
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "tree/0/0",
+        },
+        {
+          "from": "tree/0",
+          "kind": "test",
+          "optional": false,
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "tree/0/1",
+        },
+        {
+          "from": "tree/0",
+          "kind": "test",
+          "optional": false,
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "tree/0/2",
+        },
+        {
+          "from": "tree/0",
+          "kind": "test",
+          "optional": false,
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "tree/0/3",
+        },
+      ],
+      "id": "["maven","pom.xml","maven:2e5d9e6b2658048e65a5d0e40956b574347b840b11cc57255b205e6a7b6e99e0"]",
+      "interpretation": "resolved",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "root:maven:dependency-tree",
+          "project": {
+            "definitionFile": "pom.xml",
+            "purl": "pkg:maven/com.mycompany.app/my-app@1.0-SNAPSHOT",
+          },
+          "purl": "pkg:maven/com.mycompany.app/my-app@1.0-SNAPSHOT",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "root:test",
+          "project": {
+            "definitionFile": "pom.xml",
+            "purl": "pkg:maven/com.mycompany.app/my-app@1.0-SNAPSHOT",
+          },
+          "purl": "pkg:maven/com.mycompany.app/my-app@1.0-SNAPSHOT",
+        },
+        {
+          "attributes": {
+            "maven:node": {
+              "artifactId": "junit-jupiter-api",
+              "classifier": "",
+              "groupId": "org.junit.jupiter",
+              "optional": "false",
+              "scope": "test",
+              "type": "jar",
+              "version": "6.0.1",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "tree/0",
+          "locator": "tree/0",
+          "purl": "pkg:maven/org.junit.jupiter/junit-jupiter-api@6.0.1",
+        },
+        {
+          "attributes": {
+            "maven:node": {
+              "artifactId": "opentest4j",
+              "classifier": "",
+              "groupId": "org.opentest4j",
+              "optional": "false",
+              "scope": "test",
+              "type": "jar",
+              "version": "1.3.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "tree/0/0",
+          "locator": "tree/0/0",
+          "purl": "pkg:maven/org.opentest4j/opentest4j@1.3.0",
+        },
+        {
+          "attributes": {
+            "maven:node": {
+              "artifactId": "junit-platform-commons",
+              "classifier": "",
+              "groupId": "org.junit.platform",
+              "optional": "false",
+              "scope": "test",
+              "type": "jar",
+              "version": "6.0.1",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "tree/0/1",
+          "locator": "tree/0/1",
+          "purl": "pkg:maven/org.junit.platform/junit-platform-commons@6.0.1",
+        },
+        {
+          "attributes": {
+            "maven:node": {
+              "artifactId": "apiguardian-api",
+              "classifier": "",
+              "groupId": "org.apiguardian",
+              "optional": "false",
+              "scope": "test",
+              "type": "jar",
+              "version": "1.1.2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "tree/0/2",
+          "locator": "tree/0/2",
+          "purl": "pkg:maven/org.apiguardian/apiguardian-api@1.1.2",
+        },
+        {
+          "attributes": {
+            "maven:node": {
+              "artifactId": "jspecify",
+              "classifier": "",
+              "groupId": "org.jspecify",
+              "optional": "false",
+              "scope": "test",
+              "type": "jar",
+              "version": "1.0.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "tree/0/3",
+          "locator": "tree/0/3",
+          "purl": "pkg:maven/org.jspecify/jspecify@1.0.0",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "root:maven:dependency-tree",
+          "node": "root:maven:dependency-tree",
+          "project": {
+            "definitionFile": "pom.xml",
+            "purl": "pkg:maven/com.mycompany.app/my-app@1.0-SNAPSHOT",
+          },
+          "scope": "maven:dependency-tree",
+        },
+        {
+          "id": "root:test",
+          "node": "root:test",
+          "project": {
+            "definitionFile": "pom.xml",
+            "purl": "pkg:maven/com.mycompany.app/my-app@1.0-SNAPSHOT",
+          },
+          "scope": "test",
+        },
+      ],
+      "source": {
+        "extractor": "maven",
+        "files": [
+          "pom.xml",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "pom.xml",
+      ],
+      "purl": "pkg:maven/org.apiguardian/apiguardian-api@1.1.2",
+    },
+    {
+      "evidence": [
+        "pom.xml",
+      ],
+      "purl": "pkg:maven/org.jspecify/jspecify@1.0.0",
+    },
+    {
+      "evidence": [
+        "pom.xml",
+      ],
+      "purl": "pkg:maven/org.junit.jupiter/junit-jupiter-api@6.0.1",
+    },
+    {
+      "evidence": [
+        "pom.xml",
+      ],
+      "purl": "pkg:maven/org.junit.platform/junit-platform-commons@6.0.1",
+    },
+    {
+      "evidence": [
+        "pom.xml",
+      ],
+      "purl": "pkg:maven/org.opentest4j/opentest4j@1.3.0",
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "pom.xml",
+      "purl": "pkg:maven/com.mycompany.app/my-app@1.0-SNAPSHOT",
+    },
+  ],
+}
+`;
+
+exports[`native Maven extraction: multimodule 1`] = `
+{
+  "codebase": "fixture:multimodule",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "attributes": {
+        "maven:projection": "dependency-tree",
+        "maven:requests": "not-reported",
+      },
+      "edges": [
+        {
+          "from": "root:compile",
+          "kind": "compile",
+          "optional": false,
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "tree/0",
+        },
+        {
+          "from": "root:maven:dependency-tree",
+          "kind": "compile",
+          "optional": false,
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "tree/0",
+        },
+        {
+          "from": "tree/0",
+          "kind": "compile",
+          "optional": false,
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "tree/0/0",
+        },
+        {
+          "from": "tree/0",
+          "kind": "compile",
+          "optional": false,
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "tree/0/1",
+        },
+        {
+          "from": "tree/0",
+          "kind": "compile",
+          "optional": false,
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "tree/0/2",
+        },
+        {
+          "from": "tree/0",
+          "kind": "compile",
+          "optional": false,
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "tree/0/3",
+        },
+        {
+          "from": "tree/0",
+          "kind": "compile",
+          "optional": false,
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "tree/0/4",
+        },
+        {
+          "from": "tree/0",
+          "kind": "compile",
+          "optional": false,
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "tree/0/5",
+        },
+      ],
+      "id": "["maven","module-a/pom.xml","maven:61b80f7abd9de798071d445b567ef84a75a13689b03bf7bec941f30e7c15d06f"]",
+      "interpretation": "resolved",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "root:compile",
+          "project": {
+            "definitionFile": "module-a/pom.xml",
+            "purl": "pkg:maven/com.example/module-a@1.0.0",
+          },
+          "purl": "pkg:maven/com.example/module-a@1.0.0",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "root:maven:dependency-tree",
+          "project": {
+            "definitionFile": "module-a/pom.xml",
+            "purl": "pkg:maven/com.example/module-a@1.0.0",
+          },
+          "purl": "pkg:maven/com.example/module-a@1.0.0",
+        },
+        {
+          "attributes": {
+            "maven:node": {
+              "artifactId": "guava",
+              "classifier": "",
+              "groupId": "com.google.guava",
+              "optional": "false",
+              "scope": "compile",
+              "type": "jar",
+              "version": "33.0.0-jre",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "tree/0",
+          "locator": "tree/0",
+          "purl": "pkg:maven/com.google.guava/guava@33.0.0-jre",
+        },
+        {
+          "attributes": {
+            "maven:node": {
+              "artifactId": "failureaccess",
+              "classifier": "",
+              "groupId": "com.google.guava",
+              "optional": "false",
+              "scope": "compile",
+              "type": "jar",
+              "version": "1.0.2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "tree/0/0",
+          "locator": "tree/0/0",
+          "purl": "pkg:maven/com.google.guava/failureaccess@1.0.2",
+        },
+        {
+          "attributes": {
+            "maven:node": {
+              "artifactId": "listenablefuture",
+              "classifier": "",
+              "groupId": "com.google.guava",
+              "optional": "false",
+              "scope": "compile",
+              "type": "jar",
+              "version": "9999.0-empty-to-avoid-conflict-with-guava",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "tree/0/1",
+          "locator": "tree/0/1",
+          "purl": "pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava",
+        },
+        {
+          "attributes": {
+            "maven:node": {
+              "artifactId": "jsr305",
+              "classifier": "",
+              "groupId": "com.google.code.findbugs",
+              "optional": "false",
+              "scope": "compile",
+              "type": "jar",
+              "version": "3.0.2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "tree/0/2",
+          "locator": "tree/0/2",
+          "purl": "pkg:maven/com.google.code.findbugs/jsr305@3.0.2",
+        },
+        {
+          "attributes": {
+            "maven:node": {
+              "artifactId": "checker-qual",
+              "classifier": "",
+              "groupId": "org.checkerframework",
+              "optional": "false",
+              "scope": "compile",
+              "type": "jar",
+              "version": "3.41.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "tree/0/3",
+          "locator": "tree/0/3",
+          "purl": "pkg:maven/org.checkerframework/checker-qual@3.41.0",
+        },
+        {
+          "attributes": {
+            "maven:node": {
+              "artifactId": "error_prone_annotations",
+              "classifier": "",
+              "groupId": "com.google.errorprone",
+              "optional": "false",
+              "scope": "compile",
+              "type": "jar",
+              "version": "2.23.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "tree/0/4",
+          "locator": "tree/0/4",
+          "purl": "pkg:maven/com.google.errorprone/error_prone_annotations@2.23.0",
+        },
+        {
+          "attributes": {
+            "maven:node": {
+              "artifactId": "j2objc-annotations",
+              "classifier": "",
+              "groupId": "com.google.j2objc",
+              "optional": "false",
+              "scope": "compile",
+              "type": "jar",
+              "version": "2.8",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "tree/0/5",
+          "locator": "tree/0/5",
+          "purl": "pkg:maven/com.google.j2objc/j2objc-annotations@2.8",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "root:compile",
+          "node": "root:compile",
+          "project": {
+            "definitionFile": "module-a/pom.xml",
+            "purl": "pkg:maven/com.example/module-a@1.0.0",
+          },
+          "scope": "compile",
+        },
+        {
+          "id": "root:maven:dependency-tree",
+          "node": "root:maven:dependency-tree",
+          "project": {
+            "definitionFile": "module-a/pom.xml",
+            "purl": "pkg:maven/com.example/module-a@1.0.0",
+          },
+          "scope": "maven:dependency-tree",
+        },
+      ],
+      "source": {
+        "extractor": "maven",
+        "files": [
+          "module-a/pom.xml",
+        ],
+      },
+    },
+    {
+      "attributes": {
+        "maven:projection": "dependency-tree",
+        "maven:requests": "not-reported",
+      },
+      "edges": [
+        {
+          "from": "root:compile",
+          "kind": "compile",
+          "optional": false,
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "tree/0",
+        },
+        {
+          "from": "root:compile",
+          "kind": "compile",
+          "optional": false,
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "tree/1",
+        },
+        {
+          "from": "root:maven:dependency-tree",
+          "kind": "compile",
+          "optional": false,
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "tree/0",
+        },
+        {
+          "from": "root:maven:dependency-tree",
+          "kind": "compile",
+          "optional": false,
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "tree/1",
+        },
+        {
+          "from": "tree/0",
+          "kind": "compile",
+          "optional": false,
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "tree/0/0",
+        },
+        {
+          "from": "tree/0/0",
+          "kind": "compile",
+          "optional": false,
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "tree/0/0/0",
+        },
+        {
+          "from": "tree/0/0",
+          "kind": "compile",
+          "optional": false,
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "tree/0/0/1",
+        },
+        {
+          "from": "tree/0/0",
+          "kind": "compile",
+          "optional": false,
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "tree/0/0/2",
+        },
+        {
+          "from": "tree/0/0",
+          "kind": "compile",
+          "optional": false,
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "tree/0/0/3",
+        },
+        {
+          "from": "tree/0/0",
+          "kind": "compile",
+          "optional": false,
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "tree/0/0/4",
+        },
+        {
+          "from": "tree/0/0",
+          "kind": "compile",
+          "optional": false,
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "tree/0/0/5",
+        },
+      ],
+      "id": "["maven","module-b/pom.xml","maven:004d09c03b602423178e78169cbafce6eff0d8b9f40b0d5337446317a0c57906"]",
+      "interpretation": "resolved",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "root:compile",
+          "project": {
+            "definitionFile": "module-b/pom.xml",
+            "purl": "pkg:maven/com.example/module-b@1.0.0",
+          },
+          "purl": "pkg:maven/com.example/module-b@1.0.0",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "root:maven:dependency-tree",
+          "project": {
+            "definitionFile": "module-b/pom.xml",
+            "purl": "pkg:maven/com.example/module-b@1.0.0",
+          },
+          "purl": "pkg:maven/com.example/module-b@1.0.0",
+        },
+        {
+          "attributes": {
+            "maven:node": {
+              "artifactId": "module-a",
+              "classifier": "",
+              "groupId": "com.example",
+              "optional": "false",
+              "scope": "compile",
+              "type": "jar",
+              "version": "1.0.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "tree/0",
+          "locator": "tree/0",
+          "purl": "pkg:maven/com.example/module-a@1.0.0",
+        },
+        {
+          "attributes": {
+            "maven:node": {
+              "artifactId": "guava",
+              "classifier": "",
+              "groupId": "com.google.guava",
+              "optional": "false",
+              "scope": "compile",
+              "type": "jar",
+              "version": "33.0.0-jre",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "tree/0/0",
+          "locator": "tree/0/0",
+          "purl": "pkg:maven/com.google.guava/guava@33.0.0-jre",
+        },
+        {
+          "attributes": {
+            "maven:node": {
+              "artifactId": "failureaccess",
+              "classifier": "",
+              "groupId": "com.google.guava",
+              "optional": "false",
+              "scope": "compile",
+              "type": "jar",
+              "version": "1.0.2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "tree/0/0/0",
+          "locator": "tree/0/0/0",
+          "purl": "pkg:maven/com.google.guava/failureaccess@1.0.2",
+        },
+        {
+          "attributes": {
+            "maven:node": {
+              "artifactId": "listenablefuture",
+              "classifier": "",
+              "groupId": "com.google.guava",
+              "optional": "false",
+              "scope": "compile",
+              "type": "jar",
+              "version": "9999.0-empty-to-avoid-conflict-with-guava",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "tree/0/0/1",
+          "locator": "tree/0/0/1",
+          "purl": "pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava",
+        },
+        {
+          "attributes": {
+            "maven:node": {
+              "artifactId": "jsr305",
+              "classifier": "",
+              "groupId": "com.google.code.findbugs",
+              "optional": "false",
+              "scope": "compile",
+              "type": "jar",
+              "version": "3.0.2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "tree/0/0/2",
+          "locator": "tree/0/0/2",
+          "purl": "pkg:maven/com.google.code.findbugs/jsr305@3.0.2",
+        },
+        {
+          "attributes": {
+            "maven:node": {
+              "artifactId": "checker-qual",
+              "classifier": "",
+              "groupId": "org.checkerframework",
+              "optional": "false",
+              "scope": "compile",
+              "type": "jar",
+              "version": "3.41.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "tree/0/0/3",
+          "locator": "tree/0/0/3",
+          "purl": "pkg:maven/org.checkerframework/checker-qual@3.41.0",
+        },
+        {
+          "attributes": {
+            "maven:node": {
+              "artifactId": "error_prone_annotations",
+              "classifier": "",
+              "groupId": "com.google.errorprone",
+              "optional": "false",
+              "scope": "compile",
+              "type": "jar",
+              "version": "2.23.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "tree/0/0/4",
+          "locator": "tree/0/0/4",
+          "purl": "pkg:maven/com.google.errorprone/error_prone_annotations@2.23.0",
+        },
+        {
+          "attributes": {
+            "maven:node": {
+              "artifactId": "j2objc-annotations",
+              "classifier": "",
+              "groupId": "com.google.j2objc",
+              "optional": "false",
+              "scope": "compile",
+              "type": "jar",
+              "version": "2.8",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "tree/0/0/5",
+          "locator": "tree/0/0/5",
+          "purl": "pkg:maven/com.google.j2objc/j2objc-annotations@2.8",
+        },
+        {
+          "attributes": {
+            "maven:node": {
+              "artifactId": "commons-lang3",
+              "classifier": "",
+              "groupId": "org.apache.commons",
+              "optional": "false",
+              "scope": "compile",
+              "type": "jar",
+              "version": "3.14.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "tree/1",
+          "locator": "tree/1",
+          "purl": "pkg:maven/org.apache.commons/commons-lang3@3.14.0",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "root:compile",
+          "node": "root:compile",
+          "project": {
+            "definitionFile": "module-b/pom.xml",
+            "purl": "pkg:maven/com.example/module-b@1.0.0",
+          },
+          "scope": "compile",
+        },
+        {
+          "id": "root:maven:dependency-tree",
+          "node": "root:maven:dependency-tree",
+          "project": {
+            "definitionFile": "module-b/pom.xml",
+            "purl": "pkg:maven/com.example/module-b@1.0.0",
+          },
+          "scope": "maven:dependency-tree",
+        },
+      ],
+      "source": {
+        "extractor": "maven",
+        "files": [
+          "module-b/pom.xml",
+        ],
+      },
+    },
+    {
+      "attributes": {
+        "maven:projection": "dependency-tree",
+        "maven:requests": "not-reported",
+      },
+      "edges": [],
+      "id": "["maven","pom.xml","maven:87fab422fa4d9e29c695638d277cc7042d29ceb1069d9e39100f5eac7f31fdb1"]",
+      "interpretation": "resolved",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "root:maven:dependency-tree",
+          "project": {
+            "definitionFile": "pom.xml",
+            "purl": "pkg:maven/com.example/multimodule-parent@1.0.0?type=pom",
+          },
+          "purl": "pkg:maven/com.example/multimodule-parent@1.0.0?type=pom",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "root:maven:dependency-tree",
+          "node": "root:maven:dependency-tree",
+          "project": {
+            "definitionFile": "pom.xml",
+            "purl": "pkg:maven/com.example/multimodule-parent@1.0.0?type=pom",
+          },
+          "scope": "maven:dependency-tree",
+        },
+      ],
+      "source": {
+        "extractor": "maven",
+        "files": [
+          "pom.xml",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "module-b/pom.xml",
+      ],
+      "purl": "pkg:maven/com.example/module-a@1.0.0",
+    },
+    {
+      "evidence": [
+        "module-a/pom.xml",
+        "module-b/pom.xml",
+      ],
+      "purl": "pkg:maven/com.google.code.findbugs/jsr305@3.0.2",
+    },
+    {
+      "evidence": [
+        "module-a/pom.xml",
+        "module-b/pom.xml",
+      ],
+      "purl": "pkg:maven/com.google.errorprone/error_prone_annotations@2.23.0",
+    },
+    {
+      "evidence": [
+        "module-a/pom.xml",
+        "module-b/pom.xml",
+      ],
+      "purl": "pkg:maven/com.google.guava/failureaccess@1.0.2",
+    },
+    {
+      "evidence": [
+        "module-a/pom.xml",
+        "module-b/pom.xml",
+      ],
+      "purl": "pkg:maven/com.google.guava/guava@33.0.0-jre",
+    },
+    {
+      "evidence": [
+        "module-a/pom.xml",
+        "module-b/pom.xml",
+      ],
+      "purl": "pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava",
+    },
+    {
+      "evidence": [
+        "module-a/pom.xml",
+        "module-b/pom.xml",
+      ],
+      "purl": "pkg:maven/com.google.j2objc/j2objc-annotations@2.8",
+    },
+    {
+      "evidence": [
+        "module-b/pom.xml",
+      ],
+      "purl": "pkg:maven/org.apache.commons/commons-lang3@3.14.0",
+    },
+    {
+      "evidence": [
+        "module-a/pom.xml",
+        "module-b/pom.xml",
+      ],
+      "purl": "pkg:maven/org.checkerframework/checker-qual@3.41.0",
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "module-a/pom.xml",
+      "purl": "pkg:maven/com.example/module-a@1.0.0",
+    },
+    {
+      "definitionFile": "module-b/pom.xml",
+      "purl": "pkg:maven/com.example/module-b@1.0.0",
+    },
+    {
+      "definitionFile": "pom.xml",
+      "purl": "pkg:maven/com.example/multimodule-parent@1.0.0?type=pom",
+    },
+  ],
+}
+`;
