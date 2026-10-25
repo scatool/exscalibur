@@ -400,3 +400,22 @@ test.each(
     field === "pkg" ? "invalid package index" : "invalid fragment",
   );
 });
+
+test("equal coordinates remain ambiguous when scope declarations and manager cannot identify one owner", () => {
+  expect(() =>
+    convertOrtResultV2(
+      {
+        projects: [
+          { id: "NPM::app:1", definition_file_path: "npm/package.json", scope_names: ["same"] },
+          { id: "Yarn::app:1", definition_file_path: "yarn/package.json", scope_names: ["same"] },
+        ],
+        dependency_graphs: {
+          OtherManager: { packages: [], scopes: { ":app:1:same": [] } },
+        },
+      },
+      options,
+    ),
+  ).toThrow(
+    "ORT scope ':app:1:same' in graph 'OtherManager' must identify exactly one source project",
+  );
+});

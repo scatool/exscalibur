@@ -266,3 +266,45 @@ test("anonymous source IDs cannot collide with an explicit native element ID", (
     result.graphs[0]!.nodes.find((node) => node.purl === "pkg:npm/anonymous@1")!.locator,
   ).toBeUndefined();
 });
+
+test("shared analyzed-subject collections are visited once without being mistaken for cycles", () => {
+  const result = extract(
+    [
+      pkg("app", "pkg:npm/app@1"),
+      { type: "Bundle", spdxId: "first", rootElement: ["shared"] },
+      { type: "Bundle", spdxId: "second", rootElement: ["shared"] },
+      { type: "software_Sbom", spdxId: "shared", rootElement: ["app"] },
+    ],
+    ["first", "second"],
+  );
+
+  expect(result.subprojects).toHaveLength(1);
+  expect(result.graphs[0]!.roots).toHaveLength(1);
+  expect(result.graphs[0]!.rootCompleteness).toBe("complete");
+  expect(result.issues).toEqual([]);
+});
+
+test("unknown required-dependency coverage does not hide conflicting complete optional claims", () => {
+  const result = extract([
+    pkg("app"),
+    pkg("first"),
+    pkg("second"),
+    ...["first", "second"].map((target) =>
+      relationship("app", [target], {
+        relationshipType: "hasOptionalDependency",
+        completeness: "complete",
+      }),
+    ),
+  ]);
+
+  expect(closure(result).completeness).toBe("unknown");
+  expect(closure(result).locators).toEqual(["first", "second"]);
+  expect(result.issues).toEqual([
+    {
+      code: "spdx.conflicting_completeness",
+      severity: "WARNING",
+      file: "bom.spdx.json",
+      message: "Conflicting complete 'hasOptionalDependency' target sets are retained for 'app'",
+    },
+  ]);
+});

@@ -27,16 +27,18 @@ export function extractCycloneDXV2(
     throw new Error(
       `Unsupported CycloneDX version: ${JSON.stringify(bom.specVersion) ?? "undefined"}`,
     );
+
   const result = createEmptyResultV2(options.codebase);
   const evidence = [options.evidenceFile];
   const nodes = new Map<string, DependencyView>();
-  const references = new Map<string, string>();
-  const native = new Map<string, RecordValue>();
+  const viewIdsByReference = new Map<string, string>();
+  const entitiesByViewId = new Map<string, RecordValue>();
   const catalog = new Map<string, PackageV2>();
   const edges: DependencyEdge[] = [];
-  const issue = (code: string, message: string) =>
+  const reportWarning = (code: string, message: string) =>
     result.issues.push({ code, message, severity: "WARNING", file: options.evidenceFile });
-  const fallback = (id: string, component: RecordValue) =>
+
+  const fallbackPurl = (id: string, component: RecordValue) =>
     new PackageURL(
       "generic",
       "excalibur-cyclonedx",
@@ -48,34 +50,37 @@ export function extractCycloneDXV2(
       null,
     ).toString();
 
-  const register = (
+  const registerEntityView = (
     component: RecordValue,
     path: string,
     kind: "component" | "service",
   ): string => {
     const ref = typeof component["bom-ref"] === "string" ? component["bom-ref"] : undefined;
     const id = ref === undefined ? `anonymous:${path}` : `bom-ref:${JSON.stringify(ref)}`;
-    const previous = native.get(id);
+    const previous = entitiesByViewId.get(id);
     if (previous) {
       if (!isDeepStrictEqual(previous, component))
         throw new Error(`Conflicting CycloneDX entity reference: ${ref}`);
       return id;
     }
-    native.set(id, component);
-    if (ref !== undefined) references.set(ref, id);
+
+    entitiesByViewId.set(id, component);
+    if (ref !== undefined) viewIdsByReference.set(ref, id);
+
     let purl: string | undefined;
     if (typeof component.purl === "string") {
       try {
         purl = PackageURL.fromString(component.purl).toString();
       } catch {
-        issue(
+        reportWarning(
           "cyclonedx.invalid_purl",
           `Invalid PURL for ${ref ?? path}; preserving the entity with a generic PURL`,
         );
       }
     }
     const synthesized = purl === undefined;
-    purl ??= fallback(id, component);
+    purl ??= fallbackPurl(id, component);
+
     const occurrences = record(component.evidence ?? {}).occurrences;
     const entityEvidence = [...evidence];
     for (const value of array(occurrences)) {
@@ -85,6 +90,7 @@ export function extractCycloneDXV2(
           `${occurrence.location}${typeof occurrence.line === "number" ? `#${occurrence.line}` : ""}`,
         );
     }
+
     const hashes: Record<string, string> = {};
     for (const value of array(component.hashes)) {
       const hash = record(value);
@@ -96,6 +102,8 @@ export function extractCycloneDXV2(
     }
     const selectedArtifacts: Artifact[] =
       Object.keys(hashes).length > 0 ? [{ hashes, evidence }] : [];
+    // Keep the current attribution distinction: component hashes belong to this view, while
+    // distribution URLs remain catalog observations. Do not infer a hash-to-URL pairing.
     const artifacts = [...selectedArtifacts];
     const externalReferences: ExternalReference[] = [];
     for (const value of array(component.externalReferences)) {
@@ -108,6 +116,7 @@ export function extractCycloneDXV2(
           locator: reference.url,
         });
     }
+
     const existing = catalog.get(purl) ?? {
       purl,
       evidence: [],
@@ -124,6 +133,7 @@ export function extractCycloneDXV2(
     if (externalReferences.length > 0)
       existing.externalReferences = [...(existing.externalReferences ?? []), ...externalReferences];
     catalog.set(purl, existing);
+
     const { components, services, ...metadata } = component;
     const node: DependencyView = {
       id,
@@ -135,30 +145,35 @@ export function extractCycloneDXV2(
       attributes: { "cyclonedx:entityKind": kind, "cyclonedx:entity": metadata },
     };
     nodes.set(id, node);
+
     const children = [
       ...array(components).map((value, index) =>
-        register(record(value), `${path}/components/${index}`, "component"),
+        registerEntityView(record(value), `${path}/components/${index}`, "component"),
       ),
       ...array(services).map((value, index) =>
-        register(record(value), `${path}/services/${index}`, "service"),
+        registerEntityView(record(value), `${path}/services/${index}`, "service"),
       ),
     ];
     if (children.length > 0) node.attributes!["cyclonedx:children"] = children;
+
     return id;
   };
+
   const metadata = record(bom.metadata ?? {});
   const subject =
     metadata.component === undefined
       ? undefined
-      : register(record(metadata.component), "metadata/component", "component");
+      : registerEntityView(record(metadata.component), "metadata/component", "component");
   for (const [index, value] of array(bom.components).entries())
-    register(record(value), `components/${index}`, "component");
+    registerEntityView(record(value), `components/${index}`, "component");
   for (const [index, value] of array(bom.services).entries())
-    register(record(value), `services/${index}`, "service");
-  const ensureReference = (ref: string): string => {
-    const existing = references.get(ref);
+    registerEntityView(record(value), `services/${index}`, "service");
+
+  const ensureReferencedView = (ref: string): string => {
+    const existing = viewIdsByReference.get(ref);
     if (existing) return existing;
-    const id = register({ "bom-ref": ref }, `unreported/${ref}`, "component");
+
+    const id = registerEntityView({ "bom-ref": ref }, `unreported/${ref}`, "component");
     nodes.get(id)!.attributes!["cyclonedx:entityMissing"] = true;
     if (ref.startsWith("urn:cdx:")) {
       nodes.get(id)!.attributes!["cyclonedx:externalReference"] = ref;
@@ -169,18 +184,21 @@ export function extractCycloneDXV2(
         message: `External BOM-Link '${ref}' is retained without assuming its entity metadata or dependencies`,
       });
     } else
-      issue(
+      reportWarning(
         "cyclonedx.missing_entity",
         `Dependency reference '${ref}' has no reported component or service; preserving the graph reference with a generic PURL`,
       );
+
     return id;
   };
+
   const dependencyRecords = new Map<string, string>();
   for (const value of array(bom.dependencies)) {
     const dependency = record(value);
     if (typeof dependency.ref !== "string")
       throw new Error("CycloneDX dependency is missing its reference");
-    const from = ensureReference(dependency.ref);
+
+    const from = ensureReferencedView(dependency.ref);
     const targets = stringArray(dependency.dependsOn);
     const signature = JSON.stringify([...new Set(targets)].sort());
     if (dependencyRecords.has(from)) {
@@ -190,8 +208,8 @@ export function extractCycloneDXV2(
       dependencyRecords.set(from, signature);
       nodes.get(from)!.dependencyCompleteness = "complete";
       for (const ref of targets) {
-        const to = ensureReference(ref);
-        const scope = native.get(to)?.scope;
+        const to = ensureReferencedView(ref);
+        const scope = entitiesByViewId.get(to)?.scope;
         edges.push({
           from,
           to,
@@ -204,17 +222,20 @@ export function extractCycloneDXV2(
         });
       }
     }
+
     // 'provides' and component containment do not introduce dependency reachability.
     const records = nodes.get(from)!.attributes!["cyclonedx:dependencyRecords"] ?? [];
     nodes.get(from)!.attributes!["cyclonedx:dependencyRecords"] = [...array(records), dependency];
   }
+
   const compositionCompleteness = new Map<string, "partial" | "unknown">();
   const completeClaims = new Set<string>();
   const incompleteClaims = new Set<string>();
+
   for (const value of array(bom.compositions)) {
     const composition = record(value);
     for (const ref of stringArray(composition.dependencies)) {
-      const id = ensureReference(ref);
+      const id = ensureReferencedView(ref);
       if (composition.aggregate === "complete") completeClaims.add(id);
       if (
         typeof composition.aggregate === "string" &&
@@ -233,20 +254,22 @@ export function extractCycloneDXV2(
       // records for an entity omitted from the explicit graph. Preserve it in document metadata.
     }
   }
+
   for (const [id, completeness] of compositionCompleteness)
     nodes.get(id)!.dependencyCompleteness = completeness;
   for (const id of completeClaims) {
     if (incompleteClaims.has(id))
-      issue(
+      reportWarning(
         "cyclonedx.conflicting_completeness",
         `Conflicting complete/incomplete composition claims for '${nodes.get(id)!.locator ?? id}' are retained conservatively`,
       );
     if (!dependencyRecords.has(id))
-      issue(
+      reportWarning(
         "cyclonedx.missing_dependency_record",
         `A complete composition names '${nodes.get(id)!.locator ?? id}' but its dependency record is absent; completeness remains unknown`,
       );
   }
+
   const roots = [];
   if (subject !== undefined) {
     const node = nodes.get(subject)!;
@@ -262,6 +285,7 @@ export function extractCycloneDXV2(
     });
     roots.push({ id: "subject/dependencies", project, scope: "dependencies", node: subject });
   }
+
   const {
     components: _components,
     services: _services,
@@ -270,6 +294,7 @@ export function extractCycloneDXV2(
     ...document
   } = bom;
   const { component: _component, ...documentMetadata } = metadata;
+
   result.packages = [...catalog.values()];
   result.graphs.push(
     createDependencyGraph({
@@ -286,6 +311,7 @@ export function extractCycloneDXV2(
       attributes: { "cyclonedx:document": document, "cyclonedx:metadata": documentMetadata },
     }),
   );
+
   return normalizeResultV2(result);
 }
 
@@ -294,11 +320,13 @@ function record(value: unknown): RecordValue {
     throw new Error("Expected a CycloneDX record");
   return value as RecordValue;
 }
+
 function array(value: JsonValue | undefined): JsonValue[] {
   if (value === undefined) return [];
   if (!Array.isArray(value)) throw new Error("Expected a CycloneDX array");
   return value;
 }
+
 function stringArray(value: JsonValue | undefined): string[] {
   const values = array(value);
   if (!values.every((item) => typeof item === "string"))
