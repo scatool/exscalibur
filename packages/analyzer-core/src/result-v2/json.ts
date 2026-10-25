@@ -5,6 +5,26 @@ export function isPortableJsonNumber(value: number): boolean {
   return Number.isFinite(value) && (!Number.isInteger(value) || Number.isSafeInteger(value));
 }
 
+/** Check the wire format's portable JSON rules, including numbers and object prototypes. */
+export function isPortableJson(value: unknown, ancestors = new Set<object>()): value is JsonValue {
+  if (value === null || typeof value === "string" || typeof value === "boolean") return true;
+  if (typeof value === "number") return isPortableJsonNumber(value);
+  if (typeof value !== "object" || ancestors.has(value)) return false;
+
+  const prototype = Object.getPrototypeOf(value);
+  if (!Array.isArray(value) && prototype !== Object.prototype && prototype !== null) return false;
+  if (Object.getOwnPropertySymbols(value).length > 0) return false;
+
+  // Only the active path is cyclic; repeated references in separate branches are valid JSON.
+  ancestors.add(value);
+  const valid = Array.isArray(value)
+    ? Array.from(value).every((item) => isPortableJson(item, ancestors))
+    : Object.values(value).every((item) => isPortableJson(item, ancestors));
+
+  ancestors.delete(value);
+  return valid;
+}
+
 /** Object key order is insignificant. Native array order is preserved. */
 export function canonicalJson(value: unknown): string {
   return JSON.stringify(canonicalValue(value));

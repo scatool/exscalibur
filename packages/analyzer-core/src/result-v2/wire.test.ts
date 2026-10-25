@@ -1,6 +1,9 @@
 import { expect, test } from "vite-plus/test";
 import fixtures from "./wire-fixtures.json";
 import { canonicalJson } from "./json.ts";
+import { analyzerResultV2Schema as publicSchema } from "../index.ts";
+import { analyzerResultV2Schema as validationSchema } from "./validate.ts";
+import { analyzerResultV2Schema as schemaDefinition } from "./result-schema.ts";
 import {
   analyzerResultV2Schema,
   createEmptyResultV2,
@@ -87,4 +90,39 @@ test("valid special hash keys survive schema parsing, normalization and merge", 
   expect(parseResultV2(result)).toEqual(result);
   expect(normalizeResultV2(result)).toEqual(result);
   expect(mergeResultsV2([result, result])).toEqual(result);
+});
+
+test("schema re-exports share the same public validator instance", () => {
+  expect(publicSchema).toBe(analyzerResultV2Schema);
+  expect(validationSchema).toBe(analyzerResultV2Schema);
+  expect(schemaDefinition).toBe(analyzerResultV2Schema);
+});
+
+test("repeated native JSON objects are accepted while active-path cycles are rejected", () => {
+  const shared = JSON.parse('{"__proto__":{"native":true},"values":[1,null,"three"]}');
+  const input = {
+    ...createEmptyResultV2("example:shared-json"),
+    extension: { first: shared, second: shared },
+  };
+
+  expect(parseResultV2(input)).toEqual(input);
+  expect(analyzerResultV2Schema.parse(input)).toEqual(input);
+
+  shared.cycle = shared;
+  expect(() => parseResultV2(input)).toThrow("Analyzer results must contain plain JSON data only");
+});
+
+test("portable JSON and schema errors precede cross-record reference errors", () => {
+  const pkg = { purl: "pkg:npm/a@1", evidence: [] };
+  const duplicateCatalog = {
+    ...createEmptyResultV2("example:validation-order"),
+    packages: [pkg, pkg],
+  };
+  const invalidShape = { ...duplicateCatalog, codebase: "" };
+
+  expect(() => parseResultV2({ ...invalidShape, extension: undefined })).toThrow(
+    "Analyzer results must contain plain JSON data only",
+  );
+  expect(() => parseResultV2(invalidShape)).toThrow("Too small");
+  expect(() => parseResultV2(duplicateCatalog)).toThrow("Duplicate package PURL: pkg:npm/a@1");
 });
