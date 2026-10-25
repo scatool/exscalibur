@@ -130,6 +130,9 @@ Supporting packages: `analyzer-cli` (CLI entry point), `analyzer-test-utils` (sh
 
 ### Testing
 
-Tests use Vitest with source-backed semantic assertions and core validation. Shared fixture
-helpers require an `assertResult` callback and reject unexpected ERROR issues.
+Tests use Vitest with source-backed semantic assertions, core validation and full normalized
+result snapshots. Shared fixture helpers require an `assertResult` callback, reject unexpected
+ERROR issues and compare the entire contextual result to its reviewed snapshot. Snapshot changes
+must be checked against native inputs; do not replace semantic assertions with generated output.
 `__fixtures__/` contains native inputs; integration baselines are separate reviewed artifacts.
+See `packages/analyzer-test-utils/README.md` for the snapshot review workflow.

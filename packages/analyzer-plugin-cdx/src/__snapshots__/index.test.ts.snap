@@ -1,0 +1,1134 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`native CycloneDX fixture: basic.cdx.json 1`] = `
+{
+  "codebase": "fixture",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "attributes": {
+        "cyclonedx:document": {
+          "bomFormat": "CycloneDX",
+          "specVersion": "1.7",
+          "version": 1,
+        },
+        "cyclonedx:metadata": {},
+      },
+      "edges": [],
+      "id": "cyclonedx:86fb5f6b51b0e2bec91189c7cc409579380d8d9f2493c96e7857c283d2c4338e",
+      "interpretation": "unknown",
+      "nodes": [
+        {
+          "attributes": {
+            "cyclonedx:entity": {
+              "bom-ref": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.15.0",
+              "name": "jackson-databind",
+              "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.15.0",
+              "type": "library",
+              "version": "2.15.0",
+            },
+            "cyclonedx:entityKind": "component",
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "basic.cdx.json",
+          ],
+          "id": "bom-ref:"pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.15.0"",
+          "locator": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.15.0",
+          "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.15.0",
+        },
+        {
+          "attributes": {
+            "cyclonedx:entity": {
+              "bom-ref": "pkg:npm/express@4.18.2",
+              "externalReferences": [
+                {
+                  "type": "website",
+                  "url": "https://expressjs.com/",
+                },
+                {
+                  "type": "distribution",
+                  "url": "https://registry.npmjs.org/express/-/express-4.18.2.tgz",
+                },
+                {
+                  "type": "vcs",
+                  "url": "git+https://github.com/expressjs/express.git@4.18.2",
+                },
+                {
+                  "type": "source-distribution",
+                  "url": "https://github.com/expressjs/express/archive/refs/tags/4.18.2.tar.gz",
+                },
+              ],
+              "name": "express",
+              "purl": "pkg:npm/express@4.18.2",
+              "type": "library",
+              "version": "4.18.2",
+            },
+            "cyclonedx:entityKind": "component",
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "basic.cdx.json",
+          ],
+          "id": "bom-ref:"pkg:npm/express@4.18.2"",
+          "locator": "pkg:npm/express@4.18.2",
+          "purl": "pkg:npm/express@4.18.2",
+        },
+        {
+          "attributes": {
+            "cyclonedx:entity": {
+              "bom-ref": "pkg:npm/react@18.2.0",
+              "name": "react",
+              "purl": "pkg:npm/react@18.2.0",
+              "type": "library",
+              "version": "18.2.0",
+            },
+            "cyclonedx:entityKind": "component",
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "basic.cdx.json",
+          ],
+          "id": "bom-ref:"pkg:npm/react@18.2.0"",
+          "locator": "pkg:npm/react@18.2.0",
+          "purl": "pkg:npm/react@18.2.0",
+        },
+      ],
+      "rootCompleteness": "unknown",
+      "roots": [],
+      "source": {
+        "extractor": "cyclonedx",
+        "files": [
+          "basic.cdx.json",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "basic.cdx.json",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "cyclonedx",
+            "files": [
+              "basic.cdx.json",
+            ],
+            "key": "bom-ref:"pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.15.0"",
+          },
+          "synthesizedPurl": false,
+        },
+      ],
+      "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.15.0",
+    },
+    {
+      "artifacts": [
+        {
+          "evidence": [
+            "basic.cdx.json",
+          ],
+          "location": "https://registry.npmjs.org/express/-/express-4.18.2.tgz",
+        },
+      ],
+      "evidence": [
+        "basic.cdx.json",
+      ],
+      "externalReferences": [
+        {
+          "locator": "git+https://github.com/expressjs/express.git@4.18.2",
+          "type": "vcs",
+        },
+        {
+          "locator": "https://github.com/expressjs/express/archive/refs/tags/4.18.2.tar.gz",
+          "type": "sourceArtifact",
+        },
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "cyclonedx",
+            "files": [
+              "basic.cdx.json",
+            ],
+            "key": "bom-ref:"pkg:npm/express@4.18.2"",
+          },
+          "synthesizedPurl": false,
+        },
+      ],
+      "purl": "pkg:npm/express@4.18.2",
+    },
+    {
+      "evidence": [
+        "basic.cdx.json",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "cyclonedx",
+            "files": [
+              "basic.cdx.json",
+            ],
+            "key": "bom-ref:"pkg:npm/react@18.2.0"",
+          },
+          "synthesizedPurl": false,
+        },
+      ],
+      "purl": "pkg:npm/react@18.2.0",
+    },
+  ],
+  "subprojects": [],
+}
+`;
+
+exports[`native CycloneDX fixture: complete-example.cdx.json 1`] = `
+{
+  "codebase": "fixture",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "attributes": {
+        "cyclonedx:document": {
+          "bomFormat": "CycloneDX",
+          "specVersion": "1.7",
+          "version": 1,
+        },
+        "cyclonedx:metadata": {
+          "timestamp": "2024-01-15T10:30:00Z",
+        },
+      },
+      "edges": [
+        {
+          "evidence": [
+            "complete-example.cdx.json",
+          ],
+          "from": "bom-ref:"pkg:npm/body-parser@1.20.1"",
+          "kind": "dependsOn",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "bom-ref:"pkg:npm/debug@2.6.9"",
+        },
+        {
+          "evidence": [
+            "complete-example.cdx.json",
+          ],
+          "from": "bom-ref:"pkg:npm/express@4.18.2"",
+          "kind": "dependsOn",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "bom-ref:"pkg:npm/body-parser@1.20.1"",
+        },
+        {
+          "evidence": [
+            "complete-example.cdx.json",
+          ],
+          "from": "bom-ref:"pkg:npm/express@4.18.2"",
+          "kind": "dependsOn",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "bom-ref:"pkg:npm/cookie-parser@1.4.6"",
+        },
+        {
+          "evidence": [
+            "complete-example.cdx.json",
+          ],
+          "from": "bom-ref:"pkg:npm/express@4.18.2"",
+          "kind": "dependsOn",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "bom-ref:"pkg:npm/debug@2.6.9"",
+        },
+      ],
+      "id": "cyclonedx:4ca240657a1aa1465c1d336d8b0d3a85489ea7b34b94e3707ae8865293037c3e",
+      "interpretation": "unknown",
+      "nodes": [
+        {
+          "attributes": {
+            "cyclonedx:entity": {
+              "name": "my-app",
+              "type": "application",
+              "version": "1.0.0",
+            },
+            "cyclonedx:entityKind": "component",
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "complete-example.cdx.json",
+          ],
+          "id": "anonymous:metadata/component",
+          "project": {
+            "definitionFile": "complete-example.cdx.json",
+            "purl": "pkg:generic/excalibur-cyclonedx/component-7fb4eec00faed9502700b5962e57fe0e5dc5ad689972f9b82d78fdf1b9b80678@1.0.0",
+          },
+          "purl": "pkg:generic/excalibur-cyclonedx/component-7fb4eec00faed9502700b5962e57fe0e5dc5ad689972f9b82d78fdf1b9b80678@1.0.0",
+        },
+        {
+          "attributes": {
+            "cyclonedx:dependencyRecords": [
+              {
+                "dependsOn": [
+                  "pkg:npm/debug@2.6.9",
+                ],
+                "ref": "pkg:npm/body-parser@1.20.1",
+              },
+            ],
+            "cyclonedx:entity": {
+              "bom-ref": "pkg:npm/body-parser@1.20.1",
+              "name": "body-parser",
+              "purl": "pkg:npm/body-parser@1.20.1",
+              "type": "library",
+              "version": "1.20.1",
+            },
+            "cyclonedx:entityKind": "component",
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "complete-example.cdx.json",
+          ],
+          "id": "bom-ref:"pkg:npm/body-parser@1.20.1"",
+          "locator": "pkg:npm/body-parser@1.20.1",
+          "purl": "pkg:npm/body-parser@1.20.1",
+        },
+        {
+          "attributes": {
+            "cyclonedx:entity": {
+              "bom-ref": "pkg:npm/cookie-parser@1.4.6",
+              "evidence": {
+                "occurrences": [
+                  {
+                    "line": 16,
+                    "location": "/package.json",
+                  },
+                ],
+              },
+              "name": "cookie-parser",
+              "purl": "pkg:npm/cookie-parser@1.4.6",
+              "type": "library",
+              "version": "1.4.6",
+            },
+            "cyclonedx:entityKind": "component",
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "/package.json#16",
+            "complete-example.cdx.json",
+          ],
+          "id": "bom-ref:"pkg:npm/cookie-parser@1.4.6"",
+          "locator": "pkg:npm/cookie-parser@1.4.6",
+          "purl": "pkg:npm/cookie-parser@1.4.6",
+        },
+        {
+          "attributes": {
+            "cyclonedx:entity": {
+              "bom-ref": "pkg:npm/debug@2.6.9",
+              "name": "debug",
+              "purl": "pkg:npm/debug@2.6.9",
+              "type": "library",
+              "version": "2.6.9",
+            },
+            "cyclonedx:entityKind": "component",
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "complete-example.cdx.json",
+          ],
+          "id": "bom-ref:"pkg:npm/debug@2.6.9"",
+          "locator": "pkg:npm/debug@2.6.9",
+          "purl": "pkg:npm/debug@2.6.9",
+        },
+        {
+          "attributes": {
+            "cyclonedx:dependencyRecords": [
+              {
+                "dependsOn": [
+                  "pkg:npm/body-parser@1.20.1",
+                  "pkg:npm/cookie-parser@1.4.6",
+                  "pkg:npm/debug@2.6.9",
+                ],
+                "ref": "pkg:npm/express@4.18.2",
+              },
+            ],
+            "cyclonedx:entity": {
+              "bom-ref": "pkg:npm/express@4.18.2",
+              "evidence": {
+                "occurrences": [
+                  {
+                    "line": 15,
+                    "location": "/package.json",
+                  },
+                ],
+              },
+              "name": "express",
+              "purl": "pkg:npm/express@4.18.2",
+              "type": "library",
+              "version": "4.18.2",
+            },
+            "cyclonedx:entityKind": "component",
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "/package.json#15",
+            "complete-example.cdx.json",
+          ],
+          "id": "bom-ref:"pkg:npm/express@4.18.2"",
+          "locator": "pkg:npm/express@4.18.2",
+          "purl": "pkg:npm/express@4.18.2",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "subject/dependencies",
+          "node": "anonymous:metadata/component",
+          "project": {
+            "definitionFile": "complete-example.cdx.json",
+            "purl": "pkg:generic/excalibur-cyclonedx/component-7fb4eec00faed9502700b5962e57fe0e5dc5ad689972f9b82d78fdf1b9b80678@1.0.0",
+          },
+          "scope": "dependencies",
+        },
+      ],
+      "source": {
+        "extractor": "cyclonedx",
+        "files": [
+          "complete-example.cdx.json",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "complete-example.cdx.json",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "cyclonedx",
+            "files": [
+              "complete-example.cdx.json",
+            ],
+            "key": "anonymous:metadata/component",
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/excalibur-cyclonedx/component-7fb4eec00faed9502700b5962e57fe0e5dc5ad689972f9b82d78fdf1b9b80678@1.0.0",
+    },
+    {
+      "evidence": [
+        "complete-example.cdx.json",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "cyclonedx",
+            "files": [
+              "complete-example.cdx.json",
+            ],
+            "key": "bom-ref:"pkg:npm/body-parser@1.20.1"",
+          },
+          "synthesizedPurl": false,
+        },
+      ],
+      "purl": "pkg:npm/body-parser@1.20.1",
+    },
+    {
+      "evidence": [
+        "/package.json#16",
+        "complete-example.cdx.json",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "cyclonedx",
+            "files": [
+              "complete-example.cdx.json",
+            ],
+            "key": "bom-ref:"pkg:npm/cookie-parser@1.4.6"",
+          },
+          "synthesizedPurl": false,
+        },
+      ],
+      "purl": "pkg:npm/cookie-parser@1.4.6",
+    },
+    {
+      "evidence": [
+        "complete-example.cdx.json",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "cyclonedx",
+            "files": [
+              "complete-example.cdx.json",
+            ],
+            "key": "bom-ref:"pkg:npm/debug@2.6.9"",
+          },
+          "synthesizedPurl": false,
+        },
+      ],
+      "purl": "pkg:npm/debug@2.6.9",
+    },
+    {
+      "evidence": [
+        "/package.json#15",
+        "complete-example.cdx.json",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "cyclonedx",
+            "files": [
+              "complete-example.cdx.json",
+            ],
+            "key": "bom-ref:"pkg:npm/express@4.18.2"",
+          },
+          "synthesizedPurl": false,
+        },
+      ],
+      "purl": "pkg:npm/express@4.18.2",
+    },
+  ],
+  "subprojects": [
+    {
+      "attributes": {
+        "cyclonedx:reference": "anonymous:metadata/component",
+        "cyclonedx:subject": true,
+      },
+      "definitionFile": "complete-example.cdx.json",
+      "evidence": [
+        "complete-example.cdx.json",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "cyclonedx",
+            "files": [
+              "complete-example.cdx.json",
+            ],
+            "key": "anonymous:metadata/component",
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/excalibur-cyclonedx/component-7fb4eec00faed9502700b5962e57fe0e5dc5ad689972f9b82d78fdf1b9b80678@1.0.0",
+    },
+  ],
+}
+`;
+
+exports[`native CycloneDX fixture: missing-purls.cdx.json 1`] = `
+{
+  "codebase": "fixture",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "attributes": {
+        "cyclonedx:document": {
+          "bomFormat": "CycloneDX",
+          "specVersion": "1.7",
+          "version": 1,
+        },
+        "cyclonedx:metadata": {},
+      },
+      "edges": [],
+      "id": "cyclonedx:48bda90b6fee7f04be7940227d471e4e24a608d2f2317820e2c4a8956b5a2e4b",
+      "interpretation": "unknown",
+      "nodes": [
+        {
+          "attributes": {
+            "cyclonedx:entity": {
+              "name": "another-without-purl",
+              "type": "library",
+              "version": "2.0.0",
+            },
+            "cyclonedx:entityKind": "component",
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "missing-purls.cdx.json",
+          ],
+          "id": "anonymous:components/2",
+          "purl": "pkg:generic/excalibur-cyclonedx/component-636b5777dfea92202ce03e9ce640657528d6f63c0072a83fa5a3b231bff838a2@2.0.0",
+        },
+        {
+          "attributes": {
+            "cyclonedx:entity": {
+              "bom-ref": "component-1",
+              "name": "some-library",
+              "type": "library",
+              "version": "1.0.0",
+            },
+            "cyclonedx:entityKind": "component",
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "missing-purls.cdx.json",
+          ],
+          "id": "bom-ref:"component-1"",
+          "locator": "component-1",
+          "purl": "pkg:generic/excalibur-cyclonedx/component-ff3ff603a547b1a0733cadac4d416d0eedb7fbd7f882c7ec9d18d136adf4fcd5@1.0.0",
+        },
+        {
+          "attributes": {
+            "cyclonedx:entity": {
+              "bom-ref": "pkg:npm/valid-package@1.0.0",
+              "name": "valid-package",
+              "purl": "pkg:npm/valid-package@1.0.0",
+              "type": "library",
+              "version": "1.0.0",
+            },
+            "cyclonedx:entityKind": "component",
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "missing-purls.cdx.json",
+          ],
+          "id": "bom-ref:"pkg:npm/valid-package@1.0.0"",
+          "locator": "pkg:npm/valid-package@1.0.0",
+          "purl": "pkg:npm/valid-package@1.0.0",
+        },
+      ],
+      "rootCompleteness": "unknown",
+      "roots": [],
+      "source": {
+        "extractor": "cyclonedx",
+        "files": [
+          "missing-purls.cdx.json",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "missing-purls.cdx.json",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "cyclonedx",
+            "files": [
+              "missing-purls.cdx.json",
+            ],
+            "key": "anonymous:components/2",
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/excalibur-cyclonedx/component-636b5777dfea92202ce03e9ce640657528d6f63c0072a83fa5a3b231bff838a2@2.0.0",
+    },
+    {
+      "evidence": [
+        "missing-purls.cdx.json",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "cyclonedx",
+            "files": [
+              "missing-purls.cdx.json",
+            ],
+            "key": "bom-ref:"component-1"",
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/excalibur-cyclonedx/component-ff3ff603a547b1a0733cadac4d416d0eedb7fbd7f882c7ec9d18d136adf4fcd5@1.0.0",
+    },
+    {
+      "evidence": [
+        "missing-purls.cdx.json",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "cyclonedx",
+            "files": [
+              "missing-purls.cdx.json",
+            ],
+            "key": "bom-ref:"pkg:npm/valid-package@1.0.0"",
+          },
+          "synthesizedPurl": false,
+        },
+      ],
+      "purl": "pkg:npm/valid-package@1.0.0",
+    },
+  ],
+  "subprojects": [],
+}
+`;
+
+exports[`native CycloneDX fixture: nested-components.cdx.json 1`] = `
+{
+  "codebase": "fixture",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "attributes": {
+        "cyclonedx:document": {
+          "bomFormat": "CycloneDX",
+          "specVersion": "1.7",
+          "version": 1,
+        },
+        "cyclonedx:metadata": {},
+      },
+      "edges": [],
+      "id": "cyclonedx:19396aa4a237b1b8651a5d87d39ae7ada6ce11ee8d17346a949dca46149d53f1",
+      "interpretation": "unknown",
+      "nodes": [
+        {
+          "attributes": {
+            "cyclonedx:entity": {
+              "bom-ref": "pkg:deb/debian/openssl@1.1.1k-1",
+              "name": "openssl",
+              "purl": "pkg:deb/debian/openssl@1.1.1k-1",
+              "type": "library",
+              "version": "1.1.1k-1",
+            },
+            "cyclonedx:entityKind": "component",
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "nested-components.cdx.json",
+          ],
+          "id": "bom-ref:"pkg:deb/debian/openssl@1.1.1k-1"",
+          "locator": "pkg:deb/debian/openssl@1.1.1k-1",
+          "purl": "pkg:deb/debian/openssl@1.1.1k-1",
+        },
+        {
+          "attributes": {
+            "cyclonedx:entity": {
+              "bom-ref": "pkg:deb/debian/zlib@1.2.11.dfsg-2",
+              "name": "zlib",
+              "purl": "pkg:deb/debian/zlib@1.2.11.dfsg-2",
+              "type": "library",
+              "version": "1.2.11.dfsg-2",
+            },
+            "cyclonedx:entityKind": "component",
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "nested-components.cdx.json",
+          ],
+          "id": "bom-ref:"pkg:deb/debian/zlib@1.2.11.dfsg-2"",
+          "locator": "pkg:deb/debian/zlib@1.2.11.dfsg-2",
+          "purl": "pkg:deb/debian/zlib@1.2.11.dfsg-2",
+        },
+        {
+          "attributes": {
+            "cyclonedx:children": [
+              "bom-ref:"pkg:deb/debian/openssl@1.1.1k-1"",
+              "bom-ref:"pkg:deb/debian/zlib@1.2.11.dfsg-2"",
+            ],
+            "cyclonedx:entity": {
+              "bom-ref": "pkg:docker/nginx@1.21.0",
+              "name": "nginx",
+              "purl": "pkg:docker/nginx@1.21.0",
+              "type": "container",
+              "version": "1.21.0",
+            },
+            "cyclonedx:entityKind": "component",
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "nested-components.cdx.json",
+          ],
+          "id": "bom-ref:"pkg:docker/nginx@1.21.0"",
+          "locator": "pkg:docker/nginx@1.21.0",
+          "purl": "pkg:docker/nginx@1.21.0",
+        },
+      ],
+      "rootCompleteness": "unknown",
+      "roots": [],
+      "source": {
+        "extractor": "cyclonedx",
+        "files": [
+          "nested-components.cdx.json",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "nested-components.cdx.json",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "cyclonedx",
+            "files": [
+              "nested-components.cdx.json",
+            ],
+            "key": "bom-ref:"pkg:deb/debian/openssl@1.1.1k-1"",
+          },
+          "synthesizedPurl": false,
+        },
+      ],
+      "purl": "pkg:deb/debian/openssl@1.1.1k-1",
+    },
+    {
+      "evidence": [
+        "nested-components.cdx.json",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "cyclonedx",
+            "files": [
+              "nested-components.cdx.json",
+            ],
+            "key": "bom-ref:"pkg:deb/debian/zlib@1.2.11.dfsg-2"",
+          },
+          "synthesizedPurl": false,
+        },
+      ],
+      "purl": "pkg:deb/debian/zlib@1.2.11.dfsg-2",
+    },
+    {
+      "evidence": [
+        "nested-components.cdx.json",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "cyclonedx",
+            "files": [
+              "nested-components.cdx.json",
+            ],
+            "key": "bom-ref:"pkg:docker/nginx@1.21.0"",
+          },
+          "synthesizedPurl": false,
+        },
+      ],
+      "purl": "pkg:docker/nginx@1.21.0",
+    },
+  ],
+  "subprojects": [],
+}
+`;
+
+exports[`native CycloneDX fixture: with-dependencies.cdx.json 1`] = `
+{
+  "codebase": "fixture",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "attributes": {
+        "cyclonedx:document": {
+          "bomFormat": "CycloneDX",
+          "specVersion": "1.7",
+          "version": 1,
+        },
+        "cyclonedx:metadata": {},
+      },
+      "edges": [
+        {
+          "evidence": [
+            "with-dependencies.cdx.json",
+          ],
+          "from": "bom-ref:"pkg:npm/express@4.18.2"",
+          "kind": "dependsOn",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "bom-ref:"pkg:npm/accepts@1.3.8"",
+        },
+        {
+          "evidence": [
+            "with-dependencies.cdx.json",
+          ],
+          "from": "bom-ref:"pkg:npm/express@4.18.2"",
+          "kind": "dependsOn",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "bom-ref:"pkg:npm/body-parser@1.20.1"",
+        },
+      ],
+      "id": "cyclonedx:6289c72cdd00ad6cc90ce9e3e59e6a30865d2c1ff54ecf742509aa09c2cb0427",
+      "interpretation": "unknown",
+      "nodes": [
+        {
+          "attributes": {
+            "cyclonedx:entity": {
+              "bom-ref": "pkg:npm/accepts@1.3.8",
+              "name": "accepts",
+              "purl": "pkg:npm/accepts@1.3.8",
+              "type": "library",
+              "version": "1.3.8",
+            },
+            "cyclonedx:entityKind": "component",
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "with-dependencies.cdx.json",
+          ],
+          "id": "bom-ref:"pkg:npm/accepts@1.3.8"",
+          "locator": "pkg:npm/accepts@1.3.8",
+          "purl": "pkg:npm/accepts@1.3.8",
+        },
+        {
+          "attributes": {
+            "cyclonedx:entity": {
+              "bom-ref": "pkg:npm/body-parser@1.20.1",
+              "name": "body-parser",
+              "purl": "pkg:npm/body-parser@1.20.1",
+              "type": "library",
+              "version": "1.20.1",
+            },
+            "cyclonedx:entityKind": "component",
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "with-dependencies.cdx.json",
+          ],
+          "id": "bom-ref:"pkg:npm/body-parser@1.20.1"",
+          "locator": "pkg:npm/body-parser@1.20.1",
+          "purl": "pkg:npm/body-parser@1.20.1",
+        },
+        {
+          "attributes": {
+            "cyclonedx:dependencyRecords": [
+              {
+                "dependsOn": [
+                  "pkg:npm/body-parser@1.20.1",
+                  "pkg:npm/accepts@1.3.8",
+                ],
+                "ref": "pkg:npm/express@4.18.2",
+              },
+            ],
+            "cyclonedx:entity": {
+              "bom-ref": "pkg:npm/express@4.18.2",
+              "name": "express",
+              "purl": "pkg:npm/express@4.18.2",
+              "type": "library",
+              "version": "4.18.2",
+            },
+            "cyclonedx:entityKind": "component",
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "with-dependencies.cdx.json",
+          ],
+          "id": "bom-ref:"pkg:npm/express@4.18.2"",
+          "locator": "pkg:npm/express@4.18.2",
+          "purl": "pkg:npm/express@4.18.2",
+        },
+      ],
+      "rootCompleteness": "unknown",
+      "roots": [],
+      "source": {
+        "extractor": "cyclonedx",
+        "files": [
+          "with-dependencies.cdx.json",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "with-dependencies.cdx.json",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "cyclonedx",
+            "files": [
+              "with-dependencies.cdx.json",
+            ],
+            "key": "bom-ref:"pkg:npm/accepts@1.3.8"",
+          },
+          "synthesizedPurl": false,
+        },
+      ],
+      "purl": "pkg:npm/accepts@1.3.8",
+    },
+    {
+      "evidence": [
+        "with-dependencies.cdx.json",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "cyclonedx",
+            "files": [
+              "with-dependencies.cdx.json",
+            ],
+            "key": "bom-ref:"pkg:npm/body-parser@1.20.1"",
+          },
+          "synthesizedPurl": false,
+        },
+      ],
+      "purl": "pkg:npm/body-parser@1.20.1",
+    },
+    {
+      "evidence": [
+        "with-dependencies.cdx.json",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "cyclonedx",
+            "files": [
+              "with-dependencies.cdx.json",
+            ],
+            "key": "bom-ref:"pkg:npm/express@4.18.2"",
+          },
+          "synthesizedPurl": false,
+        },
+      ],
+      "purl": "pkg:npm/express@4.18.2",
+    },
+  ],
+  "subprojects": [],
+}
+`;
+
+exports[`native CycloneDX fixture: with-evidence.cdx.json 1`] = `
+{
+  "codebase": "fixture",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "attributes": {
+        "cyclonedx:document": {
+          "bomFormat": "CycloneDX",
+          "specVersion": "1.7",
+          "version": 1,
+        },
+        "cyclonedx:metadata": {},
+      },
+      "edges": [],
+      "id": "cyclonedx:03ab61b68499a86cdecccee0a4ffddf2fb88b36638f0cd81f24969be406c78ae",
+      "interpretation": "unknown",
+      "nodes": [
+        {
+          "attributes": {
+            "cyclonedx:entity": {
+              "bom-ref": "pkg:npm/lodash@4.17.21",
+              "evidence": {
+                "occurrences": [
+                  {
+                    "line": 5,
+                    "location": "/src/utils/helper.ts",
+                  },
+                  {
+                    "line": 12,
+                    "location": "/src/index.ts",
+                  },
+                ],
+              },
+              "name": "lodash",
+              "purl": "pkg:npm/lodash@4.17.21",
+              "type": "library",
+              "version": "4.17.21",
+            },
+            "cyclonedx:entityKind": "component",
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "/src/index.ts#12",
+            "/src/utils/helper.ts#5",
+            "with-evidence.cdx.json",
+          ],
+          "id": "bom-ref:"pkg:npm/lodash@4.17.21"",
+          "locator": "pkg:npm/lodash@4.17.21",
+          "purl": "pkg:npm/lodash@4.17.21",
+        },
+        {
+          "attributes": {
+            "cyclonedx:entity": {
+              "bom-ref": "pkg:pypi/requests@2.28.1",
+              "evidence": {
+                "occurrences": [
+                  {
+                    "line": 3,
+                    "location": "/requirements.txt",
+                  },
+                ],
+              },
+              "name": "requests",
+              "purl": "pkg:pypi/requests@2.28.1",
+              "type": "library",
+              "version": "2.28.1",
+            },
+            "cyclonedx:entityKind": "component",
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "/requirements.txt#3",
+            "with-evidence.cdx.json",
+          ],
+          "id": "bom-ref:"pkg:pypi/requests@2.28.1"",
+          "locator": "pkg:pypi/requests@2.28.1",
+          "purl": "pkg:pypi/requests@2.28.1",
+        },
+      ],
+      "rootCompleteness": "unknown",
+      "roots": [],
+      "source": {
+        "extractor": "cyclonedx",
+        "files": [
+          "with-evidence.cdx.json",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "/src/index.ts#12",
+        "/src/utils/helper.ts#5",
+        "with-evidence.cdx.json",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "cyclonedx",
+            "files": [
+              "with-evidence.cdx.json",
+            ],
+            "key": "bom-ref:"pkg:npm/lodash@4.17.21"",
+          },
+          "synthesizedPurl": false,
+        },
+      ],
+      "purl": "pkg:npm/lodash@4.17.21",
+    },
+    {
+      "evidence": [
+        "/requirements.txt#3",
+        "with-evidence.cdx.json",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "cyclonedx",
+            "files": [
+              "with-evidence.cdx.json",
+            ],
+            "key": "bom-ref:"pkg:pypi/requests@2.28.1"",
+          },
+          "synthesizedPurl": false,
+        },
+      ],
+      "purl": "pkg:pypi/requests@2.28.1",
+    },
+  ],
+  "subprojects": [],
+}
+`;

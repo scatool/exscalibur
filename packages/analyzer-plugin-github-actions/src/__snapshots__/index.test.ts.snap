@@ -1,0 +1,920 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`native workflow fixture: basic.yml 1`] = `
+{
+  "codebase": "fixture",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "edges": [
+        {
+          "attributes": {
+            "github-actions:job": "build",
+            "github-actions:step": 0,
+          },
+          "evidence": [
+            "basic.yml",
+          ],
+          "from": "job:build",
+          "kind": "uses",
+          "relation": "depends-on",
+          "requested": {
+            "id": "job:build/step:0",
+            "name": "actions/checkout@v4",
+            "specifier": "actions/checkout@v4",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+        {
+          "attributes": {
+            "github-actions:job": "build",
+            "github-actions:step": 1,
+          },
+          "evidence": [
+            "basic.yml",
+          ],
+          "from": "job:build",
+          "kind": "uses",
+          "relation": "depends-on",
+          "requested": {
+            "id": "job:build/step:1",
+            "name": "actions/setup-node@v4",
+            "specifier": "actions/setup-node@v4",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+      ],
+      "id": "github-actions:b70002431c5f02254b62236e2b2582439fc130cbdcd9d4406d483d446a8194bd",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "job:build",
+          "project": {
+            "definitionFile": "basic.yml",
+            "purl": "pkg:generic/github-actions/workflow",
+          },
+          "purl": "pkg:generic/github-actions/workflow",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "job:build",
+          "node": "job:build",
+          "project": {
+            "definitionFile": "basic.yml",
+            "purl": "pkg:generic/github-actions/workflow",
+          },
+          "scope": "build",
+        },
+      ],
+      "source": {
+        "extractor": "github-actions",
+        "files": [
+          "basic.yml",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "basic.yml",
+      "evidence": [
+        "basic.yml",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "github-actions",
+            "files": [
+              "basic.yml",
+            ],
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/github-actions/workflow",
+    },
+  ],
+}
+`;
+
+exports[`native workflow fixture: conditional.yml 1`] = `
+{
+  "codebase": "fixture",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "edges": [
+        {
+          "attributes": {
+            "github-actions:job": "cache",
+            "github-actions:step": 0,
+          },
+          "condition": {
+            "expression": {
+              "step": "\${{ github.ref == 'refs/heads/main' }}",
+            },
+            "language": "github-actions",
+          },
+          "evidence": [
+            "conditional.yml",
+          ],
+          "from": "job:cache",
+          "kind": "uses",
+          "relation": "depends-on",
+          "requested": {
+            "id": "job:cache/step:0",
+            "name": "actions/cache@v4",
+            "specifier": "actions/cache@v4",
+          },
+          "selection": "conditional",
+          "status": "declared",
+        },
+      ],
+      "id": "github-actions:ea34d8d2f876269f485411d390cede8437d1027002c8c421c32b2872d3e4219c",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "job:cache",
+          "project": {
+            "definitionFile": "conditional.yml",
+            "purl": "pkg:generic/github-actions/workflow",
+          },
+          "purl": "pkg:generic/github-actions/workflow",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "job:cache",
+          "node": "job:cache",
+          "project": {
+            "definitionFile": "conditional.yml",
+            "purl": "pkg:generic/github-actions/workflow",
+          },
+          "scope": "cache",
+        },
+      ],
+      "source": {
+        "extractor": "github-actions",
+        "files": [
+          "conditional.yml",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "conditional.yml",
+      "evidence": [
+        "conditional.yml",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "github-actions",
+            "files": [
+              "conditional.yml",
+            ],
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/github-actions/workflow",
+    },
+  ],
+}
+`;
+
+exports[`native workflow fixture: docker-scheme.yml 1`] = `
+{
+  "codebase": "fixture",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "edges": [
+        {
+          "attributes": {
+            "github-actions:job": "job",
+            "github-actions:step": 0,
+          },
+          "evidence": [
+            "docker-scheme.yml",
+          ],
+          "from": "job:job",
+          "kind": "uses",
+          "relation": "depends-on",
+          "requested": {
+            "id": "job:job/step:0",
+            "name": "docker://alpine:3.18",
+            "specifier": "docker://alpine:3.18",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+        {
+          "attributes": {
+            "github-actions:job": "job",
+            "github-actions:step": 2,
+          },
+          "evidence": [
+            "docker-scheme.yml",
+          ],
+          "from": "job:job",
+          "kind": "uses",
+          "relation": "depends-on",
+          "requested": {
+            "id": "job:job/step:2",
+            "name": "docker://busybox:1.36",
+            "specifier": "docker://busybox:1.36",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+      ],
+      "id": "github-actions:b9f5dc56ba7153b4b420d8534fbe287de1b59d66ee1b869e918267045fd3f474",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "job:job",
+          "project": {
+            "definitionFile": "docker-scheme.yml",
+            "purl": "pkg:generic/github-actions/workflow",
+          },
+          "purl": "pkg:generic/github-actions/workflow",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "job:job",
+          "node": "job:job",
+          "project": {
+            "definitionFile": "docker-scheme.yml",
+            "purl": "pkg:generic/github-actions/workflow",
+          },
+          "scope": "job",
+        },
+      ],
+      "source": {
+        "extractor": "github-actions",
+        "files": [
+          "docker-scheme.yml",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "docker-scheme.yml",
+      "evidence": [
+        "docker-scheme.yml",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "github-actions",
+            "files": [
+              "docker-scheme.yml",
+            ],
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/github-actions/workflow",
+    },
+  ],
+}
+`;
+
+exports[`native workflow fixture: local-and-external.yml 1`] = `
+{
+  "codebase": "fixture",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "edges": [
+        {
+          "attributes": {
+            "github-actions:job": "job",
+            "github-actions:step": 0,
+          },
+          "evidence": [
+            "local-and-external.yml",
+          ],
+          "from": "job:job",
+          "kind": "uses",
+          "relation": "depends-on",
+          "requested": {
+            "id": "job:job/step:0",
+            "name": "./actions/my-local-action",
+            "specifier": "./actions/my-local-action",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+        {
+          "attributes": {
+            "github-actions:job": "job",
+            "github-actions:step": 1,
+          },
+          "evidence": [
+            "local-and-external.yml",
+          ],
+          "from": "job:job",
+          "kind": "uses",
+          "relation": "depends-on",
+          "requested": {
+            "id": "job:job/step:1",
+            "name": "actions/upload-artifact@v4",
+            "specifier": "actions/upload-artifact@v4",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+      ],
+      "id": "github-actions:b2be360704188b0c1ec9d9ef58a91092066b985b6d108aa70556d0e3e6dd5abd",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "job:job",
+          "project": {
+            "definitionFile": "local-and-external.yml",
+            "purl": "pkg:generic/github-actions/workflow",
+          },
+          "purl": "pkg:generic/github-actions/workflow",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "job:job",
+          "node": "job:job",
+          "project": {
+            "definitionFile": "local-and-external.yml",
+            "purl": "pkg:generic/github-actions/workflow",
+          },
+          "scope": "job",
+        },
+      ],
+      "source": {
+        "extractor": "github-actions",
+        "files": [
+          "local-and-external.yml",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "local-and-external.yml",
+      "evidence": [
+        "local-and-external.yml",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "github-actions",
+            "files": [
+              "local-and-external.yml",
+            ],
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/github-actions/workflow",
+    },
+  ],
+}
+`;
+
+exports[`native workflow fixture: matrix.yml 1`] = `
+{
+  "codebase": "fixture",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "edges": [
+        {
+          "attributes": {
+            "github-actions:job": "test",
+            "github-actions:step": 0,
+          },
+          "evidence": [
+            "matrix.yml",
+          ],
+          "from": "job:test",
+          "kind": "uses",
+          "relation": "depends-on",
+          "requested": {
+            "id": "job:test/step:0",
+            "name": "actions/checkout@v4",
+            "specifier": "actions/checkout@v4",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+        {
+          "attributes": {
+            "github-actions:job": "test",
+            "github-actions:step": 1,
+          },
+          "evidence": [
+            "matrix.yml",
+          ],
+          "from": "job:test",
+          "kind": "uses",
+          "relation": "depends-on",
+          "requested": {
+            "id": "job:test/step:1",
+            "name": "actions/setup-node@v4",
+            "specifier": "actions/setup-node@v4",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+      ],
+      "id": "github-actions:3d6c046100991e24f5af439f6f2e69b627ca184c2a5dfb2aec1f36055e744a2f",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "job:test",
+          "project": {
+            "definitionFile": "matrix.yml",
+            "purl": "pkg:generic/github-actions/workflow",
+          },
+          "purl": "pkg:generic/github-actions/workflow",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "job:test",
+          "node": "job:test",
+          "project": {
+            "definitionFile": "matrix.yml",
+            "purl": "pkg:generic/github-actions/workflow",
+          },
+          "scope": "test",
+        },
+      ],
+      "source": {
+        "extractor": "github-actions",
+        "files": [
+          "matrix.yml",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "matrix.yml",
+      "evidence": [
+        "matrix.yml",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "github-actions",
+            "files": [
+              "matrix.yml",
+            ],
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/github-actions/workflow",
+    },
+  ],
+}
+`;
+
+exports[`native workflow fixture: pinned-commit.yml 1`] = `
+{
+  "codebase": "fixture",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "edges": [
+        {
+          "attributes": {
+            "github-actions:job": "login",
+            "github-actions:step": 0,
+          },
+          "evidence": [
+            "pinned-commit.yml",
+          ],
+          "from": "job:login",
+          "kind": "uses",
+          "relation": "depends-on",
+          "requested": {
+            "id": "job:login/step:0",
+            "name": "docker/login-action@ac2bdf35d6ab477ce523b7e564f4b6f3d3af5e6c",
+            "specifier": "docker/login-action@ac2bdf35d6ab477ce523b7e564f4b6f3d3af5e6c",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+      ],
+      "id": "github-actions:278e842d36e5ea7663ba76630ca063f4eb5333eedf68ad10b749461de0dad2cc",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "job:login",
+          "project": {
+            "definitionFile": "pinned-commit.yml",
+            "purl": "pkg:generic/github-actions/workflow",
+          },
+          "purl": "pkg:generic/github-actions/workflow",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "job:login",
+          "node": "job:login",
+          "project": {
+            "definitionFile": "pinned-commit.yml",
+            "purl": "pkg:generic/github-actions/workflow",
+          },
+          "scope": "login",
+        },
+      ],
+      "source": {
+        "extractor": "github-actions",
+        "files": [
+          "pinned-commit.yml",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "pinned-commit.yml",
+      "evidence": [
+        "pinned-commit.yml",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "github-actions",
+            "files": [
+              "pinned-commit.yml",
+            ],
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/github-actions/workflow",
+    },
+  ],
+}
+`;
+
+exports[`native workflow fixture: pinned-version.yml 1`] = `
+{
+  "codebase": "fixture",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "edges": [
+        {
+          "attributes": {
+            "github-actions:job": "py",
+            "github-actions:step": 0,
+          },
+          "evidence": [
+            "pinned-version.yml",
+          ],
+          "from": "job:py",
+          "kind": "uses",
+          "relation": "depends-on",
+          "requested": {
+            "id": "job:py/step:0",
+            "name": "actions/setup-python@v5.1.0",
+            "specifier": "actions/setup-python@v5.1.0",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+      ],
+      "id": "github-actions:481f09259b799ed5ec160236ed82b9184f03bed9b88d65ac72d9cc12e9df93a2",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "job:py",
+          "project": {
+            "definitionFile": "pinned-version.yml",
+            "purl": "pkg:generic/github-actions/workflow",
+          },
+          "purl": "pkg:generic/github-actions/workflow",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "job:py",
+          "node": "job:py",
+          "project": {
+            "definitionFile": "pinned-version.yml",
+            "purl": "pkg:generic/github-actions/workflow",
+          },
+          "scope": "py",
+        },
+      ],
+      "source": {
+        "extractor": "github-actions",
+        "files": [
+          "pinned-version.yml",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "pinned-version.yml",
+      "evidence": [
+        "pinned-version.yml",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "github-actions",
+            "files": [
+              "pinned-version.yml",
+            ],
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/github-actions/workflow",
+    },
+  ],
+}
+`;
+
+exports[`native workflow fixture: private-action.yml 1`] = `
+{
+  "codebase": "fixture",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "edges": [
+        {
+          "attributes": {
+            "github-actions:job": "job",
+            "github-actions:step": 0,
+          },
+          "evidence": [
+            "private-action.yml",
+          ],
+          "from": "job:job",
+          "kind": "uses",
+          "relation": "depends-on",
+          "requested": {
+            "id": "job:job/step:0",
+            "name": "my-org/private-action@v2",
+            "specifier": "my-org/private-action@v2",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+      ],
+      "id": "github-actions:5f519ecead76dc71b9f70a3ec38cb2a773f5820f9f7a682a2131b4f2771a6c6d",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "job:job",
+          "project": {
+            "definitionFile": "private-action.yml",
+            "purl": "pkg:generic/github-actions/workflow",
+          },
+          "purl": "pkg:generic/github-actions/workflow",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "job:job",
+          "node": "job:job",
+          "project": {
+            "definitionFile": "private-action.yml",
+            "purl": "pkg:generic/github-actions/workflow",
+          },
+          "scope": "job",
+        },
+      ],
+      "source": {
+        "extractor": "github-actions",
+        "files": [
+          "private-action.yml",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "private-action.yml",
+      "evidence": [
+        "private-action.yml",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "github-actions",
+            "files": [
+              "private-action.yml",
+            ],
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/github-actions/workflow",
+    },
+  ],
+}
+`;
+
+exports[`native workflow fixture: reusable-workflow.yml 1`] = `
+{
+  "codebase": "fixture",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "edges": [],
+      "id": "github-actions:9ae26b2aaa5b46d760576e64c710cca452e86581f258ecac021bacf110ee3dc7",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "partial",
+          "id": "job:call",
+          "project": {
+            "definitionFile": "reusable-workflow.yml",
+            "purl": "pkg:generic/github-actions/workflow",
+          },
+          "purl": "pkg:generic/github-actions/workflow",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "job:call",
+          "node": "job:call",
+          "project": {
+            "definitionFile": "reusable-workflow.yml",
+            "purl": "pkg:generic/github-actions/workflow",
+          },
+          "scope": "call",
+        },
+      ],
+      "source": {
+        "extractor": "github-actions",
+        "files": [
+          "reusable-workflow.yml",
+        ],
+      },
+    },
+  ],
+  "issues": [
+    {
+      "code": "INCOMPLETE_WORKFLOW_JOB",
+      "file": "reusable-workflow.yml",
+      "message": "Step dependencies were not fully observed for job 'call'",
+      "severity": "WARNING",
+    },
+  ],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "reusable-workflow.yml",
+      "evidence": [
+        "reusable-workflow.yml",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "github-actions",
+            "files": [
+              "reusable-workflow.yml",
+            ],
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/github-actions/workflow",
+    },
+  ],
+}
+`;
+
+exports[`native workflow fixture: subpath.yml 1`] = `
+{
+  "codebase": "fixture",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "edges": [
+        {
+          "attributes": {
+            "github-actions:job": "lint",
+            "github-actions:step": 0,
+          },
+          "evidence": [
+            "subpath.yml",
+          ],
+          "from": "job:lint",
+          "kind": "uses",
+          "relation": "depends-on",
+          "requested": {
+            "id": "job:lint/step:0",
+            "name": "acme/tools/actions/eslint@v1",
+            "specifier": "acme/tools/actions/eslint@v1",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+      ],
+      "id": "github-actions:76dee702b8f8e04c63da322e9718ca472e8006101cecab320e4e362d5675b7bc",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "job:lint",
+          "project": {
+            "definitionFile": "subpath.yml",
+            "purl": "pkg:generic/github-actions/workflow",
+          },
+          "purl": "pkg:generic/github-actions/workflow",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "job:lint",
+          "node": "job:lint",
+          "project": {
+            "definitionFile": "subpath.yml",
+            "purl": "pkg:generic/github-actions/workflow",
+          },
+          "scope": "lint",
+        },
+      ],
+      "source": {
+        "extractor": "github-actions",
+        "files": [
+          "subpath.yml",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "subpath.yml",
+      "evidence": [
+        "subpath.yml",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "github-actions",
+            "files": [
+              "subpath.yml",
+            ],
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/github-actions/workflow",
+    },
+  ],
+}
+`;

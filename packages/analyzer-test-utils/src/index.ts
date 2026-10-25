@@ -1,12 +1,14 @@
 import {
+  normalizeResult,
   readNormalizedTextFile,
   scanFiles,
   type AnalyzerResult,
   type Extractor,
 } from "@scatool/analyzer-core";
-import { test } from "vitest";
+import { expect, test } from "vitest";
 import { dirname, join } from "node:path/posix";
 import { assertSuccessfulResult } from "./validate.ts";
+
 export { validateResult, assertSuccessfulResult } from "./validate.ts";
 
 type SemanticCheck = {
@@ -27,8 +29,12 @@ export async function createFileContentTests(
     test(file, async () => {
       const content = await readNormalizedTextFile(join(options.fixturesDir, file));
       const result = await options.extractFn(content, file);
+
       assertSuccessfulResult(result, options.allowedIssueCodes);
       await options.assertResult(result, file);
+
+      // Preserve the whole contextual result; semantic assertions explain its native meaning.
+      expect(normalizeResult(result)).toMatchSnapshot();
     });
   }
 }
@@ -48,7 +54,7 @@ export async function scanFixtureFiles(fixturesDir: string, pattern: string): Pr
     .sort((a, b) => a.localeCompare(b));
 }
 
-/** Discover fixtures, enforce the core contract and run source-backed semantic assertions. */
+/** Check native fixture semantics and guard the full normalized result against regressions. */
 export async function createExtractorTests<Options>(
   options: SemanticCheck & {
     extractor: Extractor<Options>;
@@ -75,8 +81,11 @@ export async function createExtractorTests<Options>(
           options.options,
           { codebaseId: "test:fixture" },
         );
+
         assertSuccessfulResult(result, options.allowedIssueCodes);
         await options.assertResult(result, fixture);
+
+        expect(normalizeResult(result)).toMatchSnapshot();
       },
       options.timeout,
     );

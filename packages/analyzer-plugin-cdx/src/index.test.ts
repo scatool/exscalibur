@@ -2,7 +2,7 @@ import { readFile, readdir } from "node:fs/promises";
 import { join } from "node:path";
 import { expect, test } from "vite-plus/test";
 import { PackageURL } from "packageurl-js";
-import { validateResult } from "@scatool/analyzer-core";
+import { normalizeResult, validateResult } from "@scatool/analyzer-core";
 import { extractCycloneDX } from "./index.ts";
 
 type Component = { "bom-ref"?: string; purl?: string; components?: Component[] };
@@ -54,6 +54,8 @@ for (const file of await readdir(fixtures)) {
       );
     if (!source.dependencies)
       expect(graph.nodes.every((node) => node.dependencyCompleteness === "unknown")).toBe(true);
+
+    expect(normalizeResult(result)).toMatchSnapshot();
   });
 }
 

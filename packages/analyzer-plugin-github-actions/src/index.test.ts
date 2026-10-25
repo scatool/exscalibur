@@ -1,7 +1,7 @@
 import { readFile, readdir } from "node:fs/promises";
 import { join } from "node:path";
 import { expect, test } from "vite-plus/test";
-import { validateResult } from "@scatool/analyzer-core";
+import { normalizeResult, validateResult } from "@scatool/analyzer-core";
 import { extractWorkflow } from "./index.ts";
 
 const expected: Record<string, string[]> = {
@@ -34,5 +34,7 @@ for (const file of await readdir(fixtures)) {
       expect(result.issues[0]!.code).toBe("INCOMPLETE_WORKFLOW_JOB");
     } else expect(result.issues).toEqual([]);
     if (file === "conditional.yml") expect(graph.edges[0]!.selection).toBe("conditional");
+
+    expect(normalizeResult(result)).toMatchSnapshot();
   });
 }

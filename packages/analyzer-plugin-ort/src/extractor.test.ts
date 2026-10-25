@@ -2,7 +2,7 @@ import { readFile, readdir } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { parse as parseYaml } from "yaml";
 import { expect, test } from "vite-plus/test";
-import { validateResult } from "@scatool/analyzer-core";
+import { normalizeResult, validateResult } from "@scatool/analyzer-core";
 import { ortExtractor } from "./index.ts";
 import { convertOrtIdToPurl } from "./id.ts";
 import type { OrtAnalyzerResult, OrtResultFile } from "./model.ts";
@@ -49,5 +49,7 @@ for (const relative of await readdir(fixtures, { recursive: true })) {
       .map((issue) => issue.message);
     for (const issue of result.issues.filter((issue) => issue.severity === "ERROR"))
       expect(nativeErrors).toContain(issue.message);
+
+    expect(normalizeResult(result)).toMatchSnapshot();
   });
 }

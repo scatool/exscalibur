@@ -1,7 +1,7 @@
 import { readdir } from "node:fs/promises";
 import { join } from "node:path";
 import { expect, test } from "vite-plus/test";
-import { queryDependencies, validateResult } from "@scatool/analyzer-core";
+import { normalizeResult, queryDependencies, validateResult } from "@scatool/analyzer-core";
 import {
   lockResult,
   pipfileResult,
@@ -188,29 +188,35 @@ test("Poetry optional marker requests retain native applicability and extras", (
   });
 });
 
-test("existing Python fixtures extract valid native graphs without snapshots", async () => {
-  for (const [directory, extractor] of [
-    ["requirementstxt", requirementsTxtExtractor],
-    ["pyprojecttoml", pyprojectTomlExtractor],
-    ["pipfilelock", pipfileLockExtractor],
-    ["poetrylock", poetryLockExtractor],
-    ["pdmlock", pdmLockExtractor],
-  ] as const) {
-    const fixtures = join(import.meta.dirname, directory, "__fixtures__");
-    for (const name of await readdir(fixtures)) {
+for (const [directory, extractor] of [
+  ["requirementstxt", requirementsTxtExtractor],
+  ["pyprojecttoml", pyprojectTomlExtractor],
+  ["pipfilelock", pipfileLockExtractor],
+  ["poetrylock", poetryLockExtractor],
+  ["pdmlock", pdmLockExtractor],
+] as const) {
+  const fixtures = join(import.meta.dirname, directory, "__fixtures__");
+
+  for (const name of (await readdir(fixtures)).sort()) {
+    test(`${directory} fixture: ${name}`, async () => {
       const result = await extractor.extract(join(fixtures, name), undefined, {
         codebaseId: "example:fixtures",
       });
+
       validateResult(result);
       expect(result.graphs.length).toBeGreaterThan(0);
       expect(result.issues.filter((issue) => issue.severity === "ERROR")).toEqual([]);
+
       if (directory === "poetrylock" || directory === "pdmlock") {
         expect(result.graphs.some((graph) => graph.interpretation === "declared")).toBe(true);
         expect(result.graphs.some((graph) => graph.interpretation === "locked")).toBe(true);
       }
-    }
+
+      // Retain every contextual relationship and native observation beside the semantic checks.
+      expect(normalizeResult(result)).toMatchSnapshot();
+    });
   }
-});
+}
 
 test("incompatible ranges and source requests never select a name-only lock candidate", () => {
   const result = lockResult(

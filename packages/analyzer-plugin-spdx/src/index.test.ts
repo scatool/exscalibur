@@ -3,7 +3,7 @@ import { join } from "node:path";
 import { describe, expect, test } from "vite-plus/test";
 import { parse as parseYaml } from "yaml";
 import { PackageURL } from "packageurl-js";
-import { validateResult } from "@scatool/analyzer-core";
+import { normalizeResult, validateResult } from "@scatool/analyzer-core";
 import { extractSpdx } from "./index.ts";
 
 const fixtures = join(import.meta.dirname, "__fixtures__");
@@ -60,6 +60,8 @@ for (const file of await readdir(fixtures)) {
             (project) => project.attributes?.["spdx:subject"] === (pkg.spdxId ?? pkg["@id"]),
           ),
       ).toBe(true);
+
+    expect(normalizeResult(result)).toMatchSnapshot();
   });
 }
 

@@ -1,7 +1,7 @@
 import { readFile, readdir } from "node:fs/promises";
 import { join } from "node:path";
 import { expect, test } from "vite-plus/test";
-import { validateResult } from "@scatool/analyzer-core";
+import { normalizeResult, validateResult } from "@scatool/analyzer-core";
 import { extractDockerfile } from "./index.ts";
 
 const expected: Record<string, string[]> = {
@@ -37,5 +37,7 @@ for (const file of await readdir(fixtures)) {
     expect(result.packages).toEqual([]);
     expect(result.issues).toEqual([]);
     expect(result.graphs[0]!.roots[0]!.project.definitionFile).toBe(file);
+
+    expect(normalizeResult(result)).toMatchSnapshot();
   });
 }
