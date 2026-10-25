@@ -2,8 +2,8 @@ import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { expect, test } from "vite-plus/test";
-import { validateResultV2 } from "@scatool/analyzer-core";
-import { extractorV2 } from "./index-v2.ts";
+import { validateResult } from "@scatool/analyzer-core";
+import { extractor } from "./index.ts";
 const directory = join(import.meta.dirname, "__fixtures__/npm-workspace-oracle");
 type NativeEdge = {
   from: string;
@@ -86,10 +86,10 @@ for (const item of report.cases)
     expect(item.virtual.edges.some((e) => e.from === "" && e.name === "workspace-app")).toBe(
       item.mode !== "missing",
     );
-    const result = await extractorV2.extract(join(directory, item.id), undefined, {
+    const result = await extractor.extract(join(directory, item.id), undefined, {
       codebaseId: `oracle:${item.id}`,
     });
-    validateResultV2(result);
+    validateResult(result);
     const graph = result.graphs.find((g) => g.interpretation === "locked")!;
     expect(graph.nodes.find((n) => n.locator === "node_modules/renamed")?.purl).toBe(
       "pkg:npm/real-leaf@1.0.0",

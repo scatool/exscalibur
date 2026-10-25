@@ -4,7 +4,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { promisify } from "node:util";
 import { expect, test } from "vite-plus/test";
-import { parseResultV2 } from "@scatool/analyzer-core";
+import { parseResult } from "@scatool/analyzer-core";
 
 // The workspace ready task builds before testing. Run Node directly to catch ESM/CJS
 // interoperability failures hidden by the test runner's transformed imports.
@@ -27,7 +27,7 @@ test("built CLI runs on Node and emits a validated format 2 result", async () =>
       directory,
       output,
     ]);
-    const result = parseResultV2(JSON.parse(await readFile(output, "utf8")));
+    const result = parseResult(JSON.parse(await readFile(output, "utf8")));
     expect(result.issues).toEqual([]);
     expect(result.graphs.some((graph) => graph.interpretation === "declared")).toBe(true);
     expect(result.graphs.flatMap((graph) => graph.edges)).toContainEqual(

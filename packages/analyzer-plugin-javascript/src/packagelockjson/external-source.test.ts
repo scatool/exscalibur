@@ -2,8 +2,8 @@ import { mkdtemp, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { expect, test } from "vite-plus/test";
-import { queryDependenciesV2, validateResultV2 } from "@scatool/analyzer-core";
-import { extractorV2 } from "./index-v2.ts";
+import { queryDependencies, validateResult } from "@scatool/analyzer-core";
+import { extractor } from "./index.ts";
 
 test.each([false, true])(
   "external local source uses its own ancestors (recorded ancestor: %s)",
@@ -23,8 +23,8 @@ test.each([false, true])(
           },
         }),
       );
-      const result = await extractorV2.extract(directory, undefined, { codebaseId: "example:npm" });
-      validateResultV2(result);
+      const result = await extractor.extract(directory, undefined, { codebaseId: "example:npm" });
+      validateResult(result);
       expect(result.issues.some((issue) => issue.code === "npm.manifest_outside_codebase")).toBe(
         true,
       );
@@ -35,7 +35,7 @@ test.each([false, true])(
       const root = graph.roots.find(
         (entry) => entry.scope === "dependencies" && entry.project.purl === "pkg:npm/root",
       )!;
-      const closure = queryDependenciesV2(result, { graph: graph.id, root: root.id });
+      const closure = queryDependencies(result, { graph: graph.id, root: root.id });
       const reached = [...closure.definite, ...closure.conditional].map(
         (id) => graph.nodes.find((node) => node.id === id)!.purl,
       );

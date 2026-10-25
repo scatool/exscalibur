@@ -2,19 +2,19 @@ import { createHash } from "node:crypto";
 import { PackageURL } from "packageurl-js";
 import {
   createDependencyGraph,
-  createEmptyResultV2,
-  normalizeResultV2,
-  type AnalyzerResultV2,
+  createEmptyResult,
+  normalizeResult,
+  type AnalyzerResult,
   type Completeness,
   type DependencyCondition,
   type DependencyEdge,
   type DependencyGraph,
   type DependencyRequest,
   type DependencyView,
-  type FileExtractionContextV2,
+  type FileExtractionContext,
   type JsonObject,
   type JsonValue,
-  type PackageV2,
+  type Package,
   type ProjectReference,
 } from "@scatool/analyzer-core";
 import { createNpmPurl } from "./npm-utils.ts";
@@ -28,23 +28,23 @@ export type NpmProject = {
 };
 
 /** Shared construction only. Native adapters retain responsibility for choosing the correct target view. */
-export class NpmGraphV2 {
-  readonly result: AnalyzerResultV2;
+export class NpmGraph {
+  readonly result: AnalyzerResult;
   readonly nodes = new Map<string, DependencyView>();
   readonly edges: DependencyEdge[] = [];
   readonly roots: Array<{ id: string; project: ProjectReference; scope: string; node: string }> =
     [];
   readonly sourceFiles: Set<string>;
-  readonly packages = new Map<string, PackageV2>();
+  readonly packages = new Map<string, Package>();
   readonly attributes: JsonObject = {};
   rootCompleteness: Completeness = "complete";
 
   constructor(
-    readonly context: FileExtractionContextV2,
+    readonly context: FileExtractionContext,
     readonly extractor: string,
     readonly interpretation: DependencyGraph["interpretation"] = "locked",
   ) {
-    this.result = createEmptyResultV2(context.codebaseId);
+    this.result = createEmptyResult(context.codebaseId);
     this.sourceFiles = new Set([context.relativeFile]);
   }
 
@@ -251,7 +251,7 @@ export class NpmGraphV2 {
     }
   }
 
-  finish(): AnalyzerResultV2 {
+  finish(): AnalyzerResult {
     this.result.packages = [...this.packages.values()];
     this.result.graphs.push(
       createDependencyGraph({
@@ -265,7 +265,7 @@ export class NpmGraphV2 {
       }),
     );
 
-    return normalizeResultV2(this.result);
+    return normalizeResult(this.result);
   }
 }
 

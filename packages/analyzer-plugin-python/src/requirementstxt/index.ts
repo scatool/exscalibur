@@ -1,1 +1,1 @@
-export { requirementsTxtExtractorV2 as extractor } from "../python-v2.ts";
+export { requirementsTxtExtractor as extractor } from "../extraction.ts";

@@ -20,18 +20,17 @@ import { cargoLockExtractor } from "@scatool/analyzer-plugin-rust";
 const result = await cargoLockExtractor.extract("/path/to/codebase");
 ```
 
-## Native result v2
+## Dependency observations
 
 All extractors return `formatVersion: 2`, keeping source identity and native graph
 references separate. Every component and project has a PURL. `cargoLockExtractor`,
-`cargoMetadataExtractor` and the CLI use this format; the `V2` extractor names remain
-aliases for the same implementations.
+`cargoMetadataExtractor` and the CLI use this format.
 
 ```typescript
-import { cargoLockExtractor, convertCargoMetadataV2 } from "@scatool/analyzer-plugin-rust";
+import { cargoLockExtractor, convertCargoMetadata } from "@scatool/analyzer-plugin-rust";
 
 const inventory = await cargoLockExtractor.extract("/path/to/codebase");
-const result = convertCargoMetadataV2(nativeMetadata, {
+const result = convertCargoMetadata(nativeMetadata, {
   codebase: "https://github.com/example/project@exact-revision",
   evidenceFile: "cargo-metadata.json",
   definitionFilePrefix: "", // Explicitly map the exported workspace root to this codebase root.
@@ -77,4 +76,4 @@ or, when unknown, their lock observation. Checksums are artifact observations.
 Fixture tests compare native lock records and dependency references with graph
 records and edges. Validation also uses captured Cargo metadata, independent
 raw-record comparisons and exact upstream input hashes. See the
-[result v2 contract](../analyzer-core/src/result-v2/README.md).
+[result contract](../analyzer-core/src/result/README.md).

@@ -1,15 +1,13 @@
 import { realpath } from "node:fs/promises";
 import { isAbsolute, relative as filesystemRelative, resolve, sep } from "node:path";
 import { dirname, join } from "node:path/posix";
-import type { FileExtractionContextV2 } from "@scatool/analyzer-core";
+import type { FileExtractionContext } from "@scatool/analyzer-core";
+import { type NpmGraph, type NpmProject, type NpmRecord } from "../npm-graph.ts";
 import {
   addCurrentManifestObservation,
   dependencyScopes,
   loadNpmManifest,
-  type NpmGraphV2,
-  type NpmProject,
-  type NpmRecord,
-} from "../npm-v2.ts";
+} from "../npm-manifest.ts";
 import { NPM_DEPENDENCY_SCOPES } from "../npm-utils.ts";
 
 type LockProjectInput = {
@@ -21,10 +19,10 @@ type LockProjectInput = {
 /** Register source projects before dependency lookup; current declarations remain independent. */
 export async function registerLockProjects(
   lockDirectory: string,
-  context: FileExtractionContextV2,
+  context: FileExtractionContext,
   { document, version, packagesByLocation }: LockProjectInput,
-  lockedObservation: NpmGraphV2,
-  currentManifestObservation: NpmGraphV2,
+  lockedObservation: NpmGraph,
+  currentManifestObservation: NpmGraph,
 ) {
   const projectsByLocation = new Map<string, NpmProject>();
   const projectsWithInvalidDeclarations = new Set<string>();

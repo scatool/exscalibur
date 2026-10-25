@@ -1,6 +1,6 @@
 import { normalize } from "node:path/posix";
 import { npmResolutionCandidates } from "../npm-resolution.ts";
-import type { NpmRecord } from "../npm-v2.ts";
+import type { NpmRecord } from "../npm-graph.ts";
 
 /** Resolve native locations, including links, without collapsing equal package identities. */
 export function createPlacementResolver(

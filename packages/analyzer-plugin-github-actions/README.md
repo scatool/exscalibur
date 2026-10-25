@@ -2,7 +2,7 @@
 
 **Note**: This plugin is experimental.
 
-## Native result V2
+## Dependency observations
 
 `extractor` and `extractWorkflow` return source declarations with one root per
 workflow job. Step `uses` references retain native strings without fabricating
@@ -13,5 +13,4 @@ requests and are not expanded. Unsupported job forms, including reusable workflo
 jobs, retain partial coverage and an issue. Malformed workflows fail extraction
 rather than becoming successful empty results.
 
-The default API returns format 2. The `V2` export names remain aliases of the same
-implementation; no legacy result implementation is retained.
+The API returns result format 2.

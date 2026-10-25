@@ -2,28 +2,28 @@ import { createHash } from "node:crypto";
 import { PackageURL } from "packageurl-js";
 import {
   createDependencyGraph,
-  createEmptyResultV2,
-  normalizeResultV2,
-  type AnalyzerResultV2,
+  createEmptyResult,
+  normalizeResult,
+  type AnalyzerResult,
   type DependencyCondition,
   type DependencyEdge,
   type DependencyRequest,
   type DependencyRoot,
   type DependencyView,
-  type FileExtractionContextV2,
+  type FileExtractionContext,
   type JsonObject,
-  type PackageV2,
+  type Package,
   type ProjectReference,
 } from "@scatool/analyzer-core";
 import { createNpmPurl } from "../npm-utils.ts";
-import { json, type NpmRecord } from "../npm-v2.ts";
+import { json, type NpmRecord } from "../npm-graph.ts";
 
 export type RegistryKind = "npm" | "jsr";
 
 /** Construct one observation without correlating native locks with current declarations. */
 export class DenoObservation {
-  readonly result: AnalyzerResultV2;
-  readonly packages = new Map<string, PackageV2>();
+  readonly result: AnalyzerResult;
+  readonly packages = new Map<string, Package>();
   readonly nodes = new Map<string, DependencyView>();
   readonly edges: DependencyEdge[] = [];
   readonly roots: DependencyRoot[] = [];
@@ -32,11 +32,11 @@ export class DenoObservation {
   rootCompleteness: "complete" | "partial" | "unknown" = "complete";
 
   constructor(
-    readonly context: FileExtractionContextV2,
+    readonly context: FileExtractionContext,
     readonly interpretation: "locked" | "declared",
     readonly key: string,
   ) {
-    this.result = createEmptyResultV2(context.codebaseId);
+    this.result = createEmptyResult(context.codebaseId);
     this.files = new Set(interpretation === "locked" ? [context.relativeFile] : []);
   }
 
@@ -219,7 +219,7 @@ export class DenoObservation {
     }
   }
 
-  finish(): AnalyzerResultV2 {
+  finish(): AnalyzerResult {
     this.result.packages = [...this.packages.values()];
     this.result.graphs.push(
       createDependencyGraph({
@@ -233,7 +233,7 @@ export class DenoObservation {
       }),
     );
 
-    return normalizeResultV2(this.result);
+    return normalizeResult(this.result);
   }
 }
 

@@ -2,7 +2,7 @@ import { mkdtemp, rm, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { tmpdir } from "node:os";
 import { expect, test } from "vite-plus/test";
-import { validateResultV2, type AnalyzerResultV2 } from "@scatool/analyzer-core";
+import { validateResult, type AnalyzerResult } from "@scatool/analyzer-core";
 import {
   requirementsTxtExtractor,
   pyprojectTomlExtractor,
@@ -12,13 +12,13 @@ import {
 } from "./index.ts";
 const path = (folder: string, fixture: string) =>
   join(import.meta.dirname, folder, "__fixtures__", fixture);
-const names = (result: AnalyzerResultV2) =>
+const names = (result: AnalyzerResult) =>
   result.graphs
     .flatMap((graph) =>
       graph.edges.flatMap((edge) => (edge.requested?.name ? [edge.requested.name] : [])),
     )
     .sort((a, b) => String(a).localeCompare(String(b)));
-const purls = (result: AnalyzerResultV2) => result.packages.map((pkg) => pkg.purl);
+const purls = (result: AnalyzerResult) => result.packages.map((pkg) => pkg.purl);
 const basic = [
   "certifi@2023.7.22",
   "charset-normalizer@3.2.0",
@@ -35,7 +35,7 @@ test.each([
   "requirements default preserves %s requests without fabricated selected versions",
   async (fixture, expected) => {
     const result = await requirementsTxtExtractor.extract(path("requirementstxt", fixture));
-    validateResultV2(result);
+    validateResult(result);
     expect(names(result)).toEqual(expected);
     expect(result.packages).toEqual([]);
     expect(result.issues).toEqual([]);
@@ -50,7 +50,7 @@ test.each([
 
 test("unsupported requirement forms remain declarations and includes retain missing coverage", async () => {
   const result = await requirementsTxtExtractor.extract(path("requirementstxt", "unsupported"));
-  validateResultV2(result);
+  validateResult(result);
   const edges = result.graphs[0]!.edges;
   expect(edges).toHaveLength(7);
   expect(edges.some((edge) => edge.requested?.specifier === "-e .")).toBe(true);
@@ -69,7 +69,7 @@ test("ANSI requirements are a visible extraction error with unknown graph covera
   try {
     await writeFile(join(dir, "requirements.txt"), "\u001b[31mrequests==2.32.0\u001b[0m\n");
     const result = await requirementsTxtExtractor.extract(dir);
-    validateResultV2(result);
+    validateResult(result);
     expect(result.issues.some((issue) => issue.severity === "ERROR")).toBe(true);
     expect(result.graphs[0]!.rootCompleteness).toBe("unknown");
   } finally {
@@ -89,7 +89,7 @@ test.each([
   "pyproject default retains %s project and declarations even beside a lock",
   async (fixture, purl, expected) => {
     const result = await pyprojectTomlExtractor.extract(path("pyprojecttoml", fixture));
-    validateResultV2(result);
+    validateResult(result);
     expect(result.subprojects[0]!.purl).toBe(purl);
     expect(names(result)).toEqual(expected);
     expect(result.packages).toEqual([]);
@@ -115,7 +115,7 @@ test.each([
   "Pipfile default preserves %s versions, lock categories and unknown adjacency",
   async (fixture, expected) => {
     const result = await pipfileLockExtractor.extract(path("pipfilelock", fixture));
-    validateResultV2(result);
+    validateResult(result);
     expect(purls(result)).toEqual(expected);
     expect(
       result.graphs[0]!.roots.map((root) => root.scope).sort((a, b) =>
@@ -164,7 +164,7 @@ test.each([
   "%s default retains %s native lock and current manifest observations",
   async (folder, extractor, fixture, expected, direct) => {
     const result = await extractor.extract(path(folder, fixture));
-    validateResultV2(result);
+    validateResult(result);
     expect(purls(result)).toEqual(expected);
     expect(result.issues).toEqual([]);
     const locked = result.graphs.find((graph) => graph.interpretation === "locked")!;

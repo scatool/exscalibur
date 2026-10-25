@@ -2,8 +2,8 @@ import { mkdir, mkdtemp, rm, symlink, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { expect, test } from "vite-plus/test";
-import { validateResultV2 } from "@scatool/analyzer-core";
-import { extractorV2 } from "./index-v2.ts";
+import { validateResult } from "@scatool/analyzer-core";
+import { extractor } from "./index.ts";
 
 test.each(["../outside", "linked"])(
   "lock location %s cannot import a manifest outside the scanned codebase",
@@ -30,8 +30,8 @@ test.each(["../outside", "linked"])(
           },
         }),
       );
-      const result = await extractorV2.extract(codebase, undefined, { codebaseId: "example:npm" });
-      validateResultV2(result);
+      const result = await extractor.extract(codebase, undefined, { codebaseId: "example:npm" });
+      validateResult(result);
       expect(JSON.stringify(result)).not.toContain("outside-private-manifest");
       expect(result.subprojects.some((pkg) => pkg.purl === "pkg:npm/recorded-local@1.0.0")).toBe(
         true,
@@ -80,10 +80,10 @@ test.each([false, true])(
       );
       const codebase = aliasedCodebase ? join(directory, "project-alias") : realCodebase;
       if (aliasedCodebase) await symlink(realCodebase, codebase, "dir");
-      const result = await extractorV2.extract(codebase, undefined, {
+      const result = await extractor.extract(codebase, undefined, {
         codebaseId: "example:contained",
       });
-      validateResultV2(result);
+      validateResult(result);
       expect(result.issues).toEqual([]);
       expect(result.graphs).toHaveLength(1);
       const graph = result.graphs[0]!;

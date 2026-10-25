@@ -2,8 +2,8 @@ import { mkdir, mkdtemp, rm, symlink, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { expect, test } from "vite-plus/test";
-import { queryDependenciesV2, validateResultV2 } from "@scatool/analyzer-core";
-import { extractorV2 } from "./index-v2.ts";
+import { queryDependencies, validateResult } from "@scatool/analyzer-core";
+import { extractor } from "./index.ts";
 
 for (const escape of ["directory-symlink", "file-symlink", "parent-path"])
   test(`Deno ${escape} keeps lock evidence without reading outside manifests`, async () => {
@@ -51,8 +51,8 @@ for (const escape of ["directory-symlink", "file-symlink", "parent-path"])
           },
         }),
       );
-      const result = await extractorV2.extract(codebase);
-      validateResultV2(result);
+      const result = await extractor.extract(codebase);
+      validateResult(result);
       expect(result.issues.filter((issue) => issue.severity === "ERROR")).toEqual([]);
       expect(result.issues.some((issue) => issue.code === "deno.manifest_outside_codebase")).toBe(
         true,
@@ -65,7 +65,7 @@ for (const escape of ["directory-symlink", "file-symlink", "parent-path"])
       );
       expect(roots).toHaveLength(2);
       for (const root of roots) {
-        const closure = queryDependenciesV2(result, { graph: graph.id, root: root.id });
+        const closure = queryDependencies(result, { graph: graph.id, root: root.id });
         expect(
           closure.definite.map((id) => graph.nodes.find((node) => node.id === id)!.purl),
         ).toEqual(["pkg:npm/foo@1.0.0"]);

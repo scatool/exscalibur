@@ -3,11 +3,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { stringify } from "yaml";
 import { expect, test } from "vite-plus/test";
-import {
-  normalizeResultV2,
-  queryDependenciesV2,
-  type AnalyzerResultV2,
-} from "@scatool/analyzer-core";
+import { normalizeResult, queryDependencies, type AnalyzerResult } from "@scatool/analyzer-core";
 import {
   bunlockExtractor,
   denoLockExtractor,
@@ -69,8 +65,8 @@ const adapters = [
   { extractor: denoLockExtractor, file: "deno.lock", content: JSON.stringify(denoLock) },
 ];
 
-function retained(result: AnalyzerResultV2) {
-  expect(() => normalizeResultV2(result)).not.toThrow();
+function retained(result: AnalyzerResult) {
+  expect(() => normalizeResult(result)).not.toThrow();
   expect(result.issues.filter((issue) => issue.code === "core.file_extraction_failed")).toEqual([]);
   expect(result.packages.map((pkg) => pkg.purl)).toEqual(["pkg:npm/foo@1.0.0"]);
   expect(result.graphs.some((graph) => graph.interpretation === "locked")).toBe(true);
@@ -133,7 +129,7 @@ for (const version of ["3", "5"])
         const declared = result.graphs.find((graph) => graph.interpretation === "declared");
         for (const root of declared?.roots ?? [])
           expect(
-            queryDependenciesV2(result, { graph: declared!.id, root: root.id }).completeness,
+            queryDependencies(result, { graph: declared!.id, root: root.id }).completeness,
           ).toBe("unknown");
         const native = result.graphs.find((graph) => graph.source.key === "native-lock")!;
         if (version === "3") expect(native.roots).toEqual([]);

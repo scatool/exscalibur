@@ -1,8 +1,8 @@
 import { parse as parseToml } from "smol-toml";
 import type {
-  AnalyzerResultV2,
+  AnalyzerResult,
   DependencyCondition,
-  FileExtractionContextV2,
+  FileExtractionContext,
   JsonValue,
 } from "@scatool/analyzer-core";
 import { PythonObservation } from "./observation.ts";
@@ -18,8 +18,8 @@ import {
 
 export function requirementsResult(
   content: string,
-  context: FileExtractionContextV2,
-): AnalyzerResultV2 {
+  context: FileExtractionContext,
+): AnalyzerResult {
   const observation = new PythonObservation(context, "requirementstxt", "declared");
   const root = observation.addRoot(observation.addProject(), "requirements");
 
@@ -72,10 +72,7 @@ export function requirementsResult(
   return observation.finish();
 }
 
-export function pyprojectResult(
-  content: string,
-  context: FileExtractionContextV2,
-): AnalyzerResultV2 {
+export function pyprojectResult(content: string, context: FileExtractionContext): AnalyzerResult {
   const native = readMetadataTable(parseToml(content));
   const project = readMetadataTable(native.project);
   const tool = readMetadataTable(native.tool);

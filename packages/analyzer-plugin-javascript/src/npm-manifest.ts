@@ -1,5 +1,5 @@
 import { readFile } from "node:fs/promises";
-import { NpmGraphV2, json, type NpmRecord } from "./npm-graph.ts";
+import { NpmGraph, json, type NpmRecord } from "./npm-graph.ts";
 import { NPM_DEPENDENCY_SCOPES } from "./npm-utils.ts";
 
 export type NpmDeclaration = {
@@ -11,7 +11,7 @@ export type NpmDeclaration = {
 };
 
 export function addManifestObservation(
-  builder: NpmGraphV2,
+  builder: NpmGraph,
   location: string,
   definitionFile: string,
   manifest: NpmRecord,
@@ -35,7 +35,7 @@ export function addManifestObservation(
 
 /** A malformed auxiliary manifest must not invalidate an independent native lock observation. */
 export function addCurrentManifestObservation(
-  builder: NpmGraphV2,
+  builder: NpmGraph,
   location: string,
   definitionFile: string,
   manifest: NpmRecord,
@@ -48,7 +48,7 @@ export function addCurrentManifestObservation(
 
     // Validate in an isolated builder before adding any declarations to the shared
     // observation. A late normalization error must not leave half a manifest behind.
-    const candidate = new NpmGraphV2(builder.context, builder.extractor, builder.interpretation);
+    const candidate = new NpmGraph(builder.context, builder.extractor, builder.interpretation);
     addManifestObservation(candidate, location, definitionFile, manifest, declarations);
     candidate.finish();
   } catch (error) {
@@ -127,7 +127,7 @@ export function dependencyScopes(record: NpmRecord): NpmDeclaration[] {
 export async function loadNpmManifest(
   file: string,
   fallback: NpmRecord,
-  builder: NpmGraphV2,
+  builder: NpmGraph,
 ): Promise<{ manifest: NpmRecord; available: boolean }> {
   try {
     const value: unknown = JSON.parse((await readFile(file, "utf8")).replace(/^\uFEFF/, ""));
@@ -137,7 +137,7 @@ export async function loadNpmManifest(
 
     assertPortableManifest(value);
     // Validate the exact project representation before its identity/metadata can enter a lock graph.
-    const candidate = new NpmGraphV2(builder.context, "packagejson", "declared");
+    const candidate = new NpmGraph(builder.context, "packagejson", "declared");
     candidate.addProject(".", file, value as NpmRecord, true);
     candidate.finish();
 

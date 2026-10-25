@@ -2,8 +2,8 @@ import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { expect, test } from "vite-plus/test";
-import { validateResultV2 } from "@scatool/analyzer-core";
-import { extractorV2 } from "./index-v2.ts";
+import { validateResult } from "@scatool/analyzer-core";
+import { extractor } from "./index.ts";
 
 const directory = join(import.meta.dirname, "__fixtures__/npm-optional-oracle");
 const report = JSON.parse(await readFile(join(directory, "native-observations.json"), "utf8")) as {
@@ -86,10 +86,10 @@ for (const id of [
   "override-only-drift",
 ])
   test(`${id}: extraction preserves lock observation, not native install outcome`, async () => {
-    const result = await extractorV2.extract(join(directory, id), undefined, {
+    const result = await extractor.extract(join(directory, id), undefined, {
       codebaseId: `oracle:${id}`,
     });
-    validateResultV2(result);
+    validateResult(result);
     const manifestText = await readFile(join(directory, id, "package.json"), "utf8");
     expect(createHash("sha256").update(manifestText).digest("hex")).toBe(
       observed(id).manifestSha256,

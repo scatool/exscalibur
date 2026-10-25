@@ -3,7 +3,7 @@ import { join } from "node:path";
 import { describe, expect, test } from "vite-plus/test";
 import { parse as parseYaml } from "yaml";
 import { PackageURL } from "packageurl-js";
-import { validateResultV2 } from "@scatool/analyzer-core";
+import { validateResult } from "@scatool/analyzer-core";
 import { extractSpdx } from "./index.ts";
 
 const fixtures = join(import.meta.dirname, "__fixtures__");
@@ -12,7 +12,7 @@ for (const file of await readdir(fixtures)) {
     const content = await readFile(join(fixtures, file), "utf8");
     const source = parseYaml(content);
     const result = extractSpdx(content, { evidenceFile: file, codebase: "fixture" });
-    validateResultV2(result);
+    validateResult(result);
     const elements = source.element ?? source["@graph"] ?? [];
     const graph = result.graphs[0]!;
     for (const element of elements) {
@@ -92,7 +92,7 @@ describe("SPDX version support", () => {
 
       expect(result.issues).toEqual([]);
       expect(result.packages.map((pkg) => pkg.purl)).toEqual(["pkg:npm/example@1.0.0"]);
-      validateResultV2(result);
+      validateResult(result);
     },
   );
 

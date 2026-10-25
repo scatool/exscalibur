@@ -59,7 +59,7 @@ contains no additional matching inputs.
    native tools actually execute, record versions and command options, and preserve
    failures as failures. Do not retry denied services or weaken checks to obtain a
    passing result.
-3. Run the native V2 extractors with the harness's stable codebase namespace.
+3. Run the native extractors with the harness's stable codebase namespace.
    Validate the wire contract and graph references. Independently compare native
    declarations, catalog identities, exact project/scope roots, bindings, conditions,
    contextual views and unknown coverage. A valid schema is not semantic acceptance.

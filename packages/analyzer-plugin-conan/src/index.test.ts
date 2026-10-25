@@ -1,6 +1,6 @@
 import { join } from "node:path";
 import { scanFixtures } from "@scatool/analyzer-test-utils";
-import { parseResultV2, queryDependenciesV2 } from "@scatool/analyzer-core";
+import { parseResult, queryDependencies } from "@scatool/analyzer-core";
 import { test, expect } from "vite-plus/test";
 import { PackageURL } from "packageurl-js";
 import { extractor } from "./index.ts";
@@ -26,7 +26,7 @@ for (const fixture of await scanFixtures(fixturesDir, "*/conanfile.{txt,py}")) {
       { codebaseId: `fixture:${fixture}` },
     );
     expect(result.issues.filter((issue) => issue.severity === "ERROR")).toEqual([]);
-    expect(parseResultV2(result)).toEqual(result);
+    expect(parseResult(result)).toEqual(result);
     expect(result.graphs).toHaveLength(1);
     const graph = result.graphs[0]!;
     expect(graph.interpretation).toBe("resolved");
@@ -35,7 +35,7 @@ for (const fixture of await scanFixtures(fixturesDir, "*/conanfile.{txt,py}")) {
     const names = new Set(result.packages.map((pkg) => PackageURL.fromString(pkg.purl).name));
     for (const name of expected[fixture]!) expect(names.has(name), name).toBe(true);
     for (const root of graph.roots) {
-      const closure = queryDependenciesV2(result, { graph: graph.id, root: root.id });
+      const closure = queryDependencies(result, { graph: graph.id, root: root.id });
       expect(closure.conditional).toEqual([]);
       expect(closure.declarations).toEqual([]);
       expect(closure.completeness).toBe("complete");

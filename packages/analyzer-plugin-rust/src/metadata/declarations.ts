@@ -13,7 +13,7 @@ import {
   text,
   type CargoObservationOptions,
   type CargoRecord,
-} from "../cargo-v2.ts";
+} from "../observation.ts";
 
 export function declarationNodeId(id: string): string {
   return JSON.stringify(["package", id]);

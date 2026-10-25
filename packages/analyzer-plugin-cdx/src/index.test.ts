@@ -2,7 +2,7 @@ import { readFile, readdir } from "node:fs/promises";
 import { join } from "node:path";
 import { expect, test } from "vite-plus/test";
 import { PackageURL } from "packageurl-js";
-import { validateResultV2 } from "@scatool/analyzer-core";
+import { validateResult } from "@scatool/analyzer-core";
 import { extractCycloneDX } from "./index.ts";
 
 type Component = { "bom-ref"?: string; purl?: string; components?: Component[] };
@@ -12,7 +12,7 @@ for (const file of await readdir(fixtures)) {
     const content = await readFile(join(fixtures, file), "utf8");
     const source = JSON.parse(content);
     const result = extractCycloneDX(content, { evidenceFile: file, codebase: "fixture" });
-    validateResultV2(result);
+    validateResult(result);
     const graph = result.graphs[0]!;
     const components: Component[] = [];
     const visit = (values: Component[]) => {

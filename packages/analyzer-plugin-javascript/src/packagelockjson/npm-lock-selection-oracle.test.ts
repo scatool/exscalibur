@@ -3,8 +3,8 @@ import { mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { expect, test } from "vite-plus/test";
-import { validateResultV2 } from "@scatool/analyzer-core";
-import { extractorV2 } from "./index-v2.ts";
+import { validateResult } from "@scatool/analyzer-core";
+import { extractor } from "./index.ts";
 
 type RecordValue = Record<string, unknown>;
 type Lock = { packages: Record<string, RecordValue> };
@@ -56,10 +56,10 @@ test.each(fixtures)(
           typeof value === "string" ? value : JSON.stringify(value),
         );
       }
-      const result = await extractorV2.extract(directory, undefined, {
+      const result = await extractor.extract(directory, undefined, {
         codebaseId: "test:npm-lock-selection",
       });
-      validateResultV2(result);
+      validateResult(result);
       const locks = Object.entries(fixture.files).filter(([file]) => file !== "package.json");
       expect(
         result.graphs.filter((graph) => graph.source.extractor === "packagelockjson"),

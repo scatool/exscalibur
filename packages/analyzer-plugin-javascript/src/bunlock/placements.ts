@@ -1,6 +1,6 @@
 import { normalize } from "node:path/posix";
 import { valid } from "semver";
-import { NpmGraphV2, json, type NpmProject, type NpmRecord } from "../npm-v2.ts";
+import { NpmGraph, json, type NpmProject, type NpmRecord } from "../npm-graph.ts";
 import type { BunWorkspace } from "./workspaces.ts";
 
 export type BunPackageEntry = {
@@ -18,7 +18,7 @@ export function registerBunPackagePlacements(
   packages: NpmRecord,
   lockfileVersion: unknown,
   projects: Map<string, BunWorkspace>,
-  builder: NpmGraphV2,
+  builder: NpmGraph,
 ) {
   const entries: BunPackageEntry[] = [];
   const workspaceAliases = new Map<BunPackageEntry, { project: NpmProject; view: string }>();

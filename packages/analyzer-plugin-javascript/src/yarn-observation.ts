@@ -1,15 +1,8 @@
 import { satisfies, valid, validRange } from "semver";
 import type { DependencyCondition } from "@scatool/analyzer-core";
 import { NPM_DEPENDENCY_SCOPES } from "./npm-utils.ts";
-import {
-  NpmGraphV2,
-  dependencyScopes,
-  json,
-  table,
-  type NpmDeclaration,
-  type NpmProject,
-  type NpmRecord,
-} from "./npm-v2.ts";
+import { NpmGraph, json, type NpmProject, type NpmRecord } from "./npm-graph.ts";
+import { dependencyScopes, table, type NpmDeclaration } from "./npm-manifest.ts";
 import { parseYarnDescriptor, yarnRecord, type YarnLockEntry } from "./yarn-lock.ts";
 
 export type WorkspaceManifest = {
@@ -38,7 +31,7 @@ export class YarnObservationProjection {
   private readonly versionByTarget = new Map<string, string>();
 
   constructor(
-    private readonly builder: NpmGraphV2,
+    private readonly builder: NpmGraph,
     private readonly input: ProjectionInput,
   ) {}
 

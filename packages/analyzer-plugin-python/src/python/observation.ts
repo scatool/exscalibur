@@ -2,13 +2,13 @@ import { createHash } from "node:crypto";
 import { PackageURL } from "packageurl-js";
 import {
   createDependencyGraph,
-  createEmptyResultV2,
-  normalizeResultV2,
-  type AnalyzerResultV2,
+  createEmptyResult,
+  normalizeResult,
+  type AnalyzerResult,
   type DependencyEdge,
   type DependencyRequest,
   type DependencyView,
-  type FileExtractionContextV2,
+  type FileExtractionContext,
   type JsonObject,
 } from "@scatool/analyzer-core";
 import { createPypiPurl } from "../python-utils.ts";
@@ -16,7 +16,7 @@ import { normalizePackageName } from "./native-metadata.ts";
 
 /** Accumulate one file's observation without merging declarations into locked facts. */
 export class PythonObservation {
-  readonly result: AnalyzerResultV2;
+  readonly result: AnalyzerResult;
   readonly nodes: DependencyView[] = [];
   readonly edges: DependencyEdge[] = [];
   readonly roots: {
@@ -27,11 +27,11 @@ export class PythonObservation {
   }[] = [];
 
   constructor(
-    readonly context: FileExtractionContextV2,
+    readonly context: FileExtractionContext,
     readonly extractor: string,
     readonly interpretation: "declared" | "locked",
   ) {
-    this.result = createEmptyResultV2(context.codebaseId);
+    this.result = createEmptyResult(context.codebaseId);
   }
 
   addProject(name?: string, version?: string) {
@@ -114,6 +114,6 @@ export class PythonObservation {
       }),
     );
 
-    return normalizeResultV2(this.result);
+    return normalizeResult(this.result);
   }
 }

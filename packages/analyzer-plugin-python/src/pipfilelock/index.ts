@@ -1,1 +1,1 @@
-export { pipfileLockExtractorV2 as extractor } from "../python-v2.ts";
+export { pipfileLockExtractor as extractor } from "../extraction.ts";

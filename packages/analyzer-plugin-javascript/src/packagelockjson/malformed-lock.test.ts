@@ -2,12 +2,8 @@ import { mkdir, mkdtemp, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { expect, test } from "vite-plus/test";
-import {
-  queryDependenciesV2,
-  validateResultV2,
-  type AnalyzerResultV2,
-} from "@scatool/analyzer-core";
-import { extractorV2 } from "./index-v2.ts";
+import { queryDependencies, validateResult, type AnalyzerResult } from "@scatool/analyzer-core";
+import { extractor } from "./index.ts";
 type RecordValue = Record<string, unknown>;
 async function extract(lock: unknown, files: Record<string, unknown> = {}) {
   const directory = await mkdtemp(join(tmpdir(), "exscalibur-malformed-lock-"));
@@ -19,16 +15,16 @@ async function extract(lock: unknown, files: Record<string, unknown> = {}) {
         typeof value === "string" ? value : JSON.stringify(value),
       );
     }
-    const result = await extractorV2.extract(directory, undefined, {
+    const result = await extractor.extract(directory, undefined, {
       codebaseId: "test:malformed-lock",
     });
-    validateResultV2(result);
+    validateResult(result);
     return result;
   } finally {
     await rm(directory, { recursive: true, force: true });
   }
 }
-function failed(result: AnalyzerResultV2) {
+function failed(result: AnalyzerResult) {
   expect(result.issues.filter((i) => i.severity === "ERROR").map((i) => [i.code, i.file])).toEqual([
     ["core.file_extraction_failed", "package-lock.json"],
   ]);
@@ -116,7 +112,7 @@ for (const link of [{ link: true, resolved: "missing/source" }])
     expect(edge.to).toBeUndefined();
     expect(edge.requested).toMatchObject({ name: "dep", specifier: "*" });
     expect(result.issues.some((i) => i.code === "npm.unresolved_dependency")).toBe(true);
-    expect(queryDependenciesV2(result, { graph: graph.id, root: scope.id }).completeness).toBe(
+    expect(queryDependencies(result, { graph: graph.id, root: scope.id }).completeness).toBe(
       "partial",
     );
   });
@@ -139,7 +135,7 @@ test("nearest dangling link shadows an available ancestor package", async () => 
   });
   expect(graph.edges.find((e) => e.from === parent.id)?.to).toBeUndefined();
   const scope = graph.roots.find((r) => r.scope === "dependencies")!;
-  const query = queryDependenciesV2(result, { graph: graph.id, root: scope.id });
+  const query = queryDependencies(result, { graph: graph.id, root: scope.id });
   expect(query.completeness).toBe("partial");
   expect(query.definite.map((id) => graph.nodes.find((n) => n.id === id)!.purl)).not.toContain(
     "pkg:npm/dep@1.0.0",
@@ -171,7 +167,7 @@ test("linked local package resolves nested dependencies from its source target",
   const scope = graph.roots.find(
     (r) => r.scope === "dependencies" && r.project.definitionFile === "package-lock.json#packages/",
   )!;
-  const query = queryDependenciesV2(result, { graph: graph.id, root: scope.id });
+  const query = queryDependencies(result, { graph: graph.id, root: scope.id });
   expect(query.definite.map((id) => graph.nodes.find((n) => n.id === id)!.purl)).toContain(
     "pkg:npm/dep@1.0.0",
   );

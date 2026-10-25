@@ -76,8 +76,8 @@ AnalyzerResult
 ```
 
 `Extractor<Options>` and `FilesExtractor<Options>` have interface `version: 1`, independent
-of wire `formatVersion: 2`. Canonical aliases and explicit V2 names refer to the same API.
-See `packages/analyzer-core/src/result-v2/README.md` for semantics and the wire contract.
+of wire `formatVersion: 2`. Public types and functions use unversioned domain names.
+See `packages/analyzer-core/src/result/README.md` for semantics and the wire contract.
 
 ### Extractor Pattern
 

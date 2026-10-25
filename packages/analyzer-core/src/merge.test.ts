@@ -1,5 +1,5 @@
 import { test, expect } from "vite-plus/test";
-import { createEmptyResult, mergeResults, mergeResultsV2, type AnalyzerResult } from "./index.ts";
+import { createEmptyResult, mergeResults, type AnalyzerResult } from "./index.ts";
 
 const result = (evidence: string[]): AnalyzerResult => ({
   ...createEmptyResult("example:repo"),
@@ -7,7 +7,6 @@ const result = (evidence: string[]): AnalyzerResult => ({
 });
 
 test("public merge API uses only the contextual result contract", () => {
-  expect(mergeResults).toBe(mergeResultsV2);
   expect(mergeResults([result(["b", "a"]), result(["c", "a"])]).packages).toEqual([
     { purl: "pkg:npm/foo@1", evidence: ["a", "b", "c"] },
   ]);

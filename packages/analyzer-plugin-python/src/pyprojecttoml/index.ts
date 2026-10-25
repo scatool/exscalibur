@@ -1,1 +1,1 @@
-export { pyprojectTomlExtractorV2 as extractor } from "../python-v2.ts";
+export { pyprojectTomlExtractor as extractor } from "../extraction.ts";

@@ -1,4 +1,5 @@
-import { NpmGraphV2, json, table, type NpmRecord } from "../npm-v2.ts";
+import { NpmGraph, json, type NpmRecord } from "../npm-graph.ts";
+import { table } from "../npm-manifest.ts";
 
 /** Full native keys own peer/patch context; package coordinates never select a snapshot. */
 export class PnpmSnapshotIndex {
@@ -9,7 +10,7 @@ export class PnpmSnapshotIndex {
   private readonly missingMetadata = new Set<string>();
 
   constructor(
-    private readonly builder: NpmGraphV2,
+    private readonly builder: NpmGraph,
     document: NpmRecord,
     version: number,
   ) {

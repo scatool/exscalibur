@@ -19,5 +19,4 @@ const result = await ortExtractor.extract("/path/to/codebase");
 The default API returns format 2. `convertOrtResult(source, { codebase, evidenceFile })`
 preserves native dependency contexts and exact project scopes. An optional
 `definitionFilePrefix` rebases reported project paths; evidence names the imported
-report. The removed `useDefinitionFilePaths` option is not accepted. `V2` exports
-remain aliases of the same implementation.
+report. The removed `useDefinitionFilePaths` option is not accepted.

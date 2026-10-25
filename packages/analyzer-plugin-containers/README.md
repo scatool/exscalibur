@@ -2,7 +2,7 @@
 
 **Note**: This plugin is experimental.
 
-## Native result V2
+## Dependency observations
 
 `dockerfileExtractor` and `extractDockerfile` preserve `FROM` inputs as source
 **declarations**, not resolved image dependencies. Each Dockerfile owns a `from`
@@ -12,5 +12,4 @@ build inputs. Internal stages and `scratch` do not introduce external requests.
 Unsupported `FROM` syntax produces partial adjacency and an issue. Image contents,
 selected build targets and transitive dependencies remain unobserved.
 
-The default API returns format 2. The `V2` export names remain aliases of the same
-implementation; no legacy result implementation is retained.
+The API returns result format 2.

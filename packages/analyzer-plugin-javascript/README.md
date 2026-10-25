@@ -16,12 +16,12 @@ import { packageLockJsonExtractor } from "@scatool/analyzer-plugin-javascript";
 const result = await packageLockJsonExtractor.extract("/path/to/codebase");
 ```
 
-## Native result v2
+## Dependency observations
 
 All extractors return `formatVersion: 2`, preserving native dependency contexts for
 packages with equal PURLs. Every package and project has a PURL, including versionless
-identities when the input does not establish an exact package version. The default
-exports and CLI use this format; exports ending in `V2` are aliases for the same APIs.
+identities when the input does not establish an exact package version. The library
+exports and CLI use this format.
 
 ```typescript
 import { yarnBerryExtractor } from "@scatool/analyzer-plugin-javascript";
@@ -122,7 +122,7 @@ declarations. HTTP modules remain inventory unless entry-point evidence exists.
 JSR dependency coverage remains unknown because lockfiles record retention information;
 external import maps are retained as references without claiming complete declarations.
 
-See the [result v2 contract](../analyzer-core/src/result-v2/README.md) for selection,
+See the [result contract](../analyzer-core/src/result/README.md) for selection,
 conditions and completeness. Fixture tests compare native records and requests
 with the resulting graph, alongside focused tests for contextual reachability.
 Correctness also requires evidence from native package-manager behavior.

@@ -1,25 +1,25 @@
 import { expect, test } from "vite-plus/test";
-import { createEmptyResultV2, validateResultV2, type ExtractorV2 } from "@scatool/analyzer-core";
+import { createEmptyResult, validateResult, type Extractor } from "@scatool/analyzer-core";
 import { analyze } from "./analysis.ts";
 
 test("analysis retains discovery failures alongside successful observations", async () => {
-  const failure: ExtractorV2 = {
+  const failure: Extractor = {
     name: "failure",
     version: 1,
     extract: async () => {
       throw new Error("discovery failed");
     },
   };
-  const success: ExtractorV2 = {
+  const success: Extractor = {
     name: "success",
     version: 1,
     extract: async (_path, _options, runtime) => ({
-      ...createEmptyResultV2(runtime!.codebaseId!),
+      ...createEmptyResult(runtime!.codebaseId!),
       packages: [{ purl: "pkg:npm/example@1", evidence: ["input"] }],
     }),
   };
   const result = await analyze("/repo", [failure, success], {}, []);
-  validateResultV2(result);
+  validateResult(result);
   expect(result.packages).toHaveLength(1);
   expect(result.issues).toMatchObject([{ code: "cli.extraction_failed", severity: "ERROR" }]);
   expect(result.graphs).toMatchObject([
@@ -29,12 +29,12 @@ test("analysis retains discovery failures alongside successful observations", as
 
 test("analysis preserves a namespace with no enabled extractors and rejects malformed observations", async () => {
   const empty = await analyze("/repo", [], {}, []);
-  validateResultV2(empty);
+  validateResult(empty);
   expect(empty.formatVersion).toBe(2);
-  const invalid: ExtractorV2 = {
+  const invalid: Extractor = {
     name: "invalid",
     version: 1,
-    extract: async () => createEmptyResultV2("wrong"),
+    extract: async () => createEmptyResult("wrong"),
   };
   const result = await analyze("/repo", [invalid], {}, []);
   expect(result.issues[0]!.message).toContain("Cannot merge codebase");

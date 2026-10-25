@@ -6,7 +6,7 @@ vcpkg analyzer plugin for Exscalibur.
 
 Supported package files: `vcpkg.json`.
 
-The default extractor returns format 2. See [result semantics](./RESULT_V2.md) for
+The default extractor returns format 2. See [result semantics](./RESULT.md) for
 registry-candidate bindings and conservative host/target/feature handling.
 
 Supported extractor options:

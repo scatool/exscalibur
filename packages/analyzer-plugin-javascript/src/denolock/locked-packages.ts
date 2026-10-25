@@ -1,7 +1,8 @@
 import { PackageURL } from "packageurl-js";
 import { valid, validRange, satisfies } from "semver";
 import type { DependencyRequest } from "@scatool/analyzer-core";
-import { table, type NpmRecord } from "../npm-v2.ts";
+import { type NpmRecord } from "../npm-graph.ts";
+import { table } from "../npm-manifest.ts";
 import { DenoObservation, genericPurl, registryPurl, type RegistryKind } from "./observation.ts";
 
 type NpmBinding = { alias: string; raw: string; target?: string; request: DependencyRequest };

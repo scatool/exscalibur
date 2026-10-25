@@ -6,7 +6,7 @@ import { test, expect } from "vite-plus/test";
 import os, { tmpdir } from "node:os";
 import { copyFile, rm, mkdtemp, readFile } from "node:fs/promises";
 import type { VcpkgPort } from "./types.ts";
-import { findExecutable, parseResultV2, runCommand } from "@scatool/analyzer-core";
+import { findExecutable, parseResult, runCommand } from "@scatool/analyzer-core";
 import { PackageURL } from "packageurl-js";
 
 const fixturesDir = join(import.meta.dirname, "__fixtures__");
@@ -36,7 +36,7 @@ for (const fixture of fixtures) {
         codebaseId: `fixture:${fixture}`,
       });
       expect(result.issues.filter((issue) => issue.severity === "ERROR")).toEqual([]);
-      expect(parseResultV2(result)).toEqual(result);
+      expect(parseResult(result)).toEqual(result);
       expect(result.graphs).toHaveLength(1);
       const graph = result.graphs[0]!;
       expect(graph.interpretation).toBe("declared");

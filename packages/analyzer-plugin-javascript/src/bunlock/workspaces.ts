@@ -1,15 +1,9 @@
 import { dirname, join, normalize } from "node:path/posix";
 import { isDeepStrictEqual } from "node:util";
-import type { FileExtractionContextV2 } from "@scatool/analyzer-core";
+import type { FileExtractionContext } from "@scatool/analyzer-core";
 import { NPM_DEPENDENCY_SCOPES } from "../npm-utils.ts";
-import {
-  NpmGraphV2,
-  addCurrentManifestObservation,
-  json,
-  loadNpmManifest,
-  type NpmProject,
-  type NpmRecord,
-} from "../npm-v2.ts";
+import { NpmGraph, json, type NpmProject, type NpmRecord } from "../npm-graph.ts";
+import { addCurrentManifestObservation, loadNpmManifest } from "../npm-manifest.ts";
 import { readBunRecord } from "./placements.ts";
 
 export type BunWorkspace = { project: NpmProject; locked: boolean; caller: string };
@@ -17,10 +11,10 @@ export type BunWorkspace = { project: NpmProject; locked: boolean; caller: strin
 /** Register locked workspace identity independently from current manifest declarations. */
 export async function registerBunWorkspaces(
   file: string,
-  context: FileExtractionContextV2,
+  context: FileExtractionContext,
   workspaces: NpmRecord,
-  builder: NpmGraphV2,
-  declared: NpmGraphV2,
+  builder: NpmGraph,
+  declared: NpmGraph,
 ): Promise<Map<string, BunWorkspace>> {
   const projects = new Map<string, BunWorkspace>();
 

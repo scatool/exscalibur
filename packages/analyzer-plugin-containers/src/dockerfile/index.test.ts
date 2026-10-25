@@ -1,7 +1,7 @@
 import { readFile, readdir } from "node:fs/promises";
 import { join } from "node:path";
 import { expect, test } from "vite-plus/test";
-import { validateResultV2 } from "@scatool/analyzer-core";
+import { validateResult } from "@scatool/analyzer-core";
 import { extractDockerfile } from "./index.ts";
 
 const expected: Record<string, string[]> = {
@@ -27,7 +27,7 @@ const fixtures = join(import.meta.dirname, "__fixtures__");
 for (const file of await readdir(fixtures)) {
   test(`native Dockerfile fixture: ${file}`, async () => {
     const result = extractDockerfile(await readFile(join(fixtures, file), "utf8"), file, "fixture");
-    validateResultV2(result);
+    validateResult(result);
     expect(
       result.graphs[0]!.edges.map((edge) => edge.requested?.specifier).sort((a, b) =>
         String(a).localeCompare(String(b)),

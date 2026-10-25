@@ -2,34 +2,34 @@
 
 import { Command } from "commander";
 import {
-  bunlockExtractorV2,
-  denoLockExtractorV2,
-  packageJsonExtractorV2,
-  packageLockJsonExtractorV2,
-  pnpmLockExtractorV2,
-  yarnBerryExtractorV2,
-  yarnLockExtractorV2,
+  bunlockExtractor,
+  denoLockExtractor,
+  packageJsonExtractor,
+  packageLockJsonExtractor,
+  pnpmLockExtractor,
+  yarnBerryExtractor,
+  yarnLockExtractor,
 } from "@scatool/analyzer-plugin-javascript";
-import { dockerfileExtractorV2 } from "@scatool/analyzer-plugin-containers";
-import { gradleExtractorV2 } from "@scatool/analyzer-plugin-gradle";
-import { gomodExtractorV2 } from "@scatool/analyzer-plugin-go";
-import { extractorV2 as uvExtractor } from "@scatool/analyzer-plugin-uv";
+import { dockerfileExtractor } from "@scatool/analyzer-plugin-containers";
+import { gradleExtractor } from "@scatool/analyzer-plugin-gradle";
+import { gomodExtractor } from "@scatool/analyzer-plugin-go";
+import { extractor as uvExtractor } from "@scatool/analyzer-plugin-uv";
 import { writeTextFile } from "@scatool/analyzer-core";
 import { analyze } from "./analysis.ts";
-import { extractorV2 as githubActionsExtractor } from "@scatool/analyzer-plugin-github-actions";
+import { extractor as githubActionsExtractor } from "@scatool/analyzer-plugin-github-actions";
 import {
-  pipfileLockExtractorV2,
-  poetryLockExtractorV2,
-  pdmLockExtractorV2,
-  pyprojectTomlExtractorV2,
-  requirementsTxtExtractorV2,
+  pipfileLockExtractor,
+  poetryLockExtractor,
+  pdmLockExtractor,
+  pyprojectTomlExtractor,
+  requirementsTxtExtractor,
 } from "@scatool/analyzer-plugin-python";
-import { cargoLockExtractorV2 } from "@scatool/analyzer-plugin-rust";
-import { mavenExtractorV2 } from "@scatool/analyzer-plugin-maven";
-import { cyclonedxExtractorV2 as cyclonedxExtractor } from "@scatool/analyzer-plugin-cdx";
-import { spdxExtractorV2 as spdxExtractor } from "@scatool/analyzer-plugin-spdx";
-import { ortExtractorV2 } from "@scatool/analyzer-plugin-ort";
-import type { ExtractorV2 as Extractor } from "@scatool/analyzer-core";
+import { cargoLockExtractor } from "@scatool/analyzer-plugin-rust";
+import { mavenExtractor } from "@scatool/analyzer-plugin-maven";
+import { extractor as cyclonedxExtractor } from "@scatool/analyzer-plugin-cdx";
+import { extractor as spdxExtractor } from "@scatool/analyzer-plugin-spdx";
+import { ortExtractor } from "@scatool/analyzer-plugin-ort";
+import type { Extractor } from "@scatool/analyzer-core";
 import { resolve } from "path";
 import { z } from "zod";
 
@@ -218,28 +218,28 @@ Examples:
       const outputPathResolved = resolve(outputPath);
 
       const allExtractors: Extractor[] = [
-        bunlockExtractorV2,
-        denoLockExtractorV2,
-        packageJsonExtractorV2,
-        packageLockJsonExtractorV2,
-        pnpmLockExtractorV2,
-        yarnBerryExtractorV2,
-        yarnLockExtractorV2,
-        dockerfileExtractorV2,
+        bunlockExtractor,
+        denoLockExtractor,
+        packageJsonExtractor,
+        packageLockJsonExtractor,
+        pnpmLockExtractor,
+        yarnBerryExtractor,
+        yarnLockExtractor,
+        dockerfileExtractor,
         githubActionsExtractor,
-        gradleExtractorV2,
-        gomodExtractorV2,
+        gradleExtractor,
+        gomodExtractor,
         uvExtractor,
-        pipfileLockExtractorV2,
-        poetryLockExtractorV2,
-        pdmLockExtractorV2,
-        pyprojectTomlExtractorV2,
-        requirementsTxtExtractorV2,
-        cargoLockExtractorV2,
-        mavenExtractorV2,
+        pipfileLockExtractor,
+        poetryLockExtractor,
+        pdmLockExtractor,
+        pyprojectTomlExtractor,
+        requirementsTxtExtractor,
+        cargoLockExtractor,
+        mavenExtractor,
         cyclonedxExtractor,
         spdxExtractor,
-        ortExtractorV2,
+        ortExtractor,
       ];
 
       const extractors = filterExtractors(enabledExtractors, disabledExtractors, allExtractors);

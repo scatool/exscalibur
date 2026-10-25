@@ -2,15 +2,16 @@ import { realpath } from "node:fs/promises";
 import { isAbsolute, relative as filesystemRelative, resolve, sep } from "node:path";
 import { dirname, join } from "node:path/posix";
 import { parse as parseJsonc, type ParseError } from "jsonc-parser";
-import { readNormalizedTextFile, type FileExtractionContextV2 } from "@scatool/analyzer-core";
-import { assertPortableManifest, table, type NpmRecord } from "../npm-v2.ts";
+import { readNormalizedTextFile, type FileExtractionContext } from "@scatool/analyzer-core";
+import { type NpmRecord } from "../npm-graph.ts";
+import { assertPortableManifest, table } from "../npm-manifest.ts";
 import { DenoObservation } from "./observation.ts";
 import { record } from "./locked-packages.ts";
 
 /** Keep manifest caching and lexical/realpath containment checks at one filesystem boundary. */
 export async function createManifestReader(
   file: string,
-  context: FileExtractionContextV2,
+  context: FileExtractionContext,
   native: DenoObservation,
 ) {
   const codebaseDirectory = await realpath(context.codebasePath);

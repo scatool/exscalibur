@@ -1,6 +1,6 @@
 import { join } from "node:path";
 import { expect, test } from "vite-plus/test";
-import { validateResultV2 } from "@scatool/analyzer-core";
+import { validateResult } from "@scatool/analyzer-core";
 import { extractor } from "./index.ts";
 
 test("default UV extractor preserves native frozen export packages, artifacts and adjacency", async () => {
@@ -9,7 +9,7 @@ test("default UV extractor preserves native frozen export packages, artifacts an
     undefined,
     { codebaseId: "example:uv-fixture" },
   );
-  validateResultV2(result);
+  validateResult(result);
   expect(result.issues.filter((issue) => issue.severity === "ERROR")).toEqual([]);
   expect(result.packages).toHaveLength(6);
   expect(result.subprojects).toHaveLength(1);

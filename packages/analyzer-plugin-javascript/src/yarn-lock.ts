@@ -2,7 +2,8 @@ import { normalize } from "node:path/posix";
 import { isDeepStrictEqual } from "node:util";
 import { createRequire } from "node:module";
 import { parse as parseYaml } from "yaml";
-import { table, type NpmRecord } from "./npm-v2.ts";
+import { type NpmRecord } from "./npm-graph.ts";
+import { table } from "./npm-manifest.ts";
 
 // Load the CommonJS parser consistently in Node and transformed test modules.
 const { parse: parseClassicLock } = createRequire(import.meta.url)(

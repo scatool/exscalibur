@@ -3,7 +3,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { stringify } from "yaml";
 import { expect, test } from "vite-plus/test";
-import { queryDependenciesV2, validateResultV2 } from "@scatool/analyzer-core";
+import { queryDependencies, validateResult } from "@scatool/analyzer-core";
 import {
   bunlockExtractor,
   packageLockJsonExtractor,
@@ -91,7 +91,7 @@ for (const { extractor, file, content } of cases)
         const result = await extractor.extract(directory, undefined, {
           codebaseId: "test:isolation",
         });
-        validateResultV2(result);
+        validateResult(result);
         expect(
           result.issues.filter((issue) => issue.code === "core.file_extraction_failed"),
         ).toEqual([]);
@@ -106,7 +106,7 @@ for (const { extractor, file, content } of cases)
         if (portable) {
           const currentRoot = current.roots.find((entry) => entry.scope === "dependencies")!;
           expect(
-            queryDependenciesV2(result, { graph: current.id, root: currentRoot.id }).completeness,
+            queryDependencies(result, { graph: current.id, root: currentRoot.id }).completeness,
           ).toBe("unknown");
           expect(
             current.nodes.find((node) => node.locator !== undefined)?.attributes?.[
@@ -129,7 +129,7 @@ for (const { extractor, file, content } of cases)
           const lockedRoot = locked.roots.find((entry) =>
             ["dependencies", "yarn:dependencies"].includes(entry.scope),
           )!;
-          const closure = queryDependenciesV2(result, { graph: locked.id, root: lockedRoot.id });
+          const closure = queryDependencies(result, { graph: locked.id, root: lockedRoot.id });
           expect(
             closure.definite.map((id) => locked.nodes.find((node) => node.id === id)!.purl),
           ).toContain("pkg:npm/foo@1.0.0");
@@ -174,7 +174,7 @@ test("Yarn: one invalid workspace declaration leaves other workspace observation
       const entry = graph.roots.find(
         (entry) => entry.project.definitionFile === file && entry.scope === "dependencies",
       )!;
-      expect(queryDependenciesV2(result, { graph: graph.id, root: entry.id }).completeness).toBe(
+      expect(queryDependencies(result, { graph: graph.id, root: entry.id }).completeness).toBe(
         file === "package.json" ? "complete" : "unknown",
       );
     }

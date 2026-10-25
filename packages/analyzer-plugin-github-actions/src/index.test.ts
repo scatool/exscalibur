@@ -1,7 +1,7 @@
 import { readFile, readdir } from "node:fs/promises";
 import { join } from "node:path";
 import { expect, test } from "vite-plus/test";
-import { validateResultV2 } from "@scatool/analyzer-core";
+import { validateResult } from "@scatool/analyzer-core";
 import { extractWorkflow } from "./index.ts";
 
 const expected: Record<string, string[]> = {
@@ -20,7 +20,7 @@ const fixtures = join(import.meta.dirname, "__fixtures__");
 for (const file of await readdir(fixtures)) {
   test(`native workflow fixture: ${file}`, async () => {
     const result = extractWorkflow(await readFile(join(fixtures, file), "utf8"), file, "fixture");
-    validateResultV2(result);
+    validateResult(result);
     const graph = result.graphs[0]!;
     expect(
       graph.edges

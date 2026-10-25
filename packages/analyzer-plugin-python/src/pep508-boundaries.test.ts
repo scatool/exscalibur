@@ -1,5 +1,5 @@
 import { expect, test } from "vite-plus/test";
-import { lockResult, pyprojectResult, requirementsResult } from "./python-v2.ts";
+import { lockResult, pyprojectResult, requirementsResult } from "./extraction.ts";
 
 const context = {
   codebaseId: "python-boundaries",

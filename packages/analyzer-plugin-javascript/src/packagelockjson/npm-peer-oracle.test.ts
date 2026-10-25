@@ -3,8 +3,8 @@ import { mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { expect, test } from "vite-plus/test";
-import { validateResultV2 } from "@scatool/analyzer-core";
-import { extractorV2 } from "./index-v2.ts";
+import { validateResult } from "@scatool/analyzer-core";
+import { extractor } from "./index.ts";
 
 type Fixture = { id: string; packages: Record<string, Record<string, unknown>> };
 type NativeEdge = {
@@ -63,10 +63,10 @@ test.each(fixtures)(
         join(temporary, "package-lock.json"),
         JSON.stringify({ ...fixture.packages[""], lockfileVersion: 3, packages: fixture.packages }),
       );
-      const result = await extractorV2.extract(temporary, undefined, {
+      const result = await extractor.extract(temporary, undefined, {
         codebaseId: "test:npm-peer-oracle",
       });
-      validateResultV2(result);
+      validateResult(result);
       expect(result.graphs).toHaveLength(1);
       const graph = result.graphs[0]!;
       const expectedPeers = native.observations

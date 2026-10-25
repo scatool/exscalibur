@@ -1,6 +1,6 @@
 import { join } from "node:path";
 import { expect, test } from "vite-plus/test";
-import { queryDependenciesV2, validateResultV2 } from "@scatool/analyzer-core";
+import { queryDependencies, validateResult } from "@scatool/analyzer-core";
 import { extractor } from "./index.ts";
 
 // Expectations read from the committed go.mod files, not generated from extractor output.
@@ -28,7 +28,7 @@ for (const [fixture, projects] of Object.entries(fixtures)) {
       {},
       { codebaseId: `fixture:${fixture}` },
     );
-    validateResultV2(result);
+    validateResult(result);
     expect(result.issues.filter((issue) => issue.severity === "ERROR")).toEqual([]);
     expect(result.subprojects.map((project) => project.definitionFile).sort()).toEqual(
       Object.keys(projects).sort(),
@@ -43,7 +43,7 @@ for (const [fixture, projects] of Object.entries(fixtures)) {
       expect(
         direct.every((edge) => edge.status === "resolved" && edge.selection === "selected"),
       ).toBe(true);
-      const closure = queryDependenciesV2(result, { graph: graph.id, root: root.id });
+      const closure = queryDependencies(result, { graph: graph.id, root: root.id });
       expect(closure.declarations).toEqual([]);
       if (requests.length) expect(closure.completeness).toBe("unknown");
     }

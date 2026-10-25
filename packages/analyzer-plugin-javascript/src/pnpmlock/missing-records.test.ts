@@ -3,8 +3,8 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { stringify } from "yaml";
 import { expect, test } from "vite-plus/test";
-import { queryDependenciesV2, validateResultV2 } from "@scatool/analyzer-core";
-import { extractorV2 } from "./index-v2.ts";
+import { queryDependencies, validateResult } from "@scatool/analyzer-core";
+import { extractor } from "./index.ts";
 
 for (const missing of ["importers", "packages"])
   test(`v9 missing ${missing} retains inventory without claiming complete coverage`, async () => {
@@ -22,8 +22,8 @@ for (const missing of ["importers", "packages"])
         join(directory, "package.json"),
         JSON.stringify({ name: "app", dependencies: { foo: "^1" } }),
       );
-      const result = await extractorV2.extract(directory);
-      validateResultV2(result);
+      const result = await extractor.extract(directory);
+      validateResult(result);
       expect(result.packages.map((pkg) => pkg.purl)).toContain("pkg:npm/foo@1.0.0");
       expect(result.issues.some((issue) => issue.severity === "WARNING")).toBe(true);
       const graph = result.graphs.find((graph) => graph.source.extractor === "pnpmlock")!;
@@ -33,7 +33,7 @@ for (const missing of ["importers", "packages"])
         expect(result.graphs.some((graph) => graph.interpretation === "declared")).toBe(true);
       } else {
         const root = graph.roots.find((entry) => entry.scope === "dependencies")!;
-        const closure = queryDependenciesV2(result, { graph: graph.id, root: root.id });
+        const closure = queryDependencies(result, { graph: graph.id, root: root.id });
         expect(closure.completeness).toBe("unknown");
         expect(closure.definite).toEqual([]);
         expect(closure.conditional).toHaveLength(1);

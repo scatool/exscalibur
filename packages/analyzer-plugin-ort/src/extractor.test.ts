@@ -2,7 +2,7 @@ import { readFile, readdir } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { parse as parseYaml } from "yaml";
 import { expect, test } from "vite-plus/test";
-import { validateResultV2 } from "@scatool/analyzer-core";
+import { validateResult } from "@scatool/analyzer-core";
 import { ortExtractor } from "./index.ts";
 import { convertOrtIdToPurl } from "./id.ts";
 import type { OrtAnalyzerResult, OrtResultFile } from "./model.ts";
@@ -15,7 +15,7 @@ for (const relative of await readdir(fixtures, { recursive: true })) {
     const parsed = parseYaml(await readFile(file, "utf8")) as OrtResultFile & OrtAnalyzerResult;
     const native = parsed.analyzer?.result ?? parsed;
     const result = await ortExtractor.extract(dirname(file), {}, { codebaseId: "fixture" });
-    validateResultV2(result);
+    validateResult(result);
     expect(
       result.subprojects
         .map((project) => project.definitionFile)

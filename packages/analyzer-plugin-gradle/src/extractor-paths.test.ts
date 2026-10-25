@@ -2,8 +2,8 @@ import { mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { expect, test, vi } from "vite-plus/test";
-import { runCommand, validateResultV2 } from "@scatool/analyzer-core";
-import { extractor, type GradleConfiguration } from "./extractor-v2.ts";
+import { runCommand, validateResult } from "@scatool/analyzer-core";
+import { extractor, type GradleConfiguration } from "./extractor.ts";
 
 vi.mock("@scatool/analyzer-core", async (original) => ({
   ...(await original<typeof import("@scatool/analyzer-core")>()),
@@ -79,7 +79,7 @@ test("Gradle graph identities survive checkout relocation with nested multimodul
     const results = [];
     for (const root of roots) {
       const result = await extractor.extract(root, {}, { codebaseId: "example:relocated-service" });
-      validateResultV2(result);
+      validateResult(result);
       expect(result.issues).toEqual([]);
       expect(result.graphs).toHaveLength(3);
       expect(result.subprojects.map((project) => project.definitionFile).sort()).toEqual([
@@ -125,7 +125,7 @@ test("Gradle metadata outside a sibling-prefix checkout retains its external ide
         : "",
     }));
     const result = await extractor.extract(root, {}, { codebaseId: "example:external-project" });
-    validateResultV2(result);
+    validateResult(result);
     expect(result.issues).toEqual([]);
     expect(result.subprojects[0]!.definitionFile).toBe(external);
     expect(result.graphs[0]!.roots[0]!.project.definitionFile).toBe(external);

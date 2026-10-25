@@ -1,9 +1,9 @@
 import { parse as parseToml } from "smol-toml";
 import type {
-  AnalyzerResultV2,
+  AnalyzerResult,
   DependencyCondition,
   DependencyRequest,
-  FileExtractionContextV2,
+  FileExtractionContext,
 } from "@scatool/analyzer-core";
 import { createPypiPurl } from "../python-utils.ts";
 import { PythonObservation } from "./observation.ts";
@@ -17,7 +17,7 @@ import {
   toNativeJson,
 } from "./native-metadata.ts";
 
-export function pipfileResult(content: string, context: FileExtractionContextV2): AnalyzerResultV2 {
+export function pipfileResult(content: string, context: FileExtractionContext): AnalyzerResult {
   const native = readMetadataTable(JSON.parse(content));
   const observation = new PythonObservation(context, "pipfilelock", "locked");
   const project = observation.addProject();
@@ -65,9 +65,9 @@ export function pipfileResult(content: string, context: FileExtractionContextV2)
 
 export function lockResult(
   content: string,
-  context: FileExtractionContextV2,
+  context: FileExtractionContext,
   kind: "poetrylock" | "pdmlock",
-): AnalyzerResultV2 {
+): AnalyzerResult {
   const native = readMetadataTable(parseToml(content));
   const records = readMetadataList(native.package).map(readMetadataTable);
   const observation = new PythonObservation(context, kind, "locked");

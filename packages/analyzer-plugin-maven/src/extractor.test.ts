@@ -1,6 +1,6 @@
 import { join } from "node:path";
 import { expect, test } from "vite-plus/test";
-import { queryDependenciesV2, runCommand, validateResultV2 } from "@scatool/analyzer-core";
+import { queryDependencies, runCommand, validateResult } from "@scatool/analyzer-core";
 import { extractor } from "./extractor.ts";
 
 // Native Maven execution remains required. These expectations come from the fixture POMs.
@@ -32,7 +32,7 @@ for (const [fixture, projects] of Object.entries(fixtures)) {
       ).toBe(0);
     }
     const result = await extractor.extract(directory, {}, { codebaseId: `fixture:${fixture}` });
-    validateResultV2(result);
+    validateResult(result);
     expect(result.issues.filter((issue) => issue.severity === "ERROR")).toEqual([]);
     expect(result.subprojects.map((project) => project.definitionFile).sort()).toEqual(
       Object.keys(projects).sort(),
@@ -50,13 +50,13 @@ for (const [fixture, projects] of Object.entries(fixtures)) {
           );
         expect(direct.sort()).toEqual([...expected].sort());
         // Native tree pruning does not establish complete transitive adjacency.
-        expect(queryDependenciesV2(result, { graph: graph.id, root: root.id }).completeness).toBe(
+        expect(queryDependencies(result, { graph: graph.id, root: root.id }).completeness).toBe(
           "unknown",
         );
       }
       const aggregate = graph.roots.find((root) => root.scope === "maven:dependency-tree")!;
       expect(
-        queryDependenciesV2(result, { graph: graph.id, root: aggregate.id }).declarations,
+        queryDependencies(result, { graph: graph.id, root: aggregate.id }).declarations,
       ).toEqual([]);
     }
   }, 120000);

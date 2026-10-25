@@ -4,7 +4,7 @@ import { createRequire } from "node:module";
 import { parse as yaml } from "yaml";
 import { parse as jsonc } from "jsonc-parser";
 import { expect } from "vite-plus/test";
-import type { AnalyzerResultV2 } from "@scatool/analyzer-core";
+import type { AnalyzerResult } from "@scatool/analyzer-core";
 
 const classic = createRequire(import.meta.url)(
   "@yarnpkg/lockfile",
@@ -15,11 +15,7 @@ const sorted = (values: unknown[]) =>
   [...new Set(values.map((value) => JSON.stringify(value)))].sort((a, b) => a.localeCompare(b));
 
 /** Compare retained native records with fixture inputs, independently of old PURL-union snapshots. */
-export async function assertNativeFixture(
-  kind: string,
-  result: AnalyzerResultV2,
-  directory: string,
-) {
+export async function assertNativeFixture(kind: string, result: AnalyzerResult, directory: string) {
   const graphs = result.graphs.filter(
     (graph) =>
       graph.source.extractor === kind &&

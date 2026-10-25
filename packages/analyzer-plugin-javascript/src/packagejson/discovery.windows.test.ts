@@ -3,7 +3,7 @@ import { win32 } from "node:path";
 import { beforeEach, expect, test, vi } from "vite-plus/test";
 import { scanFiles } from "@scatool/analyzer-core";
 import { hasLockfileInDirectory } from "./discovery.ts";
-import { extractorV2 } from "./index-v2.ts";
+import { extractor } from "./index.ts";
 
 // Run the actual helper with Windows path semantics and a simulated filesystem.
 vi.mock("node:path", async (importOriginal) => {
@@ -96,7 +96,7 @@ test.each([
 ])("manifest discovery at %s uses the absolute filesystem parent", async (root, file, shadow) => {
   locks.add(shadow);
   vi.mocked(scanFiles).mockResolvedValue([file]);
-  const result = await extractorV2.extract(root, undefined, { codebaseId: "example:windows" });
+  const result = await extractor.extract(root, undefined, { codebaseId: "example:windows" });
   expect(result.issues).toEqual([]);
   expect(result.subprojects).toHaveLength(1);
   expect(result.graphs).toHaveLength(1);
@@ -106,7 +106,7 @@ test.each([
   expect(checkedPaths.every((path) => win32.dirname(path) === expectedDirectory)).toBe(true);
 
   locks.add(win32.join(root, "package-lock.json"));
-  const locked = await extractorV2.extract(root, undefined, { codebaseId: "example:windows" });
+  const locked = await extractor.extract(root, undefined, { codebaseId: "example:windows" });
   expect(locked.issues).toEqual([]);
   expect(locked.graphs).toEqual([]);
 });

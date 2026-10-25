@@ -31,7 +31,7 @@ The following options were considered for implementing the Vcpkg extractor:
       The main downside of this approach is the relatively complex parsing logic to extract all dependencies correctly and this only supports baselines up to `68a74950d0400f5a803026d0860f49853984bf11` (first commit of `versions/baseline.json`).
 
 For this implementation, the last approach was chosen. The format 2 graph records
-registry candidates with unknown selection; see [result semantics](../RESULT_V2.md).
+registry candidates with unknown selection; see [result semantics](../RESULT.md).
 Target/host views remain distinct and no resolved feature union is inferred.
 
 With this we can extract the dependency graph as follows:

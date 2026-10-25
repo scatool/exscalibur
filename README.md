@@ -16,7 +16,7 @@ Exscalibur extracts dependency graphs from software projects.
 
 ## Development
 
-The [analyzer result v2 contract](packages/analyzer-core/src/result-v2/README.md)
+The [analyzer result contract](packages/analyzer-core/src/result/README.md)
 defines the sole model for contextual dependency graphs. Library defaults and the
 CLI emit `formatVersion: 2`; legacy result objects and PURL-union helpers are removed.
 The extractor interface version remains independent of the result format.

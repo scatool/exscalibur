@@ -1,6 +1,6 @@
 import { join } from "node:path";
 import { expect, test } from "vite-plus/test";
-import { queryDependenciesV2, validateResultV2 } from "@scatool/analyzer-core";
+import { queryDependencies, validateResult } from "@scatool/analyzer-core";
 import { extractor } from "./extractor.ts";
 
 for (const fixture of ["basic", "multimodule"]) {
@@ -10,7 +10,7 @@ for (const fixture of ["basic", "multimodule"]) {
       {},
       { codebaseId: `fixture:${fixture}` },
     );
-    validateResultV2(result);
+    validateResult(result);
     expect(result.issues.filter((issue) => issue.severity === "ERROR")).toEqual([]);
     const file = fixture === "basic" ? "build.gradle" : "app/build.gradle";
     const graphFor = (scope: string) =>
@@ -21,7 +21,7 @@ for (const fixture of ["basic", "multimodule"]) {
       const graph = graphFor(scope);
       expect(graph).toBeDefined();
       const root = graph.roots[0]!;
-      const closure = queryDependenciesV2(result, { graph: graph.id, root: root.id });
+      const closure = queryDependencies(result, { graph: graph.id, root: root.id });
       expect(closure.completeness).toBe("unknown");
       expect(graph.attributes).toMatchObject({
         "gradle:projection": "dependency-graph-snapshot",
