@@ -1,4 +1,4 @@
-import { mkdir, mkdtemp, rm, writeFile } from "node:fs/promises";
+import { mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { expect, test, vi } from "vite-plus/test";
@@ -132,6 +132,52 @@ test("Gradle metadata outside a sibling-prefix checkout retains its external ide
     expect(result.graphs[0]!.nodes.find((node) => node.project)!.project!.definitionFile).toBe(
       external,
     );
+  } finally {
+    vi.mocked(runCommand).mockReset();
+    await rm(temporary, { recursive: true, force: true });
+  }
+});
+
+test("Gradle execution keeps extractor-adjacent init scripts and the configured Java environment", async () => {
+  const temporary = await mkdtemp(join(tmpdir(), "gradle-execution-boundary-"));
+  try {
+    const directory = await checkout(temporary, [":"]);
+    const javaHome = join(temporary, "jdk");
+    const wrapper = join(directory, process.platform === "win32" ? "gradlew.bat" : "gradlew");
+    const scripts = ["project-info.gradle", "init.gradle"];
+    let invocation = 0;
+
+    vi.mocked(runCommand).mockReset();
+    vi.mocked(runCommand).mockImplementation(async (command, options) => {
+      const script = join(import.meta.dirname, scripts[invocation++]!);
+      expect(await readFile(script, "utf8")).not.toBe("");
+      expect(command).toEqual(
+        invocation === 1
+          ? [wrapper, "-I", script, "-q"]
+          : [
+              wrapper,
+              "-I",
+              script,
+              "--no-configuration-cache",
+              "--no-configure-on-demand",
+              ":ForceDependencyResolutionPlugin_resolveAllDependencies",
+            ],
+      );
+      expect(options).toEqual({ cwd: directory, env: { ...process.env, JAVA_HOME: javaHome } });
+      return { exitCode: 0, stderr: "", stdout: "" };
+    });
+
+    const result = await extractor.extract(
+      temporary,
+      { javaHome },
+      {
+        codebaseId: "example:execution",
+      },
+    );
+    expect(result.issues.filter((issue) => issue.code === "core.file_extraction_failed")).toEqual(
+      [],
+    );
+    expect(invocation).toBe(2);
   } finally {
     vi.mocked(runCommand).mockReset();
     await rm(temporary, { recursive: true, force: true });
