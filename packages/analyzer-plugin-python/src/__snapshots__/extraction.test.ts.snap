@@ -1,0 +1,3564 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`pdmlock fixture: basic 1`] = `
+{
+  "codebase": "example:fixtures",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "attributes": {
+        "python:lockMetadata": {
+          "content_hash": "sha256:a36a5392bb1e8bbc06bfaa0761e52593cf2d83b486696bf54667ba8da616c839",
+          "cross_platform": true,
+          "groups": [
+            "default",
+          ],
+          "lock_version": "4.4",
+          "static_urls": false,
+        },
+      },
+      "edges": [
+        {
+          "condition": {
+            "expression": {
+              "request": {
+                "name": "certifi",
+                "specifier": "certifi>=2017.4.17",
+              },
+              "target": {
+                "requires_python": ">=3.6",
+              },
+            },
+            "language": "pdmlock:binding",
+          },
+          "from": "package:3",
+          "relation": "depends-on",
+          "requested": {
+            "name": "certifi",
+            "specifier": "certifi>=2017.4.17",
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "package:0",
+        },
+        {
+          "condition": {
+            "expression": {
+              "request": {
+                "name": "charset-normalizer",
+                "specifier": "charset-normalizer>=2,<4",
+              },
+              "target": {
+                "requires_python": ">=3.7.0",
+              },
+            },
+            "language": "pdmlock:binding",
+          },
+          "from": "package:3",
+          "relation": "depends-on",
+          "requested": {
+            "name": "charset-normalizer",
+            "specifier": "charset-normalizer>=2,<4",
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "package:1",
+        },
+        {
+          "condition": {
+            "expression": {
+              "request": {
+                "name": "idna",
+                "specifier": "idna>=2.5,<4",
+              },
+              "target": {
+                "requires_python": ">=3.5",
+              },
+            },
+            "language": "pdmlock:binding",
+          },
+          "from": "package:3",
+          "relation": "depends-on",
+          "requested": {
+            "name": "idna",
+            "specifier": "idna>=2.5,<4",
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "package:2",
+        },
+        {
+          "condition": {
+            "expression": {
+              "request": {
+                "name": "urllib3",
+                "specifier": "urllib3>=1.21.1,<3",
+              },
+              "target": {
+                "requires_python": ">=3.7",
+              },
+            },
+            "language": "pdmlock:binding",
+          },
+          "from": "package:3",
+          "relation": "depends-on",
+          "requested": {
+            "name": "urllib3",
+            "specifier": "urllib3>=1.21.1,<3",
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "package:4",
+        },
+        {
+          "condition": {
+            "expression": {
+              "requires_python": ">=3.5",
+            },
+            "language": "pdmlock:package",
+          },
+          "from": "scope:"locked-group:default"",
+          "relation": "depends-on",
+          "selection": "conditional",
+          "status": "resolved",
+          "to": "package:2",
+        },
+        {
+          "condition": {
+            "expression": {
+              "requires_python": ">=3.6",
+            },
+            "language": "pdmlock:package",
+          },
+          "from": "scope:"locked-group:default"",
+          "relation": "depends-on",
+          "selection": "conditional",
+          "status": "resolved",
+          "to": "package:0",
+        },
+        {
+          "condition": {
+            "expression": {
+              "requires_python": ">=3.7",
+            },
+            "language": "pdmlock:package",
+          },
+          "from": "scope:"locked-group:default"",
+          "relation": "depends-on",
+          "selection": "conditional",
+          "status": "resolved",
+          "to": "package:3",
+        },
+        {
+          "condition": {
+            "expression": {
+              "requires_python": ">=3.7",
+            },
+            "language": "pdmlock:package",
+          },
+          "from": "scope:"locked-group:default"",
+          "relation": "depends-on",
+          "selection": "conditional",
+          "status": "resolved",
+          "to": "package:4",
+        },
+        {
+          "condition": {
+            "expression": {
+              "requires_python": ">=3.7.0",
+            },
+            "language": "pdmlock:package",
+          },
+          "from": "scope:"locked-group:default"",
+          "relation": "depends-on",
+          "selection": "conditional",
+          "status": "resolved",
+          "to": "package:1",
+        },
+      ],
+      "id": "["pdmlock","pdm.lock","pdmlock:c24f1645a22fb2e68a600f6f7f4c8cfa214df7c399fc566f4a21d01576680217"]",
+      "interpretation": "locked",
+      "nodes": [
+        {
+          "attributes": {
+            "python:lockRecord": {
+              "groups": [
+                "default",
+              ],
+              "name": "certifi",
+              "requires_python": ">=3.6",
+              "summary": "Python package for providing Mozilla's CA Bundle.",
+              "version": "2023.7.22",
+            },
+          },
+          "dependencyCompleteness": "complete",
+          "id": "package:0",
+          "locator": "package:0",
+          "purl": "pkg:pypi/certifi@2023.7.22",
+        },
+        {
+          "attributes": {
+            "python:lockRecord": {
+              "groups": [
+                "default",
+              ],
+              "name": "charset-normalizer",
+              "requires_python": ">=3.7.0",
+              "summary": "The Real First Universal Charset Detector",
+              "version": "3.2.0",
+            },
+          },
+          "dependencyCompleteness": "complete",
+          "id": "package:1",
+          "locator": "package:1",
+          "purl": "pkg:pypi/charset-normalizer@3.2.0",
+        },
+        {
+          "attributes": {
+            "python:lockRecord": {
+              "groups": [
+                "default",
+              ],
+              "name": "idna",
+              "requires_python": ">=3.5",
+              "summary": "Internationalized Domain Names in Applications (IDNA)",
+              "version": "3.4",
+            },
+          },
+          "dependencyCompleteness": "complete",
+          "id": "package:2",
+          "locator": "package:2",
+          "purl": "pkg:pypi/idna@3.4",
+        },
+        {
+          "attributes": {
+            "python:lockRecord": {
+              "dependencies": [
+                "certifi>=2017.4.17",
+                "charset-normalizer>=2,<4",
+                "idna>=2.5,<4",
+                "urllib3>=1.21.1,<3",
+              ],
+              "groups": [
+                "default",
+              ],
+              "name": "requests",
+              "requires_python": ">=3.7",
+              "summary": "Python HTTP for Humans.",
+              "version": "2.31.0",
+            },
+          },
+          "dependencyCompleteness": "complete",
+          "id": "package:3",
+          "locator": "package:3",
+          "purl": "pkg:pypi/requests@2.31.0",
+        },
+        {
+          "attributes": {
+            "python:lockRecord": {
+              "groups": [
+                "default",
+              ],
+              "name": "urllib3",
+              "requires_python": ">=3.7",
+              "summary": "HTTP library with thread-safe connection pooling, file post, and more.",
+              "version": "2.0.4",
+            },
+          },
+          "dependencyCompleteness": "complete",
+          "id": "package:4",
+          "locator": "package:4",
+          "purl": "pkg:pypi/urllib3@2.0.4",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:"locked-group:default"",
+          "project": {
+            "definitionFile": "pdm.lock",
+            "purl": "pkg:generic/python-input/920a028cb405db942ba0d6613e3b5a7fbda976ba702dd8f9c2d1254dcd8b5929",
+          },
+          "purl": "pkg:generic/python-input/920a028cb405db942ba0d6613e3b5a7fbda976ba702dd8f9c2d1254dcd8b5929",
+        },
+      ],
+      "rootCompleteness": "unknown",
+      "roots": [
+        {
+          "id": "scope:"locked-group:default"",
+          "node": "scope:"locked-group:default"",
+          "project": {
+            "definitionFile": "pdm.lock",
+            "purl": "pkg:generic/python-input/920a028cb405db942ba0d6613e3b5a7fbda976ba702dd8f9c2d1254dcd8b5929",
+          },
+          "scope": "locked-group:default",
+        },
+      ],
+      "source": {
+        "extractor": "pdmlock",
+        "files": [
+          "pdm.lock",
+        ],
+      },
+    },
+    {
+      "attributes": {
+        "python:manifest": {
+          "build-system": {
+            "build-backend": "pdm.backend",
+            "requires": [
+              "pdm-backend",
+            ],
+          },
+          "project": {
+            "dependencies": [
+              "requests>=2.31.0",
+            ],
+            "description": "A sample PDM project",
+            "name": "my-pdm-project",
+            "requires-python": ">=3.11",
+            "version": "1.0.0",
+          },
+        },
+      },
+      "edges": [
+        {
+          "evidence": [
+            "pyproject.toml",
+          ],
+          "from": "scope:"dependencies"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "requests",
+            "specifier": "requests>=2.31.0",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+      ],
+      "id": "["pdmlock","pdm.lock","pyprojecttoml:ab355d24a69d873c68578e0835b1305e266323b92c2c6c3dd157a8912b0a4c27"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:"dependencies"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/my-pdm-project@1.0.0",
+          },
+          "purl": "pkg:pypi/my-pdm-project@1.0.0",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:"dependencies"",
+          "node": "scope:"dependencies"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/my-pdm-project@1.0.0",
+          },
+          "scope": "dependencies",
+        },
+      ],
+      "source": {
+        "extractor": "pyprojecttoml",
+        "files": [
+          "pyproject.toml",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "pdm.lock",
+      ],
+      "purl": "pkg:pypi/certifi@2023.7.22",
+    },
+    {
+      "evidence": [
+        "pdm.lock",
+      ],
+      "purl": "pkg:pypi/charset-normalizer@3.2.0",
+    },
+    {
+      "evidence": [
+        "pdm.lock",
+      ],
+      "purl": "pkg:pypi/idna@3.4",
+    },
+    {
+      "evidence": [
+        "pdm.lock",
+      ],
+      "purl": "pkg:pypi/requests@2.31.0",
+    },
+    {
+      "evidence": [
+        "pdm.lock",
+      ],
+      "purl": "pkg:pypi/urllib3@2.0.4",
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "pdm.lock",
+      "evidence": [
+        "pdm.lock",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "pdmlock",
+            "files": [
+              "pdm.lock",
+            ],
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/python-input/920a028cb405db942ba0d6613e3b5a7fbda976ba702dd8f9c2d1254dcd8b5929",
+    },
+    {
+      "definitionFile": "pyproject.toml",
+      "evidence": [
+        "pyproject.toml",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "pyprojecttoml",
+            "files": [
+              "pyproject.toml",
+            ],
+          },
+          "synthesizedPurl": false,
+        },
+      ],
+      "purl": "pkg:pypi/my-pdm-project@1.0.0",
+    },
+  ],
+}
+`;
+
+exports[`pdmlock fixture: with-groups 1`] = `
+{
+  "codebase": "example:fixtures",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "attributes": {
+        "python:lockMetadata": {
+          "content_hash": "sha256:b36a5392bb1e8bbc06bfaa0761e52593cf2d83b486696bf54667ba8da616c840",
+          "cross_platform": true,
+          "groups": [
+            "default",
+            "dev",
+            "test",
+          ],
+          "lock_version": "4.4",
+          "static_urls": false,
+        },
+      },
+      "edges": [
+        {
+          "condition": {
+            "expression": {
+              "request": {
+                "name": "click",
+                "specifier": "click>=8.1.3",
+              },
+              "target": {
+                "requires_python": ">=3.7",
+              },
+            },
+            "language": "pdmlock:binding",
+          },
+          "from": "package:0",
+          "relation": "depends-on",
+          "requested": {
+            "name": "click",
+            "specifier": "click>=8.1.3",
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "package:1",
+        },
+        {
+          "condition": {
+            "expression": {
+              "request": {
+                "name": "pytest",
+                "specifier": "pytest>=4.6",
+              },
+              "target": {
+                "requires_python": ">=3.7",
+              },
+            },
+            "language": "pdmlock:binding",
+          },
+          "from": "package:5",
+          "relation": "depends-on",
+          "requested": {
+            "name": "pytest",
+            "specifier": "pytest>=4.6",
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "package:3",
+        },
+        {
+          "condition": {
+            "expression": {
+              "request": {
+                "name": "werkzeug",
+                "specifier": "werkzeug>=2.3.7",
+              },
+              "target": {
+                "requires_python": ">=3.8",
+              },
+            },
+            "language": "pdmlock:binding",
+          },
+          "from": "package:0",
+          "relation": "depends-on",
+          "requested": {
+            "name": "werkzeug",
+            "specifier": "werkzeug>=2.3.7",
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "package:2",
+        },
+        {
+          "condition": {
+            "expression": {
+              "requires_python": ">=3.7",
+            },
+            "language": "pdmlock:package",
+          },
+          "from": "scope:"locked-group:default"",
+          "relation": "depends-on",
+          "selection": "conditional",
+          "status": "resolved",
+          "to": "package:1",
+        },
+        {
+          "condition": {
+            "expression": {
+              "requires_python": ">=3.7",
+            },
+            "language": "pdmlock:package",
+          },
+          "from": "scope:"locked-group:dev"",
+          "relation": "depends-on",
+          "selection": "conditional",
+          "status": "resolved",
+          "to": "package:3",
+        },
+        {
+          "condition": {
+            "expression": {
+              "requires_python": ">=3.7",
+            },
+            "language": "pdmlock:package",
+          },
+          "from": "scope:"locked-group:test"",
+          "relation": "depends-on",
+          "selection": "conditional",
+          "status": "resolved",
+          "to": "package:5",
+        },
+        {
+          "condition": {
+            "expression": {
+              "requires_python": ">=3.8",
+            },
+            "language": "pdmlock:package",
+          },
+          "from": "scope:"locked-group:default"",
+          "relation": "depends-on",
+          "selection": "conditional",
+          "status": "resolved",
+          "to": "package:0",
+        },
+        {
+          "condition": {
+            "expression": {
+              "requires_python": ">=3.8",
+            },
+            "language": "pdmlock:package",
+          },
+          "from": "scope:"locked-group:default"",
+          "relation": "depends-on",
+          "selection": "conditional",
+          "status": "resolved",
+          "to": "package:2",
+        },
+        {
+          "condition": {
+            "expression": {
+              "requires_python": ">=3.8",
+            },
+            "language": "pdmlock:package",
+          },
+          "from": "scope:"locked-group:dev"",
+          "relation": "depends-on",
+          "selection": "conditional",
+          "status": "resolved",
+          "to": "package:4",
+        },
+      ],
+      "id": "["pdmlock","pdm.lock","pdmlock:835e3766404d02da0e49df4615e2ae18ff256d358ca20c5605f63ecd390bb16a"]",
+      "interpretation": "locked",
+      "nodes": [
+        {
+          "attributes": {
+            "python:lockRecord": {
+              "dependencies": [
+                "click>=8.1.3",
+                "werkzeug>=2.3.7",
+              ],
+              "groups": [
+                "default",
+              ],
+              "name": "flask",
+              "requires_python": ">=3.8",
+              "summary": "A simple framework for building complex web applications.",
+              "version": "2.3.3",
+            },
+          },
+          "dependencyCompleteness": "complete",
+          "id": "package:0",
+          "locator": "package:0",
+          "purl": "pkg:pypi/flask@2.3.3",
+        },
+        {
+          "attributes": {
+            "python:lockRecord": {
+              "groups": [
+                "default",
+              ],
+              "name": "click",
+              "requires_python": ">=3.7",
+              "summary": "Composable command line interface toolkit",
+              "version": "8.1.7",
+            },
+          },
+          "dependencyCompleteness": "complete",
+          "id": "package:1",
+          "locator": "package:1",
+          "purl": "pkg:pypi/click@8.1.7",
+        },
+        {
+          "attributes": {
+            "python:lockRecord": {
+              "groups": [
+                "default",
+              ],
+              "name": "werkzeug",
+              "requires_python": ">=3.8",
+              "summary": "The comprehensive WSGI web application library.",
+              "version": "2.3.7",
+            },
+          },
+          "dependencyCompleteness": "complete",
+          "id": "package:2",
+          "locator": "package:2",
+          "purl": "pkg:pypi/werkzeug@2.3.7",
+        },
+        {
+          "attributes": {
+            "python:lockRecord": {
+              "groups": [
+                "dev",
+              ],
+              "name": "pytest",
+              "requires_python": ">=3.7",
+              "summary": "pytest: simple powerful testing with Python",
+              "version": "7.4.2",
+            },
+          },
+          "dependencyCompleteness": "complete",
+          "id": "package:3",
+          "locator": "package:3",
+          "purl": "pkg:pypi/pytest@7.4.2",
+        },
+        {
+          "attributes": {
+            "python:lockRecord": {
+              "groups": [
+                "dev",
+              ],
+              "name": "black",
+              "requires_python": ">=3.8",
+              "summary": "The uncompromising code formatter.",
+              "version": "23.9.1",
+            },
+          },
+          "dependencyCompleteness": "complete",
+          "id": "package:4",
+          "locator": "package:4",
+          "purl": "pkg:pypi/black@23.9.1",
+        },
+        {
+          "attributes": {
+            "python:lockRecord": {
+              "dependencies": [
+                "pytest>=4.6",
+              ],
+              "groups": [
+                "test",
+              ],
+              "name": "pytest-cov",
+              "requires_python": ">=3.7",
+              "summary": "Pytest plugin for measuring coverage.",
+              "version": "4.1.0",
+            },
+          },
+          "dependencyCompleteness": "complete",
+          "id": "package:5",
+          "locator": "package:5",
+          "purl": "pkg:pypi/pytest-cov@4.1.0",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:"locked-group:default"",
+          "project": {
+            "definitionFile": "pdm.lock",
+            "purl": "pkg:generic/python-input/920a028cb405db942ba0d6613e3b5a7fbda976ba702dd8f9c2d1254dcd8b5929",
+          },
+          "purl": "pkg:generic/python-input/920a028cb405db942ba0d6613e3b5a7fbda976ba702dd8f9c2d1254dcd8b5929",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:"locked-group:dev"",
+          "project": {
+            "definitionFile": "pdm.lock",
+            "purl": "pkg:generic/python-input/920a028cb405db942ba0d6613e3b5a7fbda976ba702dd8f9c2d1254dcd8b5929",
+          },
+          "purl": "pkg:generic/python-input/920a028cb405db942ba0d6613e3b5a7fbda976ba702dd8f9c2d1254dcd8b5929",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:"locked-group:test"",
+          "project": {
+            "definitionFile": "pdm.lock",
+            "purl": "pkg:generic/python-input/920a028cb405db942ba0d6613e3b5a7fbda976ba702dd8f9c2d1254dcd8b5929",
+          },
+          "purl": "pkg:generic/python-input/920a028cb405db942ba0d6613e3b5a7fbda976ba702dd8f9c2d1254dcd8b5929",
+        },
+      ],
+      "rootCompleteness": "unknown",
+      "roots": [
+        {
+          "id": "scope:"locked-group:default"",
+          "node": "scope:"locked-group:default"",
+          "project": {
+            "definitionFile": "pdm.lock",
+            "purl": "pkg:generic/python-input/920a028cb405db942ba0d6613e3b5a7fbda976ba702dd8f9c2d1254dcd8b5929",
+          },
+          "scope": "locked-group:default",
+        },
+        {
+          "id": "scope:"locked-group:dev"",
+          "node": "scope:"locked-group:dev"",
+          "project": {
+            "definitionFile": "pdm.lock",
+            "purl": "pkg:generic/python-input/920a028cb405db942ba0d6613e3b5a7fbda976ba702dd8f9c2d1254dcd8b5929",
+          },
+          "scope": "locked-group:dev",
+        },
+        {
+          "id": "scope:"locked-group:test"",
+          "node": "scope:"locked-group:test"",
+          "project": {
+            "definitionFile": "pdm.lock",
+            "purl": "pkg:generic/python-input/920a028cb405db942ba0d6613e3b5a7fbda976ba702dd8f9c2d1254dcd8b5929",
+          },
+          "scope": "locked-group:test",
+        },
+      ],
+      "source": {
+        "extractor": "pdmlock",
+        "files": [
+          "pdm.lock",
+        ],
+      },
+    },
+    {
+      "attributes": {
+        "python:manifest": {
+          "build-system": {
+            "build-backend": "pdm.backend",
+            "requires": [
+              "pdm-backend",
+            ],
+          },
+          "project": {
+            "dependencies": [
+              "flask>=2.3.3",
+            ],
+            "description": "A Flask application",
+            "name": "flask-app",
+            "requires-python": ">=3.11",
+            "version": "2.0.0",
+          },
+          "tool": {
+            "pdm": {
+              "dev-dependencies": {
+                "dev": [
+                  "pytest>=7.4.2",
+                  "black>=23.9.1",
+                ],
+                "test": [
+                  "pytest-cov>=4.1.0",
+                ],
+              },
+            },
+          },
+        },
+      },
+      "edges": [
+        {
+          "evidence": [
+            "pyproject.toml",
+          ],
+          "from": "scope:"dependencies"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "flask",
+            "specifier": "flask>=2.3.3",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+        {
+          "evidence": [
+            "pyproject.toml",
+          ],
+          "from": "scope:"dev-dependencies"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "black",
+            "specifier": "black>=23.9.1",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+        {
+          "evidence": [
+            "pyproject.toml",
+          ],
+          "from": "scope:"dev-dependencies"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "pytest",
+            "specifier": "pytest>=7.4.2",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+        {
+          "evidence": [
+            "pyproject.toml",
+          ],
+          "from": "scope:"group.test"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "pytest-cov",
+            "specifier": "pytest-cov>=4.1.0",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+      ],
+      "id": "["pdmlock","pdm.lock","pyprojecttoml:92ae9dea9e0d66999601aa75c1cc75b0d163ac061f1aa1193fdfd93d09e661a1"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:"dependencies"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/flask-app@2.0.0",
+          },
+          "purl": "pkg:pypi/flask-app@2.0.0",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:"dev-dependencies"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/flask-app@2.0.0",
+          },
+          "purl": "pkg:pypi/flask-app@2.0.0",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:"group.test"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/flask-app@2.0.0",
+          },
+          "purl": "pkg:pypi/flask-app@2.0.0",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:"dependencies"",
+          "node": "scope:"dependencies"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/flask-app@2.0.0",
+          },
+          "scope": "dependencies",
+        },
+        {
+          "id": "scope:"dev-dependencies"",
+          "node": "scope:"dev-dependencies"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/flask-app@2.0.0",
+          },
+          "scope": "dev-dependencies",
+        },
+        {
+          "id": "scope:"group.test"",
+          "node": "scope:"group.test"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/flask-app@2.0.0",
+          },
+          "scope": "group.test",
+        },
+      ],
+      "source": {
+        "extractor": "pyprojecttoml",
+        "files": [
+          "pyproject.toml",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "pdm.lock",
+      ],
+      "purl": "pkg:pypi/black@23.9.1",
+    },
+    {
+      "evidence": [
+        "pdm.lock",
+      ],
+      "purl": "pkg:pypi/click@8.1.7",
+    },
+    {
+      "evidence": [
+        "pdm.lock",
+      ],
+      "purl": "pkg:pypi/flask@2.3.3",
+    },
+    {
+      "evidence": [
+        "pdm.lock",
+      ],
+      "purl": "pkg:pypi/pytest-cov@4.1.0",
+    },
+    {
+      "evidence": [
+        "pdm.lock",
+      ],
+      "purl": "pkg:pypi/pytest@7.4.2",
+    },
+    {
+      "evidence": [
+        "pdm.lock",
+      ],
+      "purl": "pkg:pypi/werkzeug@2.3.7",
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "pdm.lock",
+      "evidence": [
+        "pdm.lock",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "pdmlock",
+            "files": [
+              "pdm.lock",
+            ],
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/python-input/920a028cb405db942ba0d6613e3b5a7fbda976ba702dd8f9c2d1254dcd8b5929",
+    },
+    {
+      "definitionFile": "pyproject.toml",
+      "evidence": [
+        "pyproject.toml",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "pyprojecttoml",
+            "files": [
+              "pyproject.toml",
+            ],
+          },
+          "synthesizedPurl": false,
+        },
+      ],
+      "purl": "pkg:pypi/flask-app@2.0.0",
+    },
+  ],
+}
+`;
+
+exports[`pipfilelock fixture: basic 1`] = `
+{
+  "codebase": "example:fixtures",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "attributes": {
+        "pipenv:metadata": {
+          "hash": {
+            "sha256": "a36a5392bb1e8bbc06bfaa0761e52593cf2d83b486696bf54667ba8da616c839",
+          },
+          "pipfile-spec": 6,
+          "requires": {
+            "python_version": "3.11",
+          },
+          "sources": [
+            {
+              "name": "pypi",
+              "url": "https://pypi.org/simple",
+              "verify_ssl": true,
+            },
+          ],
+        },
+      },
+      "edges": [
+        {
+          "condition": {
+            "expression": "python_version >= '3.5'",
+            "language": "pep508",
+          },
+          "from": "scope:"locked-group:default"",
+          "relation": "depends-on",
+          "selection": "conditional",
+          "status": "resolved",
+          "to": "["default","idna"]",
+        },
+        {
+          "condition": {
+            "expression": "python_version >= '3.6'",
+            "language": "pep508",
+          },
+          "from": "scope:"locked-group:default"",
+          "relation": "depends-on",
+          "selection": "conditional",
+          "status": "resolved",
+          "to": "["default","certifi"]",
+        },
+        {
+          "condition": {
+            "expression": "python_version >= '3.7'",
+            "language": "pep508",
+          },
+          "from": "scope:"locked-group:default"",
+          "relation": "depends-on",
+          "selection": "conditional",
+          "status": "resolved",
+          "to": "["default","charset-normalizer"]",
+        },
+        {
+          "condition": {
+            "expression": "python_version >= '3.7'",
+            "language": "pep508",
+          },
+          "from": "scope:"locked-group:default"",
+          "relation": "depends-on",
+          "selection": "conditional",
+          "status": "resolved",
+          "to": "["default","urllib3"]",
+        },
+        {
+          "from": "scope:"locked-group:default"",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "["default","requests"]",
+        },
+      ],
+      "id": "["pipfilelock","Pipfile.lock","pipfilelock:24104c66d1ef5802d0996bc9c6cd3306c6c6b58165352a0a781c93aeb4fdb5c7"]",
+      "interpretation": "locked",
+      "nodes": [
+        {
+          "attributes": {
+            "pipenv:record": {
+              "hashes": [
+                "sha256:539cc1d13202e33ca466e88b2807e29f73af4e3620a988bfe6b2f5d10c6c71ef",
+              ],
+              "markers": "python_version >= '3.6'",
+              "version": "==2023.7.22",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "["default","certifi"]",
+          "purl": "pkg:pypi/certifi@2023.7.22",
+        },
+        {
+          "attributes": {
+            "pipenv:record": {
+              "hashes": [
+                "sha256:06435b539f889b1f6f4ac1758871aae42dc3a8c0e24ac9e60c2384973ad73027",
+              ],
+              "markers": "python_version >= '3.7'",
+              "version": "==3.2.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "["default","charset-normalizer"]",
+          "purl": "pkg:pypi/charset-normalizer@3.2.0",
+        },
+        {
+          "attributes": {
+            "pipenv:record": {
+              "hashes": [
+                "sha256:814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4",
+              ],
+              "markers": "python_version >= '3.5'",
+              "version": "==3.4",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "["default","idna"]",
+          "purl": "pkg:pypi/idna@3.4",
+        },
+        {
+          "attributes": {
+            "pipenv:record": {
+              "hashes": [
+                "sha256:58cd2187c01e70e6e26505bca751777aa9f2ee0b7f4300988b709f44e013003f",
+              ],
+              "index": "pypi",
+              "version": "==2.31.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "["default","requests"]",
+          "purl": "pkg:pypi/requests@2.31.0",
+        },
+        {
+          "attributes": {
+            "pipenv:record": {
+              "hashes": [
+                "sha256:c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84",
+              ],
+              "markers": "python_version >= '3.7'",
+              "version": "==2.0.4",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "["default","urllib3"]",
+          "purl": "pkg:pypi/urllib3@2.0.4",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:"locked-group:default"",
+          "project": {
+            "definitionFile": "Pipfile.lock",
+            "purl": "pkg:generic/python-input/f3cdb22939564a634e5ef30a6d865c797090759ac8d490406eb9dcdbd31c9578",
+          },
+          "purl": "pkg:generic/python-input/f3cdb22939564a634e5ef30a6d865c797090759ac8d490406eb9dcdbd31c9578",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:"locked-group:develop"",
+          "project": {
+            "definitionFile": "Pipfile.lock",
+            "purl": "pkg:generic/python-input/f3cdb22939564a634e5ef30a6d865c797090759ac8d490406eb9dcdbd31c9578",
+          },
+          "purl": "pkg:generic/python-input/f3cdb22939564a634e5ef30a6d865c797090759ac8d490406eb9dcdbd31c9578",
+        },
+      ],
+      "rootCompleteness": "unknown",
+      "roots": [
+        {
+          "id": "scope:"locked-group:default"",
+          "node": "scope:"locked-group:default"",
+          "project": {
+            "definitionFile": "Pipfile.lock",
+            "purl": "pkg:generic/python-input/f3cdb22939564a634e5ef30a6d865c797090759ac8d490406eb9dcdbd31c9578",
+          },
+          "scope": "locked-group:default",
+        },
+        {
+          "id": "scope:"locked-group:develop"",
+          "node": "scope:"locked-group:develop"",
+          "project": {
+            "definitionFile": "Pipfile.lock",
+            "purl": "pkg:generic/python-input/f3cdb22939564a634e5ef30a6d865c797090759ac8d490406eb9dcdbd31c9578",
+          },
+          "scope": "locked-group:develop",
+        },
+      ],
+      "source": {
+        "extractor": "pipfilelock",
+        "files": [
+          "Pipfile.lock",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "Pipfile.lock",
+      ],
+      "purl": "pkg:pypi/certifi@2023.7.22",
+    },
+    {
+      "evidence": [
+        "Pipfile.lock",
+      ],
+      "purl": "pkg:pypi/charset-normalizer@3.2.0",
+    },
+    {
+      "evidence": [
+        "Pipfile.lock",
+      ],
+      "purl": "pkg:pypi/idna@3.4",
+    },
+    {
+      "evidence": [
+        "Pipfile.lock",
+      ],
+      "purl": "pkg:pypi/requests@2.31.0",
+    },
+    {
+      "evidence": [
+        "Pipfile.lock",
+      ],
+      "purl": "pkg:pypi/urllib3@2.0.4",
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "Pipfile.lock",
+      "evidence": [
+        "Pipfile.lock",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "pipfilelock",
+            "files": [
+              "Pipfile.lock",
+            ],
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/python-input/f3cdb22939564a634e5ef30a6d865c797090759ac8d490406eb9dcdbd31c9578",
+    },
+  ],
+}
+`;
+
+exports[`pipfilelock fixture: dev-deps 1`] = `
+{
+  "codebase": "example:fixtures",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "attributes": {
+        "pipenv:metadata": {
+          "hash": {
+            "sha256": "b36a5392bb1e8bbc06bfaa0761e52593cf2d83b486696bf54667ba8da616c840",
+          },
+          "pipfile-spec": 6,
+          "requires": {
+            "python_version": "3.11",
+          },
+          "sources": [
+            {
+              "name": "pypi",
+              "url": "https://pypi.org/simple",
+              "verify_ssl": true,
+            },
+          ],
+        },
+      },
+      "edges": [
+        {
+          "condition": {
+            "expression": "python_version >= '3.7'",
+            "language": "pep508",
+          },
+          "from": "scope:"locked-group:default"",
+          "relation": "depends-on",
+          "selection": "conditional",
+          "status": "resolved",
+          "to": "["default","click"]",
+        },
+        {
+          "from": "scope:"locked-group:default"",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "["default","flask"]",
+        },
+        {
+          "from": "scope:"locked-group:develop"",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "["develop","pytest-cov"]",
+        },
+        {
+          "from": "scope:"locked-group:develop"",
+          "relation": "depends-on",
+          "selection": "selected",
+          "status": "resolved",
+          "to": "["develop","pytest"]",
+        },
+      ],
+      "id": "["pipfilelock","Pipfile.lock","pipfilelock:4d3fb4d976c7cf650c4d3e59ce0bfd06698690c72f9637daa15bf8a00d0c76cf"]",
+      "interpretation": "locked",
+      "nodes": [
+        {
+          "attributes": {
+            "pipenv:record": {
+              "hashes": [
+                "sha256:48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd",
+              ],
+              "markers": "python_version >= '3.7'",
+              "version": "==8.1.7",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "["default","click"]",
+          "purl": "pkg:pypi/click@8.1.7",
+        },
+        {
+          "attributes": {
+            "pipenv:record": {
+              "hashes": [
+                "sha256:642c450d19c4ad482f96729bd2ea8f12b425b4e0c9c5f0c07f5d1ca5f5d6b0ab",
+              ],
+              "index": "pypi",
+              "version": "==2.3.3",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "["default","flask"]",
+          "purl": "pkg:pypi/flask@2.3.3",
+        },
+        {
+          "attributes": {
+            "pipenv:record": {
+              "hashes": [
+                "sha256:1d881c6124e08ff0a1bb75ba3ec0bfd8b5354a01c194ddd5a0a870a48d99b002",
+              ],
+              "index": "pypi",
+              "version": "==7.4.2",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "["develop","pytest"]",
+          "purl": "pkg:pypi/pytest@7.4.2",
+        },
+        {
+          "attributes": {
+            "pipenv:record": {
+              "hashes": [
+                "sha256:2feb1b751d66a8bd934e5edfa2e2d1e0348644d5a7c7dfa0b8c7f4a8f4e1c2f2",
+              ],
+              "index": "pypi",
+              "version": "==4.1.0",
+            },
+          },
+          "dependencyCompleteness": "unknown",
+          "id": "["develop","pytest-cov"]",
+          "purl": "pkg:pypi/pytest-cov@4.1.0",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:"locked-group:default"",
+          "project": {
+            "definitionFile": "Pipfile.lock",
+            "purl": "pkg:generic/python-input/f3cdb22939564a634e5ef30a6d865c797090759ac8d490406eb9dcdbd31c9578",
+          },
+          "purl": "pkg:generic/python-input/f3cdb22939564a634e5ef30a6d865c797090759ac8d490406eb9dcdbd31c9578",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:"locked-group:develop"",
+          "project": {
+            "definitionFile": "Pipfile.lock",
+            "purl": "pkg:generic/python-input/f3cdb22939564a634e5ef30a6d865c797090759ac8d490406eb9dcdbd31c9578",
+          },
+          "purl": "pkg:generic/python-input/f3cdb22939564a634e5ef30a6d865c797090759ac8d490406eb9dcdbd31c9578",
+        },
+      ],
+      "rootCompleteness": "unknown",
+      "roots": [
+        {
+          "id": "scope:"locked-group:default"",
+          "node": "scope:"locked-group:default"",
+          "project": {
+            "definitionFile": "Pipfile.lock",
+            "purl": "pkg:generic/python-input/f3cdb22939564a634e5ef30a6d865c797090759ac8d490406eb9dcdbd31c9578",
+          },
+          "scope": "locked-group:default",
+        },
+        {
+          "id": "scope:"locked-group:develop"",
+          "node": "scope:"locked-group:develop"",
+          "project": {
+            "definitionFile": "Pipfile.lock",
+            "purl": "pkg:generic/python-input/f3cdb22939564a634e5ef30a6d865c797090759ac8d490406eb9dcdbd31c9578",
+          },
+          "scope": "locked-group:develop",
+        },
+      ],
+      "source": {
+        "extractor": "pipfilelock",
+        "files": [
+          "Pipfile.lock",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "Pipfile.lock",
+      ],
+      "purl": "pkg:pypi/click@8.1.7",
+    },
+    {
+      "evidence": [
+        "Pipfile.lock",
+      ],
+      "purl": "pkg:pypi/flask@2.3.3",
+    },
+    {
+      "evidence": [
+        "Pipfile.lock",
+      ],
+      "purl": "pkg:pypi/pytest-cov@4.1.0",
+    },
+    {
+      "evidence": [
+        "Pipfile.lock",
+      ],
+      "purl": "pkg:pypi/pytest@7.4.2",
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "Pipfile.lock",
+      "evidence": [
+        "Pipfile.lock",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "pipfilelock",
+            "files": [
+              "Pipfile.lock",
+            ],
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/python-input/f3cdb22939564a634e5ef30a6d865c797090759ac8d490406eb9dcdbd31c9578",
+    },
+  ],
+}
+`;
+
+exports[`poetrylock fixture: basic 1`] = `
+{
+  "codebase": "example:fixtures",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "attributes": {
+        "python:lockMetadata": {
+          "content-hash": "a36a5392bb1e8bbc06bfaa0761e52593cf2d83b486696bf54667ba8da616c839",
+          "lock-version": "2.0",
+          "python-versions": "^3.11",
+        },
+      },
+      "edges": [
+        {
+          "condition": {
+            "expression": {
+              "python-versions": ">=3.5",
+            },
+            "language": "poetrylock:package",
+          },
+          "from": "scope:"locked-packages"",
+          "relation": "depends-on",
+          "selection": "conditional",
+          "status": "resolved",
+          "to": "package:2",
+        },
+        {
+          "condition": {
+            "expression": {
+              "python-versions": ">=3.6",
+            },
+            "language": "poetrylock:package",
+          },
+          "from": "scope:"locked-packages"",
+          "relation": "depends-on",
+          "selection": "conditional",
+          "status": "resolved",
+          "to": "package:0",
+        },
+        {
+          "condition": {
+            "expression": {
+              "python-versions": ">=3.7",
+            },
+            "language": "poetrylock:package",
+          },
+          "from": "scope:"locked-packages"",
+          "relation": "depends-on",
+          "selection": "conditional",
+          "status": "resolved",
+          "to": "package:3",
+        },
+        {
+          "condition": {
+            "expression": {
+              "python-versions": ">=3.7",
+            },
+            "language": "poetrylock:package",
+          },
+          "from": "scope:"locked-packages"",
+          "relation": "depends-on",
+          "selection": "conditional",
+          "status": "resolved",
+          "to": "package:4",
+        },
+        {
+          "condition": {
+            "expression": {
+              "python-versions": ">=3.7.0",
+            },
+            "language": "poetrylock:package",
+          },
+          "from": "scope:"locked-packages"",
+          "relation": "depends-on",
+          "selection": "conditional",
+          "status": "resolved",
+          "to": "package:1",
+        },
+        {
+          "condition": {
+            "expression": {
+              "request": {
+                "attributes": {
+                  "python:declaration": ">=1.21.1,<3",
+                },
+                "name": "urllib3",
+                "specifier": ">=1.21.1,<3",
+              },
+              "target": {
+                "python-versions": ">=3.7",
+              },
+            },
+            "language": "poetrylock:binding",
+          },
+          "from": "package:3",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "python:declaration": ">=1.21.1,<3",
+            },
+            "name": "urllib3",
+            "specifier": ">=1.21.1,<3",
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "package:4",
+        },
+        {
+          "condition": {
+            "expression": {
+              "request": {
+                "attributes": {
+                  "python:declaration": ">=2,<4",
+                },
+                "name": "charset-normalizer",
+                "specifier": ">=2,<4",
+              },
+              "target": {
+                "python-versions": ">=3.7.0",
+              },
+            },
+            "language": "poetrylock:binding",
+          },
+          "from": "package:3",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "python:declaration": ">=2,<4",
+            },
+            "name": "charset-normalizer",
+            "specifier": ">=2,<4",
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "package:1",
+        },
+        {
+          "condition": {
+            "expression": {
+              "request": {
+                "attributes": {
+                  "python:declaration": ">=2.5,<4",
+                },
+                "name": "idna",
+                "specifier": ">=2.5,<4",
+              },
+              "target": {
+                "python-versions": ">=3.5",
+              },
+            },
+            "language": "poetrylock:binding",
+          },
+          "from": "package:3",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "python:declaration": ">=2.5,<4",
+            },
+            "name": "idna",
+            "specifier": ">=2.5,<4",
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "package:2",
+        },
+        {
+          "condition": {
+            "expression": {
+              "request": {
+                "attributes": {
+                  "python:declaration": ">=2017.4.17",
+                },
+                "name": "certifi",
+                "specifier": ">=2017.4.17",
+              },
+              "target": {
+                "python-versions": ">=3.6",
+              },
+            },
+            "language": "poetrylock:binding",
+          },
+          "from": "package:3",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "python:declaration": ">=2017.4.17",
+            },
+            "name": "certifi",
+            "specifier": ">=2017.4.17",
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "package:0",
+        },
+      ],
+      "id": "["poetrylock","poetry.lock","poetrylock:00a393f765ab4ff73ea0a918e4118fe02f6455f6ee5226f4a027f0af06307c60"]",
+      "interpretation": "locked",
+      "nodes": [
+        {
+          "attributes": {
+            "python:lockRecord": {
+              "description": "Python package for providing Mozilla's CA Bundle.",
+              "files": [],
+              "name": "certifi",
+              "optional": false,
+              "python-versions": ">=3.6",
+              "version": "2023.7.22",
+            },
+          },
+          "dependencyCompleteness": "complete",
+          "id": "package:0",
+          "locator": "package:0",
+          "purl": "pkg:pypi/certifi@2023.7.22",
+        },
+        {
+          "attributes": {
+            "python:lockRecord": {
+              "description": "The Real First Universal Charset Detector",
+              "files": [],
+              "name": "charset-normalizer",
+              "optional": false,
+              "python-versions": ">=3.7.0",
+              "version": "3.2.0",
+            },
+          },
+          "dependencyCompleteness": "complete",
+          "id": "package:1",
+          "locator": "package:1",
+          "purl": "pkg:pypi/charset-normalizer@3.2.0",
+        },
+        {
+          "attributes": {
+            "python:lockRecord": {
+              "description": "Internationalized Domain Names in Applications (IDNA)",
+              "files": [],
+              "name": "idna",
+              "optional": false,
+              "python-versions": ">=3.5",
+              "version": "3.4",
+            },
+          },
+          "dependencyCompleteness": "complete",
+          "id": "package:2",
+          "locator": "package:2",
+          "purl": "pkg:pypi/idna@3.4",
+        },
+        {
+          "attributes": {
+            "python:lockRecord": {
+              "dependencies": {
+                "certifi": ">=2017.4.17",
+                "charset-normalizer": ">=2,<4",
+                "idna": ">=2.5,<4",
+                "urllib3": ">=1.21.1,<3",
+              },
+              "description": "Python HTTP for Humans.",
+              "files": [],
+              "name": "requests",
+              "optional": false,
+              "python-versions": ">=3.7",
+              "version": "2.31.0",
+            },
+          },
+          "dependencyCompleteness": "complete",
+          "id": "package:3",
+          "locator": "package:3",
+          "purl": "pkg:pypi/requests@2.31.0",
+        },
+        {
+          "attributes": {
+            "python:lockRecord": {
+              "description": "HTTP library with thread-safe connection pooling, file post, and more.",
+              "files": [],
+              "name": "urllib3",
+              "optional": false,
+              "python-versions": ">=3.7",
+              "version": "2.0.4",
+            },
+          },
+          "dependencyCompleteness": "complete",
+          "id": "package:4",
+          "locator": "package:4",
+          "purl": "pkg:pypi/urllib3@2.0.4",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:"locked-packages"",
+          "project": {
+            "definitionFile": "poetry.lock",
+            "purl": "pkg:generic/python-input/9a723b5615db02125ade470b5ffe22c5482905e6890174840df06e38f29d5934",
+          },
+          "purl": "pkg:generic/python-input/9a723b5615db02125ade470b5ffe22c5482905e6890174840df06e38f29d5934",
+        },
+      ],
+      "rootCompleteness": "unknown",
+      "roots": [
+        {
+          "id": "scope:"locked-packages"",
+          "node": "scope:"locked-packages"",
+          "project": {
+            "definitionFile": "poetry.lock",
+            "purl": "pkg:generic/python-input/9a723b5615db02125ade470b5ffe22c5482905e6890174840df06e38f29d5934",
+          },
+          "scope": "locked-packages",
+        },
+      ],
+      "source": {
+        "extractor": "poetrylock",
+        "files": [
+          "poetry.lock",
+        ],
+      },
+    },
+    {
+      "attributes": {
+        "python:manifest": {
+          "build-system": {
+            "build-backend": "poetry.core.masonry.api",
+            "requires": [
+              "poetry-core",
+            ],
+          },
+          "tool": {
+            "poetry": {
+              "authors": [
+                "Developer <dev@example.com>",
+              ],
+              "dependencies": {
+                "python": "^3.11",
+                "requests": "^2.31.0",
+              },
+              "description": "A sample Python project",
+              "name": "my-project",
+              "version": "1.0.0",
+            },
+          },
+        },
+      },
+      "edges": [
+        {
+          "evidence": [
+            "pyproject.toml",
+          ],
+          "from": "scope:"dependencies"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "python:declaration": "^2.31.0",
+            },
+            "name": "requests",
+            "specifier": "^2.31.0",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+      ],
+      "id": "["poetrylock","poetry.lock","pyprojecttoml:7014d1488d90cc4a859ea411110923d987920cced01f6f80f0b28d69baa9d208"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "attributes": {
+            "python:requiresPython": "^3.11",
+          },
+          "dependencyCompleteness": "complete",
+          "id": "scope:"dependencies"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/my-project@1.0.0",
+          },
+          "purl": "pkg:pypi/my-project@1.0.0",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:"dependencies"",
+          "node": "scope:"dependencies"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/my-project@1.0.0",
+          },
+          "scope": "dependencies",
+        },
+      ],
+      "source": {
+        "extractor": "pyprojecttoml",
+        "files": [
+          "pyproject.toml",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "poetry.lock",
+      ],
+      "purl": "pkg:pypi/certifi@2023.7.22",
+    },
+    {
+      "evidence": [
+        "poetry.lock",
+      ],
+      "purl": "pkg:pypi/charset-normalizer@3.2.0",
+    },
+    {
+      "evidence": [
+        "poetry.lock",
+      ],
+      "purl": "pkg:pypi/idna@3.4",
+    },
+    {
+      "evidence": [
+        "poetry.lock",
+      ],
+      "purl": "pkg:pypi/requests@2.31.0",
+    },
+    {
+      "evidence": [
+        "poetry.lock",
+      ],
+      "purl": "pkg:pypi/urllib3@2.0.4",
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "poetry.lock",
+      "evidence": [
+        "poetry.lock",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "poetrylock",
+            "files": [
+              "poetry.lock",
+            ],
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/python-input/9a723b5615db02125ade470b5ffe22c5482905e6890174840df06e38f29d5934",
+    },
+    {
+      "definitionFile": "pyproject.toml",
+      "evidence": [
+        "pyproject.toml",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "pyprojecttoml",
+            "files": [
+              "pyproject.toml",
+            ],
+          },
+          "synthesizedPurl": false,
+        },
+      ],
+      "purl": "pkg:pypi/my-project@1.0.0",
+    },
+  ],
+}
+`;
+
+exports[`poetrylock fixture: with-groups 1`] = `
+{
+  "codebase": "example:fixtures",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "attributes": {
+        "python:lockMetadata": {
+          "content-hash": "b36a5392bb1e8bbc06bfaa0761e52593cf2d83b486696bf54667ba8da616c840",
+          "lock-version": "2.0",
+          "python-versions": "^3.11",
+        },
+      },
+      "edges": [
+        {
+          "condition": {
+            "expression": {
+              "python-versions": ">=3.5",
+            },
+            "language": "poetrylock:package",
+          },
+          "from": "scope:"locked-group:main"",
+          "relation": "depends-on",
+          "selection": "conditional",
+          "status": "resolved",
+          "to": "package:2",
+        },
+        {
+          "condition": {
+            "expression": {
+              "python-versions": ">=3.7",
+            },
+            "language": "poetrylock:package",
+          },
+          "from": "scope:"locked-group:dev"",
+          "relation": "depends-on",
+          "selection": "conditional",
+          "status": "resolved",
+          "to": "package:3",
+        },
+        {
+          "condition": {
+            "expression": {
+              "python-versions": ">=3.7",
+            },
+            "language": "poetrylock:package",
+          },
+          "from": "scope:"locked-group:main"",
+          "relation": "depends-on",
+          "selection": "conditional",
+          "status": "resolved",
+          "to": "package:1",
+        },
+        {
+          "condition": {
+            "expression": {
+              "python-versions": ">=3.8",
+            },
+            "language": "poetrylock:package",
+          },
+          "from": "scope:"locked-group:dev"",
+          "relation": "depends-on",
+          "selection": "conditional",
+          "status": "resolved",
+          "to": "package:4",
+        },
+        {
+          "condition": {
+            "expression": {
+              "python-versions": ">=3.8",
+            },
+            "language": "poetrylock:package",
+          },
+          "from": "scope:"locked-group:main"",
+          "relation": "depends-on",
+          "selection": "conditional",
+          "status": "resolved",
+          "to": "package:0",
+        },
+        {
+          "condition": {
+            "expression": {
+              "request": {
+                "attributes": {
+                  "python:declaration": ">=0.3.1",
+                },
+                "name": "sqlparse",
+                "specifier": ">=0.3.1",
+              },
+              "target": {
+                "python-versions": ">=3.5",
+              },
+            },
+            "language": "poetrylock:binding",
+          },
+          "from": "package:0",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "python:declaration": ">=0.3.1",
+            },
+            "name": "sqlparse",
+            "specifier": ">=0.3.1",
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "package:2",
+        },
+        {
+          "condition": {
+            "expression": {
+              "request": {
+                "attributes": {
+                  "python:declaration": ">=3.6.0,<4",
+                },
+                "name": "asgiref",
+                "specifier": ">=3.6.0,<4",
+              },
+              "target": {
+                "python-versions": ">=3.7",
+              },
+            },
+            "language": "poetrylock:binding",
+          },
+          "from": "package:0",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "python:declaration": ">=3.6.0,<4",
+            },
+            "name": "asgiref",
+            "specifier": ">=3.6.0,<4",
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "package:1",
+        },
+      ],
+      "id": "["poetrylock","poetry.lock","poetrylock:279a4bdcc47de7a5c59e060be002aa24a74f2980fed278ebd00c325f542a4db6"]",
+      "interpretation": "locked",
+      "nodes": [
+        {
+          "attributes": {
+            "python:lockRecord": {
+              "category": "main",
+              "dependencies": {
+                "asgiref": ">=3.6.0,<4",
+                "sqlparse": ">=0.3.1",
+              },
+              "description": "A high-level Python web framework",
+              "files": [],
+              "name": "django",
+              "optional": false,
+              "python-versions": ">=3.8",
+              "version": "4.2.5",
+            },
+          },
+          "dependencyCompleteness": "complete",
+          "id": "package:0",
+          "locator": "package:0",
+          "purl": "pkg:pypi/django@4.2.5",
+        },
+        {
+          "attributes": {
+            "python:lockRecord": {
+              "category": "main",
+              "description": "ASGI specs, helper code, and adapters",
+              "files": [],
+              "name": "asgiref",
+              "optional": false,
+              "python-versions": ">=3.7",
+              "version": "3.7.2",
+            },
+          },
+          "dependencyCompleteness": "complete",
+          "id": "package:1",
+          "locator": "package:1",
+          "purl": "pkg:pypi/asgiref@3.7.2",
+        },
+        {
+          "attributes": {
+            "python:lockRecord": {
+              "category": "main",
+              "description": "A non-validating SQL parser",
+              "files": [],
+              "name": "sqlparse",
+              "optional": false,
+              "python-versions": ">=3.5",
+              "version": "0.4.4",
+            },
+          },
+          "dependencyCompleteness": "complete",
+          "id": "package:2",
+          "locator": "package:2",
+          "purl": "pkg:pypi/sqlparse@0.4.4",
+        },
+        {
+          "attributes": {
+            "python:lockRecord": {
+              "category": "dev",
+              "description": "pytest: simple powerful testing with Python",
+              "files": [],
+              "name": "pytest",
+              "optional": false,
+              "python-versions": ">=3.7",
+              "version": "7.4.2",
+            },
+          },
+          "dependencyCompleteness": "complete",
+          "id": "package:3",
+          "locator": "package:3",
+          "purl": "pkg:pypi/pytest@7.4.2",
+        },
+        {
+          "attributes": {
+            "python:lockRecord": {
+              "category": "dev",
+              "description": "The uncompromising code formatter",
+              "files": [],
+              "name": "black",
+              "optional": false,
+              "python-versions": ">=3.8",
+              "version": "23.9.1",
+            },
+          },
+          "dependencyCompleteness": "complete",
+          "id": "package:4",
+          "locator": "package:4",
+          "purl": "pkg:pypi/black@23.9.1",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:"locked-group:dev"",
+          "project": {
+            "definitionFile": "poetry.lock",
+            "purl": "pkg:generic/python-input/9a723b5615db02125ade470b5ffe22c5482905e6890174840df06e38f29d5934",
+          },
+          "purl": "pkg:generic/python-input/9a723b5615db02125ade470b5ffe22c5482905e6890174840df06e38f29d5934",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:"locked-group:main"",
+          "project": {
+            "definitionFile": "poetry.lock",
+            "purl": "pkg:generic/python-input/9a723b5615db02125ade470b5ffe22c5482905e6890174840df06e38f29d5934",
+          },
+          "purl": "pkg:generic/python-input/9a723b5615db02125ade470b5ffe22c5482905e6890174840df06e38f29d5934",
+        },
+      ],
+      "rootCompleteness": "unknown",
+      "roots": [
+        {
+          "id": "scope:"locked-group:dev"",
+          "node": "scope:"locked-group:dev"",
+          "project": {
+            "definitionFile": "poetry.lock",
+            "purl": "pkg:generic/python-input/9a723b5615db02125ade470b5ffe22c5482905e6890174840df06e38f29d5934",
+          },
+          "scope": "locked-group:dev",
+        },
+        {
+          "id": "scope:"locked-group:main"",
+          "node": "scope:"locked-group:main"",
+          "project": {
+            "definitionFile": "poetry.lock",
+            "purl": "pkg:generic/python-input/9a723b5615db02125ade470b5ffe22c5482905e6890174840df06e38f29d5934",
+          },
+          "scope": "locked-group:main",
+        },
+      ],
+      "source": {
+        "extractor": "poetrylock",
+        "files": [
+          "poetry.lock",
+        ],
+      },
+    },
+    {
+      "attributes": {
+        "python:manifest": {
+          "build-system": {
+            "build-backend": "poetry.core.masonry.api",
+            "requires": [
+              "poetry-core",
+            ],
+          },
+          "tool": {
+            "poetry": {
+              "authors": [
+                "Developer <dev@example.com>",
+              ],
+              "dependencies": {
+                "django": "^4.2.5",
+                "python": "^3.11",
+              },
+              "description": "A Django application",
+              "group": {
+                "dev": {
+                  "dependencies": {
+                    "black": "^23.9.1",
+                    "pytest": "^7.4.2",
+                  },
+                },
+              },
+              "name": "django-app",
+              "version": "2.0.0",
+            },
+          },
+        },
+      },
+      "edges": [
+        {
+          "evidence": [
+            "pyproject.toml",
+          ],
+          "from": "scope:"dependencies"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "python:declaration": "^4.2.5",
+            },
+            "name": "django",
+            "specifier": "^4.2.5",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+        {
+          "evidence": [
+            "pyproject.toml",
+          ],
+          "from": "scope:"group.dev"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "python:declaration": "^23.9.1",
+            },
+            "name": "black",
+            "specifier": "^23.9.1",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+        {
+          "evidence": [
+            "pyproject.toml",
+          ],
+          "from": "scope:"group.dev"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "python:declaration": "^7.4.2",
+            },
+            "name": "pytest",
+            "specifier": "^7.4.2",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+      ],
+      "id": "["poetrylock","poetry.lock","pyprojecttoml:7cdca7777d1e43178f5493c6aee21d0404e1207d71aec997835fb1a0ea809d11"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "attributes": {
+            "python:requiresPython": "^3.11",
+          },
+          "dependencyCompleteness": "complete",
+          "id": "scope:"dependencies"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/django-app@2.0.0",
+          },
+          "purl": "pkg:pypi/django-app@2.0.0",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:"group.dev"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/django-app@2.0.0",
+          },
+          "purl": "pkg:pypi/django-app@2.0.0",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:"dependencies"",
+          "node": "scope:"dependencies"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/django-app@2.0.0",
+          },
+          "scope": "dependencies",
+        },
+        {
+          "id": "scope:"group.dev"",
+          "node": "scope:"group.dev"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/django-app@2.0.0",
+          },
+          "scope": "group.dev",
+        },
+      ],
+      "source": {
+        "extractor": "pyprojecttoml",
+        "files": [
+          "pyproject.toml",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "poetry.lock",
+      ],
+      "purl": "pkg:pypi/asgiref@3.7.2",
+    },
+    {
+      "evidence": [
+        "poetry.lock",
+      ],
+      "purl": "pkg:pypi/black@23.9.1",
+    },
+    {
+      "evidence": [
+        "poetry.lock",
+      ],
+      "purl": "pkg:pypi/django@4.2.5",
+    },
+    {
+      "evidence": [
+        "poetry.lock",
+      ],
+      "purl": "pkg:pypi/pytest@7.4.2",
+    },
+    {
+      "evidence": [
+        "poetry.lock",
+      ],
+      "purl": "pkg:pypi/sqlparse@0.4.4",
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "poetry.lock",
+      "evidence": [
+        "poetry.lock",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "poetrylock",
+            "files": [
+              "poetry.lock",
+            ],
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/python-input/9a723b5615db02125ade470b5ffe22c5482905e6890174840df06e38f29d5934",
+    },
+    {
+      "definitionFile": "pyproject.toml",
+      "evidence": [
+        "pyproject.toml",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "pyprojecttoml",
+            "files": [
+              "pyproject.toml",
+            ],
+          },
+          "synthesizedPurl": false,
+        },
+      ],
+      "purl": "pkg:pypi/django-app@2.0.0",
+    },
+  ],
+}
+`;
+
+exports[`pyprojecttoml fixture: basic 1`] = `
+{
+  "codebase": "example:fixtures",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "attributes": {
+        "python:manifest": {
+          "project": {
+            "dependencies": [
+              "FastAPI>=0.115,<1.0",
+              "pydantic-settings>=2.6,<3.0",
+              "local-lib @ file:///tmp/local-lib",
+            ],
+            "name": "sample_app",
+            "optional-dependencies": {
+              "dev": [
+                "pytest>=8.0,<9.0",
+                "ruff>=0.8",
+              ],
+              "docs": [
+                "mkdocs>=1.5",
+              ],
+            },
+            "version": "1.2.3",
+          },
+          "tool": {
+            "uv": {
+              "dev-dependencies": [
+                "mypy>=1.13",
+              ],
+            },
+          },
+        },
+      },
+      "edges": [
+        {
+          "evidence": [
+            "pyproject.toml",
+          ],
+          "from": "scope:"dependencies"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "FastAPI",
+            "specifier": "FastAPI>=0.115,<1.0",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+        {
+          "evidence": [
+            "pyproject.toml",
+          ],
+          "from": "scope:"dependencies"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "local-lib",
+            "specifier": "local-lib @ file:///tmp/local-lib",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+        {
+          "evidence": [
+            "pyproject.toml",
+          ],
+          "from": "scope:"dependencies"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "pydantic-settings",
+            "specifier": "pydantic-settings>=2.6,<3.0",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+        {
+          "evidence": [
+            "pyproject.toml",
+          ],
+          "from": "scope:"dev-dependencies"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "mypy",
+            "specifier": "mypy>=1.13",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+        {
+          "evidence": [
+            "pyproject.toml",
+          ],
+          "from": "scope:"optional.dev"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "pytest",
+            "specifier": "pytest>=8.0,<9.0",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+        {
+          "evidence": [
+            "pyproject.toml",
+          ],
+          "from": "scope:"optional.dev"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "ruff",
+            "specifier": "ruff>=0.8",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+        {
+          "evidence": [
+            "pyproject.toml",
+          ],
+          "from": "scope:"optional.docs"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "mkdocs",
+            "specifier": "mkdocs>=1.5",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+      ],
+      "id": "["pyprojecttoml","pyproject.toml","pyprojecttoml:e982cb650a7a25181c20e180dda0bcd554e1021430d62d9639dde544ea07aa76"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:"dependencies"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/sample-app@1.2.3",
+          },
+          "purl": "pkg:pypi/sample-app@1.2.3",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:"dev-dependencies"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/sample-app@1.2.3",
+          },
+          "purl": "pkg:pypi/sample-app@1.2.3",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:"optional.dev"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/sample-app@1.2.3",
+          },
+          "purl": "pkg:pypi/sample-app@1.2.3",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:"optional.docs"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/sample-app@1.2.3",
+          },
+          "purl": "pkg:pypi/sample-app@1.2.3",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:"dependencies"",
+          "node": "scope:"dependencies"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/sample-app@1.2.3",
+          },
+          "scope": "dependencies",
+        },
+        {
+          "id": "scope:"dev-dependencies"",
+          "node": "scope:"dev-dependencies"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/sample-app@1.2.3",
+          },
+          "scope": "dev-dependencies",
+        },
+        {
+          "id": "scope:"optional.dev"",
+          "node": "scope:"optional.dev"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/sample-app@1.2.3",
+          },
+          "scope": "optional.dev",
+        },
+        {
+          "id": "scope:"optional.docs"",
+          "node": "scope:"optional.docs"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/sample-app@1.2.3",
+          },
+          "scope": "optional.docs",
+        },
+      ],
+      "source": {
+        "extractor": "pyprojecttoml",
+        "files": [
+          "pyproject.toml",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "pyproject.toml",
+      "evidence": [
+        "pyproject.toml",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "pyprojecttoml",
+            "files": [
+              "pyproject.toml",
+            ],
+          },
+          "synthesizedPurl": false,
+        },
+      ],
+      "purl": "pkg:pypi/sample-app@1.2.3",
+    },
+  ],
+}
+`;
+
+exports[`pyprojecttoml fixture: poetry 1`] = `
+{
+  "codebase": "example:fixtures",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "attributes": {
+        "python:manifest": {
+          "tool": {
+            "poetry": {
+              "dependencies": {
+                "Django": ">=4.2",
+                "python": "^3.11",
+                "requests": {
+                  "extras": [
+                    "socks",
+                  ],
+                  "version": ">=2.31",
+                },
+              },
+              "group": {
+                "test": {
+                  "dependencies": {
+                    "pytest": ">=8",
+                  },
+                },
+              },
+              "name": "poetry-app",
+              "version": "0.2.0",
+            },
+          },
+        },
+      },
+      "edges": [
+        {
+          "evidence": [
+            "pyproject.toml",
+          ],
+          "from": "scope:"dependencies"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "python:declaration": ">=4.2",
+            },
+            "name": "Django",
+            "specifier": ">=4.2",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+        {
+          "evidence": [
+            "pyproject.toml",
+          ],
+          "from": "scope:"dependencies"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "python:declaration": {
+                "extras": [
+                  "socks",
+                ],
+                "version": ">=2.31",
+              },
+            },
+            "features": [
+              "socks",
+            ],
+            "name": "requests",
+            "specifier": ">=2.31",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+        {
+          "evidence": [
+            "pyproject.toml",
+          ],
+          "from": "scope:"group.test"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "python:declaration": ">=8",
+            },
+            "name": "pytest",
+            "specifier": ">=8",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+      ],
+      "id": "["pyprojecttoml","pyproject.toml","pyprojecttoml:9db3ed08ef0614b36406014d490f54553deaa72b8fdc8f4a7c62aae3a77a2448"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "attributes": {
+            "python:requiresPython": "^3.11",
+          },
+          "dependencyCompleteness": "complete",
+          "id": "scope:"dependencies"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/poetry-app@0.2.0",
+          },
+          "purl": "pkg:pypi/poetry-app@0.2.0",
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:"group.test"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/poetry-app@0.2.0",
+          },
+          "purl": "pkg:pypi/poetry-app@0.2.0",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:"dependencies"",
+          "node": "scope:"dependencies"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/poetry-app@0.2.0",
+          },
+          "scope": "dependencies",
+        },
+        {
+          "id": "scope:"group.test"",
+          "node": "scope:"group.test"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/poetry-app@0.2.0",
+          },
+          "scope": "group.test",
+        },
+      ],
+      "source": {
+        "extractor": "pyprojecttoml",
+        "files": [
+          "pyproject.toml",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "pyproject.toml",
+      "evidence": [
+        "pyproject.toml",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "pyprojecttoml",
+            "files": [
+              "pyproject.toml",
+            ],
+          },
+          "synthesizedPurl": false,
+        },
+      ],
+      "purl": "pkg:pypi/poetry-app@0.2.0",
+    },
+  ],
+}
+`;
+
+exports[`pyprojecttoml fixture: with-lock 1`] = `
+{
+  "codebase": "example:fixtures",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "attributes": {
+        "python:manifest": {
+          "project": {
+            "dependencies": [
+              "requests>=2.31",
+            ],
+            "name": "locked-project",
+            "version": "1.0.0",
+          },
+        },
+      },
+      "edges": [
+        {
+          "evidence": [
+            "pyproject.toml",
+          ],
+          "from": "scope:"dependencies"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "requests",
+            "specifier": "requests>=2.31",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+      ],
+      "id": "["pyprojecttoml","pyproject.toml","pyprojecttoml:26d11d9e771b6e5e8b3921f48acab184bdc305c600935c95b41aeb5233756750"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:"dependencies"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/locked-project@1.0.0",
+          },
+          "purl": "pkg:pypi/locked-project@1.0.0",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:"dependencies"",
+          "node": "scope:"dependencies"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/locked-project@1.0.0",
+          },
+          "scope": "dependencies",
+        },
+      ],
+      "source": {
+        "extractor": "pyprojecttoml",
+        "files": [
+          "pyproject.toml",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "pyproject.toml",
+      "evidence": [
+        "pyproject.toml",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "pyprojecttoml",
+            "files": [
+              "pyproject.toml",
+            ],
+          },
+          "synthesizedPurl": false,
+        },
+      ],
+      "purl": "pkg:pypi/locked-project@1.0.0",
+    },
+  ],
+}
+`;
+
+exports[`requirementstxt fixture: basic 1`] = `
+{
+  "codebase": "example:fixtures",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "edges": [
+        {
+          "evidence": [
+            "requirements.txt",
+          ],
+          "from": "scope:"requirements"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "django",
+            "specifier": "django",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+        {
+          "evidence": [
+            "requirements.txt",
+          ],
+          "from": "scope:"requirements"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "flask",
+            "specifier": "flask",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+        {
+          "evidence": [
+            "requirements.txt",
+          ],
+          "from": "scope:"requirements"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "requests",
+            "specifier": "requests",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+      ],
+      "id": "["requirementstxt","requirements.txt","requirementstxt:f0f5587c611b399b3b9bcb1568a46c51923fcd826b6ee944c0e62d57e9aacd76"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:"requirements"",
+          "project": {
+            "definitionFile": "requirements.txt",
+            "purl": "pkg:generic/python-input/6aa5a8f2fd61d22ad069cbf0181128e69a64328a77da597d1b9918d7d53ef2d4",
+          },
+          "purl": "pkg:generic/python-input/6aa5a8f2fd61d22ad069cbf0181128e69a64328a77da597d1b9918d7d53ef2d4",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:"requirements"",
+          "node": "scope:"requirements"",
+          "project": {
+            "definitionFile": "requirements.txt",
+            "purl": "pkg:generic/python-input/6aa5a8f2fd61d22ad069cbf0181128e69a64328a77da597d1b9918d7d53ef2d4",
+          },
+          "scope": "requirements",
+        },
+      ],
+      "source": {
+        "extractor": "requirementstxt",
+        "files": [
+          "requirements.txt",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "requirements.txt",
+      "evidence": [
+        "requirements.txt",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "requirementstxt",
+            "files": [
+              "requirements.txt",
+            ],
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/python-input/6aa5a8f2fd61d22ad069cbf0181128e69a64328a77da597d1b9918d7d53ef2d4",
+    },
+  ],
+}
+`;
+
+exports[`requirementstxt fixture: dev-deps 1`] = `
+{
+  "codebase": "example:fixtures",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "edges": [
+        {
+          "evidence": [
+            "requirements-dev.txt",
+          ],
+          "from": "scope:"requirements"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "black",
+            "specifier": "black==23.9.1",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+        {
+          "evidence": [
+            "requirements-dev.txt",
+          ],
+          "from": "scope:"requirements"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "pytest",
+            "specifier": "pytest==7.4.2",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+        {
+          "evidence": [
+            "requirements-dev.txt",
+          ],
+          "from": "scope:"requirements"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "pytest-cov",
+            "specifier": "pytest-cov==4.1.0",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+      ],
+      "id": "["requirementstxt","requirements-dev.txt","requirementstxt:a286d860ffb478869e4ad0067a073f4fa394dbd4cdca45e9aae3e20d57cf6ac3"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:"requirements"",
+          "project": {
+            "definitionFile": "requirements-dev.txt",
+            "purl": "pkg:generic/python-input/ddecc5ef519a6c792370166bcca73f80fc1e632c45b97df31c114d5c0de199a5",
+          },
+          "purl": "pkg:generic/python-input/ddecc5ef519a6c792370166bcca73f80fc1e632c45b97df31c114d5c0de199a5",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:"requirements"",
+          "node": "scope:"requirements"",
+          "project": {
+            "definitionFile": "requirements-dev.txt",
+            "purl": "pkg:generic/python-input/ddecc5ef519a6c792370166bcca73f80fc1e632c45b97df31c114d5c0de199a5",
+          },
+          "scope": "requirements",
+        },
+      ],
+      "source": {
+        "extractor": "requirementstxt",
+        "files": [
+          "requirements-dev.txt",
+        ],
+      },
+    },
+    {
+      "edges": [
+        {
+          "evidence": [
+            "requirements.txt",
+          ],
+          "from": "scope:"requirements"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "flask",
+            "specifier": "flask==2.3.3",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+        {
+          "evidence": [
+            "requirements.txt",
+          ],
+          "from": "scope:"requirements"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "requests",
+            "specifier": "requests==2.31.0",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+      ],
+      "id": "["requirementstxt","requirements.txt","requirementstxt:d7b2c35a1f7e7351709c41e3c1bfd44f2019387e8114a203b3737f6ee389c7f8"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:"requirements"",
+          "project": {
+            "definitionFile": "requirements.txt",
+            "purl": "pkg:generic/python-input/6aa5a8f2fd61d22ad069cbf0181128e69a64328a77da597d1b9918d7d53ef2d4",
+          },
+          "purl": "pkg:generic/python-input/6aa5a8f2fd61d22ad069cbf0181128e69a64328a77da597d1b9918d7d53ef2d4",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:"requirements"",
+          "node": "scope:"requirements"",
+          "project": {
+            "definitionFile": "requirements.txt",
+            "purl": "pkg:generic/python-input/6aa5a8f2fd61d22ad069cbf0181128e69a64328a77da597d1b9918d7d53ef2d4",
+          },
+          "scope": "requirements",
+        },
+      ],
+      "source": {
+        "extractor": "requirementstxt",
+        "files": [
+          "requirements.txt",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "requirements.txt",
+      "evidence": [
+        "requirements.txt",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "requirementstxt",
+            "files": [
+              "requirements.txt",
+            ],
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/python-input/6aa5a8f2fd61d22ad069cbf0181128e69a64328a77da597d1b9918d7d53ef2d4",
+    },
+    {
+      "definitionFile": "requirements-dev.txt",
+      "evidence": [
+        "requirements-dev.txt",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "requirementstxt",
+            "files": [
+              "requirements-dev.txt",
+            ],
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/python-input/ddecc5ef519a6c792370166bcca73f80fc1e632c45b97df31c114d5c0de199a5",
+    },
+  ],
+}
+`;
+
+exports[`requirementstxt fixture: unsupported 1`] = `
+{
+  "codebase": "example:fixtures",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "edges": [
+        {
+          "evidence": [
+            "requirements.txt",
+          ],
+          "from": "scope:"requirements"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "editable_pkg",
+            "specifier": "-e git+https://github.com/example/editable.git#egg=editable_pkg",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+        {
+          "evidence": [
+            "requirements.txt",
+          ],
+          "from": "scope:"requirements"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "named-direct",
+            "specifier": "named-direct @ git+https://github.com/example/named-direct.git",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+        {
+          "evidence": [
+            "requirements.txt",
+          ],
+          "from": "scope:"requirements"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "requests",
+            "specifier": "requests",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+        {
+          "evidence": [
+            "requirements.txt",
+          ],
+          "from": "scope:"requirements"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "url_pkg",
+            "specifier": "https://example.com/packages/archive.zip#egg=url_pkg",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+        {
+          "evidence": [
+            "requirements.txt",
+          ],
+          "from": "scope:"requirements"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "specifier": "-e .",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+        {
+          "evidence": [
+            "requirements.txt",
+          ],
+          "from": "scope:"requirements"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "specifier": "https://example.com/packages/unnamed-1.0.0.tar.gz",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+        {
+          "from": "scope:"requirements"",
+          "relation": "depends-on",
+          "requested": {
+            "specifier": "-r extra-requirements.txt",
+          },
+          "selection": "unknown",
+          "status": "unresolved",
+        },
+      ],
+      "id": "["requirementstxt","requirements.txt","requirementstxt:631ac4335ea889bd13afbc7876dbfca9cd9fc0f8d1454e8c7373d54144907fbe"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "partial",
+          "id": "scope:"requirements"",
+          "project": {
+            "definitionFile": "requirements.txt",
+            "purl": "pkg:generic/python-input/6aa5a8f2fd61d22ad069cbf0181128e69a64328a77da597d1b9918d7d53ef2d4",
+          },
+          "purl": "pkg:generic/python-input/6aa5a8f2fd61d22ad069cbf0181128e69a64328a77da597d1b9918d7d53ef2d4",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:"requirements"",
+          "node": "scope:"requirements"",
+          "project": {
+            "definitionFile": "requirements.txt",
+            "purl": "pkg:generic/python-input/6aa5a8f2fd61d22ad069cbf0181128e69a64328a77da597d1b9918d7d53ef2d4",
+          },
+          "scope": "requirements",
+        },
+      ],
+      "source": {
+        "extractor": "requirementstxt",
+        "files": [
+          "requirements.txt",
+        ],
+      },
+    },
+  ],
+  "issues": [
+    {
+      "code": "requirementstxt.include_not_followed",
+      "file": "requirements.txt",
+      "message": "Requirement/constraint input is not followed: -r extra-requirements.txt",
+      "severity": "WARNING",
+    },
+  ],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "requirements.txt",
+      "evidence": [
+        "requirements.txt",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "requirementstxt",
+            "files": [
+              "requirements.txt",
+            ],
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/python-input/6aa5a8f2fd61d22ad069cbf0181128e69a64328a77da597d1b9918d7d53ef2d4",
+    },
+  ],
+}
+`;
+
+exports[`requirementstxt fixture: with-versions 1`] = `
+{
+  "codebase": "example:fixtures",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "edges": [
+        {
+          "evidence": [
+            "requirements.txt",
+          ],
+          "from": "scope:"requirements"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "django",
+            "specifier": "django>=4.2.0,<5.0.0",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+        {
+          "evidence": [
+            "requirements.txt",
+          ],
+          "from": "scope:"requirements"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "flask",
+            "specifier": "flask==2.3.3",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+        {
+          "evidence": [
+            "requirements.txt",
+          ],
+          "from": "scope:"requirements"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "pytest",
+            "specifier": "pytest>=7.4.0",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+        {
+          "evidence": [
+            "requirements.txt",
+          ],
+          "from": "scope:"requirements"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "requests",
+            "specifier": "requests==2.31.0",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+        {
+          "evidence": [
+            "requirements.txt",
+          ],
+          "from": "scope:"requirements"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "sqlalchemy",
+            "specifier": "sqlalchemy==2.0.21",
+          },
+          "selection": "selected",
+          "status": "declared",
+        },
+      ],
+      "id": "["requirementstxt","requirements.txt","requirementstxt:7123d1c0d0c38cbf906232f713fd39731824001e26a133b2a367d1d5a0cd6be8"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:"requirements"",
+          "project": {
+            "definitionFile": "requirements.txt",
+            "purl": "pkg:generic/python-input/6aa5a8f2fd61d22ad069cbf0181128e69a64328a77da597d1b9918d7d53ef2d4",
+          },
+          "purl": "pkg:generic/python-input/6aa5a8f2fd61d22ad069cbf0181128e69a64328a77da597d1b9918d7d53ef2d4",
+        },
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:"requirements"",
+          "node": "scope:"requirements"",
+          "project": {
+            "definitionFile": "requirements.txt",
+            "purl": "pkg:generic/python-input/6aa5a8f2fd61d22ad069cbf0181128e69a64328a77da597d1b9918d7d53ef2d4",
+          },
+          "scope": "requirements",
+        },
+      ],
+      "source": {
+        "extractor": "requirementstxt",
+        "files": [
+          "requirements.txt",
+        ],
+      },
+    },
+  ],
+  "issues": [],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "requirements.txt",
+      "evidence": [
+        "requirements.txt",
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "requirementstxt",
+            "files": [
+              "requirements.txt",
+            ],
+          },
+          "synthesizedPurl": true,
+        },
+      ],
+      "purl": "pkg:generic/python-input/6aa5a8f2fd61d22ad069cbf0181128e69a64328a77da597d1b9918d7d53ef2d4",
+    },
+  ],
+}
+`;

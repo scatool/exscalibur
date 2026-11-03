@@ -35,14 +35,18 @@
   },
   "dependencies": {
     "@scatool/analyzer-core": "workspace:*",
+    "@yarnpkg/lockfile": "^1.1.0",
     "jsonc-parser": "^3.3.1",
     "packageurl-js": "catalog:",
+    "semver": "^7.8.5",
     "yaml": "catalog:",
     "zod": "catalog:"
   },
   "devDependencies": {
     "@scatool/analyzer-test-utils": "workspace:*",
     "@types/node": "catalog:",
+    "@types/semver": "^7.8.0",
+    "@types/yarnpkg__lockfile": "^1.1.9",
     "vite-plus": "catalog:",
     "vitest": "catalog:"
   },

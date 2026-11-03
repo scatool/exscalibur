@@ -1,252 +1,185 @@
 import {
-  type AnalyzerResult,
-  type DependencyScope,
-  type Extractor,
-  mergeResults,
-  type Subproject,
-  addRelationship,
-  ensurePackageExists,
-  addPackageEvidence,
-  buildResult,
-  initializeExtractionMaps,
+  createDependencyGraph,
+  createEmptyResult,
+  filesExtractor,
+  normalizeResult,
   findExecutable,
   readTextFile,
   runCommand,
-  scanFiles,
-  type ExtractionRuntimeOptions,
+  scanAndMarkFiles,
+  type AnalyzerResult,
+  type DependencyEdge,
+  type DependencyView,
+  type JsonObject,
 } from "@scatool/analyzer-core";
 import { PackageURL } from "packageurl-js";
-import { dirname, join } from "node:path/posix";
+import { dirname, join } from "node:path";
 import { existsSync } from "node:fs";
-import { rm } from "node:fs/promises";
-import type { MavenOptions } from "./options.ts";
-import { optionSchema } from "./options.ts";
+import { mkdtemp, rm } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { optionSchema, type MavenOptions } from "./options.ts";
 
-interface DependencyNode {
+export type MavenTreeNode = {
   groupId: string;
   artifactId: string;
   version: string;
-  type: string;
-  scope: string;
-  classifier: string;
-  optional: string;
-  children?: DependencyNode[];
-}
+  type?: string;
+  classifier?: string;
+  scope?: string;
+  optional?: string | boolean;
+  children?: MavenTreeNode[];
+};
 
-async function extractFile(file: string, options: MavenOptions): Promise<AnalyzerResult> {
-  const dir = dirname(file);
-  const { packageMap, relationshipsMap } = initializeExtractionMaps();
-  const subprojects: Subproject[] = [];
-  const issues: AnalyzerResult["issues"] = [];
-
-  try {
-    const mavenCmd = options.mavenPath;
-
-    const isWindows = process.platform === "win32";
-    const mvnWrapper = isWindows ? join(dir, "mvnw.cmd") : join(dir, "mvnw");
-    const mvnExecutable = existsSync(mvnWrapper)
-      ? mvnWrapper
-      : findExecutable(mavenCmd) || mavenCmd;
-
-    const env = { ...process.env };
-    if (options.javaHome) {
-      env.JAVA_HOME = options.javaHome;
-    }
-
-    // Extract project metadata
-    const groupIdProc = await runCommand(
-      [mvnExecutable, "help:evaluate", "-Dexpression=project.groupId", "-q", "-DforceStdout"],
-      {
-        cwd: dir,
-        env,
-      },
-    );
-    const groupId = groupIdProc.stdout.trim();
-    const groupIdExitCode = groupIdProc.exitCode;
-
-    const artifactIdProc = await runCommand(
-      [mvnExecutable, "help:evaluate", "-Dexpression=project.artifactId", "-q", "-DforceStdout"],
-      { cwd: dir, env },
-    );
-    const artifactId = artifactIdProc.stdout.trim();
-    const artifactIdExitCode = artifactIdProc.exitCode;
-
-    const versionProc = await runCommand(
-      [mvnExecutable, "help:evaluate", "-Dexpression=project.version", "-q", "-DforceStdout"],
-      {
-        cwd: dir,
-        env,
-      },
-    );
-    const version = versionProc.stdout.trim();
-    const versionExitCode = versionProc.exitCode;
-
-    if (groupIdExitCode !== 0 || artifactIdExitCode !== 0 || versionExitCode !== 0) {
-      issues.push({
-        code: "maven.project_metadata_extraction_failed",
-        message: "Failed to extract project metadata",
-        severity: "ERROR",
-        file,
-      });
-      return { packages: [], subprojects: [], relationships: [], issues };
-    }
-
-    // Extract dependency tree
-    const depTreeFile = join(dir, ".dependency-tree.json");
-    const depTreeProc = await runCommand(
-      [
-        mvnExecutable,
-        "dependency:tree",
-        "-DoutputType=json",
-        `-DoutputFile=${depTreeFile}`,
-        "--batch-mode",
-      ],
-      { cwd: dir, env },
-    );
-    const depTreeExitCode = depTreeProc.exitCode;
-
-    if (depTreeExitCode !== 0) {
-      issues.push({
-        code: "maven.dependency_extraction_failed",
-        message: `Maven dependency extraction failed: ${depTreeProc.stderr}`,
-        severity: "ERROR",
-        file,
-      });
-      return { packages: [], subprojects: [], relationships: [], issues };
-    }
-
-    if (!existsSync(depTreeFile)) {
-      issues.push({
-        code: "maven.dependency_tree_not_found",
-        message: "Dependency tree file not found",
-        severity: "ERROR",
-        file,
-      });
-      return { packages: [], subprojects: [], relationships: [], issues };
-    }
-
-    const depTreeContent = await readTextFile(depTreeFile);
-    const depTree: DependencyNode = JSON.parse(depTreeContent);
-
-    const scopeMap = new Map<string, Set<string>>();
-
-    const processNode = (node: DependencyNode, isRoot: boolean, isDirect: boolean) => {
-      if (isRoot) {
-        if (node.children) {
-          for (const child of node.children) {
-            processNode(child, false, true);
-          }
-        }
-        return;
-      }
-
-      const purl = createMavenPurl(node.groupId, node.artifactId, node.version);
-
-      ensurePackageExists(packageMap, purl);
-      addPackageEvidence(packageMap, purl, file);
-
-      if (isDirect) {
-        const scope = node.scope || "compile";
-        if (!scopeMap.has(scope)) {
-          scopeMap.set(scope, new Set());
-        }
-        scopeMap.get(scope)!.add(purl);
-      }
-
-      if (node.children && node.children.length > 0) {
-        for (const child of node.children) {
-          const childPurl = createMavenPurl(child.groupId, child.artifactId, child.version);
-          addRelationship(relationshipsMap, purl, childPurl);
-          processNode(child, false, false);
-        }
-      }
-    };
-
-    processNode(depTree, true, false);
-
-    const scopes: DependencyScope[] = [];
-    for (const [scopeName, packages] of scopeMap.entries()) {
-      if (packages.size > 0) {
-        scopes.push({ scope: scopeName, packages: Array.from(packages) });
-      }
-    }
-
-    if (scopes.length > 0 || packageMap.size > 0) {
-      const projectPurl = createMavenPurl(groupId, artifactId, version);
-      subprojects.push({ purl: projectPurl, definitionFile: file, scopes });
-    }
-
-    try {
-      await rm(depTreeFile);
-    } catch {
-      // Ignore cleanup errors
-    }
-  } catch (error) {
-    issues.push({
-      code: "maven.extraction_failed",
-      message: `Failed to extract dependencies: ${error instanceof Error ? error.message : String(error)}`,
-      severity: "ERROR",
-      file,
-    });
+function validateTreeNode(value: unknown): asserts value is MavenTreeNode {
+  if (value === null || typeof value !== "object" || Array.isArray(value))
+    throw new Error("Maven tree node must be a record");
+  const node = value as Record<string, unknown>;
+  if (
+    [node.groupId, node.artifactId, node.version].some(
+      (part) => typeof part !== "string" || !part.trim(),
+    )
+  )
+    throw new Error("Maven tree has missing or invalid coordinates");
+  if (node.children !== undefined) {
+    if (!Array.isArray(node.children)) throw new Error("Maven children must be an array");
+    for (const child of node.children) validateTreeNode(child);
   }
-
-  return {
-    ...buildResult(packageMap, relationshipsMap, subprojects),
-    issues,
-  };
 }
 
-export const extractor: Extractor<MavenOptions> = {
+function purl(node: MavenTreeNode): string {
+  if (!node.groupId || !node.artifactId || !node.version)
+    throw new Error("Maven tree has missing coordinates");
+  const qualifiers: Record<string, string> = {};
+  if (node.type && node.type !== "jar") qualifiers.type = node.type;
+  if (node.classifier) qualifiers.classifier = node.classifier;
+  return new PackageURL(
+    "maven",
+    node.groupId,
+    node.artifactId,
+    node.version,
+    qualifiers,
+    null,
+  ).toString();
+}
+
+/** Keep each selected tree occurrence: exclusions and mediation can change equal-coordinate views. */
+export function convertMavenTree(
+  tree: MavenTreeNode,
+  file: string,
+  codebase: string,
+): AnalyzerResult {
+  validateTreeNode(tree);
+  const result = createEmptyResult(codebase);
+  const project = { purl: purl(tree), definitionFile: file };
+  result.subprojects.push(project);
+  const nodes: DependencyView[] = [];
+  const edges: DependencyEdge[] = [];
+  const catalog = new Set<string>();
+  const addNode = (node: MavenTreeNode, id: string) => {
+    const identity = purl(node);
+    if (!catalog.has(identity)) result.packages.push({ purl: identity, evidence: [file] });
+    catalog.add(identity);
+    const { children: _, ...native } = node;
+    nodes.push({
+      id,
+      purl: identity,
+      locator: id,
+      // The native tree prunes duplicate/conflict branches. Even a record without
+      // children can have dependencies, so its outgoing coverage is not established.
+      dependencyCompleteness: "unknown",
+      attributes: { "maven:node": native as JsonObject },
+    });
+    for (const [index, child] of (node.children ?? []).entries()) {
+      const target = `${id}/${index}`;
+      edges.push(binding(id, target, child));
+      addNode(child, target);
+    }
+  };
+  const binding = (from: string, to: string, node: MavenTreeNode): DependencyEdge => ({
+    from,
+    to,
+    status: "resolved",
+    relation: "depends-on",
+    selection: "selected",
+    ...(node.scope && { kind: node.scope }),
+    ...(node.optional !== undefined && {
+      optional: node.optional === true || node.optional === "true",
+    }),
+  });
+  const scopes = [
+    "maven:dependency-tree",
+    ...new Set((tree.children ?? []).map((node) => node.scope || "compile")),
+  ];
+  const roots = scopes.map((scope) => {
+    const id = `root:${scope}`;
+    nodes.push({ id, purl: project.purl, project, dependencyCompleteness: "complete" });
+    return { id, project, node: id, scope };
+  });
+  for (const [index, child] of (tree.children ?? []).entries()) {
+    const target = `tree/${index}`;
+    addNode(child, target);
+    edges.push(binding("root:maven:dependency-tree", target, child));
+    edges.push(binding(`root:${child.scope || "compile"}`, target, child));
+  }
+  result.graphs.push(
+    createDependencyGraph({
+      source: { extractor: "maven", files: [file] },
+      interpretation: "resolved",
+      rootCompleteness: "complete",
+      roots,
+      nodes,
+      edges,
+      attributes: { "maven:projection": "dependency-tree", "maven:requests": "not-reported" },
+    }),
+  );
+  return normalizeResult(result);
+}
+
+export const extractor = filesExtractor<MavenOptions>({
   name: "maven",
   version: 1,
   optionsSchema: optionSchema,
-  extract: async (
-    codebase: string,
-    runtimeOptions?: Partial<MavenOptions>,
-    extractionRuntimeOptions: ExtractionRuntimeOptions = {},
-  ) => {
-    const options = optionSchema.parse(runtimeOptions || {});
-    const files = await scanFiles(codebase, "**/pom.xml", [
-      ...(extractionRuntimeOptions.ignore ?? []),
-      ...options.ignore,
-    ]);
-
-    const results: AnalyzerResult[] = [];
-    for (const file of files) {
-      results.push(await extractFile(file, options));
-    }
-
-    const merged = mergeResults(results);
-
-    // Filter subproject purls from packages and relationships (cross-file)
-    const subprojectPurls = new Set(merged.subprojects.map((sp) => sp.purl));
-    const normalizedCodebase = codebase.endsWith("/") ? codebase.slice(0, -1) : codebase;
-    const makeRelative = (path: string) =>
-      path.startsWith(normalizedCodebase + "/")
-        ? path.substring(normalizedCodebase.length + 1)
-        : path;
-
-    return {
-      packages: merged.packages
-        .filter((pkg) => !subprojectPurls.has(pkg.purl))
-        .map((pkg) => ({ ...pkg, evidence: pkg.evidence.map(makeRelative) })),
-      subprojects: merged.subprojects.map((sp) => ({
-        ...sp,
-        definitionFile: makeRelative(sp.definitionFile),
-      })),
-      relationships: merged.relationships
-        .filter((rel) => !subprojectPurls.has(rel.from))
-        .map((rel) => ({ ...rel, to: rel.to.filter((to) => !subprojectPurls.has(to)) }))
-        .filter((rel) => rel.to.length > 0),
-      issues: merged.issues.map((issue) => ({
-        ...issue,
-        ...(issue.file && { file: makeRelative(issue.file) }),
-      })),
-    };
+  markFiles: async function (codebase, options) {
+    await scanAndMarkFiles(this, codebase, "**/pom.xml", options.ignore);
   },
-};
-
-function createMavenPurl(groupId: string, artifactId: string, version: string): string {
-  const namespace = groupId || null;
-  return new PackageURL("maven", namespace, artifactId, version, null, null).toString();
-}
+  extractFile: async (file, options, context) => {
+    const dir = dirname(file);
+    const wrapper = join(dir, process.platform === "win32" ? "mvnw.cmd" : "mvnw");
+    const executable = existsSync(wrapper)
+      ? wrapper
+      : findExecutable(options.mavenPath) || options.mavenPath;
+    const temporary = await mkdtemp(join(tmpdir(), "exscalibur-maven-"));
+    try {
+      const output = join(temporary, "tree.json");
+      const command = await runCommand(
+        [
+          executable,
+          "dependency:tree",
+          "-DoutputType=json",
+          `-DoutputFile=${output}`,
+          "--batch-mode",
+          "--non-recursive",
+        ],
+        {
+          cwd: dir,
+          env: { ...process.env, ...(options.javaHome && { JAVA_HOME: options.javaHome }) },
+        },
+      );
+      if (command.exitCode !== 0) {
+        const diagnostics = [command.stderr.trim(), command.stdout.trim()]
+          .filter(Boolean)
+          .join("\n");
+        throw new Error(
+          `Maven dependency extraction failed (exit ${command.exitCode})${diagnostics ? `: ${diagnostics}` : ""}`,
+        );
+      }
+      return convertMavenTree(
+        JSON.parse(await readTextFile(output)),
+        context.relativeFile,
+        context.codebaseId,
+      );
+    } finally {
+      await rm(temporary, { recursive: true, force: true });
+    }
+  },
+});

@@ -26,11 +26,13 @@ The following options were considered for implementing the Vcpkg extractor:
    2. **Using `vcpkg depend-info`**:\
       This command provides a graph of dependencies, however it neither includes version information nor platform information (so all dependencies for all platforms are listed).
    3. **Using `vcpkg x-package-info [port] --x-json`**:\
-      This command provides a JSON representation of the specified port(s). It automatically resolves the dependencies based on the local `vcpkg.json` and its `builtin-baseline` (if specified) and provides port information even for ports that do not have a `vcpkg.json` file.\
-      Furthermore, it provides the dependencies in a platform-aware way, so it is possible to extract the dependencies for a specific or even all platforms.\
+      This command provides a JSON representation of the specified port(s). It supplies registry port information in the local manifest context, including ports without a physical `vcpkg.json` file. This is not proof of the versions selected by an install resolver.\
+      Native dependency and feature platform predicates remain in the result instead of being filtered against the analyzer host.\
       The main downside of this approach is the relatively complex parsing logic to extract all dependencies correctly and this only supports baselines up to `68a74950d0400f5a803026d0860f49853984bf11` (first commit of `versions/baseline.json`).
 
-For this implementation, the last approach was chosen.
+For this implementation, the last approach was chosen. The format 2 graph records
+registry candidates with unknown selection; see [result semantics](../RESULT.md).
+Target/host views remain distinct and no resolved feature union is inferred.
 
 With this we can extract the dependency graph as follows:
 

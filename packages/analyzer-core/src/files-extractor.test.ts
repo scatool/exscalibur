@@ -2,10 +2,10 @@ import { mkdtemp, mkdir, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { basename, join } from "node:path";
 import { expect, test } from "vite-plus/test";
-import { filesExtractor, scanAndMarkFiles } from "./index.ts";
+import { createEmptyResult, filesExtractor, scanAndMarkFiles } from "./index.ts";
 
-test("scanAndMarkFiles works with legacy mark file contexts", async () => {
-  const dir = await mkdtemp(join(tmpdir(), "excalibur-legacy-context-"));
+test("scanAndMarkFiles supports a context without global ignores", async () => {
+  const dir = await mkdtemp(join(tmpdir(), "excalibur-discovery-context-"));
 
   try {
     await writeFile(join(dir, "package.json"), "");
@@ -40,10 +40,10 @@ test("filesExtractor applies global ignore patterns during file discovery", asyn
       markFiles: async function (codebase: string) {
         await scanAndMarkFiles(this, codebase, "**/*.txt", []);
       },
-      extractFile: async (file: string) => ({
+      extractFile: async (file, _options, context) => ({
+        ...createEmptyResult(context.codebaseId),
         packages: [{ purl: `pkg:generic/${basename(file)}`, evidence: [file] }],
         subprojects: [],
-        relationships: [],
         issues: [],
       }),
     });

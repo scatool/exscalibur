@@ -1,139 +1,503 @@
 {
-  "packages": [
+  "codebase": "integration:micromark/micromark-extension-mdxjs-esm@3fdf3d3e597c707ac08ca94ba52d99d88f87ddfe",
+  "formatVersion": 2,
+  "graphs": [
     {
-      "purl": "pkg:npm/%40types/acorn@4.0.0",
-      "evidence": [
-        "package.json#54"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40types/estree@1.0.0",
-      "evidence": [
-        "package.json#43"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40types/node@22.0.0",
-      "evidence": [
-        "package.json#55"
-      ]
-    },
-    {
-      "purl": "pkg:npm/acorn-jsx@5.0.0",
-      "evidence": [
-        "package.json#57"
-      ]
-    },
-    {
-      "purl": "pkg:npm/acorn@8.0.0",
-      "evidence": [
-        "package.json#56"
-      ]
-    },
-    {
-      "purl": "pkg:npm/c8@10.0.0",
-      "evidence": [
-        "package.json#58"
-      ]
-    },
-    {
-      "purl": "pkg:npm/devlop@1.0.0",
-      "evidence": [
-        "package.json#44"
-      ]
-    },
-    {
-      "purl": "pkg:npm/micromark-build@2.0.0",
-      "evidence": [
-        "package.json#60"
-      ]
-    },
-    {
-      "purl": "pkg:npm/micromark-core-commonmark@2.0.0",
-      "evidence": [
-        "package.json#45"
-      ]
-    },
-    {
-      "purl": "pkg:npm/micromark-util-character@2.0.0",
-      "evidence": [
-        "package.json#46"
-      ]
-    },
-    {
-      "purl": "pkg:npm/micromark-util-events-to-acorn@2.0.0",
-      "evidence": [
-        "package.json#47"
-      ]
-    },
-    {
-      "purl": "pkg:npm/micromark-util-symbol@2.0.0",
-      "evidence": [
-        "package.json#48"
-      ]
-    },
-    {
-      "purl": "pkg:npm/micromark-util-types@2.0.0",
-      "evidence": [
-        "package.json#49"
-      ]
-    },
-    {
-      "purl": "pkg:npm/micromark@4.0.0",
-      "evidence": [
-        "package.json#7"
-      ]
-    },
-    {
-      "purl": "pkg:npm/prettier@3.0.0",
-      "evidence": [
-        "package.json#61"
-      ]
-    },
-    {
-      "purl": "pkg:npm/remark-cli@12.0.0",
-      "evidence": [
-        "package.json#62"
-      ]
-    },
-    {
-      "purl": "pkg:npm/remark-preset-wooorm@10.0.0",
-      "evidence": [
-        "package.json#63"
-      ]
-    },
-    {
-      "purl": "pkg:npm/type-coverage@2.0.0",
-      "evidence": [
-        "package.json#64"
-      ]
-    },
-    {
-      "purl": "pkg:npm/typescript@5.0.0",
-      "evidence": [
-        "package.json#65"
-      ]
-    },
-    {
-      "purl": "pkg:npm/unist-util-position-from-estree@2.0.0",
-      "evidence": [
-        "package.json#50"
-      ]
-    },
-    {
-      "purl": "pkg:npm/vfile-message@4.0.0",
-      "evidence": [
-        "package.json#51"
-      ]
-    },
-    {
-      "purl": "pkg:npm/xo@0.59.0",
-      "evidence": [
-        "package.json#66"
-      ]
+      "attributes": {},
+      "edges": [
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"@types/estree\"]",
+            "name": "@types/estree",
+            "specifier": "^1.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"devlop\"]",
+            "name": "devlop",
+            "specifier": "^1.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"micromark-core-commonmark\"]",
+            "name": "micromark-core-commonmark",
+            "specifier": "^2.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"micromark-util-character\"]",
+            "name": "micromark-util-character",
+            "specifier": "^2.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"micromark-util-events-to-acorn\"]",
+            "name": "micromark-util-events-to-acorn",
+            "specifier": "^2.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"micromark-util-symbol\"]",
+            "name": "micromark-util-symbol",
+            "specifier": "^2.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"micromark-util-types\"]",
+            "name": "micromark-util-types",
+            "specifier": "^2.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"unist-util-position-from-estree\"]",
+            "name": "unist-util-position-from-estree",
+            "specifier": "^2.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"vfile-message\"]",
+            "name": "vfile-message",
+            "specifier": "^4.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@types/acorn\"]",
+            "name": "@types/acorn",
+            "specifier": "^4.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@types/node\"]",
+            "name": "@types/node",
+            "specifier": "^22.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"acorn-jsx\"]",
+            "name": "acorn-jsx",
+            "specifier": "^5.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"acorn\"]",
+            "name": "acorn",
+            "specifier": "^8.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"c8\"]",
+            "name": "c8",
+            "specifier": "^10.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"micromark-build\"]",
+            "name": "micromark-build",
+            "specifier": "^2.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"micromark\"]",
+            "name": "micromark",
+            "specifier": "^4.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"prettier\"]",
+            "name": "prettier",
+            "specifier": "^3.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"remark-cli\"]",
+            "name": "remark-cli",
+            "specifier": "^12.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"remark-preset-wooorm\"]",
+            "name": "remark-preset-wooorm",
+            "specifier": "^10.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"type-coverage\"]",
+            "name": "type-coverage",
+            "specifier": "^2.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"typescript\"]",
+            "name": "typescript",
+            "specifier": "^5.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"xo\"]",
+            "name": "xo",
+            "specifier": "^0.59.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        }
+      ],
+      "id": "[\"packagejson\",\"package.json\",\"packagejson:d4b55e6b763651e8f5073d3fc04ed7c4bf57b2a76c57df9c337b294f3ccbba4a\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/micromark-extension-mdxjs-esm@3.0.0"
+          },
+          "purl": "pkg:npm/micromark-extension-mdxjs-esm@3.0.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/micromark-extension-mdxjs-esm@3.0.0"
+          },
+          "purl": "pkg:npm/micromark-extension-mdxjs-esm@3.0.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/micromark-extension-mdxjs-esm@3.0.0"
+          },
+          "purl": "pkg:npm/micromark-extension-mdxjs-esm@3.0.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/micromark-extension-mdxjs-esm@3.0.0"
+          },
+          "purl": "pkg:npm/micromark-extension-mdxjs-esm@3.0.0"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {
+              "name": "micromark-extension-mdxjs-esm",
+              "type": "module",
+              "version": "3.0.0"
+            }
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "workspace:\".\"",
+          "locator": ".",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/micromark-extension-mdxjs-esm@3.0.0"
+          },
+          "purl": "pkg:npm/micromark-extension-mdxjs-esm@3.0.0"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"package.json\",\"dependencies\"]",
+          "node": "scope:[\"package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/micromark-extension-mdxjs-esm@3.0.0"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"package.json\",\"devDependencies\"]",
+          "node": "scope:[\"package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/micromark-extension-mdxjs-esm@3.0.0"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/micromark-extension-mdxjs-esm@3.0.0"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/micromark-extension-mdxjs-esm@3.0.0"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "package.json"
+        ]
+      }
     }
   ],
-  "subprojects": [],
-  "relationships": [],
-  "issues": []
+  "issues": [],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "package.json",
+      "evidence": [
+        "package.json"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "packagejson",
+            "files": [
+              "package.json"
+            ],
+            "key": "\".\""
+          },
+          "synthesizedPurl": false
+        }
+      ],
+      "purl": "pkg:npm/micromark-extension-mdxjs-esm@3.0.0"
+    }
+  ]
 }

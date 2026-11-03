@@ -2,7 +2,8 @@
 
 **Note**: This plugin is experimental.
 
-Conan analyzer plugin for Exscalibur.
+Conan analyzer plugin for Exscalibur. The default extractor returns format 2; see
+[result semantics](./RESULT.md) for native contexts and scope roots.
 
 Supported package files: `conanfile.txt`, `conanfile.py` and `conan.lock`.
 

@@ -1,163 +1,570 @@
 {
-  "packages": [
+  "codebase": "integration:sindresorhus/execa@23ec6f0569b3e42af43294dc807494ebe896e980",
+  "formatVersion": 2,
+  "graphs": [
     {
-      "purl": "pkg:npm/%40sindresorhus/merge-streams@4.0.0",
-      "evidence": [
-        "package.json#54"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40types/node@22.15.21",
-      "evidence": [
-        "package.json#68"
-      ]
-    },
-    {
-      "purl": "pkg:npm/ava@6.3.0",
-      "evidence": [
-        "package.json#69"
-      ]
-    },
-    {
-      "purl": "pkg:npm/c8@10.1.3",
-      "evidence": [
-        "package.json#70"
-      ]
-    },
-    {
-      "purl": "pkg:npm/cross-spawn@7.0.6",
-      "evidence": [
-        "package.json#55"
-      ]
-    },
-    {
-      "purl": "pkg:npm/figures@6.1.0",
-      "evidence": [
-        "package.json#56"
-      ]
-    },
-    {
-      "purl": "pkg:npm/get-node@15.0.3",
-      "evidence": [
-        "package.json#71"
-      ]
-    },
-    {
-      "purl": "pkg:npm/get-stream@9.0.0",
-      "evidence": [
-        "package.json#57"
-      ]
-    },
-    {
-      "purl": "pkg:npm/human-signals@8.0.1",
-      "evidence": [
-        "package.json#58"
-      ]
-    },
-    {
-      "purl": "pkg:npm/is-in-ci@1.0.0",
-      "evidence": [
-        "package.json#72"
-      ]
-    },
-    {
-      "purl": "pkg:npm/is-plain-obj@4.1.0",
-      "evidence": [
-        "package.json#59"
-      ]
-    },
-    {
-      "purl": "pkg:npm/is-running@2.1.0",
-      "evidence": [
-        "package.json#73"
-      ]
-    },
-    {
-      "purl": "pkg:npm/is-stream@4.0.1",
-      "evidence": [
-        "package.json#60"
-      ]
-    },
-    {
-      "purl": "pkg:npm/log-process-errors@12.0.1",
-      "evidence": [
-        "package.json#74"
-      ]
-    },
-    {
-      "purl": "pkg:npm/npm-run-path@6.0.0",
-      "evidence": [
-        "package.json#61"
-      ]
-    },
-    {
-      "purl": "pkg:npm/path-exists@5.0.0",
-      "evidence": [
-        "package.json#75"
-      ]
-    },
-    {
-      "purl": "pkg:npm/path-key@4.0.0",
-      "evidence": [
-        "package.json#76"
-      ]
-    },
-    {
-      "purl": "pkg:npm/pretty-ms@9.2.0",
-      "evidence": [
-        "package.json#62"
-      ]
-    },
-    {
-      "purl": "pkg:npm/signal-exit@4.1.0",
-      "evidence": [
-        "package.json#63"
-      ]
-    },
-    {
-      "purl": "pkg:npm/strip-final-newline@4.0.0",
-      "evidence": [
-        "package.json#64"
-      ]
-    },
-    {
-      "purl": "pkg:npm/tempfile@5.0.0",
-      "evidence": [
-        "package.json#77"
-      ]
-    },
-    {
-      "purl": "pkg:npm/tsd@0.32.0",
-      "evidence": [
-        "package.json#78"
-      ]
-    },
-    {
-      "purl": "pkg:npm/typescript@5.8.3",
-      "evidence": [
-        "package.json#79"
-      ]
-    },
-    {
-      "purl": "pkg:npm/which@5.0.0",
-      "evidence": [
-        "package.json#80"
-      ]
-    },
-    {
-      "purl": "pkg:npm/xo@0.60.0",
-      "evidence": [
-        "package.json#24"
-      ]
-    },
-    {
-      "purl": "pkg:npm/yoctocolors@2.1.1",
-      "evidence": [
-        "package.json#65"
-      ]
+      "attributes": {},
+      "edges": [
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"@sindresorhus/merge-streams\"]",
+            "name": "@sindresorhus/merge-streams",
+            "specifier": "^4.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"cross-spawn\"]",
+            "name": "cross-spawn",
+            "specifier": "^7.0.6"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"figures\"]",
+            "name": "figures",
+            "specifier": "^6.1.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"get-stream\"]",
+            "name": "get-stream",
+            "specifier": "^9.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"human-signals\"]",
+            "name": "human-signals",
+            "specifier": "^8.0.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"is-plain-obj\"]",
+            "name": "is-plain-obj",
+            "specifier": "^4.1.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"is-stream\"]",
+            "name": "is-stream",
+            "specifier": "^4.0.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"npm-run-path\"]",
+            "name": "npm-run-path",
+            "specifier": "^6.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"pretty-ms\"]",
+            "name": "pretty-ms",
+            "specifier": "^9.2.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"signal-exit\"]",
+            "name": "signal-exit",
+            "specifier": "^4.1.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"strip-final-newline\"]",
+            "name": "strip-final-newline",
+            "specifier": "^4.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"yoctocolors\"]",
+            "name": "yoctocolors",
+            "specifier": "^2.1.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@types/node\"]",
+            "name": "@types/node",
+            "specifier": "^22.15.21"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"ava\"]",
+            "name": "ava",
+            "specifier": "^6.3.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"c8\"]",
+            "name": "c8",
+            "specifier": "^10.1.3"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"get-node\"]",
+            "name": "get-node",
+            "specifier": "^15.0.3"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"is-in-ci\"]",
+            "name": "is-in-ci",
+            "specifier": "^1.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"is-running\"]",
+            "name": "is-running",
+            "specifier": "^2.1.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"log-process-errors\"]",
+            "name": "log-process-errors",
+            "specifier": "^12.0.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"path-exists\"]",
+            "name": "path-exists",
+            "specifier": "^5.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"path-key\"]",
+            "name": "path-key",
+            "specifier": "^4.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"tempfile\"]",
+            "name": "tempfile",
+            "specifier": "^5.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"tsd\"]",
+            "name": "tsd",
+            "specifier": "^0.32.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"typescript\"]",
+            "name": "typescript",
+            "specifier": "^5.8.3"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"which\"]",
+            "name": "which",
+            "specifier": "^5.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"xo\"]",
+            "name": "xo",
+            "specifier": "^0.60.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        }
+      ],
+      "id": "[\"packagejson\",\"package.json\",\"packagejson:1e3169af592774d6e972ba60f72222e556638ffc7b52b75429ffea5388b2ecd4\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/execa@9.6.0"
+          },
+          "purl": "pkg:npm/execa@9.6.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/execa@9.6.0"
+          },
+          "purl": "pkg:npm/execa@9.6.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/execa@9.6.0"
+          },
+          "purl": "pkg:npm/execa@9.6.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/execa@9.6.0"
+          },
+          "purl": "pkg:npm/execa@9.6.0"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {
+              "engines": {
+                "node": "^18.19.0 || >=20.5.0"
+              },
+              "name": "execa",
+              "type": "module",
+              "version": "9.6.0"
+            }
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "workspace:\".\"",
+          "locator": ".",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/execa@9.6.0"
+          },
+          "purl": "pkg:npm/execa@9.6.0"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"package.json\",\"dependencies\"]",
+          "node": "scope:[\"package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/execa@9.6.0"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"package.json\",\"devDependencies\"]",
+          "node": "scope:[\"package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/execa@9.6.0"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/execa@9.6.0"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/execa@9.6.0"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "package.json"
+        ]
+      }
     }
   ],
-  "subprojects": [],
-  "relationships": [],
-  "issues": []
+  "issues": [],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "package.json",
+      "evidence": [
+        "package.json"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "packagejson",
+            "files": [
+              "package.json"
+            ],
+            "key": "\".\""
+          },
+          "synthesizedPurl": false
+        }
+      ],
+      "purl": "pkg:npm/execa@9.6.0"
+    }
+  ]
 }

@@ -1,115 +1,441 @@
 {
-  "packages": [
+  "codebase": "integration:expressjs/compression@29499a19595d29432633d54f3a61ee56498dd1b6",
+  "formatVersion": 2,
+  "graphs": [
     {
-      "purl": "pkg:npm/after@0.8.2",
-      "evidence": [
-        "package.json#26"
-      ]
-    },
-    {
-      "purl": "pkg:npm/bytes@3.1.2",
-      "evidence": [
-        "package.json#17"
-      ]
-    },
-    {
-      "purl": "pkg:npm/compressible@2.0.18",
-      "evidence": [
-        "package.json#18"
-      ]
-    },
-    {
-      "purl": "pkg:npm/debug@2.6.9",
-      "evidence": [
-        "package.json#19"
-      ]
-    },
-    {
-      "purl": "pkg:npm/eslint-config-standard@14.1.1",
-      "evidence": [
-        "package.json#28"
-      ]
-    },
-    {
-      "purl": "pkg:npm/eslint-plugin-import@2.32.0",
-      "evidence": [
-        "package.json#29"
-      ]
-    },
-    {
-      "purl": "pkg:npm/eslint-plugin-markdown@2.2.1",
-      "evidence": [
-        "package.json#30"
-      ]
-    },
-    {
-      "purl": "pkg:npm/eslint-plugin-node@11.1.0",
-      "evidence": [
-        "package.json#31"
-      ]
-    },
-    {
-      "purl": "pkg:npm/eslint-plugin-promise@5.2.0",
-      "evidence": [
-        "package.json#32"
-      ]
-    },
-    {
-      "purl": "pkg:npm/eslint-plugin-standard@4.1.0",
-      "evidence": [
-        "package.json#33"
-      ]
-    },
-    {
-      "purl": "pkg:npm/eslint@7.32.0",
-      "evidence": [
-        "package.json#27"
-      ]
-    },
-    {
-      "purl": "pkg:npm/mocha@9.2.2",
-      "evidence": [
-        "package.json#34"
-      ]
-    },
-    {
-      "purl": "pkg:npm/negotiator@0.6.4",
-      "evidence": [
-        "package.json#20"
-      ]
-    },
-    {
-      "purl": "pkg:npm/nyc@15.1.0",
-      "evidence": [
-        "package.json#35"
-      ]
-    },
-    {
-      "purl": "pkg:npm/on-headers@1.1.0",
-      "evidence": [
-        "package.json#21"
-      ]
-    },
-    {
-      "purl": "pkg:npm/safe-buffer@5.2.1",
-      "evidence": [
-        "package.json#22"
-      ]
-    },
-    {
-      "purl": "pkg:npm/supertest@6.3.4",
-      "evidence": [
-        "package.json#36"
-      ]
-    },
-    {
-      "purl": "pkg:npm/vary@1.1.2",
-      "evidence": [
-        "package.json#23"
-      ]
+      "attributes": {},
+      "edges": [
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"bytes\"]",
+            "name": "bytes",
+            "specifier": "3.1.2"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"compressible\"]",
+            "name": "compressible",
+            "specifier": "~2.0.18"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"debug\"]",
+            "name": "debug",
+            "specifier": "2.6.9"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"negotiator\"]",
+            "name": "negotiator",
+            "specifier": "~0.6.4"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"on-headers\"]",
+            "name": "on-headers",
+            "specifier": "~1.1.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"safe-buffer\"]",
+            "name": "safe-buffer",
+            "specifier": "5.2.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"vary\"]",
+            "name": "vary",
+            "specifier": "~1.1.2"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"after\"]",
+            "name": "after",
+            "specifier": "0.8.2"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"eslint-config-standard\"]",
+            "name": "eslint-config-standard",
+            "specifier": "14.1.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"eslint-plugin-import\"]",
+            "name": "eslint-plugin-import",
+            "specifier": "2.32.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"eslint-plugin-markdown\"]",
+            "name": "eslint-plugin-markdown",
+            "specifier": "2.2.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"eslint-plugin-node\"]",
+            "name": "eslint-plugin-node",
+            "specifier": "11.1.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"eslint-plugin-promise\"]",
+            "name": "eslint-plugin-promise",
+            "specifier": "5.2.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"eslint-plugin-standard\"]",
+            "name": "eslint-plugin-standard",
+            "specifier": "4.1.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"eslint\"]",
+            "name": "eslint",
+            "specifier": "7.32.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"mocha\"]",
+            "name": "mocha",
+            "specifier": "9.2.2"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"nyc\"]",
+            "name": "nyc",
+            "specifier": "15.1.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"supertest\"]",
+            "name": "supertest",
+            "specifier": "6.3.4"
+          },
+          "selection": "selected",
+          "status": "declared"
+        }
+      ],
+      "id": "[\"packagejson\",\"package.json\",\"packagejson:6bb690d5461af003878f2d2f0121d7b0ab98c425f7a5ba8c2848ab65f656ba94\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/compression@1.8.1"
+          },
+          "purl": "pkg:npm/compression@1.8.1"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/compression@1.8.1"
+          },
+          "purl": "pkg:npm/compression@1.8.1"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/compression@1.8.1"
+          },
+          "purl": "pkg:npm/compression@1.8.1"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/compression@1.8.1"
+          },
+          "purl": "pkg:npm/compression@1.8.1"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {
+              "engines": {
+                "node": ">= 0.8.0"
+              },
+              "name": "compression",
+              "version": "1.8.1"
+            }
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "workspace:\".\"",
+          "locator": ".",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/compression@1.8.1"
+          },
+          "purl": "pkg:npm/compression@1.8.1"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"package.json\",\"dependencies\"]",
+          "node": "scope:[\"package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/compression@1.8.1"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"package.json\",\"devDependencies\"]",
+          "node": "scope:[\"package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/compression@1.8.1"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/compression@1.8.1"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/compression@1.8.1"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "package.json"
+        ]
+      }
     }
   ],
-  "subprojects": [],
-  "relationships": [],
-  "issues": []
+  "issues": [],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "package.json",
+      "evidence": [
+        "package.json"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "packagejson",
+            "files": [
+              "package.json"
+            ],
+            "key": "\".\""
+          },
+          "synthesizedPurl": false
+        }
+      ],
+      "purl": "pkg:npm/compression@1.8.1"
+    }
+  ]
 }

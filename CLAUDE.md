@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Excalibur extracts dependency graphs from software projects. It parses lockfiles, package manifests, and other dependency definition files to produce a normalized graph of packages, subprojects, and relationships. Output uses [Package URLs (PURLs)](https://github.com/package-url/purl-spec) as identifiers.
+Excalibur extracts dependency graphs from software projects. It parses lockfiles, package manifests, and other dependency definition files to produce a normalized catalog and independent contextual dependency graphs. Output uses [Package URLs (PURLs)](https://github.com/package-url/purl-spec) as identifiers.
 
 This is a pnpm workspace using Vite+ for install and task orchestration. All packages live under `packages/`.
 Published packages, the CLI, and repository tests target Node.js.
@@ -40,7 +40,13 @@ Integration tests in `test/` run all extractors against real open-source reposit
 
 Use the explicit file path because downloaded repositories can contain unrelated test files.
 
-**Update snapshots:** `UPDATE_SNAPSHOTS=1 vp test run ./test/integration.test.ts`
+**Baseline migration:** integration baselines must be reviewed against pinned native inputs.
+The harness requires a tracked, source-reviewed case in `test/integration-migration.json`
+before invoking extractors and never auto-updates baselines. See
+`test/INTEGRATION_ACCEPTANCE.md` for review evidence and outstanding prerequisites.
+The downloader supports an explicit `--transport git` and repeatable
+`--case owner+repository`; it never switches transports after a failure. Existing
+source directories without matching provenance receipts are preserved and rejected.
 
 **Pitfalls:**
 
@@ -61,16 +67,17 @@ The project uses `mise` to manage tool versions (see `mise.toml`):
 
 ```
 AnalyzerResult
-├── packages: Package[]        # { purl, evidence: string[] }
-├── subprojects: Subproject[]  # { purl, definitionFile, scopes: DependencyScope[] }
-├── relationships: Relationship[]  # { from, to: string[] }
-└── issues: Issue[]            # { message, severity, file? }
+├── formatVersion: 2
+├── codebase: string
+├── packages: Package[]          # PURL catalog identities
+├── subprojects: Subproject[]    # exact (PURL, definitionFile) subjects
+├── graphs: DependencyGraph[]    # independent observations, contextual nodes, roots and edges
+└── issues: Issue[]
 ```
 
-Key interfaces:
-
-- **`Extractor<Options>`** — `{ name, version: 1, extract(codebase, options?) }`. The primary interface all extractors implement.
-- **`FilesExtractor<Options>`** — `{ name, version: 1, markFiles(codebase, options), extractFile?(file, options) }`. Higher-level interface used with the `filesExtractor()` helper.
+`Extractor<Options>` and `FilesExtractor<Options>` have interface `version: 1`, independent
+of wire `formatVersion: 2`. Public types and functions use unversioned domain names.
+See `packages/analyzer-core/src/result/README.md` for semantics and the wire contract.
 
 ### Extractor Pattern
 
@@ -83,8 +90,8 @@ export const extractor: Extractor = filesExtractor({
   markFiles: async function (codebase, options) {
     // Use scanAndMarkFiles() or call this.markFile(path) directly
   },
-  extractFile: async (file, options) => {
-    // Parse file and return an AnalyzerResult
+  extractFile: async (file, options, context) => {
+    // Parse native data and return an AnalyzerResult with context.codebaseId
   },
 });
 ```
@@ -93,9 +100,13 @@ The core also exports `scanAndMarkFiles(context, codebase, globPattern, ignorePa
 
 ### Utility Functions
 
-- **`normalizeResult()`** — sorts all arrays for deterministic output
-- **`mergeResults()`** — combines multiple `AnalyzerResult` objects, deduplicating packages and merging relationships
-- **Map utilities** — `initializeExtractionMaps()`, `ensurePackageExists()`, `addPackageEvidence()`, `addRelationship()`, `buildResult()`, `errorResult()` for building results imperatively
+- **`normalizeResult()`** sorts known set-valued fields and retains native JSON array order.
+- **`mergeResults()`** merges a common codebase catalog and independent graphs, rejecting incompatible facts.
+- **`createEmptyResult(codebase)`** creates an empty format 2 result with its required namespace.
+- **`validateResult()`** checks portable JSON, identities and graph-local reference consistency.
+- **`queryDependencies()`** queries one exact root conservatively, without inferring native predicates.
+
+Legacy PURL-union map helpers, relationships and subproject scopes are removed.
 
 ### Plugins
 
@@ -119,7 +130,9 @@ Supporting packages: `analyzer-cli` (CLI entry point), `analyzer-test-utils` (sh
 
 ### Testing
 
-Tests use Vitest with snapshot testing. Each extractor package has:
-
-- `__fixtures__/` — real-world example files
-- `__snapshots__/` — expected output snapshots
+Tests use Vitest with source-backed semantic assertions, core validation and full normalized
+result snapshots. Shared fixture helpers require an `assertResult` callback, reject unexpected
+ERROR issues and compare the entire contextual result to its reviewed snapshot. Snapshot changes
+must be checked against native inputs; do not replace semantic assertions with generated output.
+`__fixtures__/` contains native inputs; integration baselines are separate reviewed artifacts.
+See `packages/analyzer-test-utils/README.md` for the snapshot review workflow.

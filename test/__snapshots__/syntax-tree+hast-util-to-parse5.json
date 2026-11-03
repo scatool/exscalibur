@@ -1,115 +1,439 @@
 {
-  "packages": [
+  "codebase": "integration:syntax-tree/hast-util-to-parse5@b92b23d91ce311ac5d81c0eaee94865387e6dcc5",
+  "formatVersion": 2,
+  "graphs": [
     {
-      "purl": "pkg:npm/%40types/hast@3.0.0",
-      "evidence": [
-        "package.json#36"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40types/json-stringify-safe@5.0.0",
-      "evidence": [
-        "package.json#45"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40types/node@20.0.0",
-      "evidence": [
-        "package.json#46"
-      ]
-    },
-    {
-      "purl": "pkg:npm/c8@8.0.0",
-      "evidence": [
-        "package.json#47"
-      ]
-    },
-    {
-      "purl": "pkg:npm/comma-separated-tokens@2.0.0",
-      "evidence": [
-        "package.json#37"
-      ]
-    },
-    {
-      "purl": "pkg:npm/devlop@1.0.0",
-      "evidence": [
-        "package.json#38"
-      ]
-    },
-    {
-      "purl": "pkg:npm/json-stringify-safe@5.0.0",
-      "evidence": [
-        "package.json#48"
-      ]
-    },
-    {
-      "purl": "pkg:npm/parse5@7.0.0",
-      "evidence": [
-        "package.json#13"
-      ]
-    },
-    {
-      "purl": "pkg:npm/prettier@3.0.0",
-      "evidence": [
-        "package.json#50"
-      ]
-    },
-    {
-      "purl": "pkg:npm/property-information@6.0.0",
-      "evidence": [
-        "package.json#39"
-      ]
-    },
-    {
-      "purl": "pkg:npm/remark-cli@11.0.0",
-      "evidence": [
-        "package.json#51"
-      ]
-    },
-    {
-      "purl": "pkg:npm/remark-preset-wooorm@9.0.0",
-      "evidence": [
-        "package.json#52"
-      ]
-    },
-    {
-      "purl": "pkg:npm/space-separated-tokens@2.0.0",
-      "evidence": [
-        "package.json#40"
-      ]
-    },
-    {
-      "purl": "pkg:npm/type-coverage@2.0.0",
-      "evidence": [
-        "package.json#53"
-      ]
-    },
-    {
-      "purl": "pkg:npm/typescript@5.0.0",
-      "evidence": [
-        "package.json#54"
-      ]
-    },
-    {
-      "purl": "pkg:npm/web-namespaces@2.0.0",
-      "evidence": [
-        "package.json#41"
-      ]
-    },
-    {
-      "purl": "pkg:npm/xo@0.55.0",
-      "evidence": [
-        "package.json#55"
-      ]
-    },
-    {
-      "purl": "pkg:npm/zwitch@2.0.0",
-      "evidence": [
-        "package.json#42"
-      ]
+      "attributes": {},
+      "edges": [
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"@types/hast\"]",
+            "name": "@types/hast",
+            "specifier": "^3.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"comma-separated-tokens\"]",
+            "name": "comma-separated-tokens",
+            "specifier": "^2.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"devlop\"]",
+            "name": "devlop",
+            "specifier": "^1.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"property-information\"]",
+            "name": "property-information",
+            "specifier": "^6.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"space-separated-tokens\"]",
+            "name": "space-separated-tokens",
+            "specifier": "^2.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"web-namespaces\"]",
+            "name": "web-namespaces",
+            "specifier": "^2.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"zwitch\"]",
+            "name": "zwitch",
+            "specifier": "^2.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@types/json-stringify-safe\"]",
+            "name": "@types/json-stringify-safe",
+            "specifier": "^5.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@types/node\"]",
+            "name": "@types/node",
+            "specifier": "^20.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"c8\"]",
+            "name": "c8",
+            "specifier": "^8.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"json-stringify-safe\"]",
+            "name": "json-stringify-safe",
+            "specifier": "^5.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"parse5\"]",
+            "name": "parse5",
+            "specifier": "^7.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"prettier\"]",
+            "name": "prettier",
+            "specifier": "^3.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"remark-cli\"]",
+            "name": "remark-cli",
+            "specifier": "^11.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"remark-preset-wooorm\"]",
+            "name": "remark-preset-wooorm",
+            "specifier": "^9.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"type-coverage\"]",
+            "name": "type-coverage",
+            "specifier": "^2.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"typescript\"]",
+            "name": "typescript",
+            "specifier": "^5.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"xo\"]",
+            "name": "xo",
+            "specifier": "^0.55.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        }
+      ],
+      "id": "[\"packagejson\",\"package.json\",\"packagejson:a8ad8d9b1ef4daab8978aac8d0cf7c48c228624fe0a25b79784a05bfe7743efa\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/hast-util-to-parse5@8.0.0"
+          },
+          "purl": "pkg:npm/hast-util-to-parse5@8.0.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/hast-util-to-parse5@8.0.0"
+          },
+          "purl": "pkg:npm/hast-util-to-parse5@8.0.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/hast-util-to-parse5@8.0.0"
+          },
+          "purl": "pkg:npm/hast-util-to-parse5@8.0.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/hast-util-to-parse5@8.0.0"
+          },
+          "purl": "pkg:npm/hast-util-to-parse5@8.0.0"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {
+              "name": "hast-util-to-parse5",
+              "type": "module",
+              "version": "8.0.0"
+            }
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "workspace:\".\"",
+          "locator": ".",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/hast-util-to-parse5@8.0.0"
+          },
+          "purl": "pkg:npm/hast-util-to-parse5@8.0.0"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"package.json\",\"dependencies\"]",
+          "node": "scope:[\"package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/hast-util-to-parse5@8.0.0"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"package.json\",\"devDependencies\"]",
+          "node": "scope:[\"package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/hast-util-to-parse5@8.0.0"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/hast-util-to-parse5@8.0.0"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/hast-util-to-parse5@8.0.0"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "package.json"
+        ]
+      }
     }
   ],
-  "subprojects": [],
-  "relationships": [],
-  "issues": []
+  "issues": [],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "package.json",
+      "evidence": [
+        "package.json"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "packagejson",
+            "files": [
+              "package.json"
+            ],
+            "key": "\".\""
+          },
+          "synthesizedPurl": false
+        }
+      ],
+      "purl": "pkg:npm/hast-util-to-parse5@8.0.0"
+    }
+  ]
 }

@@ -1,237 +1,802 @@
 {
-  "packages": [
+  "codebase": "integration:encode/httpx@ae1b9f66238f75ced3ced5e4485408435de10768",
+  "formatVersion": 2,
+  "graphs": [
     {
-      "purl": "pkg:pypi/anyio",
-      "evidence": [
-        "pyproject.toml#33"
-      ]
+      "attributes": {
+        "python:manifest": {
+          "build-system": {
+            "build-backend": "hatchling.build",
+            "requires": [
+              "hatchling",
+              "hatch-fancy-pypi-readme"
+            ]
+          },
+          "project": {
+            "authors": [
+              {
+                "email": "tom@tomchristie.com",
+                "name": "Tom Christie"
+              }
+            ],
+            "classifiers": [
+              "Development Status :: 4 - Beta",
+              "Environment :: Web Environment",
+              "Framework :: AsyncIO",
+              "Framework :: Trio",
+              "Intended Audience :: Developers",
+              "License :: OSI Approved :: BSD License",
+              "Operating System :: OS Independent",
+              "Programming Language :: Python :: 3",
+              "Programming Language :: Python :: 3 :: Only",
+              "Programming Language :: Python :: 3.9",
+              "Programming Language :: Python :: 3.10",
+              "Programming Language :: Python :: 3.11",
+              "Programming Language :: Python :: 3.12",
+              "Programming Language :: Python :: 3.13",
+              "Topic :: Internet :: WWW/HTTP"
+            ],
+            "dependencies": [
+              "certifi",
+              "httpcore==1.*",
+              "anyio",
+              "idna"
+            ],
+            "description": "The next generation HTTP client.",
+            "dynamic": [
+              "readme",
+              "version"
+            ],
+            "license": "BSD-3-Clause",
+            "name": "httpx",
+            "optional-dependencies": {
+              "brotli": [
+                "brotli; platform_python_implementation == 'CPython'",
+                "brotlicffi; platform_python_implementation != 'CPython'"
+              ],
+              "cli": [
+                "click==8.*",
+                "pygments==2.*",
+                "rich>=10,<15"
+              ],
+              "http2": [
+                "h2>=3,<5"
+              ],
+              "socks": [
+                "socksio==1.*"
+              ],
+              "zstd": [
+                "zstandard>=0.18.0"
+              ]
+            },
+            "requires-python": ">=3.9",
+            "scripts": {
+              "httpx": "httpx:main"
+            },
+            "urls": {
+              "Changelog": "https://github.com/encode/httpx/blob/master/CHANGELOG.md",
+              "Documentation": "https://www.python-httpx.org",
+              "Homepage": "https://github.com/encode/httpx",
+              "Source": "https://github.com/encode/httpx"
+            }
+          },
+          "tool": {
+            "coverage": {
+              "run": {
+                "include": [
+                  "httpx/*",
+                  "tests/*"
+                ],
+                "omit": [
+                  "venv/*"
+                ]
+              }
+            },
+            "hatch": {
+              "build": {
+                "targets": {
+                  "sdist": {
+                    "include": [
+                      "/httpx",
+                      "/CHANGELOG.md",
+                      "/README.md",
+                      "/tests"
+                    ]
+                  }
+                }
+              },
+              "metadata": {
+                "hooks": {
+                  "fancy-pypi-readme": {
+                    "content-type": "text/markdown",
+                    "fragments": [
+                      {
+                        "path": "README.md"
+                      },
+                      {
+                        "text": "\n## Release Information\n\n"
+                      },
+                      {
+                        "path": "CHANGELOG.md",
+                        "pattern": "\n(###.+?\n)## "
+                      },
+                      {
+                        "text": "\n---\n\n[Full changelog](https://github.com/encode/httpx/blob/master/CHANGELOG.md)\n"
+                      }
+                    ],
+                    "substitutions": [
+                      {
+                        "pattern": "src=\"(docs/img/.*?)\"",
+                        "replacement": "src=\"https://raw.githubusercontent.com/encode/httpx/master/\\1\""
+                      }
+                    ]
+                  }
+                }
+              },
+              "version": {
+                "path": "httpx/__version__.py"
+              }
+            },
+            "mypy": {
+              "ignore_missing_imports": true,
+              "overrides": [
+                {
+                  "check_untyped_defs": true,
+                  "disallow_untyped_defs": false,
+                  "module": "tests.*"
+                }
+              ],
+              "strict": true
+            },
+            "pytest": {
+              "ini_options": {
+                "addopts": "-rxXs",
+                "filterwarnings": [
+                  "error",
+                  "ignore: You seem to already have a custom sys.excepthook handler installed. I'll skip installing Trio's custom handler, but this means MultiErrors will not show full tracebacks.:RuntimeWarning",
+                  "ignore: trio.MultiError is deprecated since Trio 0.22.0:trio.TrioDeprecationWarning"
+                ],
+                "markers": [
+                  "copied_from(source, changes=None): mark test as copied from somewhere else, along with a description of changes made to accodomate e.g. our test setup",
+                  "network: marks tests which require network connection. Used in 3rd-party build environments that have network disabled."
+                ]
+              }
+            },
+            "ruff": {
+              "lint": {
+                "ignore": [
+                  "B904",
+                  "B028"
+                ],
+                "isort": {
+                  "combine-as-imports": true
+                },
+                "per-file-ignores": {
+                  "__init__.py": [
+                    "F403",
+                    "F405"
+                  ]
+                },
+                "select": [
+                  "E",
+                  "F",
+                  "I",
+                  "B",
+                  "PIE"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "edges": [
+        {
+          "condition": {
+            "expression": "platform_python_implementation != 'CPython'",
+            "language": "pep508"
+          },
+          "evidence": [
+            "pyproject.toml"
+          ],
+          "from": "scope:\"optional.brotli\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "condition": {
+              "expression": "platform_python_implementation != 'CPython'",
+              "language": "pep508"
+            },
+            "name": "brotlicffi",
+            "specifier": "brotlicffi; platform_python_implementation != 'CPython'"
+          },
+          "selection": "conditional",
+          "status": "declared"
+        },
+        {
+          "condition": {
+            "expression": "platform_python_implementation == 'CPython'",
+            "language": "pep508"
+          },
+          "evidence": [
+            "pyproject.toml"
+          ],
+          "from": "scope:\"optional.brotli\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "condition": {
+              "expression": "platform_python_implementation == 'CPython'",
+              "language": "pep508"
+            },
+            "name": "brotli",
+            "specifier": "brotli; platform_python_implementation == 'CPython'"
+          },
+          "selection": "conditional",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "pyproject.toml"
+          ],
+          "from": "scope:\"dependencies\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "anyio",
+            "specifier": "anyio"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "pyproject.toml"
+          ],
+          "from": "scope:\"dependencies\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "certifi",
+            "specifier": "certifi"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "pyproject.toml"
+          ],
+          "from": "scope:\"dependencies\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "httpcore",
+            "specifier": "httpcore==1.*"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "pyproject.toml"
+          ],
+          "from": "scope:\"dependencies\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "idna",
+            "specifier": "idna"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "pyproject.toml"
+          ],
+          "from": "scope:\"optional.cli\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "click",
+            "specifier": "click==8.*"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "pyproject.toml"
+          ],
+          "from": "scope:\"optional.cli\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "pygments",
+            "specifier": "pygments==2.*"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "pyproject.toml"
+          ],
+          "from": "scope:\"optional.cli\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "rich",
+            "specifier": "rich>=10,<15"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "pyproject.toml"
+          ],
+          "from": "scope:\"optional.http2\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "h2",
+            "specifier": "h2>=3,<5"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "pyproject.toml"
+          ],
+          "from": "scope:\"optional.socks\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "socksio",
+            "specifier": "socksio==1.*"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "pyproject.toml"
+          ],
+          "from": "scope:\"optional.zstd\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "zstandard",
+            "specifier": "zstandard>=0.18.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        }
+      ],
+      "id": "[\"pyprojecttoml\",\"pyproject.toml\",\"pyprojecttoml:4682b764daf5eb1f50440be9366ca50f5b6d772191f0da65806081e9ba9ffae1\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:\"dependencies\"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/httpx"
+          },
+          "purl": "pkg:pypi/httpx"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:\"optional.brotli\"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/httpx"
+          },
+          "purl": "pkg:pypi/httpx"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:\"optional.cli\"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/httpx"
+          },
+          "purl": "pkg:pypi/httpx"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:\"optional.http2\"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/httpx"
+          },
+          "purl": "pkg:pypi/httpx"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:\"optional.socks\"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/httpx"
+          },
+          "purl": "pkg:pypi/httpx"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:\"optional.zstd\"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/httpx"
+          },
+          "purl": "pkg:pypi/httpx"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:\"dependencies\"",
+          "node": "scope:\"dependencies\"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/httpx"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:\"optional.brotli\"",
+          "node": "scope:\"optional.brotli\"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/httpx"
+          },
+          "scope": "optional.brotli"
+        },
+        {
+          "id": "scope:\"optional.cli\"",
+          "node": "scope:\"optional.cli\"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/httpx"
+          },
+          "scope": "optional.cli"
+        },
+        {
+          "id": "scope:\"optional.http2\"",
+          "node": "scope:\"optional.http2\"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/httpx"
+          },
+          "scope": "optional.http2"
+        },
+        {
+          "id": "scope:\"optional.socks\"",
+          "node": "scope:\"optional.socks\"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/httpx"
+          },
+          "scope": "optional.socks"
+        },
+        {
+          "id": "scope:\"optional.zstd\"",
+          "node": "scope:\"optional.zstd\"",
+          "project": {
+            "definitionFile": "pyproject.toml",
+            "purl": "pkg:pypi/httpx"
+          },
+          "scope": "optional.zstd"
+        }
+      ],
+      "source": {
+        "extractor": "pyprojecttoml",
+        "files": [
+          "pyproject.toml"
+        ]
+      }
     },
     {
-      "purl": "pkg:pypi/brotli",
-      "evidence": [
-        "pyproject.toml#39"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/brotlicffi",
-      "evidence": [
-        "pyproject.toml#41"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/build",
-      "evidence": [
-        "requirements.txt#17"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/certifi",
-      "evidence": [
-        "pyproject.toml#31"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/chardet",
-      "evidence": [
-        "requirements.txt#9"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/click",
-      "evidence": [
-        "pyproject.toml#44"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/coverage",
-      "evidence": [
-        "requirements.txt#21"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/cryptography",
-      "evidence": [
-        "requirements.txt#22"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/h2",
-      "evidence": [
-        "pyproject.toml#49"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/httpcore",
-      "evidence": [
-        "pyproject.toml#32"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/idna",
-      "evidence": [
-        "pyproject.toml#34"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/mkautodoc",
-      "evidence": [
-        "requirements.txt#13"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/mkdocs",
-      "evidence": [
-        "requirements.txt#12"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/mkdocs-material",
-      "evidence": [
-        "requirements.txt#14"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/mypy",
-      "evidence": [
-        "requirements.txt#23"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/pygments",
-      "evidence": [
-        "pyproject.toml#45"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/pytest",
-      "evidence": [
-        "requirements.txt#24"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/rich",
-      "evidence": [
-        "pyproject.toml#46"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/ruff",
-      "evidence": [
-        "requirements.txt#25"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/socksio",
-      "evidence": [
-        "pyproject.toml#52"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/trio",
-      "evidence": [
-        "requirements.txt#26"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/trio-typing",
-      "evidence": [
-        "requirements.txt#27"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/trustme",
-      "evidence": [
-        "requirements.txt#28"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/twine",
-      "evidence": [
-        "requirements.txt#18"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/uvicorn",
-      "evidence": [
-        "requirements.txt#29"
-      ]
-    },
-    {
-      "purl": "pkg:pypi/zstandard",
-      "evidence": [
-        "pyproject.toml#55"
-      ]
+      "edges": [
+        {
+          "evidence": [
+            "requirements.txt"
+          ],
+          "from": "scope:\"requirements\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "features": [
+              "toml"
+            ],
+            "name": "coverage",
+            "specifier": "coverage[toml]==7.10.6"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "requirements.txt"
+          ],
+          "from": "scope:\"requirements\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "build",
+            "specifier": "build==1.3.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "requirements.txt"
+          ],
+          "from": "scope:\"requirements\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "chardet",
+            "specifier": "chardet==5.2.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "requirements.txt"
+          ],
+          "from": "scope:\"requirements\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "cryptography",
+            "specifier": "cryptography==45.0.7"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "requirements.txt"
+          ],
+          "from": "scope:\"requirements\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "mkautodoc",
+            "specifier": "mkautodoc==0.2.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "requirements.txt"
+          ],
+          "from": "scope:\"requirements\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "mkdocs",
+            "specifier": "mkdocs==1.6.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "requirements.txt"
+          ],
+          "from": "scope:\"requirements\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "mkdocs-material",
+            "specifier": "mkdocs-material==9.6.18"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "requirements.txt"
+          ],
+          "from": "scope:\"requirements\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "mypy",
+            "specifier": "mypy==1.17.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "requirements.txt"
+          ],
+          "from": "scope:\"requirements\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "pytest",
+            "specifier": "pytest==8.4.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "requirements.txt"
+          ],
+          "from": "scope:\"requirements\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "ruff",
+            "specifier": "ruff==0.12.11"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "requirements.txt"
+          ],
+          "from": "scope:\"requirements\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "trio",
+            "specifier": "trio==0.31.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "requirements.txt"
+          ],
+          "from": "scope:\"requirements\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "trio-typing",
+            "specifier": "trio-typing==0.10.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "requirements.txt"
+          ],
+          "from": "scope:\"requirements\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "trustme",
+            "specifier": "trustme==1.2.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "requirements.txt"
+          ],
+          "from": "scope:\"requirements\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "twine",
+            "specifier": "twine==6.1.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "requirements.txt"
+          ],
+          "from": "scope:\"requirements\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "name": "uvicorn",
+            "specifier": "uvicorn==0.35.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "requirements.txt"
+          ],
+          "from": "scope:\"requirements\"",
+          "kind": "dependency",
+          "relation": "depends-on",
+          "requested": {
+            "specifier": "-e .[brotli,cli,http2,socks,zstd]"
+          },
+          "selection": "selected",
+          "status": "declared"
+        }
+      ],
+      "id": "[\"requirementstxt\",\"requirements.txt\",\"requirementstxt:f263fec9fcb3dc3ade14c276da4a0a84437d6ea878711f866d43a21ed6b1bd5c\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "id": "scope:\"requirements\"",
+          "project": {
+            "definitionFile": "requirements.txt",
+            "purl": "pkg:generic/python-input/cbe5100bde1c2f2c1615cb2d17c05f2ac48073af9a75c1385c18ec58aa69629c"
+          },
+          "purl": "pkg:generic/python-input/cbe5100bde1c2f2c1615cb2d17c05f2ac48073af9a75c1385c18ec58aa69629c"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:\"requirements\"",
+          "node": "scope:\"requirements\"",
+          "project": {
+            "definitionFile": "requirements.txt",
+            "purl": "pkg:generic/python-input/cbe5100bde1c2f2c1615cb2d17c05f2ac48073af9a75c1385c18ec58aa69629c"
+          },
+          "scope": "requirements"
+        }
+      ],
+      "source": {
+        "extractor": "requirementstxt",
+        "files": [
+          "requirements.txt"
+        ]
+      }
     }
   ],
+  "issues": [],
+  "packages": [],
   "subprojects": [
     {
-      "purl": "pkg:pypi/httpx",
-      "definitionFile": "pyproject.toml",
-      "scopes": [
+      "definitionFile": "requirements.txt",
+      "evidence": [
+        "requirements.txt"
+      ],
+      "identityObservations": [
         {
-          "scope": "dependencies",
-          "packages": [
-            "pkg:pypi/anyio",
-            "pkg:pypi/certifi",
-            "pkg:pypi/httpcore",
-            "pkg:pypi/idna"
-          ]
-        },
-        {
-          "scope": "optional.brotli",
-          "packages": [
-            "pkg:pypi/brotli",
-            "pkg:pypi/brotlicffi"
-          ]
-        },
-        {
-          "scope": "optional.cli",
-          "packages": [
-            "pkg:pypi/click",
-            "pkg:pypi/pygments",
-            "pkg:pypi/rich"
-          ]
-        },
-        {
-          "scope": "optional.http2",
-          "packages": [
-            "pkg:pypi/h2"
-          ]
-        },
-        {
-          "scope": "optional.socks",
-          "packages": [
-            "pkg:pypi/socksio"
-          ]
-        },
-        {
-          "scope": "optional.zstd",
-          "packages": [
-            "pkg:pypi/zstandard"
-          ]
+          "source": {
+            "extractor": "requirementstxt",
+            "files": [
+              "requirements.txt"
+            ]
+          },
+          "synthesizedPurl": true
         }
-      ]
-    }
-  ],
-  "relationships": [],
-  "issues": [
-    {
-      "code": "pyprojecttoml.unresolved_dependencies",
-      "severity": "WARNING",
-      "message": "pyproject.toml dependencies are unresolved and emitted as versionless PyPI PURLs because no supported Python lockfile was found. Use a lockfile for resolved versions and transitive relationships.",
-      "file": "pyproject.toml"
+      ],
+      "purl": "pkg:generic/python-input/cbe5100bde1c2f2c1615cb2d17c05f2ac48073af9a75c1385c18ec58aa69629c"
     },
     {
-      "code": "requirementstxt.unresolved_dependencies",
-      "severity": "WARNING",
-      "message": "requirements.txt dependencies are unresolved and emitted as versionless PyPI PURLs. Use a lockfile for resolved versions and transitive relationships.",
-      "file": "requirements.txt"
-    },
-    {
-      "code": "requirementstxt.unsupported_editable_dependency_declaration",
-      "severity": "WARNING",
-      "message": "Unsupported editable requirements.txt dependency declaration was not emitted: -e .[brotli,cli,http2,socks,zstd]",
-      "file": "requirements.txt#5"
+      "definitionFile": "pyproject.toml",
+      "evidence": [
+        "pyproject.toml"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "pyprojecttoml",
+            "files": [
+              "pyproject.toml"
+            ]
+          },
+          "synthesizedPurl": false
+        }
+      ],
+      "purl": "pkg:pypi/httpx"
     }
   ]
 }

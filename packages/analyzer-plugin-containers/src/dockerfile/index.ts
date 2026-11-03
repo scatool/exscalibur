@@ -1,185 +1,103 @@
 import {
-  type AnalyzerResult,
-  type Extractor,
+  createDependencyGraph,
+  createEmptyResult,
   filesExtractor,
+  normalizeResult,
   readNormalizedTextFile,
   scanAndMarkFiles,
+  type AnalyzerResult,
+  type DependencyEdge,
 } from "@scatool/analyzer-core";
 import { PackageURL } from "packageurl-js";
 
-const ARG_PATTERN = /^\s*ARG\s+([A-Z_][A-Z0-9_]*)=(.+?)(?:\s*#.*)?$/im;
-const STAGE_PATTERN = /^\s*FROM\s+(?:--platform=\S+\s+)?\S+\s+AS\s+(\S+)(?:\s*#.*)?/im;
-const FROM_PATTERN = /^\s*FROM\s+(?:--platform=\S+\s+)?(\S+)(?:\s|#|$)/im;
+export { parseContainerImage } from "../image.ts";
 
-export const extractor: Extractor = filesExtractor({
+export const extractor = filesExtractor({
   name: "dockerfile",
   version: 1,
-  markFiles: async function (codebase: string) {
+  markFiles: async function (codebase) {
     await scanAndMarkFiles(this, codebase, "**/Dockerfile*", []);
   },
-  extractFile: async (file: string): Promise<AnalyzerResult> => {
-    const content = await readNormalizedTextFile(file);
-    return extractDockerfile(content, file);
-  },
+  extractFile: async (file, _options, context) =>
+    extractDockerfile(await readNormalizedTextFile(file), context.relativeFile, context.codebaseId),
 });
 
-export function extractDockerfile(content: string, filePath?: string): AnalyzerResult {
-  const packages: Array<{ purl: string; lineNumber: number }> = [];
-
-  // Parse ARG instructions to build a variable map
-  const args = new Map<string, string>();
-  for (const argMatch of content.matchAll(new RegExp(ARG_PATTERN, "gim"))) {
-    const varName = argMatch[1];
-    const varValue = argMatch[2];
-    if (varName && varValue) {
-      args.set(varName, varValue.trim());
-    }
-  }
-
-  // Collect all stage names to exclude internal references
-  const stageNames = new Set<string>();
-  for (const stageMatch of content.matchAll(new RegExp(STAGE_PATTERN, "gim"))) {
-    const stageName = stageMatch[1];
-    if (stageName) {
-      stageNames.add(stageName.toLowerCase());
-    }
-  }
-
-  // Match FROM instructions and track line numbers
-  for (const match of content.matchAll(new RegExp(FROM_PATTERN, "gim"))) {
-    let imageRef = match[1];
-
-    // Skip on scratch image
-    if (!imageRef || imageRef === "scratch") continue;
-
-    // Skip if this is a reference to an internal stage
-    if (stageNames.has(imageRef.toLowerCase())) {
+/** FROM records declare build inputs; they do not resolve image contents or a selected build target. */
+export function extractDockerfile(
+  content: string,
+  filePath = "Dockerfile",
+  codebase = "input:dockerfile",
+): AnalyzerResult {
+  const result = createEmptyResult(codebase);
+  const project = {
+    purl: new PackageURL("generic", "dockerfile", "build", null, null, null).toString(),
+    definitionFile: filePath,
+  };
+  result.subprojects.push({
+    ...project,
+    evidence: [filePath],
+    identityObservations: [
+      { source: { extractor: "dockerfile", files: [filePath] }, synthesizedPurl: true },
+    ],
+  });
+  const edges: DependencyEdge[] = [];
+  const stages = new Set<string>();
+  const argDefaults: { name: string; value: string; line: number }[] = [];
+  let partial = false;
+  const lines = content.split("\n");
+  for (const [index, line] of lines.entries()) {
+    const arg = /^\s*ARG\s+([A-Z_][A-Z0-9_]*)=(.+?)(?:\s*#.*)?$/i.exec(line);
+    if (arg) argDefaults.push({ name: arg[1]!, value: arg[2]!.trim(), line: index + 1 });
+    if (!/^\s*FROM\b/i.test(line)) continue;
+    const match = /^\s*FROM\s+(?:--platform=(\S+)\s+)?(\S+)(?:\s+AS\s+(\S+))?\s*(?:#.*)?$/i.exec(
+      line,
+    );
+    if (!match || /[\\`]\s*$/.test(line)) {
+      partial = true;
+      result.issues.push({
+        code: "UNSUPPORTED_FROM",
+        severity: "WARNING",
+        message: "FROM instruction could not be fully parsed",
+        file: `${filePath}#${index + 1}`,
+      });
       continue;
     }
-
-    // Substitute ARG variables
-    imageRef = substituteArgs(imageRef, args);
-
-    const purl = parseContainerImage(imageRef);
-    if (purl) {
-      // Calculate line number by counting newlines before the match
-      const lineNumber = content.substring(0, match.index).split("\n").length;
-      packages.push({ purl, lineNumber });
+    const [, platform, reference, stage] = match;
+    if (reference !== "scratch" && !stages.has(reference!.toLowerCase())) {
+      edges.push({
+        from: "source",
+        relation: "depends-on",
+        status: "declared",
+        selection: "selected",
+        kind: "FROM",
+        requested: { name: reference!, specifier: reference! },
+        evidence: [`${filePath}#${index + 1}`],
+        attributes: {
+          "dockerfile:line": index + 1,
+          ...(platform && { "dockerfile:platform": platform }),
+          ...(stage && { "dockerfile:stage": stage }),
+        },
+      });
     }
+    if (stage) stages.add(stage.toLowerCase());
   }
-
-  return {
-    packages: packages.map((pkg) => ({
-      purl: pkg.purl,
-      evidence: filePath ? [`${filePath}#${pkg.lineNumber}`] : [],
-    })),
-    subprojects: [],
-    relationships: [],
-    issues: [],
-  };
-}
-
-// Replace ${VAR} and $VAR with values from args map
-function substituteArgs(str: string, args: Map<string, string>): string {
-  let result = str;
-
-  // Replace ${VAR} format
-  result = result.replace(
-    /\$\{([A-Z_][A-Z0-9_]*)}/g,
-    (match, varName) => args.get(varName) || match,
+  result.graphs.push(
+    createDependencyGraph({
+      source: { extractor: "dockerfile", files: [filePath] },
+      interpretation: "declared",
+      context: { "dockerfile:argDefaults": argDefaults },
+      rootCompleteness: "complete",
+      roots: [{ id: "from", project, scope: "from", node: "source" }],
+      nodes: [
+        {
+          id: "source",
+          purl: project.purl,
+          project,
+          dependencyCompleteness: partial ? "partial" : "complete",
+        },
+      ],
+      edges,
+    }),
   );
-
-  // Replace $VAR format (without braces)
-  result = result.replace(/\$([A-Z_][A-Z0-9_]*)/g, (match, varName) => args.get(varName) || match);
-
-  return result;
-}
-
-export function parseContainerImage(imageRef: string): string | null {
-  // Container image format: [registry/]name[:tag|@digest]
-
-  // Per PURL spec:
-  // - namespace: registry/user/organization (optional)
-  // - name: image name (required)
-  // - version: tag or sha256 (optional, prefer sha256)
-  // - qualifiers: repository_url for non-Docker Hub registries
-
-  let registry: string;
-  let namespace = "";
-  let name: string;
-  let version = "";
-
-  // Split by @ for digest
-  let digestPart = "";
-  const atIndex = imageRef.indexOf("@");
-  if (atIndex !== -1) {
-    digestPart = imageRef.substring(atIndex + 1);
-    imageRef = imageRef.substring(0, atIndex);
-  }
-
-  // Split by : for tag
-  const colonIndex = imageRef.lastIndexOf(":");
-  if (colonIndex !== -1) {
-    version = imageRef.substring(colonIndex + 1);
-    imageRef = imageRef.substring(0, colonIndex);
-  }
-
-  // If we had a digest, use that as version and URL-encode the colon
-  if (digestPart) {
-    // Per spec example: sha256%3A244fd47e07d10
-    version = digestPart.replace(":", "%3A");
-  }
-
-  // Default version if not specified
-  if (!version) {
-    version = "latest";
-  }
-
-  // Parse registry and name
-  const parts = imageRef.split("/");
-
-  // Check if first part is a registry (contains . or : or is localhost)
-  if (
-    parts.length > 1 &&
-    (parts[0]?.includes(".") || parts[0]?.includes(":") || parts[0] === "localhost")
-  ) {
-    registry = parts[0] || "";
-    const remainingParts = parts.slice(1);
-
-    // For custom registries, everything except the last part is namespace
-    if (remainingParts.length > 1) {
-      namespace = remainingParts.slice(0, -1).join("/");
-      name = remainingParts[remainingParts.length - 1] || "";
-    } else {
-      name = remainingParts[0] || "";
-    }
-  } else {
-    // No explicit registry, assume Docker Hub
-    registry = "docker.io";
-
-    // For Docker Hub:
-    // - Official images (no /): namespace is empty, name is just the image
-    // - User/org images (has /): namespace is user/org, name is image
-    if (imageRef.includes("/")) {
-      const slashIndex = imageRef.lastIndexOf("/");
-      namespace = imageRef.substring(0, slashIndex);
-      name = imageRef.substring(slashIndex + 1);
-    } else {
-      // Official image - no namespace
-      namespace = "";
-      name = imageRef;
-    }
-  }
-
-  // Create PURL per spec
-  let qualifiers: Record<string, string> | null = null;
-
-  // For non-Docker Hub registries, use repository_url qualifier
-  if (registry && registry !== "docker.io") {
-    qualifiers = { repository_url: registry };
-  }
-
-  const purl = new PackageURL("docker", namespace || null, name, version, qualifiers, null);
-
-  return purl.toString();
+  return normalizeResult(result);
 }

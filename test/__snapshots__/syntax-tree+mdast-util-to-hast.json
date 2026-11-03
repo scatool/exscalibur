@@ -1,145 +1,519 @@
 {
-  "packages": [
+  "codebase": "integration:syntax-tree/mdast-util-to-hast@f511a93817b131fb73419bf7d24d73a5b8b0f0c2",
+  "formatVersion": 2,
+  "graphs": [
     {
-      "purl": "pkg:npm/%40types/hast@3.0.0",
-      "evidence": [
-        "package.json#36"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40types/mdast@4.0.0",
-      "evidence": [
-        "package.json#37"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40types/node@20.0.0",
-      "evidence": [
-        "package.json#47"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40types/ungap__structured-clone@1.0.0",
-      "evidence": [
-        "package.json#48"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40ungap/structured-clone@1.0.0",
-      "evidence": [
-        "package.json#38"
-      ]
-    },
-    {
-      "purl": "pkg:npm/c8@9.0.0",
-      "evidence": [
-        "package.json#49"
-      ]
-    },
-    {
-      "purl": "pkg:npm/devlop@1.0.0",
-      "evidence": [
-        "package.json#39"
-      ]
-    },
-    {
-      "purl": "pkg:npm/hast-util-to-html@9.0.0",
-      "evidence": [
-        "package.json#50"
-      ]
-    },
-    {
-      "purl": "pkg:npm/hastscript@9.0.0",
-      "evidence": [
-        "package.json#51"
-      ]
-    },
-    {
-      "purl": "pkg:npm/mdast-util-from-markdown@2.0.0",
-      "evidence": [
-        "package.json#52"
-      ]
-    },
-    {
-      "purl": "pkg:npm/mdast-util-gfm@3.0.0",
-      "evidence": [
-        "package.json#53"
-      ]
-    },
-    {
-      "purl": "pkg:npm/micromark-extension-gfm@3.0.0",
-      "evidence": [
-        "package.json#54"
-      ]
-    },
-    {
-      "purl": "pkg:npm/micromark-util-sanitize-uri@2.0.0",
-      "evidence": [
-        "package.json#40"
-      ]
-    },
-    {
-      "purl": "pkg:npm/prettier@3.0.0",
-      "evidence": [
-        "package.json#55"
-      ]
-    },
-    {
-      "purl": "pkg:npm/remark-cli@12.0.0",
-      "evidence": [
-        "package.json#56"
-      ]
-    },
-    {
-      "purl": "pkg:npm/remark-preset-wooorm@10.0.0",
-      "evidence": [
-        "package.json#57"
-      ]
-    },
-    {
-      "purl": "pkg:npm/trim-lines@3.0.0",
-      "evidence": [
-        "package.json#41"
-      ]
-    },
-    {
-      "purl": "pkg:npm/type-coverage@2.0.0",
-      "evidence": [
-        "package.json#58"
-      ]
-    },
-    {
-      "purl": "pkg:npm/typescript@5.5.1-rc",
-      "evidence": [
-        "package.json#59"
-      ]
-    },
-    {
-      "purl": "pkg:npm/unist-util-position@5.0.0",
-      "evidence": [
-        "package.json#42"
-      ]
-    },
-    {
-      "purl": "pkg:npm/unist-util-visit@5.0.0",
-      "evidence": [
-        "package.json#43"
-      ]
-    },
-    {
-      "purl": "pkg:npm/vfile@6.0.0",
-      "evidence": [
-        "package.json#44"
-      ]
-    },
-    {
-      "purl": "pkg:npm/xo@0.58.0",
-      "evidence": [
-        "package.json#60"
-      ]
+      "attributes": {},
+      "edges": [
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"@types/hast\"]",
+            "name": "@types/hast",
+            "specifier": "^3.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"@types/mdast\"]",
+            "name": "@types/mdast",
+            "specifier": "^4.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"@ungap/structured-clone\"]",
+            "name": "@ungap/structured-clone",
+            "specifier": "^1.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"devlop\"]",
+            "name": "devlop",
+            "specifier": "^1.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"micromark-util-sanitize-uri\"]",
+            "name": "micromark-util-sanitize-uri",
+            "specifier": "^2.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"trim-lines\"]",
+            "name": "trim-lines",
+            "specifier": "^3.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"unist-util-position\"]",
+            "name": "unist-util-position",
+            "specifier": "^5.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"unist-util-visit\"]",
+            "name": "unist-util-visit",
+            "specifier": "^5.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"vfile\"]",
+            "name": "vfile",
+            "specifier": "^6.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@types/node\"]",
+            "name": "@types/node",
+            "specifier": "^20.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@types/ungap__structured-clone\"]",
+            "name": "@types/ungap__structured-clone",
+            "specifier": "^1.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"c8\"]",
+            "name": "c8",
+            "specifier": "^9.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"hast-util-to-html\"]",
+            "name": "hast-util-to-html",
+            "specifier": "^9.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"hastscript\"]",
+            "name": "hastscript",
+            "specifier": "^9.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"mdast-util-from-markdown\"]",
+            "name": "mdast-util-from-markdown",
+            "specifier": "^2.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"mdast-util-gfm\"]",
+            "name": "mdast-util-gfm",
+            "specifier": "^3.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"micromark-extension-gfm\"]",
+            "name": "micromark-extension-gfm",
+            "specifier": "^3.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"prettier\"]",
+            "name": "prettier",
+            "specifier": "^3.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"remark-cli\"]",
+            "name": "remark-cli",
+            "specifier": "^12.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"remark-preset-wooorm\"]",
+            "name": "remark-preset-wooorm",
+            "specifier": "^10.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"type-coverage\"]",
+            "name": "type-coverage",
+            "specifier": "^2.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"typescript\"]",
+            "name": "typescript",
+            "specifier": "^5.5.1-rc"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"xo\"]",
+            "name": "xo",
+            "specifier": "^0.58.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        }
+      ],
+      "id": "[\"packagejson\",\"package.json\",\"packagejson:ca0e51fbf4bf9b1fdb48bd64b39ee6db6400679d0bbc4c8f581f2d350cdadf7a\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/mdast-util-to-hast@13.2.0"
+          },
+          "purl": "pkg:npm/mdast-util-to-hast@13.2.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/mdast-util-to-hast@13.2.0"
+          },
+          "purl": "pkg:npm/mdast-util-to-hast@13.2.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/mdast-util-to-hast@13.2.0"
+          },
+          "purl": "pkg:npm/mdast-util-to-hast@13.2.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/mdast-util-to-hast@13.2.0"
+          },
+          "purl": "pkg:npm/mdast-util-to-hast@13.2.0"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {
+              "name": "mdast-util-to-hast",
+              "type": "module",
+              "version": "13.2.0"
+            }
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "workspace:\".\"",
+          "locator": ".",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/mdast-util-to-hast@13.2.0"
+          },
+          "purl": "pkg:npm/mdast-util-to-hast@13.2.0"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"package.json\",\"dependencies\"]",
+          "node": "scope:[\"package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/mdast-util-to-hast@13.2.0"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"package.json\",\"devDependencies\"]",
+          "node": "scope:[\"package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/mdast-util-to-hast@13.2.0"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/mdast-util-to-hast@13.2.0"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/mdast-util-to-hast@13.2.0"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "package.json"
+        ]
+      }
     }
   ],
-  "subprojects": [],
-  "relationships": [],
-  "issues": []
+  "issues": [],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "package.json",
+      "evidence": [
+        "package.json"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "packagejson",
+            "files": [
+              "package.json"
+            ],
+            "key": "\".\""
+          },
+          "synthesizedPurl": false
+        }
+      ],
+      "purl": "pkg:npm/mdast-util-to-hast@13.2.0"
+    }
+  ]
 }

@@ -1,0 +1,10 @@
+{
+  "name": "override-only-drift",
+  "version": "1.0.0",
+  "dependencies": {
+    "parent": "file:../packages/parent-1.0.0.tgz"
+  },
+  "overrides": {
+    "leaf": "file:../../../packages/leaf-2.0.0.tgz"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "analyzerHead": "f1992774b33e574ea1c41f5fa68f7ad1c79196cc",
+  "toolVersion": "Conan version 2.28.1",
+  "captureDate": "2026-10-25",
+  "captures": [
+    {
+      "fixture": "basic",
+      "definitionFile": "conanfile.txt",
+      "recording": "basic.json",
+      "recordingSha256": "049bb6800f7ef0503981ff30764c14cf4149ab9c80948f085a785c1bab32902d",
+      "stdoutSha256": "5e1bb150b2b107f3189c3a4910054b486f47743861b35d8380ec763bb675e004",
+      "stderrSha256": "d45cf7091d38318450cd07168f2a36a9f9aa8bbf60d3c9dc86a37cad4352fc8a",
+      "inputs": {
+        "packages/analyzer-plugin-conan/src/__fixtures__/basic/conanfile.txt": "1e1cf9813844d07448490513ef1832cfce6019d7d9824c1900613d55607d63b0",
+        "packages/analyzer-plugin-conan/src/__fixtures__/basic/conan.lock": "ce44f78ebb2b3c20af219b1346903cc19e4e306bdc825e2db62bd5ad4e5c5050",
+        "packages/analyzer-plugin-conan/src/__fixtures__/profile": "e6d0ae52aa4699062daeb264a1def01bf07cde87e3601da67d6c573eeb910079"
+      }
+    },
+    {
+      "fixture": "basic_py",
+      "definitionFile": "conanfile.py",
+      "recording": "basic_py.json",
+      "recordingSha256": "33a7d0bd2c121fbf9734c6d5788a3d3da1a9378546239a3c93bdb81fd331a2e1",
+      "stdoutSha256": "161eabf26bf1a9f05d25bad7b563439cae2c0c4718a3d834fe7ba782726dd150",
+      "stderrSha256": "44ce9c5536b16515a3d0e7b39fff3d0f063016078c77db3994007f1791d4699d",
+      "inputs": {
+        "packages/analyzer-plugin-conan/src/__fixtures__/basic_py/conanfile.py": "3e9feee07f7b54ace33f40d02dbc750fb608acea57df8a34a7b7fc1290b46e54",
+        "packages/analyzer-plugin-conan/src/__fixtures__/basic_py/conan.lock": "562c5228aec0c7fa904262dfd44c2b181389dd8b1a4ad3e4495fd336ba54a715",
+        "packages/analyzer-plugin-conan/src/__fixtures__/profile": "e6d0ae52aa4699062daeb264a1def01bf07cde87e3601da67d6c573eeb910079"
+      }
+    },
+    {
+      "fixture": "evidence",
+      "definitionFile": "conanfile.txt",
+      "recording": "evidence.json",
+      "recordingSha256": "3670048b2eec616cc78d424c6acbbff6a463acb3bd8063619d3e063f5c8f2b9a",
+      "stdoutSha256": "5e1bb150b2b107f3189c3a4910054b486f47743861b35d8380ec763bb675e004",
+      "stderrSha256": "b7409a0d794ccf0524a15af2bc3f9e0af4217fe9a580c79c7a4e185bed3b9721",
+      "inputs": {
+        "packages/analyzer-plugin-conan/src/__fixtures__/evidence/conanfile.txt": "446b89585c30cb24aba1c64a50e4fa2e5fdb05f7d337532f0c5df12bf8e2cdd4",
+        "packages/analyzer-plugin-conan/src/__fixtures__/evidence/conan.lock": "ce44f78ebb2b3c20af219b1346903cc19e4e306bdc825e2db62bd5ad4e5c5050",
+        "packages/analyzer-plugin-conan/src/__fixtures__/profile": "e6d0ae52aa4699062daeb264a1def01bf07cde87e3601da67d6c573eeb910079"
+      }
+    },
+    {
+      "fixture": "transitive_extended",
+      "definitionFile": "conanfile.py",
+      "recording": "transitive_extended.json",
+      "recordingSha256": "f4d579c6443d9aaa9347e95419b62c29ad73c0518a5420e841c9cb03f0d5e663",
+      "stdoutSha256": "e1c7b50e78069117622497555128d0cd631f1c63818e6d4579d62cb8114c6b97",
+      "stderrSha256": "1f549fa789f257cfcc2a70315a563cf8e4d481d87b7ca0a44f58141e50f051bd",
+      "inputs": {
+        "packages/analyzer-plugin-conan/src/__fixtures__/transitive_extended/conanfile.py": "12a4afc5e02a2717d4488805a29e2669122d51617c7ccfe0b4763d2c4bdef694",
+        "packages/analyzer-plugin-conan/src/__fixtures__/transitive_extended/conan.lock": "c70f9e7c683bf5c555a68af66727b2dac6d4393a3aa7086374159d152d7966b5",
+        "packages/analyzer-plugin-conan/src/__fixtures__/profile": "e6d0ae52aa4699062daeb264a1def01bf07cde87e3601da67d6c573eeb910079"
+      }
+    },
+    {
+      "fixture": "transitive_simple",
+      "definitionFile": "conanfile.py",
+      "recording": "transitive_simple.json",
+      "recordingSha256": "89ba0dbc12deeaaf83633dad9ef92efd791a8a9f900cd055b4cef194ab0abcae",
+      "stdoutSha256": "58235cb363ef9f9aa8fdeb37393c533831ece3252de9f9aaade8caeda5d06617",
+      "stderrSha256": "39301fc3e3f819b49862f1e70950a27192a335a0120192f3c276d492c38236bd",
+      "inputs": {
+        "packages/analyzer-plugin-conan/src/__fixtures__/transitive_simple/conanfile.py": "a7da3bb9dfe12caf9845aa0c623780e0306c208fe3fb96c70351d6a465d9bf95",
+        "packages/analyzer-plugin-conan/src/__fixtures__/transitive_simple/conan.lock": "b830291c258ddc132f5ee629e45432de1e36b079a15911a817808efb4fc7db96",
+        "packages/analyzer-plugin-conan/src/__fixtures__/profile": "e6d0ae52aa4699062daeb264a1def01bf07cde87e3601da67d6c573eeb910079"
+      }
+    }
+  ]
+}

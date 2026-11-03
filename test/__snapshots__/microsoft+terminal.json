@@ -1,83 +1,1489 @@
 {
+  "codebase": "integration:microsoft/terminal@b4e69c68620a822407d45bfbba6ee10feebc70a3",
+  "formatVersion": 2,
+  "graphs": [
+    {
+      "attributes": {
+        "vcpkg:projection": "registry-declarations",
+        "vcpkg:resolution": "unobserved"
+      },
+      "context": {
+        "vcpkg:includeAllFeatures": false
+      },
+      "edges": [
+        {
+          "attributes": {
+            "vcpkg:binding": "registry-candidate"
+          },
+          "evidence": [
+            "dep/vcpkg-overlay-ports/fmt/vcpkg.json"
+          ],
+          "from": "[\"[root]\",\"host\"]",
+          "kind": "host",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "vcpkg:request": {
+                "host": true,
+                "name": "vcpkg-cmake"
+              }
+            },
+            "name": "vcpkg-cmake"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "[\"vcpkg-cmake\",\"host\"]"
+        },
+        {
+          "attributes": {
+            "vcpkg:binding": "registry-candidate"
+          },
+          "evidence": [
+            "dep/vcpkg-overlay-ports/fmt/vcpkg.json"
+          ],
+          "from": "[\"[root]\",\"host\"]",
+          "kind": "host",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "vcpkg:request": {
+                "host": true,
+                "name": "vcpkg-cmake-config"
+              }
+            },
+            "name": "vcpkg-cmake-config"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "[\"vcpkg-cmake-config\",\"host\"]"
+        }
+      ],
+      "id": "[\"vcpkg\",\"dep/vcpkg-overlay-ports/fmt/vcpkg.json\",\"vcpkg:36894c463d55cfbcf750052e99576061f28b4245df491dd3721795a998fc23fa\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "attributes": {
+            "vcpkg:domain": "host",
+            "vcpkg:manifest": {
+              "dependencies": [
+                {
+                  "host": true,
+                  "name": "vcpkg-cmake"
+                },
+                {
+                  "host": true,
+                  "name": "vcpkg-cmake-config"
+                }
+              ],
+              "description": "{fmt} is an open-source formatting library providing a fast and safe alternative to C stdio and C++ iostreams.",
+              "homepage": "https://github.com/fmtlib/fmt",
+              "license": "MIT",
+              "name": "fmt",
+              "version": "11.1.4"
+            }
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "dep/vcpkg-overlay-ports/fmt/vcpkg.json"
+          ],
+          "id": "[\"[root]\",\"host\"]",
+          "project": {
+            "definitionFile": "dep/vcpkg-overlay-ports/fmt/vcpkg.json",
+            "purl": "pkg:vcpkg/fmt@11.1.4"
+          },
+          "purl": "pkg:vcpkg/fmt@11.1.4"
+        },
+        {
+          "attributes": {
+            "vcpkg:domain": "target",
+            "vcpkg:manifest": {
+              "dependencies": [
+                {
+                  "host": true,
+                  "name": "vcpkg-cmake"
+                },
+                {
+                  "host": true,
+                  "name": "vcpkg-cmake-config"
+                }
+              ],
+              "description": "{fmt} is an open-source formatting library providing a fast and safe alternative to C stdio and C++ iostreams.",
+              "homepage": "https://github.com/fmtlib/fmt",
+              "license": "MIT",
+              "name": "fmt",
+              "version": "11.1.4"
+            }
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "dep/vcpkg-overlay-ports/fmt/vcpkg.json"
+          ],
+          "id": "[\"[root]\",\"target\"]",
+          "project": {
+            "definitionFile": "dep/vcpkg-overlay-ports/fmt/vcpkg.json",
+            "purl": "pkg:vcpkg/fmt@11.1.4"
+          },
+          "purl": "pkg:vcpkg/fmt@11.1.4"
+        },
+        {
+          "attributes": {
+            "vcpkg:domain": "host",
+            "vcpkg:manifest": {
+              "documentation": "https://learn.microsoft.com/vcpkg/maintainers/functions/vcpkg_cmake_configure",
+              "license": "MIT",
+              "name": "vcpkg-cmake",
+              "version-date": "2024-04-23"
+            }
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "dep/vcpkg-overlay-ports/fmt/vcpkg.json"
+          ],
+          "id": "[\"vcpkg-cmake\",\"host\"]",
+          "purl": "pkg:vcpkg/vcpkg-cmake@2024-04-23"
+        },
+        {
+          "attributes": {
+            "vcpkg:domain": "target",
+            "vcpkg:manifest": {
+              "documentation": "https://learn.microsoft.com/vcpkg/maintainers/functions/vcpkg_cmake_configure",
+              "license": "MIT",
+              "name": "vcpkg-cmake",
+              "version-date": "2024-04-23"
+            }
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "dep/vcpkg-overlay-ports/fmt/vcpkg.json"
+          ],
+          "id": "[\"vcpkg-cmake\",\"target\"]",
+          "purl": "pkg:vcpkg/vcpkg-cmake@2024-04-23"
+        },
+        {
+          "attributes": {
+            "vcpkg:domain": "host",
+            "vcpkg:manifest": {
+              "documentation": "https://learn.microsoft.com/vcpkg/maintainers/functions/vcpkg_cmake_config_fixup",
+              "license": "MIT",
+              "name": "vcpkg-cmake-config",
+              "version-date": "2024-05-23"
+            }
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "dep/vcpkg-overlay-ports/fmt/vcpkg.json"
+          ],
+          "id": "[\"vcpkg-cmake-config\",\"host\"]",
+          "purl": "pkg:vcpkg/vcpkg-cmake-config@2024-05-23"
+        },
+        {
+          "attributes": {
+            "vcpkg:domain": "target",
+            "vcpkg:manifest": {
+              "documentation": "https://learn.microsoft.com/vcpkg/maintainers/functions/vcpkg_cmake_config_fixup",
+              "license": "MIT",
+              "name": "vcpkg-cmake-config",
+              "version-date": "2024-05-23"
+            }
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "dep/vcpkg-overlay-ports/fmt/vcpkg.json"
+          ],
+          "id": "[\"vcpkg-cmake-config\",\"target\"]",
+          "purl": "pkg:vcpkg/vcpkg-cmake-config@2024-05-23"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "[\"[root]\",\"host\"]",
+          "node": "[\"[root]\",\"host\"]",
+          "project": {
+            "definitionFile": "dep/vcpkg-overlay-ports/fmt/vcpkg.json",
+            "purl": "pkg:vcpkg/fmt@11.1.4"
+          },
+          "scope": "host"
+        },
+        {
+          "id": "[\"[root]\",\"target\"]",
+          "node": "[\"[root]\",\"target\"]",
+          "project": {
+            "definitionFile": "dep/vcpkg-overlay-ports/fmt/vcpkg.json",
+            "purl": "pkg:vcpkg/fmt@11.1.4"
+          },
+          "scope": "target"
+        }
+      ],
+      "source": {
+        "extractor": "vcpkg",
+        "files": [
+          "dep/vcpkg-overlay-ports/fmt/vcpkg.json"
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "vcpkg:projection": "registry-declarations",
+        "vcpkg:resolution": "unobserved"
+      },
+      "context": {
+        "vcpkg:includeAllFeatures": false
+      },
+      "edges": [
+        {
+          "attributes": {
+            "vcpkg:binding": "registry-candidate"
+          },
+          "condition": {
+            "environment": "host",
+            "expression": {
+              "supports": "!uwp"
+            },
+            "language": "vcpkg:declaration"
+          },
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "from": "[\"cli11\",\"host\"]",
+          "kind": "host",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "vcpkg:request": {
+                "host": true,
+                "name": "vcpkg-cmake"
+              }
+            },
+            "condition": {
+              "environment": "host",
+              "expression": {
+                "supports": "!uwp"
+              },
+              "language": "vcpkg:declaration"
+            },
+            "name": "vcpkg-cmake"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "[\"vcpkg-cmake\",\"host\"]"
+        },
+        {
+          "attributes": {
+            "vcpkg:binding": "registry-candidate"
+          },
+          "condition": {
+            "environment": "host",
+            "expression": {
+              "supports": "!uwp"
+            },
+            "language": "vcpkg:declaration"
+          },
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "from": "[\"cli11\",\"host\"]",
+          "kind": "host",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "vcpkg:request": {
+                "host": true,
+                "name": "vcpkg-cmake-config"
+              }
+            },
+            "condition": {
+              "environment": "host",
+              "expression": {
+                "supports": "!uwp"
+              },
+              "language": "vcpkg:declaration"
+            },
+            "name": "vcpkg-cmake-config"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "[\"vcpkg-cmake-config\",\"host\"]"
+        },
+        {
+          "attributes": {
+            "vcpkg:binding": "registry-candidate"
+          },
+          "condition": {
+            "environment": "target",
+            "expression": {
+              "feature": "terminal"
+            },
+            "language": "vcpkg:declaration"
+          },
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "from": "[\"[root]\",\"target\"]",
+          "kind": "target",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "vcpkg:request": "cli11"
+            },
+            "condition": {
+              "environment": "target",
+              "expression": {
+                "feature": "terminal"
+              },
+              "language": "vcpkg:declaration"
+            },
+            "name": "cli11"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "[\"cli11\",\"target\"]"
+        },
+        {
+          "attributes": {
+            "vcpkg:binding": "registry-candidate"
+          },
+          "condition": {
+            "environment": "target",
+            "expression": {
+              "feature": "terminal"
+            },
+            "language": "vcpkg:declaration"
+          },
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "from": "[\"[root]\",\"target\"]",
+          "kind": "target",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "vcpkg:request": "cmark"
+            },
+            "condition": {
+              "environment": "target",
+              "expression": {
+                "feature": "terminal"
+              },
+              "language": "vcpkg:declaration"
+            },
+            "name": "cmark"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "[\"cmark\",\"target\"]"
+        },
+        {
+          "attributes": {
+            "vcpkg:binding": "registry-candidate"
+          },
+          "condition": {
+            "environment": "target",
+            "expression": {
+              "feature": "terminal"
+            },
+            "language": "vcpkg:declaration"
+          },
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "from": "[\"[root]\",\"target\"]",
+          "kind": "target",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "vcpkg:request": "jsoncpp"
+            },
+            "condition": {
+              "environment": "target",
+              "expression": {
+                "feature": "terminal"
+              },
+              "language": "vcpkg:declaration"
+            },
+            "name": "jsoncpp"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "[\"jsoncpp\",\"target\"]"
+        },
+        {
+          "attributes": {
+            "vcpkg:binding": "registry-candidate"
+          },
+          "condition": {
+            "environment": "target",
+            "expression": {
+              "supports": "!uwp"
+            },
+            "language": "vcpkg:declaration"
+          },
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "from": "[\"cli11\",\"target\"]",
+          "kind": "host",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "vcpkg:request": {
+                "host": true,
+                "name": "vcpkg-cmake"
+              }
+            },
+            "condition": {
+              "environment": "target",
+              "expression": {
+                "supports": "!uwp"
+              },
+              "language": "vcpkg:declaration"
+            },
+            "name": "vcpkg-cmake"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "[\"vcpkg-cmake\",\"host\"]"
+        },
+        {
+          "attributes": {
+            "vcpkg:binding": "registry-candidate"
+          },
+          "condition": {
+            "environment": "target",
+            "expression": {
+              "supports": "!uwp"
+            },
+            "language": "vcpkg:declaration"
+          },
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "from": "[\"cli11\",\"target\"]",
+          "kind": "host",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "vcpkg:request": {
+                "host": true,
+                "name": "vcpkg-cmake-config"
+              }
+            },
+            "condition": {
+              "environment": "target",
+              "expression": {
+                "supports": "!uwp"
+              },
+              "language": "vcpkg:declaration"
+            },
+            "name": "vcpkg-cmake-config"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "[\"vcpkg-cmake-config\",\"host\"]"
+        },
+        {
+          "attributes": {
+            "vcpkg:binding": "registry-candidate"
+          },
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "from": "[\"[root]\",\"target\"]",
+          "kind": "target",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "vcpkg:request": "fmt"
+            },
+            "name": "fmt"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "[\"fmt\",\"target\"]"
+        },
+        {
+          "attributes": {
+            "vcpkg:binding": "registry-candidate"
+          },
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "from": "[\"[root]\",\"target\"]",
+          "kind": "target",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "vcpkg:request": "ms-gsl"
+            },
+            "name": "ms-gsl"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "[\"ms-gsl\",\"target\"]"
+        },
+        {
+          "attributes": {
+            "vcpkg:binding": "registry-candidate"
+          },
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "from": "[\"cmark\",\"host\"]",
+          "kind": "host",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "vcpkg:request": {
+                "host": true,
+                "name": "vcpkg-cmake"
+              }
+            },
+            "name": "vcpkg-cmake"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "[\"vcpkg-cmake\",\"host\"]"
+        },
+        {
+          "attributes": {
+            "vcpkg:binding": "registry-candidate"
+          },
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "from": "[\"cmark\",\"host\"]",
+          "kind": "host",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "vcpkg:request": {
+                "host": true,
+                "name": "vcpkg-cmake-config"
+              }
+            },
+            "name": "vcpkg-cmake-config"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "[\"vcpkg-cmake-config\",\"host\"]"
+        },
+        {
+          "attributes": {
+            "vcpkg:binding": "registry-candidate"
+          },
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "from": "[\"cmark\",\"target\"]",
+          "kind": "host",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "vcpkg:request": {
+                "host": true,
+                "name": "vcpkg-cmake"
+              }
+            },
+            "name": "vcpkg-cmake"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "[\"vcpkg-cmake\",\"host\"]"
+        },
+        {
+          "attributes": {
+            "vcpkg:binding": "registry-candidate"
+          },
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "from": "[\"cmark\",\"target\"]",
+          "kind": "host",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "vcpkg:request": {
+                "host": true,
+                "name": "vcpkg-cmake-config"
+              }
+            },
+            "name": "vcpkg-cmake-config"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "[\"vcpkg-cmake-config\",\"host\"]"
+        },
+        {
+          "attributes": {
+            "vcpkg:binding": "registry-candidate"
+          },
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "from": "[\"fmt\",\"host\"]",
+          "kind": "host",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "vcpkg:request": {
+                "host": true,
+                "name": "vcpkg-cmake"
+              }
+            },
+            "name": "vcpkg-cmake"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "[\"vcpkg-cmake\",\"host\"]"
+        },
+        {
+          "attributes": {
+            "vcpkg:binding": "registry-candidate"
+          },
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "from": "[\"fmt\",\"host\"]",
+          "kind": "host",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "vcpkg:request": {
+                "host": true,
+                "name": "vcpkg-cmake-config"
+              }
+            },
+            "name": "vcpkg-cmake-config"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "[\"vcpkg-cmake-config\",\"host\"]"
+        },
+        {
+          "attributes": {
+            "vcpkg:binding": "registry-candidate"
+          },
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "from": "[\"fmt\",\"target\"]",
+          "kind": "host",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "vcpkg:request": {
+                "host": true,
+                "name": "vcpkg-cmake"
+              }
+            },
+            "name": "vcpkg-cmake"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "[\"vcpkg-cmake\",\"host\"]"
+        },
+        {
+          "attributes": {
+            "vcpkg:binding": "registry-candidate"
+          },
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "from": "[\"fmt\",\"target\"]",
+          "kind": "host",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "vcpkg:request": {
+                "host": true,
+                "name": "vcpkg-cmake-config"
+              }
+            },
+            "name": "vcpkg-cmake-config"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "[\"vcpkg-cmake-config\",\"host\"]"
+        },
+        {
+          "attributes": {
+            "vcpkg:binding": "registry-candidate"
+          },
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "from": "[\"jsoncpp\",\"host\"]",
+          "kind": "host",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "vcpkg:request": {
+                "host": true,
+                "name": "vcpkg-cmake"
+              }
+            },
+            "name": "vcpkg-cmake"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "[\"vcpkg-cmake\",\"host\"]"
+        },
+        {
+          "attributes": {
+            "vcpkg:binding": "registry-candidate"
+          },
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "from": "[\"jsoncpp\",\"host\"]",
+          "kind": "host",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "vcpkg:request": {
+                "host": true,
+                "name": "vcpkg-cmake-config"
+              }
+            },
+            "name": "vcpkg-cmake-config"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "[\"vcpkg-cmake-config\",\"host\"]"
+        },
+        {
+          "attributes": {
+            "vcpkg:binding": "registry-candidate"
+          },
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "from": "[\"jsoncpp\",\"target\"]",
+          "kind": "host",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "vcpkg:request": {
+                "host": true,
+                "name": "vcpkg-cmake"
+              }
+            },
+            "name": "vcpkg-cmake"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "[\"vcpkg-cmake\",\"host\"]"
+        },
+        {
+          "attributes": {
+            "vcpkg:binding": "registry-candidate"
+          },
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "from": "[\"jsoncpp\",\"target\"]",
+          "kind": "host",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "vcpkg:request": {
+                "host": true,
+                "name": "vcpkg-cmake-config"
+              }
+            },
+            "name": "vcpkg-cmake-config"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "[\"vcpkg-cmake-config\",\"host\"]"
+        },
+        {
+          "attributes": {
+            "vcpkg:binding": "registry-candidate"
+          },
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "from": "[\"ms-gsl\",\"host\"]",
+          "kind": "host",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "vcpkg:request": {
+                "host": true,
+                "name": "vcpkg-cmake"
+              }
+            },
+            "name": "vcpkg-cmake"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "[\"vcpkg-cmake\",\"host\"]"
+        },
+        {
+          "attributes": {
+            "vcpkg:binding": "registry-candidate"
+          },
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "from": "[\"ms-gsl\",\"host\"]",
+          "kind": "host",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "vcpkg:request": {
+                "host": true,
+                "name": "vcpkg-cmake-config"
+              }
+            },
+            "name": "vcpkg-cmake-config"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "[\"vcpkg-cmake-config\",\"host\"]"
+        },
+        {
+          "attributes": {
+            "vcpkg:binding": "registry-candidate"
+          },
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "from": "[\"ms-gsl\",\"target\"]",
+          "kind": "host",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "vcpkg:request": {
+                "host": true,
+                "name": "vcpkg-cmake"
+              }
+            },
+            "name": "vcpkg-cmake"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "[\"vcpkg-cmake\",\"host\"]"
+        },
+        {
+          "attributes": {
+            "vcpkg:binding": "registry-candidate"
+          },
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "from": "[\"ms-gsl\",\"target\"]",
+          "kind": "host",
+          "relation": "depends-on",
+          "requested": {
+            "attributes": {
+              "vcpkg:request": {
+                "host": true,
+                "name": "vcpkg-cmake-config"
+              }
+            },
+            "name": "vcpkg-cmake-config"
+          },
+          "selection": "unknown",
+          "status": "resolved",
+          "to": "[\"vcpkg-cmake-config\",\"host\"]"
+        }
+      ],
+      "id": "[\"vcpkg\",\"vcpkg.json\",\"vcpkg:4fa5bc510b45f834849aae3136700fc4f59428423fcc44c87556a4eb01307071\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "attributes": {
+            "vcpkg:domain": "host",
+            "vcpkg:manifest": {
+              "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
+              "builtin-baseline": "fe1cde61e971d53c9687cf9a46308f8f55da19fa",
+              "dependencies": [
+                "fmt",
+                "ms-gsl"
+              ],
+              "features": {
+                "terminal": {
+                  "dependencies": [
+                    "jsoncpp",
+                    "cli11",
+                    "cmark"
+                  ],
+                  "description": "Components required for Windows Terminal; separated out to make the Windows conhost build work"
+                }
+              },
+              "overrides": [
+                {
+                  "name": "fmt",
+                  "version": "11.1.4"
+                },
+                {
+                  "name": "ms-gsl",
+                  "version": "3.1.0"
+                },
+                {
+                  "name": "jsoncpp",
+                  "version": "1.9.5"
+                },
+                {
+                  "name": "cli11",
+                  "version": "2.4.2"
+                },
+                {
+                  "name": "cmark",
+                  "version": "0.30.3"
+                }
+              ],
+              "vcpkg-configuration": {
+                "overlay-ports": [
+                  "./dep/vcpkg-overlay-ports"
+                ]
+              }
+            }
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "id": "[\"[root]\",\"host\"]",
+          "project": {
+            "definitionFile": "vcpkg.json",
+            "purl": "pkg:vcpkg/project"
+          },
+          "purl": "pkg:vcpkg/project"
+        },
+        {
+          "attributes": {
+            "vcpkg:domain": "target",
+            "vcpkg:manifest": {
+              "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
+              "builtin-baseline": "fe1cde61e971d53c9687cf9a46308f8f55da19fa",
+              "dependencies": [
+                "fmt",
+                "ms-gsl"
+              ],
+              "features": {
+                "terminal": {
+                  "dependencies": [
+                    "jsoncpp",
+                    "cli11",
+                    "cmark"
+                  ],
+                  "description": "Components required for Windows Terminal; separated out to make the Windows conhost build work"
+                }
+              },
+              "overrides": [
+                {
+                  "name": "fmt",
+                  "version": "11.1.4"
+                },
+                {
+                  "name": "ms-gsl",
+                  "version": "3.1.0"
+                },
+                {
+                  "name": "jsoncpp",
+                  "version": "1.9.5"
+                },
+                {
+                  "name": "cli11",
+                  "version": "2.4.2"
+                },
+                {
+                  "name": "cmark",
+                  "version": "0.30.3"
+                }
+              ],
+              "vcpkg-configuration": {
+                "overlay-ports": [
+                  "./dep/vcpkg-overlay-ports"
+                ]
+              }
+            }
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "id": "[\"[root]\",\"target\"]",
+          "project": {
+            "definitionFile": "vcpkg.json",
+            "purl": "pkg:vcpkg/project"
+          },
+          "purl": "pkg:vcpkg/project"
+        },
+        {
+          "attributes": {
+            "vcpkg:domain": "host",
+            "vcpkg:manifest": {
+              "dependencies": [
+                {
+                  "host": true,
+                  "name": "vcpkg-cmake"
+                },
+                {
+                  "host": true,
+                  "name": "vcpkg-cmake-config"
+                }
+              ],
+              "description": "CLI11 is a command line parser for C++11 and beyond that provides a rich feature set with a simple and intuitive interface.",
+              "homepage": "https://github.com/CLIUtils/CLI11",
+              "license": "BSD-3-Clause",
+              "name": "cli11",
+              "supports": "!uwp",
+              "version": "2.4.2"
+            }
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "id": "[\"cli11\",\"host\"]",
+          "purl": "pkg:vcpkg/cli11@2.4.2"
+        },
+        {
+          "attributes": {
+            "vcpkg:domain": "target",
+            "vcpkg:manifest": {
+              "dependencies": [
+                {
+                  "host": true,
+                  "name": "vcpkg-cmake"
+                },
+                {
+                  "host": true,
+                  "name": "vcpkg-cmake-config"
+                }
+              ],
+              "description": "CLI11 is a command line parser for C++11 and beyond that provides a rich feature set with a simple and intuitive interface.",
+              "homepage": "https://github.com/CLIUtils/CLI11",
+              "license": "BSD-3-Clause",
+              "name": "cli11",
+              "supports": "!uwp",
+              "version": "2.4.2"
+            }
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "id": "[\"cli11\",\"target\"]",
+          "purl": "pkg:vcpkg/cli11@2.4.2"
+        },
+        {
+          "attributes": {
+            "vcpkg:domain": "host",
+            "vcpkg:manifest": {
+              "dependencies": [
+                {
+                  "host": true,
+                  "name": "vcpkg-cmake"
+                },
+                {
+                  "host": true,
+                  "name": "vcpkg-cmake-config"
+                }
+              ],
+              "description": "CommonMark parsing and rendering library",
+              "features": {
+                "tools": {
+                  "description": "Build tools",
+                  "supports": "!uwp"
+                }
+              },
+              "homepage": "https://github.com/commonmark/cmark",
+              "name": "cmark",
+              "version-semver": "0.30.3"
+            }
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "id": "[\"cmark\",\"host\"]",
+          "purl": "pkg:vcpkg/cmark@0.30.3"
+        },
+        {
+          "attributes": {
+            "vcpkg:domain": "target",
+            "vcpkg:manifest": {
+              "dependencies": [
+                {
+                  "host": true,
+                  "name": "vcpkg-cmake"
+                },
+                {
+                  "host": true,
+                  "name": "vcpkg-cmake-config"
+                }
+              ],
+              "description": "CommonMark parsing and rendering library",
+              "features": {
+                "tools": {
+                  "description": "Build tools",
+                  "supports": "!uwp"
+                }
+              },
+              "homepage": "https://github.com/commonmark/cmark",
+              "name": "cmark",
+              "version-semver": "0.30.3"
+            }
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "id": "[\"cmark\",\"target\"]",
+          "purl": "pkg:vcpkg/cmark@0.30.3"
+        },
+        {
+          "attributes": {
+            "vcpkg:domain": "host",
+            "vcpkg:manifest": {
+              "dependencies": [
+                {
+                  "host": true,
+                  "name": "vcpkg-cmake"
+                },
+                {
+                  "host": true,
+                  "name": "vcpkg-cmake-config"
+                }
+              ],
+              "description": "{fmt} is an open-source formatting library providing a fast and safe alternative to C stdio and C++ iostreams.",
+              "homepage": "https://github.com/fmtlib/fmt",
+              "license": "MIT",
+              "name": "fmt",
+              "version": "11.1.4"
+            }
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "id": "[\"fmt\",\"host\"]",
+          "purl": "pkg:vcpkg/fmt@11.1.4"
+        },
+        {
+          "attributes": {
+            "vcpkg:domain": "target",
+            "vcpkg:manifest": {
+              "dependencies": [
+                {
+                  "host": true,
+                  "name": "vcpkg-cmake"
+                },
+                {
+                  "host": true,
+                  "name": "vcpkg-cmake-config"
+                }
+              ],
+              "description": "{fmt} is an open-source formatting library providing a fast and safe alternative to C stdio and C++ iostreams.",
+              "homepage": "https://github.com/fmtlib/fmt",
+              "license": "MIT",
+              "name": "fmt",
+              "version": "11.1.4"
+            }
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "id": "[\"fmt\",\"target\"]",
+          "purl": "pkg:vcpkg/fmt@11.1.4"
+        },
+        {
+          "attributes": {
+            "vcpkg:domain": "host",
+            "vcpkg:manifest": {
+              "dependencies": [
+                {
+                  "host": true,
+                  "name": "vcpkg-cmake"
+                },
+                {
+                  "host": true,
+                  "name": "vcpkg-cmake-config"
+                }
+              ],
+              "description": "JsonCpp is a C++ library that allows manipulating JSON values, including serialization and deserialization to and from strings. It can also preserve existing comment in unserialization/serialization steps, making it a convenient format to store user input files.",
+              "homepage": "https://github.com/open-source-parsers/jsoncpp",
+              "license": "MIT",
+              "name": "jsoncpp",
+              "port-version": 4,
+              "version": "1.9.5"
+            }
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "id": "[\"jsoncpp\",\"host\"]",
+          "purl": "pkg:vcpkg/jsoncpp@1.9.5?port_version=4"
+        },
+        {
+          "attributes": {
+            "vcpkg:domain": "target",
+            "vcpkg:manifest": {
+              "dependencies": [
+                {
+                  "host": true,
+                  "name": "vcpkg-cmake"
+                },
+                {
+                  "host": true,
+                  "name": "vcpkg-cmake-config"
+                }
+              ],
+              "description": "JsonCpp is a C++ library that allows manipulating JSON values, including serialization and deserialization to and from strings. It can also preserve existing comment in unserialization/serialization steps, making it a convenient format to store user input files.",
+              "homepage": "https://github.com/open-source-parsers/jsoncpp",
+              "license": "MIT",
+              "name": "jsoncpp",
+              "port-version": 4,
+              "version": "1.9.5"
+            }
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "id": "[\"jsoncpp\",\"target\"]",
+          "purl": "pkg:vcpkg/jsoncpp@1.9.5?port_version=4"
+        },
+        {
+          "attributes": {
+            "vcpkg:domain": "host",
+            "vcpkg:manifest": {
+              "dependencies": [
+                {
+                  "host": true,
+                  "name": "vcpkg-cmake"
+                },
+                {
+                  "host": true,
+                  "name": "vcpkg-cmake-config"
+                }
+              ],
+              "description": "Microsoft implementation of the Guidelines Support Library",
+              "homepage": "https://github.com/Microsoft/GSL",
+              "license": "MIT",
+              "name": "ms-gsl",
+              "port-version": 1,
+              "version": "4.0.0"
+            }
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "id": "[\"ms-gsl\",\"host\"]",
+          "purl": "pkg:vcpkg/ms-gsl@4.0.0?port_version=1"
+        },
+        {
+          "attributes": {
+            "vcpkg:domain": "target",
+            "vcpkg:manifest": {
+              "dependencies": [
+                {
+                  "host": true,
+                  "name": "vcpkg-cmake"
+                },
+                {
+                  "host": true,
+                  "name": "vcpkg-cmake-config"
+                }
+              ],
+              "description": "Microsoft implementation of the Guidelines Support Library",
+              "homepage": "https://github.com/Microsoft/GSL",
+              "license": "MIT",
+              "name": "ms-gsl",
+              "port-version": 1,
+              "version": "4.0.0"
+            }
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "id": "[\"ms-gsl\",\"target\"]",
+          "purl": "pkg:vcpkg/ms-gsl@4.0.0?port_version=1"
+        },
+        {
+          "attributes": {
+            "vcpkg:domain": "host",
+            "vcpkg:manifest": {
+              "documentation": "https://learn.microsoft.com/vcpkg/maintainers/functions/vcpkg_cmake_configure",
+              "license": "MIT",
+              "name": "vcpkg-cmake",
+              "version-date": "2024-04-23"
+            }
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "id": "[\"vcpkg-cmake\",\"host\"]",
+          "purl": "pkg:vcpkg/vcpkg-cmake@2024-04-23"
+        },
+        {
+          "attributes": {
+            "vcpkg:domain": "target",
+            "vcpkg:manifest": {
+              "documentation": "https://learn.microsoft.com/vcpkg/maintainers/functions/vcpkg_cmake_configure",
+              "license": "MIT",
+              "name": "vcpkg-cmake",
+              "version-date": "2024-04-23"
+            }
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "id": "[\"vcpkg-cmake\",\"target\"]",
+          "purl": "pkg:vcpkg/vcpkg-cmake@2024-04-23"
+        },
+        {
+          "attributes": {
+            "vcpkg:domain": "host",
+            "vcpkg:manifest": {
+              "documentation": "https://learn.microsoft.com/vcpkg/maintainers/functions/vcpkg_cmake_config_fixup",
+              "license": "MIT",
+              "name": "vcpkg-cmake-config",
+              "version-date": "2024-05-23"
+            }
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "id": "[\"vcpkg-cmake-config\",\"host\"]",
+          "purl": "pkg:vcpkg/vcpkg-cmake-config@2024-05-23"
+        },
+        {
+          "attributes": {
+            "vcpkg:domain": "target",
+            "vcpkg:manifest": {
+              "documentation": "https://learn.microsoft.com/vcpkg/maintainers/functions/vcpkg_cmake_config_fixup",
+              "license": "MIT",
+              "name": "vcpkg-cmake-config",
+              "version-date": "2024-05-23"
+            }
+          },
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "vcpkg.json"
+          ],
+          "id": "[\"vcpkg-cmake-config\",\"target\"]",
+          "purl": "pkg:vcpkg/vcpkg-cmake-config@2024-05-23"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "[\"[root]\",\"host\"]",
+          "node": "[\"[root]\",\"host\"]",
+          "project": {
+            "definitionFile": "vcpkg.json",
+            "purl": "pkg:vcpkg/project"
+          },
+          "scope": "host"
+        },
+        {
+          "id": "[\"[root]\",\"target\"]",
+          "node": "[\"[root]\",\"target\"]",
+          "project": {
+            "definitionFile": "vcpkg.json",
+            "purl": "pkg:vcpkg/project"
+          },
+          "scope": "target"
+        }
+      ],
+      "source": {
+        "extractor": "vcpkg",
+        "files": [
+          "vcpkg.json"
+        ]
+      }
+    }
+  ],
+  "issues": [],
   "packages": [
     {
-      "purl": "pkg:vcpkg/fmt@11.1.4",
       "evidence": [
-        "vcpkg.json#19",
-        "vcpkg.json#4"
-      ]
+        "vcpkg.json"
+      ],
+      "purl": "pkg:vcpkg/cli11@2.4.2"
     },
     {
-      "purl": "pkg:vcpkg/ms-gsl@4.0.0",
       "evidence": [
-        "vcpkg.json#23",
-        "vcpkg.json#5"
-      ]
+        "vcpkg.json"
+      ],
+      "purl": "pkg:vcpkg/cmark@0.30.3"
     },
     {
-      "purl": "pkg:vcpkg/vcpkg-cmake-config@2024-05-23",
       "evidence": [
-        "dep/vcpkg-overlay-ports/fmt/vcpkg.json#13"
-      ]
+        "vcpkg.json"
+      ],
+      "purl": "pkg:vcpkg/fmt@11.1.4"
     },
     {
-      "purl": "pkg:vcpkg/vcpkg-cmake@2024-04-23",
       "evidence": [
-        "dep/vcpkg-overlay-ports/fmt/vcpkg.json#9"
-      ]
+        "vcpkg.json"
+      ],
+      "purl": "pkg:vcpkg/jsoncpp@1.9.5?port_version=4"
+    },
+    {
+      "evidence": [
+        "vcpkg.json"
+      ],
+      "purl": "pkg:vcpkg/ms-gsl@4.0.0?port_version=1"
+    },
+    {
+      "evidence": [
+        "dep/vcpkg-overlay-ports/fmt/vcpkg.json",
+        "vcpkg.json"
+      ],
+      "purl": "pkg:vcpkg/vcpkg-cmake-config@2024-05-23"
+    },
+    {
+      "evidence": [
+        "dep/vcpkg-overlay-ports/fmt/vcpkg.json",
+        "vcpkg.json"
+      ],
+      "purl": "pkg:vcpkg/vcpkg-cmake@2024-04-23"
     }
   ],
   "subprojects": [
     {
-      "purl": "pkg:vcpkg/fmt@11.1.4?local=true",
       "definitionFile": "dep/vcpkg-overlay-ports/fmt/vcpkg.json",
-      "scopes": [
+      "identityObservations": [
         {
-          "scope": "host",
-          "packages": [
-            "pkg:vcpkg/vcpkg-cmake-config@2024-05-23",
-            "pkg:vcpkg/vcpkg-cmake@2024-04-23"
-          ]
-        },
-        {
-          "scope": "target",
-          "packages": []
+          "source": {
+            "extractor": "vcpkg",
+            "files": [
+              "dep/vcpkg-overlay-ports/fmt/vcpkg.json"
+            ]
+          },
+          "synthesizedPurl": false
         }
-      ]
+      ],
+      "purl": "pkg:vcpkg/fmt@11.1.4"
     },
     {
-      "purl": "pkg:vcpkg/microsoft%2Bterminal@unknown?local=true",
       "definitionFile": "vcpkg.json",
-      "scopes": [
+      "identityObservations": [
         {
-          "scope": "host",
-          "packages": []
-        },
-        {
-          "scope": "target",
-          "packages": [
-            "pkg:vcpkg/fmt@11.1.4",
-            "pkg:vcpkg/ms-gsl@4.0.0"
-          ]
+          "source": {
+            "extractor": "vcpkg",
+            "files": [
+              "vcpkg.json"
+            ]
+          },
+          "synthesizedPurl": true
         }
-      ]
+      ],
+      "purl": "pkg:vcpkg/project"
     }
-  ],
-  "relationships": [
-    {
-      "from": "pkg:vcpkg/fmt@11.1.4",
-      "to": [
-        "pkg:vcpkg/vcpkg-cmake-config@2024-05-23",
-        "pkg:vcpkg/vcpkg-cmake@2024-04-23"
-      ]
-    },
-    {
-      "from": "pkg:vcpkg/ms-gsl@4.0.0",
-      "to": [
-        "pkg:vcpkg/vcpkg-cmake-config@2024-05-23",
-        "pkg:vcpkg/vcpkg-cmake@2024-04-23"
-      ]
-    }
-  ],
-  "issues": []
+  ]
 }

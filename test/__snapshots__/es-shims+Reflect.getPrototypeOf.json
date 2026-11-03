@@ -1,127 +1,474 @@
 {
-  "packages": [
+  "codebase": "integration:es-shims/Reflect.getPrototypeOf@91a8f0d8b9339eaea50002070e552ee1b88e94f7",
+  "formatVersion": 2,
+  "graphs": [
     {
-      "purl": "pkg:npm/%40es-shims/api@2.5.1",
-      "evidence": [
-        "package.json#69"
-      ]
-    },
-    {
-      "purl": "pkg:npm/%40ljharb/eslint-config@21.1.1",
-      "evidence": [
-        "package.json#70"
-      ]
-    },
-    {
-      "purl": "pkg:npm/auto-changelog@2.5.0",
-      "evidence": [
-        "package.json#71"
-      ]
-    },
-    {
-      "purl": "pkg:npm/call-bind@1.0.8",
-      "evidence": [
-        "package.json#59"
-      ]
-    },
-    {
-      "purl": "pkg:npm/define-properties@1.2.1",
-      "evidence": [
-        "package.json#60"
-      ]
-    },
-    {
-      "purl": "pkg:npm/encoding@0.1.13",
-      "evidence": [
-        "package.json#72"
-      ]
-    },
-    {
-      "purl": "pkg:npm/es-abstract@1.23.9",
-      "evidence": [
-        "package.json#61"
-      ]
-    },
-    {
-      "purl": "pkg:npm/es-errors@1.3.0",
-      "evidence": [
-        "package.json#62"
-      ]
-    },
-    {
-      "purl": "pkg:npm/es-object-atoms@1.0.0",
-      "evidence": [
-        "package.json#63"
-      ]
-    },
-    {
-      "purl": "pkg:npm/eslint@8.8.0",
-      "evidence": [
-        "package.json#73"
-      ]
-    },
-    {
-      "purl": "pkg:npm/evalmd@0.0.19",
-      "evidence": [
-        "package.json#74"
-      ]
-    },
-    {
-      "purl": "pkg:npm/functions-have-names@1.2.3",
-      "evidence": [
-        "package.json#75"
-      ]
-    },
-    {
-      "purl": "pkg:npm/get-intrinsic@1.2.7",
-      "evidence": [
-        "package.json#64"
-      ]
-    },
-    {
-      "purl": "pkg:npm/get-proto@1.0.1",
-      "evidence": [
-        "package.json#65"
-      ]
-    },
-    {
-      "purl": "pkg:npm/in-publish@2.0.1",
-      "evidence": [
-        "package.json#76"
-      ]
-    },
-    {
-      "purl": "pkg:npm/npmignore@0.3.1",
-      "evidence": [
-        "package.json#77"
-      ]
-    },
-    {
-      "purl": "pkg:npm/nyc@10.3.2",
-      "evidence": [
-        "package.json#78"
-      ]
-    },
-    {
-      "purl": "pkg:npm/safe-publish-latest@2.0.0",
-      "evidence": [
-        "package.json#18"
-      ]
-    },
-    {
-      "purl": "pkg:npm/tape@5.9.0",
-      "evidence": [
-        "package.json#80"
-      ]
-    },
-    {
-      "purl": "pkg:npm/which-builtin-type@1.2.1",
-      "evidence": [
-        "package.json#66"
-      ]
+      "attributes": {},
+      "edges": [
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"call-bind\"]",
+            "name": "call-bind",
+            "specifier": "^1.0.8"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"define-properties\"]",
+            "name": "define-properties",
+            "specifier": "^1.2.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"es-abstract\"]",
+            "name": "es-abstract",
+            "specifier": "^1.23.9"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"es-errors\"]",
+            "name": "es-errors",
+            "specifier": "^1.3.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"es-object-atoms\"]",
+            "name": "es-object-atoms",
+            "specifier": "^1.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"get-intrinsic\"]",
+            "name": "get-intrinsic",
+            "specifier": "^1.2.7"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"get-proto\"]",
+            "name": "get-proto",
+            "specifier": "^1.0.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"which-builtin-type\"]",
+            "name": "which-builtin-type",
+            "specifier": "^1.2.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@es-shims/api\"]",
+            "name": "@es-shims/api",
+            "specifier": "^2.5.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"@ljharb/eslint-config\"]",
+            "name": "@ljharb/eslint-config",
+            "specifier": "^21.1.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"auto-changelog\"]",
+            "name": "auto-changelog",
+            "specifier": "^2.5.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"encoding\"]",
+            "name": "encoding",
+            "specifier": "^0.1.13"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"eslint\"]",
+            "name": "eslint",
+            "specifier": "=8.8.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"evalmd\"]",
+            "name": "evalmd",
+            "specifier": "^0.0.19"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"functions-have-names\"]",
+            "name": "functions-have-names",
+            "specifier": "^1.2.3"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"in-publish\"]",
+            "name": "in-publish",
+            "specifier": "^2.0.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"npmignore\"]",
+            "name": "npmignore",
+            "specifier": "^0.3.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"nyc\"]",
+            "name": "nyc",
+            "specifier": "^10.3.2"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"safe-publish-latest\"]",
+            "name": "safe-publish-latest",
+            "specifier": "^2.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"tape\"]",
+            "name": "tape",
+            "specifier": "^5.9.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        }
+      ],
+      "id": "[\"packagejson\",\"package.json\",\"packagejson:cefc4618d7946530af8d092844e664449e3d13ea151124fb135f81cb53ad8c52\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/reflect.getprototypeof@1.0.10"
+          },
+          "purl": "pkg:npm/reflect.getprototypeof@1.0.10"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/reflect.getprototypeof@1.0.10"
+          },
+          "purl": "pkg:npm/reflect.getprototypeof@1.0.10"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/reflect.getprototypeof@1.0.10"
+          },
+          "purl": "pkg:npm/reflect.getprototypeof@1.0.10"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/reflect.getprototypeof@1.0.10"
+          },
+          "purl": "pkg:npm/reflect.getprototypeof@1.0.10"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {
+              "engines": {
+                "node": ">= 0.4"
+              },
+              "name": "reflect.getprototypeof",
+              "type": "commonjs",
+              "version": "1.0.10"
+            }
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "workspace:\".\"",
+          "locator": ".",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/reflect.getprototypeof@1.0.10"
+          },
+          "purl": "pkg:npm/reflect.getprototypeof@1.0.10"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"package.json\",\"dependencies\"]",
+          "node": "scope:[\"package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/reflect.getprototypeof@1.0.10"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"package.json\",\"devDependencies\"]",
+          "node": "scope:[\"package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/reflect.getprototypeof@1.0.10"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/reflect.getprototypeof@1.0.10"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/reflect.getprototypeof@1.0.10"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "package.json"
+        ]
+      }
     }
   ],
-  "subprojects": [],
-  "relationships": [],
-  "issues": []
+  "issues": [],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "package.json",
+      "evidence": [
+        "package.json"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "packagejson",
+            "files": [
+              "package.json"
+            ],
+            "key": "\".\""
+          },
+          "synthesizedPurl": false
+        }
+      ],
+      "purl": "pkg:npm/reflect.getprototypeof@1.0.10"
+    }
+  ]
 }

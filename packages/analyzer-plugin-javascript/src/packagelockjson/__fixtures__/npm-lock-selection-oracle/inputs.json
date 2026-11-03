@@ -1,0 +1,187 @@
+[
+  {
+    "id": "both",
+    "files": {
+      "package.json": {
+        "name": "app",
+        "version": "1.0.0",
+        "dependencies": {
+          "foo": "2.0.0"
+        }
+      },
+      "package-lock.json": {
+        "name": "app",
+        "version": "1.0.0",
+        "lockfileVersion": 3,
+        "packages": {
+          "": {
+            "name": "app",
+            "version": "1.0.0",
+            "dependencies": {
+              "foo": "1.0.0"
+            }
+          },
+          "node_modules/foo": {
+            "version": "1.0.0"
+          }
+        }
+      },
+      "npm-shrinkwrap.json": {
+        "name": "app",
+        "version": "1.0.0",
+        "lockfileVersion": 3,
+        "packages": {
+          "": {
+            "name": "app",
+            "version": "1.0.0",
+            "dependencies": {
+              "foo": "2.0.0"
+            }
+          },
+          "node_modules/foo": {
+            "version": "2.0.0"
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "stale",
+    "files": {
+      "package.json": {
+        "name": "app",
+        "version": "1.0.0",
+        "dependencies": {
+          "foo": "2.0.0"
+        }
+      },
+      "package-lock.json": {
+        "name": "app",
+        "version": "1.0.0",
+        "lockfileVersion": 3,
+        "packages": {
+          "": {
+            "name": "app",
+            "version": "1.0.0",
+            "dependencies": {
+              "foo": "1.0.0"
+            }
+          },
+          "node_modules/foo": {
+            "version": "1.0.0"
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "missing-manifest",
+    "files": {
+      "package-lock.json": {
+        "name": "app",
+        "version": "1.0.0",
+        "lockfileVersion": 3,
+        "packages": {
+          "": {
+            "name": "app",
+            "version": "1.0.0",
+            "dependencies": {
+              "foo": "1.0.0"
+            }
+          },
+          "node_modules/foo": {
+            "version": "1.0.0"
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "missing-root-name",
+    "files": {
+      "package-lock.json": {
+        "name": "app",
+        "version": "1.0.0",
+        "lockfileVersion": 3,
+        "packages": {
+          "": {
+            "dependencies": {
+              "foo": "1.0.0"
+            }
+          },
+          "node_modules/foo": {
+            "version": "1.0.0"
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "missing-root-record",
+    "files": {
+      "package-lock.json": {
+        "name": "app",
+        "version": "1.0.0",
+        "lockfileVersion": 3,
+        "packages": {
+          "node_modules/foo": {
+            "version": "1.0.0"
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "malformed-manifest",
+    "files": {
+      "package.json": "{",
+      "package-lock.json": {
+        "name": "app",
+        "version": "1.0.0",
+        "lockfileVersion": 3,
+        "packages": {
+          "": {
+            "name": "app",
+            "version": "1.0.0",
+            "dependencies": {
+              "foo": "1.0.0"
+            }
+          },
+          "node_modules/foo": {
+            "version": "1.0.0"
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "invalid-shrinkwrap",
+    "files": {
+      "package.json": {
+        "name": "app",
+        "version": "1.0.0",
+        "dependencies": {
+          "foo": "1.0.0"
+        }
+      },
+      "package-lock.json": {
+        "name": "app",
+        "version": "1.0.0",
+        "lockfileVersion": 3,
+        "packages": {
+          "": {
+            "name": "app",
+            "version": "1.0.0",
+            "dependencies": {
+              "foo": "1.0.0"
+            }
+          },
+          "node_modules/foo": {
+            "version": "1.0.0"
+          }
+        }
+      },
+      "npm-shrinkwrap.json": "{"
+    }
+  }
+]

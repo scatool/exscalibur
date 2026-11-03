@@ -18,6 +18,7 @@
     "@scatool/analyzer-plugin-python": "workspace:*",
     "@scatool/analyzer-plugin-rust": "workspace:*",
     "@scatool/analyzer-plugin-vcpkg": "workspace:*",
+    "smol-toml": "catalog:",
     "zod": "catalog:"
   },
   "devDependencies": {

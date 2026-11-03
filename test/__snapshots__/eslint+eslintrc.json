@@ -1,134 +1,2156 @@
 {
-  "packages": [
+  "codebase": "integration:eslint/eslintrc@13ccd1d0daca2291f4e63b9475e287bfe1a0deff",
+  "formatVersion": 2,
+  "graphs": [
     {
-      "purl": "pkg:npm/ajv@6.12.4",
-      "evidence": [
-        "package.json#65"
-      ]
+      "attributes": {},
+      "edges": [
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"ajv\"]",
+            "name": "ajv",
+            "specifier": "^6.12.4"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"debug\"]",
+            "name": "debug",
+            "specifier": "^4.3.2"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"espree\"]",
+            "name": "espree",
+            "specifier": "^10.0.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"globals\"]",
+            "name": "globals",
+            "specifier": "^14.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"ignore\"]",
+            "name": "ignore",
+            "specifier": "^5.2.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"import-fresh\"]",
+            "name": "import-fresh",
+            "specifier": "^3.2.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"js-yaml\"]",
+            "name": "js-yaml",
+            "specifier": "^4.1.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"minimatch\"]",
+            "name": "minimatch",
+            "specifier": "^3.1.2"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"dependencies\"]",
+          "kind": "dependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"dependencies\\\"]\",\"dependencies\",\"strip-json-comments\"]",
+            "name": "strip-json-comments",
+            "specifier": "^3.1.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"c8\"]",
+            "name": "c8",
+            "specifier": "^7.7.3"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"chai\"]",
+            "name": "chai",
+            "specifier": "^4.3.4"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"eslint-config-eslint\"]",
+            "name": "eslint-config-eslint",
+            "specifier": "^11.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"eslint\"]",
+            "name": "eslint",
+            "specifier": "^9.20.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"fs-teardown\"]",
+            "name": "fs-teardown",
+            "specifier": "^0.1.3"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"mocha\"]",
+            "name": "mocha",
+            "specifier": "^9.0.3"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"rollup\"]",
+            "name": "rollup",
+            "specifier": "^2.70.1"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"shelljs\"]",
+            "name": "shelljs",
+            "specifier": "^0.8.5"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"sinon\"]",
+            "name": "sinon",
+            "specifier": "^11.1.2"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"temp-dir\"]",
+            "name": "temp-dir",
+            "specifier": "^2.0.0"
+          },
+          "selection": "selected",
+          "status": "declared"
+        },
+        {
+          "evidence": [
+            "package.json"
+          ],
+          "from": "scope:[\"package.json\",\"devDependencies\"]",
+          "kind": "devDependencies",
+          "optional": false,
+          "relation": "depends-on",
+          "requested": {
+            "id": "[\"scope:[\\\"package.json\\\",\\\"devDependencies\\\"]\",\"devDependencies\",\"typescript\"]",
+            "name": "typescript",
+            "specifier": "^5.7.3"
+          },
+          "selection": "selected",
+          "status": "declared"
+        }
+      ],
+      "id": "[\"packagejson\",\"package.json\",\"packagejson:b487efea049dfa0db2edb26d57bad90e35a468383a9e5331f5e87cafbf4fdf8a\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/%40eslint/eslintrc@3.3.1"
+          },
+          "purl": "pkg:npm/%40eslint/eslintrc@3.3.1"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/%40eslint/eslintrc@3.3.1"
+          },
+          "purl": "pkg:npm/%40eslint/eslintrc@3.3.1"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/%40eslint/eslintrc@3.3.1"
+          },
+          "purl": "pkg:npm/%40eslint/eslintrc@3.3.1"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "scope:[\"package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/%40eslint/eslintrc@3.3.1"
+          },
+          "purl": "pkg:npm/%40eslint/eslintrc@3.3.1"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {
+              "engines": {
+                "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+              },
+              "name": "@eslint/eslintrc",
+              "type": "module",
+              "version": "3.3.1"
+            }
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "package.json"
+          ],
+          "id": "workspace:\".\"",
+          "locator": ".",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/%40eslint/eslintrc@3.3.1"
+          },
+          "purl": "pkg:npm/%40eslint/eslintrc@3.3.1"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"package.json\",\"dependencies\"]",
+          "node": "scope:[\"package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/%40eslint/eslintrc@3.3.1"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"package.json\",\"devDependencies\"]",
+          "node": "scope:[\"package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/%40eslint/eslintrc@3.3.1"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/%40eslint/eslintrc@3.3.1"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "package.json",
+            "purl": "pkg:npm/%40eslint/eslintrc@3.3.1"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "package.json"
+        ]
+      }
     },
     {
-      "purl": "pkg:npm/c8@7.7.3",
-      "evidence": [
-        "package.json#52"
-      ]
+      "attributes": {},
+      "edges": [],
+      "id": "[\"packagejson\",\"tests/fixtures/config-extends/package.json\",\"packagejson:b5617e9062a227cde4c364a274a8882664e0271cfc242e1cab4e440df0dcb584\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-extends/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-extends/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-extends/package.json",
+            "purl": "pkg:npm/test@0.1.1"
+          },
+          "purl": "pkg:npm/test@0.1.1"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-extends/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-extends/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-extends/package.json",
+            "purl": "pkg:npm/test@0.1.1"
+          },
+          "purl": "pkg:npm/test@0.1.1"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-extends/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-extends/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-extends/package.json",
+            "purl": "pkg:npm/test@0.1.1"
+          },
+          "purl": "pkg:npm/test@0.1.1"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-extends/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-extends/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-extends/package.json",
+            "purl": "pkg:npm/test@0.1.1"
+          },
+          "purl": "pkg:npm/test@0.1.1"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {
+              "name": "test",
+              "version": "0.1.1"
+            }
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "tests/fixtures/config-extends/package.json"
+          ],
+          "id": "workspace:\"tests/fixtures/config-extends\"",
+          "locator": "tests/fixtures/config-extends",
+          "project": {
+            "definitionFile": "tests/fixtures/config-extends/package.json",
+            "purl": "pkg:npm/test@0.1.1"
+          },
+          "purl": "pkg:npm/test@0.1.1"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"tests/fixtures/config-extends/package.json\",\"dependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-extends/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-extends/package.json",
+            "purl": "pkg:npm/test@0.1.1"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"tests/fixtures/config-extends/package.json\",\"devDependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-extends/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-extends/package.json",
+            "purl": "pkg:npm/test@0.1.1"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"tests/fixtures/config-extends/package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-extends/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-extends/package.json",
+            "purl": "pkg:npm/test@0.1.1"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"tests/fixtures/config-extends/package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-extends/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-extends/package.json",
+            "purl": "pkg:npm/test@0.1.1"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "tests/fixtures/config-extends/package.json"
+        ]
+      }
     },
     {
-      "purl": "pkg:npm/chai@4.3.4",
-      "evidence": [
-        "package.json#53"
-      ]
+      "attributes": {},
+      "edges": [],
+      "id": "[\"packagejson\",\"tests/fixtures/config-file/bom/package.json\",\"packagejson:a7b6d47c476ec75cf8e1d23c2d65ac9dc58434169a7878d05e2f4ff2d6f77357\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-file/bom/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-file/bom/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-file/bom/package.json",
+            "purl": "pkg:npm/eslint-test@0.0.0"
+          },
+          "purl": "pkg:npm/eslint-test@0.0.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-file/bom/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-file/bom/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-file/bom/package.json",
+            "purl": "pkg:npm/eslint-test@0.0.0"
+          },
+          "purl": "pkg:npm/eslint-test@0.0.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-file/bom/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-file/bom/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-file/bom/package.json",
+            "purl": "pkg:npm/eslint-test@0.0.0"
+          },
+          "purl": "pkg:npm/eslint-test@0.0.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-file/bom/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-file/bom/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-file/bom/package.json",
+            "purl": "pkg:npm/eslint-test@0.0.0"
+          },
+          "purl": "pkg:npm/eslint-test@0.0.0"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {
+              "name": "eslint-test",
+              "private": true,
+              "version": "0.0.0"
+            }
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "tests/fixtures/config-file/bom/package.json"
+          ],
+          "id": "workspace:\"tests/fixtures/config-file/bom\"",
+          "locator": "tests/fixtures/config-file/bom",
+          "project": {
+            "definitionFile": "tests/fixtures/config-file/bom/package.json",
+            "purl": "pkg:npm/eslint-test@0.0.0"
+          },
+          "purl": "pkg:npm/eslint-test@0.0.0"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"tests/fixtures/config-file/bom/package.json\",\"dependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-file/bom/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-file/bom/package.json",
+            "purl": "pkg:npm/eslint-test@0.0.0"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"tests/fixtures/config-file/bom/package.json\",\"devDependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-file/bom/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-file/bom/package.json",
+            "purl": "pkg:npm/eslint-test@0.0.0"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"tests/fixtures/config-file/bom/package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-file/bom/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-file/bom/package.json",
+            "purl": "pkg:npm/eslint-test@0.0.0"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"tests/fixtures/config-file/bom/package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-file/bom/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-file/bom/package.json",
+            "purl": "pkg:npm/eslint-test@0.0.0"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "tests/fixtures/config-file/bom/package.json"
+        ]
+      }
     },
     {
-      "purl": "pkg:npm/debug@4.3.2",
-      "evidence": [
-        "package.json#66"
-      ]
+      "attributes": {},
+      "edges": [],
+      "id": "[\"packagejson\",\"tests/fixtures/config-file/package-json/package.json\",\"packagejson:31c698162ed2b2a1a436649a559893fb2cda6538406ecc8ce2b375f3dc381ee8\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-file/package-json/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-file/package-json/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-file/package-json/package.json",
+            "purl": "pkg:generic/excalibur/project-852b6fac611caa7298d4dd2c5c7d8928491b8342762721ab19b78a18bc71b06e"
+          },
+          "purl": "pkg:generic/excalibur/project-852b6fac611caa7298d4dd2c5c7d8928491b8342762721ab19b78a18bc71b06e"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-file/package-json/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-file/package-json/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-file/package-json/package.json",
+            "purl": "pkg:generic/excalibur/project-852b6fac611caa7298d4dd2c5c7d8928491b8342762721ab19b78a18bc71b06e"
+          },
+          "purl": "pkg:generic/excalibur/project-852b6fac611caa7298d4dd2c5c7d8928491b8342762721ab19b78a18bc71b06e"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-file/package-json/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-file/package-json/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-file/package-json/package.json",
+            "purl": "pkg:generic/excalibur/project-852b6fac611caa7298d4dd2c5c7d8928491b8342762721ab19b78a18bc71b06e"
+          },
+          "purl": "pkg:generic/excalibur/project-852b6fac611caa7298d4dd2c5c7d8928491b8342762721ab19b78a18bc71b06e"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-file/package-json/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-file/package-json/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-file/package-json/package.json",
+            "purl": "pkg:generic/excalibur/project-852b6fac611caa7298d4dd2c5c7d8928491b8342762721ab19b78a18bc71b06e"
+          },
+          "purl": "pkg:generic/excalibur/project-852b6fac611caa7298d4dd2c5c7d8928491b8342762721ab19b78a18bc71b06e"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {}
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "tests/fixtures/config-file/package-json/package.json"
+          ],
+          "id": "workspace:\"tests/fixtures/config-file/package-json\"",
+          "locator": "tests/fixtures/config-file/package-json",
+          "project": {
+            "definitionFile": "tests/fixtures/config-file/package-json/package.json",
+            "purl": "pkg:generic/excalibur/project-852b6fac611caa7298d4dd2c5c7d8928491b8342762721ab19b78a18bc71b06e"
+          },
+          "purl": "pkg:generic/excalibur/project-852b6fac611caa7298d4dd2c5c7d8928491b8342762721ab19b78a18bc71b06e"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"tests/fixtures/config-file/package-json/package.json\",\"dependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-file/package-json/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-file/package-json/package.json",
+            "purl": "pkg:generic/excalibur/project-852b6fac611caa7298d4dd2c5c7d8928491b8342762721ab19b78a18bc71b06e"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"tests/fixtures/config-file/package-json/package.json\",\"devDependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-file/package-json/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-file/package-json/package.json",
+            "purl": "pkg:generic/excalibur/project-852b6fac611caa7298d4dd2c5c7d8928491b8342762721ab19b78a18bc71b06e"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"tests/fixtures/config-file/package-json/package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-file/package-json/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-file/package-json/package.json",
+            "purl": "pkg:generic/excalibur/project-852b6fac611caa7298d4dd2c5c7d8928491b8342762721ab19b78a18bc71b06e"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"tests/fixtures/config-file/package-json/package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-file/package-json/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-file/package-json/package.json",
+            "purl": "pkg:generic/excalibur/project-852b6fac611caa7298d4dd2c5c7d8928491b8342762721ab19b78a18bc71b06e"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "tests/fixtures/config-file/package-json/package.json"
+        ]
+      }
     },
     {
-      "purl": "pkg:npm/eslint-config-eslint@11.0.0",
-      "evidence": [
-        "package.json#55"
-      ]
+      "attributes": {},
+      "edges": [],
+      "id": "[\"packagejson\",\"tests/fixtures/config-hierarchy/broken/package.json\",\"packagejson:b772907122e1de10439ee81b5e14a6374994637bf16a8ea2d3595e22249e2f48\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/broken/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-hierarchy/broken/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/broken/package.json",
+            "purl": "pkg:generic/excalibur/project-ea6fceac7d135ec56edab7705302768b51835ceaad7fba1810a4c5fb37861f75"
+          },
+          "purl": "pkg:generic/excalibur/project-ea6fceac7d135ec56edab7705302768b51835ceaad7fba1810a4c5fb37861f75"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/broken/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-hierarchy/broken/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/broken/package.json",
+            "purl": "pkg:generic/excalibur/project-ea6fceac7d135ec56edab7705302768b51835ceaad7fba1810a4c5fb37861f75"
+          },
+          "purl": "pkg:generic/excalibur/project-ea6fceac7d135ec56edab7705302768b51835ceaad7fba1810a4c5fb37861f75"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/broken/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-hierarchy/broken/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/broken/package.json",
+            "purl": "pkg:generic/excalibur/project-ea6fceac7d135ec56edab7705302768b51835ceaad7fba1810a4c5fb37861f75"
+          },
+          "purl": "pkg:generic/excalibur/project-ea6fceac7d135ec56edab7705302768b51835ceaad7fba1810a4c5fb37861f75"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/broken/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-hierarchy/broken/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/broken/package.json",
+            "purl": "pkg:generic/excalibur/project-ea6fceac7d135ec56edab7705302768b51835ceaad7fba1810a4c5fb37861f75"
+          },
+          "purl": "pkg:generic/excalibur/project-ea6fceac7d135ec56edab7705302768b51835ceaad7fba1810a4c5fb37861f75"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {
+              "name": "",
+              "version": ""
+            }
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/broken/package.json"
+          ],
+          "id": "workspace:\"tests/fixtures/config-hierarchy/broken\"",
+          "locator": "tests/fixtures/config-hierarchy/broken",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/broken/package.json",
+            "purl": "pkg:generic/excalibur/project-ea6fceac7d135ec56edab7705302768b51835ceaad7fba1810a4c5fb37861f75"
+          },
+          "purl": "pkg:generic/excalibur/project-ea6fceac7d135ec56edab7705302768b51835ceaad7fba1810a4c5fb37861f75"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"tests/fixtures/config-hierarchy/broken/package.json\",\"dependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-hierarchy/broken/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/broken/package.json",
+            "purl": "pkg:generic/excalibur/project-ea6fceac7d135ec56edab7705302768b51835ceaad7fba1810a4c5fb37861f75"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"tests/fixtures/config-hierarchy/broken/package.json\",\"devDependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-hierarchy/broken/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/broken/package.json",
+            "purl": "pkg:generic/excalibur/project-ea6fceac7d135ec56edab7705302768b51835ceaad7fba1810a4c5fb37861f75"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"tests/fixtures/config-hierarchy/broken/package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-hierarchy/broken/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/broken/package.json",
+            "purl": "pkg:generic/excalibur/project-ea6fceac7d135ec56edab7705302768b51835ceaad7fba1810a4c5fb37861f75"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"tests/fixtures/config-hierarchy/broken/package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-hierarchy/broken/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/broken/package.json",
+            "purl": "pkg:generic/excalibur/project-ea6fceac7d135ec56edab7705302768b51835ceaad7fba1810a4c5fb37861f75"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "tests/fixtures/config-hierarchy/broken/package.json"
+        ]
+      }
     },
     {
-      "purl": "pkg:npm/eslint@9.20.1",
-      "evidence": [
-        "package.json#54"
-      ]
+      "attributes": {},
+      "edges": [],
+      "id": "[\"packagejson\",\"tests/fixtures/config-hierarchy/packagejson/package.json\",\"packagejson:c0727eb8130dfb5818be2a9880935747721d53d8c50f251b65cc9882778a2012\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/packagejson/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-hierarchy/packagejson/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/packagejson/package.json",
+            "purl": "pkg:generic/excalibur/project-da3a3d9b5a2643a8c3f046c85a639b22eb327141ccfe8b36dd446fb2af3aa1dd"
+          },
+          "purl": "pkg:generic/excalibur/project-da3a3d9b5a2643a8c3f046c85a639b22eb327141ccfe8b36dd446fb2af3aa1dd"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/packagejson/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-hierarchy/packagejson/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/packagejson/package.json",
+            "purl": "pkg:generic/excalibur/project-da3a3d9b5a2643a8c3f046c85a639b22eb327141ccfe8b36dd446fb2af3aa1dd"
+          },
+          "purl": "pkg:generic/excalibur/project-da3a3d9b5a2643a8c3f046c85a639b22eb327141ccfe8b36dd446fb2af3aa1dd"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/packagejson/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-hierarchy/packagejson/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/packagejson/package.json",
+            "purl": "pkg:generic/excalibur/project-da3a3d9b5a2643a8c3f046c85a639b22eb327141ccfe8b36dd446fb2af3aa1dd"
+          },
+          "purl": "pkg:generic/excalibur/project-da3a3d9b5a2643a8c3f046c85a639b22eb327141ccfe8b36dd446fb2af3aa1dd"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/packagejson/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-hierarchy/packagejson/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/packagejson/package.json",
+            "purl": "pkg:generic/excalibur/project-da3a3d9b5a2643a8c3f046c85a639b22eb327141ccfe8b36dd446fb2af3aa1dd"
+          },
+          "purl": "pkg:generic/excalibur/project-da3a3d9b5a2643a8c3f046c85a639b22eb327141ccfe8b36dd446fb2af3aa1dd"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {
+              "name": "",
+              "version": ""
+            }
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/packagejson/package.json"
+          ],
+          "id": "workspace:\"tests/fixtures/config-hierarchy/packagejson\"",
+          "locator": "tests/fixtures/config-hierarchy/packagejson",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/packagejson/package.json",
+            "purl": "pkg:generic/excalibur/project-da3a3d9b5a2643a8c3f046c85a639b22eb327141ccfe8b36dd446fb2af3aa1dd"
+          },
+          "purl": "pkg:generic/excalibur/project-da3a3d9b5a2643a8c3f046c85a639b22eb327141ccfe8b36dd446fb2af3aa1dd"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"tests/fixtures/config-hierarchy/packagejson/package.json\",\"dependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-hierarchy/packagejson/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/packagejson/package.json",
+            "purl": "pkg:generic/excalibur/project-da3a3d9b5a2643a8c3f046c85a639b22eb327141ccfe8b36dd446fb2af3aa1dd"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"tests/fixtures/config-hierarchy/packagejson/package.json\",\"devDependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-hierarchy/packagejson/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/packagejson/package.json",
+            "purl": "pkg:generic/excalibur/project-da3a3d9b5a2643a8c3f046c85a639b22eb327141ccfe8b36dd446fb2af3aa1dd"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"tests/fixtures/config-hierarchy/packagejson/package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-hierarchy/packagejson/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/packagejson/package.json",
+            "purl": "pkg:generic/excalibur/project-da3a3d9b5a2643a8c3f046c85a639b22eb327141ccfe8b36dd446fb2af3aa1dd"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"tests/fixtures/config-hierarchy/packagejson/package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-hierarchy/packagejson/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/packagejson/package.json",
+            "purl": "pkg:generic/excalibur/project-da3a3d9b5a2643a8c3f046c85a639b22eb327141ccfe8b36dd446fb2af3aa1dd"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "tests/fixtures/config-hierarchy/packagejson/package.json"
+        ]
+      }
     },
     {
-      "purl": "pkg:npm/espree@10.0.1",
-      "evidence": [
-        "package.json#67"
-      ]
+      "attributes": {},
+      "edges": [],
+      "id": "[\"packagejson\",\"tests/fixtures/config-hierarchy/packagejson/subdir/package.json\",\"packagejson:e527829093cf2a9908cd23f4a08d062766960fcf69ba5a1549d4d12fb53f7b03\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/packagejson/subdir/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-hierarchy/packagejson/subdir/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/packagejson/subdir/package.json",
+            "purl": "pkg:generic/excalibur/project-3984cf2a4f161bc1d85fef1997ef4ade30e2961ce485aa795c62d50d4bd1efed"
+          },
+          "purl": "pkg:generic/excalibur/project-3984cf2a4f161bc1d85fef1997ef4ade30e2961ce485aa795c62d50d4bd1efed"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/packagejson/subdir/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-hierarchy/packagejson/subdir/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/packagejson/subdir/package.json",
+            "purl": "pkg:generic/excalibur/project-3984cf2a4f161bc1d85fef1997ef4ade30e2961ce485aa795c62d50d4bd1efed"
+          },
+          "purl": "pkg:generic/excalibur/project-3984cf2a4f161bc1d85fef1997ef4ade30e2961ce485aa795c62d50d4bd1efed"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/packagejson/subdir/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-hierarchy/packagejson/subdir/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/packagejson/subdir/package.json",
+            "purl": "pkg:generic/excalibur/project-3984cf2a4f161bc1d85fef1997ef4ade30e2961ce485aa795c62d50d4bd1efed"
+          },
+          "purl": "pkg:generic/excalibur/project-3984cf2a4f161bc1d85fef1997ef4ade30e2961ce485aa795c62d50d4bd1efed"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/packagejson/subdir/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-hierarchy/packagejson/subdir/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/packagejson/subdir/package.json",
+            "purl": "pkg:generic/excalibur/project-3984cf2a4f161bc1d85fef1997ef4ade30e2961ce485aa795c62d50d4bd1efed"
+          },
+          "purl": "pkg:generic/excalibur/project-3984cf2a4f161bc1d85fef1997ef4ade30e2961ce485aa795c62d50d4bd1efed"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {
+              "name": "",
+              "version": ""
+            }
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/packagejson/subdir/package.json"
+          ],
+          "id": "workspace:\"tests/fixtures/config-hierarchy/packagejson/subdir\"",
+          "locator": "tests/fixtures/config-hierarchy/packagejson/subdir",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/packagejson/subdir/package.json",
+            "purl": "pkg:generic/excalibur/project-3984cf2a4f161bc1d85fef1997ef4ade30e2961ce485aa795c62d50d4bd1efed"
+          },
+          "purl": "pkg:generic/excalibur/project-3984cf2a4f161bc1d85fef1997ef4ade30e2961ce485aa795c62d50d4bd1efed"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"tests/fixtures/config-hierarchy/packagejson/subdir/package.json\",\"dependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-hierarchy/packagejson/subdir/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/packagejson/subdir/package.json",
+            "purl": "pkg:generic/excalibur/project-3984cf2a4f161bc1d85fef1997ef4ade30e2961ce485aa795c62d50d4bd1efed"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"tests/fixtures/config-hierarchy/packagejson/subdir/package.json\",\"devDependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-hierarchy/packagejson/subdir/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/packagejson/subdir/package.json",
+            "purl": "pkg:generic/excalibur/project-3984cf2a4f161bc1d85fef1997ef4ade30e2961ce485aa795c62d50d4bd1efed"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"tests/fixtures/config-hierarchy/packagejson/subdir/package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-hierarchy/packagejson/subdir/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/packagejson/subdir/package.json",
+            "purl": "pkg:generic/excalibur/project-3984cf2a4f161bc1d85fef1997ef4ade30e2961ce485aa795c62d50d4bd1efed"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"tests/fixtures/config-hierarchy/packagejson/subdir/package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-hierarchy/packagejson/subdir/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/packagejson/subdir/package.json",
+            "purl": "pkg:generic/excalibur/project-3984cf2a4f161bc1d85fef1997ef4ade30e2961ce485aa795c62d50d4bd1efed"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "tests/fixtures/config-hierarchy/packagejson/subdir/package.json"
+        ]
+      }
     },
     {
-      "purl": "pkg:npm/fs-teardown@0.1.3",
-      "evidence": [
-        "package.json#56"
-      ]
+      "attributes": {},
+      "edges": [],
+      "id": "[\"packagejson\",\"tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/package.json\",\"packagejson:2938e49e2f777cb11012834d00ea4242edad7bca66ccc2c5d73595f6983b7845\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/package.json",
+            "purl": "pkg:generic/excalibur/project-801831517d9994b4cb1bbab73715d28398af61c9fa46bde6b7cafbfc618b3666"
+          },
+          "purl": "pkg:generic/excalibur/project-801831517d9994b4cb1bbab73715d28398af61c9fa46bde6b7cafbfc618b3666"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/package.json",
+            "purl": "pkg:generic/excalibur/project-801831517d9994b4cb1bbab73715d28398af61c9fa46bde6b7cafbfc618b3666"
+          },
+          "purl": "pkg:generic/excalibur/project-801831517d9994b4cb1bbab73715d28398af61c9fa46bde6b7cafbfc618b3666"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/package.json",
+            "purl": "pkg:generic/excalibur/project-801831517d9994b4cb1bbab73715d28398af61c9fa46bde6b7cafbfc618b3666"
+          },
+          "purl": "pkg:generic/excalibur/project-801831517d9994b4cb1bbab73715d28398af61c9fa46bde6b7cafbfc618b3666"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/package.json",
+            "purl": "pkg:generic/excalibur/project-801831517d9994b4cb1bbab73715d28398af61c9fa46bde6b7cafbfc618b3666"
+          },
+          "purl": "pkg:generic/excalibur/project-801831517d9994b4cb1bbab73715d28398af61c9fa46bde6b7cafbfc618b3666"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {
+              "name": "",
+              "version": ""
+            }
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/package.json"
+          ],
+          "id": "workspace:\"tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir\"",
+          "locator": "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/package.json",
+            "purl": "pkg:generic/excalibur/project-801831517d9994b4cb1bbab73715d28398af61c9fa46bde6b7cafbfc618b3666"
+          },
+          "purl": "pkg:generic/excalibur/project-801831517d9994b4cb1bbab73715d28398af61c9fa46bde6b7cafbfc618b3666"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/package.json\",\"dependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/package.json",
+            "purl": "pkg:generic/excalibur/project-801831517d9994b4cb1bbab73715d28398af61c9fa46bde6b7cafbfc618b3666"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/package.json\",\"devDependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/package.json",
+            "purl": "pkg:generic/excalibur/project-801831517d9994b4cb1bbab73715d28398af61c9fa46bde6b7cafbfc618b3666"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/package.json",
+            "purl": "pkg:generic/excalibur/project-801831517d9994b4cb1bbab73715d28398af61c9fa46bde6b7cafbfc618b3666"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/package.json",
+            "purl": "pkg:generic/excalibur/project-801831517d9994b4cb1bbab73715d28398af61c9fa46bde6b7cafbfc618b3666"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/package.json"
+        ]
+      }
     },
     {
-      "purl": "pkg:npm/globals@14.0.0",
-      "evidence": [
-        "package.json#68"
-      ]
+      "attributes": {},
+      "edges": [],
+      "id": "[\"packagejson\",\"tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/subsubsubdir/package.json\",\"packagejson:f78fe7f0d8d1d07b6ca1f03202ef3e3e5a87e47cd384c4c5622bbb556dd4dead\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/subsubsubdir/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/subsubsubdir/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/subsubsubdir/package.json",
+            "purl": "pkg:generic/excalibur/project-bb4bf9e2bf20ae9a3c89bedd0a870d6b5cf0395f376277ccc086bbf038f7c359"
+          },
+          "purl": "pkg:generic/excalibur/project-bb4bf9e2bf20ae9a3c89bedd0a870d6b5cf0395f376277ccc086bbf038f7c359"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/subsubsubdir/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/subsubsubdir/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/subsubsubdir/package.json",
+            "purl": "pkg:generic/excalibur/project-bb4bf9e2bf20ae9a3c89bedd0a870d6b5cf0395f376277ccc086bbf038f7c359"
+          },
+          "purl": "pkg:generic/excalibur/project-bb4bf9e2bf20ae9a3c89bedd0a870d6b5cf0395f376277ccc086bbf038f7c359"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/subsubsubdir/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/subsubsubdir/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/subsubsubdir/package.json",
+            "purl": "pkg:generic/excalibur/project-bb4bf9e2bf20ae9a3c89bedd0a870d6b5cf0395f376277ccc086bbf038f7c359"
+          },
+          "purl": "pkg:generic/excalibur/project-bb4bf9e2bf20ae9a3c89bedd0a870d6b5cf0395f376277ccc086bbf038f7c359"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/subsubsubdir/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/subsubsubdir/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/subsubsubdir/package.json",
+            "purl": "pkg:generic/excalibur/project-bb4bf9e2bf20ae9a3c89bedd0a870d6b5cf0395f376277ccc086bbf038f7c359"
+          },
+          "purl": "pkg:generic/excalibur/project-bb4bf9e2bf20ae9a3c89bedd0a870d6b5cf0395f376277ccc086bbf038f7c359"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {
+              "name": "",
+              "version": ""
+            }
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/subsubsubdir/package.json"
+          ],
+          "id": "workspace:\"tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/subsubsubdir\"",
+          "locator": "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/subsubsubdir",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/subsubsubdir/package.json",
+            "purl": "pkg:generic/excalibur/project-bb4bf9e2bf20ae9a3c89bedd0a870d6b5cf0395f376277ccc086bbf038f7c359"
+          },
+          "purl": "pkg:generic/excalibur/project-bb4bf9e2bf20ae9a3c89bedd0a870d6b5cf0395f376277ccc086bbf038f7c359"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/subsubsubdir/package.json\",\"dependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/subsubsubdir/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/subsubsubdir/package.json",
+            "purl": "pkg:generic/excalibur/project-bb4bf9e2bf20ae9a3c89bedd0a870d6b5cf0395f376277ccc086bbf038f7c359"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/subsubsubdir/package.json\",\"devDependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/subsubsubdir/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/subsubsubdir/package.json",
+            "purl": "pkg:generic/excalibur/project-bb4bf9e2bf20ae9a3c89bedd0a870d6b5cf0395f376277ccc086bbf038f7c359"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/subsubsubdir/package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/subsubsubdir/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/subsubsubdir/package.json",
+            "purl": "pkg:generic/excalibur/project-bb4bf9e2bf20ae9a3c89bedd0a870d6b5cf0395f376277ccc086bbf038f7c359"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/subsubsubdir/package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/subsubsubdir/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/subsubsubdir/package.json",
+            "purl": "pkg:generic/excalibur/project-bb4bf9e2bf20ae9a3c89bedd0a870d6b5cf0395f376277ccc086bbf038f7c359"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/subsubsubdir/package.json"
+        ]
+      }
     },
     {
-      "purl": "pkg:npm/ignore@5.2.0",
-      "evidence": [
-        "package.json#69"
-      ]
+      "attributes": {},
+      "edges": [],
+      "id": "[\"packagejson\",\"tests/fixtures/config-hierarchy/personal-config/home-folder-with-packagejson/package.json\",\"packagejson:388f563dae14834aab499a49d47c9764467bb9120107867e9e1cde0f7aef693e\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/personal-config/home-folder-with-packagejson/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-hierarchy/personal-config/home-folder-with-packagejson/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/personal-config/home-folder-with-packagejson/package.json",
+            "purl": "pkg:npm/foo@1.0.0"
+          },
+          "purl": "pkg:npm/foo@1.0.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/personal-config/home-folder-with-packagejson/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-hierarchy/personal-config/home-folder-with-packagejson/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/personal-config/home-folder-with-packagejson/package.json",
+            "purl": "pkg:npm/foo@1.0.0"
+          },
+          "purl": "pkg:npm/foo@1.0.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/personal-config/home-folder-with-packagejson/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-hierarchy/personal-config/home-folder-with-packagejson/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/personal-config/home-folder-with-packagejson/package.json",
+            "purl": "pkg:npm/foo@1.0.0"
+          },
+          "purl": "pkg:npm/foo@1.0.0"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/personal-config/home-folder-with-packagejson/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-hierarchy/personal-config/home-folder-with-packagejson/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/personal-config/home-folder-with-packagejson/package.json",
+            "purl": "pkg:npm/foo@1.0.0"
+          },
+          "purl": "pkg:npm/foo@1.0.0"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {
+              "name": "foo",
+              "version": "1.0.0"
+            }
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/personal-config/home-folder-with-packagejson/package.json"
+          ],
+          "id": "workspace:\"tests/fixtures/config-hierarchy/personal-config/home-folder-with-packagejson\"",
+          "locator": "tests/fixtures/config-hierarchy/personal-config/home-folder-with-packagejson",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/personal-config/home-folder-with-packagejson/package.json",
+            "purl": "pkg:npm/foo@1.0.0"
+          },
+          "purl": "pkg:npm/foo@1.0.0"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"tests/fixtures/config-hierarchy/personal-config/home-folder-with-packagejson/package.json\",\"dependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-hierarchy/personal-config/home-folder-with-packagejson/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/personal-config/home-folder-with-packagejson/package.json",
+            "purl": "pkg:npm/foo@1.0.0"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"tests/fixtures/config-hierarchy/personal-config/home-folder-with-packagejson/package.json\",\"devDependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-hierarchy/personal-config/home-folder-with-packagejson/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/personal-config/home-folder-with-packagejson/package.json",
+            "purl": "pkg:npm/foo@1.0.0"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"tests/fixtures/config-hierarchy/personal-config/home-folder-with-packagejson/package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-hierarchy/personal-config/home-folder-with-packagejson/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/personal-config/home-folder-with-packagejson/package.json",
+            "purl": "pkg:npm/foo@1.0.0"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"tests/fixtures/config-hierarchy/personal-config/home-folder-with-packagejson/package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-hierarchy/personal-config/home-folder-with-packagejson/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/personal-config/home-folder-with-packagejson/package.json",
+            "purl": "pkg:npm/foo@1.0.0"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "tests/fixtures/config-hierarchy/personal-config/home-folder-with-packagejson/package.json"
+        ]
+      }
     },
     {
-      "purl": "pkg:npm/import-fresh@3.2.1",
-      "evidence": [
-        "package.json#70"
-      ]
+      "attributes": {},
+      "edges": [],
+      "id": "[\"packagejson\",\"tests/fixtures/config-hierarchy/personal-config/home-folder/project/package.json\",\"packagejson:20ee0af6d698001f41523b0b3bff82e4445c4487e31812768e0b850721780d40\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/personal-config/home-folder/project/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-hierarchy/personal-config/home-folder/project/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/personal-config/home-folder/project/package.json",
+            "purl": "pkg:generic/excalibur/project-e025a4675b7a0ddd5204dbd92e8e2cf78428cc23fc7f3b27725676692c2d4a1c"
+          },
+          "purl": "pkg:generic/excalibur/project-e025a4675b7a0ddd5204dbd92e8e2cf78428cc23fc7f3b27725676692c2d4a1c"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/personal-config/home-folder/project/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-hierarchy/personal-config/home-folder/project/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/personal-config/home-folder/project/package.json",
+            "purl": "pkg:generic/excalibur/project-e025a4675b7a0ddd5204dbd92e8e2cf78428cc23fc7f3b27725676692c2d4a1c"
+          },
+          "purl": "pkg:generic/excalibur/project-e025a4675b7a0ddd5204dbd92e8e2cf78428cc23fc7f3b27725676692c2d4a1c"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/personal-config/home-folder/project/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-hierarchy/personal-config/home-folder/project/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/personal-config/home-folder/project/package.json",
+            "purl": "pkg:generic/excalibur/project-e025a4675b7a0ddd5204dbd92e8e2cf78428cc23fc7f3b27725676692c2d4a1c"
+          },
+          "purl": "pkg:generic/excalibur/project-e025a4675b7a0ddd5204dbd92e8e2cf78428cc23fc7f3b27725676692c2d4a1c"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/personal-config/home-folder/project/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-hierarchy/personal-config/home-folder/project/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/personal-config/home-folder/project/package.json",
+            "purl": "pkg:generic/excalibur/project-e025a4675b7a0ddd5204dbd92e8e2cf78428cc23fc7f3b27725676692c2d4a1c"
+          },
+          "purl": "pkg:generic/excalibur/project-e025a4675b7a0ddd5204dbd92e8e2cf78428cc23fc7f3b27725676692c2d4a1c"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {}
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/personal-config/home-folder/project/package.json"
+          ],
+          "id": "workspace:\"tests/fixtures/config-hierarchy/personal-config/home-folder/project\"",
+          "locator": "tests/fixtures/config-hierarchy/personal-config/home-folder/project",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/personal-config/home-folder/project/package.json",
+            "purl": "pkg:generic/excalibur/project-e025a4675b7a0ddd5204dbd92e8e2cf78428cc23fc7f3b27725676692c2d4a1c"
+          },
+          "purl": "pkg:generic/excalibur/project-e025a4675b7a0ddd5204dbd92e8e2cf78428cc23fc7f3b27725676692c2d4a1c"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"tests/fixtures/config-hierarchy/personal-config/home-folder/project/package.json\",\"dependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-hierarchy/personal-config/home-folder/project/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/personal-config/home-folder/project/package.json",
+            "purl": "pkg:generic/excalibur/project-e025a4675b7a0ddd5204dbd92e8e2cf78428cc23fc7f3b27725676692c2d4a1c"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"tests/fixtures/config-hierarchy/personal-config/home-folder/project/package.json\",\"devDependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-hierarchy/personal-config/home-folder/project/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/personal-config/home-folder/project/package.json",
+            "purl": "pkg:generic/excalibur/project-e025a4675b7a0ddd5204dbd92e8e2cf78428cc23fc7f3b27725676692c2d4a1c"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"tests/fixtures/config-hierarchy/personal-config/home-folder/project/package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-hierarchy/personal-config/home-folder/project/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/personal-config/home-folder/project/package.json",
+            "purl": "pkg:generic/excalibur/project-e025a4675b7a0ddd5204dbd92e8e2cf78428cc23fc7f3b27725676692c2d4a1c"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"tests/fixtures/config-hierarchy/personal-config/home-folder/project/package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-hierarchy/personal-config/home-folder/project/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/personal-config/home-folder/project/package.json",
+            "purl": "pkg:generic/excalibur/project-e025a4675b7a0ddd5204dbd92e8e2cf78428cc23fc7f3b27725676692c2d4a1c"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "tests/fixtures/config-hierarchy/personal-config/home-folder/project/package.json"
+        ]
+      }
     },
     {
-      "purl": "pkg:npm/js-yaml@4.1.0",
-      "evidence": [
-        "package.json#71"
-      ]
+      "attributes": {},
+      "edges": [],
+      "id": "[\"packagejson\",\"tests/fixtures/config-hierarchy/personal-config/project-with-config/package.json\",\"packagejson:be36e8f98c10e0bce69704f0ac28734b36370581bb29b9c223d52d113d7e638c\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/personal-config/project-with-config/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-hierarchy/personal-config/project-with-config/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/personal-config/project-with-config/package.json",
+            "purl": "pkg:generic/excalibur/project-6e1f4d376bd0524922e724d05c0cde9c29a07c7efd0d4d8e29ea9f7ecfc01cdf"
+          },
+          "purl": "pkg:generic/excalibur/project-6e1f4d376bd0524922e724d05c0cde9c29a07c7efd0d4d8e29ea9f7ecfc01cdf"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/personal-config/project-with-config/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-hierarchy/personal-config/project-with-config/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/personal-config/project-with-config/package.json",
+            "purl": "pkg:generic/excalibur/project-6e1f4d376bd0524922e724d05c0cde9c29a07c7efd0d4d8e29ea9f7ecfc01cdf"
+          },
+          "purl": "pkg:generic/excalibur/project-6e1f4d376bd0524922e724d05c0cde9c29a07c7efd0d4d8e29ea9f7ecfc01cdf"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/personal-config/project-with-config/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-hierarchy/personal-config/project-with-config/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/personal-config/project-with-config/package.json",
+            "purl": "pkg:generic/excalibur/project-6e1f4d376bd0524922e724d05c0cde9c29a07c7efd0d4d8e29ea9f7ecfc01cdf"
+          },
+          "purl": "pkg:generic/excalibur/project-6e1f4d376bd0524922e724d05c0cde9c29a07c7efd0d4d8e29ea9f7ecfc01cdf"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/personal-config/project-with-config/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-hierarchy/personal-config/project-with-config/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/personal-config/project-with-config/package.json",
+            "purl": "pkg:generic/excalibur/project-6e1f4d376bd0524922e724d05c0cde9c29a07c7efd0d4d8e29ea9f7ecfc01cdf"
+          },
+          "purl": "pkg:generic/excalibur/project-6e1f4d376bd0524922e724d05c0cde9c29a07c7efd0d4d8e29ea9f7ecfc01cdf"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {}
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/personal-config/project-with-config/package.json"
+          ],
+          "id": "workspace:\"tests/fixtures/config-hierarchy/personal-config/project-with-config\"",
+          "locator": "tests/fixtures/config-hierarchy/personal-config/project-with-config",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/personal-config/project-with-config/package.json",
+            "purl": "pkg:generic/excalibur/project-6e1f4d376bd0524922e724d05c0cde9c29a07c7efd0d4d8e29ea9f7ecfc01cdf"
+          },
+          "purl": "pkg:generic/excalibur/project-6e1f4d376bd0524922e724d05c0cde9c29a07c7efd0d4d8e29ea9f7ecfc01cdf"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"tests/fixtures/config-hierarchy/personal-config/project-with-config/package.json\",\"dependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-hierarchy/personal-config/project-with-config/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/personal-config/project-with-config/package.json",
+            "purl": "pkg:generic/excalibur/project-6e1f4d376bd0524922e724d05c0cde9c29a07c7efd0d4d8e29ea9f7ecfc01cdf"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"tests/fixtures/config-hierarchy/personal-config/project-with-config/package.json\",\"devDependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-hierarchy/personal-config/project-with-config/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/personal-config/project-with-config/package.json",
+            "purl": "pkg:generic/excalibur/project-6e1f4d376bd0524922e724d05c0cde9c29a07c7efd0d4d8e29ea9f7ecfc01cdf"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"tests/fixtures/config-hierarchy/personal-config/project-with-config/package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-hierarchy/personal-config/project-with-config/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/personal-config/project-with-config/package.json",
+            "purl": "pkg:generic/excalibur/project-6e1f4d376bd0524922e724d05c0cde9c29a07c7efd0d4d8e29ea9f7ecfc01cdf"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"tests/fixtures/config-hierarchy/personal-config/project-with-config/package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-hierarchy/personal-config/project-with-config/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/personal-config/project-with-config/package.json",
+            "purl": "pkg:generic/excalibur/project-6e1f4d376bd0524922e724d05c0cde9c29a07c7efd0d4d8e29ea9f7ecfc01cdf"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "tests/fixtures/config-hierarchy/personal-config/project-with-config/package.json"
+        ]
+      }
     },
     {
-      "purl": "pkg:npm/minimatch@3.1.2",
-      "evidence": [
-        "package.json#72"
-      ]
+      "attributes": {},
+      "edges": [],
+      "id": "[\"packagejson\",\"tests/fixtures/config-hierarchy/personal-config/project-without-config/package.json\",\"packagejson:bb3694071cf96a4dd169e8e3caf80e9d44da6e5ee48015d396f8c3397cec8595\"]",
+      "interpretation": "declared",
+      "nodes": [
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/personal-config/project-without-config/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-hierarchy/personal-config/project-without-config/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/personal-config/project-without-config/package.json",
+            "purl": "pkg:generic/excalibur/project-4119c6db5eec6068a47e4fb78a92e7bee3a2acc5ceffc898b4b224c88fecccdd"
+          },
+          "purl": "pkg:generic/excalibur/project-4119c6db5eec6068a47e4fb78a92e7bee3a2acc5ceffc898b4b224c88fecccdd"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/personal-config/project-without-config/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-hierarchy/personal-config/project-without-config/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/personal-config/project-without-config/package.json",
+            "purl": "pkg:generic/excalibur/project-4119c6db5eec6068a47e4fb78a92e7bee3a2acc5ceffc898b4b224c88fecccdd"
+          },
+          "purl": "pkg:generic/excalibur/project-4119c6db5eec6068a47e4fb78a92e7bee3a2acc5ceffc898b4b224c88fecccdd"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/personal-config/project-without-config/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-hierarchy/personal-config/project-without-config/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/personal-config/project-without-config/package.json",
+            "purl": "pkg:generic/excalibur/project-4119c6db5eec6068a47e4fb78a92e7bee3a2acc5ceffc898b4b224c88fecccdd"
+          },
+          "purl": "pkg:generic/excalibur/project-4119c6db5eec6068a47e4fb78a92e7bee3a2acc5ceffc898b4b224c88fecccdd"
+        },
+        {
+          "dependencyCompleteness": "complete",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/personal-config/project-without-config/package.json"
+          ],
+          "id": "scope:[\"tests/fixtures/config-hierarchy/personal-config/project-without-config/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/personal-config/project-without-config/package.json",
+            "purl": "pkg:generic/excalibur/project-4119c6db5eec6068a47e4fb78a92e7bee3a2acc5ceffc898b4b224c88fecccdd"
+          },
+          "purl": "pkg:generic/excalibur/project-4119c6db5eec6068a47e4fb78a92e7bee3a2acc5ceffc898b4b224c88fecccdd"
+        },
+        {
+          "attributes": {
+            "npm:projectMetadata": {}
+          },
+          "dependencyCompleteness": "unknown",
+          "evidence": [
+            "tests/fixtures/config-hierarchy/personal-config/project-without-config/package.json"
+          ],
+          "id": "workspace:\"tests/fixtures/config-hierarchy/personal-config/project-without-config\"",
+          "locator": "tests/fixtures/config-hierarchy/personal-config/project-without-config",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/personal-config/project-without-config/package.json",
+            "purl": "pkg:generic/excalibur/project-4119c6db5eec6068a47e4fb78a92e7bee3a2acc5ceffc898b4b224c88fecccdd"
+          },
+          "purl": "pkg:generic/excalibur/project-4119c6db5eec6068a47e4fb78a92e7bee3a2acc5ceffc898b4b224c88fecccdd"
+        }
+      ],
+      "rootCompleteness": "complete",
+      "roots": [
+        {
+          "id": "scope:[\"tests/fixtures/config-hierarchy/personal-config/project-without-config/package.json\",\"dependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-hierarchy/personal-config/project-without-config/package.json\",\"dependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/personal-config/project-without-config/package.json",
+            "purl": "pkg:generic/excalibur/project-4119c6db5eec6068a47e4fb78a92e7bee3a2acc5ceffc898b4b224c88fecccdd"
+          },
+          "scope": "dependencies"
+        },
+        {
+          "id": "scope:[\"tests/fixtures/config-hierarchy/personal-config/project-without-config/package.json\",\"devDependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-hierarchy/personal-config/project-without-config/package.json\",\"devDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/personal-config/project-without-config/package.json",
+            "purl": "pkg:generic/excalibur/project-4119c6db5eec6068a47e4fb78a92e7bee3a2acc5ceffc898b4b224c88fecccdd"
+          },
+          "scope": "devDependencies"
+        },
+        {
+          "id": "scope:[\"tests/fixtures/config-hierarchy/personal-config/project-without-config/package.json\",\"optionalDependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-hierarchy/personal-config/project-without-config/package.json\",\"optionalDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/personal-config/project-without-config/package.json",
+            "purl": "pkg:generic/excalibur/project-4119c6db5eec6068a47e4fb78a92e7bee3a2acc5ceffc898b4b224c88fecccdd"
+          },
+          "scope": "optionalDependencies"
+        },
+        {
+          "id": "scope:[\"tests/fixtures/config-hierarchy/personal-config/project-without-config/package.json\",\"peerDependencies\"]",
+          "node": "scope:[\"tests/fixtures/config-hierarchy/personal-config/project-without-config/package.json\",\"peerDependencies\"]",
+          "project": {
+            "definitionFile": "tests/fixtures/config-hierarchy/personal-config/project-without-config/package.json",
+            "purl": "pkg:generic/excalibur/project-4119c6db5eec6068a47e4fb78a92e7bee3a2acc5ceffc898b4b224c88fecccdd"
+          },
+          "scope": "peerDependencies"
+        }
+      ],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "tests/fixtures/config-hierarchy/personal-config/project-without-config/package.json"
+        ]
+      }
     },
     {
-      "purl": "pkg:npm/mocha@9.0.3",
-      "evidence": [
-        "package.json#57"
-      ]
-    },
-    {
-      "purl": "pkg:npm/rollup@2.70.1",
-      "evidence": [
-        "package.json#58"
-      ]
-    },
-    {
-      "purl": "pkg:npm/shelljs@0.8.5",
-      "evidence": [
-        "package.json#59"
-      ]
-    },
-    {
-      "purl": "pkg:npm/sinon@11.1.2",
-      "evidence": [
-        "package.json#60"
-      ]
-    },
-    {
-      "purl": "pkg:npm/strip-json-comments@3.1.1",
-      "evidence": [
-        "package.json#73"
-      ]
-    },
-    {
-      "purl": "pkg:npm/temp-dir@2.0.0",
-      "evidence": [
-        "package.json#61"
-      ]
-    },
-    {
-      "purl": "pkg:npm/typescript@5.7.3",
-      "evidence": [
-        "package.json#62"
-      ]
+      "attributes": {
+        "core:failure": "Failed to extract file: Expected ',' or '}' after property value in JSON at position 81 (line 7 column 1)"
+      },
+      "edges": [],
+      "id": "packagejson:dcae46fb5d18829aa120d7c05d641d35cee52092b2d297403a46c03e569c9bbf",
+      "interpretation": "unknown",
+      "nodes": [],
+      "rootCompleteness": "unknown",
+      "roots": [],
+      "source": {
+        "extractor": "packagejson",
+        "files": [
+          "tests/fixtures/config-file/broken-package-json/package.json"
+        ],
+        "key": "extraction-failed"
+      }
     }
   ],
-  "subprojects": [],
-  "relationships": [],
   "issues": [
     {
       "code": "core.file_extraction_failed",
+      "file": "tests/fixtures/config-file/broken-package-json/package.json",
       "message": "Failed to extract file: Expected ',' or '}' after property value in JSON at position 81 (line 7 column 1)",
-      "severity": "ERROR",
-      "file": "tests/fixtures/config-file/broken-package-json/package.json"
+      "severity": "ERROR"
+    }
+  ],
+  "packages": [],
+  "subprojects": [
+    {
+      "definitionFile": "tests/fixtures/config-hierarchy/packagejson/subdir/package.json",
+      "evidence": [
+        "tests/fixtures/config-hierarchy/packagejson/subdir/package.json"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "packagejson",
+            "files": [
+              "tests/fixtures/config-hierarchy/packagejson/subdir/package.json"
+            ],
+            "key": "\"tests/fixtures/config-hierarchy/packagejson/subdir\""
+          },
+          "synthesizedPurl": true
+        }
+      ],
+      "purl": "pkg:generic/excalibur/project-3984cf2a4f161bc1d85fef1997ef4ade30e2961ce485aa795c62d50d4bd1efed"
+    },
+    {
+      "definitionFile": "tests/fixtures/config-hierarchy/personal-config/project-without-config/package.json",
+      "evidence": [
+        "tests/fixtures/config-hierarchy/personal-config/project-without-config/package.json"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "packagejson",
+            "files": [
+              "tests/fixtures/config-hierarchy/personal-config/project-without-config/package.json"
+            ],
+            "key": "\"tests/fixtures/config-hierarchy/personal-config/project-without-config\""
+          },
+          "synthesizedPurl": true
+        }
+      ],
+      "purl": "pkg:generic/excalibur/project-4119c6db5eec6068a47e4fb78a92e7bee3a2acc5ceffc898b4b224c88fecccdd"
+    },
+    {
+      "definitionFile": "tests/fixtures/config-hierarchy/personal-config/project-with-config/package.json",
+      "evidence": [
+        "tests/fixtures/config-hierarchy/personal-config/project-with-config/package.json"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "packagejson",
+            "files": [
+              "tests/fixtures/config-hierarchy/personal-config/project-with-config/package.json"
+            ],
+            "key": "\"tests/fixtures/config-hierarchy/personal-config/project-with-config\""
+          },
+          "synthesizedPurl": true
+        }
+      ],
+      "purl": "pkg:generic/excalibur/project-6e1f4d376bd0524922e724d05c0cde9c29a07c7efd0d4d8e29ea9f7ecfc01cdf"
+    },
+    {
+      "definitionFile": "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/package.json",
+      "evidence": [
+        "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/package.json"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "packagejson",
+            "files": [
+              "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/package.json"
+            ],
+            "key": "\"tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir\""
+          },
+          "synthesizedPurl": true
+        }
+      ],
+      "purl": "pkg:generic/excalibur/project-801831517d9994b4cb1bbab73715d28398af61c9fa46bde6b7cafbfc618b3666"
+    },
+    {
+      "definitionFile": "tests/fixtures/config-file/package-json/package.json",
+      "evidence": [
+        "tests/fixtures/config-file/package-json/package.json"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "packagejson",
+            "files": [
+              "tests/fixtures/config-file/package-json/package.json"
+            ],
+            "key": "\"tests/fixtures/config-file/package-json\""
+          },
+          "synthesizedPurl": true
+        }
+      ],
+      "purl": "pkg:generic/excalibur/project-852b6fac611caa7298d4dd2c5c7d8928491b8342762721ab19b78a18bc71b06e"
+    },
+    {
+      "definitionFile": "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/subsubsubdir/package.json",
+      "evidence": [
+        "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/subsubsubdir/package.json"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "packagejson",
+            "files": [
+              "tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/subsubsubdir/package.json"
+            ],
+            "key": "\"tests/fixtures/config-hierarchy/packagejson/subdir/subsubdir/subsubsubdir\""
+          },
+          "synthesizedPurl": true
+        }
+      ],
+      "purl": "pkg:generic/excalibur/project-bb4bf9e2bf20ae9a3c89bedd0a870d6b5cf0395f376277ccc086bbf038f7c359"
+    },
+    {
+      "definitionFile": "tests/fixtures/config-hierarchy/packagejson/package.json",
+      "evidence": [
+        "tests/fixtures/config-hierarchy/packagejson/package.json"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "packagejson",
+            "files": [
+              "tests/fixtures/config-hierarchy/packagejson/package.json"
+            ],
+            "key": "\"tests/fixtures/config-hierarchy/packagejson\""
+          },
+          "synthesizedPurl": true
+        }
+      ],
+      "purl": "pkg:generic/excalibur/project-da3a3d9b5a2643a8c3f046c85a639b22eb327141ccfe8b36dd446fb2af3aa1dd"
+    },
+    {
+      "definitionFile": "tests/fixtures/config-hierarchy/personal-config/home-folder/project/package.json",
+      "evidence": [
+        "tests/fixtures/config-hierarchy/personal-config/home-folder/project/package.json"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "packagejson",
+            "files": [
+              "tests/fixtures/config-hierarchy/personal-config/home-folder/project/package.json"
+            ],
+            "key": "\"tests/fixtures/config-hierarchy/personal-config/home-folder/project\""
+          },
+          "synthesizedPurl": true
+        }
+      ],
+      "purl": "pkg:generic/excalibur/project-e025a4675b7a0ddd5204dbd92e8e2cf78428cc23fc7f3b27725676692c2d4a1c"
+    },
+    {
+      "definitionFile": "tests/fixtures/config-hierarchy/broken/package.json",
+      "evidence": [
+        "tests/fixtures/config-hierarchy/broken/package.json"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "packagejson",
+            "files": [
+              "tests/fixtures/config-hierarchy/broken/package.json"
+            ],
+            "key": "\"tests/fixtures/config-hierarchy/broken\""
+          },
+          "synthesizedPurl": true
+        }
+      ],
+      "purl": "pkg:generic/excalibur/project-ea6fceac7d135ec56edab7705302768b51835ceaad7fba1810a4c5fb37861f75"
+    },
+    {
+      "definitionFile": "package.json",
+      "evidence": [
+        "package.json"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "packagejson",
+            "files": [
+              "package.json"
+            ],
+            "key": "\".\""
+          },
+          "synthesizedPurl": false
+        }
+      ],
+      "purl": "pkg:npm/%40eslint/eslintrc@3.3.1"
+    },
+    {
+      "definitionFile": "tests/fixtures/config-file/bom/package.json",
+      "evidence": [
+        "tests/fixtures/config-file/bom/package.json"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "packagejson",
+            "files": [
+              "tests/fixtures/config-file/bom/package.json"
+            ],
+            "key": "\"tests/fixtures/config-file/bom\""
+          },
+          "synthesizedPurl": false
+        }
+      ],
+      "purl": "pkg:npm/eslint-test@0.0.0"
+    },
+    {
+      "definitionFile": "tests/fixtures/config-hierarchy/personal-config/home-folder-with-packagejson/package.json",
+      "evidence": [
+        "tests/fixtures/config-hierarchy/personal-config/home-folder-with-packagejson/package.json"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "packagejson",
+            "files": [
+              "tests/fixtures/config-hierarchy/personal-config/home-folder-with-packagejson/package.json"
+            ],
+            "key": "\"tests/fixtures/config-hierarchy/personal-config/home-folder-with-packagejson\""
+          },
+          "synthesizedPurl": false
+        }
+      ],
+      "purl": "pkg:npm/foo@1.0.0"
+    },
+    {
+      "definitionFile": "tests/fixtures/config-extends/package.json",
+      "evidence": [
+        "tests/fixtures/config-extends/package.json"
+      ],
+      "identityObservations": [
+        {
+          "source": {
+            "extractor": "packagejson",
+            "files": [
+              "tests/fixtures/config-extends/package.json"
+            ],
+            "key": "\"tests/fixtures/config-extends\""
+          },
+          "synthesizedPurl": false
+        }
+      ],
+      "purl": "pkg:npm/test@0.1.1"
     }
   ]
 }

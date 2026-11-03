@@ -1,0 +1,745 @@
+{
+  "versions": {
+    "node": "22.23.4",
+    "npm": "11.9.0",
+    "arborist": "9.2.0"
+  },
+  "inputSha256": "65f4d2e4374cabce30e86a111d1b30164ad92e472c9e490d290a07a98dc36f63",
+  "observations": [
+    {
+      "id": "hoisted-valid",
+      "loadVirtual": [
+        {
+          "from": "",
+          "name": "react",
+          "rawSpec": "18.0.0",
+          "spec": "18.0.0",
+          "type": "prod",
+          "peer": false,
+          "optional": false,
+          "to": "node_modules/react",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "",
+          "name": "widget",
+          "rawSpec": "1.0.0",
+          "spec": "1.0.0",
+          "type": "prod",
+          "peer": false,
+          "optional": false,
+          "to": "node_modules/widget",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "node_modules/widget",
+          "name": "react",
+          "rawSpec": "^18",
+          "spec": "^18",
+          "type": "peer",
+          "peer": true,
+          "optional": false,
+          "to": "node_modules/react",
+          "valid": true,
+          "error": null
+        }
+      ],
+      "loadActual": [
+        {
+          "from": "",
+          "name": "react",
+          "rawSpec": "18.0.0",
+          "spec": "18.0.0",
+          "type": "prod",
+          "peer": false,
+          "optional": false,
+          "to": "node_modules/react",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "",
+          "name": "widget",
+          "rawSpec": "1.0.0",
+          "spec": "1.0.0",
+          "type": "prod",
+          "peer": false,
+          "optional": false,
+          "to": "node_modules/widget",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "node_modules/widget",
+          "name": "react",
+          "rawSpec": "^18",
+          "spec": "^18",
+          "type": "peer",
+          "peer": true,
+          "optional": false,
+          "to": "node_modules/react",
+          "valid": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "nested-valid",
+      "loadVirtual": [
+        {
+          "from": "",
+          "name": "left",
+          "rawSpec": "1.0.0",
+          "spec": "1.0.0",
+          "type": "prod",
+          "peer": false,
+          "optional": false,
+          "to": "node_modules/left",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "",
+          "name": "right",
+          "rawSpec": "1.0.0",
+          "spec": "1.0.0",
+          "type": "prod",
+          "peer": false,
+          "optional": false,
+          "to": "node_modules/right",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "node_modules/left",
+          "name": "react",
+          "rawSpec": "18.0.0",
+          "spec": "18.0.0",
+          "type": "prod",
+          "peer": false,
+          "optional": false,
+          "to": "node_modules/left/node_modules/react",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "node_modules/left",
+          "name": "widget",
+          "rawSpec": "1.0.0",
+          "spec": "1.0.0",
+          "type": "prod",
+          "peer": false,
+          "optional": false,
+          "to": "node_modules/left/node_modules/widget",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "node_modules/left/node_modules/widget",
+          "name": "react",
+          "rawSpec": "^18",
+          "spec": "^18",
+          "type": "peer",
+          "peer": true,
+          "optional": false,
+          "to": "node_modules/left/node_modules/react",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "node_modules/right",
+          "name": "react",
+          "rawSpec": "19.0.0",
+          "spec": "19.0.0",
+          "type": "prod",
+          "peer": false,
+          "optional": false,
+          "to": "node_modules/right/node_modules/react",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "node_modules/right",
+          "name": "widget",
+          "rawSpec": "1.0.0",
+          "spec": "1.0.0",
+          "type": "prod",
+          "peer": false,
+          "optional": false,
+          "to": "node_modules/right/node_modules/widget",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "node_modules/right/node_modules/widget",
+          "name": "react",
+          "rawSpec": "^19",
+          "spec": "^19",
+          "type": "peer",
+          "peer": true,
+          "optional": false,
+          "to": "node_modules/right/node_modules/react",
+          "valid": true,
+          "error": null
+        }
+      ],
+      "loadActual": [
+        {
+          "from": "",
+          "name": "left",
+          "rawSpec": "1.0.0",
+          "spec": "1.0.0",
+          "type": "prod",
+          "peer": false,
+          "optional": false,
+          "to": "node_modules/left",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "",
+          "name": "right",
+          "rawSpec": "1.0.0",
+          "spec": "1.0.0",
+          "type": "prod",
+          "peer": false,
+          "optional": false,
+          "to": "node_modules/right",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "node_modules/left",
+          "name": "react",
+          "rawSpec": "18.0.0",
+          "spec": "18.0.0",
+          "type": "prod",
+          "peer": false,
+          "optional": false,
+          "to": "node_modules/left/node_modules/react",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "node_modules/left",
+          "name": "widget",
+          "rawSpec": "1.0.0",
+          "spec": "1.0.0",
+          "type": "prod",
+          "peer": false,
+          "optional": false,
+          "to": "node_modules/left/node_modules/widget",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "node_modules/left/node_modules/widget",
+          "name": "react",
+          "rawSpec": "^18",
+          "spec": "^18",
+          "type": "peer",
+          "peer": true,
+          "optional": false,
+          "to": "node_modules/left/node_modules/react",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "node_modules/right",
+          "name": "react",
+          "rawSpec": "19.0.0",
+          "spec": "19.0.0",
+          "type": "prod",
+          "peer": false,
+          "optional": false,
+          "to": "node_modules/right/node_modules/react",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "node_modules/right",
+          "name": "widget",
+          "rawSpec": "1.0.0",
+          "spec": "1.0.0",
+          "type": "prod",
+          "peer": false,
+          "optional": false,
+          "to": "node_modules/right/node_modules/widget",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "node_modules/right/node_modules/widget",
+          "name": "react",
+          "rawSpec": "^19",
+          "spec": "^19",
+          "type": "peer",
+          "peer": true,
+          "optional": false,
+          "to": "node_modules/right/node_modules/react",
+          "valid": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "hoisted-conflict",
+      "loadVirtual": [
+        {
+          "from": "",
+          "name": "react",
+          "rawSpec": "17.0.0",
+          "spec": "17.0.0",
+          "type": "prod",
+          "peer": false,
+          "optional": false,
+          "to": "node_modules/react",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "",
+          "name": "widget",
+          "rawSpec": "1.0.0",
+          "spec": "1.0.0",
+          "type": "prod",
+          "peer": false,
+          "optional": false,
+          "to": "node_modules/widget",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "node_modules/widget",
+          "name": "react",
+          "rawSpec": "^18",
+          "spec": "^18",
+          "type": "peer",
+          "peer": true,
+          "optional": false,
+          "to": "node_modules/react",
+          "valid": false,
+          "error": "INVALID"
+        }
+      ],
+      "loadActual": [
+        {
+          "from": "",
+          "name": "react",
+          "rawSpec": "17.0.0",
+          "spec": "17.0.0",
+          "type": "prod",
+          "peer": false,
+          "optional": false,
+          "to": "node_modules/react",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "",
+          "name": "widget",
+          "rawSpec": "1.0.0",
+          "spec": "1.0.0",
+          "type": "prod",
+          "peer": false,
+          "optional": false,
+          "to": "node_modules/widget",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "node_modules/widget",
+          "name": "react",
+          "rawSpec": "^18",
+          "spec": "^18",
+          "type": "peer",
+          "peer": true,
+          "optional": false,
+          "to": "node_modules/react",
+          "valid": false,
+          "error": "INVALID"
+        }
+      ]
+    },
+    {
+      "id": "optional-present",
+      "loadVirtual": [
+        {
+          "from": "",
+          "name": "react",
+          "rawSpec": "18.0.0",
+          "spec": "18.0.0",
+          "type": "prod",
+          "peer": false,
+          "optional": false,
+          "to": "node_modules/react",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "",
+          "name": "widget",
+          "rawSpec": "1.0.0",
+          "spec": "1.0.0",
+          "type": "prod",
+          "peer": false,
+          "optional": false,
+          "to": "node_modules/widget",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "node_modules/widget",
+          "name": "react",
+          "rawSpec": "^18",
+          "spec": "^18",
+          "type": "peerOptional",
+          "peer": true,
+          "optional": true,
+          "to": "node_modules/react",
+          "valid": true,
+          "error": null
+        }
+      ],
+      "loadActual": [
+        {
+          "from": "",
+          "name": "react",
+          "rawSpec": "18.0.0",
+          "spec": "18.0.0",
+          "type": "prod",
+          "peer": false,
+          "optional": false,
+          "to": "node_modules/react",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "",
+          "name": "widget",
+          "rawSpec": "1.0.0",
+          "spec": "1.0.0",
+          "type": "prod",
+          "peer": false,
+          "optional": false,
+          "to": "node_modules/widget",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "node_modules/widget",
+          "name": "react",
+          "rawSpec": "^18",
+          "spec": "^18",
+          "type": "peerOptional",
+          "peer": true,
+          "optional": true,
+          "to": "node_modules/react",
+          "valid": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "optional-absent",
+      "loadVirtual": [
+        {
+          "from": "",
+          "name": "widget",
+          "rawSpec": "1.0.0",
+          "spec": "1.0.0",
+          "type": "prod",
+          "peer": false,
+          "optional": false,
+          "to": "node_modules/widget",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "node_modules/widget",
+          "name": "react",
+          "rawSpec": "^18",
+          "spec": "^18",
+          "type": "peerOptional",
+          "peer": true,
+          "optional": true,
+          "to": null,
+          "valid": true,
+          "error": null
+        }
+      ],
+      "loadActual": [
+        {
+          "from": "",
+          "name": "widget",
+          "rawSpec": "1.0.0",
+          "spec": "1.0.0",
+          "type": "prod",
+          "peer": false,
+          "optional": false,
+          "to": "node_modules/widget",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "node_modules/widget",
+          "name": "react",
+          "rawSpec": "^18",
+          "spec": "^18",
+          "type": "peerOptional",
+          "peer": true,
+          "optional": true,
+          "to": null,
+          "valid": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "required-absent",
+      "loadVirtual": [
+        {
+          "from": "",
+          "name": "widget",
+          "rawSpec": "1.0.0",
+          "spec": "1.0.0",
+          "type": "prod",
+          "peer": false,
+          "optional": false,
+          "to": "node_modules/widget",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "node_modules/widget",
+          "name": "react",
+          "rawSpec": "^18",
+          "spec": "^18",
+          "type": "peer",
+          "peer": true,
+          "optional": false,
+          "to": null,
+          "valid": false,
+          "error": "MISSING"
+        }
+      ],
+      "loadActual": [
+        {
+          "from": "",
+          "name": "widget",
+          "rawSpec": "1.0.0",
+          "spec": "1.0.0",
+          "type": "prod",
+          "peer": false,
+          "optional": false,
+          "to": "node_modules/widget",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "node_modules/widget",
+          "name": "react",
+          "rawSpec": "^18",
+          "spec": "^18",
+          "type": "peer",
+          "peer": true,
+          "optional": false,
+          "to": null,
+          "valid": false,
+          "error": "MISSING"
+        }
+      ]
+    },
+    {
+      "id": "child-candidate-invalid",
+      "loadVirtual": [
+        {
+          "from": "",
+          "name": "react",
+          "rawSpec": "18.0.0",
+          "spec": "18.0.0",
+          "type": "prod",
+          "peer": false,
+          "optional": false,
+          "to": "node_modules/react",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "",
+          "name": "widget",
+          "rawSpec": "1.0.0",
+          "spec": "1.0.0",
+          "type": "prod",
+          "peer": false,
+          "optional": false,
+          "to": "node_modules/widget",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "node_modules/widget",
+          "name": "react",
+          "rawSpec": "^18",
+          "spec": "^18",
+          "type": "peer",
+          "peer": true,
+          "optional": false,
+          "to": "node_modules/widget/node_modules/react",
+          "valid": false,
+          "error": "PEER LOCAL"
+        }
+      ],
+      "loadActual": [
+        {
+          "from": "",
+          "name": "react",
+          "rawSpec": "18.0.0",
+          "spec": "18.0.0",
+          "type": "prod",
+          "peer": false,
+          "optional": false,
+          "to": "node_modules/react",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "",
+          "name": "widget",
+          "rawSpec": "1.0.0",
+          "spec": "1.0.0",
+          "type": "prod",
+          "peer": false,
+          "optional": false,
+          "to": "node_modules/widget",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "node_modules/widget",
+          "name": "react",
+          "rawSpec": "^18",
+          "spec": "^18",
+          "type": "peer",
+          "peer": true,
+          "optional": false,
+          "to": "node_modules/widget/node_modules/react",
+          "valid": false,
+          "error": "PEER LOCAL"
+        }
+      ]
+    },
+    {
+      "id": "optional-conflict",
+      "loadVirtual": [
+        {
+          "from": "",
+          "name": "react",
+          "rawSpec": "17.0.0",
+          "spec": "17.0.0",
+          "type": "prod",
+          "peer": false,
+          "optional": false,
+          "to": "node_modules/react",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "",
+          "name": "widget",
+          "rawSpec": "1.0.0",
+          "spec": "1.0.0",
+          "type": "prod",
+          "peer": false,
+          "optional": false,
+          "to": "node_modules/widget",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "node_modules/widget",
+          "name": "react",
+          "rawSpec": "^18",
+          "spec": "^18",
+          "type": "peerOptional",
+          "peer": true,
+          "optional": true,
+          "to": "node_modules/react",
+          "valid": false,
+          "error": "INVALID"
+        }
+      ],
+      "loadActual": [
+        {
+          "from": "",
+          "name": "react",
+          "rawSpec": "17.0.0",
+          "spec": "17.0.0",
+          "type": "prod",
+          "peer": false,
+          "optional": false,
+          "to": "node_modules/react",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "",
+          "name": "widget",
+          "rawSpec": "1.0.0",
+          "spec": "1.0.0",
+          "type": "prod",
+          "peer": false,
+          "optional": false,
+          "to": "node_modules/widget",
+          "valid": true,
+          "error": null
+        },
+        {
+          "from": "node_modules/widget",
+          "name": "react",
+          "rawSpec": "^18",
+          "spec": "^18",
+          "type": "peerOptional",
+          "peer": true,
+          "optional": true,
+          "to": "node_modules/react",
+          "valid": false,
+          "error": "INVALID"
+        }
+      ]
+    },
+    {
+      "id": "root-peer-valid",
+      "loadVirtual": [
+        {
+          "from": "",
+          "name": "react",
+          "rawSpec": "^18",
+          "spec": "^18",
+          "type": "peer",
+          "peer": true,
+          "optional": false,
+          "to": "node_modules/react",
+          "valid": true,
+          "error": null
+        }
+      ],
+      "loadActual": [
+        {
+          "from": "",
+          "name": "react",
+          "rawSpec": "^18",
+          "spec": "^18",
+          "type": "peer",
+          "peer": true,
+          "optional": false,
+          "to": "node_modules/react",
+          "valid": true,
+          "error": null
+        }
+      ]
+    }
+  ]
+}

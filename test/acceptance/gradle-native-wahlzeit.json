@@ -1,0 +1,5863 @@
+{
+  "projects": {
+    ":": {
+      "name": "evorto+wahlzeit",
+      "group": "",
+      "version": "unspecified",
+      "buildFile": "build.gradle"
+    }
+  },
+  "configurations": [
+    {
+      "rootOrigin": {
+        "id": "build :",
+        "path": ":"
+      },
+      "configurationName": "detachedConfiguration1",
+      "scope": "Unknown",
+      "allDependencies": []
+    },
+    {
+      "rootOrigin": {
+        "id": "project :",
+        "path": ":"
+      },
+      "configurationName": "classpath",
+      "scope": "Unknown",
+      "allDependencies": [
+        {
+          "id": "org.gretty:gretty:3.0.8",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.gretty",
+            "module": "gretty",
+            "version": "3.0.8"
+          },
+          "repositoryUrl": "https://plugins.gradle.org/m2",
+          "dependencies": [
+            "org.gretty:gretty-core:3.0.8",
+            "org.springframework.boot:spring-boot-loader-tools:2.6.3",
+            "org.eclipse.jetty:jetty-util:8.1.22.v20160922"
+          ]
+        },
+        {
+          "id": "org.gretty:gretty-core:3.0.8",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.gretty",
+            "module": "gretty-core",
+            "version": "3.0.8"
+          },
+          "repositoryUrl": "https://plugins.gradle.org/m2",
+          "dependencies": [
+            "commons-cli:commons-cli:1.3.1",
+            "commons-configuration:commons-configuration:1.10",
+            "commons-io:commons-io:2.11.0",
+            "org.apache.commons:commons-lang3:3.3.2",
+            "org.bouncycastle:bcprov-jdk15on:1.60",
+            "org.springframework.boot:spring-boot-devtools:2.6.3",
+            "org.gretty:gretty-common:3.0.8"
+          ]
+        },
+        {
+          "id": "commons-cli:commons-cli:1.3.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "commons-cli",
+            "module": "commons-cli",
+            "version": "1.3.1"
+          },
+          "repositoryUrl": "https://plugins.gradle.org/m2",
+          "dependencies": []
+        },
+        {
+          "id": "commons-configuration:commons-configuration:1.10",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "commons-configuration",
+            "module": "commons-configuration",
+            "version": "1.10"
+          },
+          "repositoryUrl": "https://plugins.gradle.org/m2",
+          "dependencies": ["commons-lang:commons-lang:2.6", "commons-logging:commons-logging:1.1.1"]
+        },
+        {
+          "id": "commons-lang:commons-lang:2.6",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "commons-lang",
+            "module": "commons-lang",
+            "version": "2.6"
+          },
+          "repositoryUrl": "https://plugins.gradle.org/m2",
+          "dependencies": []
+        },
+        {
+          "id": "commons-logging:commons-logging:1.1.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "commons-logging",
+            "module": "commons-logging",
+            "version": "1.1.1"
+          },
+          "repositoryUrl": "https://plugins.gradle.org/m2",
+          "dependencies": []
+        },
+        {
+          "id": "commons-io:commons-io:2.11.0",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "commons-io",
+            "module": "commons-io",
+            "version": "2.11.0"
+          },
+          "repositoryUrl": "https://plugins.gradle.org/m2",
+          "dependencies": []
+        },
+        {
+          "id": "org.apache.commons:commons-lang3:3.3.2",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.apache.commons",
+            "module": "commons-lang3",
+            "version": "3.3.2"
+          },
+          "repositoryUrl": "https://plugins.gradle.org/m2",
+          "dependencies": []
+        },
+        {
+          "id": "org.bouncycastle:bcprov-jdk15on:1.60",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.bouncycastle",
+            "module": "bcprov-jdk15on",
+            "version": "1.60"
+          },
+          "repositoryUrl": "https://plugins.gradle.org/m2",
+          "dependencies": []
+        },
+        {
+          "id": "org.springframework.boot:spring-boot-devtools:2.6.3",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.springframework.boot",
+            "module": "spring-boot-devtools",
+            "version": "2.6.3"
+          },
+          "repositoryUrl": "https://plugins.gradle.org/m2",
+          "dependencies": [
+            "org.springframework.boot:spring-boot:2.6.3",
+            "org.springframework.boot:spring-boot-autoconfigure:2.6.3"
+          ]
+        },
+        {
+          "id": "org.springframework.boot:spring-boot:2.6.3",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.springframework.boot",
+            "module": "spring-boot",
+            "version": "2.6.3"
+          },
+          "repositoryUrl": "https://plugins.gradle.org/m2",
+          "dependencies": [
+            "org.springframework:spring-core:5.3.15",
+            "org.springframework:spring-context:5.3.15"
+          ]
+        },
+        {
+          "id": "org.springframework:spring-core:5.3.15",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.springframework",
+            "module": "spring-core",
+            "version": "5.3.15"
+          },
+          "repositoryUrl": "https://plugins.gradle.org/m2",
+          "dependencies": ["org.springframework:spring-jcl:5.3.15"]
+        },
+        {
+          "id": "org.springframework:spring-jcl:5.3.15",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.springframework",
+            "module": "spring-jcl",
+            "version": "5.3.15"
+          },
+          "repositoryUrl": "https://plugins.gradle.org/m2",
+          "dependencies": []
+        },
+        {
+          "id": "org.springframework:spring-context:5.3.15",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.springframework",
+            "module": "spring-context",
+            "version": "5.3.15"
+          },
+          "repositoryUrl": "https://plugins.gradle.org/m2",
+          "dependencies": [
+            "org.springframework:spring-aop:5.3.15",
+            "org.springframework:spring-beans:5.3.15",
+            "org.springframework:spring-core:5.3.15",
+            "org.springframework:spring-expression:5.3.15"
+          ]
+        },
+        {
+          "id": "org.springframework:spring-aop:5.3.15",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.springframework",
+            "module": "spring-aop",
+            "version": "5.3.15"
+          },
+          "repositoryUrl": "https://plugins.gradle.org/m2",
+          "dependencies": [
+            "org.springframework:spring-beans:5.3.15",
+            "org.springframework:spring-core:5.3.15"
+          ]
+        },
+        {
+          "id": "org.springframework:spring-beans:5.3.15",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.springframework",
+            "module": "spring-beans",
+            "version": "5.3.15"
+          },
+          "repositoryUrl": "https://plugins.gradle.org/m2",
+          "dependencies": ["org.springframework:spring-core:5.3.15"]
+        },
+        {
+          "id": "org.springframework:spring-expression:5.3.15",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.springframework",
+            "module": "spring-expression",
+            "version": "5.3.15"
+          },
+          "repositoryUrl": "https://plugins.gradle.org/m2",
+          "dependencies": ["org.springframework:spring-core:5.3.15"]
+        },
+        {
+          "id": "org.springframework.boot:spring-boot-autoconfigure:2.6.3",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.springframework.boot",
+            "module": "spring-boot-autoconfigure",
+            "version": "2.6.3"
+          },
+          "repositoryUrl": "https://plugins.gradle.org/m2",
+          "dependencies": ["org.springframework.boot:spring-boot:2.6.3"]
+        },
+        {
+          "id": "org.gretty:gretty-common:3.0.8",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.gretty",
+            "module": "gretty-common",
+            "version": "3.0.8"
+          },
+          "repositoryUrl": "https://plugins.gradle.org/m2",
+          "dependencies": ["org.slf4j:slf4j-api:1.7.36"]
+        },
+        {
+          "id": "org.slf4j:slf4j-api:1.7.36",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.slf4j",
+            "module": "slf4j-api",
+            "version": "1.7.36"
+          },
+          "repositoryUrl": "https://plugins.gradle.org/m2",
+          "dependencies": []
+        },
+        {
+          "id": "org.springframework.boot:spring-boot-loader-tools:2.6.3",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.springframework.boot",
+            "module": "spring-boot-loader-tools",
+            "version": "2.6.3"
+          },
+          "repositoryUrl": "https://plugins.gradle.org/m2",
+          "dependencies": [
+            "org.apache.commons:commons-compress:1.21",
+            "org.springframework:spring-core:5.3.15"
+          ]
+        },
+        {
+          "id": "org.apache.commons:commons-compress:1.21",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.apache.commons",
+            "module": "commons-compress",
+            "version": "1.21"
+          },
+          "repositoryUrl": "https://plugins.gradle.org/m2",
+          "dependencies": []
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-util:8.1.22.v20160922",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-util",
+            "version": "8.1.22.v20160922"
+          },
+          "repositoryUrl": "https://plugins.gradle.org/m2",
+          "dependencies": []
+        }
+      ]
+    },
+    {
+      "rootOrigin": {
+        "id": "project :",
+        "path": ":"
+      },
+      "configurationName": "compileClasspath",
+      "scope": "Unknown",
+      "allDependencies": [
+        {
+          "id": "javax.servlet:javax.servlet-api:4.0.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.servlet",
+            "module": "javax.servlet-api",
+            "version": "4.0.1"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "javax.websocket:javax.websocket-api:1.0",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.websocket",
+            "module": "javax.websocket-api",
+            "version": "1.0"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.postgresql:postgresql:9.3-1104-jdbc41",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.postgresql",
+            "module": "postgresql",
+            "version": "9.3-1104-jdbc41"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "log4j:log4j:1.2.17",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "log4j",
+            "module": "log4j",
+            "version": "1.2.17"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "com.sun.mail:javax.mail:1.6.2",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "com.sun.mail",
+            "module": "javax.mail",
+            "version": "1.6.2"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["javax.activation:activation:1.1"]
+        },
+        {
+          "id": "javax.activation:activation:1.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.activation",
+            "module": "activation",
+            "version": "1.1"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "javax.servlet:javax.servlet-api:4.0.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.servlet",
+            "module": "javax.servlet-api",
+            "version": "4.0.1"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        }
+      ]
+    },
+    {
+      "rootOrigin": {
+        "id": "project :",
+        "path": ":"
+      },
+      "configurationName": "grettyProductRuntime",
+      "scope": "Unknown",
+      "allDependencies": [
+        {
+          "id": "javax.servlet:javax.servlet-api:4.0.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.servlet",
+            "module": "javax.servlet-api",
+            "version": "4.0.1"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "javax.websocket:javax.websocket-api:1.0",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.websocket",
+            "module": "javax.websocket-api",
+            "version": "1.0"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.postgresql:postgresql:9.3-1104-jdbc41",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.postgresql",
+            "module": "postgresql",
+            "version": "9.3-1104-jdbc41"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "log4j:log4j:1.2.17",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "log4j",
+            "module": "log4j",
+            "version": "1.2.17"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "com.sun.mail:javax.mail:1.6.2",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "com.sun.mail",
+            "module": "javax.mail",
+            "version": "1.6.2"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["javax.activation:activation:1.1"]
+        },
+        {
+          "id": "javax.activation:activation:1.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.activation",
+            "module": "activation",
+            "version": "1.1"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "javax.servlet:javax.servlet-api:4.0.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.servlet",
+            "module": "javax.servlet-api",
+            "version": "4.0.1"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        }
+      ]
+    },
+    {
+      "rootOrigin": {
+        "id": "project :",
+        "path": ":"
+      },
+      "configurationName": "grettyProvidedCompile",
+      "scope": "Unknown",
+      "allDependencies": [
+        {
+          "id": "javax.servlet:javax.servlet-api:3.1.0",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.servlet",
+            "module": "javax.servlet-api",
+            "version": "3.1.0"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "javax.websocket:javax.websocket-api:1.0",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.websocket",
+            "module": "javax.websocket-api",
+            "version": "1.0"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        }
+      ]
+    },
+    {
+      "rootOrigin": {
+        "id": "project :",
+        "path": ":"
+      },
+      "configurationName": "grettyRunnerJetty7",
+      "scope": "Unknown",
+      "allDependencies": [
+        {
+          "id": "org.gretty:gretty-runner-jetty7:3.0.8",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.gretty",
+            "module": "gretty-runner-jetty7",
+            "version": "3.0.8"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.gretty:gretty-runner-jetty:3.0.8",
+            "javax.servlet:servlet-api:2.5",
+            "org.eclipse.jetty:jetty-server:7.6.21.v20160908",
+            "org.eclipse.jetty:jetty-servlet:7.6.21.v20160908",
+            "org.eclipse.jetty:jetty-webapp:7.6.21.v20160908",
+            "org.eclipse.jetty:jetty-security:7.6.21.v20160908",
+            "org.eclipse.jetty:jetty-jsp:7.6.21.v20160908",
+            "org.eclipse.jetty:jetty-plus:7.6.21.v20160908"
+          ]
+        },
+        {
+          "id": "org.gretty:gretty-runner-jetty:3.0.8",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.gretty",
+            "module": "gretty-runner-jetty",
+            "version": "3.0.8"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.gretty:gretty-runner:3.0.8"]
+        },
+        {
+          "id": "org.gretty:gretty-runner:3.0.8",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.gretty",
+            "module": "gretty-runner",
+            "version": "3.0.8"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "commons-cli:commons-cli:1.3.1",
+            "commons-io:commons-io:2.11.0",
+            "ch.qos.logback:logback-classic:1.2.10",
+            "org.gretty:gretty-common:3.0.8"
+          ]
+        },
+        {
+          "id": "commons-cli:commons-cli:1.3.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "commons-cli",
+            "module": "commons-cli",
+            "version": "1.3.1"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "commons-io:commons-io:2.11.0",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "commons-io",
+            "module": "commons-io",
+            "version": "2.11.0"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "ch.qos.logback:logback-classic:1.2.10",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "ch.qos.logback",
+            "module": "logback-classic",
+            "version": "1.2.10"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["ch.qos.logback:logback-core:1.2.10", "org.slf4j:slf4j-api:1.7.36"]
+        },
+        {
+          "id": "ch.qos.logback:logback-core:1.2.10",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "ch.qos.logback",
+            "module": "logback-core",
+            "version": "1.2.10"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.slf4j:slf4j-api:1.7.36",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.slf4j",
+            "module": "slf4j-api",
+            "version": "1.7.36"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.gretty:gretty-common:3.0.8",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.gretty",
+            "module": "gretty-common",
+            "version": "3.0.8"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.slf4j:slf4j-api:1.7.36"]
+        },
+        {
+          "id": "javax.servlet:servlet-api:2.5",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.servlet",
+            "module": "servlet-api",
+            "version": "2.5"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-server:7.6.21.v20160908",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-server",
+            "version": "7.6.21.v20160908"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty:jetty-continuation:7.6.21.v20160908",
+            "org.eclipse.jetty:jetty-http:7.6.21.v20160908"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-continuation:7.6.21.v20160908",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-continuation",
+            "version": "7.6.21.v20160908"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-http:7.6.21.v20160908",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-http",
+            "version": "7.6.21.v20160908"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.eclipse.jetty:jetty-io:7.6.21.v20160908"]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-io:7.6.21.v20160908",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-io",
+            "version": "7.6.21.v20160908"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.eclipse.jetty:jetty-util:7.6.21.v20160908"]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-util:7.6.21.v20160908",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-util",
+            "version": "7.6.21.v20160908"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-servlet:7.6.21.v20160908",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-servlet",
+            "version": "7.6.21.v20160908"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.eclipse.jetty:jetty-security:7.6.21.v20160908"]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-security:7.6.21.v20160908",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-security",
+            "version": "7.6.21.v20160908"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.eclipse.jetty:jetty-server:7.6.21.v20160908"]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-webapp:7.6.21.v20160908",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-webapp",
+            "version": "7.6.21.v20160908"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty:jetty-xml:7.6.21.v20160908",
+            "org.eclipse.jetty:jetty-servlet:7.6.21.v20160908"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-xml:7.6.21.v20160908",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-xml",
+            "version": "7.6.21.v20160908"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.eclipse.jetty:jetty-util:7.6.21.v20160908"]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-jsp:7.6.21.v20160908",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-jsp",
+            "version": "7.6.21.v20160908"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty.orbit:javax.servlet.jsp:2.1.0.v201105211820",
+            "org.eclipse.jetty.orbit:org.apache.jasper.glassfish:2.1.0.v201110031002",
+            "org.eclipse.jetty.orbit:javax.servlet.jsp.jstl:1.2.0.v201105211821",
+            "org.eclipse.jetty.orbit:org.apache.taglibs.standard.glassfish:1.2.0.v201112081803",
+            "org.eclipse.jetty.orbit:javax.el:2.1.0.v201105211819",
+            "org.eclipse.jetty.orbit:com.sun.el:1.0.0.v201105211818",
+            "org.eclipse.jetty.orbit:org.eclipse.jdt.core:3.7.1"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty.orbit:javax.servlet.jsp:2.1.0.v201105211820",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.orbit",
+            "module": "javax.servlet.jsp",
+            "version": "2.1.0.v201105211820"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.eclipse.jetty.orbit:org.apache.jasper.glassfish:2.1.0.v201110031002",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.orbit",
+            "module": "org.apache.jasper.glassfish",
+            "version": "2.1.0.v201110031002"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.eclipse.jetty.orbit:javax.servlet.jsp:2.1.0.v201105211820"]
+        },
+        {
+          "id": "org.eclipse.jetty.orbit:javax.servlet.jsp.jstl:1.2.0.v201105211821",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.orbit",
+            "module": "javax.servlet.jsp.jstl",
+            "version": "1.2.0.v201105211821"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.eclipse.jetty.orbit:javax.servlet.jsp:2.1.0.v201105211820"]
+        },
+        {
+          "id": "org.eclipse.jetty.orbit:org.apache.taglibs.standard.glassfish:1.2.0.v201112081803",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.orbit",
+            "module": "org.apache.taglibs.standard.glassfish",
+            "version": "1.2.0.v201112081803"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.eclipse.jetty.orbit:javax.servlet.jsp.jstl:1.2.0.v201105211821"]
+        },
+        {
+          "id": "org.eclipse.jetty.orbit:javax.el:2.1.0.v201105211819",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.orbit",
+            "module": "javax.el",
+            "version": "2.1.0.v201105211819"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.eclipse.jetty.orbit:com.sun.el:1.0.0.v201105211818",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.orbit",
+            "module": "com.sun.el",
+            "version": "1.0.0.v201105211818"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.eclipse.jetty.orbit:org.eclipse.jdt.core:3.7.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.orbit",
+            "module": "org.eclipse.jdt.core",
+            "version": "3.7.1"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-plus:7.6.21.v20160908",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-plus",
+            "version": "7.6.21.v20160908"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty.orbit:javax.transaction:1.1.1.v201105210645",
+            "org.eclipse.jetty:jetty-webapp:7.6.21.v20160908",
+            "org.eclipse.jetty:jetty-jndi:7.6.21.v20160908"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty.orbit:javax.transaction:1.1.1.v201105210645",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.orbit",
+            "module": "javax.transaction",
+            "version": "1.1.1.v201105210645"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-jndi:7.6.21.v20160908",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-jndi",
+            "version": "7.6.21.v20160908"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty:jetty-server:7.6.21.v20160908",
+            "org.eclipse.jetty.orbit:javax.mail.glassfish:1.4.1.v201005082020"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty.orbit:javax.mail.glassfish:1.4.1.v201005082020",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.orbit",
+            "module": "javax.mail.glassfish",
+            "version": "1.4.1.v201005082020"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.eclipse.jetty.orbit:javax.activation:1.1.0.v201105071233"]
+        },
+        {
+          "id": "org.eclipse.jetty.orbit:javax.activation:1.1.0.v201105071233",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.orbit",
+            "module": "javax.activation",
+            "version": "1.1.0.v201105071233"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        }
+      ]
+    },
+    {
+      "rootOrigin": {
+        "id": "project :",
+        "path": ":"
+      },
+      "configurationName": "grettyRunnerJetty8",
+      "scope": "Unknown",
+      "allDependencies": [
+        {
+          "id": "org.gretty:gretty-runner-jetty8:3.0.8",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.gretty",
+            "module": "gretty-runner-jetty8",
+            "version": "3.0.8"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.gretty:gretty-runner-jetty:3.0.8",
+            "javax.servlet:javax.servlet-api:3.0.1",
+            "org.eclipse.jetty:jetty-server:8.1.22.v20160922",
+            "org.eclipse.jetty:jetty-servlet:8.1.22.v20160922",
+            "org.eclipse.jetty:jetty-webapp:8.1.22.v20160922",
+            "org.eclipse.jetty:jetty-security:8.1.22.v20160922",
+            "org.eclipse.jetty:jetty-jsp:8.1.22.v20160922",
+            "org.eclipse.jetty:jetty-annotations:8.1.22.v20160922",
+            "org.eclipse.jetty:jetty-plus:8.1.22.v20160922"
+          ]
+        },
+        {
+          "id": "org.gretty:gretty-runner-jetty:3.0.8",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.gretty",
+            "module": "gretty-runner-jetty",
+            "version": "3.0.8"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.gretty:gretty-runner:3.0.8"]
+        },
+        {
+          "id": "org.gretty:gretty-runner:3.0.8",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.gretty",
+            "module": "gretty-runner",
+            "version": "3.0.8"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "commons-cli:commons-cli:1.3.1",
+            "commons-io:commons-io:2.11.0",
+            "ch.qos.logback:logback-classic:1.2.10",
+            "org.gretty:gretty-common:3.0.8"
+          ]
+        },
+        {
+          "id": "commons-cli:commons-cli:1.3.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "commons-cli",
+            "module": "commons-cli",
+            "version": "1.3.1"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "commons-io:commons-io:2.11.0",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "commons-io",
+            "module": "commons-io",
+            "version": "2.11.0"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "ch.qos.logback:logback-classic:1.2.10",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "ch.qos.logback",
+            "module": "logback-classic",
+            "version": "1.2.10"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["ch.qos.logback:logback-core:1.2.10", "org.slf4j:slf4j-api:1.7.36"]
+        },
+        {
+          "id": "ch.qos.logback:logback-core:1.2.10",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "ch.qos.logback",
+            "module": "logback-core",
+            "version": "1.2.10"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.slf4j:slf4j-api:1.7.36",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.slf4j",
+            "module": "slf4j-api",
+            "version": "1.7.36"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.gretty:gretty-common:3.0.8",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.gretty",
+            "module": "gretty-common",
+            "version": "3.0.8"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.slf4j:slf4j-api:1.7.36"]
+        },
+        {
+          "id": "javax.servlet:javax.servlet-api:3.0.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.servlet",
+            "module": "javax.servlet-api",
+            "version": "3.0.1"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-server:8.1.22.v20160922",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-server",
+            "version": "8.1.22.v20160922"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty:jetty-continuation:8.1.22.v20160922",
+            "org.eclipse.jetty:jetty-http:8.1.22.v20160922"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-continuation:8.1.22.v20160922",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-continuation",
+            "version": "8.1.22.v20160922"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-http:8.1.22.v20160922",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-http",
+            "version": "8.1.22.v20160922"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.eclipse.jetty:jetty-io:8.1.22.v20160922"]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-io:8.1.22.v20160922",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-io",
+            "version": "8.1.22.v20160922"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.eclipse.jetty:jetty-util:8.1.22.v20160922"]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-util:8.1.22.v20160922",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-util",
+            "version": "8.1.22.v20160922"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-servlet:8.1.22.v20160922",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-servlet",
+            "version": "8.1.22.v20160922"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.eclipse.jetty:jetty-security:8.1.22.v20160922"]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-security:8.1.22.v20160922",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-security",
+            "version": "8.1.22.v20160922"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.eclipse.jetty:jetty-server:8.1.22.v20160922"]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-webapp:8.1.22.v20160922",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-webapp",
+            "version": "8.1.22.v20160922"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty:jetty-xml:8.1.22.v20160922",
+            "org.eclipse.jetty:jetty-servlet:8.1.22.v20160922"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-xml:8.1.22.v20160922",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-xml",
+            "version": "8.1.22.v20160922"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.eclipse.jetty:jetty-util:8.1.22.v20160922"]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-jsp:8.1.22.v20160922",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-jsp",
+            "version": "8.1.22.v20160922"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty.orbit:javax.servlet.jsp:2.2.0.v201112011158",
+            "org.eclipse.jetty.orbit:org.apache.jasper.glassfish:2.2.2.v201112011158",
+            "org.eclipse.jetty.orbit:javax.servlet.jsp.jstl:1.2.0.v201105211821",
+            "org.eclipse.jetty.orbit:org.apache.taglibs.standard.glassfish:1.2.0.v201112081803",
+            "org.eclipse.jetty.orbit:javax.el:2.2.0.v201108011116",
+            "org.eclipse.jetty.orbit:com.sun.el:2.2.0.v201108011116",
+            "org.eclipse.jetty.orbit:org.eclipse.jdt.core:3.7.1"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty.orbit:javax.servlet.jsp:2.2.0.v201112011158",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.orbit",
+            "module": "javax.servlet.jsp",
+            "version": "2.2.0.v201112011158"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.eclipse.jetty.orbit:org.apache.jasper.glassfish:2.2.2.v201112011158",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.orbit",
+            "module": "org.apache.jasper.glassfish",
+            "version": "2.2.2.v201112011158"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.eclipse.jetty.orbit:javax.servlet.jsp:2.2.0.v201112011158"]
+        },
+        {
+          "id": "org.eclipse.jetty.orbit:javax.servlet.jsp.jstl:1.2.0.v201105211821",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.orbit",
+            "module": "javax.servlet.jsp.jstl",
+            "version": "1.2.0.v201105211821"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.eclipse.jetty.orbit:javax.servlet.jsp:2.2.0.v201112011158"]
+        },
+        {
+          "id": "org.eclipse.jetty.orbit:org.apache.taglibs.standard.glassfish:1.2.0.v201112081803",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.orbit",
+            "module": "org.apache.taglibs.standard.glassfish",
+            "version": "1.2.0.v201112081803"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.eclipse.jetty.orbit:javax.servlet.jsp.jstl:1.2.0.v201105211821"]
+        },
+        {
+          "id": "org.eclipse.jetty.orbit:javax.el:2.2.0.v201108011116",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.orbit",
+            "module": "javax.el",
+            "version": "2.2.0.v201108011116"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.eclipse.jetty.orbit:com.sun.el:2.2.0.v201108011116",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.orbit",
+            "module": "com.sun.el",
+            "version": "2.2.0.v201108011116"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.eclipse.jetty.orbit:org.eclipse.jdt.core:3.7.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.orbit",
+            "module": "org.eclipse.jdt.core",
+            "version": "3.7.1"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-annotations:8.1.22.v20160922",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-annotations",
+            "version": "8.1.22.v20160922"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty:jetty-plus:8.1.22.v20160922",
+            "org.eclipse.jetty:jetty-webapp:8.1.22.v20160922",
+            "org.eclipse.jetty.orbit:javax.annotation:1.1.0.v201108011116",
+            "org.eclipse.jetty.orbit:org.objectweb.asm:3.1.0.v200803061910"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-plus:8.1.22.v20160922",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-plus",
+            "version": "8.1.22.v20160922"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty.orbit:javax.transaction:1.1.1.v201105210645",
+            "org.eclipse.jetty:jetty-webapp:8.1.22.v20160922",
+            "org.eclipse.jetty:jetty-jndi:8.1.22.v20160922"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty.orbit:javax.transaction:1.1.1.v201105210645",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.orbit",
+            "module": "javax.transaction",
+            "version": "1.1.1.v201105210645"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-jndi:8.1.22.v20160922",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-jndi",
+            "version": "8.1.22.v20160922"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty:jetty-server:8.1.22.v20160922",
+            "org.eclipse.jetty.orbit:javax.mail.glassfish:1.4.1.v201005082020"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty.orbit:javax.mail.glassfish:1.4.1.v201005082020",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.orbit",
+            "module": "javax.mail.glassfish",
+            "version": "1.4.1.v201005082020"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.eclipse.jetty.orbit:javax.activation:1.1.0.v201105071233"]
+        },
+        {
+          "id": "org.eclipse.jetty.orbit:javax.activation:1.1.0.v201105071233",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.orbit",
+            "module": "javax.activation",
+            "version": "1.1.0.v201105071233"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.eclipse.jetty.orbit:javax.annotation:1.1.0.v201108011116",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.orbit",
+            "module": "javax.annotation",
+            "version": "1.1.0.v201108011116"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.eclipse.jetty.orbit:org.objectweb.asm:3.1.0.v200803061910",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.orbit",
+            "module": "org.objectweb.asm",
+            "version": "3.1.0.v200803061910"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        }
+      ]
+    },
+    {
+      "rootOrigin": {
+        "id": "project :",
+        "path": ":"
+      },
+      "configurationName": "grettyRunnerJetty9",
+      "scope": "Unknown",
+      "allDependencies": [
+        {
+          "id": "org.gretty:gretty-runner-jetty9:3.0.8",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.gretty",
+            "module": "gretty-runner-jetty9",
+            "version": "3.0.8"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.gretty:gretty-runner-jetty:3.0.8",
+            "javax.servlet:javax.servlet-api:3.1.0",
+            "org.eclipse.jetty:jetty-server:9.2.26.v20180806",
+            "org.eclipse.jetty:jetty-servlet:9.2.26.v20180806",
+            "org.eclipse.jetty:jetty-webapp:9.2.26.v20180806",
+            "org.eclipse.jetty:jetty-security:9.2.26.v20180806",
+            "org.eclipse.jetty:jetty-jsp:9.2.26.v20180806",
+            "org.eclipse.jetty:jetty-annotations:9.2.26.v20180806",
+            "org.eclipse.jetty:jetty-plus:9.2.26.v20180806",
+            "org.eclipse.jetty.websocket:javax-websocket-server-impl:9.2.26.v20180806",
+            "org.ow2.asm:asm:9.2",
+            "org.ow2.asm:asm-commons:9.2"
+          ]
+        },
+        {
+          "id": "org.gretty:gretty-runner-jetty:3.0.8",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.gretty",
+            "module": "gretty-runner-jetty",
+            "version": "3.0.8"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.gretty:gretty-runner:3.0.8"]
+        },
+        {
+          "id": "org.gretty:gretty-runner:3.0.8",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.gretty",
+            "module": "gretty-runner",
+            "version": "3.0.8"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "commons-cli:commons-cli:1.3.1",
+            "commons-io:commons-io:2.11.0",
+            "ch.qos.logback:logback-classic:1.2.10",
+            "org.gretty:gretty-common:3.0.8"
+          ]
+        },
+        {
+          "id": "commons-cli:commons-cli:1.3.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "commons-cli",
+            "module": "commons-cli",
+            "version": "1.3.1"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "commons-io:commons-io:2.11.0",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "commons-io",
+            "module": "commons-io",
+            "version": "2.11.0"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "ch.qos.logback:logback-classic:1.2.10",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "ch.qos.logback",
+            "module": "logback-classic",
+            "version": "1.2.10"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["ch.qos.logback:logback-core:1.2.10", "org.slf4j:slf4j-api:1.7.36"]
+        },
+        {
+          "id": "ch.qos.logback:logback-core:1.2.10",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "ch.qos.logback",
+            "module": "logback-core",
+            "version": "1.2.10"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.slf4j:slf4j-api:1.7.36",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.slf4j",
+            "module": "slf4j-api",
+            "version": "1.7.36"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.gretty:gretty-common:3.0.8",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.gretty",
+            "module": "gretty-common",
+            "version": "3.0.8"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.slf4j:slf4j-api:1.7.36"]
+        },
+        {
+          "id": "javax.servlet:javax.servlet-api:3.1.0",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.servlet",
+            "module": "javax.servlet-api",
+            "version": "3.1.0"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-server:9.2.26.v20180806",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-server",
+            "version": "9.2.26.v20180806"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "javax.servlet:javax.servlet-api:3.1.0",
+            "org.eclipse.jetty:jetty-http:9.2.26.v20180806",
+            "org.eclipse.jetty:jetty-io:9.2.26.v20180806"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-http:9.2.26.v20180806",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-http",
+            "version": "9.2.26.v20180806"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.eclipse.jetty:jetty-util:9.2.26.v20180806"]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-util:9.2.26.v20180806",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-util",
+            "version": "9.2.26.v20180806"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-io:9.2.26.v20180806",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-io",
+            "version": "9.2.26.v20180806"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.eclipse.jetty:jetty-util:9.2.26.v20180806"]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-servlet:9.2.26.v20180806",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-servlet",
+            "version": "9.2.26.v20180806"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.eclipse.jetty:jetty-security:9.2.26.v20180806"]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-security:9.2.26.v20180806",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-security",
+            "version": "9.2.26.v20180806"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.eclipse.jetty:jetty-server:9.2.26.v20180806"]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-webapp:9.2.26.v20180806",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-webapp",
+            "version": "9.2.26.v20180806"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty:jetty-xml:9.2.26.v20180806",
+            "org.eclipse.jetty:jetty-servlet:9.2.26.v20180806"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-xml:9.2.26.v20180806",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-xml",
+            "version": "9.2.26.v20180806"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.eclipse.jetty:jetty-util:9.2.26.v20180806"]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-jsp:9.2.26.v20180806",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-jsp",
+            "version": "9.2.26.v20180806"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty.toolchain:jetty-schemas:3.1.M0",
+            "javax.servlet:javax.servlet-api:3.1.0",
+            "javax.servlet.jsp:javax.servlet.jsp-api:2.3.1",
+            "org.glassfish.web:javax.servlet.jsp:2.3.2",
+            "org.eclipse.jetty.orbit:javax.servlet.jsp.jstl:1.2.0.v201105211821",
+            "org.glassfish.web:javax.servlet.jsp.jstl:1.2.2",
+            "org.glassfish:javax.el:3.0.0",
+            "org.eclipse.jetty.orbit:org.eclipse.jdt.core:3.8.2.v20130121"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty.toolchain:jetty-schemas:3.1.M0",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.toolchain",
+            "module": "jetty-schemas",
+            "version": "3.1.M0"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "javax.servlet.jsp:javax.servlet.jsp-api:2.3.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.servlet.jsp",
+            "module": "javax.servlet.jsp-api",
+            "version": "2.3.1"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.glassfish.web:javax.servlet.jsp:2.3.2",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.glassfish.web",
+            "module": "javax.servlet.jsp",
+            "version": "2.3.2"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.glassfish:javax.el:3.0.0",
+            "javax.servlet.jsp:javax.servlet.jsp-api:2.3.1"
+          ]
+        },
+        {
+          "id": "org.glassfish:javax.el:3.0.0",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.glassfish",
+            "module": "javax.el",
+            "version": "3.0.0"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.eclipse.jetty.orbit:javax.servlet.jsp.jstl:1.2.0.v201105211821",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.orbit",
+            "module": "javax.servlet.jsp.jstl",
+            "version": "1.2.0.v201105211821"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.glassfish.web:javax.servlet.jsp.jstl:1.2.2",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.glassfish.web",
+            "module": "javax.servlet.jsp.jstl",
+            "version": "1.2.2"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.eclipse.jetty.orbit:org.eclipse.jdt.core:3.8.2.v20130121",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.orbit",
+            "module": "org.eclipse.jdt.core",
+            "version": "3.8.2.v20130121"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-annotations:9.2.26.v20180806",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-annotations",
+            "version": "9.2.26.v20180806"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty:jetty-plus:9.2.26.v20180806",
+            "org.eclipse.jetty:jetty-webapp:9.2.26.v20180806",
+            "javax.annotation:javax.annotation-api:1.2",
+            "org.ow2.asm:asm:9.2",
+            "org.ow2.asm:asm-commons:9.2"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-plus:9.2.26.v20180806",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-plus",
+            "version": "9.2.26.v20180806"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty:jetty-webapp:9.2.26.v20180806",
+            "org.eclipse.jetty:jetty-jndi:9.2.26.v20180806"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-jndi:9.2.26.v20180806",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-jndi",
+            "version": "9.2.26.v20180806"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.eclipse.jetty:jetty-util:9.2.26.v20180806"]
+        },
+        {
+          "id": "javax.annotation:javax.annotation-api:1.2",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.annotation",
+            "module": "javax.annotation-api",
+            "version": "1.2"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.ow2.asm:asm:9.2",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.ow2.asm",
+            "module": "asm",
+            "version": "9.2"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.ow2.asm:asm-commons:9.2",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.ow2.asm",
+            "module": "asm-commons",
+            "version": "9.2"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.ow2.asm:asm:9.2",
+            "org.ow2.asm:asm-tree:9.2",
+            "org.ow2.asm:asm-analysis:9.2"
+          ]
+        },
+        {
+          "id": "org.ow2.asm:asm-tree:9.2",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.ow2.asm",
+            "module": "asm-tree",
+            "version": "9.2"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.ow2.asm:asm:9.2"]
+        },
+        {
+          "id": "org.ow2.asm:asm-analysis:9.2",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.ow2.asm",
+            "module": "asm-analysis",
+            "version": "9.2"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.ow2.asm:asm-tree:9.2"]
+        },
+        {
+          "id": "org.eclipse.jetty.websocket:javax-websocket-server-impl:9.2.26.v20180806",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.websocket",
+            "module": "javax-websocket-server-impl",
+            "version": "9.2.26.v20180806"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty:jetty-annotations:9.2.26.v20180806",
+            "org.eclipse.jetty.websocket:javax-websocket-client-impl:9.2.26.v20180806",
+            "org.eclipse.jetty.websocket:websocket-server:9.2.26.v20180806",
+            "javax.websocket:javax.websocket-api:1.0"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty.websocket:javax-websocket-client-impl:9.2.26.v20180806",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.websocket",
+            "module": "javax-websocket-client-impl",
+            "version": "9.2.26.v20180806"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty.websocket:websocket-client:9.2.26.v20180806",
+            "javax.websocket:javax.websocket-api:1.0"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty.websocket:websocket-client:9.2.26.v20180806",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.websocket",
+            "module": "websocket-client",
+            "version": "9.2.26.v20180806"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty:jetty-util:9.2.26.v20180806",
+            "org.eclipse.jetty:jetty-io:9.2.26.v20180806",
+            "org.eclipse.jetty.websocket:websocket-common:9.2.26.v20180806"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty.websocket:websocket-common:9.2.26.v20180806",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.websocket",
+            "module": "websocket-common",
+            "version": "9.2.26.v20180806"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty.websocket:websocket-api:9.2.26.v20180806",
+            "org.eclipse.jetty:jetty-util:9.2.26.v20180806",
+            "org.eclipse.jetty:jetty-io:9.2.26.v20180806"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty.websocket:websocket-api:9.2.26.v20180806",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.websocket",
+            "module": "websocket-api",
+            "version": "9.2.26.v20180806"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "javax.websocket:javax.websocket-api:1.0",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.websocket",
+            "module": "javax.websocket-api",
+            "version": "1.0"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.eclipse.jetty.websocket:websocket-server:9.2.26.v20180806",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.websocket",
+            "module": "websocket-server",
+            "version": "9.2.26.v20180806"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty.websocket:websocket-common:9.2.26.v20180806",
+            "org.eclipse.jetty.websocket:websocket-client:9.2.26.v20180806",
+            "org.eclipse.jetty.websocket:websocket-servlet:9.2.26.v20180806",
+            "org.eclipse.jetty:jetty-servlet:9.2.26.v20180806",
+            "org.eclipse.jetty:jetty-http:9.2.26.v20180806"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty.websocket:websocket-servlet:9.2.26.v20180806",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.websocket",
+            "module": "websocket-servlet",
+            "version": "9.2.26.v20180806"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty.websocket:websocket-api:9.2.26.v20180806",
+            "javax.servlet:javax.servlet-api:3.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "rootOrigin": {
+        "id": "project :",
+        "path": ":"
+      },
+      "configurationName": "grettyRunnerJetty93",
+      "scope": "Unknown",
+      "allDependencies": [
+        {
+          "id": "org.gretty:gretty-runner-jetty93:3.0.8",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.gretty",
+            "module": "gretty-runner-jetty93",
+            "version": "3.0.8"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.gretty:gretty-runner-jetty:3.0.8",
+            "javax.servlet:javax.servlet-api:3.1.0",
+            "org.eclipse.jetty:jetty-server:9.3.28.v20191105",
+            "org.eclipse.jetty:jetty-servlet:9.3.28.v20191105",
+            "org.eclipse.jetty:jetty-webapp:9.3.28.v20191105",
+            "org.eclipse.jetty:jetty-security:9.3.28.v20191105",
+            "org.eclipse.jetty:apache-jsp:9.3.28.v20191105",
+            "org.eclipse.jetty:jetty-annotations:9.3.28.v20191105",
+            "org.eclipse.jetty:jetty-plus:9.3.28.v20191105",
+            "org.eclipse.jetty.websocket:javax-websocket-server-impl:9.3.28.v20191105",
+            "org.ow2.asm:asm:9.2",
+            "org.ow2.asm:asm-commons:9.2"
+          ]
+        },
+        {
+          "id": "org.gretty:gretty-runner-jetty:3.0.8",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.gretty",
+            "module": "gretty-runner-jetty",
+            "version": "3.0.8"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.gretty:gretty-runner:3.0.8"]
+        },
+        {
+          "id": "org.gretty:gretty-runner:3.0.8",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.gretty",
+            "module": "gretty-runner",
+            "version": "3.0.8"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "commons-cli:commons-cli:1.3.1",
+            "commons-io:commons-io:2.11.0",
+            "ch.qos.logback:logback-classic:1.2.10",
+            "org.gretty:gretty-common:3.0.8"
+          ]
+        },
+        {
+          "id": "commons-cli:commons-cli:1.3.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "commons-cli",
+            "module": "commons-cli",
+            "version": "1.3.1"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "commons-io:commons-io:2.11.0",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "commons-io",
+            "module": "commons-io",
+            "version": "2.11.0"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "ch.qos.logback:logback-classic:1.2.10",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "ch.qos.logback",
+            "module": "logback-classic",
+            "version": "1.2.10"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["ch.qos.logback:logback-core:1.2.10", "org.slf4j:slf4j-api:1.7.36"]
+        },
+        {
+          "id": "ch.qos.logback:logback-core:1.2.10",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "ch.qos.logback",
+            "module": "logback-core",
+            "version": "1.2.10"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.slf4j:slf4j-api:1.7.36",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.slf4j",
+            "module": "slf4j-api",
+            "version": "1.7.36"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.gretty:gretty-common:3.0.8",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.gretty",
+            "module": "gretty-common",
+            "version": "3.0.8"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.slf4j:slf4j-api:1.7.36"]
+        },
+        {
+          "id": "javax.servlet:javax.servlet-api:3.1.0",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.servlet",
+            "module": "javax.servlet-api",
+            "version": "3.1.0"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-server:9.3.28.v20191105",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-server",
+            "version": "9.3.28.v20191105"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "javax.servlet:javax.servlet-api:3.1.0",
+            "org.eclipse.jetty:jetty-http:9.3.28.v20191105",
+            "org.eclipse.jetty:jetty-io:9.3.28.v20191105"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-http:9.3.28.v20191105",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-http",
+            "version": "9.3.28.v20191105"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.eclipse.jetty:jetty-util:9.3.28.v20191105"]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-util:9.3.28.v20191105",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-util",
+            "version": "9.3.28.v20191105"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-io:9.3.28.v20191105",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-io",
+            "version": "9.3.28.v20191105"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.eclipse.jetty:jetty-util:9.3.28.v20191105"]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-servlet:9.3.28.v20191105",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-servlet",
+            "version": "9.3.28.v20191105"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.eclipse.jetty:jetty-security:9.3.28.v20191105"]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-security:9.3.28.v20191105",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-security",
+            "version": "9.3.28.v20191105"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.eclipse.jetty:jetty-server:9.3.28.v20191105"]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-webapp:9.3.28.v20191105",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-webapp",
+            "version": "9.3.28.v20191105"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty:jetty-xml:9.3.28.v20191105",
+            "org.eclipse.jetty:jetty-servlet:9.3.28.v20191105"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-xml:9.3.28.v20191105",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-xml",
+            "version": "9.3.28.v20191105"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.eclipse.jetty:jetty-util:9.3.28.v20191105"]
+        },
+        {
+          "id": "org.eclipse.jetty:apache-jsp:9.3.28.v20191105",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "apache-jsp",
+            "version": "9.3.28.v20191105"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty:jetty-util:9.3.28.v20191105",
+            "org.eclipse.jetty.toolchain:jetty-schemas:3.1",
+            "javax.servlet:javax.servlet-api:3.1.0",
+            "org.mortbay.jasper:apache-jsp:8.0.33",
+            "org.eclipse.jdt.core.compiler:ecj:4.4.2"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty.toolchain:jetty-schemas:3.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.toolchain",
+            "module": "jetty-schemas",
+            "version": "3.1"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.mortbay.jasper:apache-jsp:8.0.33",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.mortbay.jasper",
+            "module": "apache-jsp",
+            "version": "8.0.33"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty.toolchain:jetty-schemas:3.1",
+            "org.mortbay.jasper:apache-el:8.0.33"
+          ]
+        },
+        {
+          "id": "org.mortbay.jasper:apache-el:8.0.33",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.mortbay.jasper",
+            "module": "apache-el",
+            "version": "8.0.33"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.eclipse.jdt.core.compiler:ecj:4.4.2",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jdt.core.compiler",
+            "module": "ecj",
+            "version": "4.4.2"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-annotations:9.3.28.v20191105",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-annotations",
+            "version": "9.3.28.v20191105"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty:jetty-plus:9.3.28.v20191105",
+            "org.eclipse.jetty:jetty-webapp:9.3.28.v20191105",
+            "javax.annotation:javax.annotation-api:1.2",
+            "org.ow2.asm:asm:9.2",
+            "org.ow2.asm:asm-commons:9.2"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-plus:9.3.28.v20191105",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-plus",
+            "version": "9.3.28.v20191105"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty:jetty-webapp:9.3.28.v20191105",
+            "org.eclipse.jetty:jetty-jndi:9.3.28.v20191105"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-jndi:9.3.28.v20191105",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-jndi",
+            "version": "9.3.28.v20191105"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.eclipse.jetty:jetty-util:9.3.28.v20191105"]
+        },
+        {
+          "id": "javax.annotation:javax.annotation-api:1.2",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.annotation",
+            "module": "javax.annotation-api",
+            "version": "1.2"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.ow2.asm:asm:9.2",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.ow2.asm",
+            "module": "asm",
+            "version": "9.2"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.ow2.asm:asm-commons:9.2",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.ow2.asm",
+            "module": "asm-commons",
+            "version": "9.2"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.ow2.asm:asm:9.2",
+            "org.ow2.asm:asm-tree:9.2",
+            "org.ow2.asm:asm-analysis:9.2"
+          ]
+        },
+        {
+          "id": "org.ow2.asm:asm-tree:9.2",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.ow2.asm",
+            "module": "asm-tree",
+            "version": "9.2"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.ow2.asm:asm:9.2"]
+        },
+        {
+          "id": "org.ow2.asm:asm-analysis:9.2",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.ow2.asm",
+            "module": "asm-analysis",
+            "version": "9.2"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.ow2.asm:asm-tree:9.2"]
+        },
+        {
+          "id": "org.eclipse.jetty.websocket:javax-websocket-server-impl:9.3.28.v20191105",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.websocket",
+            "module": "javax-websocket-server-impl",
+            "version": "9.3.28.v20191105"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty:jetty-annotations:9.3.28.v20191105",
+            "org.eclipse.jetty.websocket:javax-websocket-client-impl:9.3.28.v20191105",
+            "org.eclipse.jetty.websocket:websocket-server:9.3.28.v20191105",
+            "javax.websocket:javax.websocket-api:1.0"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty.websocket:javax-websocket-client-impl:9.3.28.v20191105",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.websocket",
+            "module": "javax-websocket-client-impl",
+            "version": "9.3.28.v20191105"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty.websocket:websocket-client:9.3.28.v20191105",
+            "javax.websocket:javax.websocket-api:1.0"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty.websocket:websocket-client:9.3.28.v20191105",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.websocket",
+            "module": "websocket-client",
+            "version": "9.3.28.v20191105"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty:jetty-util:9.3.28.v20191105",
+            "org.eclipse.jetty:jetty-io:9.3.28.v20191105",
+            "org.eclipse.jetty.websocket:websocket-common:9.3.28.v20191105"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty.websocket:websocket-common:9.3.28.v20191105",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.websocket",
+            "module": "websocket-common",
+            "version": "9.3.28.v20191105"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty.websocket:websocket-api:9.3.28.v20191105",
+            "org.eclipse.jetty:jetty-util:9.3.28.v20191105",
+            "org.eclipse.jetty:jetty-io:9.3.28.v20191105"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty.websocket:websocket-api:9.3.28.v20191105",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.websocket",
+            "module": "websocket-api",
+            "version": "9.3.28.v20191105"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "javax.websocket:javax.websocket-api:1.0",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.websocket",
+            "module": "javax.websocket-api",
+            "version": "1.0"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.eclipse.jetty.websocket:websocket-server:9.3.28.v20191105",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.websocket",
+            "module": "websocket-server",
+            "version": "9.3.28.v20191105"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty.websocket:websocket-common:9.3.28.v20191105",
+            "org.eclipse.jetty.websocket:websocket-client:9.3.28.v20191105",
+            "org.eclipse.jetty.websocket:websocket-servlet:9.3.28.v20191105",
+            "org.eclipse.jetty:jetty-servlet:9.3.28.v20191105",
+            "org.eclipse.jetty:jetty-http:9.3.28.v20191105"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty.websocket:websocket-servlet:9.3.28.v20191105",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.websocket",
+            "module": "websocket-servlet",
+            "version": "9.3.28.v20191105"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty.websocket:websocket-api:9.3.28.v20191105",
+            "javax.servlet:javax.servlet-api:3.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "rootOrigin": {
+        "id": "project :",
+        "path": ":"
+      },
+      "configurationName": "grettyRunnerJetty94",
+      "scope": "Unknown",
+      "allDependencies": [
+        {
+          "id": "org.gretty:gretty-runner-jetty94:3.0.8",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.gretty",
+            "module": "gretty-runner-jetty94",
+            "version": "3.0.8"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.gretty:gretty-runner-jetty:3.0.8",
+            "javax.servlet:javax.servlet-api:3.1.0",
+            "org.eclipse.jetty:jetty-server:9.4.24.v20191120",
+            "org.eclipse.jetty:jetty-servlet:9.4.24.v20191120",
+            "org.eclipse.jetty:jetty-webapp:9.4.24.v20191120",
+            "org.eclipse.jetty:jetty-security:9.4.24.v20191120",
+            "org.eclipse.jetty:apache-jsp:9.4.24.v20191120",
+            "org.eclipse.jetty:jetty-annotations:9.4.24.v20191120",
+            "org.eclipse.jetty:jetty-plus:9.4.24.v20191120",
+            "org.eclipse.jetty.websocket:javax-websocket-server-impl:9.4.24.v20191120",
+            "org.ow2.asm:asm:9.2",
+            "org.ow2.asm:asm-commons:9.2"
+          ]
+        },
+        {
+          "id": "org.gretty:gretty-runner-jetty:3.0.8",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.gretty",
+            "module": "gretty-runner-jetty",
+            "version": "3.0.8"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.gretty:gretty-runner:3.0.8"]
+        },
+        {
+          "id": "org.gretty:gretty-runner:3.0.8",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.gretty",
+            "module": "gretty-runner",
+            "version": "3.0.8"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "commons-cli:commons-cli:1.3.1",
+            "commons-io:commons-io:2.11.0",
+            "ch.qos.logback:logback-classic:1.2.10",
+            "org.gretty:gretty-common:3.0.8"
+          ]
+        },
+        {
+          "id": "commons-cli:commons-cli:1.3.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "commons-cli",
+            "module": "commons-cli",
+            "version": "1.3.1"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "commons-io:commons-io:2.11.0",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "commons-io",
+            "module": "commons-io",
+            "version": "2.11.0"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "ch.qos.logback:logback-classic:1.2.10",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "ch.qos.logback",
+            "module": "logback-classic",
+            "version": "1.2.10"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["ch.qos.logback:logback-core:1.2.10", "org.slf4j:slf4j-api:1.7.36"]
+        },
+        {
+          "id": "ch.qos.logback:logback-core:1.2.10",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "ch.qos.logback",
+            "module": "logback-core",
+            "version": "1.2.10"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.slf4j:slf4j-api:1.7.36",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.slf4j",
+            "module": "slf4j-api",
+            "version": "1.7.36"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.gretty:gretty-common:3.0.8",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.gretty",
+            "module": "gretty-common",
+            "version": "3.0.8"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.slf4j:slf4j-api:1.7.36"]
+        },
+        {
+          "id": "javax.servlet:javax.servlet-api:3.1.0",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.servlet",
+            "module": "javax.servlet-api",
+            "version": "3.1.0"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-server:9.4.24.v20191120",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-server",
+            "version": "9.4.24.v20191120"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "javax.servlet:javax.servlet-api:3.1.0",
+            "org.eclipse.jetty:jetty-http:9.4.24.v20191120",
+            "org.eclipse.jetty:jetty-io:9.4.24.v20191120"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-http:9.4.24.v20191120",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-http",
+            "version": "9.4.24.v20191120"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty:jetty-util:9.4.24.v20191120",
+            "org.eclipse.jetty:jetty-io:9.4.24.v20191120"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-util:9.4.24.v20191120",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-util",
+            "version": "9.4.24.v20191120"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-io:9.4.24.v20191120",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-io",
+            "version": "9.4.24.v20191120"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.eclipse.jetty:jetty-util:9.4.24.v20191120"]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-servlet:9.4.24.v20191120",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-servlet",
+            "version": "9.4.24.v20191120"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.eclipse.jetty:jetty-security:9.4.24.v20191120"]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-security:9.4.24.v20191120",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-security",
+            "version": "9.4.24.v20191120"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.eclipse.jetty:jetty-server:9.4.24.v20191120"]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-webapp:9.4.24.v20191120",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-webapp",
+            "version": "9.4.24.v20191120"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty:jetty-xml:9.4.24.v20191120",
+            "org.eclipse.jetty:jetty-servlet:9.4.24.v20191120"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-xml:9.4.24.v20191120",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-xml",
+            "version": "9.4.24.v20191120"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.eclipse.jetty:jetty-util:9.4.24.v20191120"]
+        },
+        {
+          "id": "org.eclipse.jetty:apache-jsp:9.4.24.v20191120",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "apache-jsp",
+            "version": "9.4.24.v20191120"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty:jetty-util:9.4.24.v20191120",
+            "org.eclipse.jetty.toolchain:jetty-schemas:3.1.2",
+            "javax.servlet:javax.servlet-api:3.1.0",
+            "org.mortbay.jasper:apache-jsp:8.5.40",
+            "org.eclipse.jetty:jetty-annotations:9.4.24.v20191120"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty.toolchain:jetty-schemas:3.1.2",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.toolchain",
+            "module": "jetty-schemas",
+            "version": "3.1.2"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.mortbay.jasper:apache-jsp:8.5.40",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.mortbay.jasper",
+            "module": "apache-jsp",
+            "version": "8.5.40"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty.toolchain:jetty-schemas:3.1.2",
+            "org.mortbay.jasper:apache-el:8.5.40",
+            "org.eclipse.jdt:ecj:3.17.0"
+          ]
+        },
+        {
+          "id": "org.mortbay.jasper:apache-el:8.5.40",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.mortbay.jasper",
+            "module": "apache-el",
+            "version": "8.5.40"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.eclipse.jdt:ecj:3.17.0",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jdt",
+            "module": "ecj",
+            "version": "3.17.0"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-annotations:9.4.24.v20191120",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-annotations",
+            "version": "9.4.24.v20191120"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty:jetty-plus:9.4.24.v20191120",
+            "org.eclipse.jetty:jetty-webapp:9.4.24.v20191120",
+            "javax.annotation:javax.annotation-api:1.3",
+            "org.ow2.asm:asm:9.2",
+            "org.ow2.asm:asm-commons:9.2"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-plus:9.4.24.v20191120",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-plus",
+            "version": "9.4.24.v20191120"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty:jetty-webapp:9.4.24.v20191120",
+            "org.eclipse.jetty:jetty-jndi:9.4.24.v20191120"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-jndi:9.4.24.v20191120",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-jndi",
+            "version": "9.4.24.v20191120"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.eclipse.jetty:jetty-util:9.4.24.v20191120"]
+        },
+        {
+          "id": "javax.annotation:javax.annotation-api:1.3",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.annotation",
+            "module": "javax.annotation-api",
+            "version": "1.3"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.ow2.asm:asm:9.2",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.ow2.asm",
+            "module": "asm",
+            "version": "9.2"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.ow2.asm:asm-commons:9.2",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.ow2.asm",
+            "module": "asm-commons",
+            "version": "9.2"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.ow2.asm:asm:9.2",
+            "org.ow2.asm:asm-tree:9.2",
+            "org.ow2.asm:asm-analysis:9.2"
+          ]
+        },
+        {
+          "id": "org.ow2.asm:asm-tree:9.2",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.ow2.asm",
+            "module": "asm-tree",
+            "version": "9.2"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.ow2.asm:asm:9.2"]
+        },
+        {
+          "id": "org.ow2.asm:asm-analysis:9.2",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.ow2.asm",
+            "module": "asm-analysis",
+            "version": "9.2"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.ow2.asm:asm-tree:9.2"]
+        },
+        {
+          "id": "org.eclipse.jetty.websocket:javax-websocket-server-impl:9.4.24.v20191120",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.websocket",
+            "module": "javax-websocket-server-impl",
+            "version": "9.4.24.v20191120"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty:jetty-annotations:9.4.24.v20191120",
+            "org.eclipse.jetty.websocket:javax-websocket-client-impl:9.4.24.v20191120",
+            "org.eclipse.jetty.websocket:websocket-server:9.4.24.v20191120",
+            "javax.websocket:javax.websocket-api:1.0"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty.websocket:javax-websocket-client-impl:9.4.24.v20191120",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.websocket",
+            "module": "javax-websocket-client-impl",
+            "version": "9.4.24.v20191120"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty.websocket:websocket-client:9.4.24.v20191120",
+            "javax.websocket:javax.websocket-client-api:1.0"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty.websocket:websocket-client:9.4.24.v20191120",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.websocket",
+            "module": "websocket-client",
+            "version": "9.4.24.v20191120"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty:jetty-client:9.4.24.v20191120",
+            "org.eclipse.jetty:jetty-xml:9.4.24.v20191120",
+            "org.eclipse.jetty:jetty-util:9.4.24.v20191120",
+            "org.eclipse.jetty:jetty-io:9.4.24.v20191120",
+            "org.eclipse.jetty.websocket:websocket-common:9.4.24.v20191120"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty:jetty-client:9.4.24.v20191120",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty",
+            "module": "jetty-client",
+            "version": "9.4.24.v20191120"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty:jetty-http:9.4.24.v20191120",
+            "org.eclipse.jetty:jetty-io:9.4.24.v20191120"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty.websocket:websocket-common:9.4.24.v20191120",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.websocket",
+            "module": "websocket-common",
+            "version": "9.4.24.v20191120"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty.websocket:websocket-api:9.4.24.v20191120",
+            "org.eclipse.jetty:jetty-util:9.4.24.v20191120",
+            "org.eclipse.jetty:jetty-io:9.4.24.v20191120"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty.websocket:websocket-api:9.4.24.v20191120",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.websocket",
+            "module": "websocket-api",
+            "version": "9.4.24.v20191120"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "javax.websocket:javax.websocket-client-api:1.0",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.websocket",
+            "module": "javax.websocket-client-api",
+            "version": "1.0"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.eclipse.jetty.websocket:websocket-server:9.4.24.v20191120",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.websocket",
+            "module": "websocket-server",
+            "version": "9.4.24.v20191120"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty.websocket:websocket-common:9.4.24.v20191120",
+            "org.eclipse.jetty.websocket:websocket-client:9.4.24.v20191120",
+            "org.eclipse.jetty.websocket:websocket-servlet:9.4.24.v20191120",
+            "org.eclipse.jetty:jetty-servlet:9.4.24.v20191120",
+            "org.eclipse.jetty:jetty-http:9.4.24.v20191120"
+          ]
+        },
+        {
+          "id": "org.eclipse.jetty.websocket:websocket-servlet:9.4.24.v20191120",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jetty.websocket",
+            "module": "websocket-servlet",
+            "version": "9.4.24.v20191120"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.eclipse.jetty.websocket:websocket-api:9.4.24.v20191120",
+            "javax.servlet:javax.servlet-api:3.1.0"
+          ]
+        },
+        {
+          "id": "javax.websocket:javax.websocket-api:1.0",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.websocket",
+            "module": "javax.websocket-api",
+            "version": "1.0"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        }
+      ]
+    },
+    {
+      "rootOrigin": {
+        "id": "project :",
+        "path": ":"
+      },
+      "configurationName": "grettyRunnerTomcat85",
+      "scope": "Unknown",
+      "allDependencies": [
+        {
+          "id": "org.gretty:gretty-runner-tomcat85:3.0.8",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.gretty",
+            "module": "gretty-runner-tomcat85",
+            "version": "3.0.8"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.gretty:gretty-runner-tomcat8plus:3.0.8",
+            "org.apache.tomcat.embed:tomcat-embed-core:8.5.75",
+            "org.apache.tomcat.embed:tomcat-embed-el:8.5.75",
+            "org.apache.tomcat.embed:tomcat-embed-jasper:8.5.75",
+            "org.apache.tomcat.embed:tomcat-embed-websocket:8.5.75",
+            "javax.servlet:javax.servlet-api:3.1.0"
+          ]
+        },
+        {
+          "id": "org.gretty:gretty-runner-tomcat8plus:3.0.8",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.gretty",
+            "module": "gretty-runner-tomcat8plus",
+            "version": "3.0.8"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.gretty:gretty-runner-tomcat:3.0.8"]
+        },
+        {
+          "id": "org.gretty:gretty-runner-tomcat:3.0.8",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.gretty",
+            "module": "gretty-runner-tomcat",
+            "version": "3.0.8"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.gretty:gretty-runner:3.0.8", "org.slf4j:log4j-over-slf4j:1.7.36"]
+        },
+        {
+          "id": "org.gretty:gretty-runner:3.0.8",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.gretty",
+            "module": "gretty-runner",
+            "version": "3.0.8"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "commons-cli:commons-cli:1.3.1",
+            "commons-io:commons-io:2.11.0",
+            "ch.qos.logback:logback-classic:1.2.10",
+            "org.gretty:gretty-common:3.0.8"
+          ]
+        },
+        {
+          "id": "commons-cli:commons-cli:1.3.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "commons-cli",
+            "module": "commons-cli",
+            "version": "1.3.1"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "commons-io:commons-io:2.11.0",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "commons-io",
+            "module": "commons-io",
+            "version": "2.11.0"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "ch.qos.logback:logback-classic:1.2.10",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "ch.qos.logback",
+            "module": "logback-classic",
+            "version": "1.2.10"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["ch.qos.logback:logback-core:1.2.10", "org.slf4j:slf4j-api:1.7.36"]
+        },
+        {
+          "id": "ch.qos.logback:logback-core:1.2.10",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "ch.qos.logback",
+            "module": "logback-core",
+            "version": "1.2.10"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.slf4j:slf4j-api:1.7.36",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.slf4j",
+            "module": "slf4j-api",
+            "version": "1.7.36"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.gretty:gretty-common:3.0.8",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.gretty",
+            "module": "gretty-common",
+            "version": "3.0.8"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.slf4j:slf4j-api:1.7.36"]
+        },
+        {
+          "id": "org.slf4j:log4j-over-slf4j:1.7.36",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.slf4j",
+            "module": "log4j-over-slf4j",
+            "version": "1.7.36"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.slf4j:slf4j-api:1.7.36"]
+        },
+        {
+          "id": "org.apache.tomcat.embed:tomcat-embed-core:8.5.75",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.apache.tomcat.embed",
+            "module": "tomcat-embed-core",
+            "version": "8.5.75"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.apache.tomcat:tomcat-annotations-api:8.5.75"]
+        },
+        {
+          "id": "org.apache.tomcat:tomcat-annotations-api:8.5.75",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.apache.tomcat",
+            "module": "tomcat-annotations-api",
+            "version": "8.5.75"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.apache.tomcat.embed:tomcat-embed-el:8.5.75",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.apache.tomcat.embed",
+            "module": "tomcat-embed-el",
+            "version": "8.5.75"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.apache.tomcat.embed:tomcat-embed-jasper:8.5.75",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.apache.tomcat.embed",
+            "module": "tomcat-embed-jasper",
+            "version": "8.5.75"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.apache.tomcat.embed:tomcat-embed-core:8.5.75",
+            "org.apache.tomcat.embed:tomcat-embed-el:8.5.75",
+            "org.eclipse.jdt:ecj:3.12.3"
+          ]
+        },
+        {
+          "id": "org.eclipse.jdt:ecj:3.12.3",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jdt",
+            "module": "ecj",
+            "version": "3.12.3"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.apache.tomcat.embed:tomcat-embed-websocket:8.5.75",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.apache.tomcat.embed",
+            "module": "tomcat-embed-websocket",
+            "version": "8.5.75"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.apache.tomcat.embed:tomcat-embed-core:8.5.75"]
+        },
+        {
+          "id": "javax.servlet:javax.servlet-api:3.1.0",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.servlet",
+            "module": "javax.servlet-api",
+            "version": "3.1.0"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        }
+      ]
+    },
+    {
+      "rootOrigin": {
+        "id": "project :",
+        "path": ":"
+      },
+      "configurationName": "grettyRunnerTomcat9",
+      "scope": "Unknown",
+      "allDependencies": [
+        {
+          "id": "org.gretty:gretty-runner-tomcat9:3.0.8",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.gretty",
+            "module": "gretty-runner-tomcat9",
+            "version": "3.0.8"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.gretty:gretty-runner-tomcat85:3.0.8",
+            "org.apache.tomcat.embed:tomcat-embed-core:9.0.58",
+            "org.apache.tomcat.embed:tomcat-embed-el:9.0.58",
+            "org.apache.tomcat.embed:tomcat-embed-jasper:9.0.58",
+            "org.apache.tomcat.embed:tomcat-embed-websocket:9.0.58",
+            "javax.servlet:javax.servlet-api:4.0.1"
+          ]
+        },
+        {
+          "id": "org.gretty:gretty-runner-tomcat85:3.0.8",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.gretty",
+            "module": "gretty-runner-tomcat85",
+            "version": "3.0.8"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.gretty:gretty-runner-tomcat8plus:3.0.8"]
+        },
+        {
+          "id": "org.gretty:gretty-runner-tomcat8plus:3.0.8",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.gretty",
+            "module": "gretty-runner-tomcat8plus",
+            "version": "3.0.8"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.gretty:gretty-runner-tomcat:3.0.8"]
+        },
+        {
+          "id": "org.gretty:gretty-runner-tomcat:3.0.8",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.gretty",
+            "module": "gretty-runner-tomcat",
+            "version": "3.0.8"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.gretty:gretty-runner:3.0.8", "org.slf4j:log4j-over-slf4j:1.7.36"]
+        },
+        {
+          "id": "org.gretty:gretty-runner:3.0.8",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.gretty",
+            "module": "gretty-runner",
+            "version": "3.0.8"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "commons-cli:commons-cli:1.3.1",
+            "commons-io:commons-io:2.11.0",
+            "ch.qos.logback:logback-classic:1.2.10",
+            "org.gretty:gretty-common:3.0.8"
+          ]
+        },
+        {
+          "id": "commons-cli:commons-cli:1.3.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "commons-cli",
+            "module": "commons-cli",
+            "version": "1.3.1"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "commons-io:commons-io:2.11.0",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "commons-io",
+            "module": "commons-io",
+            "version": "2.11.0"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "ch.qos.logback:logback-classic:1.2.10",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "ch.qos.logback",
+            "module": "logback-classic",
+            "version": "1.2.10"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["ch.qos.logback:logback-core:1.2.10", "org.slf4j:slf4j-api:1.7.36"]
+        },
+        {
+          "id": "ch.qos.logback:logback-core:1.2.10",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "ch.qos.logback",
+            "module": "logback-core",
+            "version": "1.2.10"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.slf4j:slf4j-api:1.7.36",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.slf4j",
+            "module": "slf4j-api",
+            "version": "1.7.36"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.gretty:gretty-common:3.0.8",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.gretty",
+            "module": "gretty-common",
+            "version": "3.0.8"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.slf4j:slf4j-api:1.7.36"]
+        },
+        {
+          "id": "org.slf4j:log4j-over-slf4j:1.7.36",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.slf4j",
+            "module": "log4j-over-slf4j",
+            "version": "1.7.36"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.slf4j:slf4j-api:1.7.36"]
+        },
+        {
+          "id": "org.apache.tomcat.embed:tomcat-embed-core:9.0.58",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.apache.tomcat.embed",
+            "module": "tomcat-embed-core",
+            "version": "9.0.58"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.apache.tomcat:tomcat-annotations-api:9.0.58"]
+        },
+        {
+          "id": "org.apache.tomcat:tomcat-annotations-api:9.0.58",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.apache.tomcat",
+            "module": "tomcat-annotations-api",
+            "version": "9.0.58"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.apache.tomcat.embed:tomcat-embed-el:9.0.58",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.apache.tomcat.embed",
+            "module": "tomcat-embed-el",
+            "version": "9.0.58"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.apache.tomcat.embed:tomcat-embed-jasper:9.0.58",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.apache.tomcat.embed",
+            "module": "tomcat-embed-jasper",
+            "version": "9.0.58"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.apache.tomcat.embed:tomcat-embed-core:9.0.58",
+            "org.apache.tomcat.embed:tomcat-embed-el:9.0.58",
+            "org.eclipse.jdt:ecj:3.18.0"
+          ]
+        },
+        {
+          "id": "org.eclipse.jdt:ecj:3.18.0",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.eclipse.jdt",
+            "module": "ecj",
+            "version": "3.18.0"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.apache.tomcat.embed:tomcat-embed-websocket:9.0.58",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.apache.tomcat.embed",
+            "module": "tomcat-embed-websocket",
+            "version": "9.0.58"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.apache.tomcat.embed:tomcat-embed-core:9.0.58"]
+        },
+        {
+          "id": "javax.servlet:javax.servlet-api:4.0.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.servlet",
+            "module": "javax.servlet-api",
+            "version": "4.0.1"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        }
+      ]
+    },
+    {
+      "rootOrigin": {
+        "id": "project :",
+        "path": ":"
+      },
+      "configurationName": "grettySpringLoaded",
+      "scope": "Unknown",
+      "allDependencies": [
+        {
+          "id": "org.springframework:springloaded:1.2.8.RELEASE",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.springframework",
+            "module": "springloaded",
+            "version": "1.2.8.RELEASE"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        }
+      ]
+    },
+    {
+      "rootOrigin": {
+        "id": "project :",
+        "path": ":"
+      },
+      "configurationName": "grettyStarter",
+      "scope": "Unknown",
+      "allDependencies": [
+        {
+          "id": "org.gretty:gretty-starter:3.0.8",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.gretty",
+            "module": "gretty-starter",
+            "version": "3.0.8"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.gretty:gretty-core:3.0.8"]
+        },
+        {
+          "id": "org.gretty:gretty-core:3.0.8",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.gretty",
+            "module": "gretty-core",
+            "version": "3.0.8"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "ch.qos.logback:logback-classic:1.2.10",
+            "commons-cli:commons-cli:1.4",
+            "commons-configuration:commons-configuration:1.10",
+            "commons-io:commons-io:2.11.0",
+            "org.apache.commons:commons-lang3:3.3.2",
+            "org.bouncycastle:bcprov-jdk15on:1.60",
+            "org.springframework.boot:spring-boot-devtools:2.6.3",
+            "org.gretty:gretty-common:3.0.8"
+          ]
+        },
+        {
+          "id": "ch.qos.logback:logback-classic:1.2.10",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "ch.qos.logback",
+            "module": "logback-classic",
+            "version": "1.2.10"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["ch.qos.logback:logback-core:1.2.10", "org.slf4j:slf4j-api:1.7.36"]
+        },
+        {
+          "id": "ch.qos.logback:logback-core:1.2.10",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "ch.qos.logback",
+            "module": "logback-core",
+            "version": "1.2.10"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.slf4j:slf4j-api:1.7.36",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.slf4j",
+            "module": "slf4j-api",
+            "version": "1.7.36"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "commons-cli:commons-cli:1.4",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "commons-cli",
+            "module": "commons-cli",
+            "version": "1.4"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "commons-configuration:commons-configuration:1.10",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "commons-configuration",
+            "module": "commons-configuration",
+            "version": "1.10"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["commons-lang:commons-lang:2.6", "commons-logging:commons-logging:1.1.1"]
+        },
+        {
+          "id": "commons-lang:commons-lang:2.6",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "commons-lang",
+            "module": "commons-lang",
+            "version": "2.6"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "commons-logging:commons-logging:1.1.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "commons-logging",
+            "module": "commons-logging",
+            "version": "1.1.1"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "commons-io:commons-io:2.11.0",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "commons-io",
+            "module": "commons-io",
+            "version": "2.11.0"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.apache.commons:commons-lang3:3.3.2",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.apache.commons",
+            "module": "commons-lang3",
+            "version": "3.3.2"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.bouncycastle:bcprov-jdk15on:1.60",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.bouncycastle",
+            "module": "bcprov-jdk15on",
+            "version": "1.60"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.springframework.boot:spring-boot-devtools:2.6.3",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.springframework.boot",
+            "module": "spring-boot-devtools",
+            "version": "2.6.3"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.springframework.boot:spring-boot:2.6.3",
+            "org.springframework.boot:spring-boot-autoconfigure:2.6.3"
+          ]
+        },
+        {
+          "id": "org.springframework.boot:spring-boot:2.6.3",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.springframework.boot",
+            "module": "spring-boot",
+            "version": "2.6.3"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.springframework:spring-core:5.3.15",
+            "org.springframework:spring-context:5.3.15"
+          ]
+        },
+        {
+          "id": "org.springframework:spring-core:5.3.15",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.springframework",
+            "module": "spring-core",
+            "version": "5.3.15"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.springframework:spring-jcl:5.3.15"]
+        },
+        {
+          "id": "org.springframework:spring-jcl:5.3.15",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.springframework",
+            "module": "spring-jcl",
+            "version": "5.3.15"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.springframework:spring-context:5.3.15",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.springframework",
+            "module": "spring-context",
+            "version": "5.3.15"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.springframework:spring-aop:5.3.15",
+            "org.springframework:spring-beans:5.3.15",
+            "org.springframework:spring-core:5.3.15",
+            "org.springframework:spring-expression:5.3.15"
+          ]
+        },
+        {
+          "id": "org.springframework:spring-aop:5.3.15",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.springframework",
+            "module": "spring-aop",
+            "version": "5.3.15"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": [
+            "org.springframework:spring-beans:5.3.15",
+            "org.springframework:spring-core:5.3.15"
+          ]
+        },
+        {
+          "id": "org.springframework:spring-beans:5.3.15",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.springframework",
+            "module": "spring-beans",
+            "version": "5.3.15"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.springframework:spring-core:5.3.15"]
+        },
+        {
+          "id": "org.springframework:spring-expression:5.3.15",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.springframework",
+            "module": "spring-expression",
+            "version": "5.3.15"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.springframework:spring-core:5.3.15"]
+        },
+        {
+          "id": "org.springframework.boot:spring-boot-autoconfigure:2.6.3",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.springframework.boot",
+            "module": "spring-boot-autoconfigure",
+            "version": "2.6.3"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.springframework.boot:spring-boot:2.6.3"]
+        },
+        {
+          "id": "org.gretty:gretty-common:3.0.8",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.gretty",
+            "module": "gretty-common",
+            "version": "3.0.8"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.slf4j:slf4j-api:1.7.36"]
+        },
+        {
+          "id": "org.codehaus.groovy:groovy-cli-commons:2.5.12",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.codehaus.groovy",
+            "module": "groovy-cli-commons",
+            "version": "2.5.12"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.codehaus.groovy:groovy:2.5.12", "commons-cli:commons-cli:1.4"]
+        },
+        {
+          "id": "org.codehaus.groovy:groovy:2.5.12",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.codehaus.groovy",
+            "module": "groovy",
+            "version": "2.5.12"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.codehaus.groovy:groovy-json:2.5.12",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.codehaus.groovy",
+            "module": "groovy-json",
+            "version": "2.5.12"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.codehaus.groovy:groovy:2.5.12"]
+        }
+      ]
+    },
+    {
+      "rootOrigin": {
+        "id": "project :",
+        "path": ":"
+      },
+      "configurationName": "providedCompile",
+      "scope": "Unknown",
+      "allDependencies": [
+        {
+          "id": "javax.servlet:javax.servlet-api:4.0.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.servlet",
+            "module": "javax.servlet-api",
+            "version": "4.0.1"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "javax.websocket:javax.websocket-api:1.0",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.websocket",
+            "module": "javax.websocket-api",
+            "version": "1.0"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "javax.servlet:javax.servlet-api:4.0.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.servlet",
+            "module": "javax.servlet-api",
+            "version": "4.0.1"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        }
+      ]
+    },
+    {
+      "rootOrigin": {
+        "id": "project :",
+        "path": ":"
+      },
+      "configurationName": "providedRuntime",
+      "scope": "Unknown",
+      "allDependencies": [
+        {
+          "id": "javax.servlet:javax.servlet-api:4.0.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.servlet",
+            "module": "javax.servlet-api",
+            "version": "4.0.1"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "javax.websocket:javax.websocket-api:1.0",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.websocket",
+            "module": "javax.websocket-api",
+            "version": "1.0"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "javax.servlet:javax.servlet-api:4.0.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.servlet",
+            "module": "javax.servlet-api",
+            "version": "4.0.1"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        }
+      ]
+    },
+    {
+      "rootOrigin": {
+        "id": "project :",
+        "path": ":"
+      },
+      "configurationName": "runtimeClasspath",
+      "scope": "Unknown",
+      "allDependencies": [
+        {
+          "id": "javax.servlet:javax.servlet-api:4.0.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.servlet",
+            "module": "javax.servlet-api",
+            "version": "4.0.1"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "javax.websocket:javax.websocket-api:1.0",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.websocket",
+            "module": "javax.websocket-api",
+            "version": "1.0"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.postgresql:postgresql:9.3-1104-jdbc41",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.postgresql",
+            "module": "postgresql",
+            "version": "9.3-1104-jdbc41"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "log4j:log4j:1.2.17",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "log4j",
+            "module": "log4j",
+            "version": "1.2.17"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "com.sun.mail:javax.mail:1.6.2",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "com.sun.mail",
+            "module": "javax.mail",
+            "version": "1.6.2"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["javax.activation:activation:1.1"]
+        },
+        {
+          "id": "javax.activation:activation:1.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.activation",
+            "module": "activation",
+            "version": "1.1"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "javax.servlet:javax.servlet-api:4.0.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.servlet",
+            "module": "javax.servlet-api",
+            "version": "4.0.1"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        }
+      ]
+    },
+    {
+      "rootOrigin": {
+        "id": "project :",
+        "path": ":"
+      },
+      "configurationName": "springBoot",
+      "scope": "Unknown",
+      "allDependencies": [
+        {
+          "id": "javax.servlet:javax.servlet-api:4.0.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.servlet",
+            "module": "javax.servlet-api",
+            "version": "4.0.1"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "javax.websocket:javax.websocket-api:1.0",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.websocket",
+            "module": "javax.websocket-api",
+            "version": "1.0"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.postgresql:postgresql:9.3-1104-jdbc41",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.postgresql",
+            "module": "postgresql",
+            "version": "9.3-1104-jdbc41"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "log4j:log4j:1.2.17",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "log4j",
+            "module": "log4j",
+            "version": "1.2.17"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "com.sun.mail:javax.mail:1.6.2",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "com.sun.mail",
+            "module": "javax.mail",
+            "version": "1.6.2"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["javax.activation:activation:1.1"]
+        },
+        {
+          "id": "javax.activation:activation:1.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.activation",
+            "module": "activation",
+            "version": "1.1"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "javax.servlet:javax.servlet-api:4.0.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.servlet",
+            "module": "javax.servlet-api",
+            "version": "4.0.1"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        }
+      ]
+    },
+    {
+      "rootOrigin": {
+        "id": "project :",
+        "path": ":"
+      },
+      "configurationName": "testCompileClasspath",
+      "scope": "Unknown",
+      "allDependencies": [
+        {
+          "id": "javax.servlet:javax.servlet-api:4.0.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.servlet",
+            "module": "javax.servlet-api",
+            "version": "4.0.1"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "javax.websocket:javax.websocket-api:1.0",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.websocket",
+            "module": "javax.websocket-api",
+            "version": "1.0"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.postgresql:postgresql:9.3-1104-jdbc41",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.postgresql",
+            "module": "postgresql",
+            "version": "9.3-1104-jdbc41"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "log4j:log4j:1.2.17",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "log4j",
+            "module": "log4j",
+            "version": "1.2.17"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "com.sun.mail:javax.mail:1.6.2",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "com.sun.mail",
+            "module": "javax.mail",
+            "version": "1.6.2"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["javax.activation:activation:1.1"]
+        },
+        {
+          "id": "javax.activation:activation:1.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.activation",
+            "module": "activation",
+            "version": "1.1"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "javax.servlet:javax.servlet-api:4.0.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.servlet",
+            "module": "javax.servlet-api",
+            "version": "4.0.1"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "junit:junit:4.12",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "junit",
+            "module": "junit",
+            "version": "4.12"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.hamcrest:hamcrest-core:1.3"]
+        },
+        {
+          "id": "org.hamcrest:hamcrest-core:1.3",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.hamcrest",
+            "module": "hamcrest-core",
+            "version": "1.3"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        }
+      ]
+    },
+    {
+      "rootOrigin": {
+        "id": "project :",
+        "path": ":"
+      },
+      "configurationName": "testRuntimeClasspath",
+      "scope": "Unknown",
+      "allDependencies": [
+        {
+          "id": "javax.servlet:javax.servlet-api:4.0.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.servlet",
+            "module": "javax.servlet-api",
+            "version": "4.0.1"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "javax.websocket:javax.websocket-api:1.0",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.websocket",
+            "module": "javax.websocket-api",
+            "version": "1.0"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "org.postgresql:postgresql:9.3-1104-jdbc41",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.postgresql",
+            "module": "postgresql",
+            "version": "9.3-1104-jdbc41"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "log4j:log4j:1.2.17",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "log4j",
+            "module": "log4j",
+            "version": "1.2.17"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "com.sun.mail:javax.mail:1.6.2",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "com.sun.mail",
+            "module": "javax.mail",
+            "version": "1.6.2"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["javax.activation:activation:1.1"]
+        },
+        {
+          "id": "javax.activation:activation:1.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.activation",
+            "module": "activation",
+            "version": "1.1"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "javax.servlet:javax.servlet-api:4.0.1",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "javax.servlet",
+            "module": "javax.servlet-api",
+            "version": "4.0.1"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        },
+        {
+          "id": "junit:junit:4.12",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": true,
+          "isProject": false,
+          "coordinates": {
+            "group": "junit",
+            "module": "junit",
+            "version": "4.12"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": ["org.hamcrest:hamcrest-core:1.3"]
+        },
+        {
+          "id": "org.hamcrest:hamcrest-core:1.3",
+          "origin": {
+            "id": "project :",
+            "path": ":"
+          },
+          "isDirect": false,
+          "isProject": false,
+          "coordinates": {
+            "group": "org.hamcrest",
+            "module": "hamcrest-core",
+            "version": "1.3"
+          },
+          "repositoryUrl": "https://jcenter.bintray.com",
+          "dependencies": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 import { expect, test } from "vite-plus/test";
 import { join } from "node:path/posix";
 import { existsSync } from "node:fs";
-import { readFile, writeFile } from "node:fs/promises";
+import { readFile, readdir } from "node:fs/promises";
 import {
   bunlockExtractor,
   packageJsonExtractor,
@@ -52,17 +52,19 @@ const allExtractors: Extractor[] = [
   vcpkgExtractor,
 ];
 
-interface RepositoryConfig {
-  owner: string;
-  repository: string;
-  commit: string;
-  options?: Record<string, Partial<unknown>>;
-  javaVersion?: number;
-}
-
-// Load repository configuration
-const repositoriesConfig: RepositoryConfig[] = JSON.parse(
-  await readFile(join(import.meta.dirname, "repositories.json"), "utf8"),
+import {
+  codebaseIdFor,
+  sha256,
+  requireAcceptedCase,
+  validateAcceptanceLedger,
+  validateAcceptedBaseline,
+  type RepositoryConfig,
+} from "./integration-acceptance.ts";
+const configurationText = await readFile(join(import.meta.dirname, "repositories.json"), "utf8");
+const repositoriesConfig: RepositoryConfig[] = JSON.parse(configurationText);
+const acceptanceCases = validateAcceptanceLedger(
+  configurationText,
+  JSON.parse(await readFile(join(import.meta.dirname, "integration-migration.json"), "utf8")),
 );
 
 const globalOptionSchema = z.strictObject(
@@ -100,6 +102,32 @@ for (const config of repositoriesConfig) {
     repoName,
     async () => {
       const repoPath = join(repositoriesDir, repoName);
+      const acceptance = acceptanceCases.find((entry) => entry.id === repoName)!;
+      requireAcceptedCase(acceptance);
+      if (Array.isArray(acceptance.reviewEvidence)) throw new Error("Missing review evidence");
+      const snapshot = validateAcceptedBaseline(
+        acceptance,
+        await readFile(join(import.meta.dirname, "..", acceptance.baseline.path), "utf8"),
+        await readFile(
+          join(import.meta.dirname, "..", acceptance.reviewEvidence.review.path),
+          "utf8",
+        ),
+      );
+      if (
+        !existsSync(repoPath) ||
+        existsSync(join(repositoriesDir, `${repoName}.tar.gz`)) ||
+        (await readdir(repoPath)).every((name) => name === ".gitkeep")
+      ) {
+        throw new Error(
+          `Pinned repository input is missing or incomplete: ${repoName}@${config.commit}`,
+        );
+      }
+      for (const source of acceptance.reviewEvidence.source.files) {
+        const actualHash = sha256(await readFile(join(repoPath, source.path)));
+        if (actualHash !== source.sha256)
+          throw new Error(`Reviewed source hash mismatch: ${repoName}/${source.path}`);
+      }
+      const codebaseId = codebaseIdFor(config);
 
       if (config.options !== undefined) {
         // validate only
@@ -121,10 +149,9 @@ for (const config of repositoriesConfig) {
       }
 
       // Switch Java version if needed
-      let originalJavaHome: string | undefined;
+      const originalJavaHome = process.env.JAVA_HOME;
+      const originalPath = process.env.PATH;
       if (config.javaVersion) {
-        originalJavaHome = process.env.JAVA_HOME;
-
         const configuredPath = systemConfig.java?.[config.javaVersion.toString()];
         if (configuredPath) {
           const { exitCode } = await runCommand(["test", "-d", configuredPath]);
@@ -146,65 +173,25 @@ for (const config of repositoriesConfig) {
       try {
         const results = await Promise.all(
           allExtractors.map((extractor) =>
-            extractor.extract(repoPath, config.options?.[extractor.name]),
+            extractor.extract(repoPath, config.options?.[extractor.name], { codebaseId }),
           ),
         );
 
         // Merge all results
-        const mergedResult = mergeResults(results);
+        const mergedResult = mergeResults(results, { codebase: codebaseId });
 
-        // Normalize paths in evidence and definitionFile for consistent snapshots
-        for (const pkg of mergedResult.packages) {
-          pkg.evidence = pkg.evidence.map((e: string) =>
-            e.replace(repositoriesDir, "<repositories>"),
-          );
-        }
-
-        for (const subproject of mergedResult.subprojects) {
-          subproject.definitionFile = subproject.definitionFile.replace(
-            repositoriesDir,
-            "<repositories>",
-          );
-        }
-
-        for (const issue of mergedResult.issues) {
-          if (issue.file) {
-            issue.file = issue.file.replace(repositoriesDir, "<repositories>");
-          }
-        }
-
-        // Re-normalize after path replacement to ensure consistent ordering
         const normalizedResult = normalizeResult(mergedResult);
-
-        // Write snapshot to individual JSON file
-        const snapshotPath = join(import.meta.dirname, "__snapshots__", `${repoName}.json`);
-
-        const updateSnapshots = process.env.UPDATE_SNAPSHOTS === "1";
-        const snapshotExists = existsSync(snapshotPath);
-
-        if (updateSnapshots) {
-          // Update snapshot
-          await writeFile(snapshotPath, JSON.stringify(normalizedResult, null, 2) + "\n");
-          return; // No need to compare if we just updated it
-        } else if (!snapshotExists) {
-          // Create snapshot
-          await writeFile(snapshotPath, JSON.stringify(normalizedResult, null, 2) + "\n");
-          return; // No need to compare if we just created it
-        }
-
-        // Read and compare with snapshot
-        const snapshotContent = await readFile(snapshotPath, "utf8");
-        const snapshot = JSON.parse(snapshotContent);
-
         expect(normalizedResult).toEqual(snapshot);
       } finally {
         // Restore original Java version
-        if (config.javaVersion && originalJavaHome !== undefined) {
-          if (originalJavaHome) {
+        if (config.javaVersion) {
+          if (originalJavaHome !== undefined) {
             process.env.JAVA_HOME = originalJavaHome;
           } else {
             delete process.env.JAVA_HOME;
           }
+          if (originalPath !== undefined) process.env.PATH = originalPath;
+          else delete process.env.PATH;
         }
       }
     },
