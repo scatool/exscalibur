@@ -1,6 +1,6 @@
 import { mkdtemp, mkdir, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
-import { basename, join } from "node:path";
+import { basename, join, posix } from "node:path";
 import { expect, test } from "vite-plus/test";
 import { filesExtractor, scanAndMarkFiles } from "./index.ts";
 
@@ -20,7 +20,7 @@ test("scanAndMarkFiles works with legacy mark file contexts", async () => {
       [],
     );
 
-    expect(markedFiles).toEqual([`${dir}/package.json`]);
+    expect(markedFiles).toEqual([posix.join(dir, "package.json")]);
   } finally {
     await rm(dir, { recursive: true, force: true });
   }
