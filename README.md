@@ -22,10 +22,10 @@ Published packages, the CLI, and repository tests run on Node.js.
 
 ### Getting Started
 
-Install dependencies from the repository root:
+Install dependencies from the repository root and build to resolve alias imports:
 
 ```sh
-vp install
+vp install && vp run -r build
 ```
 
 Before pushing changes, make sure the codebase still passes all checks:
