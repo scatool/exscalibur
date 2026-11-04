@@ -1,11 +1,11 @@
 import { mkdtemp, mkdir, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
-import { basename, join } from "node:path";
+import { basename, join, posix } from "node:path";
 import { expect, test } from "vite-plus/test";
 import { filesExtractor, scanAndMarkFiles } from "./index.ts";
 
 test("scanAndMarkFiles works with legacy mark file contexts", async () => {
-  const dir = await mkdtemp(join(tmpdir(), "excalibur-legacy-context-"));
+  const dir = (await mkdtemp(join(tmpdir(), "excalibur-legacy-context-"))).replaceAll("\\", "/");
 
   try {
     await writeFile(join(dir, "package.json"), "");
@@ -20,14 +20,14 @@ test("scanAndMarkFiles works with legacy mark file contexts", async () => {
       [],
     );
 
-    expect(markedFiles).toEqual([join(dir, "package.json")]);
+    expect(markedFiles).toEqual([posix.join(dir, "package.json")]);
   } finally {
     await rm(dir, { recursive: true, force: true });
   }
 });
 
 test("filesExtractor applies global ignore patterns during file discovery", async () => {
-  const dir = await mkdtemp(join(tmpdir(), "excalibur-global-ignore-"));
+  const dir = (await mkdtemp(join(tmpdir(), "excalibur-global-ignore-"))).replaceAll("\\", "/");
 
   try {
     await mkdir(join(dir, "ignored"), { recursive: true });
