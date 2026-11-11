@@ -11,14 +11,14 @@ import {
   readNormalizedTextFile,
   scanAndMarkFiles,
 } from "@scatool/analyzer-core";
-import { stat } from "node:fs/promises";
+import { readdir, stat } from "node:fs/promises";
 import { basename, dirname, join } from "node:path/posix";
 import { parse as parseToml } from "smol-toml";
 import { createPypiPurl, normalizePythonName, parsePythonDependencyName } from "../python-utils.ts";
 import type { PythonOptions } from "../options.ts";
 import { optionSchema } from "../options.ts";
 
-const SUPPORTED_LOCKFILES = ["poetry.lock", "pdm.lock", "uv.lock", "Pipfile.lock"];
+const SUPPORTED_LOCKFILES = ["poetry.lock", "pdm.lock", "uv.lock", "Pipfile.lock", "pylock.toml"];
 
 interface PyProjectToml {
   project?: {
@@ -241,7 +241,16 @@ async function hasSupportedLockfile(dir: string): Promise<boolean> {
       return true;
     }
   }
-  return false;
+  return hasNamedPylockFile(dir);
+}
+
+/** Named lock files per the pylock spec, e.g. pylock.dev.toml. */
+async function hasNamedPylockFile(dir: string): Promise<boolean> {
+  try {
+    return (await readdir(dir)).some((name) => /^pylock\.[^.]+\.toml$/.test(name));
+  } catch {
+    return false;
+  }
 }
 
 async function pathExists(path: string): Promise<boolean> {
