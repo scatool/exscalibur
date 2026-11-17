@@ -14,7 +14,12 @@ import {
 import { readdir, stat } from "node:fs/promises";
 import { basename, dirname, join } from "node:path/posix";
 import { parse as parseToml } from "smol-toml";
-import { createPypiPurl, normalizePythonName, parsePythonDependencyName } from "../python-utils.ts";
+import {
+  PYLOCK_FILE_NAME,
+  createPypiPurl,
+  normalizePythonName,
+  parsePythonDependencyName,
+} from "../python-utils.ts";
 import type { PythonOptions } from "../options.ts";
 import { optionSchema } from "../options.ts";
 
@@ -247,7 +252,7 @@ async function hasSupportedLockfile(dir: string): Promise<boolean> {
 /** Named lock files per the pylock spec, e.g. pylock.dev.toml. */
 async function hasNamedPylockFile(dir: string): Promise<boolean> {
   try {
-    return (await readdir(dir)).some((name) => /^pylock\.[^.]+\.toml$/.test(name));
+    return (await readdir(dir)).some((name) => PYLOCK_FILE_NAME.test(name));
   } catch {
     return false;
   }
