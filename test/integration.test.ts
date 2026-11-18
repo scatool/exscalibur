@@ -17,6 +17,7 @@ import {
   pipfileLockExtractor,
   poetryLockExtractor,
   pdmLockExtractor,
+  pyLockExtractor,
   pyprojectTomlExtractor,
   requirementsTxtExtractor,
 } from "@scatool/analyzer-plugin-python";
@@ -46,6 +47,7 @@ const allExtractors: Extractor[] = [
   pipfileLockExtractor,
   poetryLockExtractor,
   pdmLockExtractor,
+  pyLockExtractor,
   pyprojectTomlExtractor,
   requirementsTxtExtractor,
   conanfileExtractor,

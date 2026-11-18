@@ -20,6 +20,13 @@ export function normalizePythonName(name: string): string {
 }
 
 /**
+ * Lock file names allowed by the pylock spec: pylock.toml or pylock.<name>.toml, where <name> contains no dots.
+ * Capture group 1 is <name> including its trailing dot, e.g. "dev." for pylock.dev.toml.
+ * https://packaging.python.org/en/latest/specifications/pylock-toml/#file-name
+ */
+export const PYLOCK_FILE_NAME = /^pylock\.([^.]+\.)?toml$/;
+
+/**
  * Parse a package name from a PEP 508-style dependency specification.
  */
 export function parsePythonDependencyName(spec: string): string | null {

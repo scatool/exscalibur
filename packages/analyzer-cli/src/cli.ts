@@ -20,6 +20,7 @@ import {
   pipfileLockExtractor,
   poetryLockExtractor,
   pdmLockExtractor,
+  pyLockExtractor,
   pyprojectTomlExtractor,
   requirementsTxtExtractor,
 } from "@scatool/analyzer-plugin-python";
@@ -191,6 +192,7 @@ Available extractors:
   pipfilelock       Extract from Pipfile.lock files
   poetrylock        Extract from poetry.lock files
   pdmlock           Extract from pdm.lock files
+  pylock            Extract from pylock.toml files
   pyprojecttoml     Extract declared dependencies from pyproject.toml files
   requirementstxt   Extract from requirements.txt files
   cargolock         Extract from Cargo.lock files
@@ -232,6 +234,7 @@ Examples:
         pipfileLockExtractor,
         poetryLockExtractor,
         pdmLockExtractor,
+        pyLockExtractor,
         pyprojectTomlExtractor,
         requirementsTxtExtractor,
         cargoLockExtractor,
