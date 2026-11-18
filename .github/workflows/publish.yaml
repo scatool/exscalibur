@@ -22,6 +22,7 @@ jobs:
 
       - uses: voidzero-dev/setup-vp@68f39c78aaf39be468cabd2afb09c162574c84af # v1.21.2
         with:
+          working-directory: ./excalibur
           node-version: "22"
           cache: true
 
