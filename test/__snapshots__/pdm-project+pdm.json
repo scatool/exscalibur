@@ -87,7 +87,8 @@
     {
       "purl": "pkg:pypi/certifi@2025.1.31",
       "evidence": [
-        "tests/fixtures/projects/demo/pdm.lock#14"
+        "tests/fixtures/projects/demo/pdm.lock#14",
+        "tests/fixtures/projects/demo/pylock.toml#11"
       ]
     },
     {
@@ -111,7 +112,8 @@
     {
       "purl": "pkg:pypi/chardet@3.0.4",
       "evidence": [
-        "tests/fixtures/projects/demo/pdm.lock#26"
+        "tests/fixtures/projects/demo/pdm.lock#26",
+        "tests/fixtures/projects/demo/pylock.toml#24"
       ]
     },
     {
@@ -129,7 +131,8 @@
     {
       "purl": "pkg:pypi/charset-normalizer@2.0.12",
       "evidence": [
-        "tests/fixtures/projects/demo/pdm.lock#37"
+        "tests/fixtures/projects/demo/pdm.lock#37",
+        "tests/fixtures/projects/demo/pylock.toml#36"
       ]
     },
     {
@@ -179,7 +182,8 @@
     {
       "purl": "pkg:pypi/colorama@0.3.9",
       "evidence": [
-        "tests/fixtures/projects/demo/pdm.lock#49"
+        "tests/fixtures/projects/demo/pdm.lock#49",
+        "tests/fixtures/projects/demo/pylock.toml#49"
       ]
     },
     {
@@ -327,7 +331,8 @@
     {
       "purl": "pkg:pypi/idna@2.7",
       "evidence": [
-        "tests/fixtures/projects/demo/pdm.lock#60"
+        "tests/fixtures/projects/demo/pdm.lock#60",
+        "tests/fixtures/projects/demo/pylock.toml#61"
       ]
     },
     {
@@ -654,7 +659,8 @@
     {
       "purl": "pkg:pypi/py@1.4.34",
       "evidence": [
-        "tests/fixtures/projects/demo/pdm.lock#70"
+        "tests/fixtures/projects/demo/pdm.lock#70",
+        "tests/fixtures/projects/demo/pylock.toml#73"
       ]
     },
     {
@@ -744,7 +750,8 @@
     {
       "purl": "pkg:pypi/pytest@3.2.5",
       "evidence": [
-        "tests/fixtures/projects/demo/pdm.lock#80"
+        "tests/fixtures/projects/demo/pdm.lock#80",
+        "tests/fixtures/projects/demo/pylock.toml#85"
       ]
     },
     {
@@ -801,7 +808,8 @@
     {
       "purl": "pkg:pypi/requests@2.27.1",
       "evidence": [
-        "tests/fixtures/projects/demo/pdm.lock#97"
+        "tests/fixtures/projects/demo/pdm.lock#97",
+        "tests/fixtures/projects/demo/pylock.toml#103"
       ]
     },
     {
@@ -831,7 +839,8 @@
     {
       "purl": "pkg:pypi/setuptools@39.2.0",
       "evidence": [
-        "tests/fixtures/projects/demo/pdm.lock#117"
+        "tests/fixtures/projects/demo/pdm.lock#117",
+        "tests/fixtures/projects/demo/pylock.toml#123"
       ]
     },
     {
@@ -928,7 +937,8 @@
     {
       "purl": "pkg:pypi/urllib3@1.26.20",
       "evidence": [
-        "tests/fixtures/projects/demo/pdm.lock#128"
+        "tests/fixtures/projects/demo/pdm.lock#128",
+        "tests/fixtures/projects/demo/pylock.toml#136"
       ]
     },
     {
@@ -1058,6 +1068,19 @@
           "scope": "dependencies",
           "packages": [
             "pkg:pypi/requests@2.26.0"
+          ]
+        }
+      ]
+    },
+    {
+      "purl": "pkg:pypi/demo@0.0.1",
+      "definitionFile": "tests/fixtures/projects/demo/pyproject.toml",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:pypi/chardet@3.0.4",
+            "pkg:pypi/idna@2.7"
           ]
         }
       ]

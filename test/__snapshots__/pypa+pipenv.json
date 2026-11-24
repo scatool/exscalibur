@@ -3,61 +3,71 @@
     {
       "purl": "pkg:pypi/alabaster@1.0.0",
       "evidence": [
-        "Pipfile.lock#27"
+        "Pipfile.lock#27",
+        "pylock.toml#18"
       ]
     },
     {
       "purl": "pkg:pypi/arpeggio@2.0.3",
       "evidence": [
-        "Pipfile.lock#35"
+        "Pipfile.lock#35",
+        "pylock.toml#28"
       ]
     },
     {
       "purl": "pkg:pypi/atomicwrites@1.4.1",
       "evidence": [
-        "Pipfile.lock#42"
+        "Pipfile.lock#42",
+        "pylock.toml#38"
       ]
     },
     {
       "purl": "pkg:pypi/attrs@25.4.0",
       "evidence": [
-        "Pipfile.lock#50"
+        "Pipfile.lock#50",
+        "pylock.toml#47"
       ]
     },
     {
       "purl": "pkg:pypi/babel@2.17.0",
       "evidence": [
-        "Pipfile.lock#58"
+        "Pipfile.lock#58",
+        "pylock.toml#57"
       ]
     },
     {
       "purl": "pkg:pypi/backports.tarfile@1.2.0",
       "evidence": [
-        "Pipfile.lock#66"
+        "Pipfile.lock#66",
+        "pylock.toml#67"
       ]
     },
     {
       "purl": "pkg:pypi/beautifulsoup4@4.14.3",
       "evidence": [
-        "Pipfile.lock#74"
+        "Pipfile.lock#74",
+        "pylock.toml#77"
       ]
     },
     {
       "purl": "pkg:pypi/black@24.3.0",
       "evidence": [
-        "Pipfile.lock#82"
+        "Pipfile.lock#82",
+        "pylock.toml#87"
       ]
     },
     {
       "purl": "pkg:pypi/bottle@0.13.4",
       "evidence": [
-        "Pipfile.lock#110"
+        "Pipfile.lock#110",
+        "pylock.toml#117"
       ]
     },
     {
       "purl": "pkg:pypi/build@1.3.0",
       "evidence": [
-        "Pipfile.lock#118"
+        "Pipfile.lock#118",
+        "pylock.toml#127"
       ]
     },
     {
@@ -67,29 +77,39 @@
       ]
     },
     {
+      "purl": "pkg:pypi/certifi@2022.9.24",
+      "evidence": [
+        "examples/pylock.toml#40"
+      ]
+    },
+    {
       "purl": "pkg:pypi/certifi@2025.11.12",
       "evidence": [
         "Pipfile.lock#127",
-        "examples/Pipfile.lock#19"
+        "examples/Pipfile.lock#19",
+        "pylock.toml#137"
       ]
     },
     {
       "purl": "pkg:pypi/cffi@2.0.0",
       "evidence": [
-        "Pipfile.lock#135"
+        "Pipfile.lock#135",
+        "pylock.toml#147"
       ]
     },
     {
       "purl": "pkg:pypi/cfgv@3.5.0",
       "evidence": [
-        "Pipfile.lock#225"
+        "Pipfile.lock#225",
+        "pylock.toml#239"
       ]
     },
     {
       "purl": "pkg:pypi/charset-normalizer@3.4.4",
       "evidence": [
         "Pipfile.lock#233",
-        "examples/Pipfile.lock#28"
+        "examples/Pipfile.lock#28",
+        "pylock.toml#249"
       ]
     },
     {
@@ -101,79 +121,98 @@
     {
       "purl": "pkg:pypi/click@8.0.3",
       "evidence": [
-        "Pipfile.lock#352"
+        "Pipfile.lock#352",
+        "pylock.toml#370"
       ]
     },
     {
       "purl": "pkg:pypi/colorama@0.4.6",
       "evidence": [
-        "Pipfile.lock#361"
+        "Pipfile.lock#361",
+        "pylock.toml#380"
       ]
     },
     {
       "purl": "pkg:pypi/coverage@7.13.0",
       "evidence": [
-        "Pipfile.lock#370"
+        "Pipfile.lock#370",
+        "pylock.toml#390"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/cryptography@40.0.0",
+      "evidence": [
+        "examples/pylock.toml#68"
       ]
     },
     {
       "purl": "pkg:pypi/cryptography@46.0.3",
       "evidence": [
-        "Pipfile.lock#471"
+        "Pipfile.lock#471",
+        "pylock.toml#490"
       ]
     },
     {
       "purl": "pkg:pypi/distlib@0.4.0",
       "evidence": [
-        "Pipfile.lock#531"
+        "Pipfile.lock#531",
+        "pylock.toml#552"
       ]
     },
     {
       "purl": "pkg:pypi/docutils@0.21.2",
       "evidence": [
-        "Pipfile.lock#538"
+        "Pipfile.lock#538",
+        "pylock.toml#562"
       ]
     },
     {
       "purl": "pkg:pypi/exceptiongroup@1.1.0",
       "evidence": [
-        "Pipfile.lock#546"
+        "Pipfile.lock#546",
+        "pylock.toml#572"
       ]
     },
     {
       "purl": "pkg:pypi/execnet@2.1.2",
       "evidence": [
-        "Pipfile.lock#555"
+        "Pipfile.lock#555",
+        "pylock.toml#582"
       ]
     },
     {
       "purl": "pkg:pypi/filelock@3.20.0",
       "evidence": [
-        "Pipfile.lock#563"
+        "Pipfile.lock#563",
+        "pylock.toml#592"
       ]
     },
     {
       "purl": "pkg:pypi/flake8@3.9.2",
       "evidence": [
-        "Pipfile.lock#571"
+        "Pipfile.lock#571",
+        "pylock.toml#602"
       ]
     },
     {
       "purl": "pkg:pypi/gunicorn@23.0.0",
       "evidence": [
-        "Pipfile.lock#579"
+        "Pipfile.lock#579",
+        "pylock.toml#622"
       ]
     },
     {
       "purl": "pkg:pypi/id@1.5.0",
       "evidence": [
-        "Pipfile.lock#587"
+        "Pipfile.lock#587",
+        "pylock.toml#632"
       ]
     },
     {
       "purl": "pkg:pypi/identify@2.6.15",
       "evidence": [
-        "Pipfile.lock#595"
+        "Pipfile.lock#595",
+        "pylock.toml#642"
       ]
     },
     {
@@ -186,7 +225,8 @@
       "purl": "pkg:pypi/idna@3.11",
       "evidence": [
         "Pipfile.lock#603",
-        "examples/Pipfile.lock#148"
+        "examples/Pipfile.lock#148",
+        "pylock.toml#652"
       ]
     },
     {
@@ -198,56 +238,65 @@
     {
       "purl": "pkg:pypi/imagesize@1.4.1",
       "evidence": [
-        "Pipfile.lock#611"
+        "Pipfile.lock#611",
+        "pylock.toml#662"
       ]
     },
     {
       "purl": "pkg:pypi/importlib-metadata@8.7.0",
       "evidence": [
-        "Pipfile.lock#619"
+        "Pipfile.lock#619",
+        "pylock.toml#672"
       ]
     },
     {
       "purl": "pkg:pypi/importlib-resources@6.5.2",
       "evidence": [
-        "Pipfile.lock#628"
+        "Pipfile.lock#628",
+        "pylock.toml#682"
       ]
     },
     {
       "purl": "pkg:pypi/iniconfig@2.3.0",
       "evidence": [
         "Pipfile.lock#636",
-        "examples/Pipfile.lock#177"
+        "examples/Pipfile.lock#177",
+        "pylock.toml#692"
       ]
     },
     {
       "purl": "pkg:pypi/invoke@2.2.1",
       "evidence": [
-        "Pipfile.lock#644"
+        "Pipfile.lock#644",
+        "pylock.toml#702"
       ]
     },
     {
       "purl": "pkg:pypi/jaraco.classes@3.4.0",
       "evidence": [
-        "Pipfile.lock#653"
+        "Pipfile.lock#653",
+        "pylock.toml#712"
       ]
     },
     {
       "purl": "pkg:pypi/jaraco.context@6.0.1",
       "evidence": [
-        "Pipfile.lock#661"
+        "Pipfile.lock#661",
+        "pylock.toml#722"
       ]
     },
     {
       "purl": "pkg:pypi/jaraco.functools@4.3.0",
       "evidence": [
-        "Pipfile.lock#669"
+        "Pipfile.lock#669",
+        "pylock.toml#732"
       ]
     },
     {
       "purl": "pkg:pypi/jeepney@0.9.0",
       "evidence": [
-        "Pipfile.lock#677"
+        "Pipfile.lock#677",
+        "pylock.toml#742"
       ]
     },
     {
@@ -259,13 +308,21 @@
     {
       "purl": "pkg:pypi/jinja2@3.1.6",
       "evidence": [
-        "Pipfile.lock#685"
+        "Pipfile.lock#685",
+        "pylock.toml#752"
       ]
     },
     {
       "purl": "pkg:pypi/keyring@25.7.0",
       "evidence": [
-        "Pipfile.lock#693"
+        "Pipfile.lock#693",
+        "pylock.toml#762"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/legacy-cgi",
+      "evidence": [
+        "pylock.toml#772"
       ]
     },
     {
@@ -277,13 +334,15 @@
     {
       "purl": "pkg:pypi/linkify-it-py@2.0.3",
       "evidence": [
-        "Pipfile.lock#705"
+        "Pipfile.lock#705",
+        "pylock.toml#777"
       ]
     },
     {
       "purl": "pkg:pypi/markdown-it-py@3.0.0",
       "evidence": [
-        "Pipfile.lock#713"
+        "Pipfile.lock#713",
+        "pylock.toml#787"
       ]
     },
     {
@@ -295,43 +354,50 @@
     {
       "purl": "pkg:pypi/markupsafe@3.0.3",
       "evidence": [
-        "Pipfile.lock#721"
+        "Pipfile.lock#721",
+        "pylock.toml#797"
       ]
     },
     {
       "purl": "pkg:pypi/mccabe@0.6.1",
       "evidence": [
-        "Pipfile.lock#816"
+        "Pipfile.lock#816",
+        "pylock.toml#894"
       ]
     },
     {
       "purl": "pkg:pypi/mdit-py-plugins@0.5.0",
       "evidence": [
-        "Pipfile.lock#823"
+        "Pipfile.lock#823",
+        "pylock.toml#904"
       ]
     },
     {
       "purl": "pkg:pypi/mdurl@0.1.2",
       "evidence": [
-        "Pipfile.lock#831"
+        "Pipfile.lock#831",
+        "pylock.toml#914"
       ]
     },
     {
       "purl": "pkg:pypi/mock@5.2.0",
       "evidence": [
-        "Pipfile.lock#839"
+        "Pipfile.lock#839",
+        "pylock.toml#924"
       ]
     },
     {
       "purl": "pkg:pypi/more-itertools@10.8.0",
       "evidence": [
-        "Pipfile.lock#847"
+        "Pipfile.lock#847",
+        "pylock.toml#934"
       ]
     },
     {
       "purl": "pkg:pypi/mypy-extensions@1.1.0",
       "evidence": [
-        "Pipfile.lock#855"
+        "Pipfile.lock#855",
+        "pylock.toml#944"
       ]
     },
     {
@@ -343,136 +409,164 @@
     {
       "purl": "pkg:pypi/myst-parser@4.0.1",
       "evidence": [
-        "Pipfile.lock#863"
+        "Pipfile.lock#863",
+        "pylock.toml#954"
       ]
     },
     {
       "purl": "pkg:pypi/nh3@0.3.2",
       "evidence": [
-        "Pipfile.lock#874"
+        "Pipfile.lock#874",
+        "pylock.toml#964"
       ]
     },
     {
       "purl": "pkg:pypi/nodeenv@1.9.1",
       "evidence": [
-        "Pipfile.lock#906"
+        "Pipfile.lock#906",
+        "pylock.toml#998"
       ]
     },
     {
       "purl": "pkg:pypi/packaging@25.0",
       "evidence": [
         "Pipfile.lock#914",
-        "examples/Pipfile.lock#185"
+        "examples/Pipfile.lock#185",
+        "pylock.toml#1008"
       ]
     },
     {
       "purl": "pkg:pypi/parse@1.20.2",
       "evidence": [
-        "Pipfile.lock#922"
+        "Pipfile.lock#922",
+        "pylock.toml#1018"
       ]
     },
     {
       "purl": "pkg:pypi/parver@0.5",
       "evidence": [
-        "Pipfile.lock#930"
+        "Pipfile.lock#930",
+        "pylock.toml#1028"
       ]
     },
     {
       "purl": "pkg:pypi/pathspec@0.12.1",
       "evidence": [
-        "Pipfile.lock#938"
+        "Pipfile.lock#938",
+        "pylock.toml#1038"
       ]
     },
     {
       "purl": "pkg:pypi/pip@25.3",
       "evidence": [
-        "Pipfile.lock#946"
+        "Pipfile.lock#946",
+        "pylock.toml#1048"
       ]
     },
     {
       "purl": "pkg:pypi/platformdirs@4.5.1",
       "evidence": [
-        "Pipfile.lock#963"
+        "Pipfile.lock#963",
+        "pylock.toml#1063"
       ]
     },
     {
       "purl": "pkg:pypi/pluggy@1.6.0",
       "evidence": [
         "Pipfile.lock#971",
-        "examples/Pipfile.lock#193"
+        "examples/Pipfile.lock#193",
+        "pylock.toml#1073"
       ]
     },
     {
       "purl": "pkg:pypi/pre-commit@2.21.0",
       "evidence": [
-        "Pipfile.lock#979"
+        "Pipfile.lock#979",
+        "pylock.toml#1083"
       ]
     },
     {
       "purl": "pkg:pypi/pycodestyle@2.7.0",
       "evidence": [
-        "Pipfile.lock#988"
+        "Pipfile.lock#988",
+        "pylock.toml#1093"
       ]
     },
     {
       "purl": "pkg:pypi/pycparser@2.23",
       "evidence": [
-        "Pipfile.lock#996"
+        "Pipfile.lock#996",
+        "pylock.toml#1103"
       ]
     },
     {
       "purl": "pkg:pypi/pyenchant@3.3.0",
       "evidence": [
-        "Pipfile.lock#1004"
+        "Pipfile.lock#1004",
+        "pylock.toml#1113"
       ]
     },
     {
       "purl": "pkg:pypi/pyflakes@2.3.1",
       "evidence": [
-        "Pipfile.lock#1014"
+        "Pipfile.lock#1014",
+        "pylock.toml#1125"
       ]
     },
     {
       "purl": "pkg:pypi/pygments@2.19.2",
       "evidence": [
         "Pipfile.lock#1022",
-        "examples/Pipfile.lock#201"
+        "examples/Pipfile.lock#201",
+        "pylock.toml#1135"
       ]
     },
     {
       "purl": "pkg:pypi/pypiserver@2.4.0",
       "evidence": [
-        "Pipfile.lock#1030"
+        "Pipfile.lock#1030",
+        "pylock.toml#1145"
       ]
     },
     {
       "purl": "pkg:pypi/pyproject-hooks@1.2.0",
       "evidence": [
-        "Pipfile.lock#1039"
+        "Pipfile.lock#1039",
+        "pylock.toml#1155"
       ]
     },
     {
       "purl": "pkg:pypi/pytest-cov@4.1.0",
       "evidence": [
-        "Pipfile.lock#1055"
+        "Pipfile.lock#1055",
+        "pylock.toml#1175"
       ]
     },
     {
       "purl": "pkg:pypi/pytest-rerunfailures@16.1",
       "evidence": [
-        "Pipfile.lock#1064"
+        "Pipfile.lock#1064",
+        "pylock.toml#612"
       ]
     },
     {
       "purl": "pkg:pypi/pytest-timeout@2.4.0",
       "evidence": [
-        "Pipfile.lock#1073"
+        "Pipfile.lock#1073",
+        "pylock.toml#1185"
       ]
     },
     {
       "purl": "pkg:pypi/pytest-xdist@3.8.0",
       "evidence": [
-        "Pipfile.lock#1081"
+        "Pipfile.lock#1081",
+        "pylock.toml#1195"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pytest@7.2.0",
+      "evidence": [
+        "examples/pylock.toml#53"
       ]
     },
     {
@@ -484,7 +578,8 @@
     {
       "purl": "pkg:pypi/pytest@9.0.2",
       "evidence": [
-        "Pipfile.lock#1047"
+        "Pipfile.lock#1047",
+        "pylock.toml#1165"
       ]
     },
     {
@@ -496,19 +591,22 @@
     {
       "purl": "pkg:pypi/pytz@2025.2",
       "evidence": [
-        "Pipfile.lock#17"
+        "Pipfile.lock#17",
+        "pylock.toml#9"
       ]
     },
     {
       "purl": "pkg:pypi/pyyaml@6.0.1",
       "evidence": [
-        "Pipfile.lock#1089"
+        "Pipfile.lock#1089",
+        "pylock.toml#1205"
       ]
     },
     {
       "purl": "pkg:pypi/readme-renderer@44.0",
       "evidence": [
-        "Pipfile.lock#1147"
+        "Pipfile.lock#1147",
+        "pylock.toml#1264"
       ]
     },
     {
@@ -520,44 +618,57 @@
     {
       "purl": "pkg:pypi/requests-toolbelt@1.0.0",
       "evidence": [
-        "Pipfile.lock#1164"
+        "Pipfile.lock#1164",
+        "pylock.toml#1284"
+      ]
+    },
+    {
+      "purl": "pkg:pypi/requests@2.28.1",
+      "evidence": [
+        "examples/pylock.toml#14"
       ]
     },
     {
       "purl": "pkg:pypi/requests@2.32.5",
       "evidence": [
         "Pipfile.lock#1155",
-        "examples/Pipfile.lock#157"
+        "examples/Pipfile.lock#157",
+        "pylock.toml#1274"
       ]
     },
     {
       "purl": "pkg:pypi/rfc3986@2.0.0",
       "evidence": [
-        "Pipfile.lock#1172"
+        "Pipfile.lock#1172",
+        "pylock.toml#1294"
       ]
     },
     {
       "purl": "pkg:pypi/rich@14.2.0",
       "evidence": [
-        "Pipfile.lock#1180"
+        "Pipfile.lock#1180",
+        "pylock.toml#1304"
       ]
     },
     {
       "purl": "pkg:pypi/secretstorage@3.5.0",
       "evidence": [
-        "Pipfile.lock#1188"
+        "Pipfile.lock#1188",
+        "pylock.toml#1314"
       ]
     },
     {
       "purl": "pkg:pypi/semver@3.0.4",
       "evidence": [
-        "Pipfile.lock#1196"
+        "Pipfile.lock#1196",
+        "pylock.toml#1324"
       ]
     },
     {
       "purl": "pkg:pypi/setuptools@80.9.0",
       "evidence": [
-        "Pipfile.lock#1205"
+        "Pipfile.lock#1205",
+        "pylock.toml#1334"
       ]
     },
     {
@@ -569,13 +680,15 @@
     {
       "purl": "pkg:pypi/snowballstemmer@3.0.1",
       "evidence": [
-        "Pipfile.lock#1213"
+        "Pipfile.lock#1213",
+        "pylock.toml#1344"
       ]
     },
     {
       "purl": "pkg:pypi/soupsieve@2.8",
       "evidence": [
-        "Pipfile.lock#1221"
+        "Pipfile.lock#1221",
+        "pylock.toml#1354"
       ]
     },
     {
@@ -594,7 +707,8 @@
     {
       "purl": "pkg:pypi/sphinx-click@4.4.0",
       "evidence": [
-        "Pipfile.lock#1238"
+        "Pipfile.lock#1238",
+        "pylock.toml#1374"
       ]
     },
     {
@@ -606,43 +720,50 @@
     {
       "purl": "pkg:pypi/sphinx@8.1.3",
       "evidence": [
-        "Pipfile.lock#1229"
+        "Pipfile.lock#1229",
+        "pylock.toml#1364"
       ]
     },
     {
       "purl": "pkg:pypi/sphinxcontrib-applehelp@2.0.0",
       "evidence": [
-        "Pipfile.lock#1247"
+        "Pipfile.lock#1247",
+        "pylock.toml#1384"
       ]
     },
     {
       "purl": "pkg:pypi/sphinxcontrib-devhelp@2.0.0",
       "evidence": [
-        "Pipfile.lock#1255"
+        "Pipfile.lock#1255",
+        "pylock.toml#1394"
       ]
     },
     {
       "purl": "pkg:pypi/sphinxcontrib-htmlhelp@2.1.0",
       "evidence": [
-        "Pipfile.lock#1263"
+        "Pipfile.lock#1263",
+        "pylock.toml#1404"
       ]
     },
     {
       "purl": "pkg:pypi/sphinxcontrib-jsmath@1.0.1",
       "evidence": [
-        "Pipfile.lock#1271"
+        "Pipfile.lock#1271",
+        "pylock.toml#1414"
       ]
     },
     {
       "purl": "pkg:pypi/sphinxcontrib-qthelp@2.0.0",
       "evidence": [
-        "Pipfile.lock#1279"
+        "Pipfile.lock#1279",
+        "pylock.toml#1424"
       ]
     },
     {
       "purl": "pkg:pypi/sphinxcontrib-serializinghtml@2.0.0",
       "evidence": [
-        "Pipfile.lock#1287"
+        "Pipfile.lock#1287",
+        "pylock.toml#1434"
       ]
     },
     {
@@ -654,7 +775,8 @@
     {
       "purl": "pkg:pypi/sphinxcontrib-spelling@7.7.0",
       "evidence": [
-        "Pipfile.lock#1295"
+        "Pipfile.lock#1295",
+        "pylock.toml#1444"
       ]
     },
     {
@@ -666,37 +788,43 @@
     {
       "purl": "pkg:pypi/stdeb@0.11.0",
       "evidence": [
-        "Pipfile.lock#1304"
+        "Pipfile.lock#1304",
+        "pylock.toml#1454"
       ]
     },
     {
       "purl": "pkg:pypi/tomli@2.3.0",
       "evidence": [
-        "Pipfile.lock#1312"
+        "Pipfile.lock#1312",
+        "pylock.toml#1464"
       ]
     },
     {
       "purl": "pkg:pypi/towncrier@25.8.0",
       "evidence": [
-        "Pipfile.lock#1361"
+        "Pipfile.lock#1361",
+        "pylock.toml#1514"
       ]
     },
     {
       "purl": "pkg:pypi/twine@6.2.0",
       "evidence": [
-        "Pipfile.lock#1369"
+        "Pipfile.lock#1369",
+        "pylock.toml#1524"
       ]
     },
     {
       "purl": "pkg:pypi/typing-extensions@4.15.0",
       "evidence": [
-        "Pipfile.lock#1378"
+        "Pipfile.lock#1378",
+        "pylock.toml#1534"
       ]
     },
     {
       "purl": "pkg:pypi/uc-micro-py@1.0.3",
       "evidence": [
-        "Pipfile.lock#1387"
+        "Pipfile.lock#1387",
+        "pylock.toml#1544"
       ]
     },
     {
@@ -706,9 +834,16 @@
       ]
     },
     {
+      "purl": "pkg:pypi/urllib3@1.26.12",
+      "evidence": [
+        "examples/pylock.toml#27"
+      ]
+    },
+    {
       "purl": "pkg:pypi/urllib3@2.6.1",
       "evidence": [
-        "Pipfile.lock#1395"
+        "Pipfile.lock#1395",
+        "pylock.toml#1554"
       ]
     },
     {
@@ -732,23 +867,57 @@
     {
       "purl": "pkg:pypi/virtualenv@20.35.4",
       "evidence": [
-        "Pipfile.lock#1404"
+        "Pipfile.lock#1404",
+        "pylock.toml#1564"
       ]
     },
     {
       "purl": "pkg:pypi/waitress@3.0.2",
       "evidence": [
-        "Pipfile.lock#1412"
+        "Pipfile.lock#1412",
+        "pylock.toml#1574"
       ]
     },
     {
       "purl": "pkg:pypi/zipp@3.21.0",
       "evidence": [
-        "Pipfile.lock#1421"
+        "Pipfile.lock#1421",
+        "pylock.toml#1584"
       ]
     }
   ],
   "subprojects": [
+    {
+      "purl": "pkg:pypi/examples",
+      "definitionFile": "examples/pylock.toml",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:pypi/certifi@2022.9.24",
+            "pkg:pypi/cryptography@40.0.0",
+            "pkg:pypi/pytest@7.2.0",
+            "pkg:pypi/requests@2.28.1",
+            "pkg:pypi/urllib3@1.26.12"
+          ]
+        }
+      ]
+    },
+    {
+      "purl": "pkg:pypi/pipenv",
+      "definitionFile": "pyproject.toml",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:pypi/certifi@2025.11.12",
+            "pkg:pypi/packaging@25.0",
+            "pkg:pypi/setuptools@80.9.0",
+            "pkg:pypi/virtualenv@20.35.4"
+          ]
+        }
+      ]
+    },
     {
       "purl": "pkg:pypi/pypi@0.0.0",
       "definitionFile": "Pipfile",
