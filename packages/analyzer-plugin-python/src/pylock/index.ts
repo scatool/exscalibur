@@ -12,7 +12,6 @@ import {
   readNormalizedTextFile,
   readTextFile,
   scanAndMarkFiles,
-  scanFiles,
 } from "@scatool/analyzer-core";
 import { basename, dirname, join } from "node:path/posix";
 import { parse as parseToml } from "smol-toml";
@@ -136,6 +135,9 @@ interface HatchEnv {
   "lock-filename"?: string;
 }
 
+/** Marked lockfile -> all lockfiles in its directory accepted by markFiles, consumed by extractFile. */
+const siblingLockfiles = new Map<string, string[]>();
+
 export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>({
   name: "pylock",
   version: 1,
@@ -148,15 +150,25 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
     await scanAndMarkFiles(collector, codebase, "**/pylock.toml", options.ignore);
     await scanAndMarkFiles(collector, codebase, "**/pylock.*.toml", options.ignore);
 
-    const byDir = new Map<string, string>(); // holds one lockfile per directory, siblings excluded (discovered by extractFile though)
+    const byDir = new Map<string, string[]>(); // all accepted lockfiles per directory
     for (const file of found.sort()) {
       // The globs are broader than the spec, e.g. they also match pylock.a.b.toml
       if (!PYLOCK_FILE_NAME.test(basename(file))) continue;
-      if (!byDir.has(dirname(file))) byDir.set(dirname(file), file);
+      const siblings = byDir.get(dirname(file)) ?? [];
+      siblings.push(file);
+      byDir.set(dirname(file), siblings);
     }
-    for (const file of byDir.values()) this.markFile(file);
+    for (const [first, ...rest] of byDir.values()) {
+      // pylock.toml first, matching the order of the default lockfile before named ones
+      const siblings = [first!, ...rest].sort(
+        (a, b) => Number(basename(b) === "pylock.toml") - Number(basename(a) === "pylock.toml"),
+      );
+      // extractFile reuses the accepted siblings, so ignore patterns apply exactly as during discovery
+      siblingLockfiles.set(first!, siblings);
+      this.markFile(first!);
+    }
   },
-  extractFile: async (file: string, options: PythonOptions): Promise<AnalyzerResult> => {
+  extractFile: async (file: string): Promise<AnalyzerResult> => {
     const dir = dirname(file);
     const { packageMap, relationshipsMap } = initializeExtractionMaps();
     const subprojects: Subproject[] = [];
@@ -179,11 +191,9 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
       ? normalizePythonName(pyproject.project.name)
       : undefined;
 
-    // process all (potentially existing) sibling lockfiles of this lockfile
-    const lockfiles = [
-      ...(await scanFiles(dir, "pylock.toml", options.ignore)),
-      ...(await scanFiles(dir, "pylock.*.toml", options.ignore)),
-    ].filter((lockfilePath) => PYLOCK_FILE_NAME.test(basename(lockfilePath)));
+    // process all sibling lockfiles accepted during discovery (including this lockfile)
+    const lockfiles = siblingLockfiles.get(file) ?? [file];
+    siblingLockfiles.delete(file);
 
     // Scope name -> purls, merged across all lockfiles
     const scopeMap = new Map<string, Set<string>>();
