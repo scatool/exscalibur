@@ -1,0 +1,19 @@
+lock-version = "1.0"
+created-by = "uv"
+requires-python = ">=3.12.7"
+
+[[packages]]
+name = "idna"
+version = "3.20"
+sdist = { url = "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz", upload-time = 2026-09-17T14:11:04Z, size = 216463, hashes = { sha256 = "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44" } }
+wheels = [
+  { url = "https://files.pythonhosted.org/packages/58/a2/bb081bab032533a855d44de1d56f8e8426114ff1ba5d1f07a438a0a654f8/idna-3.20-py3-none-any.whl", upload-time = 2026-09-17T14:11:03Z, size = 69583, hashes = { sha256 = "ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c" } },
+]
+
+[[packages]]
+name = "six"
+version = "1.17.0"
+sdist = { url = "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz", upload-time = 2024-12-04T17:35:28Z, size = 34031, hashes = { sha256 = "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81" } }
+wheels = [
+  { url = "https://files.pythonhosted.org/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl", upload-time = 2024-12-04T17:35:26Z, size = 11050, hashes = { sha256 = "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274" } },
+]

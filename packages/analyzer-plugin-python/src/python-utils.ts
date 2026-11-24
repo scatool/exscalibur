@@ -20,6 +20,15 @@ export function normalizePythonName(name: string): string {
 }
 
 /**
+ * Comparison key for Python package names: lowercase, every run of "-", "_" and "." becomes one "-".
+ * https://packaging.python.org/en/latest/specifications/name-normalization/
+ * Only for matching names, not for building purls (use normalizePythonName / createPypiPurl there).
+ */
+export function pythonNameKey(name: string): string {
+  return name.toLowerCase().replace(/[-_.]+/g, "-");
+}
+
+/**
  * Lock file names allowed by the pylock spec: pylock.toml or pylock.<name>.toml, where <name> contains no dots.
  * Capture group 1 is <name> including its trailing dot, e.g. "dev." for pylock.dev.toml.
  * https://packaging.python.org/en/latest/specifications/pylock-toml/#file-name

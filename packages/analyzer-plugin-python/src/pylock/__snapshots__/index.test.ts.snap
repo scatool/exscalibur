@@ -42,6 +42,70 @@ exports[`basic 1`] = `
 }
 `;
 
+exports[`hatch-inheritance 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "pylock.docs.toml#6",
+        "pylock.docsext.toml#6",
+      ],
+      "purl": "pkg:pypi/certifi@2026.11.20",
+    },
+    {
+      "evidence": [
+        "pylock.dev.toml#6",
+        "pylock.docsext.toml#14",
+      ],
+      "purl": "pkg:pypi/idna@3.20",
+    },
+    {
+      "evidence": [
+        "pylock.dev.toml#14",
+        "pylock.toml#6",
+      ],
+      "purl": "pkg:pypi/six@1.17.0",
+    },
+  ],
+  "relationships": [],
+  "subprojects": [
+    {
+      "definitionFile": "pyproject.toml",
+      "purl": "pkg:pypi/hatch-inheritance@0.0.1",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:pypi/six@1.17.0",
+          ],
+          "scope": "env.default",
+        },
+        {
+          "packages": [
+            "pkg:pypi/idna@3.20",
+            "pkg:pypi/six@1.17.0",
+          ],
+          "scope": "env.dev",
+        },
+        {
+          "packages": [
+            "pkg:pypi/certifi@2026.11.20",
+          ],
+          "scope": "env.docs",
+        },
+        {
+          "packages": [
+            "pkg:pypi/certifi@2026.11.20",
+            "pkg:pypi/idna@3.20",
+          ],
+          "scope": "env.docsext",
+        },
+      ],
+    },
+  ],
+}
+`;
+
 exports[`multiple-envs 1`] = `
 {
   "issues": [],
@@ -164,6 +228,95 @@ exports[`multiple-envs 1`] = `
 }
 `;
 
+exports[`name-normalization 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "pylock.toml#6",
+      ],
+      "purl": "pkg:pypi/six@1.17.0",
+    },
+    {
+      "evidence": [
+        "pylock.toml#14",
+      ],
+      "purl": "pkg:pypi/zope-interface@8.7",
+    },
+  ],
+  "relationships": [],
+  "subprojects": [
+    {
+      "definitionFile": "pyproject.toml",
+      "purl": "pkg:pypi/my.project@0.0.1",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:pypi/six@1.17.0",
+            "pkg:pypi/zope-interface@8.7",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
+
+exports[`optional-and-groups 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "pylock.toml#6",
+      ],
+      "purl": "pkg:pypi/certifi@2026.11.20",
+    },
+    {
+      "evidence": [
+        "pylock.toml#14",
+      ],
+      "purl": "pkg:pypi/idna@3.20",
+    },
+    {
+      "evidence": [
+        "pylock.toml#22",
+      ],
+      "purl": "pkg:pypi/six@1.17.0",
+    },
+  ],
+  "relationships": [],
+  "subprojects": [
+    {
+      "definitionFile": "pyproject.toml",
+      "purl": "pkg:pypi/optional-and-groups@0.0.1",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:pypi/six@1.17.0",
+          ],
+          "scope": "dependencies",
+        },
+        {
+          "packages": [
+            "pkg:pypi/certifi@2026.11.20",
+          ],
+          "scope": "group.docs",
+        },
+        {
+          "packages": [
+            "pkg:pypi/idna@3.20",
+          ],
+          "scope": "optional.test",
+        },
+      ],
+    },
+  ],
+}
+`;
+
 exports[`pylock-only-with-dependencies 1`] = `
 {
   "issues": [],
@@ -260,6 +413,35 @@ exports[`self-entry 1`] = `
             "pkg:pypi/requests@2.34.2",
           ],
           "scope": "dependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
+
+exports[`self-name-released 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "pylock.toml#6",
+      ],
+      "purl": "pkg:pypi/six@1.17.0",
+    },
+  ],
+  "relationships": [],
+  "subprojects": [
+    {
+      "definitionFile": "pyproject.toml",
+      "purl": "pkg:pypi/six@9.9.9",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:pypi/six@1.17.0",
+          ],
+          "scope": "env.default",
         },
       ],
     },

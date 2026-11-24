@@ -18,8 +18,8 @@ import { parse as parseToml } from "smol-toml";
 import {
   PYLOCK_FILE_NAME,
   createPypiPurl,
-  normalizePythonName,
   parsePythonDependencyName,
+  pythonNameKey,
 } from "../python-utils.ts";
 import type { PythonOptions } from "../options.ts";
 import { optionSchema } from "../options.ts";
@@ -114,6 +114,7 @@ interface PyProject {
     dependencies?: string[];
     "optional-dependencies"?: Record<string, string[]>;
   };
+  "dependency-groups"?: Record<string, unknown[]>; // PEP 735: specs or { include-group = "..." } tables
   tool?: {
     hatch?: {
       envs?: Record<string, HatchEnv>; // [tool.hatch.envs.<name>]
@@ -187,9 +188,7 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
     const projectName = pyproject?.project?.name || basename(dir) || "unknown";
     const projectVersion = pyproject?.project?.version ?? null;
     // The project itself may appear as a [[packages]] entry, it should be skipped as dependency or relationship evidence
-    const selfName = pyproject?.project?.name
-      ? normalizePythonName(pyproject.project.name)
-      : undefined;
+    const selfName = pyproject?.project?.name ? pythonNameKey(pyproject.project.name) : undefined;
 
     // process all sibling lockfiles accepted during discovery (including this lockfile)
     const lockfiles = siblingLockfiles.get(file) ?? [file];
@@ -223,6 +222,29 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
         continue;
       }
 
+      // Spec: unsupported major versions must raise an error, unsupported minor versions should warn; supported: 1.0
+      const lockVersion = lockfile["lock-version"];
+      const [major, minor] = String(lockVersion ?? "")
+        .split(".")
+        .map(Number);
+      if (major !== 1) {
+        issues.push({
+          code: "pylock.unsupported_lock_version",
+          severity: "ERROR",
+          message: `Unsupported lock-version ${JSON.stringify(lockVersion)}, expected 1.x`,
+          file: lockfilePath,
+        });
+        continue;
+      }
+      if (minor! > 0) {
+        issues.push({
+          code: "pylock.unsupported_lock_version",
+          severity: "WARNING",
+          message: `lock-version ${JSON.stringify(lockVersion)} is newer than the supported 1.0, extracting anyway`,
+          file: lockfilePath,
+        });
+      }
+
       const packages = lockfile.packages ?? [];
       // Validate required fields before adding anything, so a malformed lockfile neither aborts its siblings nor leaves partial results
       if (!Array.isArray(packages) || packages.some((pkg) => typeof pkg?.name !== "string")) {
@@ -238,8 +260,11 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
 
       // Set of all purls given by the packages and their versions
       const purls = packages.map((pkg) => createPypiPurl(pkg.name, pkg.version));
-      // Marks the entry of the project itself, which is skipped as package and relationship endpoint
-      const isSelf = packages.map((pkg) => normalizePythonName(pkg.name) === selfName);
+      // Marks the entry of the project itself, which is skipped as package and relationship endpoint.
+      // A released distribution of the same name (e.g. pinned in a detached env) is not the project itself.
+      const isSelf = packages.map(
+        (pkg) => pythonNameKey(pkg.name) === selfName && isLocalEntry(pkg),
+      );
       // Map of each normalized name to all of its purls in this lockfile (since a name can appear multiple times)
       const purlsByName = new Map<string, string[]>();
 
@@ -251,10 +276,10 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
         allPurls.add(purl);
 
         // Build purlsByName map
-        const normalizedName = normalizePythonName(pkg.name);
-        const existing = purlsByName.get(normalizedName) ?? [];
+        const nameKey = pythonNameKey(pkg.name);
+        const existing = purlsByName.get(nameKey) ?? [];
         if (!existing.includes(purl)) existing.push(purl);
-        purlsByName.set(normalizedName, existing);
+        purlsByName.set(nameKey, existing);
 
         const lineNumber = packageLines[index];
         if (lineNumber !== undefined) {
@@ -293,7 +318,7 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
         for (const spec of specs) {
           const name = parsePythonDependencyName(spec);
           if (!name) continue;
-          for (const purl of purlsByName.get(normalizePythonName(name)) ?? []) {
+          for (const purl of purlsByName.get(pythonNameKey(name)) ?? []) {
             resolved.add(purl);
           }
         }
@@ -301,11 +326,32 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
       };
 
       const envName = findHatchEnvName(lockfilePath, pyproject);
-      const env = envName ? pyproject?.tool?.hatch?.envs?.[envName] : undefined;
+      // Effective config including inherited options, as Hatch installs it
+      const env = envName
+        ? resolveHatchEnv(pyproject?.tool?.hatch?.envs ?? {}, envName)
+        : undefined;
 
       // Project dependencies, unless the env doesn't install the project
       if (!env?.detached && pyproject?.project?.dependencies) {
         addToScope("dependencies", resolveSpecs(pyproject.project.dependencies));
+      }
+
+      // Optional dependencies (extras), unless the env doesn't install the project; scope names match pyprojecttoml
+      if (!env?.detached) {
+        for (const [extra, specs] of Object.entries(
+          pyproject?.project?.["optional-dependencies"] ?? {},
+        )) {
+          addToScope(`optional.${extra}`, resolveSpecs(specs));
+        }
+      }
+
+      // PEP 735 dependency groups, independent of the project install; scope names match pyprojecttoml
+      for (const [group, specs] of Object.entries(pyproject?.["dependency-groups"] ?? {})) {
+        const stringSpecs = specs.filter((spec): spec is string => typeof spec === "string"); // skips include-group
+        addToScope(
+          group === "dev" ? "dev-dependencies" : `group.${group}`,
+          resolveSpecs(stringSpecs),
+        );
       }
 
       // Dependencies of the Hatch environment this lockfile belongs to
@@ -360,6 +406,36 @@ function findHatchEnvName(file: string, pyproject: PyProject | null): string | u
 }
 
 /**
+ * Effective configuration of a Hatch environment.
+ * Environments inherit all options from their `template` (default: "default"), recursively; own options replace
+ * inherited ones. A template naming the environment itself disables inheritance.
+ * https://hatch.pypa.io/latest/config/environment/overview/#inheritance
+ */
+function resolveHatchEnv(
+  envs: Record<string, HatchEnv>,
+  name: string,
+  seen = new Set<string>(),
+): HatchEnv | undefined {
+  const env = envs[name];
+  if (!env) return undefined;
+  const template = env.template ?? "default";
+  if (template === name || seen.has(name)) return env; // no inheritance, or a template cycle
+  seen.add(name);
+  return { ...resolveHatchEnv(envs, template, seen), ...env };
+}
+
+/**
+ * Whether a [[packages]] entry can be the local project: it has no released distribution (sdist, wheels, archive)
+ * and no VCS source. Covers `directory` entries and generators writing the project without any source (e.g. pipenv).
+ */
+function isLocalEntry(pkg: PackagesEntry): boolean {
+  return !pkg.sdist && !pkg.wheels && !pkg.archive && !pkg.vcs;
+}
+
+/** A [[packages]] header, allowing whitespace inside the brackets and a trailing comment. */
+const PACKAGES_HEADER = /^\[\[\s*packages\s*\]\]\s*(#.*)?$/;
+
+/**
  * Line number of each [[packages]] entry's `name` key, by package index.
  * Skips `name` keys of sub-tables like [[packages.dependencies]].
  * Avoids using the first `name = "package-name"` match, since this pattern can occur several times for the same name
@@ -373,7 +449,7 @@ function findPackageLineNumbers(lines: string[]): (number | undefined)[] {
     const trimmed = lines[i]!.trim();
 
     if (trimmed.startsWith("[")) {
-      inPackageTable = trimmed === "[[packages]]";
+      inPackageTable = PACKAGES_HEADER.test(trimmed);
       if (inPackageTable) result.push(undefined);
       continue;
     }
@@ -394,7 +470,7 @@ function matchesDependency(candidate: PackagesEntry, dependency: PackagesDepende
   return Object.entries(dependency).every(([key, value]) => {
     const candidateValue = candidate[key as keyof PackagesEntry];
     if (key === "name" && typeof value === "string" && typeof candidateValue === "string") {
-      return normalizePythonName(value) === normalizePythonName(candidateValue);
+      return pythonNameKey(value) === pythonNameKey(candidateValue);
     }
     return isSubset(value, candidateValue);
   });

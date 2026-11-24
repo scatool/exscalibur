@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "hatch-inheritance"
+version = "0.0.1"
+requires-python = ">=3.9"
+dependencies = []
+
+[tool.hatch.envs.default]
+locked = true
+locker = "uv"
+installer = "uv"
+detached = true
+dependencies = ["six"]
+
+# Inherits from default: locked/locker/installer/detached and dependencies = ["six"]
+[tool.hatch.envs.dev]
+extra-dependencies = ["idna"]
+
+# Inherits from default, but replaces its dependencies
+[tool.hatch.envs.docs]
+dependencies = ["certifi"]
+
+# Inherits from docs (and transitively default)
+[tool.hatch.envs.docsext]
+template = "docs"
+extra-dependencies = ["idna"]
