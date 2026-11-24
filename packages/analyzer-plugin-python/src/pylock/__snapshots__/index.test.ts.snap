@@ -213,3 +213,56 @@ exports[`pylock-only-with-dependencies 1`] = `
   ],
 }
 `;
+
+exports[`self-entry 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "pylock.toml#9",
+      ],
+      "purl": "pkg:pypi/certifi@2026.11.20",
+    },
+    {
+      "evidence": [
+        "pylock.toml#20",
+      ],
+      "purl": "pkg:pypi/charset-normalizer@3.5.3",
+    },
+    {
+      "evidence": [
+        "pylock.toml#201",
+      ],
+      "purl": "pkg:pypi/idna@3.20",
+    },
+    {
+      "evidence": [
+        "pylock.toml#217",
+      ],
+      "purl": "pkg:pypi/requests@2.34.2",
+    },
+    {
+      "evidence": [
+        "pylock.toml#228",
+      ],
+      "purl": "pkg:pypi/urllib3@2.8.0",
+    },
+  ],
+  "relationships": [],
+  "subprojects": [
+    {
+      "definitionFile": "pyproject.toml",
+      "purl": "pkg:pypi/my-project@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:pypi/requests@2.34.2",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+  ],
+}
+`;

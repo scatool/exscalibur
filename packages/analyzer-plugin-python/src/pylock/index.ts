@@ -174,6 +174,10 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
     // Fallback to directory name if no project name found
     const projectName = pyproject?.project?.name || basename(dir) || "unknown";
     const projectVersion = pyproject?.project?.version ?? null;
+    // The project itself may appear as a [[packages]] entry, it should be skipped as dependency or relationship evidence
+    const selfName = pyproject?.project?.name
+      ? normalizePythonName(pyproject.project.name)
+      : undefined;
 
     // process all (potentially existing) sibling lockfiles of this lockfile
     const lockfiles = [
@@ -224,11 +228,14 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
 
       // Set of all purls given by the packages and their versions
       const purls = packages.map((pkg) => createPypiPurl(pkg.name, pkg.version));
+      // Marks the entry of the project itself, which is skipped as package and relationship endpoint
+      const isSelf = packages.map((pkg) => normalizePythonName(pkg.name) === selfName);
       // Map of each normalized name to all of its purls in this lockfile (since a name can appear multiple times)
       const purlsByName = new Map<string, string[]>();
 
       // Process all packages in the lockfile
       packages.forEach((pkg, index) => {
+        if (isSelf[index]) return;
         const purl = purls[index]!;
         ensurePackageExists(packageMap, purl);
         allPurls.add(purl);
@@ -247,6 +254,7 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
 
       // Add relationships: each dependency entry identifies exactly one other package entry by key-by-key comparison
       packages.forEach((pkg, index) => {
+        if (isSelf[index]) return;
         for (const dependency of pkg.dependencies ?? []) {
           // Set of packages that the dependency relates to
           const matches = packages
@@ -254,7 +262,10 @@ export const extractor: Extractor<PythonOptions> = filesExtractor<PythonOptions>
             .filter(({ candidate }) => matchesDependency(candidate, dependency));
 
           if (matches.length === 1) {
-            addRelationship(relationshipsMap, purls[index]!, purls[matches[0]!.candidateIndex]!);
+            // Matching runs against all entries, so a dependency on the project resolves without a warning but adds no edge
+            if (!isSelf[matches[0]!.candidateIndex]) {
+              addRelationship(relationshipsMap, purls[index]!, purls[matches[0]!.candidateIndex]!);
+            }
           } else {
             issues.push({
               code: "pylock.unresolved_dependency",
