@@ -915,6 +915,28 @@
             "pkg:pypi/setuptools@80.9.0",
             "pkg:pypi/virtualenv@20.35.4"
           ]
+        },
+        {
+          "scope": "optional.dev",
+          "packages": [
+            "pkg:pypi/beautifulsoup4@4.14.3",
+            "pkg:pypi/black@24.3.0",
+            "pkg:pypi/flake8@3.9.2",
+            "pkg:pypi/invoke@2.2.1",
+            "pkg:pypi/parver@0.5",
+            "pkg:pypi/sphinx@8.1.3",
+            "pkg:pypi/towncrier@25.8.0"
+          ]
+        },
+        {
+          "scope": "optional.tests",
+          "packages": [
+            "pkg:pypi/mock@5.2.0",
+            "pkg:pypi/pytest-rerunfailures@16.1",
+            "pkg:pypi/pytest-timeout@2.4.0",
+            "pkg:pypi/pytest-xdist@3.8.0",
+            "pkg:pypi/pytest@9.0.2"
+          ]
         }
       ]
     },

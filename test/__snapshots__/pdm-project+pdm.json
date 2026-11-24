@@ -1095,6 +1095,18 @@
             "pkg:pypi/chardet@3.0.4",
             "pkg:pypi/idna@2.7"
           ]
+        },
+        {
+          "scope": "optional.security",
+          "packages": [
+            "pkg:pypi/requests@2.27.1"
+          ]
+        },
+        {
+          "scope": "optional.tests",
+          "packages": [
+            "pkg:pypi/pytest@3.2.5"
+          ]
         }
       ]
     },
