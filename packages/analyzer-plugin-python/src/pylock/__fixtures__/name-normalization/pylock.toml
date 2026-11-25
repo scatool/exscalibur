@@ -1,0 +1,19 @@
+lock-version = "1.0"
+created-by = "uv"
+requires-python = ">=3.12.7"
+
+[[packages]]
+name = "six"
+version = "1.17.0"
+sdist = { url = "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz", upload-time = 2024-12-04T17:35:28Z, size = 34031, hashes = { sha256 = "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81" } }
+wheels = [
+  { url = "https://files.pythonhosted.org/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl", upload-time = 2024-12-04T17:35:26Z, size = 11050, hashes = { sha256 = "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274" } },
+]
+
+[[packages]]
+name = "zope-interface"
+version = "8.7"
+sdist = { url = "https://files.pythonhosted.org/packages/de/ff/a1f0021a26033da0df223fd05a7455d6d2881b67daf2c6dc897b4fe0a427/zope_interface-8.7.tar.gz", upload-time = 2026-10-15T07:25:14Z, size = 266343, hashes = { sha256 = "0b47b62e8d0d99b24bcdd32f4f2120425e5019c3bee2ad69a0e1d75737487a96" } }
+wheels = [
+  { url = "https://files.pythonhosted.org/packages/c2/54/5311f7d2605c3693b1c729c2c3b171c60b11a6126a5f41dc44047e7493fb/zope_interface-8.7-cp312-cp312-win_amd64.whl", upload-time = 2026-10-15T07:24:06Z, size = 220958, hashes = { sha256 = "68acf0f25707f9c6277552a3d10114405235385ea1f66bffc89612e0b84f6edd" } },
+]

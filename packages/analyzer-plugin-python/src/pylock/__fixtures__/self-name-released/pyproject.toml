@@ -1,0 +1,17 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "six"
+version = "9.9.9"
+requires-python = ">=3.9"
+dependencies = []
+
+# Detached: the local project is not installed, the lockfile contains the released six from PyPI
+[tool.hatch.envs.default]
+locked = true
+locker = "uv"
+installer = "uv"
+detached = true
+dependencies = ["six==1.17.0"]

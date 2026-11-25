@@ -1,0 +1,19 @@
+lock-version = "1.0"
+created-by = "uv"
+requires-python = ">=3.12.7"
+
+[[packages]]
+name = "certifi"
+version = "2026.11.20"
+sdist = { url = "https://files.pythonhosted.org/packages/51/33/4cd27639502f010084bcef7a2036391dd637439901341ce1a530f36f6e51/certifi-2026.11.20.tar.gz", upload-time = 2026-11-20T23:37:49Z, size = 128901, hashes = { sha256 = "af1cb240a8133f105aa52684a3a3258339d7f2fd0bd4e2812698ff5cf5588c4e" } }
+wheels = [
+  { url = "https://files.pythonhosted.org/packages/6d/39/5eec3296860b94ac20bb8ed807725b88f6adfab3f343df592afd975f5f86/certifi-2026.11.20-py3-none-any.whl", upload-time = 2026-11-20T23:37:48Z, size = 127913, hashes = { sha256 = "7422df25243767b9877031a2248cb14d09ddac9beee846f4cef3d5c9191d488f" } },
+]
+
+[[packages]]
+name = "idna"
+version = "3.20"
+sdist = { url = "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz", upload-time = 2026-09-17T14:11:04Z, size = 216463, hashes = { sha256 = "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44" } }
+wheels = [
+  { url = "https://files.pythonhosted.org/packages/58/a2/bb081bab032533a855d44de1d56f8e8426114ff1ba5d1f07a438a0a654f8/idna-3.20-py3-none-any.whl", upload-time = 2026-09-17T14:11:03Z, size = 69583, hashes = { sha256 = "ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c" } },
+]

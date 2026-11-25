@@ -1,0 +1,450 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`basic 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "pylock.toml#6",
+      ],
+      "purl": "pkg:pypi/numpy@2.5.4",
+    },
+    {
+      "evidence": [
+        "pylock.toml#14",
+      ],
+      "purl": "pkg:pypi/python-dateutil@2.9.0.post0",
+    },
+    {
+      "evidence": [
+        "pylock.toml#22",
+      ],
+      "purl": "pkg:pypi/six@1.17.0",
+    },
+  ],
+  "relationships": [],
+  "subprojects": [
+    {
+      "definitionFile": "pyproject.toml",
+      "purl": "pkg:pypi/sample-1@0.0.1",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:pypi/numpy@2.5.4",
+            "pkg:pypi/python-dateutil@2.9.0.post0",
+          ],
+          "scope": "env.default",
+        },
+      ],
+    },
+  ],
+}
+`;
+
+exports[`hatch-inheritance 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "pylock.docs.toml#6",
+        "pylock.docsext.toml#6",
+      ],
+      "purl": "pkg:pypi/certifi@2026.11.20",
+    },
+    {
+      "evidence": [
+        "pylock.dev.toml#6",
+        "pylock.docsext.toml#14",
+      ],
+      "purl": "pkg:pypi/idna@3.20",
+    },
+    {
+      "evidence": [
+        "pylock.dev.toml#14",
+        "pylock.toml#6",
+      ],
+      "purl": "pkg:pypi/six@1.17.0",
+    },
+  ],
+  "relationships": [],
+  "subprojects": [
+    {
+      "definitionFile": "pyproject.toml",
+      "purl": "pkg:pypi/hatch-inheritance@0.0.1",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:pypi/six@1.17.0",
+          ],
+          "scope": "env.default",
+        },
+        {
+          "packages": [
+            "pkg:pypi/idna@3.20",
+            "pkg:pypi/six@1.17.0",
+          ],
+          "scope": "env.dev",
+        },
+        {
+          "packages": [
+            "pkg:pypi/certifi@2026.11.20",
+          ],
+          "scope": "env.docs",
+        },
+        {
+          "packages": [
+            "pkg:pypi/certifi@2026.11.20",
+            "pkg:pypi/idna@3.20",
+          ],
+          "scope": "env.docsext",
+        },
+      ],
+    },
+  ],
+}
+`;
+
+exports[`multiple-envs 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "pylock.dev.toml#6",
+      ],
+      "purl": "pkg:pypi/filelock@4.2.7",
+    },
+    {
+      "evidence": [
+        "pylock.dev.toml#14",
+      ],
+      "purl": "pkg:pypi/fsspec@2026.9.0",
+    },
+    {
+      "evidence": [
+        "pylock.dev.toml#22",
+      ],
+      "purl": "pkg:pypi/jinja2@3.1.6",
+    },
+    {
+      "evidence": [
+        "pylock.dev.toml#30",
+      ],
+      "purl": "pkg:pypi/markupsafe@3.0.4",
+    },
+    {
+      "evidence": [
+        "pylock.dev.toml#38",
+      ],
+      "purl": "pkg:pypi/mpmath@1.3.0",
+    },
+    {
+      "evidence": [
+        "pylock.dev.toml#46",
+      ],
+      "purl": "pkg:pypi/networkx@3.7",
+    },
+    {
+      "evidence": [
+        "pylock.dev.toml#54",
+        "pylock.toml#6",
+      ],
+      "purl": "pkg:pypi/numpy@2.5.4",
+    },
+    {
+      "evidence": [
+        "pylock.dev.toml#62",
+      ],
+      "purl": "pkg:pypi/pillow@13.0.0",
+    },
+    {
+      "evidence": [
+        "pylock.toml#14",
+      ],
+      "purl": "pkg:pypi/python-dateutil@2.9.0.post0",
+    },
+    {
+      "evidence": [
+        "pylock.dev.toml#70",
+      ],
+      "purl": "pkg:pypi/setuptools@84.2.1",
+    },
+    {
+      "evidence": [
+        "pylock.toml#22",
+      ],
+      "purl": "pkg:pypi/six@1.17.0",
+    },
+    {
+      "evidence": [
+        "pylock.dev.toml#78",
+      ],
+      "purl": "pkg:pypi/sympy@1.14.0",
+    },
+    {
+      "evidence": [
+        "pylock.dev.toml#86",
+      ],
+      "purl": "pkg:pypi/torch@2.15.0",
+    },
+    {
+      "evidence": [
+        "pylock.dev.toml#93",
+      ],
+      "purl": "pkg:pypi/torchvision@0.29.2",
+    },
+    {
+      "evidence": [
+        "pylock.dev.toml#100",
+      ],
+      "purl": "pkg:pypi/typing-extensions@4.16.0",
+    },
+  ],
+  "relationships": [],
+  "subprojects": [
+    {
+      "definitionFile": "pyproject.toml",
+      "purl": "pkg:pypi/sample-2@0.0.1",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:pypi/numpy@2.5.4",
+            "pkg:pypi/python-dateutil@2.9.0.post0",
+          ],
+          "scope": "env.default",
+        },
+        {
+          "packages": [
+            "pkg:pypi/torch@2.15.0",
+            "pkg:pypi/torchvision@0.29.2",
+          ],
+          "scope": "env.dev",
+        },
+      ],
+    },
+  ],
+}
+`;
+
+exports[`name-normalization 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "pylock.toml#6",
+      ],
+      "purl": "pkg:pypi/six@1.17.0",
+    },
+    {
+      "evidence": [
+        "pylock.toml#14",
+      ],
+      "purl": "pkg:pypi/zope-interface@8.7",
+    },
+  ],
+  "relationships": [],
+  "subprojects": [
+    {
+      "definitionFile": "pyproject.toml",
+      "purl": "pkg:pypi/my.project@0.0.1",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:pypi/six@1.17.0",
+            "pkg:pypi/zope-interface@8.7",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
+
+exports[`optional-and-groups 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "pylock.toml#6",
+      ],
+      "purl": "pkg:pypi/certifi@2026.11.20",
+    },
+    {
+      "evidence": [
+        "pylock.toml#14",
+      ],
+      "purl": "pkg:pypi/idna@3.20",
+    },
+    {
+      "evidence": [
+        "pylock.toml#22",
+      ],
+      "purl": "pkg:pypi/six@1.17.0",
+    },
+  ],
+  "relationships": [],
+  "subprojects": [
+    {
+      "definitionFile": "pyproject.toml",
+      "purl": "pkg:pypi/optional-and-groups@0.0.1",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:pypi/six@1.17.0",
+          ],
+          "scope": "dependencies",
+        },
+        {
+          "packages": [
+            "pkg:pypi/certifi@2026.11.20",
+          ],
+          "scope": "group.docs",
+        },
+        {
+          "packages": [
+            "pkg:pypi/idna@3.20",
+          ],
+          "scope": "optional.test",
+        },
+      ],
+    },
+  ],
+}
+`;
+
+exports[`pylock-only-with-dependencies 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "pylock.toml#8",
+      ],
+      "purl": "pkg:pypi/attrs@25.1.0",
+    },
+    {
+      "evidence": [
+        "pylock.toml#26",
+      ],
+      "purl": "pkg:pypi/cattrs@24.1.2",
+    },
+    {
+      "evidence": [
+        "pylock.toml#39",
+      ],
+      "purl": "pkg:pypi/numpy@2.2.3",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:pypi/cattrs@24.1.2",
+      "to": [
+        "pkg:pypi/attrs@25.1.0",
+      ],
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "pylock.toml",
+      "purl": "pkg:pypi/pylock-only-with-dependencies",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:pypi/attrs@25.1.0",
+            "pkg:pypi/cattrs@24.1.2",
+            "pkg:pypi/numpy@2.2.3",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
+
+exports[`self-entry 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "pylock.toml#9",
+      ],
+      "purl": "pkg:pypi/certifi@2026.11.20",
+    },
+    {
+      "evidence": [
+        "pylock.toml#20",
+      ],
+      "purl": "pkg:pypi/charset-normalizer@3.5.3",
+    },
+    {
+      "evidence": [
+        "pylock.toml#201",
+      ],
+      "purl": "pkg:pypi/idna@3.20",
+    },
+    {
+      "evidence": [
+        "pylock.toml#217",
+      ],
+      "purl": "pkg:pypi/requests@2.34.2",
+    },
+    {
+      "evidence": [
+        "pylock.toml#228",
+      ],
+      "purl": "pkg:pypi/urllib3@2.8.0",
+    },
+  ],
+  "relationships": [],
+  "subprojects": [
+    {
+      "definitionFile": "pyproject.toml",
+      "purl": "pkg:pypi/my-project@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:pypi/requests@2.34.2",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
+
+exports[`self-name-released 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "pylock.toml#6",
+      ],
+      "purl": "pkg:pypi/six@1.17.0",
+    },
+  ],
+  "relationships": [],
+  "subprojects": [
+    {
+      "definitionFile": "pyproject.toml",
+      "purl": "pkg:pypi/six@9.9.9",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:pypi/six@1.17.0",
+          ],
+          "scope": "env.default",
+        },
+      ],
+    },
+  ],
+}
+`;

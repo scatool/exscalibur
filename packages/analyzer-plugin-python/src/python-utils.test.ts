@@ -1,5 +1,10 @@
 import { describe, expect, test } from "vite-plus/test";
-import { createPypiPurl, normalizePythonName, findTomlPackageLineNumber } from "./python-utils.ts";
+import {
+  createPypiPurl,
+  normalizePythonName,
+  pythonNameKey,
+  findTomlPackageLineNumber,
+} from "./python-utils.ts";
 
 describe("createPypiPurl", () => {
   test("creates PURL for simple package", () => {
@@ -34,6 +39,21 @@ describe("normalizePythonName", () => {
 
   test("handles already normalized name", () => {
     expect(normalizePythonName("requests")).toBe("requests");
+  });
+});
+
+describe("pythonNameKey", () => {
+  test("replaces dots with hyphens", () => {
+    expect(pythonNameKey("zope.interface")).toBe("zope-interface");
+  });
+
+  test("collapses runs of separators and lowercases", () => {
+    expect(pythonNameKey("Foo__Bar")).toBe("foo-bar");
+    expect(pythonNameKey("a-_.b")).toBe("a-b");
+  });
+
+  test("handles already normalized name", () => {
+    expect(pythonNameKey("requests")).toBe("requests");
   });
 });
 
