@@ -1,0 +1,10 @@
+{
+  "name": "versionless-workspace",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "ms": "^2.1.3"
+  }
+}

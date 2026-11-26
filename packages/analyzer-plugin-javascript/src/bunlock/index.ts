@@ -18,6 +18,7 @@ import {
   extractNpmScopes,
   NPM_DEPENDENCY_SCOPES,
   readPackageJson,
+  getProjectName,
 } from "../npm-utils.ts";
 import type { JavaScriptOptions } from "../options.ts";
 import { optionSchema } from "../options.ts";
@@ -68,7 +69,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     const rootPackageInfo = await readPackageJson(packageJsonPath);
 
     // Build a map of workspace package names to their versions
-    const workspacePackages = new Map<string, string>();
+    const workspacePackages = new Map<string, string | undefined>();
     if (lockfile.workspaces && typeof lockfile.workspaces === "object") {
       for (const [workspacePath, workspace] of Object.entries(lockfile.workspaces)) {
         if (!workspace || typeof workspace !== "object") continue;
@@ -81,9 +82,8 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
         const workspacePackageJsonPath = join(workspaceDir, "package.json");
 
         const packageInfo = await readPackageJson(workspacePackageJsonPath);
-        if (packageInfo?.version) {
-          workspacePackages.set(workspaceName, packageInfo.version);
-        }
+        // The version is optional, e.g. for private packages
+        if (packageInfo) workspacePackages.set(workspaceName, packageInfo.version);
       }
     }
 
@@ -92,10 +92,6 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
       for (const [workspacePath, workspace] of Object.entries(lockfile.workspaces)) {
         if (!workspace || typeof workspace !== "object") continue;
 
-        // Get workspace name from the lockfile
-        const workspaceName = "name" in workspace ? workspace.name : undefined;
-        if (!workspaceName || typeof workspaceName !== "string") continue;
-
         // Determine the package.json path for this workspace
         const workspaceDir = workspacePath === "" ? dir : join(dir, workspacePath);
         const workspacePackageJsonPath = join(workspaceDir, "package.json");
@@ -103,25 +99,31 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
         const packageInfo = await readPackageJson(workspacePackageJsonPath);
         if (!packageInfo) continue;
 
-        if (packageInfo.version) {
-          const purl = createNpmPurl(workspaceName, packageInfo.version);
-          const scopes = extractScopes(
-            workspace as Record<string, unknown>,
-            packageInfoMap,
-            workspacePackages,
-            workspaceName,
-          );
+        // Get workspace name from the lockfile, unnamed workspaces are named after their directory
+        const lockfileName = "name" in workspace ? workspace.name : undefined;
+        const workspaceName =
+          lockfileName && typeof lockfileName === "string"
+            ? lockfileName
+            : getProjectName(packageInfo, workspaceDir);
 
-          subprojects.push({
-            purl,
-            definitionFile: workspacePackageJsonPath,
-            scopes,
-          });
-        }
+        const purl = createNpmPurl(workspaceName, packageInfo.version);
+        const scopes = extractScopes(
+          workspace as Record<string, unknown>,
+          packageInfoMap,
+          workspacePackages,
+          // Nested packages are keyed by the workspace name of the lockfile
+          typeof lockfileName === "string" ? lockfileName : "",
+        );
+
+        subprojects.push({
+          purl,
+          definitionFile: workspacePackageJsonPath,
+          scopes,
+        });
       }
-    } else if (rootPackageInfo?.name && rootPackageInfo.version) {
+    } else if (rootPackageInfo) {
       // Fallback to reading package.json directly if no workspaces in lockfile
-      const purl = createNpmPurl(rootPackageInfo.name, rootPackageInfo.version);
+      const purl = createNpmPurl(getProjectName(rootPackageInfo, dir), rootPackageInfo.version);
       const scopes = extractScopes(rootPackageInfo, packageInfoMap, workspacePackages, "");
 
       subprojects.push({
@@ -169,9 +171,8 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
 
                 // Check if this is a workspace package
                 if (depVersionRange.startsWith("workspace:")) {
-                  const workspaceVersion = workspacePackages.get(depName);
-                  if (workspaceVersion) {
-                    const depPurl = createNpmPurl(depName, workspaceVersion);
+                  if (workspacePackages.has(depName)) {
+                    const depPurl = createNpmPurl(depName, workspacePackages.get(depName));
                     addRelationship(relationshipsMap, purl, depPurl);
                     ensurePackageExists(packageMap, depPurl);
                   }
@@ -199,13 +200,14 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
 function extractScopes(
   packageInfo: Record<string, unknown>,
   packageInfoMap: Map<string, { name: string; version: string }>,
-  workspacePackages: Map<string, string>,
+  workspacePackages: Map<string, string | undefined>,
   callerKey: string,
 ): DependencyScope[] {
   return extractNpmScopes(packageInfo, (depName, versionRange) => {
     if (versionRange.startsWith("workspace:")) {
-      const workspaceVersion = workspacePackages.get(depName);
-      return workspaceVersion ? createNpmPurl(depName, workspaceVersion) : null;
+      return workspacePackages.has(depName)
+        ? createNpmPurl(depName, workspacePackages.get(depName))
+        : null;
     }
     const resolved = resolvePackageInfo(depName, packageInfoMap, callerKey);
     return resolved ? createNpmPurl(resolved.name, resolved.version) : null;

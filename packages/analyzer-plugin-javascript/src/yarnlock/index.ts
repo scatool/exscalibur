@@ -21,7 +21,7 @@ import {
   resolvePackageVersion,
 } from "./lockfile.ts";
 import type { PackageJson } from "../types.ts";
-import { createNpmPurl, extractNpmScopes, readPackageJson } from "../npm-utils.ts";
+import { createNpmPurl, extractNpmScopes, readPackageJson, getProjectName } from "../npm-utils.ts";
 import type { JavaScriptOptions } from "../options.ts";
 import { optionSchema } from "../options.ts";
 
@@ -79,15 +79,15 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
 
     // Build a map of workspace package names to their versions
     // We need to do this before extracting scopes so we can identify workspace dependencies
-    const workspacePackages = new Map<string, string>();
-    if (rootPackageInfo?.name && rootPackageInfo?.version) {
+    const workspacePackages = new Map<string, string | undefined>();
+    if (rootPackageInfo?.name) {
       workspacePackages.set(rootPackageInfo.name, rootPackageInfo.version);
     }
     // Add all workspace packages from their package.json files
     if (isWorkspaceRoot && workspacePackageJsonPaths.length > 0) {
       for (const pkgJsonPath of workspacePackageJsonPaths) {
         const pkgInfo = await readPackageJson(pkgJsonPath);
-        if (pkgInfo?.name && pkgInfo.version) {
+        if (pkgInfo?.name) {
           workspacePackages.set(pkgInfo.name, pkgInfo.version);
         }
       }
@@ -98,18 +98,20 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
         if (versionRange.startsWith("workspace:") || versionRange.startsWith("link:")) {
           return null;
         }
-        const workspaceVersion = workspacePackages.get(depName);
-        if (workspaceVersion) {
-          return createNpmPurl(depName, workspaceVersion);
-        }
         const resolvedVersion = resolvePackageVersion(lockfile, depName, versionRange);
+        if (workspacePackages.has(depName)) {
+          // Yarn only links workspaces that have a version, otherwise a locked dependency of
+          // the same name is installed from the registry
+          const workspaceVersion = workspacePackages.get(depName);
+          return createNpmPurl(depName, workspaceVersion ?? resolvedVersion);
+        }
         return resolvedVersion ? createNpmPurl(depName, resolvedVersion) : null;
       });
     };
 
-    // Create subproject for root package if it has name and version
-    if (rootPackageInfo?.name && rootPackageInfo?.version) {
-      const rootPurl = createNpmPurl(rootPackageInfo.name, rootPackageInfo.version);
+    // Create subproject for root package (the version is optional, e.g. for private packages)
+    if (rootPackageInfo) {
+      const rootPurl = createNpmPurl(getProjectName(rootPackageInfo, dir), rootPackageInfo.version);
       const rootScopes = extractScopesFromPackageJson(rootPackageInfo);
 
       subprojects.push({
@@ -123,8 +125,11 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     if (isWorkspaceRoot && workspacePackageJsonPaths.length > 0) {
       for (const pkgJsonPath of workspacePackageJsonPaths) {
         const pkgInfo = await readPackageJson(pkgJsonPath);
-        if (pkgInfo?.name && pkgInfo.version) {
-          const purl = createNpmPurl(pkgInfo.name, pkgInfo.version);
+        if (pkgInfo) {
+          const purl = createNpmPurl(
+            getProjectName(pkgInfo, dirname(pkgJsonPath)),
+            pkgInfo.version,
+          );
           const scopes = extractScopesFromPackageJson(pkgInfo);
 
           subprojects.push({

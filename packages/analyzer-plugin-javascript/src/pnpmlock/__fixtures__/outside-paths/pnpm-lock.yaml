@@ -1,0 +1,44 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      absolute-dep:
+        specifier: file:/etc/absolute
+        version: file:/etc/absolute
+      inside-dep:
+        specifier: file:./local
+        version: file:local
+      outside-dep:
+        specifier: file:../file-deps/local
+        version: file:../file-deps/local
+
+  ../file-deps/packages/inj:
+    dependencies:
+      inside-dep:
+        specifier: file:../../../outside-paths/local
+        version: file:local
+
+packages:
+
+  absolute-dep@file:/etc/absolute:
+    resolution: {directory: /etc/absolute, type: directory}
+
+  inside-dep@file:local:
+    resolution: {directory: local, type: directory}
+
+  outside-dep@file:../file-deps/local:
+    resolution: {directory: ../file-deps/local, type: directory}
+
+snapshots:
+
+  absolute-dep@file:/etc/absolute: {}
+
+  inside-dep@file:local: {}
+
+  outside-dep@file:../file-deps/local: {}

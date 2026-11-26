@@ -1,0 +1,8 @@
+{
+  "name": "file-deps-legacy",
+  "version": "1.0.0",
+  "dependencies": {
+    "local-dep": "file:./local",
+    "loose-envify": "^1.4.0"
+  }
+}

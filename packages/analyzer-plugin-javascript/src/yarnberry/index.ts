@@ -18,6 +18,7 @@ import {
   findLineNumber,
   parsePackagePattern,
   parseYarnBerryLockfile,
+  resolveExactPackageVersion,
   resolvePackageVersion,
   type YarnBerryLockfile,
 } from "./lockfile.ts";
@@ -26,6 +27,7 @@ import {
   extractNpmScopes,
   NPM_DEPENDENCY_SCOPES,
   readPackageJson,
+  getProjectName,
 } from "../npm-utils.ts";
 import type { JavaScriptOptions } from "../options.ts";
 import { optionSchema } from "../options.ts";
@@ -40,15 +42,12 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
       "**/yarn.lock",
       mergeIgnorePatterns(this, options.ignore),
     )) {
-      // Only mark Yarn Berry lockfiles (version 8+)
-      // Check the first few lines for __metadata: section
+      // Only mark Yarn Berry lockfiles, which start with a __metadata: section (all metadata
+      // versions, e.g. 4 of Yarn v2, 6 of Yarn v3 and 8 or 10 of Yarn v4). Lockfiles without it
+      // are Yarn Classic lockfiles, handled by the yarnlock extractor.
       try {
         const buffer = (await readTextFile(file)).slice(0, 500);
-
-        // Check for Yarn Berry markers
-        // Yarn Berry uses lockfile version 6+ (v2, v3, v4 all use different formats)
-        // We support v6 (Yarn v3/v4) and v8+ (Yarn v4+)
-        if (buffer.includes("__metadata:") && /version:\s+[6-9]\d*/.test(buffer)) {
+        if (buffer.includes("__metadata:")) {
           this.markFile(file);
         }
       } catch {
@@ -66,7 +65,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     const lockfile = parseYarnBerryLockfile(lockfileContent);
 
     // Find all workspace packages by looking for linkType: soft
-    const workspacePackages = new Map<string, { version: string; path: string }>();
+    const workspacePackages = new Map<string, { version?: string; path: string }>();
     const workspacePatterns = new Map<string, string>(); // Map package name to workspace path
 
     for (const [pattern, pkg] of lockfile.packages.entries()) {
@@ -85,7 +84,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
       const workspaceDir = path === "." ? dir : join(dir, path);
       const packageJsonPath = join(workspaceDir, "package.json");
       const packageInfo = await readPackageJson(packageJsonPath);
-      if (packageInfo?.version) {
+      if (packageInfo) {
         workspacePackages.set(name, {
           version: packageInfo.version,
           path,
@@ -103,9 +102,6 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
       const workspaceDir = info.path === "." ? dir : join(dir, info.path);
       const packageJsonPath = join(workspaceDir, "package.json");
 
-      // Create PURL for this subproject
-      const purl = createNpmPurl(name, info.version);
-
       // Extract scopes - read from package.json to preserve original dependency types
       // (Yarn Berry lockfile normalizes all deps to just "dependencies")
       const scopes: DependencyScope[] = [];
@@ -114,13 +110,31 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
       const packageInfo = await readPackageJson(packageJsonPath);
       if (!packageInfo) continue;
 
+      // Yarn generates a name (root-workspace-<hash>) for unnamed workspaces, which are named
+      // after their directory instead
+      const purl = createNpmPurl(
+        packageInfo.name ? name : getProjectName(packageInfo, workspaceDir),
+        info.version,
+      );
+
       const extractedScopes = extractNpmScopes(
         packageInfo as Record<string, unknown>,
         (depName, versionRange) => {
-          const workspaceVersion = workspacePackages.get(depName);
-          if (workspaceVersion) return createNpmPurl(depName, workspaceVersion.version);
-          const { actualName, actualRange } = parseAliasedDependency(depName, versionRange);
-          const resolvedVersion = resolvePackageVersion(lockfile, actualName, actualRange);
+          const { actualName } = parseAliasedDependency(depName, versionRange);
+          // An alias (npm:name@range) never refers to a workspace
+          const workspace = /^npm:.+@/.test(versionRange)
+            ? undefined
+            : workspacePackages.get(depName);
+          if (workspace) {
+            // A workspace without a version does not satisfy a version range, a dependency of
+            // the same name locked for that range is installed from the registry
+            const lockedVersion =
+              workspace.version || versionRange.startsWith("workspace:")
+                ? null
+                : resolveExactPackageVersion(lockfile, depName, versionRange);
+            return createNpmPurl(depName, lockedVersion ?? workspace.version);
+          }
+          const resolvedVersion = resolveDependencyVersion(lockfile, depName, versionRange);
           return resolvedVersion ? createNpmPurl(actualName, resolvedVersion) : null;
         },
       );
@@ -138,14 +152,14 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
       const packageJsonPath = join(dir, "package.json");
       const packageInfo = await readPackageJson(packageJsonPath);
 
-      if (packageInfo?.name && packageInfo.version) {
-        const purl = createNpmPurl(packageInfo.name, packageInfo.version);
+      if (packageInfo) {
+        const purl = createNpmPurl(getProjectName(packageInfo, dir), packageInfo.version);
 
         const scopes = extractNpmScopes(
           packageInfo as Record<string, unknown>,
           (depName, versionRange) => {
-            const { actualName, actualRange } = parseAliasedDependency(depName, versionRange);
-            const resolvedVersion = resolvePackageVersion(lockfile, actualName, actualRange);
+            const { actualName } = parseAliasedDependency(depName, versionRange);
+            const resolvedVersion = resolveDependencyVersion(lockfile, depName, versionRange);
             return resolvedVersion ? createNpmPurl(actualName, resolvedVersion) : null;
           },
         );
@@ -230,6 +244,22 @@ function parseAliasedDependency(
     actualName: depName,
     actualRange: versionRange,
   };
+}
+
+/**
+ * Resolve the installed version of a dependency of a package.json. Aliases are locked under
+ * the alias (e.g. `ms-old@npm:ms@2.1.2`), which is preferred over other entries of the package.
+ */
+function resolveDependencyVersion(
+  lockfile: YarnBerryLockfile,
+  depName: string,
+  versionRange: string,
+): string | null {
+  const { actualName, actualRange } = parseAliasedDependency(depName, versionRange);
+  return (
+    resolveExactPackageVersion(lockfile, depName, versionRange) ??
+    resolvePackageVersion(lockfile, actualName, actualRange)
+  );
 }
 
 /**

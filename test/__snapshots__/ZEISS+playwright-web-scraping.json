@@ -1803,6 +1803,18 @@
   ],
   "subprojects": [
     {
+      "purl": "pkg:npm/node",
+      "definitionFile": "node/package.json",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:npm/playwright@1.27.0"
+          ]
+        }
+      ]
+    },
+    {
       "purl": "pkg:npm/playwright-web-scraping@1.0.0",
       "definitionFile": "package.json",
       "scopes": [

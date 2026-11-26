@@ -1,3 +1,5 @@
+import { win32 } from "node:path";
+import { basename, isAbsolute, join, normalize } from "node:path/posix";
 import { PackageURL } from "packageurl-js";
 import { readTextFile, type DependencyScope } from "@scatool/analyzer-core";
 import type { PackageJson } from "./types.ts";
@@ -9,7 +11,8 @@ export const NPM_DEPENDENCY_SCOPES = [
   "peerDependencies",
 ] as const;
 
-export function createNpmPurl(name: string, version: string): string {
+/** Creates an npm PURL; projects without a version in package.json get a version-less PURL. */
+export function createNpmPurl(name: string, version?: string | null): string {
   let namespace: string | null = null;
   let packageName = name;
 
@@ -21,7 +24,15 @@ export function createNpmPurl(name: string, version: string): string {
     }
   }
 
-  return new PackageURL("npm", namespace, packageName, version, null, null).toString();
+  return new PackageURL("npm", namespace, packageName, version || null, null, null).toString();
+}
+
+/**
+ * Name of the project defined by a package.json. Private packages, especially workspace
+ * roots, often have no name; they are named after their directory instead.
+ */
+export function getProjectName(packageInfo: PackageJson, dir: string): string {
+  return packageInfo.name || basename(dir) || "unknown";
 }
 
 export async function readPackageJson(path: string): Promise<PackageJson | null> {
@@ -57,4 +68,16 @@ export function extractNpmScopes(
   }
 
   return scopes;
+}
+
+/**
+ * Resolve a path of the lockfile against the directory of the lockfile. Returns null for paths
+ * outside of that directory (absolute paths or paths climbing above it): lockfiles are
+ * untrusted input and must not make the extractor read files elsewhere.
+ */
+export function resolveInside(dir: string, path: string): string | null {
+  if (isAbsolute(path) || win32.isAbsolute(path)) return null;
+  const normalized = normalize(path.replaceAll("\\", "/"));
+  if (normalized === ".." || normalized.startsWith("../")) return null;
+  return join(dir, normalized);
 }

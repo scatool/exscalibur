@@ -4686,6 +4686,24 @@
           ]
         }
       ]
+    },
+    {
+      "purl": "pkg:npm/zeiss%2Bhtmx-template",
+      "definitionFile": "package.json",
+      "scopes": [
+        {
+          "scope": "devDependencies",
+          "packages": [
+            "pkg:npm/%40tailwindcss/typography@0.5.10",
+            "pkg:npm/browser-sync@2.29.3",
+            "pkg:npm/concurrently@8.2.2",
+            "pkg:npm/daisyui@4.6.1",
+            "pkg:npm/esbuild@0.20.0",
+            "pkg:npm/htmx.org@1.9.10",
+            "pkg:npm/tailwindcss@3.4.1"
+          ]
+        }
+      ]
     }
   ],
   "relationships": [

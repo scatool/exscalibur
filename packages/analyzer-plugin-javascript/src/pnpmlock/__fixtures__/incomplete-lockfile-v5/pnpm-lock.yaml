@@ -1,0 +1,17 @@
+lockfileVersion: 5.4
+
+specifiers:
+  buffer-alias: npm:safe_buffer@^1.0.0
+  lodash: ^4.17.21
+  with-peer: ^1.7.0
+
+dependencies:
+  buffer-alias: /safe_buffer/1.0.0
+  lodash: 4.17.21
+  with-peer: 1.7.0_react@18.3.1
+
+packages:
+
+  /lodash/4.17.21:
+    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
+    dev: false

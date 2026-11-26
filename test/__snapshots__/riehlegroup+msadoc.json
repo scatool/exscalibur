@@ -7097,6 +7097,139 @@
           ]
         }
       ]
+    },
+    {
+      "purl": "pkg:npm/client-generator",
+      "definitionFile": "client-generator/package.json",
+      "scopes": [
+        {
+          "scope": "devDependencies",
+          "packages": [
+            "pkg:npm/%40openapitools/openapi-generator-cli@2.5.2"
+          ]
+        }
+      ]
+    },
+    {
+      "purl": "pkg:npm/msadoc",
+      "definitionFile": "package.json",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:npm/rxjs@7.8.0"
+          ]
+        },
+        {
+          "scope": "devDependencies",
+          "packages": [
+            "pkg:npm/%40jvalue/eslint-config-jvalue@1.2.1",
+            "pkg:npm/%40types/node@18.11.18",
+            "pkg:npm/%40typescript-eslint/eslint-plugin@5.48.2",
+            "pkg:npm/%40typescript-eslint/parser@5.48.2",
+            "pkg:npm/eslint-config-prettier@8.6.0",
+            "pkg:npm/eslint-plugin-import@2.27.5",
+            "pkg:npm/eslint-plugin-prettier@4.2.1",
+            "pkg:npm/eslint@8.32.0",
+            "pkg:npm/prettier@2.8.3",
+            "pkg:npm/rimraf@3.0.2",
+            "pkg:npm/typescript@4.9.4"
+          ]
+        }
+      ]
+    },
+    {
+      "purl": "pkg:npm/msadoc-client",
+      "definitionFile": "client-generated/package.json",
+      "scopes": []
+    },
+    {
+      "purl": "pkg:npm/msadoc-frontend",
+      "definitionFile": "frontend/package.json",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:npm/%40emotion/react@11.10.5",
+            "pkg:npm/%40emotion/styled@11.10.5",
+            "pkg:npm/%40fontsource/roboto@4.5.8",
+            "pkg:npm/%40mui/icons-material@5.11.0",
+            "pkg:npm/%40mui/lab@5.0.0-alpha.116",
+            "pkg:npm/%40mui/material@5.11.5",
+            "pkg:npm/%40nivo/sankey@0.80.0",
+            "pkg:npm/cytoscape-cola@2.5.1",
+            "pkg:npm/cytoscape@3.23.0",
+            "pkg:npm/escape-string-regexp@5.0.0",
+            "pkg:npm/react-cytoscapejs@2.0.0",
+            "pkg:npm/react-dom@18.2.0",
+            "pkg:npm/react-router-dom@6.7.0",
+            "pkg:npm/react@18.2.0",
+            "pkg:npm/search-expression-parser@0.0.2"
+          ]
+        },
+        {
+          "scope": "devDependencies",
+          "packages": [
+            "pkg:npm/%40types/react-cytoscapejs@1.2.2",
+            "pkg:npm/%40types/react-dom@18.0.10",
+            "pkg:npm/%40types/react@18.0.27",
+            "pkg:npm/%40vitejs/plugin-react@3.1.0",
+            "pkg:npm/autoprefixer@10.4.14",
+            "pkg:npm/eslint-config-react-app@7.0.1",
+            "pkg:npm/gh-pages@4.0.0",
+            "pkg:npm/sass@1.57.1",
+            "pkg:npm/vite@4.2.0"
+          ]
+        }
+      ]
+    },
+    {
+      "purl": "pkg:npm/msadoc-server",
+      "definitionFile": "server/package.json",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:npm/%40nestjs/common@9.2.1",
+            "pkg:npm/%40nestjs/config@2.2.0",
+            "pkg:npm/%40nestjs/core@9.2.1",
+            "pkg:npm/%40nestjs/jwt@9.0.0",
+            "pkg:npm/%40nestjs/passport@9.0.0",
+            "pkg:npm/%40nestjs/platform-express@9.2.1",
+            "pkg:npm/%40nestjs/swagger@6.1.4",
+            "pkg:npm/%40nestjs/typeorm@9.0.1",
+            "pkg:npm/class-transformer@0.5.1",
+            "pkg:npm/class-validator@0.14.0",
+            "pkg:npm/passport-custom@1.1.1",
+            "pkg:npm/passport-jwt@4.0.1",
+            "pkg:npm/passport-local@1.0.0",
+            "pkg:npm/passport@0.6.0",
+            "pkg:npm/pg@8.8.0",
+            "pkg:npm/reflect-metadata@0.1.13",
+            "pkg:npm/typeorm@0.3.11"
+          ]
+        },
+        {
+          "scope": "devDependencies",
+          "packages": [
+            "pkg:npm/%40nestjs/cli@9.1.8",
+            "pkg:npm/%40nestjs/schematics@9.0.4",
+            "pkg:npm/%40nestjs/testing@9.2.1",
+            "pkg:npm/%40types/express@4.17.15",
+            "pkg:npm/%40types/jest@29.2.6",
+            "pkg:npm/%40types/passport-jwt@3.0.8",
+            "pkg:npm/%40types/passport-local@1.0.35",
+            "pkg:npm/%40types/supertest@2.0.12",
+            "pkg:npm/jest@29.3.1",
+            "pkg:npm/source-map-support@0.5.21",
+            "pkg:npm/supertest@6.3.3",
+            "pkg:npm/ts-jest@29.0.5",
+            "pkg:npm/ts-loader@9.4.2",
+            "pkg:npm/ts-node@10.9.1",
+            "pkg:npm/tsconfig-paths@4.1.2"
+          ]
+        }
+      ]
     }
   ],
   "relationships": [

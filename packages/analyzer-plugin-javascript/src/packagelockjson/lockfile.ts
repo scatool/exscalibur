@@ -61,6 +61,8 @@ export interface PackageLockPackage {
   optional?: boolean;
   /** Package name (may differ from directory for aliases) */
   name?: string;
+  /** Whether this is a link to another entry, e.g. a workspace package */
+  link?: boolean;
   /** Workspace packages array (for root package) */
   workspaces?: string[];
 }

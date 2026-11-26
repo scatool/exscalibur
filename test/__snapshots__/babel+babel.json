@@ -9423,6 +9423,75 @@
   ],
   "subprojects": [
     {
+      "purl": "pkg:npm/%40babel-internal/runtime-integration-rollup",
+      "definitionFile": "test/runtime-integration/rollup/package.json",
+      "scopes": [
+        {
+          "scope": "devDependencies",
+          "packages": [
+            "pkg:npm/%40babel/runtime@7.28.4",
+            "pkg:npm/%40rollup/plugin-commonjs@24.1.0",
+            "pkg:npm/%40rollup/plugin-node-resolve@15.2.3",
+            "pkg:npm/rollup@2.79.1"
+          ]
+        }
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40babel-internal/runtime-integration-src",
+      "definitionFile": "test/runtime-integration/src/package.json",
+      "scopes": [
+        {
+          "scope": "devDependencies",
+          "packages": [
+            "pkg:npm/%40babel/runtime-corejs3@7.28.4",
+            "pkg:npm/%40babel/runtime@7.28.4"
+          ]
+        }
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40babel-internal/runtime-integration-webpack-3",
+      "definitionFile": "test/runtime-integration/webpack-3/package.json",
+      "scopes": [
+        {
+          "scope": "devDependencies",
+          "packages": [
+            "pkg:npm/%40babel/runtime@7.28.4",
+            "pkg:npm/webpack@3.12.0"
+          ]
+        }
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40babel-internal/runtime-integration-webpack-4",
+      "definitionFile": "test/runtime-integration/webpack-4/package.json",
+      "scopes": [
+        {
+          "scope": "devDependencies",
+          "packages": [
+            "pkg:npm/%40babel/runtime@7.28.4",
+            "pkg:npm/webpack-cli@4.10.0",
+            "pkg:npm/webpack@4.46.0"
+          ]
+        }
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40babel-internal/runtime-integration-webpack-5",
+      "definitionFile": "test/runtime-integration/webpack-5/package.json",
+      "scopes": [
+        {
+          "scope": "devDependencies",
+          "packages": [
+            "pkg:npm/%40babel/runtime@7.28.4",
+            "pkg:npm/webpack-cli@4.10.0",
+            "pkg:npm/webpack@5.88.2"
+          ]
+        }
+      ]
+    },
+    {
       "purl": "pkg:npm/%40babel/benchmark@7.28.4",
       "definitionFile": "benchmark/package.json",
       "scopes": [
@@ -9701,7 +9770,7 @@
           "packages": [
             "pkg:npm/%40babel/core@7.28.5",
             "pkg:npm/%40babel/eslint-parser@7.28.5",
-            "pkg:npm/%40babel/parser@7.24.4",
+            "pkg:npm/%40babel/parser@7.14.0",
             "pkg:npm/%40babel/preset-flow@7.27.1",
             "pkg:npm/%40babel/preset-react@7.28.5",
             "pkg:npm/dedent@1.6.0",
@@ -13363,7 +13432,7 @@
         {
           "scope": "devDependencies",
           "packages": [
-            "pkg:npm/%40babel/core@7.24.4",
+            "pkg:npm/%40babel/core@7.12.9",
             "pkg:npm/%40babel/core@7.28.5",
             "pkg:npm/%40babel/helper-plugin-test-runner@7.27.1",
             "pkg:npm/%40babel/traverse@7.28.5"
@@ -13659,6 +13728,20 @@
             "pkg:npm/%40babel/code-frame@7.27.1",
             "pkg:npm/%40babel/parser@7.28.5",
             "pkg:npm/%40babel/types@7.28.5"
+          ]
+        }
+      ]
+    },
+    {
+      "purl": "pkg:npm/%40babel/test-esm",
+      "definitionFile": "test/esm/package.json",
+      "scopes": [
+        {
+          "scope": "devDependencies",
+          "packages": [
+            "pkg:npm/%40babel/runtime-corejs3@7.28.4",
+            "pkg:npm/%40babel/runtime@7.28.4",
+            "pkg:npm/picocolors@1.1.1"
           ]
         }
       ]

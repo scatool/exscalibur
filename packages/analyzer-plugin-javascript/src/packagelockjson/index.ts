@@ -2,6 +2,7 @@ import {
   type AnalyzerResult,
   type DependencyScope,
   type Extractor,
+  type Issue,
   type PackageMapEntry,
   type Subproject,
   filesExtractor,
@@ -28,6 +29,8 @@ import {
   extractNpmScopes,
   NPM_DEPENDENCY_SCOPES,
   readPackageJson,
+  getProjectName,
+  resolveInside,
 } from "../npm-utils.ts";
 import type { JavaScriptOptions } from "../options.ts";
 import { optionSchema } from "../options.ts";
@@ -148,8 +151,8 @@ async function extractFromV1Lockfile(
   // Extract root package as subproject
   const packageJsonPath = join(dir, "package.json");
   const packageInfo = await readPackageJson(packageJsonPath);
-  if (packageInfo?.name && packageInfo.version) {
-    const rootPurl = createNpmPurl(packageInfo.name, packageInfo.version);
+  if (packageInfo) {
+    const rootPurl = createNpmPurl(getProjectName(packageInfo, dir), packageInfo.version);
     const rootScopes = extractScopesV1(packageInfo, lockfile.dependencies);
 
     subprojects.push({
@@ -189,28 +192,52 @@ async function extractFromV2Lockfile(
   }
 
   // Process workspace packages to build a map of workspace names
-  const workspacePackages = new Map<string, { version: string; path: string }>();
+  const workspacePackages = new Map<string, { version?: string; path: string }>();
 
-  for (const [packagePath] of Object.entries(lockfile.packages)) {
-    if (isWorkspacePath(packagePath)) {
-      const packageJsonPath = join(dir, packagePath, "package.json");
-      const packageInfo = await readPackageJson(packageJsonPath);
-      if (packageInfo?.name && packageInfo.version) {
-        workspacePackages.set(packageInfo.name, {
-          version: packageInfo.version,
+  // Paths of the lockfile are untrusted, files outside of its directory (e.g. of a local
+  // file:../ dependency) are not read
+  const issues: Issue[] = [];
+  const workspacePaths: string[] = [];
+  for (const [packagePath, packageEntry] of Object.entries(lockfile.packages)) {
+    if (!isWorkspacePath(packagePath)) continue;
+    if (resolveInside(dir, packagePath)) {
+      workspacePaths.push(packagePath);
+    } else {
+      // Reported as a package, with the name and version of the lockfile
+      if (packageEntry.name) {
+        workspacePackages.set(packageEntry.name, {
+          version: packageEntry.version,
           path: packagePath,
         });
+        ensurePackageExists(packageMap, createNpmPurl(packageEntry.name, packageEntry.version));
       }
+      issues.push({
+        code: "packagelockjson.path_outside_lockfile_directory",
+        message: `Skipped package.json of "${packagePath}": the path is outside of the directory of the lockfile`,
+        severity: "WARNING",
+        file,
+      });
     }
   }
 
-  // Extract root package as subproject if it has name and version
+  for (const packagePath of workspacePaths) {
+    const packageJsonPath = join(dir, packagePath, "package.json");
+    const packageInfo = await readPackageJson(packageJsonPath);
+    if (packageInfo?.name) {
+      workspacePackages.set(packageInfo.name, {
+        version: packageInfo.version,
+        path: packagePath,
+      });
+    }
+  }
+
+  // Extract root package as subproject (the version is optional, e.g. for private packages)
   const rootPackage = lockfile.packages[""];
   if (rootPackage) {
     const packageJsonPath = join(dir, "package.json");
     const rootPackageInfo = await readPackageJson(packageJsonPath);
-    if (rootPackageInfo?.name && rootPackageInfo.version) {
-      const rootPurl = createNpmPurl(rootPackageInfo.name, rootPackageInfo.version);
+    if (rootPackageInfo) {
+      const rootPurl = createNpmPurl(getProjectName(rootPackageInfo, dir), rootPackageInfo.version);
       const rootScopes = extractScopes(rootPackageInfo, lockfile.packages, workspacePackages);
 
       subprojects.push({
@@ -222,25 +249,21 @@ async function extractFromV2Lockfile(
   }
 
   // Extract workspace packages as subprojects
-  for (const [packagePath] of Object.entries(lockfile.packages)) {
-    if (isWorkspacePath(packagePath)) {
-      const packageJsonPath = join(dir, packagePath, "package.json");
-      const packageInfo = await readPackageJson(packageJsonPath);
-      if (packageInfo?.name && packageInfo.version) {
-        const purl = createNpmPurl(packageInfo.name, packageInfo.version);
-        const scopes = extractScopes(
-          packageInfo,
-          lockfile.packages,
-          workspacePackages,
-          packagePath,
-        );
+  for (const packagePath of workspacePaths) {
+    const packageJsonPath = join(dir, packagePath, "package.json");
+    const packageInfo = await readPackageJson(packageJsonPath);
+    if (packageInfo) {
+      const purl = createNpmPurl(
+        getProjectName(packageInfo, join(dir, packagePath)),
+        packageInfo.version,
+      );
+      const scopes = extractScopes(packageInfo, lockfile.packages, workspacePackages, packagePath);
 
-        subprojects.push({
-          purl,
-          definitionFile: packageJsonPath,
-          scopes,
-        });
-      }
+      subprojects.push({
+        purl,
+        definitionFile: packageJsonPath,
+        scopes,
+      });
     }
   }
 
@@ -284,21 +307,22 @@ async function extractFromV2Lockfile(
     );
   }
 
-  return buildResult(packageMap, relationshipsMap, subprojects);
+  return buildResult(packageMap, relationshipsMap, subprojects, issues);
 }
 
 function extractScopes(
   packageInfo: PackageJson,
   allPackages: Record<string, PackageLockPackage>,
-  workspacePackages: Map<string, { version: string; path: string }>,
+  workspacePackages: Map<string, { version?: string; path: string }>,
   callerPath: string = "",
 ): DependencyScope[] {
   return extractNpmScopes(packageInfo as Record<string, unknown>, (depName) => {
-    const workspaceInfo = workspacePackages.get(depName);
-    if (workspaceInfo) return createNpmPurl(depName, workspaceInfo.version);
-
+    // An installed package takes precedence over a workspace of the same name
     const resolved = resolvePackageInfo(depName, allPackages, callerPath);
-    return resolved ? createNpmPurl(resolved.name, resolved.version) : null;
+    if (resolved) return createNpmPurl(resolved.name, resolved.version);
+
+    const workspaceInfo = workspacePackages.get(depName);
+    return workspaceInfo ? createNpmPurl(depName, workspaceInfo.version) : null;
   });
 }
 
@@ -310,7 +334,7 @@ function processDependencies(
   packagePath: string,
   purl: string,
   allPackages: Record<string, PackageLockPackage>,
-  workspacePackages: Map<string, { version: string; path: string }>,
+  workspacePackages: Map<string, { version?: string; path: string }>,
   packageMap: Map<string, PackageMapEntry>,
   relationshipsMap: Map<string, Set<string>>,
 ): void {
@@ -321,14 +345,8 @@ function processDependencies(
     for (const [depName, versionRange] of Object.entries(depsInScope)) {
       if (typeof versionRange !== "string") continue;
 
-      // Check if this is a workspace package
-      const workspaceInfo = workspacePackages.get(depName);
-      if (workspaceInfo) {
-        // Don't create relationships to workspace packages
-        continue;
-      }
-
-      // Resolve the actual package info (handles aliases)
+      // Resolve the actual package info (handles aliases). Relationships to workspace
+      // packages, which are linked instead of installed, are not created.
       const packageInfo = resolvePackageInfo(depName, allPackages, packagePath);
 
       if (packageInfo) {
@@ -387,6 +405,8 @@ function resolvePackageInfo(
 
   for (const candidate of candidates) {
     const pkg = allPackages[candidate];
+    // A link (e.g. to a workspace) shadows the packages further up
+    if (pkg?.link) return null;
     if (pkg?.version) {
       const actualName = pkg.name || depName;
       return { name: actualName, version: pkg.version };

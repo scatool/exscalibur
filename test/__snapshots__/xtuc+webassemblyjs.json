@@ -8641,7 +8641,65 @@
       ]
     }
   ],
-  "subprojects": [],
+  "subprojects": [
+    {
+      "purl": "pkg:npm/website",
+      "definitionFile": "website/package.json",
+      "scopes": [
+        {
+          "scope": "devDependencies",
+          "packages": [
+            "pkg:npm/docusaurus@1.0.7"
+          ]
+        }
+      ]
+    },
+    {
+      "purl": "pkg:npm/xtuc%2Bwebassemblyjs",
+      "definitionFile": "package.json",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:npm/mkdirp@1.0.4",
+            "pkg:npm/synp@1.9.7"
+          ]
+        },
+        {
+          "scope": "devDependencies",
+          "packages": [
+            "pkg:npm/%40babel/cli@7.15.4",
+            "pkg:npm/%40babel/core@7.15.5",
+            "pkg:npm/%40babel/generator@7.15.4",
+            "pkg:npm/%40babel/plugin-proposal-export-default-from@7.14.5",
+            "pkg:npm/%40babel/plugin-proposal-object-rest-spread@7.15.6",
+            "pkg:npm/%40babel/preset-env@7.15.4",
+            "pkg:npm/%40babel/preset-flow@7.14.5",
+            "pkg:npm/%40babel/template@7.15.4",
+            "pkg:npm/babel-eslint@8.0.3",
+            "pkg:npm/babel-plugin-mamacro@0.0.7",
+            "pkg:npm/chai@4.3.4",
+            "pkg:npm/eslint-config-prettier@6.15.0",
+            "pkg:npm/eslint-plugin-flowtype-errors@4.1.0",
+            "pkg:npm/eslint-plugin-flowtype@3.10.4",
+            "pkg:npm/eslint-plugin-mocha@6.3.0",
+            "pkg:npm/eslint-plugin-prettier@2.7.0",
+            "pkg:npm/eslint@4.12.1",
+            "pkg:npm/flow-bin@0.159.0",
+            "pkg:npm/flow-typed@3.3.1",
+            "pkg:npm/glob@7.1.7",
+            "pkg:npm/http-server@13.0.1",
+            "pkg:npm/jest-diff@24.8.0",
+            "pkg:npm/lerna@5.1.6",
+            "pkg:npm/markdown-to-html@0.0.13",
+            "pkg:npm/mocha@6.1.4",
+            "pkg:npm/performance-now@2.1.0",
+            "pkg:npm/prettier@2.4.0"
+          ]
+        }
+      ]
+    }
+  ],
   "relationships": [
     {
       "from": "pkg:npm/%40babel/cli@7.15.4",

@@ -9537,6 +9537,44 @@
       ]
     },
     {
+      "purl": "pkg:npm/ory%2Bkratos",
+      "definitionFile": "package.json",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:npm/%40openapitools/openapi-generator-cli@2.24.0",
+            "pkg:npm/yamljs@0.3.0"
+          ]
+        },
+        {
+          "scope": "devDependencies",
+          "packages": [
+            "pkg:npm/license-checker@25.0.1",
+            "pkg:npm/ory-prettier-styles@1.3.0",
+            "pkg:npm/prettier-plugin-packagejson@2.5.19",
+            "pkg:npm/prettier@3.6.2",
+            "pkg:npm/process@0.11.10",
+            "pkg:npm/wait-on@9.0.1"
+          ]
+        }
+      ]
+    },
+    {
+      "purl": "pkg:npm/oryx",
+      "definitionFile": "oryx/package.json",
+      "scopes": [
+        {
+          "scope": "devDependencies",
+          "packages": [
+            "pkg:npm/license-checker@25.0.1",
+            "pkg:npm/ory-prettier-styles@1.3.0",
+            "pkg:npm/prettier@2.8.8"
+          ]
+        }
+      ]
+    },
+    {
       "purl": "pkg:npm/proxy@1.0.0",
       "definitionFile": "test/e2e/proxy/package.json",
       "scopes": [

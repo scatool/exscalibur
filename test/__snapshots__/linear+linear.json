@@ -10858,6 +10858,88 @@
           ]
         }
       ]
+    },
+    {
+      "purl": "pkg:npm/linear",
+      "definitionFile": "package.json",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:npm/%40changesets/cli@2.29.7",
+            "pkg:npm/%40commitlint/cli@17.8.1",
+            "pkg:npm/%40commitlint/config-conventional@11.0.0",
+            "pkg:npm/%40graphql-codegen/cli@2.16.5",
+            "pkg:npm/%40octokit/core@3.6.0",
+            "pkg:npm/%40rollup/plugin-typescript@12.1.4",
+            "pkg:npm/%40types/express@4.17.23",
+            "pkg:npm/%40types/inquirer@7.3.3",
+            "pkg:npm/%40types/jest@26.0.24",
+            "pkg:npm/%40types/lodash@4.17.20",
+            "pkg:npm/%40types/node-fetch@2.6.13",
+            "pkg:npm/%40types/node@20.5.1",
+            "pkg:npm/%40types/ws@7.4.7",
+            "pkg:npm/%40typescript-eslint/eslint-plugin@4.33.0",
+            "pkg:npm/%40typescript-eslint/parser@4.33.0",
+            "pkg:npm/auto-bind@4.0.0",
+            "pkg:npm/body-parser@1.20.3",
+            "pkg:npm/eslint-config-prettier@6.15.0",
+            "pkg:npm/eslint-plugin-import@2.32.0",
+            "pkg:npm/eslint-plugin-jsdoc@30.7.13",
+            "pkg:npm/eslint-plugin-no-null@1.0.2",
+            "pkg:npm/eslint@7.32.0",
+            "pkg:npm/express@4.21.2",
+            "pkg:npm/get-port@5.1.1",
+            "pkg:npm/graphql-faker@2.0.0-rc.25",
+            "pkg:npm/graphql@15.10.1",
+            "pkg:npm/husky@4.3.8",
+            "pkg:npm/jest@26.6.3",
+            "pkg:npm/lerna@7.1.4",
+            "pkg:npm/lint-staged@10.5.4",
+            "pkg:npm/markdown-magic@3.7.0",
+            "pkg:npm/npm-run-all@4.1.5",
+            "pkg:npm/prettier@3.6.2",
+            "pkg:npm/rimraf@3.0.2",
+            "pkg:npm/ts-jest@26.5.6",
+            "pkg:npm/tslib@2.8.1",
+            "pkg:npm/typescript@4.7.4"
+          ]
+        },
+        {
+          "scope": "devDependencies",
+          "packages": [
+            "pkg:npm/%40types/react-transition-group@4.4.12"
+          ]
+        }
+      ]
+    },
+    {
+      "purl": "pkg:npm/linear-file-upload-example",
+      "definitionFile": "examples/nextjs-file-upload/package.json",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:npm/multer@2.0.2",
+            "pkg:npm/next@15.4.7",
+            "pkg:npm/node-fetch@3.3.2",
+            "pkg:npm/react-dom@18.2.0",
+            "pkg:npm/react@18.2.0"
+          ]
+        },
+        {
+          "scope": "devDependencies",
+          "packages": [
+            "pkg:npm/%40linear/sdk@7.0.1",
+            "pkg:npm/%40types/multer@1.4.7",
+            "pkg:npm/%40types/node-fetch@2.6.4",
+            "pkg:npm/%40types/node@20.4.2",
+            "pkg:npm/%40types/react-dom@18.2.7",
+            "pkg:npm/%40types/react@18.2.15",
+            "pkg:npm/typescript@5.1.6"
+          ]
+        }
+      ]
     }
   ],
   "relationships": [

@@ -5966,6 +5966,23 @@
       ]
     },
     {
+      "purl": "pkg:npm/algoliasearch-client-javascript",
+      "definitionFile": "package.json",
+      "scopes": [
+        {
+          "scope": "devDependencies",
+          "packages": [
+            "pkg:npm/%40types/node@22.18.12",
+            "pkg:npm/bundlewatch@0.4.1",
+            "pkg:npm/execa@9.6.0",
+            "pkg:npm/lerna@9.0.0",
+            "pkg:npm/rollup@4.52.5",
+            "pkg:npm/typescript@5.9.3"
+          ]
+        }
+      ]
+    },
+    {
       "purl": "pkg:npm/algoliasearch@5.41.0",
       "definitionFile": "packages/algoliasearch/package.json",
       "scopes": [
