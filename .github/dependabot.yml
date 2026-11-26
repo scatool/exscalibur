@@ -15,10 +15,7 @@ updates:
     ignore:
       - dependency-name: "@types/node"
         versions:
-          - ">=23.0.0"
-    groups:
-      eslint:
-        patterns:
-          - "eslint"
-          - "@eslint/*"
-          - "typescript-eslint"
+          - ">=25.0.0"
+      - dependency-name: "vite-plus"
+      - dependency-name: "@voidzero-dev/vite-plus-core"
+      - dependency-name: "vitest"
