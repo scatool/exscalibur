@@ -41,10 +41,15 @@
     "vite-plus": "catalog:"
   },
   "peerDependencies": {
-    "typescript": "^5",
+    "typescript": ">=5.4",
     "vitest": "^4 || ^5"
   },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+  },
   "engines": {
-    "node": ">=22"
+    "node": ">=24"
   }
 }

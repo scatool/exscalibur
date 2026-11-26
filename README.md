@@ -76,7 +76,7 @@ All remaining commands are run from the repository root.
 First, download the fixture repositories (only needed once):
 
 ```sh
-vp exec tsx test/scripts/download-repositories.ts
+vpx test/scripts/download-repositories.ts
 ```
 
 Then run the integration tests:
