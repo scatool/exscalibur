@@ -14,7 +14,7 @@ defaults:
 
 jobs:
   test:
-    name: Test (Node ${{ matrix.node }})
+    name: Test
     timeout-minutes: 5
     runs-on: ubuntu-latest
     strategy:
