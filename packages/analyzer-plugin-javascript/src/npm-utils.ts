@@ -1,4 +1,5 @@
-import { basename } from "node:path/posix";
+import { win32 } from "node:path";
+import { basename, isAbsolute, join, normalize } from "node:path/posix";
 import { PackageURL } from "packageurl-js";
 import { readTextFile, type DependencyScope } from "@scatool/analyzer-core";
 import type { PackageJson } from "./types.ts";
@@ -67,4 +68,16 @@ export function extractNpmScopes(
   }
 
   return scopes;
+}
+
+/**
+ * Resolve a path of the lockfile against the directory of the lockfile. Returns null for paths
+ * outside of that directory (absolute paths or paths climbing above it): lockfiles are
+ * untrusted input and must not make the extractor read files elsewhere.
+ */
+export function resolveInside(dir: string, path: string): string | null {
+  if (isAbsolute(path) || win32.isAbsolute(path)) return null;
+  const normalized = normalize(path.replaceAll("\\", "/"));
+  if (normalized === ".." || normalized.startsWith("../")) return null;
+  return join(dir, normalized);
 }

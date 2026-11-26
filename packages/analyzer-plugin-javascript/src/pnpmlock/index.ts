@@ -20,7 +20,6 @@ import {
   getPackageKeyCandidates,
   parsePackageKey,
   parsePnpmLockfile,
-  resolveInside,
   type PnpmKeyFormat,
   type PnpmLockfile,
   type PnpmLockfileV9,
@@ -33,6 +32,7 @@ import {
   getProjectName,
   NPM_DEPENDENCY_SCOPES,
   readPackageJson,
+  resolveInside,
 } from "../npm-utils.ts";
 import type { JavaScriptOptions } from "../options.ts";
 import { optionSchema } from "../options.ts";
@@ -76,28 +76,24 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     // Name and version are optional: private packages, especially workspace roots, often have
     // neither.
     const workspacePurls = new Map<string, string>();
-    const importerInfos = await Promise.all(
-      importers.map(async ([importerPath, importer]) => {
-        const importerDir = resolveInside(dir, importerPath);
-        if (!importerDir) {
-          reportOutside(importerPath);
-          return null;
-        }
-        const packageJsonPath = join(importerDir, "package.json");
-        const packageInfo = await readPackageJson(packageJsonPath);
-        const purl = packageInfo
-          ? createNpmPurl(getProjectName(packageInfo, importerDir), packageInfo.version)
-          : undefined;
-        if (purl) workspacePurls.set(importerDir, purl);
-        return { importer, importerDir, packageJsonPath, purl };
-      }),
-    );
+    const importerInfos = [];
+    // Read one by one: a workspace can have thousands of importers
+    for (const [importerPath, importer] of importers) {
+      const importerDir = resolveInside(dir, importerPath);
+      if (!importerDir) {
+        reportOutside(importerPath);
+        continue;
+      }
+      const packageJsonPath = join(importerDir, "package.json");
+      const packageInfo = await readPackageJson(packageJsonPath);
+      if (!packageInfo) continue;
+      const purl = createNpmPurl(getProjectName(packageInfo, importerDir), packageInfo.version);
+      workspacePurls.set(importerDir, purl);
+      importerInfos.push({ importer, importerDir, packageJsonPath, purl });
+    }
 
     // Process importers to create subprojects
-    for (const info of importerInfos) {
-      if (!info?.purl) continue;
-      const { importer, importerDir, packageJsonPath, purl } = info;
-
+    for (const { importer, importerDir, packageJsonPath, purl } of importerInfos) {
       // Map each dependency type to resolved versions
       const scopes: DependencyScope[] = [];
 

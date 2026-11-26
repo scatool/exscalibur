@@ -15428,6 +15428,11 @@
   ],
   "subprojects": [
     {
+      "purl": "pkg:npm/%40jvalue%2Fjayvee-extensions%2Fstd%2Fexec",
+      "definitionFile": "libs/extensions/std/exec/package.json",
+      "scopes": []
+    },
+    {
       "purl": "pkg:npm/jayvee@0.6.4",
       "definitionFile": "package.json",
       "scopes": [

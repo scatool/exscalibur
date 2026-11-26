@@ -98,10 +98,13 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
         if (versionRange.startsWith("workspace:") || versionRange.startsWith("link:")) {
           return null;
         }
-        if (workspacePackages.has(depName)) {
-          return createNpmPurl(depName, workspacePackages.get(depName));
-        }
         const resolvedVersion = resolvePackageVersion(lockfile, depName, versionRange);
+        if (workspacePackages.has(depName)) {
+          // Yarn only links workspaces that have a version, otherwise a locked dependency of
+          // the same name is installed from the registry
+          const workspaceVersion = workspacePackages.get(depName);
+          return createNpmPurl(depName, workspaceVersion ?? resolvedVersion);
+        }
         return resolvedVersion ? createNpmPurl(depName, resolvedVersion) : null;
       });
     };

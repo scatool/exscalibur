@@ -356,6 +356,35 @@ export function resolvePackageVersion(
   packageName: string,
   versionRange: string,
 ): string | null {
+  const exactVersion = resolveExactPackageVersion(lockfile, packageName, versionRange);
+  if (exactVersion) return exactVersion;
+
+  // 4. Search all lockfile entries for this package name and find any match
+  // This handles cases where the exact range doesn't match but the package exists
+  for (const [entryPattern, entryPkg] of lockfile.packages.entries()) {
+    if (entryPkg.version === "0.0.0-use.local") continue;
+
+    const parsed = parsePackagePattern(entryPattern);
+    if (parsed && parsed.name === packageName) {
+      // Found a match for this package - return its version
+      // Note: This may not be the exact range requested, but it's better than nothing
+      // In a more sophisticated implementation, we'd do semver range matching here
+      return entryPkg.version;
+    }
+  }
+
+  return null;
+}
+
+/**
+ * Resolve the installed version of the lockfile entry for exactly this package name and
+ * version range, without falling back to other entries of the package
+ */
+export function resolveExactPackageVersion(
+  lockfile: YarnBerryLockfile,
+  packageName: string,
+  versionRange: string,
+): string | null {
   // Normalize version range - strip npm: prefix if present
   let normalizedRange = versionRange;
   if (normalizedRange.startsWith("npm:")) {
@@ -377,20 +406,6 @@ export function resolvePackageVersion(
     pattern = `${packageName}@${versionRange}`;
     pkg = lockfile.packages.get(pattern);
     if (pkg && pkg.version !== "0.0.0-use.local") return pkg.version;
-  }
-
-  // 4. Search all lockfile entries for this package name and find any match
-  // This handles cases where the exact range doesn't match but the package exists
-  for (const [entryPattern, entryPkg] of lockfile.packages.entries()) {
-    if (entryPkg.version === "0.0.0-use.local") continue;
-
-    const parsed = parsePackagePattern(entryPattern);
-    if (parsed && parsed.name === packageName) {
-      // Found a match for this package - return its version
-      // Note: This may not be the exact range requested, but it's better than nothing
-      // In a more sophisticated implementation, we'd do semver range matching here
-      return entryPkg.version;
-    }
   }
 
   return null;

@@ -28053,6 +28053,25 @@
       ]
     },
     {
+      "purl": "pkg:npm/%40calcom/kysely",
+      "definitionFile": "packages/kysely/package.json",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:npm/kysely@0.28.2",
+            "pkg:npm/pg@8.15.6"
+          ]
+        },
+        {
+          "scope": "devDependencies",
+          "packages": [
+            "pkg:npm/%40types/pg@8.11.14"
+          ]
+        }
+      ]
+    },
+    {
       "purl": "pkg:npm/%40calcom/larkcalendar@0.0.0",
       "definitionFile": "packages/app-store/larkcalendar/package.json",
       "scopes": [

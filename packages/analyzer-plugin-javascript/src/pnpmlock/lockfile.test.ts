@@ -6,8 +6,8 @@ import {
   getPackageKeyCandidates,
   buildLineIndex,
   parsePnpmLockfile,
-  resolveInside,
 } from "./lockfile.ts";
+import { resolveInside } from "../npm-utils.ts";
 
 describe("parsePackageKey", () => {
   test("parses simple package key", () => {
@@ -245,6 +245,11 @@ describe("parsePnpmLockfile", () => {
     );
     const { lockfile } = parsePnpmLockfile(content);
     expect(Object.keys(lockfile.packages ?? {})).toEqual(["lodash@4.17.21"]);
+  });
+
+  test("tolerates importers that are not objects", () => {
+    const { lockfile } = parsePnpmLockfile("lockfileVersion: '9.0'\nimporters:\n  .: oops\n");
+    expect(lockfile.lockfileVersion).toBe("9.0");
   });
 
   test("tolerates empty importers", () => {

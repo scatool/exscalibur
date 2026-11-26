@@ -10175,6 +10175,30 @@
   ],
   "subprojects": [
     {
+      "purl": "pkg:npm/4.44.2",
+      "definitionFile": "test/webpack-versions/4.44.2/package.json",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:npm/webpack@4.44.2"
+          ]
+        }
+      ]
+    },
+    {
+      "purl": "pkg:npm/5.76.0",
+      "definitionFile": "test/webpack-versions/5.76.0/package.json",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:npm/webpack@5.76.0"
+          ]
+        }
+      ]
+    },
+    {
       "purl": "pkg:npm/webpack-bundle-analyzer@4.10.2",
       "definitionFile": "package.json",
       "scopes": [

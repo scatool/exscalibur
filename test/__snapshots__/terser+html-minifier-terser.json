@@ -5063,6 +5063,22 @@
   ],
   "subprojects": [
     {
+      "purl": "pkg:npm/html-minifer-terser-benchmarks",
+      "definitionFile": "benchmarks/package.json",
+      "scopes": [
+        {
+          "scope": "dependencies",
+          "packages": [
+            "pkg:npm/chalk@4.1.2",
+            "pkg:npm/cli-table3@0.6.1",
+            "pkg:npm/lzma@2.3.2",
+            "pkg:npm/minimize@2.2.0",
+            "pkg:npm/progress@2.0.3"
+          ]
+        }
+      ]
+    },
+    {
       "purl": "pkg:npm/html-minifier-terser@7.2.0",
       "definitionFile": "package.json",
       "scopes": [

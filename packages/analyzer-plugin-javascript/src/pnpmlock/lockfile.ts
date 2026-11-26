@@ -1,6 +1,4 @@
 import { parseAllDocuments } from "yaml";
-import { win32 } from "node:path";
-import { isAbsolute, join, normalize } from "node:path/posix";
 
 /**
  * Base lockfile structure shared by all versions
@@ -126,7 +124,9 @@ const DEPENDENCY_IMPORTER_KEYS = ["dependencies", "devDependencies", "optionalDe
 
 /** An env document has importers with env keys and none with regular dependencies. */
 function isEnvDocument(lockfile: PnpmLockfile): boolean {
-  const importers = Object.values(lockfile.importers ?? {}).filter(Boolean);
+  const importers = Object.values(lockfile.importers ?? {}).filter(
+    (importer) => importer && typeof importer === "object",
+  );
   const hasKey = (keys: string[]) =>
     importers.some((importer) => keys.some((key) => key in importer));
   return hasKey(ENV_IMPORTER_KEYS) && !hasKey(DEPENDENCY_IMPORTER_KEYS);
@@ -264,16 +264,4 @@ export function buildLineIndex(content: string, startLine = 1): Map<string, numb
   }
 
   return index;
-}
-
-/**
- * Resolve a path of the lockfile against the directory of the lockfile. Returns null for paths
- * outside of that directory (absolute paths or paths climbing above it): lockfiles are
- * untrusted input and must not make the extractor read files elsewhere.
- */
-export function resolveInside(dir: string, path: string): string | null {
-  if (isAbsolute(path) || win32.isAbsolute(path)) return null;
-  const normalized = normalize(path.replaceAll("\\", "/"));
-  if (normalized === ".." || normalized.startsWith("../")) return null;
-  return join(dir, normalized);
 }
