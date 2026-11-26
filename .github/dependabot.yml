@@ -15,10 +15,9 @@ updates:
     ignore:
       - dependency-name: "@types/node"
         versions:
-          - ">=23.0.0"
-    groups:
-      eslint:
-        patterns:
-          - "eslint"
-          - "@eslint/*"
-          - "typescript-eslint"
+          - ">=25.0.0"
+      # Vite+ pins its core (aliased as `vite`) and vitest to exact versions that
+      # don't share its version number. Update these together with `vp migrate`.
+      - dependency-name: "vite-plus"
+      - dependency-name: "@voidzero-dev/vite-plus-core"
+      - dependency-name: "vitest"
