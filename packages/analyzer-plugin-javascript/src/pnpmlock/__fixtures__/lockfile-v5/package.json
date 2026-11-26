@@ -1,0 +1,18 @@
+{
+  "name": "legacy-single",
+  "version": "1.0.0",
+  "dependencies": {
+    "@sindresorhus/is": "^4.6.0",
+    "is-even": "https://codeload.github.com/jonschlinkert/is-even/tar.gz/a94a9be2783fdd77fa37195e4fabb22fc51e573e",
+    "loose-envify": "^1.4.0",
+    "ms": "https://registry.npmjs.org/ms/-/ms-2.1.3.tgz",
+    "strip-ansi-cjs": "npm:strip-ansi@^6.0.1",
+    "use-sync-external-store": "^1.2.0"
+  },
+  "devDependencies": {
+    "react": "^18.2.0"
+  },
+  "optionalDependencies": {
+    "is-odd": "^3.0.1"
+  }
+}

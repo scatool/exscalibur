@@ -1,0 +1,9 @@
+{
+  "name": "outside-paths",
+  "version": "1.0.0",
+  "dependencies": {
+    "absolute-dep": "file:/etc/absolute",
+    "inside-dep": "file:./local",
+    "outside-dep": "file:../file-deps/local"
+  }
+}

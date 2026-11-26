@@ -1,0 +1,8 @@
+{
+  "name": "@legacy/a",
+  "version": "0.1.0",
+  "dependencies": {
+    "@legacy/b": "workspace:*",
+    "loose-envify": "^1.4.0"
+  }
+}

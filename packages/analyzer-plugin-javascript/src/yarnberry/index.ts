@@ -26,6 +26,7 @@ import {
   extractNpmScopes,
   NPM_DEPENDENCY_SCOPES,
   readPackageJson,
+  getProjectName,
 } from "../npm-utils.ts";
 import type { JavaScriptOptions } from "../options.ts";
 import { optionSchema } from "../options.ts";
@@ -47,8 +48,9 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
 
         // Check for Yarn Berry markers
         // Yarn Berry uses lockfile version 6+ (v2, v3, v4 all use different formats)
-        // We support v6 (Yarn v3/v4) and v8+ (Yarn v4+)
-        if (buffer.includes("__metadata:") && /version:\s+[6-9]\d*/.test(buffer)) {
+        // We support v6 (Yarn v3) and later, e.g. v8 and v10 written by Yarn v4
+        const metadataVersion = /__metadata:\s*\n\s+version:\s+["']?(\d+)/.exec(buffer)?.[1];
+        if (metadataVersion && Number(metadataVersion) >= 6) {
           this.markFile(file);
         }
       } catch {
@@ -66,7 +68,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
     const lockfile = parseYarnBerryLockfile(lockfileContent);
 
     // Find all workspace packages by looking for linkType: soft
-    const workspacePackages = new Map<string, { version: string; path: string }>();
+    const workspacePackages = new Map<string, { version?: string; path: string }>();
     const workspacePatterns = new Map<string, string>(); // Map package name to workspace path
 
     for (const [pattern, pkg] of lockfile.packages.entries()) {
@@ -85,7 +87,7 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
       const workspaceDir = path === "." ? dir : join(dir, path);
       const packageJsonPath = join(workspaceDir, "package.json");
       const packageInfo = await readPackageJson(packageJsonPath);
-      if (packageInfo?.version) {
+      if (packageInfo) {
         workspacePackages.set(name, {
           version: packageInfo.version,
           path,
@@ -103,9 +105,6 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
       const workspaceDir = info.path === "." ? dir : join(dir, info.path);
       const packageJsonPath = join(workspaceDir, "package.json");
 
-      // Create PURL for this subproject
-      const purl = createNpmPurl(name, info.version);
-
       // Extract scopes - read from package.json to preserve original dependency types
       // (Yarn Berry lockfile normalizes all deps to just "dependencies")
       const scopes: DependencyScope[] = [];
@@ -113,6 +112,13 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
       // Read package.json to get the original dependency scopes
       const packageInfo = await readPackageJson(packageJsonPath);
       if (!packageInfo) continue;
+
+      // Yarn generates a name (root-workspace-<hash>) for unnamed workspaces, which are named
+      // after their directory instead
+      const purl = createNpmPurl(
+        packageInfo.name ? name : getProjectName(packageInfo, workspaceDir),
+        info.version,
+      );
 
       const extractedScopes = extractNpmScopes(
         packageInfo as Record<string, unknown>,
@@ -138,8 +144,8 @@ export const extractor: Extractor<JavaScriptOptions> = filesExtractor<JavaScript
       const packageJsonPath = join(dir, "package.json");
       const packageInfo = await readPackageJson(packageJsonPath);
 
-      if (packageInfo?.name && packageInfo.version) {
-        const purl = createNpmPurl(packageInfo.name, packageInfo.version);
+      if (packageInfo) {
+        const purl = createNpmPurl(getProjectName(packageInfo, dir), packageInfo.version);
 
         const scopes = extractNpmScopes(
           packageInfo as Record<string, unknown>,

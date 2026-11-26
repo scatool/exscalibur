@@ -573,6 +573,114 @@ exports[`basic 1`] = `
 }
 `;
 
+exports[`env-only 1`] = `
+{
+  "issues": [],
+  "packages": [],
+  "relationships": [],
+  "subprojects": [
+    {
+      "definitionFile": "package.json",
+      "purl": "pkg:npm/env-only@1.0.0",
+      "scopes": [],
+    },
+  ],
+}
+`;
+
+exports[`file-deps 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "pnpm-lock.yaml#41",
+      ],
+      "purl": "pkg:npm/%40jsr/std__internal@1.0.14",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#44",
+      ],
+      "purl": "pkg:npm/%40jsr/std__path@1.1.6",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#47",
+      ],
+      "purl": "pkg:npm/js-tokens@4.0.0",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#50",
+      ],
+      "purl": "pkg:npm/local-dep@3.2.1",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#53",
+      ],
+      "purl": "pkg:npm/loose-envify@1.4.0",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#57",
+      ],
+      "purl": "pkg:npm/ms@2.1.3",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:npm/%40jsr/std__path@1.1.6",
+      "to": [
+        "pkg:npm/%40jsr/std__internal@1.0.14",
+      ],
+    },
+    {
+      "from": "pkg:npm/local-dep@3.2.1",
+      "to": [
+        "pkg:npm/ms@2.1.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/loose-envify@1.4.0",
+      "to": [
+        "pkg:npm/js-tokens@4.0.0",
+      ],
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "packages/inj/package.json",
+      "purl": "pkg:npm/%40x/inj@0.5.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/js-tokens@4.0.0",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+    {
+      "definitionFile": "package.json",
+      "purl": "pkg:npm/extra@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/%40jsr/std__path@1.1.6",
+            "pkg:npm/%40x/inj@0.5.0",
+            "pkg:npm/local-dep@3.2.1",
+            "pkg:npm/loose-envify@1.4.0",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
+
 exports[`git-deps 1`] = `
 {
   "issues": [],
@@ -1193,7 +1301,7 @@ exports[`git-deps 1`] = `
       ],
     },
     {
-      "from": "pkg:npm/express@https:%2F%2Fcodeload.github.com%2Fexpressjs%2Fexpress%2Ftar.gz%2F64e7373d6976dd3ec32a92dbc31ff19700fe152a",
+      "from": "pkg:npm/express@5.1.0",
       "to": [
         "pkg:npm/accepts@2.0.0",
         "pkg:npm/body-parser@2.2.0",
@@ -1295,7 +1403,7 @@ exports[`git-deps 1`] = `
       ],
     },
     {
-      "from": "pkg:npm/is-even@git+https:%2F%2Fgithub.com%2Fjonschlinkert%2Fis-even.git%230990c36e791f0eca662c661238fb3e560b7d28c8",
+      "from": "pkg:npm/is-even@1.0.0",
       "to": [
         "pkg:npm/is-odd@0.1.2",
       ],
@@ -1345,7 +1453,7 @@ exports[`git-deps 1`] = `
       ],
     },
     {
-      "from": "pkg:npm/mocha@https:%2F%2Fcodeload.github.com%2Fmochajs%2Fmocha%2Ftar.gz%2F4727d357ea",
+      "from": "pkg:npm/mocha@2.0.1",
       "to": [
         "pkg:npm/commander@2.3.0",
         "pkg:npm/debug@2.0.0",
@@ -1484,6 +1592,749 @@ exports[`git-deps 1`] = `
             "pkg:npm/mocha@2.0.1",
           ],
           "scope": "dependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
+
+exports[`incomplete-lockfile-v5 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "pnpm-lock.yaml#15",
+      ],
+      "purl": "pkg:npm/lodash@4.17.21",
+    },
+  ],
+  "relationships": [],
+  "subprojects": [
+    {
+      "definitionFile": "package.json",
+      "purl": "pkg:npm/incomplete-lockfile-v5@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/lodash@4.17.21",
+            "pkg:npm/safe_buffer@1.0.0",
+            "pkg:npm/with-peer@1.7.0",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
+
+exports[`lockfile-v5 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "pnpm-lock.yaml#29",
+      ],
+      "purl": "pkg:npm/%40sindresorhus/is@4.6.0",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#34",
+      ],
+      "purl": "pkg:npm/ansi-regex@5.0.1",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#39",
+      ],
+      "purl": "pkg:npm/is-buffer@1.1.6",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#113",
+      ],
+      "purl": "pkg:npm/is-even@1.0.0",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#43",
+      ],
+      "purl": "pkg:npm/is-number@3.0.0",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#50",
+      ],
+      "purl": "pkg:npm/is-number@6.0.0",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#56",
+      ],
+      "purl": "pkg:npm/is-odd@0.1.2",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#63",
+      ],
+      "purl": "pkg:npm/is-odd@3.0.1",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#72",
+      ],
+      "purl": "pkg:npm/js-tokens@4.0.0",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#75",
+      ],
+      "purl": "pkg:npm/kind-of@3.2.2",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#82",
+      ],
+      "purl": "pkg:npm/loose-envify@1.4.0",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#88",
+      ],
+      "purl": "pkg:npm/ms@2.1.3",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#92",
+      ],
+      "purl": "pkg:npm/react@18.3.1",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#98",
+      ],
+      "purl": "pkg:npm/strip-ansi@6.0.1",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#105",
+      ],
+      "purl": "pkg:npm/use-sync-external-store@1.7.0",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:npm/is-even@1.0.0",
+      "to": [
+        "pkg:npm/is-odd@0.1.2",
+      ],
+    },
+    {
+      "from": "pkg:npm/is-number@3.0.0",
+      "to": [
+        "pkg:npm/kind-of@3.2.2",
+      ],
+    },
+    {
+      "from": "pkg:npm/is-odd@0.1.2",
+      "to": [
+        "pkg:npm/is-number@3.0.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/is-odd@3.0.1",
+      "to": [
+        "pkg:npm/is-number@6.0.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/kind-of@3.2.2",
+      "to": [
+        "pkg:npm/is-buffer@1.1.6",
+      ],
+    },
+    {
+      "from": "pkg:npm/loose-envify@1.4.0",
+      "to": [
+        "pkg:npm/js-tokens@4.0.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/react@18.3.1",
+      "to": [
+        "pkg:npm/loose-envify@1.4.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/strip-ansi@6.0.1",
+      "to": [
+        "pkg:npm/ansi-regex@5.0.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/use-sync-external-store@1.7.0",
+      "to": [
+        "pkg:npm/react@18.3.1",
+      ],
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "package.json",
+      "purl": "pkg:npm/legacy-single@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/%40sindresorhus/is@4.6.0",
+            "pkg:npm/is-even@1.0.0",
+            "pkg:npm/loose-envify@1.4.0",
+            "pkg:npm/ms@2.1.3",
+            "pkg:npm/strip-ansi@6.0.1",
+            "pkg:npm/use-sync-external-store@1.7.0",
+          ],
+          "scope": "dependencies",
+        },
+        {
+          "packages": [
+            "pkg:npm/react@18.3.1",
+          ],
+          "scope": "devDependencies",
+        },
+        {
+          "packages": [
+            "pkg:npm/is-odd@3.0.1",
+          ],
+          "scope": "optionalDependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
+
+exports[`lockfile-v5-file-deps 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "pnpm-lock.yaml#13",
+      ],
+      "purl": "pkg:npm/js-tokens@4.0.0",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#28",
+      ],
+      "purl": "pkg:npm/local-dep@3.2.1",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#17",
+      ],
+      "purl": "pkg:npm/loose-envify@1.4.0",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#24",
+      ],
+      "purl": "pkg:npm/ms@2.1.3",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:npm/local-dep@3.2.1",
+      "to": [
+        "pkg:npm/ms@2.1.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/loose-envify@1.4.0",
+      "to": [
+        "pkg:npm/js-tokens@4.0.0",
+      ],
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "package.json",
+      "purl": "pkg:npm/file-deps-legacy@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/local-dep@3.2.1",
+            "pkg:npm/loose-envify@1.4.0",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
+
+exports[`lockfile-v5-workspace 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "pnpm-lock.yaml#32",
+      ],
+      "purl": "pkg:npm/%40sindresorhus/is@4.6.0",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#37",
+      ],
+      "purl": "pkg:npm/js-tokens@4.0.0",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#40",
+      ],
+      "purl": "pkg:npm/loose-envify@1.4.0",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#46",
+      ],
+      "purl": "pkg:npm/ms@2.1.3",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#50",
+      ],
+      "purl": "pkg:npm/react@18.3.1",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#57",
+      ],
+      "purl": "pkg:npm/use-sync-external-store@1.7.0",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:npm/loose-envify@1.4.0",
+      "to": [
+        "pkg:npm/js-tokens@4.0.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/react@18.3.1",
+      "to": [
+        "pkg:npm/loose-envify@1.4.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/use-sync-external-store@1.7.0",
+      "to": [
+        "pkg:npm/react@18.3.1",
+      ],
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "packages/a/package.json",
+      "purl": "pkg:npm/%40legacy/a@0.1.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/%40legacy/b@0.2.0",
+            "pkg:npm/loose-envify@1.4.0",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+    {
+      "definitionFile": "packages/b/package.json",
+      "purl": "pkg:npm/%40legacy/b@0.2.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/%40sindresorhus/is@4.6.0",
+          ],
+          "scope": "dependencies",
+        },
+        {
+          "packages": [
+            "pkg:npm/react@18.3.1",
+            "pkg:npm/use-sync-external-store@1.7.0",
+          ],
+          "scope": "devDependencies",
+        },
+      ],
+    },
+    {
+      "definitionFile": "package.json",
+      "purl": "pkg:npm/legacy-workspace",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/ms@2.1.3",
+          ],
+          "scope": "devDependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
+
+exports[`lockfile-v6 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "pnpm-lock.yaml#39",
+      ],
+      "purl": "pkg:npm/%40sindresorhus/is@4.6.0",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#44",
+      ],
+      "purl": "pkg:npm/ansi-regex@5.0.1",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#49",
+      ],
+      "purl": "pkg:npm/is-buffer@1.1.6",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#124",
+      ],
+      "purl": "pkg:npm/is-even@1.0.0",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#53",
+      ],
+      "purl": "pkg:npm/is-number@3.0.0",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#60",
+      ],
+      "purl": "pkg:npm/is-number@6.0.0",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#67",
+      ],
+      "purl": "pkg:npm/is-odd@0.1.2",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#74",
+      ],
+      "purl": "pkg:npm/is-odd@3.0.1",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#83",
+      ],
+      "purl": "pkg:npm/js-tokens@4.0.0",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#86",
+      ],
+      "purl": "pkg:npm/kind-of@3.2.2",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#93",
+      ],
+      "purl": "pkg:npm/loose-envify@1.4.0",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#99",
+      ],
+      "purl": "pkg:npm/ms@2.1.3",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#103",
+      ],
+      "purl": "pkg:npm/react@18.3.1",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#109",
+      ],
+      "purl": "pkg:npm/strip-ansi@6.0.1",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#116",
+      ],
+      "purl": "pkg:npm/use-sync-external-store@1.7.0",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:npm/is-even@1.0.0",
+      "to": [
+        "pkg:npm/is-odd@0.1.2",
+      ],
+    },
+    {
+      "from": "pkg:npm/is-number@3.0.0",
+      "to": [
+        "pkg:npm/kind-of@3.2.2",
+      ],
+    },
+    {
+      "from": "pkg:npm/is-odd@0.1.2",
+      "to": [
+        "pkg:npm/is-number@3.0.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/is-odd@3.0.1",
+      "to": [
+        "pkg:npm/is-number@6.0.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/kind-of@3.2.2",
+      "to": [
+        "pkg:npm/is-buffer@1.1.6",
+      ],
+    },
+    {
+      "from": "pkg:npm/loose-envify@1.4.0",
+      "to": [
+        "pkg:npm/js-tokens@4.0.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/react@18.3.1",
+      "to": [
+        "pkg:npm/loose-envify@1.4.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/strip-ansi@6.0.1",
+      "to": [
+        "pkg:npm/ansi-regex@5.0.1",
+      ],
+    },
+    {
+      "from": "pkg:npm/use-sync-external-store@1.7.0",
+      "to": [
+        "pkg:npm/react@18.3.1",
+      ],
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "package.json",
+      "purl": "pkg:npm/legacy-single@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/%40sindresorhus/is@4.6.0",
+            "pkg:npm/is-even@1.0.0",
+            "pkg:npm/loose-envify@1.4.0",
+            "pkg:npm/ms@2.1.3",
+            "pkg:npm/strip-ansi@6.0.1",
+            "pkg:npm/use-sync-external-store@1.7.0",
+          ],
+          "scope": "dependencies",
+        },
+        {
+          "packages": [
+            "pkg:npm/react@18.3.1",
+          ],
+          "scope": "devDependencies",
+        },
+        {
+          "packages": [
+            "pkg:npm/is-odd@3.0.1",
+          ],
+          "scope": "optionalDependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
+
+exports[`lockfile-v6-file-deps 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "pnpm-lock.yaml#17",
+      ],
+      "purl": "pkg:npm/js-tokens@4.0.0",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#32",
+      ],
+      "purl": "pkg:npm/local-dep@3.2.1",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#21",
+      ],
+      "purl": "pkg:npm/loose-envify@1.4.0",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#28",
+      ],
+      "purl": "pkg:npm/ms@2.1.3",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:npm/local-dep@3.2.1",
+      "to": [
+        "pkg:npm/ms@2.1.3",
+      ],
+    },
+    {
+      "from": "pkg:npm/loose-envify@1.4.0",
+      "to": [
+        "pkg:npm/js-tokens@4.0.0",
+      ],
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "package.json",
+      "purl": "pkg:npm/file-deps-legacy@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/local-dep@3.2.1",
+            "pkg:npm/loose-envify@1.4.0",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
+
+exports[`lockfile-v6-workspace 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "pnpm-lock.yaml#39",
+      ],
+      "purl": "pkg:npm/%40sindresorhus/is@4.6.0",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#44",
+      ],
+      "purl": "pkg:npm/js-tokens@4.0.0",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#47",
+      ],
+      "purl": "pkg:npm/loose-envify@1.4.0",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#53",
+      ],
+      "purl": "pkg:npm/ms@2.1.3",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#57",
+      ],
+      "purl": "pkg:npm/react@18.3.1",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#64",
+      ],
+      "purl": "pkg:npm/use-sync-external-store@1.7.0",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:npm/loose-envify@1.4.0",
+      "to": [
+        "pkg:npm/js-tokens@4.0.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/react@18.3.1",
+      "to": [
+        "pkg:npm/loose-envify@1.4.0",
+      ],
+    },
+    {
+      "from": "pkg:npm/use-sync-external-store@1.7.0",
+      "to": [
+        "pkg:npm/react@18.3.1",
+      ],
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "packages/a/package.json",
+      "purl": "pkg:npm/%40legacy/a@0.1.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/%40legacy/b@0.2.0",
+            "pkg:npm/loose-envify@1.4.0",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+    {
+      "definitionFile": "packages/b/package.json",
+      "purl": "pkg:npm/%40legacy/b@0.2.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/%40sindresorhus/is@4.6.0",
+          ],
+          "scope": "dependencies",
+        },
+        {
+          "packages": [
+            "pkg:npm/react@18.3.1",
+            "pkg:npm/use-sync-external-store@1.7.0",
+          ],
+          "scope": "devDependencies",
+        },
+      ],
+    },
+    {
+      "definitionFile": "package.json",
+      "purl": "pkg:npm/legacy-workspace",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/ms@2.1.3",
+          ],
+          "scope": "devDependencies",
         },
       ],
     },
@@ -2441,6 +3292,60 @@ exports[`monorepo 1`] = `
 }
 `;
 
+exports[`multi-document 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "pnpm-lock.yaml#69",
+      ],
+      "purl": "pkg:npm/js-tokens@4.0.0",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#72",
+      ],
+      "purl": "pkg:npm/loose-envify@1.4.0",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#76",
+      ],
+      "purl": "pkg:npm/typescript@5.9.3",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:npm/loose-envify@1.4.0",
+      "to": [
+        "pkg:npm/js-tokens@4.0.0",
+      ],
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "package.json",
+      "purl": "pkg:npm/multi-document@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/loose-envify@1.4.0",
+          ],
+          "scope": "dependencies",
+        },
+        {
+          "packages": [
+            "pkg:npm/typescript@5.9.3",
+          ],
+          "scope": "devDependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
+
 exports[`nested-deps 1`] = `
 {
   "issues": [],
@@ -2515,6 +3420,68 @@ exports[`nested-deps 1`] = `
 }
 `;
 
+exports[`outside-paths 1`] = `
+{
+  "issues": [
+    {
+      "code": "pnpmlock.path_outside_lockfile_directory",
+      "file": "pnpm-lock.yaml",
+      "message": "Skipped package.json of "../file-deps/local": the path is outside of the directory of the lockfile",
+      "severity": "WARNING",
+    },
+    {
+      "code": "pnpmlock.path_outside_lockfile_directory",
+      "file": "pnpm-lock.yaml",
+      "message": "Skipped package.json of "../file-deps/packages/inj": the path is outside of the directory of the lockfile",
+      "severity": "WARNING",
+    },
+    {
+      "code": "pnpmlock.path_outside_lockfile_directory",
+      "file": "pnpm-lock.yaml",
+      "message": "Skipped package.json of "/etc/absolute": the path is outside of the directory of the lockfile",
+      "severity": "WARNING",
+    },
+  ],
+  "packages": [
+    {
+      "evidence": [
+        "pnpm-lock.yaml#29",
+      ],
+      "purl": "pkg:npm/absolute-dep",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#32",
+      ],
+      "purl": "pkg:npm/inside-dep@2.0.0",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#35",
+      ],
+      "purl": "pkg:npm/outside-dep",
+    },
+  ],
+  "relationships": [],
+  "subprojects": [
+    {
+      "definitionFile": "package.json",
+      "purl": "pkg:npm/outside-paths@1.0.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/absolute-dep",
+            "pkg:npm/inside-dep@2.0.0",
+            "pkg:npm/outside-dep",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
+
 exports[`tarball-deps 1`] = `
 {
   "issues": [],
@@ -2569,6 +3536,79 @@ exports[`tarball-deps 1`] = `
             "pkg:npm/react@18.3.1",
           ],
           "scope": "dependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
+
+exports[`unnamed-root 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "evidence": [
+        "pnpm-lock.yaml#32",
+      ],
+      "purl": "pkg:npm/js-tokens@4.0.0",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#35",
+      ],
+      "purl": "pkg:npm/loose-envify@1.4.0",
+    },
+    {
+      "evidence": [
+        "pnpm-lock.yaml#39",
+      ],
+      "purl": "pkg:npm/ms@2.1.3",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:npm/loose-envify@1.4.0",
+      "to": [
+        "pkg:npm/js-tokens@4.0.0",
+      ],
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "packages/a/package.json",
+      "purl": "pkg:npm/%40unnamed/a@0.1.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/%40unnamed/b@0.2.0",
+            "pkg:npm/loose-envify@1.4.0",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+    {
+      "definitionFile": "packages/b/package.json",
+      "purl": "pkg:npm/%40unnamed/b@0.2.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/js-tokens@4.0.0",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+    {
+      "definitionFile": "package.json",
+      "purl": "pkg:npm/unnamed-root",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/ms@2.1.3",
+          ],
+          "scope": "devDependencies",
         },
       ],
     },

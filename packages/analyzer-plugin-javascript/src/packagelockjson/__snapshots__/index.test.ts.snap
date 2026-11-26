@@ -2942,6 +2942,158 @@ exports[`tarball-deps 1`] = `
 }
 `;
 
+exports[`unnamed-root 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "downloadLocation": "https://registry.npmjs.org/js-tokens/-/js-tokens-4.0.0.tgz",
+      "evidence": [
+        "package-lock.json#23",
+      ],
+      "purl": "pkg:npm/js-tokens@4.0.0",
+    },
+    {
+      "downloadLocation": "https://registry.npmjs.org/loose-envify/-/loose-envify-1.4.0.tgz",
+      "evidence": [
+        "package-lock.json#29",
+      ],
+      "purl": "pkg:npm/loose-envify@1.4.0",
+    },
+    {
+      "downloadLocation": "https://registry.npmjs.org/ms/-/ms-2.1.3.tgz",
+      "evidence": [
+        "package-lock.json#41",
+      ],
+      "purl": "pkg:npm/ms@2.1.3",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:npm/loose-envify@1.4.0",
+      "to": [
+        "pkg:npm/js-tokens@4.0.0",
+      ],
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "packages/a/package.json",
+      "purl": "pkg:npm/%40unnamed/a@0.1.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/%40unnamed/b@0.2.0",
+            "pkg:npm/loose-envify@1.4.0",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+    {
+      "definitionFile": "packages/b/package.json",
+      "purl": "pkg:npm/%40unnamed/b@0.2.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/js-tokens@4.0.0",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+    {
+      "definitionFile": "package.json",
+      "purl": "pkg:npm/unnamed-root",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/ms@2.1.3",
+          ],
+          "scope": "devDependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
+
+exports[`versionless-workspace 1`] = `
+{
+  "issues": [],
+  "packages": [
+    {
+      "downloadLocation": "https://registry.npmjs.org/js-tokens/-/js-tokens-4.0.0.tgz",
+      "evidence": [
+        "package-lock.json#24",
+      ],
+      "purl": "pkg:npm/js-tokens@4.0.0",
+    },
+    {
+      "downloadLocation": "https://registry.npmjs.org/loose-envify/-/loose-envify-1.4.0.tgz",
+      "evidence": [
+        "package-lock.json#30",
+      ],
+      "purl": "pkg:npm/loose-envify@1.4.0",
+    },
+    {
+      "downloadLocation": "https://registry.npmjs.org/ms/-/ms-2.1.3.tgz",
+      "evidence": [
+        "package-lock.json#42",
+      ],
+      "purl": "pkg:npm/ms@2.1.3",
+    },
+  ],
+  "relationships": [
+    {
+      "from": "pkg:npm/loose-envify@1.4.0",
+      "to": [
+        "pkg:npm/js-tokens@4.0.0",
+      ],
+    },
+  ],
+  "subprojects": [
+    {
+      "definitionFile": "packages/a/package.json",
+      "purl": "pkg:npm/%40versionless/a@0.1.0",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/%40versionless/b",
+            "pkg:npm/loose-envify@1.4.0",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+    {
+      "definitionFile": "packages/b/package.json",
+      "purl": "pkg:npm/%40versionless/b",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/js-tokens@4.0.0",
+          ],
+          "scope": "dependencies",
+        },
+      ],
+    },
+    {
+      "definitionFile": "package.json",
+      "purl": "pkg:npm/versionless-workspace",
+      "scopes": [
+        {
+          "packages": [
+            "pkg:npm/ms@2.1.3",
+          ],
+          "scope": "devDependencies",
+        },
+      ],
+    },
+  ],
+}
+`;
+
 exports[`workspace 1`] = `
 {
   "issues": [],

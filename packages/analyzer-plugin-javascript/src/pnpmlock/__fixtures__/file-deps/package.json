@@ -1,0 +1,15 @@
+{
+  "name": "extra",
+  "version": "1.0.0",
+  "dependencies": {
+    "@std/path": "jsr:^1.0.0",
+    "@x/inj": "workspace:*",
+    "local-dep": "file:./local",
+    "loose-envify": "catalog:"
+  },
+  "dependenciesMeta": {
+    "@x/inj": {
+      "injected": true
+    }
+  }
+}
